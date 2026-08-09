@@ -1,0 +1,18 @@
+prompts/
+.DS_Store
+.sih/
+target/
+
+# Calibration 原始数据不入库, manifest 保留作指针 (R-E1 决策)
+sih/state/calibration/**
+!sih/state/calibration/manifest.json
+
+# Python 运行环境
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
