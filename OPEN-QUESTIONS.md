@@ -134,13 +134,11 @@
 - 阻塞。无强阻塞。csnx 实验可在 P1 现状直接跑（single_round_explore + Hermes 材料 topic）。底稿采集可并行跑也可省略。
 - 哲学依据。无直接哲学命题约束。观察动机是人类决策者对"独立系统得出相同命题"这一现象的验证需求，属于工程实证积累。参照/提炼/借鉴三个判断本身承接 PRO-007 鉴层（多视角交叉审阅打破自证循环）。
 
-### OQ-17 facet severity 合法值定档
+### OQ-17 facet severity 合法值定档 [CLOSED]
 
 - 问题。facet 的 severity 字段当前暂定 critical / major / minor / info 四档（比 counter 多一档 info 信息级）。定档依据不足——没有实际跑出来的 severity 分布数据支撑四档还是三档更合理。过早定档会在 csnx 实验数据积累后发现分档不合适，回头改 compiler + 历史数据的 severity 字段。
-- 已推导结论。第一，info 档是 facet 新增的猜测性分档，counter 没有这一档，info 的语义边界（什么程度的发现算 info 不算 minor）未定义。第二，暂不定档不阻塞 P1——compiler 的 compute_severity_distribution 已经支持四档（KNOWN_SEVERITIES 含 info），未声明的 severity 归 (unknown) 桶，改档只改 KNOWN_SEVERITIES 常量。第三，ROADMAP P3 已登记此待定项。
-- 待定。第一，csnx 实验跑出实际 severity 分布后定档——看 info 是否有实际产出、info 与 minor 的分布是否可区分。第二，定档后的历史数据处理——已有的 single_round_explore 实验数据如果含 info 标注，定档时是否回溯重分类。第三，info 的语义定义——是"信息性发现不构成问题"还是"低优先级观察"。
-- 关联。facet ROADMAP P3 数据与分析（severity 定档已登记）。facet src/compiler.py KNOWN_SEVERITIES 常量（定档改这里）。facet src/engine.py _extract_facets（severity 字段从 LLM 产出解析）。
-- 阻塞。csnx 消息压缩采样实验（实验跑出来才有分布数据可看）。无其他阻塞。
+- 解决。170 个 facet 的实测分布：critical 38（22%）/ major 109（64%）/ minor 22（13%）/ info 1（0.6%）。info 仅 1 个产出，与 minor 完全不可区分，语义边界未定义。定档为三档 critical / major / minor，info 砂除。KNOWN_SEVERITIES 常量改为三档，atom.yaml system prompt 去掉 info，历史数据里的 info 标注自动归 (unknown) 桶不需回溯。
+- 关联。facet src/compiler.py KNOWN_SEVERITIES 常量（已改三档）。facet atom.yaml（system prompt 已去掉 info）。csnx5 三轮 + endogenous_tree 两轮（170 facet 分布数据来源）。
 - 哲学依据。工程基线第五条治理延伸是减少 LLM 参与（severity 定档是确定性程序的度量定义，不应靠 LLM 自行判断 severity 归属，应由人类基于分布数据定档后机械应用）。
 
 ### OQ-18 endogenous_tree parent_facet_ids 悬 hanging pointer
