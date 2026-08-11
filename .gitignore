@@ -16,3 +16,6 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# 临时产物不入库
+tmp/
