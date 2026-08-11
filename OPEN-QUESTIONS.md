@@ -143,6 +143,24 @@
 - 阻塞。csnx 消息压缩采样实验（实验跑出来才有分布数据可看）。无其他阻塞。
 - 哲学依据。工程基线第五条治理延伸是减少 LLM 参与（severity 定档是确定性程序的度量定义，不应靠 LLM 自行判断 severity 归属，应由人类基于分布数据定档后机械应用）。
 
+### OQ-18 endogenous_tree parent_facet_ids 悬 hanging pointer
+
+- 问题。facet P2 endogenous_tree 的 branch_out 方向要求 LLM 在 round 2 的 facet 里填 parent_facet_ids 字段，引用 round 1 的真实 facet id。但 validator（anchor_whitelist）只检查 anchor_ref 是否在 topic 锚点白名单内，不检查 parent_facet_ids 是否引用真实存在的 facet id。LLM 可能编造不存在的 id 格式（实测：Qwen3.7-Plus-A round 2 的 f6_r2 引用了不存在的 f4_r1_qwen，实际 round 1 的 id 是 f4_r1 无后缀）。
+- 已推导结论。第一，这是 validator 覆盖盲区，不是 atom-chain 范式设计问题——范式配置正确声明了 parent_facet_ids 的用途，检验器没覆盖。第二，悬挂的 parent_facet_ids 不阻塞 compiler 聚合（compiler 不依赖 parent 关系算 Jaccard），但破坏分叉树的可重建性——用 parent_facet_ids 重建树结构时会出现指向不存在的节点。
+- 待定。第一，是否给 parent_facet_ids 加 validator（参照 anchor_whitelist 的机械剔除模式：parent 不在 round 1 的 id 集合内则剔除并记 dropped_parents，不静默丢失）。第二，validator 的 round 1 id 集合怎么获取——需要在 runner 构造 round 2 调用前加载 round 1 产出，把 id 集合作为 validator_params 注入。第三，是否在 system prompt 里更强约束 id 格式（当前 prompt 说"引用前序产出中真实存在的 facet id"，LLM 仍编造）。
+- 关联。facet P2 endogenous_tree（parent_facet_ids 字段的引入）。facet src/validators.py（anchor_whitelist 检验器，parent 检验应加在这里或新建 parent_whitelist 检验器）。facet endogenous_tree-20260811T103946Z/run_r2.jsonl（Qwen f6_r2 悬挂实例）。
+- 阻塞。无强阻塞。悬挂 parent 不影响 Jaccard 计算。但阻塞分叉树的可视化与深度分析（P3 跨轮分析依赖 parent 关系）。
+- 哲学依据。PRO-07 鉴层机械剔除模式（锚定白名单的机械剔除是鉴层打破自证循环的工程映射，parent 检验应同构）。工程基线第四条可验证性（parent_facet_ids 悬挂使分叉树不可机械重建，违反操作结果可机械校验）。
+
+### OQ-19 compiler.aggregate 向后兼容缺口
+
+- 问题。facet P2 改了 compiler.aggregate 支持多轮分轮文件（run_r1.jsonl / run_r2.jsonl）。旧的 single_round_explore 实验目录只有单文件 run.jsonl（无 run_r*.jsonl）。新 aggregate 扫描 run_r*.jsonl 时找不到文件，走目录模式返回空 per_round / cross_round，merged 段也无数据。旧的 single_round_explore 实验数据无法被新 compiler 重新聚合。
+- 已推导结论。第一，这不阻塞新实验（endogenous_tree 用 run_r*.jsonl 正常工作）。第二，阻塞旧实验数据的重新分析——如果 P3 要对 csnx5 三轮数据重新跑 compiler 算指标，会失败。第三，runner 写 single_round_explore 时仍写 run.jsonl（P2 没改 single_round 的持久化逻辑），所以新跑的 single_round_explore 也受影响。
+- 待定。第一，aggregate 是否加回退逻辑：检测到无 run_r*.jsonl 但有 run.jsonl 时，回退到单文件模式（把 run.jsonl 当作 round 1 处理，per_round 只有 round 1，cross_round 为空）。第二，或者统一持久化格式：single_round_explore 也写 run_r1.jsonl 不写 run.jsonl，向后兼容靠 aggregate 的回退逻辑处理历史数据。第三，回退逻辑的触发条件——按文件名 glob 还是按 paradigm_id 判断。
+- 关联。facet P2 compiler.aggregate 改造（目录模式输入）。facet src/persistence.py（single_round 写 run.jsonl，endogenous_tree 写 run_r*.jsonl，格式不统一）。facet single_round_explore 历史实验目录（csnx5 三轮数据，均为单 run.jsonl）。
+- 阻塞。P3 csnx 实验数据分析（如果需要对历史 single_round 数据重新聚合）。无其他阻塞。
+- 哲学依据。工程基线第四条可验证性（操作历史不可篡改要求历史数据可被重新校验，compiler 不能因格式升级而丢弃历史数据的可分析性）。
+
 ## 已发现的治理债务 {#debts}
 
 以下是与上述问题关联但尚未处理的工程层缺陷,记录备查。
