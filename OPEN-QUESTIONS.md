@@ -141,7 +141,7 @@
 - 关联。facet src/compiler.py KNOWN_SEVERITIES 常量（已改三档）。facet atom.yaml（system prompt 已去掉 info）。csnx5 三轮 + endogenous_tree 两轮（170 facet 分布数据来源）。
 - 哲学依据。工程基线第五条治理延伸是减少 LLM 参与（severity 定档是确定性程序的度量定义，不应靠 LLM 自行判断 severity 归属，应由人类基于分布数据定档后机械应用）。
 
-### OQ-18 endogenous_tree parent_facet_ids 悬 hanging pointer
+### OQ-18 endogenous_tree parent_facet_ids 悬 hanging pointer [CLOSED]
 
 - 问题。facet P2 endogenous_tree 的 branch_out 方向要求 LLM 在 round 2 的 facet 里填 parent_facet_ids 字段，引用 round 1 的真实 facet id。但 validator（anchor_whitelist）只检查 anchor_ref 是否在 topic 锚点白名单内，不检查 parent_facet_ids 是否引用真实存在的 facet id。LLM 可能编造不存在的 id 格式（实测：Qwen3.7-Plus-A round 2 的 f6_r2 引用了不存在的 f4_r1_qwen，实际 round 1 的 id 是 f4_r1 无后缀）。
 - 已推导结论。第一，这是 validator 覆盖盲区，不是 atom-chain 范式设计问题——范式配置正确声明了 parent_facet_ids 的用途，检验器没覆盖。第二，悬挂的 parent_facet_ids 不阻塞 compiler 聚合（compiler 不依赖 parent 关系算 Jaccard），但破坏分叉树的可重建性——用 parent_facet_ids 重建树结构时会出现指向不存在的节点。
