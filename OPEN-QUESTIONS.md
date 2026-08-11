@@ -118,6 +118,31 @@
 - 阻塞。OQ-11 OQ 机制正式化（组件的治理地位须先于组件设计）。counter bps2 命名审阅结果（命名方向须先于组件立名）。counter P0-exp 对比实验结果（算法保留集须先于解耦工程化）
 - 哲学依据。PRO-001 立名本体论（名字参与构成实体，命名先于实现）。工程基线第一条确定性程序是治理操作唯一执行者。工程基线第三条人类注意力只投向异常信号。工程基线第四条可验证性约束
 
+### OQ-15 facet runner 硬编码 atom_name 架构债务 [CLOSED]
+
+- 问题。facet P1 第三批验收通过的 runner.py 第 174 行硬编码了 `atoms.get("facetor_independent", {})`，第 186 行硬编码 `atom_name="facetor_independent"`。PRO-001 核心命题是"加范式不改代码"，runner 读 atom-chain.yaml 编排配置机械执行，不应知道具体 atom 名。当前实现只对 single_round_explore（P1 唯一范式）有效，加新范式（P2 endogenous_tree / P4 ban_pick）时 runner 要改成对应 atom_name，违反 PRO-001。
+- 解决。runner.py 从 atom-chain.yaml 的 composition 段读 atom_name（parallel.atom / sequential.atom），替换两处硬编码。同时修复 validator_params 从 direction 读（原硬编码 {"strict": True}）。验证：hermes-philosophy-relation scheme 重跑通过，runner.py grep facetor_independent 零结果。P2 endogenous_tree 可不改 runner 直接加范式。
+- 关联。PRO-001 范式原语定义（加范式不改代码的核心命题）。facet ROADMAP P2 endogenous_tree（硬编码修复的前置触发点）。
+- 哲学依据。PRO-001 范式配置与固定程序分离的核心命题。工程基线第一条确定性程序是治理操作唯一执行者。
+
+### OQ-16 Hermes Agent 与 SiHankor 的关系调研后续
+
+- 问题。人类决策者观察到 Hermes Agent（Nous Research）的哲学与司衡哲学可能存在同源关系。初步概览对照发现工程方法学层多处强对应（确定性护栏 / 前置约束 / 持久化不可变性 / 关注点分离），但概览级判断存在过早下结论的风险——四个"SiHankor 独有"命题（道一 / 立名不撤回 / 治理流程 / 治理实体）尚未验证是否是同一命题在不同接入层的不同表达。调研目的有二：厘清接入层次边界（SiHankor 哲学层/治理引擎层 vs Hermes 通用 agent 框架/工具层，不构成竞争但需定边界），借鉴飞轮数据（Hermes 47K stars / 42 天社区提供大量实践数据）。
+- 已推导结论。第一，底稿采集任务包已写（ai-ex/HERMES-RESEARCH-BASELINE-COLLECTION.md），三路并行采集（官方文档 / 源码 / 社区数据）。第二，人类决策者调整了后续策略：参照/提炼/借鉴三个渐进式任务不作为独立任务包跑，而是把 Hermes 材料作为 facet csnx 实验的真实 topic 素材，让 facet 多 facetor 审阅 Hermes 材料，人类读 facet 产出后自己做参照/提炼/借鉴判断。理由：避免单独跑调研成为脱离真实用途的虚假数据飞轮，同时验证 facet 的异质性发现能力。
+- 待定。第一，csnx 实验的 topic.md 设计——Hermes 的哪些材料作为锚点（架构原则 / 约束执行三层模型 / 记忆冻结快照 / skill 系统），命题怎么定（"SiHankor 与 Hermes 接入层次关系"还是更具体的命题）。第二，参照/提炼/借鉴三个判断的输出载体——是写进 ai-ex 还是由人类决策者直接在 facet 产出基础上做推理。第三，底稿采集任务包是否仍按原计划跑（作为 topic 锚点材料来源），还是直接用已读过的官方架构文档 + 约束执行 issue 作为锚点省略底稿采集。
+- 关联。ai-ex/HERMES-RESEARCH-BASELINE-COLLECTION.md（底稿采集任务包，定位已调整为 topic 锚点材料来源）。Hermes 官方架构文档（设计原则 / 可观测执行 / 提示词稳定性 / 松耦合 / 配置隔离）。Hermes GitHub Issue #29652（三层约束执行模型：prompt / tool / architecture 层的可靠性频谱）。Hermes GitHub Issue #476（Mode System 被评最高价值架构变更）。OQ-15 facet runner 硬编码（csnx 实验是否需要修完硬编码才能跑——不需要，single_round_explore 不受影响）。
+- 阻塞。无强阻塞。csnx 实验可在 P1 现状直接跑（single_round_explore + Hermes 材料 topic）。底稿采集可并行跑也可省略。
+- 哲学依据。无直接哲学命题约束。观察动机是人类决策者对"独立系统得出相同命题"这一现象的验证需求，属于工程实证积累。参照/提炼/借鉴三个判断本身承接 PRO-007 鉴层（多视角交叉审阅打破自证循环）。
+
+### OQ-17 facet severity 合法值定档
+
+- 问题。facet 的 severity 字段当前暂定 critical / major / minor / info 四档（比 counter 多一档 info 信息级）。定档依据不足——没有实际跑出来的 severity 分布数据支撑四档还是三档更合理。过早定档会在 csnx 实验数据积累后发现分档不合适，回头改 compiler + 历史数据的 severity 字段。
+- 已推导结论。第一，info 档是 facet 新增的猜测性分档，counter 没有这一档，info 的语义边界（什么程度的发现算 info 不算 minor）未定义。第二，暂不定档不阻塞 P1——compiler 的 compute_severity_distribution 已经支持四档（KNOWN_SEVERITIES 含 info），未声明的 severity 归 (unknown) 桶，改档只改 KNOWN_SEVERITIES 常量。第三，ROADMAP P3 已登记此待定项。
+- 待定。第一，csnx 实验跑出实际 severity 分布后定档——看 info 是否有实际产出、info 与 minor 的分布是否可区分。第二，定档后的历史数据处理——已有的 single_round_explore 实验数据如果含 info 标注，定档时是否回溯重分类。第三，info 的语义定义——是"信息性发现不构成问题"还是"低优先级观察"。
+- 关联。facet ROADMAP P3 数据与分析（severity 定档已登记）。facet src/compiler.py KNOWN_SEVERITIES 常量（定档改这里）。facet src/engine.py _extract_facets（severity 字段从 LLM 产出解析）。
+- 阻塞。csnx 消息压缩采样实验（实验跑出来才有分布数据可看）。无其他阻塞。
+- 哲学依据。工程基线第五条治理延伸是减少 LLM 参与（severity 定档是确定性程序的度量定义，不应靠 LLM 自行判断 severity 归属，应由人类基于分布数据定档后机械应用）。
+
 ## 已发现的治理债务 {#debts}
 
 以下是与上述问题关联但尚未处理的工程层缺陷,记录备查。
