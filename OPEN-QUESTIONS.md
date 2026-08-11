@@ -150,7 +150,7 @@
 - 阻塞。无强阻塞。悬挂 parent 不影响 Jaccard 计算。但阻塞分叉树的可视化与深度分析（P3 跨轮分析依赖 parent 关系）。
 - 哲学依据。PRO-07 鉴层机械剔除模式（锚定白名单的机械剔除是鉴层打破自证循环的工程映射，parent 检验应同构）。工程基线第四条可验证性（parent_facet_ids 悬挂使分叉树不可机械重建，违反操作结果可机械校验）。
 
-### OQ-19 compiler.aggregate 向后兼容缺口
+### OQ-19 compiler.aggregate 向后兼容缺口 [CLOSED]
 
 - 问题。facet P2 改了 compiler.aggregate 支持多轮分轮文件（run_r1.jsonl / run_r2.jsonl）。旧的 single_round_explore 实验目录只有单文件 run.jsonl（无 run_r*.jsonl）。新 aggregate 扫描 run_r*.jsonl 时找不到文件，走目录模式返回空 per_round / cross_round，merged 段也无数据。旧的 single_round_explore 实验数据无法被新 compiler 重新聚合。
 - 已推导结论。第一，这不阻塞新实验（endogenous_tree 用 run_r*.jsonl 正常工作）。第二，阻塞旧实验数据的重新分析——如果 P3 要对 csnx5 三轮数据重新跑 compiler 算指标，会失败。第三，runner 写 single_round_explore 时仍写 run.jsonl（P2 没改 single_round 的持久化逻辑），所以新跑的 single_round_explore 也受影响。
