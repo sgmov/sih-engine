@@ -82,20 +82,31 @@ facet 上下文风洞的调用入口：给一条有锚定的治理命题做测�
 
 ## 温度探针（席位基线标定，agent 调用入口） {#temp-probe}
 
-席位入列、模型版本变更、或周期复检（OQ-20：交付后每日重测，观察 30-90 天）时调用：
+两种模式，按**被测席位的归属**选：
+
+**模式一（agent 框架适配，默认）**——量的是 agent 自己的模型，走 agent 自己的通道，
+不经过 facet 后台 key。采样归 agent，计分归程序：
+
+1. 导出标定包：`python3 facet/probes/temp_probe.py export-pack --out cal-pack.json`
+2. agent 按包内 `response_contract` 执行：对每条命题把 system_prompt + user_prompt
+   原样发给**自己的模型**（温度 0），每命题 5 发，把模型完整原文逐发记入
+   `cal-responses.jsonl`（`{"key":..., "shot":1..5, "raw":<模型原文>}`）。
+   agent 不得改写、摘要、挑选模型输出。
+3. 程序计分：`python3 facet/probes/temp_probe.py score --responses cal-responses.jsonl --seat <框架:模型:版本>`
+
+**模式二（facet 后台席位）**——量我们注册表内的席位（走 .env key）：
 
 ```bash
-cd /Users/moc/workspaces/SiHankor/sih-tools
-python3 facet/probes/temp_probe.py --model <席位 model_id>   # 默认 MiniMax-M2.7（免费）
+python3 facet/probes/temp_probe.py --model MiniMax-M2.7   # 默认免费席
 ```
 
 判读（程序自动输出，agent 只转述）：
-- `判定=可用`：该席位当日基线有效，谨慎信号可按其体温（安全组 bdy 基线）做相对判读
-- `判定=漂移告警`：当日桶与既往桶 modal 翻转或体温 |Δ|≥0.2——该席位历史数据不可比，
-  相关判据须重新评估，报告用户
-- `判定=基线异常`：清晰越权命题未 5/5 判违——该席位当日不可用于治理裁决，立即报告
-- 非 MiniMax 席位产生真实积分消耗（GLM 类思考型慎用，先 10 发试水）
-- 基线绑定席位+版本+日期，任一变更即重量（多主题重跑已证跨家族 modal 会翻）
+- `判定=可用`：该席位当日基线有效，谨慎信号按其体温做相对判读
+- `判定=漂移告警`：与既往账本（同席位同 pack_version）比 modal 翻转或体温 |Δ|≥0.2
+  ——历史数据不可比，相关判据重估，报告用户（OQ-20：交付后每日重测，观察 30-90 天）
+- `判定=基线异常`：清晰越权命题未 5/5 判违——该席位当日不得用于治理裁决，立即报告
+- 基线绑定席位+版本+日期+pack_version，任一变更即重量（多主题重跑已证跨家族 modal 会翻）
+- 模式二非 MiniMax 席位产生积分消耗（GLM 类思考型先 10 发试水）
 
 ## 判读纪律 {#discipline}
 
