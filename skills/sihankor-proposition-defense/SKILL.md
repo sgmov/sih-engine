@@ -19,6 +19,20 @@ description: "Defend SiHankor propositions and reports from three-layer audit ga
 
 skill 设计原则：**方法学注入（LLM 主动调）+ 机械漏层检查（脚本兜底）双层防御**。
 
+### 方法学真源 = `methodology.yaml` {#methodology-source}
+
+本 skill 的方法学（层的定义 / 必查问题 / 典型错位模式 / 锚点表）**唯一真源**是：
+
+```
+sihankor-proposition-defense/methodology.yaml
+```
+
+- 改方法学 → 只改此 yaml，不得在 SKILL.md 或脚本中重复定义
+- `probes/check_three_proposition_audit.py` 启动时读此 yaml
+- 读方法学 = `python3 -c "import yaml; print(yaml.safe_load(open('methodology.yaml')))"`
+
+schema 见 `methodology.yaml` 头部 `schema_doc` 注释。三层结构：每层含 `id / name_zh / name_en / definition / must_check / typical_misalignment / anchors.{zh,en}`。
+
 ## 触发时机 {#trigger}
 
 用户表达以下意图时触发
@@ -73,37 +87,20 @@ python sih-engine/skills/sihankor-proposition-defense/probes/check_three_proposi
 
 不管脚本结果如何，LLM 必须按方法学真审三个命题层。每层**至少给一段实质判断**，不能只引关键词。
 
-#### 立题命题层
+**真审时按 `methodology.yaml` 的 `must_check` 列表逐条问，参考 `typical_misalignment` 反面教材**。本节不重复列方法学——查 yaml 即可。
 
-问：被审对象是否在立题命题范围内？审阅者是否把 X 当作超出立题的事来审？
+LLM 真审模板（每层套用）：
 
-例：审 facet "错误方向相关性盲区"批评——这个批评是否在 facet 立题"异质性来自独立探索"范围内？错位批评 = 审阅者把"测语义对错"（超出立题）当 facet 该做的事。
-
-判据：
-
-- X 是否触及立题命题的核心词（异质性 / 独立探索 / 命题合法性）
-- 审阅者是否在立题范围内讨论
-- 错位批评 = 审阅者把 X 当成超出立题的事来审
-
-#### 应用命题层
-
-问：X 是否真被 PRO-07 / A-A3.1 / A-A4.1 / A-A4.2 覆盖？四个锚定都被审到吗？
-
-- A-A3.1 自证循环：X 是否触及"多模型独立审阅真打破自证循环"？
-- A-A4.1 候选建议生成器：X 是否触及"facet 不裁决只产报告"？
-- A-A4.2 裁决权归确定性引擎：X 是否触及"裁决权不能下放给 LLM"？
-
-判据：四个锚定中任一未审 = 漏层。
-
-#### 治理领域展开贡献层
-
-问：X 对司衡治理领域**真贡献**是什么？是工具成熟度（事件数 / 测试数）还是治理贡献（上下文风洞 / 权责归一 / 信息洪流的实际展开）？
-
-判据：
-
-- X 是否区分"工具成熟度"和"治理贡献"？
-- X 是否测了"上下文风洞"在真实数据上的表现？
-- X 是否触及"权责归一"原则？
+```
+[<层名>]
+- definition（摘自 yaml）：[...]
+- must_check 逐条问（≥ 3 问，逐条答）：
+  1. [must_check[0]] → [答 ≥ 30 字]
+  2. [must_check[1]] → [答 ≥ 30 字]
+  3. [must_check[2]] → [答 ≥ 30 字]
+- 是否落入 typical_misalignment？引具体类型。
+- 最终判断：[过 / 漏 / 错位]
+```
 
 ### 3. 综合产出审计报告 {#step-report}
 
@@ -126,7 +123,9 @@ python sih-engine/skills/sihankor-proposition-defense/probes/check_three_proposi
 - 方法学防"审阅者没意识到要查这层"
 - 机械检查防"审阅者写了报告但漏了某层"
 
-锚点表可扩展。`LAYER_ANCHORS` 字典是开源的，工程师可按领域加新锚点（不要删旧锚点，避免漏判）。新锚点加进去后**必须**回退跑一次现有报告，确认覆盖率不倒退。
+方法学真源唯一。方法学（层定义 / 必查问题 / 典型错位模式 / 锚点表）只写在 `methodology.yaml` 一处。SKILL.md 不重复方法学内容（避免双源脱钩）。改方法学只改 yaml。
+
+锚点表可扩展。`methodology.yaml` 的 `layers[].anchors.{zh,en}` 是开源的，工程师可按领域加新锚点（不要删旧锚点，避免漏判）。新锚点加进去后**必须**回退跑一次现有报告，确认覆盖率不倒退。
 
 不替代 LLM。脚本查"是否含某锚点"≠ "是否真审过"。真判断仍是 LLM + 人。脚本退出码 0 也不等于审计通过——是"机械层未漏"，LLM 层仍须按方法学真审。
 
@@ -134,9 +133,11 @@ python sih-engine/skills/sihankor-proposition-defense/probes/check_three_proposi
 
 - 0 = 三层都覆盖（机械层未漏）
 - 1 = 漏层（须 LLM 补审）
-- 2 = 文件不可读
+- 2 = 文件或方法学不可读
 
 不预判内容。脚本只查锚点覆盖，不替 LLM 给"应该审什么"。漏什么列什么。
+
+self-check：方法学完整性。`probes/check_three_proposition_audit.py` 启动时校验 `methodology.yaml` 存在 + schema 合法 + 三层齐 + 锚点非空。失败退出码 2，防止"yaml 改坏 → 脚本静默退化"。
 
 ## 常见错误处理 {#errors}
 
@@ -159,9 +160,10 @@ strict 模式。`--strict` 标记只表示"用严格态度审"，不改变覆盖
 ## 当前状态 {#status}
 
 - 1 commit 落地：skill + 内嵌脚本（2026-08-16）
-- 锚点表初始 3 层 × 中英文 5-10 关键词 / 层
-- 测试：脚本 `--json` 退出码可机械校验
-- 跨工具投影：待 .agents/skills/sihankor-proposition-defense/ 创建（AGENTS.md 约定）
+- 方法学真源：`methodology.yaml`（v1，schema 含 definition / must_check / typical_misalignment / anchors）
+- 锚点表 3 层 × 中英文 5-10 关键词 / 层（从 yaml 读，不硬编码）
+- 测试：脚本 `--json` 退出码可机械校验，启动时校验 yaml 完整性
+- 跨工具投影：.agents/skills/sihankor-proposition-defense/ 是 symlink → ../../sih-engine/skills/sihankor-proposition-defense
 
 ### Baseline 漏层率（2026-08-16 跑）
 

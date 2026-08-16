@@ -1,0 +1,120 @@
+# sihankor-proposition-defense 方法学真源
+# 真源 = 单一权威，所有派生（SKILL.md 渲染、check_three_proposition_audit.py 锚点表）
+# 必须从此文件渲染，不得各写一份。
+# 改方法学：只改这里。
+
+version: 1
+schema_doc: |
+  每层含 5 部分：
+  - id / name_zh / name_en：唯一标识 + 中英名（脚本 + SKILL.md 都引用 id）
+  - definition：层定义（一句话，LLM 真审时看）
+  - must_check：必查问题列表（每条 ≥ 1 问，LLM 真审逐条回）
+  - typical_misalignment：典型错位模式（LLM 真审的反面教材）
+  - anchors.zh / anchors.en：机械层锚点（脚本查覆盖用）
+
+layers:
+
+  - id: foundation
+    name_zh: 立题命题
+    name_en: foundation proposition
+    definition: |
+      被审对象是否在立题命题范围内？审阅者是否把 X 当作超出立题的事来审？
+      立题命题 = 工具/项目存在的根本理由，是审计合法性的来源。
+    must_check:
+      - X 是否触及立题命题的核心词
+      - 审阅者是否在立题范围内讨论 X
+      - 是否存在错位批评（把超出立题的事当 X 该做的事）
+    typical_misalignment:
+      - 把"测语义对错"当 facet 该做的事（facet 立题是测异质性，不是测对错）
+      - 把"X 工具的工程 bug"当立题合法性问题
+      - 把"立题证明" 当成"立题范围内的具体功能表现"
+    anchors:
+      zh:
+        - "本体命题"
+        - "立题"
+        - "异质性"
+        - "独立探索"
+        - "命题合法性"
+        - "facet\\s*立题"
+        - "异质性来自"
+        - "立题范围"
+        - "本体论"
+      en:
+        - "foundation\\s+proposition"
+        - "core\\s+proposition"
+        - "cross-family\\s+heterogeneity"
+        - "independent\\s+exploration"
+        - "proposition.{0,5}scope"
+
+  - id: application
+    name_zh: 应用命题
+    name_en: application proposition
+    definition: |
+      X 是否真被 PRO-07 / A-A3.1 / A-A4.1 / A-A4.2 覆盖？四个锚定都被审到吗？
+      应用命题 = 立题命题在治理场景下的工程化映射，每条都须独立判断。
+    must_check:
+      - A-A3.1 鉴层破自证循环：X 是否触及"多模型独立审阅真打破自证循环"？
+      - A-A4.1 候选建议生成器：X 是否触及"facet 不裁决只产报告"？
+      - A-A4.2 裁决权归确定性引擎：X 是否触及"裁决权不能下放给 LLM"？
+      - PRO-07 整体：四命题中任一未审 = 漏层
+    typical_misalignment:
+      - 只提 PRO-07 不提 A-A3.1 / A-A4.1 / A-A4.2（粒度不够）
+      - 把"facet 程序签"当 A-A4.2 的实现（但程序签 rationale 是 LLM 自动生成，含 LLM 参与是否违反 A-A4.2？）
+      - 跨家族当 A-A3.1 已证（同源预训练 / RLHF 共享风险未评估）
+    anchors:
+      zh:
+        - "应用命题"
+        - "自证循环"
+        - "候选建议"
+        - "确定性引擎"
+        - "鉴层"
+        - "PRO-?07"
+        - "A-A3"
+        - "A-A4"
+        - "破自证"
+        - "建议生成器"
+        - "裁决权"
+      en:
+        - "application\\s+proposition"
+        - "A-A3\\.1"
+        - "A-A4\\.1"
+        - "A-A4\\.2"
+        - "self-verification"
+        - "PRO-?07"
+        - "deterministic\\s+engine"
+
+  - id: governance
+    name_zh: 治理领域展开贡献
+    name_en: governance contribution
+    definition: |
+      X 对司衡治理领域**真贡献**是什么？区分工具成熟度（事件数 / 测试数）和
+      治理贡献（上下文风洞 / 权责归一 / 信息洪流的实际展开）。
+    must_check:
+      - X 是否区分"工具成熟度"和"治理贡献"？
+      - X 是否测了"上下文风洞"在真实数据上的表现？
+      - X 是否触及"权责归一"原则？
+      - X 是否触及"信息洪流降维"或"注意力分配"？
+    typical_misalignment:
+      - 把 N + C 工具成熟度指标当治理贡献（前者是工程数据，后者是治理展开）
+      - 把"测量层进生产试点"当治理贡献（试点≠真贡献）
+      - 漏掉"权责归一"（裁决权跟责任走）
+    anchors:
+      zh:
+        - "治理领域"
+        - "上下文风洞"
+        - "权责归一"
+        - "信息洪流"
+        - "上下文包"
+        - "牌照"
+        - "治理展开"
+        - "治理贡献"
+        - "裁决权跟着责任"
+        - "人节点"
+      en:
+        - "governance\\s+contribution"
+        - "context\\s+wind\\s+tunnel"
+        - "human\\s+attention"
+        - "context\\s+licen[cs]e"
+
+# 真源结束。改方法学：只改本文件。
+# SKILL.md 与 check_three_proposition_audit.py 必须从此文件渲染/读取。
