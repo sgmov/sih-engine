@@ -1,0 +1,2167 @@
+{
+  "summary": {
+    "scan_dir": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes",
+    "files_scanned": 92,
+    "files_skipped": [
+      "check_verdict_consistency.py"
+    ],
+    "parse_errors": [],
+    "verdict_using_total": 53,
+    "v1_family_by_calls": 15,
+    "v2_family_by_calls": 8,
+    "v3_family_by_calls": 5,
+    "mixed_by_calls": 1,
+    "reads_only_total": 24,
+    "v1_family_loose": 40,
+    "v1_family_loose_including_fp": 44,
+    "v3_family_loose": 9,
+    "v3_family_loose_including_fp": 9,
+    "false_positive_total": 4
+  },
+  "v1_family_by_calls": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "main",
+      "function_line_range": "159-233",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "run_condition",
+      "function_line_range": "158-185",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_microcircuit_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-217",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "build_docket",
+      "function_line_range": "77-141",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "submit_signoff",
+      "function_line_range": "144-203",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/lightweight_mode_probe.py",
+      "function_name": "main",
+      "function_line_range": "363-498",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v2",
+      "function_line_range": "201-232",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_retrovalidate.py",
+      "function_name": "main",
+      "function_line_range": "50-99",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "main",
+      "function_line_range": "82-150",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "gate_row",
+      "function_line_range": "98-109",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_baseline_row",
+      "function_line_range": "83-89",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "run_subject",
+      "function_line_range": "92-121",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/real_guidance_run.py",
+      "function_name": "main",
+      "function_line_range": "120-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "main",
+      "function_line_range": "169-287",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/reflexive_signing_probe.py",
+      "function_name": "main",
+      "function_line_range": "103-169",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v1_family_by_calls_with_fp": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "main",
+      "function_line_range": "159-233",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "run_condition",
+      "function_line_range": "158-185",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_microcircuit_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-217",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "build_docket",
+      "function_line_range": "77-141",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "submit_signoff",
+      "function_line_range": "144-203",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/lightweight_mode_probe.py",
+      "function_name": "main",
+      "function_line_range": "363-498",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v2",
+      "function_line_range": "201-232",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_retrovalidate.py",
+      "function_name": "main",
+      "function_line_range": "50-99",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "main",
+      "function_line_range": "82-150",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "gate_row",
+      "function_line_range": "98-109",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_baseline_row",
+      "function_line_range": "83-89",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "run_subject",
+      "function_line_range": "92-121",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/real_guidance_run.py",
+      "function_name": "main",
+      "function_line_range": "120-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "main",
+      "function_line_range": "169-287",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/reflexive_signing_probe.py",
+      "function_name": "main",
+      "function_line_range": "103-169",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v2_family_by_calls": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v2.py",
+      "function_name": "main",
+      "function_line_range": "52-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1",
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "69-105",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v3",
+      "function_line_range": "317-507",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mech_ladder_probe.py",
+      "function_name": "main",
+      "function_line_range": "107-166",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mt_run.py",
+      "function_name": "main",
+      "function_line_range": "113-173",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "adjudicate_v2",
+      "function_line_range": "65-79",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "103-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "extend",
+      "function_line_range": "101-123",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v3_family_by_calls": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "main",
+      "function_line_range": "75-180",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "main",
+      "function_line_range": "46-147",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge.py",
+      "function_name": "main",
+      "function_line_range": "53-139",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge_signoff.py",
+      "function_name": "_main",
+      "function_line_range": "48-199",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "program_signoff",
+      "function_line_range": "195-493",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "mixed_by_calls": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "_cmd_route",
+      "function_line_range": "229-306",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v1",
+        "v3"
+      ],
+      "verdict_family": "mixed",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "reads_only": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "_pre_registered",
+      "function_line_range": "149-156",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "50-61",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "36-43",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "main",
+      "function_line_range": "108-143",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bootstrap_partial.py",
+      "function_name": "main",
+      "function_line_range": "128-276",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "main",
+      "function_line_range": "188-269",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "_cond_task",
+      "function_line_range": "196-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/eir_ecr_gate_probe.py",
+      "function_name": "main",
+      "function_line_range": "222-308",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_trail.py",
+      "function_name": "load_latest_foregrounding",
+      "function_line_range": "415-421",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "function name in FALSE_POSITIVE_NAMES (load_latest_foregrounding)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/foregrounding_probe.py",
+      "function_name": "main",
+      "function_line_range": "195-286",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_collect",
+      "function_line_range": "47-85",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_noise_floor",
+      "function_line_range": "176-189",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "_build_rationale",
+      "function_line_range": "170-192",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "main",
+      "function_line_range": "112-167",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "main",
+      "function_line_range": "124-177",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_task",
+      "function_line_range": "130-141",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "_pre_registered_verdict",
+      "function_line_range": "156-166",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/run_stage2_03_eval.py",
+      "function_name": "main",
+      "function_line_range": "150-354",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "run",
+      "function_line_range": "119-191",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "score",
+      "function_line_range": "260-315",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "main",
+      "function_line_range": "318-356",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/verify_thinking_silent.py",
+      "function_name": "main",
+      "function_line_range": "146-245",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "main",
+      "function_line_range": "127-155",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-154",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v1_family_loose": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "_pre_registered",
+      "function_line_range": "149-156",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "main",
+      "function_line_range": "159-233",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v2.py",
+      "function_name": "main",
+      "function_line_range": "52-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1",
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "69-105",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "main",
+      "function_line_range": "108-143",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bootstrap_partial.py",
+      "function_name": "main",
+      "function_line_range": "128-276",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "run_condition",
+      "function_line_range": "158-185",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "main",
+      "function_line_range": "188-269",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "_cond_task",
+      "function_line_range": "196-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/eir_ecr_gate_probe.py",
+      "function_name": "main",
+      "function_line_range": "222-308",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_microcircuit_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-217",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/foregrounding_probe.py",
+      "function_name": "main",
+      "function_line_range": "195-286",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_collect",
+      "function_line_range": "47-85",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_noise_floor",
+      "function_line_range": "176-189",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "build_docket",
+      "function_line_range": "77-141",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "submit_signoff",
+      "function_line_range": "144-203",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/lightweight_mode_probe.py",
+      "function_name": "main",
+      "function_line_range": "363-498",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v2",
+      "function_line_range": "201-232",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v3",
+      "function_line_range": "317-507",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_retrovalidate.py",
+      "function_name": "main",
+      "function_line_range": "50-99",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mech_ladder_probe.py",
+      "function_name": "main",
+      "function_line_range": "107-166",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mt_run.py",
+      "function_name": "main",
+      "function_line_range": "113-173",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "adjudicate_v2",
+      "function_line_range": "65-79",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "main",
+      "function_line_range": "82-150",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "gate_row",
+      "function_line_range": "98-109",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "main",
+      "function_line_range": "112-167",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_baseline_row",
+      "function_line_range": "83-89",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "run_subject",
+      "function_line_range": "92-121",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "main",
+      "function_line_range": "124-177",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_task",
+      "function_line_range": "130-141",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/real_guidance_run.py",
+      "function_name": "main",
+      "function_line_range": "120-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "_pre_registered_verdict",
+      "function_line_range": "156-166",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "main",
+      "function_line_range": "169-287",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/reflexive_signing_probe.py",
+      "function_name": "main",
+      "function_line_range": "103-169",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/run_stage2_03_eval.py",
+      "function_name": "main",
+      "function_line_range": "150-354",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/verify_thinking_silent.py",
+      "function_name": "main",
+      "function_line_range": "146-245",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "103-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "main",
+      "function_line_range": "127-155",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "extend",
+      "function_line_range": "101-123",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-154",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v1_family_loose_with_fp": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "_pre_registered",
+      "function_line_range": "149-156",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/basis_split_heal_probe.py",
+      "function_name": "main",
+      "function_line_range": "159-233",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v2.py",
+      "function_name": "main",
+      "function_line_range": "52-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1",
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "69-105",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bing_xseat_probe.py",
+      "function_name": "main",
+      "function_line_range": "108-143",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/bootstrap_partial.py",
+      "function_name": "main",
+      "function_line_range": "128-276",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "run_condition",
+      "function_line_range": "158-185",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "main",
+      "function_line_range": "188-269",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/cascade_ng_probe.py",
+      "function_name": "_cond_task",
+      "function_line_range": "196-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/eir_ecr_gate_probe.py",
+      "function_name": "main",
+      "function_line_range": "222-308",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_microcircuit_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-217",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_trail.py",
+      "function_name": "load_latest_foregrounding",
+      "function_line_range": "415-421",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "function name in FALSE_POSITIVE_NAMES (load_latest_foregrounding)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/foregrounding_probe.py",
+      "function_name": "main",
+      "function_line_range": "195-286",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_collect",
+      "function_line_range": "47-85",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/knife_calib_probe.py",
+      "function_name": "_noise_floor",
+      "function_line_range": "176-189",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "build_docket",
+      "function_line_range": "77-141",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "submit_signoff",
+      "function_line_range": "144-203",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/lightweight_mode_probe.py",
+      "function_name": "main",
+      "function_line_range": "363-498",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v2",
+      "function_line_range": "201-232",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_gate.py",
+      "function_name": "assess_maturation_v3",
+      "function_line_range": "317-507",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/maturation_retrovalidate.py",
+      "function_name": "main",
+      "function_line_range": "50-99",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mech_ladder_probe.py",
+      "function_name": "main",
+      "function_line_range": "107-166",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/mt_run.py",
+      "function_name": "main",
+      "function_line_range": "113-173",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "adjudicate_v2",
+      "function_line_range": "65-79",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3a_gate_v2.py",
+      "function_name": "main",
+      "function_line_range": "82-150",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "gate_row",
+      "function_line_range": "98-109",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r3b_new_props.py",
+      "function_name": "main",
+      "function_line_range": "112-167",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_baseline_row",
+      "function_line_range": "83-89",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "run_subject",
+      "function_line_range": "92-121",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "main",
+      "function_line_range": "124-177",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/r5_emphasis_feedback.py",
+      "function_name": "_task",
+      "function_line_range": "130-141",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/real_guidance_run.py",
+      "function_name": "main",
+      "function_line_range": "120-207",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "_pre_registered_verdict",
+      "function_line_range": "156-166",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/refine_loop_probe.py",
+      "function_name": "main",
+      "function_line_range": "169-287",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/reflexive_signing_probe.py",
+      "function_name": "main",
+      "function_line_range": "103-169",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [
+        "v1"
+      ],
+      "verdict_family": "v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/run_stage2_03_eval.py",
+      "function_name": "main",
+      "function_line_range": "150-354",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "run",
+      "function_line_range": "119-191",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "score",
+      "function_line_range": "260-315",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "main",
+      "function_line_range": "318-356",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/verify_thinking_silent.py",
+      "function_name": "main",
+      "function_line_range": "146-245",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "run_cond",
+      "function_line_range": "103-124",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/xseat_fill_probe.py",
+      "function_name": "main",
+      "function_line_range": "127-155",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "extend",
+      "function_line_range": "101-123",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [
+        "v2"
+      ],
+      "verdict_family": "v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/yi_depth_probe.py",
+      "function_name": "main",
+      "function_line_range": "126-154",
+      "reads_field": "verdict_v2",
+      "field_version": "v2",
+      "calls_versions": [],
+      "verdict_family": "reads-v2-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v3_family_loose": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "50-61",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "main",
+      "function_line_range": "75-180",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "36-43",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "main",
+      "function_line_range": "46-147",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge.py",
+      "function_name": "main",
+      "function_line_range": "53-139",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge_signoff.py",
+      "function_name": "_main",
+      "function_line_range": "48-199",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "_cmd_route",
+      "function_line_range": "229-306",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v1",
+        "v3"
+      ],
+      "verdict_family": "mixed",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "_build_rationale",
+      "function_line_range": "170-192",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "program_signoff",
+      "function_line_range": "195-493",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "v3_family_loose_with_fp": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "50-61",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3.py",
+      "function_name": "main",
+      "function_line_range": "75-180",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "_latest_v3_verdict",
+      "function_line_range": "36-43",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_baseline.py",
+      "function_name": "main",
+      "function_line_range": "46-147",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge.py",
+      "function_name": "main",
+      "function_line_range": "53-139",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/batch_reevaluate_v3_knife_edge_signoff.py",
+      "function_name": "_main",
+      "function_line_range": "48-199",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/layer2_signoff.py",
+      "function_name": "_cmd_route",
+      "function_line_range": "229-306",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v1",
+        "v3"
+      ],
+      "verdict_family": "mixed",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "_build_rationale",
+      "function_line_range": "170-192",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [],
+      "verdict_family": "reads-v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/program_signoff.py",
+      "function_name": "program_signoff",
+      "function_line_range": "195-493",
+      "reads_field": "verdict_v3",
+      "field_version": "v3",
+      "calls_versions": [
+        "v3"
+      ],
+      "verdict_family": "v3-family",
+      "is_false_positive": false,
+      "false_positive_reason": null
+    }
+  ],
+  "false_positives": [
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/flywheel_trail.py",
+      "function_name": "load_latest_foregrounding",
+      "function_line_range": "415-421",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "function name in FALSE_POSITIVE_NAMES (load_latest_foregrounding)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "run",
+      "function_line_range": "119-191",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "score",
+      "function_line_range": "260-315",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    },
+    {
+      "function_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/temp_probe.py",
+      "function_name": "main",
+      "function_line_range": "318-356",
+      "reads_field": "verdict",
+      "field_version": "v1",
+      "calls_versions": [],
+      "verdict_family": "reads-v1-family",
+      "is_false_positive": true,
+      "false_positive_reason": "file in FALSE_POSITIVE_FILES (temp_probe.py)"
+    }
+  ]
+}
