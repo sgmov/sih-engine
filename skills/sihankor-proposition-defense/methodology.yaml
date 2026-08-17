@@ -3,7 +3,7 @@
 # 必须从此文件渲染，不得各写一份。
 # 改方法学：只改这里。
 
-version: 1
+version: 1.1
 schema_doc: |
   每层含 5 部分：
   - id / name_zh / name_en：唯一标识 + 中英名（脚本 + SKILL.md 都引用 id）
@@ -59,7 +59,7 @@ layers:
       - PRO-07 整体：四命题中任一未审 = 漏层
     typical_misalignment:
       - 只提 PRO-07 不提 A-A3.1 / A-A4.1 / A-A4.2（粒度不够）
-      - 把"facet 程序签"当 A-A4.2 的实现（但程序签 rationale 是 LLM 自动生成，含 LLM 参与是否违反 A-A4.2？）
+      - 把"facet 程序签"当 A-A4.2 的实现 — 程序签 rationale 由 `_build_rationale` 确定性模板拼接生成，**零 LLM 调用**（实测：program_signoff.py:170-192 全文无 `openai` / `anthropic` 等调用指纹）；A-A4.2 形式满足
       - 跨家族当 A-A3.1 已证（同源预训练 / RLHF 共享风险未评估）
     anchors:
       zh:
