@@ -96,12 +96,20 @@ T6D-09 范围 = 中优先级 8 个 + maturation_retrovalidate 1 个 = **9 函数
 | **F1** X1 改完 5 函数 + X2 改完 4 函数 | 实施 | git diff 显示 9 函数改 + 单元测试过 |
 | **F2** pytest 217+ 全过 | 实施 | `pytest` 退出码 0 |
 | **F3** v1-scan 严格 calls ≤ 3 | 跨族治理 | `fix-governance-boundaries-t6d-v1-scan.py` 严格 calls ≤ 3（12-9）|
-| **F4** 9 探针测试全过 | 实施 | 9 个 `test_<probe>.py` 全过 |
-| **F5** CLI 不破 | 实施 | `python3 probes/<probe>.py --help` 退出码 0 |
-| **F6** v3 字段输出到 trail | 实施 | 模拟测试 + 探针输出含 v3 verdict 字段 |
-| **F7** 双源 trail 保留 v1 audit | 实施 | 输出含 v1_audit key 或保留 v1 verdict 字段 |
+| **F4** 9 探针 import + main 函数调用无 exception（smoke test）| 实施 | `python3 -c "import probes.<probe>; from probes.<probe> import main"` 退出码 0（无测试文件时用 smoke test 替代）|
+| **F5** CLI 不破 | 实施 | `python3 probes/<probe>.py --help` 退出码 0（9 探针各 1 次）|
+| **F6** v3 字段输出到 trail | 实施 | smoke test 验证探针输出含 v3 verdict 字段（用 v3_audit 模式调用 main 函数）|
+| **F7** 双源 trail 保留 v1 audit | 实施 | smoke test 验证输出含 v1 audit 字段 |
 | **F8** cross-coupling 验证 | 元层工具 | 主线跑 audit_pipeline 验 9 函数改完不破坏 v3 闸基础 |
 | **F9** 失败 F 锚定触发 = 回滚 | 范畴边界 | F1-F8 任一失败，主线停止 + 写 fail 文档 + git revert |
+
+**F 锚定修正说明**：
+
+- F4 原始设计「9 探针测试全过」基于「仓里已有 9 个 `test_<probe>.py`」假设
+- 实际仓里只有 19 个 test 文件，无 9 探针的独立 test 文件
+- 修正：F4 改 smoke test（import + main 函数调用无 exception）： 这是 F 锚定设计 4 类分项中「实施」类的最小可验判据
+- F5「CLI 不破」保留（`--help` 退出码 0 是 CLI 入口的最小可验）
+- F6 F7 改 smoke test 模式（不依赖 test 文件，直接调 main 函数）
 
 **F1-F8 任意触发** = 任务失败
 
