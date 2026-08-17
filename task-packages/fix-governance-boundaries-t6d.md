@@ -23,7 +23,7 @@ T6D-02 fix-failures-t6d 完成 5 修复代码层，但 audit_pipeline 仍 1 PASS
 
 ## 二、关键设计 {#design}
 
-### 2.1 范围切分（A vs B）
+### 2.1 范围切分（A vs B） {#2-1-范围切分-a-vs-b}
 
 **A = 跨族治理 + 数据治理**（大工程，多文件，跨多版本）
 
@@ -35,12 +35,12 @@ T6D-02 fix-failures-t6d 完成 5 修复代码层，但 audit_pipeline 仍 1 PASS
 - B-1 改 `check_decision_authority.py` 读 DEC 文档 + schema 字段
 - B-2 让 audit A5 能基于"实际代码 + DEC 文档"判定 cross-link gap
 
-### 2.2 T6-D 编排（双子代理 + 主线）
+### 2.2 T6-D 编排（双子代理 + 主线） {#2-2-t6-d-编排-双子代理-主线}
 
 **Cluster 1：双子代理并行（X1 写 B / X2 写 A-1 诊断）**
 
 - X1：写 B（audit 脚本更新，单文件，1-2 小时）
-- X2：写 A-1（v1-family 函数识别 + 迁移路径设计，**不实施**——只诊断）
+- X2：写 A-1（v1-family 函数识别 + 迁移路径设计，**不实施**：只诊断）
 - 主线：写 A-2 数据治理路径（caller 设计，让 .agents/skills/ 关键路径走 facet）
 
 **Cluster 2：主线验收集齐**
@@ -49,19 +49,19 @@ T6D-02 fix-failures-t6d 完成 5 修复代码层，但 audit_pipeline 仍 1 PASS
 - 跑 pytest 验 217+ 全过
 - 主线 commit
 
-### 2.3 B 优先级
+### 2.3 B 优先级 {#2-3-b-优先级}
 
-B 立即能跑出 A5 PASS（脚本改完即可）——X1 完成后立刻见效。
+B 立即能跑出 A5 PASS（脚本改完即可）：X1 完成后立刻见效。
 
-A-1 跨族治理是大工程（45+ 函数迁移）——本任务包只做"诊断 + 路径设计"，实际迁移留 T6D-04。
+A-1 跨族治理是大工程（45+ 函数迁移）：本任务包只做"诊断 + 路径设计"，实际迁移留 T6D-04。
 
-A-2 数据治理是"工具设计 + 流程改造"——本任务包做 caller 设计，实际跑流量留阶段 2.5。
+A-2 数据治理是"工具设计 + 流程改造"：本任务包做 caller 设计，实际跑流量留阶段 2.5。
 
 ## 三、工作清单 {#work}
 
-### Cluster 1
+### Cluster 1 {#cluster-1}
 
-#### B-1. audit_pipeline A5 脚本读 DEC（X1）
+#### B-1. audit_pipeline A5 脚本读 DEC（X1） {#b-1-audit_pipeline-a5-脚本读-dec-x1}
 
 **位置**：`sih-engine/skills/sihankor-proposition-defense/probes/check_decision_authority.py`
 
@@ -74,10 +74,10 @@ A-2 数据治理是"工具设计 + 流程改造"——本任务包做 caller 设
 
 **F 锚定（B.x）**：
 - B.1.1 改后 audit A5 立即转 PASS
-- B.1.2 改后 audit A5 不报硬编码"3 gap"——而是根据实际 schema 字段动态计算
+- B.1.2 改后 audit A5 不报硬编码"3 gap"：而是根据实际 schema 字段动态计算
 - B.1.3 pytest 217+ 不倒退
 
-#### A-1. v1-family 函数跨族诊断（X2）
+#### A-1. v1-family 函数跨族诊断（X2） {#a-1-v1-family-函数跨族诊断-x2}
 
 **目标**：识别 45+ v1-family 函数 + 提迁移路径
 
@@ -94,15 +94,15 @@ A-2 数据治理是"工具设计 + 流程改造"——本任务包做 caller 设
 **F 锚定（A-1.x）**：
 - A-1.1 识别 ≥ 40 个 v1-family 函数（baseline 已知 45+）
 - A-1.2 每个函数含迁移路径（"改 X 行"或"立 X 任务"）
-- A-1.3 不实施迁移（**只诊断**——T6D-04 才实施）
+- A-1.3 不实施迁移（**只诊断**：T6D-04 才实施）
 
-#### A-2. 数据治理 caller 设计（主线）
+#### A-2. 数据治理 caller 设计（主线） {#a-2-数据治理-caller-设计-主线}
 
 **目标**：让 .agents/skills/ 关键路径走 facet pipeline，制造真实 program_signoff / knife_edge_risk / supersession 事件
 
 **位置**：`sih-engine/skills/sihankor-proposition-defense/`（自动触发机制设计）
 
-**当前行为**：cron 跑 contribution_metric.py 监控 — 但 contribution_metric.py 是**指标计算**，不是真"治理操作"
+**当前行为**：cron 跑 contribution_metric.py 监控 ： 但 contribution_metric.py 是**指标计算**，不是真"治理操作"
 
 **目标行为**：
 - 关键治理决策（如"接受这个 prompt"）走 facet pipeline
@@ -113,33 +113,33 @@ A-2 数据治理是"工具设计 + 流程改造"——本任务包做 caller 设
 - A-2.1 caller 设计文档化（不实施，但写 SPEC）
 - A-2.2 流量入口识别（哪些治理操作该走 facet）
 
-### Cluster 2
+### Cluster 2 {#cluster-2}
 
-#### C-1. 跨仓 commit
+#### C-1. 跨仓 commit {#c-1-跨仓-commit}
 
 - sih-engine 仓：B 改的 audit 脚本
 - facet 仓：（如 B 涉及 flywheel_trail 字段改名）
 
-#### C-2. 任务包结果文档
+#### C-2. 任务包结果文档 {#c-2-任务包结果文档}
 
 - `sih-engine/task-packages/fix-governance-boundaries-t6d-results.md`
 - 内容：B 改完验 audit A5 PASS + A-1 跨族函数清单 + A-2 caller SPEC
 
 ## 四、可证伪条件（跑前立文） {#falsifiable}
 
-### B 部分
+### B 部分 {#b-部分}
 
 - **B.1.1** B 改后 audit A5 PASS → 必须达成
 - **B.1.2** B 改后 audit A5 不报硬编码"3 gap" → 必须达成
 - **B.1.3** B 改后 pytest 217+ 不倒退 → 必须达成
 
-### A-1 部分
+### A-1 部分 {#a-1-部分}
 
 - **A-1.1** 识别 ≥ 40 个 v1-family 函数 → 必须达成
 - **A-1.2** 每个函数含迁移路径 → 必须达成
 - **A-1.3** 不实施迁移（**只诊断**）→ 必须达成
 
-### A-2 部分
+### A-2 部分 {#a-2-部分}
 
 - **A-2.1** caller 设计文档化 → 必须达成
 - **A-2.2** 流量入口识别 → 必须达成
@@ -165,7 +165,7 @@ X2 必读：
 主线必读：
 - 全部 + A-2 caller 设计
 
-## 六、微积分知识包
+## 六、微积分知识包 {#六-微积分知识包}
 
 查 `/Users/moc/workspaces/SiHankor/calculus/llm-friendly-build/`：
 - `mapping.md` 检索"约束 / 限制 / 边界"
@@ -174,12 +174,12 @@ X2 必读：
 
 ## 七、验收标准 {#acceptance}
 
-### Cluster 1
+### Cluster 1 {#cluster-1}
 - B 改完（X1）
 - A-1 v1-family 函数清单（X2）
 - A-2 caller SPEC（主线）
 
-### Cluster 2
+### Cluster 2 {#cluster-2}
 - audit_pipeline.py 跑 → exit 0（5 全 PASS）
 - pytest 217+ 全过
 - 跨仓 commit
@@ -196,7 +196,7 @@ X2 必读：
 
 ## 九、派发顺序（T6-D 范式） {#dispatch}
 
-### 阶段 1：并行双子代理
+### 阶段 1：并行双子代理 {#阶段-1-并行双子代理}
 
 ```bash
 # 派 X1 写 B
@@ -209,7 +209,7 @@ mavis task --description "fix-governance-t6d X2 A-1 诊断" --prompt "..."
 # 写 + commit A-2 caller SPEC
 ```
 
-### 阶段 2：主线验收集齐
+### 阶段 2：主线验收集齐 {#阶段-2-主线验收集齐}
 
 - 跑 audit_pipeline.py 验 5 PASS
 - 跑 pytest 验 217+ 全过
@@ -235,9 +235,9 @@ mavis task --description "fix-governance-t6d X2 A-1 诊断" --prompt "..."
 
 - ❌ A-1 不实施跨族函数迁移（45+ 函数改是 T6D-04 范围）
 - ❌ A-2 不实施 caller 实际跑流量（只写 SPEC）
-- ❌ 数据治理（让占比从 73% 降到 60%）—— 阶段 2.5 流量工程
-- ❌ pre-existing 错位（test_flywheel_trail / test_check_verdict_consistency）—— 元层测试更新
-- ❌ baseline_checker 实际代码实现（DES-011 §边界 §66）—— 后续 SPEC
+- ❌ 数据治理（让占比从 73% 降到 60%）： 阶段 2.5 流量工程
+- ❌ pre-existing 错位（test_flywheel_trail / test_check_verdict_consistency）： 元层测试更新
+- ❌ baseline_checker 实际代码实现（DES-011 §边界 §66）： 后续 SPEC
 
 ## 十二、教训承接 {#lessons}
 

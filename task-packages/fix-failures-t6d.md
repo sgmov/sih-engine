@@ -10,7 +10,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 | 脚本 | 状态 | 根因 | 修复方向 |
 |---|---|---|---|
 | A1 check_layer_proportion | FAIL | flywheel_run 73.17% > 60% | contribution_metric 加"layer 占比下限"约束 |
-| A2 check_yaml_factual | PASS | (v1.1 已修) | — |
+| A2 check_yaml_factual | PASS | (v1.1 已修) | ： |
 | A3 check_test_intent | FAIL | test_f34_reproducibility 名字 vs 实际（3 mismatch） | 加 assert trail 不被重复写 + program_signoff 加 dedup |
 | A4 check_verdict_consistency | FAIL | 1 v1/v3 version split | layer2_signoff route 内部重算 v3 |
 | A5 check_decision_authority | FAIL | UNIQUE_BUT_BLIND + 3 cross-link gap | DES-011 立 DEC + program_signoff schema 加 cross-link |
@@ -19,7 +19,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 
 ## 二、关键设计 {#design}
 
-### 2.1 T6-D 编排（双子代理 + 主线）
+### 2.1 T6-D 编排（双子代理 + 主线） {#2-1-t6-d-编排-双子代理-主线}
 
 **Cluster 1：双子代理并行（facet 代码改）**
 
@@ -31,18 +31,18 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 
 - 主线：cluster 1 收齐后 commit + 写 fix-failures-t6d-results.md
 
-### 2.2 修复顺序依赖
+### 2.2 修复顺序依赖 {#2-2-修复顺序依赖}
 
 - A3 依赖 program_signoff dedup（要先改 program_signoff，再加 test assert）
 - A4 依赖 layer2_signoff route 改（独立）
 - A1 依赖 contribution_metric 改（独立）
 - A5 依赖 program_signoff schema 改（与 A3 共享 program_signoff 改动）
 
-**约束**：A3 + A5 都改 program_signoff.py——必须协调，否则合并冲突。建议 X1 改完 program_signoff 主体，X2 在 X1 基础上加 cross-link 字段。
+**约束**：A3 + A5 都改 program_signoff.py：必须协调，否则合并冲突。建议 X1 改完 program_signoff 主体，X2 在 X1 基础上加 cross-link 字段。
 
 或：让 X1 改 A3 + A4（程序签路由层），X2 改 A1 + A5（指标层 + 设计层），X2 用 DES-011 DEC 立文 + program_signoff 增量改动（不冲突 X1 的 dedup 部分）。
 
-### 2.3 验收标准
+### 2.3 验收标准 {#2-3-验收标准}
 
 - 跑 audit_pipeline.py → exit 0（5 全 PASS）
 - 跑 pytest tests/ -q → 195+ 全过
@@ -50,9 +50,9 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 
 ## 三、工作清单 {#work}
 
-### Cluster 1
+### Cluster 1 {#cluster-1}
 
-#### A1. contribution_metric 加 layer 占比下限（X2）
+#### A1. contribution_metric 加 layer 占比下限（X2） {#a1-contribution_metric-加-layer-占比下限-x2}
 
 **位置**：`sih-tools/facet/probes/contribution_metric.py`
 
@@ -69,7 +69,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 - F1.1 实测 flywheel_run 占比 ≥ 60% → 撤销（已抓）→ 修后 = PASS ✓
 - F1.3 占比阈值与 A1 机械脚本一致（不能 < 0.60，否则 A1 永远 FAIL）
 
-#### A3. program_signoff 加 dedup + test_f34 修（X1）
+#### A3. program_signoff 加 dedup + test_f34 修（X1） {#a3-program_signoff-加-dedup-test_f34-修-x1}
 
 **位置 1**：`sih-tools/facet/probes/program_signoff.py`
 
@@ -87,7 +87,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 - F3.1 修后 A3 check_test_intent 不再 PARTIAL test_f34 → PASS
 - F3.2 简单测试不误报（已有） → 仍 PASS
 
-#### A4. layer2_signoff route 内部重算 v3（X1）
+#### A4. layer2_signoff route 内部重算 v3（X1） {#a4-layer2_signoff-route-内部重算-v3-x1}
 
 **位置**：`sih-tools/facet/probes/layer2_signoff.py:228-267`
 
@@ -100,7 +100,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 - F4.1 修后 A4 check_verdict_consistency 不再 INCONSISTENT → PASS
 - F4.2 v1/v2 同一族不误判（已有）→ 仍 PASS
 
-#### A5. program_signoff schema 加 cross-link + DES-011 DEC（X2）
+#### A5. program_signoff schema 加 cross-link + DES-011 DEC（X2） {#a5-program_signoff-schema-加-cross-link-des-011-dec-x2}
 
 **位置 1**：`sih-tools/facet/probes/flywheel_trail.py:238-291` `record_program_signoff` 事件 schema
 
@@ -119,14 +119,14 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 - F5.1 修后 A5 check_decision_authority 不再 UNIQUE_BUT_BLIND → UNIQUE（cross-link 建立后）
 - F5.2 路径图含 4 条（人签路由 + cross-link 到 sih-engine）
 
-### Cluster 2
+### Cluster 2 {#cluster-2}
 
-#### B1. 跨仓 commit
+#### B1. 跨仓 commit {#b1-跨仓-commit}
 
 - facet 仓：3 commit（A1 / A3+A4 / A5 schema）
 - sih-engine 仓：1 commit（DES-011 DEC）
 
-#### B2. 任务包结果文档
+#### B2. 任务包结果文档 {#b2-任务包结果文档}
 
 - `sih-engine/task-packages/fix-failures-t6d-results.md`
 - 内容：4 修复的 commit hash + 修后 audit_pipeline 实测 (5 PASS) + 教训
@@ -162,7 +162,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 - 全部
 - DES-011 立 DEC 决策（用户已立任务包，需要 root session 决策 DEC 接受度）
 
-## 六、微积分知识包
+## 六、微积分知识包 {#六-微积分知识包}
 
 查 `/Users/moc/workspaces/SiHankor/calculus/llm-friendly-build/`：
 - `mapping.md` 检索"约束 / 限制 / 边界"
@@ -173,13 +173,13 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 
 ## 七、验收标准 {#acceptance}
 
-### Cluster 1（A1 + A3 + A4 + A5）
+### Cluster 1（A1 + A3 + A4 + A5） {#cluster-1-a1-a3-a4-a5}
 - 4 个 commit（facet 仓 + sih-engine 仓）
 - 修后 audit_pipeline.py 跑 → exit 0（5 全 PASS）
 - 修后 pytest tests/ -q → 195+ 全过
 - F1.x.1-F5.x.2 全部锚定不触发
 
-### Cluster 2（B1 + B2）
+### Cluster 2（B1 + B2） {#cluster-2-b1-b2}
 - 跨仓 commit 完成
 - fix-failures-t6d-results.md 写完
 - 5 脚本 baseline 报告
@@ -195,7 +195,7 @@ T6D-01 audit_pipeline baseline（c3f98b7 / f0eca04 后）：
 
 ## 九、派发顺序（T6-D 范式） {#dispatch}
 
-### 阶段 1：并行双子代理
+### 阶段 1：并行双子代理 {#阶段-1-并行双子代理}
 
 ```bash
 # 派 X1 写 A3 + A4
@@ -205,7 +205,7 @@ mavis task --description "fix-failures A3+A4" --prompt "..."
 mavis task --description "fix-failures A1+A5" --prompt "..."
 ```
 
-### 阶段 2：主线验收 + 跨仓 commit
+### 阶段 2：主线验收 + 跨仓 commit {#阶段-2-主线验收-跨仓-commit}
 
 - 跑 audit_pipeline.py 验 5 PASS
 - 跑 pytest 验 195+ 全过

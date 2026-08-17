@@ -38,26 +38,82 @@ REQUIRED_SECTIONS = [
 EM_DASH_PATTERN = re.compile(r"[—–]")
 
 
+def is_task_package(file_path: Path) -> bool:
+    """判断是否任务包（强制 F-D.3 §一-§七 必填节齐）。
+
+    任务包命名约定：
+    - `<主题>-t6d.md` 结尾 = 任务包
+    - `TEMPLATE.md` = 模板
+    - `README.md` = 目录说明
+
+    非任务包文档豁免 F-D.3：
+    - `*-t6d-results.md` = 结果文档
+    - `*-t6d-report-*.md` = 审阅报告（双子代理产出）
+    - `*-inventory.md` = 清单文档
+    - `*-spec.md` = SPEC 文档
+    - `*-a2-caller-spec.md` = A-2 caller SPEC
+    """
+    name = file_path.name
+    if name in ("TEMPLATE.md", "README.md"):
+        return False
+    # results / report / inventory / spec 都豁免
+    if "-results.md" in name or "-report-" in name or "-inventory.md" in name or "-spec.md" in name:
+        return False
+    # 任务包：<主题>-t6d.md 结尾
+    if name.endswith("-t6d.md"):
+        return True
+    return False
+
+
 def check_one(file_path: Path) -> dict:
     """对一个 task-packages 文档跑 F-D 5 条校验。
 
     返回 {f-d-id: {"status": "PASS"/"FAIL", "detail": str}}
+
+    跳过 fenced code block（``` 围栏之间的内容），不计入标题统计。
+    F-D.3 §一-§七 必填节齐 仅对任务包强制（其他文档豁免）。
     """
     results: dict = {}
     content = file_path.read_text()
     lines = content.splitlines()
 
-    # F-D.1 一级标题 1 个
-    h1_count = sum(1 for line in lines if re.match(r"^#\s+", line) and not line.startswith("##"))
+    # 标记 fenced code block 区间
+    in_code_block = False
+    code_block_ranges: list[tuple[int, int]] = []
+    block_start = -1
+    for i, line in enumerate(lines):
+        if line.strip().startswith("```"):
+            if not in_code_block:
+                block_start = i
+                in_code_block = True
+            else:
+                code_block_ranges.append((block_start, i))
+                in_code_block = False
+
+    def in_code(i: int) -> bool:
+        for s, e in code_block_ranges:
+            if s <= i <= e:
+                return True
+        return False
+
+    # F-D.1 一级标题 1 个（跳过代码块）
+    h1_count = 0
+    for i, line in enumerate(lines):
+        if in_code(i):
+            continue
+        if re.match(r"^#\s+", line) and not line.startswith("##"):
+            h1_count += 1
     if h1_count == 1:
         results["F-D.1"] = {"status": "PASS", "detail": f"1 个一级标题"}
     else:
         results["F-D.1"] = {"status": "FAIL", "detail": f"{h1_count} 个一级标题（应 1 个）"}
 
-    # F-D.2 二级及以上标题均带 {#anchor}
+    # F-D.2 二级及以上标题均带 {#anchor}（跳过代码块）
     headings_with_anchor = 0
     headings_without_anchor: list[str] = []
-    for line in lines:
+    for i, line in enumerate(lines):
+        if in_code(i):
+            continue
         m = re.match(r"^(#{2,})\s+", line)
         if m:
             if "{#" in line:
@@ -73,16 +129,19 @@ def check_one(file_path: Path) -> dict:
             "detail": f"{len(headings_without_anchor)} 个标题缺锚点: " + "; ".join(headings_without_anchor[:3]),
         }
 
-    # F-D.3 必填节（§一-§七）齐
-    missing_sections: list[str] = []
-    for section_name, pattern in REQUIRED_SECTIONS:
-        if not re.search(pattern, content, flags=re.MULTILINE):
-            missing_sections.append(section_name)
-
-    if not missing_sections:
-        results["F-D.3"] = {"status": "PASS", "detail": "§一-§七 必填节齐"}
+    # F-D.3 必填节（§一-§七）齐—— 仅任务包强制，其他文档豁免
+    if not is_task_package(file_path):
+        results["F-D.3"] = {"status": "PASS", "detail": f"非任务包（{file_path.name} 豁免 §一-§七）"}
     else:
-        results["F-D.3"] = {"status": "FAIL", "detail": f"缺: {', '.join(missing_sections)}"}
+        missing_sections: list[str] = []
+        for section_name, pattern in REQUIRED_SECTIONS:
+            if not re.search(pattern, content, flags=re.MULTILINE):
+                missing_sections.append(section_name)
+
+        if not missing_sections:
+            results["F-D.3"] = {"status": "PASS", "detail": "§一-§七 必填节齐"}
+        else:
+            results["F-D.3"] = {"status": "FAIL", "detail": f"缺: {', '.join(missing_sections)}"}
 
     # F-D.4 em dash 0 命中
     em_dash_count = len(EM_DASH_PATTERN.findall(content))
@@ -91,11 +150,13 @@ def check_one(file_path: Path) -> dict:
     else:
         results["F-D.4"] = {"status": "FAIL", "detail": f"{em_dash_count} 个 em dash 命中"}
 
-    # F-D.5 三级标题 100% 带 {#anchor}
+    # F-D.5 三级标题 100% 带 {#anchor}（跳过代码块）
     h3_count = 0
     h3_with_anchor = 0
     h3_without: list[str] = []
-    for line in lines:
+    for i, line in enumerate(lines):
+        if in_code(i):
+            continue
         if re.match(r"^###\s+", line):
             h3_count += 1
             if "{#" in line:

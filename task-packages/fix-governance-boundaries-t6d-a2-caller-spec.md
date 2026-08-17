@@ -7,14 +7,14 @@
 
 ## 一、问题陈述 {#problem}
 
-### 1.1 当前数据状态
+### 1.1 当前数据状态 {#1-1-当前数据状态}
 
 - 6227 个 trail 事件，flywheel_run 5270 / gate_assessment 950 / layer2_signoff 5 / program_signoff 0 / knife_edge_risk 0 / supersession 0
 - 阶段 2 新机制（program_signoff / knife_edge_risk / supersession）零触发
 - 占比 flywheel_run 73.17% > 60% 阈值 → A1 check_layer_proportion FAIL
 - 数据治理目标：让新机制接真实流量，让占比降到 ≤ 60%
 
-### 1.2 当前 .agents/skills/ 治理操作
+### 1.2 当前 .agents/skills/ 治理操作 {#1-2-当前-agents-skills-治理操作}
 
 现有 6 个 skill：
 
@@ -29,10 +29,10 @@
 | sihankor-slash-trigger | 路由 | 否（不判断）|
 
 **2 个 skill 天然该走 facet 飞轮**：
-1. **sihankor-proposition-defense** —— 三层审本质是多 LLM 投票，**应该是** facet 飞轮的 N 个 actor
-2. **sihankor-redteam** —— 多 LLM 对抗，**应该是** facet 飞轮的 N 个 actor
+1. **sihankor-proposition-defense** ： 三层审本质是多 LLM 投票，**应该是** facet 飞轮的 N 个 actor
+2. **sihankor-redteam** ： 多 LLM 对抗，**应该是** facet 飞轮的 N 个 actor
 
-### 1.3 流量入口识别
+### 1.3 流量入口识别 {#1-3-流量入口识别}
 
 数据治理 = **让 .agents/skills/ 关键治理操作走 facet pipeline**：
 
@@ -57,11 +57,11 @@
 - 所需新事件：约 (60% × current_C) / (2 × 0.4) ≈ ~1500 条新 Layer 2 事件
 - 按 4-10/天 估算：约 150-375 天 ≈ 5-12 个月
 
-**A-2 数据治理是慢变量**——需要长期接入，不能立竿见影。
+**A-2 数据治理是慢变量**：需要长期接入，不能立竿见影。
 
 ## 二、caller 设计 {#design}
 
-### 2.1 总体架构
+### 2.1 总体架构 {#2-1-总体架构}
 
 ```
 .agents/skills/{proposition-defense | redteam}
@@ -73,7 +73,7 @@ caller wrapper (新组件)
   └─ 返回 (verdict, evidence, 治理动作建议)
 ```
 
-### 2.2 caller 接口设计
+### 2.2 caller 接口设计 {#2-2-caller-接口设计}
 
 ```python
 # sih-engine/skills/sihankor-proposition-defense/caller.py
@@ -98,7 +98,7 @@ def audit_with_facet(
     ...
 ```
 
-### 2.3 集成到现有 skill
+### 2.3 集成到现有 skill {#2-3-集成到现有-skill}
 
 **SihankorPropositionDefenseSkill 改造**：
 
@@ -130,7 +130,7 @@ def run_redteam(proposition):
     )
 ```
 
-### 2.4 反向兼容
+### 2.4 反向兼容 {#2-4-反向兼容}
 
 caller 设计要保留"非 facet 路径"作为 fallback：
 
@@ -147,7 +147,7 @@ def run_audit(report_path, use_facet: bool = True):
 - 用户显式 --no-facet
 - 测试 / dev 环境
 
-### 2.5 流量归一化
+### 2.5 流量归一化 {#2-5-流量归一化}
 
 caller 跑的每个 audit 调用 = 1 个 flywheel_run + 1 个 gate_assessment 事件。
 
@@ -163,7 +163,7 @@ A-2 caller SPEC **不实施**：
 - ❌ 不改 sihankor-proposition-defense / sihankor-redteam skill 集成
 - ❌ 不立即在真流量上跑
 
-实施路径：T6D-04 立任务包 — caller 实现 + skill 集成 + 真实流量验证。
+实施路径：T6D-04 立任务包 ： caller 实现 + skill 集成 + 真实流量验证。
 
 ## 四、依赖与配套 {#dependencies}
 
@@ -179,8 +179,8 @@ A-2 caller SPEC **不实施**：
 
 ## 五、F 锚定（设计阶段） {#falsifiable}
 
-- **A-2.1 caller 设计文档化** — 本 SPEC 落地 ✓
-- **A-2.2 流量入口识别** — proposition-defense + redteam 2 个 skill 识别 ✓
+- **A-2.1 caller 设计文档化** ： 本 SPEC 落地 ✓
+- **A-2.2 流量入口识别** ： proposition-defense + redteam 2 个 skill 识别 ✓
 
 **实施阶段 F 锚定（T6D-04 立）**：
 - A-2.3 caller 实际写完 + 单元测试过
@@ -199,7 +199,7 @@ A-2 caller SPEC **不实施**：
 
 ## 七、自检 {#self-check}
 
-### 形式合规
+### 形式合规 {#形式合规}
 
 - 一级标题无锚点，仅一个
 - 二级标题均带锚点
@@ -207,13 +207,13 @@ A-2 caller SPEC **不实施**：
 - 无破折号、无装饰符号、无 Unicode Emoji
 - 引用使用半角双冒号加锚点链接格式
 
-### 内容合规
+### 内容合规 {#内容合规}
 
 - 现状数据明确（6227 / 73% / 5 PASS / 4 FAIL）
 - 流量入口识别（2 个 skill：proposition-defense + redteam）
 - caller 接口签名完整（参数 / 返回 / 异常 / fallback）
 - 反向兼容路径明确（fallback 触发条件）
 - 不实施声明显式（4 条不做的）
-- 流量估算（5-12 个月达 60%）—— 数据治理是慢变量，不立竿见影
+- 流量估算（5-12 个月达 60%）： 数据治理是慢变量，不立竿见影
 - 依赖表清晰（4 ✅ + 3 ❌）
 - 关联文档链回 fix-failures-t6d / DES-011 DEC / T6D-04

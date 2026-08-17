@@ -5,7 +5,7 @@
 > 审阅时间：2026-08-17 19:30-19:55（≈25 min）
 > 工具层：B2 流水线 + 三层审 + v1-scan + 贡献度 4 个工具全跑
 
-## 一、整体印象
+## 一、整体印象 {#一-整体印象}
 
 facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADMAP」的阶段 1+2 累积形态，commit 粒度细到原子修复（A1 layer 占比、A4 route 内部 v3 重算、A2 dedup、A5 cross-link），但**四个工具一致显示仓整体尚未到可迁入 sih-engine 的状态**：贡献度 NOT PASS、三层审计漏立题命题、v1-family 跨族待迁 40+ 个函数、A4 裁决路径 UNIQUE_BUT_BLIND。
 
@@ -13,7 +13,7 @@ facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADM
 
 但工具组也有自己的盲点：所有 4 个工具都是「机械层事实采集」，没有「语义层解读」：比如 contribution_metric 报告 73.17% 失衡，它**不判**「这是数据飞轮问题还是指标设计缺陷」；v1-scan 报告 40 个 v1-family loose 函数，它**不**评估「这些函数迁移的成本/风险排序」。LLM 真审仍必要。
 
-## 二、四维度发现
+## 二、四维度发现 {#二-四维度发现}
 
 ### 维度 1：代码质量 {#维度-1-代码质量}
 
@@ -91,7 +91,7 @@ facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADM
 - 工具：check_verdict_consistency
 - 含义：A4 修复**决策**正确，但**工具分类**仍报跨族：T6D-04 需同步更新 family 分类（将 _cmd_route 从 v1-family 完全移到 v3-family 而非 mixed）。
 
-## 三、工具 vs 阅读对比
+## 三、工具 vs 阅读对比 {#三-工具-vs-阅读对比}
 
 ### 工具独有发现（X2 ∖ X1 应有） {#工具独有发现-x2-x1-应有}
 
@@ -128,7 +128,7 @@ facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADM
 - **盲点**：工具不读 commit message（不识「A4 修复语义」），不识别「文档/代码版本不对齐」（D1.4），不识别「修复上游未留底」（D2.4）。LLM 阅读在「意图层」仍占优。
 - **张力点**：D4.2/D4.4 揭示**工具分类标准**（reads 字段 = v1-family）vs **修复意图**（决策已迁 v3，v1 仅 audit）有错位：这是工具设计的边界条件。
 
-## 四、风险点 / 待办
+## 四、风险点 / 待办 {#四-风险点-待办}
 
 **R1（高）**：退出条件 #6 NOT PASS → 阶段 2 新机制 0/3 真实流量触发缺位。ROADMAP §阶段 2.5 B 路径「拿 2-3 条真实司衡决策走完整 pipeline」未启动。建议：T6D-04 同步 B 路径触发（不只是迁移代码），否则 44e8d0c 的 A1+A4 修复在迁入 sih-engine 时仍会被同一问题拖累。锚定：`ROADMAP.md:944-967`。
 
@@ -142,7 +142,7 @@ facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADM
 
 **R6（低）**：D1.3 commit 96bf81a 双子任务合并：可在 ROADMAP §commit 规范加 1 行「单 commit 单修复优先（紧急合并需 commit message 注明）」。锚定：`git show 96bf81a`。
 
-## 五、工具盲点（你跑工具后认为工具漏掉的问题）
+## 五、工具盲点（你跑工具后认为工具漏掉的问题） {#五-工具盲点-你跑工具后认为工具漏掉的问题}
 
 **B1：工具不识别 commit message 语义**。A4 修复 (44e8d0c) 的 commit message 明确写「route 读 v1 verdict 决策的 bug 已根治」：但 audit_pipeline / check_verdict_consistency 仅看代码 AST，识别不出「决策已迁」vs「读字段但决策不依赖」的区别。建议：v1-scan 增加「decision_source」字段标注（reads 字段 = 数据依赖 / 决策依据 = 决策依赖）。
 
@@ -158,13 +158,13 @@ facet 仓在 44e8d0c（head）已形成「5 机制 + 217 测试 + 1001 行 ROADM
 
 ---
 
-## F 锚定状态
+## F 锚定状态 {#f-锚定状态}
 
 - F2（25-35 min 完成）：✅ 19:30-19:55（≈25 min）
 - F3（至少跑 3 个新工具）：✅ audit_pipeline + check_three_proposition_audit + v1-scan + contribution_metric = 4 个（额外跑了 5 个子脚本 = 共 9 次工具调用）
 - F6（每条发现标锚定）：✅ D1.1-D4.4 + 6 项风险 + 6 项盲点全部标 (path, line) 或 commit hash + 工具来源
 
-## 工具调用清单（防虚报）
+## 工具调用清单（防虚报） {#工具调用清单-防虚报}
 
 1. `python3 skills/sihankor-proposition-defense/probes/audit_pipeline.py` → 5 子脚本 1 PASS / 4 FAIL
 2. `python3 skills/sihankor-proposition-defense/probes/check_layer_proportion.py` → 73.17% FAIL
