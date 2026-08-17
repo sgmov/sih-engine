@@ -255,8 +255,8 @@ def _print_table(report: ConsistencyReport) -> None:
 def main() -> int:
     p = argparse.ArgumentParser(
         description="verdict 版本一致性机械检查")
-    p.add_argument("--scan-dir", default="sih-tools/facet/probes/",
-                    help="扫描目录（默认 sih-tools/facet/probes/）")
+    p.add_argument("--scan-dir", default="/Users/moc/workspaces/SiHankor/sih-tools/facet/probes/",
+                    help="扫描目录（默认 /Users/moc/workspaces/SiHankor/sih-tools/facet/probes/）")
     p.add_argument("--json", action="store_true", help="仅输出 JSON")
     args = p.parse_args()
 

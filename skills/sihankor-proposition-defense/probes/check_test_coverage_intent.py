@@ -295,8 +295,8 @@ def _print_table(report: CoverageReport) -> None:
 def main() -> int:
     p = argparse.ArgumentParser(
         description="test docstring/name vs 实际测什么 机械检查")
-    p.add_argument("--tests-dir", default="sih-tools/facet/tests/",
-                    help="tests 目录（默认 sih-tools/facet/tests/）")
+    p.add_argument("--tests-dir", default="/Users/moc/workspaces/SiHankor/sih-tools/facet/tests/",
+                    help="tests 目录（默认 /Users/moc/workspaces/SiHankor/sih-tools/facet/tests/）")
     p.add_argument("--json", action="store_true", help="仅输出 JSON")
     args = p.parse_args()
 
