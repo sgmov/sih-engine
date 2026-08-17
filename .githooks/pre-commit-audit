@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Pre-commit hook: 跑治理工程审阅流水线（零 LLM 调用）
+# 任务包 T6D-01 子任务 B1
+#
+# 设计原则：
+# - 默认 WARN 模式（不阻断 commit）—— baseline 已知 FAIL，需要时间消化
+# - 未来 STRICT 模式可由 --strict 参数启用（任一 FAIL = 阻断）
+# - 输出写入 commit message / git notes 作 audit 痕迹
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SKILL_DIR="$REPO_ROOT/skills/sihankor-proposition-defense"
+PROBES_DIR="$SKILL_DIR/probes"
+PIPELINE="$PROBES_DIR/audit_pipeline.py"
+
+if [ ! -f "$PIPELINE" ]; then
+    echo "⚠ audit_pipeline.py not found at $PIPELINE — skip pre-commit audit"
+    exit 0
+fi
+
+# 默认 WARN：不阻断 commit
+MODE="${AUDIT_HOOK_MODE:-warn}"
+TRAIL_ROOT="${AUDIT_TRAIL_ROOT:-/Users/moc/workspaces/SiHankor/sih-tools/proposition/DES}"
+
+echo "[pre-commit audit] 跑治理工程审阅流水线（零 LLM）..."
+if ! python3 "$PIPELINE" --trail-root "$TRAIL_ROOT" 2>&1 | tee /tmp/pre-commit-audit.log; then
+    echo ""
+    case "$MODE" in
+        strict)
+            echo "❌ [pre-commit audit] 机械层失败 — STRICT 模式阻断 commit"
+            echo "   解阻：fix 已知问题 或 AUDIT_HOOK_MODE=warn git commit --no-verify"
+            exit 1
+            ;;
+        warn|*)
+            echo "⚠ [pre-commit audit] 机械层失败 — WARN 模式不阻断"
+            echo "   已知 FAIL：task-packages/t6d-01-mechanism-scripts.md §4 可证伪条件"
+            echo "   全部 FAIL 视为 baseline 状态（task package 已立 B1 改进路径）"
+            # 把 audit 状态写入 git notes（不阻断 commit）
+            SUMMARY=$(python3 "$PIPELINE" --trail-root "$TRAIL_ROOT" --json 2>/dev/null | python3 -c "
+import json, sys
+r = json.load(sys.stdin)
+s = r['summary']
+print(f\"{s['pass']} pass / {s['fail']} fail / {s['error']} error, LLM={s['llm_calls']}\")
+" 2>/dev/null || echo "audit summary unavailable")
+            git notes add -m "[audit] $SUMMARY" HEAD 2>/dev/null || true
+            exit 0
+            ;;
+    esac
+fi
+
+echo "[pre-commit audit] ✅ 机械层全过"
+exit 0
