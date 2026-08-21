@@ -1,0 +1,38 @@
+---
+name: "sihankor-incubation"
+description: "SiHankor engine cut-out incubation loop protocol. Invoke when engine development proposes a new capability (decide cut-out vs in-repo), when registering an interface contract or acceptance criteria for an incubating sih-tools tool, or when checking the integration gate, e.g. 切一个工具出来, 这个能力外切, 融回检查, 开发范式."
+---
+
+# Skill: sihankor-incubation
+
+司衡引擎外切孵化融回范式的调用入口：引擎新能力开发经外切 sih-tools 分解、skills 手工调用验证、可证伪验收、可插拔融回四步环。本 skill 承载环的执行纪律，权威源是 PRO-005 全态节与 GOV-002 主线锁，本 skill 不替代登记。名称待用户签署，登记前以工作名运行。
+
+## 触发时机 {#trigger}
+
+- 引擎新能力开发动议，须判定外切还是仓内实现
+- 外切工具的接口契约与验收判据登记
+- 孵化期调用纪律检查与融回门检查
+- 用户表达"切一个工具出来"、"这个能力外切"、"融回检查"类意图
+
+不触发：引擎核心组件本体的仓内开发，外切的是可通用化的确定性能力不是组件本体；facet 测量本身走 sihankor-facet-measure。
+
+## 环四步 {#loop}
+
+第一步外切判定。判据：能力是通用的、纯确定性的、可跨仓复用、可带退出码的，候选外切；承载引擎核心治理职能的组件本体，留仓实现。判定结果留痕。
+
+第二步接口契约登记。外切时即定组件接口与退出码，融回只搬实现不改接口。契约落工具仓内文档，引擎侧留引用。回迁债的根源是融回时重谈判接口，此步即为其预防。
+
+第三步验收判据登记。可证伪条件，形态仿 facet 先例即指标加闸门验收。判据在外切时登记，融回时对表，不以感觉替代。
+
+第四步融回门。三查：验收判据全过、接口契约未变、回迁债已评估。三查过后经可插拔机制落为组件模块实现，单独发布能力并行保留，或按知止退役。
+
+## 纪律 {#discipline}
+
+- 孵化期工具治理自治，不受引擎文档流程约束，但 skills 调用须留痕
+- 三纪律随环携带：接口契约先于工具本体、验证判据前置、治理自增殖守望
+- 融回不自动发生，融回门是人节点裁决
+- 本 skill 不豁免化格核阅管线与 facet 测量
+
+## 边界 {#boundary}
+
+本 skill 是范式的手动期载体。按 PRO-003 模式，职能成立后可正式化为引擎开发治理组件，其自身也走外切孵化融回环。权威源在 PRO-005 全态节与 GOV-002 主线锁，与权威源冲突时以权威源为准。
