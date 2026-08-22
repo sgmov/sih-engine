@@ -31,7 +31,7 @@ description: "SiHankor engine cut-out incubation loop protocol. Invoke when engi
 - 孵化期工具治理自治，不受引擎文档流程约束，但 skills 调用须留痕
 - 三纪律随环携带：接口契约先于工具本体、验证判据前置、治理自增殖守望
 - 融回不自动发生，融回门是人节点裁决
-- 本 skill 不豁免化格核阅管线与 facet 测量
+- 本 skill 不豁免化格核阅管线、书简认证与 facet 测量
 
 ## 边界 {#boundary}
 
