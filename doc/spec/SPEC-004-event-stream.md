@@ -10,7 +10,7 @@
 - 事件数据结构含核心字段、操作者子结构、哈希链字段、事件分类字段::[数据契约](#data-contract)
 - 单次写入操作经待写入、校验中、已追加或被拒绝四态::[状态转换](#state-machine)
 - 四条验收依据，不可篡改、写入权限、写入前校验、事件分类::[验收依据](#acceptance-criteria)
-- 事件类型按治理环层与 会话任务层两级组织::[事件类型层级](#event-type-hierarchy)
+- 事件类型按治理环层、会话任务层、工具线测量层三级组织::[事件类型层级](#event-type-hierarchy)
 - 度量权威归确定性程序，LLM 不可作为操作者写入治理操作事件::[写入权限约束](#write-authority)
 
 ## 接口签名 {#interface-signature}
@@ -89,7 +89,7 @@ details 字段的必须性例外。details 对多数事件类型是必须字段�
 
 ## 事件类型层级 {#event-type-hierarchy}
 
-事件类型按两个层级组织。治理环层承接 DES-003 的四节点定义，会话任务层承接当前 trail 文件的实际使用。两级事件类型共存于同一 trail，按 event_type 字段区分。
+事件类型按三个层级组织。治理环层承接 DES-003 的四节点定义，会话任务层承接当前 trail 文件的实际使用，工具线测量层承接书简外切孵化的认证事件定义。三级事件类型共存于同一 trail，按 event_type 字段区分。
 
 ### 治理环事件类型 {#governance-loop-events}
 
@@ -118,6 +118,14 @@ task_completion 即任务完成事件。治理任务完成时产生，负载含�
 inconsistency 即不一致事件。反向校验发现本会话所述治理动作与 trail 实际记录不匹配时产生，负载含不一致描述、涉及文档 ID。
 
 会话任务层事件类型在当前 trail 文件中的实际使用状态。task_completion 已在全部 trail 文件中实际使用，trail/2026-07-27.ndjson 承载 6 条，trail/2026-08-03.ndjson 承载 7 条，trail/2026-08-06.ndjson 承载 3 条。session_open、session_close、inconsistency 三类事件尚未在任何 trail 文件中出现，是本规格定义的预留事件类型，待对应场景的自动化承载。此标注标准与治理环事件类型一致。
+
+### 工具线测量层事件类型 {#tool-line-measurement-events}
+
+工具线测量层事件类型承接 sih-tools/scribe/CONTRACT.md 的认证事件定义，经书简外切孵化引入，2026-08-22 连带改写合流并入本层级。定义权威在工具仓契约，本节为引擎侧登记。
+
+certification_completed 即认证完成事件。书简消费核阅与 facet 的报告文件时产生，负载含报告路径、报告自身哈希、规约包版本清单、目标内容哈希清单、发现或结论计数、显式退出码、工具版本、golden 基线版本八项。event_class 固定取值仅记录，认证事件构成测量留痕不构成决策依据，偏差介入走报告侧与退出码侧，不走事件侧。操作者为书简自署即 actor_id 取 scribe、actor_type 取 system、invoked_via 取 cli。
+
+工具线测量层事件的当前状态。工具线 trail 由书简写入，哈希公式与本规格哈希链结构同源即 compute_event_hash 单源权威并以 golden 对拍为写权限前置，融回时链并入引擎 event_stream 非重建。此为阶段状态。
 
 ## 状态转换 {#state-machine}
 
@@ -224,7 +232,7 @@ Rejected 是被拒绝态。校验失败，事件未写入 trail，返回拒绝�
 - 数据契约的字段命名对照 trail 实际文件即 details 即 DES-003 负载、actor 子结构展开 DES-003 操作者标识，doc_id 承接 DES-003 第 87 行，字段定义与 DES-003 同步一致
 - 数据契约显式声明物理存储承接 DEC-001 文本流式追加人类可读不依赖专有工具
 - 哈希链结构如实标注当前 trail 文件两种状态即 07-27 完整哈希与 08-03 加 08-06 空哈希过渡态
-- 事件类型层级按治理环层与会话任务层组织，治理环类型标注尚未在 trail 实际使用，会话任务层标注 task_completion 已使用而 session_open 加 session_close 加 inconsistency 尚未出现，两级标准一致
+- 事件类型层级按治理环层与会话任务层与工具线测量层组织，治理环类型标注尚未在 trail 实际使用，会话任务层标注 task_completion 已使用而 session_open 加 session_close 加 inconsistency 尚未出现，测量层标注工具线 trail 在役待融回，三级标准一致
 - 状态机使用 mermaid 围栏代码块，描述单次写入操作生命周期
 - 验收依据按四条分别承载，承接 GOV-001 的 FM-04、FM-05、FM-09 三约束
 - FM-05 落地位置显式声明，GOV-001 原始落地是参验组件协议，本规格承接事件分类维度
