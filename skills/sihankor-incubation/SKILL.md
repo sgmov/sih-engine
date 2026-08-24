@@ -41,6 +41,8 @@ description: "SiHankor engine cut-out incubation loop protocol. Invoke when engi
 
 2026-08-22 修订三：双门槛主判据定为贡献度，承用户同日补充裁定，体量与时间是贡献度的载体与观察窗，贡献度即真实治理工作中的实际作用与产出，空转调用量不计入。
 
+2026-08-22 修订四：能力外切例证补第四跑即检词／Nomenclator，术语登记与核查，簇六闭案，空腹术语包与核阅规则包同构，登记见 sih-engine PRO-007。
+
 ## 边界 {#boundary}
 
 本 skill 是范式的手动期载体。按 PRO-003 模式，职能成立后可正式化为引擎开发治理组件，其自身也走外切孵化融回环。权威源在 PRO-005 全态节与 GOV-002 主线锁，与权威源冲突时以权威源为准。
