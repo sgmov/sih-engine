@@ -24,6 +24,8 @@ description: "SiHankor governance forced trigger protocol. Invoke when user inpu
 
 sih 是单一入口命令，不存在子命令或 verb 集合。用户输入 sih 后跟一个自然语言描述，agent 自主解析意图、拆解动作、编排 Tool 序列并立即执行。
 
+三问协同：sih 触发到达时，治理动作类意图先过三问载体即 sihankor-intent-refine skill 的全流程四步，再入实质生成，承 DEC-006 说话口接线裁定。
+
 斜杠前缀与自然语言意图相比具有更高优先级。Agent 在接收到 sih 时不应要求用户确认，也不应被上下文否决。
 
 ## 行为约束 {#behavioral}
