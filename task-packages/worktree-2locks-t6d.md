@@ -58,3 +58,16 @@ sih-tools/cascade 即级联／cascade，能力外切承正身先例。三子命�
 ## 五、结果留档 {#results}
 
 结果见 worktree-2locks-t6d-results.md，随批更新。
+
+## 六、请求写入 {#requested-writes}
+
+- sih-engine/task-packages/worktree-2locks-t6d.md
+- sih-engine/task-packages/worktree-2locks-t6d-results.md
+- sih-engine/task-packages/TEMPLATE.md
+- sih-engine/task-packages/README.md
+- sih-engine/doc/decision/011-locks-and-package-binding.md
+- AGENTS.md
+- sih-tools/cascade/
+- sih-tools/worktree/
+- sih-tools/locks/
+- sih-tools/scribe/
