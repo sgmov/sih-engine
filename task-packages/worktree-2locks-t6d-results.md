@@ -4,7 +4,7 @@
 
 ## Cluster 1 cascade 工具外切 {#cluster1}
 
-毕。sih-tools/cascade 即工作名待立名，三子命令 build、check、orphans，十二测全绿，契约落地即 cascade/CONTRACT.md。引用词五族抽取，前缀族精确匹配优先裸号仅 DEC 族收，自引排除去重排序，多义无主入注记不建边，双跑逐字节一致，core 零写调用。
+毕。sih-tools/cascade 即级联／cascade，三子命令 build、check、orphans，十二测全绿，契约落地即 cascade/CONTRACT.md。引用词五族抽取，前缀族精确匹配优先裸号仅 DEC 族收，自引排除去重排序，多义无主入注记不建边，双跑逐字节一致，core 零写调用。
 
 ## Cluster 2 边册采种与真仓 build {#cluster2}
 

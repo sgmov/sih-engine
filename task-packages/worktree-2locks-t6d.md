@@ -30,7 +30,7 @@ SETSP 05-infra-deploy 载 WorktreeSession 生命周期即 agent 启动创建会�
 
 ### Cluster 1：cascade 工具外切（本批执行）
 
-sih-tools/cascade 即工作名待立名，能力外切承 identity 先例。三子命令：build 扫引用建边册、check 验上游洁净、orphans 查孤儿边。空腹零内置知识、json 报告退出码三值、双版本戳、复演确定性。
+sih-tools/cascade 即级联／cascade，能力外切承正身先例。三子命令：build 扫引用建边册、check 验上游洁净、orphans 查孤儿边。空腹零内置知识、json 报告退出码三值、双版本戳、复演确定性。
 
 ### Cluster 2：边册采种与真仓 build（本批执行）
 
