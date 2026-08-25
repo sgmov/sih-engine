@@ -83,9 +83,9 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 
 二，落记录即照 SPEC-005 产输出记录。锚点行号先 grep 核验后落记录，血统三件套即哲学引文、理据、证据行号逐条齐备，禁熔断即低置信锚点保留。
 
-三，机械验货即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。
+三，机械验收即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。
 
-四，上链即书简 intent 子命令写 intent_refined 事件，调用即 cd sih-tools 后 uv run scribe intent --record <记录.json> --validation <验货报告.json> --trail scribe/trail/<日期>.ndjson，doc_id 用会话标识。
+四，上链即书简 intent 子命令写 intent_refined 事件，调用即 cd sih-tools 后 uv run scribe intent --record <记录.json> --validation <验收报告.json> --trail scribe/trail/<日期>.ndjson，doc_id 用会话标识。
 
 调用计量现状：calls_in 与 calls_out 暂为操作者最优估计，无机械计数源，机械源实装前记录照填但须知情，调用总量判据的执行待机械源。
 
@@ -94,3 +94,5 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 2026-08-22 修订一：随 DEC-006 三问正式化批升格为手动期正式载体，三问单元措辞归位三问组件，承接引用改指本仓 DEC-006 与 DES-013 与 SPEC-005，触发时机提炼动作执行约束失败模式六节零语义变更。
 
 2026-08-22 修订二：增全流程四步节，固化产契约、落记录、机械验货、上链四步与治理批必触发纪律，登记计量估计值现状。触发即手动调用完善审查发现流程未固化与触发纪律被本会话治理批违反两缺口。
+
+2026-08-25 修订三：四步第三步措辞验货改验收，承用户同日裁定即验收为任务包模板时代既有活词零新铸，验货入检词死档登记 class name_only 即历史记录行不改，修订二历史行原文保留。
