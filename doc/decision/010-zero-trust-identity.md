@@ -74,3 +74,5 @@
 ## 修订记录 {#revisions}
 
 2026-08-25 修订一：组件集七件扩八件即增 mac 网卡硬件址，身份串规范名 identity_string_v1 升 v2，承用户同日补裁即跨机器区分件。mac 采集走 uuid.getnode，组播位置位即随机回退判缺席为空串不判败。mac 与 hostname 同层即环境可观察件，防跨机器偶发撞名，不防产权级仿冒即 mac 属主可配置。工具契约随升 0.2.0 即 sih-tools/identity/CONTRACT.md 修订二。
+
+2026-08-25 修订二：组件集八件扩十二件即增 boottime 开机时刻、parent_start 父进程出生时刻、ancestry 父链进程名序列、net_time 外部权威时间，身份串规范名升 v3。承用户同日裁定：网络依赖可受、拿不到按缺席、联网可达而不提供网络时钟本身即异常点。异常点三件即 net_time_missing_while_reachable 与 clock_skew 与 timestamp_before_boottime，观察事实非动作，退出码一扩为存在失配或存在异常点。工具契约随升 0.3.0 即 sih-tools/identity/CONTRACT.md 修订三。
