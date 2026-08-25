@@ -5,9 +5,15 @@
 //! 事件流是 sih-engine 第一阶段的核心模块，提供追加写入、哈希链校验、事件检索
 //! 三个入口，按确定性程序规则运行。
 
+pub mod ask3repeater;
 pub mod event_stream;
 
 // Re-export the public API
+pub use ask3repeater::{
+    intent_event_input, validate, Anchor, Ask3Error, Domain, DomainContract, DomainTag,
+    InputRecord, InquiryStage, IntentContract, INTENT_EVENT_CLASS, INTENT_EVENT_TYPE,
+    OutputRecord, PhilosophyRef, SessionContext,
+};
 pub use event_stream::{
     append, compute_event_hash, load_events, query, verify, AggregationResult, AppendError,
     AppendSuccess, Actor, ActorType, Event, EventAggregate, EventFilter, EventInput, EventList,

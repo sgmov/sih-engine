@@ -92,6 +92,8 @@ pub struct EventInput {
     pub doc_id: String,
     /// 可选，调用方若已计算则传入；否则由 append 内部填充。
     pub prev_hash: Option<String>,
+    /// 可选事件分类，缺省 None 即不入分类字段，三问意图事件固定 record_only。
+    pub event_class: Option<String>,
 }
 
 impl Event {

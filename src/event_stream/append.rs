@@ -128,7 +128,7 @@ pub fn append(
         doc_id: input.doc_id.clone(),
         prev_hash: prev_hash.clone(),
         event_hash: String::new(), // 先占位，计算完再填
-        event_class: None,
+        event_class: input.event_class.clone(),
         verification_result: None,
     };
 
@@ -223,6 +223,7 @@ mod tests {
             details: Some(serde_json::json!({"change_summary": "test"})),
             doc_id: "TEST-DOC".into(),
             prev_hash: None,
+            event_class: None,
         }
     }
 
