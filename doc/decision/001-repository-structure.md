@@ -86,13 +86,13 @@ sih-engine/
 │   │   ├── graph/                 文档关系投影，物理暂挂 doc/CASCADE.json
 │   │   ├── view/                  派生视图，物理待建
 │   │   ├── plan/                  待执行意图编排投影
+│   │   ├── parking/               主线泊界在泊投影，物理在顶层 parking/
 │   │   └── calibration/           参验机制标定基准集
+│   ├── task-packages/             治理任务包即批次过程件，物理在顶层 task-packages/
+│   ├── skills/                    过渡期治理手工载体，物理在顶层 skills/
+│   ├── open-questions.md          开放问题工作记忆，物理在顶层 OPEN-QUESTIONS.md
 │   └── static/                    静态档，审计链存档
 │
-├── task-packages/                 治理任务包，T6 载体
-├── skills/                        引擎技能权威源，投影至工作区 .agents/skills
-├── parking/                       主线泊界材料件，名册在 doc/governance/PARKING-v1.md
-├── OPEN-QUESTIONS.md              开放问题工作记忆，消化后迁移
 ├── state/                         早期任务投影位，逻辑归 sih/state/plan，归位待迁移
 ├── src/                           源代码
 ├── tests/                         测试代码，Cargo 约定即 tests
@@ -122,6 +122,18 @@ sih/state/graph
 
 sih/state/plan
 : 物理载体顶层 state/tasks 早期位加 sih/state/plan 现位，归位动作归并至 sih/state/plan
+
+sih/task-packages
+: 物理载体顶层 task-packages/ 即 T6 批次过程件，归位动作迁入 sih/
+
+sih/state/parking
+: 物理载体顶层 parking/ 即在泊材料件，归位动作迁入 sih/state/
+
+sih/skills
+: 物理载体顶层 skills/ 即过渡期治理手工状态，归位动作迁入 sih/，组件实装后降回辅助
+
+sih/open-questions.md
+: 物理载体顶层 OPEN-QUESTIONS.md 即工作记忆，归位动作迁入 sih/
 
 归位三原则。第一事件只追加即 trail 历史行不改写，迁移复制不搬改。第二旧路径不失效即历史记录与外部引用里的旧路径经本节解析到归位后节点，痕迹对账以本节为基准。第三迁移动作本身走批留痕即每次归位是一个治理批次，非静默搬移。
 
@@ -339,3 +351,5 @@ sih/state/plan
 2026-08-25 修订一：随 000 文档格式与 001 仓库结构首立，即本决策初版。
 
 2026-08-26 修订二：围堰期物理节点收编入树即 AGENTS.md、doc/research、doc/CASCADE.json、sih/static、task-packages、skills、parking、OPEN-QUESTIONS.md、state、tests 对齐 Cargo 约定、examples、fixtures、probes，tools 标注物理围堰于外仓 sih-tools，requirement 登记为待建空节点，tmp 与 target 不入树。新增围堰物理对应与归位映射节即五件对应与归位三原则。承用户结构债即过令即等融回则路径引用与痕迹对账失去基准。修订不改文档名与既有编号，承文件名不可变约束。
+
+2026-08-26 修订三：四件归位判定承用户裁定即消费模式判据跑全，task-packages 判进治理区批次过程件，parking 判进状态层在泊投影，OPEN-QUESTIONS 判进治理区工作记忆，skills 判进治理区即过渡期治理手工状态随组件实装降回辅助。树内四件由顶层收编细化为移入 sih 子树，物理位仍在顶层经映射表声明，物理搬移归归位批。映射表由五件扩九件。
