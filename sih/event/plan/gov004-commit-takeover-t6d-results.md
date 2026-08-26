@@ -8,15 +8,26 @@
 
 ## 链上证据 {#evidence}
 
-| 事项 | 证据 |
-|---|---|
-| 意图入链 | f7444946 即 sess-zcode-260826-gov004build，双腿绿即围堰包零违例加引擎闸门三锚点过 |
-| 会话开工 | ed0df5e751e5a0b3 即双仓副本，基线 sih-engine main 与 sih-tools integral-stage-build |
-| 六锁 | 任务包两件、GOV-004、DEC-012、DEC-011、sih-tools/scribe |
-| 化格 | 475fd540 即三件零改动 |
-| 核阅 | 770496fa 即 des-001 三件零违例零域外 |
-| 检词 | c9da4ba3 即三件零违例 |
-| 段结算提交 | 机械模板过渡实践，提交号随 close 批补记 |
+意图入链
+: f7444946 即 sess-zcode-260826-gov004build，双腿绿即围堰包零违例加引擎闸门三锚点过
+
+会话开工
+: ed0df5e751e5a0b3 即双仓副本，基线 sih-engine main 与 sih-tools integral-stage-build
+
+六锁
+: 任务包两件、GOV-004、DEC-012、DEC-011、sih-tools/scribe
+
+化格
+: 475fd540 即三件零改动
+
+核阅
+: 770496fa 即 des-001 三件零违例零域外
+
+检词
+: c9da4ba3 即三件零违例
+
+段结算提交
+: 机械模板过渡实践，提交号随 close 批补记
 
 ## 判据核对 {#criteria}
 
@@ -29,3 +40,7 @@ L1 过即 GOV-004 一页承五钉位与分期与版本固定，核阅绿。L2 �
 偏离二：段结算提交为机械模板过渡实践即 lease commit 未实装，message 由操作者按 DEC-012 裁决二模板手写，段标题语义源的机械取数随实施批落地。
 
 偏离三：任务包登记提交 0945f26 在会话签发前落 sih-engine main，属历史不可改起点前的过渡窗口，如实登记。
+
+## 修订记录 {#revisions}
+
+2026-08-27 修订一：链上证据节表格转定义列表即 F005 禁形态补核转形，承 cleanup-t6d 清理捆批，证据内容零变化。
