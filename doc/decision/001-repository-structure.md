@@ -80,18 +80,18 @@ sih-engine/
 │   │   ├── trail/                 治理动作留痕，物理围堰于 sih-tools/scribe/trail
 │   │   ├── feedback/              反哺信号
 │   │   ├── challenge/             挑战记录
-│   │   └── report/                审查报告
+│   │   ├── report/                审查报告
+│   │   ├── plan/                  退役编排归档即签毕批的包与结果档，物理在顶层 task-packages/
+│   │   └── audit/                 审计链存档，物理在 sih/static/audit
 │   ├── state/                     状态层（当前投影）
 │   │   ├── registry/              文档身份与状态登记，物理待建
 │   │   ├── graph/                 文档关系投影，物理暂挂 doc/CASCADE.json
 │   │   ├── view/                  派生视图，物理待建
-│   │   ├── plan/                  待执行意图编排投影
+│   │   ├── plan/                  待执行意图编排投影即活跃与待签批任务包，物理在顶层 task-packages/
 │   │   ├── parking/               主线泊界在泊投影，物理在顶层 parking/
+│   │   ├── skills/                过渡期治理手工载体，物理在顶层 skills/
+│   │   ├── open-questions.md      开放问题工作记忆，物理在顶层 OPEN-QUESTIONS.md
 │   │   └── calibration/           参验机制标定基准集
-│   ├── task-packages/             治理任务包即批次过程件，物理在顶层 task-packages/
-│   ├── skills/                    过渡期治理手工载体，物理在顶层 skills/
-│   ├── open-questions.md          开放问题工作记忆，物理在顶层 OPEN-QUESTIONS.md
-│   └── static/                    静态档，审计链存档
 │
 ├── state/                         早期任务投影位，逻辑归 sih/state/plan，归位待迁移
 ├── src/                           源代码
@@ -106,7 +106,7 @@ tmp 与 target 为临时与构建区，不入节点树，清理纪律由后续�
 
 ### 围堰物理对应与归位映射 {#cofferdam-mapping}
 
-围堰期治理能力外切于 sih-tools，逻辑节点与物理载体经下列五件对应。本节是融回迁移的基准，即迁移动作按对应执行，不由实施批重推。
+围堰期治理能力外切于 sih-tools，逻辑节点与物理载体经下列对应。本节是融回迁移的基准，即迁移动作按对应执行，不由实施批重推。两态判定判据为消费完成度即签与结算人节点过为消费完成归事件层，未过即退役待审归状态层。
 
 sih/event/trail
 : 物理载体 sih-tools/scribe/trail 即书简围堰，归位动作融回迁移且历史行不改写
@@ -121,19 +121,22 @@ sih/state/graph
 : 物理载体 doc/CASCADE.json，归位动作迁移至 sih/state/graph
 
 sih/state/plan
-: 物理载体顶层 state/tasks 早期位加 sih/state/plan 现位，归位动作归并至 sih/state/plan
+: 物理载体顶层 state/tasks 早期位加顶层 task-packages/ 现位即活跃与待签批的包与结果档加 README 与 TEMPLATE，归位动作归并迁入
 
-sih/task-packages
-: 物理载体顶层 task-packages/ 即 T6 批次过程件，归位动作迁入 sih/
+sih/event/plan
+: 物理载体顶层 task-packages/ 即签毕批的包与结果档，归位动作按签或结算证据逐 stem 核验后迁入，旧 event-stream 包同迁，名随源不加内容改名
 
 sih/state/parking
 : 物理载体顶层 parking/ 即在泊材料件，归位动作迁入 sih/state/
 
-sih/skills
-: 物理载体顶层 skills/ 即过渡期治理手工状态，归位动作迁入 sih/，组件实装后降回辅助
+sih/state/skills
+: 物理载体顶层 skills/ 即过渡期治理手工状态，归位动作迁入 sih/state/，组件实装后降回辅助
 
-sih/open-questions.md
-: 物理载体顶层 OPEN-QUESTIONS.md 即工作记忆，归位动作迁入 sih/
+sih/state/open-questions.md
+: 物理载体顶层 OPEN-QUESTIONS.md 即工作记忆，归位动作迁入 sih/state/
+
+sih/event/audit
+: 物理载体 sih/static/audit 即审计链存档，归位动作迁入 sih/event/
 
 归位三原则。第一事件只追加即 trail 历史行不改写，迁移复制不搬改。第二旧路径不失效即历史记录与外部引用里的旧路径经本节解析到归位后节点，痕迹对账以本节为基准。第三迁移动作本身走批留痕即每次归位是一个治理批次，非静默搬移。
 
@@ -353,3 +356,5 @@ sih/open-questions.md
 2026-08-26 修订二：围堰期物理节点收编入树即 AGENTS.md、doc/research、doc/CASCADE.json、sih/static、task-packages、skills、parking、OPEN-QUESTIONS.md、state、tests 对齐 Cargo 约定、examples、fixtures、probes，tools 标注物理围堰于外仓 sih-tools，requirement 登记为待建空节点，tmp 与 target 不入树。新增围堰物理对应与归位映射节即五件对应与归位三原则。承用户结构债即过令即等融回则路径引用与痕迹对账失去基准。修订不改文档名与既有编号，承文件名不可变约束。
 
 2026-08-26 修订三：四件归位判定承用户裁定即消费模式判据跑全，task-packages 判进治理区批次过程件，parking 判进状态层在泊投影，OPEN-QUESTIONS 判进治理区工作记忆，skills 判进治理区即过渡期治理手工状态随组件实装降回辅助。树内四件由顶层收编细化为移入 sih 子树，物理位仍在顶层经映射表声明，物理搬移归归位批。映射表由五件扩九件。
+
+2026-08-26 修订四：两态归属全量判定承用户裁定。一即消费完成度判据入文，签与结算人节点过即消费完成归事件层，未过即退役待审归状态层。二即 task-packages 两段两态，活跃与待签批归 sih/state/plan 即 README 与 TEMPLATE 随行，签毕批归 sih/event/plan，名随源不加内容改名即不立 task-package-archive 名。三即 skills 归 sih/state/skills 承过渡期治理手工状态裁定。四即 open-questions 归 sih/state 工作记忆。五即 static 之 audit 判事件层归档即 sih/event/audit。修订三所列 sih 根下独立节点行由此全部细化归层，映射表十件。
