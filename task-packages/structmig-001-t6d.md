@@ -73,7 +73,7 @@
 
 - sih-engine/task-packages/structmig-001-t6d.md
 - sih-engine/task-packages/structmig-001-t6d-results.md
-- sih-engine/task-packages 即全部迁移件
+- sih-engine/task-packages/
 - sih-engine/state/
 - sih-engine/sih/
 - sih-engine/skills/
