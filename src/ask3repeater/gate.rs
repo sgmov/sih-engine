@@ -29,6 +29,7 @@ pub fn intent_event_input(record: &OutputRecord, actor: Actor) -> Result<EventIn
         doc_id: record.session_id.clone(),
         prev_hash: None,
         event_class: Some(INTENT_EVENT_CLASS.into()),
+        verification_result: None,
     })
 }
 
