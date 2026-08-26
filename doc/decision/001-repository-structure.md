@@ -14,6 +14,7 @@
 
 - 文档区与治理区按消费模式分界，源码、测试、工具按工程职责分界::[顶层节点分界](#root-node-boundary)
 - 节点树表达逻辑节点关系，不决策物理存储方式::[全节点树](#full-node-tree)
+- 围堰期物理节点收编入树，逻辑与物理的对应经映射表声明，融回迁移不改写痕迹::[围堰物理对应与归位映射](#cofferdam-mapping)
 - 文档区按文档类型组织，体系定义作为设计子节点存在::[文档区结构](#doc-area-structure)
 - 治理区按事件与状态本体二分::[治理区结构](#sih-structure)
 - 挑战与报告归治理区，涵盖消费模式判据::[挑战和报告归治理区](#challenges-reports)
@@ -61,33 +62,68 @@
 
 ````filetree
 sih-engine/
+├── AGENTS.md                      代理引导层，引擎域指令
 ├── doc/                           被持续引用的活跃文档，人类直接查阅
-│   ├── requirement/               需求/意图   REQ-NNN-slug
+│   ├── requirement/               需求/意图   REQ-NNN-slug，物理待建
 │   ├── decision/                  决策文档    DEC-NNN-slug
 │   ├── design/                    技术设计    DES-NNN-slug
 │   │   └── architecture/          体系定义    ARC-NNN-slug
 │   ├── spec/                      规格定义    SPEC-NNN-slug
 │   ├── governance/                规约        GOV-NNN-slug
 │   ├── knowledge/                 知识库      KNOW-NNN-slug
-│   └── proposal/                  提案        PRO-NNN-slug
+│   ├── research/                  研究记录    日期命名，非编号族
+│   ├── proposal/                  提案        PRO-NNN-slug
+│   └── CASCADE.json               级联关系投影，逻辑归 sih/state/graph
 │
 ├── sih/                           司衡引擎治理层，治理过程与痕迹
 │   ├── event/                     事件层（发生过的事件，只追加写）
-│   │   ├── trail/                 治理动作留痕    治理主体动作的时序记录
-│   │   ├── feedback/              反哺信号        工程层对哲学层的张力登记
-│   │   ├── challenge/             挑战记录        外部对治理对象的质疑
-│   │   └── report/                审查报告        检验事件产出
-│   └── state/                     状态层（当前投影）
-│       ├── registry/              文档身份与状态登记
-│       ├── graph/                 文档关系投影
-│       ├── view/                  派生视图，从 registry 与 event 合成
-│       ├── plan/                  待执行意图的当前编排投影
-│       └── calibration/           参验机制的标定基准集
+│   │   ├── trail/                 治理动作留痕，物理围堰于 sih-tools/scribe/trail
+│   │   ├── feedback/              反哺信号
+│   │   ├── challenge/             挑战记录
+│   │   └── report/                审查报告
+│   ├── state/                     状态层（当前投影）
+│   │   ├── registry/              文档身份与状态登记，物理待建
+│   │   ├── graph/                 文档关系投影，物理暂挂 doc/CASCADE.json
+│   │   ├── view/                  派生视图，物理待建
+│   │   ├── plan/                  待执行意图编排投影
+│   │   └── calibration/           参验机制标定基准集
+│   └── static/                    静态档，审计链存档
 │
+├── task-packages/                 治理任务包，T6 载体
+├── skills/                        引擎技能权威源，投影至工作区 .agents/skills
+├── parking/                       主线泊界材料件，名册在 doc/governance/PARKING-v1.md
+├── OPEN-QUESTIONS.md              开放问题工作记忆，消化后迁移
+├── state/                         早期任务投影位，逻辑归 sih/state/plan，归位待迁移
 ├── src/                           源代码
-├── test/                         测试
-└── tools/                        独立 CLI 工具
+├── tests/                         测试代码，Cargo 约定即 tests
+├── examples/                      Cargo 示例位，属源码域约定
+├── fixtures/                      测试夹具位
+├── probes/                        探针脚本位，测试支撑
+└── tools/                         独立 CLI 工具，物理围堰于外仓 sih-tools
 ````
+
+tmp 与 target 为临时与构建区，不入节点树，清理纪律由后续批承载。
+
+### 围堰物理对应与归位映射 {#cofferdam-mapping}
+
+围堰期治理能力外切于 sih-tools，逻辑节点与物理载体经下列五件对应。本节是融回迁移的基准，即迁移动作按对应执行，不由实施批重推。
+
+sih/event/trail
+: 物理载体 sih-tools/scribe/trail 即书简围堰，归位动作融回迁移且历史行不改写
+
+状态层登记族
+: 物理载体 sih-tools/lease/ledger 即租约台账围堰，归位动作融回接引擎状态层登记
+
+tools 独立 CLI 工具
+: 物理载体外仓 sih-tools 即各工具契约持 CONTRACT.md，归位动作融回按贡献度逐件评估即位 sih-engine/tools 或独立发布
+
+sih/state/graph
+: 物理载体 doc/CASCADE.json，归位动作迁移至 sih/state/graph
+
+sih/state/plan
+: 物理载体顶层 state/tasks 早期位加 sih/state/plan 现位，归位动作归并至 sih/state/plan
+
+归位三原则。第一事件只追加即 trail 历史行不改写，迁移复制不搬改。第二旧路径不失效即历史记录与外部引用里的旧路径经本节解析到归位后节点，痕迹对账以本节为基准。第三迁移动作本身走批留痕即每次归位是一个治理批次，非静默搬移。
 
 ### 文档区结构 {#doc-area-structure}
 
@@ -297,3 +333,9 @@ sih-engine/
 ### 自反性结论 {#reflexive-conclusion}
 
 本文档经自检，未发现违反自身元规则的形态。但自检的边界明确：形式合规由 si-doclint 工具校验，内容自检由人审视。本节的存在本身是元原则的工程化体现，决策必须自证。
+
+## 修订记录 {#revisions}
+
+2026-08-25 修订一：随 000 文档格式与 001 仓库结构首立，即本决策初版。
+
+2026-08-26 修订二：围堰期物理节点收编入树即 AGENTS.md、doc/research、doc/CASCADE.json、sih/static、task-packages、skills、parking、OPEN-QUESTIONS.md、state、tests 对齐 Cargo 约定、examples、fixtures、probes，tools 标注物理围堰于外仓 sih-tools，requirement 登记为待建空节点，tmp 与 target 不入树。新增围堰物理对应与归位映射节即五件对应与归位三原则。承用户结构债即过令即等融回则路径引用与痕迹对账失去基准。修订不改文档名与既有编号，承文件名不可变约束。
