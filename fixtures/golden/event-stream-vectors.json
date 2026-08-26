@@ -1,0 +1,120 @@
+[
+  {
+    "class": "genesis",
+    "event": {
+      "actor": {
+        "actor_id": "scribegate",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "note": "genesis"
+      },
+      "doc_id": "vec-genesis",
+      "event_class": null,
+      "event_hash": "da6464824405205914387d1290b203ddcb8fbac80227853c4fca9f9412eb64dc",
+      "event_id": "00000000-0000-4000-8000-000000000001",
+      "event_type": "session_open",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "2026-08-27T00:00:00Z",
+      "verification_result": null
+    },
+    "expected_hash": "da6464824405205914387d1290b203ddcb8fbac80227853c4fca9f9412eb64dc",
+    "name": "vec-genesis"
+  },
+  {
+    "class": "details_null",
+    "event": {
+      "actor": {
+        "actor_id": "scribegate",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": null,
+      "doc_id": "vec-details-null",
+      "event_class": null,
+      "event_hash": "3d9907c6e04f0ffc7ecc31ffd97db9cb262a4e1a65a286817115898706ee714f",
+      "event_id": "00000000-0000-4000-8000-000000000002",
+      "event_type": "session_close",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "2026-08-27T00:00:01Z",
+      "verification_result": null
+    },
+    "expected_hash": "3d9907c6e04f0ffc7ecc31ffd97db9cb262a4e1a65a286817115898706ee714f",
+    "name": "vec-details-null"
+  },
+  {
+    "class": "optional_absent",
+    "event": {
+      "actor": {
+        "actor_id": "scribegate",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "task": "t"
+      },
+      "doc_id": "vec-optional",
+      "event_class": null,
+      "event_hash": "f2aa527bbbdcec03e921f540d1d7047f2bffa165c9ed723c5a23516927acdcba",
+      "event_id": "00000000-0000-4000-8000-000000000003",
+      "event_type": "task_completion",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "2026-08-27T00:00:02.500Z",
+      "verification_result": null
+    },
+    "expected_hash": "f2aa527bbbdcec03e921f540d1d7047f2bffa165c9ed723c5a23516927acdcba",
+    "name": "vec-optional"
+  },
+  {
+    "class": "non_ascii",
+    "event": {
+      "actor": {
+        "actor_id": "scribegate",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "词": "书简融回",
+        "路径": "副本/核阅"
+      },
+      "doc_id": "vec-非ASCII",
+      "event_class": "record_only",
+      "event_hash": "6e103a162a2264f77bf2fab628b6e798a2ac7a8dece5143f3c757cc7cc02c217",
+      "event_id": "00000000-0000-4000-8000-000000000004",
+      "event_type": "certification_completed",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "2026-08-27T00:00:03Z",
+      "verification_result": null
+    },
+    "expected_hash": "6e103a162a2264f77bf2fab628b6e798a2ac7a8dece5143f3c757cc7cc02c217",
+    "name": "vec-非ASCII"
+  },
+  {
+    "class": "timestamp_edge",
+    "event": {
+      "actor": {
+        "actor_id": "scribegate",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "entry_id": "vec-5"
+      },
+      "doc_id": "vec-ts-edge",
+      "event_class": "record_only",
+      "event_hash": "34bd0f12b2ff9d197d7c58f54731903f5956faf3dec577d12c9ae2205d82eb28",
+      "event_id": "00000000-0000-4000-8000-000000000005",
+      "event_type": "parking_entered",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": "2026-08-27T23:59:59.999999Z",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      }
+    },
+    "expected_hash": "34bd0f12b2ff9d197d7c58f54731903f5956faf3dec577d12c9ae2205d82eb28",
+    "name": "vec-ts-edge"
+  }
+]

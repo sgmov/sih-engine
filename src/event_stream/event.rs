@@ -94,6 +94,8 @@ pub struct EventInput {
     pub prev_hash: Option<String>,
     /// 可选事件分类，缺省 None 即不入分类字段，三问意图事件固定 record_only。
     pub event_class: Option<String>,
+    /// 可选校验结果，承 SPEC-006 报告消费入口透传，缺省 None。
+    pub verification_result: Option<JsonValue>,
 }
 
 impl Event {

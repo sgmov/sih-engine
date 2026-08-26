@@ -129,7 +129,7 @@ pub fn append(
         prev_hash: prev_hash.clone(),
         event_hash: String::new(), // 先占位，计算完再填
         event_class: input.event_class.clone(),
-        verification_result: None,
+        verification_result: input.verification_result.clone(),
     };
 
     let event_hash = compute_event_hash(&event);
@@ -223,6 +223,7 @@ mod tests {
             details: Some(serde_json::json!({"change_summary": "test"})),
             doc_id: "TEST-DOC".into(),
             prev_hash: None,
+            verification_result: None,
             event_class: None,
         }
     }
