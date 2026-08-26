@@ -62,4 +62,6 @@ SDD 即本批只出 DEC 与 SPEC 不写实现。TDD 即实现批每判据先写�
 - sih-engine/doc/spec/
 - sih-engine/sih/state/plan/mergeback-sdd-t6d.md
 - sih-engine/sih/state/plan/mergeback-sdd-t6d-results.md
+- sih-tools/lease/
+- sih-tools/nomenclator/
 - sih-tools/scribe/
