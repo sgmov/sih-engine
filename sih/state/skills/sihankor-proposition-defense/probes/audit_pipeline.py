@@ -20,7 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-# 5 个机械脚本路径（默认 sih-engine/skills/.../probes/）
+# 5 个机械脚本路径（默认 sih-engine/sih/state/skills/.../probes/）
 _PROBES_DIR = Path(__file__).resolve().parent
 
 SCRIPTS = {

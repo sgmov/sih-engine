@@ -51,8 +51,8 @@ schema 见 `methodology.yaml` 头部 `schema_doc` 注释。三层结构：每层
 
 ## 前置检查 {#precheck}
 
-1. `sih-engine/skills/sihankor-proposition-defense/probes/check_three_proposition_audit.py` 在
-2. `.agents/skills/sihankor-proposition-defense/` 投影存在（AGENTS.md 约定权威源在 sih-engine/skills/）
+1. `sih-engine/sih/state/skills/sihankor-proposition-defense/probes/check_three_proposition_audit.py` 在
+2. `.agents/skills/sihankor-proposition-defense/` 投影存在（AGENTS.md 约定权威源在 sih-engine/sih/state/skills/）
 3. 报告 / 命题文件路径已确定
 
 ## 执行流程 {#flow}
@@ -62,7 +62,7 @@ schema 见 `methodology.yaml` 头部 `schema_doc` 注释。三层结构：每层
 ### 1. 跑机械漏层检查 {#step-script}
 
 ```bash
-python sih-engine/skills/sihankor-proposition-defense/probes/check_three_proposition_audit.py <report.md> --json
+python sih-engine/sih/state/skills/sihankor-proposition-defense/probes/check_three_proposition_audit.py <report.md> --json
 ```
 
 输出 JSON：
@@ -147,7 +147,7 @@ self-check：方法学完整性。`probes/check_three_proposition_audit.py` 启�
 
 strict 模式。`--strict` 标记只表示"用严格态度审"，不改变覆盖逻辑（已要求 ≥ 1 命中）。严格语义留给 LLM + 用户定。
 
-跨仓使用。本 skill 在 sih-engine/skills/ 是权威源，跨工具投影到 .agents/skills/。两处内容须同步。
+跨仓使用。本 skill 在 sih-engine/sih/state/skills/ 是权威源，跨工具投影到 .agents/skills/。两处内容须同步。
 
 ## 与其他 skill 的分工 {#relation}
 
@@ -163,7 +163,7 @@ strict 模式。`--strict` 标记只表示"用严格态度审"，不改变覆盖
 - 方法学真源：`methodology.yaml`（v1，schema 含 definition / must_check / typical_misalignment / anchors）
 - 锚点表 3 层 × 中英文 5-10 关键词 / 层（从 yaml 读，不硬编码）
 - 测试：脚本 `--json` 退出码可机械校验，启动时校验 yaml 完整性
-- 跨工具投影：.agents/skills/sihankor-proposition-defense/ 是 symlink → ../../sih-engine/skills/sihankor-proposition-defense
+- 跨工具投影：.agents/skills/sihankor-proposition-defense/ 是实体文件投影即内容与权威源同步承 2026-08-25 裁定
 
 ### Baseline 漏层率（2026-08-16 跑）
 

@@ -22,7 +22,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 # 权重真源 = facet 仓 contribution_metric。本脚本跨仓引用之。
-# 路径：当前文件 = sih-engine/skills/sihankor-proposition-defense/probes/check_layer_proportion.py
+# 路径：当前文件 = sih-engine/sih/state/skills/sihankor-proposition-defense/probes/check_layer_proportion.py
 # 上溯 5 层 = 项目根 /Users/moc/workspaces/SiHankor/，再下到 sih-tools/facet/probes/
 _FACET_PROBES_DIR = Path(__file__).resolve().parent.parent.parent.parent.parent / "sih-tools" / "facet" / "probes"
 

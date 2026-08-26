@@ -21,7 +21,7 @@ from pathlib import Path
 
 
 # task-packages 目录（相对仓库根）
-TASK_PACKAGES_DIR = Path("task-packages")
+TASK_PACKAGES_DIR = Path("sih/state/plan")
 
 # 必填节（一级中文数字 §一-§七）
 REQUIRED_SECTIONS = [

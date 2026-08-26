@@ -5,7 +5,7 @@ description: "SiHankor T6-D 长程任务集群范式。Invoke when the user says
 
 # Skill: sihankor-t6d（T6-D 长程任务集群范式）
 
-T6-D 是工作流范式，即 Twin-agent 双子代理并行、Mainline 主线串行验证、Dependent 依赖收敛，不是任务编号。权威源为 sih-engine/task-packages/README.md 即范式与命名约定、task-packages/TEMPLATE.md 即任务包十节模板、ai-ex/T6-PARADIGMS.md 即四模式谱系与选择判据。本 skill 是调用契约，与权威源冲突时以权威源为准。
+T6-D 是工作流范式，即 Twin-agent 双子代理并行、Mainline 主线串行验证、Dependent 依赖收敛，不是任务编号。权威源为 sih-engine/sih/state/plan/README.md 即范式与命名约定、task-packages/TEMPLATE.md 即任务包十节模板、ai-ex/T6-PARADIGMS.md 即四模式谱系与选择判据。本 skill 是调用契约，与权威源冲突时以权威源为准。
 
 ## 触发时机 {#trigger}
 
@@ -21,7 +21,7 @@ T6-D 是工作流范式，即 Twin-agent 双子代理并行、Mainline 主线串
 
 一，主线编排。主 agent 分解任务为三类簇：并行簇即子代理可独立完成的件、主线簇即需完整上下文的最复杂件、依赖簇即须待验收后串行执行的件。
 
-二，先写任务包再动手。落 task-packages/「主题-t6d.md」，按 TEMPLATE 十节，问题陈述、关键设计、工作清单按簇、可证伪条件即 F 锚定必须在跑前立文、必读文件、约束、验收标准、风险、范式偏离声明、关联文件。命名为主题前缀加 t6d 后缀，T6D-XX 作为编号用法是 README 已纠正的历史误用，不新用。
+二，先写任务包再动手。落 sih/state/plan/「主题-t6d.md」，按 TEMPLATE 十节，问题陈述、关键设计、工作清单按簇、可证伪条件即 F 锚定必须在跑前立文、必读文件、约束、验收标准、风险、范式偏离声明、关联文件。命名为主题前缀加 t6d 后缀，T6D-XX 作为编号用法是 README 已纠正的历史误用，不新用。
 
 三，派双子代理。经 Agent 工具后台并行派发，一代理领一个并行簇。派发提示词自包含，即任务包的问题陈述、必读文件、该簇工作清单、约束、相关 F 锚定的原文，子代理只凭包内容跑，不依赖主会话上下文。
 

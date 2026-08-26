@@ -70,7 +70,7 @@ sih 不取代隐式映射。隐式映射覆盖自然语言意图场景，由 age
 
 ## 跨工具层定位 {#cross-tool-layer}
 
-权威源在 sih-engine/skills/sihankor-slash-trigger/，通过 symlink 投影到 .agents/skills/ 跨工具发现层。任何默认扫描 .agents/skills/ 的 agent 框架都加载本 skill，不限于单一框架。scripts/ 目录含 gather_identity.sh，用于采集 client 端 identity 提交 MCP server。
+权威源在 sih-engine/sih/state/skills/sihankor-slash-trigger/，通过 symlink 投影到 .agents/skills/ 跨工具发现层。任何默认扫描 .agents/skills/ 的 agent 框架都加载本 skill，不限于单一框架。scripts/ 目录含 gather_identity.sh，用于采集 client 端 identity 提交 MCP server。
 
 ## 关键元层命题 {#meta}
 

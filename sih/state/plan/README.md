@@ -1,6 +1,8 @@
-# task-packages/ — sih-engine 治理任务包目录
+# sih/state/plan/ — sih-engine 活跃任务包目录
 
-> 范式与命名约定（2026-08-17 立）
+> 范式与命名约定（2026-08-17 立，2026-08-26 归位批迁入 sih/state/plan）
+
+两态布局承 DEC-001 修订四：本目录载活跃与待签批任务包即消费完成度未过件，签毕批归档在 sih/event/plan/ 即签与结算人节点过件，判据为消费完成度。
 
 ## 范式：T6-D 双子代理 + 主线串行验证
 
@@ -48,10 +50,7 @@
 
 ## 现有任务包
 
-| 任务包 | 范式 | 状态 |
-|---|---|---|
-| `mechanism-scripts-t6d.md` | T6-D | ✅ 完成（5 脚本 + B1 + B2） |
-| `mechanism-scripts-t6d-results.md` | T6-D | ✅ 完成 |
+活跃与待签批在本目录，签毕批在 sih/event/plan/ 名随源不加内容改名。逐 stem 分类证据见 structmig-001-t6d 任务包即已签文档与根 AGENTS 已裁条目与用户令本体三类。
 
 ## 与 commit message 的关系
 

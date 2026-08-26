@@ -42,5 +42,5 @@ description: "Calculus concept retrieval for SiHankor. Invoke when reasoning inv
 
 本 skill 只提供数学推理工具的检索路径，不产出数学命题的新推导。微积分仓的条目内容由人类决策者建设，AI 只检索与加载。
 
-Base directory for this skill: /Users/moc/workspaces/SiHankor/sih-engine/skills/sihankor-calculus-trigger
+Base directory for this skill: /Users/moc/workspaces/SiHankor/sih-engine/sih/state/skills/sihankor-calculus-trigger
 Relative paths in this skill are relative to this base directory.
