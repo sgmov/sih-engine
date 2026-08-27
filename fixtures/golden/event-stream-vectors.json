@@ -3,7 +3,7 @@
     "class": "genesis",
     "event": {
       "actor": {
-        "actor_id": "scribegate",
+        "actor_id": "scribe",
         "actor_type": "system",
         "invoked_via": "cli"
       },
@@ -12,42 +12,42 @@
       },
       "doc_id": "vec-genesis",
       "event_class": null,
-      "event_hash": "da6464824405205914387d1290b203ddcb8fbac80227853c4fca9f9412eb64dc",
+      "event_hash": "2335080e24d6499938f8fd5ba1f565421848f51b366c4faa5d43f668612a6e3a",
       "event_id": "00000000-0000-4000-8000-000000000001",
       "event_type": "session_open",
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "timestamp": "2026-08-27T00:00:00Z",
       "verification_result": null
     },
-    "expected_hash": "da6464824405205914387d1290b203ddcb8fbac80227853c4fca9f9412eb64dc",
+    "expected_hash": "2335080e24d6499938f8fd5ba1f565421848f51b366c4faa5d43f668612a6e3a",
     "name": "vec-genesis"
   },
   {
     "class": "details_null",
     "event": {
       "actor": {
-        "actor_id": "scribegate",
+        "actor_id": "scribe",
         "actor_type": "system",
         "invoked_via": "cli"
       },
       "details": null,
       "doc_id": "vec-details-null",
       "event_class": null,
-      "event_hash": "3d9907c6e04f0ffc7ecc31ffd97db9cb262a4e1a65a286817115898706ee714f",
+      "event_hash": "1536f09f6deaf9f2b899b38994669f4b55aaa4fc1ea891e77fb773165e44e73b",
       "event_id": "00000000-0000-4000-8000-000000000002",
       "event_type": "session_close",
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "timestamp": "2026-08-27T00:00:01Z",
       "verification_result": null
     },
-    "expected_hash": "3d9907c6e04f0ffc7ecc31ffd97db9cb262a4e1a65a286817115898706ee714f",
+    "expected_hash": "1536f09f6deaf9f2b899b38994669f4b55aaa4fc1ea891e77fb773165e44e73b",
     "name": "vec-details-null"
   },
   {
     "class": "optional_absent",
     "event": {
       "actor": {
-        "actor_id": "scribegate",
+        "actor_id": "scribe",
         "actor_type": "system",
         "invoked_via": "cli"
       },
@@ -56,21 +56,21 @@
       },
       "doc_id": "vec-optional",
       "event_class": null,
-      "event_hash": "f2aa527bbbdcec03e921f540d1d7047f2bffa165c9ed723c5a23516927acdcba",
+      "event_hash": "538a48d626991dda56e141b5768f9672d4a3f5d194281ccd5883efa81bffc8a5",
       "event_id": "00000000-0000-4000-8000-000000000003",
       "event_type": "task_completion",
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "timestamp": "2026-08-27T00:00:02.500Z",
       "verification_result": null
     },
-    "expected_hash": "f2aa527bbbdcec03e921f540d1d7047f2bffa165c9ed723c5a23516927acdcba",
+    "expected_hash": "538a48d626991dda56e141b5768f9672d4a3f5d194281ccd5883efa81bffc8a5",
     "name": "vec-optional"
   },
   {
     "class": "non_ascii",
     "event": {
       "actor": {
-        "actor_id": "scribegate",
+        "actor_id": "scribe",
         "actor_type": "system",
         "invoked_via": "cli"
       },
@@ -80,21 +80,21 @@
       },
       "doc_id": "vec-非ASCII",
       "event_class": "record_only",
-      "event_hash": "6e103a162a2264f77bf2fab628b6e798a2ac7a8dece5143f3c757cc7cc02c217",
+      "event_hash": "5de4410cd57c26c9e33e703c876d01a5cad7888528036f954d82edd61ad525a9",
       "event_id": "00000000-0000-4000-8000-000000000004",
       "event_type": "certification_completed",
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
       "timestamp": "2026-08-27T00:00:03Z",
       "verification_result": null
     },
-    "expected_hash": "6e103a162a2264f77bf2fab628b6e798a2ac7a8dece5143f3c757cc7cc02c217",
+    "expected_hash": "5de4410cd57c26c9e33e703c876d01a5cad7888528036f954d82edd61ad525a9",
     "name": "vec-非ASCII"
   },
   {
     "class": "timestamp_edge",
     "event": {
       "actor": {
-        "actor_id": "scribegate",
+        "actor_id": "scribe",
         "actor_type": "system",
         "invoked_via": "cli"
       },
@@ -103,7 +103,7 @@
       },
       "doc_id": "vec-ts-edge",
       "event_class": "record_only",
-      "event_hash": "34bd0f12b2ff9d197d7c58f54731903f5956faf3dec577d12c9ae2205d82eb28",
+      "event_hash": "3f1d9a872accd4ee83e5bb4ce3200ffe84dfe53ba44cc53cdd3076495f6a3ae7",
       "event_id": "00000000-0000-4000-8000-000000000005",
       "event_type": "parking_entered",
       "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -114,7 +114,7 @@
         "total": 0
       }
     },
-    "expected_hash": "34bd0f12b2ff9d197d7c58f54731903f5956faf3dec577d12c9ae2205d82eb28",
+    "expected_hash": "3f1d9a872accd4ee83e5bb4ce3200ffe84dfe53ba44cc53cdd3076495f6a3ae7",
     "name": "vec-ts-edge"
   }
 ]

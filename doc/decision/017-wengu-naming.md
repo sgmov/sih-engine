@@ -7,7 +7,7 @@
 - 命名集五件即温故、retriever、代号不设、展示名不设、项目记忆反向锚点::[命名集](#naming-set)
 - 术语裁定即英文对为仓内正名，工程代码标识符说法弃用::[术语裁定](#terminology)
 - 三问补全即英文对归位 Ask3Repeater 承旧仓 DEC-035，宿主名经撤gate批改裸英文对::[三问补全](#ask3-supplement)
-- 宿主名撤 gate 后缀改裸英文对即 retriever 与 ask3repeater，scribegate 另议待人签::[宿主家族](#gate-family)
+- 书简宿主错名 scribegate 回滚为本名 scribe 即司衡引擎决策错误的首个回滚实例::[宿主家族](#gate-family)
 - 血统档死因收录即司忆与英文四件与 memgate::[血统档](#lineage)
 
 ## 命名集 {#naming-set}
@@ -37,7 +37,7 @@ DEC-006 承接旧仓 DEC-035 五件套时沿用其槽位说法，本批归位：
 
 ## 宿主家族 {#gate-family}
 
-宿主名即组件英文对裸名，模块与宿主同名同源自组件一家。现役即三问宿主 ask3repeater 与温故宿主 retriever，书简宿主 scribegate 暂名待撤。本节原宿主家族公式条款系无令源铸入即未签规范，随撤gate批撤除并记越权账，撤gate令源在用户 2026-08-28 裁定原文。scribegate 因撞退役工具仓 scribe 之名另议待人签，候选名随物走承 DEC-013。
+宿主名即组件英文对裸名，模块与宿主同名同源自组件一家。现役三件即三问宿主 ask3repeater、温故宿主 retriever、书简宿主 scribe。书简宿主错名 scribegate 系切换批承 ask3gate 先例铸入的决策错误，本名 scribe 承 DEC-004 名随物走即写入位迁引擎时名应随行，回滚裁定承用户 2026-08-28 令即错名认领与本名回归，为 DEC-015 判据二回滚点账本的首个活实例，错名出生证供保全即 SPEC-006 承先例行与出生批提交不改写。
 
 ## 血统档 {#lineage}
 
@@ -72,3 +72,5 @@ v1 于 2026-08-28 承用户签令随立名批 wengunaming-t6d 落盘。修订须
 ## 修订记录 {#revisions}
 
 2026-08-28 修订一：承用户撤gate令。原宿主家族节公式条款系无令源铸入即未签规范，撤除；宿主名改裸英文对即 retriever 与 ask3repeater；越权账与权源缺口随批落结果档；scribegate 另议待人签。
+
+2026-08-28 修订二：承用户回滚裁定令即 scribegate 是错名本名就是 scribe，非立新名而是回滚。错名出生即切换批承 ask3gate 先例铸入，本名承 DEC-004 名随物走。本批为司衡引擎决策错误的首个回滚实例，回滚点在 DEC-015 判据二账本可指。actor 归属随批改 scribe 即未来链事件署名本名，存量事件 actor 保持错名如实即历史不改写，金向量随 actor 重冻即新基线自本批起算。
