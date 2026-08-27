@@ -15,14 +15,14 @@ mod tdd {
 
     fn actor() -> Actor {
         Actor {
-            actor_id: "scribegate".to_string(),
+            actor_id: "scribe".to_string(),
             actor_type: ActorType::System,
             invoked_via: "cli".to_string(),
         }
     }
 
     fn temp_trail(tag: &str) -> PathBuf {
-        let dir = std::env::temp_dir().join(format!("scribegate-{tag}-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("scribe-{tag}-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
         dir.join("trail.ndjson")
     }
@@ -174,20 +174,20 @@ mod tdd {
         drop(load_events(&trail).unwrap());
     }
 
-    // T6 scribegate 退出码三值。
+    // T6 scribe 退出码三值即本名回滚后。
     #[test]
-    fn t6_scribegate_exit_codes() {
+    fn t6_scribe_exit_codes() {
         let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribegate");
+        let bin = manifest.join("target/debug/scribe");
         if !bin.exists() {
-            panic!("scribegate 未构建");
+            panic!("scribe 未构建");
         }
         let trail = temp_trail("cli");
         let _ = std::fs::remove_file(&trail);
         let ok = Command::new(&bin).args(["verify", "--trail", "/nonexistent.ndjson"]).output().unwrap();
         assert_eq!(ok.status.code(), Some(2), "trail 不存在即工具异常二");
         let report = json!({"engine": {"name": "f", "version": "0"}, "packs": [], "content_hashes": {}, "findings": [], "golden_baseline": "0", "tool": {"name": "f", "version": "0"}}).to_string();
-        let rpath = std::env::temp_dir().join(format!("scribegate-rep-{}.json", std::process::id()));
+        let rpath = std::env::temp_dir().join(format!("scribe-rep-{}.json", std::process::id()));
         std::fs::write(&rpath, &report).unwrap();
         let good = Command::new(&bin).args(["append", "--report", rpath.to_str().unwrap(), "--exit-code", "0", "--trail", trail.to_str().unwrap()]).output().unwrap();
         assert_eq!(good.status.code(), Some(0), "写入成功零");

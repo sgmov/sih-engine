@@ -1,4 +1,4 @@
-//! scribegate 即书简融回命令行面，承接 SPEC-006#boundary 与 T6。
+//! scribe 即书简融回命令行面即本名回滚承 DEC-017 修订二，承接 SPEC-006#boundary 与 T6。
 //!
 //! 子命令五件即 append、verify、query、intent、park，另携 vectors 冻结向量集。
 //! 退出码三值即零成功、一校验或检索异常、二工具自身异常。
@@ -15,7 +15,7 @@ use std::process::exit;
 
 fn gate_actor() -> Actor {
     Actor {
-        actor_id: "scribegate".to_string(),
+        actor_id: "scribe".to_string(),
         actor_type: ActorType::System,
         invoked_via: "cli".to_string(),
     }
@@ -179,7 +179,7 @@ fn main() {
             emit(json!({"status": "written", "count": vectors.as_array().map(|a| a.len()).unwrap_or(0)}), 0);
         }
         _ => emit(
-            json!({"error": "用法 scribegate <append|verify|query|intent|park|vectors> --trail <路径>"}),
+            json!({"error": "用法 scribe <append|verify|query|intent|park|vectors> --trail <路径>"}),
             2,
         ),
     }
@@ -189,7 +189,7 @@ fn golden_vectors() -> serde_json::Value {
     use chrono::{DateTime, Utc};
     use sih_engine::event_stream::event::{Actor, ActorType, Event};
     let base_actor = || Actor {
-        actor_id: "scribegate".to_string(),
+        actor_id: "scribe".to_string(),
         actor_type: ActorType::System,
         invoked_via: "cli".to_string(),
     };
