@@ -9,7 +9,7 @@
 - 三轴语义即主题轴走寻址词查询条目级、事件轴走库内 query 位、时间轴按东八区日界含即含::[轴语义落差](#axes)
 - ref 补钉即无行位 json 载体记路径加条目稳定标识，机械回验走寻址按标识直取::[ref 形态补钉](#ref-pin)
 - 排序机械即档序固定档内文件载体先事件载体后，输出无评分无建议::[确定性与排序](#determinism)
-- 组件边界即库面落 src/retriever 与命令面落 src/bin/retrievergate.rs，事件轴底座库内直调不走子进程::[组件边界](#boundary)
+- 组件边界即库面落 src/retriever 与命令面落 src/bin/retriever.rs，事件轴底座库内直调不走子进程::[组件边界](#boundary)
 - 测试计划十组即 F-1 至 F-8 加边界与拦面单测，红态即入口建桩未实现::[测试计划](#tdd)
 - 已知缺陷登记即寻址 core 包全仓构建段错误，本批窄域包绕开修复归另批::[缺陷登记](#defects)
 
@@ -57,7 +57,7 @@ excerpt 即条目 text 逐字，事件载体即事件紧凑序列化逐字，上
 
 库面即 src/retriever 模块，入口函数接收根路径与参数组返回切面行序列，根定位由命令面承担即从当前目录上溯找 sih-engine 与 sih-tools 并存的目录层，找不到退出码二。事件轴底座即库内直调 event_stream 的 query 位。主题轴底座即子进程只读调用寻址即 uv run --project 寻址目录，缺席或失败映射退出码二报缺席件名 locator。
 
-命令面即 src/bin/retrievergate.rs 新二元，宿主名随 DEC-017 温故立名由 memgate 改 retrievergate 承 gate 家族惯例，本句旧名记述保留为修订史。子命令 recall 参数七件随 SPEC-007 冻结，输出走标准输出或 --out 文件。库面无 CLI 耦合即记忆模块不依赖 std::env。
+命令面即 src/bin/retriever.rs 新二元，宿主名经 DEC-017 立名与修订一两跳由 memgate 经 retrievergate 改裸名 retriever 承撤gate令，本句旧名记述保留为修订史。子命令 recall 参数七件随 SPEC-007 冻结，输出走标准输出或 --out 文件。库面无 CLI 耦合即记忆模块不依赖 std::env。
 
 ## 测试计划 {#tdd}
 
@@ -107,4 +107,4 @@ F-10 包档一致
 
 ## 版本与固定 {#version}
 
-v1.2 于 2026-08-28 即 DEC-017 温故立名连带即组件名与模块路径与宿主名改写，窄域包路径 sih-tools/locator/packs/memory/pack.json 属寻址侧命名不动，语义零改。v1 于 2026-08-27 随实装批 mem-impl-t6d 落盘。2026-08-27 修订一即出处分隔符统一为 at 记号，md 载体 ref 由路径:行区间改路径@行区间，承用户直觉令与 facet 双向测量即 m-refsep 刀锋与 m-refsep-inv 接近临界两形皆无规约违反、歧义归人偏好由用户定 @，事件载体 ref 形态不动，随 pk024exit 批落码。落差补钉修订须走修订记录留痕，破冻显式可见。
+v1.3 于 2026-08-28 即 DEC-017 修订一撤gate连带即宿主名改裸英文对。v1.2 于 2026-08-28 即 DEC-017 温故立名连带即组件名与模块路径与宿主名改写，窄域包路径 sih-tools/locator/packs/memory/pack.json 属寻址侧命名不动，语义零改。v1 于 2026-08-27 随实装批 mem-impl-t6d 落盘。2026-08-27 修订一即出处分隔符统一为 at 记号，md 载体 ref 由路径:行区间改路径@行区间，承用户直觉令与 facet 双向测量即 m-refsep 刀锋与 m-refsep-inv 接近临界两形皆无规约违反、歧义归人偏好由用户定 @，事件载体 ref 形态不动，随 pk024exit 批落码。落差补钉修订须走修订记录留痕，破冻显式可见。
