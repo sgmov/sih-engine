@@ -1,11 +1,11 @@
-//! memgate 即项目记忆宿主命令面，承接 SPEC-007#interface-signature 与 SPEC-008#boundary。
+//! retrievergate 即温故宿主命令面，承接 SPEC-007#interface-signature 与 SPEC-008#boundary。
 //!
 //! 子命令单件 recall，参数七件即 topic 与 event 与 since 与 until 与 archive 与 at 与 out，
 //! 退出码三值即零成功一拦二异常。根定位从当前目录上溯，不读系统钟。
 
 use std::path::PathBuf;
 
-use sih_engine::memory::{derive_root, exit_code, recall, rows_to_ndjson, write_output, RecallArgs};
+use sih_engine::retriever::{derive_root, exit_code, recall, rows_to_ndjson, write_output, RecallArgs};
 
 fn fail(message: &str, code: i32) -> ! {
     eprintln!("{{\"error\": \"{message}\"}}");
@@ -15,7 +15,7 @@ fn fail(message: &str, code: i32) -> ! {
 fn main() {
     let argv: Vec<String> = std::env::args().skip(1).collect();
     if argv.first().map(|s| s.as_str()) != Some("recall") {
-        fail("用法 memgate recall --topic 词 --event 记号 --since 日期 --until 日期 --archive 档名 --at 日期 --out 路径", 2);
+        fail("用法 retrievergate recall --topic 词 --event 记号 --since 日期 --until 日期 --archive 档名 --at 日期 --out 路径", 2);
     }
     let mut topics: Vec<String> = Vec::new();
     let mut events: Vec<String> = Vec::new();

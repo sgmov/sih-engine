@@ -30,7 +30,7 @@ fn main() {
     }
     let record_path = match record_path {
         Some(path) => path,
-        None => emit(&serde_json::json!({"error": "用法：ask3gate <记录.json> --root <工作区根>"}), 2),
+        None => emit(&serde_json::json!({"error": "用法：ask3repeatergate <记录.json> --root <工作区根>"}), 2),
     };
     let root = match root {
         Some(path) => path,

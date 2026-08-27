@@ -67,7 +67,7 @@ pub fn sort_rows(rows: &mut [FacetRow]) {
 mod tests {
     use super::*;
     use crate::event_stream::event::{Actor, ActorType};
-    use crate::memory::{Archive, Axis, RecallError};
+    use crate::retriever::{Archive, Axis, RecallError};
     use serde_json::json;
 
     /// F-9 截断即超限截断附三句点与限内原样。
@@ -145,7 +145,7 @@ mod tests {
     /// 退出码映射即拦一异常二。
     #[test]
     fn f9_exit_code_mapping() {
-        use crate::memory::exit_code;
+        use crate::retriever::exit_code;
         assert_eq!(exit_code(&RecallError::Blocked("x".into())), 1);
         assert_eq!(exit_code(&RecallError::MissingBase("locator".into())), 2);
         assert_eq!(exit_code(&RecallError::TargetUnreadable("t".into())), 2);
