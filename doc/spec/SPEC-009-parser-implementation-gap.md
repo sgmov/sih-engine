@@ -103,3 +103,5 @@ F-8 退出码三值与只读面
 ## 版本与固定 {#version}
 
 v1 于 2026-08-28 随落差规格批 judousdd-t6d 落盘。修订须走本节逐条留痕，破冻显式可见。
+
+2026-08-28 修订一：随句读实现批 judouimpl-parallel 落盘。承实现发现即冻结 schema 表达不了 json 与 markdown 载体对表，扩展如下。tokens 表元增可选 text 即数据驱动解码形，含 dequote 与 unescape 表与 u4 四位十六进制含代理对。mapping 表元 name_from 增两对象形：path 即键段点连加 element_rules 所列元素规则序号缀的路径合成，join_tokens 即连名叶取名。text_form 增四对象形：scalar_text 取末子标量、raw_lines 去首尾行可带 strip_prefix 逐行剥前缀、join_tokens 连名叶、join_rules 连名规则区间原文可带 strip_prefix 与 line_strip_max 逐行剥前缀与限深空白。另增可选 lines 枚举 node 与 null 即行位可置空。记号与规则节点增字符区间即 start 与 end 供区间原文。carrier 定为语言包所在目录之称，对表两包即 markdown 与 json 承寻址载体字符串。旗标名冻结即 parse --pack --in 与 entries --pack --in --out 与 lint --pack 与 vectors --pack 可加 --freeze。
