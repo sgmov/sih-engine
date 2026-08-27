@@ -8,7 +8,7 @@ use std::path::{Path, PathBuf};
 use serde_json::Value;
 
 use sih_engine::event_stream::{query as chain_query, EventFilter};
-use sih_engine::memory::{
+use sih_engine::retriever::{
     derive_root, load_chain, locator_bridge, recall, rows_to_ndjson, Archive, RecallArgs,
     RecallError,
 };
@@ -212,7 +212,7 @@ fn f8_degradation_names_missing_base() {
     })
     .unwrap_err();
     assert!(matches!(&err, RecallError::MissingBase(name) if name.contains("locator")), "缺席件名 {err:?}");
-    assert_eq!(sih_engine::memory::exit_code(&err), 2);
+    assert_eq!(sih_engine::retriever::exit_code(&err), 2);
 
     let root_b = tmp.path().join("no-trail");
     std::fs::create_dir_all(root_b.join("sih-tools/locator")).unwrap();
@@ -227,7 +227,7 @@ fn f8_degradation_names_missing_base() {
     })
     .unwrap_err();
     assert!(matches!(&err, RecallError::TargetUnreadable(p) if p.contains("trail")), "缺席件名 {err:?}");
-    assert_eq!(sih_engine::memory::exit_code(&err), 2);
+    assert_eq!(sih_engine::retriever::exit_code(&err), 2);
 
     assert_eq!(std::fs::read(&sentinel).unwrap(), before, "五档载体原样无损");
 }
@@ -244,7 +244,7 @@ fn f10_pack_archive_consistency() {
         if v.get("type").and_then(|t| t.as_str()) == Some("file") {
             let path = v.get("path").and_then(|p| p.as_str()).expect("文件记录带路径");
             assert!(
-                sih_engine::memory::archives::classify_path(path).is_some(),
+                sih_engine::retriever::archives::classify_path(path).is_some(),
                 "包内路径不可归档：{path}"
             );
             file_count += 1;

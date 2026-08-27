@@ -53,7 +53,7 @@ fn pack_path(root: &Path) -> PathBuf {
 }
 
 fn index_path() -> PathBuf {
-    std::env::temp_dir().join(format!("memgate-index-{}.ndjson", std::process::id()))
+    std::env::temp_dir().join(format!("retrievergate-index-{}.ndjson", std::process::id()))
 }
 
 /// 建索引于系统临时目录不落工作区，缺席或失败映射 MissingBase 即报缺席件名 locator。

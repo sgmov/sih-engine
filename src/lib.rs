@@ -7,7 +7,7 @@
 
 pub mod ask3repeater;
 pub mod event_stream;
-pub mod memory;
+pub mod retriever;
 
 // Re-export the public API
 pub use ask3repeater::{
