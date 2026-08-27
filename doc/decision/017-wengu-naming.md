@@ -6,8 +6,8 @@
 
 - 命名集五件即温故、retriever、代号不设、展示名不设、项目记忆反向锚点::[命名集](#naming-set)
 - 术语裁定即英文对为仓内正名，工程代码标识符说法弃用::[术语裁定](#terminology)
-- 三问补全即英文对归位 Ask3Repeater 承旧仓 DEC-035，宿主名随批改 ask3repeatergate 即家族公式统一::[三问补全](#ask3-supplement)
-- gate 宿主家族惯例登记三件即 ask3gate、scribegate、retrievergate::[宿主家族](#gate-family)
+- 三问补全即英文对归位 Ask3Repeater 承旧仓 DEC-035，宿主名经撤gate批改裸英文对::[三问补全](#ask3-supplement)
+- 宿主名撤 gate 后缀改裸英文对即 retriever 与 ask3repeater，scribegate 另议待人签::[宿主家族](#gate-family)
 - 血统档死因收录即司忆与英文四件与 memgate::[血统档](#lineage)
 
 ## 命名集 {#naming-set}
@@ -33,11 +33,11 @@
 
 ## 三问补全 {#ask3-supplement}
 
-DEC-006 承接旧仓 DEC-035 五件套时沿用其槽位说法，本批归位：三问英文对为 Ask3Repeater，承旧仓 2026-07-25 用户签收的完整推导即三问报时表机芯典源；ASK3 维持内部代号即仅用于 trail 与日志字段；宿主二进制名随批由 ask3gate 改为 ask3repeatergate，词根由代号小写形态归英文对，承用户 2026-08-28 改名令。ask3gate 出生于三问首落 src 批即既成事实，本批不以既成事实豁免处治，处治形态即改名归公式而非补册特例，旧名入死档。
+DEC-006 承接旧仓 DEC-035 五件套时沿用其槽位说法，本批归位：三问英文对为 Ask3Repeater，承旧仓 2026-07-25 用户签收的完整推导即三问报时表机芯典源；ASK3 维持内部代号即仅用于 trail 与日志字段；宿主二进制名先由 ask3gate 改 ask3repeatergate 承同日改名令，旋经撤gate批改裸名 ask3repeater 承用户 2026-08-28 撤gate令，旧名两枚入死档。
 
 ## 宿主家族 {#gate-family}
 
-gate 后缀宿主名惯例登记三件：ask3repeatergate 即三问宿主、scribegate 即书简宿主、retrievergate 即温故宿主。公式即组件英文对加 gate，统一无特例，宿主名属工程命名不入治理名册，新宿主随组件落位循此公式。
+宿主名即组件英文对裸名，模块与宿主同名同源自组件一家。现役即三问宿主 ask3repeater 与温故宿主 retriever，书简宿主 scribegate 暂名待撤。本节原宿主家族公式条款系无令源铸入即未签规范，随撤gate批撤除并记越权账，撤gate令源在用户 2026-08-28 裁定原文。scribegate 因撞退役工具仓 scribe 之名另议待人签，候选名随物走承 DEC-013。
 
 ## 血统档 {#lineage}
 
@@ -47,7 +47,7 @@ gate 后缀宿主名惯例登记三件：ask3repeatergate 即三问宿主、scri
 
 - 组件第六席名分落定即名册、退出标准、规格、代码语域同名同源
 - 英文对落代码面即模块与宿主与测试随批改名，旧名入死档管住复用
-- 三问命名集在新仓术语下归位闭环，宿主名公式统一后无特例
+- 三问命名集在新仓术语下归位闭环，宿主名回归英文对裸名
 
 ## 备选方案 {#alternatives}
 
@@ -68,3 +68,7 @@ recaller 作英文对
 ## 版本与固定 {#version}
 
 v1 于 2026-08-28 承用户签令随立名批 wengunaming-t6d 落盘。修订须走修订记录节逐条留痕。
+
+## 修订记录 {#revisions}
+
+2026-08-28 修订一：承用户撤gate令。原宿主家族节公式条款系无令源铸入即未签规范，撤除；宿主名改裸英文对即 retriever 与 ask3repeater；越权账与权源缺口随批落结果档；scribegate 另议待人签。
