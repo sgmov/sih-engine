@@ -61,7 +61,7 @@ fn f2_refs_machine_verifiable() {
     for row in &rows {
         match row.carrier {
             "md" => {
-                let (path_part, range) = row.reference.rsplit_once(':').expect("md ref 形态");
+                let (path_part, range) = row.reference.rsplit_once('@').expect("md ref 形态");
                 let (ls, le) = range.split_once('-').expect("行区间形态");
                 let ls: usize = ls.parse().unwrap();
                 let le: usize = le.parse().unwrap();
