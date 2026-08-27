@@ -147,7 +147,7 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
                 let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
                 let reference = match (carrier, entry.line_start, entry.line_end) {
                     ("json", _, _) => format!("{}@{}", entry.path, entry.id),
-                    ("md", Some(ls), Some(le)) => format!("{}:{ls}-{le}", entry.path),
+                    ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
                     _ => continue,
                 };
                 rows.push(FacetRow {
@@ -192,16 +192,38 @@ pub fn write_output(path: &Path, rows: &[FacetRow]) -> Result<(), RecallError> {
     })
 }
 
-/// 根定位即从给定目录上溯找 sih-engine 与 sih-tools 并存的目录层。
+/// 根定位即从给定目录上溯找 sih-engine 与 sih-tools 并存的目录层，名为 worktrees 的租约工地目录恒非根即跳过。
 pub fn derive_root(from: &Path) -> Option<PathBuf> {
     let mut cur = Some(from);
     while let Some(dir) = cur {
-        if dir.join("sih-engine").is_dir() && dir.join("sih-tools").is_dir() {
+        let is_scaffold = dir
+            .file_name()
+            .map(|name| name == "worktrees")
+            .unwrap_or(false);
+        if !is_scaffold && dir.join("sih-engine").is_dir() && dir.join("sih-tools").is_dir() {
             return Some(dir.to_path_buf());
         }
         cur = dir.parent();
     }
     None
+}
+
+#[cfg(test)]
+mod derive_tests {
+    use super::*;
+
+    /// 工地名跳过即 worktrees 汇集层不被误认成根，上溯到真根。
+    #[test]
+    fn worktrees_layer_never_root() {
+        let tmp = tempfile::tempdir().unwrap();
+        let root = tmp.path().join("real");
+        let batch = root.join("worktrees").join("sih-engine").join("batch");
+        std::fs::create_dir_all(&batch).unwrap();
+        std::fs::create_dir_all(root.join("worktrees").join("sih-tools")).unwrap();
+        std::fs::create_dir_all(root.join("sih-engine")).unwrap();
+        std::fs::create_dir_all(root.join("sih-tools")).unwrap();
+        assert_eq!(derive_root(&batch), Some(root));
+    }
 }
 
 /// 跨日链加载即 trail 目录文件名字典序逐文件拼接。

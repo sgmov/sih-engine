@@ -34,7 +34,7 @@ fn sort_key(row: &FacetRow) -> (u8, u8, String, u32, String, u8, String) {
     } else {
         let cut = row
             .reference
-            .find(|c| c == ':' || c == '@')
+            .find('@')
             .unwrap_or(row.reference.len());
         row.reference[..cut].to_string()
     };
@@ -96,11 +96,11 @@ mod tests {
             at: "t".into(),
         };
         let mut rows = vec![
-            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/b-results.md:9-9", Axis::Topic),
+            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/b-results.md@9-9", Axis::Topic),
             mk(Archive::Fact, "event", "e2/aaaaaaaa", Axis::Time),
-            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/a-results.md:3-3", Axis::Topic),
+            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/a-results.md@3-3", Axis::Topic),
             mk(Archive::Fact, "event", "e1/bbbbbbbb", Axis::Event),
-            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/a-results.md:1-1", Axis::Topic),
+            mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/a-results.md@1-1", Axis::Topic),
             mk(Archive::Fact, "event", "e1/bbbbbbbb", Axis::Time),
         ];
         sort_rows(&mut rows);
@@ -111,9 +111,9 @@ mod tests {
                 "e1/bbbbbbbb",
                 "e1/bbbbbbbb",
                 "e2/aaaaaaaa",
-                "sih-engine/sih/event/plan/a-results.md:1-1",
-                "sih-engine/sih/event/plan/a-results.md:3-3",
-                "sih-engine/sih/event/plan/b-results.md:9-9",
+                "sih-engine/sih/event/plan/a-results.md@1-1",
+                "sih-engine/sih/event/plan/a-results.md@3-3",
+                "sih-engine/sih/event/plan/b-results.md@9-9",
             ]
         );
         assert_eq!(rows[0].axis, Axis::Event);
