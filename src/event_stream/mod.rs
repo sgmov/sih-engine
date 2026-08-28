@@ -10,6 +10,7 @@
 pub mod append;
 pub mod certify;
 pub mod intent;
+pub mod lockgate;
 pub mod park;
 pub mod event;
 pub mod hash;
@@ -24,6 +25,7 @@ pub use append::{append, load_events, AppendError, AppendSuccess};
 pub use certify::{certification_event, CertifyError};
 pub use event::{Actor, ActorType, Event, EventInput};
 pub use intent::{intent_event, IntentError};
+pub use lockgate::{check_locks, LockGateError};
 pub use park::{park_event, ParkError};
 pub use hash::{compute_event_hash, verify_chain, GENESIS_PREV_HASH};
 pub use query::{query, EventAggregate, EventFilter, EventList, AggregationResult};
