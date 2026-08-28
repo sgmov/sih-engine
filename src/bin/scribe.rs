@@ -7,10 +7,11 @@ use chrono::Utc;
 use serde_json::json;
 use sih_engine::event_stream::event::{Actor, ActorType};
 use sih_engine::event_stream::{
-    append, certification_event, compute_event_hash, intent_event, load_events, park_event,
-    query, verify, Event, EventFilter, VerifyRange, GENESIS_PREV_HASH,
+    append, certification_event, check_locks, compute_event_hash, intent_event, load_events,
+    lockgate::LockGateError, park_event, query, verify, Event, EventFilter, VerifyRange,
+    GENESIS_PREV_HASH,
 };
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::exit;
 
 fn gate_actor() -> Actor {
@@ -38,6 +39,28 @@ fn load_store(trail: &str) -> Vec<Event> {
     match load_events(path.as_path()) {
         Ok(events) => events,
         Err(e) => emit(json!({"error": format!("trail 不可读 {e:?}")}), 2),
+    }
+}
+
+/// 锁位前查即他会话持锁拒写，承 lockguard-solo 批。
+///
+/// --locks 缺席即零查旧行为逐字节不变；在场即对写命令 trail 路径前查，
+/// 他会话 active 锁拒写退出码一并报持锁方，本会话持锁或零锁放行，
+/// 台账不可读退出码二不静默。--session 即调用方会话号用于本会话放行。
+fn lockgate_guard(opts: &std::collections::HashMap<String, String>, trail: &str) {
+    let Some(locks) = opts.get("locks") else { return };
+    match check_locks(
+        Path::new(locks),
+        Path::new(trail),
+        opts.get("session").map(|s| s.as_str()),
+    ) {
+        Ok(()) => {}
+        Err(LockGateError::Held { holders }) => {
+            emit(json!({"error": "链路径在他会话锁下", "holders": holders}), 1)
+        }
+        Err(LockGateError::Unreadable(e)) => {
+            emit(json!({"error": format!("锁台账不可读 {e}")}), 2)
+        }
     }
 }
 
@@ -100,6 +123,7 @@ fn main() {
             else {
                 emit(json!({"error": "缺参"}), 2)
             };
+            lockgate_guard(&opts, &trail);
             let Ok(exit_code) = exit_code.parse::<i32>() else {
                 emit(json!({"error": "退出码非数"}), 2)
             };
@@ -129,6 +153,7 @@ fn main() {
             else {
                 emit(json!({"error": "缺参"}), 2)
             };
+            lockgate_guard(&opts, &trail);
             let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
                 emit(json!({"error": "双件缺失"}), 2)
             };
@@ -156,6 +181,7 @@ fn main() {
             let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
                 emit(json!({"error": "缺参"}), 2)
             };
+            lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
             let store = load_store(&trail);
             let input = match park_event(&text, &store, gate_actor(), Utc::now()) {
