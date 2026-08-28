@@ -29,13 +29,13 @@ description: "SiHankor 代理编组长程任务范式。Invoke when the user say
 
 一，选形。按 README 队形表与 ai-ex 选择判据定形，任务包文件名与范式行声明形，命名即主题前缀加形英文对后缀。
 
-二，先写任务包再动手。落 sih/state/plan/ 即主题加形后缀.md，F 锚定跑前立文。
+二，先写任务包再动手。落包前按批主题词跑温故检索面取结论档与经验档先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --at <实日> --out <输出件路径>，输出件随批材料入档，必读文件清单对检索结果取材，零命中如实记，检索缺席即违本步。承 SPEC-007 消费侧二与 wenguwire-solo 批。落 sih/state/plan/ 即主题加形后缀.md，F 锚定跑前立文。
 
 三，按形执行。单线即主线直写。单发与反思即派单子代理，提示词自包含即只凭包内容跑。并联即主线拆三类簇：并行簇双子代理后台各领、主线簇亲写最复杂件、依赖簇待验收后串行。
 
 四，主线串行验收。F 锚定逐条实跑，文档类产出走 T6 工具链即化格、核阅、检词、书简认证。
 
-五，写结果档含完成度表、F 验证表、队形验证一行。
+五，写结果档含完成度表、F 验证表、队形验证一行。起草前按事件与时间轴跑温故检索面取事实档与结论档切面，调用即 cd sih-engine 后 target/debug/retriever recall --event <事件类型或标识> --since <起日> --until <止日> --at <实日> --out <输出件路径>，输出件随批材料入档，本段链上事实以切面为机械底稿不以会话记忆复述。承 SPEC-007 消费侧三与 wenguwire-solo 批。
 
 六，主线 commit 全部。
 
@@ -54,3 +54,5 @@ description: "SiHankor 代理编组长程任务范式。Invoke when the user say
 ## 修订记录 {#revisions}
 
 2026-08-28 修订一：承用户全签批即族名代理编组与五形单线单发反思并联串行立名，skill 由 sihankor-t6d 改名 sihankor-marshalling，Twin 助记扩写复审撤除即 2026-08-17 助记非词源，偏离制改选形制，编号退场入死档。
+
+2026-08-28 修订二：硬性工作流第二步增落包前温故检索取先例、第五步增结果档起草前按事件与时间轴检索取切面为机械底稿，两处输出件随批材料入档零命中如实记，承 SPEC-007 消费侧二三与 wenguwire-solo 批，宿主命令名 retriever 即检词查证 memgate 死档旧名禁复用。

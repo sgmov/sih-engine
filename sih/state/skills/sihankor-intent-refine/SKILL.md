@@ -77,17 +77,19 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 
 模式四，单极塌缩。提炼中只取用户措辞的一极。守护：配对极核验，用户只说一极时主动补配对极。
 
-## 全流程四步
+## 全流程五步
 
-手动期正式载体的完整调用不止于产出契约，四步钉死：
+手动期正式载体的完整调用不止于产出契约，五步钉死：
 
 一，诘察产契约即提炼动作。治理批即起草、修订、命名、决策类产出必触发，不得跳过，跳过即违本 skill。
 
-二，落记录即照 SPEC-005 产输出记录。锚点行号先 grep 核验后落记录，血统三件套即哲学引文、理据、证据行号逐条齐备，禁熔断即低置信锚点保留。
+二，检索加载即温故 recall 机械在场。落锚前按批主题词跑检索面取命题先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --archive intent --at <实日> --out <输出件路径>，输出件随 ask3 材料入档，锚定理据须对其中先例取材或如实记零命中，检索缺席即违本 skill。承 SPEC-007 消费侧一与 wenguwire-solo 批，宿主命令名 retriever 即检词查证 memgate 死档旧名禁复用。
 
-三，机械验收即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。
+三，落记录即照 SPEC-005 产输出记录。锚点行号先 grep 核验后落记录，血统三件套即哲学引文、理据、证据行号逐条齐备，禁熔断即低置信锚点保留。
 
-四，上链即书简 intent 子命令写 intent_refined 事件，调用即 cd sih-tools 后 uv run scribe intent --record <记录.json> --validation <验收报告.json> --trail scribe/trail/<日期>.ndjson，doc_id 用会话标识。
+四，机械验收即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。
+
+五，上链即书简 intent 子命令写 intent_refined 事件，调用即 cd sih-engine 后 target/debug/scribe intent --record <记录.json> --validation <验收报告.json> --trail sih-engine/sih/event/trail/<日期>.ndjson --locks sih-tools/lease/ledger/locks.ndjson，doc_id 用会话标识，引擎现役形即旧工具侧调用已于 2026-08-27 退役。
 
 调用计量现状：calls_in 与 calls_out 暂为操作者最优估计，无机械计数源，机械源实装前记录照填但须知情，调用总量判据的执行待机械源。
 
@@ -102,3 +104,5 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 2026-08-28 修订四：生成契约增令源约束固定条即决策档规范级条款须令源引用，承用户同日补法令甲即前向防生成，令源即撤gate越权账问政对谈。
 
 2026-08-28 修订五：生成契约增命名查档约束固定条即工程命名动作前查命名集与检词，承用户同日立令，与令源约束互补即 ask3gate 型二回滚的机械解药，载体并立即立名 skill 第二段前查档条与 DEC-017 修订四。
+
+2026-08-28 修订六：全流程四步升五步即新增检索加载步，落锚前温故 recall 机械在场取命题先例，输出件随 ask3 材料入档零命中如实记，承 SPEC-007 消费侧一与 wenguwire-solo 批；第五步上链调用形同步改引擎现役形加 --locks 锁位前查即旧工具侧形随 2026-08-27 切换退役后本 skill 残留陈旧调用一并修除。
