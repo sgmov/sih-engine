@@ -1,0 +1,11 @@
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 1, "role": "human", "text": "我突然想到一个问题，三问脱胎于追问，参考公开skill grillme，是对齐llm和人类意图的，现在三问的机制是否产生了漂移？如果是的话，当前会话任务全部入泊，转三问前置的追问"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 2, "role": "human", "text": "下次不要自创术语，所有的术语都要走立名。批准执行"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 3, "role": "human", "text": "Q1 温故召回是否会消耗LLM的用量？如果不吃就是全路径的上下文注入，但是要规避噪声污染"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 4, "role": "human", "text": "Q3 人类所有的输入必须留档，作为审计，以免人类赖账，人类的长期记忆和短期记忆都不如持久化存储"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 5, "role": "human", "text": "Q5 立名要走，等我们定下这个东西到底是什么？追问引擎的引擎二字是死词，追问不一定"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 6, "role": "human", "text": "Q7 这个记一下，我还没想好"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 7, "role": "human", "text": "Q2 无所谓，错了有节点可以重置，我们正在开发中，司衡引擎也是在失败中重构，失败的经验能够消化掉就是我们的财富"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 8, "role": "human", "text": "Q4 这里要确定一下，谁在前，三问在前还是追问在前？我认为是三问在前，自我诘问之后还未对齐，才要人类介入，对齐意图。你有不同意见可以提出，不要以我为准，人类和LLM之间没有高下之分，你我之间是合作不是从属"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 9, "role": "human", "text": "Q6 项目记忆水说的就是温故吗？"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 10, "role": "human", "text": "R2-4 不能上主链，都是噪音，关键的话本身就已经在主链上呆着了（我的通过、同意、批准），要做成类似有时间戳的，有级联的日志形式，目的就是审计，以及未来需要回溯的时候，能够大概了解当初的人类的意图"}
+{"logged_at": "2026-08-29T15:27:05Z", "session": "sess-zcode-260829-askloop", "seq": 11, "role": "human", "text": "我理解的是两个问题是一个问题，你觉得呢？对话内的诘问你没过吗？"}
