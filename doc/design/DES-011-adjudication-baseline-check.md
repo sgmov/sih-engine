@@ -47,7 +47,7 @@ facet 闸三态与温度探针判定到裁决处置的映射。处置枚举四�
 
 第四优先级，stable_clear。核对规则 R1 至 R7 全过，处置为裁决通过，裁决方向沿用席位众数方向，写 crosscheck_completed 事件，负载通过记录含闸裁决、方向、v3_rule、规则版本、材料指纹。任一规则失败，处置为材料退回，裁决不通过，写 crosscheck_completed 事件，负载偏差记录含失败规则标识与失败位置。
 
-处置为退回、挂起、打回的 crosscheck_completed 与 inconsistency 事件，event_class 取可消费进视图。处置为裁决通过的事件，event_class 取仅记录，不进人类视图，异常时由审计追偿路径复核。
+处置为退回、挂起、打回的 crosscheck_completed 与 inconsistency 事件，event_class 取可消费进告警视图。处置为裁决通过的事件，event_class 取仅记录进知晓视图——人类知晓、零动作要求、无需复签（2026-08-30 用户裁定签署节点三条款，原「不进人类视图」旧文废止留痕）；人类保留一票绝对反对权，否决经 inconsistency 翻案事件覆盖被签效力；级联边界条件变更经复算浮出即签署点异常视图，人介入重命题或令 agent 重跑。
 
 ## 输出契约 {#output-contract}
 
