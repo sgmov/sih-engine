@@ -83,11 +83,11 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 
 一，诘察产契约即提炼动作。治理批即起草、修订、命名、决策类产出必触发，不得跳过，跳过即违本 skill。
 
-二，检索加载即温故 recall 机械在场。落锚前按批主题词跑检索面取命题先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --archive intent --at <实日> --out <输出件路径>，输出件随 ask3 材料入档，锚定理据须对其中先例取材或如实记零命中，检索缺席即违本 skill。承 SPEC-007 消费侧一与 wenguwire-solo 批，宿主命令名 retriever 即检词查证 memgate 死档旧名禁复用。
+二，检索加载即温故 recall 机械在场。落锚前按批主题词跑检索面取命题先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --archive intent --at <实日> --out <输出件路径>，输出件随 ask3 材料入档，锚定理据须对其中先例取材或如实记零命中，检索缺席即违本 skill。承 SPEC-007 消费侧一与 wenguwire-solo 批，宿主命令名 retriever 即检词查证 memgate 死档旧名禁复用。检索后即叩问 check 出信号件：cd sih-tools/elicit 后 uv run --project . elicit check --packs ../nomenclator/packs/core --words <草稿新词逐个> --topics <批主题词> --recall-face <召回面件> --out <信号件> --at <实日>，信号件随批材料入档。
 
 三，落记录即照 SPEC-005 产输出记录。锚点行号先 grep 核验后落记录，血统三件套即哲学引文、理据、证据行号逐条齐备，禁熔断即低置信锚点保留。
 
-四，机械验收即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。
+四，机械验收即核阅 ask3 包过记录，调用即 cd sih-tools/scrutinator 后 uv run python -m scrutinator --pack packs/ask3 <记录.json>，退出码非零即修记录重验，校验失败不入流。核阅过闸后即叩问 digest 消化闸：cd sih-tools/elicit 后 uv run --project . elicit digest --signals <信号件> --contract <记录件>，退出码一即契约未消化信号、补叩问处置标记或声明升级追问后重验，过闸方可入流；零信号即零处置直过。
 
 五，上链即书简 intent 子命令写 intent_refined 事件，调用即 cd sih-engine 后 target/debug/scribe intent --record <记录.json> --validation <验收报告.json> --trail sih-engine/sih/event/trail/<日期>.ndjson --locks sih-tools/lease/ledger/locks.ndjson，doc_id 用会话标识，引擎现役形即旧工具侧调用已于 2026-08-27 退役。
 
@@ -116,3 +116,4 @@ AGENTS.md 是每次会话加载的构成性约束，管基础约束四维（cons
 2026-08-28 修订六：全流程四步升五步即新增检索加载步，落锚前温故 recall 机械在场取命题先例，输出件随 ask3 材料入档零命中如实记，承 SPEC-007 消费侧一与 wenguwire-solo 批；第五步上链调用形同步改引擎现役形加 --locks 锁位前查即旧工具侧形随 2026-08-27 切换退役后本 skill 残留陈旧调用一并修除。
 2026-08-29 修订七：新增追问升级位与人类输入日志两节即三问在前、追问为自审合不拢时的升级位、扳机三件机械产出即未登记词与召回矛盾与裁定冲突、契约逐信号消化义务、答案落日结日志链外审计，承用户同日四轮追问裁定与二分巧合考古案；SPEC-005 禁令零改动即追问不在向内诘察期间发生无字面冲突；正名后置本质定形后另走立名三段。
 2026-08-29 修订八：追问升级位正名归位叩问升级位即用户签核中文名叩问与英文对 elicit，往返推导双过为新范式，历史修订行原文保留，扳机与消化义务零语义变更，词条入检词包 code elicit。
+2026-08-30 修订九：叩问闸位接线即检索加载步增 check 出信号件与机械验收步增 digest 消化闸、信号未消化不得上链、零信号直过，承 elicitgate 批与用户同日同意令；工具权威在 sih-tools/elicit/CONTRACT.md、壳 sihankor-elicit 同批注册。
