@@ -32,10 +32,11 @@
 
 ## 三、越线与误差申报
 
-1. yaml 块标量 clip 缺口：合同出题初版用裸 NG 文本，与直跑 runner 所见形差一尾换行，测试对表捕获后以 scheme_clipped_ng 补齐同形并加 yaml 往返对表测，本批内闭环。
-2. 观察腿 emit 对未满额既有格沿用 setup_one_prop 清空重建语义，与直跑 run-probe 同一幂等防御，未新增加固；满额格照旧跳过保护。
-3. recall #1 复合主题词零命中、原子词「接口」三条相邻先例（旧审计接口、斜杠协议接口、维护任务接口），零直接先例如实记；recall #3 命中今日链事实切面，输出件随批入档。
-4. 单测套 6 挂为 ng_assembler 读 worktrees/sih-tools/AGENTS.md 缺席，属 dose01 批既登记围堰缺陷（缺省相对根读不到工作区根），主仓同测 9 过，非本批引入。
+1. 任务包请求写入段漏列两件即 facet/contract_mode.py 与 facet/probes/k2t_driver.py，会话范围快照在 commit 范围验拒收即 staged_out_of_scope，处置按 pk021settle 补齐先例：两件抢救暂存、任务包补列、本会话收段后重开会话携带完整范围，二段 settle 承接，全程留痕。
+2. yaml 块标量 clip 缺口：合同出题初版用裸 NG 文本，与直跑 runner 所见形差一尾换行，测试对表捕获后以 scheme_clipped_ng 补齐同形并加 yaml 往返对表测，本批内闭环。
+3. 观察腿 emit 对未满额既有格沿用 setup_one_prop 清空重建语义，与直跑 run-probe 同一幂等防御，未新增加固；满额格照旧跳过保护。
+4. recall #1 复合主题词零命中、原子词「接口」三条相邻先例（旧审计接口、斜杠协议接口、维护任务接口），零直接先例如实记；recall #3 命中今日链事实切面，输出件随批入档。
+5. 单测套 6 挂为 ng_assembler 读 worktrees/sih-tools/AGENTS.md 缺席，属 dose01 批既登记围堰缺陷（缺省相对根读不到工作区根），主仓同测 9 过，非本批引入。
 
 ## 四、残留申报（不属本批）
 

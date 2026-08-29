@@ -78,6 +78,8 @@ measure.py 现行代码体量未知，两段式重构须保兼容模式行为逐
 - sih-tools/facet/measure.py
 - sih-tools/facet/singleseat.py
 - sih-tools/facet/probes/dose_driver.py
+- sih-tools/facet/probes/k2t_driver.py
+- sih-tools/facet/contract_mode.py
 - sih-tools/facet/tests/
 - sih-tools/scribe/reports/
 - sih-tools/scribe/CALL-LOG.md
