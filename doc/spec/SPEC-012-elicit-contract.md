@@ -19,11 +19,13 @@
 
 ## 接口签名 {#interface-signature}
 
-两操作，命令行子命令形态，宿主命令名待实装批按英文对 elicit 定名，操作名 check 与 digest 随本契约冻结。
+三操作，命令行子命令形态，宿主命令名实装批已定 elicit 原形，操作名 check 与 digest 与 suspend 承 v1.1 修订入冻结面。
 
-check 即产缺口信号件。参数：--input 即待查文本件可重复，覆盖用户输入与契约草稿；--packs 即检词包路径；--recall-face 即温故召回面 ndjson；--history-face 即历史裁定清单件；--out 即输出 ndjson 缺省标准输出；--at 即参照时间显式给参。输出即信号件 ndjson 逐行，字段五件：signal_type 即 unregistered 或 recall_miss 或 recall_conflict 或 ruling_conflict、subject 即命中词或主题、weight 即轻或重、source_ref 即出处可回验、at 即参照时间回显。
+check 即产缺口信号件。参数：--words 即显式词表可重复承接契约草稿新词、原 --input 文本件收紧淘汰即分词不做；--topics 即主题词可重复；--conflict-words 即冲突查词可重复；--packs 即检词包路径；--recall-face 即温故召回面 ndjson；--history-face 即历史裁定清单件；--out 即输出 ndjson 缺省标准输出；--at 即参照时间显式给参。输出即信号件 ndjson 逐行，字段五件：signal_type 即 unregistered 或 recall_miss 或 recall_conflict 或 ruling_conflict、subject 即命中词或主题、weight 即轻或重、source_ref 即出处可回验、at 即参照时间回显。
 
 digest 即消化闸。参数：--signals 即信号件；--contract 即契约件。机械校验契约件含逐信号处置记录即每信号行有对应消解声明或升级声明，缺一即拦。
+
+suspend 即挂起记录：--signals 落 state suspended 于 --log，升级后无应答时调用，无代答路径。
 
 ## 三扳机 {#triggers}
 
@@ -66,4 +68,4 @@ digest 即消化闸。参数：--signals 即信号件；--contract 即契约件�
 
 ## 版本与固定 {#version}
 
-v1 于 2026-08-29 随 elicitinit-solo 批落盘。接口冻结即 check 与 digest 两操作名与信号件五字段经修订记录留痕方可改。正名已签即叩问 Elicit，词条在检词包 code elicit。
+v1.1 于 2026-08-30 随 elicitgate 批修订即 suspend 操作入冻结面与 check 参数 --words 收紧淘汰 --input 并增 --topics 与 --conflict-words 与 --history-face、分词不做、破冻显式留痕。v1 于 2026-08-29 随 elicitinit-solo 批落盘。接口冻结即 check 与 digest 两操作名与信号件五字段经修订记录留痕方可改。正名已签即叩问 Elicit，词条在检词包 code elicit。
