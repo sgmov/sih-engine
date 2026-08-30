@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "../../sih-tools/scribe/reports/2026-08-30-ask3-bridgeacc-record.json"
+  ],
+  "content_hashes": {
+    "../../sih-tools/scribe/reports/2026-08-30-ask3-bridgeacc-record.json": "b1f54fbf5acf6affbcdf1d94dbb06ce870d4e25766c01ccb01ad66082f53d925"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
