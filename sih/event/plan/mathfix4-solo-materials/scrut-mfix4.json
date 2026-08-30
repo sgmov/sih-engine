@@ -1,0 +1,354 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.2.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md": "c11fa969ff4461fce3c824240b5702753f6a521f589eb88961acb5c58e65bcc3"
+  },
+  "findings": [
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 23
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 38
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 51
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 51
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 53
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 63
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 63
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 82
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 83
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 89
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 113
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 116
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 118
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 118
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 119
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 121
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 121
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 138
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 140
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 144
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix4-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 145
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 34,
+    "by_rule": {
+      "C006": 34
+    },
+    "by_pack": {
+      "des-001-mathe": 34
+    }
+  }
+}

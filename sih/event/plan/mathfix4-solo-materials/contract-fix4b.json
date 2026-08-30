@@ -1,0 +1,90 @@
+{
+  "contract_version": 1,
+  "kind": "facet-sampling-contract",
+  "meta": {
+    "measurement_entry": "proposition/topics/2026-08-30-fix4b.md",
+    "n_declared": 9
+  },
+  "pack": {
+    "atom": "integrator",
+    "direction": "judge",
+    "ng_label": "medium",
+    "ng_text_sha256": "d4f847016697d5be0701ce7630e49b1ec328a2ace64169a3cdd1bd49c99af32c",
+    "paradigm_id": "normative_convergence"
+  },
+  "proposition": {
+    "gid": "m-fix4b",
+    "title": "批四产出物全部可由确定性脚本机械复算",
+    "topic_sha256": "95b7a3b06b879ed72a8e5569295f9674006ffc7461d92c47d7f6d3a97ecec1a2"
+  },
+  "responses_format": {
+    "discipline": "逐发模型完整原文回填，不改写、不摘要、不挑选",
+    "fields": [
+      "key",
+      "shot",
+      "raw"
+    ],
+    "file": "jsonl"
+  },
+  "seat": {
+    "framework": "zcode",
+    "model_id": "GLM-5.3-Flash",
+    "version": "self-reported"
+  },
+  "shots": [
+    {
+      "key": "m-fix4b#r1",
+      "shot": 1,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r2",
+      "shot": 2,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r3",
+      "shot": 3,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r4",
+      "shot": 4,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r5",
+      "shot": 5,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r6",
+      "shot": 6,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r7",
+      "shot": 7,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r8",
+      "shot": 8,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    },
+    {
+      "key": "m-fix4b#r9",
+      "shot": 9,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 批四产出物全部可由确定性脚本机械复算\nauthored: m-fix4 boundary 后单基线收窄重测，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fix4b\n---\n\n# 待裁命题\n\n数学仓批四的可验证性满足基线四：ALG-001 的三件修复以 git diff 复算其变更仅为锚点改挂与标注替换与前提补记三类；calculus 113 条机械四查的每项产出即引用命题号清单、工程调用位磁盘核验清单、可证伪节计数、双答结构计数都以脚本复算，任何一项复算不符即批四失败。批四不产出脚本不可复算的断言。\n\n## 谱系\n\nm-fix4 于 2026-08-30 判 boundary，唯一挂点 basis_consensus 即批范围命题天然横跨三基线；通道分解后范围裁决归任务包通道，本命题只承载基线四可验证性一翼，且以复算不符即判败约束本批自身。\n\n## anchors\n\n- path: ../sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md\n  range: 40-75\n  note: 待修三件的实体段落，修复后以 git diff 复算\n- path: ../sih-math/docs/survey-mathprobe-2026-08-30.md\n  range: 40-55\n  note: 体检清单即机械四查判据来源\n- path: ../sih-math/INDEX.md\n  range: 30-40\n  note: 代数登记行即 ALG-007 在册证据\n\n"
+    }
+  ]
+}
