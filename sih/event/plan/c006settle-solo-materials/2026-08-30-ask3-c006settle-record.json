@@ -1,0 +1,48 @@
+{
+  "session_id": "sess-zcode-260830-c006settle",
+  "raw_input": "开：c006settle-solo 结算补办批（c006 四批改动回围堰补结算 + 四批实况勘误补链）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "c006settle-solo 补办结算与认证：sih-math 113 文件改动经工作树副本提交归并，sih-engine 链尾与批材料随之落账；链补四批实况勘误即 jc 撤回、sb 链未跑、四批内容认证缺失、归零声明由 1344 改 8 修正为机械实测 154 残",
+    "exclusions": [
+      "不动主检出他人线改动即 proposition-defense skill 与 inputlog 与 task-packages",
+      "不改四批历史结果档原文，勘误以新结果档承载",
+      "不动 8 处真 SKIP，不做余量 154 的内容手改"
+    ],
+    "output_format": "移植 + 逐件哈希比对 + 三闸报告随材料 + 勘误结果档 + scribe intent/append + lease commit/close + 双仓 reconcile",
+    "injected_constraints": [
+      "工程基线第一条：确定性程序执行，LLM 产出仅符号材料",
+      "工程基线第四条：操作来源可追溯、结果可机械校验、历史不可篡改",
+      "链快照复制必须发生在末笔追加之后",
+      "commit 须指围堰，拒主检出直提"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-math entries 全域 + sih-engine plan 与 event 路径",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-tools/lease + engine scribe + ask3repeater + scrutinator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "c006settle-solo 机械实测 C006 154 残证伪 99.4% 归零并按实况勘误留痕 + 结算回围堰",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+        "quote": "应而不藏：如实应对，不藏不掖——成功不夸大，失败不掩盖"
+      },
+      "rationale": "本批以机械核阅对表证伪虚报数并如实勘误上链，承接 PRO-08 应而不藏，机械改与检验双重",
+      "evidence": "sih-engine/sih/event/plan/c006-sb3-solo-results.md:1",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 0
+}

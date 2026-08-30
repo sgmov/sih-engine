@@ -1,0 +1,3185 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.2.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-003-two-body-problem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-005-vibrating-string.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-006-chladni-figure.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-001-derivative.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-011-product-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-029-related-rates.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-010-gauss.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-001-antiderivative.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-020-arclength.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-022-shell-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-008-continuous-function.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-002-disk-integration.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-006-curvature.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-001-infinite-series.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-003-taylor-series.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-004-fourier-series.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-006-probability-measure.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-007-expectation.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md": "7f55e7ecf5bf3d0718fb4f47920a01b49349db1e881b93c4e5a152921d58bb61",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md": "a3077c4ae08aba51210bf92e0ccfbcd8792a61afb54b1ca0053f2c54efe8c16f",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md": "987d7639440b31c813ffb19cedb7aed94f8d826e892f52622b5118d6a2610e69",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-003-two-body-problem.md": "a18bfbd2d556afc6830fca853f045e975e1a56f7c196895e08b487b3d4672f21",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md": "1fe0695894714cbf71b0f8d7ef12d343f65e3722c59d392de2cf219ea037964e",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-005-vibrating-string.md": "013f74c418c1bed94cec0efe1e8102999ccc25645eb81a76e7bfb9e4dce89db1",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-006-chladni-figure.md": "8e32669c07a0d83e367eef9b3bd8ff6732ab8031d9db649890012f6af8ae1b57",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md": "6b200d78eeb95b43a15ffedb28ce92ce406bfe9e57ced237a3312e9b8bce027b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md": "88f103882b8323934dc0f6e825fc2d2c9a514285619c3a7aba6cb708c7be6aaf",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md": "9d7269907d036eeb30822d0df7e97f55318766ee02409eb64bda49108bd34777",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md": "fb10cd585b08df6738a3aeb75b605c7e1f4055bb9372f7d5bfc16f52aebbb17a",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-001-derivative.md": "efbbeac6fdd51dca10d1537e434e9d88cdf722afbb03b52b673538b83026c317",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md": "a64f2e6ef7037a5e748a4e4344b7275163c817eddd4a8bc7bbf26f25dfa3ad6f",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md": "da7fa59015a7e05d5da84b7c5bd6e50839aaf4c4378bb44e9c9b77cb917d38a0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md": "ae55b9cfdae33bc53282314ba0736882535addda499c226a3fbe03c682555fea",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md": "96fedcc334bc8e84720b6924085f0ea184e980bd447e1787ffe98f9de2a2f8a9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md": "7ee84e55fb3069d8ea63245677638a8a68557df0e3d00a4cf9eb69a333efe3b6",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md": "279ea68f7339b844454fe08e44cd49df40c672c4029d7e12f777257e34380bb0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-008-power-rule.md": "72bb7351ad7f720026157120f9a9ba605b2ce51c0d8516ac760c34a38db8e9fd",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md": "f38b455a44577235cca4c1bfa9b4acb129113aa1d0b1fbd52d442aca030a85cf",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md": "2cad5ccdfd45930bbc6d831e539079df41f5ef896cc14fe06e4b68d26e334590",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-011-product-rule.md": "36f3b9c88f62656e21f419068fb6e2db808ffbed08fbb0b86cded5180fdc4e6c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md": "8567089c08a507ee536e8234b038dd030edc67d90afde4155e9b7260aafb8f16",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md": "ebad84954195eff37a66de716057b88ed57a1ecd7a256cb40c1f166764e8c194",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md": "ce8272f30be6c102fb960782065401de32a5312f7f26bc0b04487a903e17bb22",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md": "ba977be7e90e981e1ceb593741658e6de35c1a3fc2a51569c0d16c1d1bf51396",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md": "390aefec9d07ab4cc11e20a2ced1aad9b34f0966bc2004aee3208df5dead72da",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md": "3f6923da7a2a761ba3f53e2dbae16001ec2e5f7a7bd5d1ead07d5097cb3818ae",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md": "e905b71162099bd3ce9f1ebf98b17933016f6581e91df32c0274f67ff370aa49",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md": "9fbd4eb149f6429f7a76fcdfed15e1a0b36d3880f90e548fc5c10bc418074b9c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md": "9a9190436685432f001d5f5fa05c22bd1532010de6d06f34215f873f7de854c0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md": "57fa0a3804e6c4559ca6d118a8920221ca59b372aeb7a20491b0c0007d0bc4b9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md": "deac7716a28057a07c08e2284f9d4f5c353d734c68ac2ac1460a7e520667b3f9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md": "f8b6cf36e09b95bcdd9dac5cdbd3d5455e16e502f31a92b21b347348fcb3fb4d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md": "f5b178e94a9f7ab9d125074efeddddf3416732110d2f03c022fbdbb65067bf90",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md": "76ac61509145356049c9e5efd1f3fd6f469d5dd2508263858b830416b3e6044d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md": "83ec924015e1b3ea96540bc5a7e7ca00f509f734c3dabb682350caf842eb0a3c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md": "da552b868cbb9bf3af04de1012be309083d4dd935db124d9cdd361c36ec1900a",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md": "9d79b0cb446db9fec4cf1cec4333c3471245bf869c4de754098b474328c32236",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-029-related-rates.md": "b827a3fc902521d6d5e62a8851b15c1fdd2088571c33168502ed9d5d3aac0bac",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md": "32cc876fd82a2c86cc7e6e906e0dcdc520eca510d453e9a1158ece7999870db4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md": "0faf7540c3fd2a4b08e12e5baf807abe02552700f43486f12a582780b9d19a27",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md": "527c8dc05f639a978200b7251e95472f972b7f95572b808a3a8bfe2374417e44",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md": "f4f1226c794e5cfd9c9dea777ca6037fcc85df7f170818f8e9ce955602a847d4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md": "8c41e6f5c7c2f15ca5ab3fe6da312f4bd4af61d91cbcee60ca3f8cd79fe4137b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md": "c5a4bc84c848f2f93084272b948dd49eb30a51fff0e8ef3a0629cad939d2c52b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md": "e3f4c0fc86ed2790183f9569dc9c77266d5bac4c2f1a8bddea0cff7fa536dc22",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md": "c61253bf66fe909d6c54c7f5266d928e1996a40625c5042bde8e5e12b52dbf3e",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md": "361cf051f0b2f81ae93376cd5932dd47cef8ec084bf7f616380b9c5370216d5b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md": "7d9570cc45fe9726f734c607eeac569fcb787bb495a5806552a6840ce485b90f",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md": "ed980fac8cde2329f4146fcfcce6f8e7848889c4685905dad2b5bbe613e05a5d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md": "b0526f227a6df4cb28cf186e7828f5819a11d1d3a3b2ebad8a9fb26ecf6f6381",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-010-gauss.md": "f595f75984139267cee22a8f1a77f119657db95b4307cd92b10b77e4aeaec025",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md": "ce6b300072e2b608cb42d528af5b831ec8360a743aa559fa8dc72593c93ecdec",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md": "e55034dc2e92880a2d4244f63352abb85cb32dcfd5c8045adb7bba42b7653d03",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md": "95f04614b333f2876ea8f02258c890dac9cc1e2c10e6d209a62037f4dcbce397",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md": "0d14c48fbdc8c4a65f6224e845e0a6f9e5ee90336689f9a6c8f1b7b437df61c2",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md": "c4d3687b617b3c990a035ad2b2bb5fc7f6feeb27f9762f6999ae1e41d6d948cb",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md": "51300d828f349483041106fabe98520b0581434fa6da4d99d4ab9a7982530740",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-001-antiderivative.md": "18383caf30ad00406df4808db464955d42f3d4cde942e4b6dd73260fad432780",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md": "231d86f5e7667cb14434e2e21e4bb5fcb513ff654333dc6f9623f2a17577fdc9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md": "18dc2092fbe64e3f0b06dd4b450e1c942fdb111f21fb563efd04f2a580082d6c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md": "5c15070909775222a36e53991b2eed666a6af9ba0fd66dc7b97ea99a7039a985",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md": "3cfd6090515dcc74eeb2456faa4096085a5d511a5f4199e2d21c2b0f4cf4ab7b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md": "ead317e467856bc422dbfb14a56a8b63bee3a7ba5151223504b7ee842fd90fe8",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md": "3e2ac5b335b08b5f158779f1d8cf80dfa5f2f6abb1e7a70f75a38a5df8214c2d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md": "010ca8ce65a3c07de31f3580a7e64d3df582f5558982b0f8b232dffcc864889c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md": "fa32489befe281f9ba056256981ad8d7650ca272d4af0f57e4aa8a5257a10ea4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md": "d60ced6077936b5ea2ee55102e33b88addcbd8a7fea5eb6373de930ab39efc0a",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md": "01fcef9cc933a8c19fcc44098a721cf6974d693ec3d23adb407d1b01f651df99",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md": "0ab4c28991573148c6ce1212e31477fea907d32e5e35a59b1bae13e5598f3346",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md": "0c0a574bb24ff588bb1a0c8675826e9523404260012ae881ecf2e8d98961b87a",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md": "bed861e3348b9a96b2ef0cae91b3a8b65a68da9f7ccf05b00ebaeb0dbb603cae",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md": "c3dadfc23f97a3d82bbecbcfc0dda491825f642610542d6daa1926c67a4bd86c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md": "be9300f2b5d63d7d4b12263550a81b485b070b89ff274597ad52547353661f13",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md": "d415a402a24f0d3cb702c2ca414cbbd5070bb42d2daf9c6632758a05e9561c55",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md": "5e97fed64c94affcf953fba39565ddee211d024e10b52e6af05afc9601e3842e",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md": "794e55040a96dc5e10527d5f15405ff111c655aab0c2018b4a3d6cb201dd4448",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-020-arclength.md": "22f173b8ac71ebe800225b0057e2f0fe2f73685dd6455f2e9d68a06abd78c4ae",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md": "89b9145dd79e50ac915b38a5da6b297de329fa6ab9d0bd2ff2359d814213b928",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-022-shell-integration.md": "b8e598c60b1ac88c55529fd0aaaa385cd44c86753399356857b2db27a9410815",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md": "b74ae3ab2ab37c3e7a8106a373a2bce3947ebe0baae9d32e9808b4254e068051",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md": "11773c25d2bace03e3c8eb1b59a30ae429b694a04bd35399ddfbe2d17e9855ee",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md": "94950c03513e80a018be8bfa9396b501f4a45aaaf1f734c87a2849ea0435c119",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md": "2ac6e86bd52a9777bcd031a3e76ebbff9208f4a474b0297810abbae63339d897",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md": "80ebe3dc00f5798680406f55d128883dfc19802b946c6912fc1296ea68866683",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md": "9d16bae849cd4f0cee4d3553a2506ef432fd496aa768de067df69c98ef3df24c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md": "a8057e39724d9c3aaca5dfca0e33b07364132ad71d8192fb4ddd6982171bbbc0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-008-continuous-function.md": "67803f0bd89ad89dddc714ffa10fb7583aa2a03a28eb7c04e6a18d5f41645ea5",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md": "038593f56d48f28a9f9a1a6471b59e6c4f8136e7a655abbba0cc8890832a1706",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-002-disk-integration.md": "c3704b472d7592a9999744d5e6a50d49efcac5743635849172b81d6a61f62924",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md": "945ab6ccd18b557c3fb2a14d0f2eeab5fd858a9ffcdfd5b92a1f30f9d60eba26",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md": "eac09081ab73291ea3bb5b1626670bc8e7c5a3602047eac524ab03d21c9e29d3",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md": "9bd079609adb89c6af599bc2abb2df7ec529d70ab321eafb3ce19f746a504bb3",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-006-curvature.md": "c3aaa7943c2eb70b5e5a159daff7c31bf6c35e974afa7d37f2513bc55fffeeff",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md": "f4745f67446c945403c530319fba507b4de3925adbe441df9cd8129a2f7ace58",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md": "1488ceed31c1ffc4fa8d681e896b70b99863e95b424c34128d0c48380fe34ddb",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md": "a3c7b2169faf62e36a907edc0fc626bb64170c326d3bc3774705fce60f00ab1d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md": "af896180f60f4d932621178ddf2089619c08944ac804268871e79aa59135738c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md": "9bebe3db1d3f99a31abae4b7b560c3348f5c4521ab3499d2ae3ac388bd8d1133",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md": "e1ef52efc75108efef1b11192c2524b9d51ae934b83039cbb8a9751c98dd221c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md": "880608c9a69faf604b2962193fa337bde13eb0bb6b0a759b774e604c46fd839c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-001-infinite-series.md": "6946d3a4b110f79f70a775c2bee19f39055a0f4bff6a37305a43a74996667200",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md": "f9b461492f4a321105d9703203aaccf39ef523c293d82ea3a853f82052fac39c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-003-taylor-series.md": "988277d28ed7106865acbdf9b676d71cf6e20e8d917499ee558e9e4886f022f5",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-004-fourier-series.md": "af2799e68cf99efb2d14082c3e74770eadaeba1bc43ea9485457cd7999545e1a",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md": "6855ff73124e828ec66f4d01ef8210f4b0d4986b5e9cdadeab5ef4d513100f14",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md": "028308daa2f346d661a63167e8b628c65aa9bb2a18ef528ff73d5277a7c8b3c1",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md": "e75a3abe1a8a942211ffa6747ff158987161d06cebf57b50fcecde15155afd01",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md": "75cb7470d7917a3d32881a3194ef70e5cc8708f7036f5d84cf22027086ff666e",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md": "2d8bba7316155e922356b97cad64d6cd9b0333b0b33c998a9f8749f94a558311",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md": "5ef161f5300a75ff6ef4c4535ff8ee64d36804fe3420aa969a8dbdb515b054a4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md": "c3fcb639753d537e8c2fa941501cc5c315d729e8ed892ed8c799587e6fab08c4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md": "054a449f4166a3b4e8957e94fdf64724968b48594d675fb5af461cca86ef4c0c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md": "f90ec3a05308dc3cea9a0edf37cc9c2672dd66ebbe4aeba254fd4d002a2ae825",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md": "639495b110b24f5379f00fdbc299250ac0c1be09fbe549dc9f4c408fab8812e1",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md": "f59d643550dab84832586ba84d9c6f4915617f8ecf4d8fe0d5031fd6ff49c49c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md": "be492cca0858bbba0c9ee3092e62fb6b99a96662305b6f7ed13ea21845f9a73d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md": "0cd0e6619691047fb81e2dc0b4ac8c45d1aa7809481e948a2e4503c53c327040",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md": "1a10698b8754fb0ef1721b1d43268ec0d1c4f7eb74fbd01491d83719f34dfec2",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md": "b8dcb59302c61c2d2ac1f8c8c259a53c8944a73742f95f45c49502cf1c8588ed",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-006-probability-measure.md": "c280e914be6b7d0de7dffbe239f6fbc631e72c1de7e1fff21d252b9dfbd5ee20",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-007-expectation.md": "1b66804726eafd769b66eb559d6edb433afb701b665463737d22d1d69bfebb25",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md": "aecec962985520c3ffbbdb6fdba5852e3cb8d3507b5d0912dd009a87c21c87b9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md": "5c25dfe637135425393fc5ccd43f04b552ddf2489e306d0f570571a3e2e68fb7",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md": "83e89049a4a472435f397cdf7d0ecc89828135d3296693369cbfeb01694a202d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md": "95588d3d163fe35d281b7fb2e174658cb7b6b565742b732b3abb736ad89a00ae",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md": "51743ad28a5eb6cfe3963151a47c7b24c3d8ae33ec2f516e069160ad67186c23"
+  },
+  "findings": [
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 23
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 38
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 51
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 51
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 53
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 63
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 63
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 82
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 83
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 89
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 118
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 121
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 138
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 140
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 144
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "location": {
+        "line": 145
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-003-two-body-problem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-003-two-body-problem.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-005-vibrating-string.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-005-vibrating-string.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-006-chladni-figure.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-006-chladni-figure.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-001-derivative.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+      "location": {
+        "line": 45
+      },
+      "message": "字符 U+U+02E3 超出允许的 ASCII+CJK+数学 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+      "location": {
+        "line": 47
+      },
+      "message": "字符 U+U+02E3 超出允许的 ASCII+CJK+数学 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-011-product-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-029-related-rates.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-010-gauss.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-010-gauss.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-001-antiderivative.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-020-arclength.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md",
+      "location": {
+        "line": 20
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/INT-022-shell-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+      "location": {
+        "line": 24
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/LIM-008-continuous-function.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-002-disk-integration.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-002-disk-integration.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-006-curvature.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-006-curvature.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-001-infinite-series.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-001-infinite-series.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-003-taylor-series.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-003-taylor-series.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-004-fourier-series.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-004-fourier-series.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md",
+      "location": {
+        "line": 3
+      },
+      "message": "数学条目第一个二级标题必须为「定义」(现为「概览」)"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "M008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md",
+      "location": {
+        "line": 1
+      },
+      "message": "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 24
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 64
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 68
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 89
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 96
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 130
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 133
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 20
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 21
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 21
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 29
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 38
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 59
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 75
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 1
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 13
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 69
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 70
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 102
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 112
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 24
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 37
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 39
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 53
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 67
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 75
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 44
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 93
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 112
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 29
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 85
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 1
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 41
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 50
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 94
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 95
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 23
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 69
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 113
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 46
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 46
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 77
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 107
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 116
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 120
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006settle-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 120
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 320,
+    "by_rule": {
+      "C006": 154,
+      "S005": 113,
+      "M008": 51,
+      "C002": 2
+    },
+    "by_pack": {
+      "des-001-mathe": 320
+    }
+  }
+}
