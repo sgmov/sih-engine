@@ -1,0 +1,1342 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.2.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md": "74872301baa92a701f08fd707168fa2d328790b169e1761eb7dba90d80568597",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md": "d67f506cdac391a07de59ba316b19ad949206275787dd46b7b1b0ce473b555fe",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md": "ed2101c57e176f2fb7f04f86dd0847152a2da0584f7399d3821c939ea2a258c1",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md": "469b2888a3d08a0d2849bf687302fa063ed9abcecd51ce023bd89e6fa414dd0f",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md": "eb1464ca499e791f41a29cbb953dc937df168a724771560a5245499b41c4dada",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md": "ab7b8c74145e50e33478c9a3256767f23c317312f8f3590a6d415a204379cfca",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md": "3f71fccbb586af1f59cea222237cfe86357ddb337c69f407873dfdd1c312afcd",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md": "20f8427c0274f21e6fe679340ebc082bce2eea80c0037b495927421a3f0c54f0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md": "5b6c12c0cfd3fa9a948941593c3bd3af9f4bf0b1c5684b8971aca7a5b40c694c"
+  },
+  "findings": [
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+      "location": {
+        "line": 45
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 29
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 60
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+      "location": {
+        "line": 85
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 1
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 36
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 41
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 50
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 66
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 92
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 94
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 94
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 95
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "location": {
+        "line": 95
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 23
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 69
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 94
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+      "location": {
+        "line": 113
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 41
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 46
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 46
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 77
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 107
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 116
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 120
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "location": {
+        "line": 120
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 24
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 64
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 68
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 89
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 96
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 130
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+      "location": {
+        "line": 133
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 20
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 9
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 21
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 21
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 28
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 29
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 38
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 39
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 59
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 64
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 64
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 70
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 74
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 75
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 88
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "location": {
+        "line": 89
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 1
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 9
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 13
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 34
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 38
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 43
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 69
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 70
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 70
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 92
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 102
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 102
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 103
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 112
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 118
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 119
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md",
+      "location": {
+        "line": 122
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 142,
+    "by_rule": {
+      "C006": 142
+    },
+    "by_pack": {
+      "des-001-mathe": 142
+    }
+  }
+}
