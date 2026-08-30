@@ -86,6 +86,7 @@ gaugeimpl 批留期票两张：一引擎侧 record 落链腿即 SPEC-011 修订�
 - sih-tools/lease/src/lease/
 - sih-tools/lease/tests/
 - sih-tools/lease/CONTRACT.md
+- sih-tools/lease/pyproject.toml
 - sih-engine/sih/event/trail/2026-08-30.ndjson
 - sih-tools/scribe/reports/
 - sih-tools/formatter/CALL-LOG.md
