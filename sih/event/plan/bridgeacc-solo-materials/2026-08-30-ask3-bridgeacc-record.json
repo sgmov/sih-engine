@@ -1,0 +1,49 @@
+{
+  "session_id": "sess-zcode-260830-bridgeacc",
+  "raw_input": "开：bridgeacc-solo 桥接入闸批（113 件已验收草稿经租约落笔入正身）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "bridgeacc-solo 将收件台 113 件四项全绿桥接草稿即 225 条逐字验过锚点插入 calculus 条目的关系节与工程映射节之间，经三闸与认证上链结算归并，数学仓读数不回归即 C006 8 与 S005 113 与 M008 51 与 C002 2 全不变",
+    "exclusions": [
+      "不动 8 处 C006 真 SKIP",
+      "不改规则包语义",
+      "不动子代理编排记录与认领账本的已落盘内容，只归档复制",
+      "不动 sih-tools 与 engine 主检出他人线件"
+    ],
+    "output_format": "副本内机械插入 113 节 + 三闸 + 三认证上链 + 结果档 + 双仓结算归并 + 对表",
+    "injected_constraints": [
+      "工程基线第一条：确定性程序执行，子代理产出仅符号材料",
+      "工程基线第四条：可验证性",
+      "链快照复制必须发生在末笔追加之后",
+      "请求写入行必须净路径"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-math/calculus/llm-friendly-build/entries/ 113 件",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-tools/lease 与 engine scribe 与 ask3repeater 与 scrutinator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "bridgeacc 113 件多代理产出经四项机械验收全绿后由主线确定性落笔，承接 PRO-07 鉴即检验由可重复程序承载",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+        "quote": "鉴是治理的认识机制"
+      },
+      "rationale": "多代理生成零判定权，验收读数全部出自 verify.py 与核阅工具，本批即该命题的工程实证",
+      "evidence": "agent-drafts/bridge/WAVES.md:1",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 0
+}
