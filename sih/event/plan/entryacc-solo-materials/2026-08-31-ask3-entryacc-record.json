@@ -1,0 +1,47 @@
+{
+  "session_id": "sess-zcode-260831-entryacc",
+  "raw_input": "开：entryacc-solo 新条目入闸批（五件生而绿草稿经独立复验入正身）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "entryacc-solo 将五件已登记未建概念的生而绿草稿即 TOP-006 紧集与 TOP-007 连续映射与 PROB-004 大偏差原理与 PROB-005 Bayesian 更新与 ORD-005 链与反链，经归一化即 H1 提首与状态统一已建后入 sih-math 正身，mapping 与三子仓 INDEX 刷已建，验收即全量 133 件核阅零违规",
+    "exclusions": [
+      "不动五件草稿的数学内容",
+      "不动编排波认领与波次记录",
+      "存量发现即 TOP-004 指针悬空与 calculus INDEX 标注差仅记录不代改"
+    ],
+    "output_format": "副本归一化落笔 + 三闸 + 认证上链 + 双仓结算归并 + 对表",
+    "injected_constraints": [
+      "工程基线第一条与第四条",
+      "引文程序化截取教训承 rulesem 批",
+      "链快照在末笔后"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-math 五子仓 entries 新增五件与 mapping 与 INDEX 三件",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-tools/lease 与 engine scribe 与 ask3repeater 与 scrutinator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "entryacc 五件多代理产草稿经主线独立机械复验与内容抽读后入正身，数学仓登记概念全量已建，承接 PRO-02 道一即收敛态机械可验",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/02-on-first-tao.md",
+        "quote": "道一：发散是默认方向，治理是收敛的构成性条件。"
+      },
+      "rationale": "五件入正身后五子仓登记概念全部已建即收敛态，核阅零违规为机械验收面",
+      "evidence": "agent-drafts/entry/WAVES.md:1",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 0
+}

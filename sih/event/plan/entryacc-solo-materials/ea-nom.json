@@ -1,0 +1,63 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-006-compact-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-007-continuous-mapping.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-004-large-deviation-principle.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-005-bayesian-updating.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/order/entries/ORD-005-chains-and-antichains.md"
+  ],
+  "findings": [
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "chet 在 Sur quelques points du calcul fonctionnel 中将连续性推广到度量空",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-007-continuous-mapping.md",
+      "line": 67,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.3.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.1.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 5,
+    "findings": 1,
+    "skipped": 0
+  }
+}

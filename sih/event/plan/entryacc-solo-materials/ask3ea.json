@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "../../sih-tools/scribe/reports/2026-08-31-ask3-entryacc-record.json"
+  ],
+  "content_hashes": {
+    "../../sih-tools/scribe/reports/2026-08-31-ask3-entryacc-record.json": "e3ff1682c04bf171b014cdd2e3aae03e3c416450a4a728a612625ba25b42263c"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
