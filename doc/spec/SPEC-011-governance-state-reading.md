@@ -87,3 +87,4 @@ reading_recorded 事件字段七件逐一必填。dimension 即维度三值枚�
 
 v1 于 2026-08-28 随 gspec-solo 批落盘。正名已签即秤星英文对 gauge，名冻解除而接口冻结不动，即 read 与 record 两操作名与七字段 schema 经修订记录留痕方可改。
 修订二 2026-08-30 pk029signoff 批：组件正名签定为秤星英文对 gauge，承得一四通道机器终签即终签事件 3d1ec172 至 923449fe 与用户同意令；三维轴值 convergence adoption mergeback 与 read record 操作名与七字段 schema 接口冻结不动，本修订只动名不动接口。
+修订三 2026-08-30 gaugeimpl 批：实装家位经用户开工令裁定为围堰组件先建即计算核落 sih-tools/gauge 外切孵化，替本节原引擎 src 判据；融回前置即引擎侧 record 守卫批，读数事件类型与落链腿两件，另开承接；接口冻结面零触碰。
