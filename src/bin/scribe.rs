@@ -9,7 +9,7 @@ use serde_json::json;
 use sih_engine::event_stream::event::{Actor, ActorType};
 use sih_engine::event_stream::{
     append, certification_event, check_locks, compute_event_hash, intent_event, load_events,
-    lockgate::LockGateError, park_event, query, reading_event, verify, Event, EventFilter,
+    crosscheck_event, lockgate::LockGateError, park_event, query, reading_event, verify, Event, EventFilter,
     VerifyRange, GENESIS_PREV_HASH,
 };
 use std::path::{Path, PathBuf};
@@ -223,6 +223,36 @@ fn main() {
                 Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
             }
         }
+        "crosscheck" => {
+            let (Some(report), Some(material), Some(trail)) =
+                (opt("report"), opt("material"), opt("trail"))
+            else {
+                emit(json!({"error": "缺参"}), 2)
+            };
+            lockgate_guard(&opts, &trail);
+            let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
+            let Some(mat_text) = read_text(&material) else {
+                emit(json!({"error": format!("所指材料不存在 {material}")}), 2)
+            };
+            let input = match crosscheck_event(&text, &mat_text, gate_actor()) {
+                Ok(i) => i,
+                Err(e) => emit(json!({"error": format!("跨方核毕守卫拒 {e}")}), 1),
+            };
+            let doc_id = input.doc_id.clone();
+            let mut store = load_store(&trail);
+            match append(input, &mut store, Some(&PathBuf::from(&trail))) {
+                Ok(ok) => emit(
+                    json!({
+                        "status": "appended",
+                        "event_id": ok.event_id,
+                        "event_hash": ok.event_hash,
+                        "doc_id": doc_id,
+                    }),
+                    0,
+                ),
+                Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+            }
+        }
         "vectors" => {
             let Some(out) = opt("write") else { emit(json!({"error": "缺 --write"}), 2) };
             let vectors = golden_vectors();
@@ -231,7 +261,7 @@ fn main() {
             emit(json!({"status": "written", "count": vectors.as_array().map(|a| a.len()).unwrap_or(0)}), 0);
         }
         _ => emit(
-            json!({"error": "用法 scribe <append|verify|query|intent|park|record|vectors> --trail <路径>"}),
+            json!({"error": "用法 scribe <append|verify|query|intent|park|record|crosscheck|vectors> --trail <路径>"}),
             2,
         ),
     }

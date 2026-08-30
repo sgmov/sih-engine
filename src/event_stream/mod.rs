@@ -9,6 +9,7 @@
 
 pub mod append;
 pub mod certify;
+pub mod crosscheck;
 pub mod intent;
 pub mod lockgate;
 pub mod park;
@@ -28,6 +29,7 @@ pub use event::{Actor, ActorType, Event, EventInput};
 pub use intent::{intent_event, IntentError};
 pub use lockgate::{check_locks, LockGateError};
 pub use park::{park_event, ParkError};
+pub use crosscheck::{crosscheck_event, guard_crosscheck, CrosscheckError, CROSSCHECK_LIFT_FIELDS, CROSSCHECK_REPORT_FIELDS};
 pub use reading::{guard_reading, reading_event, ReadingError, READING_DIMENSIONS, READING_FIELDS};
 pub use hash::{compute_event_hash, verify_chain, GENESIS_PREV_HASH};
 pub use query::{query, EventAggregate, EventFilter, EventList, AggregationResult};
