@@ -1,0 +1,90 @@
+{
+  "contract_version": 1,
+  "kind": "facet-sampling-contract",
+  "meta": {
+    "measurement_entry": "proposition/topics/2026-08-30-fmtbatch.md",
+    "n_declared": 9
+  },
+  "pack": {
+    "atom": "integrator",
+    "direction": "judge",
+    "ng_label": "medium",
+    "ng_text_sha256": "d4f847016697d5be0701ce7630e49b1ec328a2ace64169a3cdd1bd49c99af32c",
+    "paradigm_id": "normative_convergence"
+  },
+  "proposition": {
+    "gid": "m-fmtbatch",
+    "title": "格式违规按机械可修性分道清偿",
+    "topic_sha256": "e91969f9341bc39fd20c7ab3abc98b977fb19484b32d70c772543f79f2e65b29"
+  },
+  "responses_format": {
+    "discipline": "逐发模型完整原文回填，不改写、不摘要、不挑选",
+    "fields": [
+      "key",
+      "shot",
+      "raw"
+    ],
+    "file": "jsonl"
+  },
+  "seat": {
+    "framework": "zcode",
+    "model_id": "GLM-5.3-Flash",
+    "version": "self-reported"
+  },
+  "shots": [
+    {
+      "key": "m-fmtbatch#r1",
+      "shot": 1,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r2",
+      "shot": 2,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r3",
+      "shot": 3,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r4",
+      "shot": 4,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r5",
+      "shot": 5,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r6",
+      "shot": 6,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r7",
+      "shot": 7,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r8",
+      "shot": 8,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    },
+    {
+      "key": "m-fmtbatch#r9",
+      "shot": 9,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: 格式违规按机械可修性分道清偿\nauthored: mathreg 后格式归一批范围裁定采样，AI 起草（ZCode/GLM-5.3-Flash）\nng: medium\nn: 9\ngid: m-fmtbatch\n---\n\n# 待裁命题\n\n数学仓 1963 处核阅违规中，S004（标题缺显式锚点）与 C001（中文破折号）两类属机械可修：核阅引擎按行号定位、改写不涉论证语义（补锚点为格式标记追加，破折号替换为标点映射），适于独立格式归一批先行清偿；C006（全角括号内容非法）的合规改写须逐句重排括号内论证文字、语义判断不可回避，应随条目内容修复分卷消化，不入独立格式批。\n\n## anchors\n\n- path: scrutinator/packs/des-001-mathe/rules.toml\n  range: 13-50\n  note: C001 与 C006 与 S004 三规则的机械定义，改写可修性的规则依据\n- path: scrutinator/packs/des-001/rules.toml\n  range: 1-40\n  note: 基础包同三规则定义，规则语义跨包同构\n- path: proposition/topics/2026-08-30-fmtbatch.md\n  range: 8-10\n  note: 命题中三类违规的实例形态与数量断言\n\n"
+    }
+  ]
+}
