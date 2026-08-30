@@ -1,0 +1,28 @@
+[
+ {
+  "file": "HIS-002-infinitesimal.md",
+  "errors": [
+   {
+    "rule_id": "UNCLOSED_BRACKET",
+    "message": "unclosed '('",
+    "line": 30,
+    "column": 111,
+    "severity": "error",
+    "context": ""
+   }
+  ]
+ },
+ {
+  "file": "INT-017-trapezium-rule.m",
+  "errors": [
+   {
+    "rule_id": "UNCLOSED_BRACKET",
+    "message": "mismatched: expected ']' for '[' but found ')'",
+    "line": 7,
+    "column": 25,
+    "severity": "error",
+    "context": "述::[math-formulation)"
+   }
+  ]
+ }
+]
