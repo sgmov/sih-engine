@@ -1,0 +1,50 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-math/calculus/entries/*.md",
+          "sih-math/topology/entries/*.md",
+          "sih-math/probability/entries/*.md",
+          "sih-math/order/entries/*.md",
+          "sih-math/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/llm-friendly-build/**",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathprobe-solo/docs/survey-mathprobe-2026-08-30.md"
+  ],
+  "content_hashes": {},
+  "findings": [],
+  "domain_mismatches": [
+    {
+      "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathprobe-solo/docs/survey-mathprobe-2026-08-30.md",
+      "reason": "目标不在任何已加载规则包声明的治理域内",
+      "pack_domains": [
+        "des-001-mathe"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
