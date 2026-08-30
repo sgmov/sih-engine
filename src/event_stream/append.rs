@@ -70,6 +70,7 @@ pub fn append(
         "intent_revised",
         "symbol_generated",
         "crosscheck_completed",
+        "reading_recorded",
     ];
     if requires_details.contains(&input.event_type.as_str()) && input.details.is_none() {
         return Err(AppendError::MissingRequiredDetails(input.event_type.clone()));
