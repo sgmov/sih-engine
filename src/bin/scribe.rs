@@ -1,6 +1,7 @@
 //! scribe 即书简融回命令行面即本名回滚承 DEC-017 修订二，承接 SPEC-006#boundary 与 T6。
 //!
-//! 子命令五件即 append、verify、query、intent、park，另携 vectors 冻结向量集。
+//! 子命令六件即 append、verify、query、intent、park、record，另携 vectors 冻结向量集。
+//! record 即秤星读数落链入口，七字段守卫承 SPEC-011，只校形不判值。
 //! 退出码三值即零成功、一校验或检索异常、二工具自身异常。
 
 use chrono::Utc;
@@ -8,8 +9,8 @@ use serde_json::json;
 use sih_engine::event_stream::event::{Actor, ActorType};
 use sih_engine::event_stream::{
     append, certification_event, check_locks, compute_event_hash, intent_event, load_events,
-    lockgate::LockGateError, park_event, query, verify, Event, EventFilter, VerifyRange,
-    GENESIS_PREV_HASH,
+    lockgate::LockGateError, park_event, query, reading_event, verify, Event, EventFilter,
+    VerifyRange, GENESIS_PREV_HASH,
 };
 use std::path::{Path, PathBuf};
 use std::process::exit;
@@ -197,6 +198,31 @@ fn main() {
                 Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
             }
         }
+        "record" => {
+            let (Some(reading), Some(trail)) = (opt("reading"), opt("trail")) else {
+                emit(json!({"error": "缺参"}), 2)
+            };
+            lockgate_guard(&opts, &trail);
+            let Some(text) = read_text(&reading) else { emit(json!({"error": "读数件不存在"}), 2) };
+            let input = match reading_event(&text, gate_actor()) {
+                Ok(i) => i,
+                Err(e) => emit(json!({"error": format!("读数守卫拒 {e}")}), 1),
+            };
+            let doc_id = input.doc_id.clone();
+            let mut store = load_store(&trail);
+            match append(input, &mut store, Some(&PathBuf::from(&trail))) {
+                Ok(ok) => emit(
+                    json!({
+                        "status": "appended",
+                        "event_id": ok.event_id,
+                        "event_hash": ok.event_hash,
+                        "doc_id": doc_id,
+                    }),
+                    0,
+                ),
+                Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+            }
+        }
         "vectors" => {
             let Some(out) = opt("write") else { emit(json!({"error": "缺 --write"}), 2) };
             let vectors = golden_vectors();
@@ -205,7 +231,7 @@ fn main() {
             emit(json!({"status": "written", "count": vectors.as_array().map(|a| a.len()).unwrap_or(0)}), 0);
         }
         _ => emit(
-            json!({"error": "用法 scribe <append|verify|query|intent|park|vectors> --trail <路径>"}),
+            json!({"error": "用法 scribe <append|verify|query|intent|park|record|vectors> --trail <路径>"}),
             2,
         ),
     }
