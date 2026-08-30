@@ -1,0 +1,47 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathprobe-solo/docs/survey-mathprobe-2026-08-30.md"
+  ],
+  "findings": [],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.3.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.1.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 0,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathprobe-solo/docs/survey-mathprobe-2026-08-30.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathprobe-solo/docs/survey-mathprobe-2026-08-30.md": "639e55365ce0eac2cf76f703aa33c36b359679b3d50a8fd90cf65b2ee6a062bc"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
