@@ -1,0 +1,52 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-006-compact-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-007-continuous-mapping.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-004-large-deviation-principle.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-005-bayesian-updating.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/order/entries/ORD-005-chains-and-antichains.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-006-compact-set.md": "6844e9c8fccfb42316bc1f5634af2fa9bb968c1905982cf763cd09feceb00094",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/topology/entries/TOP-007-continuous-mapping.md": "21c187b7ac06ec8bbfcf47696f67b390c945d5879c656cc8fa4fdd364c3517c8",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-004-large-deviation-principle.md": "e34bd98200ce9cc4853c449217a5e4949d15fd971c5b78e5a06c1a36c24e49ea",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/probability/entries/PROB-005-bayesian-updating.md": "1256a27a19b3c861b7ec6c06c2cfdb62dd1d947051a44830b7375981e6c402db",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/entryacc-solo/order/entries/ORD-005-chains-and-antichains.md": "a061d18d6347a583a8d70a055cb78d35b26fc7a2bc9cd9c28bcd3e9be9edde1c"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
