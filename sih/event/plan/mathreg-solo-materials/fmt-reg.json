@@ -1,0 +1,50 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/llm-friendly-build/mapping.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/INDEX.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/README.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/docs/survey-mathprobe-2026-08-30.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/llm-friendly-build/mapping.md": "234626b154da077e7eeed3c2d12fcd1ed37f59ec42282b38b4dbd816ef9b6d2b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/INDEX.md": "5581f8c9da3793ea81a626a58b240c59dc70a006a60ef07c4bc539103d35a4a4",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/README.md": "5880167d275086e7844f318465752376a0cf876113e9c4df342afaaed00ee4dc",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathreg-solo/docs/survey-mathprobe-2026-08-30.md": "e3afcc80e1be226b0a8df28b5d0eade71c136e3b34028ca805cdfa4526b9b97c"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}

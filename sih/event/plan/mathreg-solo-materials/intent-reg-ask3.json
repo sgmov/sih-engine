@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/tmp/mathprobe/intent-record-reg.json"
+  ],
+  "content_hashes": {
+    "/tmp/mathprobe/intent-record-reg.json": "9f1130cb156b2246e1964bc9b458c030aa2cb97ff6bf6f6c08f2912d329dcb2d"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
