@@ -70,6 +70,7 @@ expr_chunk 换结构可能破崩溃语料恢复即有序选择保留配平回退
 - sih-tools/parser/packs/rust/
 - sih-tools/parser/tests/
 - sih-tools/parser/CONTRACT.md
+- sih-tools/parser/src/parser/langpack.py
 - sih-engine/sih/state/plan/pk027expr-solo.md
 - sih-engine/sih/event/plan/pk027expr-solo-results.md
 - sih-tools/parking/materials/pk-027-exit.json
