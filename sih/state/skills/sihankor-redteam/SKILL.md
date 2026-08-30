@@ -1,9 +1,11 @@
 ---
 name: "sihankor-redteam"
-description: "Run a LLM red-blue-purple adversarial review on a proposition. Invoke when the user asks to redteam / adversarially review / stress-test a claim, proposition, or design decision, especially when anchored evidence is available in the repo."
+description: "RETIRED 已退役：redteam 工具代码已于 2026-08-30 前移除，本壳仅存血统档禁止调用。历史：通用 LLM 红蓝紫对抗审查工具的调用入口。"
 ---
 
 # SiHankor Redteam Skill
+
+> **已退役（2026-08-30 补登记）**：redteam 工具代码已全盘移除，本 skill 仅存血统档，禁止调用。死因与翻案条件见根 AGENTS.md redteam 章。以下原文保留不抹。
 
 通用 LLM 红蓝紫对抗审查工具的调用入口。工具独立于司衡哲学体系，承接 PRO-07 鉴层打破自证循环的精神，但不显式引用哲学命题。
 
