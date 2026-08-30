@@ -1,0 +1,52 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-003-central-limit-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-006-probability-measure.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-007-expectation.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-001-law-of-large-numbers.md": "f2827a70017f3434cc75a2312c11120f33b0fdf84493cdae0c36a117adb9be8d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md": "d829f64db94751b538f863bad25e815633b7432bbb918c3bfa638afba21d98c0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-003-central-limit-theorem.md": "984bc928dba711af46c384bd61c95181a39ab1cd4b8e26b4287b654cd23551b9",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-006-probability-measure.md": "0f1bb1b551a4fd71fb9db6e96c46e178d55a024dd6a603383c7a5c655ccbdd91",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix2-solo/probability/entries/PROB-007-expectation.md": "34d669f439d174b48be3b1b010ebaa98052fbab0ecac45cf298e2af4b0b6f802"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
