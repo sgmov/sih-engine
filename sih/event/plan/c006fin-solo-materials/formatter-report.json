@@ -1,0 +1,68 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-001-partially-ordered-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-002-complete-lattice.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-004-monotone-operator.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-003-central-limit-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-001-banach-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-004-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-005-complete-metric-space.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md": "961bf36a8ce06b82e78ccce4c8803f58f85ad0bf96a12e146666b0356a993b93",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-001-partially-ordered-set.md": "5ba56bb74cfd695fee4c369c61de2aea66977bdd54ed049e5e9abcd6748bfc13",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-002-complete-lattice.md": "57fa89b6dc1932117d8e950c2eb7fae05ecc0a69119e46510fdf05a3f65bb75b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md": "37d721d12b8d1a26f0cda8dcd1fb162fe38e44505b9c9c5007da824b75fe7a1c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/order/entries/ORD-004-monotone-operator.md": "1e7502aa17a453dcff7b7b79d902bac74459fd0f28a25de4419690ff397706d5",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-001-law-of-large-numbers.md": "6ead04702d56158fde554867ec1872a07802b63c85ae3fd50b0d38b6bea4f593",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md": "eacfbaacb6c5e3fdf5a1f519783c8ed6945567a48b8886a02b85302b30507263",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/probability/entries/PROB-003-central-limit-theorem.md": "41e036395f6147f0df361f0d7fe95ee731fa51736ac56d519852d544a01c6569",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-001-banach-fixed-point.md": "7b2f9365bd8725cbea1e2b2bc0534d954eb92e0ef5d437d7955bec64e519d811",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-002-brouwer-fixed-point.md": "14c4a389784d313dc75af996c4c01b7abf282d41e97da09b9418746b79996314",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-003-knaster-tarski-mirror.md": "d866a7d1e350408568ecf82de6364459ae63f331c1689dfcca9f2eb0d7f36847",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-004-metric-space.md": "aed6d2ddfb9d47a6909e74ec48fc3fabd33468115b352c0464454ee67b3017aa",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/c006fin-solo/topology/entries/TOP-005-complete-metric-space.md": "61dddfe4b80cd1ec1bb01d7eee0521e18867b5ae653fd87994c9f9d8d176b588"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
