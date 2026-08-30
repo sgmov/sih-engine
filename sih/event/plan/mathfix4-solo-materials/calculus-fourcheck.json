@@ -1,0 +1,1111 @@
+[
+ {
+  "id": "APP-001",
+  "file": "calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "APP-002",
+  "file": "calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-003",
+  "file": "calculus/llm-friendly-build/entries/APP-003-two-body-problem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-004",
+  "file": "calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-005",
+  "file": "calculus/llm-friendly-build/entries/APP-005-vibrating-string.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-006",
+  "file": "calculus/llm-friendly-build/entries/APP-006-chladni-figure.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-007",
+  "file": "calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-008",
+  "file": "calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "APP-009",
+  "file": "calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "APP-010",
+  "file": "calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-001-derivative.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md",
+  "props": [
+   "PRO-07"
+  ],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-00",
+  "file": "calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-011-product-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-01",
+  "file": "calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-02",
+  "file": "calculus/llm-friendly-build/entries/DIFF-029-related-rates.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-03",
+  "file": "calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "DIFF-03",
+  "file": "calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "DIFF-03",
+  "file": "calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "HIS-001",
+  "file": "calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-002",
+  "file": "calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "HIS-003",
+  "file": "calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-004",
+  "file": "calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-005",
+  "file": "calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-006",
+  "file": "calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-007",
+  "file": "calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-008",
+  "file": "calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-009",
+  "file": "calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-010",
+  "file": "calculus/llm-friendly-build/entries/HIS-010-gauss.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-011",
+  "file": "calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-012",
+  "file": "calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "HIS-013",
+  "file": "calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "HIS-014",
+  "file": "calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "HIS-015",
+  "file": "calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "HIS-016",
+  "file": "calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-001",
+  "file": "calculus/llm-friendly-build/entries/INT-001-antiderivative.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-002",
+  "file": "calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-003",
+  "file": "calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-004",
+  "file": "calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "INT-005",
+  "file": "calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "INT-006",
+  "file": "calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-007",
+  "file": "calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-008",
+  "file": "calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "INT-009",
+  "file": "calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-010",
+  "file": "calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-011",
+  "file": "calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-012",
+  "file": "calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-013",
+  "file": "calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-014",
+  "file": "calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-015",
+  "file": "calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-016",
+  "file": "calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-017",
+  "file": "calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-018",
+  "file": "calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-019",
+  "file": "calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-020",
+  "file": "calculus/llm-friendly-build/entries/INT-020-arclength.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "INT-021",
+  "file": "calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "INT-022",
+  "file": "calculus/llm-friendly-build/entries/INT-022-shell-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "LIM-001",
+  "file": "calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "LIM-002",
+  "file": "calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "LIM-003",
+  "file": "calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "LIM-004",
+  "file": "calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "LIM-005",
+  "file": "calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "LIM-006",
+  "file": "calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "LIM-007",
+  "file": "calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "LIM-008",
+  "file": "calculus/llm-friendly-build/entries/LIM-008-continuous-function.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-001",
+  "file": "calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-002",
+  "file": "calculus/llm-friendly-build/entries/MUL-002-disk-integration.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "MUL-003",
+  "file": "calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-004",
+  "file": "calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "MUL-005",
+  "file": "calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-006",
+  "file": "calculus/llm-friendly-build/entries/MUL-006-curvature.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-007",
+  "file": "calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "MUL-008",
+  "file": "calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-009",
+  "file": "calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "MUL-010",
+  "file": "calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "NS-001-",
+  "file": "calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "NS-002-",
+  "file": "calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "NS-003-",
+  "file": "calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "SER-001",
+  "file": "calculus/llm-friendly-build/entries/SER-001-infinite-series.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SER-002",
+  "file": "calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "SER-003",
+  "file": "calculus/llm-friendly-build/entries/SER-003-taylor-series.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SER-004",
+  "file": "calculus/llm-friendly-build/entries/SER-004-fourier-series.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SER-005",
+  "file": "calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": false
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ },
+ {
+  "id": "SPEC-00",
+  "file": "calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md",
+  "props": [],
+  "dangling_props": [],
+  "dead_call_roots": [
+   "counter"
+  ],
+  "falsifiable": false,
+  "dual_answer": true
+ }
+]
