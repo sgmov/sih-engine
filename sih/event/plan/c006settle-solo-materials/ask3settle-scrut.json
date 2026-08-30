@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "../../sih-tools/scribe/reports/2026-08-30-ask3-c006settle-record.json"
+  ],
+  "content_hashes": {
+    "../../sih-tools/scribe/reports/2026-08-30-ask3-c006settle-record.json": "8b6495793c270ac72ed8b8670b9333bd250a928feb60c8502d3034dae8229214"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
