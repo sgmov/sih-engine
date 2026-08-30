@@ -1,0 +1,60 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-001-banach-fixed-point.md": "74872301baa92a701f08fd707168fa2d328790b169e1761eb7dba90d80568597",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-002-brouwer-fixed-point.md": "d67f506cdac391a07de59ba316b19ad949206275787dd46b7b1b0ce473b555fe",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-003-knaster-tarski-mirror.md": "ed2101c57e176f2fb7f04f86dd0847152a2da0584f7399d3821c939ea2a258c1",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-004-metric-space.md": "469b2888a3d08a0d2849bf687302fa063ed9abcecd51ce023bd89e6fa414dd0f",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/topology/entries/TOP-005-complete-metric-space.md": "eb1464ca499e791f41a29cbb953dc937df168a724771560a5245499b41c4dada",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-001-partially-ordered-set.md": "ab7b8c74145e50e33478c9a3256767f23c317312f8f3590a6d415a204379cfca",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-002-complete-lattice.md": "3f71fccbb586af1f59cea222237cfe86357ddb337c69f407873dfdd1c312afcd",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md": "20f8427c0274f21e6fe679340ebc082bce2eea80c0037b495927421a3f0c54f0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathfix1-solo/order/entries/ORD-004-monotone-operator.md": "5b6c12c0cfd3fa9a948941593c3bd3af9f4bf0b1c5684b8971aca7a5b40c694c"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
