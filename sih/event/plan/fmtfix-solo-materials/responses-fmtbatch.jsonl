@@ -1,0 +1,9 @@
+{"key": "m-fmtbatch#r1", "shot": 1, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_1\", \"reason\": \"S004 补锚点与 C001 标点映射均为确定性规则可定位可改写的格式操作，归机械批符合确定性执行者条款\", \"boundary_flag\": true}"}
+{"key": "m-fmtbatch#r2", "shot": 2, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_5\", \"reason\": \"机械类修复不需语义判断即不需 LLM 参与，与 C006 的逐句重排分开处理使 LLM 参与面收敛到确需语义处\", \"boundary_flag\": false}"}
+{"key": "m-fmtbatch#r3", "shot": 3, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_1\", \"reason\": \"核阅引擎已按行号定位违规，S004 与 C001 的改写是格式标记追加与标点映射，属确定性程序职权\", \"boundary_flag\": false}"}
+{"key": "m-fmtbatch#r4", "shot": 4, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"机械批的修复结果可由核阅复跑机械校验，违规计数下降即可证伪，满足可校验要求\", \"boundary_flag\": true}"}
+{"key": "m-fmtbatch#r5", "shot": 5, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_1\", \"reason\": \"C006 改写需逐句重排论证文字属语义工作应留内容批，S004 与 C001 留给确定性程序，命题的分道与执行者归属一致\", \"boundary_flag\": false}"}
+{"key": "m-fmtbatch#r6", "shot": 6, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_5\", \"reason\": \"先清机械类使后续内容批的核阅读数只剩语义类违规，减少治理环节中的 LLM 噪声参与\", \"boundary_flag\": true}"}
+{"key": "m-fmtbatch#r7", "shot": 7, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_1\", \"reason\": \"标题锚点是格式标记而非内容，破折号到冒号是标点映射，两类改写均可机械执行且可机械复验\", \"boundary_flag\": false}"}
+{"key": "m-fmtbatch#r8", "shot": 8, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"分道后每批的修复效果各有独立的机械校验口径即违规类计数归零，来源与结果均可追溯\", \"boundary_flag\": true}"}
+{"key": "m-fmtbatch#r9", "shot": 9, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_1\", \"reason\": \"把机械可定位的两类交独立格式批、语义类留内容批，符合治理操作归确定性程序的条款\", \"boundary_flag\": false}"}

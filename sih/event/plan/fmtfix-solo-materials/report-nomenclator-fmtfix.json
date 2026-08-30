@@ -1,0 +1,126 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-001-banach-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-002-brouwer-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-003-knaster-tarski-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-004-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-005-complete-metric-space.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/order/entries/ORD-001-partially-ordered-set.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/order/entries/ORD-002-complete-lattice.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/order/entries/ORD-004-monotone-operator.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/algebra/entries/ALG-001-matrix-and-eigenvalue.md"
+  ],
+  "findings": [
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "906 年在 Sur quelques points du calcul fonctionnel 中引入度量空间概念，F",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-004-metric-space.md",
+      "line": 51,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "chet 在 Sur quelques points du calcul fonctionnel（博士论文）中引入度量空",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-004-metric-space.md",
+      "line": 98,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "1906). Sur quelques points du calcul fonctionnel. Rend. Circ",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-004-metric-space.md",
+      "line": 117,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "906 年在 Sur quelques points du calcul fonctionnel 中给出度量空间完备性的",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "line": 44,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "chet 在 Sur quelques points du calcul fonctionnel（博士论文）中给出度量空",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "line": 106,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "excerpt": "1906). Sur quelques points du calcul fonctionnel. Rend. Circ",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/fmtfix-solo/topology/entries/TOP-005-complete-metric-space.md",
+      "line": 124,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.3.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.1.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 13,
+    "findings": 6,
+    "skipped": 0
+  }
+}
