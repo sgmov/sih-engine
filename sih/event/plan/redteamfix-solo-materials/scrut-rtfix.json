@@ -1,0 +1,416 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.2.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-006-probability-measure.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-007-expectation.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md": "a273166873033ba17dc442081b703f5d23afcaf7a52eed4605abe3cee55cbdcd",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md": "13b6983d3e1bdbb6141e3c2e73063584dfe34aab6baf0042c396bc97d29a24f6",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md": "f7e37314f92351c6a3d69743cf6e2a12f6190aeb59a36b6169a4f670906ca0be",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-006-probability-measure.md": "c280e914be6b7d0de7dffbe239f6fbc631e72c1de7e1fff21d252b9dfbd5ee20",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-007-expectation.md": "1b66804726eafd769b66eb559d6edb433afb701b665463737d22d1d69bfebb25"
+  },
+  "findings": [
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 24
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 37
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 53
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-001-law-of-large-numbers.md",
+      "location": {
+        "line": 61
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 25
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 39
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 48
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 53
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 66
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 67
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 75
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 19
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 39
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 44
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 45
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 51
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 59
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 85
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 92
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 93
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 96
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001-mathe",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/redteamfix-solo/probability/entries/PROB-003-central-limit-theorem.md",
+      "location": {
+        "line": 112
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 40,
+    "by_rule": {
+      "C006": 40
+    },
+    "by_pack": {
+      "des-001-mathe": 40
+    }
+  }
+}
