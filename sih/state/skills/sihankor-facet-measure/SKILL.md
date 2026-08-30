@@ -107,6 +107,8 @@ facet 调用面两半切分（CONTRACT-MODE-SPEC v1，sih-tools/facet/docs）：
 确定性内核四件即出题、计分、闸门、验证，零 LLM 调用零网络零 key；框架侧一
 动作即执行采样合同。模式一的「采样归 agent、计分归程序」由此从温度标定特例
 升格为通用调用形态，温度探针两模式保留为标定特例。
+pk-035 起计分必挂 `--identity-report <正身报告.json>` 或 `--identity-hash <HEX64>`，
+计分材料强制携带 identity_hash 与规范席位串（框架:模型:版本三段式大小写敏感）。
 
 1. **出题**：`python3 facet/measure.py <topic.md> --emit-contract <out.json> --seat <框架:模型> [--shots N]`，产采样合同（每发 system_prompt + user_prompt，装配确定性）。探针集规模用 `python3 facet/singleseat.py emit-contract --registry <reg.json> --date <YYYYMMDD> --out <dir>`，剂量格用 `python3 facet/probes/dose_driver.py emit-contract`。
 2. **执行（框架侧）**：把合同内每条提示词原样发给框架自己的模型，模型完整原文逐发写响应 jsonl（每行恰 key/shot/raw 三键），不改写、不摘要、不挑选——与模式一 cal-responses 纪律同款。
@@ -120,6 +122,8 @@ facet 调用面两半切分（CONTRACT-MODE-SPEC v1，sih-tools/facet/docs）：
 **模式一（agent 框架适配，默认）**——量的是 agent 自己的模型，走 agent 自己的通道，
 不经过 facet 后台 key。采样归 agent，计分归程序：
 
+0. 跑正身 verify 取身份报告（pk-035 起 score 必挂 `--identity-report` 或 `--identity-hash`，
+   缺一即拒；漂移配对按身份哈希优先，串同哈希异不混比）
 1. 导出标定包：`python3 facet/probes/temp_probe.py export-pack --out cal-pack.json`
 2. agent 按包内 `response_contract` 执行：对每条命题把 system_prompt + user_prompt
    原样发给**自己的模型**（温度 0），每命题 5 发，把模型完整原文逐发记入
@@ -149,6 +153,8 @@ python3 facet/probes/temp_probe.py --model MiniMax-M2.7   # 默认免费席
 - facet 测的是机制稳定性，不替代哲学命题推导与人类判断
 
 ## 修订记录
+
+2026-08-30 修订七，席位身份入正身。承用户裁定与泊件 pk-035 得一四通道机器终签即 3706bac0 至 01bf2697：采样与标定前先跑正身 verify 取报告，measure score 与 temp_probe score 必挂 --identity-report 或 --identity-hash，计分材料与标定账本强制携带 identity_hash 与规范席位串即三段式大小写敏感，漂移配对与执契 R5 按身份哈希优先、任一缺席回退现行为保旧件重放同判，正身本体零改、绑定止于可追溯非产权级防伪。
 
 2026-08-22 修订一，boundary 处理次序。用户裁定 facet 目的为人节点退化与反洪流，闸门返回打回重作时 agent 第一动作是法层精炼而非人节点重写：按认识论通道分解命题，文档一致性类断言重立为反向搜寻形即不一致搜寻，新 gid 测量且方向须对己不利以防调参钓鱼；机械可验性类断言路由确定性管线即 golden 对拍与测试；权力链事实类断言路由登记簿。原裁决留痕不抹。原「刀锋命题须人重写上下文」限位为法层精炼无法消解时的兜底，不再为第一跳。若反向搜寻形仍 boundary 且反对集中于任务类本身即跨文档比对属确定性可核任务，则裁定为通道错配即 facet 拒绝受理该任务类，命题落确定性核对通道机械执行，不三跑。
 
