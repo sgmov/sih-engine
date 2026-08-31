@@ -56,8 +56,13 @@
 
 | 序 | 事件类型 | 事件哈希 | doc_id | 备注 |
 |---|---|---|---|---|
-| 1 | intent_refined | 待批结算后 | sess-zcode-260831-tdfix2 | meter 包裹 scribe intent 入链 |
-| 2..n | certification_completed | 待批结算后 | tdfix2-fmt / tdfix2-scr / tdfix2-nom | 化格/核阅/检词三件报告各一笔 |
+| 1 | intent_refined | **未写入** | sess-zcode-260831-tdfix2 | trail 锁撞 ordfound-solo 35d0c111be991a5b，scribe 拒写，撞锁即报不绕行 |
+| 2..4 | certification_completed | **未写入** | tdfix2-fmt / tdfix2-scr / tdfix2-nom | 同上 trail 锁阻 |
+| - | 总链事件 | 99 → 102 | 2026-08-31.ndjson | 或dfound-solo 期间 8:38/8:39/8:43 写入 3 个 cert 事件，本批撞锁未写 |
+
+链收口状态：**未完成**。本批撞 ordfound-solo 持锁 trail/2026-08-31.ndjson 致链上事件无法写入。链本身仍 valid（102 事件，prev_hash 链不断），但本批意图与认证事件未上链。
+
+按指示「迁链必留路标即原路径占位说明」——本档即路标；待 trail 锁释放后由下批（或自动补写）将 sess-zcode-260831-tdfix2 intent + 4 个 cert 事件补入。补入需要 trail 锁未被他会话持、且用本批 ask3 记录与三件报告的哈希。
 
 ## 六、双仓对表与零残留 {#reconcile}
 
