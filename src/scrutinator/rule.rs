@@ -206,38 +206,6 @@ fn glob_match(pattern: &str, path: &str) -> bool {
     }
 }
 
-fn glob_simple(pattern: &str, path: &str) -> bool {
-    // 简易 glob：仅支持 * 与 ?
-    let pp: Vec<char> = pattern.chars().collect();
-    let mut i = 0;
-    let mut j = 0;
-    let mut star_i: Option<usize> = None;
-    let mut star_j: Option<usize> = None;
-    while j < path.chars().count() {
-        let pc = pp.get(i).copied();
-        let cc = path.chars().nth(j);
-        if pc == Some('*') {
-            star_i = Some(i);
-            star_j = Some(j);
-            i += 1;
-        } else if pc == Some('?') || (pc.is_some() && pc == cc) {
-            i += 1;
-            j += 1;
-        } else if let Some(si) = star_i {
-            i = si + 1;
-            let sj = star_j.unwrap() + 1;
-            j = sj;
-            star_j = Some(j);
-        } else {
-            return false;
-        }
-    }
-    while i < pp.len() && pp[i] == '*' {
-        i += 1;
-    }
-    i == pp.len()
-}
-
 /// 规则对单条文本检查，返回 findings
 pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
     let mut out = Vec::new();
@@ -498,12 +466,12 @@ pub struct TextFinding {
 
 /// 解析 manifest 加载规则集
 pub fn load_pack(pack_name: &str) -> Result<(DomainSpec, Vec<RuleEntry>), String> {
-    let manifest_text = crate::scrutiny::asset::manifest(pack_name);
+    let manifest_text = crate::scrutinator::asset::manifest(pack_name);
     if manifest_text.is_empty() {
         return Err(format!("未知名包: {pack_name}"));
     }
     let domain = parse_manifest_domains(manifest_text)?;
-    let rules_text = crate::scrutiny::asset::rules(pack_name);
+    let rules_text = crate::scrutinator::asset::rules(pack_name);
     let rules = parse_rules(rules_text)?;
     Ok((domain, rules))
 }

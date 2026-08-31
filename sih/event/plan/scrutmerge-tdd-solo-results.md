@@ -8,7 +8,7 @@
 
 ## 概览 {#overview}
 
-引擎侧核阅组件按 SPEC-013 用 Rust 落地。`src/核阅/` 库模块（rule/report/asset 子模块，零规则知识）+ `src/bin/scrutinator.rs` 命令行面 + `Cargo.toml` 加 `toml`/`regex` 依赖 + `src/核阅/packs/{des-001,des-001-mathe,ask3}/` 三包编译期内嵌。TDD 六组逐判据先红后绿：T1 金向量冻结 6 件真实目标（des-001 域 GOV-002/003、des-001-mathe 域 LIM-001/MUL-001、ask3 域 scrutmerge-sdd/viewrider record 件），T2 逐字节一致 6 件全过，T3 退出码三值（0/1/2）已实装，T4 多包归因 by_pack/by_rule 已实装，T5 不变量无网络无写由 Rust 静态保证（无 std::net 引用、无 fs::write），T6 content_hashes SHA-256 与 scribe append 认证位兼容。
+引擎侧核阅组件按 SPEC-013 用 Rust 落地。`src/scrutinator/` 库模块（rule/report/asset 子模块，零规则知识）+ `src/bin/scrutinator.rs` 命令行面 + `Cargo.toml` 加 `toml`/`regex` 依赖 + `src/scrutinator/packs/{des-001,des-001-mathe,ask3}/` 三包编译期内嵌。TDD 六组逐判据先红后绿：T1 金向量冻结 6 件真实目标（des-001 域 GOV-002/003、des-001-mathe 域 LIM-001/MUL-001、ask3 域 scrutmerge-sdd/viewrider record 件），T2 逐字节一致 6 件全过，T3 退出码三值（0/1/2）已实装，T4 多包归因 by_pack/by_rule 已实装，T5 不变量无网络无写由 Rust 静态保证（无 std::net 引用、无 fs::write），T6 content_hashes SHA-256 与 scribe append 认证位兼容。
 
 ## 验收判据自判 {#acceptance}
 
@@ -20,15 +20,15 @@
 
 ### F-2 接口契约对表：CONTRACT.md 六件机器形态与五判据与融回门三查逐条对表 {#f-2}
 
-- 六件机器形态：cli.py + packs + report + engine + domain + recorder 五源。引擎侧对应 `src/bin/scrutinator.rs`（cli 形态）+ `src/核阅/asset.rs`（packs 内嵌）+ `src/核阅/report.rs`（report 渲染）+ `src/核阅/rule.rs`（engine）+ `src/核阅/rule.rs::domain_match`（domain glob 锚定）。逐一对位。
+- 六件机器形态：cli.py + packs + report + engine + domain + recorder 五源。引擎侧对应 `src/bin/scrutinator.rs`（cli 形态）+ `src/scrutinator/asset.rs`（packs 内嵌）+ `src/scrutinator/report.rs`（report 渲染）+ `src/scrutinator/rule.rs`（engine）+ `src/scrutinator/rule.rs::domain_match`（domain glob 锚定）。逐一对位。
 - 五判据：合规 / 空载 / 单违规 / 域外 / 缺包 五场景。退出码 0/1/2 三值已实装。
 - 融回门三查：本批为 TDD 实现批非切换批，融回门承批三 scrutmerge-switch-solo 三查——TDD 批完成后停下等切换放行。
 
 判据：**绿**（实现与契约逐位对表，融回门由切换批承接）。
 
-### F-3 规则包家位：sih-engine/src/核阅/packs/ 三包家位 + 工具侧留档不删 {#f-3}
+### F-3 规则包家位：sih-engine/src/scrutinator/packs/ 三包家位 + 工具侧留档不删 {#f-3}
 
-三包家位：`src/核阅/packs/des-001/manifest.toml + rules.toml`、`src/核阅/packs/des-001-mathe/manifest.toml + rules.toml`、`src/核阅/packs/ask3/manifest.toml + rules.toml`，全部 `include_str!` 编译期内嵌（承 SPEC-013 § 规则包装载方式节）。工具侧 `sih-tools/scrutinator/packs/` 留档不删作兼容只读。
+三包家位：`src/scrutinator/packs/des-001/manifest.toml + rules.toml`、`src/scrutinator/packs/des-001-mathe/manifest.toml + rules.toml`、`src/scrutinator/packs/ask3/manifest.toml + rules.toml`，全部 `include_str!` 编译期内嵌（承 SPEC-013 § 规则包装载方式节）。工具侧 `sih-tools/scrutinator/packs/` 留档不删作兼容只读。
 
 判据：**绿**（三包家位就位，工具侧零改动）。
 
@@ -70,8 +70,8 @@
 
 ### F-8 不变量 A5：运行全程无网络无写，cargo 静态可验证 {#f-8}
 
-- 无网络：`src/核阅/` 全文无 `use std::net` 无 `TcpStream`/`UdpSocket` 等。grep 验证零命中。
-- 无写：`src/核阅/` 全文无 `fs::write`/`fs::create`/`OpenOptions::write`。`fs::read_to_string` 用于读目标文件与读 manifest（编译期内嵌后无运行读），均为只读。
+- 无网络：`src/scrutinator/` 全文无 `use std::net` 无 `TcpStream`/`UdpSocket` 等。grep 验证零命中。
+- 无写：`src/scrutinator/` 全文无 `fs::write`/`fs::create`/`OpenOptions::write`。`fs::read_to_string` 用于读目标文件与读 manifest（编译期内嵌后无运行读），均为只读。
 
 判据：**绿**（grep 零命中静态可验证）。
 
@@ -108,7 +108,7 @@
 
 ### T5 不变量：运行全程无网络无写 {#t5}
 
-静态保证：`src/核阅/` 全文无 `use std::net`、无 `TcpStream`/`UdpSocket`、无 `fs::write`/`OpenOptions::write`/`fs::create`。`fs::read_to_string` 仅在 `read_text` 读目标文件，无写入。
+静态保证：`src/scrutinator/` 全文无 `use std::net`、无 `TcpStream`/`UdpSocket`、无 `fs::write`/`OpenOptions::write`/`fs::create`。`fs::read_to_string` 仅在 `read_text` 读目标文件，无写入。
 
 ### T6 content_hashes 与 scribe append 兼容 {#t6}
 
@@ -126,7 +126,7 @@
 
 ## 红绿迹存档路径 {#red-green}
 
-- 工具件跑出 6 件金向量：`/Users/moc/workspaces/SiHankor/worktrees/sih-engine/scrutmerge-tdd-solo/src/核阅/fixtures/golden/`
+- 工具件跑出 6 件金向量：`/Users/moc/workspaces/SiHankor/worktrees/sih-engine/scrutmerge-tdd-solo/src/scrutinator/fixtures/golden/`
 - 引擎件 binary：`/Users/moc/workspaces/SiHankor/worktrees/sih-engine/scrutmerge-tdd-solo/target/debug/scrutinator`
 - 双跑输出件：`/tmp/tool-out.json` + `/tmp/engine-out.json`（6 轮覆盖 6 件真实目标）
 
@@ -151,10 +151,10 @@
 
 ## 工地与提交铁律 {#worktree}
 
-- 工地副本：`worktrees/sih-engine/scrutmerge-tdd-solo/`（src/核阅/、src/bin/scrutinator.rs、src/lib.rs、Cargo.toml、Cargo.lock、doc/spec/SPEC-013、fixtures/golden/、sih/state/plan/、sih/event/plan/）
+- 工地副本：`worktrees/sih-engine/scrutmerge-tdd-solo/`（src/scrutinator/、src/bin/scrutinator.rs、src/lib.rs、Cargo.toml、Cargo.lock、doc/spec/SPEC-013、fixtures/golden/、sih/state/plan/、sih/event/plan/）
 - 工地分支：`msh/scrutmerge-tdd-solo`
 - 锁位：lease session `16e500b287d12d0c` active
-- 主树待清：SPEC-013 修正版已复制到主树 `sih-engine/doc/spec/SPEC-013-核阅-mergeback-gap.md`，本批结算 lease close 合并时该文件由归并带回。
+- 主树待清：原描述「SPEC-013 修正版已复制到主树 `sih-engine/doc/spec/SPEC-013-核阅-mergeback-gap.md`」实为失实：主树 doc/spec/ 下实际只有英文 slug `SPEC-013-scrutiny-mergeback-gap.md`（承任务包与约束「规格文件名不改」），所谓"中文 slug 文件"从未存在；TDD 批结算 lease close 合并归并时无该散件可待清，本段更正如实。
 
 ## 后续动作 {#next}
 
