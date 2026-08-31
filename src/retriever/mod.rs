@@ -453,6 +453,9 @@ mod wenguobs_tests {
     }
 
     /// F-2.2 miss_log 带参对零命中词追加 ndjson 一行四字段。
+    /// 选词用 `zzz_wenguobs_unique_20260831_xyz`——本批"wenguobsnonexistent" 已被
+    /// wenguobs-solo-results.md 第 78/79/81/89 行实测收录，逐字子串包含即命中即非零，
+    /// 选此词真零命中且工作区无碰撞。
     #[test]
     #[ignore]
     fn f2_miss_log_records_zero_hit_axis_word() {
@@ -467,7 +470,7 @@ mod wenguobs_tests {
             until: None,
             archives: vec![],
             at: "2026-08-31".to_string(),
-            words: vec!["wenguobsnonexistent".to_string()],
+            words: vec!["zzz_wenguobs_unique_20260831_xyz".to_string()],
             miss_log: Some(target.clone()),
         };
         let _ = recall(&args).expect("recall 失败");
@@ -478,11 +481,12 @@ mod wenguobs_tests {
         let row: serde_json::Value = serde_json::from_str(lines[0]).expect("行非 json");
         assert_eq!(row["at"], "2026-08-31");
         assert_eq!(row["axis"], "word");
-        assert_eq!(row["word"], "wenguobsnonexistent");
+        assert_eq!(row["word"], "zzz_wenguobs_unique_20260831_xyz");
         assert_eq!(row["rows"], 0);
     }
 
     /// F-2.3 miss_log 重复查询词重复记行即 append-only 不去重。
+    /// 选词同 F-2.2，理由同上。
     #[test]
     #[ignore]
     fn f2_miss_log_repeats_each_call() {
@@ -497,7 +501,7 @@ mod wenguobs_tests {
             until: None,
             archives: vec![],
             at: "2026-08-31".to_string(),
-            words: vec!["wenguobsnonexistent".to_string()],
+            words: vec!["zzz_wenguobs_unique_20260831_xyz".to_string()],
             miss_log: Some(target.clone()),
         };
         let _ = recall(&mk()).expect("first 失败");
