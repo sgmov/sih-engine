@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "../../sih-tools/scribe/reports/2026-08-31-ask3-epiacc-record.json"
+  ],
+  "content_hashes": {
+    "../../sih-tools/scribe/reports/2026-08-31-ask3-epiacc-record.json": "44918ab9e44407c51cf40cbd4855e8bfca0edf8c58b972946890483d0ae4a70f"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
