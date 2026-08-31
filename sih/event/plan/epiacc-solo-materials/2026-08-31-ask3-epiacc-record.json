@@ -1,0 +1,47 @@
+{
+  "session_id": "sess-zcode-260831-epiacc",
+  "raw_input": "开：epiacc-solo 复归补强入闸批（七件专门承载条目入正身）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "epiacc-solo 将七件已独立复验的专门承载条目即 ORD-006 至 ORD-010 与 ALG-008 与 ALG-009 入 sih-math 正身，mapping 与两子仓 INDEX 登记新行，顺修 mapping 伪构 PRO-12 残行，验收即全量 140 件核阅零违规，哲学命题数学承接面闭合至 PRO-00 待哲学仓裁量",
+    "exclusions": [
+      "不动七件数学内容",
+      "PRO-00 是否数学化留哲学仓裁量",
+      "存量发现只记录"
+    ],
+    "output_format": "副本归一化落笔 + 三闸 + 认证上链 + 双仓结算归并 + 对表",
+    "injected_constraints": [
+      "工程基线第一条与第四条",
+      "引文程序化截取",
+      "链快照在末笔后"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-math order 与 algebra entries 新增七件与 mapping 与两 INDEX",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-tools/lease 与 engine scribe 与 scrutinator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "epiacc 七件入正身后复归段 EPI-12 至 15 与薄覆盖 PRO-01 03 04 全部有专门数学承载",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/epistrophe/15-on-falsifiability.md",
+        "quote": "每步命题的证伪条件须满足三要素："
+      },
+      "rationale": "七战线覆盖经机械对表闭合，核阅零违规为验收面",
+      "evidence": "agent-drafts/epi/WAVES.md:1",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 0
+}

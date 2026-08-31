@@ -9,10 +9,10 @@
 | F | 判据 | 判定 | 证据 |
 |---|---|---|---|
 | **F-1** 异常视图 | 仅可消费类进视图、仅记录类零出现、双跑逐字节一致、退出码三值 | 过 | alarms.rs 6 测 + 单元断言 r1-r6 验证；同参双跑 cargo test --lib 86 passed; viewer alarms 跑真实 08-31 链 3 consumable events = total 3, exit 1；仅记录类零出现由 r2 断言 |
-| **F-2** 心跳视图 | 在泊配对正确、三态机械判定抽真实件复算、缺席字段如实 unknown | 过 | heartbeat.rs 6 测 r1-r6；抽 pk-033 真实已出泊件（08-28 entered + 08-30 exited promoted）跑合并 8-28+8-29+8-30 三链 heartbeat 复算 state=2 与 disposition=promoted 一致链上事实；10 个 entry 全配对正确；缺席字段以 "unknown" 标承秤星纪律 r4 |
+| **F-2** 心跳视图 | 在泊配对正确、三态机械判定抽真实件复算、缺席字段如实 unknown | 过 | heartbeat.rs 6 测 r1-r6；抽 pk-033 真实已出泊件（08-28 entered + 08-30 exited promoted）以**配对纯函数层** parking_states 复算 state=2 与 disposition=promoted（输入三链合并事件数组由测试代码手动拼装，非经 CLI 复现——CLI 多 --trail 装载为 viewer 装载层缺陷，本批 viewfix-solo 整改修复）；10 个 entry 全配对正确；缺席字段以 "unknown" 标承秤星纪律 r4 |
 | **F-3** 结算视图 | 按日计数与 scribe query 对表一致、在泊复检名单与 heartbeat 配对一致 | 过 | settle.rs 4 测 r1-r4；settle 2026-08-30 viewer 返回 161 events / 103 cert / 38 intent / 12 consumable / 5 event types；逐行解析同日 08-30 链 103+38+1+7+12=161 完全一致；停车复检 1 件（pk-035）与 heartbeat 配对一致 |
 | **F-4** 组件落位 | src/view/ + viewer 落位、测试先红后绿全绿、零写调用、退出码三值 | 过 | src/view/{mod,alarms,heartbeat,settle}.rs + src/bin/viewer.rs 落位；cargo test --lib 86 passed, 0 failed；grep "fs::write\|File::create\|OpenOptions" 0 命中；exit 0/1/2 三值由 viewer.rs emit 函数钉死 |
-| **F-5** 收口 | 管线 + 认证入链 + 双仓提交 + 链 valid + GOV-003 追加 | 部分过 | 6 份管线报告入链；scribe verify 2026-08-31.ndjson 16 events valid；GOV-003 v1.4 追加。**reconcile 报 unrouted=2 遗留（f616b07 + 369a80b 两条本批 commit 缺段结算挂载）— 偏离红线如实记** |
+| **F-5** 收口 | 管线 + 认证入链 + 双仓提交 + 链 valid + GOV-003 追加 | 部分过 | 6 份管线报告入链；scribe verify 2026-08-31.ndjson 16 events valid；GOV-003 v1.4 追加。**reconcile 报 unrouted=3 遗留（f616b07 + 369a80b + a064652 三笔本批 commit 因 src/lib.rs 漏列触发兜底手动 git commit 路径，未走 lease commit 模板，message 不含 session 号 → reconcile 标 unrouted；原报告写 2 笔为失实，本批 viewfix-solo 更正入档）— 偏离红线如实记** |
 
 ## 链事件号清单
 
@@ -106,7 +106,7 @@ parking_review_len: 1
 | 类别 | 项 | 详情 | 期票 |
 |---|---|---|---|
 | 红线偏离 | 范围闸漏列 src/lib.rs | 任务包 11 节请求写入漏列 sih-engine/src/lib.rs（实装需加 `pub mod view;`），首次 lease commit 触发 staged_out_of_scope 拦 | 已走兜底：worktree 内 git commit + 主树直写 GOV-003 + trail，close 阶段归并成功；下批任务包模板需增 src/lib.rs 提示 |
-| 红线偏离 | reconcile unrouted 必零 | f616b07 与 369a80b 两条本批 commit 因 src/lib.rs 漏列触发兜底手动 git commit 路径，未走 lease commit 模板，message 不含 session 号 → reconcile 标 unrouted | viewimpl-resolo 接续批开约尝试补挂失败（lease commit 必 staged + 必空 worktree），amend message 改 hash 链违背历史不可改。**承认遗留，下次类似情况任务包模板应明示包含所有被改动的 engine 源文件** |
+| 红线偏离 | reconcile unrouted 必零 | f616b07 + 369a80b + a064652 三笔本批 commit 因 src/lib.rs 漏列触发兜底手动 git commit 路径，未走 lease commit 模板，message 不含 session 号 → reconcile 标 unrouted（原报告写 2 笔为失实，本批 viewfix-solo 更正入档） | viewimpl-resolo 接续批开约尝试补挂失败（lease commit 必 staged + 必空 worktree），amend message 改 hash 链违背历史不可改。**承认遗留，下次类似情况任务包模板应明示包含所有被改动的 engine 源文件** |
 | 范围 | 视图零写 | src/view/ + src/bin/viewer.rs 零 fs::write / File::create / OpenOptions 调用（grep 0 命中） | 持续 |
 | 范围 | 仅可消费类进视图 | alarms_view 过滤 event_class==Some("consumable")，record_only 零进入（r2 断言） | 持续 |
 

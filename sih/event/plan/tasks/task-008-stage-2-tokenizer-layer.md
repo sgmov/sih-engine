@@ -1,5 +1,13 @@
 # 任务包 008 阶段 2 tokenizer 分词层
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：承接闭项
+> 承接位：语义单元切分由寻址／locator 承接即 markdown 载体 CommonMark 语义单元切分；稳定标识派生由寻址规则承接即路径加节点类型加节点序号加内容哈希，与本包 stable_id 规则逐字同构；解析引擎由句读／parser 承接即空腹 PEG 序选择、承 DEC-016 零第三方解析依赖
+> 证据：sih-tools/locator/CONTRACT.md:16 稳定标识派生承 DES-009 规则即路径加节点类型加节点序号加内容哈希；sih-engine/doc/decision/016-parser-initiation.md:1 立项决策在场；sih-engine/sih/event/trail/2026-08-28.ndjson:19 事件 9e990fc3 句读立名批意图入链
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 2,在 `sih-engine` 仓加 Rust 分词层模块,把治理文档从纯文本切分为语义单元。本任务包不写 Rust 代码,只写 sub-agent 可执行的任务规范。sub-agent 跑完本任务包后产出 `sih-engine/src/tokenizer/` 模块与单元测试。

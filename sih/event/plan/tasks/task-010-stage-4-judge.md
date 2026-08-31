@@ -1,5 +1,13 @@
 # 任务包 010 阶段 4 judge 判定器
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：承接闭项（分布式承接）
+> 承接位：规则执行引擎由核阅／scrutinator 承接即 des-001 十二规则码、退出码 0/1/2、findings 结构化入报告；术语引用合法性由检词／nomenclator 承接即死档禁字级禁用与懒波词违例两规则；跨文档一致性由级联／cascade 承接即引用即边、上游洁净不变式；裁决材料与机器终签由执契／tally 即 R1 至 R7 核对加得一即二层裁决结构承接
+> 证据：AGENTS.md:158 des-001 包覆盖十二种规则码；sih-tools/nomenclator/CONTRACT.md:37 两规则字符串级；sih-tools/cascade/CONTRACT.md:3 上游洁净不变式即当前内容哈希等于链上最近认证哈希；sih-engine/doc/decision/019-tally-naming.md:1；sih-engine/doc/decision/020-deyi-component-naming.md:3
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 4,在 `sih-engine` 仓加 Rust 判定器模块,在阶段 3 semantic tree 上跑静态语义分析。本任务包不写 Rust 代码,只写 sub-agent 可执行的任务规范。sub-agent 跑完本任务包后产出 `sih-engine/src/judge/` 模块与单元测试。

@@ -1,0 +1,56 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/algebra/entries/ALG-008-kernel-and-fiber.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/algebra/entries/ALG-009-rank-nullity-and-section.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-006-closure-and-consequence-operator.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-007-derivation-soundness-and-mirror.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-008-reference-reachability-and-dangling.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-009-commitment-closure-and-naming.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-010-falsification-and-counterexample.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/algebra/entries/ALG-008-kernel-and-fiber.md": "d3dccfd2091f226118256686c2d3ccf885b43a87dba6bf0ca4f1a2eac0d0e374",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/algebra/entries/ALG-009-rank-nullity-and-section.md": "85933d755409c5e81009204121b8975cf8dffb623b7743bd09ebd301a9b6248c",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-006-closure-and-consequence-operator.md": "29d0a22c1568896fc496e58b5d2f38bf7af2c5fc2cea94654802d37d9eed93d2",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-007-derivation-soundness-and-mirror.md": "ec90a633deacb6c933f687355b4b061b999e26cafe125c00185ff3ed717e08e7",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-008-reference-reachability-and-dangling.md": "9dc10327981dd755da4121b74c8b9589bbe6c1870d6f9b7c334a644343b73244",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-009-commitment-closure-and-naming.md": "f76a682f2a3750464368ef9d3e370f5cb45ce93b4604ce6cb54a4545d03dbf9d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/epiacc-solo/order/entries/ORD-010-falsification-and-counterexample.md": "3f52462d49c86f40335fa2884e76466793790b9467f2fdcf7c21bdac7287e209"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
