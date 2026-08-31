@@ -162,10 +162,10 @@ ask3 0.1.0 共二十三件
 - 候选 B：Rust 编译期内嵌 manifest.toml 与 rules.toml。引擎侧决定选此方式，理由四件：
   1. 引擎侧 zero-IO 在装载阶段：运行时不读不写规则包文件，承工程基线第一条确定性程序；
   2. 编译期单源权威：manifest.toml 与 rules.toml 在编译时嵌入二进制，金向量冻结后任何字段漂移即重 build；
-  3. 切换批零迁移成本：规则包文件源在 sih-tools/scrutinator/packs/，引擎侧 home 位在 src/scrutator/packs/（include_str! 嵌入），工具侧退役只作兼容只读不删不修；
+  3. 切换批零迁移成本：规则包文件源在 sih-tools/scrutinator/packs/，引擎侧 home 位在 src/scrutinator/packs/（include_str! 嵌入），工具侧退役只作兼容只读不删不修；
   4. 路径管理归零：运行时不传 --pack 路径即走编译期内嵌默认包，工具件要求传路径形态在引擎侧不必要。
 
-实现接口：src/scrutator/packs/{des-001,des-001-mathe,ask3}/ 目录 + manifest.toml + rules.toml + asset.rs 用 include_str!("packs/<name>/manifest.toml") 与 include_str!("packs/<name>/rules.toml") 编译期内嵌。验收：F-5 不变量即运行无文件写覆盖本约束，cargo build 单源生成 binary 含规则字节。
+实现接口：src/scrutinator/packs/{des-001,des-001-mathe,ask3}/ 目录 + manifest.toml + rules.toml + asset.rs 用 include_str!("packs/<name>/manifest.toml") 与 include_str!("packs/<name>/rules.toml") 编译期内嵌。验收：F-5 不变量即运行无文件写覆盖本约束，cargo build 单源生成 binary 含规则字节。
 
 ### 工具侧与引擎侧包内容同步 {#pack-sync}
 

@@ -12,6 +12,9 @@ pub mod asset;
 pub mod report;
 pub mod rule;
 
+#[cfg(test)]
+mod tests;
+
 use report::*;
 use sha2::{Digest, Sha256};
 use std::collections::BTreeMap;
