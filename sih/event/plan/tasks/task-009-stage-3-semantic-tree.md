@@ -1,5 +1,13 @@
 # 任务包 009 阶段 3 semantic tree 语义树层
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：部分承接闭项
+> 承接位：语义树本体即 containment 与 order 关系、树必产由句读／parser 承接即 PEG 语法树、错误处包节点永远产树，与寻址的 markdown 语义单元切分配套；unsliced 节点级切分标记无直接承接位
+> 证据：sih-tools/parser/CONTRACT.md:18 错误处包节点永远产树；sih-engine/sih/event/trail/2026-08-28.ndjson:19 事件 9e990fc3；grep 全仓 unsliced 仅存于校准调研 sih-engine/sih/state/calibration/markdown-tokenization-toolchain-survey.md:51 与 91，无活动实装，部分承接如实记
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 3,在 `sih-engine` 仓加 Rust 语义树层模块,把阶段 2 tokenizer 输出的语义单元组织为含 containment 与 order 关系的语义树。本任务包不写 Rust 代码,只写 sub-agent 可执行的任务规范。sub-agent 跑完本任务包后产出 `sih-engine/src/semantic_tree/` 模块与单元测试。

@@ -1,5 +1,13 @@
 # 任务包 011 阶段 5 rules 规则定义层
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：部分承接闭项
+> 承接位：规则承载形态由规则包承接即 des-001 规则包版本管理、规则语义增删改走规则包版本管理；术语规则由检词术语包承接即已立与懒波与死档三态登记；空腹谓词形态由路择谓词包承接即零 LLM 只读；规则可重放可核由执契 verify 承接即同输入逐字节同判；CounterExample 反例三字段结构无机械承接位
+> 证据：AGENTS.md:158 规则覆盖以包承载且规则语义增删改走规则包版本管理；sih-tools/nomenclator/CONTRACT.md:27 三态登记；sih-tools/tally/CONTRACT.md:19 verify 同输入逐字节同判
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 5,在 `sih-engine` 仓加 Rust 规则定义模块,用声明式语言承载规则,规则本身是治理对象,可证伪、可被反例推翻。承接 DES-009 第四层规则定义段与 P1-4 convergence P3.1 退化机制定位。
