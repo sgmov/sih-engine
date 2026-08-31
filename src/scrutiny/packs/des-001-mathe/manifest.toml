@@ -1,0 +1,20 @@
+name = "des-001-mathe"
+version = "0.3.0"
+
+[domain]
+include = [
+  "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+  "sih-math/**/topology/entries/*.md",
+  "sih-math/**/probability/entries/*.md",
+  "sih-math/**/order/entries/*.md",
+  "sih-math/**/algebra/entries/*.md",
+]
+exclude = [
+  "**/skills/**",
+  "**/.agents/**",
+  "**/INDEX.md",
+  "**/README.md",
+  "**/mapping.md",
+  "**/agent-bootstrap-prompt.md",
+  "**/task-package-build-entries.md",
+]

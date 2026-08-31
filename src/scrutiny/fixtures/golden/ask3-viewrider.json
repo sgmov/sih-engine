@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-08-31-ask3-viewrider-record.json"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-08-31-ask3-viewrider-record.json": "68abbafff5aa88f04736e52f10a04f2b12b5a09b97e8fe2ed29d38c5437b865f"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}

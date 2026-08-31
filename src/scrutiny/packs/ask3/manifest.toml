@@ -1,0 +1,7 @@
+name = "ask3"
+version = "0.1.0"
+material = "json"
+
+[domain]
+include = ["**/*.json"]
+exclude = []

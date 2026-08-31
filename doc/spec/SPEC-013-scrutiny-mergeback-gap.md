@@ -4,6 +4,13 @@
 
 家位令源：库模块路径选 src/scrutinator/ 与二进制同名，承检词死档 discipline 即相关英文同形词已被 PRO-007 死档登记，库与二进制同位精简路径承 DEC-001 基础设施层归位。
 
+## 规格修订记录 {#revisions}
+
+2026-08-31 修订一（scrutmerge-tdd-solo 批三处规格修正走本批管线）：
+1. mathe 包规则清单重数。原批一规格写「共十四件」即承 des-001 十二件加 mathe 新增二件；实测 rules.toml 实有二十条 [[rules]]：承 des-001 十二件（C001 C002 C006 S002 S004 S005 S006 F000 F002 F003 F005 N002）+ mathe 新增八件（M008 H1 prefix 合法集 + M010 加 M010a 至 M010f 共七件 facet 启发式禁词）。本规格以二十件为基线，并把承继重声明关系写清。
+2. 两「验收判据」节并节消歧义。原规格行 137 ## 验收判据 与行 218 ## 验收判据 同名双节；批二规格合并为单节 ## 验收判据 即 A1 至 A6 六条。
+3. 规则包装载方式定案。详见 § 规则包装载方式节，取舍理由即工具件 Python 运行时路径读 TOML 与 Rust 编译期内嵌对比。
+
 ## 概览 {#overview}
 
 - 引擎侧家位即 src/scrutinator/ 库模块加 src/bin/scrutinator.rs 命令行面，承 SPEC-006 书简融回先例::[家位与模块形](#shape)
@@ -120,13 +127,45 @@ des-001 0.1.0 共十二件
 : F005 line_flag table
 : N002 nav_format 导航项格式
 
-des-001-mathe 0.3.0 共十四件
-: 承 des-001 十二件
-: M008 header_structure H1 标题 prefix 合法集
-: M010 forbid_pattern 禁 facet 启发式
+des-001-mathe 0.3.0 共二十件
+: 承 des-001 十二件即 C001 C002 C006 S002 S004 S005 S006 F000 F002 F003 F005 N002 — 全部重声明于本包 rules.toml（不依赖 des-001 包加载），承继逻辑由 manifest.toml 域差异实现
+: C001 charset_forbid 半角破折号同 des-001
+: C002 charset_allow 字符集扩展含 Greek 加 Math Operators 加 Letterlike 加 Arrows 加 Subscripts/Superscripts（与 des-001 同 kind 不同 ranges）
+: C006 forbid_pattern 全角括号白名单扩「以下简写为」「又称」「原名」「即」四模式
+: S002 header_structure single_h1
+: S004 header_structure anchor_required
+: S005 header_structure first_h2_name="定义"（数学 6 段规约首段，不沿用 des-001 "概览"） — kind 同 first_h2_name，name 数组接受「定义」或「概览」二选一
+: S006 header_structure no_level_skip
+: F000 line_flag fence_open
+: F002 line_flag blockquote
+: F003 line_flag bold
+: F005 line_flag table
+: N002 nav_format
+: M008 forbid_pattern H1 标题 prefix 合法集（TOP PROB ORD ALG CALC LIM DIFF INT APP HIS MUL NS SER SPEC）
+: M010 forbid_pattern 禁 facet 启发式「5 厂投票加权」
+: M010a forbid_pattern 禁 facet 启发式「voter 投票加权」
+: M010b forbid_pattern 禁 facet 启发式「5-factory voting」
+: M010c forbid_pattern 禁 facet 启发式「voter weight」
+: M010d forbid_pattern 禁 facet 启发式「5 厂投票策略」
+: M010e forbid_pattern 禁 facet 启发式「5 厂配比」
+: M010f forbid_pattern 禁 facet 启发式「投票权重分配」
+
+承继重声明语义：des-001-mathe 包不依赖 des-001 包加载即可独立运行，十二件 des-001 规则在 mathe 包内重声明；承继是逻辑承继非物理依赖，承 DEC-001 围堰归位映射即工具侧不删不改语义，引擎侧独立家位。
 
 ask3 0.1.0 共二十三件
 : 锚点 schema + 八意图契约子字段 + 四认知域契约子字段 + 三跨字段比较 + 数值闭区间
+
+### 规则包装载方式 {#pack-load}
+
+两候选对比：
+- 候选 A：运行时从文件路径读 TOML。工具件 Python 实现即此方式，灵活可热替换，代价是运行时 IO 失败面与文件路径管理负担。
+- 候选 B：Rust 编译期内嵌 manifest.toml 与 rules.toml。引擎侧决定选此方式，理由四件：
+  1. 引擎侧 zero-IO 在装载阶段：运行时不读不写规则包文件，承工程基线第一条确定性程序；
+  2. 编译期单源权威：manifest.toml 与 rules.toml 在编译时嵌入二进制，金向量冻结后任何字段漂移即重 build；
+  3. 切换批零迁移成本：规则包文件源在 sih-tools/scrutinator/packs/，引擎侧 home 位在 src/scrutator/packs/（include_str! 嵌入），工具侧退役只作兼容只读不删不修；
+  4. 路径管理归零：运行时不传 --pack 路径即走编译期内嵌默认包，工具件要求传路径形态在引擎侧不必要。
+
+实现接口：src/scrutator/packs/{des-001,des-001-mathe,ask3}/ 目录 + manifest.toml + rules.toml + asset.rs 用 include_str!("packs/<name>/manifest.toml") 与 include_str!("packs/<name>/rules.toml") 编译期内嵌。验收：F-5 不变量即运行无文件写覆盖本约束，cargo build 单源生成 binary 含规则字节。
 
 ### 工具侧与引擎侧包内容同步 {#pack-sync}
 
@@ -223,6 +262,19 @@ T6 报告 content_hashes 兼容
 - A4 生产目标复验全零违规
 - A5 退出码三值与工具侧对齐
 - A6 库面可被 MCP 层直接调用即无 CLI 耦合入库层
+
+## 验收判据（合并节，承批二并节消歧义） {#acceptance-merged}
+
+本节合并原规格两同名「验收判据」节即行 137 acceptance（A1-A5 五条）与行 218 acceptance-criteria（A1-A6 六条），统称「验收判据」，A1 至 A6 六条不重复列示，行 218 原六条作 A1 至 A6 通行面即：
+
+- A1 三件入口签名与负载与工具生产面对表无漏项（承 § 验收判据 #acceptance 第一节即 A1 同包同目标逐字节一致）
+- A2 多包加载逻辑可判定 pack_name 归因
+- A3 金向量三包各二件全量对表计数
+- A4 生产目标复验全零违规
+- A5 退出码三值与工具侧对齐
+- A6 库面可被 MCP 层直接调用即无 CLI 耦合入库层
+
+行 137 acceptance 节 A1-A5 与本节 A1-A6 对表：行 137 A1 即本节 A1（逐字节一致）；行 137 A2 即本节 A5（退出码三值）；行 137 A3 即本节 A3（content_hashes 兼容由 § 验收判据 #acceptance-criteria A6 库面可被 MCP 层调用覆盖）；行 137 A4 即本节 A2（多包归因）；行 137 A5 即本节 A4（不变量）。
 
 ## 边界 {#boundary}
 

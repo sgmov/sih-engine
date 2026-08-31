@@ -1,0 +1,71 @@
+[[rules]]
+id = "C001"
+kind = "charset_forbid"
+params = { strings = ["——"] }
+message = "禁止破折号「——」,中文连接请使用全角冒号「:」"
+
+[[rules]]
+id = "C002"
+kind = "charset_allow"
+params = { ranges = ["0020-007E", "00A0-00FF", "4E00-9FFF", "3000-303F", "FF00-FFEF"] }
+message = "字符 U+{char} 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+
+[[rules]]
+id = "C006"
+kind = "forbid_pattern"
+params = { pattern = '（(?!(?:[A-Za-z0-9 ./&+=,-]*|[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+)）)[^）]*）' }
+message = "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+
+[[rules]]
+id = "S002"
+kind = "header_structure"
+params = { check = "single_h1" }
+message = "全文仅允许一个一级标题"
+
+[[rules]]
+id = "S004"
+kind = "header_structure"
+params = { check = "anchor_required", min_level = 2 }
+message = "第 {level} 级标题必须显式声明 {{#锚点}}"
+
+[[rules]]
+id = "S005"
+kind = "header_structure"
+params = { check = "first_h2_name", name = "概览" }
+message = "全文第一个二级标题必须为「概览」(现为「{title}」)"
+
+[[rules]]
+id = "S006"
+kind = "header_structure"
+params = { check = "no_level_skip" }
+message = "标题层级跳级:上一级为 {prev} 级,当前为 {level} 级"
+
+[[rules]]
+id = "F000"
+kind = "line_flag"
+params = { flag = "fence_open", allow_langs = ["mermaid", "filetree"] }
+message = "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+
+[[rules]]
+id = "F002"
+kind = "line_flag"
+params = { flag = "blockquote" }
+message = "禁止块引用「>」"
+
+[[rules]]
+id = "F003"
+kind = "line_flag"
+params = { flag = "bold" }
+message = "禁止粗体「**」"
+
+[[rules]]
+id = "F005"
+kind = "line_flag"
+params = { flag = "table" }
+message = "禁止表格"
+
+[[rules]]
+id = "N002"
+kind = "nav_format"
+params = { }
+message = "导航项格式必须为「章节简述::[链接文本](#锚点)」"

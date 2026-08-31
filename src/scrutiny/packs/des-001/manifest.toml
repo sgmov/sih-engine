@@ -1,0 +1,14 @@
+name = "des-001"
+version = "0.1.0"
+
+[domain]
+include = [
+  "sih-engine/doc/**/*.md",
+  "**/scrutinator/fixtures/corpus/**/*.md",
+  "**/formatter/fixtures/**/*.md",
+]
+exclude = [
+  "**/skills/**",
+  "**/.agents/**",
+  "**/skill_like.md",
+]
