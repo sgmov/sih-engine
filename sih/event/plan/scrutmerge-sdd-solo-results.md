@@ -47,6 +47,7 @@
 | 域外 | 任务包核阅 1 mismatch | 任务包在 sih/state/plan/ 不在 des-001 域 | 已知非违规如实记 |
 | 范围 | TDD 批未跑 | 属批二待放行执行 | TDD 批按 SPEC-013 逐判据先红后绿 |
 | 范围 | 切换批未跑 | 属批三待放行执行 | 工具件转兼容只读与 T6 管线核阅腿认证位改指引擎件 |
+| 范围 | reconcile unrouted=4 遗留 | sd 批段1+段2+段3 主树直写 3 条 commit 与 merge 副本归并 1 条 commit 因走兜底手动 commit 路径未带 session 号 | 与 viewimpl-solo 同样问题；如 viewimpl-resolo 方式补挂失败，承认遗留 |
 
 ## 后续
 
