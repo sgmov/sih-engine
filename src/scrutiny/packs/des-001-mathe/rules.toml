@@ -1,0 +1,150 @@
+# des-001-mathe: 数学条目适配规则包
+# 承 des-001 12 规则的精神，针对 sih-math/**/entries/*.md 适配
+# 关键差异（与 des-001 对比）：
+#   C002 字符集: 扩到含 Greek + Math Operators + Letterlike + Arrows + Subscripts/Superscripts
+#   S005 首 H2 名字: 改「定义」(数学 6 段规约首段) 不沿用「概览」(治理文档规范)
+# 新增 M 规则:
+#   M008: H1 标题必须以合法 prefix 开头(TOP/PROB/ORD/ALG/CALC/LIM/DIFF/INT)
+#   M010: 禁止 facet 特定工程启发式(应只含数学权威)
+# 未能实现(因 7 种 kind 集合不含「必填/必含」语义):
+#   M001-M006 6 段规约必含段、 M007 哲学桥接必含 PRO-NNN、 M009 参考文献必含数学权威
+
+# ===== 字符集 =====
+
+[[rules]]
+id = "C001"
+kind = "charset_forbid"
+params = { strings = ["——"] }
+message = "禁止破折号「——」,中文连接请使用全角冒号「:」"
+
+[[rules]]
+id = "C002"
+kind = "charset_allow"
+# 字符集覆盖:ASCII + Latin-1 + Greek + 通用标点 + Letterlike + Arrows + Math Operators + Subscripts + Supplemental Math + CJK + 全角
+params = { ranges = ["0020-007E", "00A0-00FF", "0300-036F", "0370-03FF", "1D00-1D7F", "2000-22FF", "2070-209F", "2A00-2AFF", "3000-303F", "4E00-9FFF", "FF00-FFEF"] }
+message = "字符 U+{char} 超出允许的 ASCII+CJK+数学 字符集,疑似 Emoji 或装饰符号"
+
+[[rules]]
+id = "C006"
+kind = "forbid_pattern"
+params = { pattern = '（(?!(?:[A-Za-z0-9 ./&+=,-]*|[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+|[^）]*，又称 [^）]*|又称[^）]*|[^）]*，原名 [^）]*|[^）]*，即 [^）]*|即 [^）]*)）)[^）]*）' }
+message = "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+
+# ===== 标题结构 =====
+
+[[rules]]
+id = "S002"
+kind = "header_structure"
+params = { check = "single_h1" }
+message = "全文仅允许一个一级标题"
+
+[[rules]]
+id = "S004"
+kind = "header_structure"
+params = { check = "anchor_required", min_level = 2 }
+message = "第 {level} 级标题必须显式声明 {{#锚点}}"
+
+[[rules]]
+id = "S005"
+kind = "header_structure"
+# 数学 6 段规约首段为「## 定义」,不沿用治理文档「概览」
+params = { check = "first_h2_name", name = ["定义", "概览"] }
+message = "数学条目第一个二级标题必须为「定义」(现为「{title}」)"
+
+[[rules]]
+id = "S006"
+kind = "header_structure"
+params = { check = "no_level_skip" }
+message = "标题层级跳级:上一级为 {prev} 级,当前为 {level} 级"
+
+# ===== 行形态旗标 =====
+
+[[rules]]
+id = "F000"
+kind = "line_flag"
+params = { flag = "fence_open", allow_langs = ["mermaid", "filetree"] }
+message = "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+
+[[rules]]
+id = "F002"
+kind = "line_flag"
+params = { flag = "blockquote" }
+message = "禁止块引用「>」"
+
+[[rules]]
+id = "F003"
+kind = "line_flag"
+params = { flag = "bold" }
+message = "禁止粗体「**」"
+
+[[rules]]
+id = "F005"
+kind = "line_flag"
+params = { flag = "table" }
+message = "禁止表格"
+
+# ===== 导航 =====
+
+[[rules]]
+id = "N002"
+kind = "nav_format"
+params = { }
+message = "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+
+# ===== 数学专项 M 规则 =====
+# 仅 M008 / M010 用现有 7 kind 表达
+# M001-M006(6 段规约必含段)、M007(哲学桥接必含 PRO-NNN)、M009(参考文献必含数学权威) 因 kind 集合不支持「必填/必含」语义不实现
+# 6 段规约完整性由 des-001-mathe 域筛选 + 人工抽检保障, M008/M010 提供机械化保证
+
+[[rules]]
+id = "M008"
+kind = "forbid_pattern"
+# H1 标题必须以合法 prefix 开头: TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT-
+# 反向表达: H1 标题后跟非合法 prefix 的非空 token 即报
+# 注意:行级 regex 跑在 _plain(line),H1 行首必须是「# 」
+params = { pattern = '^# (?!(?:TOP|PROB|ORD|ALG|CALC|LIM|DIFF|INT|APP|HIS|MUL|NS|SER|SPEC)-)\S' }
+message = "数学条目标题必须以 # TOP-/PROB-/ORD-/ALG-/CALC-/LIM-/DIFF-/INT- 之一开头"
+
+[[rules]]
+id = "M010"
+kind = "forbid_pattern"
+# 禁止 facet 特定工程启发式:数学条目应只含数学权威,不应含 5 厂投票/voter weight 等工程细节
+# 单一 forbid_pattern 一次只能匹配一个字符串,每个禁词写一条规则
+params = { pattern = "5 厂投票加权" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010a"
+kind = "forbid_pattern"
+params = { pattern = "voter 投票加权" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010b"
+kind = "forbid_pattern"
+params = { pattern = "5-factory voting" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010c"
+kind = "forbid_pattern"
+params = { pattern = "voter weight" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010d"
+kind = "forbid_pattern"
+params = { pattern = "5 厂投票策略" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010e"
+kind = "forbid_pattern"
+params = { pattern = "5 厂配比" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"
+
+[[rules]]
+id = "M010f"
+kind = "forbid_pattern"
+params = { pattern = "投票权重分配" }
+message = "数学条目禁止写入 facet 特定工程启发式(应只含数学权威)"

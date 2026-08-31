@@ -1,0 +1,168 @@
+# ask3 规则包：三问输出记录 schema 校验
+# 承 sih-engine/doc/spec/SPEC-005-ask3-interface.md 数据契约、意图契约字段、认知域契约字段、推理锚点格式四节
+# material 为 json，目标先按 JSON 解析，行文类规则不适用
+
+# 记录八字段必填带类型
+
+[[rules]]
+id = "A01"
+kind = "json_field"
+params = { path = "session_id", type = "str" }
+message = "session_id 必填且为字符串,逐字沿用输入记录的会话标识"
+
+[[rules]]
+id = "A02"
+kind = "json_field"
+params = { path = "raw_input", type = "str" }
+message = "raw_input 必填且为字符串,原始输入逐字快照,回放核验以原文为入口"
+
+[[rules]]
+id = "A03"
+kind = "json_field"
+params = { path = "round", type = "int" }
+message = "round 必填且为整数,会话内提炼序号从 1 起"
+
+[[rules]]
+id = "A04"
+kind = "json_field"
+params = { path = "intent_contract", type = "object" }
+message = "intent_contract 必填且为对象,收窄后的精确生成契约"
+
+[[rules]]
+id = "A05"
+kind = "json_field"
+params = { path = "domain_contract", type = "object" }
+message = "domain_contract 必填且为对象,认知域契约即目标域与支撑域的深度限制"
+
+[[rules]]
+id = "A06"
+kind = "json_field"
+params = { path = "anchors", type = "array" }
+message = "anchors 必填且为数组,一问至少析出一条显层命题"
+
+[[rules]]
+id = "A07"
+kind = "json_field"
+params = { path = "calls_in", type = "int" }
+message = "calls_in 必填且为整数,进入三问时点的会话内调用计数"
+
+[[rules]]
+id = "A08"
+kind = "json_field"
+params = { path = "calls_out", type = "int" }
+message = "calls_out 必填且为整数,记录产出时点的会话内调用计数"
+
+# 意图契约四子字段,齐备性即无排除时排除项也以空数组显式声明
+
+[[rules]]
+id = "A09"
+kind = "json_field"
+params = { path = "intent_contract.goal", type = "str" }
+message = "intent_contract.goal 必填且为字符串,正向目标一句话"
+
+[[rules]]
+id = "A10"
+kind = "json_field"
+params = { path = "intent_contract.exclusions", type = "array" }
+message = "intent_contract.exclusions 必填且为数组,无排除时为空数组不得缺省"
+
+[[rules]]
+id = "A11"
+kind = "json_field"
+params = { path = "intent_contract.output_format", type = "str" }
+message = "intent_contract.output_format 必填且为字符串,任务类型的产出形态约束"
+
+[[rules]]
+id = "A12"
+kind = "json_field"
+params = { path = "intent_contract.injected_constraints", type = "array" }
+message = "intent_contract.injected_constraints 必填且为数组,每项为可定位可核验的约束出处"
+
+# 认知域契约,目标域与支撑域各含范围陈述与深度上限
+
+[[rules]]
+id = "A13"
+kind = "json_field"
+params = { path = "domain_contract.target_domain", type = "object" }
+message = "domain_contract.target_domain 必填且为对象,本次诘察的最终意图所在"
+
+[[rules]]
+id = "A14"
+kind = "json_field"
+params = { path = "domain_contract.target_domain.scope", type = "str" }
+message = "target_domain.scope 必填且为字符串,范围陈述"
+
+[[rules]]
+id = "A15"
+kind = "json_field"
+params = { path = "domain_contract.target_domain.max_depth", type = "int" }
+message = "target_domain.max_depth 必填且为整数,深度上限"
+
+[[rules]]
+id = "A16"
+kind = "json_field"
+params = { path = "domain_contract.support_domain", type = "object" }
+message = "domain_contract.support_domain 必填且为对象,辅助推理的旁支命题所在"
+
+[[rules]]
+id = "A17"
+kind = "json_field"
+params = { path = "domain_contract.support_domain.scope", type = "str" }
+message = "support_domain.scope 必填且为字符串,范围陈述"
+
+[[rules]]
+id = "A18"
+kind = "json_field"
+params = { path = "domain_contract.support_domain.max_depth", type = "int" }
+message = "support_domain.max_depth 必填且为整数,深度上限"
+
+# 锚点数组逐元素 schema,九字段含 philosophy_ref 递归对象
+# fields 为字段名到类型的映射,类型值可递归即 { type = "object", fields = {...} },str 字段可带 enum
+
+[[rules]]
+id = "A19"
+kind = "json_array_schema"
+message = "锚点九字段逐项校验:anchor_seq 整数、text 字符串、inquiry_stage 枚举 first/second/third、domain_tag 枚举 target/support、depth 整数、philosophy_ref 递归对象含 source 与 quote 两字符串、rationale 字符串、evidence 字符串、confidence 数值,数组下限一"
+
+[rules.params]
+path = "anchors"
+min_items = 1
+
+[rules.params.fields]
+anchor_seq = "int"
+text = "str"
+inquiry_stage = { type = "str", enum = ["first", "second", "third"] }
+domain_tag = { type = "str", enum = ["target", "support"] }
+depth = "int"
+philosophy_ref = { type = "object", fields = { source = "str", quote = "str" } }
+rationale = "str"
+evidence = "str"
+confidence = "number"
+
+# 置信度数值区间,禁熔断载体字段如实取值不设剔除阈值
+
+[[rules]]
+id = "A20"
+kind = "json_number_range"
+params = { path = "anchors.confidence", min = 0.0, max = 1.0 }
+message = "anchors 逐锚点 confidence 须落在 0.0 至 1.0 闭区间"
+
+# 跨字段比较三条:深度双检第一检、调用计量单调、轮次下限
+
+[[rules]]
+id = "A21"
+kind = "json_field_compare"
+params = { left = "domain_contract.support_domain.max_depth", op = "<=", right = "domain_contract.target_domain.max_depth" }
+message = "深度双检第一检:support_domain.max_depth 不得超过 target_domain.max_depth"
+
+[[rules]]
+id = "A22"
+kind = "json_field_compare"
+params = { left = "calls_out", op = ">=", right = "calls_in" }
+message = "调用计量单调:calls_out 不得小于 calls_in"
+
+[[rules]]
+id = "A23"
+kind = "json_field_compare"
+params = { left = "round", op = ">=", right = 1 }
+message = "round 会话内提炼序号从 1 起,不得小于 1"

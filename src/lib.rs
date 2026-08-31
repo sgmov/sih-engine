@@ -8,6 +8,7 @@
 pub mod ask3repeater;
 pub mod event_stream;
 pub mod retriever;
+pub mod scrutiny;
 pub mod view;
 
 // Re-export the public API
