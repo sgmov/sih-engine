@@ -1,0 +1,98 @@
+{
+ "engine": {
+  "name": "formatter",
+  "version": "0.1.0"
+ },
+ "pack": {
+  "name": "general-v1",
+  "version": "0.1.0"
+ },
+ "targets": [
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/order/entries/ORD-011-well-founded-recursion-termination.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/order/INDEX.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/algebra/INDEX.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/topology/INDEX.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/probability/INDEX.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/INDEX.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/llm-friendly-build/mapping.md",
+  "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ordfound-solo/sih/event/plan/epiacc-solo-results.md"
+ ],
+ "summary": {
+  "targets": 8,
+  "total_changed": 0
+ },
+ "per_target": [
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/order/entries/ORD-011-well-founded-recursion-termination.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/order/INDEX.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/algebra/INDEX.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/topology/INDEX.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/probability/INDEX.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/INDEX.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/ordfound-solo/llm-friendly-build/mapping.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  },
+  {
+   "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ordfound-solo/sih/event/plan/epiacc-solo-results.md",
+   "check_exit_code": 0,
+   "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+   },
+   "changes": []
+  }
+ ]
+}
