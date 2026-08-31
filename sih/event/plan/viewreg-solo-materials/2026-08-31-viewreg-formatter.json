@@ -1,0 +1,36 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/viewreg-solo/sih/state/plan/viewreg-solo.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/viewreg-solo/sih/event/plan/viewreg-solo-results.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/viewreg-solo/sih/state/plan/viewreg-solo.md": "5d4386b6f0cd7ae749e036c0b272de7591dcf8c0aa0c3a43c06ca1d00fec8460",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/viewreg-solo/sih/event/plan/viewreg-solo-results.md": "54ba71bd1c93533b691fb28854ad78a19b631143d0de912243630cbe4e5f579a"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
