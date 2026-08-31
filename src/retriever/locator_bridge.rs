@@ -95,6 +95,28 @@ fn entries_of(report: serde_json::Value) -> Vec<LocatorEntry> {
         .unwrap_or_default()
 }
 
+/// 加载索引内全量 entry 供文轴逐字子串扫，承接 SPEC-008 修订六。
+pub fn load_entries(index: &Path) -> Result<Vec<LocatorEntry>, RecallError> {
+    let content = std::fs::read_to_string(index)
+        .map_err(|_| RecallError::TargetUnreadable(index.to_string_lossy().into_owned()))?;
+    let mut out = Vec::new();
+    for line in content.split_terminator('\n') {
+        if line.is_empty() {
+            continue;
+        }
+        let v: serde_json::Value = match serde_json::from_str(line) {
+            Ok(v) => v,
+            Err(_) => continue,
+        };
+        if v.get("type").and_then(|t| t.as_str()) == Some("entry") {
+            if let Ok(entry) = serde_json::from_value::<LocatorEntry>(v) {
+                out.push(entry);
+            }
+        }
+    }
+    Ok(out)
+}
+
 /// 词查询即按词边界匹配名与文本取条目级命中，不取 occurrences。
 pub fn query_word_entries(
     root: &Path,

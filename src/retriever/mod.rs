@@ -46,11 +46,12 @@ impl Archive {
     }
 }
 
-/// 三轴枚举，排序即 topic 加 event 加 time 末位决胜。
+/// 四轴枚举，排序即 topic 加 word 加 event 加 time 末位决胜。
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Serialize)]
 #[serde(rename_all = "lowercase")]
 pub enum Axis {
     Topic,
+    Word,
     Event,
     Time,
 }
@@ -59,13 +60,14 @@ impl Axis {
     pub fn as_str(&self) -> &'static str {
         match self {
             Axis::Topic => "topic",
+            Axis::Word => "word",
             Axis::Event => "event",
             Axis::Time => "time",
         }
     }
 }
 
-/// recall 参数组，七件承 SPEC-007 接口签名。
+/// recall 参数组：原七件承 SPEC-007 冻结加 word 文轴词列与 miss_log 可选参承 SPEC-008 修订六。
 #[derive(Clone, Debug)]
 pub struct RecallArgs {
     pub root: PathBuf,
@@ -75,6 +77,10 @@ pub struct RecallArgs {
     pub until: Option<String>,
     pub archives: Vec<String>,
     pub at: String,
+    /// 文轴词列：每个词对寻址索引 entry.text 做逐字子串 contains 匹配，产 axis=word 切面行。
+    pub words: Vec<String>,
+    /// 零命中账可选参：带参时对每个产零行的查询词追加一行 ndjson 四字段 at/axis/word/rows=0。
+    pub miss_log: Option<PathBuf>,
 }
 
 /// 切面记录七字段，键序固定即 archive 加 carrier 加 ref 加 axis 加 excerpt 加 matched 加 at。
@@ -100,7 +106,7 @@ pub enum RecallError {
     Internal(String),
 }
 
-/// 单操作 recall 即三轴编排取切面行序列，排序机械承 SPEC-008 确定性与排序节。
+/// 单操作 recall 即四轴编排取切面行序列，排序机械承 SPEC-008 确定性与排序节。
 pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     let mut keep: Vec<Archive> = Vec::new();
     for name in &args.archives {
@@ -112,7 +118,11 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     let in_keep = |archive: Archive| keep_all || keep.contains(&archive);
 
     let has_time_axis = args.since.is_some() || args.until.is_some();
-    if args.topics.is_empty() && args.events.is_empty() && !has_time_axis {
+    if args.topics.is_empty()
+        && args.events.is_empty()
+        && !has_time_axis
+        && args.words.is_empty()
+    {
         return Err(RecallError::Blocked("轴全缺".to_string()));
     }
 
@@ -134,31 +144,105 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
         }
     }
 
-    if !args.topics.is_empty() {
+    if !args.topics.is_empty() || !args.words.is_empty() {
         let index = locator_bridge::build_index(&args.root)?;
-        for topic in &args.topics {
-            for entry in locator_bridge::query_word_entries(&args.root, &index, topic)? {
-                let Some(archive) = archives::classify_path(&entry.path) else {
-                    continue;
-                };
-                if !in_keep(archive) {
-                    continue;
+        let entries = locator_bridge::load_entries(&index)?;
+        if !args.topics.is_empty() {
+            for topic in &args.topics {
+                for entry in locator_bridge::query_word_entries(&args.root, &index, topic)? {
+                    let Some(archive) = archives::classify_path(&entry.path) else {
+                        continue;
+                    };
+                    if !in_keep(archive) {
+                        continue;
+                    }
+                    let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
+                    let reference = match (carrier, entry.line_start, entry.line_end) {
+                        ("json", _, _) => format!("{}@{}", entry.path, entry.id),
+                        ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
+                        _ => continue,
+                    };
+                    rows.push(FacetRow {
+                        archive,
+                        carrier,
+                        reference,
+                        axis: Axis::Topic,
+                        excerpt: facet::excerpt_of_text(&entry.text),
+                        matched: topic.clone(),
+                        at: args.at.clone(),
+                    });
                 }
-                let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
-                let reference = match (carrier, entry.line_start, entry.line_end) {
-                    ("json", _, _) => format!("{}@{}", entry.path, entry.id),
-                    ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
-                    _ => continue,
-                };
-                rows.push(FacetRow {
-                    archive,
-                    carrier,
-                    reference,
-                    axis: Axis::Topic,
-                    excerpt: facet::excerpt_of_text(&entry.text),
-                    matched: topic.clone(),
-                    at: args.at.clone(),
-                });
+            }
+        }
+        if !args.words.is_empty() {
+            // miss_log 账：带参且产零行即每词一行，缺参零写。
+            let mut per_word_rows: Vec<(String, usize)> = Vec::new();
+            for word in &args.words {
+                let mut count = 0usize;
+                for entry in &entries {
+                    let Some(archive) = archives::classify_path(&entry.path) else {
+                        continue;
+                    };
+                    if !in_keep(archive) {
+                        continue;
+                    }
+                    let carrier: &'static str =
+                        if entry.carrier == "json" { "json" } else { "md" };
+                    let reference = match (carrier, entry.line_start, entry.line_end) {
+                        ("json", _, _) => format!("{}@{}", entry.path, entry.id),
+                        ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
+                        _ => continue,
+                    };
+                    if !entry.text.contains(word.as_str()) {
+                        continue;
+                    }
+                    count += 1;
+                    rows.push(FacetRow {
+                        archive,
+                        carrier,
+                        reference,
+                        axis: Axis::Word,
+                        excerpt: facet::excerpt_of_text(&entry.text),
+                        matched: word.clone(),
+                        at: args.at.clone(),
+                    });
+                }
+                per_word_rows.push((word.clone(), count));
+            }
+            if let Some(log_path) = &args.miss_log {
+                if let Some(parent) = log_path.parent() {
+                    if !parent.as_os_str().is_empty() {
+                        std::fs::create_dir_all(parent).map_err(|_| {
+                            RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
+                        })?;
+                    }
+                }
+                let mut buf = String::new();
+                for (word, count) in &per_word_rows {
+                    if *count == 0 {
+                        let row = serde_json::json!({
+                            "at": args.at,
+                            "axis": Axis::Word.as_str(),
+                            "word": word,
+                            "rows": 0u32,
+                        });
+                        buf.push_str(&serde_json::to_string(&row).unwrap_or_default());
+                        buf.push('\n');
+                    }
+                }
+                if !buf.is_empty() {
+                    use std::io::Write;
+                    let mut f = std::fs::OpenOptions::new()
+                        .create(true)
+                        .append(true)
+                        .open(log_path)
+                        .map_err(|_| {
+                            RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
+                        })?;
+                    f.write_all(buf.as_bytes()).map_err(|_| {
+                        RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
+                    })?;
+                }
             }
         }
     }
@@ -223,6 +307,204 @@ mod derive_tests {
         std::fs::create_dir_all(root.join("sih-engine")).unwrap();
         std::fs::create_dir_all(root.join("sih-tools")).unwrap();
         assert_eq!(derive_root(&batch), Some(root));
+    }
+}
+
+/// 集成测试：依赖真实工作区索引，跑慢，故 #[ignore]；实装后用 cargo test -- --ignored 跑。
+///
+/// 工地根解析：测试在 worktree 内跑时 derive_root 必须能上溯到真根。
+fn integration_root() -> PathBuf {
+    let cwd = std::env::current_dir().expect("cwd");
+    derive_root(&cwd).expect("root 不可定位")
+}
+
+#[cfg(test)]
+mod wenguobs_tests {
+    use super::*;
+
+    /// 真实工作区根解析恒存在。
+    #[test]
+    fn integration_root_resolves() {
+        let root = integration_root();
+        assert!(root.join("sih-engine").is_dir());
+        assert!(root.join("sih-tools").is_dir());
+    }
+
+    /// F-1.1 文轴：六落空词经 --word 全命中且 ref 可回查原档。
+    #[test]
+    #[ignore]
+    fn f1_word_axis_hits_six_words() {
+        let root = integration_root();
+        let args = RecallArgs {
+            root,
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec![
+                "令牌".to_string(),
+                "use 边".to_string(),
+                "边账".to_string(),
+                "期票".to_string(),
+                "句读".to_string(),
+                "级联".to_string(),
+            ],
+            miss_log: None,
+        };
+        let rows = recall(&args).expect("recall 失败");
+        let six: Vec<&str> = vec!["令牌", "use 边", "边账", "期票", "句读", "级联"];
+        for word in &six {
+            let hits: Vec<&FacetRow> =
+                rows.iter().filter(|r| r.matched == *word && r.axis == Axis::Word).collect();
+            assert!(!hits.is_empty(), "文轴未命中 {word}");
+            let hit = hits[0];
+            // ref 形如 path@Lstart-Lend 即 md 载体回原档行区间
+            assert!(
+                hit.reference.contains('@'),
+                "ref 缺 @ 分隔即 {ref}",
+                ref = hit.reference
+            );
+        }
+    }
+
+    /// F-1.2 文轴对 name 轴零变：RecallArgs 仅传 topics 不传 words 时行为与 v1.4 退路一致。
+    #[test]
+    #[ignore]
+    fn f1_topic_axis_unchanged_when_words_absent() {
+        let root = integration_root();
+        let baseline = RecallArgs {
+            root: root.clone(),
+            topics: vec!["期票".to_string()],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec![],
+            miss_log: None,
+        };
+        let baseline_rows = recall(&baseline).expect("baseline 失败");
+        let baseline_count = baseline_rows
+            .iter()
+            .filter(|r| r.axis == Axis::Topic)
+            .count();
+        assert!(baseline_count > 0, "主轴基线本应有命中");
+
+        // 加 words 但不命中任一新词时，topic 行集应完全一致
+        let with_words = RecallArgs {
+            words: vec!["句读".to_string()],
+            ..baseline.clone()
+        };
+        let with_rows = recall(&with_words).expect("扩展 失败");
+        let topic_rows: Vec<&FacetRow> =
+            with_rows.iter().filter(|r| r.axis == Axis::Topic).collect();
+        let baseline_topic: Vec<&FacetRow> =
+            baseline_rows.iter().filter(|r| r.axis == Axis::Topic).collect();
+        assert_eq!(topic_rows.len(), baseline_topic.len(), "topic 行数变化");
+        for (a, b) in topic_rows.iter().zip(baseline_topic.iter()) {
+            assert_eq!(a.reference, b.reference, "topic ref 漂移");
+        }
+    }
+
+    /// F-1.3 --word 与 --topic 同词并用时两轴行并出。
+    #[test]
+    #[ignore]
+    fn f1_word_and_topic_same_word_both_axes() {
+        let root = integration_root();
+        let args = RecallArgs {
+            root,
+            topics: vec!["期票".to_string()],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec!["期票".to_string()],
+            miss_log: None,
+        };
+        let rows = recall(&args).expect("recall 失败");
+        let has_topic = rows.iter().any(|r| r.axis == Axis::Topic && r.matched == "期票");
+        let has_word = rows.iter().any(|r| r.axis == Axis::Word && r.matched == "期票");
+        assert!(has_topic && has_word, "两轴应并存：topic={has_topic} word={has_word}");
+    }
+
+    /// F-2.1 miss_log 缺参零写：未带参时 miss_log 不应被写。
+    #[test]
+    #[ignore]
+    fn f2_miss_log_absent_keeps_default_readonly() {
+        let root = integration_root();
+        let target = std::env::temp_dir().join("wenguobs-miss-log-absent.ndjson");
+        let _ = std::fs::remove_file(&target);
+        let args = RecallArgs {
+            root,
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec!["wenguobsnonexistent".to_string()],
+            miss_log: None,
+        };
+        let _ = recall(&args).expect("recall 失败");
+        assert!(!target.exists(), "缺参形态不应写 miss_log");
+    }
+
+    /// F-2.2 miss_log 带参对零命中词追加 ndjson 一行四字段。
+    #[test]
+    #[ignore]
+    fn f2_miss_log_records_zero_hit_axis_word() {
+        let root = integration_root();
+        let target = std::env::temp_dir().join("wenguobs-miss-log-word.ndjson");
+        let _ = std::fs::remove_file(&target);
+        let args = RecallArgs {
+            root,
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec!["wenguobsnonexistent".to_string()],
+            miss_log: Some(target.clone()),
+        };
+        let _ = recall(&args).expect("recall 失败");
+        assert!(target.exists(), "带参形态应写 miss_log");
+        let content = std::fs::read_to_string(&target).expect("miss_log 读失败");
+        let lines: Vec<&str> = content.split_terminator('\n').filter(|l| !l.is_empty()).collect();
+        assert_eq!(lines.len(), 1, "应恰一行账");
+        let row: serde_json::Value = serde_json::from_str(lines[0]).expect("行非 json");
+        assert_eq!(row["at"], "2026-08-31");
+        assert_eq!(row["axis"], "word");
+        assert_eq!(row["word"], "wenguobsnonexistent");
+        assert_eq!(row["rows"], 0);
+    }
+
+    /// F-2.3 miss_log 重复查询词重复记行即 append-only 不去重。
+    #[test]
+    #[ignore]
+    fn f2_miss_log_repeats_each_call() {
+        let root = integration_root();
+        let target = std::env::temp_dir().join("wenguobs-miss-log-rep.ndjson");
+        let _ = std::fs::remove_file(&target);
+        let mk = || RecallArgs {
+            root: root.clone(),
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-08-31".to_string(),
+            words: vec!["wenguobsnonexistent".to_string()],
+            miss_log: Some(target.clone()),
+        };
+        let _ = recall(&mk()).expect("first 失败");
+        let _ = recall(&mk()).expect("second 失败");
+        let content = std::fs::read_to_string(&target).expect("miss_log 读失败");
+        let lines: Vec<&str> = content.split_terminator('\n').filter(|l| !l.is_empty()).collect();
+        assert_eq!(lines.len(), 2, "重复查询应双份账行");
     }
 }
 
