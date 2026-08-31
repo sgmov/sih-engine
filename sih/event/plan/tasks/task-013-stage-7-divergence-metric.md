@@ -1,5 +1,13 @@
 # 任务包 013 阶段 7 divergence metric 偏离率度量
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：部分承接闭项
+> 承接位：异质性度量即 Jaccard、coverage、severity 分布由 facet compiler 承接即确定性聚合、配对 Jaccard 实证 0.92 与 0.30 在档；收敛态读数由秤星承接即三维快照、convergence 维组件治理批覆盖比、ga-1，量的是治理态收敛非原包 LLM 输出偏离，如实区分；收敛裁决机械闸由得一即二层裁决结构承接；K/N、波动系数、双指标阈值公式未作为 src 模块承接
+> 证据：sih-tools/facet/FACET.md:23 compiler 算 coverage、Jaccard、severity 分布；sih-tools/facet/FACET.md:33 bps0 Jaccard=0.92 与 fps5 Jaccard=0.30 实证；sih-tools/gauge/CONTRACT.md:19 convergence 维定义；sih-engine/doc/decision/020-deyi-component-naming.md:3
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 7,在 `sih-engine` 仓加 Rust 偏离率度量模块,确定性计算 K/N 偏离率、Jaccard 相似度、波动系数、收敛双指标判定。承接 DES-005 v2 偏离率度量机制与 SPEC-001 v2 数据契约与 DES-010 多专家范式与 DEC-005 子项一(263 文档集复用边界)。

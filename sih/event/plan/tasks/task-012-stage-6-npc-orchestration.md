@@ -1,5 +1,13 @@
 # 任务包 012 阶段 6 NPC orchestration 编排层
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：承接闭项
+> 承接位：多专家独立审阅由 facet 承接即多 facetor 独立审阅、单 KEY 单 MODEL、compiler 确定性聚合出异质性指标；多代理编排形态由代理编组承接即单线、单发、反思、并联、串行五形、2026-08-28 全签批；裁决材料落链由得一即二层裁决结构承接
+> 证据：sih-tools/facet/FACET.md:7 多 facetor 独立审阅加 compiler 确定性聚合；sih-tools/facet/FACET.md:41 单 KEY 单 MODEL；AGENTS.md:279 sihankor-marshalling 代理编组即长程任务范式；sih-engine/doc/decision/020-deyi-component-naming.md:3
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 6,在 `sih-engine` 仓加 Rust NPC 编排模块,按规则调度 NPC 专家团审阅,收集审阅单元。承接 DES-009 第五层 Verifier 与偏离率段与 DES-005 v2 审阅单元结构与 DES-010 单 KEY 多专家范式。

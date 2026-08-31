@@ -1,5 +1,13 @@
 # 任务包 007 阶段 1 doclint 结构化输出集成
 
+
+> 关闭裁定（批 pkgclose-solo，2026-08-31）
+> 裁定：承接闭项
+> 承接位：doclint 结构化输出与强制校验位由核阅／scrutinator 承接即空腹谓词引擎、结构化 JSON findings、零 LLM、退出码 0/1/2；校验结果的认证留痕上书简／scribe append 即认证事件哈希入链；DES-008 报告契约以 des-001 规则包报告形态承接即报告含引擎版本与规则包版本与目标内容哈希
+> 证据：AGENTS.md:128 核阅即 scrutinator 空腹谓词引擎且 doclint 之名退役入血统档；AGENTS.md:280 静态审计工具 2026-08-20 承接 doclint 强制校验位；AGENTS.md:162 历史实证 2026-07-21 DEC-000 与 DEC-001 修订前 33 处违规修订后 0 处；sih-tools/scrutinator/ 工具在场
+> 原文主体零改动，本块为批 pkgclose-solo 追加头部件
+
+
 ## 概览 {#overview}
 
 本任务包实现 8 阶段路径阶段 1,在旧仓 doclint 源码加 `--emit-json` CLI 选项,输出符合 DES-008 契约的 NDJSON。本任务包不写 Rust 代码,只写 sub-agent 可执行的任务规范,sub-agent 跑完本任务包后产出修改后的 Rust 源码与新二进制。
