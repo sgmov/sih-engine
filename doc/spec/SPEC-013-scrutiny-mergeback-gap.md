@@ -31,6 +31,8 @@
 1. 「金向量须含脏目标条款」。本规格基线金向量由净目标六件 (原 TDD 批冻结) 扩展为净目标六件加脏目标六件 (含违例目标至少四件覆盖 C001 加 C002 加 C006 加 S002 加 S004 加 S005 加 S006 加 F000 加 F002 加 F003 加 F005 加 N002 共十二码加真目标 DEC-020 直接入冻) 。净目标续用: cargo test 用例 `golden_des001_gov002` / `golden_des001_gov003` / `golden_des001mathe_lim001` / `golden_des001mathe_mul001` / `golden_ask3_scrutmerge_sdd` / `golden_ask3_viewrider` 共六件零漂移；脏目标新增: cargo test 用例 `golden_des001_goldfix_001_multiflag` / `golden_des001_goldfix_002_header` / `golden_des001_goldfix_003_fence` / `golden_des001_goldfix_004_nav` / `golden_des001_goldfix_005_skip` / `golden_des001_dec020` 共六件逐字节回归工具件基准输出。「金向量冻结后任何字段漂移即判负返工」，含工具件一切格式特征特别是字符集消息 U+U+{char} 双前缀照抄不修。
 2. 「双跑同参形条款」。本规格 § 验收判据 A1 同包同目标逐字节一致判据的执行条件由「双侧用同形态」明确为「双侧同参形」: 包名一致 (两侧 `--pack` 值字符串字节级一致) ，目标路径一致 (两侧均用绝对路径形态) ，输出形态逐字节一致。即两侧均以 `uv run scrutinator --pack packs/des-001 <绝对路径>` 与 `target/debug/scrutinator --pack des-001 <绝对路径>` 形态同参运行，cmp 零差与退出码一致。相对路径形态在双跑中视为调用形差异非等价性差异，不作为切换判据。
 
+2026-09-01 修订五，scrutmerge-switch-solo 批重开切换执行记录：承修订三挂起裁定与修订四 goldfix 整改完成，本批重开以同参形条款为切换成立判据。双跑判据执行实录：cargo build 1 warning 来自主树已存在 retriever 集成根 dead code 非本批触发红线守住；cargo test --lib 107 passed 0 failed 6 ignored 含金向量 12 件逐字节断言全过；三目标 SPEC-013 DEC-020 GOV-002 同参形双跑 cmp 0 即零差且退出码一致，证据入材料件 `sih-engine/sih/event/plan/scrutmerge-goldfix-solo-materials/dualrun-cmp.json` 与本批收编 `2026-09-01-switch-stop-engine-*.json` 与 `2026-09-01-switch-stop-tools-*.json` 六件。核阅位换旗完成：根 AGENTS.md 三处核阅位即概览行、核阅调用行、文件索引行改指引擎件 `sih-engine/target/debug/scrutinator`、BATCH-FACE.md 核阅腿命令同步改引擎件路径、宪法节与两条启动命令一字不碰字节级 diff 自证仅限三行核阅位。工具件退役完成：`sih-tools/scrutinator/CONTRACT.md` 加退役登记承书简先例即转兼容只读、src 与 tests 与 packs 零改动、CALL-LOG 落尾行。本批本规格不再修订仅以修订五作切换执行记录归档。
+
 ## 家位与模块形 {#shape}
 
 ### 库模块 src/scrutinator/ {#lib}
