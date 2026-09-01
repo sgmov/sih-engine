@@ -1,0 +1,22 @@
+{
+  "entry": "APP-011-marginal-cost-and-externalization-trigger",
+  "formatter": {
+    "exit": 0,
+    "changed": false,
+    "summary": {
+      "targets_changed": 0,
+      "total_changed_lines": 0
+    }
+  },
+  "scrutinator": {
+    "exit": 0,
+    "pack": "des-001-mathe",
+    "total": 0
+  },
+  "nomenclator": {
+    "exit": 0,
+    "pack_version": "0.5.0",
+    "findings": 0
+  },
+  "verdict": "three-gates-green"
+}

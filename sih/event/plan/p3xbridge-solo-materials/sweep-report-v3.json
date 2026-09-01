@@ -1,0 +1,10 @@
+{
+  "report": "sweep-v3",
+  "supersedes": "sweep-report-v2.json",
+  "pack": "des-001-mathe",
+  "entries": 152,
+  "violating_files": 0,
+  "exit": 0,
+  "date": "2026-09-02",
+  "note": "全量核阅扫零违规零域外。分支实计：order 16、algebra 5、topology 8、probability 9、calculus 114，合计 152；编号有跳位故 order 件数非 19。"
+}
