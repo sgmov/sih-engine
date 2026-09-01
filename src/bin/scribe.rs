@@ -166,7 +166,7 @@ fn main() {
             let (Some(report), Some(exit_code), Some(trail)) =
                 (opt("report"), opt("exit-code"), opt("trail"))
             else {
-                emit(json!({"error": "append 缺少必填参数，运行 scribe --help 查看用法"}), 2)
+                emit(json!({"error": "append 缺少必填参数，需 --report <报告文件> --exit-code <退出码> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Ok(exit_code) = exit_code.parse::<i32>() else {
@@ -196,7 +196,7 @@ fn main() {
             let (Some(record), Some(validation), Some(trail)) =
                 (opt("record"), opt("validation"), opt("trail"))
             else {
-                emit(json!({"error": "intent 缺少必填参数，运行 scribe --help 查看用法"}), 2)
+                emit(json!({"error": "intent 缺少必填参数，需 --record <ask3 记录> --validation <验证件> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
@@ -224,7 +224,7 @@ fn main() {
         }
         "park" => {
             let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
-                emit(json!({"error": "park 缺少必填参数，运行 scribe --help 查看用法"}), 2)
+                emit(json!({"error": "park 缺少必填参数，需 --record <停泊记录 JSON> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
@@ -244,7 +244,7 @@ fn main() {
         }
         "record" => {
             let (Some(reading), Some(trail)) = (opt("reading"), opt("trail")) else {
-                emit(json!({"error": "record 缺少必填参数，运行 scribe --help 查看用法"}), 2)
+                emit(json!({"error": "record 缺少必填参数，需 --reading <读数件> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&reading) else { emit(json!({"error": "读数件不存在"}), 2) };

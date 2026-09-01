@@ -1,0 +1,59 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/cmdface-solo/sih/event/plan/cmdface-solo-results.md"
+  ],
+  "findings": [
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "excerpt": "icit 0.2.0，并修核阅命令拼写 scrutinizer→scrutinator 两处 | 对表实况一致 | 过 ",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/cmdface-solo/sih/event/plan/cmdface-solo-results.md",
+      "line": 32,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "Scrutinizer"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.4.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 1,
+    "skipped": 0
+  }
+}
