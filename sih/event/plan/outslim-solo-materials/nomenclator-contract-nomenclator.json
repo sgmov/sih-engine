@@ -1,0 +1,103 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md"
+  ],
+  "findings": [
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "准；回迁债评估含引擎侧接入成本。融回评估双门槛即体量与时间，主判据贡献度，空转调用量不计入，达标由用户裁量。",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md",
+      "line": 64,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "PRO-007 未裁簇簇一懒波登记",
+      "word": "双门槛"
+    },
+    {
+      "cause": "生僻字与古典语域",
+      "class": "strict",
+      "excerpt": "落账见 COURSE-v1 泊界裁决史与度支见化格推导记录为登记债，录名为记录名子串登记噪声，逐处人工处置留待各文档下次",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md",
+      "line": 66,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "度支"
+    },
+    {
+      "cause": "录撞书简功能前案",
+      "class": "strict",
+      "excerpt": "泊界裁决史与度支见化格推导记录为登记债，录名为记录名子串登记噪声，逐处人工处置留待各文档下次修订。",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md",
+      "line": 66,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 术语功能轮",
+      "word": "录名"
+    },
+    {
+      "cause": "词典义项负面即银行清空与传送未达",
+      "class": "strict",
+      "excerpt": "被否，三处基线发现定为登记债与登记噪声，落账见 COURSE-v1 泊界裁决史与度支见化格推导记录为登记债，录名为记录名",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md",
+      "line": 66,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "落账"
+    },
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "2026-08-22 修订二：接线与四项裁定入册，承用户令即四项走 facet 裁且人节点退位，融回门节改写如上。",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/nomenclator/CONTRACT.md",
+      "line": 72,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.4.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.1.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 5,
+    "skipped": 0
+  }
+}
