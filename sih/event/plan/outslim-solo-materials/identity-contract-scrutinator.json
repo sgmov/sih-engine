@@ -1,0 +1,43 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/identity/CONTRACT.md"
+  ],
+  "content_hashes": {},
+  "findings": [],
+  "domain_mismatches": [
+    {
+      "target": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/identity/CONTRACT.md",
+      "reason": "目标不在任何已加载规则包声明的治理域内",
+      "pack_domains": [
+        "des-001"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}

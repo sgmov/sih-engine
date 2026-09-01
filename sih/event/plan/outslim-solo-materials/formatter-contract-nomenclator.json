@@ -1,0 +1,59 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/formatter/INCUBATION.md"
+  ],
+  "findings": [
+    {
+      "cause": "生僻字与古典语域",
+      "class": "strict",
+      "excerpt": "义零占用，仅持久化格式一类跨界子串噪声，度支在维度支撑同判，不阻断；裸名非通行词指名性最强，路择同款优势，零先验无错向；",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/outslim-solo/formatter/INCUBATION.md",
+      "line": 5,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "度支"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.4.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.1.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 1,
+    "skipped": 0
+  }
+}
