@@ -1,0 +1,26 @@
+{
+  "batch": "parkingpk-solo",
+  "date": "2026-09-02",
+  "session": "2f4147b4fdf7fc02",
+  "park_events": [
+    {
+      "entry_id": "pk-036",
+      "hash16": "55513c246e8ed9b2"
+    },
+    {
+      "entry_id": "pk-037",
+      "hash16": "2366a291205fb3e2"
+    },
+    {
+      "entry_id": "pk-038",
+      "hash16": "22b7eee7ea2c3156"
+    }
+  ],
+  "gates": {
+    "formatter": 0,
+    "scrutinator": "total=0（工地路径别名 sih-engine->. 保域形，方法如实记）",
+    "nomenclator": 0
+  },
+  "projection": "在泊两项改五项，pk-036/037/038 出泊条件与链一致",
+  "note": "出泊唯人节点，本批只进不出；数学侧不泊归用户与本会话"
+}
