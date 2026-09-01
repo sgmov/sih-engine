@@ -3,3 +3,4 @@
 {"seq": 3, "session_id": "sess-zcode-260902-acceptor", "input": "得一裁1是否能融回", "ts": "2026-09-01T16:59:59+00:00", "note": "逐字留档即 adjudisp-solo 批受理输入"}
 {"seq": 4, "session_id": "sess-zcode-260902-acceptor", "input": "为什么得一没有参与到得一落地以后的所有决策？", "ts": "2026-09-01T16:59:59+00:00", "note": "逐字留档即 adjudisp-solo 批受理输入"}
 {"seq": 5, "session_id": "sess-zcode-260902-acceptor", "input": "两步立刻执行", "ts": "2026-09-01T16:59:59+00:00", "note": "逐字留档即 adjudisp-solo 批受理输入"}
+{"seq": 6, "session_id": "sess-zcode-260902-acceptor", "input": "批准", "ts": "2026-09-02T00:00:00+00:00", "note": "逐字留档即守卫开权令承 adisp-guard-1 裁决（stable_clear 在链事件 2ada7331）批准拒直提守卫实装批 guardhook-solo"}
