@@ -1,0 +1,65 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/algebra/entries/ALG-010-factorization-and-invariance.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-015-coinduction-and-mirror-duality.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-017-definability-and-definition-extension.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-008-information-content-and-falsifiability.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md"
+  ],
+  "findings": [
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "图入名册登记，$m$ 为名册计数；意图未入册则 $m$ 低估，下界随之低估，须如实标注",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md",
+      "line": 113,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.4.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 7,
+    "findings": 1,
+    "skipped": 0
+  }
+}

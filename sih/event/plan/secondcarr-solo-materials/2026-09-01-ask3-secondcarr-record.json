@@ -1,0 +1,48 @@
+{
+  "session_id": "sess-zcode-260901-secondcarr",
+  "raw_input": "开：secondcarr-solo 第二载体入闸批（复归补强第二波七件经重编号入正身）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "secondcarr-solo 将收件台七件已独立复验的第二载体草稿入 sih-math 正身，四件 ORD 重编号 011 至 014 改 015 至 018 让位在册良基条目即得一终签 m-mathnext 之机制方向，三件保留拟派号即 PROB-008 与 PROB-009 与 ALG-010，正文旧号自指随编号机械改写，mapping 与两子仓 INDEX 登记新行，验收即全量 148 件核阅零违规",
+    "exclusions": [
+      "不动七件数学内容与哲学锚",
+      "不动在册 ORD-011 良基条目",
+      "存量发现只记录不代改"
+    ],
+    "output_format": "副本归一化落笔即重编号加正文自指改写加 H1 提首加状态行 + 三闸 + 认证上链 + 双仓结算归并 + 对表",
+    "injected_constraints": [
+      "工程基线第一条与第四条",
+      "得一副本机制命题 m-mathnext 机器终签为编号方向依据",
+      "引文程序化截取",
+      "链快照在末笔后"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-math order 与 probability 与 algebra entries 新增七件与 mapping 与两 INDEX",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-tools/lease 与 engine scribe 与 ask3repeater 与 scrutinator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "secondcarr 七件重编号入正身即编号在册占用优先于草稿拟派号，承接基线四可验证性即三表一致机械可校验",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+        "quote": "应而不藏：如实应对，不藏不掖——成功不夸大，失败不掩盖"
+      },
+      "rationale": "重编号与自指改写全程机械可验且如实留痕，承接 PRO-08 应而不藏",
+      "evidence": "sih-tools/proposition/DES/m-mathnext/m-mathnext-signcheck.json:1",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 0
+}
