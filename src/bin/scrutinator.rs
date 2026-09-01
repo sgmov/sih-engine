@@ -175,7 +175,12 @@ fn main() {
     let mut targets: Vec<(String, Option<String>)> = Vec::new();
     for path in &target_paths {
         let text = read_text(path);
-        targets.push((path.clone(), text));
+        // 目标 path 用绝对路径，与工具件 Python `str(pathlib.Path(target).resolve())` 对表
+        let abs_path = std::fs::canonicalize(path)
+            .ok()
+            .and_then(|p| p.to_str().map(String::from))
+            .unwrap_or_else(|| path.clone());
+        targets.push((abs_path, text));
     }
 
     // 跑规则：每个 pack 只跑在它域内的 target
@@ -193,16 +198,18 @@ fn main() {
                 if !in_domain {
                     continue;
                 }
+                // finding 的 path 字段填绝对路径，与工具件 Python `str(path)` 行为对表
+                let finding_path = abs.clone();
                 // 判断材料轴：manifest 标 json 走 json 规则，否则 text
                 let manifest = sih_engine::scrutinator::asset::manifest(pack_name);
                 let is_json_pack = manifest.contains("material = \"json\"")
                     || manifest.contains("material=\"json\"");
                 if is_json_pack {
                     if let Ok(v) = serde_json::from_str::<serde_json::Value>(text) {
-                        findings.extend(run_rules_on_json(pack_name, rules, &v));
+                        findings.extend(run_rules_on_json(pack_name, rules, &v, &finding_path));
                     }
                 } else {
-                    findings.extend(run_rules_on_text(pack_name, rules, text));
+                    findings.extend(run_rules_on_text(pack_name, rules, text, &finding_path));
                 }
             }
         }

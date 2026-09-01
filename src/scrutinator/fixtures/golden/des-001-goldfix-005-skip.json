@@ -1,0 +1,71 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md": "828d33ba269c72f2503c22388d68d5354c6e0691e6e803760168432a0fe403c6"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md",
+      "location": {
+        "line": 3
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「收尾节 H2」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md",
+      "location": {
+        "line": 3
+      },
+      "message": "标题层级跳级:上一级为 1 级,当前为 3 级"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 3,
+    "by_rule": {
+      "S004": 1,
+      "S005": 1,
+      "S006": 1
+    },
+    "by_pack": {
+      "des-001": 3
+    }
+  }
+}

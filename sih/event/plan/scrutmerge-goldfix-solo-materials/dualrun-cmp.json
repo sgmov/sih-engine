@@ -1,0 +1,28 @@
+{
+  "batch": "scrutmerge-goldfix-solo",
+  "date": "2026-09-01",
+  "phase": "dualrun-cmp-same-arg",
+  "targets": [
+    {
+      "name": "SPEC-013-scrutiny-mergeback-gap",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "engine_exit": 0,
+      "tools_exit": 0,
+      "cmp": 0
+    },
+    {
+      "name": "DEC-020-deyi-component-naming",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "engine_exit": 1,
+      "tools_exit": 1,
+      "cmp": 0
+    },
+    {
+      "name": "GOV-002-mainline-lock-v1",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+      "engine_exit": 0,
+      "tools_exit": 0,
+      "cmp": 0
+    }
+  ]
+}

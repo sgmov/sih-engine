@@ -1,0 +1,76 @@
+{
+  "batch": "scrutmerge-goldfix-solo",
+  "date": "2026-09-01",
+  "phase": "golden-checksheet",
+  "rationale": "金向量六件全零发现导致等价性从未被字节级钉住，goldfix 整改批以工具件为唯一基准构造含违例目标五件覆盖 12 规则码加真目标 DEC-020 直接入冻",
+  "fixtures": [
+    {
+      "name": "des-001-goldfix-001-multiflag",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-goldfix-001-multiflag.json",
+      "findings_count": 9,
+      "rules_hit": ["C001", "C002", "C006", "F002", "F003", "F005", "N002"],
+      "by_rule": {"C001": 1, "C002": 1, "C006": 2, "F002": 1, "F003": 1, "F005": 2, "N002": 1}
+    },
+    {
+      "name": "des-001-goldfix-002-header",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-002-header.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-goldfix-002-header.json",
+      "findings_count": 8,
+      "rules_hit": ["C006", "S002", "S004", "S005"],
+      "by_rule": {"C006": 1, "S002": 2, "S004": 4, "S005": 1}
+    },
+    {
+      "name": "des-001-goldfix-003-fence",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-003-fence.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-goldfix-003-fence.json",
+      "findings_count": 2,
+      "rules_hit": ["F000"],
+      "by_rule": {"F000": 2}
+    },
+    {
+      "name": "des-001-goldfix-004-nav",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-goldfix-004-nav.json",
+      "findings_count": 5,
+      "rules_hit": ["S002", "S004", "S005", "N002"],
+      "by_rule": {"S002": 1, "S004": 1, "S005": 1, "N002": 2}
+    },
+    {
+      "name": "des-001-goldfix-005-skip",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-005-skip.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-goldfix-005-skip.json",
+      "findings_count": 3,
+      "rules_hit": ["S004", "S005", "S006"],
+      "by_rule": {"S004": 1, "S005": 1, "S006": 1}
+    },
+    {
+      "name": "des-001-dec020",
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "golden": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/golden/des-001-dec020.json",
+      "findings_count": 6,
+      "rules_hit": ["C002", "C006"],
+      "by_rule": {"C002": 1, "C006": 5}
+    }
+  ],
+  "rule_coverage_summary": {
+    "C001": "goldfix-001",
+    "C002": "goldfix-001 + dec020",
+    "C006": "goldfix-001 + goldfix-002 + dec020",
+    "S002": "goldfix-002 + goldfix-004",
+    "S004": "goldfix-002 + goldfix-004 + goldfix-005",
+    "S005": "goldfix-002 + goldfix-004 + goldfix-005",
+    "S006": "goldfix-005",
+    "F000": "goldfix-003",
+    "F002": "goldfix-001",
+    "F003": "goldfix-001",
+    "F005": "goldfix-001",
+    "N002": "goldfix-001 + goldfix-004"
+  },
+  "test_count": {
+    "cargo_test_lib": "107 passed, 0 failed, 6 ignored",
+    "new_golden_tests": 6,
+    "kept_golden_tests": 6,
+    "pre_existing_tests": 14
+  }
+}

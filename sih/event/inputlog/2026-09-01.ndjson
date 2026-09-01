@@ -2,3 +2,7 @@
 {"seq":2,"session_id":"sess-zcode-260901-acceptor","input":"B 输出瘦身+C 命令面速查+AGENTS.md优化。任务包","ts":"2026-09-01T04:49:23+00:00","note":"逐字留档即三批立项令即 outslim-solo 与 cmdface-solo 与 agentslim-solo"}
 {"seq":3,"session_id":"sess-zcode-260901-acceptor","input":"三批全部完工并收约。agentslim-solo 已随引擎 main 落定（settle 5961f13、归并 2f47abc、链 valid、reconcile 零新增异常），字节级原版备份迁移至工作区根留存。","ts":"2026-09-01T04:49:23+00:00","note":"逐字留档即三批完工验收裁定、agentslim 落定点位与备份留存"}
 {"seq":4,"session_id":"sess-zcode-260901-acceptor","input":"出提示词","ts":"2026-09-01T04:49:23+00:00","note":"逐字留档即用户令出本批 matcatch-solo 提示词、发起版控补提批"}
+{"seq":5,"session_id":"sess-zcode-260901-acceptor","input":"切换批展开是什么","ts":"2026-09-01T17:30:00+00:00","note":"逐字留档即用户原话问询 scrutmerge-switch-solo 切换批展开、本批前置问询"}
+{"seq":6,"session_id":"sess-zcode-260901-acceptor","input":"批准通行","ts":"2026-09-01T17:31:00+00:00","note":"逐字留档即用户对切换批放行令、本批放行批准"}
+{"seq":7,"session_id":"sess-zcode-260901-acceptor","input":"cmp 部分零差，遇任务包未精确预见的\"行为差异非版本戳差异\"情况。按红线\"上链前必须等绿\"与风险点\"不硬切\"，我必须停下报主会裁定。","ts":"2026-09-01T18:09:00+00:00","note":"逐字留档即委外代理报主会 halt、停批证词"}
+{"seq":8,"session_id":"sess-zcode-260901-acceptor","input":"同意","ts":"2026-09-01T18:10:00+00:00","note":"逐字留档即用户对停批裁定同意令、批转 goldfix 整改"}

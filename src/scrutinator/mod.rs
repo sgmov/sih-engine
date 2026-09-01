@@ -16,8 +16,8 @@ pub mod rule;
 mod tests;
 
 use report::*;
+use serde_json::Map;
 use sha2::{Digest, Sha256};
-use std::collections::BTreeMap;
 
 pub const ENGINE_NAME: &str = "scrutinator";
 pub const ENGINE_VERSION: &str = "0.1.0";
@@ -38,19 +38,26 @@ pub fn load_packs(names: &[&str]) -> Result<Vec<(String, rule::DomainSpec, Vec<r
 }
 
 /// 对单条文本运行一组规则，返回 findings
+///
+/// `target_path` 即 CLI 传入的目标绝对路径，会落入每条 finding 的 `path` 字段。
 pub fn run_rules_on_text(
     pack_name: &str,
     rules: &[rule::RuleEntry],
     text: &str,
+    target_path: &str,
 ) -> Vec<report::Finding> {
     let mut out = Vec::new();
     for r in rules {
         for tf in rule::check_text(r, text) {
+            if tf.line == 0 {
+                continue;
+            }
             out.push(report::Finding {
-                rule_id: tf.rule_id.clone(),
-                line: if tf.line == 0 { None } else { Some(tf.line) },
-                message: tf.message,
                 pack: pack_name.to_string(),
+                rule_id: tf.rule_id.clone(),
+                path: target_path.to_string(),
+                location: report::Location::Line { line: tf.line },
+                message: tf.message,
             });
         }
     }
@@ -58,10 +65,13 @@ pub fn run_rules_on_text(
 }
 
 /// 对单条 JSON 文本运行 json 规则
+///
+/// `target_path` 即 CLI 传入的目标绝对路径，会落入每条 finding 的 `path` 字段。
 pub fn run_rules_on_json(
     pack_name: &str,
     rules: &[rule::RuleEntry],
     value: &serde_json::Value,
+    target_path: &str,
 ) -> Vec<report::Finding> {
     let mut out = Vec::new();
     for r in rules {
@@ -82,10 +92,11 @@ pub fn run_rules_on_json(
         };
         for jf in findings {
             out.push(report::Finding {
-                rule_id: jf.rule_id,
-                line: None,
-                message: jf.message,
                 pack: pack_name.to_string(),
+                rule_id: jf.rule_id,
+                path: target_path.to_string(),
+                location: report::Location::Path { path: jf.pointer },
+                message: jf.message,
             });
         }
     }
@@ -110,12 +121,12 @@ pub fn render_report(
         })
         .collect();
     let target_headers: Vec<String> = targets.iter().map(|(p, _)| p.clone()).collect();
-    let mut hashes = BTreeMap::new();
+    let mut hashes: Map<String, serde_json::Value> = Map::new();
     for (p, t) in targets {
         if let Some(text) = t {
             let mut h = Sha256::new();
             h.update(text.as_bytes());
-            hashes.insert(p.clone(), hex::encode(h.finalize()));
+            hashes.insert(p.clone(), serde_json::Value::String(hex::encode(h.finalize())));
         }
     }
     EngineReport {

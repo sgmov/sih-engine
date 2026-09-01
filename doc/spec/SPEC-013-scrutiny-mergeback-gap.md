@@ -25,6 +25,12 @@
 1. 命令行双形。位置参数目标为正典工具兼容形即 scrutinator --pack <包> <目标> [<目标>...]，与工具件 sih-tools/scrutinator 的位置参数目标形态同形；--target 旗标保留为引擎别名，与位置形并存；两形同包同目标同路径串输出逐字节一致，验证即双跑 cmp 对表加 cargo test 用例 cli_positional_and_flag_forms_byte_identical。切换映射一句：调用点由 --target 旗标形整体替换为位置参数形，即删 --target 字面留其值、值位不变；两形并存期间同传即按出现顺序取并集。
 2. 空载形。--pack 取空值即空载形，零规则包装载，产 packs 空数组报告与发现零条与退出码零，实装位即 § 接口对表 第一件空腹对表 引擎侧行，验证即 cargo test 用例 exit_empty_load_zero。
 
+2026-09-01 修订三，scrutmerge-switch-solo 批切换执行记录：主会 2026-09-01 裁定切换挂起转 goldfix 整改批，承 DEC-013 三步曲第三步整改；批内揭出引擎件与工具件三层差异即 GOV-002 路径回显调用形伪差异同参形即零差、finding 结构平铺对嵌套、规则语义差即 SPEC-013 误报五处与 DEC-020 漏报六处与字符集消息格式 U+U+ 双前缀差；根因即金向量六件全零发现净目标对结构与语义天然免疫等价性从未被字节级钉住。
+
+2026-09-01 修订四，scrutmerge-goldfix-solo 批规约堵洞：
+1. 「金向量须含脏目标条款」。本规格基线金向量由净目标六件 (原 TDD 批冻结) 扩展为净目标六件加脏目标六件 (含违例目标至少四件覆盖 C001 加 C002 加 C006 加 S002 加 S004 加 S005 加 S006 加 F000 加 F002 加 F003 加 F005 加 N002 共十二码加真目标 DEC-020 直接入冻) 。净目标续用: cargo test 用例 `golden_des001_gov002` / `golden_des001_gov003` / `golden_des001mathe_lim001` / `golden_des001mathe_mul001` / `golden_ask3_scrutmerge_sdd` / `golden_ask3_viewrider` 共六件零漂移；脏目标新增: cargo test 用例 `golden_des001_goldfix_001_multiflag` / `golden_des001_goldfix_002_header` / `golden_des001_goldfix_003_fence` / `golden_des001_goldfix_004_nav` / `golden_des001_goldfix_005_skip` / `golden_des001_dec020` 共六件逐字节回归工具件基准输出。「金向量冻结后任何字段漂移即判负返工」，含工具件一切格式特征特别是字符集消息 U+U+{char} 双前缀照抄不修。
+2. 「双跑同参形条款」。本规格 § 验收判据 A1 同包同目标逐字节一致判据的执行条件由「双侧用同形态」明确为「双侧同参形」: 包名一致 (两侧 `--pack` 值字符串字节级一致) ，目标路径一致 (两侧均用绝对路径形态) ，输出形态逐字节一致。即两侧均以 `uv run scrutinator --pack packs/des-001 <绝对路径>` 与 `target/debug/scrutinator --pack des-001 <绝对路径>` 形态同参运行，cmp 零差与退出码一致。相对路径形态在双跑中视为调用形差异非等价性差异，不作为切换判据。
+
 ## 家位与模块形 {#shape}
 
 ### 库模块 src/scrutinator/ {#lib}

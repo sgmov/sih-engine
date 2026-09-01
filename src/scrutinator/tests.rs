@@ -143,6 +143,73 @@ fn golden_des001mathe_mul001() {
 }
 
 // ============================================================================
+// goldfix-solo 整改批新增 6 件金向量（脏目标覆盖 12 码 + 真目标 DEC-020）
+//
+// 冻结基础：工具件 Python 逐字节输出即基准（承任务包 § 二 关键设计 一）
+// 覆盖：C001 C002 C006 S002 S004 S005 S006 F000 F002 F003 F005 N002
+// ============================================================================
+
+#[test]
+fn golden_des001_goldfix_001_multiflag() {
+    let golden_file = golden_path("des-001-goldfix-001-multiflag.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "goldfix-001-multiflag 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "goldfix-001-multiflag 引擎件输出与金向量逐字节不一致");
+}
+
+#[test]
+fn golden_des001_goldfix_002_header() {
+    let golden_file = golden_path("des-001-goldfix-002-header.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "goldfix-002-header 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "goldfix-002-header 引擎件输出与金向量逐字节不一致");
+}
+
+#[test]
+fn golden_des001_goldfix_003_fence() {
+    let golden_file = golden_path("des-001-goldfix-003-fence.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "goldfix-003-fence 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "goldfix-003-fence 引擎件输出与金向量逐字节不一致");
+}
+
+#[test]
+fn golden_des001_goldfix_004_nav() {
+    let golden_file = golden_path("des-001-goldfix-004-nav.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "goldfix-004-nav 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "goldfix-004-nav 引擎件输出与金向量逐字节不一致");
+}
+
+#[test]
+fn golden_des001_goldfix_005_skip() {
+    let golden_file = golden_path("des-001-goldfix-005-skip.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "goldfix-005-skip 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "goldfix-005-skip 引擎件输出与金向量逐字节不一致");
+}
+
+#[test]
+fn golden_des001_dec020() {
+    let golden_file = golden_path("des-001-dec020.json");
+    let target = golden_target(&golden_file);
+    let (code, stdout) = run_flag(&["des-001"], &[&target]);
+    assert_eq!(code, 1, "DEC-020 应退出 1（违规），实际 {}", code);
+    let expected = std::fs::read_to_string(&golden_file).expect("金向量文件读失败");
+    assert_eq!(stdout, expected, "DEC-020 引擎件输出与金向量逐字节不一致");
+}
+
+// ============================================================================
 // 退出码五场景用例
 // ============================================================================
 

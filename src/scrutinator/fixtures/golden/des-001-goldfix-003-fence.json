@@ -1,0 +1,60 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-003-fence.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-003-fence.md": "6c493525e9086dcaf4db20ff3d40e50fe90e78040cb18ae0efe745e42cb60a31"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-003-fence.md",
+      "location": {
+        "line": 5
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-003-fence.md",
+      "location": {
+        "line": 14
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 2,
+    "by_rule": {
+      "F000": 2
+    },
+    "by_pack": {
+      "des-001": 2
+    }
+  }
+}

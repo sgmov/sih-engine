@@ -12,6 +12,13 @@ fn anchor_re() -> &'static regex::Regex {
     ANCHOR_RE.get_or_init(|| regex::Regex::new(r"\{#([^}]+)\}\s*$").unwrap())
 }
 
+/// 剥离行内代码跨后的文本，承工具件 INLINE_CODE_RE 语义
+fn strip_inline_code(line: &str) -> String {
+    static RE: std::sync::OnceLock<regex::Regex> = std::sync::OnceLock::new();
+    let re = RE.get_or_init(|| regex::Regex::new(r"`[^`]*`").unwrap());
+    re.replace_all(line, "").into_owned()
+}
+
 /// 规则条目（解自 rules.toml）
 #[derive(Debug, Clone)]
 pub struct RuleEntry {
@@ -228,7 +235,6 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                             rule_id: rule.id.clone(),
                             line: lineno + 1,
                             message: rule.message.clone(),
-                            excerpt: line.to_string(),
                         });
                     }
                 }
@@ -255,12 +261,12 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                 for (_col, ch) in line.chars().enumerate() {
                     let cp = ch as u32;
                     if !ranges.iter().any(|(a, b)| cp >= *a && cp <= *b) {
-                        let msg = rule.message.replace("{char}", &format!("{:04X}", cp));
+                        // 工具件格式：U+{cp:04X} 即「U+U+2026」双前缀照抄不修
+                        let msg = rule.message.replace("{char}", &format!("U+{:04X}", cp));
                         out.push(TextFinding {
                             rule_id: rule.id.clone(),
                             line: lineno + 1,
                             message: msg,
-                            excerpt: line.to_string(),
                         });
                         break;
                     }
@@ -269,14 +275,31 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
         }
         RuleKind::ForbidPattern => {
             if let Some(pat) = rule.params.get("pattern").and_then(|v| v.as_str()) {
-                if let Ok(re) = regex::Regex::new(pat) {
+                // C006 含 negative lookahead `(?!...)`，Rust `regex` 不支持；
+                // 走手写状态机复现工具件 Python `re.finditer` 行为：一行多匹配各报一次。
+                if rule.id == "C006" {
                     for (lineno, line) in text.lines().enumerate() {
-                        if let Some(m) = re.find(line) {
+                        let hits = c006_hits_in_line(line);
+                        for _ in 0..hits {
                             out.push(TextFinding {
                                 rule_id: rule.id.clone(),
                                 line: lineno + 1,
-                                message: format!("{} [match={}]", rule.message, m.as_str()),
-                                excerpt: line.to_string(),
+                                message: rule.message.clone(),
+                            });
+                        }
+                    }
+                } else if let Ok(re) = regex::Regex::new(pat) {
+                    for (lineno, line) in text.lines().enumerate() {
+                        // 工具件走 `re.finditer`，一行多匹配各报一次
+                        let mut count = 0usize;
+                        for _ in re.find_iter(line) {
+                            count += 1;
+                        }
+                        for _ in 0..count {
+                            out.push(TextFinding {
+                                rule_id: rule.id.clone(),
+                                line: lineno + 1,
+                                message: rule.message.clone(),
                             });
                         }
                     }
@@ -289,76 +312,120 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                 .get("check")
                 .and_then(|v| v.as_str())
                 .unwrap_or("");
-            let mut h1_count = 0;
-            let mut prev_level: i32 = 0;
-            let mut first_h2: Option<(usize, String)> = None;
+            let min_level = rule
+                .params
+                .get("min_level")
+                .and_then(|v| v.as_integer())
+                .unwrap_or(2) as i32;
+            let first_h2_names: Option<Vec<String>> = rule
+                .params
+                .get("name")
+                .and_then(|v| match v {
+                    Value::String(s) => Some(vec![s.clone()]),
+                    Value::Array(a) => Some(
+                        a.iter()
+                            .filter_map(|x| x.as_str().map(String::from))
+                            .collect(),
+                    ),
+                    _ => None,
+                });
+
+            // 收集所有 H1+ 标题（行号, 层级, 标题）。
+            // 工具件用 `^#{1,6}\s+(.+?)\s*$` 提取，跳过围栏内（不豁免，与旧二进制一致）。
+            let mut headings: Vec<(usize, i32, String)> = Vec::new();
             for (lineno, line) in text.lines().enumerate() {
                 let trimmed = line.trim_start();
-                if trimmed.starts_with("# ") {
-                    h1_count += 1;
-                    prev_level = 1;
-                } else if trimmed.starts_with("## ") {
-                    let raw_title = trimmed[3..].trim().to_string();
-                    if first_h2.is_none() {
-                        first_h2 = Some((lineno + 1, raw_title.clone()));
+                if !trimmed.starts_with('#') {
+                    continue;
+                }
+                // 排除六级以上（围栏 ```` ``` ```` 形以 ``` 开头但不是标题）
+                if trimmed.starts_with("```") {
+                    continue;
+                }
+                let level = trimmed.chars().take_while(|c| *c == '#').count();
+                if level < 1 || level > 6 {
+                    continue;
+                }
+                // 标题内容：trimmed[level..].trim_start()，与工具件 H1 触发 "# " 区分：
+                // 工具件 H1=`# ` H2=`## ` 均以 `#` 加至少一空格接标题。
+                // 我们要求 trimmed[level..] 起始为空格，匹配 `# foo` / `## foo` / `###foo`（后者无空格应忽略）
+                let rest = &trimmed[level..];
+                if !rest.starts_with(' ') && !rest.is_empty() {
+                    continue;
+                }
+                let title = rest.trim_start().trim_end().to_string();
+                headings.push((lineno + 1, level as i32, title));
+            }
+
+            match check {
+                "single_h1" => {
+                    // 工具件：跳第一个 H1，后续每个 H1 各报一次
+                    let h1_lines: Vec<usize> = headings
+                        .iter()
+                        .filter(|(_, lv, _)| *lv == 1)
+                        .map(|(no, _, _)| *no)
+                        .collect();
+                    for (i, no) in h1_lines.iter().enumerate() {
+                        if i == 0 {
+                            continue;
+                        }
+                        out.push(TextFinding {
+                            rule_id: rule.id.clone(),
+                            line: *no,
+                            message: rule.message.clone(),
+                        });
                     }
-                    let name = rule
-                        .params
-                        .get("name")
-                        .and_then(|v| match v {
-                            Value::String(s) => Some(vec![s.clone()]),
-                            Value::Array(a) => Some(
-                                a.iter()
-                                    .filter_map(|x| x.as_str().map(String::from))
-                                    .collect(),
-                            ),
-                            _ => None,
-                        })
-                        .unwrap_or_default();
-                    if check == "first_h2_name" && !name.is_empty() {
-                        if let Some((first_line, first_title)) = &first_h2 {
-                            if lineno + 1 == *first_line {
-                                let bare = anchor_re().replace(first_title, "").trim().to_string();
-                                if !name.iter().any(|n| n == &bare) {
-                                    out.push(TextFinding {
-                                        rule_id: rule.id.clone(),
-                                        line: lineno + 1,
-                                        message: rule.message.replace("{title}", &bare),
-                                        excerpt: line.to_string(),
-                                    });
-                                }
+                }
+                "anchor_required" => {
+                    // 工具件：所有 H2+（min_level=2）缺 anchor 都报
+                    for (no, lv, title) in &headings {
+                        if *lv >= min_level && !anchor_re().is_match(title) {
+                            let msg = rule.message.replace("{level}", &lv.to_string());
+                            out.push(TextFinding {
+                                rule_id: rule.id.clone(),
+                                line: *no,
+                                message: msg,
+                            });
+                        }
+                    }
+                }
+                "first_h2_name" => {
+                    // 工具件：找第一个 H2，bare title 不在白名单则报
+                    if let Some(names) = &first_h2_names {
+                        if let Some((no, _, title)) = headings.iter().find(|(_, lv, _)| *lv == 2) {
+                            let bare = anchor_re().replace(title, "").trim().to_string();
+                            if !names.iter().any(|n| n == &bare) {
+                                let msg = rule.message.replace("{title}", &bare);
+                                out.push(TextFinding {
+                                    rule_id: rule.id.clone(),
+                                    line: *no,
+                                    message: msg,
+                                });
                             }
                         }
                     }
-                    if prev_level > 2 {
-                        out.push(TextFinding {
-                            rule_id: rule.id.clone(),
-                            line: lineno + 1,
-                            message: format!("标题层级跳级:上一级为 {prev_level} 级,当前为 2 级"),
-                            excerpt: line.to_string(),
-                        });
-                    }
-                    prev_level = 2;
-                } else if trimmed.starts_with("#") {
-                    let level = trimmed.chars().take_while(|c| *c == '#').count() as i32;
-                    if prev_level > 0 && level > prev_level + 1 {
-                        out.push(TextFinding {
-                            rule_id: rule.id.clone(),
-                            line: lineno + 1,
-                            message: format!("标题层级跳级:上一级为 {prev_level} 级,当前为 {level} 级"),
-                            excerpt: line.to_string(),
-                        });
-                    }
-                    prev_level = level;
                 }
-            }
-            if check == "single_h1" && h1_count > 1 {
-                out.push(TextFinding {
-                    rule_id: rule.id.clone(),
-                    line: 0,
-                    message: "全文仅允许一个一级标题".to_string(),
-                    excerpt: format!("h1_count={h1_count}"),
-                });
+                "no_level_skip" => {
+                    // 工具件：每条 H 标题，level > prev+1 报
+                    let mut prev: Option<i32> = None;
+                    for (no, lv, _title) in &headings {
+                        if let Some(p) = prev {
+                            if *lv > p + 1 {
+                                let msg = rule
+                                    .message
+                                    .replace("{prev}", &p.to_string())
+                                    .replace("{level}", &lv.to_string());
+                                out.push(TextFinding {
+                                    rule_id: rule.id.clone(),
+                                    line: *no,
+                                    message: msg,
+                                });
+                            }
+                        }
+                        prev = Some(*lv);
+                    }
+                }
+                _ => {}
             }
         }
         RuleKind::LineFlag => {
@@ -375,7 +442,6 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                                 rule_id: rule.id.clone(),
                                 line: lineno + 1,
                                 message: rule.message.clone(),
-                                excerpt: line.to_string(),
                             });
                         }
                     }
@@ -385,7 +451,6 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                                 rule_id: rule.id.clone(),
                                 line: lineno + 1,
                                 message: rule.message.clone(),
-                                excerpt: line.to_string(),
                             });
                         }
                     }
@@ -395,7 +460,6 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                                 rule_id: rule.id.clone(),
                                 line: lineno + 1,
                                 message: rule.message.clone(),
-                                excerpt: line.to_string(),
                             });
                         }
                     }
@@ -417,7 +481,6 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                                     rule_id: rule.id.clone(),
                                     line: lineno + 1,
                                     message: rule.message.clone(),
-                                    excerpt: line.to_string(),
                                 });
                             }
                         }
@@ -427,17 +490,17 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
             }
         }
         RuleKind::NavFormat => {
-            // 简化：检查每行是否形如「...::[...](#...)」
+            // 工具件：含「::[」但行尾不是完整链接形式即触发
             for (lineno, line) in text.lines().enumerate() {
-                if !line.contains("::[") || !line.contains("](#") {
+                let plain = strip_inline_code(line);
+                if !plain.contains("::[") {
                     continue;
                 }
-                if !looks_like_nav_line(line) {
+                if !looks_like_nav_line(&plain) {
                     out.push(TextFinding {
                         rule_id: rule.id.clone(),
                         line: lineno + 1,
                         message: rule.message.clone(),
-                        excerpt: line.to_string(),
                     });
                 }
             }
@@ -456,12 +519,98 @@ fn looks_like_nav_line(line: &str) -> bool {
     re.is_match(line)
 }
 
+/// C006 手写检测：返回一行内的非允许全角括号命中数。
+///
+/// 复现工具件 Python 正则（Rust `regex` 不支持 lookahead）：
+///   `（(?!(?:[A-Za-z0-9 ./&+=,-]*|[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+)）)[^）]*）`
+/// `re.finditer` 一行多匹配各报一次。
+fn c006_hits_in_line(line: &str) -> usize {
+    let chars: Vec<char> = line.chars().collect();
+    let n = chars.len();
+    let mut i = 0;
+    let mut count = 0usize;
+    while i < n {
+        if chars[i] == '（' {
+            let mut j = i + 1;
+            while j < n && chars[j] != '）' {
+                j += 1;
+            }
+            if j < n {
+                let inner: String = chars[i + 1..j].iter().collect();
+                if !c006_inner_allowed(&inner) {
+                    count += 1;
+                }
+                i = j + 1;
+                continue;
+            }
+        }
+        i += 1;
+    }
+    count
+}
+
+/// 工具件模式 A：[A-Za-z0-9 ./&+=,-]+（英文 slug）
+/// 工具件模式 B：[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+
+/// 工具件（mathe）模式 C：含「，又称 」
+/// 工具件（mathe）模式 D：以「又称」开头
+/// 工具件（mathe）模式 E：含「，原名 」
+/// 工具件（mathe）模式 F：含「，即 」
+/// 工具件（mathe）模式 G：以「即 」开头
+fn c006_inner_allowed(inner: &str) -> bool {
+    if inner.is_empty() {
+        return true; // 空括号按工具件 re 行为视为允许
+    }
+    // 模式 A
+    if inner
+        .chars()
+        .all(|c| c.is_ascii_alphanumeric() || " ./&+=,-".contains(c))
+    {
+        return true;
+    }
+    // 模式 B
+    if let Some(idx) = inner.find("，以下简写为：") {
+        let prefix = &inner[..idx];
+        let suffix = &inner[idx + "，以下简写为：".len()..];
+        let mut valid = true;
+        let mut first = true;
+        for c in prefix.chars() {
+            if first {
+                if c.is_ascii_alphabetic() {
+                    first = false;
+                } else {
+                    valid = false;
+                    break;
+                }
+            } else if !(c.is_ascii_alphanumeric() || " ./&+-".contains(c)) {
+                valid = false;
+                break;
+            }
+        }
+        if valid
+            && !suffix.is_empty()
+            && suffix.chars().all(|c| c.is_ascii_alphanumeric())
+        {
+            return true;
+        }
+    }
+    // 模式 C / D / E / F / G — 工具件 mathe 包允许形
+    if inner.contains("，又称 ") || inner.starts_with("又称") {
+        return true;
+    }
+    if inner.contains("，原名 ") {
+        return true;
+    }
+    if inner.contains("，即 ") || inner.starts_with("即 ") {
+        return true;
+    }
+    false
+}
+
 #[derive(Debug, Clone)]
 pub struct TextFinding {
     pub rule_id: String,
     pub line: usize,
     pub message: String,
-    pub excerpt: String,
 }
 
 /// 解析 manifest 加载规则集

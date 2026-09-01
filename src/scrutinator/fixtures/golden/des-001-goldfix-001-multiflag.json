@@ -1,0 +1,129 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md": "9f58cccfc68af8a422bc4c2310d825ab38ef8e62556ab4016183a223d4caba91"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 3
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 3
+      },
+      "message": "字符 U+U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 3
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 7
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 9
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 11
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 12
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "N002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-001-multiflag.md",
+      "location": {
+        "line": 14
+      },
+      "message": "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 9,
+    "by_rule": {
+      "C001": 1,
+      "C002": 1,
+      "C006": 2,
+      "F002": 1,
+      "F003": 1,
+      "F005": 2,
+      "N002": 1
+    },
+    "by_pack": {
+      "des-001": 9
+    }
+  }
+}
