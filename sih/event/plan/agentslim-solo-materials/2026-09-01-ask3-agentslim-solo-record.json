@@ -1,0 +1,81 @@
+{
+  "session_id": "agentslim-solo-ask3",
+  "raw_input": "执行 agentslim-solo 批：AGENTS.md 引导层瘦身。四件：宪法零动核验、三节瘦身、索引表格化、归档零损。红线：工程基线与禁止条款一字不动、身份四节核心裁定句在场、上链前必须等绿、禁管道掩退出码。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "AGENTS.md 引导层瘦身至 15000-23000 字节：宪法节逐字节零动、三节（会话开始、工具审计、MCP）压缩叙事、文件索引表格化即删日期版本批名注记、移出内容全量归档 AGENTS-RETIRED-2026-09.md 零损可检索",
+    "exclusions": [
+      "工程基线五条与禁止条款一字不动（红线）",
+      "项目身份、Agent 身份、哲学仓地位、数学仓地位四节核心裁定句逐句在场（红线）",
+      "产出前自检六项与 sih 触发语义保留（红线）",
+      "移出内容全量归档，不删除历史（归档零损）",
+      "AGENTS.md 无仓版控，写经 lease --allow AGENTS.md",
+      "归档件走 engine 仓收约，AGENTS 原地改",
+      "瘦索引指向 sih-tools/BATCH-FACE.md 路径先钉死"
+    ],
+    "output_format": "瘦后 AGENTS.md、归档件 AGENTS-RETIRED-2026-09.md、ask3 记录与验证件、管线三件报告、认证事件、engine 仓 settle 与收约、链 valid、结果档",
+    "injected_constraints": [
+      "工程基线第二条信息洪流是旧仓失败根因：AGENTS.md 每会话全量加载 43343 字节即固定成本稀释上下文，瘦身释放注意力给实质治理",
+      "工程基线第五条治理延伸是减少 LLM 参与：引导层瘦身减少每会话启动的无效消耗，符合减少 LLM 参与的方向",
+      "工程基线第四条可验证性约束：宪法节逐字节对表、归档件件可检索、字节区间可机械校验",
+      "上链前必须等绿、findings 亲读、禁管道掩退出码",
+      "AGENTS 无仓版控但须经 lease --allow 取锁，归档件入 engine 工地走版控收约"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "AGENTS.md 与 sih-engine/doc/AGENTS-RETIRED-2026-09.md 与 sih-engine/sih/state/plan/agentslim-solo.md 与 sih-engine/sih/event/plan/agentslim-results.md 与 sih-engine/sih/event/plan/agentslim-materials/ 与 sih-engine/sih/event/trail/2026-09-01.ndjson 与 sih-tools/scribe/reports/ 与 sih-tools/scribe/CALL-LOG.md 与 sih-tools/formatter/CALL-LOG.md 与 sih-tools/scrutinator/CALL-LOG.md 与 sih-tools/nomenclator/CALL-LOG.md 与 sih-tools/meter/counts/",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-philosophy/emanation/proodos/04-on-third-tao.md 与 sih-philosophy/emanation/proodos/08-on-settle.md 与 sih-philosophy/convergence/witness-archive/00-ai-coding-governance-principles.md 引文源只读 与 sih-tools/BATCH-FACE.md 参照只读 与 sih-engine/doc/decision/008-node-tree-clearance.md 参照只读",
+      "max_depth": 1
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "道二意图先于代码：引导层的价值是传递治理意图，当引导层自身膨胀长成史册反而遮蔽意图，瘦身是把意图信噪比拉回合理区间",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/04-on-third-tao.md",
+        "quote": "03 步确立了道二：意图先于代码。道二确立了意图 -> 代码的因果方向——意图在先，代码在后。"
+      },
+      "rationale": "AGENTS.md 是引导层不是治理本体，它的存在价值是承载并传递治理意图。文件膨胀到 43343 字节且大半为沿革叙事与死环境正文，意图密度被稀释——引导层自身长成史册，反而遮蔽了它要传递的意图。瘦身不是删除内容，是把意图的信噪比拉回合理区间。",
+      "evidence": "sih-philosophy/emanation/proodos/04-on-third-tao.md:7",
+      "confidence": 0.94
+    },
+    {
+      "anchor_seq": 2,
+      "text": "退化机制即上下文窗口有限而状态量单调增长的剪刀差：AGENTS.md 每会话全量加载是固定上下文成本，文件越肥留给实质治理的注意力越少，瘦身本质是释放稀缺注意力",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/convergence/witness-archive/00-ai-coding-governance-principles.md",
+        "quote": "治理层面的推论是根本性的：任何依赖\"将全部历史塞入上下文窗口\"的策略——长会话、长文档分析或多步推理链——都在系统性制造信息盲区。治理设计不能假定模型\"看过就等于理解\"，必须承认注意力预算是一种稀缺资源，需要在工程层面进行主动分配和优先级排序。"
+      },
+      "rationale": "AGENTS.md 每会话全量加载，是固定的上下文成本。文件越肥，留给实际治理推理的注意力越少。这不是工程失误，是结构性约束——人类与 LLM 的注意力都是稀缺资源。瘦身的本质是把稀缺注意力从引导层的自叙述中解放出来，投向真正的治理动作。",
+      "evidence": "sih-philosophy/convergence/witness-archive/00-ai-coding-governance-principles.md:213",
+      "confidence": 0.93
+    },
+    {
+      "anchor_seq": 3,
+      "text": "应的反馈需要载体载体是留痕：瘦身不是销毁，移出内容必须完整归档使鉴层可随时回溯核验，归档零损是应鉴循环的构成性条件",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+        "quote": "应的反馈需要载体，载体是留痕——应辨与应几的判断、动作、结果必须可回溯、可审计，否则反馈循环（应→鉴→新应）无法形成。留痕不是治理的附属品，是应-鉴循环的构成性条件。"
+      },
+      "rationale": "瘦身不是销毁历史。移出的内容必须完整归档至 AGENTS-RETIRED-2026-09.md，使鉴层可以随时回溯核验。宪法节逐字节不动、归档件件可检索，是瘦身的合法性基础——如果瘦身导致历史不可追索，那就不是治理，是遮蔽。",
+      "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:114",
+      "confidence": 0.95
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 5
+}
