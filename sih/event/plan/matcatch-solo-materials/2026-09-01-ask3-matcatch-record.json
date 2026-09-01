@@ -1,0 +1,82 @@
+{
+  "session_id": "sess-zcode-260901-matcatch",
+  "raw_input": "治理批 matcatch-solo：把 2026-09-01 三批即 outslim 与 cmdface 与 agentslim 欠下的版控账补提入册，零内容改动。engine 侧 sih/state/plan 三任务包（outslim-solo.md、cmdface-solo.md、agentslim-solo.md，入册前各走管线三步化格核阅检词，state/plan 属 des-001 域外 exit-2 如实记）与当日链 2026-09-01.ndjson 与新建 inputlog/2026-09-01.ndjson 落四笔逐字；tools 侧 scribe/reports 下全部 2026-09-01-* 批件与 meter/counts/2026-09-01.ndjson；identity/reports 不入；存量旧账 batch-materials、c006-sb3、viewimpl 系、scrutmerge-tdfix 包、08-30 inputlog 零收编封窗裁归用户。逐文件 stage 禁目录通配，链照旧一步不缺即 ask3 双门 elicit 正身 lease open 逐路径取锁 intent 上链 stage settle commit 放锁 close reconcile 双仓 verify 链 valid 调用册留痕 结果档 F 表。本批自己的包档结果档链尾必须随本批 settle 入版控即本批治的病不许再犯。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "把 2026-09-01 三批欠下的版控账补提入册零内容改动：engine 侧三任务包入册前走管线三步、当日链与新建 inputlog 落四笔逐字；tools 侧全部 2026-09-01-* 批件与计数件；identity 除外；存量旧账零收编；逐文件 stage 禁目录通配；完整机械链一步不缺；本批自己件尾随入版控",
+    "exclusions": [
+      "存量旧账零收编即 batch-materials 与 c006-sb3-solo-results.md 与 viewimpl 系与 scrutmerge-tdfix 包与 08-30 inputlog 均非本批范围，封窗裁归用户（红线段）",
+      "identity/reports 不入册即承历批存量形态",
+      "补提件内容零编辑，管线化格若改动即格式归一属例外须如实记",
+      "禁目录通配即 stage 逐文件点名",
+      "state/plan 与 event/plan 目标域外 exit-2 如实记不属违规",
+      "补提件不含不容基线与禁止条款即宪法零动不在本批范围",
+      "叩问处置[补提]：消解 即大白话直述即补充提交，非登记术语，沿用任务包叩问处置节原文",
+      "叩问处置[转正]：消解 即大白话直述即 untracked 转入册，非登记术语，沿用任务包叩问处置节原文"
+    ],
+    "output_format": "ask3 记录与验证件、engine 三任务包管线报告与认证、新建 inputlog 2026-09-01 四笔逐字、双仓补提件全部 settle commit、双仓 reconcile 对表、scribe verify 链 valid、四调用册各一笔、结果档 matcatch-solo-results.md 按 F 表、本批包档结果档材料链尾随批入版控",
+    "injected_constraints": [
+      "工程基线第四条可验证性约束即操作来源可追溯、结果可机械校验、历史不可篡改：补提件入册即留痕载体归位",
+      "工程基线第五条治理延伸是减少 LLM 参与而非增加：补提为确定性机械操作，LLM 只生成材料不拥有写入权限",
+      "上链前必须等绿、findings 亲读、禁管道掩退出码",
+      "一切待提交件先进工地从工地提交、禁收约后手工 merge",
+      "撞锁即报不绕行，本批锁操作显式带 --session，现存 viewrider 两个陈旧会话撞锁即报不绕行"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/sih/state/plan/outslim-solo.md 与 cmdface-solo.md 与 agentslim-solo.md 与 matcatch-solo.md 与 sih-engine/sih/event/plan/matcatch-solo-results.md 与 sih-engine/sih/event/plan/matcatch-solo-materials/ 与 sih-engine/sih/event/trail/2026-09-01.ndjson 与 sih-engine/sih/event/inputlog/2026-09-01.ndjson 与 sih-tools/scribe/reports/2026-09-01-* 与 sih-tools/meter/counts/2026-09-01.ndjson 与 sih-tools/scribe/CALL-LOG.md 与 sih-tools/formatter/CALL-LOG.md 与 sih-tools/scrutinator/CALL-LOG.md 与 sih-tools/nomenclator/CALL-LOG.md",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-philosophy/emanation/proodos/06-on-canon.md 与 08-on-settle.md 引文源只读 与 sih-engine/sih/event/plan/ordfound-mat-solo-results.md 迷你批先例只读 与 sih-engine/src/ask3repeater/ 只读 与 sih-tools/scrutinator/packs/ask3/ 只读",
+      "max_depth": 1
+    }
+  },
+  "anchors": [
+    {
+      "anchor_seq": 1,
+      "text": "补提入册即留痕载体归位：三批产物已生成但散于工作区 untracked，留痕若不在版本化载体则反馈回路断裂；补提使应鉴判断动作结果回归可回溯可审计，留痕不是附属品是构成性条件",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+        "quote": "应的反馈需要载体，载体是留痕——应辨与应几的判断、动作、结果必须可回溯、可审计，否则反馈循环（应→鉴→新应）无法形成。留痕不是治理的附属品，是应-鉴循环的构成性条件。"
+      },
+      "rationale": "补提即把已完成治理动作的记录纳入版本化载体，使其进入应-鉴反馈循环，非随意归档",
+      "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:114",
+      "confidence": 0.95
+    },
+    {
+      "anchor_seq": 2,
+      "text": "存量旧账零收编即知止边界：补提范围显式划定即只补三批欠账，batch-materials 等存量封窗裁归用户，不为不做，不越权收编本次承诺之外的历史记载",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+        "quote": "知止划定「不为」的边界——治理不是做更多事，是知道在何时停止。什么不该规约、什么不该审查、什么不该流程化。治理范围应显式划定——每条规则都应能回答「这条规则何时停止生效」。"
+      },
+      "rationale": "补提范围钉死即知止：不因三批欠账在案就把全部 untracked 存量卷入，存量处置裁归用户，本批只在承诺范围内补不足",
+      "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:149",
+      "confidence": 0.94
+    },
+    {
+      "anchor_seq": 3,
+      "text": "补提即定向弥补空白：三批收约时未把任务包与当日链与批报告件提交入版控是不可复现写入的散失形态，本批定向把这些空白补足，不笼统增减，余处不损缺处才补",
+      "inquiry_stage": "first",
+      "domain_tag": "target",
+      "depth": 0,
+      "philosophy_ref": {
+        "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+        "quote": "代码治理的损补：治理不是所有规则都加或所有规则都删，是定向的哪里有余减哪里，不足补哪里。规则堆积时要识别哪些冗余（损），规则缺失时要识别哪些空白（补）。"
+      },
+      "rationale": "补提是对散失留痕的定向修补，与知止合为损补一体两面：存量不损、缺口得补",
+      "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:77",
+      "confidence": 0.93
+    }
+  ],
+  "calls_in": 0,
+  "calls_out": 5
+}

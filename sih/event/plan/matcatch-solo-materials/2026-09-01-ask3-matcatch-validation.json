@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-01-ask3-matcatch-record.json"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-01-ask3-matcatch-record.json": "31465b19ee0831f78a18b34f241837610b751cdbaa2c3a896a259851b6882738"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
