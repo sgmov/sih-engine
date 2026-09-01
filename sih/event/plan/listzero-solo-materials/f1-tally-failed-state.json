@@ -1,0 +1,4 @@
+{
+  "error": "写入拒 Internal(\"file open failed: No such file or directory (os error 2)\")"
+}
+{"gid": "m-p3xcarr", "reason": "scribe crosscheck 非零退出，落据未发生链上无事件，唯退出码与此输出为准", "scribe_exit": 1, "sign": "failed"}

@@ -276,6 +276,46 @@ pub fn write_output(path: &Path, rows: &[FacetRow]) -> Result<(), RecallError> {
     })
 }
 
+/// 零命中信封：recall 零命中时写 JSON 信封件而非零字节，使命中与零命中在文件层可辨。
+pub fn write_output_envelope(
+    path: &Path,
+    rows: &[FacetRow],
+    topics: &[String],
+) -> Result<(), RecallError> {
+    let body = if rows.is_empty() {
+        let envelope = serde_json::json!({
+            "envelope": "recall",
+            "topics": topics,
+            "count": 0,
+        });
+        format!("{envelope}\n")
+    } else {
+        rows_to_ndjson(rows)
+    };
+    std::fs::write(path, body).map_err(|_| {
+        RecallError::OutUnwritable(path.to_string_lossy().into_owned())
+    })
+}
+
+#[cfg(test)]
+mod envelope_tests {
+    use super::*;
+
+    #[test]
+    fn zero_hit_writes_envelope_not_empty_file() {
+        let dir = std::env::temp_dir().join(format!("retr-env-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let p = dir.join("out.ndjson");
+        write_output_envelope(&p, &[], &["注意力 预算".to_string()]).unwrap();
+        let body = std::fs::read_to_string(&p).unwrap();
+        assert!(!body.trim().is_empty(), "envelope must not be zero bytes");
+        let v: serde_json::Value = body.trim_end().parse().expect("json");
+        assert_eq!(v["count"], 0);
+        assert_eq!(v["envelope"], "recall");
+        std::fs::remove_dir_all(&dir).ok();
+    }
+}
+
 /// 根定位即从给定目录上溯找 sih-engine 与 sih-tools 并存的目录层，名为 worktrees 的租约工地目录恒非根即跳过。
 pub fn derive_root(from: &Path) -> Option<PathBuf> {
     let mut cur = Some(from);
