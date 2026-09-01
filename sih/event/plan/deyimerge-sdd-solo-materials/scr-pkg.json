@@ -1,0 +1,20 @@
+{
+  "error": "目标不在任何已加载规则包声明的治理域内",
+  "unmatched_targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-sdd-solo/sih/state/plan/deyimerge-sdd-solo.md"
+  ],
+  "packs": {
+    "des-001": {
+      "include": [
+        "sih-engine/doc/**/*.md",
+        "**/scrutinator/fixtures/corpus/**/*.md",
+        "**/formatter/fixtures/**/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/skill_like.md"
+      ]
+    }
+  }
+}
