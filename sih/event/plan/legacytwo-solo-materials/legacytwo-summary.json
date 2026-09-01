@@ -1,0 +1,12 @@
+{
+  "batch": "legacytwo-solo",
+  "date": "2026-09-02",
+  "session": "2d096e308f70f5b9",
+  "outcomes": {
+    "top004_annotation": "fmt 0改 scr total=0 nom 零违例",
+    "errata": "docs/legacy-records-2026-09-02.md 四笔 record-only 落档",
+    "mem_recall_suite": "9 passed 0 failed",
+    "scope": "git 恰三处改动"
+  },
+  "next": "golden 重录与 retriever 词面语义升级归用户另裁"
+}
