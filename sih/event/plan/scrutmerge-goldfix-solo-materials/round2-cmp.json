@@ -1,0 +1,55 @@
+{
+  "batch": "scrutmerge-goldfix-solo",
+  "date": "2026-09-01",
+  "phase": "round2-cmp",
+  "round": 2,
+  "verifications": [
+    {
+      "name": "cargo-test-lib",
+      "command": "cargo test --lib",
+      "passed": 107,
+      "failed": 0,
+      "ignored": 6,
+      "result": "ok"
+    },
+    {
+      "name": "dualrun-spec013",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "engine_exit": 0,
+      "tools_exit": 0,
+      "cmp_exit": 0,
+      "engine_output_size": 871,
+      "tools_output_size": 871
+    },
+    {
+      "name": "dualrun-dec020",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "engine_exit": 1,
+      "tools_exit": 1,
+      "cmp_exit": 0,
+      "engine_output_size": 3073,
+      "tools_output_size": 3073
+    },
+    {
+      "name": "dualrun-gov002",
+      "abs_path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+      "engine_exit": 0,
+      "tools_exit": 0,
+      "cmp_exit": 0,
+      "engine_output_size": 869,
+      "tools_output_size": 869
+    },
+    {
+      "name": "rules-toml-des-001-diff",
+      "engine_path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/packs/des-001/rules.toml",
+      "tools_path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/packs/des-001/rules.toml",
+      "diff_exit": 0
+    },
+    {
+      "name": "rules-toml-des-001-mathe-diff",
+      "engine_path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/packs/des-001-mathe/rules.toml",
+      "tools_path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/packs/des-001-mathe/rules.toml",
+      "diff_exit": 0
+    }
+  ]
+}

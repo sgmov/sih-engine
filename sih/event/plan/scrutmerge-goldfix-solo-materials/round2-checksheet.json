@@ -1,0 +1,40 @@
+{
+  "batch": "scrutmerge-goldfix-solo",
+  "date": "2026-09-01",
+  "phase": "round2-checksheet",
+  "round": 2,
+  "engine_changes": [
+    {
+      "file": "src/scrutinator/rule.rs",
+      "lines_added": 36,
+      "lines_removed": 7,
+      "key_function": "render_message(template, subs)",
+      "call_sites": [
+        {"line": 291, "rule_kind": "CharsetForbid/CharsetAllow", "subs": ["char"]},
+        {"line": 410, "rule_kind": "HeaderStructure.anchor_required", "subs": ["level"]},
+        {"line": 425, "rule_kind": "HeaderStructure.first_h2_name", "subs": ["title"]},
+        {"line": 443, "rule_kind": "HeaderStructure.no_level_skip", "subs": ["prev", "level"]}
+      ]
+    },
+    {
+      "file": "src/scrutinator/packs/des-001/rules.toml",
+      "line": 29,
+      "change": "S004 message reverted: {#锚点} → {{#锚点}}"
+    },
+    {
+      "file": "src/scrutinator/packs/des-001-mathe/rules.toml",
+      "line": 45,
+      "change": "S004 message reverted: {#锚点} → {{#锚点}}"
+    }
+  ],
+  "tools_changes": [],
+  "verifications": {
+    "cargo_test_lib": "107 passed 0 failed 6 ignored",
+    "dualrun_three_targets": "SPEC-013 / DEC-020 / GOV-002 byte-identical cmp exit 0; engine exit 0/1/0, tools exit 0/1/0",
+    "rules_toml_diff": "engine vs tools des-001 & des-001-mathe zero diff (both exit 0)"
+  },
+  "evidence_files": [
+    "sih/event/trail/2026-09-01.ndjson (55 events)",
+    "sih/event/plan/scrutmerge-goldfix-solo-materials/round2-cmp.json"
+  ]
+}

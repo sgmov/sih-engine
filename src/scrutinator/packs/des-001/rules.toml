@@ -26,7 +26,7 @@ message = "全文仅允许一个一级标题"
 id = "S004"
 kind = "header_structure"
 params = { check = "anchor_required", min_level = 2 }
-message = "第 {level} 级标题必须显式声明 {#锚点}"
+message = "第 {level} 级标题必须显式声明 {{#锚点}}"
 
 [[rules]]
 id = "S005"

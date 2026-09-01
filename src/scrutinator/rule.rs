@@ -19,6 +19,32 @@ fn strip_inline_code(line: &str) -> String {
     re.replace_all(line, "").into_owned()
 }
 
+/// 消息模板渲染：对齐 Python `str.format` 转义语义。
+///
+/// 处理序：
+/// 1. `{{` → 字面 `{`、`}}` → 字面 `}`（承 str.format 双花括号转义）
+/// 2. `{name}` → 替换为对应值
+///
+/// 与工具件 `rule.message.format(**extra)`（scrutinator/cli.py L101/L125）
+/// 行为对齐，保证双跑输出 message 字段字节一致。
+///
+/// 例：
+/// - 模板 `第 {level} 级标题必须显式声明 {{#锚点}}` + subs `[(level, 2)]`
+///   → `第 2 级标题必须显式声明 {#锚点}`
+fn render_message(template: &str, subs: &[(&str, &str)]) -> String {
+    // 用控制字符作临时标记，避免与常规文本碰撞
+    const OPEN: &str = "\u{0001}";
+    const CLOSE: &str = "\u{0002}";
+    // 1) 双花括号转义
+    let mut out = template.replace("{{", OPEN).replace("}}", CLOSE);
+    // 2) 占位符替换
+    for (name, value) in subs {
+        out = out.replace(&format!("{{{name}}}"), value);
+    }
+    // 3) 转义还原
+    out.replace(OPEN, "{").replace(CLOSE, "}")
+}
+
 /// 规则条目（解自 rules.toml）
 #[derive(Debug, Clone)]
 pub struct RuleEntry {
@@ -262,7 +288,7 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                     let cp = ch as u32;
                     if !ranges.iter().any(|(a, b)| cp >= *a && cp <= *b) {
                         // 工具件格式：U+{cp:04X} 即「U+U+2026」双前缀照抄不修
-                        let msg = rule.message.replace("{char}", &format!("U+{:04X}", cp));
+                        let msg = render_message(&rule.message, &[("char", &format!("U+{:04X}", cp))]);
                         out.push(TextFinding {
                             rule_id: rule.id.clone(),
                             line: lineno + 1,
@@ -380,7 +406,8 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                     // 工具件：所有 H2+（min_level=2）缺 anchor 都报
                     for (no, lv, title) in &headings {
                         if *lv >= min_level && !anchor_re().is_match(title) {
-                            let msg = rule.message.replace("{level}", &lv.to_string());
+                            let lv_str = lv.to_string();
+                            let msg = render_message(&rule.message, &[("level", &lv_str)]);
                             out.push(TextFinding {
                                 rule_id: rule.id.clone(),
                                 line: *no,
@@ -395,7 +422,7 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                         if let Some((no, _, title)) = headings.iter().find(|(_, lv, _)| *lv == 2) {
                             let bare = anchor_re().replace(title, "").trim().to_string();
                             if !names.iter().any(|n| n == &bare) {
-                                let msg = rule.message.replace("{title}", &bare);
+                                let msg = render_message(&rule.message, &[("title", &bare)]);
                                 out.push(TextFinding {
                                     rule_id: rule.id.clone(),
                                     line: *no,
@@ -411,10 +438,12 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                     for (no, lv, _title) in &headings {
                         if let Some(p) = prev {
                             if *lv > p + 1 {
-                                let msg = rule
-                                    .message
-                                    .replace("{prev}", &p.to_string())
-                                    .replace("{level}", &lv.to_string());
+                                let p_str = p.to_string();
+                                let lv_str = lv.to_string();
+                                let msg = render_message(
+                                    &rule.message,
+                                    &[("prev", &p_str), ("level", &lv_str)],
+                                );
                                 out.push(TextFinding {
                                     rule_id: rule.id.clone(),
                                     line: *no,
