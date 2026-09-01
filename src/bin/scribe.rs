@@ -65,9 +65,53 @@ fn lockgate_guard(opts: &std::collections::HashMap<String, String>, trail: &str)
     }
 }
 
+const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
+
+子命令：
+  append    追加认证事件（写）
+    必填：--report <报告文件> --exit-code <退出码> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号>
+    示例：scribe append --report report.json --exit-code 0 --trail trail.ndjson
+
+  intent    追加意图精炼事件（写）
+    必填：--record <ask3 记录> --validation <验证件> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号>
+    示例：scribe intent --record ask3.json --validation valid.json --trail trail.ndjson
+
+  park      追加停泊事件（写）
+    必填：--record <停泊记录 JSON> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号>
+
+  verify    校验链完整性（读）
+    必填：--trail <链文件>
+    示例：scribe verify --trail trail.ndjson
+
+  query     检索链事件（读）
+    必填：--trail <链文件>
+    可选：--event-type <类型> --doc-id <文档ID>
+
+  record    秤星读数落链（写）
+    七字段守卫，详见 SPEC-011
+
+  vectors   冻结向量集（读）
+
+退出码：0=成功 1=校验/检索异常 2=工具自身异常
+"#;
+
+fn print_usage() {
+    println!("{}", USAGE);
+}
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     let cmd = args.get(1).map(|s| s.as_str()).unwrap_or("");
+    if cmd == "--help" || cmd == "-h" || cmd == "help" || cmd.is_empty() {
+        print_usage();
+        if cmd.is_empty() {
+            exit(2);
+        }
+        return;
+    }
     let mut opts = std::collections::HashMap::new();
     let mut i = 2;
     while i + 1 < args.len() + 1 && i < args.len() {
@@ -82,7 +126,7 @@ fn main() {
 
     match cmd {
         "verify" => {
-            let Some(trail) = opt("trail") else { emit(json!({"error": "缺 --trail"}), 2) };
+            let Some(trail) = opt("trail") else { emit(json!({"error": "verify 缺 --trail，用法：scribe verify --trail <链文件>"}), 2) };
             let Some(text) = read_text(&trail) else {
                 emit(json!({"error": "trail 不存在"}), 2)
             };
@@ -102,7 +146,7 @@ fn main() {
             }
         }
         "query" => {
-            let Some(trail) = opt("trail") else { emit(json!({"error": "缺 --trail"}), 2) };
+            let Some(trail) = opt("trail") else { emit(json!({"error": "query 缺少 --trail，用法：scribe query --trail <链文件>"}), 2) };
             let events = load_store(&trail);
             if events.is_empty() && !PathBuf::from(&trail).exists() {
                 emit(json!({"error": "trail 不存在"}), 2);
@@ -122,7 +166,7 @@ fn main() {
             let (Some(report), Some(exit_code), Some(trail)) =
                 (opt("report"), opt("exit-code"), opt("trail"))
             else {
-                emit(json!({"error": "缺参"}), 2)
+                emit(json!({"error": "append 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Ok(exit_code) = exit_code.parse::<i32>() else {
@@ -152,7 +196,7 @@ fn main() {
             let (Some(record), Some(validation), Some(trail)) =
                 (opt("record"), opt("validation"), opt("trail"))
             else {
-                emit(json!({"error": "缺参"}), 2)
+                emit(json!({"error": "intent 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
@@ -180,7 +224,7 @@ fn main() {
         }
         "park" => {
             let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
-                emit(json!({"error": "缺参"}), 2)
+                emit(json!({"error": "park 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
@@ -200,7 +244,7 @@ fn main() {
         }
         "record" => {
             let (Some(reading), Some(trail)) = (opt("reading"), opt("trail")) else {
-                emit(json!({"error": "缺参"}), 2)
+                emit(json!({"error": "record 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&reading) else { emit(json!({"error": "读数件不存在"}), 2) };
@@ -227,7 +271,7 @@ fn main() {
             let (Some(report), Some(material), Some(trail)) =
                 (opt("report"), opt("material"), opt("trail"))
             else {
-                emit(json!({"error": "缺参"}), 2)
+                emit(json!({"error": "record 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
