@@ -5,7 +5,7 @@
 
 use std::path::PathBuf;
 
-use sih_engine::retriever::{derive_root, exit_code, recall, rows_to_ndjson, write_output, RecallArgs};
+use sih_engine::retriever::{derive_root, exit_code, recall, rows_to_ndjson, write_output_envelope, RecallArgs};
 
 fn fail(message: &str, code: i32) -> ! {
     eprintln!("{{\"error\": \"{message}\"}}");
@@ -99,7 +99,7 @@ fn main() {
     match recall(&args) {
         Ok(rows) => {
             if let Some(path) = args_out(&out) {
-                match write_output(&path, &rows) {
+                match write_output_envelope(&path, &rows, &args.topics) {
                     Ok(()) => std::process::exit(0),
                     Err(e) => fail(&format!("{e:?}"), exit_code(&e)),
                 }

@@ -1,0 +1,46 @@
+{
+  "batch": "listzero-solo",
+  "date": "2026-09-02",
+  "session": "5c81a869dedca730",
+  "fixes": {
+    "F1_tally_sign_guard": {
+      "proof": "f1-tally-failed-state.json",
+      "exit": 1,
+      "stdout_has_failed": true,
+      "stdout_has_signed": false,
+      "note": "scribe 非零退出即打 sign failed 不打 signed，链上无事件"
+    },
+    "F2_points_exempt": {
+      "proof": "pack 0.6.0 复跑 TOP-004/005/007",
+      "findings_before": 7,
+      "findings_after": 0,
+      "points_still_registered": true
+    },
+    "F3_retriever_envelope": {
+      "proof": [
+        "f3-retriever-envelope.json",
+        "f3-retriever-hit-path.json"
+      ],
+      "zero_hit_bytes": 62,
+      "hit_path_unchanged": true
+    },
+    "F4_lineage": {
+      "tests": [
+        "rejected_status_refused",
+        "session_mismatch_refused",
+        "ok_status_passes_gate"
+      ],
+      "result": "3 passed"
+    },
+    "F5_cargo": {
+      "lib": "110 passed 1 failed 6 ignored（唯败 golden_des001_gov003 主树同败属前批 GOV-003 变更对陈旧金向量，入存量）",
+      "integration": "cli_multitrail 3 + empty_hash 1 + hash_chain 1 全过",
+      "误差申报": "mem_recall_f_suite 套件 RecallArgs 缺 words 与 miss_log 两字段主树同坏编译不过，修复入 legacytwo 批；test_valid_record_passes 工地败主树过系工地无姊妹仓环境败"
+    },
+    "F6_gates": {
+      "formatter": "CONTRACT 与 SKILL 双 0 改",
+      "nomenclator": "双 0 违例",
+      "scrutinator": "双域外 exit2 如实记"
+    }
+  }
+}

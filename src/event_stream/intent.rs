@@ -15,6 +15,8 @@ pub enum IntentError {
     RecordMissingField(&'static str),
     ValidationNotJson,
     FindingsPresent(usize),
+    ValidationNotOk(String),
+    LineageMismatch,
 }
 
 /// 双件消费即意图记录加核验报告，核验零发现放行产 intent_refined 事件输入。
@@ -30,6 +32,20 @@ pub fn intent_event(
         serde_json::from_str(record_text).map_err(|_| IntentError::RecordNotJson)?;
     let validation: Value = serde_json::from_str(validation_text)
         .map_err(|_| IntentError::ValidationNotJson)?;
+
+    let status = validation.get("status").and_then(|s| s.as_str());
+    if let Some(s) = status {
+        if s != "ok" {
+            return Err(IntentError::ValidationNotOk(s.to_string()));
+        }
+    }
+    let v_session = validation.get("session_id").and_then(|s| s.as_str());
+    let r_session = record.get("session_id").and_then(|s| s.as_str());
+    if let (Some(vs), Some(rs)) = (v_session, r_session) {
+        if vs != rs {
+            return Err(IntentError::LineageMismatch);
+        }
+    }
 
     let findings = validation.get("findings").and_then(|f| f.as_array());
     if let Some(arr) = findings {
@@ -119,4 +135,51 @@ pub fn intent_event(
         event_class: Some("record_only".to_string()),
         verification_result: None,
     })
+}
+#[cfg(test)]
+mod intent_status_tests {
+    use super::*;
+
+    fn actor() -> Actor {
+        serde_json::from_str(
+            r#"{"actor_id":"scribe","actor_type":"system","invoked_via":"cli"}"#,
+        )
+        .expect("actor")
+    }
+
+    #[test]
+    fn rejected_status_refused() {
+        let rec = r#"{"session_id":"s1","round":1}"#;
+        let val = r#"{"status":"rejected","findings":[]}"#;
+        let err = intent_event(
+            Path::new("r.json"), rec, Path::new("v.json"), val,
+            actor(), Utc::now(),
+        );
+        match err {
+            Err(IntentError::ValidationNotOk(s)) => assert_eq!(s, "rejected"),
+            other => panic!("expected ValidationNotOk, got {other:?}"),
+        }
+    }
+
+    #[test]
+    fn session_mismatch_refused() {
+        let rec = r#"{"session_id":"s1","round":1}"#;
+        let val = r#"{"status":"ok","session_id":"s2","findings":[]}"#;
+        let err = intent_event(
+            Path::new("r.json"), rec, Path::new("v.json"), val,
+            actor(), Utc::now(),
+        );
+        assert!(matches!(err, Err(IntentError::LineageMismatch)));
+    }
+
+    #[test]
+    fn ok_status_passes_gate() {
+        let rec = r#"{"session_id":"s1","round":1,"anchors":[],"calls_in":0,"calls_out":0,"intent_contract":{"goal":"g"}}"#;
+        let val = r#"{"status":"ok","findings":[]}"#;
+        let out = intent_event(
+            Path::new("r.json"), rec, Path::new("v.json"), val,
+            actor(), Utc::now(),
+        );
+        assert!(out.is_ok(), "unexpected error: {out:?}");
+    }
 }
