@@ -1,0 +1,56 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    },
+    {
+      "name": "json-canonical-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/algebra/entries/ALG-010-factorization-and-invariance.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-015-coinduction-and-mirror-duality.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-017-definability-and-definition-extension.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-008-information-content-and-falsifiability.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/algebra/entries/ALG-010-factorization-and-invariance.md": "399f959c3f142490b2aa3f1127d987d2b5e86ba8a469ad2853dafc05daa6ee08",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-015-coinduction-and-mirror-duality.md": "cc0993ef50b968c05594418ac50e46bb610e1e38fa63cc14efaf0e41a2d39661",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-016-well-founded-relation-and-backward-termination.md": "85cf8919ec6d4d28b1813b03274f0c4450c597c3dcd2005e857c4f1b5e559a58",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-017-definability-and-definition-extension.md": "31d5b7dc0450cc18cc38394c5f70ce699bd0f31bb73b90f66b1d54ad43557394",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md": "16e3227ebab9156a8c08242cae2f01085ac41ab1880061dd81c8a77646fb93b0",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-008-information-content-and-falsifiability.md": "4b9104686aef3eb838ddedbabfea195a397ae98ee87dc763f09cf87d2d3e6c1d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/secondcarr-solo/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md": "57e98632830dffaebdbb852d00aa1fd61dfe4feda8352701457e8caff278e740"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}

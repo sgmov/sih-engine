@@ -1,0 +1,31 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "../../sih-tools/scribe/reports/2026-09-01-ask3-secondcarr-record.json"
+  ],
+  "content_hashes": {
+    "../../sih-tools/scribe/reports/2026-09-01-ask3-secondcarr-record.json": "c328d65abfd31acd11a202f5bac75ec28fea93f3adced915f506411ad86fb865"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
