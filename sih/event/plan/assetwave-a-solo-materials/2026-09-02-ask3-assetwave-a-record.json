@@ -1,0 +1,78 @@
+{
+ "session_id": "sess-zcode-260902-assetwave-a",
+ "raw_input": "用户令：得一裁，裁一过一执行一，未过入泊界。裁A 已过（m-assetanchor-rev stable_clear，执契终签 8f4065bb，verify identical），执行 A 即资产盘点与回锚登记面：盘点 SETSP engineering-bridge 与 pillars 两册、旧仓 sihankor、ai-ex 沉淀三源，逐机制回锚哲学仓现行原文，产出命题×机制×资产出处登记面落 sih-math/docs/asset-anchor-registry-2026-09-02.md，作为数学仓载体扩容输入清单。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "登记面落 sih-math/docs/ 过化格与检词两门、核阅域外如实记、math 加 engine 双仓 lease 链收口 reconcile 零新增、当日链 verify valid",
+  "exclusions": [
+   "SETSP 只作盘点源不作引用源，登记面只记出处不转录降格内容（沉默参考边界，红线）",
+   "外仓本轮只登记候选不盘点，出泊唯人（红线）",
+   "不动 entries 与 INDEX 与 mapping，那是 B 批面（范畴排除）",
+   "哲学仓全文只读（红线）"
+  ],
+  "output_format": "ask3 记录与验证件、identity 件、登记面 md、化格与检词与核阅凭证、当日链 intent 加认证、双仓 commit settle 归并、reconcile 对表、链 verify、调用册留痕、结果档",
+  "injected_constraints": [
+   "工程基线第一条：登记面是待校验符号材料，扩容裁决在 B 批得一裁",
+   "工程基线第四条：登记面逐机制带命题锚与资产出处，可追溯可复算",
+   "工程基线第五条：一次盘点替代重复调研，治理延伸减少 LLM 参与",
+   "PRO-07 鉴：引文逐字节切片，禁手打",
+   "PRO-08 应而不藏：认证上链 append-only"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-math/docs/asset-anchor-registry-2026-09-02.md 与 sih-engine/sih/state/plan/assetwave-a-solo.md 与结果档与材料目录与当日链与 inputlog 与 sih-tools 报告面",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-philosophy/emanation/proodos 三章引文源只读 与 .tmp/SihEngineeringTechnologySelectionPrecedent 两册只读 与 ai-ex 只读 与 旧仓 doc 只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "资产回锚的规范力来自法顺势：检索已沉淀先例是顺势，从零重推导是逆势，登记面使先例检索成为机械可消费的清单",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "rationale": "回锚登记面把顺势的检索对象固化，扩容从清单出发替代从零推导",
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.93
+  },
+  {
+   "anchor_seq": 2,
+   "text": "回锚纪律是鉴的映照：登记面映照已沉淀机制的原命题归属，不投射新命题",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "rationale": "登记面只作对锚映射不创造命题，映射而非投射承载沉默参考边界",
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95
+  },
+  {
+   "anchor_seq": 3,
+   "text": "登记面落档上链是应而不藏：盘点结论留痕可复算，不藏于会话记忆",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "rationale": "登记面经 lease 链上链留痕，回应而不隐藏",
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94
+  }
+ ],
+ "calls_in": 230,
+ "calls_out": 261
+}
