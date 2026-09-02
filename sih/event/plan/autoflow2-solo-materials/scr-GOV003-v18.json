@@ -1,0 +1,37 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/private/tmp/scrutinator/fixtures/corpus/GOV-003-v18-check.md"
+  ],
+  "content_hashes": {
+    "/private/tmp/scrutinator/fixtures/corpus/GOV-003-v18-check.md": "3a79c258fb87a22545b605398f5404b7936072c8b7b9bbac40727875ed842277"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}

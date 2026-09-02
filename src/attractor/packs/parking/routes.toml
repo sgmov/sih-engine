@@ -1,0 +1,22 @@
+[[predicates]]
+id = "P101"
+kind = "schema_required"
+fields = ["id", "path", "state"]
+route_on_fail = "scrap_track"
+
+[[predicates]]
+id = "P102"
+kind = "time_deadline"
+route_on_fail = "siding"
+
+[[predicates]]
+id = "P103"
+kind = "parking_aging"
+aging_threshold_days = 45
+
+[defaults]
+pass_route = "mainline"
+
+[alarms]
+siding_surplus_threshold = 2
+mainline_starvation_threshold = 0

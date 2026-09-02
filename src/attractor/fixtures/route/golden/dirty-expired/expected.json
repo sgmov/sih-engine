@@ -1,0 +1,67 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "scribe/trail/**",
+        "PARKING-v1.md",
+        "parking/**",
+        "../sih-engine/parking/**",
+        "../sih-engine/doc/governance/PARKING-v1.md"
+      ]
+    },
+    "pack": {
+      "name": "parking",
+      "version": "0.2.0"
+    },
+    "reference_time": "2026-09-02",
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "pk-dirty-expired",
+      "parking": true,
+      "path": "parking/pk-dirty-expired.json",
+      "route": "siding"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "agings": 1,
+    "alarms": [
+      {
+        "count": 0,
+        "kind": "mainline_starvation",
+        "threshold": 0
+      },
+      {
+        "age_days": 93,
+        "id": "pk-dirty-expired",
+        "kind": "parking_aging",
+        "threshold": 45
+      }
+    ],
+    "mainline": 0,
+    "scrap_track": 0,
+    "siding": 1,
+    "total": 1
+  }
+}

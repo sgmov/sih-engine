@@ -1,0 +1,11 @@
+{
+  "id": "pk-026",
+  "path": "PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-08-28",
+    "ttl_days": 60
+  }
+}

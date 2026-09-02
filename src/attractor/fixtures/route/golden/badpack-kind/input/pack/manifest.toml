@@ -1,0 +1,6 @@
+name = "badpack"
+version = "0.1.0"
+
+[domain]
+include = ["**/**"]
+exclude = []

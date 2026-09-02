@@ -1,0 +1,11 @@
+[[predicates]]
+id = "X001"
+kind = "no_such_kind"
+route_on_fail = "siding"
+
+[defaults]
+pass_route = "mainline"
+
+[alarms]
+siding_surplus_threshold = 5
+mainline_starvation_threshold = 1

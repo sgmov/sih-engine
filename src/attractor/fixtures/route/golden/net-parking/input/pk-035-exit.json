@@ -1,0 +1,15 @@
+{
+ "action": "exit",
+ "entry_id": "pk-035",
+ "disposition": "promoted",
+ "ruling": "用户 2026-08-30 开工令出泊即 pk035impl-solo 批承接，四落点以本批交付即 facet 计分材料与探针账本强制携带身份哈希与规范席位串、探针漂移与执契 R5 哈希优先配对旧件回退零改写、tally 与 identity 契约修订留痕，设计输入即得一四通道机器终签 3706bac0 至 01bf2697，正身本体零改",
+ "ttl_days": 60,
+ "id": "pk-035",
+ "path": "PARKING-v1.md",
+ "state": "exited",
+ "parking": {
+  "entered_at": "2026-08-30",
+  "exited_at": "2026-08-30",
+  "ttl_days": 60
+ }
+}

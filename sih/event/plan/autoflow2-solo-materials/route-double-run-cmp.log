@@ -1,0 +1,14 @@
+== 活体双跑同参形对表 autoflow2-solo 2026-09-02T05:19:25Z ==
+== 场景一 net-core：围堰 selector vs 引擎 attractor route，同材料同包数据绝对路径 ==
+cofferdam exit=0
+engine exit=0
+cmp net-core: IDENTICAL
+== 场景二 net-parking ==
+cofferdam exit=0
+engine exit=0
+cmp net-parking: IDENTICAL
+== 场景三 attribution 双包归因 core ==
+cmp attribution-core: IDENTICAL
+== 实跑探针一行 ==
+attractor route probe: routed {"alarms": [], "mainline": 16, "scrap_track": 0, "siding": 0, "total": 16}
+probe exit=0

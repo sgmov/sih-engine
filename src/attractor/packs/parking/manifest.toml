@@ -1,0 +1,6 @@
+name = "parking"
+version = "0.2.0"
+
+[domain]
+include = ["scribe/trail/**", "PARKING-v1.md", "parking/**", "../sih-engine/parking/**", "../sih-engine/doc/governance/PARKING-v1.md"]
+exclude = []

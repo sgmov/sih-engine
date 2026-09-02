@@ -1,0 +1,59 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "task-packages/**",
+        "doc/**"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.1.0"
+    },
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": false
+        },
+        {
+          "id": "R002",
+          "pass": false
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "R001",
+      "id": "facet-audit-t6d-report-A",
+      "path": "task-packages/facet-audit-t6d-report-A.md",
+      "route": "scrap_track"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [
+      {
+        "count": 0,
+        "kind": "mainline_starvation",
+        "threshold": 1
+      }
+    ],
+    "mainline": 0,
+    "scrap_track": 1,
+    "siding": 0,
+    "total": 1
+  }
+}

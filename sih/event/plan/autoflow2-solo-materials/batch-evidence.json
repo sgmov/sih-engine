@@ -1,0 +1,90 @@
+{
+ "batch": "autoflow2-solo",
+ "date": "2026-09-02",
+ "part1": {
+  "cargo_test": {
+   "command": "cargo test (16 suites)",
+   "failed": 0,
+   "ignored": 6,
+   "log": "tdd-red-green.log",
+   "passed": 179
+  },
+  "double_run": {
+   "cmp": "IDENTICAL x3",
+   "log": "route-double-run-cmp.log",
+   "probe": "parking pack 16 materials mainline 0 alarms exit 0"
+  },
+  "golden": {
+   "dir": "src/attractor/fixtures/route/golden",
+   "manifest": "golden-manifest.json",
+   "packs_byte_identical": true,
+   "scenarios": 8
+  },
+  "migrated_files": [
+   "src/attractor/route.rs",
+   "src/attractor/packs/core/manifest.toml",
+   "src/attractor/packs/core/routes.toml",
+   "src/attractor/packs/parking/manifest.toml",
+   "src/attractor/packs/parking/routes.toml",
+   "src/bin/attractor.rs route subcommand",
+   "src/ask3repeater/intercept.rs",
+   "src/lib.rs exports",
+   "tests/attractor_route.rs"
+  ],
+  "proc_zero": {
+   "content_identical": true,
+   "moved": "task-packages/f-anchors-x11-t6d.md -> sih/event/plan/",
+   "task_packages_dir": "removed, zero facet proc files"
+  },
+  "spec015": {
+   "path": "doc/spec/SPEC-015-predicate-mergeback-gap.md",
+   "pipeline": {
+    "fmt": 0,
+    "nom": 0,
+    "scr_indomain": 0,
+    "scr_worktree_domain_exit": 2
+   },
+   "sha256": "39298096410f20c1325aa7ba9f8d8697d037c30312c54913000e4404fdb2400e"
+  },
+  "switch": {
+   "batchface": "section six route canonical",
+   "completion": "sih/event/mergeback/mergeback-predicate-completion-2026-09-02.md",
+   "dec013": "v1.3",
+   "gov003": "v1.8"
+  }
+ },
+ "part2": {
+  "calibration": {
+   "drift_alarm": [],
+   "knife_bdy": 1.0,
+   "temperature": 0.0,
+   "verdict": "可用",
+   "violate": "5/5 violate"
+  },
+  "deviation": "dispatch designated pk-039 but pk-039 was already in-park (retriever 扩容, entered 2026-09-02T02:24:17Z event 4071befb); mechanical re-entry gate rejects duplicates, so next free number pk-040 used per single-roster no-duplicate protocol; deviation declared",
+  "direction": "comply",
+  "disposition": "挂起",
+  "gate_verdict": "near_threshold",
+  "gid": "predspec-guard-1",
+  "identity_hash": "14cfa9c2942778a7d6e72a83cdb88ba28ae2cbd735eedbda3c4ee3a89b73da5b",
+  "n_declared": 9,
+  "n_shots": 9,
+  "parking": {
+   "entry_id": "pk-040",
+   "event_hash": "3593876e9eec3fa0d175356a6a6366255fbf7ef1bd34518cb4176993aab6c0d3",
+   "roster": "sih-tools/PARKING-v1.md updated",
+   "ttl_days": 14
+  },
+  "shots": {
+   "basis": {
+    "baseline_4": 7,
+    "baseline_5": 2
+   },
+   "boundary_false": 9,
+   "decision": "comply x9"
+  },
+  "sign": "refrained (near_threshold not stable_clear, red line: 不过不硬签)",
+  "tally_verdict": "pass"
+ },
+ "session": "f7a97a90ba1b0c7c"
+}
