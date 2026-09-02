@@ -1,0 +1,74 @@
+{
+ "session_id": "sess-zcode-260902-degladder",
+ "raw_input": "用户令：得一裁定，裁过开。m-degladder stable_clear 终签落据 verify identical，开立 ORD-022 降级良基链与降级矩阵：条目落 order 子仓，INDEX 与 mapping 与 AGENTS.md 计数同批注册，映射一行刷新为 order 19、总 161。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "ORD-022 落仓过三门域内核阅零违规、INDEX 与 mapping 与 AGENTS.md 注册、双仓 lease 链收口 reconcile 零新增、链 verify valid",
+  "exclusions": [
+   "引文逐字节子串禁手打（红线）",
+   "AGENTS.md 只动数学仓地位节计数与承接面半句（范畴排除）"
+  ],
+  "output_format": "ask3 双门件、identity 件、ORD-022、INDEX 与 mapping 与 AGENTS 改行、四门凭证、链上 intent 加认证、双仓 settle 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第一条：条目是可机械校验的符号材料",
+   "PRO-07 鉴：引文程序切片",
+   "PRO-08 应而不藏：认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-math/order/entries/ORD-022 与 order/INDEX.md 与 sih-math/llm-friendly-build/mapping.md 一行 与 AGENTS.md 数学仓地位节 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-math/docs/extinv-anchor-sort-2026-09-02.md 只读 与 sih-philosophy proodos 引文源只读 与 ORD-016 底稿只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "降级有度即知止的序形态：知道停在哪个最低服务级",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "> 法三：知止。知道不做什么，比知道做什么更难。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:65",
+   "confidence": 0.95,
+   "rationale": "法三知止承载降级下限"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "最低服务级与恢复重校验是硬约束，不可绕过",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/09-on-arche.md",
+    "quote": "- 治强：禁止绕过鉴直接 Ratify，治理主体不得为自己谋求有利变更"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/09-on-arche.md:322",
+   "confidence": 0.94,
+   "rationale": "治强承载恢复重校验硬约束"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "条目映射既有序概念不投射新公理体系",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.93,
+   "rationale": "鉴映照承载条目组合既有概念的纪律"
+  }
+ ],
+ "calls_in": 800,
+ "calls_out": 831
+}
