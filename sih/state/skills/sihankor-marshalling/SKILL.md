@@ -29,7 +29,7 @@ description: "SiHankor 代理编组长程任务范式。Invoke when the user say
 
 一，选形。按 README 队形表与 ai-ex 选择判据定形，任务包文件名与范式行声明形，命名即主题前缀加形英文对后缀。
 
-二，先写任务包再动手。落包前按批主题词跑温故检索面取结论档与经验档先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --at <实日> --out <输出件路径>，输出件随批材料入档，必读文件清单对检索结果取材，零命中如实记，检索缺席即违本步。承 SPEC-007 消费侧二与 wenguwire-solo 批。落 sih/state/plan/ 即主题加形后缀.md，F 锚定跑前立文。
+二，先写任务包再动手。落包前按批主题词跑温故检索面取结论档与经验档先例，调用即 cd sih-engine 后 target/debug/retriever recall --topic <批主题词> --archive conclusion --archive experience --at <实日> --out <输出件路径>，输出件随批材料入档，必读文件清单对检索结果取材，零命中如实记，检索缺席即违本步。承 SPEC-007 消费侧二与 wenguwire-solo 批。先导检索即三源盘点：ai-ex 沉淀名录、SETSP architecture 目录、旧仓 doc 索引各一次结论记录随任务包入档，缺席同违本步。承 m-pilgate 终签即 2026-09-02。落 sih/state/plan/ 即主题加形后缀.md，F 锚定跑前立文。
 
 三，按形执行。单线即主线直写。单发与反思即派单子代理，提示词自包含即只凭包内容跑。并联即主线拆三类簇：并行簇双子代理后台各领、主线簇亲写最复杂件、依赖簇待验收后串行。并行簇共用认领台账时行认领复核：认领落台账后停两息重读台账确认己认领在先，写件后再读台账核己件未被后写覆盖，被覆盖即以台账在先者为准不得重写。承 entryacc 波后写覆盖先认领病史。
 

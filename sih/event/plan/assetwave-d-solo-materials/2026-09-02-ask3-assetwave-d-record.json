@@ -1,0 +1,76 @@
+{
+ "session_id": "sess-zcode-260902-assetwave-d",
+ "raw_input": "用户令：得一裁，裁一过一执行一。裁D m-pilgate stable_clear 终签落据 verify identical，执行 D 即先导检索门机械化：marshalling skill 步二加三源先导盘点条款；retriever 档案面扩容到资产层属设计变更经命题内单列，pk-039 入泊；pk-038 出泊条件在本批触发即任务书拷入随批提交出泊闭项。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "skill 条款落档、pk-039 进泊、pk-038 出泊、PARKING 名录投影刷新、三门过、engine 收约归并 reconcile 零新增、链 verify valid",
+  "exclusions": [
+   "检索器代码扩容不执行，泊界等用户裁（红线）",
+   "skill 文件不受核阅域约束如实记",
+   "不动其他泊户记录（红线）"
+  ],
+  "output_format": "ask3 双门件、identity 件、skill 与 PARKING 改行、pk-038 拷入件、park 两笔、链上 intent 加认证、engine commit 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第三条：出泊唯人节点即 pk-038 按登记条件机械执行不加码",
+   "工程基线第五条：先导检索止重复推导",
+   "PRO-07 鉴：引文逐字节子串",
+   "PRO-08 应而不藏：停泊与认证 append-only"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-engine/sih/state/skills/sihankor-marshalling/SKILL.md 与 sih-engine/doc/governance/PARKING-v1.md 与 sih/state/plan 两件拷入与本批 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "ai-ex/SETSP-PRECEDENT-REDISCOVERY.md 只读 与 sih-philosophy proodos 引文源只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "先查已沉淀是顺势，从零重推导是逆势，先导检索门是顺势的机械位",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.95,
+   "rationale": "法顺势承载先导检索的规范力"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "三源盘点结论记录是映照已有沉淀不投射新设计",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.94,
+   "rationale": "鉴映照承载盘点纪律"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "进泊出泊皆上链留痕",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94,
+   "rationale": "应而不藏承载停泊账本"
+  }
+ ],
+ "calls_in": 500,
+ "calls_out": 531
+}
