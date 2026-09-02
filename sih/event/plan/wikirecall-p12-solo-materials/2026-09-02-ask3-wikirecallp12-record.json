@@ -1,0 +1,76 @@
+{
+ "session_id": "sess-zcode-260902-wikirecallp12",
+ "raw_input": "用户令：开始。承 m-wikirecall 全裁终签与 P0 已落地，执行 P1 加 P2 合一批 wikirecall-p12-solo：sih-tools/wikirecall 三通道确定性召回工具加自测加别名首册，消费闭环审计器 checkcite，BATCH-FACE 收口段加书单对表步骤。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "工具与守卫与自测落 sih-tools/wikirecall 过自测绿、BATCH-FACE 步骤过两门、双仓收约 reconcile 零新增、链 verify valid",
+  "exclusions": [
+   "零模型进消费链（红线）",
+   "nomenclator 包内接线留 P2 余量如实申报（范畴排除）",
+   "引擎 retriever 不动（范畴排除）"
+  ],
+  "output_format": "ask3 双门件、identity 件、recall 与 checkcite 与 selftest 与别名首册、自测绿凭证、BATCH-FACE 改行、链上 intent 加认证、双仓 settle 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第一条：召回与对表全是确定性程序",
+   "工程基线第五条：骨架全读为主词面为辅，零模型",
+   "PRO-07 鉴：自测用例含确定性重放断言",
+   "PRO-08 应而不藏：认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-tools/wikirecall/ 与 sih-tools/BATCH-FACE.md 收口段 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-math/llm-friendly-build/ 只读 与 sih-engine/sih/state/plan/wikirecall-parallel.md 只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "三通道全为字符串与图操作，逐字节可重放",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95,
+   "rationale": "鉴映照承载确定性召回纪律"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "骨架全读为主是可全读预算的顺势用法",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.93,
+   "rationale": "顺势承载全读优先"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "守卫对表结果上链留痕",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94,
+   "rationale": "应而不藏承载守卫留痕"
+  }
+ ],
+ "calls_in": 1000,
+ "calls_out": 1031
+}
