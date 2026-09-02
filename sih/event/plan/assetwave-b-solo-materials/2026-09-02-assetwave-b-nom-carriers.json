@@ -1,0 +1,58 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-010-hypothesis-testing-and-significance.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-011-estimation-and-confidence-intervals.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-012-correlation-and-regression.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-013-stationarity-and-change-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-014-expected-information-gain.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-015-littles-law-and-load-bound.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-020-total-order-resource-allocation-deadlock-freedom.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-021-dependency-dag-topological-order.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/INDEX.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/INDEX.md"
+  ],
+  "findings": [],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.6.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/llm-friendly-build/mapping.md"
+  ],
+  "summary": {
+    "checked": 10,
+    "findings": 0,
+    "skipped": 1
+  }
+}
