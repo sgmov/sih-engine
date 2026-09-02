@@ -1,0 +1,76 @@
+{
+ "session_id": "sess-zcode-260902-philwave",
+ "raw_input": "用户令：开始。P3 承 m-wikirecall 终签：哲学仓 llm-friendly-build 27 条目补触发问题节；convergence 层经核按知识包既有裁定为自证材料按 CNV 单元登记不条目化，缺口不成立如实记。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "27 条哲学条目过触发集门与检词、philosophy 加 engine 双仓收约 reconcile 零新增、链 verify valid",
+  "exclusions": [
+   "convergence 不条目化，承知识包 CNV 自证单元既有裁定（红线）",
+   "哲学仓原文只读，只写 llm-friendly-build 衍生层（红线）",
+   "不立新命题不改条目实质（范畴排除）"
+  ],
+  "output_format": "ask3 双门件、identity 件、触发集清单件、过门凭证、链上 intent 加认证、双仓 settle 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第一条：子代理产出属符号材料待主线验收",
+   "工程基线第四条：触发集随条目版控可复算",
+   "PRO-07 鉴：触发集只映照条目已有语义",
+   "PRO-08 应而不藏：认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-philosophy/llm-friendly-build/entries/ 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-philosophy/llm-friendly-build/INDEX.md 只读 与 emanation 原文只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "触发集只映照条目已有话题不投射新义",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95,
+   "rationale": "鉴映照承载触发集纪律"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "convergence 自证材料按既有登记面归位是有度",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.93,
+   "rationale": "有度承载不越权条目化"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "触发集上链留痕可复算",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94,
+   "rationale": "应而不藏承载上链"
+  }
+ ],
+ "calls_in": 1100,
+ "calls_out": 1131
+}
