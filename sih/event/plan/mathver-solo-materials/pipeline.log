@@ -1,0 +1,25 @@
+# mathver-solo 管线读数（2026-09-02，会话 4c071022d4037662）
+
+三问双门：
+- scrutinator packs/ask3: exit 0, findings 0（首跑 3 笔 A15/A18/A21 max_depth 缺字段补齐后归零）
+- ask3repeater: status ok, anchor_count 3
+
+叩问：四信号全轻级 unregistered（版本基线/基线绑定/登记面归一/重绑），消解契约全消解，digest passed covered 4
+
+化格（formatter general-v1 --write）：
+- 工地全量 54 件: exit 54x0 零改动
+- 逗号形改写后复核: exit 0 零改动
+
+核阅（scrutinator）：
+- des-001-mathe 32 触件条目: 首跑 22 笔 C006 全角括号拦下即改（括注形转逗号形），复跑 exit 0 findings 0
+- 根 INDEX/README/VERSION/路线档/algebra INDEX: exit 2 域外排除如实记不属违规
+- PARKING-v1 corpus 夹具域内读数: exit 0 findings 0，探针用后即删零残留
+- PARKING-v1 工地路径形态: exit 2 域外（域按仓根相对解析）如实记承 predspec2 先例
+
+检词（nomenclator core）：
+- 38 件: 首跑 exit 1 一笔 dead_ban（VERSION.md「入册」strict high，PRO-007 死档登记）改「登记」后复跑 exit 0 findings 0
+
+泊件路由双跑（pk-041 工地材料）：
+- 引擎件 attractor route: exit 0, mainline 1, alarms 0
+- 围堰 selector route: exit 0
+- cmp 逐字节 IDENTICAL
