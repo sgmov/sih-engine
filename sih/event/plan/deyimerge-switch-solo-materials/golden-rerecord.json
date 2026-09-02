@@ -1,0 +1,12 @@
+{
+  "batch": "deyimerge-switch-solo",
+  "pk": "pk-036",
+  "fixture": "sih-engine/src/scrutinator/fixtures/golden/des-001-gov003.json",
+  "target": "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md",
+  "old_content_hash": "6bb38a7f1a6408e6803138a481343310f3c84cc3d608d64f32f4395400c40476",
+  "new_content_hash": "76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b",
+  "delta": "仅 content_hashes 值一行，断言逻辑零碰，875 字节对 875 字节",
+  "dualrun_mainpath": "engine exit 0 / weir exit 0 / cmp IDENTICAL，v1.6 内容归并前双跑字节平价即围堰为基准",
+  "v17_engine_run": "engine exit 0 findings 0 于 v1.7 内容经 tmp 域形符号链；weir 以 realpath 判域拒符号链即诚实域检如实记",
+  "sha256_v17_final": "76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b"
+}

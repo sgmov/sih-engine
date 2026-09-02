@@ -1,0 +1,16 @@
+== pk-036 golden re-record dual-run evidence ==
+target(canonical): /Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md
+content states: v1.5-era(6bb38a7f stale frozen) -> v1.6(cb1de4fa, pre-merge main) -> v1.7(49bc4325, recorded)
+-- dual-run on main-tree real domain path (v1.6 content, pre-merge) --
+engine: cd sih-engine && target/debug/scrutinator --pack des-001 <main path> -> exit 0
+weir:   cd sih-tools/scrutinator && uv run scrutinator --pack packs/des-001 <main path> -> exit 0
+cmp engine weir -> IDENTICAL (byte parity on golden target scenario, weir is baseline)
+-- engine run on v1.7 content (worktree file via /tmp domain-shaped symlink; weir rejects symlink by realpath resolve, honest domain check) --
+engine exit 0, findings [], content_hash 76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b
+sha256(worktree GOV-003 v1.7) = 76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b
+-- fixture delta --
+only content_hashes value changed: 6bb38a7f... -> 49bc4325... ; targets/findings/summary/assertions zero touch (875 bytes -> 875 bytes)
+-- post-merge proof (recorded at close phase) --
+cargo test golden_des001_gov003 + dual-run cmp on merged main v1.7: see postmerge-verification.log
+-- GOV-003 final content note --
+v1.7 定稿含一处检词 dead_ban 连带勘正（v1.6 行死名 scrutiny 引用改核阅工具件），金向量按定稿终态重录 85e9a1f0

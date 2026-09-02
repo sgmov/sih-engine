@@ -293,3 +293,7 @@ T6 des-011 规约与存活性
 - 切换批执行前 TDD 批必须全绿；切换批执行前金向量必须冻结
 - 上链前必须等绿；读 findings 不只看退出码
 - 锁被他在持即报不绕行
+
+## 规格修订记录 {#revisions}
+
+2026-09-02 修订一，deyimerge-switch-solo 批切换执行记录：承 deyimerge-sdd-solo 规格批与 deyimerge-tdd-solo 实装批两步主会验收，本批按用户 2026-09-02 切换放行令执行三步曲第三步。双跑判据执行实录：活体五场景 check 同参形双跑 cmp 全 IDENTICAL 且退出码对齐即 0/0/0/1/0、score 活体双跑 cmp IDENTICAL，证据入 sih-engine/sih/event/plan/deyimerge-tdd-solo-materials/live-double-run-cmp.log 与 live-double-run-score.log；pk-036 金向量重录按现行 GOV-003 真实内容以围堰件为基准刷期望输出 content_hash 与 findings 区，断言逻辑零改，重录后 cargo test golden_des001_gov003 转绿且双跑 cmp 围堰件与引擎件 IDENTICAL 留证。判定位换旗完成：BATCH-FACE.md 执契与 facet 测量命令段改指引擎件 target/debug/attractor、DEC-020 无调用位表述零碰、宪法节与启动命令一字不碰字节级 diff 自证仅限换旗行。工具件退役完成：facet CONTRACT 首立与 tally CONTRACT 退役标注即判定职能强制位改指引擎件、转兼容只读、facet CLI 采样双模并存保留即本规格双模并存条款与 GOV-002 判据四字面，两 CALL-LOG 落尾行。本批本规格不再修订仅以修订一作切换执行记录归档。
