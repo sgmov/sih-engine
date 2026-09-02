@@ -1,0 +1,27 @@
+{
+  "error": "目标不在任何已加载规则包声明的治理域内",
+  "unmatched_targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/extinv-parallel/docs/asset-anchor-registry-2026-09-02.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/extinv-parallel/docs/extinv-candidates-2026-09-02.md"
+  ],
+  "packs": {
+    "des-001-mathe": {
+      "include": [
+        "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+        "sih-math/**/topology/entries/*.md",
+        "sih-math/**/probability/entries/*.md",
+        "sih-math/**/order/entries/*.md",
+        "sih-math/**/algebra/entries/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/INDEX.md",
+        "**/README.md",
+        "**/mapping.md",
+        "**/agent-bootstrap-prompt.md",
+        "**/task-package-build-entries.md"
+      ]
+    }
+  }
+}
