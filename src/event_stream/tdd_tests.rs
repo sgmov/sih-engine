@@ -132,7 +132,7 @@ mod tdd {
         let orphan = park_event(&exit, &events2, actor(), Utc::now());
         assert!(orphan.is_err(), "无主出拒");
         let again = park_event(&enter, &events2, actor(), Utc::now());
-        assert!(again.is_ok(), "出泊后可再入");
+        assert!(again.is_err(), "出泊后号源唯一拒不可再入，承 entryunique-solo 修订二");
     }
 
     fn as_event(input: EventInput) -> Event {
