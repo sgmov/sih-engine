@@ -53,17 +53,29 @@
 3. close 归并对表：主树同名未跟踪件仅任务包一件，备份让位归并后 diff 备份对归并件的差异应恰为勾选七行即本批意图内变更，逐字对表留证于完工链路；dispatch.md 主树未跟踪件不进工地零改动，尾随段原样入版控。
 4. tally assemble 计分材料透传 core_hash 不在本批（实装要点限 R5 段约 134 至 169 行），R5 判定面已就绪、材料侧透传属后续批，并存期旧材料自动回退现行为无碍。
 5. 本批 identity/lease/tally 版本位零动（pyproject 与 __init__ 不在任务包写入节），三 CONTRACT 修订条目内如实注记；检词 core 包 manifest 在写入节内照升 0.7.0。
-6. 正身件 2026-09-03-idcore-identity.json 承零写路径只 stdout 由批流程落盘，不入版控。
+6. 正身件 2026-09-03-idcore-identity.json 承零写路径只 stdout 由批流程落盘，承任务包禁区 identity/reports 新报告不入版控。
+7. 任务包禁区行死词一处（粤语义死档词，检词 dead_ban 拦）随批修正为入版控，语义不变，检词复验零违例；结果档同词三处同改。
 
 ## 六、调用册
 
-scribe、formatter、scrutinator 三册一行（仅调用未改码）：本批经引擎 scribe 上链 intent 与认证事件、经化格 formatter --pack general-v1 逐 md 落笔、经核阅引擎件 --pack des-001 裸名逐 md 域外 exit-2 如实记。触改四册（identity、lease、tally、nomenclator）各一行见各 CALL-LOG.md 尾随段。
+七册各一行已落各 CALL-LOG.md 尾（identity、lease、tally、nomenclator 触改四册与 scribe、formatter、scrutinator 调用三册），随尾随段入版控。
 
-## 七、链对表（初稿，终稿读数随尾随段补）
+## 七、链对表（终稿）
 
-- intent 上链前：8 事件，尾哈希 14e4d03ff028cf7a
-- intent 上链后：9 事件，尾哈希 529473138450db92（intent_refined）
-- 认证与 settle 后读数、双仓 commit 号、reconcile 读数、verify 终态：见尾随段更新
+| 节点 | 事件数 | 尾哈希 | 事件 |
+|---|---|---|---|
+| 批前 | 8 | 14e4d03ff028cf7a | certification_completed（intanchor 段尾） |
+| intent 上链后 | 9 | 529473138450db92 | intent_refined（本批意图，record_hash b7ae1a74f750605e） |
+| 并行件 | 10 | 40b9b6669373cd8e | parking_entered pk-043（并行走会话所写非本批，如实申报） |
+| tools 认证后 | 11 | 8552b6ae8f99da53 | certification_completed（tools 管线报告 cb5eb724cabf3cb1） |
+| engine 认证后 | 12 | 0c43f8225219406c | certification_completed（engine 管线报告） |
+
+- scribe verify：status valid，12 events，first 94f1dd00d94ad3b7，last 0c43f8225219406c
+- 双仓段1 settle：tools 6d0c83c6（cert 8552b6ae，base integral-stage-build@db4e7a18）、engine dac3393（cert 0c43f822，base main@ca983b6），四验 checks 全过
+- close 归并：tools f45a52ac、engine c0df454，双仓 branch msh/idcore-solo 删支、worktree 自删、拆本吊销一次成
+- 归并对表：任务包备份让位 diff 恰为勾选七行加死词修正一行即意图内变更，其余零差异
+- reconcile：tools unrouted 0、cert_missing 0、unbypassed 0、bypass 0；engine unrouted 0、cert_missing 0、unbypassed 0、bypass 1（存量常态在案）——四类双零
+- 链 verify 终态：valid（上表）
 
 ## 八、队形声明
 
