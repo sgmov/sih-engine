@@ -28,7 +28,7 @@ scribe 生产面已有即五子命令 append、verify、query、intent、park，
 
 双动作即 enter 与 exit。enter 必载 entry_id、title、exit_condition、ttl_days 即正数，context 可选。exit 必载 entry_id、disposition 即 promoted 或 discarded、ruling。doc_id 取 entry_id。事件类型 parking_entered 与 parking_exited，event_class 沿 record_only。
 
-配对不变量两道机械门。重入拒即同 entry_id 已在泊再 enter 拒。无主出拒即无在泊 enter 的 exit 拒。在泊判定按链序重放停泊事件。拒绝零留痕即不入流。
+配对不变量两道机械门。重入拒即同 entry_id 已在泊再 enter 拒。无主出拒即无在泊 enter 的 exit 拒。在泊判定按链序重放停泊事件，重放面即链目录全量即 --trail 同目录全部 ndjson 按名序，承 parkreplay-solo 修订一 2026-09-03；追加面仍为 --trail 单文件即当日链自身链序，跨天出泊即泊入在先日链、出泊落记录当日链。拒绝零留痕即不入流。
 
 ### 报告消费入口 {#append-entry}
 
@@ -64,7 +64,7 @@ T3 intent 双件消费
 : 零发现放行即事件入流且负载十项齐。有发现拒即不入流且零留痕。
 
 T4 park 配对不变量
-: 重入拒与无主出拒两道门，在泊判定链序重放出泊后可再入。
+: 重入拒与无主出拒两道门，在泊判定链序重放即链目录全量，出泊后可再入。
 
 T5 报告消费
 : 八项负载机械提取，重复消费两事件同报告哈希可审计。

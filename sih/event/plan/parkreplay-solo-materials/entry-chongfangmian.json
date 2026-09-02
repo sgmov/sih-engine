@@ -1,0 +1,1 @@
+{"code": null, "definition": "停泊配对门判定在泊态所依据的既有事件集合边界；书简泊配对门的重放面为链目录全量即 --trail 同目录全部 ndjson 按名序", "en": "Replay Scope", "signed": "2026-09-03", "source": "parkreplay-solo 批登记", "zh": "重放面"}

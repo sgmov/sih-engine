@@ -3,9 +3,11 @@
 //! 双动作 enter 与 exit，配对不变量两道机械门即重入拒与无主出拒，
 //! 在泊判定按既有事件链序重放停泊事件，拒绝零留痕即不产事件。
 
+use crate::event_stream::append::{load_events, AppendError};
 use crate::event_stream::event::{Actor, Event, EventInput};
 use chrono::{DateTime, Utc};
 use serde_json::{json, Value};
+use std::path::Path;
 
 #[derive(Debug)]
 pub enum ParkError {
@@ -137,5 +139,114 @@ pub fn park_event(
             })
         }
         _ => Err(ParkError::ActionMissing),
+    }
+}
+
+/// 泊界账本重放面即链目录全量，承 parkreplay-solo 修订一。
+///
+/// park 配对门的重放面从 --trail 单链文件扩为同目录全部 ndjson 按名序，
+/// 跨天出泊即泊入在先日链的出泊机械可达。追加面仍由调用方以 --trail
+/// 单文件承载即当日链自身链序，本函数只读不写。
+pub fn load_parking_scope(trail: &Path) -> Result<Vec<Event>, AppendError> {
+    let target = trail.to_path_buf();
+    let dir = match target.parent() {
+        Some(p) if !p.as_os_str().is_empty() => p.to_path_buf(),
+        _ => return load_events(&target),
+    };
+    let mut files: Vec<std::path::PathBuf> = std::fs::read_dir(&dir)
+        .map_err(|e| AppendError::Internal(format!("read dir failed: {e}")))?
+        .filter_map(|entry| entry.ok().map(|entry| entry.path()))
+        .filter(|p| p.extension().map(|ext| ext == "ndjson").unwrap_or(false))
+        .collect();
+    files.sort();
+    let mut scope = Vec::new();
+    for f in files {
+        scope.extend(load_events(&f)?);
+    }
+    Ok(scope)
+}
+
+#[cfg(test)]
+mod scope_tests {
+    use super::*;
+    use crate::event_stream::append::append;
+    use crate::event_stream::event::ActorType;
+    use crate::event_stream::hash::GENESIS_PREV_HASH;
+
+    fn actor() -> Actor {
+        Actor {
+            actor_id: "scribe".to_string(),
+            actor_type: ActorType::System,
+            invoked_via: "cli".to_string(),
+        }
+    }
+
+    fn park_to(dir: &Path, file: &str, record: &str, stamp: chrono::DateTime<chrono::Utc>) {
+        let path = dir.join(file);
+        let mut store = load_events(&path).unwrap_or_default();
+        let scope = load_parking_scope(&path).unwrap();
+        let input = park_event(record, &scope, actor(), stamp).unwrap();
+        append(input, &mut store, Some(&path)).unwrap();
+    }
+
+    #[test]
+    fn cross_day_exit_reaches_over_full_scope() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-rr-1","title":"跨天出泊","exit_condition":"测试即弃","ttl_days":7}"#;
+        let exit = r#"{"action":"exit","entry_id":"pk-rr-1","disposition":"discarded","ruling":"测试即弃"}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-01.ndjson", enter, t1);
+
+        let today = dir.path().join("2026-09-03.ndjson");
+        let single = load_events(&today).unwrap_or_default();
+        assert!(matches!(
+            park_event(exit, &single, actor(), t1 + chrono::Duration::seconds(10)),
+            Err(ParkError::OrphanExitRejected(_))
+        ));
+
+        let t2 = t1 + chrono::Duration::seconds(20);
+        park_to(dir.path(), "2026-09-03.ndjson", exit, t2);
+        let scope = load_parking_scope(&today).unwrap();
+        assert!(!scope.is_empty());
+        let again = r#"{"action":"exit","entry_id":"pk-rr-1","disposition":"discarded","ruling":"复出即无主出拒"}"#;
+        assert!(matches!(
+            park_event(again, &scope, actor(), t2 + chrono::Duration::seconds(30)),
+            Err(ParkError::OrphanExitRejected(_))
+        ));
+    }
+
+    #[test]
+    fn cross_file_reenter_rejected_over_full_scope() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-rr-2","title":"跨文件重入拒","exit_condition":"测试即弃","ttl_days":7}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-01.ndjson", enter, t1);
+        let same_file = load_events(&dir.path().join("2026-09-01.ndjson")).unwrap();
+        assert!(matches!(
+            park_event(enter, &same_file, actor(), t1 + chrono::Duration::seconds(10)),
+            Err(ParkError::ReEnterRejected(_))
+        ));
+        let today = dir.path().join("2026-09-03.ndjson");
+        let scope = load_parking_scope(&today).unwrap();
+        assert!(matches!(
+            park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(20)),
+            Err(ParkError::ReEnterRejected(_))
+        ));
+    }
+
+    #[test]
+    fn append_face_stays_single_chain() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-rr-3","title":"追加面单链","exit_condition":"测试即弃","ttl_days":7}"#;
+        let exit = r#"{"action":"exit","entry_id":"pk-rr-3","disposition":"promoted","ruling":"测试即弃"}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-01.ndjson", enter, t1);
+        park_to(dir.path(), "2026-09-03.ndjson", exit, t1 + chrono::Duration::seconds(10));
+        let day_a = load_events(&dir.path().join("2026-09-01.ndjson")).unwrap();
+        let day_b = load_events(&dir.path().join("2026-09-03.ndjson")).unwrap();
+        assert_eq!(day_a.len(), 1);
+        assert_eq!(day_b.len(), 1);
+        assert_eq!(day_b[0].prev_hash, GENESIS_PREV_HASH);
+        assert_eq!(day_b[0].event_type, "parking_exited");
     }
 }

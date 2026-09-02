@@ -7,10 +7,11 @@
 use chrono::Utc;
 use serde_json::json;
 use sih_engine::event_stream::event::{Actor, ActorType};
+use sih_engine::event_stream::park::load_parking_scope;
 use sih_engine::event_stream::{
     append, certification_event, check_locks, compute_event_hash, intent_event, load_events,
-    crosscheck_event, lockgate::LockGateError, park_event, query, reading_event, verify, Event, EventFilter,
-    VerifyRange, GENESIS_PREV_HASH,
+    crosscheck_event, lockgate::LockGateError, park_event, query,
+    reading_event, verify, Event, EventFilter, VerifyRange, GENESIS_PREV_HASH,
 };
 use std::path::{Path, PathBuf};
 use std::process::exit;
@@ -229,7 +230,11 @@ fn main() {
             lockgate_guard(&opts, &trail);
             let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
             let store = load_store(&trail);
-            let input = match park_event(&text, &store, gate_actor(), Utc::now()) {
+            let scope = match load_parking_scope(Path::new(&trail)) {
+                Ok(s) => s,
+                Err(e) => emit(json!({"error": format!("重放面不可读 {e:?}")}), 2),
+            };
+            let input = match park_event(&text, &scope, gate_actor(), Utc::now()) {
                 Ok(i) => i,
                 Err(e) => emit(json!({"error": format!("停泊拒 {e:?}")}), 1),
             };
