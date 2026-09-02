@@ -1,0 +1,96 @@
+fmt_rc=0 target=/Users/moc/workspaces/SiHankor/worktrees/sih-tools/predmerge-guard-solo/facet/facet_task_packages/predmerge-guard-1/topic.md
+scr_rc=2
+{
+  "error": "目标不在任何已加载规则包声明的治理域内",
+  "unmatched_targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/predmerge-guard-solo/facet/facet_task_packages/predmerge-guard-1/topic.md"
+  ],
+  "packs": {
+    "des-001": {
+      "include": [
+        "sih-engine/doc/**/*.md",
+        "**/scrutinator/fixtures/corpus/**/*.md",
+        "**/formatter/fixtures/**/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/skill_like.md"
+      ]
+    }
+  }
+}
+nom_rc=0
+== 化格 formatter (results.md) ==
+fmt_rc=0
+== 核阅 scrutinator des-001 (results.md) ==
+scr_rc=2
+{
+  "error": "目标不在任何已加载规则包声明的治理域内",
+  "unmatched_targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/predmerge-guard-solo/sih/event/plan/predmerge-guard-solo-results.md"
+  ],
+  "packs": {
+    "des-001": {
+      "include": [
+        "sih-engine/doc/**/*.md",
+        "**/scrutinator/fixtures/corpus/**/*.md",
+        "**/formatter/fixtures/**/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/skill_like.md"
+      ]
+    }
+  }
+}
+== 检词 nomenclator core (results.md) ==
+nom_rc=0
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/predmerge-guard-solo/sih/event/plan/predmerge-guard-solo-results.md"
+  ],
+  "findings": [],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.6.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 0,
+    "skipped": 0
+  }
+}

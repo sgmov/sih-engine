@@ -1,0 +1,63 @@
+{
+  "batch": "predmerge-guard-solo",
+  "date": "2026-09-02",
+  "session": "c4561b0a9e4183c5",
+  "verdict": {
+    "gate_verdict": "boundary",
+    "disposition": "打回重作",
+    "check_verdict": "pass",
+    "decision_distribution": "comply x9/9, boundary_flag all false",
+    "basis_distribution": {
+      "baseline_5": 4,
+      "baseline_1": 3,
+      "baseline_4": 2
+    },
+    "gate_note": "子判据挂 basis_consensus → 路由法层 refine"
+  },
+  "artifacts_sha256": {
+    "topic_md": "25c86a379d96fa4f2438f1fd284ea7d040c14131b754043bde1c50aabfe4a53e",
+    "ng_medium_txt": "1c5861f64ebf71e8e29f6195c227b212115fe1d0736f3ebc973a8fd92b5c5a24",
+    "cal_pack": "cc384b256c4273dbc431a05a586694c41f80bde9f65bb3fe2cc3c5927b520de0",
+    "cal_responses": "99974794aa48bf860e3045c2a346974bd1569373e03bce9e46d939ecf4d22247",
+    "seat_baseline": "242d3c896ce7b2e89415a85cddf8bd0c5cdbfb8eaca44d7a273ca7cddd24a6b4",
+    "contract": "3a664ab65cd7f7006085c4a4be287ada9a7f95f76d906f3efadbe1af4dd6a126",
+    "responses": "a517c58c271391f01268c42daa1006aead09c6bfb8588c9c9cbe410b02da046b",
+    "flywheel_trail": "bbb4c02e51c6f28daf368ac31bf8cc30d317a829dfe98a4dd0d6f440635c7aa8",
+    "score_material": "8e2d1607980fc70caae7b36ab3d68be37651c870ab9af52a2cf7c6509b20f9ba",
+    "tally_material": "7b90f55a1297ed2bc46a70b84036bd625e0219c2498ca38db8c240fec0112f68",
+    "check_report": "081d24031bf54be449a80780f92ef01162bece19cd5a16e5371f7c45229425cc"
+  },
+  "engine_calls": [
+    "emit-contract exit 0 (meter-wrapped)",
+    "score exit 0 (meter-wrapped, gate_verdict=boundary, runs_written=0 idempotent)",
+    "check exit 0 (meter-wrapped, R1-R7 12 passed, disposition 打回重作)",
+    "sign not invoked per red line (非通过不签)"
+  ],
+  "baseline": {
+    "probe": "temp_probe_agent",
+    "verdict": "可用",
+    "temperature": 0.0,
+    "identity_hash": "c21386eac49d69621f0e02ea843de267ed2e34bd763e5b399cde71e27f99f040",
+    "n_cal_shots": 20,
+    "parse_fail": 0,
+    "drift_alarm": []
+  },
+  "pipeline": {
+    "formatter": {
+      "targets": 2,
+      "exit": "0/0",
+      "changed": 0
+    },
+    "scrutinator_des001": {
+      "targets": 2,
+      "exit": "2/2",
+      "meaning": "域外如实记"
+    },
+    "nomenclator_core": {
+      "targets": 2,
+      "exit": "0/0",
+      "findings": 0
+    }
+  },
+  "routing": "不通过即停：不立项 SDD、不写融回规格、不融，裁决材料留档上链，打回重作转候补批"
+}
