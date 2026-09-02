@@ -1,0 +1,19 @@
+{
+  "batch": "predsplitAB-solo",
+  "date": "2026-09-02",
+  "session_id": "85428d726fc6539a",
+  "ask3_record_sha256": "ca941d6a4697af208f829076125be1e490b0c3e023b045fc3cabeb5d580aca4d",
+  "intent_event_hash": "541da5424d750847a019fb65508e592cd989369829e612d3e7fdb933ad9c2575",
+  "intent_event_id": "307fd33a-d69f-495a-9d3b-b8d907edee0a",
+  "trail_before_intent": {"events": 159, "last_hash": "1bf008a693821a73c105f5bf58f2103fc6b56f223f948a7d521a25bdd3248e04"},
+  "identity_hash": "58e220703201d895f5e1685c8aba873297dc989d6d7bedb514940ff31007e09f",
+  "seat_baseline_recalibrated": true,
+  "rounds": [
+    {"gid": "predsplit-a1", "gate_verdict": "stable_clear", "disposition": "裁决通过", "crosscheck_event_hash": "17cf212b9a62a6caa342fb41906e8649d6be9137a5da988fe47a3238961a1599", "crosscheck_event_id": "ba28ca76-7c34-4af6-a674-46e5c182d334", "dc_fingerprint": "f66ab87bd08a04d8", "basis": {"baseline_5": 9}},
+    {"gid": "predsplit-a2", "gate_verdict": "stable_clear", "disposition": "裁决通过", "crosscheck_event_hash": "77834b287266e97f4d6885571a3954b7246b32e3b518491bf41c5de6af736540", "crosscheck_event_id": "b0845d9e-7f3b-4948-9d32-228f0a66ee9c", "dc_fingerprint": "9e92b3ab9583d7eb", "basis": {"baseline_5": 9}},
+    {"gid": "predsplit-a3", "gate_verdict": "stable_clear", "disposition": "裁决通过", "crosscheck_event_hash": "90ddbea39d6c2d8c6bfdcc326c30c7b8abb52cc80ba4f24263189b60f5100381", "crosscheck_event_id": "363513aa-6567-4efe-a3f8-bf333f9446d2", "dc_fingerprint": "5cbf6d8a23e9809b", "basis": {"baseline_4": 9}},
+    {"gid": "predmerge-refine-b1", "gate_verdict": "stable_clear", "disposition": "裁决通过", "crosscheck_event_hash": "54dc6f8746d48162b6fc6336bd21cdc5f42059d1822bb291e21894d0eecefd93", "crosscheck_event_id": "d5ddb7c0-b09b-4233-9b84-f16ff1e4824e", "dc_fingerprint": "4cad315bec74700f", "basis": {"baseline_5": 9}}
+  ],
+  "quadrant": "双过",
+  "sign_first_attempt_refusal": "predsplit-a1 首试 --material 绝对路径被跨方核毕守卫拒（形态违例），零链上事件，改相对路径重签成立"
+}

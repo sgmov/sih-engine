@@ -1,0 +1,15 @@
+predsplitAB-solo 管线三步读数撮要（2026-09-02，findings 亲读）
+化格 formatter general-v1 --write：六目标全 exit 0 targets_changed 0
+  facet_task_packages/predsplit-a1/topic.md（content_hash cebba95148b5...）
+  facet_task_packages/predsplit-a2/topic.md（b40e805bd5f7...）
+  facet_task_packages/predsplit-a3/topic.md（97831fbcdfda...）
+  facet_task_packages/predmerge-refine-b1/topic.md（d7aa15e85629...）
+  event/plan/predsplitAB-solo-results.md（620413cab8e1...）
+  state/plan/predsplitAB-solo.md（01423bffb0dd...）
+核阅 scrutinator des-001（引擎件裸名包）：六目标全 exit 2 域外如实记
+  四 topic.md 在 sih-tools 属 des-001 域外；results 与 plan 在 sih/event/plan 与 sih/state/plan 属域外——不属违规
+检词 nomenclator core pack：六目标全 exit 0 findings 空（零违例）
+叩问 elicit check 四词四信号轻级 unregistered，digest passed 4/4（契约 2026-09-02-predsplitAB-solo-elicit-contract.md）
+双门：scrutinator ask3 exit 0 findings 0；ask3repeater status ok 三锚
+正身 identity verify anomalies 空，identity_hash 58e220703201d895f5e1685c8aba873297dc989d6d7bedb514940ff31007e09f
+seat 基线 temp_probe 重标定：verdict 可用，体温 0.0，violate 5/5，解析失败 0，漂移告警无
