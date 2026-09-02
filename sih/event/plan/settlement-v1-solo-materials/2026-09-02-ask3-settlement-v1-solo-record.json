@@ -1,0 +1,76 @@
+{
+ "session_id": "sess-zcode-260902-settlement-v1",
+ "raw_input": "用户令（2026-09-02 结算批准令）：主线 v1 结算开工。GOV-002 退出标准五条全绿经 GOV-003 v1.8 承载，本批 settlement-v1-solo 三件：结算单 SETTLEMENT-V1-2026-09-02.md 落 doc/governance、GOV-003 v1.9 与 GOV-002 v1.6 双向界换版、链上结算认证留痕。零运行形态变更即不改任何代码与配置。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "五判据逐条证据指针亲核在档落结算单、双向界只追加不回写换版、结算认证入当日链 valid、双仓 settle reconcile 四零",
+  "exclusions": [
+   "零运行形态变更即不改任何代码与配置（红线）",
+   "泊界在泊件与挂账零碰零收编（红线）",
+   "哲学仓原文只读（红线）"
+  ],
+  "output_format": "ask3 双门件、identity 件、结算单、GOV-003 v1.9、GOV-002 v1.6、链上 intent 加认证、双仓 settle、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第一条：本记录属符号材料待确定性程序双门校验",
+   "工程基线第三条：证据指针亲核在档才落笔",
+   "PRO-07 鉴：结算单映照在档证据不投射新义",
+   "PRO-08 应而不藏：结算认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-engine/doc/governance/ 三件 与 sih-engine/sih/state/plan/settlement-v1-solo.md 与 sih/event/plan/ 结果档材料 与 当日链与 inputlog 与 sih-tools 四 CALL-LOG",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-engine/sih/event/mergeback/ 四完成档与 doc/decision/ 与 doc/spec/SPEC-014 与 SPEC-015 与 sih-tools/facet/CONTRACT.md 与 src/ask3repeater/intercept.rs 只读 与 sih-philosophy 引文源只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "结算单每条证据指针映照在档事实，亲开文件核在档才落笔，不在档不写",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95,
+   "rationale": "鉴映照承载结算单证据纪律"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "向界换版只追加不回写，冻结条款零字节动，增长纪律照旧",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "法四：损补。定向调节规则，不笼统加码也不笼统删除。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:73",
+   "confidence": 0.93,
+   "rationale": "损补定向调节承载追记不回写"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "结算单与双向界换版认证俱上链留痕不可篡改",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94,
+   "rationale": "应而不藏承载结算上链"
+  }
+ ],
+ "calls_in": 30,
+ "calls_out": 34
+}

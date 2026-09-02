@@ -1,0 +1,20 @@
+{
+ "batch": "settlement-v1-solo",
+ "date": "2026-09-02",
+ "session_id": "3af404f491a3957a",
+ "subject": "主线 v1 结算撮要：GOV-002 退出标准五条全绿经用户批准承载",
+ "docs": {
+  "SETTLEMENT-V1-2026-09-02.md": "ffd808f4fae95eb04f3985472ef9286c30be02d861075a6a166dff4b350e90ea",
+  "GOV-003-fullstate-course-v1.md": "121d741e4b25e803cffa73ac760acf212fa5a69554e82274e483613a87f638bf",
+  "GOV-002-mainline-lock-v1.md": "57d866707ec380bd310ebe9c47f13fec3097fe37263dfd6fd228217b1c7886a2"
+ },
+ "criteria_pointers": {
+  "c1": "sih/event/plan/tasks/task-007..013 关闭裁定 pkgclose-solo 2026-08-31 与 sih/event/mergeback/ 四完成档",
+  "c2": "doc/spec/SPEC-015-predicate-mergeback-gap.md 与 src/attractor/route.rs 与 mergeback-predicate-completion-2026-09-02.md",
+  "c3": "src/ask3repeater/intercept.rs load_intercept_pack 与 round_interception",
+  "c4": "sih-tools/facet/CONTRACT.md 退役登记节与 doc/spec/SPEC-014 双模并存条款",
+  "c5": "task-packages 目录归零与 f-anchors-x11-t6d.md 归档 sih/event/plan/"
+ },
+ "approval": "用户 2026-09-02 结算批准令 inputlog seq 15 在链",
+ "pipeline": "化格 general-v1 三件零改核、des-001 域内零违规三件、检词 core 零违例三件、报告九件俱在 scribe/reports/ 已逐件认证在链"
+}
