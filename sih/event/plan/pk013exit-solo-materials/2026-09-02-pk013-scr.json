@@ -1,0 +1,48 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/pk013exit-solo.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "3b83cb8890767abf290e515fe952031651287b8cb450f3aee26f6252a8c4a414",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md": "12b6b52d184d81a1c3c4cc954193c0ac07ea136e537574f569b9c1d2642cf8ee"
+  },
+  "findings": [],
+  "domain_mismatches": [
+    {
+      "target": "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/pk013exit-solo.md",
+      "reason": "目标不在任何已加载规则包声明的治理域内",
+      "pack_domains": [
+        "des-001"
+      ]
+    }
+  ],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}

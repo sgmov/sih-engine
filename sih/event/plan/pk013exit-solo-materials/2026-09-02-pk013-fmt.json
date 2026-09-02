@@ -1,0 +1,38 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/pk013exit-solo.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "3b83cb8890767abf290e515fe952031651287b8cb450f3aee26f6252a8c4a414",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md": "12b6b52d184d81a1c3c4cc954193c0ac07ea136e537574f569b9c1d2642cf8ee",
+    "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/pk013exit-solo.md": "46a8af87a7237d0b5eb6fa1fe5bf20ecef864b0c85fbe45e6fd2fa71b8dee6e1"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
