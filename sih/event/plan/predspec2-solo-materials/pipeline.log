@@ -1,0 +1,27 @@
+# predspec2-solo 管线读数（2026-09-02，会话 899b0453181b9ad8）
+
+化格（formatter general-v1 --write，先于核阅）：
+- SPEC-016-attractor-proposition-drafting.md: exit 0, changes 0（另有一次误指同名 .json 不存在目标的调用 exit 2 零改零落据，见结果档申报 11）
+- doc/governance/PARKING-v1.md: exit 0, changes 0
+- facet_task_packages/predspec2-guard-1/topic.md: exit 0, changes 0
+- sih/state/plan/predspec2-solo.md: exit 0, changes 0
+- sih/event/plan/predspec2-solo-results.md: exit 0, changes 0
+
+核阅（引擎件 scrutinator --pack des-001 裸名）：
+- SPEC-016 域内读数经 corpus 夹具路径承载（承 deyimerge 先例，临时件用后即删零残留）: exit 0, findings 0（首稿 1 笔 C006 全角括号拦下即改，复跑归零）
+- PARKING-v1.md 域内读数经 corpus 夹具承载: exit 0, findings 0（本批新增注记两笔 C006 拦下即改，复跑归零；原档无存量违例）
+- PARKING-v1.md 工地路径形态: exit 2 域外（des-001 域按仓根相对解析，不属违规）
+- topic.md（sih-tools）: exit 2 域外如实记
+- sih/state/plan/predspec2-solo.md: exit 2 域外如实记
+- sih/event/plan/predspec2-solo-results.md: exit 2 域外如实记
+
+检词（nomenclator core）：
+- SPEC-016: exit 0, findings 0
+- PARKING-v1.md: exit 0, findings 0
+- topic.md: exit 0, findings 0
+- sih/state/plan/predspec2-solo.md: exit 1 → 1 笔死档禁词（全量入册，strict high）随批改全量入版控后 exit 0（承 autoflow2 先例）
+- sih/event/plan/predspec2-solo-results.md: exit 1 → 申报行直书死档词一笔改写避开后 exit 0
+
+调用面登记：
+- /tmp/predspec2/route-pk040-exit.json 即 pk-040 出泊件引擎 route 读数（P101/P102/P103 全过零告警，exit 0）
+- 无主出拒门探针 pk-999: scribe park 拒 OrphanExitRejected exit 1，链位探前后相等零留痕
