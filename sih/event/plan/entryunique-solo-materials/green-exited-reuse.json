@@ -1,0 +1,14 @@
+{
+  "state": "green",
+  "scenario": "已出泊号复用 enter（修后）",
+  "chain_dir": "/tmp/entryunique-green",
+  "trail": "/tmp/entryunique-green/2026-09-03.ndjson",
+  "record": "{\"action\":\"enter\",\"entry_id\":\"pk-rg-1\",\"title\":\"红绿测试复用\",\"exit_condition\":\"测试即弃\",\"ttl_days\":7}",
+  "binary": "worktrees/sih-engine/entryunique-solo/target/debug/scribe（修后）",
+  "result": "rejected",
+  "error": "停泊拒 EntryIdUsedRejected(\"pk-rg-1\")",
+  "exit_code": 1,
+  "chain_valid": "valid",
+  "chain_events": 2,
+  "captured_at": "2026-09-03"
+}
