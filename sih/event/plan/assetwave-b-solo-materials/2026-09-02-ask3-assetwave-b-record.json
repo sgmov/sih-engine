@@ -1,0 +1,77 @@
+{
+ "session_id": "sess-zcode-260902-assetwave-b",
+ "raw_input": "用户令：得一裁，裁一过一执行一，未过入泊界。裁B 已过（m-carrierwave stable_clear，执契终签落据 verify identical），执行 B 即载体条目批：按 assetwave-a 登记面三缺口立八件数学载体，PROB-010 假设检验、PROB-011 估计与置信区间、PROB-012 相关与回归、PROB-013 平稳性与变点、PROB-014 期望信息增益、PROB-015 Little 定律、ORD-020 全序防死锁、ORD-021 依赖 DAG 拓扑序，登记面 INDEX 与 mapping 同批注册。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "八条目落 probability 与 order 两子仓过三门、INDEX 与 mapping 注册、math 加 engine 双仓 lease 链收口 reconcile 零新增、当日链 verify valid",
+  "exclusions": [
+   "不立五子仓之外的新分支，章程问题泊界另议（红线）",
+   "条目只给形式化形态不立治理结论（数学仓地位，红线）",
+   "哲学仓只读，引文程序切片（红线）",
+   "SETSP 内容不进条目正文，只作登记面出处"
+  ],
+  "output_format": "ask3 双门件、elicit 件、identity 件、八条目、INDEX 两处、mapping 注册、三门凭证、链上 intent 加认证、双仓 settle 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第一条：条目是可机械校验的符号材料",
+   "工程基线第四条：逐条带命题锚与登记面出处可复算",
+   "PRO-07 鉴：引文逐字节子串禁手打",
+   "PRO-08 应而不藏：认证 append-only 上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-math/probability/entries/ 与 sih-math/order/entries/ 与 probability/INDEX.md 与 order/INDEX.md 与 sih-math/llm-friendly-build/mapping.md 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-math/docs/asset-anchor-registry-2026-09-02.md 只读 与 sih-philosophy proodos 五章引文源只读 与 PROB-008 与 ORD-005 既有条目只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "载体条目是给确定性程序补判据：调度、检验、追问的机械校验都需数学本体",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "rationale": "鉴的映照承载检验类条目的规范力，统计族承此",
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95
+  },
+  {
+   "anchor_seq": 2,
+   "text": "调度秩序与负载界的规范力在有度与应几：并发有度、未形之变可检",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "> 应变（Unsettling）是应本体（Settle）的本体论展开——应本体失稳后，治理从「安住」走向「应变」。应变的两相：应辨（应变之已形 / unsettle the present）+ 应几（应变之未形 / unsettle what's coming）。"
+   },
+   "rationale": "应变两相承载变点检测与序贯追问的哲学锚",
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:5",
+   "confidence": 0.93
+  },
+  {
+   "anchor_seq": 3,
+   "text": "八条目逐件锚定登记面所载现行命题，注册进 mapping 使工程侧可检索",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "rationale": "法顺势承载度量与调度的趋势与力度语义",
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.94
+  }
+ ],
+ "calls_in": 300,
+ "calls_out": 331
+}

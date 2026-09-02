@@ -1,0 +1,57 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001-mathe",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-010-hypothesis-testing-and-significance.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-011-estimation-and-confidence-intervals.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-012-correlation-and-regression.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-013-stationarity-and-change-point.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-014-expected-information-gain.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-015-littles-law-and-load-bound.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-020-total-order-resource-allocation-deadlock-freedom.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-021-dependency-dag-topological-order.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-010-hypothesis-testing-and-significance.md": "74c26db2499bb7463b1c24e11554514ea4db9b8e09741735b725bffd87a0a37b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-011-estimation-and-confidence-intervals.md": "4bb78dac24a2264b96b72c8e2cc9127fb88bcb3c5f68c8c9bd9985b409377185",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-012-correlation-and-regression.md": "7d228901193c499d51ba61e2ce536bf27406532326c00e672b581f0c92e99f51",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-013-stationarity-and-change-point.md": "3c8d1a19b6b406a7c29f0b6e306142b70ca867d6a6eed1b9fb4e4885f7511dcb",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-014-expected-information-gain.md": "4e00b2826b4685cdf3f6cf457996773491c4119aab67af244721d61054675e87",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/probability/entries/PROB-015-littles-law-and-load-bound.md": "41941abb2f84ae35535acae2a4992e504c8496183bf2bf83c247082f830fd57d",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-020-total-order-resource-allocation-deadlock-freedom.md": "cdd5f112ef067f3b5592a24a60f03c3a8475ca6dbf72bc27c57a37db212c1b85",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/assetwave-b-solo/order/entries/ORD-021-dependency-dag-topological-order.md": "4b080b2ba3d559093790646e81814040184f28974ac838be35dfbc94cc68a193"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}
