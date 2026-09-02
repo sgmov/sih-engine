@@ -1,0 +1,30 @@
+[[predicates]]
+id = "R001"
+kind = "schema_required"
+fields = ["id", "path", "state"]
+route_on_fail = "scrap_track"
+
+[[predicates]]
+id = "R002"
+kind = "state_annotation"
+allowed = ["process", "draft", "signed", "archived"]
+route_on_fail = "siding"
+
+[[predicates]]
+id = "R003"
+kind = "anchor_whitelist"
+whitelist = ["doc/**", "skills/**", "task-packages/**"]
+route_on_fail = "siding"
+
+[[predicates]]
+id = "R004"
+kind = "write_boundary"
+allowed_roots = ["sih-tools/**", "sih-engine/src/**"]
+route_on_fail = "scrap_track"
+
+[defaults]
+pass_route = "mainline"
+
+[alarms]
+siding_surplus_threshold = 5
+mainline_starvation_threshold = 1

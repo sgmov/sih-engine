@@ -1,0 +1,15 @@
+{
+ "action": "exit",
+ "entry_id": "pk-031",
+ "disposition": "promoted",
+ "ruling": "用户 2026-08-30 双出泊令即 pk031gap 批承接，四证据定向修以本批交付即缺省链两居所并集、active_sessions 事件序配对、缺省根双仓祖先搜上、commit 拒主检出直提，lease 1.8.2",
+ "ttl_days": 90,
+ "id": "pk-031",
+ "path": "PARKING-v1.md",
+ "state": "exited",
+ "parking": {
+  "entered_at": "2026-08-28",
+  "exited_at": "2026-08-30",
+  "ttl_days": 90
+ }
+}

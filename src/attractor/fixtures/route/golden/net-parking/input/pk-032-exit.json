@@ -1,0 +1,15 @@
+{
+ "action": "exit",
+ "entry_id": "pk-032",
+ "disposition": "promoted",
+ "ruling": "用户 2026-08-30 双出泊令即 pk032stale 批承接，七发现扫修以本批交付即两投影同步与 AGENTS 租约并行与 ask3repeater 名实符与死档名归零与净面三项如实记、退役壳十六处留档待清残令",
+ "ttl_days": 90,
+ "id": "pk-032",
+ "path": "PARKING-v1.md",
+ "state": "exited",
+ "parking": {
+  "entered_at": "2026-08-28",
+  "exited_at": "2026-08-30",
+  "ttl_days": 90
+ }
+}

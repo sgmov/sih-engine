@@ -1,0 +1,23 @@
+{
+  "action": "enter",
+  "entry_id": "pk-035",
+  "title": "席位身份入正身批即采样席位串绑定正身报告哈希",
+  "exit_condition": "用户令开工",
+  "ttl_days": 60,
+  "id": "pk-035",
+  "path": "PARKING-v1.md",
+  "anchors": [
+    "sih-tools/identity/CONTRACT.md 即正身十二件与自报对表三态不签本界",
+    "facet/probes/calibration/ledger.jsonl 即同席位两日两身份串实证（2026-08-29 zcode 两段对 2026-08-30 ZCode 三段）",
+    "sih-engine/doc/spec/SPEC-011-governance-state-reading.md 即调用置信度维度近亲"
+  ],
+  "requested_writes": [
+    "facet contract_mode 与 measure 材料增 identity_hash 字段",
+    "temp_probe 账本行增身份哈希列",
+    "tally R5 基线绑定身份哈希比对",
+    "facet-measure 与 identity 契约修订留痕"
+  ],
+  "design_sketch": "用户 2026-08-30 裁定席位立身份走正身即不另立登记表：采样与标定时 agent 先跑正身 verify 取身份报告哈希，席位身份件等于规范席位串（框架:模型:版本，禁自由大小写）加正身报告哈希；合同计分材料与标定账本强制携带；漂移与 R5 配对按身份哈希优先；正身本体预期零改或仅用可选 claims 件；边界与正身同界即绑定可追溯非产权级防伪",
+  "state": "parked",
+  "parking": {"entered_at": "2026-08-30", "ttl_days": 60}
+}

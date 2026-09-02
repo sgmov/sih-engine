@@ -1,0 +1,25 @@
+{
+  "baseline": "围堰 Python 原件 sih-tools/selector（唯一基准禁自造）",
+  "exit_codes": {
+    "attribution-core": 0,
+    "attribution-parking": 1,
+    "badpack-kind": 2,
+    "dirty-anchor-domain": 1,
+    "dirty-expired": 1,
+    "dirty-schema": 1,
+    "net-core": 0,
+    "net-parking": 0
+  },
+  "files": {
+    "attribution-core/expected.json": "5bd0cc82eecddd25980f1ed41d777576b18b1cc3aae77b709f4fb129b8e85dfe",
+    "attribution-parking/expected.json": "54b111c4aba4a501e6f071fa08d6166b4cbe0af971cd31716f6e51268e06aca3",
+    "badpack-kind/expected.json": "cc819c5a778ce4baa61aeb5f5bc9c79d0aa1a4c67e725bf3a0e22a4a743d8bec",
+    "dirty-anchor-domain/expected.json": "e4e6d8e9f4c7f71fe2cefa559b16fe7cd23dff863eadf7b37af3c556ab3471f3",
+    "dirty-expired/expected.json": "4c4362022b2fdcc950129d2454d91a8fcb17e2f4c0bcf5ff36421606b6cbac85",
+    "dirty-schema/expected.json": "cfd7ed5d73aa8144f303fe88289c281ab148e9969420d67992ff0e208b8a5ad3",
+    "net-core/expected.json": "10280aed9631f29c27ee1c3a25b943295248a7f80caf8244e9243af4dba50fb0",
+    "net-parking/expected.json": "6000c89ba48ded8b037b258e17f97fb0391807d340211f26e9c6a24f686d3489"
+  },
+  "frozen_at": "2026-09-02",
+  "spec": "SPEC-015"
+}

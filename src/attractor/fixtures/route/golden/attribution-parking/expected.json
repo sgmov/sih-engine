@@ -1,0 +1,262 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "scribe/trail/**",
+        "PARKING-v1.md",
+        "parking/**",
+        "../sih-engine/parking/**",
+        "../sih-engine/doc/governance/PARKING-v1.md"
+      ]
+    },
+    "pack": {
+      "name": "parking",
+      "version": "0.2.0"
+    },
+    "reference_time": "2026-09-02",
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "facet-audit-t6d-report-A",
+      "path": "task-packages/facet-audit-t6d-report-A.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "facet-audit-t6d-report-B",
+      "path": "task-packages/facet-audit-t6d-report-B.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "facet-migration-batch-t6d-cluster2-x1-evaluation",
+      "path": "task-packages/facet-migration-batch-t6d-cluster2-x1-evaluation.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "facet-migration-batch-t6d-cluster2-x2-evaluation",
+      "path": "task-packages/facet-migration-batch-t6d-cluster2-x2-evaluation.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fix-governance-boundaries-t6d-a2-caller-spec",
+      "path": "task-packages/fix-governance-boundaries-t6d-a2-caller-spec.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fix-governance-boundaries-t6d-v1-family-inventory",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-family-inventory.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fix-governance-boundaries-t6d-v1-scan-output",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-scan-output.json",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fix-governance-boundaries-t6d-v1-scan",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-scan.py",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-026",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-035",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-036",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [
+      {
+        "count": 8,
+        "kind": "siding_surplus",
+        "threshold": 2
+      }
+    ],
+    "mainline": 3,
+    "scrap_track": 0,
+    "siding": 8,
+    "total": 11
+  }
+}

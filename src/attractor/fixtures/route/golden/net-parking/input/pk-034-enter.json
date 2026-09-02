@@ -1,0 +1,13 @@
+{
+  "action": "enter",
+  "entry_id": "pk-034",
+  "title": "执契实装批即 DES-011 七规则全量核对与三态映射与事件写入",
+  "exit_condition": "用户令开工",
+  "ttl_days": 60,
+  "id": "pk-034",
+  "path": "PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {"entered_at": "2026-08-29", "ttl_days": 60}
+}

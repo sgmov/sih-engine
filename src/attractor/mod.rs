@@ -29,6 +29,7 @@ pub mod contract_mode;
 pub mod jsonc;
 pub mod model_utils;
 pub mod paradigm_loader;
+pub mod route;
 pub mod stats;
 pub mod tally;
 pub mod validators;

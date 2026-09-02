@@ -1,0 +1,15 @@
+{
+ "action": "exit",
+ "entry_id": "pk-036",
+ "disposition": "promoted",
+ "ruling": "用户 2026-09-02 切换放行令出泊即 deyimerge-switch-solo 批承接，按现行 GOV-003 真实内容以围堰件为基准重录 golden_des001_gov003 金向量只刷期望输出 content_hash 断言逻辑零改，双跑 cmp 围堰件与引擎件 IDENTICAL，cargo test golden_des001_gov003 归并后转绿，正身本体零改",
+ "ttl_days": 14,
+ "id": "pk-036",
+ "path": "PARKING-v1.md",
+ "state": "exited",
+ "parking": {
+  "entered_at": "2026-09-02",
+  "exited_at": "2026-09-02",
+  "ttl_days": 14
+ }
+}

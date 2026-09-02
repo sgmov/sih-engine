@@ -1,0 +1,15 @@
+{
+ "action": "exit",
+ "entry_id": "pk-033",
+ "disposition": "promoted",
+ "ruling": "用户 2026-08-30 双出泊令与开工令即 pk033casc 批承接，级联 0.3.0 以本批交付即 rs 条目投影接句读解析层与注释侧代码到文档边与 check 同表，use 边延期另批",
+ "ttl_days": 90,
+ "id": "pk-033",
+ "path": "PARKING-v1.md",
+ "state": "exited",
+ "parking": {
+  "entered_at": "2026-08-29",
+  "exited_at": "2026-08-30",
+  "ttl_days": 90
+ }
+}

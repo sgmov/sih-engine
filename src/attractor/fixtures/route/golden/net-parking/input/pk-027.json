@@ -1,0 +1,11 @@
+{
+  "id": "pk-027",
+  "path": "parking/records/pk-027-enter.json",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-08-28",
+    "ttl_days": 90
+  }
+}

@@ -17,9 +17,10 @@ use serde_json::{json, Value};
 use sih_engine::attractor::contract_mode;
 use sih_engine::attractor::jsonc::PyError;
 use sih_engine::attractor::paradigm_loader;
+use sih_engine::attractor::route;
 use sih_engine::attractor::tally;
 
-const USAGE: &str = "用法 attractor <emit-contract|score|check|verify|sign|watch> <子命令参数>\n\
+const USAGE: &str = "用法 attractor <emit-contract|score|check|verify|sign|watch|route> <子命令参数>\n\
 emit-contract: --topic <topic.md> --ng-file <ng文本> --seat <框架:模型> --gid <gid> --title <题名> \\\n\
                --shots <n> --atoms <atom.yaml> --ng-label <档> --out <合同.json> \\\n\
                [--paradigm-id normative_convergence] [--atom integrator] [--direction judge] \\\n\
@@ -30,7 +31,8 @@ check: --material <裁决材料.json>\n\
 verify: --material <裁决材料.json> --report <核对报告.json>\n\
 sign: --material <裁决材料.json> --out <落盘目录> --trail <引擎链> \\\n\
       --scribe-binary <引擎scribe> --session <会话号> --locks <锁册>\n\
-watch: --reports <签署报告目录>";
+watch: --reports <签署报告目录>\n\
+route: --pack <谓词包目录> [--reference-time <ISO日期>] <材料.json 或目录...>";
 
 struct Args {
     flags: std::collections::HashMap<String, String>,
@@ -267,6 +269,15 @@ fn main() -> ExitCode {
                 return ExitCode::from(2);
             }
         },
+        // route 谓词路由：位置参数承载材料，报文与退出码全对表围堰 cli.py，
+        // 报告与错误信封均出 stdout（围堰 print 形），退出码 0/1/2 三值。
+        "route" => match route_args(rest) {
+            Ok(code) => Ok(code),
+            Err(msg) => {
+                eprintln!("{}\n{}", msg, USAGE);
+                return ExitCode::from(2);
+            }
+        },
         _ => {
             eprintln!("未知子命令 {}\n{}", sub, USAGE);
             return ExitCode::from(2);
@@ -289,3 +300,38 @@ fn main() -> ExitCode {
 // Value 引用保持（score 输出经 json! 构造）。
 #[allow(dead_code)]
 fn _value_ref(_v: &Value) {}
+
+/// route 子命令参数解析：--pack 必填旗标、--reference-time 可选旗标、
+/// MATERIAL 位置参数可多个（材料文件或目录，零材料即空批绿态）。
+fn route_args(argv: &[String]) -> Result<i32, String> {
+    let mut pack: Option<String> = None;
+    let mut reference_time: Option<String> = None;
+    let mut materials: Vec<String> = Vec::new();
+    let mut i = 0;
+    while i < argv.len() {
+        let a = &argv[i];
+        if a == "--pack" {
+            pack = Some(argv.get(i + 1).ok_or("旗标 --pack 缺值")?.clone());
+            i += 2;
+        } else if a == "--reference-time" {
+            reference_time = Some(argv.get(i + 1).ok_or("旗标 --reference-time 缺值")?.clone());
+            i += 2;
+        } else if a.starts_with("--") {
+            return Err(format!("未知旗标 {a}"));
+        } else {
+            materials.push(a.clone());
+            i += 1;
+        }
+    }
+    let pack = pack.ok_or("缺 --pack")?;
+    match route::run_route(std::path::Path::new(&pack), reference_time.as_deref(), &materials) {
+        Ok((report, code)) => {
+            print!("{}", report);
+            Ok(code)
+        }
+        Err((envelope, code)) => {
+            println!("{}", envelope);
+            Ok(code)
+        }
+    }
+}

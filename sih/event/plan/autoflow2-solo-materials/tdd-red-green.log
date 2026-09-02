@@ -1,0 +1,30 @@
+== autoflow2-solo TDD 红转绿记录（SPEC-015 测试计划 T1 至 T6）==
+
+红态一（测试先行入口未建，2026-09-02T05:0xZ）：
+命令：cargo test --manifest-path <工地>/Cargo.toml --test attractor_route
+结果：could not compile `sih-engine` (test "attractor_route") due to 3 previous errors
+  E0432 unresolved imports sih_engine::attractor::route / sih_engine::ask3repeater::intercept
+  （红判据：src/attractor/route.rs 与 src/ask3repeater/intercept.rs 不存在）
+
+绿态实装后首轮（四失败，如实记）：
+test result: FAILED. 6 passed; 4 failed（t2_golden_byte_identical、t2_badpack_envelope_byte_identical、
+t2_live_lib_route_matches_coferdam_output、t6_intercept_load_and_round）
+归因四件：
+  1. t2_golden/t2_live：测试场景到包的映射缺陷（dirty-expired 误配 core 包）与退出码断言
+     缺围堰冻结值表——测试装配缺陷，非引擎语义缺陷
+  2. t2_badpack：引擎错误信封带 ValueError 类型前缀（PyError Display），围堰 str(exc)
+     只取消息文——引擎保真缺陷，改 e.message() 承围堰形
+  3. t6：测试材料漏 anchors 与 requested_writes 字段——测试装配缺陷
+连带发现围堰语义保真缺口一件：routes.toml 无 predicates 键在围堰是合法空包
+（data.get("predicates", [])），首版实现误判拒绝——照围堰修正即键缺省空包合法、
+非数组才拒（selector 验收判据 F6 空包全走 pass_route 的对应语义）。
+
+绿态终轮（全绿）：
+cargo test（全测试面 16 组）：179 passed; 0 failed; 6 ignored
+含：lib 127（三问既有 validate/gate 测试零改全绿即 T6 零伤证明 + attractor::route
+模块内 T4 谓词机单测）、attractor_route 集成 10（T1 金向量冻结、T2 七场景逐字节
+加坏包信封逐字节加 lib 面活体对表、T3 退出码全表、T5 源码扫描加 Cargo 依赖断言、
+T6 截流装配位加三问零伤）。
+
+活体双跑同参形对表：三场景 cmp 全 IDENTICAL（route-double-run-cmp.log），
+实跑探针 attractor route parking 包十六件全主线零告警退出码零。

@@ -1,0 +1,296 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "task-packages/**",
+        "doc/**"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.1.0"
+    },
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "facet-audit-t6d-report-A",
+      "path": "task-packages/facet-audit-t6d-report-A.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "facet-audit-t6d-report-B",
+      "path": "task-packages/facet-audit-t6d-report-B.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "facet-migration-batch-t6d-cluster2-x1-evaluation",
+      "path": "task-packages/facet-migration-batch-t6d-cluster2-x1-evaluation.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "facet-migration-batch-t6d-cluster2-x2-evaluation",
+      "path": "task-packages/facet-migration-batch-t6d-cluster2-x2-evaluation.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "fix-governance-boundaries-t6d-a2-caller-spec",
+      "path": "task-packages/fix-governance-boundaries-t6d-a2-caller-spec.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "fix-governance-boundaries-t6d-v1-family-inventory",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-family-inventory.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "fix-governance-boundaries-t6d-v1-scan-output",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-scan-output.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": true
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "fix-governance-boundaries-t6d-v1-scan",
+      "path": "task-packages/fix-governance-boundaries-t6d-v1-scan.py",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": false
+        },
+        {
+          "id": "R003",
+          "pass": true
+        },
+        {
+          "id": "R004",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "R002",
+      "id": "pk-026",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": false
+        },
+        {
+          "id": "R003",
+          "pass": false
+        },
+        {
+          "id": "R004",
+          "pass": false
+        }
+      ],
+      "failed_predicate": "R002",
+      "id": "pk-035",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": false
+        },
+        {
+          "id": "R003",
+          "pass": false
+        },
+        {
+          "id": "R004",
+          "pass": false
+        }
+      ],
+      "failed_predicate": "R002",
+      "id": "pk-036",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "siding"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [],
+    "mainline": 8,
+    "scrap_track": 0,
+    "siding": 3,
+    "total": 11
+  }
+}

@@ -7,10 +7,12 @@
 //! 写入权归书简承 DEC-006 责权拆分，本模块不直接落盘。
 
 pub mod gate;
+pub mod intercept;
 pub mod record;
 pub mod validate;
 
 pub use gate::{intent_event_input, INTENT_EVENT_CLASS, INTENT_EVENT_TYPE};
+pub use intercept::{load_intercept_pack, round_interception};
 pub use record::{
     Anchor, Domain, DomainContract, DomainTag, InputRecord, InquiryStage, IntentContract,
     OutputRecord, PhilosophyRef, SessionContext,
