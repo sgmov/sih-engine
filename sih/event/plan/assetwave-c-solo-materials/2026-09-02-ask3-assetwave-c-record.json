@@ -1,0 +1,74 @@
+{
+ "session_id": "sess-zcode-260902-assetwave-c",
+ "raw_input": "用户令：得一裁，裁一过一执行一。裁C m-bridgereg stable_clear 终签落据 verify identical，执行 C 即唯一桥梁原则登记：AGENTS.md 数学仓地位节写入唯一桥梁条款与 160 条目承接面，文件索引加资产回锚登记面行，AGENTS.md 过化格与检词两门。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "AGENTS.md 两处登记过化格检词两门、engine 单仓 lease 链收口 reconcile 零新增、当日链 verify valid",
+  "exclusions": [
+   "不动哲学仓与数学仓本批面（红线）",
+   "AGENTS.md 其余节不改（范畴排除）"
+  ],
+  "output_format": "ask3 双门件、identity 件、AGENTS.md 改行、化格检词凭证、链上 intent 加认证、engine commit 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第四条：登记逐件带出处可复算",
+   "PRO-07 鉴：引文逐字节子串",
+   "PRO-08 应而不藏：认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "AGENTS.md 数学仓地位节与文件索引行 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-math/docs/asset-anchor-registry-2026-09-02.md 只读 与 sih-philosophy proodos 引文源只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "唯一桥梁使消费面确定性化，意图不在工程环节被散文重释",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/03-on-second-tao.md",
+    "quote": "> 道二：意图先于代码。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/03-on-second-tao.md:15",
+   "confidence": 0.95,
+   "rationale": "道二承载消费面界定的规范力"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "登记内容映照已裁决事实不投射新结论",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95,
+   "rationale": "鉴映照承载登记纪律"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "登记上链留痕可复算",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+    "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36",
+   "confidence": 0.94,
+   "rationale": "应而不藏承载上链"
+  }
+ ],
+ "calls_in": 400,
+ "calls_out": 431
+}
