@@ -1,0 +1,284 @@
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:356:4
+    |
+356 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 1 warning
+   Compiling sih-engine v0.1.0 (/Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-tdd-solo)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.74s
+     Running unittests src/lib.rs (target/debug/deps/sih_engine-6d7aa693b004146e)
+
+running 121 tests
+test ask3repeater::gate::tests::test_intent_event_fields ... ok
+test ask3repeater::validate::tests::test_contract_error_empty_anchors ... ok
+test ask3repeater::validate::tests::test_lineage_error_source_missing ... ok
+test attractor::jsonc::tests::list_repr_forms ... ok
+test attractor::jsonc::tests::compact_matches_python_default_separators ... ok
+test attractor::jsonc::tests::canonical_sorts_keys_and_keeps_shape ... ok
+test ask3repeater::validate::tests::test_shape_error_on_empty_goal ... ok
+test ask3repeater::validate::tests::test_lineage_error_quote_mismatch ... ok
+test ask3repeater::validate::tests::test_metering_error_reversed_calls ... ok
+test ask3repeater::validate::tests::test_valid_record_passes ... ok
+test ask3repeater::validate::tests::test_contract_error_depth_double_check ... ok
+test ask3repeater::validate::tests::test_evidence_file_path_form ... ok
+test event_stream::append::tests::test_reject_illegal_actor_llm_invoked_via ... ok
+test event_stream::append::tests::test_reject_missing_details_for_task_completion ... ok
+test event_stream::crosscheck::tests::c1_guard_accepts_well_formed ... ok
+test event_stream::crosscheck::tests::c3_material_absent_rejected ... ok
+test event_stream::crosscheck::tests::c2_missing_and_extra_rejected ... ok
+test event_stream::event::tests::test_actor_type_case_insensitive ... ok
+test event_stream::crosscheck::tests::c5_event_class_by_disposition ... ok
+test event_stream::event::tests::test_event_roundtrip ... ok
+test event_stream::hash::tests::test_empty_chain ... ok
+test event_stream::append::tests::test_append_first_event_success ... ok
+test event_stream::crosscheck::tests::c4_shape_violations_rejected ... ok
+test event_stream::crosscheck::tests::c6_append_and_verify_roundtrip ... ok
+test event_stream::hash::tests::test_tamper_detection ... ok
+test event_stream::hash::tests::test_compute_hash_deterministic ... ok
+test event_stream::append::tests::test_reject_prev_hash_mismatch ... ok
+test event_stream::append::tests::test_reject_non_monotonic_timestamp ... ok
+test event_stream::intent::intent_status_tests::rejected_status_refused ... ok
+test event_stream::append::tests::test_reject_duplicate_event_id ... ok
+test event_stream::append::tests::test_append_second_event_success ... ok
+test event_stream::intent::intent_status_tests::ok_status_passes_gate ... ok
+test event_stream::intent::intent_status_tests::session_mismatch_refused ... ok
+test event_stream::lockgate::lockgate_tests::g1_missing_ledger_allows ... ok
+test event_stream::hash::tests::test_verify_chain_success ... ok
+test event_stream::query::tests::test_aggregate_by_actor ... ok
+test event_stream::query::tests::test_aggregate_by_type ... ok
+test event_stream::query::tests::test_aggregate_by_hour ... ok
+test event_stream::query::tests::test_combined_filter_and_aggregate ... ok
+test event_stream::query::tests::test_filter_by_actor_id ... ok
+test event_stream::query::tests::test_filter_by_event_type ... ok
+test event_stream::query::tests::test_filter_by_time_range ... ok
+test event_stream::query::tests::test_query_all ... ok
+test event_stream::reading::tests::r1_guard_accepts_well_formed ... ok
+test event_stream::reading::tests::r2_guard_rejects_missing_and_extra ... ok
+test event_stream::reading::tests::r4_insufficient_marker_and_bounds_ok ... ok
+test event_stream::reading::tests::r3_guard_rejects_enum_value_digest_shapes ... ok
+test event_stream::lockgate::lockgate_tests::g3_self_session_allows ... ok
+test event_stream::lockgate::lockgate_tests::g5_malformed_is_unreadable ... ok
+test event_stream::lockgate::lockgate_tests::g2_other_session_held ... ok
+test event_stream::tdd_tests::tdd::t3_intent_findings_rejected ... ok
+test event_stream::tdd_tests::tdd::t3_intent_zero_findings_passes ... ok
+test event_stream::lockgate::lockgate_tests::g7_non_transition_rows_skipped ... ok
+test event_stream::verify::tests::test_empty_stream_error ... ok
+test event_stream::lockgate::lockgate_tests::g4_released_allows ... ok
+test event_stream::reading::tests::r5_reading_event_appends_and_chain_verifies ... ok
+test event_stream::verify::tests::test_event_id_not_found ... ok
+test event_stream::verify::tests::test_full_verify_success ... ok
+test event_stream::verify::tests::test_hash_chain_broken ... ok
+test event_stream::verify::tests::test_invalid_range ... ok
+test retriever::archives::tests::f9_classify_event_table ... ok
+test event_stream::verify::tests::test_range_verify_success ... ok
+test retriever::archives::tests::f9_classify_path_table ... ok
+test retriever::axes::tests::f5_day_bounds_inclusive ... ok
+test retriever::axes::tests::f9_event_token_hit_three_ways ... ok
+test event_stream::lockgate::lockgate_tests::g6_unrelated_path_allows ... ok
+test event_stream::tdd_tests::tdd::t2_production_trails_verify ... ok
+test retriever::facet::tests::f9_event_reference ... ok
+test retriever::facet::tests::f9_excerpt_truncation ... ok
+test retriever::facet::tests::f9_exit_code_mapping ... ok
+test retriever::wenguobs_tests::f1_topic_axis_unchanged_when_words_absent ... ignored
+test event_stream::tdd_tests::tdd::t1_golden_vectors_recompute ... ok
+test retriever::wenguobs_tests::f1_word_and_topic_same_word_both_axes ... ignored
+test event_stream::tdd_tests::tdd::t5_certify_payload_and_duplicate ... ok
+test retriever::wenguobs_tests::f1_word_axis_hits_six_words ... ignored
+test retriever::facet::tests::f9_sort_rows_order ... ok
+test retriever::wenguobs_tests::f2_miss_log_absent_keeps_default_readonly ... ignored
+test retriever::wenguobs_tests::f2_miss_log_records_zero_hit_axis_word ... ignored
+test retriever::wenguobs_tests::f2_miss_log_repeats_each_call ... ignored
+test event_stream::tdd_tests::tdd::t4_park_invariants ... ok
+test retriever::wenguobs_tests::integration_root_resolves ... ok
+test retriever::envelope_tests::zero_hit_writes_envelope_not_empty_file ... ok
+test retriever::derive_tests::worktrees_layer_never_root ... ok
+test attractor::model_utils::tests::doctest_anchors ... ok
+test event_stream::tdd_tests::tdd::t6_scribe_exit_codes ... ok
+test scrutinator::tests::exit_missing_pack_two ... ok
+test scrutinator::tests::exit_empty_load_zero ... ok
+test scrutinator::tests::golden_ask3_scrutmerge_sdd ... ok
+test scrutinator::tests::golden_ask3_viewrider ... ok
+test scrutinator::tests::exit_single_violation_one ... ok
+test scrutinator::tests::golden_des001_dec020 ... ok
+test scrutinator::tests::exit_compliant_zero ... ok
+test scrutinator::tests::cli_positional_form_matches_golden ... ok
+test scrutinator::tests::exit_out_of_domain_two ... ok
+test scrutinator::tests::golden_des001_goldfix_001_multiflag ... ok
+test scrutinator::tests::golden_des001_goldfix_002_header ... ok
+test view::alarms::tests::r1_only_consumable_classes_pass_through ... ok
+test view::alarms::tests::r2_record_only_never_enters_view ... ok
+test view::alarms::tests::r3_empty_input_yields_empty_view_with_zero_exit ... ok
+test view::alarms::tests::r4_nonempty_consumable_yields_exit_code_one ... ok
+test view::alarms::tests::r5_temporal_ordering_is_stable_ascending ... ok
+test view::alarms::tests::r6_byte_identical_under_repeated_call ... ok
+test view::heartbeat::tests::r1_parking_pairing_active ... ok
+test view::heartbeat::tests::r2_parking_expired_state ... ok
+test view::heartbeat::tests::r3_parking_exited_state ... ok
+test view::heartbeat::tests::r4_recent_readings_three_dims_or_insufficient ... ok
+test view::heartbeat::tests::r5_consumable_count ... ok
+test view::heartbeat::tests::r6_byte_identical_repeated_call ... ok
+test view::settle::tests::r1_event_type_counts_match_input ... ok
+test view::settle::tests::r2_certification_and_intent_counts ... ok
+test view::settle::tests::r3_parking_review_carries_heartbeat_state ... ok
+test view::settle::tests::r4_byte_identical_repeated_call ... ok
+test scrutinator::tests::golden_des001_goldfix_003_fence ... ok
+test scrutinator::tests::golden_des001_goldfix_004_nav ... ok
+test scrutinator::tests::cli_positional_and_flag_forms_byte_identical ... ok
+test scrutinator::tests::golden_des001_goldfix_005_skip ... ok
+test scrutinator::tests::golden_des001_gov002 ... ok
+test scrutinator::tests::golden_des001_gov003 ... FAILED
+test scrutinator::tests::golden_des001mathe_mul001 ... ok
+test scrutinator::tests::golden_des001mathe_lim001 ... ok
+test scrutinator::tests::multipack_attribution_pack_names ... ok
+
+failures:
+
+---- scrutinator::tests::golden_des001_gov003 stdout ----
+
+thread 'scrutinator::tests::golden_des001_gov003' (8168714) panicked at src/scrutinator/tests.rs:122:5:
+assertion `left == right` failed: des-001-gov003 引擎件输出与金向量逐字节不一致
+  left: "{\n  \"engine\": {\n    \"name\": \"scrutinator\",\n    \"version\": \"0.1.0\"\n  },\n  \"packs\": [\n    {\n      \"name\": \"des-001\",\n      \"version\": \"0.1.0\",\n      \"domain\": {\n        \"include\": [\n          \"sih-engine/doc/**/*.md\",\n          \"**/scrutinator/fixtures/corpus/**/*.md\",\n          \"**/formatter/fixtures/**/*.md\"\n        ],\n        \"exclude\": [\n          \"**/skills/**\",\n          \"**/.agents/**\",\n          \"**/skill_like.md\"\n        ]\n      }\n    }\n  ],\n  \"targets\": [\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md\"\n  ],\n  \"content_hashes\": {\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md\": \"cb1de4fac177597def06c8e030f15ee021ed8357fca735731b989d7a247f0d00\"\n  },\n  \"findings\": [],\n  \"domain_mismatches\": [],\n  \"summary\": {\n    \"total\": 0,\n    \"by_rule\": {},\n    \"by_pack\": {}\n  }\n}\n"
+ right: "{\n  \"engine\": {\n    \"name\": \"scrutinator\",\n    \"version\": \"0.1.0\"\n  },\n  \"packs\": [\n    {\n      \"name\": \"des-001\",\n      \"version\": \"0.1.0\",\n      \"domain\": {\n        \"include\": [\n          \"sih-engine/doc/**/*.md\",\n          \"**/scrutinator/fixtures/corpus/**/*.md\",\n          \"**/formatter/fixtures/**/*.md\"\n        ],\n        \"exclude\": [\n          \"**/skills/**\",\n          \"**/.agents/**\",\n          \"**/skill_like.md\"\n        ]\n      }\n    }\n  ],\n  \"targets\": [\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md\"\n  ],\n  \"content_hashes\": {\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md\": \"6bb38a7f1a6408e6803138a481343310f3c84cc3d608d64f32f4395400c40476\"\n  },\n  \"findings\": [],\n  \"domain_mismatches\": [],\n  \"summary\": {\n    \"total\": 0,\n    \"by_rule\": {},\n    \"by_pack\": {}\n  }\n}\n"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    scrutinator::tests::golden_des001_gov003
+
+test result: FAILED. 114 passed; 1 failed; 6 ignored; 0 measured; 0 filtered out; finished in 1.03s
+
+error: test failed, to rerun pass `--lib`
+     Running unittests src/bin/ask3repeater.rs (target/debug/deps/ask3repeater-549489906c4f0093)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/attractor.rs (target/debug/deps/attractor-41427f78f6ccccb5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/retriever.rs (target/debug/deps/retriever-fd4d15097ade0ff0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/scribe.rs (target/debug/deps/scribe-9cc2730b7fa5c77c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/scrutinator.rs (target/debug/deps/scrutinator-e753afdcb5a79d36)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/viewer.rs (target/debug/deps/viewer-3705d63952971b60)
+
+running 5 tests
+test tests::r2_collect_trails_empty_when_absent ... ok
+test tests::r1_read_args_preserves_repeated_flags_in_order ... ok
+test tests::r5_first_value_returns_first_match ... ok
+test tests::r4_attach_trail_info_multi_chain_trails_array_in_order ... ok
+test tests::r3_attach_trail_info_single_chain_byte_identical ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/attractor_cli.rs (target/debug/deps/attractor_cli-25ca45e407809f64)
+
+running 7 tests
+test t5_zero_network_deps_in_cargo ... ok
+test t5_zero_network_zero_llm_source_scan ... ok
+test t5_offline_runnable ... ok
+test t3_verify_two_values ... ok
+test t3_watch_two_values ... ok
+test t3_check_exit_codes ... ok
+test t3_sign_tri_state ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+
+     Running tests/attractor_contract.rs (target/debug/deps/attractor_contract-3ec9eea0c3f9a6fa)
+
+running 7 tests
+test t6_idempotent_replay_no_history_rewrite ... ok
+test t6_rules_version_shape ... ok
+test t4_multi_gid_no_cross_contamination ... ok
+test t4_leg_split_manifest ... ok
+test t4_assemble_field_compat_then_check_passes ... ok
+test t6_tri_state_mapping_four_dispositions ... ok
+test t4_engine_signcheck_passes_guard_crosscheck_unchanged ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/attractor_golden.rs (target/debug/deps/attractor_golden-0e1a791af081c143)
+
+running 9 tests
+test t1_contract_and_score_golden_frozen ... ok
+test t2_frozen_golden_zero_drift_after_freeze ... ok
+test t1_golden_frozen_with_dirty_targets ... ok
+test t2_rejection_envelopes_byte_identical ... ok
+test t2_contract_emit_byte_identical ... ok
+test t2_score_material_byte_identical ... ok
+test t2_stats_conclusion_equivalence ... ok
+test t2_signcheck_bytes_identical ... ok
+test t2_check_reports_byte_identical_all_scenarios ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/cli_multitrail.rs (target/debug/deps/cli_multitrail-0035eba0dd1bab6a)
+
+running 3 tests
+test c_pairing_three_states ... ok
+test a_multi_chain_parking_pairing ... ok
+test b_single_chain_regression_byte_identical ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests/integration_empty_hash.rs (target/debug/deps/integration_empty_hash-7b9368a56c585649)
+
+running 1 test
+test test_rebuilt_hash_chain_passes_verification ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_hash_chain.rs (target/debug/deps/integration_hash_chain-a79999fe55f5dbc1)
+
+running 1 test
+test test_hash_chain_integrity ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/mem_recall_f_suite.rs (target/debug/deps/mem_recall_f_suite-20d55456b7046d05)
+
+running 9 tests
+test f8_degradation_names_missing_base ... ok
+test f5_time_axis_day_filter ... ok
+test f4_event_axis_matches_query ... ok
+test f10_pack_archive_consistency ... ok
+test f3_topic_cross_archive ... ok
+test f6_no_judgment_fields ... ok
+test f1_five_archive_coverage ... ok
+test f2_refs_machine_verifiable has been running for over 60 seconds
+test f7_double_run_identical has been running for over 60 seconds
+test f2_refs_machine_verifiable ... ok
+test f7_double_run_identical ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 93.10s
+
+   Doc-tests sih_engine
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: 1 target failed:
+    `--lib`
+exit=101

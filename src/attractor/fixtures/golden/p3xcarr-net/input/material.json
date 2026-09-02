@@ -1,0 +1,20 @@
+{
+  "contract_path": "@ROOT@/input/contract.json",
+  "contract_sha256": "da3eb963a22f08fa03ccde16dbb3e7d5b8d2f4aa96fc12973cefe187c6afc4c6",
+  "criteria_version": "v3",
+  "date": "2026-09-02",
+  "dc_fingerprint": "2bbaffcdfdc75ccf",
+  "gate_verdict": "stable_clear",
+  "gid": "m-p3xcarr",
+  "identity_hash": "6d4f64821f00a5c6179a89ae76ff6138fe4f3a4a23577fdb0f94a4fb06e0633f",
+  "kind": "tally-check-input",
+  "n_shots": 5,
+  "responses_path": "@ROOT@/input/responses.jsonl",
+  "responses_sha256": "1eaf1abdb05fa1c378e07a7179db16c38027754cbfc4b46a80eaab07ff3762ae",
+  "rules_version": "des-011-r1",
+  "seat_baseline_path": "@ROOT@/input/seat-baseline.json",
+  "topic_path": "@ROOT@/input/topic.md",
+  "topic_sha256": "3ca81718e71785997bfa318d1063b574c69ee0b59f5694cb380bbf3d9001a2fb",
+  "trail_path": "@ROOT@/input/flywheel-trail.jsonl",
+  "voids": []
+}

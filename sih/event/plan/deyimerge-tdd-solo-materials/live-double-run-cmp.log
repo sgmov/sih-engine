@@ -1,0 +1,5 @@
+adisp-net: CMP-IDENTICAL exit=0
+p3xcarr-net: CMP-IDENTICAL exit=0
+dirty-suspend-near: CMP-IDENTICAL exit=0
+dirty-return-r2: CMP-IDENTICAL exit=1
+dirty-alarm-r7: CMP-IDENTICAL exit=0

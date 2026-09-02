@@ -1,0 +1,46 @@
+{
+  "artifacts_sha256": {
+    "build_probe_log": "dde0874db8390ab9ec33adfded2660b4b6d3d0f8cc2ea8b914aec15cace231b5",
+    "golden_readme": "800db1dd64a7b06cb2434588a1d6f44f9a41261e0279e7770ba47743fd5cd493",
+    "live_double_run_cmp_log": "1f1e1e6cbd3c4f6ae6e9cab0b7b03fed838226d62e8d56a0db15fcd8de367d58",
+    "live_double_run_score_log": "76c17aca7217890be72a25bdf901dd22b3698e5b7bcc1de7a23f95daf240c207",
+    "package": "0d7cbaafd08acf0c859ca0e6a6cd7c939a01425460f4a26962c262eb1f211bcc",
+    "pipeline_formatter_log": "2603380237ac2b9c5799afdc8dca8224f490f31c6a2561e58fe1b0c2cc5a82e1",
+    "pipeline_nomenclator_log": "8701d099917c14d36b04499d1776d0182f3fa1cf23d169725e96cc80fc969812",
+    "pipeline_scrutinator_log": "f287f56303d2ef017e732ef04cc9064c722b962dc61a78c89531d0d68426de21",
+    "results": "bb6b1e6da576119f8bf8a7f3199993811ee2cef62bfa1996fe835ece9cff7961",
+    "tdd_green_run_log": "9969ace2a35aa800b954605bedff45f89cb0a994e7c387495434370e7cf3c0f6",
+    "tdd_red_run1_log": "b1780dab1887ced197a5f8071f46b3fa21d7c43f0e95a16a5ccc96c51821d7fa"
+  },
+  "batch": "deyimerge-tdd-solo",
+  "date": "2026-09-02",
+  "live_double_run": {
+    "check_scenarios": 5,
+    "result": "CMP-IDENTICAL 全部且退出码对齐",
+    "score": "CMP-IDENTICAL"
+  },
+  "pipeline": {
+    "formatter": {
+      "check_exit": 0,
+      "targets": 3,
+      "write_first_run_zero_change": true
+    },
+    "nomenclator_core": {
+      "exit": 0,
+      "note": "首扫死词「入册」四处加一处改词后复检退零",
+      "targets": 3
+    },
+    "scrutinator_des001": {
+      "exit": 2,
+      "meaning": "域外如实记（des-001 域只盖 sih-engine/doc）",
+      "targets": 3
+    }
+  },
+  "session": "5e7a19c8bcbf8fd3",
+  "tests": {
+    "attractor_green": 28,
+    "failed": "scrutinator::tests::golden_des001_gov003（存量，主树同状态）",
+    "suite_failed": 1,
+    "suite_passed": 155
+  }
+}
