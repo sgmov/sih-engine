@@ -1,0 +1,11 @@
+{
+  "batch": "deyimerge-switch-solo",
+  "date": "2026-09-02",
+  "pipeline": "formatter general-v1 -> scrutinator des-001 -> nomenclator core",
+  "rule": "笔在核前；findings 亲读；域内目标必须零违规；域外 exit-2 如实记",
+  "in_domain": "GOV-003 v1.7 与 PARKING-v1 与 DEC-013 v1.2 与 SPEC-014 修订一 均 scrutinator exit 0 findings 0，tmp corpus 形路径承 sdd 批先例，逐件 JSON 证据 scr-*-indomain.json",
+  "domain_out": "state/plan 包档、event/plan 结果档、event/mergeback 完成档、sih-tools BATCH-FACE 与 facet/tally 两 CONTRACT，scrutinator exit-2 如实记不属违规",
+  "formatter": "全目标 exit 0 无需改",
+  "nomenclator": "全目标 exit 0 findings 0，三处死名勘正后复跑零违例即 GOV-003 v1.6 行 scrutiny 死名、包档与结果档 F-5 行入册死词",
+  "runs_total": 13
+}

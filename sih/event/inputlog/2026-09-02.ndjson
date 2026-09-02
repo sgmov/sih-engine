@@ -7,3 +7,5 @@
 {"seq": 7, "session_id": "sess-zcode-260902-acceptor", "input": "数学已经做了，主线还有什么？", "ts": "2026-09-01T23:10:00+00:00", "note": "逐字留档即 deyimerge-sdd-solo 批受理输入"}
 {"seq": 8, "session_id": "sess-zcode-260902-acceptor", "input": "得一裁融回", "ts": "2026-09-01T23:10:00+00:00", "note": "逐字留档即 deyimerge-sdd-solo 批受理输入即融回门开令"}
 {"seq": 9, "session_id": "sess-zcode-260902-acceptor", "input": "批准，照旧你拉子代理跑", "ts": "2026-09-01T23:43:00+00:00", "note": "逐字留档即 deyimerge-tdd-solo 批放行令"}
+{"seq": 10, "session_id": "sess-zcode-260902-acceptor", "input": "数学仓侧正在跑，你看下是否冲突，不冲突的内容先跑，级联锁可解，但是要做合并冲突检查", "ts": "2026-09-02T00:00:00+00:00", "note": "逐字留档即数学仓并线冲突协调输入，deyimerge-switch-solo 批受理补录"}
+{"seq": 11, "session_id": "sess-zcode-260902-acceptor", "input": "那边解锁了", "ts": "2026-09-02T00:00:00+00:00", "note": "逐字留档即数学侧解锁确认即合并冲突检查通道恢复，deyimerge-switch-solo 批受理补录"}

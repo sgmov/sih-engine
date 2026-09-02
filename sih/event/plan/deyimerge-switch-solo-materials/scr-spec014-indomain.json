@@ -22,10 +22,10 @@
     }
   ],
   "targets": [
-    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md"
+    "/private/tmp/scrutinator/fixtures/corpus/spec014-rev1.md"
   ],
   "content_hashes": {
-    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md": "76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b"
+    "/private/tmp/scrutinator/fixtures/corpus/spec014-rev1.md": "df48af3a3a4913a44aef083ef8cc63eb3841c2c9f19050609ecd32684c12ed36"
   },
   "findings": [],
   "domain_mismatches": [],

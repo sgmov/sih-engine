@@ -1,0 +1,59 @@
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/doc/governance/GOV-003-fullstate-course-v1.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=1 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/doc/governance/PARKING-v1.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/doc/decision/013-mergeback-gate.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/doc/spec/SPEC-014-attractor-mergeback-gap.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/sih/event/mergeback/mergeback-attractor-completion-2026-09-02.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/sih/state/plan/deyimerge-switch-solo.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=1 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/sih/event/plan/deyimerge-switch-solo-results.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=1 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/deyimerge-switch-solo/BATCH-FACE.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/deyimerge-switch-solo/facet/CONTRACT.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/deyimerge-switch-solo/tally/CONTRACT.md
+formatter_exit=0 :: }
+scrutinator_exit=2 :: findings: 0 mismatch: 0
+nomenclator_exit=0 :: }
+===== RERUN TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/doc/governance/GOV-003-fullstate-course-v1.md
+formatter_exit=0
+nomenclator_exit=0 findings=0
+===== RERUN TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/sih/state/plan/deyimerge-switch-solo.md
+formatter_exit=0
+nomenclator_exit=0 findings=0
+===== RERUN TARGET: /Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-switch-solo/sih/event/plan/deyimerge-switch-solo-results.md
+formatter_exit=0
+nomenclator_exit=0 findings=0
+INDOMAIN gov003-v17.md exit=1 findings 2
+INDOMAIN parking-v1.md exit=0 findings 0
+INDOMAIN dec013-v12.md exit=1 findings 2
+INDOMAIN spec014-rev1.md exit=1 findings 1
+INDOMAIN-RERUN gov003-v17.md exit=0 findings 0
+INDOMAIN-RERUN dec013-v12.md exit=0 findings 0
+INDOMAIN-RERUN spec014-rev1.md exit=0 findings 0
+FINAL-RERUN GOV-003-fullstate-course-v1.md formatter=0 nomenclator=0 findings=0
+FINAL-RERUN 013-mergeback-gate.md formatter=0 nomenclator=0 findings=0
+FINAL-RERUN SPEC-014-attractor-mergeback-gap.md formatter=0 nomenclator=0 findings=0
