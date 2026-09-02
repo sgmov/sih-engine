@@ -8,7 +8,7 @@
 
 - ask3 记录 sha256：`d9f4d27c80f339c3468a0d0c18e0ed4a9df34889acbea68a7e6fa99161ab60c3`
 - 意图事件：`intent_refined`，event_hash `564116155e7f932cefbf325260b6457b3298cdaf5107ebacdae7de404aa0125f`（前八位 `56411615`，event_id 2e6bf8fa-ba2d-487f-9414-38cc52f94060，当日链第 260 位）
-- 意图前链对表：dispatch 基线 254 事件，意图前实为 259 事件，差 5 件为 mathver-solo 在飞批事件尾随（intent 与 certification，会话 4c071022d4037662），承尾随申报先例如实申报；本批八事件（意图 260 位、补链 261 至 262 位、五签 263 至 267 位）链上连续无第三会话插入
+- 意图前链对表：dispatch 基线 254 事件，意图前实为 259 事件，差 5 件为 mathver-solo 在飞批事件尾随（intent 与 certification，会话 4c071022d4037662），承尾随申报先例如实申报；本批八事件（意图 260 位、补链 261 至 262 位、五签 263 至 267 位）链上连续无第三会话插入；五场各四件裁决工件即合同与计分材料与裁决材料与核对报告凡二十件认证 268 至 287 位随收口批补录（承 predsplitAB 逐件认证先例），意图前基线读数与件三跨会话重开的链位影响见第九节申报
 - 双门：scrutinator ask3 包零违规 exit 0（findings 0）；ask3repeater status ok（三锚，引文程序切片自 06-on-canon 73 行、07-on-assay 128 行、08-on-settle 114 行逐字节子串，切片由程序 find 断言承载）
 - 叩问：五词（流水、残局、双前缀、回执、坑位）五信号轻级 unregistered，digest passed 5/5；流水残局双前缀回执四词任务包原有，坑位一词随批补入任务包叩问处置节（工地副本）
 - 正身：identity verify anomalies 空（identity/reports/2026-09-02-sweep6-identity.json，不入版控），identity_hash `d9fd7386378da905f722a2b446da873990b78215e67225398186e2bfa7668e8f`
@@ -99,11 +99,12 @@ scribe、facet、tally、formatter、scrutinator、nomenclator、lease 七册各
 
 | 项 | 读数 |
 |---|---|
-| tools settle | 工地 worktrees/sih-tools/sweepclea6-solo 提交随 lease commit --stage settle --seq 1，归并 integral-stage-build |
-| engine settle | 工地 worktrees/sih-engine/sweepclea6-solo 提交随 lease commit --stage settle --seq 1，归并 main，cert `d21ca6db` |
-| 链 verify（settle 前） | 267 事件 valid，末哈希 `d21ca6dbd58ac5609c6f45434daec74a80496c7090c5e1d36b7ef2db5d7c8980` |
+| engine settle 段1 | 提交 3163a82（会话 ae4bb48718c18c57，cert `baa6df85`）已经收约归并 main 即 merge fea4d7e，件三代码与金向量与 SPEC-013 修订六与结果档首批在主 |
+| engine settle 段2 | 会话 7e7f6e476f43c658 补提交即链尾 287 事件与任务包补列两行与结果档终稿读数，归并 main |
+| tools settle | 会话 7e7f6e476f43c658 提交归并 integral-stage-build，cert `baa6df85` |
+| 链 verify（收口前） | 287 事件 valid，末哈希随收口对表节申报 |
 | 链 verify（收口后） | 收口后读数见收口对表节随批申报 |
-| reconcile | 双仓各一跑，读数随批申报 |
+| reconcile | 双仓各一跑，四类读数随完工报告申报（engine bypass 台账存量 1 正常态） |
 
 ## 八、F 表
 
@@ -127,3 +128,5 @@ scribe、facet、tally、formatter、scrutinator、nomenclator、lease 七册各
 9. identity/reports 与存量 untracked 零收编：batch-materials、c006-sb3、viewimpl 系 plan 两件、08-30 inputlog、task-packages、leasepatch 与 proposition-defense 两 M、pk-037/038/039、extinv 在飞件全零触碰；在飞批（mathver-solo）工件零触碰
 10. 判定语义边界：四十五发作答是本席逐发独立判定，命题文形是唯一裁决对象，作答未为收敛而协调措辞；依据族单值分布是实测结果非预设指标，闸与核对读数三方复算一致在案
 11. 泊界心跳未跑申报：本批 dispatch 机械链节未列例行读数与心跳项，会话开工未落例行读数链事件，如实申报
+12. 会话四开申报：件三 SPEC-013 修订注与 lease CALL-LOG 与 calibration ledger 三路径为派工授权执行件而任务包请求写入节漏列，settle 四验 staged_out_of_scope 三度如实拦下，按 deyimerge-sdd 陈旧会话拆除先例备份让位四开会话（a077847269f729ce→ae4bb48718c18c57→8f8e7ea3b518f473→7e7f6e476f43c658，前两笔零提交或仅 engine 段1 已归并，第三笔零提交），任务包请求写入节随批补列三路径，链事件落在会话 ae4bb（意图至五签）与 7e7f（二十件认证）两号如实申报
+13. 件三金向量重录两件以围堰修后输出重录而 SPEC-013 修订三所列净目标六件中 gov002 与 gov003 与 mathe 两件已因他批改版漂移（第四节第 4 条），两漂移族未随冻即金向量重冻欠账归后批如实申报

@@ -93,6 +93,8 @@
 - sih-engine/sih/event/trail/2026-09-02.ndjson
 - sih-engine/sih/event/inputlog/2026-09-02.ndjson
 - sih-tools/lease/ledger/
+- sih-tools/lease/CALL-LOG.md
+- sih-tools/facet/probes/calibration/ledger.jsonl
 - sih-tools/scribe/reports/
 - sih-tools/tally/CONTRACT.md
 - sih-tools/scribe/CALL-LOG.md
