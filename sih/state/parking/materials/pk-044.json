@@ -1,0 +1,15 @@
+{
+  "action": "enter",
+  "entry_id": "pk-044",
+  "title": "模型温度退役——用户直觉件，待数学管线程序闸门在役",
+  "context": "原 pk-043 温度直觉件经用户 2026-09-03 批准撞号改正重编承载。用户 2026-09-03 原话：数学管线跑通以后，模型温度可以退役。关联 mathpipe-full-program-v1.md 与路线档 governance-math-route-2026-09-02.md；既成事实即席位基线探针已以 temperature 0.0 读数。未决项即 facet 多发独立重采的独立性来源（跨厂模型差 vs 同模型多发的随机性），若重采独立性依赖温度则温度退役须待独立性来源先载体化裁定，次序不可倒",
+  "exit_condition": "数学管线程序收尾批闸门在役且 facet 重采独立性来源经裁定后，用户裁温度退役与否，裁退役即另开实装批",
+  "ttl_days": 30,
+  "id": "pk-044",
+  "path": "doc/governance/PARKING-v1.md",
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "ttl_days": 30
+  }
+}
