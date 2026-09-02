@@ -1,0 +1,59 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/pk013exit-solo-results.md"
+  ],
+  "findings": [
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "2. 任务包死词「入册」一处改「入版控」随批改正。",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/pk013exit-solo-results.md",
+      "line": 28,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.6.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 1,
+    "skipped": 0
+  }
+}
