@@ -1,0 +1,773 @@
+# atom.yaml
+# PRO-001 范式原语：调用类型定义（全局唯一）
+# P1 只定义 facetor_independent，P2/P4 加其他调用类型
+
+atoms:
+  facetor_independent:
+    description: 多 facetor 各自独立审阅，无交互无分叉（对应 fps5 实验范式）
+    role: senator          # LLM 调用，不是确定性程序
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1           # 不约束上限（单 key 单 LLM 可复用）
+    accepts_from:
+      - topic              # 只接 topic 输入
+    produces_to:
+      - facets             # 产出 facets
+    directions:
+      - id: explore
+        description: 独立探索，给定 topic 产出异质性 facets
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor）{role}
+
+          你是一个严格的技术审阅者。你的任务是对给定命题进行多角度审视，产出 Facet（发现）。
+          {role_prompt}
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1",
+                "anchor_ref": "<path>#L<line>",   <!-- 锚定到 topic.md 白名单内的行 -->
+                "target": "<被审视的内容>",
+                "reason": "<你的分析理由>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor"
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          请审阅以下议题，产出 facets：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  facetor_branch:
+    description: facetor 多轮内生分叉，读自己前序产出，沿不同语义链展开
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+      - facetor_branch
+    produces_to:
+      - facets
+    directions:
+      - id: explore
+        description: 独立探索——第一轮用，等同 facetor_independent 的 explore
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，第一轮）
+
+          你是一个严格的技术审阅者。你的任务是对给定命题进行多角度审视，产出 Facet（发现）。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<你的分析理由>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": 1,
+                "parent_facet_ids": []
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          请审阅以下议题，产出 facets：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+      - id: branch_out
+        description: 自我分叉——读前序 facets，沿不同语义链展开新方向，不深化同一方向
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，分叉轮）
+
+          你是一个严格的技术审阅者。你正在做多轮审阅的第 {round} 轮。
+
+          ## 前序产出
+          以下是你第 {prev_round} 轮的审阅发现：
+
+          {prior_facets}
+
+          ## 任务
+          基于你的前序发现，沿**不同的语义链**分叉出新的审视方向。不要深化已有方向，要展开新的视角。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r{round}",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<分叉理由：为什么这是新方向不是深化>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": {round},
+                "parent_facet_ids": ["<前序 facet id>"]
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - parent_facet_ids 必须引用前序产出中真实存在的 facet id
+          - reason 字段必须说明为什么这是分叉新方向，不是深化已有方向
+        user_prompt_template: |
+          请基于你的前序发现分叉审阅。议题内容供参考：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  facetor_reflect:
+    description: facetor 多轮自我反思，读自己前序产出，修正错误/补充遗漏/深化论证（不分叉新方向）
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+      - facetor_reflect
+    produces_to:
+      - facets
+    directions:
+      - id: explore
+        description: 独立探索——第一轮用，等同 facetor_independent 的 explore
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，反思第一轮）
+
+          你是一个严格的技术审阅者。你的任务是对给定命题进行多角度审视，产出 Facet（发现）。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<你的分析理由>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": 1,
+                "parent_facet_ids": []
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          请审阅以下议题，产出 facets：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+      - id: reflect
+        description: 自我反思——读前序 facets，审视准确性/完整性/深度，修正错误/补充遗漏/深化论证，不分叉新方向
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，反思轮）
+
+          你是一个严格的技术审阅者。你正在做多轮审阅的第 {round} 轮。
+
+          ## 前序产出
+          以下是你第 {prev_round} 轮的审阅发现：
+
+          {prior_facets}
+
+          ## 任务
+          审视你的前序发现：检查是否存在错误判断、遗漏的重要维度、或论证深度不足之处。修正错误、补充遗漏、深化论证。不要展开新的语义方向，只在已有发现上深化。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r{round}",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<反思理由：修正了什么错误/补充了什么遗漏/深化了什么论证>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": {round},
+                "parent_facet_ids": ["<前序 facet id>"]
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - parent_facet_ids 必须引用前序产出中真实存在的 facet id
+          - reason 字段必须说明这是对前序哪个发现的修正/补充/深化，不是展开新方向
+        user_prompt_template: |
+          请基于你的前序发现进行反思审阅。议题内容供参考：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  banor_attack:
+    description: banor 驳方对命题发起攻击，产出 attack facets
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+      - banor_attack        # 深化轮读自己的前序攻击产出
+    produces_to:
+      - pickor_defend       # 攻击产出被 pickor 防御
+      - banor_attack        # 深化轮链式衔接
+    directions:
+      - id: attack
+        description: 首轮攻击——读 topic，产出 attack facets
+        system_prompt_template: |
+          # 角色：驳方（banor）
+
+          你是一个严格的技术审阅者，以驳方身份对给定命题发起攻击。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "attacks": [
+              {{
+                "id": "a1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被攻击的目标>",
+                "reason": "<攻击理由>",
+                "severity": "<critical/major/minor>",
+                "source": "banor"
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 attack 必须锚定到 topic.md 的 anchors 白名单内
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          请对以下议题发起攻击，产出 attacks：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+      - id: deepen_attack
+        description: 深化攻击——读前序攻击 + pickor 防御产出，发起更深入的攻击
+        system_prompt_template: |
+          # 角色：驳方（banor，深化轮）
+
+          你是一个严格的技术审阅者，正在做多轮攻防的第 {round} 轮攻击。
+
+          ## 前序攻击
+          {prior_attacks}
+
+          ## 对方防御
+          {prior_defenses}
+
+          ## 任务
+          基于对方的防御，寻找新的攻击角度或深化已有攻击点。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "attacks": [
+              {{
+                "id": "a{round}_1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被攻击的目标>",
+                "reason": "<深化攻击理由>",
+                "severity": "<critical/major/minor>",
+                "source": "banor"
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 attack 必须锚定到 topic.md 的 anchors 白名单内
+          - 不要重复前序攻击已有的角度，要寻找新方向或深化未被有效防御的点
+          - 必须输出 valid JSON
+        user_prompt_template: |
+          请基于前序攻防继续攻击。议题内容供参考：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  pickor_defend:
+    description: pickor 辩方对 banor 的攻击做防御，产出 defense facets
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - banor_attack        # 防御承接攻击产出
+    produces_to:
+      - banor_attack        # 防御产出被 banor 下一轮攻击读取
+    directions:
+      - id: defend
+        description: 首次防御——读 banor attacks，产出 defenses
+        system_prompt_template: |
+          # 角色：辩方（pickor）
+
+          你是一个严格的技术审阅者，以辩方身份对驳方的攻击做防御。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "defenses": [
+              {{
+                "id": "d1",
+                "counters": "<被反驳的 attack id>",
+                "anchor_ref": "<path>#L<line>",
+                "reason": "<防御理由>",
+                "conceded": false
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 defense 的 counters 必须引用一个真实存在的 attack id
+          - 如果某个 attack 无法防御，设 conceded 为 true 并说明理由
+          - 每个 defense 必须锚定到 topic.md 的 anchors 白名单内
+          - 必须输出 valid JSON
+        user_prompt_template: |
+          请对以下攻击进行防御：
+
+          {attacks_content}
+
+          议题内容供参考：
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+      - id: counter_defend
+        description: 终轮防御——读深化后的 attacks，做最后防御
+        system_prompt_template: |
+          # 角色：辩方（pickor，终轮）
+
+          你是一个严格的技术审阅者，正在做多轮攻防的最后一轮防御。
+
+          ## 待防御攻击（深化轮）
+          {attacks_content}
+
+          ## 前序防御
+          {prior_defenses}
+
+          ## 任务
+          对深化后的攻击做最后防御。你已经做过一轮防御，现在面对的是对方基于你的防御找到的新角度。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "defenses": [
+              {{
+                "id": "d{round}_1",
+                "counters": "<被反驳的 attack id>",
+                "anchor_ref": "<path>#L<line>",
+                "reason": "<最终防御理由>",
+                "conceded": false
+              }}
+            ]
+          }}
+          ```
+        user_prompt_template: |
+          请对以下深化攻击做最终防御：
+
+          {attacks_content}
+
+          议题内容供参考：
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  draftor_filter:
+    description: draftor 筛选轮判定，从多份攻击文档选视角差异最大的
+    role: draftor
+    actor_constraint:
+      draftor:
+        min: 1
+        max: 1
+      senator:
+        min: 0
+        max: 0
+    accepts_from:
+      - banor_attack        # 读多份攻击文档的摘要
+    produces_to:
+      - pickor_defend       # 筛选结果决定哪些攻击文档进入防御轮
+      - banor_attack        # 筛选结果决定哪些攻击文档继续
+    directions:
+      - id: filter
+        description: 筛选判定——从多份 banor 文档选视角差异最大的 2 份
+        system_prompt_template: |
+          # 角色：主理方（draftor，筛选轮）
+
+          你是审阅流程的主理方，负责从多份攻击文档中筛选出视角差异最大的 2 份。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "selected": ["<actor_id_1>", "<actor_id_2>"],
+            "rationale": "选择这 2 份的异质性理由"
+          }}
+          ```
+
+          ## 规则
+          - 选视角差异最大的 2 份，不是质量最高的 2 份
+          - selected 中的 actor_id 必须在给定的文档列表中
+          - 必须输出 valid JSON
+        user_prompt_template: |
+          请从以下攻击文档摘要中选 2 份视角差异最大的：
+
+          {doc_summaries}
+        validator: filter_selection
+        validator_params:
+          max_selected: 2
+
+  draftor_collab:
+    description: draftor 调整轮协作补充，对现有攻防文档补协作理解
+    role: draftor
+    actor_constraint:
+      draftor:
+        min: 1
+        max: 1
+      senator:
+        min: 0
+        max: 0
+    accepts_from:
+      - banor_attack        # 读攻击文档
+      - pickor_defend       # 读防御文档
+    produces_to:
+      - banor_attack        # 协作补充附加到攻击文档
+    directions:
+      - id: collab
+        description: 协作补充——在现有攻防文档基础上补协作理解，产出 markdown 文本
+        system_prompt_template: |
+          # 角色：主理方（draftor，调整轮）
+
+          你是审阅流程的主理方，负责对现有攻防文档做协作补充。
+
+          ## 任务
+          在现有 banor 攻击文档基础上，补充对 banor 攻击点的协作理解，产出 markdown 文本。
+
+          注意：你是在补充理解，不是在收敛方向。保留 banor 的原始攻击角度。
+        user_prompt_template: |
+          请对以下攻防文档做协作补充：
+
+          {doc_content}
+        validator: markdown_output
+        validator_params:
+          min_length: 50
+
+  facetor_collab:
+    description: facetor 多轮协作审阅，读所有 facetor 前序产出，查缺补漏不重复
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+      - facetor_collab
+    produces_to:
+      - facets
+    directions:
+      - id: explore
+        description: 独立探索——第一轮用，等同 facetor_independent 的 explore
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，协作第一轮）
+
+          你是一个严格的技术审阅者。你的任务是对给定命题进行多角度审视，产出 Facet（发现）。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<你的分析理由>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": 1,
+                "parent_facet_ids": []
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          请审阅以下议题，产出 facets：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+      - id: collab
+        description: 协作补漏——读所有 facetor 的前序发现，补充遗漏，不重复已发现
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，协作补漏轮）
+
+          你是一个严格的技术审阅者。你正在做多轮审阅的第 {round} 轮。
+
+          ## 所有 facetor 的前序产出
+          以下是第 {prev_round} 轮所有 facetor 的审阅发现：
+
+          {prior_facets}
+
+          ## 任务
+          阅读上述所有 facetor 的发现，找出他们**遗漏的问题**。不要重复已发现的发现，要补充新的视角和盲区。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r{round}",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<补漏理由：为什么这是前序审阅遗漏的>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": {round},
+                "parent_facet_ids": ["<前序 facet id>"]
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - parent_facet_ids 必须引用前序产出中真实存在的 facet id
+          - reason 字段必须说明为什么这是前序审阅遗漏的问题，不是重复
+        user_prompt_template: |
+          请基于所有 facetor 的前序发现协作补漏。议题内容供参考：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  facetor_partition:
+    description: facetor 集团协作审阅，锚点空间分割强制结构分离，partition 轮各审一部分，merge 轮审全局合并视图
+    role: senator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+      - facetor_partition
+    produces_to:
+      - facets
+    directions:
+      - id: explore_partition
+        description: 分区探索——第一轮用，只看自己分到的锚点子集（runner 按 facetor 数轮转分割注入 my_anchors_content）
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，分区第一轮）
+
+          你是一个严格的技术审阅者。你正在参与集团协作审阅的第一轮（分区探索）。
+          议题的锚点被分割成若干不相交子集，你被分配到其中一个子集。请**只针对你分到的锚点段**做深入审视，不要讨论你没看到的锚点。
+
+          ## 任务
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r1",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<你的分析理由>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": 1,
+                "parent_facet_ids": []
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到你分到的锚点段内（anchor_ref 引用下方分配给你的锚点）
+          - severity 仅当发现构成命题成立性的根本性缺陷时用 critical
+          - 必须输出 valid JSON，可以用 ```json 围栏但不能有 JSON 以外的内容
+        user_prompt_template: |
+          你被分配了以下锚点段（每个锚点段标注了文件路径与行号，anchor_ref 按此格式引用）。请只针对这些内容产出 facets：
+
+          {my_anchors_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+      - id: review_merged
+        description: 合并审视——第二轮，读所有 facetor 的分区产出 + 完整议题，识别跨分区的遗漏与冲突
+        system_prompt_template: |
+          # 角色：异质性审阅者（facetor，合并审视轮）
+
+          你是一个严格的技术审阅者。你正在参与集团协作审阅的第 {round} 轮（合并审视）。
+          第一轮中，所有 facetor 各自审阅了议题的不同分区。现在你看到的是合并后的全局视图，包括所有 facetor 的分区产出。
+
+          ## 所有 facetor 的前序产出
+          以下是第 {prev_round} 轮所有 facetor 的审阅发现：
+
+          {prior_facets}
+
+          ## 任务
+          审视合并后的全局视图，识别**跨分区的遗漏和冲突**：被各分区独立视角忽略的问题、分区之间可能存在的矛盾、分区边界上容易被独立视角漏掉的关联。不要重复已发现的发现。
+
+          严格按以下格式输出 JSON，不得输出 JSON 以外的内容：
+
+          ```json
+          {{
+            "facets": [
+              {{
+                "id": "f1_r{round}",
+                "anchor_ref": "<path>#L<line>",
+                "target": "<被审视的内容>",
+                "reason": "<合并审视理由：跨分区的遗漏或冲突>",
+                "severity": "<critical/major/minor>",
+                "source": "facetor",
+                "round": {round},
+                "parent_facet_ids": ["<前序 facet id>"]
+              }}
+            ]
+          }}
+          ```
+
+          ## 规则
+          - 每个 facet 必须锚定到 topic.md 的 anchors 白名单内
+          - parent_facet_ids 必须引用前序产出中真实存在的 facet id
+          - reason 字段必须说明这是跨分区的遗漏或冲突，不是重复
+        user_prompt_template: |
+          请基于所有 facetor 的前序发现做合并审视。完整议题内容供参考：
+
+          {topic_content}
+        validator: anchor_whitelist
+        validator_params:
+          strict: true
+
+  integrator:
+    description: 积分器，在规范性指导下对命题产出结构化决策（二元判定 + 依据基线 + 边界自评）
+    role: integrator
+    actor_constraint:
+      senator:
+        min: 1
+        max: -1
+    accepts_from:
+      - topic
+    produces_to:
+      - decision
+    directions:
+      - id: judge
+        description: 在规范性指导下对命题做出二元决策判定
+        system_prompt_template: |
+          你是治理规约裁定者。严格依据以下规约判定命题：
+
+          {normative_guidance}
+
+          前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：
+
+          {divergence_shape}
+
+          按指定 JSON schema 输出，不要输出 JSON 以外的文本。
+
+          输出格式：
+          {"decision": "comply 或 violate", "basis_regulation": "baseline_1 或 baseline_4 或 baseline_5", "reason": "一句话理由", "boundary_flag": true 或 false}
+
+          字段说明：
+          - decision: 命题是否符合规约（comply=符合, violate=违反）
+          - basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）
+          - reason: 一句话理由，指明依据哪条规约的哪条要求
+          - boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）
+        user_prompt_template: |
+          命题：{proposition}
+        validator: json_schema
+        validator_params:
+          required_fields:
+            - decision
+            - basis_regulation
+            - reason
+            - boundary_flag
+          schema:
+            type: object
+            properties:
+              decision:
+                type: string
+                enum: ["comply", "violate"]
+              basis_regulation:
+                type: string
+                enum: ["baseline_1", "baseline_4", "baseline_5"]
+              reason:
+                type: string
+              boundary_flag:
+                type: boolean

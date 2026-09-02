@@ -1,0 +1,5 @@
+== 构建探针（cargo build 后实跑 attractor 一行行为验证）==
+{
+  "alarms": [],
+  "direction": "comply",
+probe_exit=0

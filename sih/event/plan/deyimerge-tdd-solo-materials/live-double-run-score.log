@@ -1,0 +1,3 @@
+== score 活体双跑（同工作区同路径串，围堰闸 v3 判定 stable_clear 显式传引擎）==
+py gate: stable_clear runs: 9
+score: CMP-IDENTICAL

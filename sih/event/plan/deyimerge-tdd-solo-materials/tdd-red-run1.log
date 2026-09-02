@@ -1,0 +1,133 @@
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:356:4
+    |
+356 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 1 warning
+   Compiling sih-engine v0.1.0 (/Users/moc/workspaces/SiHankor/worktrees/sih-engine/deyimerge-tdd-solo)
+error: environment variable `CARGO_BIN_EXE_attractor` not defined at compile time
+  --> tests/attractor_cli.rs:21:5
+   |
+21 |     env!("CARGO_BIN_EXE_attractor")
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: `CARGO_BIN_EXE_attractor` may not be available for the current Cargo target
+   = help: Cargo sets build script variables at run time. Use `std::env::var("CARGO_BIN_EXE_attractor")` instead
+
+error: environment variable `CARGO_BIN_EXE_attractor` not defined at compile time
+   --> tests/attractor_contract.rs:108:28
+    |
+108 |     let out = Command::new(env!("CARGO_BIN_EXE_attractor"))
+    |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: `CARGO_BIN_EXE_attractor` may not be available for the current Cargo target
+    = help: Cargo sets build script variables at run time. Use `std::env::var("CARGO_BIN_EXE_attractor")` instead
+
+error[E0432]: unresolved import `sih_engine::attractor`
+  --> tests/attractor_cli.rs:14:17
+   |
+14 | use sih_engine::attractor::tally;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+  --> tests/attractor_contract.rs:14:17
+   |
+14 | use sih_engine::attractor::jsonc::canonical_json;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0432]: unresolved import `sih_engine::attractor`
+  --> tests/attractor_contract.rs:13:17
+   |
+13 | use sih_engine::attractor::contract_mode;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0432]: unresolved import `sih_engine::attractor`
+  --> tests/attractor_contract.rs:15:17
+   |
+15 | use sih_engine::attractor::tally;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+  --> tests/attractor_golden.rs:14:17
+   |
+14 | use sih_engine::attractor::jsonc::canonical_json;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0432]: unresolved import `sih_engine::attractor`
+  --> tests/attractor_golden.rs:13:17
+   |
+13 | use sih_engine::attractor::contract_mode;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0432]: unresolved import `sih_engine::attractor`
+  --> tests/attractor_golden.rs:15:17
+   |
+15 | use sih_engine::attractor::tally;
+   |                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+warning: unused import: `Path`
+ --> tests/attractor_contract.rs:8:17
+  |
+8 | use std::path::{Path, PathBuf};
+  |                 ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+   --> tests/attractor_cli.rs:135:48
+    |
+135 |     fs::write(&rp, format!("{}\n", sih_engine::attractor::jsonc::canonical_json(&report))).unwrap();
+    |                                                ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+   --> tests/attractor_golden.rs:202:29
+    |
+202 |     let atoms = sih_engine::attractor::paradigm_loader::load_atoms(
+    |                             ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+   --> tests/attractor_cli.rs:142:33
+    |
+142 |     fs::write(&rp2, sih_engine::attractor::jsonc::canonical_json(&bad)).unwrap();
+    |                                 ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+   --> tests/attractor_golden.rs:207:21
+    |
+207 |         sih_engine::attractor::contract_mode::sha256_bytes(ng.as_bytes()),
+    |                     ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+warning: unused import: `Path`
+ --> tests/attractor_golden.rs:9:17
+  |
+9 | use std::path::{Path, PathBuf};
+  |                 ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+error[E0433]: cannot find `attractor` in `sih_engine`
+   --> tests/attractor_cli.rs:163:43
+    |
+163 |               format!("{}\n", sih_engine::attractor::jsonc::canonical_json(&report))).unwrap();
+    |                                           ^^^^^^^^^ could not find `attractor` in `sih_engine`
+
+warning: unused variable: `merged`
+   --> tests/attractor_contract.rs:171:16
+    |
+171 |     for (line, merged) in manifest.iter().filter(|(_, m)| *m) {
+    |                ^^^^^^ help: if this is intentional, prefix it with an underscore: `_merged`
+    |
+    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0432, E0433.
+For more information about an error, try `rustc --explain E0432`.
+warning: `sih-engine` (test "attractor_contract") generated 2 warnings
+error: could not compile `sih-engine` (test "attractor_contract") due to 4 previous errors; 2 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `sih-engine` (test "attractor_cli") due to 5 previous errors
+warning: `sih-engine` (test "attractor_golden") generated 1 warning
+error: could not compile `sih-engine` (test "attractor_golden") due to 5 previous errors; 1 warning emitted
+exit=101

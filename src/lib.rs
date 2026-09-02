@@ -6,6 +6,7 @@
 //! 三个入口，按确定性程序规则运行。
 
 pub mod ask3repeater;
+pub mod attractor;
 pub mod event_stream;
 pub mod retriever;
 pub mod scrutinator;
@@ -17,6 +18,7 @@ pub use ask3repeater::{
     InputRecord, InquiryStage, IntentContract, INTENT_EVENT_CLASS, INTENT_EVENT_TYPE,
     OutputRecord, PhilosophyRef, SessionContext,
 };
+pub use attractor::{compiler, contract_mode, jsonc, model_utils, paradigm_loader, stats, tally, validators, anchors as attractor_anchors};
 pub use event_stream::{
     append, compute_event_hash, load_events, query, verify, AggregationResult, AppendError,
     AppendSuccess, Actor, ActorType, Event, EventAggregate, EventFilter, EventInput, EventList,
