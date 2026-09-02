@@ -1,0 +1,73 @@
+{
+  "checked": [],
+  "findings": [],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.6.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/APP-01.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/EPI-12.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/EPI-13.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/EPI-14.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/EPI-15.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-00.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-01-lineage-principles.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-01-name-ontology.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-01-naming-failure.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-02-divergence-forms.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-02-first-tao-as-chain.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-03.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-04.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-05-fourth-tao-main.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-05-gap-growth-dynamics.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-06.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-07.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-08.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-09-acknowledge.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-09-infuse.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-09-overcome.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-09.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-10-a.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-10-b.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-10-c.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-10-d.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-philosophy/philwave-parallel/llm-friendly-build/entries/PRO-11.md"
+  ],
+  "summary": {
+    "checked": 0,
+    "findings": 0,
+    "skipped": 27
+  }
+}
