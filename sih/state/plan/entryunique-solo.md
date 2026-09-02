@@ -51,11 +51,13 @@ park enter 增第三道门号源唯一拒：判据即重放面（链目录全量
 
 - sih-engine/src/event_stream/park.rs
 - sih-engine/src/bin/scribe.rs
+- sih-engine/src/event_stream/tdd_tests.rs
 - sih-engine/doc/spec/SPEC-006-scribe-mergeback-gap.md
 - sih-engine/sih/state/plan/entryunique-solo.md
 - sih-engine/sih/event/plan/entryunique-solo-results.md
 - sih-engine/sih/event/plan/entryunique-solo-materials/
 - sih-engine/sih/event/trail/<开工实日>.ndjson
+- sih-engine/sih/event/inputlog/2026-09-03.ndjson
 - sih-tools/scribe/reports/
 - sih-tools/scribe/CALL-LOG.md
 - sih-tools/scrutinator/CALL-LOG.md
