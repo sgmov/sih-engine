@@ -33,6 +33,8 @@
 
 2026-09-01 修订五，scrutmerge-switch-solo 批重开切换执行记录：承修订三挂起裁定与修订四 goldfix 整改完成，本批重开以同参形条款为切换成立判据。双跑判据执行实录：cargo build 1 warning 来自主树已存在 retriever 集成根 dead code 非本批触发红线守住；cargo test --lib 107 passed 0 failed 6 ignored 含金向量 12 件逐字节断言全过；三目标 SPEC-013 DEC-020 GOV-002 同参形双跑 cmp 0 即零差且退出码一致，证据入材料件 `sih-engine/sih/event/plan/scrutmerge-goldfix-solo-materials/dualrun-cmp.json` 与本批收编 `2026-09-01-switch-stop-engine-*.json` 与 `2026-09-01-switch-stop-tools-*.json` 六件。核阅位换旗完成：根 AGENTS.md 三处核阅位即概览行、核阅调用行、文件索引行改指引擎件 `sih-engine/target/debug/scrutinator`、BATCH-FACE.md 核阅腿命令同步改引擎件路径、宪法节与两条启动命令一字不碰字节级 diff 自证仅限三行核阅位。工具件退役完成：`sih-tools/scrutinator/CONTRACT.md` 加退役登记承书简先例即转兼容只读、src 与 tests 与 packs 零改动、CALL-LOG 落尾行。本批本规格不再修订仅以修订五作切换执行记录归档。
 
+2026-09-02 修订六，sweepclea6-solo 批双前缀双侧同步修正注：修订四「字符集消息 U+U+{char} 双前缀照抄不修」条款所指双前缀笔误已双侧同步修正于本日，即工具件字符集载荷生成位与引擎件 rule.rs 对应位同步去负载前缀改裸码点、模板 U+{char} 渲染单前缀，受影响金向量两件 des-001-dec020 与 des-001-goldfix-001-multiflag 以围堰修后输出重录，规则判定语义零变，三目标同参形双跑 cmp IDENTICAL 复验在档；本条即照抄不修条款的双前缀尾注更新，条款其余字面不变。
+
 ## 家位与模块形 {#shape}
 
 ### 库模块 src/scrutinator/ {#lib}

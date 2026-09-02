@@ -35,7 +35,7 @@
       "location": {
         "line": 16
       },
-      "message": "字符 U+U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+      "message": "字符 U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
     },
     {
       "pack": "des-001",

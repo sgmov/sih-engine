@@ -1,0 +1,11 @@
+{
+  "batch": "deyimerge-switch-solo",
+  "phase": "post-merge verification (after close, in-flight)",
+  "cargo_golden": "cargo test --lib golden_des001_gov003: 1 passed 0 failed",
+  "cargo_lib": "cargo test --lib: 115 passed 0 failed 6 ignored",
+  "main_gov003_sha256": "76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b",
+  "fixture_hash_match": true,
+  "dualrun": "engine exit 0 / weir exit 0 / cmp IDENTICAL on main-tree real domain path v1.7",
+  "engine_vs_fixture": "cmp IDENTICAL",
+  "pk_036": "exit condition satisfied, golden green on merged main"
+}
