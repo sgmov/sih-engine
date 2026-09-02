@@ -13,7 +13,7 @@
 | F-2 | 12 件对表读数全载；漂移件全数有合法出处或停批 | 过 | 12 件现行二进制实跑逐字节对表九同判三漂移；三漂移出处全为已结算批即 settlement-v1-solo 段1 6d76fd7（GOV-003 v1.9 追记）与 relaud-solo 段1 48724c4（LIM-001 与 MUL-001 状态行补齐）；findings 三件均零变化只刷 content_hashes 各一行；重录后 live 实跑三件 IDENTICAL、工地 cargo test 全套 exit 0（182 过 6 忽略 0 败）；对表与重录 cmp 证据见 2026-09-03-pendsweep-solo-golden-cmp.json |
 | F-3 | CONTRACT 修订一条在场，触发链四步逐字可读 | 过 | gauge CONTRACT 版本节增 0.3.0（编号递增），ga-1 校准窗满条件与触发链四步（窗满、解析校准尝试、解析不可行、pk-042 出泊复检走得一裁过即实验批）逐字在场，公式与读数零改动 |
 | F-4 | 名册行与链事件逐条对上；pk-043 出泊、pk-041 记账位、pk-042 触发链三行在场 | 过 | 对表读数见下节；引擎名册 pk-041 行补记账位主会裁定、pk-043 行撞号披露照录加登记面实名更正、pk-036 行随冻实态；工具名册 pk-042 行触发链补记；零泊界事件写入 |
-| F-5 | 链 verify 0；reconcile 双零；管线 findings 亲读留证 | 过（段2 终稿载读数） | 见收口读数节 |
+| F-5 | 链 verify 0；reconcile 双零；管线 findings 亲读留证 | 过 | 见收口读数节：链 verify valid 34 事件、reconcile 双仓四类双零、管线 findings 全数亲读零违规零违例 |
 
 ## 分道申报
 
@@ -44,18 +44,33 @@
 
 笔在核前判在书简前，序固定化格、核阅、检词，逐目标亲读 findings：
 
-- 化格 formatter general-v1 --write：15 目标全 exit 0 无需改（tools 工地 12 件加 engine 工地 3 件）；dispatch.md as-found 入册不做化格（承 idcore-solo 先例）。
+- 化格 formatter general-v1 --write：15 目标全 exit 0 无需改（tools 工地 12 件加 engine 工地 3 件）；dispatch.md as-found 随批落版控不做化格（承 idcore-solo 先例）。
 - 核阅 scrutinator --pack des-001 裸名：引擎名册直跑工地路径域外 exit-2，经 corpus 匹配路径副本实跑 exit 0 零发现（承 mathpipe-a1-solo 先例）；其余 14 目标域外 exit-2 如实记（tools 12 件加任务包加结果档），域外不属违规。
 - 检词 nomenclator check --pack packs/core（工地包 0.8.0 含三新词）：tally CONTRACT 与 gauge CONTRACT 与工具名册与引擎名册（经 sih-engine/doc 匹配副本）与九调用册与任务包与结果档全 exit 0 零违例。
 - 汇总证据件：scribe/reports/2026-09-03-pendsweep-solo-fmt.json、-scr.json、-nom.json。
 
 ## 认证清单
 
-（段1 落逐件认证事件哈希。）
+五笔认证逐件经 meter 包裹引擎 scribe append 上链（--exit-code 0，会话 c6a4af77e65e3a5e）：
+
+| 链事件 | doc_id | event_hash |
+|---|---|---|
+| 30 | 2026-09-03-pendsweep-solo-golden-cmp | 9d56da57cadbc707f39f0ad9467489436c5eca8b48a4d598252098df8680101e |
+| 31 | 2026-09-03-pendsweep-solo-tests | f7f91627bc13b79deb16d67c481762e92a0388517e58603acefe18084747ba52 |
+| 32 | 2026-09-03-pendsweep-solo-fmt | 817e36a98dfd71e6accb16d1d82defcd7f0550e9cd4107a0b2258ad08b61013f |
+| 33 | 2026-09-03-pendsweep-solo-scr | a98147567137f12908ad928fe85c1087740b99158ed03569ae86fc8fc645a411 |
+| 34 | 2026-09-03-pendsweep-solo-nom | 5c6c4298f94a7e93ac20ec80c6bf4eef795643d22edfc2e9934933e008868490 |
+
+intent 事件 26（16e2edc060d9bedc）与 ask3 记录绑定。settle 认证挂接即 --cert 5c6c4298。
 
 ## 收口读数
 
-（段2 终稿载：settle 前后链 wc 与末哈希对表、双仓 commit 号、reconcile 读数、链 verify、close 归并对表。）
+- settle 前链对表：wc 34、first 94f1dd00d94ad3b7、last 5c6c4298f94a7e93（prechain 证据件在案）；settle 后链对表：wc 34、last 同——settle 与 close 零追加，前后一致。
+- 双仓段1 settle：tools c7b454c6（base integral-stage-build@f5d4c976）、engine 3781e91（base main@00c8a4a），认证挂接 5c6c4298。
+- close 归并：tools acb88aa8、engine 963f94f，双支 msh/pendsweep-solo 删支、双 worktree 拆本、会话吊销一次成（tools 侧首跑因工地 .venv 与未 stage 账本残物拆本失败申报见越线节，清残重跑成）。
+- 归并对表：scribe/reports 13 件与 trail 与 inputlog 与 dispatch.md 备份对归并件逐字节 IDENTICAL；任务包备份对归并件 diff 恰为工作清单勾选五行即本批意图内变更。
+- reconcile：tools unrouted 0、cert_missing 0、unbypassed 0、bypass 0、session_orphan 0（routed 50）；engine unrouted 0、cert_missing 0、unbypassed 0、bypass 1（存量常态在案）、session_orphan 0（routed 79）——四类双零。
+- 链 verify 终态：status valid、34 events、first 94f1dd00d94ad3b7、last 5c6c4298f94a7e93。
 
 ## 越线与误差申报
 
@@ -67,6 +82,11 @@
 6. 检词 register 首跑三笔拒（拒因 state 非法 None，词条缺三态字段），补 state=established 后三笔 registered，manifest 0.7.0 升 0.8.0。
 7. gauge 无 CALL-LOG.md（历批未建），本批守任务包 scope 显式枚举不新建，gauge 触及记录载本档与 lease 与 meter 调用册。
 8. 主树未跟踪与未提交件的收约让位处置（任务包勾选版、trail 与 inputlog 与账本活体拷贝、报告件）见收口读数节归并对表结论。
+9. meter --quiet 位形漂移：BATCH-FACE 坑位注记「旗标置子命令前即 meter --quiet run」实跑仍报 unrecognized arguments（本 meter 版无 --quiet 位），去旗标原形执行，认证五笔零影响，漂移登记于此。
+10. 账本活体（lease/ledger locks 与 sessions 两件）不在任务包 scope 显式枚举内，tools 段1 settle 范围检查拒其入提交（staged_out_of_scope 如实处置为还原未 stage），主树活体为准留待后续批尾随同步（承 sweepclea6-solo 段2 bffbee02 先例形态）；meter counts 当日件未生成，无拷入。
+11. tools 侧 close 首跑 worktree 拆本失败（工地 .venv 与未 stage 账本残物），归并本身已落（acb88aa8），清残后重跑 close 成（拆本加删支加吊销）；engine 侧首次即成。
+12. 泊界心跳读数披露：工具线 pk-013 与 pk-042 两件 P101 谓词失败入 scrap_track 路（pk-013 已出泊在案、pk-042 在泊触发链已钉），alarms 空退出码零，如实转述不代裁。
+13. 结果档终稿检词一笔违例即死词「入册」（死档登记义项为粤语坐监，severity high），系本档管线节沿袭前批档面措辞所致，改「随批落版控」后复检零违例；初稿检词零违例与终稿检出之差记为主树包与工地包死档面一致而检查时机不同步所致，以终稿复检零违例为准。
 
 ## 队形声明
 
