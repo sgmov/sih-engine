@@ -1,0 +1,12 @@
+{
+  "state": "red",
+  "scenario": "已出泊号复用 enter（修前）",
+  "chain_dir": "/tmp/entryunique-redgreen",
+  "trail": "/tmp/entryunique-redgreen/2026-09-03.ndjson",
+  "record": "{\"action\":\"enter\",\"entry_id\":\"pk-rg-1\",\"title\":\"红绿测试复用\",\"exit_condition\":\"测试即弃\",\"ttl_days\":7}",
+  "binary": "sih-engine/target/debug/scribe（修前）",
+  "result": "appended",
+  "exit_code": 0,
+  "event_hash": "3ba86469232bb595519b058dba863f4124e96d9bb77e7a4cd7fd4491f19dec38",
+  "captured_at": "2026-09-03"
+}

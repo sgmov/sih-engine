@@ -19,6 +19,7 @@ pub enum ParkError {
     InvalidDisposition(String),
     ReEnterRejected(String),
     OrphanExitRejected(String),
+    EntryIdUsedRejected(String),
 }
 
 fn entry_parked(existing: &[Event], entry_id: &str) -> bool {
@@ -39,7 +40,20 @@ fn entry_parked(existing: &[Event], entry_id: &str) -> bool {
     parked
 }
 
-/// 双动作 enter 与 exit，配对不变量两道门按既有事件链序重放判定。
+/// 号源唯一判据即重放面内该 entry_id 出现过任何 parking_entered 即已用，承 entryunique-solo 修订二。
+fn entry_id_used(existing: &[Event], entry_id: &str) -> bool {
+    existing.iter().any(|e| {
+        e.event_type == "parking_entered"
+            && e.details
+                .as_ref()
+                .and_then(|d| d.as_object())
+                .and_then(|d| d.get("entry_id"))
+                .and_then(|v| v.as_str())
+                == Some(entry_id)
+    })
+}
+
+/// 双动作 enter 与 exit，配对不变量三道门按既有事件链序重放判定。
 pub fn park_event(
     record_text: &str,
     existing: &[Event],
@@ -62,6 +76,9 @@ pub fn park_event(
                 .to_string();
             if entry_parked(existing, &entry_id) {
                 return Err(ParkError::ReEnterRejected(entry_id));
+            }
+            if entry_id_used(existing, &entry_id) {
+                return Err(ParkError::EntryIdUsedRejected(entry_id));
             }
             let title = obj
                 .get("title")
@@ -248,5 +265,60 @@ mod scope_tests {
         assert_eq!(day_b.len(), 1);
         assert_eq!(day_b[0].prev_hash, GENESIS_PREV_HASH);
         assert_eq!(day_b[0].event_type, "parking_exited");
+    }
+
+    #[test]
+    fn new_entry_passes() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-eu-1","title":"新号过","exit_condition":"测试即弃","ttl_days":7}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-03.ndjson", enter, t1);
+        let events = load_events(&dir.path().join("2026-09-03.ndjson")).unwrap();
+        assert_eq!(events.len(), 1);
+        assert_eq!(events[0].event_type, "parking_entered");
+    }
+
+    #[test]
+    fn in_parking_reenter_rejected_regression() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-eu-2","title":"在泊重入拒","exit_condition":"测试即弃","ttl_days":7}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-03.ndjson", enter, t1);
+        let scope = load_parking_scope(&dir.path().join("2026-09-03.ndjson")).unwrap();
+        assert!(matches!(
+            park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(10)),
+            Err(ParkError::ReEnterRejected(_))
+        ));
+    }
+
+    #[test]
+    fn exited_number_reuse_rejected() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-eu-3","title":"已出泊号复用拒","exit_condition":"测试即弃","ttl_days":7}"#;
+        let exit = r#"{"action":"exit","entry_id":"pk-eu-3","disposition":"discarded","ruling":"测试即弃"}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-03.ndjson", enter, t1);
+        park_to(dir.path(), "2026-09-03.ndjson", exit, t1 + chrono::Duration::seconds(10));
+        let scope = load_parking_scope(&dir.path().join("2026-09-03.ndjson")).unwrap();
+        assert!(matches!(
+            park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(20)),
+            Err(ParkError::EntryIdUsedRejected(_))
+        ));
+    }
+
+    #[test]
+    fn cross_day_used_number_rejected() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-eu-4","title":"跨天已用号拒","exit_condition":"测试即弃","ttl_days":7}"#;
+        let exit = r#"{"action":"exit","entry_id":"pk-eu-4","disposition":"discarded","ruling":"测试即弃"}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-01.ndjson", enter, t1);
+        park_to(dir.path(), "2026-09-01.ndjson", exit, t1 + chrono::Duration::seconds(10));
+        let today = dir.path().join("2026-09-03.ndjson");
+        let scope = load_parking_scope(&today).unwrap();
+        assert!(matches!(
+            park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(20)),
+            Err(ParkError::EntryIdUsedRejected(_))
+        ));
     }
 }
