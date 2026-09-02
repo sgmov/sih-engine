@@ -9,3 +9,9 @@
 {"seq": 9, "session_id": "sess-zcode-260902-acceptor", "input": "批准，照旧你拉子代理跑", "ts": "2026-09-01T23:43:00+00:00", "note": "逐字留档即 deyimerge-tdd-solo 批放行令"}
 {"seq": 10, "session_id": "sess-zcode-260902-acceptor", "input": "数学仓侧正在跑，你看下是否冲突，不冲突的内容先跑，级联锁可解，但是要做合并冲突检查", "ts": "2026-09-02T00:00:00+00:00", "note": "逐字留档即数学仓并线冲突协调输入，deyimerge-switch-solo 批受理补录"}
 {"seq": 11, "session_id": "sess-zcode-260902-acceptor", "input": "那边解锁了", "ts": "2026-09-02T00:00:00+00:00", "note": "逐字留档即数学侧解锁确认即合并冲突检查通道恢复，deyimerge-switch-solo 批受理补录"}
+{"seq": 12, "session_id": "sess-zcode-260902-acceptor", "input": "得意裁，过了就融", "ts": "2026-09-02T02:51:53+00:00", "note": "逐字留档即谓词融回先过得一裁后融回令，predmerge-guard-solo 批受理补录"}
+{"seq": 13, "session_id": "sess-zcode-260902-acceptor", "input": "2条路，调用2个子代理都各走一遍。这里我潜在的意思是要对得一的命题选题的写法规范进入向界，否则facet或者得一全面融回后，没有了facet的探针脚本，在得一的切面，不同的LLM给出不一样的命题", "ts": "2026-09-02T03:40:18+00:00", "note": "逐字留档即双路重裁与命题选题写法规范入向界意向令，predsplitAB-solo 批受理补录"}
+{"seq": 14, "session_id": "sess-zcode-260902-acceptor", "input": "2条全过得一，裁一过一执行一，未过进泊界。这是一个去人类节点的实验工作流程", "ts": "2026-09-02T04:45:00+00:00", "note": "逐字留档即去人类节点实验流令，autoflow2-solo 批受理输入"}
+{"seq": 15, "session_id": "sess-zcode-260902-acceptor", "input": "1、批准。2、3展开我没看懂", "ts": "2026-09-02T06:02:00+00:00", "note": "逐字留档即结算批准令，settlement-v1-solo 批受理补录；2 与 3 的展开由主会对话承载不入链"}
+{"seq": 16, "session_id": "sess-zcode-260902-acceptor", "input": "重拟重裁", "ts": "2026-09-02T06:37:35+00:00", "note": "逐字留档即 pk-040 出泊重拟令，predspec2-solo 批受理补录"}
+{"seq": 17, "session_id": "sess-zcode-260902-acceptor", "input": "全部批准，一次修完。", "ts": "2026-09-02T07:55:00+00:00", "note": "逐字留档即六小件流水令与 pk-013 候裁声明在案，sweepclea6-solo 批受理补录"}

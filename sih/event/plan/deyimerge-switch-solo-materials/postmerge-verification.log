@@ -1,0 +1,6 @@
+== deyimerge-switch-solo post-merge verification (recorded after close, in-flight for next batch absorption) ==
+cargo test --lib golden_des001_gov003: 1 passed 0 failed (GREEN, pk-036 exit condition satisfied on merged main)
+cargo test --lib: 115 passed 0 failed 6 ignored (whole scrutinator lib suite green)
+main GOV-003 sha256: 76ef97b1dc238540f9a7aca9fbe73e18ad3fee6fcea7eba9e92497888580572b == fixture content_hash
+dual-run on main-tree real domain path (v1.7): engine exit 0 / weir exit 0 / cmp IDENTICAL
+engine stdout vs golden fixture: cmp IDENTICAL (byte equality asserted by golden_des001_gov003)

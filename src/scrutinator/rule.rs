@@ -287,8 +287,9 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                 for (_col, ch) in line.chars().enumerate() {
                     let cp = ch as u32;
                     if !ranges.iter().any(|(a, b)| cp >= *a && cp <= *b) {
-                        // 工具件格式：U+{cp:04X} 即「U+U+2026」双前缀照抄不修
-                        let msg = render_message(&rule.message, &[("char", &format!("U+{:04X}", cp))]);
+                        // sweep-3 双侧同步修正（2026-09-02）：载荷裸码点，模板 U+{char}
+                        // 渲染单前缀「U+2026」，双前缀笔误已双侧修（SPEC-013 修订三同步加注）
+                        let msg = render_message(&rule.message, &[("char", &format!("{:04X}", cp))]);
                         out.push(TextFinding {
                             rule_id: rule.id.clone(),
                             line: lineno + 1,
