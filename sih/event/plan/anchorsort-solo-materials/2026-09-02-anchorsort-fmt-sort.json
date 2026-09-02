@@ -1,0 +1,34 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/anchorsort-solo/docs/extinv-anchor-sort-2026-09-02.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/anchorsort-solo/docs/extinv-anchor-sort-2026-09-02.md": "9139d44b97f45170e421779e914b1b26c9c3fa4a21bb086b1a9c3144fc18bec4"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}

@@ -1,0 +1,76 @@
+{
+ "session_id": "sess-zcode-260902-anchorsort",
+ "raw_input": "用户令：开。承 extinv-parallel 候选表十三组，执行回锚分拣批 anchorsort-solo：逐组回哲学仓对锚并三向分拣即需数学载体、锚成立归程序纪律、载体已有，产出分拣面落 math docs，mapping 头部子仓计数捎带刷新为实际 8、15、18、5。",
+ "round": 1,
+ "intent_contract": {
+  "goal": "分拣面十三组逐组带锚位与归向、mapping 头部四行刷实际、双仓 lease 链收口 reconcile 零新增、链 verify valid",
+  "exclusions": [
+   "本批不立任何新条目，载体裁决另批（红线）",
+   "不动泊界 pk-037 与 pk-039（用户裁定）",
+   "哲学仓只读（红线）"
+  ],
+  "output_format": "ask3 双门件、identity 件、先导记录、分拣面、mapping 改行、三门凭证、链上 intent 加认证、双仓 settle 归并、reconcile、链 verify、结果档",
+  "injected_constraints": [
+   "工程基线第五条：分拣防数学仓找活干，需求驱动增长",
+   "工程基线第四条：逐组锚位可复算",
+   "PRO-07 鉴：引文逐字节子串",
+   "PRO-08 应而不藏：认证上链"
+  ]
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "sih-math/docs/extinv-anchor-sort-2026-09-02.md 与 sih-math/llm-friendly-build/mapping.md 头部四行 与 plan 与结果档与材料与当日链与 inputlog",
+   "max_depth": 1
+  },
+  "support_domain": {
+   "scope": "sih-math/docs/extinv-candidates-2026-09-02.md 只读 与 sih-philosophy proodos 五章引文源只读",
+   "max_depth": 1
+  }
+ },
+ "anchors": [
+  {
+   "anchor_seq": 1,
+   "text": "分拣纪律是鉴映照：逐组映照其原有规范力来源，不投射新命题",
+   "inquiry_stage": "first",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+    "quote": "- 镜的特点是纯粹映照——它不主动投射"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:61",
+   "confidence": 0.95,
+   "rationale": "分拣只作对锚映射"
+  },
+  {
+   "anchor_seq": 2,
+   "text": "程序纪律组归工程规程位是有度：数学仓不盈满",
+   "inquiry_stage": "second",
+   "domain_tag": "support",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/06-on-canon.md",
+    "quote": "早晚期力度差异——早期宽松护探索、后期严格护稳定。顺势调节「何时达到严格」而非「严格可放松」——治理力度可由松到紧，不可由紧到松（除显式审计外）。"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/06-on-canon.md:185",
+   "confidence": 0.93,
+   "rationale": "有度承载需求驱动增长"
+  },
+  {
+   "anchor_seq": 3,
+   "text": "知识权威梯锚源头可追溯，程序纪律组锚源头不投射",
+   "inquiry_stage": "third",
+   "domain_tag": "target",
+   "depth": 0,
+   "philosophy_ref": {
+    "source": "sih-philosophy/emanation/proodos/09-on-arche.md",
+    "quote": "- 治病：决策请求的资格必须被验证（决策者身份、权限、合法性校验），决策源头必须可追溯"
+   },
+   "evidence": "sih-philosophy/emanation/proodos/09-on-arche.md:320",
+   "confidence": 0.94,
+   "rationale": "源头可追溯承载权威梯与分拣可复算"
+  }
+ ],
+ "calls_in": 700,
+ "calls_out": 731
+}
