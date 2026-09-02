@@ -1,0 +1,1238 @@
+{
+  "probe": "r3a_gate_v2",
+  "timestamp": "2026-09-02T21:12:38Z",
+  "pre_registration": "docstring of r3a_gate_v2.py（跑前立文）",
+  "trails": [
+    {
+      "guidance_id": "lw-c1_direct",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B2_single_seat_noise",
+      "failed_criteria": [
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B2_single_seat_noise 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-c2vote_prog",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-c2vote_vote",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-c3_program",
+      "knife_edge": false,
+      "n_runs": 4,
+      "verdict_v1": "near_threshold",
+      "verdict_v2": "near_threshold",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.25,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 4,
+      "boundary_p": 0.01590426,
+      "boundary_low_test": false,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "near_threshold",
+        "note": "全过但贴近阈值：['boundary_near'] → Layer 2 人复核（分离不确定）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-c3_program__xseat",
+      "knife_edge": false,
+      "n_runs": 3,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 3,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-dualviol",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_4"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-e1_repair",
+      "knife_edge": true,
+      "n_runs": 7,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "boundary_low"
+      ],
+      "overall_flip": 0.1429,
+      "boundary_rate": 0.5714,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 4,
+      "boundary_n": 7,
+      "boundary_p": 1e-08,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['boundary_low']（调整后 bdy 最高 0.5074@某席位 ≥ 0.34）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-e1_repair__xsm3",
+      "knife_edge": true,
+      "n_runs": 3,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.6667,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 2,
+      "boundary_n": 3,
+      "boundary_p": 4.787e-05,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low']（调整后 bdy 最高 0.6027@某席位 ≥ 0.34）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-e1_repair__xstrio",
+      "knife_edge": true,
+      "n_runs": 3,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.4444,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 4,
+      "boundary_n": 9,
+      "boundary_p": 3e-08,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": "unanimous_violate_fast_lane",
+      "v3_note": "v3: B1_basis_degenerate 降级；unanimous_violate_fast_lane",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-n1_runner_cfg",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-p_monitor",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.4,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 2,
+      "boundary_n": 5,
+      "boundary_p": 0.00015872,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-p_monitor__esc",
+      "knife_edge": true,
+      "n_runs": 6,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low",
+        "decision_stable"
+      ],
+      "overall_flip": 0.3333,
+      "boundary_rate": 0.3333,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_4",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 4,
+      "boundary_n": 12,
+      "boundary_p": 1.2e-07,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low', 'decision_stable']（调整后 bdy 最高 0.936@某席位 ≥ 0.34）（动态基线下 noise_models=['MiniMax-M3']，thresholds={'MiniMax-M3': 0.2, 'Qwen3.5-397B-A17B-Pro': 0.2, 'Kimi-K2.6-A': 0.2, 'DeepSeek-V4-Flash-A': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-p_monitor__xseat",
+      "knife_edge": true,
+      "n_runs": 3,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.6667,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 2,
+      "boundary_n": 3,
+      "boundary_p": 4.787e-05,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low']（调整后 bdy 最高 0.6027@某席位 ≥ 0.34）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-r3b_c4_trail",
+      "knife_edge": false,
+      "n_runs": 10,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 10,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-r3b_k1_triage",
+      "knife_edge": false,
+      "n_runs": 10,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.3,
+      "boundary_rate": 0.3,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 3,
+      "boundary_n": 10,
+      "boundary_p": 7.52e-06,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-r3b_k2_bulkrepair",
+      "knife_edge": false,
+      "n_runs": 10,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low"
+      ],
+      "overall_flip": 0.1,
+      "boundary_rate": 0.5,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_4",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 5,
+      "boundary_n": 10,
+      "boundary_p": 0.0,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low']（调整后 bdy 最高 0.436@某席位 ≥ 0.34）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw-r3b_v2_selfsign",
+      "knife_edge": false,
+      "n_runs": 10,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.1,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 10,
+      "boundary_p": 0.03928763,
+      "boundary_low_test": false,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c1_direct__L1",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B2_single_seat_noise",
+      "failed_criteria": [
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B2_single_seat_noise 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c1_direct__L2",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.4,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_1, baseline_4"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c1_direct__L3",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B2_single_seat_noise",
+      "failed_criteria": [
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B2_single_seat_noise 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c3_program__L1",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c3_program__L2",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-c3_program__L3",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-e1_repair__L1",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-e1_repair__L2",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low",
+        "decision_stable"
+      ],
+      "overall_flip": 0.4,
+      "boundary_rate": 0.6,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 3,
+      "boundary_n": 5,
+      "boundary_p": 6.4e-07,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low', 'decision_stable']（调整后 bdy 最高 0.536@某席位 ≥ 0.34）（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-e1_repair__L3",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.4,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 2,
+      "boundary_n": 5,
+      "boundary_p": 0.00015872,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-p_monitor__L1",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-p_monitor__L2",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'decision_stable']（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw2-p_monitor__L3",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "boundary_low",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.8,
+      "distinct_basis": [
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 4,
+      "boundary_n": 5,
+      "boundary_p": 0.0,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['boundary_low', 'decision_stable']（调整后 bdy 最高 0.736@某席位 ≥ 0.34）（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'boundary_low'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw3-c2vote_vote__fb",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw3-dualviol__fb",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_4"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw3-p_monitor__fb",
+      "knife_edge": true,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "basis_consensus",
+        "boundary_low",
+        "decision_stable"
+      ],
+      "overall_flip": 0.2,
+      "boundary_rate": 0.6,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 3,
+      "boundary_n": 5,
+      "boundary_p": 6.4e-07,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['basis_consensus', 'boundary_low', 'decision_stable']（调整后 bdy 最高 0.536@某席位 ≥ 0.34）（动态基线下 noise_models=['MiniMax-M2.7']，thresholds={'MiniMax-M2.7': 0.2}）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['decision_stable', 'boundary_low', 'basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw4-d0",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_5"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw4-d1",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_1, baseline_4, baseline_5"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw4-d2",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "stable_clear",
+      "verdict_v2": "stable_clear",
+      "rule": null,
+      "failed_criteria": [],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1"
+      ],
+      "verdict_v2_test": "stable_clear",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "stable_clear",
+      "v3_rule": null,
+      "v3_note": "v3 全过且无 near → 送 Layer 2",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "stable_clear",
+        "note": "全过且无 near → 送 Layer 2 法/应规范裁决"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw5-g1-fmtnly",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.2,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_4"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 1,
+      "boundary_n": 5,
+      "boundary_p": 0.01984064,
+      "boundary_low_test": false,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw5-g2-human",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "near_threshold",
+      "rule": "B1_basis_degenerate",
+      "failed_criteria": [
+        "basis_consensus"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.0,
+      "distinct_basis": [
+        "baseline_1",
+        "baseline_1,baseline_4,baseline_5"
+      ],
+      "verdict_v2_test": "near_threshold",
+      "boundary_k": 0,
+      "boundary_n": 5,
+      "boundary_p": 1.0,
+      "boundary_low_test": true,
+      "verdict_v3": "near_threshold",
+      "v3_rule": null,
+      "v3_note": "v3: B1_basis_degenerate 降级",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['basis_consensus'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    },
+    {
+      "guidance_id": "lw5-g3-noval",
+      "knife_edge": false,
+      "n_runs": 5,
+      "verdict_v1": "boundary",
+      "verdict_v2": "boundary",
+      "rule": null,
+      "failed_criteria": [
+        "boundary_low"
+      ],
+      "overall_flip": 0.0,
+      "boundary_rate": 0.8,
+      "distinct_basis": [
+        "baseline_4"
+      ],
+      "verdict_v2_test": "boundary",
+      "boundary_k": 4,
+      "boundary_n": 5,
+      "boundary_p": 0.0,
+      "boundary_low_test": false,
+      "verdict_v3": "boundary",
+      "v3_rule": null,
+      "v3_note": "v3 子判据挂：['boundary_low']（调整后 bdy 最高 0.736@某席位 ≥ 0.34）",
+      "criteria_version": "v3",
+      "v1_audit": {
+        "verdict": "boundary",
+        "note": "子判据挂：['boundary_low'] → 路由法层 refine（分歧诊断→补规范→重入飞轮）"
+      },
+      "v3_fallback": false
+    }
+  ],
+  "summary": {
+    "missed_knife_edge": 0,
+    "knife_leak_ids": [],
+    "non_knife_boundary_v1": 15,
+    "non_knife_boundary_v2": 5,
+    "false_injury_reduced": true,
+    "monotone_ok": true,
+    "knife_demoted_to_near": [
+      "lw2-p_monitor__L1"
+    ],
+    "verdict_counts_v1": {
+      "boundary": 28,
+      "near_threshold": 1,
+      "stable_clear": 9
+    },
+    "verdict_counts_v2": {
+      "near_threshold": 12,
+      "boundary": 17,
+      "stable_clear": 9
+    },
+    "verdict_counts_v2_test": {
+      "near_threshold": 7,
+      "boundary": 24,
+      "stable_clear": 7
+    },
+    "verdict_change_count": 7,
+    "verdict_changes": [
+      {
+        "guidance_id": "lw-c2vote_vote",
+        "from": "near_threshold",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw-c3_program",
+        "from": "near_threshold",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw-r3b_v2_selfsign",
+        "from": "stable_clear",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw3-c2vote_vote__fb",
+        "from": "stable_clear",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw3-dualviol__fb",
+        "from": "near_threshold",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw4-d0",
+        "from": "near_threshold",
+        "to": "boundary"
+      },
+      {
+        "guidance_id": "lw5-g1-fmtnly",
+        "from": "near_threshold",
+        "to": "boundary"
+      }
+    ],
+    "criterion": {
+      "from": "ratio_threshold_0.34",
+      "to": "binomial_test",
+      "p_h0": 0.004,
+      "alpha": 0.05
+    },
+    "all_pass_strict": true
+  }
+}
