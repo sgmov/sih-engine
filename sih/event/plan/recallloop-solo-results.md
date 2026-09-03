@@ -44,10 +44,14 @@
 - sih-math/docs/recallloop-derivation-2026-09-04.md exclusive 首取撞 elicitwire-solo（31bc9b8a1b0f9e25）目录级 sih-math/docs 独占锁，locked_elsewhere 有限重试十次逐次计数未得，按不绕行让位处理，施工面先行；推导档落笔前再试一次获锁成功（对方收约释放），零抢占零绕行。
 - 与 gchart-solo（4db66354ad676374）并行：其 append 持 trail 与 scribe/reports 与 meter/counts，与本批 append 短持共存零撞锁；其 exclusive sih-tools/gauge 与本批 wikirecall 施工面互斥不相交。
 - 领取登记闸：开工前 claim 一笔 ttl 240（claimant sess-zcode-260904-recallloop），lease open 闸一联动警示行载本批自领记录，如实记非异常。
+- 收约阶段共享面冲突两起如实记：其一 close 首试被 tools 主树锁台账 merge_diverge 拦（共享运行面脏），按既定通道主树 bypass 快照两笔收编（36b6dedd 台账与 lease CALL-LOG、9c60d987 meter 计数四笔与 scribe CALL-LOG，两笔均 bypass 登记）后过预检；其二 merge 阶段主树未跟踪同名批件挡归并，按备份让位归并对表法四步（备份十七件、让位、close 归并、cmp 逐件 IDENTICAL）处置。批期 scribe/CALL-LOG.md 与 meter 计数曾被并发批回退抹行，分支副本携超集归并即自愈，批期共享面写入时序以链与分支为准。
+- close 尾段 sih-math 首仓归并成、tools 与 engine 两仓 merge_failed 后让位重跑全过，failed 空数组 session revoked；gchart-solo 链尾随同步（475832c）已把本批四笔认证收进 engine 主树 trail，双批并集超集共笔。
 
 ## 收口读数
 
-批期读数：intent 上链为链第 53 笔（批前 47 事件起链，并行批共笔在先），verify valid；金向量四场景 run1 = run2 = 冻结件 IDENTICAL；checkcite 对表通过（推导档与结果档引用全落书单图闭包）。收约读数（settle 提交号与 reconcile 与链 verify 终读数）见批后回填。
+批期读数：intent 上链为链第 53 笔（批前 47 事件起链，并行批共笔在先），verify valid；金向量四场景 run1 = run2 = 冻结件 IDENTICAL；checkcite 对表通过（推导档与结果档引用全落书单图闭包）。
+
+收约回填：三仓 settle 段一提交号 sih-tools d35d11ad、sih-math 1f9446e、sih-engine 5474e90（cert 均 dfe872e6）；归并号 sih-math 021887a、sih-tools 5e55381c、sih-engine e3ef748，三工地拆除，会话 f16265b471cfca41 revoked；reconcile 批内基线对表（tools@20c37119、engine@0017372、math@8d0bce2）unrouted 零 cert_missing 零 unbypassed 零全净；当日链 verify valid 66 事件（首哈希 05a8a75e 末哈希 83aa35d3）；回填后本档化格与检词复跑零改动。
 
 ## 队形验证
 
