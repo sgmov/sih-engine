@@ -1,0 +1,18 @@
+{
+ "batch": "facetmath-solo",
+ "date": "2026-09-04",
+ "target": "sih-engine/sih/event/plan/facetmath-solo-results.md",
+ "formatter": {
+  "exit": 0,
+  "changed": 0
+ },
+ "scrutinator_des001": {
+  "exit": 2,
+  "note": "event/plan 域外如实记不属违规"
+ },
+ "nomenclator": {
+  "exit": 0,
+  "findings": 0,
+  "pack": "core 0.11.0"
+ }
+}

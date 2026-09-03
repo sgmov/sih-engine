@@ -1,0 +1,17 @@
+{
+ "action": "enter",
+ "entry_id": "pk-048",
+ "id": "pk-048",
+ "title": "facet 判据切换判变清单 114 件——双判据对跑改判预览泊界登记，在档 verdict 零改写",
+ "context": "facetmath-solo 批 F-2 判变审计（2026-09-04）：在档可复算 facet 裁决材料 868 件双判据对跑（facet_task_packages 合同包加 proposition/DES 飞轮 trail 两类），在役占比判据 ratio 与门控待役检验判据 test 各复算一次。复算回归哨 archived_mismatch=0 即 868 件在档 operative verdict 与在役判据复算全部一致，在档裁决零漂移；判变 114 件全部由宽到紧即 near_threshold→boundary 74 件、stable_clear→boundary 40 件，零由紧到宽，刀锋集零漏放（lw2-e1_repair__L3 由 near 收紧为 boundary 仍不放行）。逐件清单冻结于 sih-engine/sih/event/plan/facetmath-solo-materials/facetmath-golden-dual-audit.json（sha256 ca9dda80cfe8bbe8 前十六位，双跑逐字节一致）。切换以 F-3 得一裁为门判 boundary 挂起进泊 pk-049，故本清单为改判预览登记，判变件零实际改判，在档历史 verdict 一字未动",
+ "exit_condition": "切换在役批即另批重测切换命题过得一裁 stable_clear 拨门控在役时承接逐件复核入档，或用户裁另案处理即废弃出泊",
+ "ttl_days": 30,
+ "path": "doc/governance/PARKING-v1.md",
+ "anchors": [],
+ "requested_writes": [],
+ "state": "parked",
+ "parking": {
+  "entered_at": "2026-09-04",
+  "ttl_days": 30
+ }
+}

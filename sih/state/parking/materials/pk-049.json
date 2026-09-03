@@ -1,0 +1,17 @@
+{
+ "action": "enter",
+ "entry_id": "pk-049",
+ "id": "pk-049",
+ "title": "facet boundary 判据切换挂起——门控关闭形在役，boundary_criterion 缺省 ratio 生产保持旧判据",
+ "context": "facetmath-solo 批 F-3 得一裁九发三态机械分流（2026-09-04）：命题「facet boundary 判据由占比阈值切换为二项检验判据（α=0.05）」以 gid facetmath-switch-1 合同模式九发测量，九发 decision 全 comply、boundary_rate 0.0，但依据族三值分散即 baseline_4 五发、baseline_1 三发、baseline_5 一发，basis_consensus 挂，闸判 boundary 打回重作（gvec-method-guard-1 先例同形即九发全合而依据族分散），加采不可救即 distinct_basis 只增不减，不重跑同命题。机械分流：切换挂起进泊界，生产路径保持旧判据；落地形为门控关闭即 maturation_gate.assess_maturation_v3(_base) 增 boundary_criterion 参数缺省 ratio 生产行为逐字节不变，test 位已实现待役即 boundary_low_by_test（p_h0=0.004 翻桌率基线，α=0.05 显式给参不读钟，A2 注册语义），经七用例先红后绿与全测试族零回归与金向量双跑逐字节一致验证。测量材料在 sih-tools/facet/contracts/facetmath-260904/（topic 与合同与九发响应与计分材料与飞轮 trail），判变预览清单在泊 pk-048",
+ "exit_condition": "另批以新测量（法层通道分解后新 gid 或人重写上下文）重测切换命题过得一裁 stable_clear 即拨 boundary_criterion 缺省为 test 在役并承接 pk-048 判变逐件复核，或用户裁废弃即门控位与测试改型随批退役",
+ "ttl_days": 30,
+ "path": "doc/governance/PARKING-v1.md",
+ "anchors": [],
+ "requested_writes": [],
+ "state": "parked",
+ "parking": {
+  "entered_at": "2026-09-04",
+  "ttl_days": 30
+ }
+}
