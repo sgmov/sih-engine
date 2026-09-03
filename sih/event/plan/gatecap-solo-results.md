@@ -63,6 +63,7 @@
 4. **引擎工地 locus 测试五败定性**：工地内 cargo test 首跑 ga1 至 ga4 与 t6 五测败，定性为工地 target 缺 scribe 二进制（测试拉起 manifest/target/debug/scribe），全 bin 重建后 156 测全绿，非本批改动引入。
 5. **零停批事件**：全程无不可解释的门与闸拒绝，无工具 exit 2 异常（formatter 对七件全零改，scrutinator 对五件域外 exit 2 如实记非异常，scope_violation 与闸系拒绝均按预期在役）。
 6. **政策行在役**：机械链全绿即自行收口推进，结果档不设「等你令」节。
+7. **引擎金向量 allow 面外被闸拦截**：段一引擎 settle 被 staged_out_of_scope 拒（金向量八件重冻面未列入开工 allow，属本人开工列面遗漏非闸误），未绕行未 bypass，拆段二会话补面重开收约（详见收约附表），两段全程四验全过零 plain commit。
 
 ## 八、验收
 
@@ -74,6 +75,13 @@
 
 ## 九、队形验证
 
-单线形 solo 零子代理，全链由会话 a1089d85f6aefe6c 亲写，零 Agent/Task 派生。
+单线形 solo 零子代理，全链由会话 a1089d85f6aefe6c（段一，三仓）与 903dab12355e4943（段二，引擎补段）亲写，零 Agent/Task 派生。
 
 ## 十、收约附表（close 后回填）
+
+- **两段式收约**：段一会话 a1089d85f6aefe6c 三仓 settle（tools 5de29d4e、math b458f9f 过，engine 被 staged_out_of_scope 闸正确拦下即金向量八件重冻面不在开工 allow 列），处置按 scriwire2 收空重开与 sweepclea6 范围补扩先例拆两段——引擎工地内容 stash 存底、放锁、主树七 reports 让位、close revoked true（tools 与 math 归并、engine 零提交拆工地）；段二会话 903dab12355e4943 引擎单仓重开（allow 补 sih-engine/src/scrutinator/fixtures/golden/），stash pop 复原、重建二进制、20 测绿、主树路径复探净 0 脏 3 中复证、settle b12ebd4、放锁、主树活链让位（备份即 checkout 回 HEAD）、close revoked true 归并 58aaa3a。
+- **备份让位对表**：tools 七件 reports 备份 cmp 逐字节 IDENTICAL（归并后主树文件与让位前备份全等）；engine 活链 21 事件备份 cmp 逐字节 IDENTICAL，零丢失。
+- **三仓 commit 号**：settle 即 tools 5de29d4e、math b458f9f、engine b12ebd4（--cert d1d1e40c，base 即 integral-stage-build@3e3405d6 / main@9784f36 / main@2bc17c8）；归并即 tools f5b222fe、math cedb139、engine 58aaa3a。
+- **reconcile 读数（close 后）**：tools unrouted 0（cert_missing 1 即 entryunique-solo 526e2be 09-03 既有、unbypassed 0、bypass 5 全登记）；engine unrouted 0（cert_missing 0、bypass 15 全登记）；math unrouted 0（cert_missing 2 即 08-30 mathfix2 93c4f0b 与 fmtfix d561f17 既有、unbypassed 1 即 08-30 基线 c556abb 既有）——三仓 unrouted 与 cert_missing 与 unbypassed 较批前零新增，本批提交零入尾。
+- **链 verify 前后对表**：批期 verify valid 21 事件（首哈希 05a8a75e、末哈希 d1d1e40c：例行读数三笔加意图一笔加认证四笔加晨批十三笔），close 后 verify valid 21 事件同首末哈希，前后一致零漂移。
+- **本笔回填**：本节由收约后 wip 提交回填，--no-verify 提交 + lease bypass 登记随行（close 通道以外提交的既定通道）。
