@@ -164,6 +164,10 @@ pub fn park_event(
 /// park 配对门的重放面从 --trail 单链文件扩为同目录全部 ndjson 按名序，
 /// 跨天出泊即泊入在先日链的出泊机械可达。追加面仍由调用方以 --trail
 /// 单文件承载即当日链自身链序，本函数只读不写。
+///
+/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：重放面遍历是版本偏序
+/// 持久性语义的机械实例，按既有事件链序重放判定在泊状态。推导见
+/// sih-math/docs/scriwire-scribe-derivation-2026-09-03.md。
 pub fn load_parking_scope(trail: &Path) -> Result<Vec<Event>, AppendError> {
     let target = trail.to_path_buf();
     let dir = match target.parent() {

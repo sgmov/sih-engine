@@ -45,10 +45,14 @@ pub enum AppendError {
 
 /// 追加写入入口。
 ///
-/// 校验项（承接 SPEC-004#acceptance-criteria 写入前校验）：
+/// 校验项（承接 SPEC-004#acceptance-criteria 写入前校验）。
+///
+/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：追加写入是版本偏序
+/// 只增不改写的引擎实例，prev_hash 链接即事件序覆盖关系，单次写入构造
+/// 一个新版本。推导见 sih-math/docs/scriwire-scribe-derivation-2026-09-03.md：
 /// 1. event_id 全局唯一性
 /// 2. 时间戳单调递增
-/// 3. prev_hash 匹配前事件哈希
+/// 3. prev_hash 匹配前事件哈希（链接位，ORD-019 覆盖关系）
 /// 4. 操作者合法性（actor_type = Agent 时须对应确定性程序）
 ///
 /// # Arguments
