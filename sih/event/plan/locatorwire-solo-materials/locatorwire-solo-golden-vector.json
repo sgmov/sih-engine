@@ -1,0 +1,58 @@
+{
+ "batch": "locatorwire-solo",
+ "carrier": "ORD-019",
+ "date": "2026-09-04",
+ "formula_version": "lw-1",
+ "payload": {
+  "build_summary": {
+   "entries": 12,
+   "files": 3,
+   "parse_errors": []
+  },
+  "carrier": "ORD-019",
+  "double_run_byte_identical": true,
+  "formula_version": "lw-1",
+  "index_sha256": "870456cf000428ebfaaad2c623db113c3f88cdfabd8ca6eb6facdfba0d47d5c3",
+  "scenario_1_addressing_derivation_determinism": {
+   "build_files": 3,
+   "double_run_byte_identical": true,
+   "entry_kind": "key",
+   "entry_path": "cfg.toml",
+   "entry_seq": 1,
+   "first_entry_id": "2fde1c992af68916ddabcfe6fdf9731264d10c940b246f67f870ae9527909752",
+   "id_matches_independent_recomputation": true,
+   "parse_errors_empty": true,
+   "recomputed_id": "2fde1c992af68916ddabcfe6fdf9731264d10c940b246f67f870ae9527909752"
+  },
+  "scenario_2_stale_detection_version_comparability": {
+   "file_level": {
+    "fresh": [
+     "cfg.toml"
+    ],
+    "missing": [
+     "data.json",
+     "extra.md"
+    ],
+    "over_threshold": true,
+    "reason": null,
+    "rebuild_required": true,
+    "stale": [
+     "notes.md"
+    ]
+   },
+   "head_version_level": {
+    "fresh": [
+     "cfg.toml",
+     "data.json",
+     "notes.md"
+    ],
+    "missing": [],
+    "over_threshold": false,
+    "reason": "pack",
+    "rebuild_required": true,
+    "stale": []
+   },
+   "matches_expectations": true
+  }
+ }
+}
