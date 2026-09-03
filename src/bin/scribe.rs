@@ -9,9 +9,11 @@ use serde_json::json;
 use sih_engine::event_stream::event::{Actor, ActorType};
 use sih_engine::event_stream::park::load_parking_scope;
 use sih_engine::event_stream::{
-    append, certification_event, check_locks, compute_event_hash, intent_event, load_events,
+    append, certification_event, check_intent_reused, check_locks, check_session,
+    compute_event_hash, intent_event, load_events,
     crosscheck_event, lockgate::LockGateError, park_event, query,
-    reading_event, verify, Event, EventFilter, VerifyRange, GENESIS_PREV_HASH,
+    reading_event, sessiongate::SessionGateError, verify, Event, EventFilter, VerifyRange,
+    GENESIS_PREV_HASH,
 };
 use std::path::{Path, PathBuf};
 use std::process::exit;
@@ -86,18 +88,57 @@ fn worktree_trail_guard(opts: &std::collections::HashMap<String, String>, trail:
     emit(json!({"error": "工地链副本禁追加即认证先落主链"}), 2);
 }
 
+/// 会话在册前查：--session 须在会话台账为活跃，无或已吊销即拒 SessionNotActive。
+///
+/// 承 guardrail2-solo 闸三，intent 与 append 认证两写命令共用。--sessions 即
+/// 会话台账路径，--session 即调用方会话号，--no-session-reason 主会处置位缺省关。
+/// 处置位开启且无会话号即放行行事由落链；有会话号须台账在册活跃否则拒。
+fn session_guard(opts: &std::collections::HashMap<String, String>) -> Option<String> {
+    let session = opts.get("session").map(|s| s.as_str());
+    let reason = opts.get("no-session-reason").cloned();
+    if session.is_none() && reason.is_some() {
+        return reason; // 主会处置位：无会话号但显式给事由即放行，由写分支落链。
+    }
+    if session.is_none() {
+        emit(
+            json!({"error": "会话不在册即拒 SessionNotActive：缺 --session，主会处置位 --no-session-reason <事由> 默认关"}),
+            1,
+        );
+    }
+    let Some(sessions) = opts.get("sessions") else {
+        emit(json!({"error": "会话在册验需 --sessions <会话台账路径>"}), 2);
+    };
+    match check_session(Path::new(sessions), session, None) {
+        Ok(_) => None,
+        Err(SessionGateError::NotActive { session_id }) => {
+            emit(
+                json!({"error": "会话不在册即拒 SessionNotActive", "session_id": session_id}),
+                1,
+            )
+        }
+        Err(SessionGateError::Unreadable(e)) => {
+            emit(json!({"error": format!("会话台账不可读 {e}")}), 2)
+        }
+    }
+}
+
 const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
 
 子命令：
   append    追加认证事件（写）
     必填：--report <报告文件> --exit-code <退出码> --trail <链文件>
-    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
+    可选：--locks <锁册路径> --session <会话号> --sessions <会话台账路径> --allow-worktree-trail <1|true> --no-session-reason <事由>
     示例：scribe append --report report.json --exit-code 0 --trail trail.ndjson
+    闸三会话在册验：--session 须在会话台账为活跃，无或已吊销即拒 SessionNotActive；
+      --no-session-reason <事由> 主会处置位默认关，无会话号时显式开启即放行。
 
   intent    追加意图精炼事件（写）
     必填：--record <ask3 记录> --validation <验证件> --trail <链文件>
-    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
+    可选：--locks <锁册路径> --session <会话号> --sessions <会话台账路径> --allow-worktree-trail <1|true> --allow-reintent <1|true> --no-session-reason <事由>
     示例：scribe intent --record ask3.json --validation valid.json --trail trail.ndjson
+    闸二重意图拒：同 record 路径已有 intent_refined 在链即拒 IntentRecordUsedRejected；
+      --allow-reintent 默认关留 facepark 丢事件重追加合法通道。
+    闸三会话在册验：同 append，--session 须活跃，--no-session-reason 默认关。
 
   park      追加停泊事件（写）
     必填：--record <停泊记录 JSON> --trail <链文件>
@@ -194,6 +235,7 @@ fn main() {
             let Ok(exit_code) = exit_code.parse::<i32>() else {
                 emit(json!({"error": "退出码非数"}), 2)
             };
+            session_guard(&opts);
             let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
             let input = match certification_event(
                 PathBuf::from(&report).as_path(),
@@ -222,9 +264,22 @@ fn main() {
             };
             lockgate_guard(&opts, &trail);
             worktree_trail_guard(&opts, &trail);
+            session_guard(&opts);
             let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
                 emit(json!({"error": "双件缺失"}), 2)
             };
+            let scope = match load_parking_scope(Path::new(&trail)) {
+                Ok(s) => s,
+                Err(e) => emit(json!({"error": format!("重放面不可读 {e:?}")}), 2),
+            };
+            let allow_reintent = opts.get("allow-reintent").map(|s| s == "1" || s == "true").unwrap_or(false);
+            match check_intent_reused(&scope, &record, allow_reintent) {
+                Ok(()) => {}
+                Err(sih_engine::event_stream::intent::IntentError::IntentRecordUsed) => {
+                    emit(json!({"error": "意图记录已用即拒 IntentRecordUsedRejected，主会处置位 --allow-reintent 默认关"}), 1)
+                }
+                Err(e) => emit(json!({"error": format!("重意图拒异常 {e:?}")}), 2),
+            }
             let input = match intent_event(
                 PathBuf::from(&record).as_path(),
                 &rtext,

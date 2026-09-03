@@ -4,7 +4,7 @@
 //! 有发现即拒不入流。负载承 SPEC-006 十二项，doc_id 取会话标识。
 
 use crate::event_stream::certify::sha256_hex;
-use crate::event_stream::event::{Actor, EventInput};
+use crate::event_stream::event::{Actor, Event, EventInput};
 use chrono::{DateTime, Utc};
 use serde_json::{json, Value};
 use std::path::Path;
@@ -17,6 +17,31 @@ pub enum IntentError {
     FindingsPresent(usize),
     ValidationNotOk(String),
     LineageMismatch,
+    IntentRecordUsed,
+}
+
+/// 重意图拒闸：同 record 路径已有 intent_refined 在链即拒，--allow-reintent 放行。
+///
+/// 承 guardrail2-solo 闸二：scope 即链目录全量重放面（承 park 的
+/// load_parking_scope 形），按事件 details.record_path 与当次 record_path 比对。
+/// allow_reintent 显式开启即放行，供 facepark 丢事件重追加的合法通道。
+pub fn check_intent_reused(scope: &[Event], record_path: &str, allow_reintent: bool) -> Result<(), IntentError> {
+    if allow_reintent {
+        return Ok(());
+    }
+    for event in scope {
+        if event.event_type != "intent_refined" {
+            continue;
+        }
+        let Some(details) = &event.details else { continue };
+        let Some(path) = details.get("record_path").and_then(|v| v.as_str()) else {
+            continue;
+        };
+        if path == record_path {
+            return Err(IntentError::IntentRecordUsed);
+        }
+    }
+    Ok(())
 }
 
 /// 双件消费即意图记录加核验报告，核验零发现放行产 intent_refined 事件输入。
@@ -181,5 +206,50 @@ mod intent_status_tests {
             actor(), Utc::now(),
         );
         assert!(out.is_ok(), "unexpected error: {out:?}");
+    }
+
+    fn reused_event(record_path: &str) -> Event {
+        Event {
+            event_id: "id".to_string(),
+            event_type: "intent_refined".to_string(),
+            timestamp: Utc::now(),
+            actor: actor(),
+            details: Some(json!({"record_path": record_path})),
+            doc_id: "s1".to_string(),
+            prev_hash: String::new(),
+            event_hash: String::new(),
+            event_class: None,
+            verification_result: None,
+        }
+    }
+
+    // 闸二 R1 同 record 路径已有 intent_refined 即拒。
+    #[test]
+    fn reintent_repeated_record_rejected() {
+        let scope = vec![reused_event("/tmp/r.json")];
+        assert!(matches!(
+            check_intent_reused(&scope, "/tmp/r.json", false),
+            Err(IntentError::IntentRecordUsed)
+        ));
+    }
+
+    // 闸二 R2 链上无同 record 即放行。
+    #[test]
+    fn reintent_fresh_record_allows() {
+        let scope = vec![reused_event("/tmp/other.json")];
+        assert!(check_intent_reused(&scope, "/tmp/r.json", false).is_ok());
+    }
+
+    // 闸二 R3 空链即放行。
+    #[test]
+    fn reintent_empty_scope_allows() {
+        assert!(check_intent_reused(&[], "/tmp/r.json", false).is_ok());
+    }
+
+    // 闸二 R4 --allow-reintent 显式开启即放行同 record 重追加合法通道。
+    #[test]
+    fn reintent_allow_reintent_allows() {
+        let scope = vec![reused_event("/tmp/r.json")];
+        assert!(check_intent_reused(&scope, "/tmp/r.json", true).is_ok());
     }
 }

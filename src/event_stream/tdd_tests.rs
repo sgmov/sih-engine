@@ -191,7 +191,16 @@ mod tdd {
         let report = json!({"engine": {"name": "f", "version": "0"}, "packs": [], "content_hashes": {}, "findings": [], "golden_baseline": "0", "tool": {"name": "f", "version": "0"}}).to_string();
         let rpath = std::env::temp_dir().join(format!("scribe-rep-{}.json", std::process::id()));
         std::fs::write(&rpath, &report).unwrap();
-        let good = Command::new(&bin).args(["append", "--report", rpath.to_str().unwrap(), "--exit-code", "0", "--trail", trail.to_str().unwrap()]).output().unwrap();
+        // 闸三会话在册验：append 认证需活跃会话，先建会话台账在册再验证写成功零。
+        let sessions = temp_trail("sesscli");
+        let _ = std::fs::remove_file(&sessions);
+        let sid = format!("sess-t6-{}", std::process::id());
+        std::fs::write(&sessions, format!("{{\"event\":\"issued\",\"session_id\":\"{sid}\"}}\n")).unwrap();
+        let good = Command::new(&bin).args([
+            "append", "--report", rpath.to_str().unwrap(), "--exit-code", "0",
+            "--trail", trail.to_str().unwrap(),
+            "--session", &sid, "--sessions", sessions.to_str().unwrap(),
+        ]).output().unwrap();
         assert_eq!(good.status.code(), Some(0), "写入成功零");
         let v = Command::new(&bin).args(["verify", "--trail", trail.to_str().unwrap()]).output().unwrap();
         assert_eq!(v.status.code(), Some(0), "链校验通过零");
