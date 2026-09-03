@@ -85,8 +85,10 @@ rev1 十二件判定性改判资源性以（相对路径，常数名）键承继
 ## 七、冲突样本节（pk-045 样本库）
 
 1. coverage 目录 exclusive 首取撞锁：facetmath-solo（会话 c44edb7ecb8d7210）append 持位（读共享），locked_elsewhere 撞锁计数 1/10；按 append+append 共存锁型语义改取 append 键即得，本批对 coverage 目录零直写（产出落 math 工地由 close 归并），串行化点移至 close 归并。
-2. trail 追加态两次取放（intent 与认证五笔）即取即得零撞锁；与 facetmath-solo 与 m3clear-solo 同日共链，批期链 32 事件 valid（并行批共笔并入，非本批独笔）。
+2. trail 追加态两次取放（intent 与认证五笔）即取即得零撞锁；与 facetmath-solo 与 m3clear-solo 同日共链。
 3. scribe append 认证五笔同锁短持内完成，零撞锁；meter 包裹 2>/dev/null 对治在役。
+4. **close 八试录（与并行批收约竞速全记录）**：首试 partial——math 归并成（624b770），engine 与 tools 撞主树未提交共享面（并行批 append 在途）；二至六试撞四类前置态即 trail 与 CALL-LOG 未提交态、terms.json 三方内容冲突、m3clear 结果档在途 diverge；七试 engine（864906b）与 math 归并成、tools 撞主树未跟踪报告件；八试全成并 revoked。处置全按备份让位归并对表法与并集超集放行形：主树共享面让位前逐字节 cmp 等于本批分支件（trail 47 事件、CALL-LOG 两件、meter counts、让位件三项与报告三件），让位零丢失；terms.json 冲突按词表并集归一（主 HEAD 137 件已含本批三件，分支 blob 采主 HEAD 形归一 wip df6ce8ad 后归并 20c37119）；m3clear 结果档让位后还原与备份逐字节一致。
+5. trail 收约后对表：47 事件 valid 与让位前备份逐字节一致，并行批共笔零丢失，末哈希 35d7edc7。
 
 ## 八、认证清单
 
@@ -116,10 +118,36 @@ rev1 十二件判定性改判资源性以（相对路径，常数名）键承继
 
 ## 十一、收约附表（close 后回填）
 
-### 三仓 commit 号（回填位）
-### close 记录（回填位）
-### reconcile 读数（回填位）
-### 链 verify（回填位）
+### 三仓 commit 号
+
+| 仓 | settle 段1 | 收编 wip | 归并号（main） |
+|---|---|---|---|
+| sih-math | ef1751a | — | 624b770 |
+| sih-engine | 0ff7f75 | — | 864906b |
+| sih-tools | dc8f597a | df6ce8ad（词表并集超集收编） | 20c37119 |
+
+### close 记录
+
+八试录见冲突样本节第四；末试 exit 0，failed 空，三仓分支删除或已并入，worktree 全移除，会话 d10ee82894c6544f revoked，claim 在册本批（ttl 240）随会话生命周期不再阻断后续批。
+
+### reconcile 读数（三仓）
+
+| 仓 | unrouted | unbypassed | cert_missing | 异常归属 |
+|---|---|---|---|---|
+| sih-engine | 0 | 0 | 0 | 全净 |
+| sih-tools | 0 | 0 | 1 | entryunique-solo 段2（526e2be，2026-09-03 旧账，非本批新增） |
+| sih-math | 0 | 1 | 2 | baseline 零号 c556abb 与 mathfix2 段2（93c4f0b）与 fmtfix 段2（d561f17），均 2026-08-30 旧账，非本批新增 |
+
+### 链 verify（close 后）
+
+status valid，47 事件，首哈希 05a8a75e，末哈希 35d7edc7；与收约让位前备份逐字节一致，并行批（facetmath/m3clear）共笔零丢失。
+
+### 共享面对表
+
+- scribe/CALL-LOG.md 与 lease/CALL-LOG.md：并集版本随 tools 归并在案，本批各一笔留痕。
+- meter/counts：UTC 日账 2026-09-03.ndjson 含本批 meter 六笔（intent 一与认证五含探针一并计），随 tools 归并在案。
+- 词债：terms.json 137 件归一（本批三件：载体三态、期票、账面漂移；主 HEAD 上游已并本批三件，分支 blob 采主 HEAD 形归一后零冲突归并）。
+- 结果档本笔回填提交：close 通道外 wip 形（--no-verify 加 bypass 登记），claimgate ac01a56 先例同形。
 
 ## 十二、命题层
 
