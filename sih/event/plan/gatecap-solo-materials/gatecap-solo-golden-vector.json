@@ -1,0 +1,78 @@
+{
+ "batch": "gatecap-solo",
+ "kind": "golden_vector",
+ "date": "2026-09-04",
+ "rule_additions": [
+  {
+   "id": "C007",
+   "pack": "des-001",
+   "kind": "forbid_pattern",
+   "pattern": "(阈值|判据|裁决规则)\\s*[0-9][^@]*$",
+   "semantics": "判定性常数声明形行全行无 @ 指针记号即裸奔违规"
+  },
+  {
+   "id": "C008",
+   "pack": "des-001",
+   "kind": "forbid_pattern",
+   "pattern": "(阈值|判据|裁决规则)\\s*[0-9][^@]*@[^@]*$",
+   "semantics": "声明形行仅携单指针（有载体缺推导档）即违规"
+  },
+  {
+   "id": "R8",
+   "tool": "tally",
+   "gate": "rules_version=des-011-r2",
+   "semantics": "推导档指针缺失或所指文件不存在即孤悬走挂起四值处置"
+  }
+ ],
+ "pointer_convention": "声明行内 @ 载体路径（sih-math 条目） @ 推导档路径（sih-math/docs/）",
+ "cases": [
+  {
+   "name": "clean_carried",
+   "fixture": "sih-tools/scrutinator/fixtures/corpus/carrier/constant-carried.md",
+   "md5": "5adce19a021ee378e46f775b913251d7",
+   "engine_exit": 0,
+   "tools_exit": 0,
+   "findings": 0,
+   "double_run_byte_identical": true,
+   "cross_impl_findings_equal": true
+  },
+  {
+   "name": "dirty_naked",
+   "fixture": "sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+   "md5": "52d7784d02ba6c84a1d387e1dcb0c70c",
+   "engine_exit": 1,
+   "tools_exit": 1,
+   "findings": [
+    {
+     "rule_id": "C007",
+     "line": 7
+    },
+    {
+     "rule_id": "C007",
+     "line": 9
+    },
+    {
+     "rule_id": "C008",
+     "line": 11
+    }
+   ],
+   "double_run_byte_identical": true,
+   "cross_impl_findings_equal": true
+  },
+  {
+   "name": "tally_r8_missing_pointer",
+   "material": "tally-check-input rules_version=des-011-r2 无 derivation_path",
+   "disposition": "挂起",
+   "exit": 0,
+   "double_run_byte_identical": true
+  }
+ ],
+ "legacy_sweep": "gatecap-solo-legacy-sweep.json",
+ "compat": {
+  "scrutinator_tools_pytest": "32 passed（29 既有 + 3 新增）",
+  "scrutinator_engine_cargo": "156 passed（含金向量逐字节断言不破）",
+  "tally_pytest": "25 passed（20 既有 + 5 新增）",
+  "all_green": true
+ },
+ "replay_convention": "探针须以重建后的引擎二进制（内嵌新包）与工具侧工地 src 双跑；脏夹具命中行位 7/9/11 冻结"
+}

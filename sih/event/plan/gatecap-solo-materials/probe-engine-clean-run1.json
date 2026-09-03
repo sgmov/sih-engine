@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "des-001",
-      "version": "0.2.0",
+      "version": "0.1.0",
       "domain": {
         "include": [
           "sih-engine/doc/**/*.md",
@@ -22,10 +22,10 @@
     }
   ],
   "targets": [
-    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md"
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-carried.md"
   ],
   "content_hashes": {
-    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "3b83cb8890767abf290e515fe952031651287b8cb450f3aee26f6252a8c4a414"
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-carried.md": "28ad60c762a02250d402f74ae832e2311f4eb5ae9efb92a08f889f23db504cf9"
   },
   "findings": [],
   "domain_mismatches": [],
