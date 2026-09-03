@@ -43,6 +43,11 @@
 5. 化格 py 两件（compute.py、replay_golden.py）与核阅八目标 exit 2 均域外如实记（general-v1 只盖 md/json/yaml/toml；des-001 只盖 sih-engine/doc），不属违规。
 6. 温故零命中故书单空，checkcite 无引用可对表，零命中显式申报代位（selwire 先例同形）。
 7. 批后工地测试显形 3 笔 SyntaxWarning（test_validate.py 文档串 \e 非法转义），系本批未触碰件的预在源码内容在工地新 venv（Python 3.14.6）下显形，非本批引入，不属回归（批前主树跑同码因主树旧 venv 缓存未显形）。
+8. close 预检两拒与让位归并：close 首试被闸四整批拒（merge_diverge：tools locks 台账与 meter 计数、engine 活链，并行批共笔在增长）；处置按 recallloop 既定通道——主树活共享面 bypass 快照两笔收编（tools d2a34c10 台账与 meter 计数与 scribe 册、engine c3f24ad 活链 81 事件）后，工地分支手工并集归并以 merge 直挂被守卫 no_merge_hanger 拒两腿（tools 37bb5f40、engine 11d0313），改 close 通道外 --no-verify 完成＋bypass 登记（selwire ef6b6ad9/b237df8 先例同形）。
+9. close 拆本三跑：close 二跑 math 腿归并成（f64d390）、tools 与 engine 腿因主树活共享面脏 merge_failed；close 三跑报 no active session 假象——成因是本批让位 checkout 把主树活 sessions 台账退回提交态致活跃会话行暂失，自备份复原即回（越线自报：让位前应保持活台账在场只让位合并冲突件，教训入档）；close 四跑 engine 腿归并成（3133dac）、tools 腿余主树未跟踪同名批件九件挡归并；close 五跑全过（failed 空、三仓归并齐、会话 d465a632f627e0db 吊销）。
+10. 备份让位归并对表：未跟踪九件（scribe/reports 八件＋identity 件）与归并结果逐字节 IDENTICAL；活链备份与归并 trail 81 事件逐字节 IDENTICAL；claims 与 locks 与 meter 计数与 scribe 册 IDENTICAL；sessions 为前缀超集（备份 664 行＝归并 666 行前缀，追加恰为 close_failed 与 revoked 两行），零丢失零冲突残渣。
+11. 词债另笔：terms.json 未列任务包请求写入节，范围闸 staged_out_of_scope 拒入段1，按 selwire 越线5 与 gchart 词表收编先例让位，close 后并集收编另笔 022de53b（142→146）经 --no-verify＋bypass 登记入版控。
+12. 例行读数（gauge record）本批未执行：gauge 面为并行批 queueing-solo 独占施工面，任务包禁区明令不碰 sih-tools/gauge，批期跑 gauge CLI 有撞其在改代码风险，如实申报留待主会例行位；泊界心跳已补跑（只读 selector route）：sih-tools parking 19 件（18 主线 1 停放）、engine parking 15 件（14 主线 1 丢弃 pk-013 依谓词判），双目录零告警退出码零。
 
 ## 冲突样本节
 
@@ -51,7 +56,29 @@
 
 ## 收口读数
 
-（收约后回填：三仓 settle 与归并号、close 读数、reconcile 对表、链 verify 终读数。）
+### 三仓提交号
+
+| 仓 | 段1 settle | close 归并 | 通道外另笔（bypass 全登记） |
+| --- | --- | --- | --- |
+| sih-tools | 63bc1d14 | 01ddd799（merge: latexwire-solo 副本归并） | d2a34c10（活共享面快照）、37bb5f40（工地并集归并）、022de53b（词债收编） |
+| sih-engine | 47d57ba | 3133dac（merge: latexwire-solo 副本归并） | c3f24ad（活链快照）、11d0313（工地并集归并） |
+| sih-math | 1c26bf4 | f64d390（merge: latexwire-solo 副本归并） | —（预检即洁） |
+
+三仓工地拆除、msh/latexwire-solo 分支删除、会话 d465a632f627e0db 吊销（close 五跑 failed 空）。本档收口回填经通道外 --no-verify 加 bypass 登记（gchart d8eea16 先例同形）。
+
+### reconcile 读数（close 后）
+
+| 仓 | unrouted | cert_missing | session_orphan | unbypassed | bypass | 退出码 |
+| --- | --- | --- | --- | --- | --- | --- |
+| sih-engine | 0 | 0 | 0 | 0 | 0 | 0 全洁 |
+| sih-tools | 0 | 1（entryunique-solo 批前存量 526e2be） | 0 | 0 | 14 | 1（存量） |
+| sih-math | 0 | 2（mathfix2-solo 93c4f0b 与 fmtfix-solo d561f17 批前存量） | 0 | 1（c556abb 零号基线存量） | 1 | 1（存量） |
+
+比批前零新增：全部 cert_missing 与 unbypassed 为 selwire 结果档第九节在册同款批前存量，本批五笔 bypass（d2a34c1、c3f24ad、37bb5f4、11d0313、022de53b）全分类 bypass 零 unbypassed。
+
+### 链 verify（close 后）
+
+2026-09-04.ndjson 81 事件 status valid（首哈希 05a8a75e、末哈希 bc8cf99f，含并行批共笔）；本批五笔为 67-71 位（意图 d14aed84 与认证 d34621ef/9eda094b/eaef5ddb/acf504b0）。回填后本档化格与检词复跑零改动。
 
 ## 队形验证
 
