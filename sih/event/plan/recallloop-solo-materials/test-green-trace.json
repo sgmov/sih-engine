@@ -1,0 +1,50 @@
+{
+ "total": 11,
+ "failed": 0,
+ "cases": [
+  {
+   "case": "test_wilson_interval_known_values",
+   "ok": true
+  },
+  {
+   "case": "test_wilson_confidence_levels_registered",
+   "ok": true
+  },
+  {
+   "case": "test_channel_gain_known_values",
+   "ok": true
+  },
+  {
+   "case": "test_not_degraded_fixture_two_state_active",
+   "ok": true
+  },
+  {
+   "case": "test_degenerate_mute_channel",
+   "ok": true
+  },
+  {
+   "case": "test_degenerate_saturated_channel",
+   "ok": true
+  },
+  {
+   "case": "test_degenerate_missing_skeleton_structure",
+   "ok": true
+  },
+  {
+   "case": "test_output_carries_readings_not_bare_boolean",
+   "ok": true
+  },
+  {
+   "case": "test_output_has_no_absolute_paths",
+   "ok": true
+  },
+  {
+   "case": "test_recall_plan_untouched_by_metrics",
+   "ok": true
+  },
+  {
+   "case": "test_golden_double_run_byte_identical_and_frozen_match",
+   "ok": true
+  }
+ ]
+}
