@@ -1,0 +1,57 @@
+{
+ "pack": {
+  "name": "locatorwire-golden",
+  "version": "1",
+  "include": ["**/*.md", "**/*.json", "**/*.toml"],
+  "exclude": [],
+  "stale_threshold": 0,
+  "max_file_bytes": 100000
+ },
+ "pack_v2": {
+  "name": "locatorwire-golden",
+  "version": "2",
+  "include": ["**/*.md", "**/*.json", "**/*.toml"],
+  "exclude": [],
+  "stale_threshold": 0,
+  "max_file_bytes": 100000
+ },
+ "corpus": {
+  "notes.md": "# 标题甲\n\n正文一段承载寻址样例。\n\n## 子题乙\n\n- 列表项一\n- 列表项二\n",
+  "data.json": "{\"name\": \"寻址样例\", \"items\": [1, 2, 3]}\n",
+  "cfg.toml": "name = \"寻址样例\"\nversion = 1\n"
+ },
+ "mutations": {
+  "mutate": {
+   "notes.md": "# 标题甲改\n\n正文已导出新版本。\n"
+  },
+  "delete": ["data.json"],
+  "add": {
+   "extra.md": "# 增补件\n"
+  }
+ },
+ "expectations": {
+  "scenario_1_addressing_derivation_determinism": {
+   "double_run_byte_identical": true,
+   "build_files": 3,
+   "parse_errors_empty": true,
+   "id_matches_independent_recomputation": true
+  },
+  "scenario_2_stale_detection_version_comparability": {
+   "file_level": {
+    "stale": ["notes.md"],
+    "missing": ["data.json", "extra.md"],
+    "fresh": ["cfg.toml"],
+    "rebuild_required": true,
+    "over_threshold": true,
+    "reason": null
+   },
+   "head_version_level": {
+    "stale": [],
+    "missing": [],
+    "rebuild_required": true,
+    "over_threshold": false,
+    "reason": "pack"
+   }
+  }
+ }
+}
