@@ -97,7 +97,9 @@
 
 ## 收口附记（close 后补记）
 
-- close：三仓收约读数见本节补记。
-- reconcile：双仓 unrouted 与 cert_missing 相比批前零新增读数见本节补记。
-- 终态 verify：见本节补记。
-- 三仓提交号：见本节补记。
+- close：三仓全过零失败（failed 空），分支 msh/m3clear-solo 三仓 deleted，工地三处 removed，会话 c44edb7ecb8d7210 revoked。并行批 facetmath-solo 与 covrefresh-solo 归并在先，本批归并无碰撞。
+- 备份让位归并对表：让位件七十六件（引擎 trail 与批件二十六、工具计数册与批件四十九、数学增量件一）备份后让位，归并后逐件 diff 全数 IDENTICAL，零漂移零丢失；锁册与调用册留主树活写未入本批 allow，归主会会计通道（checkpoint-main 先例）。
+- reconcile：sih-engine unrouted 0 与 cert_missing 0 与 unbypassed 0；sih-tools unrouted 0 与 cert_missing 1（entryunique-solo 段2 先前批既有）；sih-math unrouted 0 与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 先前批既有）与 unbypassed 1（数学仓零号基线初始提交既有）——三者相比批前零新增，本批贡献零。
+- 终态 verify：status valid 47 事件，last_hash 35d7edc7（批期链尾变更件更正认证笔为收），first_hash 与批前一致零分叉。
+- 三仓提交号：sih-engine 段1 ae5df37 与段2 4b2cdfc 与归并 96050ba；sih-tools 段1 d46411b3 与段2 8f3eb5c7 与归并 965b2926；sih-math settle 0134b8f 与归并 04ec06f。
+- 附记申报：本节为 close 后补记（ordwire 收约附表先例），补记后本档在主树为未提交修改态，归主会 checkpoint 通道收编，非越线直写。
