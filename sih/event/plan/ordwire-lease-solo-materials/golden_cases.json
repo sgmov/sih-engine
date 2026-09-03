@@ -1,0 +1,17 @@
+[
+  {
+    "name": "collision_locked_elsewhere",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "A"},
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "B"}
+    ]
+  },
+  {
+    "name": "yield_release_then_grant",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "A"},
+      {"kind": "unlock", "path": "sih-tools/lease/CONTRACT.md", "session": "A"},
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "B"}
+    ]
+  }
+]
