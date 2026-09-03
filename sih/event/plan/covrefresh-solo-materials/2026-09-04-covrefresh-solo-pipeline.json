@@ -1,0 +1,56 @@
+{
+ "batch": "covrefresh-solo",
+ "order": "化格→核阅→检词（笔在核前）",
+ "results_file": [
+  "sih-engine/sih/event/plan/covrefresh-solo-results.md",
+  "结果档成文后补跑三步，读数见结果档管线节"
+ ],
+ "run_date": "2026-09-04",
+ "targets": [
+  {
+   "formatter": {
+    "exit": 0,
+    "note": "无需改"
+   },
+   "nomenclator": {
+    "exit": 0,
+    "note": "core 包零违例零 findings"
+   },
+   "scrutinator": {
+    "exit": 2,
+    "note": "des-001 域外（sih-engine/doc 外），如实记不属违规，零 findings"
+   },
+   "target": "worktrees/sih-math/covrefresh-solo/docs/mathpipe-coverage-2026-09-03/summary-rev2.md"
+  },
+  {
+   "formatter": {
+    "exit": 0,
+    "note": "无需改"
+   },
+   "nomenclator": {
+    "exit": 0,
+    "note": "core 包零违例零 findings"
+   },
+   "scrutinator": {
+    "exit": 2,
+    "note": "des-001 域外（sih-engine/doc 外），如实记不属违规，零 findings"
+   },
+   "target": "worktrees/sih-math/covrefresh-solo/docs/mathpipe-coverage-2026-09-03/ledger-rev2.json"
+  },
+  {
+   "formatter": {
+    "exit": 0,
+    "note": "无需改"
+   },
+   "nomenclator": {
+    "exit": 0,
+    "note": "core 包零违例零 findings"
+   },
+   "scrutinator": {
+    "exit": 2,
+    "note": "des-001 域外（sih-engine/doc 外），如实记不属违规，零 findings"
+   },
+   "target": "worktrees/sih-math/covrefresh-solo/docs/mathpipe-coverage-2026-09-03/env-params-rev2.json"
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+{
+ "batch": "covrefresh-solo",
+ "cmd": "python3 rev2_script.py <输出目录>，同参双跑",
+ "cmp_result": "IDENTICAL x3（逐字节）",
+ "exit_codes": {
+  "run_a": 0,
+  "run_b": 0
+ },
+ "files_compared": [
+  "ledger-rev2.json",
+  "env-params-rev2.json",
+  "summary-rev2.md"
+ ],
+ "run_a_dir": "worktrees/sih-math/covrefresh-solo/docs/mathpipe-coverage-2026-09-03",
+ "run_b_dir": "/tmp/covrun-b",
+ "run_date": "2026-09-04",
+ "script": "sih-engine/sih/event/plan/covrefresh-solo-materials/rev2_script.py",
+ "sha256_16": {
+  "env-params-rev2.json": "580881cd914615cb",
+  "ledger-rev2.json": "2a17370dd3a3c4dd",
+  "summary-rev2.md": "fca2d24beaf8632d"
+ }
+}
