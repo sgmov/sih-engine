@@ -71,6 +71,9 @@
 4. **sih-math 无直提守卫钩**：git config core.hooksPath 于 sih-math 缺席（守卫只装双仓），math 工地 settle 走 lease commit 通道本身合规，如实申报环境态。
 5. **金向量数值舍入声明**：CUSUM 步进值逐位六舍五入进位（S₂=9.583006 由舍入进位承载），同参双跑逐字节一致不受影响，语义在推导档第四节声明。
 6. **禁碰面遵守申报**：wikirecall 与 elicit 源码零触碰（叩问与书单对表只读调用属机械链义务）；并行批 recallloop-solo 与 elicitwire-solo 施工面零交叠。
+7. **让位 checkout 回退事故（收约期，已复原）**：共享面让位用 `git checkout -- <file>` 实从 index 复原并回退了 trail 未提交段九行（本批四认证加 checkcite 与并行批 recallloop 四认证）；以让位前备份原样恢复即并集超集放行形，恢复后 scribe verify valid 66 事件，锁账 release 行同事故回退后重放补行。教训：共享面让位应 `git checkout HEAD --` 并先行双备份，已录 pk-045 候补。
+8. **bypass 登记误指一笔（不实指认，如实申报）**：tools 锁账尾随提交因并行批 recallloop 先手收编同文件而空转（nothing staged），bypass 登记却已按提交后 HEAD 取号 36b6ded9——该号实为 recallloop-solo wip 共享面快照收编提交，非本批件；bypass 台账 append-only 无撤销位，误指认在此申报更正，呈主会会计通道于下次 checkpoint 注记；本批真实的通道外提交（475832c 链尾随、c500db9/ca98f8b 台账尾随、62f5bad5 词表收编、本笔回填）均各带正确 bypass。
+9. **sih-tools 词表收编两段形**：词表六件因任务包请求写入节未含检词包面而无法入 settle（staged_out_of_scope 拒），settle 去出界件后改走主树 wip 并集收编通道（62f5bad5，df6ce8ad 先例同形）；管线与检词在工地包面先行验证零违例后主树收编复核零违例。
 
 ## 七、冲突样本节（pk-045 样本库）
 
@@ -81,7 +84,40 @@
 
 ## 八、收口读数（close 后回填）
 
-见第十一节（close 归并与 reconcile 与链 verify 与三仓 commit 号，收约后回填）。
+### 三仓 commit 号
+
+| 仓 | settle 段1 | 通道外尾随/并集 | 归并号 |
+|---|---|---|---|
+| sih-math | b4b89c6（推导档） | — | 85826d5 |
+| sih-engine | 38f8e0b（任务包与 materials 与结果档） | 475832c（链尾随 66 事件并集超集） | 7c9022b |
+| sih-tools | 277ab5a5（gauge 九件） | 重筑拾取 8cba17d7（277ab5a5 重放形基 ca98f8be）加 CALL-LOG 并集一行；62f5bad5（词表六件收编 wip）；台账尾随 c500db9 与 ca98f8b 等 | ab0000a2 |
+
+### close 记录
+
+首试撞共享面未提交态（并行批共笔 trail 与 CALL-LOG 与锁账在途）；次试拒于本会话 gauge 锁 release 行被让位 checkout 回退；三至十余试撞 CALL-LOG 同段追加内容冲突（与 recallloop-solo 收约竞速，其 HEAD 持续推进）。终解：分支重筑——工作树重锚主 tip ca98f8be 后 cherry-pick 277ab5a5（CALL-LOG 冲突人工并集零标记续拾）得 8cba17d7，merge-base=主 tip 即快进归并，close exit 0，failed 空，三仓分支删除、worktree 全移除、会话 4db66354ad676374 拆销、领取登记随会话生命周期清。
+
+### 备份让位归并对表
+
+主树任务包与 materials 三件让位前备份与归并后逐字节 cmp 一致（BACKUP-IDENTICAL），让位零丢失；trail 让位事故（checkout 回退未提交段九行：本批四认证与并行批四认证与本批 checkcite）以备份原样恢复，恢复后 scribe verify valid，恢复行与本批 /tmp 认证回执逐哈希对上，非书简零改写（并集超集放行形）。
+
+### reconcile 读数（三仓）
+
+| 仓 | unrouted | unbypassed | cert_missing | 异常归属 |
+|---|---|---|---|---|
+| sih-engine | 0 | 0 | 0 | 全净 |
+| sih-tools | 0 | 0 | 1 | entryunique-solo 段2（526e2be，2026-09-03 旧账，非本批新增） |
+| sih-math | 0 | 1 | 2 | baseline 零号 c556abb 与 mathfix2 段2（93c4f0b）与 fmtfix 段2（d561f17），均 2026-08-30 旧账，非本批新增 |
+
+### 链 verify（close 后）
+
+status valid，66 事件，首哈希 05a8a75e，末哈希 83aa35d3（本批 checkcite 认证）；例行读数三笔加 intent 一笔加认证五笔全数在链，与 recallloop-solo 并行共笔零丢失。
+
+### 共享面对表
+
+- scribe/CALL-LOG.md：并集版本随 tools 归并在案（本批一笔留痕在档尾）；lease/CALL-LOG.md 一笔由并行批台账收编带入。
+- 词表：terms.json 142 件归一（本批六件 established：控制图、控制限、越限、基线期、变点、告警；主 HEAD 上游并 recallloop 两件），主树核阅推导档检词零违例，62f5bad5 wip 收编加 bypass 登记。
+- 主树 gauge 全测试族复跑：20 passed 3 skipped（gc-1 与 ga-2 共存在役）。
+- 本笔回填提交：close 通道外 wip 形（--no-verify 加 bypass 登记），covrefresh 3bed93e 先例同形。
 
 ## 九、队形验证
 
