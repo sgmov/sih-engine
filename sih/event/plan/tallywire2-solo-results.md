@@ -93,3 +93,13 @@ rev1 账本坐实 tally 为可指认未实例化件：tally 即 R1-R7 核对与�
 - **reconcile 读数（close 后）**：tools unrouted_tail 46（cert_missing 1 即 entryunique-solo 526e2be 09-03 既有）、engine unrouted_tail 70（cert_missing 0、bypass 11 全登记）、math unrouted_tail 47（cert_missing 2 即 08-30 mathfix2 与 fmtfix 既有、unbypassed 1 即 08-30 基线 c556abb 既有）——三仓 unrouted 与 cert_missing 较批前零新增，本批提交零入尾。
 - **链 verify 前后对表**：批期 verify valid 9 事件（首哈希 05a8a75e、末哈希 a5450400），close 后 verify valid 9 事件同首末哈希，前后一致零漂移；与 selwire-solo 并发追加态下活链哈希连续。
 - **本笔回填**：本节由收约后 wip 提交回填，--no-verify 提交 + lease bypass 登记随行（close 通道以外提交的既定通道）。
+
+## 十二、验收后随冻修复（主会验收批注 2026-09-04）
+
+主会活体验收发现金向量缺陷一件，随冻修复毕：
+
+- **缺陷**：两夹具 material.json 五个路径字段（contract/responses/seat_baseline/topic/trail）冻结了工地绝对路径（`worktrees/sih-engine/tallywire2-solo/...`）。冻结态在工地内自洽（F-3 当时真实通过），但收约归并工地拆除后，主树重放 R2 找不到伴随件必败（双场景 材料退回 exit 1）——金向量对已提交树不可复现，属 frozen-wrong 失败族新变体：**夹具寻径 locus 耦合，冻结态未声明重放 cwd 约定**。
+- **修复**：夹具十路径字段改相对路径（相对 materials 目录即重放 cwd）；tally 代码零改动；冻结向量经主树实跑按 replay 归一约定重冻，重冻结果与批原版冻结向量**逐字节一致**（git 零 diff）——批内冻的行为内容本来就正确，缺陷纯在夹具寻径。
+- **复验**：replay_golden.py 主树两轮重放，双场景 double_run_byte_identical true、golden_match true、exit 0（裁决通过／挂起），ALL true。
+- **重放约定**：replay_golden.py 须在 materials 目录下执行（夹具相对寻径按 cwd 解析，replay 以绝对路径传参并按 `<MATERIALS>` 归一，两约定已在主树验证兼容）。
+- **登记**：本缺陷作为 pk-046 金向量方法论漏洞清单输入 V6（冻结态须携带重放寻径约定并过已提交树复现关），待用户裁 pk-046 载体时并入条款组。
