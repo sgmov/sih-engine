@@ -82,3 +82,7 @@ T6 退出码
 - A4 生产四文件复验全 valid
 - A5 退出码三值与工具例对齐
 - A6 库面可被 MCP 层直接调用即无 CLI 耦合入库层
+
+## 修订记录 {#revisions}
+
+2026-09-03 修订三：承 guardrail-solo 防分叉护栏，`scribe` CLI 四写入入口（append/intent/park/record）加 `worktree_trail_guard`，`--trail` 路径含 `worktrees/` 段即拒 exit 2 载错文「工地链副本禁追加即认证先落主链」，显式 `--allow-worktree-trail` 留应急位默认关；tdd 新增四测，全红后全绿；USAGE 文档同步标记旗标；以上事项全过即修订闭。

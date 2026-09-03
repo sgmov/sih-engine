@@ -66,22 +66,42 @@ fn lockgate_guard(opts: &std::collections::HashMap<String, String>, trail: &str)
     }
 }
 
+/// 工地链副本禁追加护栏：--trail 物理路径含 worktrees/ 段即拒退出码二。
+///
+/// 认证必须落主树活链，链文件 settle 前一次性拷工地，严禁工地链副本追加
+/// 致主链同位双 valid 续链分叉（entryunique 与 mathpipe-a3 教训）。判定按
+/// 规范路径组件扫描 worktrees 段，worker 目录即绝对路径态。显式覆写旗标
+/// --allow-worktree-trail 默认关，仅应急位显式开启。
+fn worktree_trail_guard(opts: &std::collections::HashMap<String, String>, trail: &str) {
+    let path = PathBuf::from(trail);
+    let contains_worktree = path
+        .components()
+        .any(|c| c.as_os_str() == "worktrees");
+    if !contains_worktree {
+        return;
+    }
+    if opts.get("allow-worktree-trail").map(|s| s == "1" || s == "true").unwrap_or(false) {
+        return;
+    }
+    emit(json!({"error": "工地链副本禁追加即认证先落主链"}), 2);
+}
+
 const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
 
 子命令：
   append    追加认证事件（写）
     必填：--report <报告文件> --exit-code <退出码> --trail <链文件>
-    可选：--locks <锁册路径> --session <会话号>
+    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
     示例：scribe append --report report.json --exit-code 0 --trail trail.ndjson
 
   intent    追加意图精炼事件（写）
     必填：--record <ask3 记录> --validation <验证件> --trail <链文件>
-    可选：--locks <锁册路径> --session <会话号>
+    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
     示例：scribe intent --record ask3.json --validation valid.json --trail trail.ndjson
 
   park      追加停泊事件（写）
     必填：--record <停泊记录 JSON> --trail <链文件>
-    可选：--locks <锁册路径> --session <会话号>
+    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
 
   verify    校验链完整性（读）
     必填：--trail <链文件>
@@ -92,7 +112,7 @@ const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
     可选：--event-type <类型> --doc-id <文档ID>
 
   record    秤星读数落链（写）
-    七字段守卫，详见 SPEC-011
+    七字段守卫，详见 SPEC-011；可选 --allow-worktree-trail <1|true>
 
   vectors   冻结向量集（读）
 
@@ -170,6 +190,7 @@ fn main() {
                 emit(json!({"error": "append 缺少必填参数，需 --report <报告文件> --exit-code <退出码> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
             let Ok(exit_code) = exit_code.parse::<i32>() else {
                 emit(json!({"error": "退出码非数"}), 2)
             };
@@ -200,6 +221,7 @@ fn main() {
                 emit(json!({"error": "intent 缺少必填参数，需 --record <ask3 记录> --validation <验证件> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
             let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
                 emit(json!({"error": "双件缺失"}), 2)
             };
@@ -228,6 +250,7 @@ fn main() {
                 emit(json!({"error": "park 缺少必填参数，需 --record <停泊记录 JSON> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
             let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
             let store = load_store(&trail);
             let scope = match load_parking_scope(Path::new(&trail)) {
@@ -252,6 +275,7 @@ fn main() {
                 emit(json!({"error": "record 缺少必填参数，需 --reading <读数件> --trail <链文件>"}), 2)
             };
             lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
             let Some(text) = read_text(&reading) else { emit(json!({"error": "读数件不存在"}), 2) };
             let input = match reading_event(&text, gate_actor()) {
                 Ok(i) => i,
