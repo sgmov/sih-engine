@@ -1,0 +1,16 @@
+{
+  "line": {
+    "claimant": "cycle-probe",
+    "claimed_at": "2026-09-03T18:40:07+00:00",
+    "event": "claimed",
+    "expires_at": "2026-09-03T19:40:07+00:00",
+    "package": "claimgate-solo",
+    "status": "claimed",
+    "tool": {
+      "name": "lease",
+      "version": "1.16.0"
+    },
+    "ttl_minutes": 60
+  },
+  "package": "claimgate-solo"
+}

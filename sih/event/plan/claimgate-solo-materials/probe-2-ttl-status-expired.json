@@ -1,0 +1,67 @@
+{
+  "claims": {
+    "claims": [
+      {
+        "claimant": "real-clock-probe",
+        "claimed_at": "2026-09-03T18:38:50+00:00",
+        "expires_at": "2026-09-03T18:39:50+00:00",
+        "package": "claimgate-solo",
+        "status": "expired",
+        "ttl_minutes": 1
+      }
+    ],
+    "header": {
+      "claims_ledger": "/tmp/probe2-claims.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "summary": {
+      "claimed": 0,
+      "expired": 1,
+      "packages": 1,
+      "released": 0
+    }
+  },
+  "header": {
+    "locks_ledger": "/tmp/probe2-locks.ndjson",
+    "sessions_ledger": "/tmp/probe2-sess.ndjson",
+    "tool": {
+      "name": "lease",
+      "version": "1.16.0"
+    }
+  },
+  "locks": {
+    "header": {
+      "locks_ledger": "/tmp/probe2-locks.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "held": [],
+    "summary": {
+      "held": 0
+    }
+  },
+  "sessions": {
+    "active": [],
+    "header": {
+      "events": 0,
+      "ledger": "/tmp/probe2-sess.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "summary": {
+      "active": 0,
+      "revoked": 0
+    }
+  },
+  "summary": {
+    "active_sessions": 0,
+    "held_locks": 0
+  }
+}
