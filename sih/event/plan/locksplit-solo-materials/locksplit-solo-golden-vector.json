@@ -1,0 +1,198 @@
+{
+  "batch": "locksplit-solo",
+  "carrier": "ORD-020",
+  "cases": [
+    {
+      "case": "append_coexistence",
+      "final_held": {
+        "sih-tools/lease/CALL-LOG.md": [
+          [
+            "A",
+            "append"
+          ],
+          [
+            "B",
+            "append"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "mode": "append",
+          "op": "lock",
+          "path": "sih-tools/lease/CALL-LOG.md",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease/CALL-LOG.md": [
+              [
+                "A",
+                "append"
+              ]
+            ]
+          }
+        },
+        {
+          "decision": "granted",
+          "holder": null,
+          "mode": "append",
+          "op": "lock",
+          "path": "sih-tools/lease/CALL-LOG.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease/CALL-LOG.md": [
+              [
+                "A",
+                "append"
+              ],
+              [
+                "B",
+                "append"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "append_exclusive_conflict",
+      "final_held": {
+        "sih-tools/lease/CALL-LOG.md": [
+          [
+            "A",
+            "exclusive"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "mode": "exclusive",
+          "op": "lock",
+          "path": "sih-tools/lease/CALL-LOG.md",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease/CALL-LOG.md": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        },
+        {
+          "decision": "locked_elsewhere",
+          "held_mode": "exclusive",
+          "holder": "A",
+          "mode": "append",
+          "op": "lock",
+          "path": "sih-tools/lease/CALL-LOG.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease/CALL-LOG.md": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "normalization_same_path_conflict",
+      "final_held": {
+        "sih-tools/lease/CONTRACT.md": [
+          [
+            "A",
+            "exclusive"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "mode": "exclusive",
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        },
+        {
+          "decision": "locked_elsewhere",
+          "held_mode": "exclusive",
+          "holder": "A",
+          "mode": "exclusive",
+          "op": "lock",
+          "path": "/abs/root/sih-tools/lease/CONTRACT.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "inclusion_dir_file_conflict",
+      "final_held": {
+        "sih-tools/lease": [
+          [
+            "A",
+            "exclusive"
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "mode": "exclusive",
+          "op": "lock",
+          "path": "sih-tools/lease",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        },
+        {
+          "decision": "locked_elsewhere",
+          "held_mode": "exclusive",
+          "holder": "A",
+          "mode": "exclusive",
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease": [
+              [
+                "A",
+                "exclusive"
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "formula_version": "ga-1"
+}
