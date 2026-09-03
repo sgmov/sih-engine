@@ -71,4 +71,4 @@ rev1 账本坐实 lease 为可指认未实例化件：程序档对挂 ORD-020 �
 
 - [x] F-1 至 F-4 全过
 - [x] 冲突样本节在结果档（第 1 条撞锁竞态含 retry 计数与让位时间戳）
-- [x] 认证入链，多仓结算收约，对表读数在档（close 后 reconcile 读数见收约附表）
+- [x] 认证入链，多仓结算收约，对表读数在档（close 后 reconcile 读数见收约附表）+5. **收约碰撞两段式（本样本第 5 条）**：close 于 engine 与 tools 两仓 merge_failed——并行 resarch-solo 先并入 main 致 5 册调用册、terms.json、引擎 trail 共享只追加文件左右各追加 git 拒并（math 仓归并 cef0f16 成功）。机械响应即两仓工地并集手工归并：引擎 trail 77 事件 scribegate verify valid（main 71 事件为其前缀、ordwire 6 事件纯追加尾）、工具 5 册调用册两批行并存、terms.json 并 8 词（修正 ordinate-lease-solo 笔误）；engine 归并 cc5908c 与 tools 归并 dfe569f0 均成 main 后裔可快进。终态归并采"收约让位"延至并发批（leasepatch/algidx/autoflow）让位后再行，本批不越界强并主树脏树活写，重试计数或让位时刻见收约附表与工具调用册更正行。

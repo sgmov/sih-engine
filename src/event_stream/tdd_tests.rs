@@ -198,4 +198,129 @@ mod tdd {
         let q = Command::new(&bin).args(["query", "--trail", trail.to_str().unwrap(), "--doc-id", "no-such"]).output().unwrap();
         assert_eq!(q.status.code(), Some(1), "查无一");
     }
+
+    // ---- 防分叉护栏（guardrail-solo 批）----
+    // 四写入入口 --trail 路径含 worktrees/ 段即拒退出码二载错文，
+    // 显式覆写旗标 --allow-worktree-trail 默认关，主树路径行为零回退。
+    // 构造工地装饰链路径与合法报告件，逐入口实测拒证与覆写放行。
+
+    fn worktree_trail() -> PathBuf {
+        let dir = std::env::temp_dir().join(format!(
+            "worktrees/sih-engine/{}-trail",
+            std::process::id()
+        ));
+        std::fs::create_dir_all(&dir).unwrap();
+        dir.join("2026-09-03.ndjson")
+    }
+
+    fn cert_report() -> PathBuf {
+        let p = std::env::temp_dir().join(format!("guard-cert-{}.json", std::process::id()));
+        let report = json!({"engine": {"name": "f", "version": "0"}, "packs": [], "content_hashes": {}, "findings": [], "golden_baseline": "0", "tool": {"name": "f", "version": "0"}});
+        if !p.exists() {
+            std::fs::write(&p, report.to_string()).unwrap();
+        }
+        p
+    }
+
+    fn intent_record() -> PathBuf {
+        let p = std::env::temp_dir().join(format!("guard-record-{}.json", std::process::id()));
+        if !p.exists() {
+            let rec = json!({
+                "session_id": "sess-guard-test", "round": 1,
+                "intent_contract": {"goal": "x", "exclusions": [], "output_format": "x", "injected_constraints": []},
+                "domain_contract": {"target_domain": {"scope": "x", "max_depth": 1}, "support_domain": {"scope": "x", "max_depth": 1}},
+                "anchors": [
+                    {"anchor_seq": 1, "text": "a", "inquiry_stage": "first", "domain_tag": "target", "depth": 0,
+                     "philosophy_ref": {"source": "sih-philosophy/emanation/proodos/07-on-assay.md", "quote": "q"}, "rationale": "r", "evidence": "e", "confidence": 0.9}
+                ],
+                "calls_in": 0, "calls_out": 0, "elicitation": {"signals_file": "x", "signals": 0, "disposition": []}
+            });
+            std::fs::write(&p, rec.to_string()).unwrap();
+        }
+        p
+    }
+
+    fn valid_rec() -> PathBuf {
+        let p = std::env::temp_dir().join(format!("guard-valid-{}.json", std::process::id()));
+        if !p.exists() {
+            std::fs::write(&p, r#"{"status":"ok","anchor_count":1}"#).unwrap();
+        }
+        p
+    }
+
+    // G-A1 append 工地链副本拒退出码二载错文。
+    #[test]
+    fn ga1_append_worktree_trail_rejected() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        let wt = worktree_trail();
+        let out = Command::new(&bin)
+            .args(["append", "--report", cert_report().to_str().unwrap(), "--exit-code", "0", "--trail", wt.to_str().unwrap()])
+            .output()
+            .unwrap();
+        assert_eq!(out.status.code(), Some(2), "工地链副本 append 应拒退出码二");
+        let body = String::from_utf8_lossy(&out.stdout);
+        assert!(body.contains("工地链副本禁追加即认证先落主链"), "错文应载明护栏：{body}");
+    }
+
+    // G-A2 record 工地链副本拒退出码二。
+    #[test]
+    fn ga2_record_worktree_trail_rejected() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        let wt = worktree_trail();
+        let reading = std::env::temp_dir().join(format!("guard-reading-{}.json", std::process::id()));
+        let rd = r#"{"dimension":"convergence","subject":"sih-engine","value":0.5,"window":"2026-08-01/2026-08-30","formula_version":"ga-1","computed_at":"2026-08-30","inputs_digest":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}"#;
+        let _ = std::fs::remove_file(&reading);
+        std::fs::write(&reading, rd).unwrap();
+        let out = Command::new(&bin)
+            .args(["record", "--reading", reading.to_str().unwrap(), "--trail", wt.to_str().unwrap()])
+            .output()
+            .unwrap();
+        assert_eq!(out.status.code(), Some(2), "工地链副本 record 应拒退出码二");
+        let body = String::from_utf8_lossy(&out.stdout);
+        assert!(body.contains("工地链副本禁追加即认证先落主链"), "错文应载明护栏：{body}");
+        // 覆写旗标放行：默认关，显式开即过护栏。
+        let allow = Command::new(&bin)
+            .args(["record", "--reading", reading.to_str().unwrap(), "--trail", wt.to_str().unwrap(), "--allow-worktree-trail", "1"])
+            .output()
+            .unwrap();
+        assert_eq!(allow.status.code(), Some(0), "显式覆写旗标应放行");
+        let _ = std::fs::remove_file(&reading);
+    }
+
+    // G-A3 intent 工地链副本拒退出码二。
+    #[test]
+    fn ga3_intent_worktree_trail_rejected() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        let wt = worktree_trail();
+        let out = Command::new(&bin)
+            .args(["intent", "--record", intent_record().to_str().unwrap(), "--validation", valid_rec().to_str().unwrap(), "--trail", wt.to_str().unwrap()])
+            .output()
+            .unwrap();
+        assert_eq!(out.status.code(), Some(2), "工地链副本 intent 应拒退出码二");
+        let body = String::from_utf8_lossy(&out.stdout);
+        assert!(body.contains("工地链副本禁追加即认证先落主链"), "错文应载明护栏：{body}");
+    }
+
+    // G-A4 park 工地链副本拒退出码二。
+    #[test]
+    fn ga4_park_worktree_trail_rejected() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        let wt = worktree_trail();
+        let rec = std::env::temp_dir().join(format!("guard-park-{}.json", std::process::id()));
+        let rp = json!({"action": "enter", "entry_id": "g-test", "title": "t", "exit_condition": "c", "ttl_days": 3});
+        let _ = std::fs::remove_file(&rec);
+        std::fs::write(&rec, rp.to_string()).unwrap();
+        let out = Command::new(&bin)
+            .args(["park", "--record", rec.to_str().unwrap(), "--trail", wt.to_str().unwrap()])
+            .output()
+            .unwrap();
+        assert_eq!(out.status.code(), Some(2), "工地链副本 park 应拒退出码二");
+        let body = String::from_utf8_lossy(&out.stdout);
+        assert!(body.contains("工地链副本禁追加即认证先落主链"), "错文应载明护栏：{body}");
+        let _ = std::fs::remove_file(&rec);
+    }
 }
