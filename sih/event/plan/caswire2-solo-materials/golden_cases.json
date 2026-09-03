@@ -1,0 +1,37 @@
+[
+  {
+    "name": "clean_chain_all_pass",
+    "edges": {
+      "A": ["B"]
+    },
+    "isolated": ["C"],
+    "cert_hashes": {
+      "B": "hash-B-current"
+    },
+    "disk_hashes": {
+      "B": "hash-B-current"
+    },
+    "expect": {
+      "A": "writable",
+      "C": "writable",
+      "exit": 0
+    }
+  },
+  {
+    "name": "polluted_chain_upstream_reject",
+    "edges": {
+      "A": ["B"]
+    },
+    "isolated": [],
+    "cert_hashes": {
+      "B": "hash-B-cert"
+    },
+    "disk_hashes": {
+      "B": "hash-B-current"
+    },
+    "expect": {
+      "A": "blocked",
+      "exit": 1
+    }
+  }
+]
