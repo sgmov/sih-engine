@@ -77,14 +77,51 @@ locator 的判定面即三件：稳定标识派生（identity.stable_id，路径
 2. **管线退出码首采失真订正**：核阅与检词循环首采在 echo 内联命令替换吃掉 `$?` 误读 exit 0（selwire-solo 越线申报三同款陷阱），直跑复验订正：核阅六目标实为 exit 2 域外如实记（域内对照件 GOV-003 exit 0 佐证采集面恢复），检词十二目标订正后仍 exit 0 零违例，管线读数以订正后为准（第五节）。
 3. **checkcite 首投拦截如实记**：初查书单零条目命中（多词连写查询不触发词通道），checkcite verdict fail 拦收口；按三通道并集条款改单词面两召回（版本偏序与等价关系与商集）并集书单后 pass 零 missing；并集构造与 fail→pass 全程如实申报。
 4. **lease open --session 旗标缺席**：lease 1.16.0 open 子命令无该旗标（勘误在案），会话号自生成 92cec27f94d03d4a，ask3 记录内会话标 sess-zcode-260904-locatorwire 双标识空间对表各认各的；闸类 scribe 写入 --session 会话号加 --sessions 台账路径双带逐笔过，非绕行。
-5. **收约读数补笔（预留）**：本档第九节收约附表于 close 后经一次 --no-verify 提交加 lease bypass 登记落档（tallywire2-solo b6646e5 与 selwire-solo 先例同形），补笔仅涉本节与第九节。
+5. **收约读数补笔（已执行）**：本档第九节收约附表于 close 后经一次 --no-verify 提交加 lease bypass 登记落档（tallywire2-solo b6646e5 与 selwire-solo 先例同形），补笔仅涉本节与第九节。
+6. **台账可见性窗口一次（commit 首投被拒）**：tools settle 首投 session_not_active（wanted 92cec27f94d03d4a），即时查册双册查无本会话行；数分钟后复刻查册，issued 一行加 locks 十八行（六独占取加 trail append 六取六放）账实相符复归，判定为与 latexwire 及 queueing 并行共笔的可见性窗口而非丢行（append_event 单点追加语义，源码 commitcore 与 core.py 实读），重试 settle 一次即过零状态残留，工具异常先处置在案。
+7. **close 退出码首采被管道掩一次**：close 首跑经 `| tail` 采集退出码掩为 0（禁管道掩退出码条款违反一次），错误体直读未漏（JSON error 全量在案）；二跑三跑改文件重定向直采 rc=1 与 rc=0，采集面恢复。
+8. **latexwire 并行批收约嵌套本批批中**：base integral-stage-build 于本批批中前移（latexwire 归并 01ddd799 加词债并集 022de53b），close 闸四 diverge 据此整批拒一次；处置见第九节 close 记录，词表并集 150 件终态。
 
-## 九、收约附表（close 后补笔回填）
+## 九、收约附表
 
-（占位：三仓 commit 号、close 记录、reconcile 读数、链 verify 读数，close 后补笔回填。）
+### 三仓 commit 号
+
+| 仓 | 段1 settle | 工地并集归并 | close 归并 |
+|---|---|---|---|
+| sih-tools | 861be4d6 | 856cd509（merge: integral-stage-build 副本归并，bypass 在账） | 3165ce42 |
+| sih-engine | 0e5151b | —（预检即洁） | 57d8956 |
+| sih-math | 19ac46d | —（预检即洁） | 42c288f |
+
+### close 记录
+
+| 时点 | 事件 | 读数 |
+|---|---|---|
+| 首跑 | close_failed（闸四前置态整批拒，零部分动作） | tools 双册 merge_diverge（base 已被 latexwire 归并前移，本分支台账陈旧） |
+| 并集归并 | 工地分支手工并集（merge 形通道外） | 856cd509：terms.json 并集 150 件（latexwire 四件加本批四件）与 scribe CALL-LOG 双行并留，台账自动取 base 侧，bypass 登记在账 |
+| 二跑 | 部分成即 tools 与 engine 腿 merge_failed，math 先并拆本（42c288f） | 主树未跟踪件撞（tools 十件 reports 与 identity，engine 任务包与 dispatch 与 recall），会话仍活 |
+| 处置 | 备份让位归并对表法 | 十三件备份让位（/tmp/locatorwire-yield-backup），close 复跑，diff 备份与归并结果逐字节 IDENTICAL 十三件全数 |
+| 末跑 | close 成 | failed 空、三仓归并齐（3165ce42 与 57d8956 与 42c288f）、会话 92cec27f94d03d4a 吊销 |
+
+### reconcile 读数（close 后）
+
+| 仓 | unrouted | cert_missing | session_orphan | unbypassed | bypass | 退出码 |
+|---|---|---|---|---|---|---|
+| sih-engine | 0 | 0 | 0 | 0 | 24 | 0 全洁 |
+| sih-tools | 0 | 1（entryunique-solo 批前存量 526e2be cert e6880a63） | 0 | 0 | 16 | 1（存量） |
+| sih-math | 0 | 2（mathfix2-solo 与 fmtfix-solo 批前存量 08-30） | 0 | 1（c556abb 08-30 基线零号件存量） | 1 | 1（存量） |
+
+比批前零新增：cert_missing 与 unrouted 与 session_orphan 与 unbypassed 全数批前存量（selwire-solo 结果档同口径），本批合并笔 856cd509 经 bypass 登记入账即 bypass 类在册。
+
+### 链 verify（close 后）
+
+2026-09-04.ndjson 批期读数 valid 81 事件（首哈希 05a8a75e 末哈希 bc8cf99f 即本批 checkcite 认证笔）；close 后复验 valid 85 事件（queueing-solo 认证四笔共笔插入后仍全绿），备份让位对表 diff 备份与归并结果逐字节 identical 十三件全数。
+
+### 队形验证
+
+单线形 solo 零子代理全程成立：批内全部写动作由本会话亲写（工地 git 提交人为本批，链六笔与本批一一对应），无 Agent/Task 派生，pk-045 冲突样本入库（第六节四条）。
 
 ## 十、验收
 
 - [x] F-1 至 F-4 全过
 - [x] 冲突样本节在结果档（第 1 条含零重试实录，第 2 条含三批共笔并存实录）
-- [x] 认证入链，三仓结算收约（收约附表补笔回填）
+- [x] 认证入链，三仓结算收约，对表读数在档（收约附表）
