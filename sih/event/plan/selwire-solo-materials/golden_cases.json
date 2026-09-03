@@ -1,0 +1,51 @@
+{
+  "pack": {
+    "manifest": "name = \"selwire-golden\"\nversion = \"0.1.0\"\n\n[domain]\ninclude = [\"**/*.json\"]\nexclude = []\n",
+    "routes": "[[predicates]]\nid = \"g_schema\"\nkind = \"schema_required\"\nroute_on_fail = \"scrap_track\"\nfields = [\"id\", \"path\", \"state\"]\n\n[[predicates]]\nid = \"g_state\"\nkind = \"state_annotation\"\nroute_on_fail = \"siding\"\nallowed = [\"draft\", \"reviewed\", \"sealed\"]\n\n[[predicates]]\nid = \"g_anchor\"\nkind = \"anchor_whitelist\"\nroute_on_fail = \"siding\"\nwhitelist = [\"docs/**\", \"reports/**\"]\n\n[[predicates]]\nid = \"g_write\"\nkind = \"write_boundary\"\nroute_on_fail = \"siding\"\nallowed_roots = [\"sih-engine/**\", \"sih-tools/**\"]\n\n[defaults]\npass_route = \"mainline\"\n\n[alarms]\nsiding_surplus_threshold = 99\nmainline_starvation_threshold = 0\n"
+  },
+  "materials": [
+    {
+      "name": "same_feature_a",
+      "record": {
+        "id": "mat-a",
+        "path": "docs/alpha.md",
+        "anchors": ["docs/alpha.md:1"],
+        "requested_writes": ["sih-engine/doc/x.md"],
+        "state": "reviewed"
+      }
+    },
+    {
+      "name": "same_feature_b",
+      "record": {
+        "id": "mat-b",
+        "path": "docs/beta.md",
+        "anchors": ["docs/beta.md:3"],
+        "requested_writes": ["sih-tools/report.md"],
+        "state": "reviewed"
+      }
+    },
+    {
+      "name": "boundary_anchor_fail",
+      "record": {
+        "id": "mat-c",
+        "path": "docs/gamma.md",
+        "anchors": ["docs/ok.md", "outside/escape.md"],
+        "requested_writes": ["sih-engine/doc/y.md"],
+        "state": "reviewed"
+      }
+    }
+  ],
+  "expectations": {
+    "same_feature_same_route": {
+      "route": "mainline",
+      "failed_predicate": null,
+      "checks_pass": ["g_schema", "g_state", "g_anchor", "g_write"]
+    },
+    "boundary_predicate_localization": {
+      "route": "siding",
+      "failed_predicate": "g_anchor",
+      "boundary_check_id": "g_anchor",
+      "boundary_check_pass": false
+    }
+  }
+}
