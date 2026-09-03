@@ -74,11 +74,42 @@ selector 逐件机械判定主线、停放、丢弃三路，判定面即谓词�
 1. **lease open --session 旗标缺席**：dispatch 台面注记「显式 --session」，lease 1.15.0 open 子命令实测无该旗标（unrecognized arguments），会话号自生成 c28da6a8cb7bbc53，正身件与 ask3 记录内会话标 sess-zcode-260904-selwire 对应同批；闸类 scribe 写入的 --session 均带会话号在册验过，非绕行，按工具实态执行如实申报。
 2. **unlock 缺 --identity 首投退出码二**：短持锁首笔 unlock 漏 --identity 报 usage 退出码二，补参重跑即 released，零状态残留，工具异常先处置在案。
 3. **化格退出码采集失真一次**：py 件化格循环内命令替换吃掉 `$?` 致首采误读 exit 0，直跑复验实为 exit 2 域外，全五件重采订正，管线读数以订正后为准（第五节）。
-4. **收约读数补笔**：close 归并与 reconcile 与终 verify 读数于收约后经一次 --no-verify 提交加 lease bypass 登记补笔落本档（red line 明示通道），补笔仅涉本档收约附表节。
+4. **close 预检撞并发批与并集归并**：close 首跑被闸四 merge-tree 预检整批拒（零部分动作），tools 三件（双册加 terms.json）与 engine trail 与 tallywire2-solo 已并内容冲突；处置即双仓工地分支手工并集归并（merge 形过守卫零 --no-verify），engine 主树活链脏态走备份让位归并对表法四步（备份十三笔、checkout 让位、close 归并、diff 备份与归并结果 identical）；两笔工地归并件经 reconcile 类 unbypassed 后补 lease bypass 登记清账（tools ef6b6ad9、engine b237df8，事由在 bypass 台账）。
+5. **nomenclator 调用册行域外让位**：范围闸 staged_out_of_scope 拒 sih-tools/nomenclator/CALL-LOG.md（任务包请求写入节未列该册），本行让位出段1，随本笔 wip 补笔经 bypass 通道入版控（facepark 先例）。
+6. **收约读数补笔**：本档收约附表与 nomenclator 调用册行于收约后经一次 --no-verify 提交加 lease bypass 登记落档（tallywire2-solo b6646e5 同款先例），补笔仅涉本档第九节与该册一行。
 
 ## 九、收约附表
 
-三仓 settle 段 1 与放锁收约与 reconcile 与链 verify 终读数见本档末节收口读数（收约后补笔）与 lease CALL-LOG 行。
+### 三仓 commit 号
+
+| 仓 | 段1 settle | 工地并集归并 | close 归并 |
+|---|---|---|---|
+| sih-engine | e5adc2c | b237df8（merge: main 副本归并，bypass 在账） | a491caa |
+| sih-tools | 9a05dada | ef6b6ad9（merge: integral-stage-build 副本归并，bypass 在账） | a722df54 |
+| sih-math | 2155b39 | —（预检即洁） | 2bc17c8 |
+
+### close 记录
+
+| 时点 | 事件 | 读数 |
+|---|---|---|
+| 首跑 | close_failed（闸四预检整批拒，零部分动作） | tools 三件冲突（lease/CALL-LOG、scribe/CALL-LOG、terms.json）加 engine trail 冲突，sih-math 洁 |
+| 次跑 | 部分成即 engine 腿 merge_failed 会话仍活 | tools 与 math 归并拆本完成，engine 主树活链脏态阻并 |
+| 处置 | 备份让位归并对表法 | 备份活链十三笔、checkout 让位至九笔、close 复跑、diff 备份与归并结果 IDENTICAL |
+| 末跑 | close 成 | failed 空、三仓归并齐、会话 c28da6a8cb7bbc53 吊销 |
+
+### reconcile 读数（close 后，bypass 登记后复跑）
+
+| 仓 | unrouted | cert_missing | session_orphan | unbypassed | bypass | 退出码 |
+|---|---|---|---|---|---|---|
+| sih-engine | 0 | 0 | 0 | 0 | 13 | 0 全洁 |
+| sih-tools | 0 | 1（entryunique-solo 批前存量 cert e6880a63） | 0 | 0 | 4 | 1（存量） |
+| sih-math | 0 | 2（mathfix2-solo 与 fmtfix-solo 批前存量 08-30） | 0 | 1（c556abb 08-30 基线零号件存量） | 0 | 1（存量） |
+
+比批前零新增：cert_missing 与 unrouted 与 session_orphan 全数批前存量，unbypassed 经补登记清零（math 存量一件不在本批处置域）。
+
+### 链 verify（close 后）
+
+2026-09-04.ndjson 13 事件 status valid，first 05a8a75e 末 5f6dd712；备份让位对表 diff 备份与归并结果逐字节 identical。
 
 ## 十、验收
 
