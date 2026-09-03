@@ -1,0 +1,79 @@
+{
+ "carriers": {
+  "degeneration": "PROB-014",
+  "hit_rate_interval": "PROB-011",
+  "information_gain": "PROB-014"
+ },
+ "channels": {
+  "graph": {
+   "confidence": 0.95,
+   "criterion": "0 < hits < total：候选空间 7 收窄到 6，IG=log2(7/6)=0.2224 比特（PROB-014 非零增益即未退化）",
+   "hit_rate": 0.8571428571428571,
+   "hits": 6,
+   "ig_bits": 0.22239242133644802,
+   "interval": [
+    0.4868721707256811,
+    0.9743203756552565
+   ],
+   "state": "active",
+   "total": 7,
+   "z": 1.959963984540054
+  },
+  "skeleton": {
+   "confidence": 0.95,
+   "criterion": "骨架 6/6 全在（结构缺件判据通过）",
+   "hit_rate": 1.0,
+   "hits": 6,
+   "ig_bits": null,
+   "interval": [
+    0.6096657120978346,
+    1.0
+   ],
+   "missing": [],
+   "state": "complete",
+   "total": 6,
+   "z": 1.959963984540054
+  },
+  "word": {
+   "confidence": 0.95,
+   "criterion": "0 < hits < total：候选空间 7 收窄到 1，IG=log2(7/1)=2.8074 比特（PROB-014 非零增益即未退化）",
+   "hit_rate": 0.14285714285714285,
+   "hits": 1,
+   "ig_bits": 2.807354922057604,
+   "interval": [
+    0.02567962434474355,
+    0.5131278292743189
+   ],
+   "state": "active",
+   "total": 7,
+   "z": 1.959963984540054
+  }
+ },
+ "confidence": 0.95,
+ "degradation_basis": [],
+ "degraded": false,
+ "hit_rate_semantic": "通道命中数对并集书单贡献占比（label-free 无外部相关标注），区间为威尔逊覆盖区间承 PROB-011",
+ "prior": "均匀先验于并集书单（先验来源：recall.py 并集 entry_ids，登记承 PROB-014 公理一）",
+ "query": [
+  "锁序"
+ ],
+ "required_skeleton": [
+  "llm-friendly-build/mapping.md",
+  "calculus/llm-friendly-build/mapping.md",
+  "probability/INDEX.md",
+  "order/INDEX.md",
+  "topology/INDEX.md",
+  "algebra/INDEX.md"
+ ],
+ "schema": "recall-metrics/1",
+ "skeleton_present": [
+  "llm-friendly-build/mapping.md",
+  "calculus/llm-friendly-build/mapping.md",
+  "probability/INDEX.md",
+  "order/INDEX.md",
+  "topology/INDEX.md",
+  "algebra/INDEX.md"
+ ],
+ "union_size": 7,
+ "z": 1.959963984540054
+}

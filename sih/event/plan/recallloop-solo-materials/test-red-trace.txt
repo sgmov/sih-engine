@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/recallloop-solo/wikirecall/metrics_selftest.py", line 16, in <module>
+    import metrics
+ModuleNotFoundError: No module named 'metrics'

@@ -1,0 +1,30 @@
+{
+ "total": 6,
+ "failed": 0,
+ "cases": [
+  {
+   "case": "test_word_channel_hits_trigger",
+   "ok": true
+  },
+  {
+   "case": "test_graph_one_hop_pulls_neighbor",
+   "ok": true
+  },
+  {
+   "case": "test_alias_expansion",
+   "ok": true
+  },
+  {
+   "case": "test_zero_query_still_has_skeleton",
+   "ok": true
+  },
+  {
+   "case": "test_deterministic_replay_byte_identical",
+   "ok": true
+  },
+  {
+   "case": "test_checkcite_pass_and_fail",
+   "ok": true
+  }
+ ]
+}

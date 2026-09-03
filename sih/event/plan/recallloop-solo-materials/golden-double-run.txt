@@ -1,0 +1,4 @@
+{"case": "not-degraded", "run1_eq_run2": true, "eq_frozen": true, "bytes": 2057, "verdict": "IDENTICAL"}
+{"case": "degenerate-mute", "run1_eq_run2": true, "eq_frozen": true, "bytes": 2127, "verdict": "IDENTICAL"}
+{"case": "degenerate-saturated", "run1_eq_run2": true, "eq_frozen": true, "bytes": 2191, "verdict": "IDENTICAL"}
+{"case": "degenerate-structure", "run1_eq_run2": true, "eq_frozen": true, "bytes": 2197, "verdict": "IDENTICAL"}
