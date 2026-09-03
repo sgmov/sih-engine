@@ -7,6 +7,10 @@
 //! 路径按台账文件上四级为工作区根解析后与 trail 规范绝对路径比对，台账
 //! 绝对路径径直比对。他会话持锁即拒，本会话持锁或零锁或台账文件缺席
 //! 放行，JSON 非法或锁态行缺键即工具异常不静默。
+//!
+//! 追加态锁承 locksplit-solo 批：acquired 行 mode 字段为 append 即追加态
+//! 持位，trail 追加操作认 append 持位即他会话 append 持位不拦（追加本
+//! 无害并发），exclusive 持位照旧互斥拦。mode 缺席即 exclusive 向后兼容。
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -52,7 +56,7 @@ pub fn check_locks(locks: &Path, trail: &Path, session: Option<&str>) -> Result<
     let root = locks.ancestors().nth(4).map(|p| p.to_path_buf());
     let trail_norm = norm(trail);
     // 按 (session_id, path) 取最新锁态迁移，非迁移行跳过。
-    let mut latest: BTreeMap<(String, String), LockEvent> = BTreeMap::new();
+    let mut latest: BTreeMap<(String, String), (LockEvent, String)> = BTreeMap::new();
     for (lineno, line) in text.lines().enumerate() {
         let line = line.trim();
         if line.is_empty() {
@@ -72,10 +76,11 @@ pub fn check_locks(locks: &Path, trail: &Path, session: Option<&str>) -> Result<
         let Some(path) = row.get("path").and_then(|v| v.as_str()) else {
             return Err(LockGateError::Unreadable(format!("行 {} 缺 path", lineno + 1)));
         };
-        latest.insert((session_id.to_string(), path.to_string()), kind);
+        let mode = row.get("mode").and_then(|v| v.as_str()).unwrap_or("exclusive");
+        latest.insert((session_id.to_string(), path.to_string()), (kind, mode.to_string()));
     }
     let mut holders = Vec::new();
-    for ((session_id, path), kind) in &latest {
+    for ((session_id, path), (kind, mode)) in &latest {
         if *kind != LockEvent::Acquired {
             continue;
         }
@@ -90,7 +95,9 @@ pub fn check_locks(locks: &Path, trail: &Path, session: Option<&str>) -> Result<
             if session.map(|s| s == session_id).unwrap_or(false) {
                 continue;
             }
-            holders.push(session_id.clone());
+            if mode == "exclusive" {
+                holders.push(session_id.clone());
+            }
         }
     }
     if holders.is_empty() {
@@ -226,5 +233,63 @@ mod lockgate_tests {
         std::fs::create_dir_all(trail.parent().unwrap()).unwrap();
         std::fs::write(&trail, "").unwrap();
         assert!(check_locks(&locks, &trail, None).is_ok());
+    }
+
+    // G8 他会话 append 持位不拦本会话 trail 追加（追加态锁共存）。
+    #[test]
+    fn g8_append_holder_allows() {
+        let dir = temp_dir("g8");
+        let locks = dir.join("ROOT/sih-tools/lease/ledger/locks.ndjson");
+        std::fs::create_dir_all(locks.parent().unwrap()).unwrap();
+        std::fs::write(
+            &locks,
+            "{\"event\":\"acquired\",\"session_id\":\"sessA\",\"path\":\"sih-engine/sih/event/trail/2026-08-28.ndjson\",\"mode\":\"append\"}\n",
+        )
+        .unwrap();
+        let trail = dir.join("ROOT/sih-engine/sih/event/trail/2026-08-28.ndjson");
+        std::fs::create_dir_all(trail.parent().unwrap()).unwrap();
+        std::fs::write(&trail, "").unwrap();
+        assert!(check_locks(&locks, &trail, Some("sessB")).is_ok());
+        assert!(check_locks(&locks, &trail, None).is_ok());
+    }
+
+    // G9 他会话 exclusive 持位照旧拦，mode 缺席即 exclusive 向后兼容。
+    #[test]
+    fn g9_exclusive_holder_blocks() {
+        let dir = temp_dir("g9");
+        let locks = dir.join("ROOT/sih-tools/lease/ledger/locks.ndjson");
+        std::fs::create_dir_all(locks.parent().unwrap()).unwrap();
+        std::fs::write(
+            &locks,
+            "{\"event\":\"acquired\",\"session_id\":\"sessA\",\"path\":\"sih-engine/sih/event/trail/2026-08-28.ndjson\",\"mode\":\"exclusive\"}\n",
+        )
+        .unwrap();
+        let trail = dir.join("ROOT/sih-engine/sih/event/trail/2026-08-28.ndjson");
+        std::fs::create_dir_all(trail.parent().unwrap()).unwrap();
+        std::fs::write(&trail, "").unwrap();
+        match check_locks(&locks, &trail, Some("sessB")) {
+            Err(LockGateError::Held { holders }) => assert_eq!(holders, vec!["sessA".to_string()]),
+            other => panic!("应 Held 实得 {other:?}"),
+        }
+    }
+
+    // G10 append 与 exclusive 混持即 exclusive 拦（互斥语义）。
+    #[test]
+    fn g10_append_plus_exclusive_blocks() {
+        let dir = temp_dir("g10");
+        let locks = dir.join("ROOT/sih-tools/lease/ledger/locks.ndjson");
+        std::fs::create_dir_all(locks.parent().unwrap()).unwrap();
+        std::fs::write(
+            &locks,
+            "{\"event\":\"acquired\",\"session_id\":\"sessA\",\"path\":\"sih-engine/sih/event/trail/2026-08-28.ndjson\",\"mode\":\"append\"}\n{\"event\":\"acquired\",\"session_id\":\"sessB\",\"path\":\"sih-engine/sih/event/trail/2026-08-28.ndjson\",\"mode\":\"exclusive\"}\n",
+        )
+        .unwrap();
+        let trail = dir.join("ROOT/sih-engine/sih/event/trail/2026-08-28.ndjson");
+        std::fs::create_dir_all(trail.parent().unwrap()).unwrap();
+        std::fs::write(&trail, "").unwrap();
+        match check_locks(&locks, &trail, Some("sessC")) {
+            Err(LockGateError::Held { holders }) => assert_eq!(holders, vec!["sessB".to_string()]),
+            other => panic!("应 Held 实得 {other:?}"),
+        }
     }
 }

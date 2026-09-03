@@ -1,0 +1,30 @@
+[
+  {
+    "name": "append_coexistence",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease/CALL-LOG.md", "session": "A", "mode": "append"},
+      {"kind": "lock", "path": "sih-tools/lease/CALL-LOG.md", "session": "B", "mode": "append"}
+    ]
+  },
+  {
+    "name": "append_exclusive_conflict",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease/CALL-LOG.md", "session": "A", "mode": "exclusive"},
+      {"kind": "lock", "path": "sih-tools/lease/CALL-LOG.md", "session": "B", "mode": "append"}
+    ]
+  },
+  {
+    "name": "normalization_same_path_conflict",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "A", "mode": "exclusive"},
+      {"kind": "lock", "path": "/abs/root/sih-tools/lease/CONTRACT.md", "session": "B", "mode": "exclusive"}
+    ]
+  },
+  {
+    "name": "inclusion_dir_file_conflict",
+    "ops": [
+      {"kind": "lock", "path": "sih-tools/lease", "session": "A", "mode": "exclusive"},
+      {"kind": "lock", "path": "sih-tools/lease/CONTRACT.md", "session": "B", "mode": "exclusive"}
+    ]
+  }
+]
