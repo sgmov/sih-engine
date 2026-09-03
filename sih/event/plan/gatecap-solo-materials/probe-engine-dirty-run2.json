@@ -1,0 +1,70 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md": "19f7a6dfbe57bee22136c8642d0e62d3a11345542be5eacd967298e7242011a9"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C007",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 7
+      },
+      "message": "判定性常数裸奔:声明形行须行内携带载体引用与推导档指针(@ 记号后接 sih-math/ 路径)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C007",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 9
+      },
+      "message": "判定性常数裸奔:声明形行须行内携带载体引用与推导档指针(@ 记号后接 sih-math/ 路径)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C008",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 11
+      },
+      "message": "推导档指针缺失:声明形行仅携单指针,须载体与推导档双指针(@ 载体路径 @ 推导档路径)"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 3,
+    "by_rule": {
+      "C007": 2,
+      "C008": 1
+    },
+    "by_pack": {
+      "des-001": 3
+    }
+  }
+}

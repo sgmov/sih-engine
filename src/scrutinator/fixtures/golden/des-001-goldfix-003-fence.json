@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "des-001",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "domain": {
         "include": [
           "sih-engine/doc/**/*.md",

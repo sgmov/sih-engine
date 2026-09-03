@@ -1,0 +1,38 @@
+{
+ "batch": "gatecap-solo",
+ "kind": "legacy_sweep",
+ "date": "2026-09-04",
+ "tool": "engine scrutinator (worktree rebuilt with C007/C008)",
+ "pack": "des-001",
+ "domain_files": 135,
+ "breakdown": {
+  "sih-engine/doc": 83,
+  "scrutinator fixtures corpus (worktree)": 50,
+  "formatter fixtures": 2
+ },
+ "total_findings_all_rules": 461,
+ "c007_c008_hits_total": 3,
+ "c007_c008_hits_on_preexisting_docs": 0,
+ "hits_detail": [
+  {
+   "rule": "C007",
+   "line": 7
+  },
+  {
+   "rule": "C007",
+   "line": 9
+  },
+  {
+   "rule": "C008",
+   "line": 11
+  }
+ ],
+ "note": "三中全落新脏夹具 constant-naked.md（故意裸奔样文，设计内命中）；存量既有文档零命中如实申报",
+ "hits_files": {
+  "/worktrees/sih-tools/gatecap-solo/scrutinator/fixtures/corpus/carrier/constant-naked.md": {
+   "C007": 2,
+   "C008": 1
+  }
+ },
+ "legacy_c007_c008_hit_files": 0
+}
