@@ -1,0 +1,58 @@
+# latexwire-solo 结果档
+
+- 日期：2026-09-04，队形：单线形 solo，会话：sess-zcode-260904-latexwire（租约 d465a632f627e0db）
+- 载体：LIM-007 epsilon-delta 定义 ＋ INT-007 微积分基本定理 ＋ SER-001 无穷级数 ＋ ALG-001 矩阵与特征值（mapping.md:68、:102、:69、:179-181 实取，条目磁盘实存，m3clear 处置清单实例化候选第二件）
+- 承接：m3clear-solo 处置清单行「latex-helper：四条目族承载 compute」；四件套形制承 ordwire 与 tallywire2 与 elicitwire 与 selwire 先例
+- 意图笔：d14aed84（ask3 三锚：道一 L89、鉴 L61、应 L108 程序切片逐字节，双门第一门 exit 0 零违规、repeater status ok，digest passed covered 4）
+- 政策行：用户 2026-09-04 裁定「继续推进数学仓的完善，遇到裁决点过得一裁，退人节点」——本批零新裁决点，机械链全绿自行收口，结果档不设「等你令」节
+
+## 完成度表
+
+| 件 | 状态 |
+| --- | --- |
+| 载体引用 | ✅ docs/CONTRACT.md 增 ## 载体引用 {#carrier} 节：四载体对挂表（mapping 行号实取）＋实现边界如实并记 |
+| 源码接线 | ✅ compute.py 五处 # 注释锚点（模块枚举节总注记＋op_limit／op_integral／op_sum／op_matrix_det_v2 判定位），ast.dump 与主树逐字节同形 true |
+| 推导档 | ✅ sih-math/docs/latexwire-derivation-2026-09-04.md 六节（族逐载体判定语义形式化＋金向量＋可证伪＋实现边界申报） |
+| 金向量 | ✅ 两场景（convergence_carriers、accumulation_and_matrix_carriers）冻结件零绝对路径携重放寻径约定，双跑逐字节一致，主树源码与工地源码重放均 IDENTICAL |
+| 对挂核验 | ✅ 四件全配无 M-3 停批分流；ALG-001 行列式构成位（条目 L21 特征方程与 L32 det=∏λᵢ）真实承载，matrix_inv/matrix_eig 枚举未实现边界申报入档 |
+| 词债 | ✅ 载体引用／注释锚点／判定位／运算枚举四件 established 登记入工地 core 包随批入版控（142→146） |
+| 温故检索 | ✅ materials/recall-latexwire.json 零命中如实记（{"envelope":"recall","topics":["LaTeX计算载体"],"count":0}） |
+| CALL-LOG | ✅ latex-helper 与 scribe 两笔留痕 |
+
+## F 表
+
+| F | 类别 | 判据 | 结果 | 证据 |
+| --- | --- | --- | --- | --- |
+| F-1 四件套 | 工程 | 载体引用＋推导档＋代码接线＋金向量四件齐 | 过 | 完成度表前四行；mapping 行号实取全读通过（消费面验收线）；条目磁盘实存 |
+| F-2 零行为变更 | 工程 | 既有行为零改动，既有测试零回归 | 过 | 纯 # 注释 AST 与主树逐字节同形（ast.dump true）；批前 102 测（主树）批后 102 测（工地）同计数全绿；主树源码重放金向量与冻结件 IDENTICAL |
+| F-3 金向量双跑 | 工程 | compute 代表用例双跑逐字节一致两场景 | 过 | 双跑 cmp IDENTICAL，verify 与冻结件 IDENTICAL，payload sha256 13a17d21e3c9b06d |
+| F-4 写入仅 allow | 治理 | 写入仅请求写入节所列 | 过 | tools 工地改动四件（compute.py、CONTRACT.md、CALL-LOG.md、terms.json）全在 sih-tools/latex-helper/ 与词债包面；math 推导档与 engine materials／results／任务包随批件全在 allow 十一路内 |
+
+## 认证清单
+
+- 意图一笔：d14aed84（meter 包裹 scribe intent，闸三 --session d465a632f627e0db 与 --sessions 台账双带）
+- 认证四笔（meter 包裹 append 主树活链）：管线 d34621ef、推导档 9eda094b、金向量 eaef5ddb、变更件 acf504b0
+- 链批期读数：批前 66 事件起链，本批意图加认证五笔落 67-71 位，逐笔 append 锁即取即放零等待
+
+## 越线与误差申报
+
+1. claim 首跑退出码未直采（PIPESTATUS 为 bash 语法 zsh 不识，管道尾采失真），同 claimant 复跑报 PackageAlreadyClaimed exit 1 证实领取已在册（sess-zcode-260904-latexwire，ttl 240），零状态残留；教训与 meter 无 --quiet 同族即静默失败须直采退出码，管道掩码禁令扩及 claim 命令。
+2. 首版锚点误落 docstring 形（AST 可变），与 elicitwire 注释形零行为证据位不符，即改 # 注释形并复原 docstring 原文，AST 同形机械验证 true 后才继续；一次模块头编辑残留两行（参考行与闭串）致语法错，ast 校验拦住即修，均在工作地内绿相前。
+3. 金向量重放首跑用系统裸 python 撞 NameError（无 sympy），重放环境约定改入重放件头注与推导档 §3.5（latex-helper 项目环境 uv run --project），零行为面影响。
+4. 重放件缺省寻径初版四级上跳错指引擎仓内，修正五级上跳至工作区根，缺省寻径 verify IDENTICAL 过。
+5. 化格 py 两件（compute.py、replay_golden.py）与核阅八目标 exit 2 均域外如实记（general-v1 只盖 md/json/yaml/toml；des-001 只盖 sih-engine/doc），不属违规。
+6. 温故零命中故书单空，checkcite 无引用可对表，零命中显式申报代位（selwire 先例同形）。
+7. 批后工地测试显形 3 笔 SyntaxWarning（test_validate.py 文档串 \e 非法转义），系本批未触碰件的预在源码内容在工地新 venv（Python 3.14.6）下显形，非本批引入，不属回归（批前主树跑同码因主树旧 venv 缓存未显形）。
+
+## 冲突样本节
+
+- 本批为 pk-045 冲突样本库参与者：三批同日在跑（queueing-solo gauge 面、locatorwire-solo locator 面、本批 latex-helper 面），施工面互斥零越面；共享追加面（trail、scribe/reports、meter/counts、lease/ledger）一律 --mode append 短持即取即放，批期 trail 四笔认证与意图笔逐笔取放零等待零撞锁。
+- 施工面五路 exclusive 首取全得零重试（sih-tools/latex-helper/、sih-math/docs/latexwire-derivation-2026-09-04.md、materials/、results.md、任务包 plan 件），未动用十次重试上限。
+
+## 收口读数
+
+（收约后回填：三仓 settle 与归并号、close 读数、reconcile 对表、链 verify 终读数。）
+
+## 队形验证
+
+单线形 solo：主线亲写，零子代理派单，全程无 Agent 调用。
