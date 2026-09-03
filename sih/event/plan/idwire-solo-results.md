@@ -67,8 +67,30 @@ identity 即身份串 v3 十二件组件加盐 SHA-256，判定面即身份等�
 
 认证一律先落主树活链，链 verify 以批期链尾变更件认证笔为收（close 后读数为准，见对表节）。
 
-## 八、验收
+## 八、收约碰撞两段式（本样本第 5 条）
+
+close 于 engine 一仓 merge_failed：main trail 以 mathclose 事件收尾，工地分支 msh/idwire-solo 在其后追加本批 5 笔 idwire 事件，git 三路合并视两侧同尾追加为同区内容冲突不可自动归并（tools/math 两仓 close 正常归并成功）。机械响应即备份让位对表法：
+
+1. 备份主树 trail（让位前工作区活链快照，165 行）至 /tmp/idwire-close-backup-2026-09-03/engine-trail.ndjson。
+2. checkout 让位 trail 回 HEAD，重试 close——trail 工作时间差异消，但 git 分支分叉内容冲突仍在，close 仍 merge_failed，与让位无关。
+3. 定性冲突源：conflict marker 两侧，HEAD 侧（main）为空、msh/idwire-solo 侧为本批 5 笔事件，且事件 prev_hash 链衔接正确（intent prev=11dc7274=mathclose elicit 之 event_hash），判定为合法纯追加归并位。
+4. 删冲突标记得 165 行，与让位前主树活链 backup 逐字节 IDENTICAL（identical 硬判据过）。
+5. 以该 resolved 内容覆盖 trail，git add 解决冲突，提交 merge 形（首行 `merge: idwire-solo 副本归并`，经 guardcore validate 通过），落 f3bf0fa。
+6. --no-verify 显式授权通道，登 lease bypass 台账一笔（sha f3bf0fa，reason 见台账）。
+7. 重试 close 成功：failed=[], 三仓 worktree removed、分支 deleted、revoked=true。
+
+## 九、对账对表（close 后 reconcile 读数）
+
+| 仓 | unrouted | unbypassed | cert_missing | 归因 |
+|---|---|---|---|---|
+| sih-math | 0 | 1 | 2 | 历史遗留（baseline init c556abb、mathfix2/fmtfix 段2）非本批；本批 merge d51d5e2 归 routed_merge |
+| sih-tools | 0 | 0 | 1 | 历史遗留（guardhook-solo merge 收约经 bypass 登记）非本批 |
+| sih-engine | 0 | 0 | 0 | 本批手工归并 f3bf0fa 已 bypass 登记 |
+
+当日链 verify（close 后）：status=valid，165 events，链尾 last_hash=0ea65d90=批料变更件认证笔，收束正确。
+
+## 十、验收
 
 - [x] F-1 至 F-4 全过
-- [x] 冲突样本节在结果档（本样本第 1 条共享锁多批双持含 scriwire 绝对拼写超越与 mathclose/scriwire 让锁时间戳）
-- [x] 认证入链，多仓结算收约，对表读数在档（close 后 reconcile 读数见收约附表）
+- [x] 冲突样本节在结果档（共享锁多批双持、trail 双拼写、收约碰撞两段式）
+- [x] 认证入链，三仓结算收约，close 后 reconcile 零新增违规，当日链 verify valid
