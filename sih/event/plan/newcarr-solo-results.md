@@ -110,3 +110,12 @@
 ## 十一、队形验证
 
 单线形 solo 成立：本批全部写入由会话 306d1b65b9b38f66（sess-zcode-260904-newcarr）亲写，零 Agent/Task 子代理调用；facet 测量九发为合同模式围堰席逐发回填（零 LLM 堆叠替代确定性验证），三态由确定性判据 v3 闸承载，终签由 attractor R2-R7 确定性核对承载；链写入经引擎 scribe 闸三（--session 加 --sessions）与 attractor sign 专属 crosscheck 通道，零直写链文件。
+
+## 收口附记（close 后补记）
+
+- close 两跑：第一跑拒 tools 与 engine 撞主树同名未跟踪件（本批件主树副本），按备份让位归并对表法四步：备份六十四件、让位、close 归并、逐件 diff 全数 IDENTICAL（contracts 二十四件与 DES 八格与 tally 十七件与 scribe 八件与 identity 一件与 engine 任务包与 materials 全目录），让位零丢失零漂移；第二跑成：三仓归并（math 首跑 already_gone 快路径）、三工地拆除、会话 306d1b65b9b38f66 吊销。
+- 三仓提交号：sih-math 段1 2358e31 与归并 66ff0f0；sih-tools 段1 75d28789 与归并 9fbdba61；sih-engine 段1 d8302d9 与归并 98acffa。
+- reconcile：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 段2 先前批既有旧账）；sih-math unrouted 0 与 unbypassed 1（零号基线初始提交既有）与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 先前批既有）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 96 事件，first_hash 05a8a75e 与批前一致零分叉，last_hash 4e6181f7（本批 changed-files 认证居链尾）；批内八笔即意图 e7af40f4 加终签四笔（64766084 与 55cd90a2 与 7f59e7ee 与 b480db12）加认证三笔（bd4a49a2 与 5c9e34ed 与 4e6181f7），例行读数三笔在批前段。
+- 共享活面对表：引擎 trail 与 tools 锁册与会话册与 claims 册与 meter 计数册与两 CALL-LOG 与温度标定账本留主树活写（共享追加面，归主会会计通道，m3clear 先例同形），本批未做通道外整备提交。
+- 本笔回填提交：close 通道外 wip 形（--no-verify 加 lease bypass 登记），queueing 9806c1d 先例同形。
