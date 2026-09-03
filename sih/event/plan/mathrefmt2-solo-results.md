@@ -90,3 +90,28 @@ last_hash `fc186170…`，链完整首尾衔接，exit 0。
 ### 越线与误差申报
 
 金向量重冻因请求写入节未含 fixtures/golden/ 目录而机械受阻，经用户裁定转遗留（F-4 不满足，如实申报）。计划请求写入节曾临时加注金向量目录后按用户裁定撤回，范围保持原 allow 不变。
+
+## 收约处置（收束，用户裁定「严格 worktree 手工解冲突」）
+
+三仓共享活链/计数器 ndjson（追加型）被 settle 复制入批分支，`git merge-tree` 实证三方归并必然冲突：sih-engine `trail/2026-09-03.ndjson` content 冲突，sih-tools `meter/counts/2026-09-03.ndjson` add/add 冲突（工作树我已验证与批分支逐字节一致，非数据分叉）。
+
+用户 2026-09-03 裁定走严格 worktree 手工解冲突归并：
+
+| 仓 | 冲突文件 | 解冲突取侧 | 归并结果 |
+|---|---|---|---|
+| sih-engine | sih/event/trail/2026-09-03.ndjson | 分支侧 127（含批 4 认证事件，链末 fc186170） | merge commit `a885f72` 回 main；主树 untracked 成果副本先删后由分支落盘（identical 零净损失） |
+| sih-tools | meter/counts/2026-09-03.ndjson | 工作区 56 行超集（分支 52 全含 + 批/并发调 4 行，零丢） | merge commit `91776929` 回 integral-stage-build；本批 7 报告与 meter 由分支落盘 |
+
+两处 merge 提交为直提守卫拒绝，经 `lease bypass --repo --sha --reason` 登记留痕（bypass.ndjson 两条：a885f72、91776929）。
+
+`lease close --force` 收约：三仓全部归并删除分支与 worktree（sih-tools worktree 残留 3 项锁台账/身份报告副本为分支副本非权威，强拆丢弃），session `12c35fa47a54b93f` revoked=true。
+
+对账：`lease reconcile` 三仓 exit 0，sih-engine 与 sih-tools `unbypassed=0`，两 merge commit 均归 bypassed，无未路由提交。
+
+链复核：`scribe verify --trail sih/event/trail/2026-09-03.ndjson` → status `valid`，events=127，last_hash `fc186170…`，exit 0（归并后活链完整首尾衔接）。
+
+### 三仓 commit 号（收束后）
+
+- sih-math：56e90c8（51 条 entry 概览归一，settle 三检过）
+- sih-engine：a885f72（本批成果与活链副本归并入 main，trail 冲突取分支侧 127）
+- sih-tools：91776929（本批管线报告与 meter 归并入 integral-stage-build）
