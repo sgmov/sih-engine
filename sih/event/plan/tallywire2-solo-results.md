@@ -87,4 +87,9 @@ rev1 账本坐实 tally 为可指认未实例化件：tally 即 R1-R7 核对与�
 
 ## 十一、收约附表（close 后回填）
 
-close 与 reconcile 与链 verify 后读数与三仓 commit 号，收约后回填此节。
+- **close 两段式**：试一 math 归并移除成功（911adff），tools 与 engine merge_failed——tools 撞主树同名未跟踪件（四报告件）、engine 撞主树活链脏态（链相对 HEAD 三笔基线后追加未提交）；按备份让位归并对表法：备份主树四报告与活链、让位删除、close 试二归并成功 revoked true（tools 与 engine 归并移除，math already_gone）。
+- **三仓 commit 号**：settle 即 math 04a21d5、tools ce426c4d、engine 53301af（--cert a5450400，base 即 integral-stage-build@eeda306c / main@d034799 / main@ddb6f7d）；归并即 math 911adff、tools a53d7164、engine 39b21b0。
+- **备份让位对表**：备份与归并结果五件 cmp 逐字节 IDENTICAL（四报告件 + 活链 9 事件），非 identical 即停批条件未触发。
+- **reconcile 读数（close 后）**：tools unrouted_tail 46（cert_missing 1 即 entryunique-solo 526e2be 09-03 既有）、engine unrouted_tail 70（cert_missing 0、bypass 11 全登记）、math unrouted_tail 47（cert_missing 2 即 08-30 mathfix2 与 fmtfix 既有、unbypassed 1 即 08-30 基线 c556abb 既有）——三仓 unrouted 与 cert_missing 较批前零新增，本批提交零入尾。
+- **链 verify 前后对表**：批期 verify valid 9 事件（首哈希 05a8a75e、末哈希 a5450400），close 后 verify valid 9 事件同首末哈希，前后一致零漂移；与 selwire-solo 并发追加态下活链哈希连续。
+- **本笔回填**：本节由收约后 wip 提交回填，--no-verify 提交 + lease bypass 登记随行（close 通道以外提交的既定通道）。
