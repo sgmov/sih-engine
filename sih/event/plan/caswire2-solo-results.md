@@ -61,11 +61,11 @@ rev1 账本坐实 cascade 为可指认未实例化件：级联判定语义既是
 
 | 事件哈希 | 对象 | 内容哈希承 |
 |---|---|---|
-| c42653dc | 意图笔（scribe intent） | ask3 记录 155df062 |
-| 8d30620c | 管线报告（2026-09-03-caswire2-solo-pipeline.json） | 报告内容哈希 8d30620c 承 |
-| fadf8b5f | 推导档报告（2026-09-03-caswire2-solo-derivation.json） | 报告内容哈希 fadf8b5f 承 |
-| 37372eff | 金向量报告（2026-09-03-caswire2-solo-golden.json） | 报告内容哈希 37372eff 承 |
-| 2cba256f | 变更件报告（2026-09-03-caswire2-solo-changed-files.json） | 报告内容哈希 2cba256f 承 |
+| 22b1198e | 意图笔（scribe intent） | ask3 记录 155df062 |
+| 8d30620c | 管线报告（2026-09-03-caswire2-solo-pipeline.json） | 报告内容哈希 96a12338 承 |
+| fadf8b5f | 推导档报告（2026-09-03-caswire2-solo-derivation.json） | 报告内容哈希 f0273bbc 承 |
+| 37372eff | 金向量报告（2026-09-03-caswire2-solo-golden.json） | 报告内容哈希 d4313b11 承 |
+| 2cba256f | 变更件报告（2026-09-03-caswire2-solo-changed-files.json） | 报告内容哈希 b3d1dd46 承 |
 
 认证一律先落主树活链，链 verify 以批期链尾变更件认证笔为收（close 后读数为准，见对表节）。
 
