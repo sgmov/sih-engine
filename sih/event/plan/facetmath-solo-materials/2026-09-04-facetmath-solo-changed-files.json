@@ -1,0 +1,55 @@
+{
+ "batch": "facetmath-solo",
+ "date": "2026-09-04",
+ "files": [
+  {
+   "path": "sih-tools/facet/probes/maturation_gate.py",
+   "sha256": "6e16963c97cccbd1184e960354097b950b6e4959241f08fd659bd8cdab09d9f2",
+   "note": "boundary_criterion 门控位：缺省 ratio 生产行为逐字节不变，test 位检验判据待役，检验载荷在册"
+  },
+  {
+   "path": "sih-tools/facet/tests/test_boundary_switch.py",
+   "sha256": "625fe7211242edefddd6de40376f0a1fd5f7b690d9f853e3d3b9b039c2238bc3",
+   "note": "新增七用例：门控参数与双判据分叉与快道零改与金向量 fixture 与 boundary_low_by_test 单元锚"
+  },
+  {
+   "path": "sih-tools/facet/probes/facetmath_dual_audit.py",
+   "sha256": "59a67671815366f79869cc97865290f41e169ff63300bc9f184eb7e0320f24b4",
+   "note": "双判据审计探针：868 件对跑零 trail 写入零时间戳确定性输出"
+  },
+  {
+   "path": "sih-tools/facet/CALL-LOG.md",
+   "sha256": "d2ba51a293fcee39692e7a11afeed9566c74f07ade7580c2019a355639bb13d0",
+   "note": "调用册 facetmath 一行"
+  },
+  {
+   "path": "sih-tools/nomenclator/packs/core/terms.json",
+   "sha256": "a9f7fd65bc1d01ce3b0661c6eb2f8fafd571b691e31c8a95870f1e4eb98c83c6",
+   "note": "三词 established 登记（翻桌率基线/收口批/门控关闭）"
+  },
+  {
+   "path": "sih-tools/nomenclator/packs/core/manifest.json",
+   "sha256": "e2bedb8fcdcad84c564aa0adf1fae69c61fbaf872abf53564607251f6a705e5a",
+   "note": "0.10.0 -> 0.11.0 单行"
+  },
+  {
+   "path": "sih-math/docs/facetmath-derivation-2026-09-04.md",
+   "sha256": "34ddff34a1ed719479894bfb6246b830eeb8ef93c808994d6634c3dfb030fdb5",
+   "note": "F-6 推导档"
+  },
+  {
+   "path": "sih-tools/facet/contracts/facetmath-260904/",
+   "note": "F-3 测量命题目录：topic 与合同与九发响应与计分材料与飞轮 trail 与计分驱动（主树在档，settle 前拷工地）"
+  },
+  {
+   "path": "sih-engine/sih/state/parking/materials/pk-048.json",
+   "sha256": "ab60e9ed90def7dafbdee6d7cbf9e2afccb7032b6ef66c5b98dfce9d9b16943a",
+   "note": "判变清单泊材料（park 事件 1b563a66 先于本档，字节已冻结零改动）"
+  },
+  {
+   "path": "sih-engine/sih/state/parking/materials/pk-049.json",
+   "sha256": "9b9bc453c2c118f425d284ea42bdd0b494bb6a07854db306f2376e1e23ec201e",
+   "note": "切换挂起泊材料（park 事件 752aa64a）"
+  }
+ ]
+}

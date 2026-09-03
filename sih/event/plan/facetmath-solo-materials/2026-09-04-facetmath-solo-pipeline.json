@@ -1,0 +1,60 @@
+{
+ "batch": "facetmath-solo",
+ "date": "2026-09-04",
+ "pipeline_docs": {
+  "target": "sih-math/docs/facetmath-derivation-2026-09-04.md",
+  "formatter": {
+   "exit": 0,
+   "changed": 0
+  },
+  "scrutinator_des001": {
+   "exit": 2,
+   "note": "域外如实记不属违规（math docs 非 sih-engine/doc 域）"
+  },
+  "nomenclator": {
+   "exit": 0,
+   "findings": 0,
+   "pack": "core 0.11.0（含本批三新词）"
+  }
+ },
+ "measurement_F3": {
+  "gid": "facetmath-switch-1",
+  "contract_sha256": "6fd810f4a7d8a2bbb26aed78e5511f4aeff1cfba7cbc4a7de1f7cfe69a5039b8",
+  "responses_sha256": "58de0f6b46fe826eaa7dc0c7ba05215eba78dbe1c279ba2fbca14dbf34694458",
+  "verdict": "boundary",
+  "boundary_rate": 0.0,
+  "n_shots": 9,
+  "voids": 0,
+  "basis_split": {
+   "baseline_4": 5,
+   "baseline_1": 3,
+   "baseline_5": 1
+  },
+  "routing": "切换挂起进泊界 pk-049，生产保持旧判据（门控关闭形）"
+ },
+ "audit_F2": {
+  "rows": 868,
+  "comparable": 868,
+  "errors": 0,
+  "archived_mismatch": 0,
+  "verdict_changes": 114,
+  "change_directions": {
+   "near_threshold->boundary": 74,
+   "stable_clear->boundary": 40
+  },
+  "strict_to_loose": 0,
+  "golden_double_run": "cmp IDENTICAL",
+  "golden_sha256": "ca9dda80cfe8bbe8e125799bd68d738147a6ce527f77c6367f2b52008227fe03"
+ },
+ "tests_F5": {
+  "red_first": "test_toggle_keyword_exists KeyError: boundary_criterion（实现前）",
+  "green": "tests/test_boundary_switch.py 7 passed",
+  "worktree_suite": "479 passed + 6 failed（均为 AGENTS.md 未入 git 工地缺件既有态，主树对照 18/18 全过）",
+  "maintree_suite": "478 passed 零失败（含本批 7 新用例，零回归零改型）"
+ },
+ "word_registration": [
+  "翻桌率基线",
+  "收口批",
+  "门控关闭"
+ ]
+}

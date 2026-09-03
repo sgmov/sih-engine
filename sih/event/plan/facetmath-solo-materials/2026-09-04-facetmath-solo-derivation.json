@@ -1,0 +1,10 @@
+{
+ "batch": "facetmath-solo",
+ "date": "2026-09-04",
+ "doc": "sih-math/docs/facetmath-derivation-2026-09-04.md",
+ "content_sha256": "34ddff34a1ed719479894bfb6246b830eeb8ef93c808994d6634c3dfb030fdb5",
+ "carrier": "PROB-010 假设检验与显著性",
+ "mapping_hit": "sih-math/llm-friendly-build/mapping.md:200 检验判定的偶然界线",
+ "checkcite": "pass（PROB-010 词通道命中在书单，missing 空）",
+ "zero_hit_declaration": "翻桌率基线无独立专条，以 PROB-010 零假设参数 p_h0 承载，不另挂载体"
+}
