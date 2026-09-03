@@ -24,11 +24,11 @@ guardrail-solo（会话 941409ce491354b4，2026-09-03T01:49:55 立约）持 trai
 
 ## 枚举计数与本波件数
 
-- 全仓 calculus entries 计数：130 条（APP-011/HIS-16/DIF/LIM/INT/MUL/NS/SER/SPEC 全前缀）
-- 首二级节为概览旧格式条数：130 / 130（全仓均为旧格式，非网关枚举列举）
-- 本波三前缀件数：LIM=8、DIFF=32、INT=22，合计=62
-- 枚举清单：2026-09-03-overview-enum-LIMDIFFINT.txt（62 条，可 grep 复算，F-1 对表索引计数）
-- 切片边界申报：余前缀 APP(11)/HIS(16)/MUL(10)/NS(3)/SER(5)/SPEC(7) 共 52 条留待后续波
+- 全仓盘上 calculus entries 计数：114 条（`ls` 与 `grep` 双法一致）
+- 首二级节为概览旧格式条数：开工前 113/114（APP-011 本就定义首节，非全仓旧格式；完全枚举清单实测 113 条）
+- 本波三前缀件数：LIM=8、DIFF=32、INT=22，合计=62（与 calculus INDEX 声明 LIM8/DIFF32/INT22 精确对表）
+- 枚举清单：2026-09-03-overview-enum.txt（113 条全览）+ 2026-09-03-overview-enum-LIMDIFFINT.txt（62 条三前缀子集，可 grep 复算，F-1 对表索引计数）
+- 切片边界申报（开工前概览首节余件留待后续波）：APP(10)/HIS(16)/MUL(10)/NS(3)/SER(5)/SPEC(7) 共 51 条【修正申报误差：此前记「全仓 130 / 余 52」，实为 114 总 / 余 51，详见越线与误差申报】
 
 ## 段落去向申报表
 
@@ -71,8 +71,43 @@ guardrail-solo（会话 941409ce491354b4，2026-09-03T01:49:55 立约）持 trai
 
 ## 三仓 commit 号
 
-> 待 settle 后回填
+- sih-math：a4372c1（62 条 entry 概览归一）
+- sih-engine：bbbd09b（plan/results/materials/trail）
+- sih-tools：44c19d86（管线报告三件 + CALL-LOG）
 
 ## 链 verify 对表 / reconcile 读数 / F 表 / 越线与误差申报
 
-> 待收约后回填
+### 链 verify
+
+`target/debug/scribe verify --trail sih/event/trail/2026-09-03.ndjson` → status `valid`，
+events=101，first_hash `94f1dd00…503512`，last_hash `72ab6a43…186bb`，链完整首尾衔接，exit 0。
+
+### reconcile 读数（租约收约）
+
+会话 157e28a3e21154b7 全部锁 12 acquired / 12 released 对称闭环，无滞留锁；guardrail-solo
+（941409ce491354b4）trail 锁 2026-09-03 交回 released=0 于十次重试内放行（见冲突样本节）。S005 豁免态
+申报外：本批三仓 merge 均以备份让位归并对表法闭合，非 identical 即停批，对表一致未触发停批。
+
+### F 表（验收判据核对）
+
+| 判据 | 断言 | 读数 | 结论 |
+|---|---|---|---|
+| F-1 枚举零漏 | 三前缀清单与 INDEX 对表 | LIM 8 / DIFF 32 / INT 22 = 62，与 INDEX 声明精确一致；枚举子集 62 条逐条可 grep 复算 | 通过 |
+| F-2 块序归一 | 改后首二级节 ## 定义 {#definition} | 本波 62 条全部 `## 定义 {#definition}`；仓内定义首节 63 = 62 + APP-011(批外既有) | 通过 |
+| F-3 信息零丢失 | 62 条 diff 逐字节比对 | 概览块全为目录锚点行、正文零改动，无弃段 | 通过 |
+| 不触碰 | INDEX 计数 / VERSION 基线零触碰 | INDEX 未入 batch commit，VERSION 未改 | 通过 |
+
+### 越线与误差申报
+
+1. **枚举计数申报误差（本批发现，已修正）**：结果档与枚举头注释原记「全仓 130 条 / 首二节均概览 / 余 52 条」。
+   收约后按盘上真相复核：全仓 **114 条**（`ls` 与 grep 双法一致），概览首节 **113**、定义首节 1
+   （APP-011 批外既有，非全仓旧格式），本波归 62 后余概览首节 **51** 条。130 系旧申报偏高，属实不为
+   盘面真相。误差不影响本波变换：62 条三前缀逐件与 INDEX 及 commit a4372c1 双向核对一致，F-1/F-2/F-3
+   全部成立。误差定性为枚举汇总口径错报（把预留/申报数混入盘面计数），非变换缺漏，已在枚举节改记
+   114/51 并此申报。
+2. **APP-011 界定**：APP 共 11 条，但 APP-011 本就定义首节（不在概览旧格式集），故留待后续波的概览
+   首节为 APP(10) 非 APP(11)。旧申报把 APP-011 误计入遗留数，与第 1 条同比修正。
+3. 无变更型越界：batch commit a4372c1 仅 62 件（32 DIFF/22 INT/8 LIM），零波及 APP/HIS/MUL/NS/SER/SPEC；
+   INDEX/VERSION 零触碰；S005 两态域内定义态通过，未触碰豁免域。
+
+> 收约后回填完成。
