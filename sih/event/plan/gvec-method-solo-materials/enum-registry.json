@@ -1,0 +1,132 @@
+{
+  "audit": "件一 全量金向量用法审计 枚举注册表",
+  "batch": "gvec-method-solo",
+  "date": "2026-09-03",
+  "families": {
+    "F1_engine_scrutinator_golden_tests": {
+      "assertions": "golden_* 各断言 stdout==金向量逐字节 + 退出码 0/1",
+      "file": "sih-engine/src/scrutinator/tests.rs",
+      "files": [
+        "ask3-scrutmerge-sdd.json",
+        "ask3-viewrider.json",
+        "des-001-gov002.json",
+        "des-001-gov003.json",
+        "des-001-mathe-lim001.json",
+        "des-001-mathe-mul001.json",
+        "des-001-goldfix-001-multiflag.json",
+        "des-001-goldfix-002-header.json",
+        "des-001-goldfix-003-fence.json",
+        "des-001-goldfix-004-nav.json",
+        "des-001-goldfix-005-skip.json",
+        "des-001-dec020.json"
+      ],
+      "frozen_files": 12,
+      "golden_fns": 14,
+      "grep": "grep -c '^fn golden_' src/scrutinator/tests.rs"
+    },
+    "F2_engine_attractor_golden": {
+      "assertions": "t1/t2 逐字节对表冻结期望 + t2_frozen_golden_zero_drift 哈希对表 + t2_stats_conclusion_equivalence 统计结论等值",
+      "extra_files": [
+        "golden-manifest.json",
+        "stats-values.json"
+      ],
+      "fixtures_golden_dirs": 12,
+      "grep": "grep -c '^fn t' tests/attractor_golden.rs",
+      "scenarios": [
+        "adisp-guard-1-net",
+        "adisp-net",
+        "contract-emit",
+        "dirty-alarm-r7",
+        "dirty-return-r2",
+        "dirty-suspend-near",
+        "m-p3xcarr-net",
+        "p3xcarr-net",
+        "reject-key-mismatch",
+        "reject-missing-shot",
+        "reject-raw-empty",
+        "reject-shot-misalign"
+      ],
+      "test_file": "sih-engine/tests/attractor_golden.rs",
+      "test_fns": 9
+    },
+    "F3_engine_route_golden": {
+      "assertions": "t2_golden_byte_identical 逐字节对表围堰冻结值 + 退出码对齐 + t3_exit_code_table 路由三值",
+      "golden_scenarios": 8,
+      "grep": "grep -c '^fn t' tests/attractor_route.rs",
+      "scenarios": [
+        "attribution-core",
+        "attribution-parking",
+        "badpack-kind",
+        "dirty-anchor-domain",
+        "dirty-expired",
+        "dirty-schema",
+        "net-core",
+        "net-parking"
+      ],
+      "test_file": "sih-engine/tests/attractor_route.rs",
+      "test_fns": 10
+    },
+    "F4_engine_event_stream_golden": {
+      "assertions": "compute_event_hash 复算 == 向量 expected_hash",
+      "classes": [
+        "genesis",
+        "details_null",
+        "optional_absent",
+        "non_ascii",
+        "timestamp_edge"
+      ],
+      "file": "sih-engine/fixtures/golden/event-stream-vectors.json",
+      "grep": "find sih-engine -name event-stream-vectors.json",
+      "test": "sih-engine/src/event_stream/tdd_tests.rs t1_golden_vectors_recompute",
+      "vectors": 5
+    },
+    "F5_tools_vectors_dirs": {
+      "assertions": "工具自测跑冻结向量 report failed==0 / 逐字节对表 expected",
+      "consumers": [
+        "sih-tools/locator/tests/test_vectors.py test_frozen_vectors_all_pass",
+        "sih-tools/elicit/tests/test_elicit.py golden bytes 比对",
+        "sih-tools/parser/tests/test_vectors.py"
+      ],
+      "counts": {
+        "elicit": {
+          "golden-check.ndjson": 1
+        },
+        "locator": {
+          "corpus_dir": 1,
+          "expected_dir": 1,
+          "manifest": 1,
+          "pack": 1
+        },
+        "parser": {
+          "in+expected per pack": 3
+        }
+      },
+      "dirs": [
+        "sih-tools/locator/src/locator/vectors/",
+        "sih-tools/elicit/vectors/",
+        "sih-tools/parser/packs/markdown/vectors/",
+        "sih-tools/parser/packs/rust/vectors/",
+        "sih-tools/parser/packs/json/vectors/"
+      ],
+      "grep": "find sih-tools -type d -name vectors"
+    },
+    "F6_results_f_表格": {
+      "assertions": "F 表以「金向量零漂移/逐字节回归通过」为验收判据但未另查锚集真值",
+      "files_with_golden": 29,
+      "glob": "sih-engine/sih/event/plan/*-results.md",
+      "grep": "grep -rl '金向量' sih-engine/sih/event/plan/*-results.md | wc -l",
+      "mentions": 114
+    }
+  },
+  "grep_recompute": true,
+  "scope": "engine cargo 测试 golden 系 + sih-engine fixtures/golden + sih-tools 各工具 vectors 目录 + sih-engine/sih/event/plan/*-results.md F 表金向量断言行",
+  "total_rough": {
+    "attractor_golden_test_fns": 9,
+    "engine_golden_frozen_assert_sites": 14,
+    "event_stream_vectors": 5,
+    "results_f_golden_files": 29,
+    "results_f_golden_mentions": 114,
+    "route_golden_test_fns": 10,
+    "tools_vectors_frozen": 3
+  }
+}
