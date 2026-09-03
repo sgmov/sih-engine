@@ -1,0 +1,869 @@
+[
+ {
+  "file": "APP-001-ordinary-differential-equation.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 86,
+  "sha_std": "0ad11b9a14fa409a",
+  "sha_new": "f62e66d81488de2f"
+ },
+ {
+  "file": "APP-002-partial-differential-equation.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 79,
+  "sha_std": "2cc982ef26c584be",
+  "sha_new": "e5d560bdb60a229e"
+ },
+ {
+  "file": "APP-003-two-body-problem.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 73,
+  "sha_std": "2d61d18422848f17",
+  "sha_new": "515eeb83bd70c6b7"
+ },
+ {
+  "file": "APP-004-keplers-laws-of-planetary-motion.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 77,
+  "sha_std": "f7c69c44dff78a96",
+  "sha_new": "6cc48762c0445a02"
+ },
+ {
+  "file": "APP-005-vibrating-string.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 72,
+  "sha_std": "3d546b4346baedaa",
+  "sha_new": "6031d6c1745160ef"
+ },
+ {
+  "file": "APP-006-chladni-figure.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 84,
+  "sha_std": "086ef2689f0abf98",
+  "sha_new": "0f9d4154ef72a82a"
+ },
+ {
+  "file": "APP-007-vibration-simulation-visualization.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 67,
+  "sha_std": "76341d196c541e00",
+  "sha_new": "b42fe62bf08ff524"
+ },
+ {
+  "file": "APP-008-daylength-rate-of-change.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 79,
+  "sha_std": "95fc91a81db5ad27",
+  "sha_new": "7956a301c280dd13"
+ },
+ {
+  "file": "APP-009-information-flood-attention-budget.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 69,
+  "sha_std": "f087abf5c89c7d8a",
+  "sha_new": "2d10dae73dc20609"
+ },
+ {
+  "file": "APP-010-csnx-message-compression-sampling.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 85,
+  "sha_std": "0a58172bdaac64fc",
+  "sha_new": "7ba77fa7858259e8"
+ },
+ {
+  "file": "HIS-001-archimedes-use-of-infinitesimals.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 57,
+  "sha_std": "729e19c620bd52e5",
+  "sha_new": "bf9c665edc952756"
+ },
+ {
+  "file": "HIS-002-infinitesimal.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 62,
+  "sha_std": "8e05978442c85845",
+  "sha_new": "04204121cf3b6b57"
+ },
+ {
+  "file": "HIS-003-gottfried-leibniz.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 75,
+  "sha_std": "85cc08d63aceeb9d",
+  "sha_new": "8c320d39738ae5bb"
+ },
+ {
+  "file": "HIS-004-isaac-newton.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 65,
+  "sha_std": "0859d9da72804b6b",
+  "sha_new": "7348b8051bbcf101"
+ },
+ {
+  "file": "HIS-005-method-of-fluxions.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 64,
+  "sha_std": "ab627d731edbd1ef",
+  "sha_new": "b5fc8e7228eca647"
+ },
+ {
+  "file": "HIS-006-infinitesimal-calculus.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 69,
+  "sha_std": "5b0f3799566b56f5",
+  "sha_new": "377f4e89a4c30199"
+ },
+ {
+  "file": "HIS-007-brook-taylor.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 75,
+  "sha_std": "47484a162ec98fc3",
+  "sha_new": "14a07b96b3d69f62"
+ },
+ {
+  "file": "HIS-008-colin-maclaurin.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 64,
+  "sha_std": "6853977054a0641f",
+  "sha_new": "91fdcb92dbbce242"
+ },
+ {
+  "file": "HIS-009-leonhard-euler.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 69,
+  "sha_std": "9b4d56da6d0d1d93",
+  "sha_new": "0a70d99539c49d62"
+ },
+ {
+  "file": "HIS-010-gauss.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 79,
+  "sha_std": "293499211a191d3f",
+  "sha_new": "3f2dd2f96ff16818"
+ },
+ {
+  "file": "HIS-011-joseph-fourier.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 65,
+  "sha_std": "bc0947c22dc60ce3",
+  "sha_new": "b0b462007aed863c"
+ },
+ {
+  "file": "HIS-012-law-of-continuity.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 62,
+  "sha_std": "0a7223dfc413af93",
+  "sha_new": "9a91a6d4d45e8ce4"
+ },
+ {
+  "file": "HIS-013-history-of-calculus.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 90,
+  "sha_std": "d042d5d72798d6f9",
+  "sha_new": "cd8cec4cad684b9d"
+ },
+ {
+  "file": "HIS-014-generality-of-algebra.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 76,
+  "sha_std": "f6c997720c7ba6df",
+  "sha_new": "97d41fd66a795fd8"
+ },
+ {
+  "file": "HIS-015-zeno-paradox.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 悖论内容::[悖论内容](#paradox)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 64,
+  "sha_std": "2f2da49459715dbd",
+  "sha_new": "217e085b7b86cc26"
+ },
+ {
+  "file": "HIS-016-squeeze-theorem.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::#历史脉络 {#history}",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 70,
+  "sha_std": "cc163f4ac2481e4e",
+  "sha_new": "166ab4d89cf50d17"
+ },
+ {
+  "file": "MUL-001-partial-derivative.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 66,
+  "sha_std": "27d9d8b30da9b38b",
+  "sha_new": "e9f54cf2628b5408"
+ },
+ {
+  "file": "MUL-002-disk-integration.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 73,
+  "sha_std": "b583a3bccd87194c",
+  "sha_new": "566489c9d75ffad9"
+ },
+ {
+  "file": "MUL-003-gabriels-horn.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 72,
+  "sha_std": "528ee5c6c7299b7d",
+  "sha_new": "dafb3657a185f4a4"
+ },
+ {
+  "file": "MUL-004-jacobian-matrix.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 78,
+  "sha_std": "5871c4f8c911b01f",
+  "sha_new": "b2ea0d45af5f0c83"
+ },
+ {
+  "file": "MUL-005-hessian-matrix.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 76,
+  "sha_std": "0fa27f31ace38a51",
+  "sha_new": "dbd7caad74b0e2bf"
+ },
+ {
+  "file": "MUL-006-curvature.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 75,
+  "sha_std": "b2879f57d50f9197",
+  "sha_new": "14373c344d126f86"
+ },
+ {
+  "file": "MUL-007-greens-theorem.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 76,
+  "sha_std": "400730843ce72423",
+  "sha_new": "df6748f1161a65ef"
+ },
+ {
+  "file": "MUL-008-divergence-theorem.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 73,
+  "sha_std": "054e44d3e1902649",
+  "sha_new": "0b7aed4feedd542c"
+ },
+ {
+  "file": "MUL-009-stokes-theorem.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 67,
+  "sha_std": "df632d26be012e1f",
+  "sha_new": "61bf2bf0bf37cd27"
+ },
+ {
+  "file": "MUL-010-vector-calculus.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 82,
+  "sha_std": "6656df5f89aeb75f",
+  "sha_new": "217b18c21e288f71"
+ },
+ {
+  "file": "NS-001-elementary-calculus-infinitesimal-approach.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 65,
+  "sha_std": "2ff69b96bdc2ae1d",
+  "sha_new": "47ef306bca4d8db1"
+ },
+ {
+  "file": "NS-002-nonstandard-calculus.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 80,
+  "sha_std": "341f37535494f00f",
+  "sha_new": "f5260d1907a4058b"
+ },
+ {
+  "file": "NS-003-infinitesimal-nonstandard.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 工程映射::[工程映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 79,
+  "sha_std": "fc423867d80f6180",
+  "sha_new": "23f4b291902f6a76"
+ },
+ {
+  "file": "SER-001-infinite-series.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 81,
+  "sha_std": "15ec04159a89f580",
+  "sha_new": "defde853f8a83e2c"
+ },
+ {
+  "file": "SER-002-maclaurin-series.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 85,
+  "sha_std": "1b8e43454befa060",
+  "sha_new": "29105027826d89f4"
+ },
+ {
+  "file": "SER-003-taylor-series.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 89,
+  "sha_std": "e3ac29b0774d4d52",
+  "sha_new": "6f73aceb6e8370bb"
+ },
+ {
+  "file": "SER-004-fourier-series.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 89,
+  "sha_std": "bafcd929d16a70f6",
+  "sha_new": "655071d80610941b"
+ },
+ {
+  "file": "SER-005-euler-maclaurin-formula.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 93,
+  "sha_std": "618aab2602d67071",
+  "sha_new": "f7e1cf66eed9b70f"
+ },
+ {
+  "file": "SPEC-001-natural-logarithm.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 67,
+  "sha_std": "ce9e1e1a73422ea8",
+  "sha_new": "976edce96a0859ff"
+ },
+ {
+  "file": "SPEC-002-e-mathematical-constant.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 67,
+  "sha_std": "9a4f7a412a1f562a",
+  "sha_new": "f8eb0b551565155e"
+ },
+ {
+  "file": "SPEC-003-exponential-function.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 75,
+  "sha_std": "0b201464920034ff",
+  "sha_new": "0d3b64686769a61c"
+ },
+ {
+  "file": "SPEC-004-hyperbolic-angle.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 70,
+  "sha_std": "0e13304d55d125c9",
+  "sha_new": "229fe66e0d7bb1a5"
+ },
+ {
+  "file": "SPEC-005-hyperbolic-function.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 74,
+  "sha_std": "abaa05719199b740",
+  "sha_new": "db72a44a59e0cef1"
+ },
+ {
+  "file": "SPEC-006-stirlings-approximation.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 77,
+  "sha_std": "8ed418c471edd121",
+  "sha_new": "49e7440756a3378d"
+ },
+ {
+  "file": "SPEC-007-bernoulli-numbers.md",
+  "overview_idx": 4,
+  "topic_idx": 13,
+  "removed_nonblank": 6,
+  "removed_lines": [
+   "- 话题::[话题](#topic)",
+   "- 历史脉络::[历史脉络](#history)",
+   "- 数学表述::[数学表述](#formulation)",
+   "- 与其他概念的关系::[关系](#relation)",
+   "- 应用映射::[应用映射](#engineering)",
+   "- 边界::[边界](#boundary)"
+  ],
+  "body_lines_after": 65,
+  "sha_std": "0625e7db93cd8d74",
+  "sha_new": "16b06ebac73108a7"
+ }
+]

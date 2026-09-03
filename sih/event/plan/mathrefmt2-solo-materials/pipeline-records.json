@@ -1,0 +1,308 @@
+[
+ {
+  "file": "APP-001-ordinary-differential-equation.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-002-partial-differential-equation.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-003-two-body-problem.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-004-keplers-laws-of-planetary-motion.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-005-vibrating-string.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-006-chladni-figure.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-007-vibration-simulation-visualization.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-008-daylength-rate-of-change.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-009-information-flood-attention-budget.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "APP-010-csnx-message-compression-sampling.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-001-archimedes-use-of-infinitesimals.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-002-infinitesimal.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-003-gottfried-leibniz.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-004-isaac-newton.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-005-method-of-fluxions.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-006-infinitesimal-calculus.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-007-brook-taylor.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-008-colin-maclaurin.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-009-leonhard-euler.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-010-gauss.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-011-joseph-fourier.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-012-law-of-continuity.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-013-history-of-calculus.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-014-generality-of-algebra.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-015-zeno-paradox.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "HIS-016-squeeze-theorem.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-001-partial-derivative.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-002-disk-integration.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-003-gabriels-horn.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-004-jacobian-matrix.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-005-hessian-matrix.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-006-curvature.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-007-greens-theorem.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-008-divergence-theorem.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-009-stokes-theorem.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "MUL-010-vector-calculus.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "NS-001-elementary-calculus-infinitesimal-approach.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "NS-002-nonstandard-calculus.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "NS-003-infinitesimal-nonstandard.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SER-001-infinite-series.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SER-002-maclaurin-series.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SER-003-taylor-series.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SER-004-fourier-series.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SER-005-euler-maclaurin-formula.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-001-natural-logarithm.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-002-e-mathematical-constant.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-003-exponential-function.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-004-hyperbolic-angle.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-005-hyperbolic-function.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-006-stirlings-approximation.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ },
+ {
+  "file": "SPEC-007-bernoulli-numbers.md",
+  "scr": 0,
+  "fmt": 0,
+  "nomen": 0
+ }
+]

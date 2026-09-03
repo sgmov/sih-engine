@@ -1,0 +1,62 @@
+mathrefmt2-solo 枚举对表读数（开工后盘面）
+条目总数: 114
+概览首节: 51 | 定义首节: 63 | 其他: 0
+概览首节按前缀:
+  APP=10
+  HIS=16
+  MUL=10
+  NS=3
+  SER=5
+  SPEC=7
+概览首节条目清单:
+  APP  APP-001-ordinary-differential-equation.md
+  APP  APP-002-partial-differential-equation.md
+  APP  APP-003-two-body-problem.md
+  APP  APP-004-keplers-laws-of-planetary-motion.md
+  APP  APP-005-vibrating-string.md
+  APP  APP-006-chladni-figure.md
+  APP  APP-007-vibration-simulation-visualization.md
+  APP  APP-008-daylength-rate-of-change.md
+  APP  APP-009-information-flood-attention-budget.md
+  APP  APP-010-csnx-message-compression-sampling.md
+  HIS  HIS-001-archimedes-use-of-infinitesimals.md
+  HIS  HIS-002-infinitesimal.md
+  HIS  HIS-003-gottfried-leibniz.md
+  HIS  HIS-004-isaac-newton.md
+  HIS  HIS-005-method-of-fluxions.md
+  HIS  HIS-006-infinitesimal-calculus.md
+  HIS  HIS-007-brook-taylor.md
+  HIS  HIS-008-colin-maclaurin.md
+  HIS  HIS-009-leonhard-euler.md
+  HIS  HIS-010-gauss.md
+  HIS  HIS-011-joseph-fourier.md
+  HIS  HIS-012-law-of-continuity.md
+  HIS  HIS-013-history-of-calculus.md
+  HIS  HIS-014-generality-of-algebra.md
+  HIS  HIS-015-zeno-paradox.md
+  HIS  HIS-016-squeeze-theorem.md
+  MUL  MUL-001-partial-derivative.md
+  MUL  MUL-002-disk-integration.md
+  MUL  MUL-003-gabriels-horn.md
+  MUL  MUL-004-jacobian-matrix.md
+  MUL  MUL-005-hessian-matrix.md
+  MUL  MUL-006-curvature.md
+  MUL  MUL-007-greens-theorem.md
+  MUL  MUL-008-divergence-theorem.md
+  MUL  MUL-009-stokes-theorem.md
+  MUL  MUL-010-vector-calculus.md
+  NS  NS-001-elementary-calculus-infinitesimal-approach.md
+  NS  NS-002-nonstandard-calculus.md
+  NS  NS-003-infinitesimal-nonstandard.md
+  SER  SER-001-infinite-series.md
+  SER  SER-002-maclaurin-series.md
+  SER  SER-003-taylor-series.md
+  SER  SER-004-fourier-series.md
+  SER  SER-005-euler-maclaurin-formula.md
+  SPEC  SPEC-001-natural-logarithm.md
+  SPEC  SPEC-002-e-mathematical-constant.md
+  SPEC  SPEC-003-exponential-function.md
+  SPEC  SPEC-004-hyperbolic-angle.md
+  SPEC  SPEC-005-hyperbolic-function.md
+  SPEC  SPEC-006-stirlings-approximation.md
+  SPEC  SPEC-007-bernoulli-numbers.md
