@@ -54,23 +54,25 @@
 泊界登记：
 - entry_id pk-046：金向量生命周期与覆盖方法论另拟
 - 停泊事件：parking_entered `5f975d24-03a5-4d31-876a-d09a46f4b714`（event_hash `400e2cee...`）
-- PARKING-v1.md 名册更新在泊三项含 pk-046
+- PARKING-v1.md 名册：pk-046 经书简 park 事件入链（权威在链），工具线 PARKING-v1.md 名册落笔不在本批 allow 域（F-4 限请求写入节所列），留待泊界复检批收编
 - exit_condition：用户裁载体另立与条款组重订归用户裁，ttl 14 天
 
 说明：件二裁量类边界分流为正常机械三态结果，非得一异常，不扰人节点。
 
 ## 认证清单
 
+> 备注：书简 append 仅认 JSON 报告件（ReportNotJson 实测），md 交付件非书简认证对象；本批 plan/materials 恰在 des-001 治理域外（des-001 只盖 sih-engine/doc，域外 scrutinator 报 exit-2 如实记档不属违规），formatter 零改动过；链外命题区文件不属本批 allow 提交域。
+
 | 件 | 类型 | 状态 |
 |---|---|---|
-| materials/classification-findings.md | 件一审计档 | 管线过 |
-| materials/enum-registry.json | 件一注册表 | 管线过 |
-| proposition/DES/gvec-method-guard-1/contract.json | 件二合同 | 链路件 |
-| proposition/DES/gvec-method-guard-1/responses.jsonl | 件二九发 | 链路件 |
-| proposition/DES/gvec-method-guard-1/contract-score-material.json | 件二计分 | 链路件 |
-| facet/facet_task_packages/gvec-method-guard-1/topic.md | 件二命题 | 链路件 |
-| parking/materials/pk-046.json | 泊界记录 | 已上链 |
-| PARKING-v1.md | 泊界名册 | 更新 |
+| materials/classification-findings.md | 件一审计档 | formatter 零改动过 + 随批入 main 提交；scrutinator 域外 exit-2 如实记档（md，非书简 JSON 认证对象） |
+| materials/enum-registry.json | 件一注册表 | 书简认证 `37206c13-0d0d`（event_hash `2931e3ea...`） |
+| proposition/DES/…/contract.json | 件二合同 | 书简认证 `bcf937f9-0ef8`（event_hash `b9bd9c3c...`），文件本体在链外命题区待泊界批收编 |
+| proposition/DES/…/responses.jsonl | 件二九发 | 链外命题区 jsonl，非书简 JSON 认证对象形态 |
+| proposition/DES/…/contract-score-material.json | 件二计分 | 书简认证 `47990d5a-19ba`（event_hash `209b6f37...`），文件本体链外待收编 |
+| facet/…/gvec-method-guard-1/topic.md | 件二命题 | 并入 tools main（md，非书简认证对象）|
+| parking/materials/pk-046.json | 泊界记录 | parking_entered 入链 `5f975d24-03a5`（event_hash `400e2cee...`） |
+| PARKING-v1.md | 泊界名册 | 不在本批 allow 域（F-4 限请求写入节），留待泊界复检批收编 |
 
 ## F 表
 
@@ -93,5 +95,8 @@
 
 ## 结算读数
 
-- 双仓 settle、reconcile 读数见结算事件。
-- 链 verify：settle 前 N 事件 valid，settle 后 M 事件 valid（对表入内文）。
+- 双仓 settle（merge 形副本归并）：
+  - engine main `94e4d30`：收编 materials/classification-findings.md、enum-registry.json、结果档与 trail 链（冲突贴补取分支权威版）
+  - tools integral-stage-build `22c7aff8`：收编 facet gvec-method-guard-1/topic.md、facet/CALL-LOG.md、meter/counts/2026-09-03.ndjson
+- 链 verify：settle 前 150 事件 valid（first_hash `94f1dd00...` last_hash `209b6f37...`）；settle 后收约补对表见完工报告。
+- reconcile 双仓对表读数：收约后补入完工报告。
