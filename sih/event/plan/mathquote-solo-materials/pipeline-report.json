@@ -1,0 +1,237 @@
+{
+  "topology/TOP-001-banach-fixed-point": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-002-brouwer-fixed-point": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-003-knaster-tarski-mirror": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-004-metric-space": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-005-complete-metric-space": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-006-compact-set": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-007-continuous-mapping": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "topology/TOP-008-separation-axioms-and-neighborhood-isolation": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-001-law-of-large-numbers": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-002-strong-law-of-large-numbers": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-003-central-limit-theorem": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-004-large-deviation-principle": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-005-bayesian-updating": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-006-probability-measure": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-007-expectation": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-008-information-content-and-falsifiability": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-009-fano-inequality-and-recovery-bound": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-010-hypothesis-testing-and-significance": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-011-estimation-and-confidence-intervals": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-012-correlation-and-regression": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-013-stationarity-and-change-point": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-014-expected-information-gain": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "probability/PROB-015-littles-law-and-load-bound": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-001-partially-ordered-set": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-002-complete-lattice": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-003-knaster-tarski-fixed-point": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-004-monotone-operator": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-005-chains-and-antichains": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-006-closure-and-consequence-operator": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-007-derivation-soundness-and-mirror": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-008-reference-reachability-and-dangling": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-009-commitment-closure-and-naming": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-010-falsification-and-counterexample": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-011-well-founded-recursion-termination": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-015-coinduction-and-mirror-duality": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-016-well-founded-relation-and-backward-termination": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-017-definability-and-definition-extension": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-018-coupled-fixed-point-and-mutual-construction": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-019-version-order-and-externalized-state-store": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-020-total-order-resource-allocation-deadlock-freedom": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-021-dependency-dag-topological-order": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "order/ORD-022-degradation-well-founded-chain": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "algebra/ALG-001-matrix-and-eigenvalue": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "algebra/ALG-002-equivalence-relation-and-quotient-isolation": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "algebra/ALG-008-kernel-and-fiber": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "algebra/ALG-009-rank-nullity-and-section": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  },
+  "algebra/ALG-010-factorization-and-invariance": {
+    "formatter": 0,
+    "scrutinator": 0,
+    "nomenclator": 0
+  }
+}

@@ -39,7 +39,7 @@ schema 见 `methodology.yaml` 头部 `schema_doc` 注释。三层结构：每层
 
 - "审一下这份报告"、"audit 一下"、"review 一下"
 - "这个命题站得住吗"、"这个设计决策对不对"
-- 收到 facet / redteam / 任何 LLM 工具产出的报告，要求真判断
+- 收到 facet / 对抗审查器 / 任何 LLM 工具产出的报告，要求真判断
 - 起草 / 提交 / commit 任何 PRO / DEC / DES 文档前自检
 - 阶段交付前的"外部审阅"
 
@@ -47,7 +47,7 @@ schema 见 `methodology.yaml` 头部 `schema_doc` 注释。三层结构：每层
 
 - 单纯事实查询
 - 不涉及命题 / 报告 / 设计的纯讨论
-- 已明确由 sihankor-redteam / sihankor-facet-measure 处理的窄场景（这两个 skill 内部已含方法学）
+- 已明确由对抗审查壳（已退役）与 sihankor-facet-measure 处理的窄场景（后者 skill 内部已含方法学）
 
 ## 前置检查 {#precheck}
 
@@ -152,8 +152,8 @@ strict 模式。`--strict` 标记只表示"用严格态度审"，不改变覆盖
 ## 与其他 skill 的分工 {#relation}
 
 - **sihankor-pre-output-self-check**：每条输出的 6 项自检（意图 / 范畴 / 责任 / 精简 / 哲学相容）—— **不重复**，本 skill 不做这 6 项
-- **sihankor-redteam**：LLM 红蓝紫对抗审查（窄工具调用）—— **本 skill 是元层**，redteam 输出仍是报告，仍可被本 skill 审
-- **sihankor-facet-measure**：facet 测温工具调用（窄工具）—— 同 redteam
+- **对抗审查壳（已退役）**：LLM 红蓝紫对抗审查（窄工具调用）—— **本 skill 是元层**，其输出仍是报告，仍可被本 skill 审
+- **sihankor-facet-measure**：facet 测温工具调用（窄工具）—— 同上，输出仍可被本 skill 审
 - **sihankor-intent-refine**：意图提炼（生成前）—— 本 skill 是**生成后审阅**
 - **sihankor-calculus-trigger**：微积分概念检索（推理工具）—— 本 skill 借它做数学正确性支撑
 
@@ -184,4 +184,4 @@ strict 模式。`--strict` 标记只表示"用严格态度审"，不改变覆盖
 
 - **优先**：把每份现有报告按本 skill 三层方法学补审，输出补审报告
 - 立项补充锚点表（用户提到"反复要遇到的防御挑战"——意味着新领域出现新锚点要加）
-- 远期：redteam 工具接本 skill 做"对立锚定"对抗
+- 远期：对抗审查器重建后接本 skill 做"对立锚定"对抗（承退役翻案条件）

@@ -1,0 +1,15 @@
+{
+  "report_type": "reverify",
+  "batch": "mathquote-calc-solo",
+  "date": "2026-09-03",
+  "script": "reverify.py",
+  "source": "sih-philosophy/emanation/proodos (read-only)",
+  "scanned_entries": 114,
+  "anchors_total": 229,
+  "anchors_line_exact": 229,
+  "failures": 0,
+  "rerun_consistent": true,
+  "note": "all new standard anchors assert byte-exact substring of the emanation source at the declared line; rerunnable, zero-write",
+  "finding_count": 0,
+  "exit_code": 0
+}

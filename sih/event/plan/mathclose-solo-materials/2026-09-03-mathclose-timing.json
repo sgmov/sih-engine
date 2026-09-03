@@ -1,0 +1,26 @@
+{
+  "batch": "mathclose-solo",
+  "session_id": "956b39218007e5a3",
+  "recorded_at": "2026-09-03T10:52:27Z",
+  "purpose": "F-4 时序不可倒判据证据：件一完成读数先于件二取哈希",
+  "readings": [
+    {
+      "stage": "件一 括注扫尾完成",
+      "evidence": "147 件状态行括注完成；annotate 报告含 147 changed / 0 errors，每件恰改一行",
+      "note": "件一 annotation 文件 mtime 2026-09-03T18:30:43Z（LIM-001）；annotate 报告 mtime 2026-09-03T18:38:30Z"
+    },
+    {
+      "stage": "件二 取盘上实哈希（注释后）",
+      "evidence": "worktree LIM-001 = b1fbfb32…，MUL-001 = 39c36a79…",
+      "note": "金向量 lim001 fixture mtime 2026-09-03T18:41:26Z，晚于件一完成 18:30/18:38，序不可倒成立"
+    }
+  ],
+  "target_annotated_hashes": {
+    "LIM-001-limit-mathematics.md": "b1fbfb32a9eb32441a651a676284c51ab7812d7ffd824c95798acb2653e08885",
+    "MUL-001-partial-derivative.md": "39c36a79aad46f0ac57f79f22ef275a10d705b5d7a7c03a390415fe472e56bf2"
+  },
+  "verdict": {
+    "F-4": "pass",
+    "detail": "件一完成读数（18:30/18:38）先于件二取哈希（18:41），重冻哈希即扫尾后盘面"
+  }
+}

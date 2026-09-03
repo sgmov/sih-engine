@@ -1,0 +1,36 @@
+{
+  "report_type": "pipeline",
+  "batch": "mathquote-calc-solo",
+  "date": "2026-09-03",
+  "stage_order": "化格 formatter -> 核阅 scrutinator -> 检词 nomenclator",
+  "target_dir": "worktrees/sih-math/mathquote-calc-solo/calculus/llm-friendly-build/entries",
+  "entries_scanned": 114,
+  "steps": {
+    "formatter": {
+      "pack": "packs/general-v1",
+      "write": true,
+      "exit0": 114,
+      "exit1_modified": 0,
+      "exit2_err": 0,
+      "note": "0 files needed formatting"
+    },
+    "scrutinator": {
+      "pack": "packs/des-001-mathe",
+      "exit0": 114,
+      "violations": 0,
+      "exit2_err": 0,
+      "note": "math warehouse domain des-001-mathe; C006 paren hygiene clean after PRO-06 paren-free canonical"
+    },
+    "nomenclator": {
+      "pack": "packs/core",
+      "exit0": 114,
+      "findings": 0,
+      "skipped": 114,
+      "checked": 0,
+      "note": "core pack domain excludes **/llm-friendly-build/**; math entries legitimately skipped, recorded as read"
+    }
+  },
+  "net_result": "all three pipeline steps exit 0 across 114 entries; zero violations, zero findings",
+  "finding_count": 0,
+  "exit_code": 0
+}

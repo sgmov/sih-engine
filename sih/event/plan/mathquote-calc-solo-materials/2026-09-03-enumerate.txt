@@ -1,0 +1,11 @@
+mathquote-calc-solo 枚举对表读数（宽形口径，施工前盘面）
+=========================================================
+盘面（sih-math 主树 calculus/llm-friendly-build/entries/）：
+  条目文件总数   114
+  宽形标准锚已锚  1  （APP-011，锚见 witness-archive 正本 L278，异格式源无 .md 后缀）
+  缺标准锚件     113
+与主会盘面 107 件对表（LIM8/DIFF26/INT22/APP10/HIS16/MUL10/NS3/SER5/SPEC7 = 8+26+22+10+16+10+3+5+7 = 107）：
+  前缀计数读出   LIM8  DIFF32  INT22  APP11  HIS16  MUL10  NS3  SER5  SPEC7 = 114
+  前缀零居位对比  LIM8  DIFF26  INT22  APP10  HIS16  MUL10  NS3  SER5  SPEC7 = 107
+  位移申报：总量 +7（DIFF +6，APP +1），如实申报供主会核对
+canonical 引文映射 10 条（PRO-01..PRO-10）逐字节子串断言 ALL OK（proodos 只读切片源）

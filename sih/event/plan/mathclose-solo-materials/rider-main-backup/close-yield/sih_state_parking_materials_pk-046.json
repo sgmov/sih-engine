@@ -1,0 +1,16 @@
+{
+  "action": "enter",
+  "entry_id": "pk-046",
+  "title": "金向量生命周期与覆盖方法论另拟——SPEC-017 立裁未过闸近 Boundary 带，方法论载体与条款组待重订",
+  "exit_condition": "用户裁方法论载体另立（引擎向界层规范 SPEC-017 或任务包或泊界复检批）与条款组重订（拆并或单锚归约如只锚基线四可验证性）",
+  "ttl_days": 14,
+  "id": "pk-046",
+  "path": "doc/governance/PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "ttl_days": 14
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "total": 147,
+  "calculus": 113,
+  "others": 34,
+  "app011_touched": [],
+  "waves_summary": {
+    "mathrefmt": 62,
+    "mathquote2": 34,
+    "mathquote-calc": 113,
+    "mathrefmt2": 51
+  },
+  "entries": {
+    "calculus/llm-friendly-build/entries/DIFF-001-derivative.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-008-power-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-011-product-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-029-related-rates.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-001-antiderivative.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-020-arclength.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/INT-022-shell-integration.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "calculus/llm-friendly-build/entries/LIM-008-continuous-function.md": [
+      "mathrefmt",
+      "mathquote-calc"
+    ],
+    "algebra/entries/ALG-001-matrix-and-eigenvalue.md": [
+      "mathquote2"
+    ],
+    "algebra/entries/ALG-008-kernel-and-fiber.md": [
+      "mathquote2"
+    ],
+    "algebra/entries/ALG-009-rank-nullity-and-section.md": [
+      "mathquote2"
+    ],
+    "algebra/entries/ALG-010-factorization-and-invariance.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-001-partially-ordered-set.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-002-complete-lattice.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-003-knaster-tarski-fixed-point.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-004-monotone-operator.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-005-chains-and-antichains.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-006-closure-and-consequence-operator.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-007-derivation-soundness-and-mirror.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-008-reference-reachability-and-dangling.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-009-commitment-closure-and-naming.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-010-falsification-and-counterexample.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-011-well-founded-recursion-termination.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-016-well-founded-relation-and-backward-termination.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-017-definability-and-definition-extension.md": [
+      "mathquote2"
+    ],
+    "order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-001-law-of-large-numbers.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-002-strong-law-of-large-numbers.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-003-central-limit-theorem.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-004-large-deviation-principle.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-005-bayesian-updating.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-006-probability-measure.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-007-expectation.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-008-information-content-and-falsifiability.md": [
+      "mathquote2"
+    ],
+    "probability/entries/PROB-009-fano-inequality-and-recovery-bound.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-001-banach-fixed-point.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-002-brouwer-fixed-point.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-003-knaster-tarski-mirror.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-004-metric-space.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-005-complete-metric-space.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-006-compact-set.md": [
+      "mathquote2"
+    ],
+    "topology/entries/TOP-007-continuous-mapping.md": [
+      "mathquote2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-003-two-body-problem.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-005-vibrating-string.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-006-chladni-figure.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-010-gauss.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-002-disk-integration.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-006-curvature.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SER-001-infinite-series.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SER-003-taylor-series.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SER-004-fourier-series.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ],
+    "calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md": [
+      "mathquote-calc",
+      "mathrefmt2"
+    ]
+  }
+}

@@ -1,0 +1,1880 @@
+diff --git a/cascade/CONTRACT.md b/cascade/CONTRACT.md
+index 88942a13..35536246 100644
+--- a/cascade/CONTRACT.md
++++ b/cascade/CONTRACT.md
+@@ -22,6 +22,10 @@ build 扫语料根下全部 markdown，抽正文引用词即 DEC、GOV、PRO、D
+ 
+ 三查对表承孵化环第四步，落点即引擎基础设施层，消费位即 worktree 加 2locks 的乐观锁半边。融回评估两重门槛即体量与时间，主判据贡献度，达标由用户届时裁量。
+ 
++## 载体引用 {#carrier}
++
++级联判定语义承载 ORD-016 良基关系与倒推终止（sih-math/order/entries/ORD-016-well-founded-relation-and-backward-termination.md，mapping.md:190）。三类语义形式化即上游依赖倒推遍历的良基性与终止性、基线比较（当前哈希对链上最近认证）、洁净判定（三态 clean/dirty/unverified 与 verdict blocked/writable），推导档 sih-math/docs/caswire-cascade-derivation-2026-09-03.md，源码判定位锚点在 cascade/src/cascade/core.py（build_edges / latest_cert_hashes / check_targets 注释锚点）。本批为接线与推导非行为变更，判定行为零改动。
++
+ ## 修订记录 {#revisions}
+ 
+ 2026-08-25 修订一：契约初版随能力外切首建，承任务包 worktree-2locks-t6d 与 2026-08-25 会话级联设计裁定五件即路径即 id、不改名即删除新建、引用即边、边账计数、健康三档。
+diff --git a/cascade/src/cascade/core.py b/cascade/src/cascade/core.py
+index cbd5286d..2fcaf4ff 100644
+--- a/cascade/src/cascade/core.py
++++ b/cascade/src/cascade/core.py
+@@ -201,6 +201,8 @@ def map_tokens(docs, extra_texts=()):
+     return mapping, ambiguous, unmapped
+ 
+ 
++# <carrier ORD-016 倒推遍历> 依赖边即引用关系 d ≻ u，建边即列举各件上游集 Out(d)，
++# 良基引用图（有限无环，mapping.md:190）担保逆引用倒推遍历必终止，推导档 caswire-cascade-derivation-2026-09-03.md
+ def build_edges(docs, mapping):
+     """引用即边：件对件引用建立上游列表，自引排除，去重排序。"""
+     edges = {}
+@@ -312,6 +314,8 @@ def find_orphans(registry, root):
+     return sorted(orphans, key=lambda o: o["edge"])
+ 
+ 
++# <carrier ORD-016 基线比较> 链上最近认证哈希即对表基线 C(u)，与当前磁盘哈希比较出
++# 洁净/偏离（落地判定与用终点路径存在的哈希形态），推导档 caswire-cascade-derivation-2026-09-03.md
+ def latest_cert_hashes(trail_paths, reports_root):
+     """链上最近认证哈希：多 trail 按参序接续，后链覆盖前链即最近认证胜。"""
+     if isinstance(trail_paths, (str, Path)):
+@@ -346,6 +350,8 @@ def latest_cert_hashes(trail_paths, reports_root):
+     return hashes
+ 
+ 
++# <carrier ORD-016 洁净判定> 逐上游对表出三态 clean/dirty/unverified，任一脏上游拒下游
++# verdict=blocked（局部单轮检查与死区传播方向，mapping.md:190），推导档 caswire-cascade-derivation-2026-09-03.md
+ def check_targets(registry, root, cert_hashes):
+     """上游洁净判定：洁净即当前哈希等于链上最近认证哈希，无认证史即 unverified 不拦。"""
+     root = Path(root).resolve()
+diff --git a/nomenclator/packs/core/terms.json b/nomenclator/packs/core/terms.json
+index 1f343d0f..3c958c7c 100644
+--- a/nomenclator/packs/core/terms.json
++++ b/nomenclator/packs/core/terms.json
+@@ -1,911 +1,918 @@
+ {
+-  "terms": [
+-    {
+-      "code": "scrutinator",
+-      "definition": "受托持人批的规约包，对材料逐条核验阅览，产出结构化报告",
+-      "en": "Scrutinator",
+-      "signed": "2026-08-19",
+-      "source": "PRO-007 已签项",
+-      "zh": "核阅"
+-    },
+-    {
+-      "code": null,
+-      "definition": "受托持人批的谓词包，对到达材料逐件机械判定，择定主线、停放、丢弃三路之一",
+-      "en": "Selector",
+-      "signed": "2026-08-20",
+-      "source": "PRO-007 已签项",
+-      "zh": "路择"
+-    },
+-    {
+-      "code": "formatter",
+-      "definition": "化其格式，格式归一，笔在核前",
+-      "en": "Formatter",
+-      "signed": "2026-08-20",
+-      "source": "PRO-007 簇五",
+-      "zh": "化格"
+-    },
+-    {
+-      "code": "scribe",
+-      "definition": "如实书写组件，append-only 哈希链写入器，只记不判",
+-      "en": "Scribe",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 书简外切裁定 承 DEC-004",
+-      "zh": "书简"
+-    },
+-    {
+-      "code": "nomenclator",
+-      "definition": "受托持人批的术语包，对术语三态作机器可读登记，对治理文档作字符串级核查，对登记写入作前校验",
+-      "en": "Nomenclator",
+-      "signed": "2026-08-22",
+-      "source": "PRO-007 簇六",
+-      "zh": "检词"
+-    },
+-    {
+-      "code": null,
+-      "definition": "受托持人签的一页方向与边界声明",
+-      "en": "Course",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 已签项",
+-      "zh": "向界"
+-    },
+-    {
+-      "code": "parking",
+-      "definition": "未裁事项的有界停靠地，停了不忘",
+-      "en": "Parking",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 已签项",
+-      "zh": "泊界"
+-    },
+-    {
+-      "code": null,
+-      "definition": "能力切出围堰孵化，类微分之分",
+-      "en": "Expedition",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 范式词汇组",
+-      "zh": "外切"
+-    },
+-    {
+-      "code": null,
+-      "definition": "孵化期满回迁引擎，类积分之积",
+-      "en": "Reintegration",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 范式词汇组",
+-      "zh": "融回"
+-    },
+-    {
+-      "code": null,
+-      "definition": "外切后在 sih-tools 的孵化期环境",
+-      "en": "Incubation",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 范式词汇组",
+-      "zh": "孵化"
+-    },
+-    {
+-      "code": null,
+-      "definition": "水下施工临时挡水围护结构，竣工即拆",
+-      "en": "Cofferdam",
+-      "signed": "2026-08-21",
+-      "source": "PRO-007 范式词汇组",
+-      "zh": "围堰"
+-    },
+-    {
+-      "code": "trail",
+-      "definition": "事件流载体，append-only 单链",
+-      "en": "trail",
+-      "signed": "2026-08-21",
+-      "source": "DEC-001",
+-      "zh": null
+-    },
+-    {
+-      "code": "sihankor",
+-      "definition": "哲学身份，治理实体，承接哲学仓全部命题与铁律",
+-      "en": "SiHankor",
+-      "signed": "2026-08-19",
+-      "source": "AGENTS 术语登记",
+-      "zh": "司衡"
+-    },
+-    {
+-      "code": null,
+-      "definition": "工程产物，本轮基础设施",
+-      "en": "sih-engine",
+-      "signed": "2026-08-19",
+-      "source": "AGENTS 术语登记",
+-      "zh": "司衡引擎"
+-    },
+-    {
+-      "code": null,
+-      "definition": "唯一权威源，构成性约束 Agent 的生成与推理",
+-      "en": "sih-philosophy",
+-      "signed": "2026-08-19",
+-      "source": "AGENTS 术语登记",
+-      "zh": "哲学仓"
+-    },
+-    {
+-      "code": null,
+-      "definition": "已废弃沉默参考，失败设计不继承",
+-      "en": null,
+-      "signed": "2026-08-19",
+-      "source": "AGENTS 术语登记",
+-      "zh": "旧工程仓"
+-    },
+-    {
+-      "code": null,
+-      "definition": "原理层",
+-      "en": "Tao",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "道"
+-    },
+-    {
+-      "code": null,
+-      "definition": "方法层，收敛五法",
+-      "en": "Canon",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "法"
+-    },
+-    {
+-      "code": null,
+-      "definition": "认识层，检验道层主张的方法论",
+-      "en": "Assay",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "鉴"
+-    },
+-    {
+-      "code": null,
+-      "definition": "应本体，居中不动以应万变",
+-      "en": "Settle",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "应"
+-    },
+-    {
+-      "code": null,
+-      "definition": "应本体失态后的正反两相合称",
+-      "en": "Unsettling",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "应变"
+-    },
+-    {
+-      "code": null,
+-      "definition": "应变之已形",
+-      "en": "unsettle the present",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "应辨"
+-    },
+-    {
+-      "code": null,
+-      "definition": "应变之未形",
+-      "en": "unsettle what's coming",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "应几"
+-    },
+-    {
+-      "code": null,
+-      "definition": "哲学的原型",
+-      "en": "Arche",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "元"
+-    },
+-    {
+-      "code": null,
+-      "definition": "递归终止的本体论根据",
+-      "en": "self-so",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "自然"
+-    },
+-    {
+-      "code": null,
+-      "definition": "元层三治总称",
+-      "en": "Regimen",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "治"
+-    },
+-    {
+-      "code": null,
+-      "definition": "元层三治之一，资格控制",
+-      "en": "Acknowledge",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "治病"
+-    },
+-    {
+-      "code": null,
+-      "definition": "元层三治之一，核心规约不可变动",
+-      "en": "Infuse",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "治益"
+-    },
+-    {
+-      "code": null,
+-      "definition": "元层三治之一，禁止绕过鉴直接 Ratify",
+-      "en": "Overcome",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "治强"
+-    },
+-    {
+-      "code": null,
+-      "definition": "链推导方法总称",
+-      "en": "Emanation",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "流衍"
+-    },
+-    {
+-      "code": null,
+-      "definition": "自上而下推导段",
+-      "en": "Proodos",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "流衍段"
+-    },
+-    {
+-      "code": null,
+-      "definition": "自下而上反推段",
+-      "en": "Epistrophe",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "复归"
+-    },
+-    {
+-      "code": null,
+-      "definition": "Emanation 的属性名词",
+-      "en": "Emanativity",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "流衍性"
+-    },
+-    {
+-      "code": null,
+-      "definition": "Epistrophe 的属性名词",
+-      "en": "Reducibility",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "可归约性"
+-    },
+-    {
+-      "code": null,
+-      "definition": "Epistrophe 第四步属性名词",
+-      "en": "Falsifiability",
+-      "signed": null,
+-      "source": "哲学仓 01 术语速查表",
+-      "zh": "可证伪性"
+-    },
+-    {
+-      "code": null,
+-      "definition": "法的工程化展开",
+-      "en": "Techne",
+-      "signed": null,
+-      "source": "哲学仓 01 英文对取名理据",
+-      "zh": "术"
+-    },
+-    {
+-      "code": null,
+-      "definition": "微兆，应几之所察",
+-      "en": "Incipient",
+-      "signed": null,
+-      "source": "哲学仓 01 英文对取名理据",
+-      "zh": "几"
+-    },
+-    {
+-      "code": null,
+-      "definition": "约束，规约之约",
+-      "en": "Brief",
+-      "signed": null,
+-      "source": "哲学仓 01 英文对取名理据",
+-      "zh": "约"
+-    },
+-    {
+-      "code": null,
+-      "definition": "形之迹，可观测面",
+-      "en": "Manifest",
+-      "signed": null,
+-      "source": "哲学仓 01 英文对取名理据",
+-      "zh": "形迹"
+-    },
+-    {
+-      "code": "ask3repeater",
+-      "definition": "承接应几前向约束的治理动作组件，三层诘察即析显层掘隐含递归细化，向内诘察严禁外问，代码标识符小写 ask3repeater，内部代号 ASK3，展示名保留不用",
+-      "en": "Ask3Repeater",
+-      "signed": "2026-08-22",
+-      "source": "DEC-006 承旧仓 DEC-035 名实复审",
+-      "zh": "三问"
+-    },
+-    {
+-      "code": "identity",
+-      "definition": "验明调用方正身，即以子进程视角亲验出身，盐哈希身份串入册，自报对表三态，留痕不签",
+-      "en": "identity",
+-      "signed": "2026-08-25",
+-      "source": "2026-08-25 立名会，sih-tools/identity 工具，推导史见 sih-engine PRO-007 簇八",
+-      "zh": "正身"
+-    },
+-    {
+-      "code": "cascade",
+-      "definition": "级联检查，即引用即边建依赖表，路径即身份，上游洁净判定与孤儿侦查，链即账本",
+-      "en": "cascade",
+-      "signed": "2026-08-25",
+-      "source": "2026-08-25 立名会，sih-tools/cascade 工具，推导史见 sih-engine PRO-007 簇八",
+-      "zh": "级联"
+-    },
+-    {
+-      "code": "session-credential",
+-      "definition": "任务包批次的短期写入凭证，开工签发载范围与正身绑定，收工吊销，台账行为载体，承 DEC-011 留裁二即会话档为主环境变量为辅",
+-      "en": "session credential",
+-      "signed": "2026-08-26",
+-      "source": "DEC-011 留裁二，2026-08-26 用户签署生效",
+-      "zh": "会话档"
+-    },
+-    {
+-      "code": "stable-subset",
+-      "definition": "本地壳语境跨时可比的绑定组件集合即 hostname 加 user 加 boottime 三件，pid 与 ppid 与 ancestry 限同瞬对表，mac 不入，承 DEC-011 留裁一",
+-      "en": "stable subset",
+-      "signed": "2026-08-26",
+-      "source": "DEC-011 留裁一，2026-08-26 用户签署生效",
+-      "zh": "稳定子集"
+-    },
+-    {
+-      "code": "lease",
+-      "definition": "按任务包生命周期治理写入的租约工具，立约开工建副本签发会话档，租内双锁即悲观五验加乐观基线强制不得直改正本，期满审查归还归并拆本，回归义构成性于期满归还",
+-      "en": "lease",
+-      "signed": "2026-08-26",
+-      "source": "2026-08-26 立名会即双工具并库为 sih-tools/lease，完美直译对两侧词典词，推导史见 sih-engine PRO-007 簇九",
+-      "zh": "租约"
+-    },
+-    {
+-      "signed": true,
+-      "source": "DEC-012 裁决七即 git log 对台账对 trail 三方比对",
+-      "zh": "对表"
+-    },
+-    {
+-      "signed": true,
+-      "source": "DEC-012 裁决七即绕行提交在对表中显现",
+-      "zh": "露形"
+-    },
+-    {
+-      "signed": true,
+-      "source": "DEC-012 裁决一与四即 lease commit 唯一合法提交通道",
+-      "zh": "正身路径"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "2026-08-25 用户匹配裁定即任务包请求写入段为会话范围第一源，lease 契约机器形态节承载",
+-      "zh": "请求写入"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "用户 2026-08-27 封字令即存量裁定，audit-049 裁定补记节承载",
+-      "zh": "封存"
+-    },
+-    {
+-      "signed": true,
+-      "source": "editmig-t6d 批 2026-08-27 用户批准即编辑位迁移，内容编辑与管线与段结算皆在副本、收约归并回主线",
+-      "zh": "副本流"
+-    },
+-    {
+-      "signed": true,
+-      "source": "2026-08-27 用户批令即融回评估批逐件轮问体量与时间与贡献度",
+-      "zh": "三问轮回"
+-    },
+-    {
+-      "signed": true,
+-      "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即被依赖的强制位实走计入贡献度",
+-      "zh": "强制位"
+-    },
+-    {
+-      "signed": true,
+-      "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即空转调用量不计入贡献度",
+-      "zh": "空转"
+-    },
+-    {
+-      "signed": true,
+-      "source": "孵化环第四步融回门三查即回迁债已评估",
+-      "zh": "回迁债"
+-    },
+-    {
+-      "signed": true,
+-      "source": "audit-049 封字令 2026-08-27 即界线认定与增量零容忍",
+-      "zh": "界线"
+-    },
+-    {
+-      "signed": true,
+-      "source": "AGENTS.md 泊界心跳 2026-08-25 接线裁定即对在泊材料跑 parking 谓词包",
+-      "zh": "心跳"
+-    },
+-    {
+-      "signed": true,
+-      "source": "PARKING-v1 停泊记账即未决事项有界停靠",
+-      "zh": "停泊"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "lease 契约修订二即任务包匹配裁定 2026-08-25，机器形态节承载",
+-      "word": "绑定侧档",
+-      "zh": "绑定侧档"
+-    },
+-    {
+-      "signed": true,
+-      "source": "2026-08-27 用户追认令即封字令修订一，audit-049 裁定修订节承载",
+-      "zh": "追认"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "DEC-013 融回门机制名随物走节即家位承 DEC-001 映射不重建，2026-08-27 承用户批令",
+-      "word": "名随物走",
+-      "zh": "名随物走"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "sih-tools/scribe/CONTRACT.md 正文承载即双子代理并行形态，2026-08-27 切换批首次入检升格",
+-      "word": "范式第二形态",
+-      "zh": "范式第二形态"
+-    },
+-    {
+-      "prior_state": "lazy",
+-      "signed": true,
+-      "source": "sih-tools/scribe/CONTRACT.md 正文承载即 facet 测量的执行入口指称，2026-08-27 切换批首次入检升格",
+-      "word": "测量侧执行入口",
+-      "zh": "测量侧执行入口"
+-    },
+-    {
+-      "code": "locator",
+-      "definition": "确定性寻址工具，对文档与配置与代码多载体结构化解析，为语义单元派生稳定标识，按标识与按词一次调用定位，索引是缓存源文件是权威源，只报不判",
+-      "en": "locator",
+-      "signed": true,
+-      "source": "2026-08-27 立名会用户裁定寻址弃索引即反候选死因为泛名词噪声，sih-tools/locator 工具落 DEC-007 基础设施五索引槽位即槽位名与工具名两实体两名，推导史见 locator-t6d 任务包",
+-      "word": "寻址",
+-      "zh": "寻址"
+-    },
+-    {
+-      "code": "retriever",
+-      "definition": "五档已沉淀物的检索面激活组件，报出已沉淀供治理动作引用，只报不判，知新在消费侧",
+-      "en": "Retriever",
+-      "signed": "2026-08-28",
+-      "source": "DEC-017 已签项",
+-      "zh": "温故"
+-    },
+-    {
+-      "code": "parser",
+-      "definition": "空腹解析引擎加声明式语言包，把代码切分为语法树并投影为寻址条目，同输入恒同树，错误处包节点永远产树，只读不判",
+-      "en": "Parser",
+-      "signed": "2026-08-28",
+-      "source": "句读立名批 已签项",
+-      "zh": "句读"
+-    },
+-    {
+-      "code": "marshalling",
+-      "definition": "长程任务的执行队形谱系即主 agent 与子代理如何分工、产出如何进租约治理包络，族内五形单线单发反思并联串行，编号旧称全退场",
+-      "en": "Marshalling",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "代理编组"
+-    },
+-    {
+-      "code": "oneshot",
+-      "definition": "单子代理单文件单次响应的队形，模板化独立任务，曾用名 T6-B",
+-      "en": "Oneshot",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "单发"
+-    },
+-    {
+-      "code": "parallel",
+-      "definition": "多子代理并行各领独立簇主线收敛验收的队形，编排者是主线即此形，司衡协议编排者属借脑预留位，曾用名 T6-D",
+-      "en": "Parallel",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "并联"
+-    },
+-    {
+-      "code": "reflect",
+-      "definition": "单子代理单文件多轮反思的队形，价值在抓结构性违规非润色，英文对带 Java 反射域距披露，曾用名 T6-C",
+-      "en": "Reflection",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "反思"
+-    },
+-    {
+-      "code": "serial",
+-      "definition": "单子代理持全量上下文连续产强耦合多文件的队形，带工具级泛用轻占用披露，曾用名 T5",
+-      "en": "Serial",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "串行"
+-    },
+-    {
+-      "code": "solo",
+-      "definition": "主线亲写零子代理的队形，需全局上下文与裁决连续性的治理批默认形，曾用名 T6-A",
+-      "en": "Solo",
+-      "signed": "2026-08-28",
+-      "source": "代理编组立名批 已签项",
+-      "zh": "单线"
+-    },
+-    {
+-      "code": "tally",
+-      "definition": "facet 裁决材料的确定性基线核对与终签壳，复算相符即合契结案落据，不契（不收敛）才归人，落据带全条件绑定即为条件改变时的重放锚；执契据以核结，非执行；契约源 DES-011，登记承 DEC-019",
+-      "en": "Tally",
+-      "signed": "2026-08-29",
+-      "source": "tallyinit-solo 立名外切批 已签项",
+-      "zh": "执契"
+-    },
+-    {
+-      "code": "elicit",
+-      "definition": "机械缺口信号驱动的人工介入升级位即未登记词与召回矛盾与裁定冲突三扳机、叩之小大应小大量级相称、无应答挂起不代答、契约逐信号消化过闸",
+-      "en": "Elicit",
+-      "signed": "2026-08-29",
+-      "source": "PRO-007 已签项",
+-      "zh": "叩问"
+-    },
+-    {
+-      "code": "attractor",
+-      "definition": "二层裁决结构组件（facet 上层采样观察加执契下层确定性核对终签），限定条件内收敛出唯一方向即机器落据为可重放裁决记录，不收敛归人诊断；得一承道德经三十九章文本根，attractor 承动力系统行业根；登记承 DEC-020",
+-      "en": "Attractor",
+-      "signed": "2026-08-30",
+-      "source": "deyireg-solo 立名登记批 已签项",
+-      "zh": "得一"
+-    },
+-    {
+-      "definition": "尊重因果方向，介入点在前端",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 395 行 / 06-on-canon 18 行",
+-      "zh": "顺因"
+-    },
+-    {
+-      "definition": "收敛恰到好处",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 396 行 / 06-on-canon",
+-      "zh": "有度"
+-    },
+-    {
+-      "definition": "知道不做什么",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 397 行 / 06-on-canon",
+-      "zh": "知止"
+-    },
+-    {
+-      "definition": "损有余补不足",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 398 行 / 06-on-canon",
+-      "zh": "损补"
+-    },
+-    {
+-      "definition": "力度适配场景",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 399 行 / 06-on-canon",
+-      "zh": "顺势"
+-    },
+-    {
+-      "definition": "涤除尘垢，主动去除偏见",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 406 行 / 07-on-assay",
+-      "zh": "去蔽"
+-    },
+-    {
+-      "definition": "致虚守静，不预设立场",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 407 行 / 07-on-assay",
+-      "zh": "客观"
+-    },
+-    {
+-      "definition": "用心如镜，反映而不投射",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 408 行 / 07-on-assay",
+-      "zh": "映照"
+-    },
+-    {
+-      "definition": "术语与原义关系的三档——保留（义核未变，仅领域迁移）/ 延伸（义核保留，跨域展开）/ 限定（通则性原义收窄为具体应用）",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 558 至 559 行",
+-      "zh": "血统档位"
+-    },
+-    {
+-      "definition": "元层溢出话题的承接位机制",
+-      "en": "",
+-      "signed": "2026-08-30 用户批准术语束登记",
+-      "source": "哲学仓 llm-friendly-build/entries/APP-01.md",
+-      "zh": "承接槽"
+-    },
+-    {
+-      "code": "gauge",
+-      "definition": "治理态三维读数组件正式名：从链上治理事实读出量值的三维读数面即收敛度调用置信度融回度一具三表盘、只报不判、read 与 record 两操作、确定性投影；义核为杆秤刻度星点读星得量值兼承司衡之衡字",
+-      "en": "gauge",
+-      "signed": "2026-08-30",
+-      "source": "SPEC-011 修订二即得一四通道机器终签 3d1ec172 至 923449fe 与用户 2026-08-30 同意令",
+-      "zh": "秤星"
+-    },
+-    {
+-      "code": "viewer",
+-      "definition": "聚合输出组件，把仅可消费类事件与泊界心跳与结算计数聚合为人类介入接口的只读呈报面，人类只在视图告警时介入，零写零判，同参双跑逐字节一致，缺席字段如实标不虚构",
+-      "en": "Viewer",
+-      "signed": "2026-08-31",
+-      "source": "视图立名批 已签项 承 DEC-007 名册即立名礼",
+-      "zh": "视图"
+-    },
+-    {
+-      "code": "adjudisp",
+-      "definition": "治理裁决权的三态路由表，即哪些裁决必过得一、哪些留人节点、哪些由确定性程序代裁，灰区默认过得一从严；适用界从 adjudisp 批起算既往不回溯；只立路由不改 DEC-020 硬件钥匙签署模型",
+-      "en": "AdjudicationRouting",
+-      "signed": "2026-09-02",
+-      "source": "adjudisp-solo 立名批 DEC-021 用户 2026-09-02 两步令",
+-      "zh": "裁决分派"
+-    },
+-    {
+-      "code": null,
+-      "definition": "正身身份核六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token 的无盐确定性 SHA-256，core-v1 前缀管道键值串键序固定派生，缺席即空串，同席同日稳定可连认，供跨报告连认配对；对位 full 盐哈希一字不改续担逐报告防篡改与防重放，双层职能分离",
+-      "en": "core_hash",
+-      "signed": "2026-09-03",
+-      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+-      "zh": "核哈希"
+-    },
+-    {
+-      "code": null,
+-      "definition": "同一逻辑身份跨报告跨批次的机械等值认定，配对键只认确定性派生的核哈希即同输入同值；与逐报告取证哈希职能分离，旧材料任一缺席核哈希即回退原判定不追认",
+-      "en": "cross-report recognition",
+-      "signed": "2026-09-03",
+-      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+-      "zh": "连认"
+-    },
+-    {
+-      "code": null,
+-      "definition": "正身十二组件中慢变难冒充的稳定子集六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token，进核哈希作连认键；易变件与新鲜度件（pid、ppid、parent_start、net_time、timestamp）不进核，重启换 boottime 即换席位纪元",
+-      "en": "identity core",
+-      "signed": "2026-09-03",
+-      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+-      "zh": "身份核"
+-    },
+-    {
+-      "code": null,
+-      "definition": "数学管线载体覆盖审计的机器账本，逐机制与逐判定性常数标三态与载体锚点，脚本全量生成零人工填项",
+-      "en": "Coverage Ledger",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a1-solo 批登记",
+-      "zh": "覆盖账本"
+-    },
+-    {
+-      "code": null,
+-      "definition": "改动会改变治理判定即放行拦截配对裁决退出码的常数与判据属性，单点扰动判据",
+-      "en": "Decision-bearing",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a1-solo 批登记",
+-      "zh": "判定性"
+-    },
+-    {
+-      "code": null,
+-      "definition": "改动只改变性能与有界性不改变治理判定的参数属性，入环境参数登记面",
+-      "en": "Resource-bearing",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a1-solo 批登记",
+-      "zh": "资源性"
+-    },
+-    {
+-      "code": null,
+-      "definition": "资源性参数的单独登记册，变更走工程基线裁定不走载体推导",
+-      "en": "Environment Parameter Registry",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a1-solo 批登记",
+-      "zh": "环境参数登记面"
+-    },
+-    {
+-      "code": null,
+-      "definition": "语法启发式落入边界未静默归类的件，标待裁定态只呈报不代裁",
+-      "en": "Pending-confirmation List",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a1-solo 批登记",
+-      "zh": "待确认清单"
+-    },
+-    {
+-      "code": null,
+-      "definition": "ga-1 读数公式的校准观察期，满条件为结算日 2026-09-02 后累计七个含例行读数的席位日或用户令提前",
+-      "en": "Calibration Window",
+-      "signed": "2026-09-03",
+-      "source": "pendsweep-solo 批登记",
+-      "zh": "校准窗"
+-    },
+-    {
+-      "code": null,
+-      "definition": "校准启动的固定四步序列即窗满、解析校准尝试、解析不可行、pk-042 出泊复检走得一裁过即实验批",
+-      "en": "Trigger Chain",
+-      "signed": "2026-09-03",
+-      "source": "pendsweep-solo 批登记",
+-      "zh": "触发链"
+-    },
+-    {
+-      "code": null,
+-      "definition": "链上停泊事件的文档名册投影修正动作，投影与链不符时以链为准，修正只动投影不写链",
+-      "en": "Projection Sync",
+-      "signed": "2026-09-03",
+-      "source": "pendsweep-solo 批登记",
+-      "zh": "投影同步"
+-    },
+-    {
+-      "code": null,
+-      "definition": "以假设检验承载的判定判据：以观测计数相对零假设基线的显著偏离作机械判定，p 值与 α 确定性比较不投射结论",
+-      "en": "Test Criterion",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a2-solo 批登记",
+-      "zh": "检验判据"
+-    },
+-    {
+-      "code": null,
+-      "definition": "承接数学仓载体条目与映射表的推导文档，承载检验统计量与零假设与备择与 α 语义，落 sih-math/docs",
+-      "en": "Derivation Doc",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a2-solo 批登记",
+-      "zh": "推导档"
+-    },
+-    {
+-      "code": null,
+-      "definition": "判据切换导致既有裁决结果改变时的逐件申报清单，待人确认零静默改判，零判变如实记零",
+-      "en": "Verdict Change List",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a2-solo 批登记",
+-      "zh": "判变清单"
+-    },
+-    {
+-      "code": null,
+-      "definition": "批结算后遗留非阻塞性欠账的集中清偿批型，余债先登记后清偿零静默",
+-      "en": "Debt Sweep",
+-      "signed": "2026-09-03",
+-      "source": "debtswp-solo 批登记",
+-      "zh": "余债清理"
+-    },
+-    {
+-      "code": null,
+-      "definition": "同一前哈希出现两条各自 valid 的续链的链态异常，处置即主链为权威、分叉侧作废不归并、其独有事件按原件重挂",
+-      "en": "Chain Fork",
+-      "signed": "2026-09-03",
+-      "source": "debtswp-solo 批登记",
+-      "zh": "链分叉"
+-    },
+-    {
+-      "code": null,
+-      "definition": "治理批结算后遗留的未入版控余件经批按现状逐字节 identical 拷贝入工地图库提交，零改字的归档批型",
+-      "en": "Batch Residual Archival",
+-      "signed": "2026-09-03",
+-      "source": "resarch-solo 批登记",
+-      "zh": "批余件入库"
+-    },
+-    {
+-      "code": null,
+-      "definition": "盘面实态逐件映照登记面即账本与实态一致，入库按现状零改写，对表读数逐字节 identical 作为验收",
+-      "en": "Ledger-Reality Alignment",
+-      "signed": "2026-09-03",
+-      "source": "resarch-solo 批登记",
+-      "zh": "账实归一"
+-    },
+-    {
+-      "code": null,
+-      "definition": "pk-045 多 agent 冲突测试样本库要求各派外批结果档须载的章节，逐件记冲突点、机械响应、解决路径与重试计数",
+-      "en": "Conflict Sample Section",
+-      "signed": "2026-09-03",
+-      "source": "resarch-solo 批登记",
+-      "zh": "冲突样本节"
+-    },
+-    {
+-      "definition": "对已持路径再守恒锁即他会在册持同 path 遇 locked_elsewhere 拒绝，冲突模式有限重试等待让位，承接 ORD-020 互斥语义",
+-      "en": "Collision Lock",
+-      "signed": "2026-09-03",
+-      "source": "ordwire-lease-solo 批登记",
+-      "zh": "撞锁"
+-    },
+-    {
+-      "definition": "持锁会话放锁释放 released 落行让位等待方获放行，承接 ORD-020 等待终止性让步良基",
+-      "en": "Yield",
+-      "signed": "2026-09-03",
+-      "source": "ordwire-lease-solo 批登记",
+-      "zh": "让路"
+-    },
+-    {
+-      "definition": "载体引用加推导档加代码接线加金向量四件套对接，M-1 判定性常数携带数学载体",
+-      "en": "Carrier Wiring",
+-      "signed": "2026-09-03",
+-      "source": "ordwire-lease-solo 批登记",
+-      "zh": "载体接线"
+-    },
+-    {
+-      "definition": "机制两场景的确定性机械重放，字节级冻结逐字节一致零漂移，M-4 模型可自证的金向量位",
+-      "en": "Golden Vector",
+-      "signed": "2026-09-03",
+-      "source": "ordwire-lease-solo 批登记",
+-      "zh": "金向量"
+-    },
+-    {
+-      "definition": "ORD-020 载体名称，资源集上取全序持有者按全序递增申请等待图无环死锁自由",
+-      "en": "Total-Order Resource Allocation",
+-      "signed": "2026-09-03",
+-      "source": "ordwire-lease-solo 批登记",
+-      "zh": "全序资源分配"
+-    },
+-    {
+-      "definition": "把占比信念作为随机变量，以 Beta-Bernoulli 共轭先验把先验与观测证据合成后验的语义，承 PROB-005 Bayesian 更新",
+-      "en": "Bayesian Semantics",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a3-solo 批登记",
+-      "zh": "贝叶斯语义"
+-    },
+-    {
+-      "definition": "Beta(α+k, β+n−k) 后验分布的均值 (α+k)/(α+β+n)，均匀先验下即拉普拉斯续则 (k+1)/(n+2)，承 PROB-005 共轭先验节",
+-      "en": "Posterior Mean",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a3-solo 批登记",
+-      "zh": "后验均值"
+-    },
+-    {
+-      "definition": "样本比例 p̂ 依中心极限定理渐近正态的 95% 双侧区间 p̂ ± z_{0.975}√(p̂(1-p̂)/n)，收口到 [0,1] 界，承 PROB-003 中心极限定理",
+-      "en": "Confidence Band",
+-      "signed": "2026-09-03",
+-      "source": "mathpipe-a3-solo 批登记",
+-      "zh": "置信带"
+-    },
+-    {
+-      "code": null,
+-      "definition": "哲学原文的逐字节子串引文，落形原文「引文」见 文件 正本 L行号，以子串断言机械复验",
+-      "en": "Verbatim Quote",
+-      "signed": "2026-09-03",
+-      "source": "mathquote2-solo 批登记",
+-      "zh": "逐字引文"
+-    },
+-    {
+-      "code": null,
+-      "definition": "自死亡批工地逐字节导出的 git diff，地位为盘点源不是引用源，须经本批机械复验放行",
+-      "en": "Salvage Diff",
+-      "signed": "2026-09-03",
+-      "source": "mathquote2-solo 批登记",
+-      "zh": "抢救 diff"
+-    },
+-    {
+-      "code": null,
+-      "definition": "OpenTelemetry 可观测性框架全称，其 GenAI 语义约定为本批登记的视图组件契约参考面候选出处，入泊文件行文要求写全称零网络外链",
+-      "en": "OpenTelemetry",
+-      "signed": "2026-09-03",
+-      "source": "facepark-solo 批登记",
+-      "zh": null
+-    },
+-    {
+-      "code": null,
+-      "definition": "OpenTelemetry 的生成式 AI 遥测语义约定族名，视图组件契约参考面候选所借鉴的约定族（agent 与 MCP 遥测提案中）",
+-      "en": "GenAI",
+-      "signed": "2026-09-03",
+-      "source": "facepark-solo 批登记",
+-      "zh": null
+-    },
+-    {
+-      "code": null,
+-      "definition": "OpenTelemetry GenAI 语义约定的遥测属性命名空间前缀即 gen_ai.*，视图组件契约候选参考的属性族记法",
+-      "en": "gen_ai",
+-      "signed": "2026-09-03",
+-      "source": "facepark-solo 批登记",
+-      "zh": null
+-    },
+-    {
+-      "code": null,
+-      "definition": "链上停泊事件对应的泊界在泊材料即材料面投影文件，心跳按 parking 包逐件路由的对表单元",
+-      "en": "Parking Material",
+-      "signed": "2026-09-03",
+-      "source": "facepark-solo 批登记",
+-      "zh": "泊材料"
+-    }
+-  ]
+-}
++ "terms": [
++  {
++   "code": "scrutinator",
++   "definition": "受托持人批的规约包，对材料逐条核验阅览，产出结构化报告",
++   "en": "Scrutinator",
++   "signed": "2026-08-19",
++   "source": "PRO-007 已签项",
++   "zh": "核阅"
++  },
++  {
++   "code": null,
++   "definition": "受托持人批的谓词包，对到达材料逐件机械判定，择定主线、停放、丢弃三路之一",
++   "en": "Selector",
++   "signed": "2026-08-20",
++   "source": "PRO-007 已签项",
++   "zh": "路择"
++  },
++  {
++   "code": "formatter",
++   "definition": "化其格式，格式归一，笔在核前",
++   "en": "Formatter",
++   "signed": "2026-08-20",
++   "source": "PRO-007 簇五",
++   "zh": "化格"
++  },
++  {
++   "code": "scribe",
++   "definition": "如实书写组件，append-only 哈希链写入器，只记不判",
++   "en": "Scribe",
++   "signed": "2026-08-21",
++   "source": "PRO-007 书简外切裁定 承 DEC-004",
++   "zh": "书简"
++  },
++  {
++   "code": "nomenclator",
++   "definition": "受托持人批的术语包，对术语三态作机器可读登记，对治理文档作字符串级核查，对登记写入作前校验",
++   "en": "Nomenclator",
++   "signed": "2026-08-22",
++   "source": "PRO-007 簇六",
++   "zh": "检词"
++  },
++  {
++   "code": null,
++   "definition": "受托持人签的一页方向与边界声明",
++   "en": "Course",
++   "signed": "2026-08-21",
++   "source": "PRO-007 已签项",
++   "zh": "向界"
++  },
++  {
++   "code": "parking",
++   "definition": "未裁事项的有界停靠地，停了不忘",
++   "en": "Parking",
++   "signed": "2026-08-21",
++   "source": "PRO-007 已签项",
++   "zh": "泊界"
++  },
++  {
++   "code": null,
++   "definition": "能力切出围堰孵化，类微分之分",
++   "en": "Expedition",
++   "signed": "2026-08-21",
++   "source": "PRO-007 范式词汇组",
++   "zh": "外切"
++  },
++  {
++   "code": null,
++   "definition": "孵化期满回迁引擎，类积分之积",
++   "en": "Reintegration",
++   "signed": "2026-08-21",
++   "source": "PRO-007 范式词汇组",
++   "zh": "融回"
++  },
++  {
++   "code": null,
++   "definition": "外切后在 sih-tools 的孵化期环境",
++   "en": "Incubation",
++   "signed": "2026-08-21",
++   "source": "PRO-007 范式词汇组",
++   "zh": "孵化"
++  },
++  {
++   "code": null,
++   "definition": "水下施工临时挡水围护结构，竣工即拆",
++   "en": "Cofferdam",
++   "signed": "2026-08-21",
++   "source": "PRO-007 范式词汇组",
++   "zh": "围堰"
++  },
++  {
++   "code": "trail",
++   "definition": "事件流载体，append-only 单链",
++   "en": "trail",
++   "signed": "2026-08-21",
++   "source": "DEC-001",
++   "zh": null
++  },
++  {
++   "code": "sihankor",
++   "definition": "哲学身份，治理实体，承接哲学仓全部命题与铁律",
++   "en": "SiHankor",
++   "signed": "2026-08-19",
++   "source": "AGENTS 术语登记",
++   "zh": "司衡"
++  },
++  {
++   "code": null,
++   "definition": "工程产物，本轮基础设施",
++   "en": "sih-engine",
++   "signed": "2026-08-19",
++   "source": "AGENTS 术语登记",
++   "zh": "司衡引擎"
++  },
++  {
++   "code": null,
++   "definition": "唯一权威源，构成性约束 Agent 的生成与推理",
++   "en": "sih-philosophy",
++   "signed": "2026-08-19",
++   "source": "AGENTS 术语登记",
++   "zh": "哲学仓"
++  },
++  {
++   "code": null,
++   "definition": "已废弃沉默参考，失败设计不继承",
++   "en": null,
++   "signed": "2026-08-19",
++   "source": "AGENTS 术语登记",
++   "zh": "旧工程仓"
++  },
++  {
++   "code": null,
++   "definition": "原理层",
++   "en": "Tao",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "道"
++  },
++  {
++   "code": null,
++   "definition": "方法层，收敛五法",
++   "en": "Canon",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "法"
++  },
++  {
++   "code": null,
++   "definition": "认识层，检验道层主张的方法论",
++   "en": "Assay",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "鉴"
++  },
++  {
++   "code": null,
++   "definition": "应本体，居中不动以应万变",
++   "en": "Settle",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "应"
++  },
++  {
++   "code": null,
++   "definition": "应本体失态后的正反两相合称",
++   "en": "Unsettling",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "应变"
++  },
++  {
++   "code": null,
++   "definition": "应变之已形",
++   "en": "unsettle the present",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "应辨"
++  },
++  {
++   "code": null,
++   "definition": "应变之未形",
++   "en": "unsettle what's coming",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "应几"
++  },
++  {
++   "code": null,
++   "definition": "哲学的原型",
++   "en": "Arche",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "元"
++  },
++  {
++   "code": null,
++   "definition": "递归终止的本体论根据",
++   "en": "self-so",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "自然"
++  },
++  {
++   "code": null,
++   "definition": "元层三治总称",
++   "en": "Regimen",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "治"
++  },
++  {
++   "code": null,
++   "definition": "元层三治之一，资格控制",
++   "en": "Acknowledge",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "治病"
++  },
++  {
++   "code": null,
++   "definition": "元层三治之一，核心规约不可变动",
++   "en": "Infuse",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "治益"
++  },
++  {
++   "code": null,
++   "definition": "元层三治之一，禁止绕过鉴直接 Ratify",
++   "en": "Overcome",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "治强"
++  },
++  {
++   "code": null,
++   "definition": "链推导方法总称",
++   "en": "Emanation",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "流衍"
++  },
++  {
++   "code": null,
++   "definition": "自上而下推导段",
++   "en": "Proodos",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "流衍段"
++  },
++  {
++   "code": null,
++   "definition": "自下而上反推段",
++   "en": "Epistrophe",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "复归"
++  },
++  {
++   "code": null,
++   "definition": "Emanation 的属性名词",
++   "en": "Emanativity",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "流衍性"
++  },
++  {
++   "code": null,
++   "definition": "Epistrophe 的属性名词",
++   "en": "Reducibility",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "可归约性"
++  },
++  {
++   "code": null,
++   "definition": "Epistrophe 第四步属性名词",
++   "en": "Falsifiability",
++   "signed": null,
++   "source": "哲学仓 01 术语速查表",
++   "zh": "可证伪性"
++  },
++  {
++   "code": null,
++   "definition": "法的工程化展开",
++   "en": "Techne",
++   "signed": null,
++   "source": "哲学仓 01 英文对取名理据",
++   "zh": "术"
++  },
++  {
++   "code": null,
++   "definition": "微兆，应几之所察",
++   "en": "Incipient",
++   "signed": null,
++   "source": "哲学仓 01 英文对取名理据",
++   "zh": "几"
++  },
++  {
++   "code": null,
++   "definition": "约束，规约之约",
++   "en": "Brief",
++   "signed": null,
++   "source": "哲学仓 01 英文对取名理据",
++   "zh": "约"
++  },
++  {
++   "code": null,
++   "definition": "形之迹，可观测面",
++   "en": "Manifest",
++   "signed": null,
++   "source": "哲学仓 01 英文对取名理据",
++   "zh": "形迹"
++  },
++  {
++   "code": "ask3repeater",
++   "definition": "承接应几前向约束的治理动作组件，三层诘察即析显层掘隐含递归细化，向内诘察严禁外问，代码标识符小写 ask3repeater，内部代号 ASK3，展示名保留不用",
++   "en": "Ask3Repeater",
++   "signed": "2026-08-22",
++   "source": "DEC-006 承旧仓 DEC-035 名实复审",
++   "zh": "三问"
++  },
++  {
++   "code": "identity",
++   "definition": "验明调用方正身，即以子进程视角亲验出身，盐哈希身份串入册，自报对表三态，留痕不签",
++   "en": "identity",
++   "signed": "2026-08-25",
++   "source": "2026-08-25 立名会，sih-tools/identity 工具，推导史见 sih-engine PRO-007 簇八",
++   "zh": "正身"
++  },
++  {
++   "code": "cascade",
++   "definition": "级联检查，即引用即边建依赖表，路径即身份，上游洁净判定与孤儿侦查，链即账本",
++   "en": "cascade",
++   "signed": "2026-08-25",
++   "source": "2026-08-25 立名会，sih-tools/cascade 工具，推导史见 sih-engine PRO-007 簇八",
++   "zh": "级联"
++  },
++  {
++   "code": "session-credential",
++   "definition": "任务包批次的短期写入凭证，开工签发载范围与正身绑定，收工吊销，台账行为载体，承 DEC-011 留裁二即会话档为主环境变量为辅",
++   "en": "session credential",
++   "signed": "2026-08-26",
++   "source": "DEC-011 留裁二，2026-08-26 用户签署生效",
++   "zh": "会话档"
++  },
++  {
++   "code": "stable-subset",
++   "definition": "本地壳语境跨时可比的绑定组件集合即 hostname 加 user 加 boottime 三件，pid 与 ppid 与 ancestry 限同瞬对表，mac 不入，承 DEC-011 留裁一",
++   "en": "stable subset",
++   "signed": "2026-08-26",
++   "source": "DEC-011 留裁一，2026-08-26 用户签署生效",
++   "zh": "稳定子集"
++  },
++  {
++   "code": "lease",
++   "definition": "按任务包生命周期治理写入的租约工具，立约开工建副本签发会话档，租内双锁即悲观五验加乐观基线强制不得直改正本，期满审查归还归并拆本，回归义构成性于期满归还",
++   "en": "lease",
++   "signed": "2026-08-26",
++   "source": "2026-08-26 立名会即双工具并库为 sih-tools/lease，完美直译对两侧词典词，推导史见 sih-engine PRO-007 簇九",
++   "zh": "租约"
++  },
++  {
++   "signed": true,
++   "source": "DEC-012 裁决七即 git log 对台账对 trail 三方比对",
++   "zh": "对表"
++  },
++  {
++   "signed": true,
++   "source": "DEC-012 裁决七即绕行提交在对表中显现",
++   "zh": "露形"
++  },
++  {
++   "signed": true,
++   "source": "DEC-012 裁决一与四即 lease commit 唯一合法提交通道",
++   "zh": "正身路径"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "2026-08-25 用户匹配裁定即任务包请求写入段为会话范围第一源，lease 契约机器形态节承载",
++   "zh": "请求写入"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "用户 2026-08-27 封字令即存量裁定，audit-049 裁定补记节承载",
++   "zh": "封存"
++  },
++  {
++   "signed": true,
++   "source": "editmig-t6d 批 2026-08-27 用户批准即编辑位迁移，内容编辑与管线与段结算皆在副本、收约归并回主线",
++   "zh": "副本流"
++  },
++  {
++   "signed": true,
++   "source": "2026-08-27 用户批令即融回评估批逐件轮问体量与时间与贡献度",
++   "zh": "三问轮回"
++  },
++  {
++   "signed": true,
++   "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即被依赖的强制位实走计入贡献度",
++   "zh": "强制位"
++  },
++  {
++   "signed": true,
++   "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即空转调用量不计入贡献度",
++   "zh": "空转"
++  },
++  {
++   "signed": true,
++   "source": "孵化环第四步融回门三查即回迁债已评估",
++   "zh": "回迁债"
++  },
++  {
++   "signed": true,
++   "source": "audit-049 封字令 2026-08-27 即界线认定与增量零容忍",
++   "zh": "界线"
++  },
++  {
++   "signed": true,
++   "source": "AGENTS.md 泊界心跳 2026-08-25 接线裁定即对在泊材料跑 parking 谓词包",
++   "zh": "心跳"
++  },
++  {
++   "signed": true,
++   "source": "PARKING-v1 停泊记账即未决事项有界停靠",
++   "zh": "停泊"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "lease 契约修订二即任务包匹配裁定 2026-08-25，机器形态节承载",
++   "word": "绑定侧档",
++   "zh": "绑定侧档"
++  },
++  {
++   "signed": true,
++   "source": "2026-08-27 用户追认令即封字令修订一，audit-049 裁定修订节承载",
++   "zh": "追认"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "DEC-013 融回门机制名随物走节即家位承 DEC-001 映射不重建，2026-08-27 承用户批令",
++   "word": "名随物走",
++   "zh": "名随物走"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "sih-tools/scribe/CONTRACT.md 正文承载即双子代理并行形态，2026-08-27 切换批首次入检升格",
++   "word": "范式第二形态",
++   "zh": "范式第二形态"
++  },
++  {
++   "prior_state": "lazy",
++   "signed": true,
++   "source": "sih-tools/scribe/CONTRACT.md 正文承载即 facet 测量的执行入口指称，2026-08-27 切换批首次入检升格",
++   "word": "测量侧执行入口",
++   "zh": "测量侧执行入口"
++  },
++  {
++   "code": "locator",
++   "definition": "确定性寻址工具，对文档与配置与代码多载体结构化解析，为语义单元派生稳定标识，按标识与按词一次调用定位，索引是缓存源文件是权威源，只报不判",
++   "en": "locator",
++   "signed": true,
++   "source": "2026-08-27 立名会用户裁定寻址弃索引即反候选死因为泛名词噪声，sih-tools/locator 工具落 DEC-007 基础设施五索引槽位即槽位名与工具名两实体两名，推导史见 locator-t6d 任务包",
++   "word": "寻址",
++   "zh": "寻址"
++  },
++  {
++   "code": "retriever",
++   "definition": "五档已沉淀物的检索面激活组件，报出已沉淀供治理动作引用，只报不判，知新在消费侧",
++   "en": "Retriever",
++   "signed": "2026-08-28",
++   "source": "DEC-017 已签项",
++   "zh": "温故"
++  },
++  {
++   "code": "parser",
++   "definition": "空腹解析引擎加声明式语言包，把代码切分为语法树并投影为寻址条目，同输入恒同树，错误处包节点永远产树，只读不判",
++   "en": "Parser",
++   "signed": "2026-08-28",
++   "source": "句读立名批 已签项",
++   "zh": "句读"
++  },
++  {
++   "code": "marshalling",
++   "definition": "长程任务的执行队形谱系即主 agent 与子代理如何分工、产出如何进租约治理包络，族内五形单线单发反思并联串行，编号旧称全退场",
++   "en": "Marshalling",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "代理编组"
++  },
++  {
++   "code": "oneshot",
++   "definition": "单子代理单文件单次响应的队形，模板化独立任务，曾用名 T6-B",
++   "en": "Oneshot",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "单发"
++  },
++  {
++   "code": "parallel",
++   "definition": "多子代理并行各领独立簇主线收敛验收的队形，编排者是主线即此形，司衡协议编排者属借脑预留位，曾用名 T6-D",
++   "en": "Parallel",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "并联"
++  },
++  {
++   "code": "reflect",
++   "definition": "单子代理单文件多轮反思的队形，价值在抓结构性违规非润色，英文对带 Java 反射域距披露，曾用名 T6-C",
++   "en": "Reflection",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "反思"
++  },
++  {
++   "code": "serial",
++   "definition": "单子代理持全量上下文连续产强耦合多文件的队形，带工具级泛用轻占用披露，曾用名 T5",
++   "en": "Serial",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "串行"
++  },
++  {
++   "code": "solo",
++   "definition": "主线亲写零子代理的队形，需全局上下文与裁决连续性的治理批默认形，曾用名 T6-A",
++   "en": "Solo",
++   "signed": "2026-08-28",
++   "source": "代理编组立名批 已签项",
++   "zh": "单线"
++  },
++  {
++   "code": "tally",
++   "definition": "facet 裁决材料的确定性基线核对与终签壳，复算相符即合契结案落据，不契（不收敛）才归人，落据带全条件绑定即为条件改变时的重放锚；执契据以核结，非执行；契约源 DES-011，登记承 DEC-019",
++   "en": "Tally",
++   "signed": "2026-08-29",
++   "source": "tallyinit-solo 立名外切批 已签项",
++   "zh": "执契"
++  },
++  {
++   "code": "elicit",
++   "definition": "机械缺口信号驱动的人工介入升级位即未登记词与召回矛盾与裁定冲突三扳机、叩之小大应小大量级相称、无应答挂起不代答、契约逐信号消化过闸",
++   "en": "Elicit",
++   "signed": "2026-08-29",
++   "source": "PRO-007 已签项",
++   "zh": "叩问"
++  },
++  {
++   "code": "attractor",
++   "definition": "二层裁决结构组件（facet 上层采样观察加执契下层确定性核对终签），限定条件内收敛出唯一方向即机器落据为可重放裁决记录，不收敛归人诊断；得一承道德经三十九章文本根，attractor 承动力系统行业根；登记承 DEC-020",
++   "en": "Attractor",
++   "signed": "2026-08-30",
++   "source": "deyireg-solo 立名登记批 已签项",
++   "zh": "得一"
++  },
++  {
++   "definition": "尊重因果方向，介入点在前端",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 395 行 / 06-on-canon 18 行",
++   "zh": "顺因"
++  },
++  {
++   "definition": "收敛恰到好处",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 396 行 / 06-on-canon",
++   "zh": "有度"
++  },
++  {
++   "definition": "知道不做什么",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 397 行 / 06-on-canon",
++   "zh": "知止"
++  },
++  {
++   "definition": "损有余补不足",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 398 行 / 06-on-canon",
++   "zh": "损补"
++  },
++  {
++   "definition": "力度适配场景",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 399 行 / 06-on-canon",
++   "zh": "顺势"
++  },
++  {
++   "definition": "涤除尘垢，主动去除偏见",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 406 行 / 07-on-assay",
++   "zh": "去蔽"
++  },
++  {
++   "definition": "致虚守静，不预设立场",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 407 行 / 07-on-assay",
++   "zh": "客观"
++  },
++  {
++   "definition": "用心如镜，反映而不投射",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 408 行 / 07-on-assay",
++   "zh": "映照"
++  },
++  {
++   "definition": "术语与原义关系的三档——保留（义核未变，仅领域迁移）/ 延伸（义核保留，跨域展开）/ 限定（通则性原义收窄为具体应用）",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 558 至 559 行",
++   "zh": "血统档位"
++  },
++  {
++   "definition": "元层溢出话题的承接位机制",
++   "en": "",
++   "signed": "2026-08-30 用户批准术语束登记",
++   "source": "哲学仓 llm-friendly-build/entries/APP-01.md",
++   "zh": "承接槽"
++  },
++  {
++   "code": "gauge",
++   "definition": "治理态三维读数组件正式名：从链上治理事实读出量值的三维读数面即收敛度调用置信度融回度一具三表盘、只报不判、read 与 record 两操作、确定性投影；义核为杆秤刻度星点读星得量值兼承司衡之衡字",
++   "en": "gauge",
++   "signed": "2026-08-30",
++   "source": "SPEC-011 修订二即得一四通道机器终签 3d1ec172 至 923449fe 与用户 2026-08-30 同意令",
++   "zh": "秤星"
++  },
++  {
++   "code": "viewer",
++   "definition": "聚合输出组件，把仅可消费类事件与泊界心跳与结算计数聚合为人类介入接口的只读呈报面，人类只在视图告警时介入，零写零判，同参双跑逐字节一致，缺席字段如实标不虚构",
++   "en": "Viewer",
++   "signed": "2026-08-31",
++   "source": "视图立名批 已签项 承 DEC-007 名册即立名礼",
++   "zh": "视图"
++  },
++  {
++   "code": "adjudisp",
++   "definition": "治理裁决权的三态路由表，即哪些裁决必过得一、哪些留人节点、哪些由确定性程序代裁，灰区默认过得一从严；适用界从 adjudisp 批起算既往不回溯；只立路由不改 DEC-020 硬件钥匙签署模型",
++   "en": "AdjudicationRouting",
++   "signed": "2026-09-02",
++   "source": "adjudisp-solo 立名批 DEC-021 用户 2026-09-02 两步令",
++   "zh": "裁决分派"
++  },
++  {
++   "code": null,
++   "definition": "正身身份核六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token 的无盐确定性 SHA-256，core-v1 前缀管道键值串键序固定派生，缺席即空串，同席同日稳定可连认，供跨报告连认配对；对位 full 盐哈希一字不改续担逐报告防篡改与防重放，双层职能分离",
++   "en": "core_hash",
++   "signed": "2026-09-03",
++   "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
++   "zh": "核哈希"
++  },
++  {
++   "code": null,
++   "definition": "同一逻辑身份跨报告跨批次的机械等值认定，配对键只认确定性派生的核哈希即同输入同值；与逐报告取证哈希职能分离，旧材料任一缺席核哈希即回退原判定不追认",
++   "en": "cross-report recognition",
++   "signed": "2026-09-03",
++   "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
++   "zh": "连认"
++  },
++  {
++   "code": null,
++   "definition": "正身十二组件中慢变难冒充的稳定子集六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token，进核哈希作连认键；易变件与新鲜度件（pid、ppid、parent_start、net_time、timestamp）不进核，重启换 boottime 即换席位纪元",
++   "en": "identity core",
++   "signed": "2026-09-03",
++   "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
++   "zh": "身份核"
++  },
++  {
++   "code": null,
++   "definition": "数学管线载体覆盖审计的机器账本，逐机制与逐判定性常数标三态与载体锚点，脚本全量生成零人工填项",
++   "en": "Coverage Ledger",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a1-solo 批登记",
++   "zh": "覆盖账本"
++  },
++  {
++   "code": null,
++   "definition": "改动会改变治理判定即放行拦截配对裁决退出码的常数与判据属性，单点扰动判据",
++   "en": "Decision-bearing",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a1-solo 批登记",
++   "zh": "判定性"
++  },
++  {
++   "code": null,
++   "definition": "改动只改变性能与有界性不改变治理判定的参数属性，入环境参数登记面",
++   "en": "Resource-bearing",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a1-solo 批登记",
++   "zh": "资源性"
++  },
++  {
++   "code": null,
++   "definition": "资源性参数的单独登记册，变更走工程基线裁定不走载体推导",
++   "en": "Environment Parameter Registry",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a1-solo 批登记",
++   "zh": "环境参数登记面"
++  },
++  {
++   "code": null,
++   "definition": "语法启发式落入边界未静默归类的件，标待裁定态只呈报不代裁",
++   "en": "Pending-confirmation List",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a1-solo 批登记",
++   "zh": "待确认清单"
++  },
++  {
++   "code": null,
++   "definition": "ga-1 读数公式的校准观察期，满条件为结算日 2026-09-02 后累计七个含例行读数的席位日或用户令提前",
++   "en": "Calibration Window",
++   "signed": "2026-09-03",
++   "source": "pendsweep-solo 批登记",
++   "zh": "校准窗"
++  },
++  {
++   "code": null,
++   "definition": "校准启动的固定四步序列即窗满、解析校准尝试、解析不可行、pk-042 出泊复检走得一裁过即实验批",
++   "en": "Trigger Chain",
++   "signed": "2026-09-03",
++   "source": "pendsweep-solo 批登记",
++   "zh": "触发链"
++  },
++  {
++   "code": null,
++   "definition": "链上停泊事件的文档名册投影修正动作，投影与链不符时以链为准，修正只动投影不写链",
++   "en": "Projection Sync",
++   "signed": "2026-09-03",
++   "source": "pendsweep-solo 批登记",
++   "zh": "投影同步"
++  },
++  {
++   "code": null,
++   "definition": "以假设检验承载的判定判据：以观测计数相对零假设基线的显著偏离作机械判定，p 值与 α 确定性比较不投射结论",
++   "en": "Test Criterion",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a2-solo 批登记",
++   "zh": "检验判据"
++  },
++  {
++   "code": null,
++   "definition": "承接数学仓载体条目与映射表的推导文档，承载检验统计量与零假设与备择与 α 语义，落 sih-math/docs",
++   "en": "Derivation Doc",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a2-solo 批登记",
++   "zh": "推导档"
++  },
++  {
++   "code": null,
++   "definition": "判据切换导致既有裁决结果改变时的逐件申报清单，待人确认零静默改判，零判变如实记零",
++   "en": "Verdict Change List",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a2-solo 批登记",
++   "zh": "判变清单"
++  },
++  {
++   "code": null,
++   "definition": "批结算后遗留非阻塞性欠账的集中清偿批型，余债先登记后清偿零静默",
++   "en": "Debt Sweep",
++   "signed": "2026-09-03",
++   "source": "debtswp-solo 批登记",
++   "zh": "余债清理"
++  },
++  {
++   "code": null,
++   "definition": "同一前哈希出现两条各自 valid 的续链的链态异常，处置即主链为权威、分叉侧作废不归并、其独有事件按原件重挂",
++   "en": "Chain Fork",
++   "signed": "2026-09-03",
++   "source": "debtswp-solo 批登记",
++   "zh": "链分叉"
++  },
++  {
++   "code": null,
++   "definition": "治理批结算后遗留的未入版控余件经批按现状逐字节 identical 拷贝入工地图库提交，零改字的归档批型",
++   "en": "Batch Residual Archival",
++   "signed": "2026-09-03",
++   "source": "resarch-solo 批登记",
++   "zh": "批余件入库"
++  },
++  {
++   "code": null,
++   "definition": "盘面实态逐件映照登记面即账本与实态一致，入库按现状零改写，对表读数逐字节 identical 作为验收",
++   "en": "Ledger-Reality Alignment",
++   "signed": "2026-09-03",
++   "source": "resarch-solo 批登记",
++   "zh": "账实归一"
++  },
++  {
++   "code": null,
++   "definition": "pk-045 多 agent 冲突测试样本库要求各派外批结果档须载的章节，逐件记冲突点、机械响应、解决路径与重试计数",
++   "en": "Conflict Sample Section",
++   "signed": "2026-09-03",
++   "source": "resarch-solo 批登记",
++   "zh": "冲突样本节"
++  },
++  {
++   "definition": "对已持路径再守恒锁即他会在册持同 path 遇 locked_elsewhere 拒绝，冲突模式有限重试等待让位，承接 ORD-020 互斥语义",
++   "en": "Collision Lock",
++   "signed": "2026-09-03",
++   "source": "ordwire-lease-solo 批登记",
++   "zh": "撞锁"
++  },
++  {
++   "definition": "持锁会话放锁释放 released 落行让位等待方获放行，承接 ORD-020 等待终止性让步良基",
++   "en": "Yield",
++   "signed": "2026-09-03",
++   "source": "ordwire-lease-solo 批登记",
++   "zh": "让路"
++  },
++  {
++   "definition": "载体引用加推导档加代码接线加金向量四件套对接，M-1 判定性常数携带数学载体",
++   "en": "Carrier Wiring",
++   "signed": "2026-09-03",
++   "source": "ordwire-lease-solo 批登记",
++   "zh": "载体接线"
++  },
++  {
++   "definition": "机制两场景的确定性机械重放，字节级冻结逐字节一致零漂移，M-4 模型可自证的金向量位",
++   "en": "Golden Vector",
++   "signed": "2026-09-03",
++   "source": "ordwire-lease-solo 批登记",
++   "zh": "金向量"
++  },
++  {
++   "definition": "ORD-020 载体名称，资源集上取全序持有者按全序递增申请等待图无环死锁自由",
++   "en": "Total-Order Resource Allocation",
++   "signed": "2026-09-03",
++   "source": "ordwire-lease-solo 批登记",
++   "zh": "全序资源分配"
++  },
++  {
++   "definition": "把占比信念作为随机变量，以 Beta-Bernoulli 共轭先验把先验与观测证据合成后验的语义，承 PROB-005 Bayesian 更新",
++   "en": "Bayesian Semantics",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a3-solo 批登记",
++   "zh": "贝叶斯语义"
++  },
++  {
++   "definition": "Beta(α+k, β+n−k) 后验分布的均值 (α+k)/(α+β+n)，均匀先验下即拉普拉斯续则 (k+1)/(n+2)，承 PROB-005 共轭先验节",
++   "en": "Posterior Mean",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a3-solo 批登记",
++   "zh": "后验均值"
++  },
++  {
++   "definition": "样本比例 p̂ 依中心极限定理渐近正态的 95% 双侧区间 p̂ ± z_{0.975}√(p̂(1-p̂)/n)，收口到 [0,1] 界，承 PROB-003 中心极限定理",
++   "en": "Confidence Band",
++   "signed": "2026-09-03",
++   "source": "mathpipe-a3-solo 批登记",
++   "zh": "置信带"
++  },
++  {
++   "code": null,
++   "definition": "哲学原文的逐字节子串引文，落形原文「引文」见 文件 正本 L行号，以子串断言机械复验",
++   "en": "Verbatim Quote",
++   "signed": "2026-09-03",
++   "source": "mathquote2-solo 批登记",
++   "zh": "逐字引文"
++  },
++  {
++   "code": null,
++   "definition": "自死亡批工地逐字节导出的 git diff，地位为盘点源不是引用源，须经本批机械复验放行",
++   "en": "Salvage Diff",
++   "signed": "2026-09-03",
++   "source": "mathquote2-solo 批登记",
++   "zh": "抢救 diff"
++  },
++  {
++   "code": null,
++   "definition": "OpenTelemetry 可观测性框架全称，其 GenAI 语义约定为本批登记的视图组件契约参考面候选出处，入泊文件行文要求写全称零网络外链",
++   "en": "OpenTelemetry",
++   "signed": "2026-09-03",
++   "source": "facepark-solo 批登记",
++   "zh": null
++  },
++  {
++   "code": null,
++   "definition": "OpenTelemetry 的生成式 AI 遥测语义约定族名，视图组件契约参考面候选所借鉴的约定族（agent 与 MCP 遥测提案中）",
++   "en": "GenAI",
++   "signed": "2026-09-03",
++   "source": "facepark-solo 批登记",
++   "zh": null
++  },
++  {
++   "code": null,
++   "definition": "OpenTelemetry GenAI 语义约定的遥测属性命名空间前缀即 gen_ai.*，视图组件契约候选参考的属性族记法",
++   "en": "gen_ai",
++   "signed": "2026-09-03",
++   "source": "facepark-solo 批登记",
++   "zh": null
++  },
++  {
++   "code": null,
++   "definition": "链上停泊事件对应的泊界在泊材料即材料面投影文件，心跳按 parking 包逐件路由的对表单元",
++   "en": "Parking Material",
++   "signed": "2026-09-03",
++   "source": "facepark-solo 批登记",
++   "zh": "泊材料"
++  },
++  {
++   "definition": "级联判定语义的倒推终止载体即上游依赖倒推遍历的良基性，良基引用图（有限无环）担保逆引用倒推遍历必终止，承接 ORD-016 良基关系与倒推终止",
++   "en": "Well-founded Backtrack",
++   "signed": "2026-09-03",
++   "source": "caswire-solo 批登记",
++   "zh": "良基倒推"
++  }
++ ]
++}
+\ No newline at end of file

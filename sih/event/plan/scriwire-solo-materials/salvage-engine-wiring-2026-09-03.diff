@@ -1,0 +1,73 @@
+diff --git a/doc/spec/SPEC-004-event-stream.md b/doc/spec/SPEC-004-event-stream.md
+index c3434fc..bac4999 100644
+--- a/doc/spec/SPEC-004-event-stream.md
++++ b/doc/spec/SPEC-004-event-stream.md
+@@ -201,6 +201,16 @@ Rejected 是被拒绝态。校验失败，事件未写入 trail，返回拒绝
+ - 哲学对照：PRO-08 应而不藏，留痕是应鉴循环的构成性条件
+ - convergence 层对照：P4.2 责任归属的四个可即
+ 
++## 载体引用 {#carrier}
++
++本规格的宿主工程组件为 sih-engine/src/event_stream/。链校验与追加写入与外化存储作为治理判定常数并经数学仓承接，本章登记其数学载体引用。
++
++- 载体条目：sih-math/order/entries/ORD-019-version-order-and-externalized-state-store.md
++- 映射表：sih-math/llm-friendly-build/mapping.md「上下文外化三性质 → ORD-019 → 版本偏序与外化状态存储」（mapping.md:196）
++- 推导文档：sih-math/docs/scriwire-scribe-derivation-2026-09-03.md
++
++链校验语义与 ORD-019 的对应关系。事件序构成版本偏序（prev_hash 链接即覆盖关系）、append-only 即偏序只增不改写、verify 即全链自最小元起的传递性复算。三性质即 ORD-019 的持久性、版本化、可审计的工程实例。
++
+ ## 认识论立场 {#epistemic-stance}
+ 
+ 本规格为设计推论（design-corollary），是工程设计选择，非逻辑必然。
+diff --git a/src/event_stream/append.rs b/src/event_stream/append.rs
+index fd6f055..818c8dd 100644
+--- a/src/event_stream/append.rs
++++ b/src/event_stream/append.rs
+@@ -45,10 +45,14 @@ pub enum AppendError {
+ 
+ /// 追加写入入口。
+ ///
+-/// 校验项（承接 SPEC-004#acceptance-criteria 写入前校验）：
++/// 校验项（承接 SPEC-004#acceptance-criteria 写入前校验）。
++///
++/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：追加写入是版本偏序
++/// 只增不改写的引擎实例，prev_hash 链接即事件序覆盖关系，单次写入构造
++/// 一个新版本。推导见 sih-math/docs/scriwire-scribe-derivation-2026-09-03.md：
+ /// 1. event_id 全局唯一性
+ /// 2. 时间戳单调递增
+-/// 3. prev_hash 匹配前事件哈希
++/// 3. prev_hash 匹配前事件哈希（链接位，ORD-019 覆盖关系）
+ /// 4. 操作者合法性（actor_type = Agent 时须对应确定性程序）
+ ///
+ /// # Arguments
+diff --git a/src/event_stream/park.rs b/src/event_stream/park.rs
+index 4aecf73..d77920f 100644
+--- a/src/event_stream/park.rs
++++ b/src/event_stream/park.rs
+@@ -164,6 +164,10 @@ pub fn park_event(
+ /// park 配对门的重放面从 --trail 单链文件扩为同目录全部 ndjson 按名序，
+ /// 跨天出泊即泊入在先日链的出泊机械可达。追加面仍由调用方以 --trail
+ /// 单文件承载即当日链自身链序，本函数只读不写。
++///
++/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：重放面遍历是版本偏序
++/// 持久性语义的机械实例，按既有事件链序重放判定在泊状态。推导见
++/// sih-math/docs/scriwire-scribe-derivation-2026-09-03.md。
+ pub fn load_parking_scope(trail: &Path) -> Result<Vec<Event>, AppendError> {
+     let target = trail.to_path_buf();
+     let dir = match target.parent() {
+diff --git a/src/event_stream/verify.rs b/src/event_stream/verify.rs
+index efd905b..2e4b84f 100644
+--- a/src/event_stream/verify.rs
++++ b/src/event_stream/verify.rs
+@@ -50,6 +50,11 @@ pub enum VerifyError {
+ ///
+ /// 校验范围支持全量与区间。
+ /// 错误类型覆盖哈希链断裂与事件 ID 缺失两类。
++///
++/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：verify 即全链自最小元
++/// 起的传递性复算，逐事件核对 prev_hash 是否等于前事件 event_hash，构成
++/// 版本偏序的可审计性机械实现。复算位即 hash::verify_chain，推导见
++/// sih-math/docs/scriwire-scribe-derivation-2026-09-03.md。
+ pub fn verify(events: &[Event], range: VerifyRange) -> Result<VerifySuccess, VerifyError> {
+     if events.is_empty() {
+         return Err(VerifyError::EmptyStream);

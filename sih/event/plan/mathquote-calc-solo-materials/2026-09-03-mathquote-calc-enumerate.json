@@ -1,0 +1,41 @@
+{
+  "report_type": "enumerate",
+  "batch": "mathquote-calc-solo",
+  "date": "2026-09-03",
+  "scope": "calulus entries bridge anchor scan (broad/宽形 regex: strict regex + nested-quote broad, per mathquote2 envelope)",
+  "target_dir": "worktrees/sih-math/mathquote-calc-solo/calculus/llm-friendly-build/entries",
+  "entry_files_total": 114,
+  "anchored_broad": 1,
+  "unanchored": 113,
+  "board_compare_107": {
+    "LIM": 8,
+    "DIFF": 26,
+    "INT": 22,
+    "APP": 10,
+    "HIS": 16,
+    "MUL": 10,
+    "NS": 3,
+    "SER": 5,
+    "SPEC": 7,
+    "board_total": 107
+  },
+  "prefix_count_disk": {
+    "LIM": 8,
+    "DIFF": 32,
+    "INT": 22,
+    "APP": 11,
+    "HIS": 16,
+    "MUL": 10,
+    "NS": 3,
+    "SER": 5,
+    "SPEC": 7,
+    "count_total": 114
+  },
+  "displacement_declared": {
+    "total": 7,
+    "by_prefix": {"DIFF": 6, "APP": 1}
+  },
+  "concurrent_batch_deference": "mathrefmt2-solo overlap; run at the then-current disk state after lock deference",
+  "finding_count": 0,
+  "exit_code": 0
+}

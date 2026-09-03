@@ -1,0 +1,15 @@
+{
+  "phase": "piece1_done",
+  "ts": "2026-09-03",
+  "wc_lines_total_block": 11858,
+  "block_sha256": "46c45e4684ddfacade8b39f0bf384a8c6743a5aff57d4b5bf2f80f537fb0fd7d",
+  "entries": {
+    "LIM-001-limit-mathematics.md": {
+      "sha256": "3f3e71748f3f13ffdef71d7aba802c745847fe031a827564e8401ce9bf484150"
+    },
+    "MUL-001-partial-derivative.md": {
+      "sha256": "01da3ebea75577a7153bf33633001b0ee6072c08b268a6d4b06f651ca5a87958"
+    }
+  },
+  "note": "件一完成读数=件二重冻依据;此后 LIM/MUL 不再改"
+}

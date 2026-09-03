@@ -1,0 +1,2620 @@
+{
+  "total": 147,
+  "changed": [
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-001-derivative.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "f62822bd42bc",
+      "sha_new": "319b482493ea"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-002-newtons-notation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "bf52f962ae3a",
+      "sha_new": "c4d76e09ab51"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-003-leibnizs-notation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "f3c6abd2b442",
+      "sha_new": "39defe26d603"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-004-constant-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "3c064c102224",
+      "sha_new": "2066521e6c44"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-005-sum-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "975ce513a222",
+      "sha_new": "26d52010a550"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-006-constant-factor-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "e0621fb80694",
+      "sha_new": "d267dada3278"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-007-linearity-of-differentiation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "07d831037879",
+      "sha_new": "e62c600bf819"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-008-power-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "87b900879527",
+      "sha_new": "729281ed35cd"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-009-chain-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "be195e17c7ae",
+      "sha_new": "04aedfff143e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-010-local-linearization.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "f872f0b46d2a",
+      "sha_new": "e6bc0fa7a836"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-011-product-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "4593f7786be9",
+      "sha_new": "2880338b2d92"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-012-quotient-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "4d029b139044",
+      "sha_new": "48a6102ebd16"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-013-inverse-functions-and-differentiation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "65661ae75b96",
+      "sha_new": "be6dffdf779e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-014-implicit-differentiation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "dfb5dc4c4627",
+      "sha_new": "422a7a562636"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-015-stationary-point.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "ec5bd71e906d",
+      "sha_new": "b7817e54de4f"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-016-maxima-and-minima.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "0c49b8e386c1",
+      "sha_new": "037073578287"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-017-first-derivative-test.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "348f35e662c1",
+      "sha_new": "d7cda1fac403"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-018-second-derivative-test.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "c8cc0eed9211",
+      "sha_new": "9c0d48d8e1ce"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-019-extreme-value-theorem.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "f4cf908a6222",
+      "sha_new": "3b8fc4f9c19b"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-020-differential-equation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "044f8bec2d6d",
+      "sha_new": "0527b9ac561a"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-021-differential-operator.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "2c2832782fae",
+      "sha_new": "4468a029d18f"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-022-newtons-method.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "9a428ff925d7",
+      "sha_new": "6ab3fec74e9e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-023-taylors-theorem.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "51132b7760c7",
+      "sha_new": "fbd5309a539f"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-024-lhopitals-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "40030b70879a",
+      "sha_new": "4bef0f7282c3"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-025-general-leibniz-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "ac057ba5612e",
+      "sha_new": "9305e6a854ea"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-026-mean-value-theorem.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "cb04138c5a3e",
+      "sha_new": "52d89499f4de"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-027-logarithmic-derivative.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "86309f01cc25",
+      "sha_new": "7d1b161b9945"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-028-differential-calculus.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "b0cd48905d28",
+      "sha_new": "578b71238aab"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-029-related-rates.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "2e53fbcfcbb2",
+      "sha_new": "80446810f89d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-030-regiomontanus-angle-maximization.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "ef65380ec620",
+      "sha_new": "6d2a022eb25c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-031-rolles-theorem.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "7ab802054077",
+      "sha_new": "f497dc00f910"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/DIFF-032-instantaneous-velocity-derivative.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "16bfb00bd510",
+      "sha_new": "183b839fd160"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-001-antiderivative.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "51d9e15b29bf",
+      "sha_new": "659eebc18b4e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-002-sum-rule-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "026ff0229ff3",
+      "sha_new": "53eb0c1b6fa0"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-003-constant-factor-rule-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "008eb76036b4",
+      "sha_new": "4042c466252c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-004-linearity-of-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "5654f5bbf5c8",
+      "sha_new": "6c002119f63c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-005-arbitrary-constant-of-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "a32c0361bf4a",
+      "sha_new": "04d0b6cd952d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-006-cavalieris-quadrature-formula.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "cd163bf56c7c",
+      "sha_new": "1388f87f285d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-007-fundamental-theorem-of-calculus.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "0a43460075c4",
+      "sha_new": "e79ac8575e93"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-008-integration-by-parts.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "160e11727ac1",
+      "sha_new": "8c9418c498a0"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-009-inverse-chain-rule-method.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "86164b5d775f",
+      "sha_new": "fc3274601831"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-010-integration-by-substitution.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "1137aba5142a",
+      "sha_new": "9b74b8727b72"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-011-tangent-half-angle-substitution.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "25e844bdf768",
+      "sha_new": "8345f2cc30e4"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-012-differentiation-under-the-integral-sign.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "da7b11e83b49",
+      "sha_new": "6b916769bfca"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-013-trigonometric-substitution.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "9cbdd0f0f48f",
+      "sha_new": "9016f74e0fa6"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-014-partial-fractions-in-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "a87ab60833e7",
+      "sha_new": "503ba7b5e163"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-015-quadratic-integral.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "f3770555d7ae",
+      "sha_new": "8491deeb9019"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-016-proof-that-22-over-7-exceeds-pi.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "5031d3574304",
+      "sha_new": "cbf1d68ffc3c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-017-trapezium-rule.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "87871fd0a44a",
+      "sha_new": "8b9508cea732"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-018-integral-of-secant-function.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "e82d0e7e773a",
+      "sha_new": "ad1d4d547f7e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-019-integral-of-secant-cubed.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "2630a3d68dda",
+      "sha_new": "a0402cbdc859"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-020-arclength.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "53e38740a02b",
+      "sha_new": "9553658a3c86"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-021-solid-of-revolution.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "b5abac1b80e9",
+      "sha_new": "94fecff64585"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/INT-022-shell-integration.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "ea6e96b6e2d4",
+      "sha_new": "49c7dae7436d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "fb90fd2a95bd",
+      "sha_new": "b1fbfb32a9eb"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-002-limit-of-a-function.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "a2558c5fbc16",
+      "sha_new": "559bcd7aa953"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-003-one-sided-limit.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "955ae42bd77d",
+      "sha_new": "1aea7e68a9f6"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-004-limit-of-a-sequence.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "624a00010010",
+      "sha_new": "19c9a68e0694"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-005-indeterminate-form.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "8eb85054af59",
+      "sha_new": "e4aa2e9a2b7d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-006-orders-of-approximation.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "07c9f6c603be",
+      "sha_new": "aa3807c63333"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-007-epsilon-delta-definition.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "612f54ed3856",
+      "sha_new": "134252121883"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/LIM-008-continuous-function.md",
+      "waves": [
+        "mathrefmt",
+        "mathquote-calc"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathrefmt加mathquote-calc 增补）。"
+      ],
+      "sha_old": "4f9c884ce422",
+      "sha_new": "7e572f0604ae"
+    },
+    {
+      "rel": "algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "b73fe739194d",
+      "sha_new": "2cecab6da10e"
+    },
+    {
+      "rel": "algebra/entries/ALG-008-kernel-and-fiber.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇C 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇C加mathquote2 增补）。"
+      ],
+      "sha_old": "f82b2bf7a7f2",
+      "sha_new": "8c917113d660"
+    },
+    {
+      "rel": "algebra/entries/ALG-009-rank-nullity-and-section.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇C 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇C加mathquote2 增补）。"
+      ],
+      "sha_old": "bad12db4d8b0",
+      "sha_new": "d05db4037d63"
+    },
+    {
+      "rel": "algebra/entries/ALG-010-factorization-and-invariance.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇C 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇C加mathquote2 增补）。"
+      ],
+      "sha_old": "c92791e22455",
+      "sha_new": "1cfa543f04c8"
+    },
+    {
+      "rel": "order/entries/ORD-001-partially-ordered-set.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "2529b303b66d",
+      "sha_new": "9a3f62a6bc09"
+    },
+    {
+      "rel": "order/entries/ORD-002-complete-lattice.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "e0f06eed485a",
+      "sha_new": "96b8f2d307f7"
+    },
+    {
+      "rel": "order/entries/ORD-003-knaster-tarski-fixed-point.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "42b91bd0cd26",
+      "sha_new": "c3d116519860"
+    },
+    {
+      "rel": "order/entries/ORD-004-monotone-operator.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "3e8066265356",
+      "sha_new": "4fc5f53b6e12"
+    },
+    {
+      "rel": "order/entries/ORD-005-chains-and-antichains.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "be11a0b230a9",
+      "sha_new": "f10f7b13462c"
+    },
+    {
+      "rel": "order/entries/ORD-006-closure-and-consequence-operator.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇B 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇B加mathquote2 增补）。"
+      ],
+      "sha_old": "f98e31cdb11c",
+      "sha_new": "c3b80d377da5"
+    },
+    {
+      "rel": "order/entries/ORD-007-derivation-soundness-and-mirror.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "ce30887c012f",
+      "sha_new": "c7b88b9ac41a"
+    },
+    {
+      "rel": "order/entries/ORD-008-reference-reachability-and-dangling.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "27eb7eb88b6c",
+      "sha_new": "bd3f52c144af"
+    },
+    {
+      "rel": "order/entries/ORD-009-commitment-closure-and-naming.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇C 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇C加mathquote2 增补）。"
+      ],
+      "sha_old": "7d735a3d49fb",
+      "sha_new": "0aa1629d991c"
+    },
+    {
+      "rel": "order/entries/ORD-010-falsification-and-counterexample.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇B 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇B加mathquote2 增补）。"
+      ],
+      "sha_old": "6955586c0254",
+      "sha_new": "a44663d75910"
+    },
+    {
+      "rel": "order/entries/ORD-011-well-founded-recursion-termination.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "579ee2dbf5fb",
+      "sha_new": "fd49faf67542"
+    },
+    {
+      "rel": "order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇A 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇A加mathquote2 增补）。"
+      ],
+      "sha_old": "05bd0e170579",
+      "sha_new": "3343b9c4c176"
+    },
+    {
+      "rel": "order/entries/ORD-017-definability-and-definition-extension.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇A 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇A加mathquote2 增补）。"
+      ],
+      "sha_old": "961b477c75ec",
+      "sha_new": "0d8c6283165f"
+    },
+    {
+      "rel": "order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇B 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇B加mathquote2 增补）。"
+      ],
+      "sha_old": "fbfde1df8dfb",
+      "sha_new": "feda2436dff4"
+    },
+    {
+      "rel": "probability/entries/PROB-001-law-of-large-numbers.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "abc538f99c90",
+      "sha_new": "a1aa2c1546d4"
+    },
+    {
+      "rel": "probability/entries/PROB-002-strong-law-of-large-numbers.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "703116aa3e52",
+      "sha_new": "ffe2ab0fee78"
+    },
+    {
+      "rel": "probability/entries/PROB-003-central-limit-theorem.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "6313aa0e5d28",
+      "sha_new": "4751b0c243d1"
+    },
+    {
+      "rel": "probability/entries/PROB-004-large-deviation-principle.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "094c0816bf52",
+      "sha_new": "6f4939f446b3"
+    },
+    {
+      "rel": "probability/entries/PROB-005-bayesian-updating.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "ff66b30cffa8",
+      "sha_new": "b5d2870e65da"
+    },
+    {
+      "rel": "probability/entries/PROB-006-probability-measure.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "a9650cf33fc5",
+      "sha_new": "da2cc0f02102"
+    },
+    {
+      "rel": "probability/entries/PROB-007-expectation.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "3721a2c47327",
+      "sha_new": "a075400589a2"
+    },
+    {
+      "rel": "probability/entries/PROB-008-information-content-and-falsifiability.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇B 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇B加mathquote2 增补）。"
+      ],
+      "sha_old": "dd959db9868d",
+      "sha_new": "5f15e21a3eb0"
+    },
+    {
+      "rel": "probability/entries/PROB-009-fano-inequality-and-recovery-bound.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目，复归段补强波簇C 增补。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（复归段补强波簇C加mathquote2 增补）。"
+      ],
+      "sha_old": "7543ea0f79bb",
+      "sha_new": "ceadcccb7077"
+    },
+    {
+      "rel": "topology/entries/TOP-001-banach-fixed-point.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "dc0a8886c71d",
+      "sha_new": "228f083d11a3"
+    },
+    {
+      "rel": "topology/entries/TOP-002-brouwer-fixed-point.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "9560f02b0ce9",
+      "sha_new": "6b4b7ef17ed0"
+    },
+    {
+      "rel": "topology/entries/TOP-003-knaster-tarski-mirror.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "cf73f0ac38e8",
+      "sha_new": "b04e3fc4f8b3"
+    },
+    {
+      "rel": "topology/entries/TOP-004-metric-space.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "05989424b4de",
+      "sha_new": "6115daaa4a48"
+    },
+    {
+      "rel": "topology/entries/TOP-005-complete-metric-space.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "d62002ce8d75",
+      "sha_new": "98a2629a6168"
+    },
+    {
+      "rel": "topology/entries/TOP-006-compact-set.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "ace718555f0b",
+      "sha_new": "abcc9c14a4bd"
+    },
+    {
+      "rel": "topology/entries/TOP-007-continuous-mapping.md",
+      "waves": [
+        "mathquote2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote2 增补）。"
+      ],
+      "sha_old": "3fcedc180872",
+      "sha_new": "441456690811"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-001-ordinary-differential-equation.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "f62e66d81488",
+      "sha_new": "4dbaa90b2019"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-002-partial-differential-equation.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "e5d560bdb60a",
+      "sha_new": "529e0e5db098"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-003-two-body-problem.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "515eeb83bd70",
+      "sha_new": "37b9d638ba28"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-004-keplers-laws-of-planetary-motion.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "6cc48762c044",
+      "sha_new": "cddd5c86f3e4"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-005-vibrating-string.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "6031d6c17451",
+      "sha_new": "8f137ab7ff3b"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-006-chladni-figure.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "0f9d4154ef72",
+      "sha_new": "006b2f99e520"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-007-vibration-simulation-visualization.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "b42fe62bf08f",
+      "sha_new": "8147d90313a9"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-008-daylength-rate-of-change.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "7956a301c280",
+      "sha_new": "9c2cbd1db533"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-009-information-flood-attention-budget.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "2d10dae73dc2",
+      "sha_new": "8ef01119c35c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/APP-010-csnx-message-compression-sampling.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "7ba77fa78582",
+      "sha_new": "ad86eaf642d2"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-001-archimedes-use-of-infinitesimals.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "bf9c665edc95",
+      "sha_new": "36d9e48a79f9"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-002-infinitesimal.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "04204121cf3b",
+      "sha_new": "de9126eca254"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-003-gottfried-leibniz.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "8c320d39738a",
+      "sha_new": "80eb7562f6e5"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-004-isaac-newton.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "7348b8051bbc",
+      "sha_new": "2e78b7c2102d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-005-method-of-fluxions.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "b5fc8e7228ec",
+      "sha_new": "9477fcc2dda0"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-006-infinitesimal-calculus.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "377f4e89a4c3",
+      "sha_new": "2048e8f13fb6"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-007-brook-taylor.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "14a07b96b3d6",
+      "sha_new": "b29f71efb96b"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-008-colin-maclaurin.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "91fdcb92dbbc",
+      "sha_new": "e4b564b3b2eb"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-009-leonhard-euler.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "0a70d99539c4",
+      "sha_new": "b01fd9f4b876"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-010-gauss.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "3f2dd2f96ff1",
+      "sha_new": "63f085245626"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-011-joseph-fourier.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "b0b462007aed",
+      "sha_new": "ac81b9714c7e"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-012-law-of-continuity.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "9a91a6d4d45e",
+      "sha_new": "74e66c42d5c0"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-013-history-of-calculus.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "cd8cec4cad68",
+      "sha_new": "e89be51fa88f"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-014-generality-of-algebra.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "97d41fd66a79",
+      "sha_new": "3f63a4c482bb"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-015-zeno-paradox.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "217e085b7b86",
+      "sha_new": "bf592ba1c56d"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/HIS-016-squeeze-theorem.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "166ab4d89cf5",
+      "sha_new": "46d4b467d44f"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-001-partial-derivative.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "e9f54cf2628b",
+      "sha_new": "39c36a79aad4"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-002-disk-integration.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "566489c9d75f",
+      "sha_new": "109735a3be5c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-003-gabriels-horn.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "dafb3657a185",
+      "sha_new": "8b375d73f873"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-004-jacobian-matrix.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "b2ea0d45af5f",
+      "sha_new": "d43bf0d7f52b"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-005-hessian-matrix.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "dbd7caad74b0",
+      "sha_new": "9606f8f95b22"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-006-curvature.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "14373c344d12",
+      "sha_new": "58f89c23c874"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-007-greens-theorem.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "df6748f1161a",
+      "sha_new": "cf0a7e56c0b5"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-008-divergence-theorem.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "0b7aed4feedd",
+      "sha_new": "8cf7d0551487"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-009-stokes-theorem.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "61bf2bf0bf37",
+      "sha_new": "8d7d382aa9f8"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/MUL-010-vector-calculus.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "217b18c21e28",
+      "sha_new": "fe531a2d901c"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/NS-001-elementary-calculus-infinitesimal-approach.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "47ef306bca4d",
+      "sha_new": "1fd24fe06030"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/NS-002-nonstandard-calculus.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "f5260d1907a4",
+      "sha_new": "24a219a13498"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/NS-003-infinitesimal-nonstandard.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "23f4b291902f",
+      "sha_new": "f55a0a2f7485"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SER-001-infinite-series.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "defde853f8a8",
+      "sha_new": "414f343fe275"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SER-002-maclaurin-series.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "29105027826d",
+      "sha_new": "fc68095bc712"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SER-003-taylor-series.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "6f73aceb6e83",
+      "sha_new": "9b37c9b26a81"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SER-004-fourier-series.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "655071d80610",
+      "sha_new": "796d769f4df4"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SER-005-euler-maclaurin-formula.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "f7e1cf66eed9",
+      "sha_new": "f4f9f0de3381"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-001-natural-logarithm.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "976edce96a08",
+      "sha_new": "e5473d469759"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-002-e-mathematical-constant.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "f8eb0b551565",
+      "sha_new": "2a9e49fb97d6"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-003-exponential-function.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "0d3b64686769",
+      "sha_new": "1852db528cfa"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-004-hyperbolic-angle.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "229fe66e0d7b",
+      "sha_new": "f0f925c9e526"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-005-hyperbolic-function.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "db72a44a59e0",
+      "sha_new": "fb5b16ad6e06"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-006-stirlings-approximation.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "49e7440756a3",
+      "sha_new": "f83ed044ff75"
+    },
+    {
+      "rel": "calculus/llm-friendly-build/entries/SPEC-007-bernoulli-numbers.md",
+      "waves": [
+        "mathquote-calc",
+        "mathrefmt2"
+      ],
+      "diff_line_indices": [
+        2
+      ],
+      "olds": [
+        "状态：已建，哲学到工程桥梁条目。"
+      ],
+      "news": [
+        "状态：已建，哲学到工程桥梁条目（mathquote-calc加mathrefmt2 增补）。"
+      ],
+      "sha_old": "16b06ebac731",
+      "sha_new": "806640b99699"
+    }
+  ],
+  "errors": [],
+  "skipped": [],
+  "wc_lines_total_wt": 11858
+}
