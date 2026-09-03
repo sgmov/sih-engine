@@ -89,3 +89,11 @@ m3clear 处置清单实例化候选第一件：elicit 为可指认载体未实�
 单线形 solo 零子代理，全链由会话 31bc9b8a1b0f9e25（sess-zcode-260904-elicitwire）亲写，零 Agent/Task 派生。
 
 ## 十一、收约附表（close 后回填）
+
+- **close 两段式**：试一 math 归并移除成功（3b62ace），tools 与 engine merge_failed——tools 撞主树同名未跟踪件（八报告件）、engine 撞主树活链脏态（链相对 HEAD 追加未提交）加同名未跟踪件（任务包与 dispatch 与 recall）；按备份让位归并对表法：备份主树八报告与活链与任务包与 dispatch 与 recall、让位删除、close 试二归并成功 revoked true（tools 与 engine 归并移除，math already_gone）。
+- **三仓 commit 号**：settle 即 math ceb45f7、tools 8f524cd2、engine 05459ab（--cert 6dd90c58，base 即 integral-stage-build@20c37119 / main@0017372 / main@8d0bce2）；归并即 math 3b62ace、tools 5cf37fcf、engine 7a725e9。
+- **备份让位对表**：备份与归并结果十二件 cmp 逐字节 IDENTICAL（八报告件 + 活链 57 事件 + 任务包 + dispatch + recall），非 identical 即停批条件未触发。
+- **reconcile 读数（close 后）**：tools unrouted 0（cert_missing 1 即 entryunique-solo 09-03 既有、unbypassed 0）、engine unrouted 0（cert_missing 0、bypass 17 全登记）、math unrouted 0（cert_missing 2 即 08-30 mathfix2 与 fmtfix 既有、unbypassed 1 即 08-30 基线 c556abb 既有）——三仓 unrouted 与 cert_missing 较批前零新增，本批提交零入尾。
+- **链 verify 前后对表**：settle 拷链 57 事件、close 后 verify valid 57 事件同读数，首哈希 05a8a75e、末哈希 6dd90c58（本批变更件认证），前后一致零漂移；与 gchart/recallloop 并行批共笔追加态下活链哈希连续。
+- **已提交树复现关**：归并后主树实跑 elicit 15 测全绿；金向量 replay_golden.py 主树 materials 目录实跑 exit 0，双跑逐字节一致且 golden_match true，主树复放与批内工地复放报告件 cmp IDENTICAL——冻结态对已提交树可复现（V6 教训闭环）。
+- **本笔回填**：本节由收约后 wip 提交回填，--no-verify 提交 + lease bypass 登记随行（close 通道以外提交的既定通道）。
