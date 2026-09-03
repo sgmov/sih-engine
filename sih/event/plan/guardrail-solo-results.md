@@ -21,7 +21,7 @@ scribe 四写入入口（append/intent/park/record）加 `worktree_trail_guard`�
 
 ### 护栏二 收约原子性（close 前置态整批拒）
 
-lease close 增前置态整批探针 `_close_precondition`：逐仓查合并态标记（MERGE_HEAD 与 rebase-merge/rebase-apply 与 CHERRY_PICK_HEAD 与 REVERT_HEAD 与 BISECT_LOG）与共享面脏（已跟踪改动非零或未跟踪件覆盖分支 tip 落地路径即碰撞判定），命中即整批拒绝零部分动作，错误详情 JSON 全量透出禁空串（ordwire 空详情事故反训）。未碰撞未跟踪件不入前置态。半程不可达即要么全归并要么零动作。两反例测即脏共享面拒与合并态拒，均断言支未删、工地未拆、会话在册、台账无 revoked/close_failed。
+lease close 增前置态整批探针 `_close_precondition`：逐仓查合并态标记（MERGE_HEAD 与 rebase-merge/rebase-apply 与 CHERRY_PICK_HEAD 与 REVERT_HEAD 与 BISECT_LOG）与归并面真分叉（base..branch 差集件落盘内容既不等 branch 固件也不等 base 原样即真分叉；未跟踪件仅覆盖分支 tip 引入路径即碰撞判定），命中即整批拒绝零部分动作，错误详情 JSON 全量透出禁空串（ordwire 空详情事故反训）。收约前置态精修即归并面判定按差集件逐件对表：落盘等于 branch 固件或 base 原样皆清净，纯运行账本（锁册会话册）与他批在线扩充的全部跟踪脏态不是 merge 带入面，不入前置态即不催收封死正常收约。半程不可达即要么全归并要么零动作。回归测含脏共享面拒与合并态拒两反例（断言支未删、工地未拆、会话在册、台账无 revoked/close_failed）加非归并未跟踪件放行（纯运行账本仍脏放行）。
 
 ### 护栏三 守卫补漏（commit-msg 拒批名前缀无 session 行）
 
@@ -38,7 +38,7 @@ guardcore.validate_commit_message 拒因三值扩四值：BATCH_PREFIX 正则识
 | F | 类别 | 判据 | 结果 | 证据 |
 |---|---|---|---|---|
 | **F-1 防分叉护栏** | 工程 | 四写入入口工地链路径拒 exit 2 载错文，覆写旗标默认关显式开放行 | 过 | ga1-ga4 四测先红后绿；scribe 141 测全绿 |
-| **F-2 收约原子性** | 工程 | 合并态或共享面脏即整批拒零部分动作，详情禁空串 | 过 | 脏共享面残区块链与合并态两反例测，零部分动作断言过 |
+| **F-2 收约原子性** | 工程 | 合并态或归并面真分叉即整批拒零部分动作，详情禁空串 | 过 | 脏共享面拒加合并态拒两反例测，零部分动作断言过；收约前置态精修即归并面按差集件落盘对表，非归并脏态放行 |
 | **F-3 守卫补漏** | 治理 | aea1768 同形必拦，合法三形全放行 | 过 | 纯函数反例加钩子端到端双拦证；合法三形带批名前缀回归全放 |
 | **F-4 余件入库** | 治理 | ordwire 第 5 条行与 CALL-LOG 更正行随批入版控 | 过 | 双仓 settle 内含两残迹逐字节对表 |
 | **F-5 写入仅 allow** | 治理 | 写入仅请求写入节所列 | 过 | 双仓工地 staged 清单对表未越 allow 冻结面 |
@@ -66,7 +66,7 @@ guardcore.validate_commit_message 拒因三值扩四值：BATCH_PREFIX 正则识
 - 化格：SPEC-006 exit 0 零待改、CONTRACT exit 0 零待改、pyproject.toml exit 0；py 变更件 general-v1 域外 exit-2 如实记不属违规。
 - 核阅：SPEC-006 des-001 exit 0 零发现（域内）；CONTRACT 与 py 件 des-001 域外（盖 sih-engine/doc）exit-2 如实记。
 - 检词：SPEC-006 与 CONTRACT exit 0 零违例；py 件 core 词包域外 exit-2 如实记。
-- 测试：scribe cargo 141 测全绿（含 ga1-ga4）、lease pytest 66 测全绿（含两收约反例与守卫反例）。
+- 测试：scribe cargo 141 测全绿（含 ga1-ga4）、lease pytest 67 测全绿（含两收约反例加守卫反例加归并面放行回归）。
 
 ## 七、验收
 
