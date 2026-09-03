@@ -1,0 +1,8 @@
+{
+  "state": "established",
+  "zh": "贝叶斯语义",
+  "en": "Bayesian Semantics",
+  "definition": "把占比信念作为随机变量，以 Beta-Bernoulli 共轭先验把先验与观测证据合成后验的语义，承 PROB-005 Bayesian 更新",
+  "source": "mathpipe-a3-solo 批登记",
+  "signed": "2026-09-03"
+}

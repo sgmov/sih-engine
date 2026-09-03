@@ -1,0 +1,35 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0"
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mathpipe-a3-solo/doc/spec/SPEC-011-governance-state-reading.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mathpipe-a3-solo/src/event_stream/reading.rs",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/CONTRACT.md",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/src/gauge/cli.py",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/tests/test_gauge.py"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mathpipe-a3-solo/doc/spec/SPEC-011-governance-state-reading.md": "415e9c00798916374583c2265de456072f4a4f8edbddc837a157d81bb4e4cd34",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mathpipe-a3-solo/src/event_stream/reading.rs": "f2d1f234b67f316c0815b9a77938b96b2a55909dde9d24bd9af58979884903d6",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/CONTRACT.md": "8f871ce050a52759155dda5953dd7c8c8f233ffe4cd04ee01f1b7f958e0f9235",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/src/gauge/cli.py": "5239190d91cce5f54537cfa5bd2bc78c147fb49cbd60348e9d8ad5a7219a842b",
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mathpipe-a3-solo/gauge/tests/test_gauge.py": "aaaac326dea3db3db8a3c244ba7033b47937a7139dd6858afca407da4f83febd"
+  },
+  "changes": [],
+  "findings": [],
+  "golden_baseline": "",
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0,
+    "scrutinator_domain": "SPEC-011 经 corpus 域形路径 exit 0 findings 0 双证；其余 src 与 sih-tools 非 des-001 域 exit-2 如实记不属违规",
+    "nomenclator_exit": 0
+  }
+}
