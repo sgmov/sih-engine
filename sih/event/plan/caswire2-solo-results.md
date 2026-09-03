@@ -69,7 +69,42 @@ rev1 账本坐实 cascade 为可指认未实例化件：级联判定语义既是
 
 认证一律先落主树活链，链 verify 以批期链尾变更件认证笔为收（close 后读数为准，见对表节）。
 
-## 八、验收
+## 八、收约附表
+
+### close 记录
+
+本批收约两次 close_failed 后由外部处置完成收约（15:45:20 UTC 会话吊销），读数如下：
+
+| 时点 (UTC) | 事件 | 读数 |
+|---|---|---|
+| 15:37:04 | close_failed 第 1 次 | tools 未跟踪报告件阻挡归并（scribe/reports 四件）；engine trail 本地改动阻挡；math 已拆 |
+| 15:38:07 | close_failed 第 2 次 | tools/engine merge_failed（CALL-LOG 共享追加冲突） |
+| 15:45:20 | revoked | 三仓工地拆、分支删、会话吊销 |
+
+### CALL-LOG 归并处置
+
+tools 归并 e8b97634 时 lease/CALL-LOG.md 冲突取基侧覆盖致 caswire2 条目丢失，补丁 1778724b 补回（wip 形 session 挂接）；scribe/CALL-LOG.md 并集双行并存（scriwire2 与 caswire2 两批行）。
+
+### 三仓 commit 号
+
+| 仓 | 段1 | 段2 | 归并 |
+|---|---|---|---|
+| sih-engine | 94ec2bf | 96dbe40 | 80f0675 |
+| sih-tools | a5253ae5 | — | e8b97634 + 1778724b（CALL-LOG 补丁） |
+| sih-math | 75702ee | — | ddb6f7d |
+
+### reconcile 读数（close 后）
+
+| 仓 | unrouted | cert_missing | session_orphan | unbypassed | bypass |
+|---|---|---|---|---|---|
+| sih-engine | 0 | 0 | 0 | 0 | 10 |
+| sih-tools | 0 | 1（entryunique-solo 批前存量，cert e6880a63 不在链） | 0 | 0 | 2 |
+
+### 链 verify（close 后）
+
+2026-09-03.ndjson 185 事件 status valid，末哈希 d234ebb3。
+
+## 九、验收
 
 - [x] F-1 至 F-4 全过
 - [x] 冲突样本节在结果档（第 1 条追加态锁实战含 retry 计数与让位时间戳）
