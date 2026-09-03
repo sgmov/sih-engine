@@ -1,0 +1,58 @@
+{
+  "carrier": "ORD-016",
+  "cases": [
+    {
+      "case": "clean_chain_all_pass",
+      "exit": 0,
+      "expect": {
+        "A": "writable",
+        "C": "writable",
+        "exit": 0
+      },
+      "targets": {
+        "A": {
+          "dirty": [],
+          "unverified": [],
+          "upstreams": {
+            "B": "clean"
+          },
+          "verdict": "writable"
+        },
+        "C": {
+          "dirty": [],
+          "unverified": [],
+          "upstreams": {},
+          "verdict": "writable"
+        }
+      },
+      "verdicts": {
+        "A": "writable",
+        "C": "writable"
+      }
+    },
+    {
+      "case": "polluted_chain_upstream_reject",
+      "exit": 1,
+      "expect": {
+        "A": "blocked",
+        "exit": 1
+      },
+      "targets": {
+        "A": {
+          "dirty": [
+            "B"
+          ],
+          "unverified": [],
+          "upstreams": {
+            "B": "dirty"
+          },
+          "verdict": "blocked"
+        }
+      },
+      "verdicts": {
+        "A": "blocked"
+      }
+    }
+  ],
+  "formula_version": "ga-1"
+}
