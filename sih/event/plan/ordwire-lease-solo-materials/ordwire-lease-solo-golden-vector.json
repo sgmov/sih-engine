@@ -1,0 +1,69 @@
+{
+  "carrier": "ORD-020",
+  "cases": [
+    {
+      "case": "collision_locked_elsewhere",
+      "final_held": {
+        "sih-tools/lease/CONTRACT.md": "A"
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": "A"
+          }
+        },
+        {
+          "decision": "locked_elsewhere",
+          "holder": "A",
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": "A"
+          }
+        }
+      ]
+    },
+    {
+      "case": "yield_release_then_grant",
+      "final_held": {
+        "sih-tools/lease/CONTRACT.md": "B"
+      },
+      "steps": [
+        {
+          "decision": "granted",
+          "holder": null,
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "A",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": "A"
+          }
+        },
+        {
+          "decision": "released",
+          "op": "unlock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "A",
+          "verdict_after": {}
+        },
+        {
+          "decision": "granted",
+          "holder": null,
+          "op": "lock",
+          "path": "sih-tools/lease/CONTRACT.md",
+          "session": "B",
+          "verdict_after": {
+            "sih-tools/lease/CONTRACT.md": "B"
+          }
+        }
+      ]
+    }
+  ],
+  "formula_version": "ga-1"
+}
