@@ -69,6 +69,8 @@
 4. **expired 读时派生设计裁量**：任务包设计「过期即自动标 expired」落为实效状态三值读时派生（status 与 claim 判定时按参照时刻标注），过期不落笔零改写承账本 append-only 零改写红线，避免读路径写与重复标记；设计裁量如实申报，判据（过期后可再领加僵尸不靠人清）全达成。
 5. **真账 runtime 态**：claims.ndjson 随探针生成真账笔（登记一笔在领），settle 前一次性拷入 tools 工地随批入版控，收约后释放回转（released 笔）留主树活账与 locks/sessions 同款运行态。
 6. **零停批事件**：全程无不可解释的门与闸拒绝，无工具 exit 2 异常（cert 段首轮 exit 2 为本人 cwd 误置已申报于第 2 条，非工具异常）；政策行在役即机械链全绿自行收口推进，结果档不设「等你令」节。
+7. **close 首跑 engine merge_failed**：主树 trail 与分支 tip 同文但非净工作树被 git 拒并（_close_precondition 判同文净过与 git merge 净树要求的语义差实测），close_failed 账行在案零绕行，处置按备份让位归并对表法四步恢复，复跑 revoked true，cmp 备份与归并后 IDENTICAL。
+8. **探针账行归并主树与前缀污染修复**：探针 open/close 缺省账本位解析在工地侧，探针会话 2ad4395d 两行账归并追加主树活账后工地侧还原基线防收约分叉；追加时误携 diff `> ` 前缀两行即原位剥前缀修复，修复后全册 634 行逐行 JSON 验证通过，修复发生在任何消费读之前。
 
 ## 八、验收
 
@@ -85,3 +87,10 @@
 ## 十、收约附表（close 后回填）
 
 - 本节由收约后 wip 提交回填：双仓 settle 提交号与归并号、reconcile 读数、链 verify 前后对表、真账释放回转读数。
+- **双仓 settle 与归并**：settle 即 tools 93b630af、engine 41ea26e（--cert f90326e7，base 即 integral-stage-build@f5b222fe 与 main@54e8e1e）；归并即 tools 4f6ee926、engine 74cb0e5。
+- **两段式 close**：首跑 close_failed 于 engine（主树 trail 本地改动阻并，close_failed 账行在案零绕行），tools 首跑已归并删支；处置按备份让位归并对表法即备份主树链 26 事件、checkout 让位、close 复跑 revoked true，tools 复跑 missing/already_gone 收敛。
+- **备份让位对表**：trail 备份与归并后主树链 cmp 逐字节 IDENTICAL 零丢失。
+- **reconcile 读数（close 后）**：engine exit 0 即 unrouted 0、cert_missing 0、session_orphan 0、unbypassed 0（bypass 16 全登记）；tools unrouted 0、session_orphan 0、unbypassed 0（bypass 5 全登记）、cert_missing 1 即 entryunique-solo 526e2be 09-03 既有，较批前零新增，本批提交零入尾。
+- **链 verify 前后对表**：批期认证后 verify valid 26 事件（首哈希 05a8a75e、末哈希 f90326e7：例行读数六笔加晨批十五笔加意图一笔加认证四笔），close 后 verify valid 26 事件同首末哈希，前后一致零漂移。
+- **真账释放回转**：claimgate-solo 领取（sess-zcode-260904-claimgate，ttl 480）于收约后经主树 1.16.0 件 unclaim，claims 账本实效状态回转 released（materials/unclaim-real.json），released 行随 tools wip 补笔入版控。
+- **本笔回填**：本节由收约后 wip 提交回填，--no-verify 提交 + lease bypass 登记随行（close 通道以外提交的既定通道）。
