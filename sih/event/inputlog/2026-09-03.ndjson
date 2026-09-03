@@ -3,3 +3,5 @@
 {"seq": 3, "session_id": "sess-zcode-260903-intanchor", "input": "同意，开", "ts": "2026-09-03T03:10:00+00:00", "note": "逐字留档即 pk-043 出泊批准令与 intanchor-solo 开批令"}
 {"seq": 4, "session_id": "sess-zcode-260903-acceptor", "input": "正身修复同意，ai-ex沉淀同意", "ts": "2026-09-03T03:20:00+00:00", "note": "正身修复采纳裁与 ai-ex 沉淀批准令"}
 {"seq": 5, "session_id": "sess-zcode-260903-acceptor", "input": "先把挂账全清了，得一裁一过一", "ts": "2026-09-02T20:27:44+00:00", "note": "逐字留档即挂账清理令与分道申报（四件均落确定性通道，承 facet-measure 修订四与 m-sett001-crosscheck 先例）"}
+{"seq": 6, "session_id": "sess-zcode-260903-mathpipea2", "input": "0.05（推荐）", "ts": "2026-09-03T04:40:00+00:00", "note": "批二人节点裁定：显著性水平 α = 0.05（承源码 ALPHA 与通行水平，取值由人裁正确性由数学检验）"}
+{"seq": 7, "session_id": "sess-zcode-260903-entryunique", "input": "sih-engine/sih/event/plan/entryunique-solo-materials/dispatch.md", "ts": "2026-09-03T04:24:00+00:00", "note": "派工即 entryunique-solo 批执行指令；撞锁问询与并行开工批准令随批在档"}
