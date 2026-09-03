@@ -1,0 +1,21 @@
+{
+  "batch": "elicitwire-solo",
+  "carrier": [
+    "ORD-008"
+  ],
+  "cases": [
+    {
+      "case": "digest_passed_covered",
+      "exit": 0,
+      "stdout_normalized": "{\"digest\": \"passed\", \"covered\": 2}\n"
+    },
+    {
+      "case": "digest_blocked_orphan",
+      "exit": 1,
+      "stdout_normalized": "{\"digest\": \"blocked\", \"missing\": [\"未处置信号\"]}\n"
+    }
+  ],
+  "date": "2026-09-04",
+  "kind": "golden_vector",
+  "replay_convention": "python3 replay_golden.py <elicit src 绝对路径>；夹具路径经 MATERIALS=本脚本所在目录相对解析，零 cwd 依赖零绝对路径冻结；stdout 归一化 <MATERIALS> 后逐字节比对，退出码逐案比对"
+}
