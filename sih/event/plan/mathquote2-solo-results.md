@@ -13,6 +13,10 @@
 
 **本批并发实测**：执行时点零活跃会话锁（锁台账全量扫描 acquired 计数零），全程零撞锁零重试。共享面预期冲突（当日链、台账、调用册）经租约锁与备份让位归并对表法处置，无实测撞锁样本节行，如实记零。
 
+**close 首跑 merge_failed（engine，承 guardrail-solo trail 共享追加事故同根因）**：首跑 close 逐仓序处理，math 与 tools 先收完（归并拆本删支），engine 被 git merge 前置检查即拒——主树 trail 共享追加件本地未提交改动被判「会被归并覆盖」（guardrail 批为归并中 3 向冲突形，本批为归并前本地改动拒形，同属 trail 共享追加并发面事故）。close_failed 台账行随败随记，会话保持活跃留残自愈（契约条款在案）。
+清障动作：先 cmp 证主树 trail 盘面与分支固件逐字节同文（109 行），再 `git checkout -- sih/event/trail/2026-09-03.ndjson` 弃本地改动（内容由归并恢复零丢失），复跑 `lease close` 即 engine 归并落地（merge ee13420）、拆工地删支、会话吊销，exit 0。math 与 tools 复跑计 missing 按契约收敛。
+申报：checkout 清障步属主树直写操作，净内容效应为零（同文预证），归并本体由 lease 复跑完成无手工合并提交；对照 guardrail 批手工合并提交（构成越线已申报），本批清障路径保持在工具自愈通道内。
+
 ## 施工源选择申报
 
 选甲即以抢救 diff（materials/salvage-34quotes-2026-09-03.diff，442 行，sha256 前八位 99125a5a）为盘点源 apply：`git apply --check` 与 `git apply` 双双通过，34/34 件命中、零域外文件、零冲突。地位申报：盘点源不是引用源，apply 后以本批 reverify 子串断言逐件过为唯一放行判据。
@@ -62,11 +66,28 @@ findings 亲读：三步 findings 全零，零条目需逐条读判；叩问两�
 
 ## 三仓 commit 号
 
-收约后回填（settle 提交哈希在归并前不自指，承 mathrefmt 先例）。
+- sih-math：e4d5724（34 件引文锚补写，归并 e8d928f）
+- sih-engine：a9d5f9a（结果档与枚举对表与材料与意图加四件认证链，归并 ee13420）
+- sih-tools：36d7d9c0（报告七件与调用册五处与两词登记，归并 15fa4202）
 
 ## 链 verify 对表 / reconcile 读数 / F 表 / 越线与误差申报
 
-收约后回填。
+### 链 verify 前后对表
+
+- 收约前（末笔认证后链终态）：status valid，events=109，first_hash 94f1dd00…503512，last_hash 9a5c38b6…cbce5d，exit 0
+- 收约后：status valid，events=109，first 与 last 哈希与收约前逐位一致，exit 0
+- 对表判决：close 归并不改链内容（链 settle 前一次性拷工地纪律在役，盘面与分支固件同文，归并恢复后字节一致）
+
+### reconcile 读数（三仓，收约后）
+
+- sih-math：routed 70 含本批 e4d5724，归并 e8d928f 即 routed_merge；cert_missing 2 即 93c4f0b 与 d561f17（均 2026-08-30 mathfix2 段2 与 fmtfix 段2 存量，math 仓无封线回落全史显式）；unbypassed 1 即 c556abb（2026-08-30 git init 零号动作基线存量）；session_orphan 0、unrouted 0。本批零新增
+- sih-engine：cert_missing 0、unbypassed 0、unrouted 0、session_orphan 0；bypass 3 件均存量已登记（75d1ea7 与 aea1768 与 9a5a778）；本批 a9d5f9a 与 ee13420 归 routed 与 routed_merge 类。本批零新增
+- sih-tools：cert_missing 1 即 526e2be（entryunique-solo 段2，今日更早批存量）；unbypassed 0、unrouted 0；bypass 1 件存量已登记（558f08e7）；本批 36d7d9c0 与 15fa4202 归 routed 与 routed_merge 类。本批零新增
+- 本会话锁对表：16 acquired / 16 released 对称闭环，零滞留锁
+
+### 备份让位归并对表法
+
+主树 16 件未跟踪冲突件（plan 1 加 materials 8 加 reports 7）收约前备份于临时目录让位，归并后逐件 cmp 对表全 identical，零停批。
 
 ## F 表（验收判据核对）
 
@@ -76,6 +97,14 @@ findings 亲读：三步 findings 全零，零条目需逐条读判；叩问两�
 | F-2 引文逐字节 | 复验脚本全绿即全部引文为原文子串，重跑一致 | reverify 本批重跑 41 锚零失败 GREEN exit 0 | 通过 |
 | F-3 对照保留 | 原命题对照零删改，引文为增不换 | 34 件删行全为增行严格前缀（后缀追加），零删改 | 通过 |
 | F-4 写入仅 allow | 写入仅请求写入节所列，calculus 与已锚 13 件零触碰 | 工地 status 34 件全落四子仓 allow 目录，calculus 与 13 已锚零位移 | 通过 |
-| F-5 链上完整 | 意图与逐件认证落主树活链，close 后链 verify valid，reconcile 零新增 | 意图加四件认证五笔在链，收约后回填 verify 与 reconcile 读数 | 收约后闭合 |
+| F-5 链上完整 | 意图与逐件认证落主树活链，close 后链 verify valid，reconcile 零新增 | 五笔在链（意图 2a000246 加四件认证），收约后 verify valid 109 事件首尾与收约前一致，reconcile 三仓本批零新增（存量件已逐件点名） | 通过 |
+
+## 越线与误差申报
+
+1. **首跑 close 半程态（机制缺口，承 guardrail F-2 同形再报）**：close 逐仓序处理，math 与 tools 先落地后 engine merge_failed 留半程。契约层前置态探针判定「盘面与分支固件同文即非分叉」放行，但 git merge 引擎仍按本地未提交改动依据前置拒收——前置态静态判定无法前瞻 git 合并引擎内部检查，属归并冲突只能关内爆发的同形机制缺口（guardrail 批已申报留待立项收口），本批复现再报，经清障复跑自愈闭合。
+2. **trail 清障主树直写申报**：`git checkout --` 弃主树 trail 本地改动，cmp 预证与分支固件逐字节同文，净内容效应为零，归并由 lease 复跑完成，无手工合并提交。该步属主树直写形，如实申报供人类审阅。
+3. **枚举口径差异申报（非误差）**：原批 enumerate.py 严正则不覆盖异格式锚（「」，见 形与嵌套引号形），本批初跑严正则对盘面读出 1/46 与 queue 13/34 不符，改用宽形正则（可选逗号加嵌套引号）即 47/13/34 全等。判定为两枚枚举器口径差非盘面位移（四子仓自原批枚举后零提交，git log 对表在案），证据落 materials/2026-09-03-enumerate-rerun.txt。
+4. **回填提交走已命名会计通道**：本档回填提交为会话吊销后主树提交，走 `--no-verify` 加 `lease bypass` 登记（guardrail 与 mathrefmt 先例在案），不属 plain commit 直提越线。
+5. **无变更型越界**：施工面 34 件全落四子仓 allow 目录，calculus 与已锚 13 件零触碰，哲学仓零写入，identity/reports 与既有存量 untracked 零收编。
 
 > 收约后回填完成。
