@@ -1,0 +1,112 @@
+{
+  "batch": "selwire-solo",
+  "carrier": "ALG-002",
+  "date": "2026-09-04",
+  "formula_version": "sw-1",
+  "payload": {
+    "carrier": "ALG-002",
+    "formula_version": "sw-1",
+    "routed": [
+      {
+        "checks": [
+          {
+            "id": "g_schema",
+            "pass": true
+          },
+          {
+            "id": "g_state",
+            "pass": true
+          },
+          {
+            "id": "g_anchor",
+            "pass": true
+          },
+          {
+            "id": "g_write",
+            "pass": true
+          }
+        ],
+        "failed_predicate": null,
+        "id": "mat-a",
+        "path": "docs/alpha.md",
+        "route": "mainline"
+      },
+      {
+        "checks": [
+          {
+            "id": "g_schema",
+            "pass": true
+          },
+          {
+            "id": "g_state",
+            "pass": true
+          },
+          {
+            "id": "g_anchor",
+            "pass": true
+          },
+          {
+            "id": "g_write",
+            "pass": true
+          }
+        ],
+        "failed_predicate": null,
+        "id": "mat-b",
+        "path": "docs/beta.md",
+        "route": "mainline"
+      },
+      {
+        "checks": [
+          {
+            "id": "g_schema",
+            "pass": true
+          },
+          {
+            "id": "g_state",
+            "pass": true
+          },
+          {
+            "id": "g_anchor",
+            "pass": false
+          },
+          {
+            "id": "g_write",
+            "pass": true
+          }
+        ],
+        "failed_predicate": "g_anchor",
+        "id": "mat-c",
+        "path": "docs/gamma.md",
+        "route": "siding"
+      }
+    ],
+    "scenario_1_same_feature_same_route": {
+      "checks_pass": [
+        "g_schema",
+        "g_state",
+        "g_anchor",
+        "g_write"
+      ],
+      "expect_route": "mainline",
+      "failed_predicate": null,
+      "route_a": "mainline",
+      "route_b": "mainline",
+      "same_route": true
+    },
+    "scenario_2_boundary_predicate_localization": {
+      "boundary_check_id": "g_anchor",
+      "boundary_check_pass": false,
+      "expect_failed_predicate": "g_anchor",
+      "expect_route": "siding",
+      "failed_predicate": "g_anchor",
+      "route": "siding"
+    },
+    "summary": {
+      "alarms": [],
+      "mainline": 2,
+      "scrap_track": 0,
+      "siding": 1,
+      "total": 3
+    }
+  }
+}
