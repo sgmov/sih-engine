@@ -1,0 +1,68 @@
+[
+  {
+    "name": "shuffle_invariance_same_string",
+    "description": "同组件换序同串：同一组件集两种录入顺序 identity_string 与 identity_hash 字节级一致，等价类代表稳定承 ALG-002 商集隔离",
+    "salt": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "components_a": {
+      "pid": "421",
+      "ppid": "1",
+      "hostname": "node-a",
+      "mac": "3c5a1234abcd",
+      "user": "moc",
+      "sandbox_id": "sb-7",
+      "session_id": "sess-77",
+      "boottime": "1756860000",
+      "parent_start": "2026-09-03T10:00:00+00:00",
+      "ancestry": "launchd>zsh>uv",
+      "net_time": "1756938000",
+      "timestamp": "2026-09-03T11:56:19+00:00"
+    },
+    "components_b": {
+      "timestamp": "2026-09-03T11:56:19+00:00",
+      "net_time": "1756938000",
+      "ancestry": "launchd>zsh>uv",
+      "parent_start": "2026-09-03T10:00:00+00:00",
+      "boottime": "1756860000",
+      "session_id": "sess-77",
+      "sandbox_id": "sb-7",
+      "user": "moc",
+      "mac": "3c5a1234abcd",
+      "hostname": "node-a",
+      "ppid": "1",
+      "pid": "421"
+    }
+  },
+  {
+    "name": "drift_change_point_located",
+    "description": "异组件异串且漂移位指认：hostname 异值致身份串异串，compare_claims 逐键唯一 mismatch 落 hostname 位，变点定位承 PROB-013",
+    "salt": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "baseline": {
+      "pid": "421",
+      "ppid": "1",
+      "hostname": "node-a",
+      "mac": "3c5a1234abcd",
+      "user": "moc",
+      "sandbox_id": "sb-7",
+      "session_id": "sess-77",
+      "boottime": "1756860000",
+      "parent_start": "2026-09-03T10:00:00+00:00",
+      "ancestry": "launchd>zsh>uv",
+      "net_time": "1756938000",
+      "timestamp": "2026-09-03T11:56:19+00:00"
+    },
+    "drifted": {
+      "pid": "421",
+      "ppid": "1",
+      "hostname": "node-b",
+      "mac": "3c5a1234abcd",
+      "user": "moc",
+      "sandbox_id": "sb-7",
+      "session_id": "sess-77",
+      "boottime": "1756860000",
+      "parent_start": "2026-09-03T10:00:00+00:00",
+      "ancestry": "launchd>zsh>uv",
+      "net_time": "1756938000",
+      "timestamp": "2026-09-03T12:00:00+00:00"
+    }
+  }
+]
