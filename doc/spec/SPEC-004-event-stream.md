@@ -201,6 +201,16 @@ Rejected 是被拒绝态。校验失败，事件未写入 trail，返回拒绝�
 - 哲学对照：PRO-08 应而不藏，留痕是应鉴循环的构成性条件
 - convergence 层对照：P4.2 责任归属的四个可即
 
+## 载体引用 {#carrier}
+
+本规格的宿主工程组件为 sih-engine/src/event_stream/。链校验与追加写入与外化存储作为治理判定常数并经数学仓承接，本章登记其数学载体引用。
+
+- 载体条目：sih-math/order/entries/ORD-019-version-order-and-externalized-state-store.md
+- 映射表：sih-math/llm-friendly-build/mapping.md「上下文外化三性质」条目承载 ORD-019 版本偏序与外化状态存储，登记于 mapping.md 第 196 行
+- 推导文档：sih-math/docs/scriwire-scribe-derivation-2026-09-03.md
+
+链校验语义与 ORD-019 的对应关系。事件序构成版本偏序，其 prev_hash 链接即覆盖关系；append-only 即偏序只增不改写；verify 即全链自最小元起的传递性复算。三性质即 ORD-019 的持久性、版本化、可审计的工程实例。
+
 ## 认识论立场 {#epistemic-stance}
 
 本规格为设计推论（design-corollary），是工程设计选择，非逻辑必然。

@@ -50,6 +50,11 @@ pub enum VerifyError {
 ///
 /// 校验范围支持全量与区间。
 /// 错误类型覆盖哈希链断裂与事件 ID 缺失两类。
+///
+/// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：verify 即全链自最小元
+/// 起的传递性复算，逐事件核对 prev_hash 是否等于前事件 event_hash，构成
+/// 版本偏序的可审计性机械实现。复算位即 hash::verify_chain，推导见
+/// sih-math/docs/scriwire-scribe-derivation-2026-09-03.md。
 pub fn verify(events: &[Event], range: VerifyRange) -> Result<VerifySuccess, VerifyError> {
     if events.is_empty() {
         return Err(VerifyError::EmptyStream);
