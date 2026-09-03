@@ -1,0 +1,40 @@
+{
+ "channels": {
+  "graph": [],
+  "skeleton": [
+   "llm-friendly-build/mapping.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "probability/INDEX.md",
+   "order/INDEX.md",
+   "topology/INDEX.md",
+   "algebra/INDEX.md"
+  ],
+  "word": []
+ },
+ "expanded": [
+  "区间序串跨度匹配",
+  "文法解析确定性",
+  "计数测度可加性",
+  "重写系统幂等"
+ ],
+ "provenance": {},
+ "query": [
+  "重写系统幂等",
+  "计数测度可加性",
+  "区间序串跨度匹配",
+  "文法解析确定性"
+ ],
+ "reading_list": {
+  "entry_ids": [],
+  "entry_paths": [],
+  "skeleton_files": [
+   "algebra/INDEX.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "llm-friendly-build/mapping.md",
+   "order/INDEX.md",
+   "probability/INDEX.md",
+   "topology/INDEX.md"
+  ]
+ },
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math"
+}
