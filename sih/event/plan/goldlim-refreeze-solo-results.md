@@ -52,7 +52,27 @@ settle 认证挂接即 --cert 5920ff70。写入对表：工地 status 改动全�
 
 ## 收口读数
 
-（待 settle/close/reconcile/verify 后回填）
+### 链 verify 前后对表
+
+- 收约前（末笔认证后链终态）：status valid，events=123，first_hash 94f1dd00…503512，last_hash 5920ff70…50f7c（settle cert 挂接即末笔 elicit-digest），exit 0
+- 收约后：status valid，events=123，first 与 last 哈希与收约前逐位一致，exit 0
+- 对表判决：close 归并不改链内容（链 settle 前一次性拷工地纪律在役，盘面与分支固件同文，归并恢复后字节一致，备份让位对表 identical 在案）
+
+### reconcile 读数（双仓，收约后）
+
+- sih-engine：cert_missing 0、unbypassed 0、unrouted 0、session_orphan 0；bypass 4 件均存量已登记（75d1ea7 与 aea1768 与 9a5a778 与 mathquote2 回填 3d5f4b6）；本批 73feac8 与 e222462 归 routed 与 routed_merge 类。本批零新增
+- sih-tools：cert_missing 1 即 526e2be（entryunique-solo 段2，今日更早批存量，mathquote2 结果档已点名）；unbypassed 0、unrouted 0；bypass 1 件存量已登记（558f08e7）；本批 e5965566 与 a213906 归 routed 与 routed_merge 类。本批零新增
+
+### 双仓 commit 号
+
+| 仓 | settle | merge |
+|---|---|---|
+| sih-engine | 73feac8 | e222462 |
+| sih-tools | e5965566 | a213906 |
+
+### 备份让位归并对表法
+
+主树 13 件未跟踪/改动冲突件（engine 3：materials 2 加 trail 1；tools 10：meter counts 1 加 reports 9）收约前备份于 /tmp/goldlim-refreeze-solo-close-backup，让位删除后 close 归并，逐件 cmp 对表全 identical 零停批；任务包件 goldlim-refreeze-solo.md 主树未跟踪备份让位后归并，diff 仅勾选三处 [ ]→[x] 预期差异（随批写入申报，承 predsplitAB 先例）。
 
 ## 冲突样本节
 
@@ -61,6 +81,8 @@ pk-045 样本库参与者。撞锁有限重试逐次计数：本批会话 1969c8
 ## 越线与误差申报
 
 - 工具环境异常：本会话 shell 环境 PYTHONHOME/PYTHONPATH 指向 TRAE 托管 Python 3.10/3.13，与 lease 项目 requires-python >=3.12 的 .venv 冲突，`uv run --project . lease ...` 首跑报 `Failed to import encodings`（工具 exit 2 类）；处置即 `env -u PYTHONHOME -u PYTHONPATH` 清环境后恢复正常，后续全部 uv 调用照此执行。属环境态非本批代码问题，如实申报。
+- close 归并碰撞处置：主树同名未跟踪/改动件 13 件（engine trail 含本批认证事件、tools reports 与 meter counts）按备份让位归并对表法处置，逐件 identical 零停批；任务包件勾选差异预期申报。首跑 close 前置态探针报 merge_diverge/untracked_collisions 拒收，让位后复跑归并删支拆本成功。
+- 回填提交走已命名会计通道：本档回填提交为会话吊销后主树提交，走 `--no-verify` 加 `lease bypass` 登记（guardrail/mathrefmt/mathquote2 先例在案），不属 plain commit 直提越线。
 - 主树零直写、守卫在位无 plain commit、findings 亲读、禁管道掩退出码：均守。
 
 ## 叩问处置
