@@ -1,0 +1,4 @@
+{
+ "exit_code": 1,
+ "stdout": "{\n  \"detail\": {\n    \"claimant\": \"holder-a\",\n    \"expires_at\": \"2026-09-04T12:00:00+00:00\",\n    \"package\": \"claimgate-solo\"\n  },\n  \"error\": \"package already claimed: claimgate-solo by holder-a until 2026-09-04T12:00:00+00:00\",\n  \"reason\": \"PackageAlreadyClaimed\"\n}\n"
+}

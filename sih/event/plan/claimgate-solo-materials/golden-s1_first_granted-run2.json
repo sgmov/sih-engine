@@ -1,0 +1,4 @@
+{
+ "exit_code": 0,
+ "stdout": "{\n  \"line\": {\n    \"claimant\": \"holder-a\",\n    \"claimed_at\": \"2026-09-04T10:00:00+00:00\",\n    \"event\": \"claimed\",\n    \"expires_at\": \"2026-09-04T12:00:00+00:00\",\n    \"package\": \"claimgate-solo\",\n    \"status\": \"claimed\",\n    \"tool\": {\n      \"name\": \"lease\",\n      \"version\": \"1.16.0\"\n    },\n    \"ttl_minutes\": 120\n  },\n  \"package\": \"claimgate-solo\"\n}\n"
+}

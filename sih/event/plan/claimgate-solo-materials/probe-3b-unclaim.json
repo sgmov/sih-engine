@@ -1,0 +1,14 @@
+{
+  "line": {
+    "claimant": "cycle-probe",
+    "event": "released",
+    "package": "claimgate-solo",
+    "released_at": "2026-09-03T18:40:07+00:00",
+    "status": "released",
+    "tool": {
+      "name": "lease",
+      "version": "1.16.0"
+    }
+  },
+  "package": "claimgate-solo"
+}

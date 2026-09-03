@@ -1,0 +1,67 @@
+{
+  "claims": {
+    "claims": [
+      {
+        "claimant": "sess-zcode-260904-claimgate",
+        "claimed_at": "2026-09-03T18:38:30+00:00",
+        "expires_at": "2026-09-04T02:38:30+00:00",
+        "package": "claimgate-solo",
+        "status": "claimed",
+        "ttl_minutes": 480
+      }
+    ],
+    "header": {
+      "claims_ledger": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/claimgate-solo/lease/ledger/claims.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "summary": {
+      "claimed": 1,
+      "expired": 0,
+      "packages": 1,
+      "released": 0
+    }
+  },
+  "header": {
+    "locks_ledger": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/claimgate-solo/lease/ledger/locks.ndjson",
+    "sessions_ledger": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/claimgate-solo/lease/ledger/sessions.ndjson",
+    "tool": {
+      "name": "lease",
+      "version": "1.16.0"
+    }
+  },
+  "locks": {
+    "header": {
+      "locks_ledger": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/claimgate-solo/lease/ledger/locks.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "held": [],
+    "summary": {
+      "held": 0
+    }
+  },
+  "sessions": {
+    "active": [],
+    "header": {
+      "events": 619,
+      "ledger": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/claimgate-solo/lease/ledger/sessions.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.16.0"
+      }
+    },
+    "summary": {
+      "active": 0,
+      "revoked": 237
+    }
+  },
+  "summary": {
+    "active_sessions": 0,
+    "held_locks": 0
+  }
+}

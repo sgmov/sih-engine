@@ -1,0 +1,80 @@
+{
+  "allow": [
+    "sih-tools/lease/CONTRACT.md",
+    "sih-tools/lease/src/lease/",
+    "sih-math/docs/",
+    "sih-engine/sih/state/plan/ordwire-lease-solo.md",
+    "sih-engine/sih/event/plan/ordwire-lease-solo-results.md",
+    "sih-engine/sih/event/plan/ordwire-lease-solo-materials/",
+    "sih-engine/sih/event/trail/<开工实日>.ndjson",
+    "sih-tools/scribe/reports/",
+    "sih-tools/scribe/CALL-LOG.md",
+    "sih-tools/scrutinator/CALL-LOG.md",
+    "sih-tools/formatter/CALL-LOG.md",
+    "sih-tools/nomenclator/CALL-LOG.md",
+    "sih-tools/lease/CALL-LOG.md",
+    "sih-tools/meter/counts/",
+    "sih-tools/nomenclator/packs/core/"
+  ],
+  "claims_warning": [
+    {
+      "claimant": "probe-worker",
+      "claimed_at": "2026-09-03T18:40:07+00:00",
+      "expires_at": "2026-09-04T04:40:07+00:00",
+      "package": "ordwire-lease-solo"
+    }
+  ],
+  "event": "issued",
+  "gauge": {
+    "at": "2026-09-03",
+    "formula_version": "ga-2",
+    "values": {
+      "adoption": {
+        "sequence": "ok",
+        "value": 0.967078
+      },
+      "convergence": {
+        "sequence": "ok",
+        "value": 1.0
+      },
+      "mergeback": {
+        "sequence": "ok",
+        "value": 0.043478
+      }
+    },
+    "window_days": 30
+  },
+  "identity": {
+    "core_hash": "81ff868723663df449d2097d533684f10afba0fd2f90d197bad41e6a81a5b00c",
+    "file_sha256": "0bfdc8fbccfe34064046d759772633203e01d8a8fe649ea8629ee1d1706035ea",
+    "identity_hash": "15aa5bd681ddb7f4e016c98dc807f59c9d117e76ee59091612f9383645351d27"
+  },
+  "intent": {
+    "anchor_count": 3,
+    "record_sha256": "c30744a37406228a261819087f93f12328e3c4e4c92f6bb7b6545097d8fcd1fb",
+    "validated_by": "scrutinator-ask3"
+  },
+  "issued_at": "2026-09-03T18:40:07+00:00",
+  "package": "ordwire-lease-solo",
+  "package_path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/ordwire-lease-solo.md",
+  "repos": [
+    {
+      "base_branch": "integral-stage-build",
+      "branch": "msh/ordwire-lease-solo",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/ordwire-lease-solo"
+    },
+    {
+      "base_branch": "main",
+      "branch": "msh/ordwire-lease-solo",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ordwire-lease-solo"
+    }
+  ],
+  "scope_source": "package",
+  "session_id": "2ad4395d8f06335d",
+  "tool": {
+    "name": "lease",
+    "version": "1.16.0"
+  }
+}

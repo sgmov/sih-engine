@@ -1,0 +1,32 @@
+{
+ "batch": "claimgate-solo",
+ "date": "2026-09-04",
+ "kind": "golden",
+ "scenarios": [
+  "double_claim_rejected",
+  "expired_then_allowed"
+ ],
+ "verdict": "IDENTICAL",
+ "cases": {
+  "s1_first_granted": {
+   "exit_code": 0,
+   "double_run_byte_identical": true
+  },
+  "s1_second_rejected": {
+   "exit_code": 1,
+   "double_run_byte_identical": true
+  },
+  "s2_first_granted": {
+   "exit_code": 0,
+   "double_run_byte_identical": true
+  },
+  "s2_expired_reclaim_granted": {
+   "exit_code": 0,
+   "double_run_byte_identical": true
+  },
+  "s2_status_view": {
+   "exit_code": 0,
+   "double_run_byte_identical": true
+  }
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "detail": {
+    "claimant": "sess-zcode-260904-claimgate",
+    "expires_at": "2026-09-04T02:38:30+00:00",
+    "package": "claimgate-solo"
+  },
+  "error": "package already claimed: claimgate-solo by sess-zcode-260904-claimgate until 2026-09-04T02:38:30+00:00",
+  "reason": "PackageAlreadyClaimed"
+}

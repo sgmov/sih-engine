@@ -1,0 +1,25 @@
+{
+  "failed": [],
+  "removed": [
+    {
+      "base_branch": "integral-stage-build",
+      "branch": "msh/ordwire-lease-solo",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/ordwire-lease-solo",
+      "worktree_result": "removed"
+    },
+    {
+      "base_branch": "main",
+      "branch": "msh/ordwire-lease-solo",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ordwire-lease-solo",
+      "worktree_result": "removed"
+    }
+  ],
+  "revoked": true,
+  "session_id": "2ad4395d8f06335d"
+}
