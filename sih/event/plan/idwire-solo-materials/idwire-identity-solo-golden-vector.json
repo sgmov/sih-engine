@@ -1,0 +1,44 @@
+{
+  "carrier": [
+    "ALG-002",
+    "PROB-013"
+  ],
+  "cases": [
+    {
+      "hash_identical": true,
+      "identity_hash_a": "a6c3daed7840b999adc8fb09c8cbaf60772e6267197320be51bd77f3a0a02924",
+      "identity_hash_b": "a6c3daed7840b999adc8fb09c8cbaf60772e6267197320be51bd77f3a0a02924",
+      "identity_string_a": "v3|pid=421|ppid=1|hostname=node-a|mac=3c5a1234abcd|user=moc|sandbox_id=sb-7|session_id=sess-77|boottime=1756860000|parent_start=2026-09-03T10:00:00+00:00|ancestry=launchd>zsh>uv|net_time=1756938000|timestamp=2026-09-03T11:56:19+00:00",
+      "identity_string_b": "v3|pid=421|ppid=1|hostname=node-a|mac=3c5a1234abcd|user=moc|sandbox_id=sb-7|session_id=sess-77|boottime=1756860000|parent_start=2026-09-03T10:00:00+00:00|ancestry=launchd>zsh>uv|net_time=1756938000|timestamp=2026-09-03T11:56:19+00:00",
+      "name": "shuffle_invariance_same_string",
+      "scenario": "同组件换序同串",
+      "string_identical": true,
+      "verdict": "canonical_rep_stable"
+    },
+    {
+      "compare": {
+        "ancestry": "match",
+        "boottime": "match",
+        "hostname": "mismatch",
+        "mac": "match",
+        "net_time": "match",
+        "parent_start": "match",
+        "pid": "match",
+        "ppid": "match",
+        "sandbox_id": "match",
+        "session_id": "match",
+        "user": "match"
+      },
+      "mismatch_keys": [
+        "hostname"
+      ],
+      "name": "drift_change_point_located",
+      "scenario": "异组件异串且漂移位指认",
+      "string_baseline": "v3|pid=421|ppid=1|hostname=node-a|mac=3c5a1234abcd|user=moc|sandbox_id=sb-7|session_id=sess-77|boottime=1756860000|parent_start=2026-09-03T10:00:00+00:00|ancestry=launchd>zsh>uv|net_time=1756938000|timestamp=2026-09-03T11:56:19+00:00",
+      "string_differ": true,
+      "string_drifted": "v3|pid=421|ppid=1|hostname=node-b|mac=3c5a1234abcd|user=moc|sandbox_id=sb-7|session_id=sess-77|boottime=1756860000|parent_start=2026-09-03T10:00:00+00:00|ancestry=launchd>zsh>uv|net_time=1756938000|timestamp=2026-09-03T12:00:00+00:00",
+      "verdict": "change_point_located"
+    }
+  ],
+  "formula_version": "ga-1"
+}
