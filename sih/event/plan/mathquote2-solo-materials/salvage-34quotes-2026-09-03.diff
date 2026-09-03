@@ -1,0 +1,442 @@
+diff --git a/algebra/entries/ALG-001-matrix-and-eigenvalue.md b/algebra/entries/ALG-001-matrix-and-eigenvalue.md
+index 3e10f21..07787c4 100644
+--- a/algebra/entries/ALG-001-matrix-and-eigenvalue.md
++++ b/algebra/entries/ALG-001-matrix-and-eigenvalue.md
+@@ -62,7 +62,7 @@ $$P^{-1} A P = \text{diag}(\lambda_1, \ldots, \lambda_n)$$
+ 
+   PRO-07 鉴要求治理检验由可重复程序承载，多主体记录打破自证循环。$k$ 个 voter 的投票关系天然编码为 $k \times k$ 矩阵 $A$，其中 $A_{ij}$ 是 voter $i$ 对 voter $j$ 的判据权重。若 $A$ 是行随机矩阵，每行和 $= 1$ 且元素非负，则其最大特征值恰为 $1$，由 Perron-Frobenius 定理 ALG-007，对应特征向量是稳态投票分布。迭代投票 $v_{n+1} = A^T v_n$ 收敛到稳态的前提是 $A$ 不可约且非周期，此时收敛到矩阵 $A$ 的最大特征值对应的特征向量；缺少这两前提时不保证收敛，如恒等矩阵行随机而永不稳定。这给出鉴层投票设计的一组数学条件而非无条件保证，条件核验由工程层承担。
+ 
+-  PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量。代数子仓给出该要求的算子化实现条件：治理状态演化若可配为线性算子迭代，则其收敛由谱半径刻画，$\rho(A) < 1$ 时迭代收敛于零点，谱半径等于一的稳态由 PROB-006 与 PROB-007 概率工具与 ORD-002 序工具分轨承载。特征值在实现条件层使收敛速度与稳定性有可计算的判据，条件不满足时收敛无保证。
++  PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量。代数子仓给出该要求的算子化实现条件：治理状态演化若可配为线性算子迭代，则其收敛由谱半径刻画，$\rho(A) < 1$ 时迭代收敛于零点，谱半径等于一的稳态由 PROB-006 与 PROB-007 概率工具与 ORD-002 序工具分轨承载。特征值在实现条件层使收敛速度与稳定性有可计算的判据，条件不满足时收敛无保证。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61；原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 在工程的应用 {#engineering-application}
+ 
+diff --git a/algebra/entries/ALG-008-kernel-and-fiber.md b/algebra/entries/ALG-008-kernel-and-fiber.md
+index 1c98f8b..c467594 100644
+--- a/algebra/entries/ALG-008-kernel-and-fiber.md
++++ b/algebra/entries/ALG-008-kernel-and-fiber.md
+@@ -56,7 +56,7 @@ $$f^{-1}(w) = v_0 + \ker f = \{v_0 + k \mid k \in \ker f\} \label{eq:alg008-cose
+ 
+ - 借鉴源：线性代数核像理论、映射论的纤维与左逆经典结果
+ - 哲学命题：PRO-03 道二，意图先于代码，因果方向不可逆 (03- § 道二命题)
+-- 形式化：意图先于代码即代码属实现像，每个所考虑的代码都是某意图的像；不可逆即映射一般非单射、像上无左逆，从代码恢复意图的映射不存在；歧义即纤维多重性，同一代码对应一个意图陪集。原文谓不可逆是因果本身的属性而非经验观察，映射非单射是其数学形态，本条目不断言意图结构是向量空间
++- 形式化：意图先于代码即代码属实现像，每个所考虑的代码都是某意图的像；不可逆即映射一般非单射、像上无左逆，从代码恢复意图的映射不存在；歧义即纤维多重性，同一代码对应一个意图陪集。原文谓不可逆是因果本身的属性而非经验观察，映射非单射是其数学形态，本条目不断言意图结构是向量空间。原文「道二：意图先于代码。」见 proodos/03-on-second-tao.md 正本 L15。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/algebra/entries/ALG-009-rank-nullity-and-section.md b/algebra/entries/ALG-009-rank-nullity-and-section.md
+index 1bb3ab5..2576f09 100644
+--- a/algebra/entries/ALG-009-rank-nullity-and-section.md
++++ b/algebra/entries/ALG-009-rank-nullity-and-section.md
+@@ -52,7 +52,7 @@ $$i - s(c) \in \ker f \label{eq:alg009-residual}$$
+ 
+ - 借鉴源：有限维线性代数秩零化度定理、直和分解与截面、鸽笼原理
+ - 哲学命题：PRO-04 道三，代码自晦意图必复，符号系统必有信息损失 (04- § 道三命题)
+-- 形式化：自晦即编码有损，线性模型中核非零 ($\dim \ker f > 0$)，基数模型中 $|I| > |C_n|$；必复即恢复是截面 $s$，截面须由外部边信息提供分裂子空间 $U$，$f$ 自身不能确定唯一恢复；残差即核元素，公式 $\ref{eq:alg009-residual}$，技艺改进只改变残差幅度不消除核。原文的 Shannon 锚定自我声明为启发性类比，本条目不承其为严格推导
++- 形式化：自晦即编码有损，线性模型中核非零 ($\dim \ker f > 0$)，基数模型中 $|I| > |C_n|$；必复即恢复是截面 $s$，截面须由外部边信息提供分裂子空间 $U$，$f$ 自身不能确定唯一恢复；残差即核元素，公式 $\ref{eq:alg009-residual}$，技艺改进只改变残差幅度不消除核。原文的 Shannon 锚定自我声明为启发性类比，本条目不承其为严格推导。原文「道三：代码自晦，意图必复。」见 proodos/04-on-third-tao.md 正本 L15。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/algebra/entries/ALG-010-factorization-and-invariance.md b/algebra/entries/ALG-010-factorization-and-invariance.md
+index 486c641..24f6236 100644
+--- a/algebra/entries/ALG-010-factorization-and-invariance.md
++++ b/algebra/entries/ALG-010-factorization-and-invariance.md
+@@ -57,7 +57,7 @@ $$g \longmapsto \bar{g}, \qquad \bar{g} \longmapsto \bar{g} \circ f \label{eq:al
+ 
+ - 借鉴源：商构造与 universal property 初等形态，不变量概念传统，像-纤维-因式分解三元组
+ - 哲学命题：PRO-03 道二，意图先于代码，因果方向不可逆 (03- § 道二命题)
+-- 形式化：原文「代码是意图的有形化，意图是代码的未形化」即 $f$ 的像-纤维结构：代码为像，意图为原像集；不可逆由 ALG-008 承，纤维多重即左逆不存在；本条承治理对象侧：治理对象即 $f$-不变量，即商上的函数；「有形不能完全包含无形」即 $f$ 一般非双射：非单射部分把信息折叠在纤维内，非满射部分有像外无意图的代码；「道二只说因果方向」即道二层只约束不变量侧，纤维内形式归法层。与 ALG-008 的分界：ALG-008 承不可逆性，本条承治理对象结构，两者共用纤维基础
++- 形式化：原文「代码是意图的有形化，意图是代码的未形化」即 $f$ 的像-纤维结构：代码为像，意图为原像集；不可逆由 ALG-008 承，纤维多重即左逆不存在；本条承治理对象侧：治理对象即 $f$-不变量，即商上的函数；「有形不能完全包含无形」即 $f$ 一般非双射：非单射部分把信息折叠在纤维内，非满射部分有像外无意图的代码；「道二只说因果方向」即道二层只约束不变量侧，纤维内形式归法层。与 ALG-008 的分界：ALG-008 承不可逆性，本条承治理对象结构，两者共用纤维基础。原文「道二：意图先于代码。」见 proodos/03-on-second-tao.md 正本 L15。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-001-partially-ordered-set.md b/order/entries/ORD-001-partially-ordered-set.md
+index fed7dbb..aede748 100644
+--- a/order/entries/ORD-001-partially-ordered-set.md
++++ b/order/entries/ORD-001-partially-ordered-set.md
+@@ -55,7 +55,7 @@ $$\text{传递性: } (x \leq y \wedge y \leq z) \implies x \leq z$$
+ 
+ - 借鉴源：Felix Hausdorff 1914 年在 Grundzüge der Mengenlehre 中给出偏序的现代公理化，Garrett Birkhoff 1940 年在 Lattice Theory 中系统化偏序集理论
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求。偏序集为收敛刻画提供本体结构：治理状态构成偏序集 P，迭代是否趋于稳定可在序意义下陈述，极大元与最大元是稳定态的序论形态。偏序容许状态不可比，反映治理分支的多样性；收敛的保证还需完全格或度量完备等强化条件，见 ORD-002 与 TOP-001
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求。偏序集为收敛刻画提供本体结构：治理状态构成偏序集 P，迭代是否趋于稳定可在序意义下陈述，极大元与最大元是稳定态的序论形态。偏序容许状态不可比，反映治理分支的多样性；收敛的保证还需完全格或度量完备等强化条件，见 ORD-002 与 TOP-001。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/order/entries/ORD-002-complete-lattice.md b/order/entries/ORD-002-complete-lattice.md
+index e1ed4bb..e80836d 100644
+--- a/order/entries/ORD-002-complete-lattice.md
++++ b/order/entries/ORD-002-complete-lattice.md
+@@ -38,7 +38,7 @@ $$\forall S \subseteq L,\ \exists \vee S \in L \wedge \exists \wedge S \in L \la
+ 
+ - 借鉴源：Garrett Birkhoff 1933 年在 On the combination of subalgebras 中给出格的现代抽象定义，Bourbaki 1940s 完成完全格的公理化
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求。完全格为收敛刻画提供严格的序框架：治理状态构成完全格 L 时任意状态组合的上下确界在格内，最小元与最大元对应初始与终极稳定态，单调迭代的收敛存在性由 ORD-003 承载。
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求。完全格为收敛刻画提供严格的序框架：治理状态构成完全格 L 时任意状态组合的上下确界在格内，最小元与最大元对应初始与终极稳定态，单调迭代的收敛存在性由 ORD-003 承载。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-003-knaster-tarski-fixed-point.md b/order/entries/ORD-003-knaster-tarski-fixed-point.md
+index 5a26331..3168bc3 100644
+--- a/order/entries/ORD-003-knaster-tarski-fixed-point.md
++++ b/order/entries/ORD-003-knaster-tarski-fixed-point.md
+@@ -36,7 +36,7 @@ Cousot 与 Cousot 1979 的构造性版本把迭代放宽到超限：一般单调
+ 
+ - 借鉴源：Tarski 1955 年在 A lattice-theoretical fixpoint theorem and its applications 中证明本定理
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求。本条给出该要求的序论实现条件：治理状态空间可配为完全格且更新为单调算子，见公式 $\ref{eq:ord003-monotone}$，时稳定态存在，但存在不等于可达，可达需连续性或超限迭代；条件不满足时收敛无保证，治理须回查迭代设计
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求。本条给出该要求的序论实现条件：治理状态空间可配为完全格且更新为单调算子，见公式 $\ref{eq:ord003-monotone}$，时稳定态存在，但存在不等于可达，可达需连续性或超限迭代；条件不满足时收敛无保证，治理须回查迭代设计。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/order/entries/ORD-004-monotone-operator.md b/order/entries/ORD-004-monotone-operator.md
+index 01a570b..071d418 100644
+--- a/order/entries/ORD-004-monotone-operator.md
++++ b/order/entries/ORD-004-monotone-operator.md
+@@ -46,7 +46,7 @@ $$x \leq y \implies f(x) \leq f(y) \label{eq:ord004-monotone}$$
+ 
+ - 借鉴源：Knaster 1928 年在幂集格版本中首次给出不动点结果，Birkhoff 1940 年在 Lattice Theory 中系统化序论工具，Tarski 1955 年在 Pacific J. Math. 中给出完全格上单调算子不动点的完整刻画
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求。单调算子，见公式 $\ref{eq:ord004-monotone}$，为治理更新提供保持性结构：更新函数保序时迭代行为的序分析可用，但单调性单独只在完全格上保证不动点存在而不保证可达，可达需连续性或超限迭代，见 ORD-003
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求。单调算子，见公式 $\ref{eq:ord004-monotone}$，为治理更新提供保持性结构：更新函数保序时迭代行为的序分析可用，但单调性单独只在完全格上保证不动点存在而不保证可达，可达需连续性或超限迭代，见 ORD-003。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/order/entries/ORD-005-chains-and-antichains.md b/order/entries/ORD-005-chains-and-antichains.md
+index cb61954..6b2d2ce 100644
+--- a/order/entries/ORD-005-chains-and-antichains.md
++++ b/order/entries/ORD-005-chains-and-antichains.md
+@@ -49,7 +49,7 @@ Dilworth 与 Mirsky 构成对偶的极小极大对：前者用最大反链给出
+ 
+ - 借鉴源：Dilworth 定理由 Dilworth 1950 年确立，与二分图 König-Egervary 定理等价；Mirsky 定理 1971 年给出对偶形式
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为。原文：「道一：发散是默认方向，治理是收敛的构成性条件。」
+-- 形式化：反链是发散的序论形态。原文：「每个 AI 模型的输出天然地按训练数据的模式，生成是发散的」，多认知源各自沿发散方向独立运作，在无比较序时不同源的状态两两不可比，正是反链的定义。链是治理收敛的序论形态：施加比较序后状态构成任意两元可比的单序轨迹。反链宽度度量「不可并序方向」的最大独立族规模，Dilworth 定理给出有限比较结构下收敛动作至多需宽度条链的极小极大边界；治理收敛即把反链并序化。两个定理本身不立治理结论，只给序结构以可计算的边界
++- 形式化：反链是发散的序论形态。原文：「每个 AI 模型的输出天然地按训练数据的模式，生成是发散的」，多认知源各自沿发散方向独立运作，在无比较序时不同源的状态两两不可比，正是反链的定义。链是治理收敛的序论形态：施加比较序后状态构成任意两元可比的单序轨迹。反链宽度度量「不可并序方向」的最大独立族规模，Dilworth 定理给出有限比较结构下收敛动作至多需宽度条链的极小极大边界；治理收敛即把反链并序化。两个定理本身不立治理结论，只给序结构以可计算的边界。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/order/entries/ORD-006-closure-and-consequence-operator.md b/order/entries/ORD-006-closure-and-consequence-operator.md
+index 9e8e61a..12ebd03 100644
+--- a/order/entries/ORD-006-closure-and-consequence-operator.md
++++ b/order/entries/ORD-006-closure-and-consequence-operator.md
+@@ -56,7 +56,7 @@ $$\mathrm{Cn}(\Gamma) = \{\varphi \in \mathcal{L} \mid \Gamma \models \varphi\}
+ 
+ - 借鉴源：Tarski 后果算子与闭包算子公理传统，Kuratowski 闭包公理，Knaster-Tarski 不动点 (ORD-003)
+ - 哲学命题：EPI-14 可归约性检测，向上收拢归一之潜能，验证每步核心命题可归约回前步而无外部跳跃
+-- 形式化：EPI-14 的每步可归约到前步，即每步属于前序步骤与锚集的后果闭包 $\mathrm{Cn}(P_i \cup A)$，见定义节判定；跳跃即闭包外元素，存在 $i$ 使 $p_i \notin \mathrm{Cn}(P_i \cup A)$。锚集 $A$ 承外部锚定统一于命名传统选择，是唯一允许的外部输入，加入 $A$ 不构成跳跃。本条只给检测的数学形态与可判定性，不立治理结论，判定标记可归约与跳跃引入由检测执行。
++- 形式化：EPI-14 的每步可归约到前步，即每步属于前序步骤与锚集的后果闭包 $\mathrm{Cn}(P_i \cup A)$，见定义节判定；跳跃即闭包外元素，存在 $i$ 使 $p_i \notin \mathrm{Cn}(P_i \cup A)$。锚集 $A$ 承外部锚定统一于命名传统选择，是唯一允许的外部输入，加入 $A$ 不构成跳跃。本条只给检测的数学形态与可判定性，不立治理结论，判定标记可归约与跳跃引入由检测执行。原文「每个 Emanation 步的核心命题是否可归约回前步命题」见 epistrophe/14-on-reducibility.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-007-derivation-soundness-and-mirror.md b/order/entries/ORD-007-derivation-soundness-and-mirror.md
+index 6cbf66a..94898fd 100644
+--- a/order/entries/ORD-007-derivation-soundness-and-mirror.md
++++ b/order/entries/ORD-007-derivation-soundness-and-mirror.md
+@@ -46,7 +46,7 @@ $$p_i \in \mathrm{Cn}(\{p_1, \ldots, p_{i-1}\} \cup A) \label{eq:ord007-anchored
+ 
+ - 借鉴源：Tarski 语义后承与健全性定理传统 (Tarski 1933, 1936)，Kuratowski 闭包算子 (Kuratowski 1948)
+ - 哲学命题：EPI-12 单向流衍链结构弱点与复归镜像检验
+-- 形式化：EPI-12 断单向流衍「只能证明每步从前步来，不能证明每步真的」。本条目把该弱点拆为局部性质与全局性质之分：条件 (eq:ord007-anchored-chain) 逐边可检，是局部性质；全体步骤属于 $\mathrm{TRUTH}$ 是全局性质。健全性定理表明全局性质成立须锚真且 $\mathrm{Cn}$ 保真，而正向推衍只检查局部性质，不检查锚的真值；最小反例即原文「假融贯」的模型，链内融贯而锚假，终点假。镜像方向即缩回方向：有效性自末端回溯逐边 $\mathrm{Cn}$ 归属，独立性判 $p_i \notin \mathrm{Cn}(T_i)$，两者构成复归检验对单向推衍的机械补全
++- 形式化：EPI-12 断单向流衍「只能证明每步从前步来，不能证明每步真的」。本条目把该弱点拆为局部性质与全局性质之分：条件 (eq:ord007-anchored-chain) 逐边可检，是局部性质；全体步骤属于 $\mathrm{TRUTH}$ 是全局性质。健全性定理表明全局性质成立须锚真且 $\mathrm{Cn}$ 保真，而正向推衍只检查局部性质，不检查锚的真值；最小反例即原文「假融贯」的模型，链内融贯而锚假，终点假。镜像方向即缩回方向：有效性自末端回溯逐边 $\mathrm{Cn}$ 归属，独立性判 $p_i \notin \mathrm{Cn}(T_i)$，两者构成复归检验对单向推衍的机械补全。原文「Epistrophe 是 Emanation 的镜像」见 epistrophe/12-on-epistrophe.md 正本 L91。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-008-reference-reachability-and-dangling.md b/order/entries/ORD-008-reference-reachability-and-dangling.md
+index 9bf8bf9..23d2af0 100644
+--- a/order/entries/ORD-008-reference-reachability-and-dangling.md
++++ b/order/entries/ORD-008-reference-reachability-and-dangling.md
+@@ -46,7 +46,7 @@ $$\forall x \in D \setminus D_C,\ P(x) \label{eq:ord008-decontextualized}$$
+ 
+ - 借鉴源：图论可达性与传递闭包 (Warshall 1962, West 图论教材)，谓词论域限制 (Tarski 1933)
+ - 哲学命题：EPI-13 落地检测与去语境化检验
+-- 形式化：EPI-13 的倒推检查是自末端至首端逐步检查核心命题是否被后续步骤引用或修正，其数学形态是链引用图的出度为零检测：倒推是遍历方向，判定准则本身是向前的出度统计，末端步以自明豁免。孤悬命题即出度为零的非末端节点，是原文「孤悬命题」的图论显形。去语境化检验是谓词论域从 $D_C$ 扩至 $D$ 后仍成立的检验，判定为补域 $D \setminus D_C$ 的反例搜索；补域无限时该搜索不保证可判定，以有界搜索近似并如实降级结论。两维总判定即落地检测的通过条件，一维通过而另一维不通过时标注受限语境
++- 形式化：EPI-13 的倒推检查是自末端至首端逐步检查核心命题是否被后续步骤引用或修正，其数学形态是链引用图的出度为零检测：倒推是遍历方向，判定准则本身是向前的出度统计，末端步以自明豁免。孤悬命题即出度为零的非末端节点，是原文「孤悬命题」的图论显形。去语境化检验是谓词论域从 $D_C$ 扩至 $D$ 后仍成立的检验，判定为补域 $D \setminus D_C$ 的反例搜索；补域无限时该搜索不保证可判定，以有界搜索近似并如实降级结论。两维总判定即落地检测的通过条件，一维通过而另一维不通过时标注受限语境。原文「每个 Emanation 步的命题是否被后续引用或修正」见 epistrophe/13-on-grounding.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-009-commitment-closure-and-naming.md b/order/entries/ORD-009-commitment-closure-and-naming.md
+index 81822d5..283953b 100644
+--- a/order/entries/ORD-009-commitment-closure-and-naming.md
++++ b/order/entries/ORD-009-commitment-closure-and-naming.md
+@@ -56,7 +56,7 @@ $$e(n) = cl(\Sigma(n)) \label{eq:ord009-entity}$$
+ 
+ - 借鉴源：Knaster-Tarski 不动点定理与序理论的闭包算子传统，集合论子集关系
+ - 哲学命题：PRO-01 名字是本体与承诺不能事后撤回 (01- § 名字的本体论地位)，PRO-01-naming-failure 立名失败即名字与实体错位 (01- § 立名失败的形态)，PRO-01-lineage-principles 血统判定三原则 (01- § 追加节 2)
+-- 形式化：参与构成即闭包生成，$e(n) = cl(\Sigma(n))$，名字是生成元实体是闭包；不可撤回即不动点稳定，$e(n)$ 是单调算子的最小不动点，给定算子下不能从内部移除；立名失败即行为集 $b$ 与承诺闭包 $e(n)$ 的两向差集错位；保留延伸限定三档即子集关系的三分，不可比是原文未覆盖的边界
++- 形式化：参与构成即闭包生成，$e(n) = cl(\Sigma(n))$，名字是生成元实体是闭包；不可撤回即不动点稳定，$e(n)$ 是单调算子的最小不动点，给定算子下不能从内部移除；立名失败即行为集 $b$ 与承诺闭包 $e(n)$ 的两向差集错位；保留延伸限定三档即子集关系的三分，不可比是原文未覆盖的边界。原文「名字不是标签，名字是本体性的」见 proodos/01-ontology-of-names.md 正本 L6。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-010-falsification-and-counterexample.md b/order/entries/ORD-010-falsification-and-counterexample.md
+index 384e992..0f99739 100644
+--- a/order/entries/ORD-010-falsification-and-counterexample.md
++++ b/order/entries/ORD-010-falsification-and-counterexample.md
+@@ -55,7 +55,7 @@ $$P \iff \forall x \in \Omega,\ T(x) = 0 \label{eq:ord010-falsification-conditio
+ 
+ - 借鉴源：Popper 可证伪性划界判据，递归论与算术层级，Pi-1 句子与半可判定性
+ - 哲学命题：EPI-15 可证伪性检测，证伪条件三要素即观察对应物、独立性、可重复性，与四态判定，不可证伪不等于伪命题
+-- 形式化：EPI-15 的三要素对应值域条件、语法非循环、谓词可判定，见定义节；四态按证立方式分类，可证伪与部分可证伪锚经验观测，不可证伪与自明锚定义与逻辑。反例搜索半可判定性给敢于自我证伪以机械形态：证伪条件可判时反例存在则有限步暴露，反例不存在则搜索不保证停机，命题为真不靠搜索停机担保，而靠定义与逻辑形式担保。
++- 形式化：EPI-15 的三要素对应值域条件、语法非循环、谓词可判定，见定义节；四态按证立方式分类，可证伪与部分可证伪锚经验观测，不可证伪与自明锚定义与逻辑。反例搜索半可判定性给敢于自我证伪以机械形态：证伪条件可判时反例存在则有限步暴露，反例不存在则搜索不保证停机，命题为真不靠搜索停机担保，而靠定义与逻辑形式担保。原文「每个 Emanation 步的核心命题是否具备明确的证伪条件」见 epistrophe/15-on-falsifiability.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-011-well-founded-recursion-termination.md b/order/entries/ORD-011-well-founded-recursion-termination.md
+index 2fb9cf0..279d677 100644
+--- a/order/entries/ORD-011-well-founded-recursion-termination.md
++++ b/order/entries/ORD-011-well-founded-recursion-termination.md
+@@ -30,7 +30,7 @@ $$a_0 \succ a_1 \succ a_2 \succ \cdots \label{eq:ord011-well-founded}$$
+ 
+ - 借鉴源：良基归纳与良基递归是集合论与证明论的标准结构，Noether 条件与 von Neumann 序数定义为其经典形式
+ - 哲学命题：PRO-11 递归终止
+-- 形式化：PRO-11 断言元递归终止于自然，引文即自然不可被进一步元化：元递归在此终止。其数学形态正是良基关系：M → M′ → M′′ → ⋯ 的无限后退在数学上即无底的下降主张，须被一个无无穷降链的良基测度终止，正如 PRO-11 断言下方无更高。良基关系给出递归必须终止的序论确证。
++- 形式化：PRO-11 断言元递归终止于自然，引文即自然不可被进一步元化：元递归在此终止。其数学形态正是良基关系：M → M′ → M′′ → ⋯ 的无限后退在数学上即无底的下降主张，须被一个无无穷降链的良基测度终止，正如 PRO-11 断言下方无更高。良基关系给出递归必须终止的序论确证。原文「元递归在此终止：自然之上无更高」见 proodos/11-on-recursion-termination.md 正本 L39。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-016-well-founded-relation-and-backward-termination.md b/order/entries/ORD-016-well-founded-relation-and-backward-termination.md
+index d02578c..820f245 100644
+--- a/order/entries/ORD-016-well-founded-relation-and-backward-termination.md
++++ b/order/entries/ORD-016-well-founded-relation-and-backward-termination.md
+@@ -66,7 +66,7 @@ $F$ 与 $G$ 为补集共轭。对任意 $X$，$\overline{G(\overline{X})} = \{y
+ 
+ - 借鉴源：良基归纳与结构递归，König 1927，Dershowitz 与 Jouannaud 1990 改写终止，有向图可达性
+ - 哲学命题：EPI-13 落地检测与去语境化检验
+-- 形式化：原文「从 11- 倒推至 00-」是良基序上的逆向遍历，程序终止性由引用关系良基性担保，有限链情形即无环检查；「真命题必有用」即节点到用终点的路径存在性，是全局可达性质；「无悬空命题」即死区为空；去语境化维度由 ORD-008 承载，本条只承倒推程序侧。与 ORD-008 的分界，ORD-008 给可达性图视角与出度零判定，本条给程序良基性视角与全局死区不动点，性质对程序
++- 形式化：原文「从 11- 倒推至 00-」是良基序上的逆向遍历，程序终止性由引用关系良基性担保，有限链情形即无环检查；「真命题必有用」即节点到用终点的路径存在性，是全局可达性质；「无悬空命题」即死区为空；去语境化维度由 ORD-008 承载，本条只承倒推程序侧。与 ORD-008 的分界，ORD-008 给可达性图视角与出度零判定，本条给程序良基性视角与全局死区不动点，性质对程序。原文「每个 Emanation 步的命题是否被后续引用或修正」见 epistrophe/13-on-grounding.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-017-definability-and-definition-extension.md b/order/entries/ORD-017-definability-and-definition-extension.md
+index 09c45ec..48223fc 100644
+--- a/order/entries/ORD-017-definability-and-definition-extension.md
++++ b/order/entries/ORD-017-definability-and-definition-extension.md
+@@ -44,7 +44,7 @@
+ 
+ - 借鉴源：Tarski 可定义性传统，模型论定义扩张与保守扩张，证明论
+ - 哲学命题：EPI-14 可归约性检测，向上收拢归一检验
+-- 形式化：原文选 Reducibility 弃 Derivability 的命名区分，数学上即语言层归约对句法层后承的区分，本条承可定义性一侧；每步可归约回前步即新增符号在基语言内可定义，无外部跳跃即不出现不可定义符号；道家范畴唯一允许的外部锚定即锚集 $A$ 外源声明；判定标记可归约对跳跃引入即可定义性判定结果。与 ORD-006 的分界，ORD-006 判命题属否前步后果闭包，命题层，本条判符号在基语言内可定义否，语言层，两层独立
++- 形式化：原文选 Reducibility 弃 Derivability 的命名区分，数学上即语言层归约对句法层后承的区分，本条承可定义性一侧；每步可归约回前步即新增符号在基语言内可定义，无外部跳跃即不出现不可定义符号；道家范畴唯一允许的外部锚定即锚集 $A$ 外源声明；判定标记可归约对跳跃引入即可定义性判定结果。与 ORD-006 的分界，ORD-006 判命题属否前步后果闭包，命题层，本条判符号在基语言内可定义否，语言层，两层独立。原文「每个 Emanation 步的核心命题是否可归约回前步命题」见 epistrophe/14-on-reducibility.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md b/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md
+index 305e02c..56369b0 100644
+--- a/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md
++++ b/order/entries/ORD-018-coupled-fixed-point-and-mutual-construction.md
+@@ -52,7 +52,7 @@ $$(n_{k+1}, e_{k+1}) = (G(e_k), F(n_k)) \label{eq:ord014-kleene}$$
+ 
+ - 借鉴源：Knaster-Tarski 定理在乘积格的应用，耦合不动点与博弈论均衡存在，不动点迭代
+ - 哲学命题：PRO-01 名字是本体与承诺不能事后撤回
+-- 形式化：原文「名字一旦确立，它参与构成被命名者」是双向构成，数学形态即耦合方程组 $e = F(n)$ 且 $n = G(e)$，非单向闭包；「承诺不能事后撤回」即 Kleene 迭代单调性，承诺状态逐点不减；后续推导受名字约束即实体分量由 $F$ 从名字分量决定。与 ORD-009 的分界：ORD-009 承单向闭包模型，名字外生，本条承耦合模型，名字内生演化，ORD-009 是特例
++- 形式化：原文「名字一旦确立，它参与构成被命名者」是双向构成，数学形态即耦合方程组 $e = F(n)$ 且 $n = G(e)$，非单向闭包；「承诺不能事后撤回」即 Kleene 迭代单调性，承诺状态逐点不减；后续推导受名字约束即实体分量由 $F$ 从名字分量决定。与 ORD-009 的分界：ORD-009 承单向闭包模型，名字外生，本条承耦合模型，名字内生演化，ORD-009 是特例。原文「名字不是标签，名字是本体性的」见 proodos/01-ontology-of-names.md 正本 L6。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/probability/entries/PROB-001-law-of-large-numbers.md b/probability/entries/PROB-001-law-of-large-numbers.md
+index 8ff55b5..fd92624 100644
+--- a/probability/entries/PROB-001-law-of-large-numbers.md
++++ b/probability/entries/PROB-001-law-of-large-numbers.md
+@@ -30,7 +30,7 @@ $$\lim_{n \to \infty} \mathbb{P}(|S_n - \mu| > \varepsilon) = 0 \label{eq:prob00
+ 
+ - 借鉴源：Jacob Bernoulli 1713 年在 Ars Conjectandi 中证明 Bernoulli 大数定律，是概率论的第一个极限定理
+ - 哲学命题：PRO-07 鉴即多主体协作打破自证循环
+-- 形式化：PRO-07 鉴层要求多主体协作，每个主体独立给出判据。WLLN 给出该协作的统计刻画：只要各判据独立同分布且期望有限，判据算术平均依概率收敛到真值，即样本足够大时偏离超过任一固定阈值的概率可任意小。注意依概率不等于几乎必然，单条样本路径的收敛保证由 PROB-002 承载。
++- 形式化：PRO-07 鉴层要求多主体协作，每个主体独立给出判据。WLLN 给出该协作的统计刻画：只要各判据独立同分布且期望有限，判据算术平均依概率收敛到真值，即样本足够大时偏离超过任一固定阈值的概率可任意小。注意依概率不等于几乎必然，单条样本路径的收敛保证由 PROB-002 承载。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/probability/entries/PROB-002-strong-law-of-large-numbers.md b/probability/entries/PROB-002-strong-law-of-large-numbers.md
+index a78f89c..27ea5ab 100644
+--- a/probability/entries/PROB-002-strong-law-of-large-numbers.md
++++ b/probability/entries/PROB-002-strong-law-of-large-numbers.md
+@@ -46,7 +46,7 @@ Kolmogorov 零一律在部分 SLLN 证明中起辅助作用：$\lim S_n$ 的存
+ 
+ - 借鉴源：Kolmogorov 1930 年在 Sur la loi forte des grands nombres 中给出 SLLN 的一般性证明，是概率论从组合数学走向测度论后的第一个重大进展
+ - 哲学命题：PRO-07 鉴即多主体协作打破自证循环
+-- 形式化：PRO-07 鉴层要求多主体独立给出判据。SLLN 给出该协作的强统计刻画：判据独立同分布且期望存在时，判据均值的极限以概率 1 等于真值，见公式 $\ref{eq:prob002-slln}$。以概率 1 意为止可忽略例外而非必然，个别样本路径仍可能偏离，只是这类路径的概率为零
++- 形式化：PRO-07 鉴层要求多主体独立给出判据。SLLN 给出该协作的强统计刻画：判据独立同分布且期望存在时，判据均值的极限以概率 1 等于真值，见公式 $\ref{eq:prob002-slln}$。以概率 1 意为止可忽略例外而非必然，个别样本路径仍可能偏离，只是这类路径的概率为零。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/probability/entries/PROB-003-central-limit-theorem.md b/probability/entries/PROB-003-central-limit-theorem.md
+index e0bb192..d5dde00 100644
+--- a/probability/entries/PROB-003-central-limit-theorem.md
++++ b/probability/entries/PROB-003-central-limit-theorem.md
+@@ -42,7 +42,7 @@ Lindeberg 条件是 CLT 的另一充分条件。Lindeberg 条件比 Lyapunov 条
+ 
+ - 借鉴源：Laplace 1810 年在 Théorie analytique des probabilités 中给出中心极限定理直觉；Lindeberg 1922 年给出严格条件；Feller 1971 年给出系统化处理
+ - 哲学命题：PRO-07 鉴即多主体协作的统计稳定性
+-- 形式化：PRO-07 鉴层要求多主体协作打破自证循环。CLT 为该协作提供偏差的统计刻画：各主体判据独立同分布时，判据均值的标准化偏差收敛到正态分布，见公式 $\ref{eq:prob003-clt-limit}$，多主体投票的偏离行为可预测、可量化、可设置信区间，鉴层共识有可计算的置信度
++- 形式化：PRO-07 鉴层要求多主体协作打破自证循环。CLT 为该协作提供偏差的统计刻画：各主体判据独立同分布时，判据均值的标准化偏差收敛到正态分布，见公式 $\ref{eq:prob003-clt-limit}$，多主体投票的偏离行为可预测、可量化、可设置信区间，鉴层共识有可计算的置信度。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/probability/entries/PROB-004-large-deviation-principle.md b/probability/entries/PROB-004-large-deviation-principle.md
+index 5d809bf..faa118a 100644
+--- a/probability/entries/PROB-004-large-deviation-principle.md
++++ b/probability/entries/PROB-004-large-deviation-principle.md
+@@ -52,7 +52,7 @@ Cramér 定理的成立依赖以下公理条件。
+ 
+ - 借鉴源：Cramér 1938 年给出随机游走和的速率函数，Chernoff 1952 年给出指数矩方法，Dembo 与 Zeitouni 1998 年给出理论的系统处理
+ - 哲学命题：PRO-08 应，应论原文话题即治理如何应对未预见的挑战
+-- 形式化：应几针对当前尚不可观测的、需要预判的。大偏差原理为这类异常提供可精确计算的指数速率：偏离均值越远，速率函数 $I$ 取值越大，概率衰减越快，预判窗口与尾部风险量级均可量化。应辨与应几共同构成应对维度：LDP 把未发生的异常的概率速率显式化，应对的前置检测有尾部量化的口径可依
++- 形式化：应几针对当前尚不可观测的、需要预判的。大偏差原理为这类异常提供可精确计算的指数速率：偏离均值越远，速率函数 $I$ 取值越大，概率衰减越快，预判窗口与尾部风险量级均可量化。应辨与应几共同构成应对维度：LDP 把未发生的异常的概率速率显式化，应对的前置检测有尾部量化的口径可依。原文「司衡之应：应而不藏，应辨当下，应几未来。」见 proodos/08-on-settle.md 正本 L108。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/probability/entries/PROB-005-bayesian-updating.md b/probability/entries/PROB-005-bayesian-updating.md
+index 83afccd..332a193 100644
+--- a/probability/entries/PROB-005-bayesian-updating.md
++++ b/probability/entries/PROB-005-bayesian-updating.md
+@@ -49,7 +49,7 @@ $$P(H \mid E_1, E_2) = \frac{P(E_2 \mid H) P(H \mid E_1)}{P(E_2 \mid E_1)} \labe
+ 
+ - 借鉴源：Bayes 1763 年首次系统给出逆概率推理，Laplace 1774 年独立发展，de Finetti 1937 年建立协调性基础
+ - 哲学命题：PRO-07 鉴，鉴论原文话题即治理如何检验自己
+-- 形式化：客观要求不预设立场，不急于下判断。贝叶斯更新把该姿态形式化：先验是初始立场，似然是证据给出的事实，后验由两者之积决定，更新由似然驱动，先验不独自定论。映照要求只反映事实，不投射判断：证据充分时后验由似然主导，先验的权重被证据因子稀释，后验反映的是观测事实而非先验投射的判断。边界如实标注：弱证据下后验仍受先验牵引，结论的客观性依赖先验声明的诚实性
++- 形式化：客观要求不预设立场，不急于下判断。贝叶斯更新把该姿态形式化：先验是初始立场，似然是证据给出的事实，后验由两者之积决定，更新由似然驱动，先验不独自定论。映照要求只反映事实，不投射判断：证据充分时后验由似然主导，先验的权重被证据因子稀释，后验反映的是观测事实而非先验投射的判断。边界如实标注：弱证据下后验仍受先验牵引，结论的客观性依赖先验声明的诚实性。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/probability/entries/PROB-006-probability-measure.md b/probability/entries/PROB-006-probability-measure.md
+index f9822cf..0dcd1b9 100644
+--- a/probability/entries/PROB-006-probability-measure.md
++++ b/probability/entries/PROB-006-probability-measure.md
+@@ -39,7 +39,7 @@ $$P(\Omega) = 1, \quad P\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\i
+ 
+ - 借鉴源：Kolmogorov 1933 年在 Grundbegriffe der Wahrscheinlichkeitsrechnung 中以测度论公理化概率论
+ - 哲学命题：PRO-07 鉴，鉴论原文话题即治理如何检验自己。
+-- 形式化：PRO-07 鉴确立检验由可重复程序承载，鉴层的统计型检验陈述即某类结果出现的频率是否稳定。概率测度使频率陈述严格：试验形式化为样本空间上的测度，重复检验的频率稳定性由 PROB-001 与 PROB-002 承载，置信型陈述由 PROB-003 承载。概率测度本身不立治理结论，只使鉴层的统计语言有明确定义域
++- 形式化：PRO-07 鉴确立检验由可重复程序承载，鉴层的统计型检验陈述即某类结果出现的频率是否稳定。概率测度使频率陈述严格：试验形式化为样本空间上的测度，重复检验的频率稳定性由 PROB-001 与 PROB-002 承载，置信型陈述由 PROB-003 承载。概率测度本身不立治理结论，只使鉴层的统计语言有明确定义域。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/probability/entries/PROB-007-expectation.md b/probability/entries/PROB-007-expectation.md
+index 9f12201..a5bc40a 100644
+--- a/probability/entries/PROB-007-expectation.md
++++ b/probability/entries/PROB-007-expectation.md
+@@ -35,7 +35,7 @@ $$\mathbb{E}[X] = \int_{\Omega} X \, dP \label{eq:prob007-lebesgue-integral}$$
+ 
+ - 借鉴源：Huygens 1657 年在 De Ratiociniis in Ludo Aleae 中以公平赌注引入期望思想，Kolmogorov 1933 年将其定义为测度意义下的积分
+ - 哲学命题：PRO-07 鉴，鉴论原文话题即治理如何检验自己。
+-- 形式化：PRO-07 鉴层以多次独立检验获得判据读数，读数的长期平均是否稳定、稳定在哪里，是检验陈述的基础。期望给出该中心值的严格定义，而平均的稳定性由 PROB-001 与 PROB-002 承载：样本均值依概率乃至几乎必然收敛到期望。期望本身不立治理结论，只使读数的中心值有明确定义。
++- 形式化：PRO-07 鉴层以多次独立检验获得判据读数，读数的长期平均是否稳定、稳定在哪里，是检验陈述的基础。期望给出该中心值的严格定义，而平均的稳定性由 PROB-001 与 PROB-002 承载：样本均值依概率乃至几乎必然收敛到期望。期望本身不立治理结论，只使读数的中心值有明确定义。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/probability/entries/PROB-008-information-content-and-falsifiability.md b/probability/entries/PROB-008-information-content-and-falsifiability.md
+index 5d22d4a..b938bf2 100644
+--- a/probability/entries/PROB-008-information-content-and-falsifiability.md
++++ b/probability/entries/PROB-008-information-content-and-falsifiability.md
+@@ -57,7 +57,7 @@ $$C(P \cap Q) \geq \max(C(P), C(Q)) \label{eq:prob008-conjunction}$$
+ 
+ - 借鉴源：Popper 可证伪划界标准与信息含量讨论，测度论概率
+ - 哲学命题：EPI-15 可证伪性检测，四态判定与不可证伪不等于伪命题
+-- 形式化：原文「真命题的标志：敢于自我证伪，明确指定证伪条件」即 $C(P) > 0$ 加证伪条件三要素满足；「tautology 在所有条件下成立，无适用边界」的数学形态即 $P = \Omega$，$C(P) = 0$；四态按内容分界，重言态零内容，可证伪态正内容加三要素，部分可证伪态正内容而条件覆盖不全，定理层不可证伪态内容被公理层吸收；不怕错怕不可被证伪即治理权重在内容不在真假。与 ORD-010 的分界：ORD-010 给三要素可判定性与反例搜索半可判定性，定性侧，本条给内容测度 $C$ 与单调性，定量侧，两者互补
++- 形式化：原文「真命题的标志：敢于自我证伪，明确指定证伪条件」即 $C(P) > 0$ 加证伪条件三要素满足；「tautology 在所有条件下成立，无适用边界」的数学形态即 $P = \Omega$，$C(P) = 0$；四态按内容分界，重言态零内容，可证伪态正内容加三要素，部分可证伪态正内容而条件覆盖不全，定理层不可证伪态内容被公理层吸收；不怕错怕不可被证伪即治理权重在内容不在真假。与 ORD-010 的分界：ORD-010 给三要素可判定性与反例搜索半可判定性，定性侧，本条给内容测度 $C$ 与单调性，定量侧，两者互补。原文「每个 Emanation 步的核心命题是否具备明确的证伪条件」见 epistrophe/15-on-falsifiability.md 正本 L3。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md b/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md
+index 37f4ecb..0edbb5e 100644
+--- a/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md
++++ b/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md
+@@ -82,7 +82,7 @@ Shannon 诚实边界。原文声明 Shannon 锚定为启发性类比而非严格
+ 
+ - 借鉴源：Fano 1961 误差概率计算，贝叶斯决策论最小错误估计，条件熵
+ - 哲学命题：PRO-04 道三，代码自晦意图必复 (04- § 道三命题)
+-- 形式化：原文「维护之前必须先恢复意图，恢复是维护的因果前提」即恢复器 $s$ 先于维护动作，数学形态即估计问题先行；自晦即 $f$ 非单射，定理一给 $H(I \mid C) > 0$；必复即 Fano 下界，恢复存在且精度有下界；原文诚实声明 Shannon 锚定为启发性类比，本件给有限离散严格版；「技艺高者损失少，但仍有损失」的数学形态即先验可降下界，但非单射纤维保任何恢复器 $P_e$ 严格正。与 ALG-009 的分界：ALG-009 承恢复的代数结构，截面存在性与非唯一性，本条承恢复的精度下界，概率侧，两者互补
++- 形式化：原文「维护之前必须先恢复意图，恢复是维护的因果前提」即恢复器 $s$ 先于维护动作，数学形态即估计问题先行；自晦即 $f$ 非单射，定理一给 $H(I \mid C) > 0$；必复即 Fano 下界，恢复存在且精度有下界；原文诚实声明 Shannon 锚定为启发性类比，本件给有限离散严格版；「技艺高者损失少，但仍有损失」的数学形态即先验可降下界，但非单射纤维保任何恢复器 $P_e$ 严格正。与 ALG-009 的分界：ALG-009 承恢复的代数结构，截面存在性与非唯一性，本条承恢复的精度下界，概率侧，两者互补。原文「道三：代码自晦，意图必复。」见 proodos/04-on-third-tao.md 正本 L15。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/topology/entries/TOP-001-banach-fixed-point.md b/topology/entries/TOP-001-banach-fixed-point.md
+index fb0b708..bd0b41a 100644
+--- a/topology/entries/TOP-001-banach-fixed-point.md
++++ b/topology/entries/TOP-001-banach-fixed-point.md
+@@ -29,7 +29,7 @@ $$d(x_n, x^*) \leq \frac{q^n}{1 - q} \cdot d(x_1, x_0) \label{eq:top001-converge
+ 
+ - 借鉴源：Banach 1922 年在 Sur les opérations dans les ensembles abstraits et leur application aux équations intégrales 中的原始证明
+ - 哲学命题：PRO-08 应而不藏即应层留痕的收敛性，PRO-07 鉴即检验的可重复性
+-- 形式化：PRO-08 应层要求治理操作留痕形成序列，序列的极限存在性是应层收敛的数学刻画。Banach 定理为应层序列提供不动点存在性保证：只要迭代是压缩的，留痕序列必收敛到唯一状态。PRO-07 鉴层要求检验可重复，压缩映射的唯一不动点保证可重复检验必给出一致结论。
++- 形式化：PRO-08 应层要求治理操作留痕形成序列，序列的极限存在性是应层收敛的数学刻画。Banach 定理为应层序列提供不动点存在性保证：只要迭代是压缩的，留痕序列必收敛到唯一状态。PRO-07 鉴层要求检验可重复，压缩映射的唯一不动点保证可重复检验必给出一致结论。原文「司衡之应：应而不藏，应辨当下，应几未来。」见 proodos/08-on-settle.md 正本 L108；原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/topology/entries/TOP-002-brouwer-fixed-point.md b/topology/entries/TOP-002-brouwer-fixed-point.md
+index 9a36213..fcf9518 100644
+--- a/topology/entries/TOP-002-brouwer-fixed-point.md
++++ b/topology/entries/TOP-002-brouwer-fixed-point.md
+@@ -34,7 +34,7 @@ Brouwer 定理不要求 f 是压缩映射，与 Banach 不同，不要求单调
+ 
+ - 借鉴源：Brouwer 1910 年在 Über Abbildung von Mannigfaltigkeiten 中证明 n 维情形
+ - 哲学命题：PRO-07 鉴即多主体协作打破自证循环，PRO-02 道一即发散自然、收敛必为
+-- 形式化：PRO-07 鉴层要求多主体协作收敛到共识。Brouwer 定理给出该收敛的存在性条件：判据空间为紧凸集且判据更新连续时稳定判据存在，但只保证存在不保证迭代到达。PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量，本定理给出此类外部迭代下稳定态存在的一组数学条件，区别于 Banach 的压缩条件与 Knaster-Tarski 的偏序条件
++- 形式化：PRO-07 鉴层要求多主体协作收敛到共识。Brouwer 定理给出该收敛的存在性条件：判据空间为紧凸集且判据更新连续时稳定判据存在，但只保证存在不保证迭代到达。PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量，本定理给出此类外部迭代下稳定态存在的一组数学条件，区别于 Banach 的压缩条件与 Knaster-Tarski 的偏序条件。原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61；原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/topology/entries/TOP-003-knaster-tarski-mirror.md b/topology/entries/TOP-003-knaster-tarski-mirror.md
+index d0a0df1..5a53bd1 100644
+--- a/topology/entries/TOP-003-knaster-tarski-mirror.md
++++ b/topology/entries/TOP-003-knaster-tarski-mirror.md
+@@ -39,7 +39,7 @@ Lawvere-Tierney 拓扑，1970 年代拓扑斯理论，给出更一般的拓扑
+ 
+ - 借鉴源：Tarski 1955 年在 A lattice-theoretical fixpoint theorem and its applications 中证明偏序集版本，Smyth 1978 年在 Power domains and predicate transformers 中将其推广到 dcpo + Scott 拓扑
+ - 哲学命题：PRO-02 道一，发散自然、收敛必为
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量。本条给出该要求在序结构上的实现条件分层：外部迭代若保有向并则最小稳定态可构造到达，见公式 $\ref{eq:top003-greatest-fixed-point}$；若仅单调则须超限迭代；条件不满足时收敛无保证，治理须回查迭代设计而非空谈稳定
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求且收敛需外部治理力量。本条给出该要求在序结构上的实现条件分层：外部迭代若保有向并则最小稳定态可构造到达，见公式 $\ref{eq:top003-greatest-fixed-point}$；若仅单调则须超限迭代；条件不满足时收敛无保证，治理须回查迭代设计而非空谈稳定。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/topology/entries/TOP-004-metric-space.md b/topology/entries/TOP-004-metric-space.md
+index 1833cf0..b436aea 100644
+--- a/topology/entries/TOP-004-metric-space.md
++++ b/topology/entries/TOP-004-metric-space.md
+@@ -50,7 +50,7 @@ $$d(x, z) \leq d(x, y) + d(y, z) \quad \forall x, y, z \in X \label{eq:top004-tr
+ 
+ - 借鉴源：Maurice Fréchet 1906 年在 Sur quelques points du calcul fonctionnel 中引入度量空间概念，Felix Hausdorff 1914 年在 Grundzüge der Mengenlehre 中系统化
+ - 哲学命题：PRO-02 道一即发散自然、收敛必为，PRO-07 鉴即多主体距离的可量化
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求，度量结构使收敛可判定：状态配以度量 $d$ 后，接近程度可量化，迭代是否趋于稳定有明确的数学刻画。PRO-07 鉴层要求多主体协作打破自证循环，度量空间为多主体判据的距离提供量化工具，多主体判据的距离可计算、可比较、可设阈值
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求，度量结构使收敛可判定：状态配以度量 $d$ 后，接近程度可量化，迭代是否趋于稳定有明确的数学刻画。PRO-07 鉴层要求多主体协作打破自证循环，度量空间为多主体判据的距离提供量化工具，多主体判据的距离可计算、可比较、可设阈值。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89；原文「镜的特点是纯粹映照」见 proodos/07-on-assay.md 正本 L61。
+ 
+ ## 在工程的应用 {#engineering-application}
+ 
+diff --git a/topology/entries/TOP-005-complete-metric-space.md b/topology/entries/TOP-005-complete-metric-space.md
+index 35defc9..b9e5445 100644
+--- a/topology/entries/TOP-005-complete-metric-space.md
++++ b/topology/entries/TOP-005-complete-metric-space.md
+@@ -44,7 +44,7 @@ $$\lim_{n \to \infty} d(x_n, x^*) = 0 \label{eq:top005-limit-convergence}$$
+ 
+ - 借鉴源：Georg Cantor 1883 年在 Grundlagen einer allgemeinen Mannigfaltigkeitslehre 中给出闭球嵌套原理的实数版本，Maurice Fréchet 1906 年在 Sur quelques points du calcul fonctionnel 中给出度量空间完备性的现代定义
+ - 哲学命题：PRO-02 道一即发散自然、收敛必为，PRO-08 应而不藏即应层留痕序列的极限可达
+-- 形式化：PRO-02 道一确立收敛是治理的构成性要求，完备度量空间给出收敛可达的一组充分条件：状态空间完备时 Cauchy 迭代序列的极限在空间内取得，见公式 $\ref{eq:top005-limit-convergence}$，实现条件不满足时收敛无保证。PRO-08 应层留痕形成序列，留痕序列的极限由完备性保证在空间中可达，使应层留痕闭合
++- 形式化：PRO-02 道一确立收敛是治理的构成性要求，完备度量空间给出收敛可达的一组充分条件：状态空间完备时 Cauchy 迭代序列的极限在空间内取得，见公式 $\ref{eq:top005-limit-convergence}$，实现条件不满足时收敛无保证。PRO-08 应层留痕形成序列，留痕序列的极限由完备性保证在空间中可达，使应层留痕闭合。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89；原文「司衡之应：应而不藏，应辨当下，应几未来。」见 proodos/08-on-settle.md 正本 L108。
+ 
+ ## 证明思路 {#proof-sketch}
+ 
+diff --git a/topology/entries/TOP-006-compact-set.md b/topology/entries/TOP-006-compact-set.md
+index b8ca2a1..31ca7de 100644
+--- a/topology/entries/TOP-006-compact-set.md
++++ b/topology/entries/TOP-006-compact-set.md
+@@ -46,7 +46,7 @@ Heine-Borel 定理：$\mathbb{R}^n$ 的子集是紧集当且仅当它闭且有
+ 
+ - 借鉴源：Heine 与 Borel 于 1880 年代与 1890 年代在 $\mathbb{R}^n$ 语境中分别独立建立有限覆盖性质
+ - 哲学命题：PRO-02 道一即发散自然、收敛必为，PRO-08 应而不藏即应层留痕
+-- 形式化：PRO-02 道一确立收敛是治理的构成性条件，紧性给出收敛存在的一组结构性充分条件：序列紧刻画保证空间内的任意留痕序列必有收敛子列，收敛必为在紧决策空间中不是空诺。极值定理保证紧空间上实值连续函数必取到极值，决策评估有确定端点，端点存在性由结构保证而非搜索保证。PRO-08 应层留痕形成序列，紧性保证该序列存在收敛子列，使留痕的收敛子结构有存在性保证，应层序列的收敛分析因此是有确定答案的问题
++- 形式化：PRO-02 道一确立收敛是治理的构成性条件，紧性给出收敛存在的一组结构性充分条件：序列紧刻画保证空间内的任意留痕序列必有收敛子列，收敛必为在紧决策空间中不是空诺。极值定理保证紧空间上实值连续函数必取到极值，决策评估有确定端点，端点存在性由结构保证而非搜索保证。PRO-08 应层留痕形成序列，紧性保证该序列存在收敛子列，使留痕的收敛子结构有存在性保证，应层序列的收敛分析因此是有确定答案的问题。原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89；原文「司衡之应：应而不藏，应辨当下，应几未来。」见 proodos/08-on-settle.md 正本 L108。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 
+diff --git a/topology/entries/TOP-007-continuous-mapping.md b/topology/entries/TOP-007-continuous-mapping.md
+index 8906b4d..b64a198 100644
+--- a/topology/entries/TOP-007-continuous-mapping.md
++++ b/topology/entries/TOP-007-continuous-mapping.md
+@@ -42,7 +42,7 @@
+ 
+ - 借鉴源：连续性由分析学 epsilon-delta 语言推广为拓扑空间原像定义，Fréchet 1906 年给出度量空间版本，Hausdorff 1914 年给出一般拓扑空间版本
+ - 哲学命题：PRO-08 应而不藏，应辨之道家根为用心若镜，PRO-02 道一即发散自然、收敛必为
+-- 形式化：PRO-08 应辨的道家根是用心若镜，镜映物不失真。不失真的数学刻画即连续性：状态到应对的映射连续，则状态的小扰动只引起应对的小变化，应对无突变失真，连续性是对应对状态忠实的前提条件。PRO-02 道一确立收敛不是自发的，需要外部的、系统的、持续的治理力量，连续映射保持收敛序列：$x_n \to x$ 蕴含 $f(x_n) \to f(x)$，治理迭代的收敛经连续响应传递，为应层动作的收敛随状态的收敛提供结构条件
++- 形式化：PRO-08 应辨的道家根是用心若镜，镜映物不失真。不失真的数学刻画即连续性：状态到应对的映射连续，则状态的小扰动只引起应对的小变化，应对无突变失真，连续性是对应对状态忠实的前提条件。PRO-02 道一确立收敛不是自发的，需要外部的、系统的、持续的治理力量，连续映射保持收敛序列：$x_n \to x$ 蕴含 $f(x_n) \to f(x)$，治理迭代的收敛经连续响应传递，为应层动作的收敛随状态的收敛提供结构条件。原文「司衡之应：应而不藏，应辨当下，应几未来。」见 proodos/08-on-settle.md 正本 L108；原文「司衡之道一：发散自-然，收敛必-为。」见 proodos/02-on-first-tao.md 正本 L89。
+ 
+ ## 在 facet 的应用 {#facet-application}
+ 

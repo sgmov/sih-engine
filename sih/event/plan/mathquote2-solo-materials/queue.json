@@ -1,0 +1,471 @@
+{
+  "scope": "four sub-repos (topology/probability/order/algebra), calculus excluded",
+  "total_bridge_entries": 47,
+  "anchored_count": 13,
+  "missing_anchor_count": 34,
+  "anchored_list": [
+    "ALG-002-equivalence-relation-and-quotient-isolation",
+    "ORD-015-coinduction-and-mirror-duality",
+    "ORD-019-version-order-and-externalized-state-store",
+    "ORD-020-total-order-resource-allocation-deadlock-freedom",
+    "ORD-021-dependency-dag-topological-order",
+    "ORD-022-degradation-well-founded-chain",
+    "PROB-010-hypothesis-testing-and-significance",
+    "PROB-011-estimation-and-confidence-intervals",
+    "PROB-012-correlation-and-regression",
+    "PROB-013-stationarity-and-change-point",
+    "PROB-014-expected-information-gain",
+    "PROB-015-littles-law-and-load-bound",
+    "TOP-008-separation-axioms-and-neighborhood-isolation"
+  ],
+  "missing_list": [
+    "ALG-001-matrix-and-eigenvalue",
+    "ALG-008-kernel-and-fiber",
+    "ALG-009-rank-nullity-and-section",
+    "ALG-010-factorization-and-invariance",
+    "ORD-001-partially-ordered-set",
+    "ORD-002-complete-lattice",
+    "ORD-003-knaster-tarski-fixed-point",
+    "ORD-004-monotone-operator",
+    "ORD-005-chains-and-antichains",
+    "ORD-006-closure-and-consequence-operator",
+    "ORD-007-derivation-soundness-and-mirror",
+    "ORD-008-reference-reachability-and-dangling",
+    "ORD-009-commitment-closure-and-naming",
+    "ORD-010-falsification-and-counterexample",
+    "ORD-011-well-founded-recursion-termination",
+    "ORD-016-well-founded-relation-and-backward-termination",
+    "ORD-017-definability-and-definition-extension",
+    "ORD-018-coupled-fixed-point-and-mutual-construction",
+    "PROB-001-law-of-large-numbers",
+    "PROB-002-strong-law-of-large-numbers",
+    "PROB-003-central-limit-theorem",
+    "PROB-004-large-deviation-principle",
+    "PROB-005-bayesian-updating",
+    "PROB-006-probability-measure",
+    "PROB-007-expectation",
+    "PROB-008-information-content-and-falsifiability",
+    "PROB-009-fano-inequality-and-recovery-bound",
+    "TOP-001-banach-fixed-point",
+    "TOP-002-brouwer-fixed-point",
+    "TOP-003-knaster-tarski-mirror",
+    "TOP-004-metric-space",
+    "TOP-005-complete-metric-space",
+    "TOP-006-compact-set",
+    "TOP-007-continuous-mapping"
+  ],
+  "detail": [
+    {
+      "stem": "TOP-001-banach-fixed-point",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07",
+        "PRO-08"
+      ]
+    },
+    {
+      "stem": "TOP-002-brouwer-fixed-point",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "TOP-003-knaster-tarski-mirror",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "TOP-004-metric-space",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "TOP-005-complete-metric-space",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-08"
+      ]
+    },
+    {
+      "stem": "TOP-006-compact-set",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-08"
+      ]
+    },
+    {
+      "stem": "TOP-007-continuous-mapping",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-08"
+      ]
+    },
+    {
+      "stem": "TOP-008-separation-axioms-and-neighborhood-isolation",
+      "subrepo": "topology",
+      "bridge": true,
+      "anchored": true,
+      "refs": [
+        "P3.3"
+      ]
+    },
+    {
+      "stem": "PROB-001-law-of-large-numbers",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-002-strong-law-of-large-numbers",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-003-central-limit-theorem",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-004-large-deviation-principle",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-08"
+      ]
+    },
+    {
+      "stem": "PROB-005-bayesian-updating",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-006-probability-measure",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-007-expectation",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "PROB-008-information-content-and-falsifiability",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-15"
+      ]
+    },
+    {
+      "stem": "PROB-009-fano-inequality-and-recovery-bound",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-04"
+      ]
+    },
+    {
+      "stem": "PROB-010-hypothesis-testing-and-significance",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "PROB-011-estimation-and-confidence-intervals",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "PROB-012-correlation-and-regression",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "PROB-013-stationarity-and-change-point",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "PROB-014-expected-information-gain",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "PROB-015-littles-law-and-load-bound",
+      "subrepo": "probability",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "ORD-001-partially-ordered-set",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "ORD-002-complete-lattice",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "ORD-003-knaster-tarski-fixed-point",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "ORD-004-monotone-operator",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "ORD-005-chains-and-antichains",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02"
+      ]
+    },
+    {
+      "stem": "ORD-006-closure-and-consequence-operator",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-14"
+      ]
+    },
+    {
+      "stem": "ORD-007-derivation-soundness-and-mirror",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-12"
+      ]
+    },
+    {
+      "stem": "ORD-008-reference-reachability-and-dangling",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-13"
+      ]
+    },
+    {
+      "stem": "ORD-009-commitment-closure-and-naming",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-01"
+      ]
+    },
+    {
+      "stem": "ORD-010-falsification-and-counterexample",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-15"
+      ]
+    },
+    {
+      "stem": "ORD-011-well-founded-recursion-termination",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-11"
+      ]
+    },
+    {
+      "stem": "ORD-015-coinduction-and-mirror-duality",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": true,
+      "refs": [
+        "EPI-12"
+      ]
+    },
+    {
+      "stem": "ORD-016-well-founded-relation-and-backward-termination",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-13"
+      ]
+    },
+    {
+      "stem": "ORD-017-definability-and-definition-extension",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "EPI-14"
+      ]
+    },
+    {
+      "stem": "ORD-018-coupled-fixed-point-and-mutual-construction",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-01"
+      ]
+    },
+    {
+      "stem": "ORD-019-version-order-and-externalized-state-store",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": true,
+      "refs": [
+        "P3.2"
+      ]
+    },
+    {
+      "stem": "ORD-020-total-order-resource-allocation-deadlock-freedom",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "ORD-021-dependency-dag-topological-order",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "ORD-022-degradation-well-founded-chain",
+      "subrepo": "order",
+      "bridge": true,
+      "anchored": true,
+      "refs": []
+    },
+    {
+      "stem": "ALG-001-matrix-and-eigenvalue",
+      "subrepo": "algebra",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-02",
+        "PRO-07"
+      ]
+    },
+    {
+      "stem": "ALG-002-equivalence-relation-and-quotient-isolation",
+      "subrepo": "algebra",
+      "bridge": true,
+      "anchored": true,
+      "refs": [
+        "P3.3"
+      ]
+    },
+    {
+      "stem": "ALG-008-kernel-and-fiber",
+      "subrepo": "algebra",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-03"
+      ]
+    },
+    {
+      "stem": "ALG-009-rank-nullity-and-section",
+      "subrepo": "algebra",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-04"
+      ]
+    },
+    {
+      "stem": "ALG-010-factorization-and-invariance",
+      "subrepo": "algebra",
+      "bridge": true,
+      "anchored": false,
+      "refs": [
+        "PRO-03"
+      ]
+    }
+  ]
+}
