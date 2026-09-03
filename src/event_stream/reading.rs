@@ -1,9 +1,12 @@
 //! 读数事件守卫与构建，承接 SPEC-011#data-contract 与 SPEC-011#persistence。
 //!
-//! reading_recorded 事件是秤星 record 动作的落链形态。守卫只校七字段形态
-//! 不评读数高低，即只报不判的写入侧对应：多字段少字段拒、维度三枚举、
-//! 值零到一或 insufficient 标记、公式版本 ga 数字形、摘要六十四位十六进制。
-//! 建议排序自动处置三字段经多字段拒显式拦，零 LLM 只记不判。
+//! reading_recorded 事件是秤星 record 动作的落链形态。守卫只校字段形态
+//! 不评读数高低，即只报不判的写入侧对应：七必填字段缺即拒、扩展字段
+//! 形态违例即拒、维度三枚举、值零到一或 insufficient 标记、公式版本 ga
+//! 数字形、摘要六十四位十六进制。ga-2 增量扩展即七必填字段只增不删，
+//! confidence_band 与 posterior_mean 两扩展字段仅 adoption 维出且可选，
+//! ga-1 七字段读数回放兼容。建议排序自动处置三字段经多字段拒显式拦，
+//! 零 LLM 只记不判。
 
 use crate::event_stream::event::{Actor, EventInput};
 use serde_json::Value;
@@ -18,6 +21,9 @@ pub const READING_FIELDS: [&str; 7] = [
     "computed_at",
     "inputs_digest",
 ];
+
+/// ga-2 增量扩展字段，可选且仅 adoption 维出，随 SPEC-011 修订记录扩展。
+pub const READING_EXT_FIELDS: [&str; 2] = ["confidence_band", "posterior_mean"];
 
 /// 维度轴值三枚举，随 SPEC-011 三维定义冻结。
 pub const READING_DIMENSIONS: [&str; 3] = ["convergence", "adoption", "mergeback"];
@@ -94,7 +100,7 @@ pub fn guard_reading(text: &str) -> Result<Value, ReadingError> {
 
     let mut extra = Vec::new();
     for key in obj.keys() {
-        if !READING_FIELDS.contains(&key.as_str()) {
+        if !READING_FIELDS.contains(&key.as_str()) && !READING_EXT_FIELDS.contains(&key.as_str()) {
             extra.push(key.clone());
         }
     }
@@ -139,6 +145,51 @@ pub fn guard_reading(text: &str) -> Result<Value, ReadingError> {
                 field: "value".into(),
                 reason: "非零到一数值亦非 insufficient 标记".into(),
             })
+        }
+    }
+
+    // ga-2 扩展字段形态校验：confidence_band 为 {lower, upper} 零到一且 lower<=upper，
+    // posterior_mean 为零到一数值；扩展字段仅 adoption 维出，他维出现即拒。
+    if let Some(cb) = obj.get("confidence_band") {
+        if dim != "adoption" {
+            return Err(ReadingError::BadField {
+                field: "confidence_band".into(),
+                reason: format!("非 adoption 维出现 {dim}"),
+            });
+        }
+        let lo = cb.get("lower").and_then(Value::as_f64);
+        let up = cb.get("upper").and_then(Value::as_f64);
+        let (Some(lo), Some(up)) = (lo, up) else {
+            return Err(ReadingError::BadField {
+                field: "confidence_band".into(),
+                reason: "lower 与 upper 缺一或非数值".into(),
+            });
+        };
+        if !(0.0..=1.0).contains(&lo) || !(0.0..=1.0).contains(&up) || lo > up {
+            return Err(ReadingError::BadField {
+                field: "confidence_band".into(),
+                reason: format!("越零一到界或 lower 大于 upper {lo} {up}"),
+            });
+        }
+    }
+    if let Some(pm) = obj.get("posterior_mean") {
+        if dim != "adoption" {
+            return Err(ReadingError::BadField {
+                field: "posterior_mean".into(),
+                reason: format!("非 adoption 维出现 {dim}"),
+            });
+        }
+        let v = pm
+            .as_f64()
+            .ok_or_else(|| ReadingError::BadField {
+                field: "posterior_mean".into(),
+                reason: "非数值".into(),
+            })?;
+        if !(0.0..=1.0).contains(&v) {
+            return Err(ReadingError::BadField {
+                field: "posterior_mean".into(),
+                reason: format!("越零一到界 {v}"),
+            });
         }
     }
 
@@ -280,6 +331,55 @@ mod tests {
         assert!(guard_reading(&ins).is_ok());
         assert!(guard_reading(&good().replace("0.5", "0.0")).is_ok());
         assert!(guard_reading(&good().replace("0.5", "1.0")).is_ok());
+    }
+
+    fn good_ga2() -> String {
+        r#"{"dimension":"adoption","subject":"agents","value":0.5,"window":"2026-08-01/2026-08-30","formula_version":"ga-2","computed_at":"2026-08-30","inputs_digest":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","confidence_band":{"lower":0.0,"upper":1.0},"posterior_mean":0.5}"#.into()
+    }
+
+    #[test]
+    fn r6_guard_accepts_ga2_ext_fields() {
+        assert!(guard_reading(&good_ga2()).is_ok());
+    }
+
+    #[test]
+    fn r7_guard_rejects_malformed_ga2_ext() {
+        // confidence_band 越界
+        let bad_lo = good_ga2().replace("\"lower\":0.0", "\"lower\":-0.1");
+        assert!(matches!(
+            guard_reading(&bad_lo),
+            Err(ReadingError::BadField { field, .. }) if field == "confidence_band"
+        ));
+        // confidence_band lower 大于 upper
+        let bad_ord = good_ga2().replace("\"lower\":0.0,\"upper\":1.0", "\"lower\":0.9,\"upper\":0.1");
+        assert!(matches!(
+            guard_reading(&bad_ord),
+            Err(ReadingError::BadField { field, .. }) if field == "confidence_band"
+        ));
+        // posterior_mean 越界
+        let bad_pm = good_ga2().replace("\"posterior_mean\":0.5", "\"posterior_mean\":1.5");
+        assert!(matches!(
+            guard_reading(&bad_pm),
+            Err(ReadingError::BadField { field, .. }) if field == "posterior_mean"
+        ));
+        // 扩展字段出现在非 adoption 维
+        let bad_dim = good_ga2().replace("\"dimension\":\"adoption\"", "\"dimension\":\"convergence\"");
+        assert!(matches!(
+            guard_reading(&bad_dim),
+            Err(ReadingError::BadField { field, .. }) if field == "confidence_band"
+        ));
+        // 未知扩展字段仍拒
+        let bad_extra = good_ga2().replace("\"posterior_mean\":0.5", "\"posterior_mean\":0.5,\"suggestion\":\"加码\"");
+        assert!(matches!(
+            guard_reading(&bad_extra),
+            Err(ReadingError::ExtraField(e)) if e.contains("suggestion")
+        ));
+    }
+
+    #[test]
+    fn r8_ga1_reading_still_accepted() {
+        // ga-1 七字段读数在 ga-2 守卫下回放兼容
+        assert!(guard_reading(&good()).is_ok());
     }
 
     #[test]

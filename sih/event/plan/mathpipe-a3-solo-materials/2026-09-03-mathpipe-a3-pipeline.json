@@ -1,0 +1,35 @@
+{
+  "formatter": [
+    {"target": "sih-engine/doc/spec/SPEC-011-governance-state-reading.md", "exit": 0},
+    {"target": "sih-math/docs/mathpipe-a3-derivation-2026-09-03.md", "exit": 0},
+    {"target": "sih-tools/gauge/CONTRACT.md", "exit": 0},
+    {"target": "sih-tools/gauge/src/gauge/cli.py", "exit": 2, "note": "general-v1 扩展域只盖 md/json/yaml/toml，py 域外如实记"},
+    {"target": "sih-tools/gauge/tests/test_gauge.py", "exit": 2, "note": "同上域外如实记"},
+    {"target": "sih-engine/src/event_stream/reading.rs", "exit": 2, "note": "同上域外如实记"}
+  ],
+  "scrutinator": [
+    {"target": "sih-engine/doc/spec/SPEC-011-governance-state-reading.md", "exit": 2, "note": "工地路径不命中 des-001 域，corpus 域形路径重跑 exit 0 findings 0 双证"},
+    {"target": "sih-math/docs/mathpipe-a3-derivation-2026-09-03.md", "exit": 2, "note": "des-001 域只盖 sih-engine/doc，math docs 域外如实记不属违规"},
+    {"target": "sih-tools/gauge/CONTRACT.md", "exit": 2, "note": "sih-tools 非 des-001 域，域外如实记不属违规"},
+    {"target": "sih-tools/gauge/src/gauge/cli.py", "exit": 2, "note": "同上域外如实记"},
+    {"target": "sih-tools/gauge/tests/test_gauge.py", "exit": 2, "note": "同上域外如实记"},
+    {"target": "sih-engine/src/event_stream/reading.rs", "exit": 2, "note": "src 非 des-001 域，域外如实记不属违规"}
+  ],
+  "nomenclator": [
+    {"target": "sih-engine/doc/spec/SPEC-011-governance-state-reading.md", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0},
+    {"target": "sih-math/docs/mathpipe-a3-derivation-2026-09-03.md", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0},
+    {"target": "sih-tools/gauge/CONTRACT.md", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0},
+    {"target": "sih-tools/gauge/src/gauge/cli.py", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0},
+    {"target": "sih-tools/gauge/tests/test_gauge.py", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0},
+    {"target": "sih-engine/src/event_stream/reading.rs", "pack": "工地 core 包含三新词", "exit": 0, "findings": 0}
+  ],
+  "term_registration": {
+    "registered": ["置信带", "贝叶斯语义", "后验均值"],
+    "state": "established",
+    "pack": "工地 core 副本随批入版控",
+    "manifest_version": "0.9.0"
+  },
+  "tests": {
+    "gauge": "12 passed, 3 skipped"
+  }
+}

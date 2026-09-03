@@ -42,6 +42,8 @@ record 即算并落链。接收与 read 同参，先算后经书简写路径落�
 
 reading_recorded 事件字段七件逐一必填。dimension 即维度三值枚举。subject 即主体标识，收敛维为组件标识、采用维为会话或 actor 标识、融回维为工具标识。value 即零到一读数值，序列不足时为 insufficient 标记不虚构数值。window 即窗口描记。formula_version 即公式版本号，公式增改走版本管理。computed_at 即参照时间逐字回显。inputs_digest 即证据输入摘要，可机械解析回链上事件哈希集。
 
+schema 增量扩展即七必填字段只增不删，扩展字段可选且仅特定维度出。ga-2 起 adoption 维可带两扩展字段：confidence_band 即 95% 置信带对象含 lower 与 upper 两零到一数值且 lower 不大于 upper，承 PROB-003 中心极限定理；posterior_mean 即贝叶斯后验均值零到一数值，承 PROB-005 Bayesian 更新。扩展字段出现即形态受守卫校验，缺省即 ga-1 七字段读数回放兼容。
+
 事件经引擎件书简写入主链，verify 链 valid。读数历史序列即链上同 dimension 与 subject 的 reading_recorded 事件按链序即得，无别处存储。
 
 ## 持久化 {#persistence}
@@ -89,3 +91,4 @@ v1 于 2026-08-28 随 gspec-solo 批落盘。正名已签即秤星英文对 gaug
 修订二 2026-08-30 pk029signoff 批：组件正名签定为秤星英文对 gauge，承得一四通道机器终签即终签事件 3d1ec172 至 923449fe 与用户同意令；三维轴值 convergence adoption mergeback 与 read record 操作名与七字段 schema 接口冻结不动，本修订只动名不动接口。
 修订三 2026-08-30 gaugeimpl 批：实装家位经用户开工令裁定为围堰组件先建即计算核落 sih-tools/gauge 外切孵化，替本节原引擎 src 判据；融回前置即引擎侧 record 守卫批，读数事件类型与落链腿两件，另开承接；接口冻结面零触碰。
 修订四 2026-08-30 gaugewiring 批：期票两件落地即落链腿与消费侧接线。引擎侧增 reading_recorded 事件类型入写前必载 details 名单、scribe 增 record 入口走锁位前查回显事件哈希、reading 守卫机械校七字段形态即维度三枚举与值零到一或 insufficient 标记与窗口非空与公式版本 ga 数字形与参照时间 YYYY-MM-DD 与摘要六十四位十六进制，多字段少字段拒、建议排序自动处置三字段经多字段拒显式拦、守卫只校形不判值零 LLM。秤星侧 record 动作与 read 共算半逐字节同值、经书简落链、read 增 history 序列回看即链上同维同主体 reading_recorded 按链序回列补 F-3、sequence 判据改同维同主体全链回看。消费侧三处接线即租约 open 会话档附三维读数摘要与段结算报告附读数、秤星或证据件缺席折 skipped 注记零拦截承 F-6、例行读数即 record 维度缺省三维全出快照形、周期化调度归章程批另开待用户令。接口冻结面零触碰即 read 与 record 操作名与七字段 schema 与三维轴值不动，read 单维形维持已证态、record 维度缺省全出为 superset 不破同参一致性。
+修订五 2026-09-03 mathpipe-a3-solo 批：期票两件清偿即 PROB-003 置信带与 PROB-005 贝叶斯语义实装，公式版本升 ga-2。schema 增量扩展即七必填字段只增不删，adoption 维可带 confidence_band 与 posterior_mean 两扩展字段，守卫校其形态即置信带 lower 与 upper 零到一且 lower 不大于 upper、后验均值零到一、扩展字段仅 adoption 维出他维出现即拒；ga-1 七字段读数回放兼容即守卫仍收。秤星侧 adoption 维 n 零时不出扩展字段、n 非零时出置信带与后验均值，模型参数显式声明即 Beta(1,1) 均匀先验与 z=1.96 入 inputs_digest。接口冻结面按修订记录留痕扩展，只增不删承由松到紧红线。

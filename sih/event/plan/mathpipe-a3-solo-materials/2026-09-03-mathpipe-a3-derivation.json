@@ -1,0 +1,27 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0"
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathpipe-a3-solo/docs/mathpipe-a3-derivation-2026-09-03.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-math/mathpipe-a3-solo/docs/mathpipe-a3-derivation-2026-09-03.md": "04aa48618b135b591549650f325e659ce2adff8ce08222fd07d1fb68690850d0"
+  },
+  "changes": [],
+  "findings": [],
+  "golden_baseline": "",
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0,
+    "scrutinator_domain": "des-001 域只盖 sih-engine/doc，math docs 域外 exit-2 如实记不属违规",
+    "nomenclator_exit": 0
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "batch": "mathpipe-a3-solo",
+  "kind": "golden_vector",
+  "date": "2026-09-03",
+  "artifact_path": "sih-engine/sih/event/plan/mathpipe-a3-solo-materials/golden/",
+  "formula_version": "ga-2",
+  "cases": ["convergence", "adoption", "mergeback"],
+  "double_run_byte_identical": true,
+  "ga1_replay_compatible": {
+    "total_ga1_readings": 18,
+    "passed_guard": 18,
+    "failed": 0
+  },
+  "ga2_golden_guard": {
+    "passed": 3,
+    "failed": 0
+  },
+  "guard_negative_tests": {
+    "confidence_band_non_adoption_dim": "rejected",
+    "confidence_band_lower_gt_upper": "rejected",
+    "confidence_band_out_of_range": "rejected",
+    "posterior_mean_out_of_range": "rejected"
+  },
+  "judgment_change": {
+    "base_value_formula": "unchanged_three_dimensions",
+    "declaration": "零判变：ga-2 与 ga-1 三维基础值公式逐字节同式（convergence 组件占比、adoption 会话占比 k/n、mergeback 工具占比），ga-2 只增 adoption 维 confidence_band 与 posterior_mean 两统计摘要扩展字段，基础值不回改"
+  },
+  "carrier": "PROB-003, PROB-005"
+}
