@@ -1,0 +1,16 @@
+{
+  "action": "enter",
+  "entry_id": "pk-045",
+  "title": "多 agent 冲突测试样本库——委外并发模式作为司衡冲突解决范例",
+  "exit_condition": "用户裁样本库足量与否，或冲突处置机制硬化立项即 scribe 防分叉护栏与收约互斥等，裁立项即另开实装批",
+  "ttl_days": 30,
+  "id": "pk-045",
+  "path": "doc/governance/PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "ttl_days": 30
+  }
+}

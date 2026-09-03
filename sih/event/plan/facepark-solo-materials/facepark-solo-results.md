@@ -66,4 +66,19 @@ signals.ndjson 一件非 json 报告形 append 拒一笔（工具限制零留痕
 
 ## 收口读数（收约后回填）
 
-（待收约后补：settle 双仓 commit、放锁 close 碰撞对表、reconcile 四类、链 verify 前后 wc 与末哈希、认证事件哈希清单、末段入版控提交号。）
+- 双仓 settle：engine 56821d8（cert eefabea2，base main@1cf5650）、tools 508caf94（cert eefabea2，base integral-stage-build@15fa4202）。engine settle subject 出现「facepark-solo 段1」前缀重复（lease 机械前缀加本批措辞叠写），信息行 session/cert 完整，照录。
+- 放锁：28 锁一次放清零持有。
+- close 共五轮：轮一被阻（引擎 merge_diverge 即名册预期合并内容加 trail 活写态）；轮二工具仓收成（35dbe43f 归并删支拆工地）、引擎仓被两件未跟踪件阻（dispatch 与任务包，备份让位）；轮三被阻（trail 主线工作件与分支快照 diverge）；轮四失败（merge 撞 trail 脏面 aborting）；轮五成——主线 trail 以 wip 形预提交两笔（01d4ec7 145 行、6267e27 146 行含 gvec 意图笔，均自然过守卫零 --no-verify）、分支 trail 同文 wip 一笔（321e773）后归并 216f318、分支删支、工地拆除、会话 revoked。
+- 四步法对表：名册 diff 恰为五改六加 pk-046 行两处编辑零多余；九本调用册备份与归并结果 identical；pk-042.json 主树未跟踪件移开由归并物化同文；scribe/reports 二十件同文。
+- meter counts 抢救：工具仓先收时归并了工地旧计数快照，本批 21 行认证计数被让位覆盖，按 pk-045「跨批调用册行丢失经备份抢救」先例自分装备份逐行回 append（时序瑕疵照录即回 append 行落 gvec 行后，行内自带时间戳可排序）。
+- reconcile：sih-tools unrouted 0 与 session_orphan 0 与 unbypassed 0 与 cert_missing 1（即 526e2be entryunique-solo 段2 旧账，批前已存在，零新增达标）；sih-engine 四类全零（bypass 7 系历史已登记账）。双仓 exit 0。
+- 链 verify：valid，146 事件，first 94f1dd00，末 6615723f（gvec 意图笔）。批前 123 行（末 5920ff70）→ 完工 146 行：本批净增 20 笔即意图加停泊加认证十八笔中在链十八笔认证加 gvec 与 mathrefmt2 尾随，详见事故节。
+
+## 事故申报：意图笔与 pk-046 首笔停泊事件被在途批 trail 活写覆盖丢失
+
+- 事实：意图笔 4e553df7 与 pk-046 停泊笔 99b85acc 于 15:21-15:22 确证上链（当时 wc 128/129 行且尾事件读数在案），其后认证十八笔于 15:34-15:36 逐笔 append 成功；待 15:31 首笔主线 trail wip 提交（01d4ec7）时链面已无此两笔（该提交 18 insertions 即 127+18 认证），git 全版本（01d4ec7、321e773、6267e27、216f318）grep 皆零。当前链 124-127 为 mathrefmt2 四笔、128-145 为本批十八笔认证直续 fc186170、146 为 gvec 意图笔，verify valid 即现链自洽，但意图与停泊两笔不在其中。
+- 判定：属并发在途批（mathrefmt2 收束段或其归并）对共享 trail 面的活写覆盖竞态，承 pk-045 冲突样本「链分叉」与「跨批调用册行丢失」同族；本批认证十八笔因直续 fc186170 而链面自洽未损，损失限于意图与停泊两笔。
+- 影响：pk-046 停泊的链上账暂缺，名册行所引 99b85acc 成幽灵哈希，泊界铁律投影与链不符时以链为准即 pk-046 链上暂未在泊；pk-046.json 材料面与名册行文（界定、出泊条件、ttl）不受影响。
+- 补救受阻：重追加两笔（append-only 合规）于收约后实跑，scribe 报「链路径在他会话锁下」即 trail 锁在 gvec-method-solo 会话 8e4e8065d863b287 手中；按撞锁即停批红线不绕行，重录挂起。
+- 后续动作（归人节点裁时机）：trail 锁释放后以原 park 记录重追加停泊笔并以新哈希改名册行入泊事件 citations、以原 ask3 记录重追加意图笔；或由主会裁令插队协调。本结果档与本报告全程如实留痕。
+- 名册行维持已归并文本不二次改写，避免在无链据状态下再动投影；本节即诚实视图。

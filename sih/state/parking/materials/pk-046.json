@@ -1,0 +1,16 @@
+{
+  "action": "enter",
+  "entry_id": "pk-046",
+  "title": "视图组件契约参考面候选——OpenTelemetry GenAI 语义约定",
+  "exit_condition": "视图组件契约起草批开工时用户裁参考与否，裁参考即入契约参考材料面，裁不用即废弃",
+  "ttl_days": 30,
+  "id": "pk-046",
+  "path": "doc/governance/PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "ttl_days": 30
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "action": "enter",
+  "entry_id": "pk-039",
+  "title": "retriever 档案面扩容到资产层",
+  "exit_condition": "用户裁扩容立项与否，裁立项即另开设计批",
+  "ttl_days": 30,
+  "id": "pk-039",
+  "path": "doc/governance/PARKING-v1.md",
+  "anchors": [],
+  "requested_writes": [],
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-02",
+    "ttl_days": 30
+  }
+}
