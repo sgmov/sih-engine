@@ -91,4 +91,12 @@ mathscan-solo 批件五唯一裁决点（数学仓全盘扫描例行化挂点两
 
 ## 收口附记（close 后补记，本节经 close 通道外 bypass 提交回填，ordwire 与 pk037impl 与 mathscan 先例同形）
 
-（close 后回填）
+- 收口形态：原执行代理于件一至件四完成、认证收约前因模型请求故障中断，主会按 pk-045 冲突库「停在收约主会代收」类经原会话 8040c9fae7c90e0e 代收至 close，施工内容零改写，唯一内容新增为名册三段 C006 合规修正与结果档定稿与本附记。
+- close 三跑：首跑撞十锁未放（代收段先 unlock 后 close 的次序教训，unlock 缺可读正身件时静默返零如实暴露后补正身件复跑十锁全释）；次跑 tools 腿撞工地未跟踪正身件（unlock 拷入件），补 settle 段三笔后三跑全绿：双仓归并、分支删、工地拆、会话吊销。
+- 认证笔：意图 1e6bbfcd、出泊 198f936b、首跑 60ed688a、管线 bc15d97e、结果档 3835a017、例行读数三维 97e8afe5/d1179c56/c0990d7c。
+- 链读数：close 后当日链 206 事件 verify valid。
+- 三仓主树归并提交：sih-tools 92f5de3c 段三与 926c1caa/c3cae275 归并、sih-engine 98d51b2 段二与 c004dbe 归并；sih-math 零写入零提交（红线达成非缺漏）。
+- reconcile：双仓 unrouted 零、session_orphan 零、unbypassed 零；cert_missing tools 2 与 engine 1 为批前存量非本批新增。
+- 让位对表：备份二十一件与归并结果逐件 cmp 全数 IDENTICAL；投影副本 pk-052.json 于合入后发现工作树被删（删除者非本批非主会，或为并行在途批动作），自 index 还原后与备份 cmp IDENTICAL，如实申报。
+- 本附记经 close 通道外 --no-verify 提交加 lease bypass 登记回填。
+- [x] 认证入链，双仓 settle，close 后收口读数见本节
