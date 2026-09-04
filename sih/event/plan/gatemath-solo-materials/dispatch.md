@@ -2,7 +2,7 @@
 
 你在 SiHankor 工作区 /Users/moc/workspaces/SiHankor 执行治理批 gatemath-solo。先读任务包 /Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/gatemath-solo.md 与本指令，调用面照 /Users/moc/workspaces/SiHankor/sih-tools/BATCH-FACE.md（含 2026-09-04 坑位勘误节），单线 solo 零子代理。
 
-批性质：收尾闸门行为变更批——SDD 先行、TDD 先红后绿、判变申报不溯往。这是数学管线全量串联计划的收尾批：闸门立起后「判定性常数裸奔」由机械拦截，"只相信数学"自维持。预期零人节点裁决点（规则形态择路属实现裁量，实查申报即可）；机械链全绿自行收口，结果档不设「等你令」节。
+批性质：收尾闸门行为变更批——SDD 先行、TDD 先红后绿、判变申报不溯往。这是数学管线全量串联计划的收尾批：闸门立起后「判定性常数裸奔」由机械拦截，"只相信数学"自维持。预期零人节点裁决点（规则形态取径属实现裁量，实查申报即可）；机械链全绿自行收口，结果档不设「等你令」节。
 
 机械链序：ask3 记录（三锚程序切片禁手打）→ 双门 → 叩问 elicit → 正身 → lease open --package gatemath-solo → 取锁（施工面 exclusive 长持；共享追加面 --mode append 短持即取即放）→ meter 包裹引擎 scribe intent 上链（闸三 --sessions 带）→ 工地施工 → 化格→核阅→检词 → 认证逐笔 append 主树活链 → settle 前一次性拷工地 → settle --cert → 放锁 → close（备份让位归并对表法，lease 1.17.0 并集复查闸在位）→ reconcile → 当日链 verify。
 
