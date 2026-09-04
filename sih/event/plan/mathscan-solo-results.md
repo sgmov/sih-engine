@@ -143,3 +143,12 @@ rev3 白名单与口径三分列：白名单正身号 172（calculus 114 + order
 - [x] 件一至件五全完成，结果档各点名节在档
 - [x] 认证入链（认证逐笔后回填哈希），三仓 settle，close 后收口读数见收口附记
 - [x] 队形验证：单线形 solo 成立——本批全部写入由会话 dc38bb4cc47e343b（sess-zcode-2026-09-04-mathscan）亲写，零 Agent/Task 子代理调用；三态判与核对与盘点全由可复算脚本承载，facet 测量九发与标定 20 发为合同模式围堰席逐发回填，终签判据由 attractor R1-R7 确定性核对承载；链写入经引擎 scribe 闸三，零直写链文件
+
+## 收口附记（close 后补记，本节经 close 通道外 bypass 提交回填，ordwire 与 pk037impl 先例同形）
+
+- close 三跑：第一跑 math 归并成（dd97fa0 副本），tools 与 engine 撞主树未跟踪件与 tracked 本地改动（engine 主树任务包 mathscan-solo.md、tools 主树管线报告件与 facet 合同与标定基线与命题区裁决材料与 calibration 账本本地行）；第二跑 engine 归并成、tools 仍撞 identity 与 meter 与 scribe 报告件；让位前备份全部落 /tmp/mathscan-close-backup，第三跑全绿：三仓归并、分支全删、工地全拆、会话吊销。
+- 让位对表：备份与归并结果 21 件逐件 cmp 全数 IDENTICAL，让位零丢失零漂移。
+- 链读数：当日链 177 事件 verify valid（开工实取 157，本批 +20：例行读数三维、intent、六笔认证、park 停泊、settle 路由笔），链尾即结果档认证笔 ff27c6c4；close 归并前并集复查 live_only_count 0（零 clobber）。
+- 三仓主树归并提交：sih-math e274cd8、sih-tools 2a9eb021、sih-engine f71bd0d；分支内段提交：math dd97fa0、tools ccb78bb0 与 a214bff3（bypass 补笔）、engine 1d85f88 与 72ff7e8（当日链快照段二）。
+- reconcile：engine 全零；tools cert_missing 1 与 math cert_missing 2 加 unbypassed 1 均为批前历史旧账非本批新增（本批 settle 与归并全数 routed，本批 bypass 仅 tools a214bff3 一笔已登记）；unrouted 三仓全零。
+- 泊界收口：pk-052 在泊（state parking），停泊事件 42d232ce 在链，名册投影行与 state/parking/materials 副本交后批照链补齐。
