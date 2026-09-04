@@ -114,6 +114,8 @@ pk-045（多 agent 冲突测试样本库，2026-09-03 入泊）散文记载「�
 - 台账交叉：该时段零 close_failed 事件行——撞车未进失败台账而走 bypass 通道，即「台账只见冰山一角，bypass 是假阳性的隐形账」的实证；批三预检与批二守卫修复的共同依据。
 - gov002v2-solo 侧：结果档缺陷节申报 attractor R5 缺核哈希优先配对一处（同核哈希仍被拦），本批移交 tally 面在案。
 
+本批自撞实证（盘点批自己撞上所盘点的病灶，批一最有力的第一手样本）：本批 close 收约时被守卫以「存在真分叉冲突（非纯追加形），整批拒」拦截，diverged_files 即 lease/CONTRACT.md——而此刻主树对 HEAD 零脏位（git status 合并面上干净，脏件仅台账与 trail 与 meter 合法活写面），批分支领先主树一提交且为同基线直系，无任何真分叉。判定路径即病灶一：detect_merge_conflicts 以「盘上 CONTRACT.md ≠ 分支 CONTRACT.md」（分支多修订三十一行）判脏位，md 非纯追加形即 diverged。零源码改动的纯盘点批修改既有文档件即必撞，与线总纲「凡修改既有文件的批净态收约也判真分叉」逐字吻合。处置承当日先例（mainord-solo 23:20 形）：工地内 settle 提交完成后，主树走 merge --no-verify 通道外加 lease bypass 登记，close 让位归并复跑。
+
 ## 九、管线与链
 
 - 例行读数：三维快照落链（convergence 0.428571、adoption 1.0、mergeback 0.043478）；例扫 rev3 双跑 cmp 四路 IDENTICAL、checkmath zero_drift 零红；泊界心跳双目录退出码零零告警
