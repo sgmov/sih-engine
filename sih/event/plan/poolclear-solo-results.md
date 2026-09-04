@@ -39,7 +39,7 @@ ask3 记录 sha256 c44412d3f728734dabc8a02cb4c7a5e09371fbbb92997f7583e827e35a3df
 
 - 工具线（主树）：total 19（mainline 18、scrap_track 0、siding 1 即 pk-042 P102 无 parking 块 fail-closed 承 facepark F-7 已知形态），批前批后同态零变化，告警空。
 - 引擎线主树批前：total 19（mainline 18、scrap_track 1 即 pk-013-exit P101、siding 0），告警空。
-- 引擎线工地批后：total 21（mainline 21、scrap_track 0、siding 0），告警空——pk-013-exit 转 mainline 加 pk-051-exit 与 pk-052 两新件 mainline；主树归并后读数待 close 归并对表节回填。
+- 引擎线工地批后：total 21（mainline 21、scrap_track 0、siding 0），告警空——pk-013-exit 转 mainline 加 pk-051-exit 与 pk-052 两新件 mainline；主树归并后读数见收口读数节。
 
 ## 越线与误差申报
 
@@ -59,4 +59,10 @@ ask3 记录 sha256 c44412d3f728734dabc8a02cb4c7a5e09371fbbb92997f7583e827e35a3df
 
 ## 收口读数（收约后回填）
 
-待收约后回填。
+- 双仓 settle：engine 1c19c2f（cert 53ae14ce，base main@537da93）、tools 2db33378（cert 53ae14ce，base integral-stage-build@2a9eb021），三闸 session_active 与 staged_in_scope 与 cert_on_chain 全过；settle subject 出现「poolclear-solo 段1」前缀重复（lease 机械前缀加本批措辞叠写），信息行 session/cert 完整，facepark 先例同款照录。
+- 放锁：十一 exclusive 长持一次放清零持有，append 短持十三轮即取即放。
+- close 共两轮：轮一 tools 成（归并删支拆工地）而 engine 被主树两件未跟踪件阻（dispatch 与任务包，备份让位即四步法步一二）；轮二成，chain_union live_only 0（快照后零活写直续），双工地拆除双分支删除，会话 revoked。
+- 四步法对表：dispatch.md 与 poolclear-solo.md 备份与归并结果 diff 逐件 IDENTICAL；主树归并后名册三门复验全绿即化格零改、核阅 des-001 直跑 exit 0 零 findings（主树在域直跑免副本法）、检词零违例；主树引擎材料心跳批后读数 21=21+0+0 告警空（工具线 19=18+0+1 同态）。
+- reconcile：sih-tools unrouted 0 与 session_orphan 0 与 unbypassed 0 与 cert_missing 1（即 526e2be entryunique-solo 段2 旧账，批前已存在，零新增达标）；sih-engine unrouted 0 与 cert_missing 0 与 session_orphan 0 与 unbypassed 0（bypass 43 系历史已登记账）。双仓 exit 0。
+- 链 verify：valid，195 事件，first 05a8a75e 不变，末 245f6c1d（本批第 12 笔认证即结果档检词件）。批前开工 178 行（主会验收时点 167 加他批尾随）→ 完工 195 行：本批净增 13 笔即 intent 51cab13d 加认证十二笔；191 至 194 四笔系他批共笔（mainqm-adjud intent 一笔与 exscanwire 族 crosscheck 三笔）直续零冲突零覆盖。
+- 回填通道申报：close 后会话已 revoked 零认证余量，本节回填与心跳归并读数件（poolclear-heartbeat-engine-merged.json）走 close 通道外 --no-verify 提交加 lease bypass 登记（ordwire 与 pk037impl 与 basefix 与 mathscan 收口回填先例同形）。
