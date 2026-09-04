@@ -1,0 +1,2 @@
+mutant class-uniqueness holds: False ['a\nb', 'a\nb\n']
+RED PROOF: OK mutant red (正实现绿由 pytest 19 passed 承载)
