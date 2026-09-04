@@ -1,0 +1,8 @@
+{
+  "action": "enter",
+  "entry_id": "pk-051",
+  "title": "locks 判定面双偏差：台账两遍配对致放后重取形锁面读出缺在锁位且互斥可绕穿、资源标识有限归一缺绝对路径同形",
+  "exit_condition": "行为变更批承 lease 侧先例修两偏差即 active_locks 改单遍事件序配对（leasepatch-solo 缺陷一同类修法）与 normalize_path 资源同一化（locksplit-solo 同类修法），以金向量 l4 场景改为 locked_elsewhere 与锁面读出全为过门判据；用户裁另案处理即废弃出泊",
+  "ttl_days": 30,
+  "context": "leasewire-solo 批（2026-09-04）locks 首锚判定位实查发现两笔偏差：其一 locks core.active_locks 配对实形为两遍事件序即先按 acquired 全量置位后按 released 配对弹出，放后重取形下锁面读出缺在锁位且他会话再取申请被放行即互斥绕穿，金向量 l4 场景 as-is 冻结实证（payload_sha256 前八位 1dae0857，探针复现 W1 取放重取后 W2 对同路径 granted）；其二 locks core.normalize_path 实形为有限归一即仅去前导点斜杠，绝对路径形态未纳入同一化，异形态同路径互斥可绕穿。两笔与 lease 侧已修同类（leasepatch-solo 缺陷一与 locksplit-solo 资源同一化），leasewire-solo 批行为零改动不修，锚点注记映照实形，推导档 sih-math/docs/leasewire-derivation-2026-09-04.md 第 7 节全文承载"
+}

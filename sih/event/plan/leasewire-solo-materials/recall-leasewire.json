@@ -1,0 +1,91 @@
+{
+ "channels": {
+  "graph": [
+   "ALG-011",
+   "ORD-001",
+   "ORD-005",
+   "ORD-016",
+   "ORD-021",
+   "ORD-022",
+   "PROB-015"
+  ],
+  "skeleton": [
+   "llm-friendly-build/mapping.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "probability/INDEX.md",
+   "order/INDEX.md",
+   "topology/INDEX.md",
+   "algebra/INDEX.md"
+  ],
+  "word": [
+   "ORD-020"
+  ]
+ },
+ "expanded": [
+  "全序资源分配",
+  "死锁自由",
+  "锁面一致性"
+ ],
+ "provenance": {
+  "ALG-011": [
+   "graph"
+  ],
+  "ORD-001": [
+   "graph"
+  ],
+  "ORD-005": [
+   "graph"
+  ],
+  "ORD-016": [
+   "graph"
+  ],
+  "ORD-020": [
+   "word"
+  ],
+  "ORD-021": [
+   "graph"
+  ],
+  "ORD-022": [
+   "graph"
+  ],
+  "PROB-015": [
+   "graph"
+  ]
+ },
+ "query": [
+  "全序资源分配",
+  "死锁自由",
+  "锁面一致性"
+ ],
+ "reading_list": {
+  "entry_ids": [
+   "ALG-011",
+   "ORD-001",
+   "ORD-005",
+   "ORD-016",
+   "ORD-020",
+   "ORD-021",
+   "ORD-022",
+   "PROB-015"
+  ],
+  "entry_paths": [
+   "/Users/moc/workspaces/SiHankor/sih-math/algebra/entries/ALG-011-vector-space-and-cosine-similarity.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-001-partially-ordered-set.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-005-chains-and-antichains.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-020-total-order-resource-allocation-deadlock-freedom.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-021-dependency-dag-topological-order.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-022-degradation-well-founded-chain.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-015-littles-law-and-load-bound.md"
+  ],
+  "skeleton_files": [
+   "algebra/INDEX.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "llm-friendly-build/mapping.md",
+   "order/INDEX.md",
+   "probability/INDEX.md",
+   "topology/INDEX.md"
+  ]
+ },
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math"
+}

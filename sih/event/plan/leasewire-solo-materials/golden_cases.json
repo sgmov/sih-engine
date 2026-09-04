@@ -1,0 +1,61 @@
+[
+  {
+    "name": "l1_lease_full_order_ascending",
+    "tool": "lease",
+    "sessions": [
+      {"session": "S1", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/a.md", "session": "S1"},
+      {"op": "lock", "path": "batch/b/c.md", "session": "S1"},
+      {"op": "lock", "path": "batch/b/d.md", "session": "S1"}
+    ],
+    "status": true
+  },
+  {
+    "name": "l2_deadlock_freedom_counterexample",
+    "tool": "both",
+    "sessions": [
+      {"session": "S1", "allow": ["batch/"]},
+      {"session": "S2", "allow": ["batch/"]},
+      {"session": "W1", "allow": ["batch/"]},
+      {"session": "W2", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/m/z.md", "session": "S1", "tool": "lease"},
+      {"op": "lock", "path": "batch/m/z.md", "session": "S2", "tool": "lease"},
+      {"op": "lock", "path": "batch/m/z.md", "session": "W1", "tool": "locks"},
+      {"op": "lock", "path": "batch/m/z.md", "session": "W2", "tool": "locks"}
+    ],
+    "status": false
+  },
+  {
+    "name": "l3_locks_ledger_pairing_consistency",
+    "tool": "locks",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/p/one.md", "session": "W1"},
+      {"op": "unlock", "path": "batch/p/one.md", "session": "W1"},
+      {"op": "lock", "path": "batch/p/two.md", "session": "W1"}
+    ],
+    "status": true
+  },
+  {
+    "name": "l4_locks_pairing_twopass_deviation_documentation",
+    "tool": "locks",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]},
+      {"session": "W2", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/q.md", "session": "W1"},
+      {"op": "unlock", "path": "batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "batch/q.md", "session": "W2"}
+    ],
+    "status": true,
+    "note": "偏差实证形：两遍配对使放后重取形在读出缺在锁位且他会话再取被放行，按 as-is 行为冻结，修法归后续行为变更批"
+  }
+]
