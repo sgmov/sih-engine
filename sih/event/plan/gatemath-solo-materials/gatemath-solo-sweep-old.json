@@ -1,0 +1,4467 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.2.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/AGENTS-RETIRED-2026-09.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/old-repo-failure-analysis.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/mergeback-evaluation-2026-08-27.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/multi-agent-independent-audit-2026-08-16.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-003-phase-one-components.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-010-single-key-multi-expert-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-008-violation-to-trail.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-adjudication-baseline-check.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-baseline-checker-DEC.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-013-ask3-component-design.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-012-scrutinator-predicate-engine.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-009-crosscheck-semantic-layer.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-005-semantic-verification-calculus.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-002-philosophy-consumption-paths.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-006-crosscheck-baseline-preload.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-006-scribe-mergeback-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-002-phase1-execution.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-013-scrutiny-mergeback-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-017-contribution-measure.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-003-crosscheck.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-018-basefix-concurrency-invariants.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-015-predicate-mergeback-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-012-elicit-contract.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-001-semantic-calculus-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-011-governance-state-reading.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-009-parser-implementation-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-004-event-stream.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-001-divergence-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-007-project-memory-component.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-005-ask3-interface.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-008-project-memory-implementation-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-016-attractor-proposition-drafting.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-014-attractor-mergeback-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-010-registry-conflict-expansion-gap.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-001-unified-crosscheck-for-code-and-doc.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-003-ask3-component-redesign.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-004-crosscheck-semantic-layer.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-008-project-memory-component-derivation.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-006-actor-ontology.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-005-engineering-layer-ontology.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-002-trail-component-relationship-and-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-007-naming-clearance-draft.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/knowledge/KNOW-001-convergence-retrieval-map.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-001-failure-derived-prohibitions.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/SETTLEMENT-V1-2026-09-02.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-004-commit-takeover-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/011-locks-and-package-binding.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/021-adjudication-dispatch.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/013-mergeback-gate.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/012-git-commit-takeover.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/019-tally-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/005-phase-0-data-and-intent.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/008-node-tree-clearance.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/015-quality-baseline.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/002-component-naming-crosscheck.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/004-component-naming-shujian.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/010-zero-trust-identity.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/018-marshalling-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/DEC-007-engineering-layer-ontology.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/014-project-memory-initiation.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/000-document-format.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/016-parser-initiation.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/OQ-07-node-naming-priority.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/003-component-function-boundary.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/009-git-governance-boundary.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/006-ask3-formalization.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/017-wengu-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/requirement-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/decision-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/architecture-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/specification-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/governance-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/proposal-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/knowledge-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/design.md",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-carried.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/charset.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-003-phase-one-components.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-010-single-key-multi-expert-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-008-violation-to-trail.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-adjudication-baseline-check.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-012-scrutinator-predicate-engine.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-009-crosscheck-semantic-layer.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-005-semantic-verification-calculus.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-002-philosophy-consumption-paths.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-006-crosscheck-baseline-preload.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-002-phase1-execution.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-003-crosscheck.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-001-semantic-calculus-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-004-event-stream.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-001-divergence-experiment.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-001-unified-crosscheck-for-code-and-doc.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-003-ask3-component-redesign.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-004-crosscheck-semantic-layer.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-006-actor-ontology.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-005-engineering-layer-ontology.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-002-trail-component-relationship-and-naming.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-007-naming-clearance-draft.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/knowledge/KNOW-001-convergence-retrieval-map.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/governance/GOV-001-failure-derived-prohibitions.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/governance/GOV-002-mainline-lock-v1.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/005-phase-0-data-and-intent.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/002-component-naming-crosscheck.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/004-component-naming-shujian.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/000-document-format.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/OQ-07-node-naming-priority.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/003-component-function-boundary.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/requirement-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/decision-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/architecture-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/specification-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/governance-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/proposal-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/knowledge-spec.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/design.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/dirty.md",
+    "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/harmful.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/AGENTS-RETIRED-2026-09.md": "5afe2ea7a69496bf10825230461f9a0b317776340ac39517586d675a498f447a",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/old-repo-failure-analysis.md": "3a00a5d79acdc08b76234a6101d81b2049a15801afbeecca15ef3f193c86a0d0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/mergeback-evaluation-2026-08-27.md": "313228befb6912acb3b176d9a26f847237af84e9db9f37c1d8622bdbc0dab69e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/research/multi-agent-independent-audit-2026-08-16.md": "dfed084482e7352e8b575f216054899985f09be446f23e801c93c34a84b9cf74",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-003-phase-one-components.md": "37659ce07e07dfe4730374927cc884e26699f41cf34628cf5f6f2c000fe0efa0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-010-single-key-multi-expert-experiment.md": "ba2cf391229702227b9a2474c8ac5eff8a16cfbe0454568740c600f31a2d365f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-008-violation-to-trail.md": "b14fd93c35edb186697ca1f19ec5f21331021b4956f8a2426b670a79cbfc986f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-adjudication-baseline-check.md": "5a261cc379876a2b30d82b98f1ee105561ed11aaf9fff0aa3632d1f03e3eaae6",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-baseline-checker-DEC.md": "3885c68e91e090afa5e81a55963c6c3e8a376dbce8c0ab58b123c784a9e6cccb",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-013-ask3-component-design.md": "498d2714b6fef33c278e544268d0dc85cd9acb428a6dd39e96e94bd915560fe6",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md": "df2710806805a0b6f8aa0ff8d8652986a32903a2eeb3e9b9f3ef51b200953766",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-012-scrutinator-predicate-engine.md": "b6081a68d9ae5ef6e8f344f3bd351005b680e5978c6e0ce0b93853777446cc2e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-009-crosscheck-semantic-layer.md": "5deb4530680594bee34b82ff66e7c0f314dfb2b326f3f75ec8a8e0181fa961f4",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-005-semantic-verification-calculus.md": "98b7292684b9453b08eaff2ab3d589ca07eb20537f35b399819949b15b542ccb",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md": "2edb3be01d01e99dc60ccf3a26532c13c54e49b657bcddbff66e5a1368bf98de",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-002-philosophy-consumption-paths.md": "bcf09c391eb506dfa03fed1034952a9215fa3c72b431f0406bfa875306e94fe0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-006-crosscheck-baseline-preload.md": "e289197aff2e4815dd0a8faf001562c9240fdee5648ed0b5d25483846943a77e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-006-scribe-mergeback-gap.md": "5af9a658c45b0c46257cca01e9d6747f0b7f72e870eace3484f3926d0c804359",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-002-phase1-execution.md": "c4dd0569587595e99b06c5ca3f97bbf2c3394cc08457fef62562f6067623932b",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-013-scrutiny-mergeback-gap.md": "b425bad3afc64dfe222ea967947aedcae0e10a5961c66c07d7e2f6eff712cedd",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-017-contribution-measure.md": "699bd46015ac71baef176b672116f02489489cfeaee631c6bcdbaf27d94a7560",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-003-crosscheck.md": "e0a4627d659dfb261a607496ef03c648790bfab992020e82b30c9c7b2f00b83f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-018-basefix-concurrency-invariants.md": "55c0d67c5d6ade48bee5163e0d101093d35eb8bb89125759b27cea9a350a3861",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-015-predicate-mergeback-gap.md": "39298096410f20c1325aa7ba9f8d8697d037c30312c54913000e4404fdb2400e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-012-elicit-contract.md": "9c4986039a5d889a321141dd32ed428059e64317d0cab61521ab6b98ef5c2024",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-001-semantic-calculus-experiment.md": "0d5b5be5f66a047383f467f92f652237e89afde1f9701a2a37a0472c36ed570d",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-011-governance-state-reading.md": "415e9c00798916374583c2265de456072f4a4f8edbddc837a157d81bb4e4cd34",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-009-parser-implementation-gap.md": "fafbb7b79ebd985402e8b67e518e341fd50462a56cf53dc56306965d322ebd1b",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-004-event-stream.md": "4c8300f867ee5004aedafae7674b018b88f8cbbfd74553f07c81f2bebc50b33d",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-001-divergence-experiment.md": "15a175886905de0c685685141deabdac4a9a27daab76a88ee91613abeb43dcd0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-007-project-memory-component.md": "93cc6b2f57567886e44f022e5b251c7fea9048933768e98a4af6c4cc2561663c",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-005-ask3-interface.md": "3b8fb06b619fe5655b07e36b513d90a80113b495b740171db1194d141bd16a9b",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-008-project-memory-implementation-gap.md": "761645a1a014ea328663b94b55c908570124125885ffddb6e1a58edf6390c375",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-016-attractor-proposition-drafting.md": "4d046347eccd793366c1230412a0ea63824c59689072e945619a1f976aae9545",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-014-attractor-mergeback-gap.md": "df48af3a3a4913a44aef083ef8cc63eb3841c2c9f19050609ecd32684c12ed36",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-010-registry-conflict-expansion-gap.md": "713a34808d149d6d28419a74a75ba44e39382be9d0105f42f2252e952ba2913c",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-001-unified-crosscheck-for-code-and-doc.md": "ae91d158895bd2b78689a71a8741abdfaeb26fba363c5c87aab94162af4ee317",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-003-ask3-component-redesign.md": "e46f46e1eba8fd48610fd76e87e01700f935d4479497ca08ca0ce8b169a5ec10",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-004-crosscheck-semantic-layer.md": "c1c896e579a028d09da423a0b13351a6b082a94cd17242bafffeee1ebe694a5a",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-008-project-memory-component-derivation.md": "2c8a5cca1d4c7f0c9f8966be93a3e2cb43095df7f1692c3ae8469e0e258b2353",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-006-actor-ontology.md": "d9b2ce4b7737a676a038f25d79dfda433a03db791db4047311d53d7d4d0f103f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-005-engineering-layer-ontology.md": "e680bd7a7979b881badd38cc003a29f42cded162a7a893df08d57197073608cb",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-002-trail-component-relationship-and-naming.md": "a74f78c44959b6c5700f46c8fa695939001b23a5c7eed2668d05699f3fac75a5",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-007-naming-clearance-draft.md": "ec07f81d02e20c83a0605ba3599ee08168ebcc023ddf5ed66b1ffc00ab9d9942",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/knowledge/KNOW-001-convergence-retrieval-map.md": "b9473416976ecacb216a623c7380862dc101115d561833dfb8635c063876f2b9",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/PARKING-v1.md": "bfddab518e08df73447cbb53b72171f87c55f7d75d5978561636c2859efcb1c3",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-001-failure-derived-prohibitions.md": "ae2ff1e91c7508663a8b13d69911fe23d6ce4129957efcb2e2aad43e1c014e81",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-003-fullstate-course-v1.md": "121d741e4b25e803cffa73ac760acf212fa5a69554e82274e483613a87f638bf",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/SETTLEMENT-V1-2026-09-02.md": "ffd808f4fae95eb04f3985472ef9286c30be02d861075a6a166dff4b350e90ea",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-004-commit-takeover-v1.md": "680382f8bb56a50afa0eb4907bb48849d0144027093aae1d7ca146f2dd9af1ed",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "3b83cb8890767abf290e515fe952031651287b8cb450f3aee26f6252a8c4a414",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/011-locks-and-package-binding.md": "b200bde25f2595d4e9d2729825973c066aea1db23a19b610f2d806d13035c0fc",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/021-adjudication-dispatch.md": "b79f370268b31265bee9a8cca2ae295d7ed05cd9e0011c7d54e501d1d73126e1",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/013-mergeback-gate.md": "6c7e8524f9108caa1faad23f4e33bfbeb976cf8bec5739a13daa6271aa2f99a2",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md": "8870cefbab0b41e893983b8661921a7e99c9d716e531cc68027f9fffb971fbc1",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/012-git-commit-takeover.md": "d52ac8e23965dce137186fbf4ccb153d06a5e7dd82ffac94b0773a63bc8fd22e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/019-tally-naming.md": "f0a172ab7dd21ae83a9977e05e3e4022926bc1f744580b531c5524258cb27829",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/005-phase-0-data-and-intent.md": "b21538346e465e61e4b8882a857cf26c54e9734dde0a23d1c61a4e4239bd55b0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/008-node-tree-clearance.md": "50bda6d918662ee80b1ad27ed0a58fd3d1a002a276e8bfdf5c1eeb8203d8ecfd",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/015-quality-baseline.md": "e0d5273bba090ab0bb196d0afef778f48448e4abd82dbd4b78e87570cadf2ad4",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/002-component-naming-crosscheck.md": "721acccf5d2606c0014edb2b58410df019771ecc920f8a4061e7c4b19d10c9de",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/004-component-naming-shujian.md": "981adfdaee1a83e6e1a5236ce5607ad8eeb37e2d2917f39fce3a127b9c76d80e",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/010-zero-trust-identity.md": "65ea572ac0c1fa3b912127762c1d50555e2e21a85e8ea15246071d6b0fe778c6",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/018-marshalling-naming.md": "5e3336c459d5a0326ab7fde2db1ee23d980c2f1f87abdf1166f22b0ace527379",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md": "4a34b8213196fea7547db352cbfc3a89bb9df24b065d6d5ec948edffa923e2e6",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/DEC-007-engineering-layer-ontology.md": "4a1d7ffab77d5c287786eb1bac7379c51d6f754edc4ace9126f26e6a99c28822",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/014-project-memory-initiation.md": "a4e0de8fb41d32e831894dcfe95144cd77931e239a622831c85907a12e81b794",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/000-document-format.md": "85a4494220aa6c2fe8190e2d183f965404351d553f05c5f084583d10c62ec80d",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/016-parser-initiation.md": "e96d097463b0b4ed5edc5efd2f90b313b2edfbad1c6dfd8a6923911c9fcd4459",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/OQ-07-node-naming-priority.md": "0d848546220977aaa269eebc83628c8ed5b0806c5f322a0fdcb772d63418c368",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/003-component-function-boundary.md": "2410cce02ac3ad6a035811ada6f8ae8ec14615b5d789f59c7a6761d1ae17952d",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/009-git-governance-boundary.md": "ddff4966ba8544108bd03a73849cbe1fcad5e39107ca15bb8cc8942aaf9d034f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/006-ask3-formalization.md": "b175a9acac46c995e59d4875318a9120644e65b51c40b73021bca52bcb57fdf4",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/017-wengu-naming.md": "9e40256a4de8f30597345af3242bacdc89928f0838dd0c9f200f94ddc4dfc351",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/requirement-spec.md": "96d02593667359009865ce13cffdd967111c7d2487b90cde03ea0c47bbc4246f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/decision-spec.md": "efc694ca0ab75e663221d9af81877a7455bb968b7487622f2193e1043fe20a87",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/architecture-spec.md": "fadf0136222db98c2a50640cbeec3499978a014b93c1d2541d60b7639575b3a7",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/specification-spec.md": "19c2726af582dc62d9d5493a3c9afa817dcb13ba1f799606d2b52fee573e6a2f",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/governance-spec.md": "03a5bf72c1357a15c4a8ef96e7267aa83215a6c034cf5bd132bc0d822385f10b",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/proposal-spec.md": "7720745023346ac0ddac24f5262227b4edd7355337c53bc9a72beb19eb0f8dc0",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md": "93f4df82930860fa73d3e534011caf234a3580f8895347086101ee13611aa166",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/knowledge-spec.md": "10b29e7c970bd861fd0b274698c4fb5f5a1f22e682c4282350975c3fb784fb24",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md": "fbb4f0bbedd746a8832d8571753061f276b9d83579bd4d2b84e7e0dd13553e65",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/design.md": "9e8cc882749c266443a5ecfdfa46cefa62f66332bb696576733ff59c42240a60",
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md": "0f1c1089bc865d96d34d5abdd38b4e8248a2fd72bf9a9330885bceb6a472bfae",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-carried.md": "28ad60c762a02250d402f74ae832e2311f4eb5ae9efb92a08f889f23db504cf9",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md": "19f7a6dfbe57bee22136c8642d0e62d3a11345542be5eacd967298e7242011a9",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/charset.md": "c6ad89ace5b63b8aedb5aa3024a01c2b4c1e628673f2a3971f9a1613b72d7a57",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md": "dc10d0ca7dc49102635d3ec586933673e3dfead589dfdc3402b7159c2421bfd1",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md": "856c42c1b5fc24a3dc03c35c1334a4488d0dd22e51d9fedf495003e2ad6e0172",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-003-phase-one-components.md": "37659ce07e07dfe4730374927cc884e26699f41cf34628cf5f6f2c000fe0efa0",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-010-single-key-multi-expert-experiment.md": "ba2cf391229702227b9a2474c8ac5eff8a16cfbe0454568740c600f31a2d365f",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-008-violation-to-trail.md": "b14fd93c35edb186697ca1f19ec5f21331021b4956f8a2426b670a79cbfc986f",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-adjudication-baseline-check.md": "9bfe97496c71405cc832be50b204006d101252515969080e009a5da047f418ea",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md": "189bb1fc836a18800c8711634c28cbea47b950ec7a78129c2ce619ba76950605",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md": "df2710806805a0b6f8aa0ff8d8652986a32903a2eeb3e9b9f3ef51b200953766",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-012-scrutinator-predicate-engine.md": "751324d30537a107d1a0534cbebe0015fc7f48c9ab4aa87925746f32c7079d55",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-009-crosscheck-semantic-layer.md": "5deb4530680594bee34b82ff66e7c0f314dfb2b326f3f75ec8a8e0181fa961f4",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-005-semantic-verification-calculus.md": "98b7292684b9453b08eaff2ab3d589ca07eb20537f35b399819949b15b542ccb",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md": "2edb3be01d01e99dc60ccf3a26532c13c54e49b657bcddbff66e5a1368bf98de",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-002-philosophy-consumption-paths.md": "bcf09c391eb506dfa03fed1034952a9215fa3c72b431f0406bfa875306e94fe0",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-006-crosscheck-baseline-preload.md": "e289197aff2e4815dd0a8faf001562c9240fdee5648ed0b5d25483846943a77e",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-002-phase1-execution.md": "c4dd0569587595e99b06c5ca3f97bbf2c3394cc08457fef62562f6067623932b",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-003-crosscheck.md": "b2455d0adc9c9a5fdb3f1d7cac60e29abe261fc98ab964d8cc7c215354725905",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-001-semantic-calculus-experiment.md": "0d5b5be5f66a047383f467f92f652237e89afde1f9701a2a37a0472c36ed570d",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-004-event-stream.md": "3b1dbac9a7b908e271dc065d98cce8a2dc1e79df8a01df84fe659f7ce2daa86a",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/spec/SPEC-001-divergence-experiment.md": "15a175886905de0c685685141deabdac4a9a27daab76a88ee91613abeb43dcd0",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-001-unified-crosscheck-for-code-and-doc.md": "ae91d158895bd2b78689a71a8741abdfaeb26fba363c5c87aab94162af4ee317",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-003-ask3-component-redesign.md": "e46f46e1eba8fd48610fd76e87e01700f935d4479497ca08ca0ce8b169a5ec10",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-004-crosscheck-semantic-layer.md": "c1c896e579a028d09da423a0b13351a6b082a94cd17242bafffeee1ebe694a5a",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-006-actor-ontology.md": "a45fe034826b32d6c698c450349e5e3711c1d614e08567f492440e83330d8366",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-005-engineering-layer-ontology.md": "3009fe687c6f61d3f1fcf6d1ab9fe74f1c85d71830fdd967b3a628c9ee2ff293",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-002-trail-component-relationship-and-naming.md": "a74f78c44959b6c5700f46c8fa695939001b23a5c7eed2668d05699f3fac75a5",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/proposal/PRO-007-naming-clearance-draft.md": "ad7eb31bd390fd984b54a6257d5889df2e47246fa53e8049dc7d5a07876bf1f4",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/knowledge/KNOW-001-convergence-retrieval-map.md": "b9473416976ecacb216a623c7380862dc101115d561833dfb8635c063876f2b9",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/governance/GOV-001-failure-derived-prohibitions.md": "ae2ff1e91c7508663a8b13d69911fe23d6ce4129957efcb2e2aad43e1c014e81",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/governance/GOV-002-mainline-lock-v1.md": "df639804c33be42d69d7c3c3a5a67f1043d554a1faa85c51a5a4a8cd0df6b6c3",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md": "0ff754ae059ed4b4c563522db475ab41e8332d1a0324eb76339719601510b238",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/005-phase-0-data-and-intent.md": "b21538346e465e61e4b8882a857cf26c54e9734dde0a23d1c61a4e4239bd55b0",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/002-component-naming-crosscheck.md": "721acccf5d2606c0014edb2b58410df019771ecc920f8a4061e7c4b19d10c9de",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/004-component-naming-shujian.md": "981adfdaee1a83e6e1a5236ce5607ad8eeb37e2d2917f39fce3a127b9c76d80e",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/000-document-format.md": "85a4494220aa6c2fe8190e2d183f965404351d553f05c5f084583d10c62ec80d",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/OQ-07-node-naming-priority.md": "0d848546220977aaa269eebc83628c8ed5b0806c5f322a0fdcb772d63418c368",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/003-component-function-boundary.md": "2410cce02ac3ad6a035811ada6f8ae8ec14615b5d789f59c7a6761d1ae17952d",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/requirement-spec.md": "96d02593667359009865ce13cffdd967111c7d2487b90cde03ea0c47bbc4246f",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/decision-spec.md": "efc694ca0ab75e663221d9af81877a7455bb968b7487622f2193e1043fe20a87",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/architecture-spec.md": "fadf0136222db98c2a50640cbeec3499978a014b93c1d2541d60b7639575b3a7",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/specification-spec.md": "19c2726af582dc62d9d5493a3c9afa817dcb13ba1f799606d2b52fee573e6a2f",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/governance-spec.md": "03a5bf72c1357a15c4a8ef96e7267aa83215a6c034cf5bd132bc0d822385f10b",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/proposal-spec.md": "7720745023346ac0ddac24f5262227b4edd7355337c53bc9a72beb19eb0f8dc0",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md": "93f4df82930860fa73d3e534011caf234a3580f8895347086101ee13611aa166",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/knowledge-spec.md": "10b29e7c970bd861fd0b274698c4fb5f5a1f22e682c4282350975c3fb784fb24",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md": "fbb4f0bbedd746a8832d8571753061f276b9d83579bd4d2b84e7e0dd13553e65",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/design.md": "9e8cc882749c266443a5ecfdfa46cefa62f66332bb696576733ff59c42240a60",
+    "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md": "0f1c1089bc865d96d34d5abdd38b4e8248a2fd72bf9a9330885bceb6a472bfae",
+    "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/dirty.md": "83a0c8544edadc9e0770dccc8f2f79df0c4c01f8fd35a149d1f9830be77dfe2f",
+    "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/harmful.md": "a99ac05cd0a99bf008e02215c0130738018e9882024061eb26ff26a5bd1ee5e9"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-adjudication-baseline-check.md",
+      "location": {
+        "line": 50
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-adjudication-baseline-check.md",
+      "location": {
+        "line": 50
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-011-adjudication-baseline-check.md",
+      "location": {
+        "line": 50
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 25
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 26
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 27
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 28
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 29
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 30
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 31
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 32
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 33
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 34
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 35
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 36
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 37
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 38
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 39
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 43
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 44
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 27
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 28
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 29
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 30
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 31
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 32
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 33
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 34
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 35
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 36
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 37
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 38
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 39
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 25
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 43
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-008-project-memory-component-derivation.md",
+      "location": {
+        "line": 22
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/proposal/PRO-008-project-memory-component-derivation.md",
+      "location": {
+        "line": 3
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 66
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 68
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 69
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 70
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 77
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 78
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 79
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 80
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 81
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 82
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 83
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 84
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 85
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 86
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 87
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 88
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 89
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 90
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 91
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 92
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 93
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 94
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 95
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 96
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 97
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 98
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 99
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 100
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 101
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 102
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 86
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 63
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/001-repository-structure.md",
+      "location": {
+        "line": 103
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/019-tally-naming.md",
+      "location": {
+        "line": 16
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 16
+      },
+      "message": "字符 U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 16
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 113
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 113
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 123
+      },
+      "message": "字符 U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 182
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 188
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 77
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 78
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 79
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 80
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 51
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 52
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 53
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 54
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 55
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 56
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 57
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 58
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 59
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 60
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 61
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 62
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 63
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 64
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 66
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 68
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 69
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 70
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C007",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 7
+      },
+      "message": "判定性常数裸奔:声明形行须行内携带载体引用与推导档指针(@ 记号后接 sih-math/ 路径)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C007",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 9
+      },
+      "message": "判定性常数裸奔:声明形行须行内携带载体引用与推导档指针(@ 记号后接 sih-math/ 路径)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C008",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/carrier/constant-naked.md",
+      "location": {
+        "line": 11
+      },
+      "message": "推导档指针缺失:声明形行仅携单指针,须载体与推导档双指针(@ 载体路径 @ 推导档路径)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/charset.md",
+      "location": {
+        "line": 6
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/charset.md",
+      "location": {
+        "line": 6
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/charset.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+      "location": {
+        "line": 3
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+      "location": {
+        "line": 5
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+      "location": {
+        "line": 11
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「不叫概览」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "N002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/violations/structure-nav.md",
+      "location": {
+        "line": 9
+      },
+      "message": "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 50
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 53
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 54
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 83
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 32
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 33
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 34
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 35
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 36
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 37
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 38
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 39
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 43
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 44
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 45
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 46
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 50
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 53
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 54
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 66
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+274C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 70
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+2705 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 82
+      },
+      "message": "字符 U+2260 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 83
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 11
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 28
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 70
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 71
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 72
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 78
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 82
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 85
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 91
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 96
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 97
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 107
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 108
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 110
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 3
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 9
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 16
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 28
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 48
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 58
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 74
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 80
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 87
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 94
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 102
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 3
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「实验目的」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 5
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 7
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 11
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 12
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 13
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 14
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 24
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 26
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 32
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 37
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 44
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 45
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 46
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 50
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 53
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 54
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 55
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 56
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 76
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 77
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 78
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 83
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 84
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 85
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 96
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 97
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 98
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 99
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 100
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 104
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 105
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 106
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 18
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 19
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 20
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 21
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 22
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 23
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 24
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 30
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 31
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 32
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 33
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 34
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 35
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 36
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 37
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 38
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 39
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 40
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 41
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 42
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 43
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 44
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 45
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/research/multi-agent-independent-audit-2026-08-16.md",
+      "location": {
+        "line": 46
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 91
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 105
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 56
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 58
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+2193 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+2193 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 69
+      },
+      "message": "字符 U+2193 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 77
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 91
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 105
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 3
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 14
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 17
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 18
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 20
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 31
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 54
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 58
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 66
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 68
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 77
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 84
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 86
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 86
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 95
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 98
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 101
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 103
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 104
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 105
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 110
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 111
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 112
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 113
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 114
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 119
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 120
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 143
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 144
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 41
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 52
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 54
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 55
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 56
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 57
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 58
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 29
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 61
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 75
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 95
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 101
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 133
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 141
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 8
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「一、决策内容」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 61
+      },
+      "message": "标题层级跳级:上一级为 1 级,当前为 3 级"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 33
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 51
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 3
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 4
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 5
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 6
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 12
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 31
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 49
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 77
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 78
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 79
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 80
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 91
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 99
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 118
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 119
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 120
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 86
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 87
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 88
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-011-baseline-checker-DEC.md",
+      "location": {
+        "line": 89
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 25
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 26
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 27
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 28
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 29
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 30
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 31
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 32
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 33
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 34
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 35
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 36
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 37
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 38
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 39
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 43
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-004-repository-structure-extension.md",
+      "location": {
+        "line": 44
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 27
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 28
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 29
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 30
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 31
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 32
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 33
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 34
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 35
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 36
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 37
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 38
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 39
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 25
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-007-engine-foundation.md",
+      "location": {
+        "line": 43
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 64
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 66
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 68
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 69
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 70
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 77
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 78
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 79
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 80
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 81
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 82
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 83
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 84
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 85
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 86
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 87
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 88
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 89
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 75
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 62
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/decision/001-repository-structure.md",
+      "location": {
+        "line": 90
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 113
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 113
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 123
+      },
+      "message": "字符 U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 182
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/general.md",
+      "location": {
+        "line": 188
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 77
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 78
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 79
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-research-investigation.md",
+      "location": {
+        "line": 80
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 51
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 52
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 53
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 54
+      },
+      "message": "字符 U+251C 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 55
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 56
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 57
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 58
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 59
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 60
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 61
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 62
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 63
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 64
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 65
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 66
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 67
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 68
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 69
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 70
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 71
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 72
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 73
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 74
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 75
+      },
+      "message": "字符 U+2502 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scrutinator/fixtures/corpus/engine/design/DES-001-document-format/prompt-v1-knowledge-pkg.md",
+      "location": {
+        "line": 76
+      },
+      "message": "字符 U+2514 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/dirty.md",
+      "location": {
+        "line": 3
+      },
+      "message": "字符 U+0009 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F000",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/dirty.md",
+      "location": {
+        "line": 6
+      },
+      "message": "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/formatter/fixtures/harmful.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 460,
+    "by_rule": {
+      "C001": 10,
+      "C002": 250,
+      "C006": 72,
+      "F000": 11,
+      "F002": 5,
+      "F003": 48,
+      "C007": 2,
+      "C008": 1,
+      "S002": 8,
+      "S004": 20,
+      "S005": 3,
+      "N002": 1,
+      "F005": 28,
+      "S006": 1
+    },
+    "by_pack": {
+      "des-001": 460
+    }
+  }
+}

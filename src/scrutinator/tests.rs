@@ -310,3 +310,98 @@ fn cli_positional_and_flag_forms_byte_identical() {
     assert_eq!(code_flag, code_pos, "两形退出码不一致：flag={} pos={}", code_flag, code_pos);
     assert_eq!(stdout_flag, stdout_pos, "两形输出不一致");
 }
+
+// ============================================================================
+// C009 判定性常数邻近级地板（gatemath-solo 批增，SDD 承 SPEC-019）
+// 文档级谓词 doc_constant_gate：声明形行围栏豁免与行内代码剥离，
+// 邻近在场即载体词面与推导档词面同文档双在场，缺一即每条声明行各一笔。
+// ============================================================================
+
+const C9_RULE_TOML: &str = r#"
+[[rules]]
+id = "C009"
+kind = "doc_constant_gate"
+params = { declaration = '(阈值|判据|裁决规则|水平|窗口|预算)\s*[=＝为：:]?\s*[0-9]', carrier = '\b(TOP|PROB|ORD|ALG|CALC|LIM|DIFF|INT|APP)-[0-9]+\b', derivation = 'sih-math/docs/[^ \t`)）】，。]*derivation[^ \t`)）】，。]*' }
+message = "判定性常数裸奔邻近级"
+"#;
+
+fn c9_rule() -> crate::scrutinator::rule::RuleEntry {
+    let rules = crate::scrutinator::rule::parse_rules(C9_RULE_TOML)
+        .expect("doc_constant_gate 规则应可解析");
+    assert_eq!(rules.len(), 1);
+    rules.into_iter().next().unwrap()
+}
+
+fn c9_lines(rule: &crate::scrutinator::rule::RuleEntry, text: &str) -> Vec<usize> {
+    crate::scrutinator::rule::check_text(rule, text)
+        .into_iter()
+        .map(|f| f.line)
+        .collect()
+}
+
+#[test]
+fn c9_parse_accepts_doc_constant_gate() {
+    let rule = c9_rule();
+    assert_eq!(rule.id, "C009");
+    assert!(matches!(
+        rule.kind,
+        crate::scrutinator::rule::RuleKind::DocConstantGate
+    ));
+}
+
+#[test]
+fn c9_compliant_nearby_presence_zero() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n置信水平 0.05 为检验判据。\n\n载体承 PROB-010 排队论与推导档 sih-math/docs/gatemath-derivation-2026-09-04.md。\n";
+    assert!(c9_lines(&rule, text).is_empty());
+}
+
+#[test]
+fn c9_naked_document_fires_per_declaration_line() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n重试上限窗口 30 天。\n预算 9 发封顶。\n";
+    assert_eq!(c9_lines(&rule, text), vec![3, 4]);
+}
+
+#[test]
+fn c9_missing_derivation_only_fires() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n窗口 7 天起算。\n载体承 ORD-019 版本偏序。\n";
+    assert_eq!(c9_lines(&rule, text), vec![3]);
+}
+
+#[test]
+fn c9_missing_carrier_only_fires() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n阈值 0.9。\n推导档 sih-math/docs/gatemath-derivation-2026-09-04.md 在档。\n";
+    assert_eq!(c9_lines(&rule, text), vec![3]);
+}
+
+#[test]
+fn c9_fence_declaration_exempt_and_pointer_in_fence_counts() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n```text\n窗口 30 天示例\n```\n\n载体承 TOP-008 与推导档 sih-math/docs/x-derivation-1.md。\n";
+    assert!(c9_lines(&rule, text).is_empty());
+}
+
+#[test]
+fn c9_inline_code_declaration_stripped() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n写法 `窗口 30 天` 仅为示例词面。\n\n载体承 ALG-002 与推导档 sih-math/docs/y-derivation-2.md。\n";
+    assert!(c9_lines(&rule, text).is_empty());
+}
+
+#[test]
+fn c9_extended_trigger_words_only_with_digit_adjacency() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n达到可工程化水平。承接五段结构。\n窗口期天数另定。\n\n载体承 PROB-011 与推导档 sih-math/docs/z-derivation-3.md。\n";
+    assert!(c9_lines(&rule, text).is_empty());
+}
+
+#[test]
+fn c9_bridge_chars_fire() {
+    let rule = c9_rule();
+    let text = "# 样文\n\n窗口: 12 天一轮。\n预算=3 发。\n显著性水平为 0.05。\n";
+    assert_eq!(c9_lines(&rule, text), vec![3, 4, 5]);
+}
+

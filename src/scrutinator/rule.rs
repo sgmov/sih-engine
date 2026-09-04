@@ -64,6 +64,8 @@ pub enum RuleKind {
     HeaderStructure,
     LineFlag,
     NavFormat,
+    // 文档类
+    DocConstantGate,
     // json 类
     JsonField,
     JsonArraySchema,
@@ -81,6 +83,7 @@ impl RuleKind {
             RuleKind::HeaderStructure => "header_structure",
             RuleKind::LineFlag => "line_flag",
             RuleKind::NavFormat => "nav_format",
+            RuleKind::DocConstantGate => "doc_constant_gate",
             RuleKind::JsonField => "json_field",
             RuleKind::JsonArraySchema => "json_array_schema",
             RuleKind::JsonNumberRange => "json_number_range",
@@ -118,6 +121,7 @@ pub fn parse_rules(toml_text: &str) -> Result<Vec<RuleEntry>, String> {
             "header_structure" => RuleKind::HeaderStructure,
             "line_flag" => RuleKind::LineFlag,
             "nav_format" => RuleKind::NavFormat,
+            "doc_constant_gate" => RuleKind::DocConstantGate,
             "json_field" => RuleKind::JsonField,
             "json_array_schema" => RuleKind::JsonArraySchema,
             "json_number_range" => RuleKind::JsonNumberRange,
@@ -517,6 +521,50 @@ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
                     }
                     _ => {}
                 }
+            }
+        }
+        RuleKind::DocConstantGate => {
+            // 文档级判定性常数邻近地板（SPEC-019）：声明形行围栏豁免与行内代码剥离，
+            // 载体词面与推导档词面全文双在场即合规，缺一即每条声明行各一笔。
+            // 零域知识：触发与载体与推导档三词面全由包参数承载。
+            let get_pat = |key: &str| -> Option<regex::Regex> {
+                rule
+                    .params
+                    .get(key)
+                    .and_then(|v| v.as_str())
+                    .and_then(|p| regex::Regex::new(p).ok())
+            };
+            let (Some(decl_re), Some(carrier_re), Some(deriv_re)) =
+                (get_pat("declaration"), get_pat("carrier"), get_pat("derivation"))
+            else {
+                return out;
+            };
+            let mut in_fence = false;
+            let mut decl_lines: Vec<usize> = Vec::new();
+            for (lineno, line) in text.lines().enumerate() {
+                if line.trim_start().starts_with("```") {
+                    in_fence = !in_fence;
+                    continue;
+                }
+                if in_fence {
+                    continue;
+                }
+                let plain = strip_inline_code(line);
+                if decl_re.is_match(&plain) {
+                    decl_lines.push(lineno + 1);
+                }
+            }
+            let carrier_present = carrier_re.is_match(text);
+            let deriv_present = deriv_re.is_match(text);
+            if carrier_present && deriv_present {
+                return out;
+            }
+            for no in decl_lines {
+                out.push(TextFinding {
+                    rule_id: rule.id.clone(),
+                    line: no,
+                    message: rule.message.clone(),
+                });
             }
         }
         RuleKind::NavFormat => {

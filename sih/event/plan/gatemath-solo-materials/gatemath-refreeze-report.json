@@ -1,0 +1,62 @@
+[
+ {
+  "golden": "des-001-dec020.json",
+  "target": "020-deyi-component-naming.md",
+  "findings": 6,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-goldfix-001-multiflag.json",
+  "target": "goldfix-001-multiflag.md",
+  "findings": 9,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-goldfix-002-header.json",
+  "target": "goldfix-002-header.md",
+  "findings": 8,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-goldfix-003-fence.json",
+  "target": "goldfix-003-fence.md",
+  "findings": 2,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-goldfix-004-nav.json",
+  "target": "goldfix-004-nav.md",
+  "findings": 5,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-goldfix-005-skip.json",
+  "target": "goldfix-005-skip.md",
+  "findings": 3,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-gov002.json",
+  "target": "GOV-002-mainline-lock-v1.md",
+  "findings": 0,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-gov003.json",
+  "target": "GOV-003-fullstate-course-v1.md",
+  "findings": 0,
+  "version_des001": "0.3.0"
+ },
+ {
+  "golden": "des-001-mathe-lim001.json",
+  "target": "LIM-001-limit-mathematics.md",
+  "findings": 0,
+  "version_des001": null
+ },
+ {
+  "golden": "des-001-mathe-mul001.json",
+  "target": "MUL-001-partial-derivative.md",
+  "findings": 0,
+  "version_des001": null
+ }
+]
