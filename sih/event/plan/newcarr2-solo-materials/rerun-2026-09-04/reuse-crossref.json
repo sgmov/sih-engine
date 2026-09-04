@@ -1,0 +1,2007 @@
+{
+ "alias_wording_refs": [],
+ "inconsistencies": [],
+ "inconsistency_count": 0,
+ "multi_consumed_concepts": [
+  {
+   "concept": "DIFF-001",
+   "consumer_ids": [
+    "APP-001",
+    "APP-003",
+    "APP-008",
+    "APP-009",
+    "APP-011",
+    "DIFF-002",
+    "DIFF-003",
+    "DIFF-007",
+    "DIFF-008",
+    "DIFF-009",
+    "DIFF-010",
+    "DIFF-011",
+    "DIFF-013",
+    "DIFF-014",
+    "DIFF-015",
+    "DIFF-016",
+    "DIFF-017",
+    "DIFF-018",
+    "DIFF-020",
+    "DIFF-021",
+    "DIFF-022",
+    "DIFF-023",
+    "DIFF-024",
+    "DIFF-025",
+    "DIFF-028",
+    "DIFF-029",
+    "DIFF-030",
+    "DIFF-032",
+    "HIS-002",
+    "HIS-004",
+    "HIS-006",
+    "INT-001",
+    "INT-007",
+    "INT-012",
+    "INT-020",
+    "LIM-001",
+    "LIM-005",
+    "LIM-008",
+    "MUL-001",
+    "MUL-006",
+    "MUL-010",
+    "SPEC-001",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-004"
+   ],
+   "consumers": 45
+  },
+  {
+   "concept": "LIM-007",
+   "consumer_ids": [
+    "APP-001",
+    "APP-009",
+    "APP-010",
+    "DIFF-001",
+    "DIFF-004",
+    "DIFF-005",
+    "DIFF-006",
+    "DIFF-007",
+    "DIFF-009",
+    "DIFF-011",
+    "DIFF-014",
+    "DIFF-019",
+    "DIFF-021",
+    "DIFF-023",
+    "DIFF-024",
+    "DIFF-025",
+    "DIFF-032",
+    "HIS-001",
+    "HIS-002",
+    "HIS-005",
+    "HIS-006",
+    "HIS-009",
+    "HIS-010",
+    "HIS-013",
+    "HIS-014",
+    "HIS-015",
+    "HIS-016",
+    "INT-007",
+    "LIM-001",
+    "LIM-002",
+    "LIM-003",
+    "LIM-008",
+    "MUL-001",
+    "NS-001",
+    "NS-002",
+    "NS-003",
+    "PROB-003",
+    "SER-001",
+    "SPEC-004",
+    "TOP-001",
+    "TOP-005"
+   ],
+   "consumers": 41
+  },
+  {
+   "concept": "INT-007",
+   "consumer_ids": [
+    "DIFF-010",
+    "DIFF-028",
+    "DIFF-032",
+    "HIS-001",
+    "HIS-003",
+    "HIS-004",
+    "HIS-006",
+    "HIS-013",
+    "INT-001",
+    "INT-002",
+    "INT-005",
+    "INT-006",
+    "INT-008",
+    "INT-012",
+    "INT-017",
+    "INT-020",
+    "INT-021",
+    "INT-022",
+    "LIM-001",
+    "LIM-007",
+    "LIM-008",
+    "MUL-002",
+    "MUL-007",
+    "MUL-008",
+    "MUL-009",
+    "SER-004",
+    "SER-005"
+   ],
+   "consumers": 27
+  },
+  {
+   "concept": "SER-001",
+   "consumer_ids": [
+    "APP-010",
+    "DIFF-005",
+    "HIS-010",
+    "HIS-014",
+    "HIS-015",
+    "INT-002",
+    "INT-005",
+    "INT-007",
+    "INT-016",
+    "INT-017",
+    "INT-021",
+    "LIM-001",
+    "LIM-004",
+    "LIM-005",
+    "LIM-007",
+    "MUL-003",
+    "SER-002",
+    "SER-003",
+    "SER-004",
+    "SER-005",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-006",
+    "SPEC-007"
+   ],
+   "consumers": 24
+  },
+  {
+   "concept": "DIFF-032",
+   "consumer_ids": [
+    "APP-001",
+    "APP-002",
+    "APP-003",
+    "APP-004",
+    "APP-005",
+    "APP-008",
+    "APP-009",
+    "DIFF-001",
+    "HIS-016",
+    "INT-001",
+    "LIM-001",
+    "LIM-002",
+    "LIM-003",
+    "LIM-007",
+    "LIM-008",
+    "MUL-006",
+    "NS-001",
+    "NS-002",
+    "NS-003",
+    "SER-001",
+    "SER-002",
+    "SER-003",
+    "SER-005"
+   ],
+   "consumers": 23
+  },
+  {
+   "concept": "ORD-002",
+   "consumer_ids": [
+    "ALG-001",
+    "ORD-001",
+    "ORD-003",
+    "ORD-004",
+    "ORD-005",
+    "ORD-006",
+    "ORD-007",
+    "ORD-008",
+    "ORD-009",
+    "ORD-010",
+    "ORD-011",
+    "ORD-015",
+    "ORD-016",
+    "ORD-017",
+    "ORD-018",
+    "PROB-002",
+    "PROB-005",
+    "PROB-008",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003"
+   ],
+   "consumers": 21
+  },
+  {
+   "concept": "DIFF-023",
+   "consumer_ids": [
+    "DIFF-008",
+    "DIFF-010",
+    "DIFF-018",
+    "DIFF-020",
+    "DIFF-022",
+    "DIFF-024",
+    "DIFF-028",
+    "HIS-004",
+    "HIS-005",
+    "HIS-007",
+    "HIS-009",
+    "HIS-010",
+    "LIM-005",
+    "LIM-006",
+    "MUL-005",
+    "SER-001",
+    "SER-002",
+    "SER-003",
+    "SPEC-006",
+    "SPEC-007"
+   ],
+   "consumers": 20
+  },
+  {
+   "concept": "LIM-001",
+   "consumer_ids": [
+    "DIFF-019",
+    "DIFF-024",
+    "INT-002",
+    "INT-003",
+    "INT-005",
+    "INT-017",
+    "LIM-002",
+    "LIM-004",
+    "LIM-006",
+    "MUL-001",
+    "MUL-002",
+    "MUL-003",
+    "SER-001",
+    "SER-002",
+    "SER-004",
+    "SER-005",
+    "SPEC-002",
+    "SPEC-007"
+   ],
+   "consumers": 18
+  },
+  {
+   "concept": "LIM-008",
+   "consumer_ids": [
+    "DIFF-001",
+    "DIFF-015",
+    "DIFF-016",
+    "DIFF-019",
+    "DIFF-026",
+    "DIFF-031",
+    "HIS-004",
+    "HIS-012",
+    "INT-007",
+    "LIM-001",
+    "LIM-002",
+    "LIM-003",
+    "LIM-006",
+    "LIM-007",
+    "SER-001",
+    "SER-003",
+    "TOP-006",
+    "TOP-007"
+   ],
+   "consumers": 18
+  },
+  {
+   "concept": "ORD-001",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-012",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "ORD-005",
+    "ORD-007",
+    "ORD-008",
+    "ORD-009",
+    "ORD-011",
+    "ORD-019",
+    "ORD-020",
+    "ORD-022",
+    "ORD-023",
+    "ORD-024",
+    "TOP-004"
+   ],
+   "consumers": 16
+  },
+  {
+   "concept": "DIFF-009",
+   "consumer_ids": [
+    "DIFF-003",
+    "DIFF-005",
+    "DIFF-007",
+    "DIFF-008",
+    "DIFF-011",
+    "DIFF-012",
+    "DIFF-013",
+    "DIFF-014",
+    "DIFF-027",
+    "DIFF-029",
+    "DIFF-032",
+    "HIS-005",
+    "INT-009",
+    "INT-010",
+    "MUL-004"
+   ],
+   "consumers": 15
+  },
+  {
+   "concept": "INT-001",
+   "consumer_ids": [
+    "INT-002",
+    "INT-003",
+    "INT-004",
+    "INT-005",
+    "INT-006",
+    "INT-007",
+    "INT-009",
+    "INT-014",
+    "INT-015",
+    "INT-016",
+    "LIM-001",
+    "LIM-008",
+    "MUL-002",
+    "MUL-007",
+    "SPEC-001"
+   ],
+   "consumers": 15
+  },
+  {
+   "concept": "ORD-003",
+   "consumer_ids": [
+    "ALG-001",
+    "ORD-001",
+    "ORD-002",
+    "ORD-004",
+    "ORD-005",
+    "ORD-006",
+    "ORD-007",
+    "ORD-009",
+    "ORD-011",
+    "ORD-015",
+    "ORD-016",
+    "ORD-018",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003"
+   ],
+   "consumers": 15
+  },
+  {
+   "concept": "HIS-015",
+   "consumer_ids": [
+    "HIS-001",
+    "HIS-002",
+    "HIS-004",
+    "HIS-005",
+    "HIS-006",
+    "HIS-012",
+    "HIS-013",
+    "HIS-016",
+    "LIM-001",
+    "LIM-004",
+    "LIM-007",
+    "NS-003",
+    "SER-001",
+    "SER-002"
+   ],
+   "consumers": 14
+  },
+  {
+   "concept": "MUL-001",
+   "consumer_ids": [
+    "APP-002",
+    "APP-005",
+    "APP-006",
+    "DIFF-003",
+    "DIFF-014",
+    "LIM-002",
+    "MUL-004",
+    "MUL-005",
+    "MUL-006",
+    "MUL-007",
+    "MUL-008",
+    "MUL-009",
+    "MUL-010",
+    "SPEC-003"
+   ],
+   "consumers": 14
+  },
+  {
+   "concept": "APP-002",
+   "consumer_ids": [
+    "APP-001",
+    "APP-005",
+    "APP-006",
+    "APP-007",
+    "DIFF-020",
+    "DIFF-021",
+    "MUL-001",
+    "MUL-008",
+    "MUL-009",
+    "MUL-010",
+    "SER-004",
+    "SPEC-005"
+   ],
+   "consumers": 12
+  },
+  {
+   "concept": "HIS-002",
+   "consumer_ids": [
+    "DIFF-003",
+    "HIS-001",
+    "HIS-003",
+    "HIS-005",
+    "HIS-006",
+    "HIS-012",
+    "HIS-013",
+    "HIS-015",
+    "INT-006",
+    "LIM-007",
+    "NS-002",
+    "NS-003"
+   ],
+   "consumers": 12
+  },
+  {
+   "concept": "ORD-004",
+   "consumer_ids": [
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-005",
+    "ORD-006",
+    "ORD-007",
+    "ORD-009",
+    "ORD-011",
+    "ORD-015",
+    "ORD-018",
+    "ORD-019",
+    "TOP-003"
+   ],
+   "consumers": 12
+  },
+  {
+   "concept": "SER-003",
+   "consumer_ids": [
+    "DIFF-023",
+    "HIS-005",
+    "HIS-007",
+    "LIM-004",
+    "SER-001",
+    "SER-002",
+    "SER-004",
+    "SER-005",
+    "SPEC-001",
+    "SPEC-003",
+    "SPEC-005",
+    "SPEC-007"
+   ],
+   "consumers": 12
+  },
+  {
+   "concept": "ALG-001",
+   "consumer_ids": [
+    "ALG-003",
+    "ALG-004",
+    "ALG-005",
+    "ALG-006",
+    "ALG-007",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "ALG-011",
+    "PROB-001",
+    "PROB-003"
+   ],
+   "consumers": 11
+  },
+  {
+   "concept": "PROB-001",
+   "consumer_ids": [
+    "ALG-001",
+    "ORD-004",
+    "PROB-002",
+    "PROB-003",
+    "PROB-004",
+    "PROB-005",
+    "PROB-006",
+    "PROB-007",
+    "PROB-013",
+    "PROB-015",
+    "TOP-002"
+   ],
+   "consumers": 11
+  },
+  {
+   "concept": "PROB-003",
+   "consumer_ids": [
+    "ALG-001",
+    "PROB-001",
+    "PROB-002",
+    "PROB-004",
+    "PROB-005",
+    "PROB-006",
+    "PROB-007",
+    "PROB-010",
+    "PROB-011",
+    "PROB-012",
+    "PROB-015"
+   ],
+   "consumers": 11
+  },
+  {
+   "concept": "SPEC-001",
+   "consumer_ids": [
+    "DIFF-013",
+    "DIFF-027",
+    "INT-006",
+    "INT-014",
+    "INT-016",
+    "SER-002",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-004",
+    "SPEC-005",
+    "SPEC-006"
+   ],
+   "consumers": 11
+  },
+  {
+   "concept": "TOP-001",
+   "consumer_ids": [
+    "ALG-001",
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "TOP-002",
+    "TOP-003",
+    "TOP-004",
+    "TOP-005",
+    "TOP-006",
+    "TOP-007"
+   ],
+   "consumers": 11
+  },
+  {
+   "concept": "DIFF-011",
+   "consumer_ids": [
+    "DIFF-005",
+    "DIFF-006",
+    "DIFF-007",
+    "DIFF-008",
+    "DIFF-009",
+    "DIFF-012",
+    "DIFF-014",
+    "DIFF-025",
+    "DIFF-027",
+    "INT-008"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "HIS-003",
+   "consumer_ids": [
+    "DIFF-003",
+    "HIS-002",
+    "HIS-004",
+    "HIS-005",
+    "HIS-006",
+    "HIS-007",
+    "HIS-009",
+    "HIS-010",
+    "HIS-012",
+    "HIS-014"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "HIS-004",
+   "consumer_ids": [
+    "DIFF-002",
+    "DIFF-032",
+    "HIS-003",
+    "HIS-005",
+    "HIS-006",
+    "HIS-007",
+    "HIS-008",
+    "HIS-009",
+    "HIS-010",
+    "HIS-011"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "HIS-009",
+   "consumer_ids": [
+    "HIS-004",
+    "HIS-007",
+    "HIS-008",
+    "HIS-010",
+    "HIS-011",
+    "HIS-014",
+    "MUL-001",
+    "SER-005",
+    "SPEC-002",
+    "SPEC-007"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "INT-010",
+   "consumer_ids": [
+    "INT-004",
+    "INT-006",
+    "INT-007",
+    "INT-008",
+    "INT-009",
+    "INT-011",
+    "INT-012",
+    "INT-013",
+    "INT-014",
+    "INT-018"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "PROB-002",
+   "consumer_ids": [
+    "ORD-004",
+    "PROB-001",
+    "PROB-003",
+    "PROB-004",
+    "PROB-006",
+    "PROB-007",
+    "PROB-010",
+    "PROB-011",
+    "PROB-015",
+    "TOP-002"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "PROB-006",
+   "consumer_ids": [
+    "ALG-001",
+    "PROB-001",
+    "PROB-002",
+    "PROB-003",
+    "PROB-004",
+    "PROB-005",
+    "PROB-007",
+    "PROB-008",
+    "PROB-009",
+    "PROB-016"
+   ],
+   "consumers": 10
+  },
+  {
+   "concept": "APP-001",
+   "consumer_ids": [
+    "APP-002",
+    "APP-003",
+    "APP-004",
+    "DIFF-002",
+    "DIFF-020",
+    "DIFF-032",
+    "MUL-005",
+    "SPEC-003",
+    "SPEC-006"
+   ],
+   "consumers": 9
+  },
+  {
+   "concept": "DIFF-020",
+   "consumer_ids": [
+    "APP-001",
+    "APP-002",
+    "DIFF-001",
+    "DIFF-007",
+    "DIFF-021",
+    "DIFF-029",
+    "HIS-005",
+    "SER-001",
+    "SPEC-003"
+   ],
+   "consumers": 9
+  },
+  {
+   "concept": "HIS-001",
+   "consumer_ids": [
+    "HIS-002",
+    "HIS-004",
+    "HIS-006",
+    "HIS-013",
+    "HIS-016",
+    "INT-006",
+    "LIM-001",
+    "LIM-004",
+    "SER-001"
+   ],
+   "consumers": 9
+  },
+  {
+   "concept": "INT-020",
+   "consumer_ids": [
+    "INT-013",
+    "INT-015",
+    "INT-019",
+    "INT-021",
+    "INT-022",
+    "MUL-002",
+    "MUL-003",
+    "MUL-006",
+    "SPEC-004"
+   ],
+   "consumers": 9
+  },
+  {
+   "concept": "ORD-005",
+   "consumer_ids": [
+    "ALG-002",
+    "ORD-001",
+    "ORD-007",
+    "ORD-008",
+    "ORD-016",
+    "ORD-018",
+    "ORD-020",
+    "ORD-021",
+    "ORD-024"
+   ],
+   "consumers": 9
+  },
+  {
+   "concept": "DIFF-015",
+   "consumer_ids": [
+    "DIFF-016",
+    "DIFF-017",
+    "DIFF-018",
+    "DIFF-019",
+    "DIFF-022",
+    "DIFF-030",
+    "DIFF-031",
+    "MUL-005"
+   ],
+   "consumers": 8
+  },
+  {
+   "concept": "MUL-004",
+   "consumer_ids": [
+    "INT-010",
+    "INT-012",
+    "MUL-001",
+    "MUL-005",
+    "MUL-007",
+    "MUL-008",
+    "MUL-009",
+    "MUL-010"
+   ],
+   "consumers": 8
+  },
+  {
+   "concept": "PROB-007",
+   "consumer_ids": [
+    "ALG-001",
+    "PROB-001",
+    "PROB-002",
+    "PROB-003",
+    "PROB-004",
+    "PROB-005",
+    "PROB-006",
+    "PROB-016"
+   ],
+   "consumers": 8
+  },
+  {
+   "concept": "TOP-003",
+   "consumer_ids": [
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "TOP-001",
+    "TOP-002",
+    "TOP-004",
+    "TOP-005"
+   ],
+   "consumers": 8
+  },
+  {
+   "concept": "ALG-002",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-003",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "ALG-012",
+    "TOP-008"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "APP-010",
+   "consumer_ids": [
+    "APP-009",
+    "DIFF-032",
+    "LIM-002",
+    "LIM-004",
+    "LIM-006",
+    "LIM-008",
+    "SER-002"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-004",
+   "consumer_ids": [
+    "DIFF-001",
+    "DIFF-005",
+    "DIFF-006",
+    "DIFF-007",
+    "DIFF-016",
+    "DIFF-021",
+    "INT-005"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-005",
+   "consumer_ids": [
+    "DIFF-004",
+    "DIFF-006",
+    "DIFF-007",
+    "DIFF-008",
+    "DIFF-011",
+    "DIFF-012",
+    "INT-002"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-010",
+   "consumer_ids": [
+    "DIFF-009",
+    "DIFF-022",
+    "DIFF-023",
+    "DIFF-028",
+    "LIM-006",
+    "MUL-004",
+    "SER-003"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-017",
+   "consumer_ids": [
+    "DIFF-015",
+    "DIFF-016",
+    "DIFF-018",
+    "DIFF-019",
+    "DIFF-022",
+    "DIFF-030",
+    "DIFF-031"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-018",
+   "consumer_ids": [
+    "DIFF-015",
+    "DIFF-016",
+    "DIFF-017",
+    "DIFF-022",
+    "DIFF-023",
+    "HIS-008",
+    "MUL-005"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "DIFF-022",
+   "consumer_ids": [
+    "DIFF-010",
+    "DIFF-015",
+    "DIFF-020",
+    "HIS-004",
+    "HIS-007",
+    "MUL-005",
+    "SER-003"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "HIS-006",
+   "consumer_ids": [
+    "HIS-001",
+    "HIS-002",
+    "HIS-003",
+    "HIS-004",
+    "HIS-005",
+    "HIS-009",
+    "HIS-012"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "HIS-016",
+   "consumer_ids": [
+    "DIFF-019",
+    "DIFF-024",
+    "DIFF-026",
+    "HIS-001",
+    "HIS-015",
+    "LIM-002",
+    "LIM-007"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "INT-008",
+   "consumer_ids": [
+    "INT-002",
+    "INT-003",
+    "INT-004",
+    "INT-007",
+    "INT-010",
+    "INT-018",
+    "INT-019"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "LIM-004",
+   "consumer_ids": [
+    "LIM-001",
+    "LIM-002",
+    "LIM-003",
+    "LIM-005",
+    "LIM-006",
+    "MUL-003",
+    "SER-001"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "MUL-005",
+   "consumer_ids": [
+    "DIFF-018",
+    "DIFF-021",
+    "MUL-001",
+    "MUL-004",
+    "MUL-006",
+    "MUL-008",
+    "MUL-010"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "MUL-006",
+   "consumer_ids": [
+    "INT-020",
+    "MUL-001",
+    "MUL-005",
+    "MUL-008",
+    "MUL-009",
+    "MUL-010",
+    "SPEC-004"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "SER-004",
+   "consumer_ids": [
+    "HIS-009",
+    "HIS-011",
+    "INT-002",
+    "SER-001",
+    "SER-002",
+    "SER-003",
+    "SER-005"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "SER-005",
+   "consumer_ids": [
+    "HIS-008",
+    "HIS-009",
+    "INT-017",
+    "SER-001",
+    "SPEC-001",
+    "SPEC-006",
+    "SPEC-007"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "SPEC-002",
+   "consumer_ids": [
+    "DIFF-027",
+    "HIS-009",
+    "SPEC-001",
+    "SPEC-003",
+    "SPEC-005",
+    "SPEC-006",
+    "SPEC-007"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "SPEC-006",
+   "consumer_ids": [
+    "HIS-008",
+    "SER-001",
+    "SER-002",
+    "SER-003",
+    "SER-005",
+    "SPEC-005",
+    "SPEC-007"
+   ],
+   "consumers": 7
+  },
+  {
+   "concept": "ALG-008",
+   "consumer_ids": [
+    "ALG-002",
+    "ALG-003",
+    "ALG-009",
+    "ALG-010",
+    "ORD-009",
+    "PROB-009"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "DIFF-006",
+   "consumer_ids": [
+    "DIFF-004",
+    "DIFF-005",
+    "DIFF-007",
+    "DIFF-008",
+    "DIFF-011",
+    "INT-003"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "DIFF-007",
+   "consumer_ids": [
+    "DIFF-004",
+    "DIFF-005",
+    "DIFF-006",
+    "DIFF-020",
+    "DIFF-021",
+    "INT-004"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "HIS-014",
+   "consumer_ids": [
+    "HIS-003",
+    "HIS-009",
+    "HIS-010",
+    "HIS-011",
+    "HIS-012",
+    "HIS-013"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "MUL-007",
+   "consumer_ids": [
+    "INT-007",
+    "MUL-004",
+    "MUL-006",
+    "MUL-008",
+    "MUL-009",
+    "MUL-010"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "MUL-009",
+   "consumer_ids": [
+    "INT-007",
+    "MUL-004",
+    "MUL-006",
+    "MUL-007",
+    "MUL-008",
+    "MUL-010"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "MUL-010",
+   "consumer_ids": [
+    "MUL-001",
+    "MUL-004",
+    "MUL-007",
+    "MUL-008",
+    "MUL-009",
+    "SPEC-003"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "ORD-016",
+   "consumer_ids": [
+    "ORD-015",
+    "ORD-017",
+    "ORD-019",
+    "ORD-020",
+    "ORD-022",
+    "ORD-023"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "SER-002",
+   "consumer_ids": [
+    "DIFF-023",
+    "HIS-008",
+    "SER-001",
+    "SER-003",
+    "SER-005",
+    "SPEC-003"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "SPEC-003",
+   "consumer_ids": [
+    "SER-002",
+    "SPEC-001",
+    "SPEC-002",
+    "SPEC-004",
+    "SPEC-005",
+    "SPEC-007"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "TOP-002",
+   "consumer_ids": [
+    "ORD-003",
+    "TOP-001",
+    "TOP-003",
+    "TOP-004",
+    "TOP-005",
+    "TOP-006"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "TOP-005",
+   "consumer_ids": [
+    "ORD-004",
+    "PROB-006",
+    "TOP-004",
+    "TOP-006",
+    "TOP-007",
+    "TOP-008"
+   ],
+   "consumers": 6
+  },
+  {
+   "concept": "ALG-003",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-004",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "ALG-004",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-003",
+    "ALG-005",
+    "ALG-006",
+    "ALG-007"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "ALG-009",
+   "consumer_ids": [
+    "ALG-003",
+    "ALG-005",
+    "ALG-008",
+    "ALG-010",
+    "PROB-009"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "APP-005",
+   "consumer_ids": [
+    "APP-002",
+    "APP-006",
+    "APP-007",
+    "HIS-011",
+    "SER-004"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "APP-009",
+   "consumer_ids": [
+    "APP-010",
+    "APP-011",
+    "DIFF-032",
+    "ORD-019",
+    "PROB-012"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "DIFF-014",
+   "consumer_ids": [
+    "DIFF-009",
+    "DIFF-013",
+    "DIFF-021",
+    "DIFF-027",
+    "DIFF-029"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "DIFF-016",
+   "consumer_ids": [
+    "DIFF-015",
+    "DIFF-017",
+    "DIFF-018",
+    "DIFF-019",
+    "DIFF-030"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "DIFF-019",
+   "consumer_ids": [
+    "DIFF-015",
+    "DIFF-016",
+    "DIFF-026",
+    "DIFF-031",
+    "LIM-008"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "DIFF-024",
+   "consumer_ids": [
+    "DIFF-023",
+    "LIM-002",
+    "LIM-005",
+    "LIM-006",
+    "SER-003"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "DIFF-031",
+   "consumer_ids": [
+    "DIFF-015",
+    "DIFF-017",
+    "DIFF-019",
+    "DIFF-023",
+    "DIFF-026"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "HIS-012",
+   "consumer_ids": [
+    "HIS-002",
+    "HIS-003",
+    "HIS-006",
+    "HIS-013",
+    "HIS-014"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "INT-004",
+   "consumer_ids": [
+    "DIFF-007",
+    "INT-001",
+    "INT-002",
+    "INT-003",
+    "INT-022"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "INT-014",
+   "consumer_ids": [
+    "INT-007",
+    "INT-010",
+    "INT-011",
+    "INT-013",
+    "INT-015"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "INT-021",
+   "consumer_ids": [
+    "INT-013",
+    "INT-020",
+    "INT-022",
+    "MUL-002",
+    "MUL-003"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "LIM-002",
+   "consumer_ids": [
+    "LIM-001",
+    "LIM-003",
+    "LIM-004",
+    "LIM-005",
+    "LIM-008"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "LIM-005",
+   "consumer_ids": [
+    "DIFF-010",
+    "DIFF-024",
+    "LIM-001",
+    "LIM-002",
+    "LIM-006"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "MUL-002",
+   "consumer_ids": [
+    "INT-021",
+    "INT-022",
+    "MUL-001",
+    "MUL-003",
+    "MUL-007"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "MUL-008",
+   "consumer_ids": [
+    "INT-007",
+    "MUL-004",
+    "MUL-007",
+    "MUL-009",
+    "MUL-010"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "NS-001",
+   "consumer_ids": [
+    "HIS-006",
+    "HIS-012",
+    "HIS-013",
+    "NS-002",
+    "NS-003"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "NS-002",
+   "consumer_ids": [
+    "HIS-002",
+    "HIS-003",
+    "HIS-012",
+    "NS-001",
+    "NS-003"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "ORD-009",
+   "consumer_ids": [
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "ORD-018",
+    "ORD-024"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "PROB-004",
+   "consumer_ids": [
+    "PROB-002",
+    "PROB-003",
+    "PROB-007",
+    "PROB-010",
+    "PROB-013"
+   ],
+   "consumers": 5
+  },
+  {
+   "concept": "ALG-005",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-004",
+    "ALG-006",
+    "ALG-007"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "ALG-006",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-004",
+    "ALG-005",
+    "ALG-007"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "ALG-007",
+   "consumer_ids": [
+    "ALG-001",
+    "ALG-004",
+    "ALG-005",
+    "ALG-006"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "APP-003",
+   "consumer_ids": [
+    "APP-001",
+    "APP-004",
+    "HIS-004",
+    "MUL-002"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "APP-006",
+   "consumer_ids": [
+    "APP-002",
+    "APP-005",
+    "APP-007",
+    "HIS-011"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "DIFF-028",
+   "consumer_ids": [
+    "DIFF-001",
+    "DIFF-003",
+    "DIFF-010",
+    "DIFF-032"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "HIS-005",
+   "consumer_ids": [
+    "DIFF-002",
+    "HIS-004",
+    "HIS-006",
+    "SPEC-002"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "INT-002",
+   "consumer_ids": [
+    "INT-001",
+    "INT-003",
+    "INT-004",
+    "INT-005"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "INT-006",
+   "consumer_ids": [
+    "HIS-001",
+    "INT-016",
+    "INT-021",
+    "MUL-002"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "INT-017",
+   "consumer_ids": [
+    "INT-016",
+    "INT-020",
+    "SER-004",
+    "SER-005"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "LIM-006",
+   "consumer_ids": [
+    "LIM-001",
+    "LIM-004",
+    "LIM-005",
+    "MUL-002"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "ORD-006",
+   "consumer_ids": [
+    "ALG-002",
+    "ORD-010",
+    "ORD-011",
+    "ORD-017"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "ORD-020",
+   "consumer_ids": [
+    "ALG-011",
+    "ORD-021",
+    "ORD-022",
+    "PROB-015"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "PROB-005",
+   "consumer_ids": [
+    "ORD-004",
+    "PROB-003",
+    "PROB-009",
+    "PROB-014"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "SPEC-004",
+   "consumer_ids": [
+    "INT-014",
+    "SPEC-001",
+    "SPEC-003",
+    "SPEC-005"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "SPEC-005",
+   "consumer_ids": [
+    "SPEC-001",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-004"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "TOP-004",
+   "consumer_ids": [
+    "ORD-001",
+    "TOP-005",
+    "TOP-006",
+    "TOP-007"
+   ],
+   "consumers": 4
+  },
+  {
+   "concept": "APP-007",
+   "consumer_ids": [
+    "APP-002",
+    "APP-005",
+    "APP-006"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "APP-008",
+   "consumer_ids": [
+    "APP-001",
+    "DIFF-001",
+    "DIFF-032"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "DIFF-002",
+   "consumer_ids": [
+    "DIFF-003",
+    "HIS-004",
+    "HIS-005"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "DIFF-003",
+   "consumer_ids": [
+    "DIFF-002",
+    "DIFF-028",
+    "HIS-003"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "DIFF-013",
+   "consumer_ids": [
+    "DIFF-009",
+    "DIFF-012",
+    "DIFF-014"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "DIFF-026",
+   "consumer_ids": [
+    "DIFF-019",
+    "DIFF-031",
+    "LIM-008"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "HIS-007",
+   "consumer_ids": [
+    "HIS-008",
+    "HIS-009",
+    "SER-003"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "HIS-011",
+   "consumer_ids": [
+    "HIS-009",
+    "HIS-010",
+    "SER-004"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "INT-003",
+   "consumer_ids": [
+    "INT-001",
+    "INT-002",
+    "INT-004"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "INT-011",
+   "consumer_ids": [
+    "INT-010",
+    "INT-013",
+    "INT-014"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "INT-012",
+   "consumer_ids": [
+    "DIFF-025",
+    "INT-004",
+    "SER-003"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "INT-013",
+   "consumer_ids": [
+    "INT-010",
+    "INT-011",
+    "INT-015"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "INT-022",
+   "consumer_ids": [
+    "INT-021",
+    "MUL-002",
+    "SPEC-006"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "LIM-003",
+   "consumer_ids": [
+    "LIM-002",
+    "LIM-004",
+    "LIM-008"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "MUL-003",
+   "consumer_ids": [
+    "INT-021",
+    "INT-022",
+    "MUL-002"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "NS-003",
+   "consumer_ids": [
+    "HIS-002",
+    "NS-001",
+    "NS-002"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "ORD-007",
+   "consumer_ids": [
+    "ORD-008",
+    "ORD-015",
+    "ORD-017"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "ORD-023",
+   "consumer_ids": [
+    "ALG-012",
+    "ORD-024",
+    "PROB-016"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "PROB-013",
+   "consumer_ids": [
+    "ORD-022",
+    "PROB-012",
+    "PROB-015"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "SPEC-007",
+   "consumer_ids": [
+    "SER-005",
+    "SPEC-002",
+    "SPEC-006"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "TOP-006",
+   "consumer_ids": [
+    "TOP-004",
+    "TOP-007",
+    "TOP-008"
+   ],
+   "consumers": 3
+  },
+  {
+   "concept": "ALG-010",
+   "consumer_ids": [
+    "ALG-002",
+    "ALG-003"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "ALG-011",
+   "consumer_ids": [
+    "ALG-006",
+    "PROB-017"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "APP-004",
+   "consumer_ids": [
+    "APP-003",
+    "HIS-004"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "APP-011",
+   "consumer_ids": [
+    "ALG-002",
+    "TOP-008"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "DIFF-008",
+   "consumer_ids": [
+    "APP-011",
+    "DIFF-025"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "DIFF-012",
+   "consumer_ids": [
+    "DIFF-001",
+    "DIFF-011"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "DIFF-021",
+   "consumer_ids": [
+    "DIFF-007",
+    "DIFF-020"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "DIFF-027",
+   "consumer_ids": [
+    "DIFF-009",
+    "DIFF-014"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "DIFF-030",
+   "consumer_ids": [
+    "DIFF-016",
+    "DIFF-029"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "HIS-008",
+   "consumer_ids": [
+    "HIS-007",
+    "HIS-009"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "HIS-010",
+   "consumer_ids": [
+    "HIS-009",
+    "HIS-011"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "HIS-013",
+   "consumer_ids": [
+    "HIS-006",
+    "HIS-014"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "INT-005",
+   "consumer_ids": [
+    "INT-001",
+    "INT-007"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "INT-009",
+   "consumer_ids": [
+    "INT-003",
+    "INT-010"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "INT-015",
+   "consumer_ids": [
+    "INT-013",
+    "INT-020"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "INT-018",
+   "consumer_ids": [
+    "INT-008",
+    "INT-019"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "INT-019",
+   "consumer_ids": [
+    "INT-008",
+    "INT-018"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "ORD-008",
+   "consumer_ids": [
+    "ORD-016",
+    "ORD-021"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "ORD-011",
+   "consumer_ids": [
+    "ORD-021",
+    "ORD-023"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "ORD-015",
+   "consumer_ids": [
+    "ORD-016",
+    "ORD-017"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "ORD-021",
+   "consumer_ids": [
+    "ORD-022",
+    "PROB-014"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "PROB-008",
+   "consumer_ids": [
+    "PROB-014",
+    "PROB-017"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "PROB-012",
+   "consumer_ids": [
+    "ALG-011",
+    "PROB-013"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "PROB-014",
+   "consumer_ids": [
+    "ALG-011",
+    "PROB-017"
+   ],
+   "consumers": 2
+  },
+  {
+   "concept": "TOP-007",
+   "consumer_ids": [
+    "TOP-006",
+    "TOP-008"
+   ],
+   "consumers": 2
+  }
+ ],
+ "multi_consumed_count": 155,
+ "named_face_note": "任务包点名面（良基 ORD-011/016/023、闭包、幂等）在读数中逐项核对",
+ "pair_total": 1076,
+ "run_date": "2026-09-04",
+ "tool": "shelfscan.py 件四跨条目定义复用对表"
+}
