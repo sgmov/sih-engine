@@ -1,0 +1,60 @@
+{
+ "batch": "carrwire-solo",
+ "date": "2026-09-04",
+ "formula_version": "cw-1",
+ "note": "输入全部内联，零绝对路径；重放寻径约定见 replay_golden.py 头注与冻结向量 note：四工具源路径与格式包与玩具包经参数传入",
+ "formatter": {
+  "dirty_md": "# 标题   \n正文一行   \n```text\n围栏内保留   \n```\n尾行无换行",
+  "dirty_json": "{\"b\": 2 , \"a\": 1 }\n",
+  "ops_line": {"id": "L001", "kind": "line_ops", "params": {"trailing_whitespace": true, "eol": "lf", "final_newline": true}},
+  "ops_json": {"id": "J001", "kind": "json_canonicalize", "params": {"sort_keys": true, "indent": 2, "ensure_ascii": false}},
+  "op_unknown": {"id": "X999", "kind": "no_such_kind", "params": {}}
+ },
+ "meter": {
+  "counts_records": [
+   {"ts": "2026-09-03T01:00:00+00:00", "command": ["scribe", "verify"], "tool": "scribe", "exit_code": 0, "duration_ms": 12},
+   {"ts": "2026-09-03T02:00:00+00:00", "command": ["formatter"], "tool": "formatter", "exit_code": 0, "duration_ms": 8},
+   {"ts": "2026-09-04T01:00:00+00:00", "command": ["scribe", "append"], "tool": "scribe", "exit_code": 0, "duration_ms": 9},
+   {"ts": "2026-09-04T02:00:00+00:00", "command": ["nomenclator", "check"], "tool": "nomenclator", "exit_code": 0, "duration_ms": 11},
+   {"ts": "2026-09-04T03:00:00+00:00", "command": ["scribe", "intent"], "tool": "scribe", "exit_code": 0, "duration_ms": 10}
+  ],
+  "trail_events": [
+   {"event_id": "ev-1", "event_type": "certification_completed", "timestamp": "2026-09-04T05:00:00+00:00", "details": {"report_path": ""}},
+   {"event_id": "ev-2", "event_type": "intent_refined", "timestamp": "2026-09-04T06:00:00+00:00", "details": {"report_path": ""}}
+  ]
+ },
+ "nomenclator": {
+  "pack_manifest": {"name": "golden-inline", "version": "1.0.0", "domain": {"include": ["**/*.md"], "exclude": []}},
+  "pack_terms": {"terms": []},
+  "pack_lazy": {"lazy": [
+   {"word": "锚点", "class": "lazy", "cause": "golden 场景词", "exempt": []},
+   {"word": "载舟", "class": "lazy", "cause": "golden 场景词", "exempt": []}
+  ]},
+  "pack_dead": {"dead": [
+   {"word": "弃名", "class": "strict", "cause": "golden 场景死档", "exempt": []}
+  ]},
+  "pack_candidates": {"candidates": []},
+  "target_text": "锚点在一行，载舟同锚点行。锚点复现。弃名在此。\n载舟第二行，锚点又在。\n",
+  "expect_chain_word": "锚点"
+ },
+ "parser": {
+  "mini_tokens": [
+   {"name": "WS", "pattern": "[ \\t\\r\\n]+", "skip": true},
+   {"name": "KW", "pattern": "kw"},
+   {"name": "WORD", "pattern": "[a-z]+"},
+   {"name": "SEMI", "pattern": ";"}
+  ],
+  "mini_grammar": {
+   "version": 1,
+   "start": "s",
+   "rules": {
+    "s": {"choice": [
+     {"seq": [{"token": "KW"}, {"token": "WORD"}, {"token": "SEMI"}]},
+     {"seq": [{"token": "KW"}, {"token": "SEMI"}]}
+    ]}
+   }
+  },
+  "mini_inputs": ["kw abc;", "kw ;"],
+  "toy_input": "item foo; item bar: 3; list zap; 残缺 ~~~"
+ }
+}

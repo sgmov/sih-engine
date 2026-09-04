@@ -1,0 +1,122 @@
+{
+ "frozen_note": "冻结态重放寻径约定：四工具源路径经 --formatter-src/--meter-src/--nomenclator-src/--parser-src 传入，格式包经 --formatter-pack，玩具包经 --parser-pack；cases 输入全内联零绝对路径；冻结于 carrwire-solo 工地 2026-09-04",
+ "payload": {
+  "batch": "carrwire-solo",
+  "carrier": "ORD-023+PROB-016+ORD-024+ALG-012",
+  "formula_version": "cw-1",
+  "scenario_formatter_f1_normalization_idempotence": {
+   "changed_once": true,
+   "double_run_byte_identical": true,
+   "once_sha256": "88fd8d170a862e1772fc40a6e61b1c6028bf0dea4ea1e8515dddcfd6b1c3cef7",
+   "second_run_no_change": true,
+   "twice_sha256": "88fd8d170a862e1772fc40a6e61b1c6028bf0dea4ea1e8515dddcfd6b1c3cef7"
+  },
+  "scenario_formatter_f2_declared_order_rejection": {
+   "declared_order_sha256": "080d51f49b27c73d17f51f3b808515a425d16218aa40021eed2ca1d204e59224",
+   "double_run_byte_identical": true,
+   "json_first_line_ops_after": true,
+   "unknown_kind_rejected": true
+  },
+  "scenario_meter_m1_partition_additivity_identity": {
+   "additivity_holds": true,
+   "by_date": {
+    "2026-09-03": 2,
+    "2026-09-04": 3
+   },
+   "by_tool": {
+    "formatter": 1,
+    "nomenclator": 1,
+    "scribe": 3
+   },
+   "double_run_byte_identical": true,
+   "sum_by_date": 5,
+   "sum_by_tool": 5,
+   "total": 5
+  },
+  "scenario_meter_m2_omission_detection_crosscheck": {
+   "checked_events": 2,
+   "double_run_byte_identical": true,
+   "exit_code": 1,
+   "flagged_count": 1,
+   "meter_records": 5,
+   "omission_detected": true
+  },
+  "scenario_nomenclator_n1_span_chain_interval_order": {
+   "chain_mutually_exclusive": true,
+   "double_run_byte_identical": true,
+   "spans": [
+    [
+     0,
+     2
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     13,
+     15
+    ],
+    [
+     30,
+     32
+    ]
+   ],
+   "spans_sha256": "2467f61ff453625ba1b38a7f8d2d8995284bf96ac6859e02bd82bd6e06e044ea",
+   "strictly_ascending": true
+  },
+  "scenario_nomenclator_n2_adoption_uniqueness": {
+   "adoption_keys": [
+    [
+     "dead_ban",
+     "弃名",
+     "target.md",
+     1
+    ],
+    [
+     "lazy_in_doc",
+     "载舟",
+     "target.md",
+     1
+    ],
+    [
+     "lazy_in_doc",
+     "锚点",
+     "target.md",
+     1
+    ],
+    [
+     "lazy_in_doc",
+     "载舟",
+     "target.md",
+     2
+    ],
+    [
+     "lazy_in_doc",
+     "锚点",
+     "target.md",
+     2
+    ]
+   ],
+   "double_run_byte_identical": true,
+   "findings_count": 5,
+   "findings_sha256": "3ddcba4fdfb68d1e68876810306847c380cefb5972c43cbbe06940532a1c687f",
+   "sorted_deterministic": true,
+   "unique_adoption": true
+  },
+  "scenario_parser_p1_ordered_choice_priority": {
+   "double_run_byte_identical": true,
+   "first_alt_won_when_word_present": true,
+   "full_input_sha256": "ca785f958e3c645038e87f05dc34582a21805aa2d3a42919ef0087d6dd07e705",
+   "partial_input_sha256": "7da3f5a4ef6328c3c00941437d9c4e128ce6bdfec95462bcb170b5064d685299",
+   "second_alt_used_on_first_alt_failure": true,
+   "trees_differ_across_inputs": true
+  },
+  "scenario_parser_p2_parse_determinism_toy_pack": {
+   "double_run_byte_identical": true,
+   "error_nodes_count": 5,
+   "error_nodes_produced_tree": true,
+   "toy_tree_sha256": "dc287928d3fc68a567e7f84a0e6bbff9157ac23f62c7fed11569e23193c52856"
+  }
+ }
+}
