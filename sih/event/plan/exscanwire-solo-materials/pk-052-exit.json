@@ -1,0 +1,6 @@
+{
+  "action": "exit",
+  "entry_id": "pk-052",
+  "disposition": "promoted",
+  "ruling": "用户 2026-09-04 令「得一裁一过一执行一」即 A 案（挂 gauge 例行读数旁：每日三维快照落链后同跑 rev3 双跑与 checkmath 四表核对）经 m-exscanhook-2 九发 stable_clear 已执契机器终签落据执行（重放锚 sih-tools/proposition/DES/m-exscanhook-2/m-exscanhook-2-signcheck.json，链 sign 笔 crosscheck_completed 5fb04cb6 verdict pass 在 2026-09-04 当日链）；出泊条件达成即执行批 exscanwire-solo 把扫描器与核对器挂接裁定位置（gauge record 例行读数后同跑）并在 sih-tools/BATCH-FACE.md 登记「例扫日扫调用形（m-exscanhook-2 终签执行）」节，首跑实测 rev3 双跑四路 cmp 逐字节 IDENTICAL 与 checkmath zero_drift 红零灰 7 在档；挂点位置为机制形之确定性后承，close 关键路径零新增闸"
+}

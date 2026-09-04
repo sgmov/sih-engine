@@ -1,0 +1,5 @@
+{
+  "batch": "exscanwire-solo",
+  "date": "2026-09-04",
+  "note": "温故检索如实记：本批为例扫挂点执行批，温故面由 m-exscanhook-2 终签材料（sih-tools/proposition/DES/m-exscanhook-2/ 三件：tally-material.json 与 signcheck 与 flywheel-trail）、pk-052 泊材料（mathscan-solo-materials/pk-052.json 与链上 park 事件 42d232ce）、出泊先例（pk-037 出泊事件 b68b178a 与 pk-051-exit-parking.json 调用形先例）、BATCH-FACE 2026-09-04 坑位勘误节与勘误补遗节全读承载，零遗漏申报"
+}
