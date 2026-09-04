@@ -1,0 +1,55 @@
+[
+  {
+    "name": "b1_locks_release_reacquire_pairing_holds",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/q.md", "session": "W1"},
+      {"op": "unlock", "path": "batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "batch/q.md", "session": "W1"}
+    ],
+    "status": true
+  },
+  {
+    "name": "b2_locks_l4_refrozen_locked_elsewhere",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]},
+      {"session": "W2", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/q.md", "session": "W1"},
+      {"op": "unlock", "path": "batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "batch/q.md", "session": "W2"}
+    ],
+    "status": true,
+    "note": "l4 场景重冻：as-is 形 W2 granted 即互斥绕穿留档于 leasewire-solo-materials，修复后形 W2 locked_elsewhere 即互斥不变式成立"
+  },
+  {
+    "name": "b3_locks_path_unification_three_forms",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]},
+      {"session": "W2", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "./batch/q.md", "session": "W1"},
+      {"op": "lock", "path": "ABS:batch/q.md", "session": "W2"},
+      {"op": "lock", "path": "batch/q.md", "session": "W2"}
+    ],
+    "status": true,
+    "note": "路径同一化：./ 前缀形与绝对形与裸相对形三态同一资源，W2 两形再取均 locked_elsewhere；ABS: 前缀由重放器展开为 root 绝对路径"
+  },
+  {
+    "name": "b4_locks_regular_pairing_readout",
+    "sessions": [
+      {"session": "W1", "allow": ["batch/"]}
+    ],
+    "ops": [
+      {"op": "lock", "path": "batch/p/one.md", "session": "W1"},
+      {"op": "unlock", "path": "batch/p/one.md", "session": "W1"},
+      {"op": "lock", "path": "batch/p/two.md", "session": "W1"}
+    ],
+    "status": true
+  }
+]

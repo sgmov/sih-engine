@@ -43,6 +43,36 @@ pub enum AppendError {
     Internal(String),
 }
 
+/// 进程间排他文件锁（basefix-solo 批 F-2 追加原子化）。
+///
+/// flock(2) 经 extern 声明直调，Cargo 依赖零增；进程死亡锁自动释放无陈锁
+/// 残留。SDD 裁形申报：进程间文件锁择于单写原语，依据有三，其一零新增
+/// 常驻进程与传输层即新增失效面最少（工程基线第五条治理延伸是减少机制），
+/// 其二读算写三段同一临界区即链尾 prev_hash 计算与落写之间无窗口，
+/// 其三非 Unix 平台降级直写不拦（本工程目标平台 macOS 与 Linux 全在位）。
+#[cfg(unix)]
+fn lock_trail_exclusive(file: &std::fs::File) -> Result<(), AppendError> {
+    use std::os::unix::io::AsRawFd;
+    const LOCK_EX: i32 = 2;
+    extern "C" {
+        fn flock(fd: i32, operation: i32) -> i32;
+    }
+    let rc = unsafe { flock(file.as_raw_fd(), LOCK_EX) };
+    if rc == 0 {
+        Ok(())
+    } else {
+        Err(AppendError::Internal(format!(
+            "trail flock failed: {}",
+            std::io::Error::last_os_error()
+        )))
+    }
+}
+
+#[cfg(not(unix))]
+fn lock_trail_exclusive(_file: &std::fs::File) -> Result<(), AppendError> {
+    Ok(())
+}
+
 /// 追加写入入口。
 ///
 /// 校验项（承接 SPEC-004#acceptance-criteria 写入前校验）。
@@ -55,9 +85,15 @@ pub enum AppendError {
 /// 3. prev_hash 匹配前事件哈希（链接位，ORD-019 覆盖关系）
 /// 4. 操作者合法性（actor_type = Agent 时须对应确定性程序）
 ///
+/// 追加原子化（basefix-solo 批 F-2，pk-045 trail 竞态类修复）：path 在场
+/// 即进程间排他锁覆盖读算写全程，锁内重读现行链不信调用方早前快照，
+/// 校验与事件构建与落写同一临界区，并发追加全数在链且链不分叉；事件
+/// schema 与哈希公式与退出码零触碰，语义零变只收并发写面。
+///
 /// # Arguments
 /// * `input` — 待写入事件输入
-/// * `store` — 当前事件存储（内存中的事件列表）
+/// * `store` — 当前事件存储（内存中的事件列表；path 在场时被锁内新鲜
+///   链态回填，path 缺席时即纯内存追加语义不变）
 /// * `path` — NDJSON 文件路径（用于持久化）
 ///
 /// # Panics
@@ -66,6 +102,36 @@ pub fn append(
     input: EventInput,
     store: &mut Vec<Event>,
     path: Option<&Path>,
+) -> Result<AppendSuccess, AppendError> {
+    let Some(p) = path else {
+        return append_in_memory(input, store);
+    };
+    // ── 追加原子化：锁覆盖读算写全程 ─────────────────────────────────
+    let file = std::fs::OpenOptions::new()
+        .create(true)
+        .read(true)
+        .append(true)
+        .open(p)
+        .map_err(|e| AppendError::Internal(format!("file open failed: {e}")))?;
+    lock_trail_exclusive(&file)?;
+    let mut fresh = load_events(p)?;
+    let success = append_in_memory(input, &mut fresh)?;
+    let line = fresh
+        .last()
+        .expect("成功追加后链尾必在")
+        .to_json_line()
+        .map_err(|e| AppendError::Internal(format!("JSON serialization failed: {e}")))?;
+    use std::io::Write;
+    let mut writer = file;
+    writeln!(writer, "{line}").map_err(|e| AppendError::Internal(format!("write failed: {e}")))?;
+    *store = fresh;
+    Ok(success)
+}
+
+/// 纯内存追加：四项校验与事件构建，无持久化。
+fn append_in_memory(
+    input: EventInput,
+    store: &mut Vec<Event>,
 ) -> Result<AppendSuccess, AppendError> {
     // ── 前置：校验 details 必须性 ─────────────────────────────────────────
     let requires_details = [
@@ -141,21 +207,7 @@ pub fn append(
     let mut final_event = event;
     final_event.event_hash = event_hash.clone();
 
-    // ── 持久化到 NDJSON ─────────────────────────────────────────────────
-    if let Some(p) = path {
-        let line = final_event
-            .to_json_line()
-            .map_err(|e| AppendError::Internal(format!("JSON serialization failed: {e}")))?;
-        let mut file = std::fs::OpenOptions::new()
-            .create(true)
-            .append(true)
-            .open(p)
-            .map_err(|e| AppendError::Internal(format!("file open failed: {e}")))?;
-        use std::io::Write;
-        writeln!(file, "{line}").map_err(|e| AppendError::Internal(format!("write failed: {e}")))?;
-    }
-
-    // ── 更新内存存储 ─────────────────────────────────────────────────────
+    // ── 更新内存存储（持久化归 append 原子化路径）───────────────────────
     store.push(final_event);
 
     Ok(AppendSuccess {

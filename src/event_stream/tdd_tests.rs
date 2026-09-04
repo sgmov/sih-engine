@@ -332,4 +332,70 @@ mod tdd {
         assert!(body.contains("工地链副本禁追加即认证先落主链"), "错文应载明护栏：{body}");
         let _ = std::fs::remove_file(&rec);
     }
+
+    // T7 双进程并发追加竞测（basefix-solo 批 F-2，先红后绿）。
+    // 两进程对同一链文件各追 N 笔，修后两进程事件全数在链且 verify valid。
+    // 修复前读算追加无锁窗口：两进程同尾算 prev_hash 双写即链分叉 verify 破。
+    #[test]
+    fn t7_concurrent_append_race_two_processes() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        if !bin.exists() {
+            panic!("scribe 未构建");
+        }
+        let trail = temp_trail("race2");
+        let _ = std::fs::remove_file(&trail);
+        let sessions = temp_trail("race-sess");
+        let _ = std::fs::remove_file(&sessions);
+        let sid = format!("sess-t7-{}", std::process::id());
+        std::fs::write(&sessions, format!("{{\"event\":\"issued\",\"session_id\":\"{sid}\"}}\n")).unwrap();
+        let dir = temp_trail("race-reports");
+        std::fs::create_dir_all(&dir).unwrap();
+        let n = 6;
+        for i in 0..n {
+            let report = json!({
+                "engine": {"name": "f", "version": "0"}, "packs": [], "content_hashes": {},
+                "findings": [], "golden_baseline": "0", "tool": {"name": "f", "version": "0"}
+            });
+            std::fs::write(dir.join(format!("rep-{i}.json")), report.to_string()).unwrap();
+        }
+        let script = format!(
+            r#"for i in $(seq 0 {}); do "$1" append --report "$2/rep-$i.json" --exit-code 0 --trail "$3" --session "$4" --sessions "$5" || exit 9; sleep 0.01; done"#,
+            n - 1
+        );
+        let mut handles = Vec::new();
+        for _p in 0..2 {
+            let bin_c = bin.clone();
+            let dir_c = dir.clone();
+            let trail_c = trail.clone();
+            let sess_c = sessions.clone();
+            let sid_c = sid.clone();
+            let script_c = script.clone();
+            handles.push(std::thread::spawn(move || {
+                Command::new("sh")
+                    .arg("-c")
+                    .arg(&script_c)
+                    .arg("probe")
+                    .arg(bin_c)
+                    .arg(dir_c)
+                    .arg(trail_c)
+                    .arg(sid_c)
+                    .arg(sess_c)
+                    .output()
+                    .unwrap()
+            }));
+        }
+        for h in handles {
+            let out = h.join().unwrap();
+            assert!(
+                out.status.success(),
+                "子进程败: {} {}",
+                String::from_utf8_lossy(&out.stdout),
+                String::from_utf8_lossy(&out.stderr)
+            );
+        }
+        let events = load_events(&trail).unwrap();
+        assert_eq!(events.len(), 2 * n, "两进程事件全数在链");
+        verify(&events, VerifyRange::Full).unwrap_or_else(|e| panic!("链校验败 {e:?}"));
+    }
 }
