@@ -1,0 +1,143 @@
+{
+ "caliber": {
+  "alias_count": 4,
+  "alias_registry": [
+   {
+    "alias": "CALC-001",
+    "canonical": "HIS-015",
+    "index_line": 206,
+    "subrepo": "calculus"
+   },
+   {
+    "alias": "CALC-003",
+    "canonical": "HIS-016",
+    "index_line": 206,
+    "subrepo": "calculus"
+   },
+   {
+    "alias": "CALC-008",
+    "canonical": "LIM-007",
+    "index_line": 68,
+    "subrepo": "calculus"
+   },
+   {
+    "alias": "CALC-031",
+    "canonical": "DIFF-032",
+    "index_line": 109,
+    "subrepo": "calculus"
+   }
+  ],
+  "entries_layout": {
+   "algebra": [
+    "algebra/entries"
+   ],
+   "calculus": [
+    "calculus/llm-friendly-build/entries"
+   ],
+   "order": [
+    "order/entries"
+   ],
+   "probability": [
+    "probability/entries"
+   ],
+   "topology": [
+    "topology/entries"
+   ]
+  },
+  "entry_files_total_md": 167,
+  "entry_ids": 167,
+  "entry_subrepo_sizes": {
+   "algebra": 7,
+   "calculus": 114,
+   "order": 21,
+   "probability": 17,
+   "topology": 8
+  },
+  "index_ids": 172,
+  "index_subrepo_sizes": {
+   "algebra": 12,
+   "calculus": 114,
+   "order": 21,
+   "probability": 17,
+   "topology": 8
+  },
+  "mapping_ids": 69,
+  "mapping_lines": 238,
+  "note": "白名单（表4）= INDEX ID 全集（表2）恒等；条目文件 md 总数含前缀不匹配件；三分列口径防 165/171 式误报",
+  "whitelist_size": 172
+ },
+ "greys": [
+  {
+   "actual_built_rows": 7,
+   "actual_pending_rows": 5,
+   "declared": {
+    "built": 3,
+    "context": "当前已建 3 条，待建 6 条",
+    "kind": "index_overview",
+    "pending": 6
+   },
+   "disk_built": 7,
+   "rule": "R7_index_overview_stale",
+   "subrepo": "algebra"
+  },
+  {
+   "actual_built_rows": 20,
+   "actual_pending_rows": 0,
+   "declared": {
+    "built": 11,
+    "context": "当前已建 11 条，待建 0 条",
+    "kind": "index_overview",
+    "pending": 0
+   },
+   "disk_built": 20,
+   "rule": "R7_index_overview_stale",
+   "subrepo": "order"
+  },
+  {
+   "actual_built_rows": 17,
+   "actual_pending_rows": 0,
+   "declared": {
+    "built": 7,
+    "context": "当前已建 7 条，待建 0 条",
+    "kind": "index_overview",
+    "pending": 0
+   },
+   "disk_built": 17,
+   "rule": "R7_index_overview_stale",
+   "subrepo": "probability"
+  },
+  {
+   "actual": 12,
+   "declared": 5,
+   "prefix": "ALG",
+   "qualifier": "核心概念",
+   "rule": "R8_mapping_overview_stale"
+  },
+  {
+   "actual": 114,
+   "declared": 113,
+   "prefix": "CALC",
+   "qualifier": "已建条目 + 大量待建）",
+   "rule": "R8_mapping_overview_stale"
+  },
+  {
+   "actual": 21,
+   "declared": 18,
+   "prefix": "ORD",
+   "qualifier": "核心概念）",
+   "rule": "R8_mapping_overview_stale"
+  },
+  {
+   "actual": 17,
+   "declared": 15,
+   "prefix": "PROB",
+   "qualifier": "核心概念）",
+   "rule": "R8_mapping_overview_stale"
+  }
+ ],
+ "reds": [],
+ "run_date": "2026-09-04",
+ "tool": "checkmath.py（mathscan-solo 件二四表一致性核对器）",
+ "verdict": "zero_drift"
+}
+{"verdict": "zero_drift", "reds": 0, "greys": 7, "caliber": {"mapping_ids": 69, "mapping_lines": 238, "index_ids": 172, "entry_files_total_md": 167, "entry_ids": 167, "whitelist_size": 172, "alias_count": 4}}
