@@ -1,0 +1,126 @@
+{
+ "channels": {
+  "graph": [
+   "ALG-012",
+   "ORD-001",
+   "ORD-011",
+   "ORD-016",
+   "ORD-024",
+   "PROB-016",
+   "ORD-023",
+   "PROB-006",
+   "PROB-007",
+   "ORD-005",
+   "ORD-009",
+   "ALG-002"
+  ],
+  "skeleton": [
+   "llm-friendly-build/mapping.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "probability/INDEX.md",
+   "order/INDEX.md",
+   "topology/INDEX.md",
+   "algebra/INDEX.md"
+  ],
+  "word": [
+   "ORD-023",
+   "PROB-016",
+   "ORD-024",
+   "ALG-012"
+  ]
+ },
+ "expanded": [
+  "确定性范式",
+  "计数测度",
+  "区间序",
+  "解析确定性"
+ ],
+ "provenance": {
+  "ALG-012": [
+   "graph",
+   "word"
+  ],
+  "ORD-001": [
+   "graph"
+  ],
+  "ORD-011": [
+   "graph"
+  ],
+  "ORD-016": [
+   "graph"
+  ],
+  "ORD-023": [
+   "word",
+   "graph"
+  ],
+  "ORD-024": [
+   "graph",
+   "word"
+  ],
+  "PROB-016": [
+   "graph",
+   "word"
+  ],
+  "PROB-006": [
+   "graph"
+  ],
+  "PROB-007": [
+   "graph"
+  ],
+  "ORD-005": [
+   "graph"
+  ],
+  "ORD-009": [
+   "graph"
+  ],
+  "ALG-002": [
+   "graph"
+  ]
+ },
+ "query": [
+  "确定性范式",
+  "计数测度",
+  "区间序",
+  "解析确定性"
+ ],
+ "reading_list": {
+  "entry_ids": [
+   "ALG-012",
+   "ORD-001",
+   "ORD-011",
+   "ORD-016",
+   "ORD-023",
+   "ORD-024",
+   "PROB-016",
+   "PROB-006",
+   "PROB-007",
+   "ORD-005",
+   "ORD-009",
+   "ALG-002"
+  ],
+  "entry_paths": [
+   "/Users/moc/workspaces/SiHankor/sih-math/algebra/entries/ALG-012-formal-grammar-and-parse-determinism.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-001-partially-ordered-set.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-011-well-founded-recursion-termination.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-023-abstract-rewrite-system-deterministic-normal-form.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-024-interval-order-and-span-matching.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-016-counting-measure-and-additivity.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-006-probability-measure.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-007-expectation.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-005-chains-and-antichains.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-009-commitment-closure-and-naming.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/algebra/entries/ALG-002-equivalence-relation-and-quotient-isolation.md"
+  ],
+  "skeleton_files": [
+   "algebra/INDEX.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "llm-friendly-build/mapping.md",
+   "order/INDEX.md",
+   "probability/INDEX.md",
+   "topology/INDEX.md"
+  ]
+ },
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math",
+ "union_note": "carrwire-solo 四单词召回并集（确定性范式/计数测度/区间序/解析确定性），承 locatorwire 并集书单条款"
+}
