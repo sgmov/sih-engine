@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "entry_id": "pk-037",
+  "disposition": "promoted",
+  "ruling": "用户 2026-09-04 裁 pk-037「应该升级」并同意路线形「采确定性统计向量、不做向量库、A/B 门切换」——此为人节点对 m-pk037-route-1 与 m-pk037-route-2 两轮九发测量材料 near_threshold 位 confirmation，材料在 sih-tools/proposition/DES/m-pk037-route-1/ 与 m-pk037-route-2/（十八发 comply 全收敛零变卦，near_threshold 于 basis 形式子判据）；升级立项批 pk037impl-solo 承接，路线最终机器终签随件二载体管线落",
+  "ttl_days": 30,
+  "id": "pk-037",
+  "path": "doc/governance/PARKING-v1.md",
+  "state": "exited",
+  "parking": {
+    "entered_at": "2026-09-02",
+    "exited_at": "2026-09-04",
+    "ttl_days": 30
+  }
+}

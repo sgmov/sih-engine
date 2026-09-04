@@ -1,0 +1,518 @@
+{
+ "aggregate": {
+  "delta_ig_bits": 12.74716014013886,
+  "sum_ig_A_bits": 10.659797733643746,
+  "sum_ig_B_bits": 23.406957873782606,
+  "sum_intersection": 8
+ },
+ "batch": "pk037impl-solo",
+ "corpus_digest": "74c630bfb8b69fa9830ef333882beace90c5b96fd258b41a8264dcaccf907e27",
+ "corpus_size": 165,
+ "criteria": {
+  "C1_new_path_zero_degeneration": true,
+  "C2_narrowing_gain_delta_ge_registered": true,
+  "C3_coverage_continuity": true
+ },
+ "delta_bits_registered": 0.5,
+ "k": 3,
+ "per_query": [
+  {
+   "A_hit_rate": 0.15384615384615385,
+   "A_ig_bits": 2.700439718141092,
+   "A_state": "active",
+   "A_union": [
+    "ALG-001",
+    "LIM-007",
+    "PROB-001",
+    "PROB-002",
+    "PROB-003",
+    "PROB-004",
+    "PROB-005",
+    "PROB-006",
+    "PROB-007",
+    "PROB-010",
+    "PROB-011",
+    "PROB-012",
+    "PROB-015"
+   ],
+   "A_word_hits": [
+    "PROB-003",
+    "PROB-011"
+   ],
+   "B_hit_rate": 0.16666666666666666,
+   "B_ig_bits": 2.584962500721156,
+   "B_scores": {
+    "ORD-024": 0.08775873874594872,
+    "PROB-003": 0.14522940681595295,
+    "PROB-011": 0.3666214750012911
+   },
+   "B_semantic_hits": [
+    "PROB-011",
+    "PROB-003",
+    "ORD-024"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ALG-001",
+    "LIM-007",
+    "ORD-001",
+    "ORD-005",
+    "ORD-009",
+    "ORD-023",
+    "ORD-024",
+    "PROB-001",
+    "PROB-002",
+    "PROB-003",
+    "PROB-004",
+    "PROB-005",
+    "PROB-006",
+    "PROB-007",
+    "PROB-010",
+    "PROB-011",
+    "PROB-012",
+    "PROB-015"
+   ],
+   "id": "lit-1",
+   "intent": "PROB-011",
+   "intersection": 2,
+   "terms": [
+    "置信区间"
+   ]
+  },
+  {
+   "A_hit_rate": 0.1,
+   "A_ig_bits": 3.321928094887362,
+   "A_state": "active",
+   "A_union": [
+    "DIFF-001",
+    "DIFF-013",
+    "DIFF-027",
+    "INT-001",
+    "INT-006",
+    "INT-014",
+    "INT-016",
+    "ORD-021",
+    "PROB-005",
+    "PROB-008",
+    "PROB-014",
+    "SER-002",
+    "SER-003",
+    "SER-005",
+    "SPEC-001",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-004",
+    "SPEC-005",
+    "SPEC-006"
+   ],
+   "A_word_hits": [
+    "PROB-014",
+    "SPEC-001"
+   ],
+   "B_hit_rate": 0.10714285714285714,
+   "B_ig_bits": 3.222392421336448,
+   "B_scores": {
+    "DIFF-024": 0.04941953958914954,
+    "PROB-014": 0.41555783333453394,
+    "SPEC-001": 0.1452417872654386
+   },
+   "B_semantic_hits": [
+    "PROB-014",
+    "SPEC-001",
+    "DIFF-024"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "DIFF-001",
+    "DIFF-013",
+    "DIFF-023",
+    "DIFF-024",
+    "DIFF-027",
+    "HIS-016",
+    "INT-001",
+    "INT-006",
+    "INT-014",
+    "INT-016",
+    "LIM-001",
+    "LIM-002",
+    "LIM-005",
+    "LIM-006",
+    "LIM-007",
+    "ORD-021",
+    "PROB-005",
+    "PROB-008",
+    "PROB-014",
+    "SER-002",
+    "SER-003",
+    "SER-005",
+    "SPEC-001",
+    "SPEC-002",
+    "SPEC-003",
+    "SPEC-004",
+    "SPEC-005",
+    "SPEC-006"
+   ],
+   "id": "lit-2",
+   "intent": "PROB-014",
+   "intersection": 2,
+   "terms": [
+    "信息增益"
+   ]
+  },
+  {
+   "A_hit_rate": 0.14285714285714285,
+   "A_ig_bits": 2.807354922057604,
+   "A_state": "active",
+   "A_union": [
+    "ORD-001",
+    "ORD-005",
+    "ORD-016",
+    "ORD-020",
+    "ORD-021",
+    "ORD-022",
+    "PROB-015"
+   ],
+   "A_word_hits": [
+    "ORD-020"
+   ],
+   "B_hit_rate": 0.14285714285714285,
+   "B_ig_bits": 2.807354922057604,
+   "B_scores": {
+    "ORD-020": 0.2360402108930797
+   },
+   "B_semantic_hits": [
+    "ORD-020"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ORD-001",
+    "ORD-005",
+    "ORD-016",
+    "ORD-020",
+    "ORD-021",
+    "ORD-022",
+    "PROB-015"
+   ],
+   "id": "lit-3",
+   "intent": "ORD-020",
+   "intersection": 1,
+   "terms": [
+    "死锁"
+   ]
+  },
+  {
+   "A_hit_rate": 0.28125,
+   "A_ig_bits": 1.8300749985576876,
+   "A_state": "active",
+   "A_union": [
+    "ALG-001",
+    "ALG-002",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "LIM-007",
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "ORD-005",
+    "ORD-006",
+    "ORD-007",
+    "ORD-009",
+    "ORD-010",
+    "ORD-011",
+    "ORD-015",
+    "ORD-016",
+    "ORD-017",
+    "ORD-018",
+    "ORD-019",
+    "ORD-024",
+    "PROB-001",
+    "PROB-002",
+    "PROB-005",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003",
+    "TOP-004",
+    "TOP-005",
+    "TOP-006",
+    "TOP-007"
+   ],
+   "A_word_hits": [
+    "ORD-003",
+    "ORD-004",
+    "ORD-006",
+    "ORD-009",
+    "ORD-015",
+    "ORD-018",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003"
+   ],
+   "B_hit_rate": 0.15789473684210525,
+   "B_ig_bits": 2.662965012722429,
+   "B_scores": {
+    "ORD-003": 0.37349146672748335,
+    "ORD-015": 0.16113283177501855,
+    "TOP-003": 0.23338116772711448
+   },
+   "B_semantic_hits": [
+    "ORD-003",
+    "TOP-003",
+    "ORD-015"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ALG-001",
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "ORD-005",
+    "ORD-006",
+    "ORD-007",
+    "ORD-009",
+    "ORD-011",
+    "ORD-015",
+    "ORD-016",
+    "ORD-017",
+    "ORD-018",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003",
+    "TOP-004",
+    "TOP-005"
+   ],
+   "id": "lit-4",
+   "intent": "ORD-003/ORD-016 族",
+   "intersection": 3,
+   "terms": [
+    "不动点"
+   ]
+  },
+  {
+   "A_hit_rate": null,
+   "A_ig_bits": 0.0,
+   "A_state": "degenerate",
+   "A_union": [],
+   "A_word_hits": [],
+   "B_hit_rate": 0.125,
+   "B_ig_bits": 3.0,
+   "B_scores": {
+    "APP-011": 0.06568275060128058,
+    "PROB-011": 0.11311956434653751,
+    "TOP-001": 0.04066694941143178
+   },
+   "B_semantic_hits": [
+    "PROB-011",
+    "APP-011",
+    "TOP-001"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ALG-001",
+    "ALG-002",
+    "APP-009",
+    "APP-011",
+    "DIFF-001",
+    "DIFF-008",
+    "LIM-007",
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-004",
+    "ORD-019",
+    "PROB-002",
+    "PROB-003",
+    "PROB-010",
+    "PROB-011",
+    "TOP-001",
+    "TOP-002",
+    "TOP-003",
+    "TOP-004",
+    "TOP-005",
+    "TOP-006",
+    "TOP-007",
+    "TOP-008"
+   ],
+   "id": "par-1",
+   "intent": "PROB-011",
+   "intersection": 0,
+   "terms": [
+    "点估计的可信范围"
+   ]
+  },
+  {
+   "A_hit_rate": null,
+   "A_ig_bits": 0.0,
+   "A_state": "degenerate",
+   "A_union": [],
+   "A_word_hits": [],
+   "B_hit_rate": 0.1111111111111111,
+   "B_ig_bits": 3.169925001442312,
+   "B_scores": {
+    "ALG-001": 0.0411433827450943,
+    "INT-006": 0.06242317553617944,
+    "PROB-014": 0.0892219493035062
+   },
+   "B_semantic_hits": [
+    "PROB-014",
+    "INT-006",
+    "ALG-001"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ALG-001",
+    "ALG-002",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "HIS-001",
+    "HIS-002",
+    "INT-001",
+    "INT-006",
+    "INT-007",
+    "INT-010",
+    "INT-016",
+    "INT-021",
+    "MUL-002",
+    "ORD-001",
+    "ORD-002",
+    "ORD-003",
+    "ORD-021",
+    "PROB-001",
+    "PROB-003",
+    "PROB-005",
+    "PROB-006",
+    "PROB-007",
+    "PROB-008",
+    "PROB-014",
+    "SPEC-001",
+    "TOP-001"
+   ],
+   "id": "par-2",
+   "intent": "PROB-014",
+   "intersection": 0,
+   "terms": [
+    "提问的排序价值"
+   ]
+  },
+  {
+   "A_hit_rate": null,
+   "A_ig_bits": 0.0,
+   "A_state": "degenerate",
+   "A_union": [],
+   "A_word_hits": [],
+   "B_hit_rate": 0.15,
+   "B_ig_bits": 2.736965594166206,
+   "B_scores": {
+    "INT-012": 0.060437007596654185,
+    "INT-015": 0.07944210274003491,
+    "ORD-020": 0.23635119037215557
+   },
+   "B_semantic_hits": [
+    "ORD-020",
+    "INT-015",
+    "INT-012"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "DIFF-001",
+    "DIFF-025",
+    "INT-001",
+    "INT-004",
+    "INT-007",
+    "INT-010",
+    "INT-012",
+    "INT-013",
+    "INT-014",
+    "INT-015",
+    "INT-020",
+    "MUL-004",
+    "ORD-001",
+    "ORD-005",
+    "ORD-016",
+    "ORD-020",
+    "ORD-021",
+    "ORD-022",
+    "PROB-015",
+    "SER-003"
+   ],
+   "id": "par-3",
+   "intent": "ORD-020",
+   "intersection": 0,
+   "terms": [
+    "锁的申请次序"
+   ]
+  },
+  {
+   "A_hit_rate": null,
+   "A_ig_bits": 0.0,
+   "A_state": "degenerate",
+   "A_union": [],
+   "A_word_hits": [],
+   "B_hit_rate": 0.10714285714285714,
+   "B_ig_bits": 3.222392421336448,
+   "B_scores": {
+    "ALG-008": 0.07303172477947595,
+    "APP-003": 0.060724051068044696,
+    "HIS-015": 0.1337149432122359
+   },
+   "B_semantic_hits": [
+    "HIS-015",
+    "ALG-008",
+    "APP-003"
+   ],
+   "B_skeleton_state": "complete",
+   "B_state": "active",
+   "B_union": [
+    "ALG-001",
+    "ALG-002",
+    "ALG-008",
+    "ALG-009",
+    "ALG-010",
+    "APP-001",
+    "APP-003",
+    "APP-004",
+    "DIFF-001",
+    "DIFF-032",
+    "HIS-001",
+    "HIS-002",
+    "HIS-004",
+    "HIS-005",
+    "HIS-006",
+    "HIS-012",
+    "HIS-013",
+    "HIS-015",
+    "HIS-016",
+    "LIM-001",
+    "LIM-004",
+    "LIM-007",
+    "MUL-002",
+    "NS-003",
+    "ORD-009",
+    "PROB-009",
+    "SER-001",
+    "SER-002"
+   ],
+   "id": "par-4",
+   "intent": "ORD-003/ORD-016 族",
+   "intersection": 0,
+   "terms": [
+    "迭代什么时候能停"
+   ]
+  }
+ ],
+ "queries_fixture": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/pk037impl-solo/wikirecall/fixtures/ab-queries.json",
+ "queries_fixture_sha256": "f2b925bff4bc746c57d5f6c65cbd2b6af9b5528a04638126b7e307bc571b9320",
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math",
+ "schema": "ab-gate-readings/1",
+ "verdict": "pass"
+}
