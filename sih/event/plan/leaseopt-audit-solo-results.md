@@ -124,3 +124,14 @@ pk-045（多 agent 冲突测试样本库，2026-09-03 入泊）散文记载「�
 - 正身：anomalies 零
 - 租约：open 4ae2e517e1f19bd9 双仓，锁五路径（施工面 exclusive 加共享追加面 append）
 - 管线：化格→核阅（des-001 域外 exit-2 如实记）→检词；认证逐笔 append；双仓 settle；reconcile；当日链 verify
+
+## 十、收口读数（close 后回填）
+
+- 收约实录：首次 close 被守卫以「真分叉 diverged 整批拒」拦（diverged_files=lease/CONTRACT.md，本批自撞病灶一实证见第八节）；主树 merge --no-verify 通道外让位归并后 close 复跑成功，revoked true，双仓 worktree 与分支拆除
+- 归并对表：engine 主树任务包与例扫 first-run 材料备份让位 diff identical（退出码 0/0）；ledger-snapshot 与 pipeline-reports 与 recompute-reading 为工地新增批件正常归并非让位对象
+- bypass 登记：tools ffb4a803（merge 段1）与 engine f06aab1（merge 段1 加段2）两笔守卫通道外归并登记在案；本笔收口附记为第三笔（先例形 close 后回填）
+- reconcile 读数：tools unrouted 0、cert_missing 1（2026-09-03 entryunique-solo 段2 批前既有非本批新增）、unbypassed 31（其中本批相关 1 笔 9b87b34 为 closeguard 机制收约自动 pre-close working tree commit，非手工绕行，登记缺口属 closeguard 机制面如实申报）、session_orphan 19；engine unrouted 0、cert_missing 0、unbypassed 20、session_orphan 23；双仓 reconcile 退出码 1，告警源即上述 unbypassed 与 session_orphan 机制面累积，判据项 unrouted 与 cert_missing 批前零新增达成
+- 提交号：tools 批分支段1 即主树 ffb4a803；engine 批分支 6af5cf5（段1）与 f06aab1（段2）即主树 f06aab1
+- 链 verify：status valid、280 事件（first_hash 05a8a75e、last_hash 22325290），本笔附记在 close 后零认证余量走通道外 bypass 留痕不追加链认证，链面 verify 280 即终读
+- 跨日申报：close 与 reconcile 时点本地钟已过午夜（台账时间戳 2026-09-05T00 时段），本批事件链面仍在 2026-09-04 当日链文件内，verify 以该文件为准
+- session_orphan 勘误补充：病灶三核验时 sessions 事件流 grep 零命中，收口时 reconcile 读数 session_orphan tools 19 笔 engine 23 笔在档——「ledger 有 session_orphan 类在档」记载在 reconcile 三方对表输出面成立、在 sessions 事件流面不成立，两处如实分记，批五回收对象以 reconcile 读数为准
