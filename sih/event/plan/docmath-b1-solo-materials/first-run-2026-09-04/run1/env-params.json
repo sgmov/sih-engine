@@ -1,0 +1,101 @@
+{
+ "entries": [
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:2",
+   "family": "scrutinator_des001",
+   "id": "C001",
+   "kind": "charset_forbid",
+   "note": "字符面风格约定，判定性扰动缺席",
+   "params": {
+    "strings": [
+     "——"
+    ]
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:8",
+   "family": "scrutinator_des001",
+   "id": "C002",
+   "kind": "charset_allow",
+   "note": "字符面风格约定，判定性扰动缺席",
+   "params": {
+    "ranges": [
+     "0020-007E",
+     "00A0-00FF",
+     "4E00-9FFF",
+     "3000-303F",
+     "FF00-FFEF"
+    ]
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:14",
+   "family": "scrutinator_des001",
+   "id": "C006",
+   "kind": "forbid_pattern",
+   "note": "标点与括号内容风格约定，判定性扰动缺席",
+   "params": {
+    "pattern": "（(?!(?:[A-Za-z0-9 ./&+=,-]*|[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+)）)[^）]*）"
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:44",
+   "family": "scrutinator_des001",
+   "id": "F000",
+   "kind": "line_flag",
+   "note": "排版元素禁用观感约定，判定性扰动缺席",
+   "params": {
+    "allow_langs": [
+     "mermaid",
+     "filetree"
+    ],
+    "flag": "fence_open"
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:50",
+   "family": "scrutinator_des001",
+   "id": "F002",
+   "kind": "line_flag",
+   "note": "排版元素禁用观感约定，判定性扰动缺席",
+   "params": {
+    "flag": "blockquote"
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:56",
+   "family": "scrutinator_des001",
+   "id": "F003",
+   "kind": "line_flag",
+   "note": "排版元素禁用观感约定，判定性扰动缺席",
+   "params": {
+    "flag": "bold"
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:62",
+   "family": "scrutinator_des001",
+   "id": "F005",
+   "kind": "line_flag",
+   "note": "排版元素禁用观感约定，判定性扰动缺席",
+   "params": {
+    "flag": "table"
+   }
+  },
+  {
+   "evidence": "sih-engine/src/scrutinator/packs/des-001/rules.toml:32",
+   "family": "scrutinator_des001",
+   "id": "S005",
+   "kind": "header_structure",
+   "note": "节序观感约定，判定性扰动缺席",
+   "params": {
+    "check": "first_h2_name",
+    "name": "概览"
+   }
+  }
+ ],
+ "face": "环境参数登记面：纯约定规则诚实标注为约定，判定性扰动缺席，不做伪装数学",
+ "program": "docmath-b1-solo",
+ "root": "/Users/moc/workspaces/SiHankor",
+ "run_date": "2026-09-04"
+}
