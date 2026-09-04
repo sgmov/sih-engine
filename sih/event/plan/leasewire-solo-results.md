@@ -116,3 +116,14 @@ AST 同形机械证：lease/src/lease/lockcore.py 与 locks/src/locks/core.py �
 ## 十二、队形验证
 
 单线形 solo 零子代理全程成立：本批全部写入由会话 3a012326cae52fa6（sess-zcode-260904-leasewire）亲写，零 Agent/Task 子代理调用；锚点定位与偏差实查与金向量全由确定性程序承载（ast.dump 机械对表、cmp 三跑、测试对表、探针复现、checkcite 并集书单），链写入经引擎 scribe 闸三（--session 加 --sessions）零直写链文件。
+
+## 收口附记（close 后补记）
+
+- close 三跑：首跑 tools 与 math 两腿并（归并 bc2ca80f 与 366298b，工地删支），engine 腿 merge_failed（主树 trail 活文件修改态阻并，与 carrwire 同款）；按备份让位归并对表法处置，二跑 engine 腿并（归并 feedf6e）拆本吊销全成，failed 空、会话 3a012326cae52fa6 吊销；tools 与 math 腿二跑计 missing 或 already_gone 幂等收敛不判败。
+- 备份让位三件对表：任务包与 dispatch 两件 cmp IDENTICAL；trail 对表出险情见下条。
+- **trail 并集超集竞态险情（越线申报）**：close 首跑前快照对表同形 134 行零漂移（wip 提交 nothing_staged 佐证），让位备份时点主树活链已被并行批 pk050sw-solo 追加一笔至 135 行，本批未复查备份与快照的并集超集即复跑 close，归并以 134 行快照落地，clobber 其 certification_completed 事件一笔（event_id 4246c783，switch-gate-checklist.json 认证，event_hash 前八 c9ab0cfb，02:49:40）；其后该批又追一笔（16993504，02:49:53）承 134 链尾。终态链 scribe verify valid 135 事件零分叉（首 05a8a75e），所失事件全文保全于 /tmp/leasewire-yield-backup/trail-2026-09-04.ndjson 第 135 行；链文件不可由本会话改写（红线），处置申报如下：pk050sw-solo 若以其 c9ab0cfb 作 settle cert 将被 cert_not_on_chain 拒即对账自愈，重跑其 scribe append 重认证即恢复；本批 close 竞态窗口检查缺陷如实入账，后续批在备份让位与 close 复跑之间须加一次行数并集复查。
+- 三仓提交号：sih-tools（integral-stage-build）settle 段1 3716884d 加归并 bc2ca80f；sih-engine（main）settle 段1 056d08d 加归并 feedf6e；sih-math（main）settle 段1 73c0423 加归并 366298b。
+- reconcile（close 后）：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 段2，2026-09-03 旧账非本批新增）；sih-math unrouted 0 与 unbypassed 1（零号基线存量）与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 批前存量）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 135 事件，first_hash 05a8a75e 与批前一致，last_hash 9a1bf670；本批七笔即意图 5ea474d8 加停泊 97ee4c20 加认证五笔（ca190da0 与 332a47de 与 ad6f0022 与 a2a4381e 与 6cefebc4）全数在链。
+- 共享活面对表：当日链与会话册与锁册与 claims 册与 meter 计数册留主树活写（共享追加面，归会计通道）；scribe/CALL-LOG 不在本批 allow 面，零写如实申报。
+- 本笔回填提交：close 通道外整备形（--no-verify 加 lease bypass 登记），queueing-solo 与 contribmath-solo 先例同形。
