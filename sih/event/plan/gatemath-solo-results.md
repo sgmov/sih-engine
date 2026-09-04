@@ -36,7 +36,7 @@
 6. 工地二进制陈新：cargo build 增量零重编即指纹新鲜，重跑探针读数不变。
 7. 施工面 diff 亲读：C009 规则语义（围栏豁免加行内码剥离加载体与推导档全文双在场即合规缺一即每声明行一笔）与谓词扩展（DocConstantGate 双侧同形）与包 0.3.0 与登记面逐件读毕，与前棒档内申报一致，未发现虚报。
 
-绿步提交纪律（本棒特有）落地：继承态经 lease commit wip 原样入盘两工地分支（tools c0a3a690、engine 048413d），本节落档为第二绿步；后续每绿步一提交。两笔工具侧 CALL-LOG（nomenclator 与 scribe）不在 allow 面，承 packhyg/basefix/cascadewire 先例随收约补笔走 bypass 通道让位申报。
+绿步提交纪律（本棒特有）落地：继承态经 lease commit wip 原样入盘两工地分支（tools c0a3a690、engine 048413d），本节落档与死档词修复为第三绿步（engine 398af7f）；结算前引擎侧尚有认证清单实哈希回填与引用切片清单与当日链快照随 settle 段结算入盘。两笔工具侧 CALL-LOG（nomenclator 与 scribe）不在 allow 面，承 packhyg/basefix/cascadewire 先例随收约补笔走 bypass 通道让位申报。
 
 ## 一、完成度表
 
@@ -83,7 +83,10 @@
 | 事件哈希 | 对象 | 备注 |
 |---|---|---|
 | fe8ed29c | 意图笔（scribe intent，meter 包裹） | ask3 记录三锚程序切片，双门 status ok |
-| （认证随批逐笔 append，见收口附表回填） | 管线报告与变更件报告与金向量报告与 checkcite 报告 | 全 meter 包裹、闸三 --session 加 --sessions 双带、主树活链 append 短持即取即放 |
+| 088b9eb2 | 管线报告 | meter 包裹、闸三 --session 加 --sessions 双带、主树活链 append |
+| 7120f894 | 变更件报告 | 同上 |
+| e83167a8 | 金向量报告 | 同上 |
+| 5660c2b9 | checkcite 报告 | verdict pass（APP-009 与 APP-011 与 ORD-008 全落书单并集），同上 |
 
 ## 七、越线与误差申报
 
