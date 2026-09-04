@@ -1,0 +1,154 @@
+{
+ "channels": {
+  "graph": [
+   "ORD-001",
+   "ORD-002",
+   "ORD-003",
+   "ORD-004",
+   "ORD-005",
+   "ORD-006",
+   "ORD-008",
+   "ORD-015",
+   "ORD-017",
+   "ORD-019",
+   "ORD-020",
+   "ORD-021",
+   "ORD-023",
+   "PROB-013"
+  ],
+  "semantic": [
+   "ORD-016",
+   "ORD-011",
+   "ORD-022"
+  ],
+  "semantic_scores": {
+   "ORD-011": 0.1291416787159971,
+   "ORD-016": 0.23838301399479914,
+   "ORD-022": 0.06661412580881117
+  },
+  "skeleton": [
+   "llm-friendly-build/mapping.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "probability/INDEX.md",
+   "order/INDEX.md",
+   "topology/INDEX.md",
+   "algebra/INDEX.md"
+  ],
+  "word": [
+   "ORD-016"
+  ]
+ },
+ "expanded": [
+  "上游洁净",
+  "倒推终止",
+  "良基关系"
+ ],
+ "provenance": {
+  "ORD-001": [
+   "graph"
+  ],
+  "ORD-002": [
+   "graph"
+  ],
+  "ORD-003": [
+   "graph"
+  ],
+  "ORD-004": [
+   "graph"
+  ],
+  "ORD-005": [
+   "graph"
+  ],
+  "ORD-006": [
+   "graph"
+  ],
+  "ORD-008": [
+   "graph"
+  ],
+  "ORD-011": [
+   "semantic"
+  ],
+  "ORD-015": [
+   "graph"
+  ],
+  "ORD-016": [
+   "word",
+   "semantic"
+  ],
+  "ORD-017": [
+   "graph"
+  ],
+  "ORD-019": [
+   "graph"
+  ],
+  "ORD-020": [
+   "graph"
+  ],
+  "ORD-021": [
+   "graph"
+  ],
+  "ORD-022": [
+   "semantic"
+  ],
+  "ORD-023": [
+   "graph"
+  ],
+  "PROB-013": [
+   "graph"
+  ]
+ },
+ "query": [
+  "良基关系",
+  "倒推终止",
+  "上游洁净"
+ ],
+ "reading_list": {
+  "entry_ids": [
+   "ORD-001",
+   "ORD-002",
+   "ORD-003",
+   "ORD-004",
+   "ORD-005",
+   "ORD-006",
+   "ORD-008",
+   "ORD-011",
+   "ORD-015",
+   "ORD-016",
+   "ORD-017",
+   "ORD-019",
+   "ORD-020",
+   "ORD-021",
+   "ORD-022",
+   "ORD-023",
+   "PROB-013"
+  ],
+  "entry_paths": [
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-001-partially-ordered-set.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-002-complete-lattice.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-003-knaster-tarski-fixed-point.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-004-monotone-operator.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-005-chains-and-antichains.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-006-closure-and-consequence-operator.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-008-reference-reachability-and-dangling.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-011-well-founded-recursion-termination.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-015-coinduction-and-mirror-duality.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-016-well-founded-relation-and-backward-termination.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-017-definability-and-definition-extension.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-019-version-order-and-externalized-state-store.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-020-total-order-resource-allocation-deadlock-freedom.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-021-dependency-dag-topological-order.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-022-degradation-well-founded-chain.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-023-abstract-rewrite-system-deterministic-normal-form.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-013-stationarity-and-change-point.md"
+  ],
+  "skeleton_files": [
+   "algebra/INDEX.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "llm-friendly-build/mapping.md",
+   "order/INDEX.md",
+   "probability/INDEX.md",
+   "topology/INDEX.md"
+  ]
+ },
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math"
+}

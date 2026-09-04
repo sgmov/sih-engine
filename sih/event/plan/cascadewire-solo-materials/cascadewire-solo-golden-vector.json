@@ -1,0 +1,130 @@
+{
+  "carrier": "ORD-016",
+  "carrier_batch": "cascadewire-solo",
+  "cases": [
+    {
+      "case": "clean_chain_all_pass",
+      "exit": 0,
+      "expect": {
+        "exit": 0,
+        "states": {
+          "B.md": "clean"
+        },
+        "verdicts": {
+          "A.md": "writable"
+        }
+      },
+      "ledger": {
+        "blocked": 0,
+        "consulted": 1,
+        "hits": 1,
+        "upstream_changes": 0
+      },
+      "orphans": [],
+      "states": {
+        "B.md": "clean"
+      },
+      "verdicts": {
+        "A.md": "writable"
+      }
+    },
+    {
+      "case": "polluted_chain_upstream_reject",
+      "exit": 1,
+      "expect": {
+        "exit": 1,
+        "states": {
+          "B.md": "dirty"
+        },
+        "verdicts": {
+          "A.md": "blocked"
+        }
+      },
+      "ledger": {
+        "blocked": 1,
+        "consulted": 1,
+        "hits": 0,
+        "upstream_changes": 1
+      },
+      "orphans": [],
+      "states": {
+        "B.md": "dirty"
+      },
+      "verdicts": {
+        "A.md": "blocked"
+      }
+    },
+    {
+      "case": "orphan_edge_detect",
+      "exit": 0,
+      "expect": {
+        "exit": 0,
+        "orphans": [
+          "A.md -> B.md"
+        ],
+        "states": {
+          "B.md": "orphan"
+        },
+        "verdicts": {
+          "A.md": "writable"
+        }
+      },
+      "ledger": {
+        "blocked": 0,
+        "consulted": 1,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "orphans": [
+        "A.md -> B.md"
+      ],
+      "states": {
+        "B.md": "orphan"
+      },
+      "verdicts": {
+        "A.md": "writable"
+      }
+    },
+    {
+      "case": "runtime_ledger_counts",
+      "exit": 1,
+      "expect": {
+        "exit": 1,
+        "ledger": {
+          "blocked": 1,
+          "consulted": 3,
+          "hits": 2,
+          "upstream_changes": 1
+        },
+        "states": {
+          "B.md": "clean",
+          "C.md": "dirty",
+          "E.md": "clean"
+        },
+        "verdicts": {
+          "A.md": "blocked",
+          "D.md": "writable"
+        }
+      },
+      "ledger": {
+        "blocked": 1,
+        "consulted": 3,
+        "hits": 2,
+        "upstream_changes": 1
+      },
+      "orphans": [],
+      "states": {
+        "B.md": "clean",
+        "C.md": "dirty",
+        "E.md": "clean"
+      },
+      "verdicts": {
+        "A.md": "blocked",
+        "D.md": "writable"
+      }
+    }
+  ],
+  "expect_match": true,
+  "formula_version": "cw-1",
+  "mismatch": []
+}

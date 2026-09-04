@@ -1,0 +1,13 @@
+{
+  "batch": "cascadewire-solo",
+  "date": "2026-09-04",
+  "session": "5b46cca3df980ab5",
+  "stage": "derivation",
+  "file": "sih-math/docs/cascadewire-derivation-2026-09-04.md",
+  "carrier": "ORD-016 良基关系与倒推终止（mapping.md:190）",
+  "structure": "七节：接线概览、初锚与深锚边界、载体映射、判定语义形式化逐判定位六节（build_edges/build_use_edges/latest_cert_hashes/check_targets/find_orphans/runtime_ledger）、良基性与终止性收拢、金向量四场景正对表、载体锚点",
+  "anchor_lines": "源码锚点六处：三处初锚零改（build_edges/latest_cert_hashes/check_targets 承 caswire2-solo）加三处深锚增注（build_use_edges/find_orphans/runtime_ledger）",
+  "contract_line": "CONTRACT.md 载体引用节深锚增补申报行（实查择形：节已由 caswire2 立节，本批增补申报行不另立节，leasewire 先例形制）加修订六",
+  "citation_guard": "checkcite pass（cited ORD-016 与 ORD-023 全在册零 missing，allowed_size 37）；首跑 fail ALG-002 不在书单闭包，先例引用去 ID 措辞修正后 pass",
+  "math_touch": "数学仓 entries 与 INDEX 与 mapping.md 零触碰，只新增 docs/ 推导档一件"
+}

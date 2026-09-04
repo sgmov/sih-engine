@@ -1,0 +1,39 @@
+{
+  "batch": "cascadewire-solo",
+  "date": "2026-09-04",
+  "session": "5b46cca3df980ab5",
+  "stage": "formatter-scrutinator-nomenclator",
+  "formatter": [
+    {"target": "worktrees/sih-math/cascadewire-solo/docs/cascadewire-derivation-2026-09-04.md", "rc": 0, "changed": 0},
+    {"target": "worktrees/sih-tools/cascadewire-solo/cascade/CONTRACT.md", "rc": 0, "changed": 0},
+    {"target": "worktrees/sih-tools/cascadewire-solo/cascade/CALL-LOG.md", "rc": 0, "changed": 0},
+    {"target": "worktrees/sih-tools/cascadewire-solo/nomenclator/packs/core/terms.json", "rc": 0, "changed": 0},
+    {"target": "sih-engine/sih/event/plan/cascadewire-solo-materials/golden_cases.json", "rc": 0, "changed": 0},
+    {"target": "sih-engine/sih/event/plan/cascadewire-solo-materials/cascadewire-solo-golden-vector.json", "rc": 0, "changed": 0},
+    {"target": "sih-engine/sih/event/plan/cascadewire-solo-materials/recall-cascadewire.json", "rc": 0, "changed": 0},
+    {"target": "sih-engine/sih/event/plan/cascadewire-solo-materials/dispatch.md", "rc": 0, "changed": 0},
+    {"target": "sih-engine/sih/event/plan/cascadewire-solo-materials/cascadewire-solo.md", "rc": 0, "changed": 0},
+    {"target": "cascade/src/cascade/core.py 与 materials/replay_golden.py", "rc": "n/a", "note": "py 域外（general-v1 只盖 md/json/yaml/toml）如实记"}
+  ],
+  "scrutinator": [
+    {"target": "docs/cascadewire-derivation-2026-09-04.md", "rc": 2, "note": "des-001 域外如实记不属违规"},
+    {"target": "cascade/CONTRACT.md", "rc": 2, "note": "des-001 域外如实记不属违规"},
+    {"target": "cascade/CALL-LOG.md", "rc": 2, "note": "des-001 域外如实记不属违规"},
+    {"target": "sih-engine/doc/governance/GOV-003-fullstate-course-v1.md（域内对照件）", "rc": 0, "findings": 0, "note": "采集面恢复佐证"}
+  ],
+  "nomenclator": [
+    {"target": "docs/cascadewire-derivation-2026-09-04.md", "rc": 0, "note": "首跑 rc=1 命中入册 dead_ban（line 103 本批产出），改写册与链零动后 rc=0"},
+    {"target": "cascade/CONTRACT.md", "rc": 0},
+    {"target": "cascade/CALL-LOG.md", "rc": 0},
+    {"target": "cascade/src/cascade/core.py", "rc": 1, "note": "存量一笔：入册 dead_ban line 396 既有 docstring（主树 line 386 同 finding 在册，caswire2-solo 同款存量申报），docstring 在 AST 内不可改即零行为变更约束，本批注释锚点首跑同词 line 394 已改写转净"},
+    {"target": "nomenclator/packs/core/terms.json", "rc": 0},
+    {"target": "materials/golden_cases.json", "rc": 0},
+    {"target": "materials/cascadewire-solo-golden-vector.json", "rc": 0},
+    {"target": "materials/recall-cascadewire.json", "rc": 0},
+    {"target": "materials/dispatch.md", "rc": 0},
+    {"target": "materials/cascadewire-solo.md", "rc": 0},
+    {"target": "materials/replay_golden.py", "rc": 0}
+  ],
+  "canonical_gate": "nomenclator tests 30 绿（词表四词收编按 CANONICAL sort_keys indent=2 尾换行形态，test_core_pack_shipped_canonical 绿）",
+  "finding_disposition": "本批产出违例零残留：推导档与 core.py 新注释两处入册改写转净；core.py line 396 存量一笔主树同 finding 在册如实申报非本批引入"
+}
