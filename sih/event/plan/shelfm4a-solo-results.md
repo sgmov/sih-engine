@@ -63,4 +63,11 @@
 
 ## 收口附记（close 后补记，本节经 close 通道外 bypass 提交回填）
 
-（close 后回填）
+- close 一次过：三仓归并、分支删、工地拆、会话吊销（revoked true），九锁先放后收。
+- 三仓主树归并提交：sih-math 段二加归并成对（五件 +4/-0 补节与推导档）、sih-tools 与 sih-engine 各 settle 加归并成对。
+- 让位对表：materials 全件与任务包与五件 diff patch 备份 cmp IDENTICAL；主树五节在盘复核 5/5。
+- 正典终扫（主树原件 ROOT）：172 = 16 + 156 = 172 对账成立，algebra 缺节 0，inconsistencies 0——与推导档与 golden 报告逐位命中。
+- 链读数：close 后当日链 219 事件 verify valid；本批认证五笔（ee41c434 / 2470caae / 20a4c75b / 40de807d / d5836e56）全在链。
+- reconcile：三仓 unrouted 零、session_orphan 零、unbypassed 零；cert_missing 与 math unbypassed 1 为批前历史存量非本批新增。
+- coverage 目录 __pycache__ 未跟踪件照录不处置（非本批产物）。
+- 本附记经 close 通道外 --no-verify 提交加 lease bypass 登记回填。
