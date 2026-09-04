@@ -1,0 +1,57 @@
+{
+  "carrier": "ORD-016",
+  "carrier_batch": "cascadewire-solo",
+  "replay_convention": "重放寻径约定：cascade 源根（含 cascade 包的 src 目录）经 --cascade-src 参数传入；root 夹具由重放器于临时目录自建即 cases 零绝对路径；cert 参照内容按 file_hash 同形即 sha256 hexdigest 换算；冻结态零工地绝对路径",
+  "cases": [
+    {
+      "name": "clean_chain_all_pass",
+      "targets": "洁净检查正场景，正对 check_targets 三态 clean（深锚推导档 §3.4）",
+      "edges": {"A.md": ["B.md"]},
+      "fixture_files": {"B.md": "content-v1"},
+      "cert_refs": {"B.md": "content-v1"},
+      "expect": {
+        "states": {"B.md": "clean"},
+        "verdicts": {"A.md": "writable"},
+        "exit": 0
+      }
+    },
+    {
+      "name": "polluted_chain_upstream_reject",
+      "targets": "违例拒绝场景，正对 dirty 拒下游 blocked（深锚推导档 §3.4）",
+      "edges": {"A.md": ["B.md"]},
+      "fixture_files": {"B.md": "content-v2"},
+      "cert_refs": {"B.md": "content-v1"},
+      "expect": {
+        "states": {"B.md": "dirty"},
+        "verdicts": {"A.md": "blocked"},
+        "exit": 1
+      }
+    },
+    {
+      "name": "orphan_edge_detect",
+      "targets": "孤儿边侦查场景，正对 find_orphans 机械兜底与 orphan 态不拦承有度（深锚推导档 §3.5）",
+      "edges": {"A.md": ["B.md"]},
+      "fixture_files": {},
+      "cert_refs": {},
+      "expect": {
+        "states": {"B.md": "orphan"},
+        "verdicts": {"A.md": "writable"},
+        "orphans": ["A.md -> B.md"],
+        "exit": 0
+      }
+    },
+    {
+      "name": "runtime_ledger_counts",
+      "targets": "边账读数场景，正对 runtime_ledger 四计数器（深锚推导档 §3.6）",
+      "edges": {"A.md": ["B.md", "C.md"], "D.md": ["E.md"]},
+      "fixture_files": {"B.md": "content-b", "C.md": "content-c2", "E.md": "content-e"},
+      "cert_refs": {"B.md": "content-b", "C.md": "content-c1", "E.md": "content-e"},
+      "expect": {
+        "states": {"B.md": "clean", "C.md": "dirty", "E.md": "clean"},
+        "verdicts": {"A.md": "blocked", "D.md": "writable"},
+        "ledger": {"consulted": 3, "upstream_changes": 1, "blocked": 1, "hits": 2},
+        "exit": 1
+      }
+    }
+  ]
+}

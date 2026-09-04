@@ -1,0 +1,28 @@
+{
+  "batch": "cascadewire-solo",
+  "date": "2026-09-04",
+  "session": "5b46cca3df980ab5",
+  "stage": "changed-files",
+  "change_type": "wiring_deep_anchor_no_behavior_change",
+  "sih_tools_worktree": [
+    {"path": "cascade/src/cascade/core.py", "change": "三处深锚注记锚点增注（build_use_edges/find_orphans/runtime_ledger），全 # 注释不进 AST，ast.dump 与主树全同 True"},
+    {"path": "cascade/CONTRACT.md", "change": "载体引用节深锚增补申报行加修订六"},
+    {"path": "cascade/CALL-LOG.md", "change": "新立首笔（本批调用留痕）"},
+    {"path": "nomenclator/packs/core/terms.json", "change": "四词 established 登记（倒推遍历/洁净判定/孤儿边/边账），165 至 169，CANONICAL 形态"}
+  ],
+  "sih_math_worktree": [
+    {"path": "docs/cascadewire-derivation-2026-09-04.md", "change": "深锚推导档新增"}
+  ],
+  "sih_engine_worktree": [
+    {"path": "sih/event/plan/cascadewire-solo-materials/（九件）", "change": "dispatch 与任务包拷贝与 recall 与金向量三件与管线四报告件，settle 前一次性拷"},
+    {"path": "sih/event/plan/cascadewire-solo-results.md", "change": "结果档"},
+    {"path": "sih/event/trail/2026-09-04.ndjson", "change": "当日链快照 settle 前一次性拷（主树活链经引擎 scribe 认证在先）"}
+  ],
+  "zero_change_evidence": [
+    "AST 同形：主树与工地 core.py 剥注记即 ast.dump 全同 True（本批仅 # 注释，Python 注释不进 AST）",
+    "测试对表：cascade 28 passed 批前（主树）批后（工地）同绿零回归",
+    "nomenclator tests 30 绿（词表收编 canonical 闸）",
+    "金向量三跑同哈希 8863e54b901a6142 含主树已提交源复现"
+  ],
+  "forbidden_faces_untouched": "cascade 可执行语义零改动；数学仓 entries 与 INDEX 与 mapping.md 零触碰；sih-tools 其余工具（lease/locks/formatter 主树/scrutinator/meter/elicit/identity/parser/selector/locator/facet/tally/gauge/wikirecall 工具码）零碰；主树零直写（除共享追加面 append 锁内与先例申报前置位）"
+}

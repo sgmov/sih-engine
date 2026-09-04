@@ -1,0 +1,26 @@
+{
+  "batch": "cascadewire-solo",
+  "date": "2026-09-04",
+  "session": "5b46cca3df980ab5",
+  "stage": "golden",
+  "files": [
+    "sih-engine/sih/event/plan/cascadewire-solo-materials/golden_cases.json",
+    "sih-engine/sih/event/plan/cascadewire-solo-materials/replay_golden.py",
+    "sih-engine/sih/event/plan/cascadewire-solo-materials/cascadewire-solo-golden-vector.json"
+  ],
+  "scenarios": [
+    {"name": "clean_chain_all_pass", "verdict_focus": "check_targets 三态 clean（洁净检查）"},
+    {"name": "polluted_chain_upstream_reject", "verdict_focus": "dirty 拒下游 blocked（违例拒绝）"},
+    {"name": "orphan_edge_detect", "verdict_focus": "find_orphans 机械兜底加 orphan 态不拦承有度"},
+    {"name": "runtime_ledger_counts", "verdict_focus": "runtime_ledger 四计数器 consulted 3 加 upstream_changes 1 加 blocked 1 加 hits 2"}
+  ],
+  "replayer": "replay_golden.py 深锚版：真实调用 cascade.core 的 check_targets 与 find_orphans 与 runtime_ledger，非轻量复刻",
+  "double_run": {
+    "run1_vs_run2": "cmp IDENTICAL",
+    "worktree_vs_main_tree": "cmp IDENTICAL（主树已提交源复现关过——接线 diff 仅注释，重放载荷逐字节不变，即零行为变更机械证）",
+    "frozen_vector": "cmp IDENTICAL",
+    "payload_sha256_16": "8863e54b901a6142"
+  },
+  "path_convention": "重放寻径约定：cascade 源根经 --cascade-src 参数传入，root 夹具 tempfile 自建，cases 零绝对路径，冻结态零工地绝对路径",
+  "fix_history": "首版两处构造错误自纠（cert 值须 file_hash 同形纯 hexdigest；states 须取 targets upstreams 聚合），首版未冻结未认证，修正后三跑同哈希为准"
+}
