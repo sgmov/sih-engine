@@ -116,6 +116,13 @@
 
 单线形 solo 零子代理，全链由会话 b11ea2f893a72fd9 亲写，零 Agent/Task 派生。
 
-## 十一、收口附表（close 后回填）
+## 十一、收口附表（close 后回填，第三棒 2026-09-04）
 
-（回填位：settle 提交号与归并号与 cert 与链 verify 读数与 reconcile 读数与备份让位对表）
+- settle 段结算双仓：engine 7f91c91 加 tools 71c78985（cert 5660c2b9，即链尾 checkcite 认证笔）
+- 归并双仓：engine ea35194 加 tools d9079805，双分支 msh/gatemath-solo 删支，双工地拆除，会话 b11ea2f893a72fd9 拆本吊销 revoked
+- 链 verify：239 笔 valid（first 05a8a75e，tail 5660c2b9），当日事件构成为例行读数三笔加意图一笔加认证四笔，尾前 231 笔承前批
+- reconcile 双仓：sih-tools unrouted 零加 unbypassed 零加 cert_missing 二笔（mainqm-adjud-solo f183d7b 加 entryunique-solo 526e2be）与 sih-engine unrouted 零加 unbypassed 零加 cert_missing 一笔（mainqm-adjud-solo 0217d74），三笔全他批存量零新增
+- 备份让位归并对表法：主树陈旧副本二件（任务包与 dispatch，前棒早期拷贝）备份让位后与归并结果对表，差异各仅死档词改取径一笔（第三棒检词修复，零信息损失定性让位）；当日链快照 cmp 逐字节 IDENTICAL 239 笔
+- 归并后主树复验（承 0803 旧二进制事故勘误条款）：cargo 重编后主树二进制包 0.3.0 生效，脏夹具探针 C007×2 加 C008×1 加 C009×3 读数不变，SPEC-019 主树域内核阅 exit 0 findings 零（工地路径域外 exit 2 先记，本笔补跑成全），工具侧 scrutinator 45 测加 nomenclator 30 测主树复跑全绿
+- 收口补笔：本附表回填与工具侧两 CALL-LOG（nomenclator 加 scribe）经 bypass 通道入版控（close 通道外，packhyg/basefix/cascadewire 先例同形），登记见 bypass 台账
+- 泊界心跳与例扫（会话开场读数）：selector 双目录 exit 0 alarms 空即 tools 十八主线一侧线加 engine 二十二主线；例扫 rev3 双跑退出码 0/0 四路 cmp 全 IDENTICAL，checkmath zero_drift reds 零 greys 四灰（声明滞后只记不代修）
