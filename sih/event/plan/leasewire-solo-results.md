@@ -98,7 +98,7 @@ AST 同形机械证：lease/src/lease/lockcore.py 与 locks/src/locks/core.py �
 1. unlock 首试两笔 rc=2：身份件路径漏 BATCH 段拼出不存在文件报 identity report unreadable（工具异常如实申报），补参复跑 rc=0，零数据面影响。
 2. scribe park 首试 rc=1 一笔：停泊记录缺 action 字段报停泊拒 ActionMissing，补 action enter 复跑 rc=0（链上零残笔即拒绝未落链）。
 3. 金向量首版 l3 场景含跨场景台账泄漏（l2 locks 台账延入 l3 status 读出），修正重放器按场景分台账后重跑，冻结向量以修正后三跑同哈希为准；首版未冻结未认证未出工地。
-4. 正身件与 ask3 记录与叩问信号与 digest 与验证件七笔写于会话签发前（机械链序前置位），scribe/reports 与 identity/reports 面锁不可得即事实直写，零共享冲突（批期该两 face 无他会话在写），如实申报。
+4. 机械链序前置位写面五笔即 ask3 生成器与 ask3 记录与验证件与叩问信号（scribe/reports 面）与正身件（identity/reports 面）写于会话签发前，面锁不可得即事实直写，digest 走标准输出不落盘；零共享冲突（批期该两 face 无他会话在写），如实申报。
 5. 租约 ledger 面零直写：sessions 与 locks 与 claims 三册全部经 lease 工具追加即唯一写点承载，本批对 ledger 面零锁外直写。
 6. 核阅域外 exit-2 十路（工地路径全在 des-001 域外）如实记入档，域内对照 GOV-003 exit 0 佐证采集面在位，不属违规。
 
