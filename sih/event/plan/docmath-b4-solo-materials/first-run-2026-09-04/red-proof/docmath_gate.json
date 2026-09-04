@@ -1,0 +1,13 @@
+{
+ "gate": "docmath 收尾合并闸门：mathpipe 裸奔复核与 docmath 三面同一处",
+ "notes": [],
+ "program": "docmath-b4-solo",
+ "remedy_form": "违规报文三要素即文件、缺件、补法；des-001 C007 与 C008 与 C009 裸奔违规类在役，本闸为合并复核位不替代规则包闸",
+ "run_date": "2026-09-04",
+ "spec_source": "worktree_batch_phase",
+ "verdict": "red",
+ "violation_count": 1,
+ "violations": [
+  "worktrees/sih-engine/docmath-b4-solo/doc/spec/SPEC-019-constant-nearby-floor.md: 缺内容充分性节（补『## 内容充分性 {#sufficiency}』节：判据红证对表、判定性常数挂锚对表、约束算子对表三行逐行如实填写，模板见 doc/spec/SPEC-TEMPLATE-sufficiency-v1.md）"
+ ]
+}

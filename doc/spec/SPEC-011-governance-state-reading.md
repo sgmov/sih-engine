@@ -92,3 +92,10 @@ v1 于 2026-08-28 随 gspec-solo 批落盘。正名已签即秤星英文对 gaug
 修订三 2026-08-30 gaugeimpl 批：实装家位经用户开工令裁定为围堰组件先建即计算核落 sih-tools/gauge 外切孵化，替本节原引擎 src 判据；融回前置即引擎侧 record 守卫批，读数事件类型与落链腿两件，另开承接；接口冻结面零触碰。
 修订四 2026-08-30 gaugewiring 批：期票两件落地即落链腿与消费侧接线。引擎侧增 reading_recorded 事件类型入写前必载 details 名单、scribe 增 record 入口走锁位前查回显事件哈希、reading 守卫机械校七字段形态即维度三枚举与值零到一或 insufficient 标记与窗口非空与公式版本 ga 数字形与参照时间 YYYY-MM-DD 与摘要六十四位十六进制，多字段少字段拒、建议排序自动处置三字段经多字段拒显式拦、守卫只校形不判值零 LLM。秤星侧 record 动作与 read 共算半逐字节同值、经书简落链、read 增 history 序列回看即链上同维同主体 reading_recorded 按链序回列补 F-3、sequence 判据改同维同主体全链回看。消费侧三处接线即租约 open 会话档附三维读数摘要与段结算报告附读数、秤星或证据件缺席折 skipped 注记零拦截承 F-6、例行读数即 record 维度缺省三维全出快照形、周期化调度归章程批另开待用户令。接口冻结面零触碰即 read 与 record 操作名与七字段 schema 与三维轴值不动，read 单维形维持已证态、record 维度缺省全出为 superset 不破同参一致性。
 修订五 2026-09-03 mathpipe-a3-solo 批：期票两件清偿即 PROB-003 置信带与 PROB-005 贝叶斯语义实装，公式版本升 ga-2。schema 增量扩展即七必填字段只增不删，adoption 维可带 confidence_band 与 posterior_mean 两扩展字段，守卫校其形态即置信带 lower 与 upper 零到一且 lower 不大于 upper、后验均值零到一、扩展字段仅 adoption 维出他维出现即拒；ga-1 七字段读数回放兼容即守卫仍收。秤星侧 adoption 维 n 零时不出扩展字段、n 非零时出置信带与后验均值，模型参数显式声明即 Beta(1,1) 均匀先验与 z=1.96 入 inputs_digest。接口冻结面按修订记录留痕扩展，只增不删承由松到紧红线。
+
+## 内容充分性 {#sufficiency}
+
+- 本节为 docmath-b4-solo 收尾批按新旧都管裁定补齐，模板见 SPEC-TEMPLATE-sufficiency-v1，只加节不改本文实质。
+- 判据红证对表：本文判据条目见 定位、三维定义、接口签名、数据契约等节。按证伪覆盖度载体如实申报：历史判据清单未逐件附可构造红证即零信息部分，清账路径为后继修订批逐件补红证，承 sih-math/docs/docmath-carriers-derivation-2026-09-04.md。
+- 判定性常数挂锚对表：本文档无声明的判定性常数。des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验。
+- 约束算子对表：本文无约束算子面，如实申报。
