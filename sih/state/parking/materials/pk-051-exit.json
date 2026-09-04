@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-051",
+  "id": "pk-051",
+  "parking": {
+    "entered_at": "2026-09-04",
+    "exited_at": "2026-09-04",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-04 令源裁定「pk-051 修复插到载体接线前，并行批安静窗口开工」即 basefix-solo 批承接修复；出泊条件达成即金向量 l4 场景改判 locked_elsewhere 与锁面读出全（active_locks 单遍事件序配对与 normalize_path 资源同一化两修复，TDD 先红后绿 locks 10 绿，as-is 旧向量留档披露不删，推导档 sih-math/docs/basefix-derivation-2026-09-04.md 在档），批内机械链承载零新裁决点",
+  "state": "exited",
+  "ttl_days": 30
+}

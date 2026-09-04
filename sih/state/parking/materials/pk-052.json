@@ -1,0 +1,24 @@
+{
+  "action": "enter",
+  "enter_event_hash": "42d232ce",
+  "anchors": [
+    "sih-tools/proposition/DES/m-mathscan-exscan-1/tally-material.json（得一裁材料，R1-R7 全过 stable_clear）",
+    "sih-engine/sih/event/plan/mathscan-solo-materials/topics/m-mathscan-exscan-1.md（裁决题 topic）",
+    "sih-math/docs/mathpipe-coverage-2026-09-04/rev3_script.py 与 checkmath.py（挂点候选承载的扫描器与核对器，双跑逐字节一致与零红在案）"
+  ],
+  "context": "mathscan-solo 批（2026-09-04）件五唯一裁决点：数学仓全盘扫描的例行化挂点提案两案——A 案挂 gauge 例行读数旁（每日三维快照落链后同跑 rev3 双跑与 checkmath 四表核对）、B 案挂批尾（每批 close 前跑，红则拦收口并出漂移清单）。facet 测量九发全 comply 变卦零谨慎零，围堰 tally assemble 装配后引擎 attractor check R1-R7 全过 verdict pass，gate_verdict stable_clear。用户 2026-09-04 裁定 stable_clear 亦呈泊界不执行——挂点属例扫节奏裁量归用户裁，材料备齐即可退人节点。泊位路径 allow 闸 scope_violation 拒写（本批 allow 未含泊界名册），泊材料与链上 park 事件落 mathscan-solo-materials 与当日链，名册投影行与 state/parking/materials 副本交后批按链补齐（泊界投影照链补齐先例）",
+  "disposition": null,
+  "entry_id": "pk-052",
+  "exit_condition": "用户裁 A 案（gauge 日扫旁）或 B 案（批尾 close 前扫）或两案并行或废弃，裁决后由后继执行批把扫描器与核对器挂接裁定位置并在 BATCH-FACE 勘误节或例行读数条目登记调用形即出泊；用户裁另案处理即废弃出泊",
+  "id": "pk-052",
+  "parking": {
+    "entered_at": "2026-09-04",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "requested_writes": [],
+  "ruling": "用户 2026-09-04 裁定原话「继续推进数学仓的完善，遇到裁决点过得一裁，退人节点」，stable_clear 亦呈泊界不执行；本泊位即退人节点，择案与节奏裁量全归用户",
+  "state": "parking",
+  "title": "数学仓全盘扫描例扫挂点两案：A 案 gauge 日扫旁 / B 案批尾 close 前扫，择案与节奏裁量归用户（过得一 stable_clear 在案）",
+  "ttl_days": 30
+}
