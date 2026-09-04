@@ -1,0 +1,128 @@
+{
+ "all_green": true,
+ "confluence_boundary": {
+  "claim": "化格以固定序（CR 先于空白）复合为单条行规则，正则形唯一性由功能确定性与幂等与等价类覆盖承载，硬测试断言类唯一与幂等不断言逐点交换",
+  "counterexample_line": "abc \\r（行尾空格加 CR）",
+  "cr_then_ws": "abc",
+  "pointwise_permutation_confluent": false,
+  "ws_then_cr": "abc "
+ },
+ "falsification_coverage": {
+  "anchors": [
+   "ORD-010",
+   "PROB-008"
+  ],
+  "carrier": "证伪覆盖度",
+  "cases": {
+   "full_coverage": {
+    "coverage": 1.0,
+    "covered_count": 4,
+    "mutant_count": 4,
+    "out_of_face_red_proofs": [],
+    "uncovered": [],
+    "zero_info_criteria": []
+   },
+   "partial_coverage": {
+    "coverage": 0.5,
+    "covered_count": 2,
+    "mutant_count": 4,
+    "out_of_face_red_proofs": [],
+    "uncovered": [
+     "mut-h1-dup",
+     "mut-table-leak"
+    ],
+    "zero_info_criteria": []
+   },
+   "zero_info_exposed": {
+    "coverage": 0.75,
+    "covered_count": 3,
+    "mutant_count": 4,
+    "out_of_face_red_proofs": [
+     "mut-table-extra"
+    ],
+    "uncovered": [
+     "mut-h1-dup"
+    ],
+    "zero_info_criteria": [
+     "S002 单一一级标题判据"
+    ]
+   }
+  },
+  "verdicts": {
+   "full_coverage": true,
+   "partial_coverage": true,
+   "zero_info_exposed": true
+  }
+ },
+ "program": "docmath-b2-solo",
+ "run_date": "2026-09-04",
+ "spec_sufficiency": {
+  "anchors": [
+   "ORD-002",
+   "ORD-003",
+   "PROB-009"
+  ],
+  "carrier": "规格充分性",
+  "cases": {
+   "contradiction_zero_model": {
+    "contradiction": [
+     "a"
+    ],
+    "greatest_fixpoint": null,
+    "least_fixpoint": null,
+    "models": 0,
+    "undecided_count": null,
+    "verdict": "invalid",
+    "witnessed_pair": null
+   },
+   "sufficient_unique": {
+    "ambiguity_lower_bound_bits": 0,
+    "contradiction": [],
+    "greatest_fixpoint": [
+     "a",
+     "b"
+    ],
+    "kleene_iterations": 1,
+    "least_fixpoint": [
+     "a",
+     "b"
+    ],
+    "models": 1,
+    "undecided_count": 0,
+    "verdict": "sufficient",
+    "witnessed_pair": null
+   },
+   "thin_ambiguous": {
+    "ambiguity_lower_bound_bits": 2,
+    "contradiction": [],
+    "greatest_fixpoint": [
+     "a",
+     "b",
+     "c"
+    ],
+    "kleene_iterations": 1,
+    "least_fixpoint": [
+     "a"
+    ],
+    "models": 4,
+    "undecided_count": 2,
+    "verdict": "insufficient",
+    "witnessed_pair": [
+     [
+      "a"
+     ],
+     [
+      "a",
+      "b",
+      "c"
+     ]
+    ]
+   }
+  },
+  "verdicts": {
+   "contradiction_zero_model": true,
+   "sufficient_unique": true,
+   "thin_ambiguous": true
+  }
+ }
+}
