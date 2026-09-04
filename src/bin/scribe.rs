@@ -10,7 +10,7 @@ use sih_engine::event_stream::event::{Actor, ActorType};
 use sih_engine::event_stream::park::load_parking_scope;
 use sih_engine::event_stream::{
     append, certification_event, check_intent_reused, check_locks, check_session,
-    compute_event_hash, intent_event, load_events,
+    compute_event_hash, intent_event, load_events, AppendError,
     crosscheck_event, lockgate::LockGateError, park_event, query,
     reading_event, sessiongate::SessionGateError, verify, Event, EventFilter, VerifyRange,
     GENESIS_PREV_HASH,
@@ -237,23 +237,33 @@ fn main() {
             };
             session_guard(&opts);
             let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
-            let input = match certification_event(
-                PathBuf::from(&report).as_path(),
-                &text,
-                exit_code,
-                gate_actor(),
-                Utc::now(),
-            ) {
-                Ok(i) => i,
-                Err(e) => emit(json!({"error": format!("报告不识别 {e:?}")}), 2),
-            };
             let mut store = load_store(&trail);
-            match append(input, &mut store, Some(&PathBuf::from(&trail))) {
-                Ok(ok) => emit(
-                    json!({"status": "appended", "event_id": ok.event_id, "event_hash": ok.event_hash}),
-                    0,
-                ),
-                Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+            // 追加原子化重试（basefix-solo 批 F-2）：并发下他进程先行落链使
+            // 本进程预取时间戳不越新链尾即拒 TimestampNotMonotonic，取新鲜
+            // 时间戳有界重试三次，事件内容仍由报告件确定性派生零伪造。
+            let mut attempt = 0u8;
+            loop {
+                let input = match certification_event(
+                    PathBuf::from(&report).as_path(),
+                    &text,
+                    exit_code,
+                    gate_actor(),
+                    Utc::now(),
+                ) {
+                    Ok(i) => i,
+                    Err(e) => emit(json!({"error": format!("报告不识别 {e:?}")}), 2),
+                };
+                match append(input, &mut store, Some(&PathBuf::from(&trail))) {
+                    Ok(ok) => emit(
+                        json!({"status": "appended", "event_id": ok.event_id, "event_hash": ok.event_hash}),
+                        0,
+                    ),
+                    Err(AppendError::TimestampNotMonotonic { .. }) if attempt < 3 => {
+                        attempt += 1;
+                        continue;
+                    }
+                    Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+                }
             }
         }
         "intent" => {
