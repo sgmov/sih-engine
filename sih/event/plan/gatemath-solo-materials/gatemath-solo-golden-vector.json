@@ -1,0 +1,57 @@
+{
+ "batch": "gatemath-solo",
+ "date": "2026-09-04",
+ "replay_convention": "夹具相对路径按重放 cwd 解析或参数传入主树源路径，冻结件零工地绝对路径；引擎二进制按内嵌名解析 des-001 包",
+ "pieces": [
+  {
+   "piece": "裸奔样张出 findings",
+   "target": "scrutinator/fixtures/corpus/carrier/constant-naked.md",
+   "expect_exit": 1,
+   "findings": [
+    {
+     "rule_id": "C007",
+     "lines": [
+      7,
+      9
+     ]
+    },
+    {
+     "rule_id": "C008",
+     "lines": [
+      11
+     ]
+    },
+    {
+     "rule_id": "C009",
+     "lines": [
+      7,
+      9,
+      11
+     ],
+     "note": "本批新增邻近级，全文档缺推导档指针"
+    }
+   ]
+  },
+  {
+   "piece": "合规样张零 findings",
+   "target": "scrutinator/fixtures/corpus/carrier/constant-carried.md",
+   "expect_exit": 0,
+   "findings": []
+  },
+  {
+   "piece": "既有合规文档抽测零回归",
+   "target": "des-001 域全量 137 面",
+   "expect": "only_old 0 且 C009 命中仅脏夹具三笔",
+   "evidence": "gatemath-solo-strike-classification.json 与 sweep 双档"
+  }
+ ],
+ "dual_run_cross_implementation": {
+  "verdict": "findings 与 summary 全等，净 0 脏 1 退出码一致",
+  "scope": "净脏双夹具工具侧与引擎侧四跑"
+ },
+ "golden_refreeze": {
+  "refrozen": 8,
+  "criterion": "findings 逐条零漂移仅包版本串 0.2.0 升 0.3.0",
+  "evidence": "gatemath-refreeze-report.json"
+ }
+}

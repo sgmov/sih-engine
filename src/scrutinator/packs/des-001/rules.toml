@@ -91,3 +91,17 @@ id = "C008"
 kind = "forbid_pattern"
 params = { pattern = '(阈值|判据|裁决规则)\s*[0-9][^@]*@[^@]*$' }
 message = "推导档指针缺失:声明形行仅携单指针,须载体与推导档双指针(@ 载体路径 @ 推导档路径)"
+
+# ===== 判定性常数邻近级地板（gatemath-solo 批 2026-09-04 增，引擎谓词类扩展 doc_constant_gate） =====
+# 承 mathpipe-full-program-v1 收尾批节与 SPEC-019（sih-engine/doc/spec/）：C007 行级闸之上加文档级地板，
+# 触发面扩至水平与窗口与预算类，合规形即载体引用（概念 ID）与推导档指针同文档邻近在场，缺一即每条
+# 声明形行各一笔。围栏内行豁免声明判定，邻近在场扫描含全文。词面族：载体承 des-001-mathe M008 前缀族
+# 加 APP 附录族，推导档承 sih-math/docs/derivation 命名族。机械边界如实声明：散文后置形与节级邻近
+# 不可及（SPEC-019 机械边界节），归 tally R8 与人工抽检承载。载体：ORD-008 引用图可达与孤悬判定
+# （mapping.md:184「引用是否可达无孤悬」）。判变只向前生效不溯往，C007 与 C008 判定位零触碰。
+
+[[rules]]
+id = "C009"
+kind = "doc_constant_gate"
+params = { declaration = '(阈值|判据|裁决规则|水平|窗口|预算)\s*[=＝为：:]?\s*[0-9]', carrier = '\b(TOP|PROB|ORD|ALG|CALC|LIM|DIFF|INT|APP)-[0-9]+\b', derivation = 'sih-math/docs/[^ \t`)）】，。]*derivation[^ \t`)）】，。]*' }
+message = "判定性常数裸奔邻近级:文档声明判定性常数而载体引用(概念 ID)与推导档指针未同文档邻近在场,缺一即违规"

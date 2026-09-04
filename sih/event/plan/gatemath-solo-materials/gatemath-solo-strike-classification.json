@@ -1,0 +1,58 @@
+{
+ "batch": "gatemath-solo",
+ "date": "2026-09-04",
+ "sweep": {
+  "targets_total": 137,
+  "old_findings_total": 460,
+  "new_findings_total": 463,
+  "only_old_count": 0,
+  "only_new_count": 3
+ },
+ "c009_findings": [
+  {
+   "rule_id": "C009",
+   "line": 11,
+   "file": "constant-naked.md"
+  },
+  {
+   "rule_id": "C009",
+   "line": 7,
+   "file": "constant-naked.md"
+  },
+  {
+   "rule_id": "C009",
+   "line": 9,
+   "file": "constant-naked.md"
+  }
+ ],
+ "classification": {
+  "true_naked_legacy": {
+   "count": 0,
+   "note": "存量 corpus 声明形行 C009 零命中，真裸奔清单为空，如实记零"
+  },
+  "false_positive": {
+   "count": 0,
+   "note": "零新命中即零误伤，规则形态无需重钉"
+  },
+  "boundary": {
+   "count_declared": 3,
+   "items": [
+    "散文后置形不可及：DES-011 行 34 预算上限散文形声明（累计采样发数不超过 9）无触发词邻数形态，C009 不可见，归 tally R8 与人工抽检",
+    "ttl 天数形不可及：PARKING-v1 泊件 ttl 30 天类资源性期限非判定性常数声明形，不在触发面",
+    "节级邻近不可及：邻近在场的 v1 机械定义为同文档，节级收紧归后继谓词批（SPEC-019 机械边界节）"
+   ]
+  },
+  "design_in_fixture_hits": {
+   "count": 3,
+   "note": "C009 三笔全落设计内脏夹具 constant-naked.md 行 7 与 9 与 11，非存量"
+  },
+  "pre_existing_engine_doc_findings": {
+   "count": 134,
+   "note": "C001 与 C002 与 C006 与 F 系既有规则在九件存量档的既有命中，批前后逐笔相同零变化，属存量违例处置归人节点非本批范围"
+  }
+ },
+ "dual_run": {
+  "binaries": "批前主树二进制（包 0.2.0）对本批工地新二进制（包 0.3.0）",
+  "verdict": "零回归零漂移：only_old 0，only_new 3 全落设计内脏夹具 C009"
+ }
+}

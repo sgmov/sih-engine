@@ -1,0 +1,2106 @@
+{
+ "alias_registry": [
+  {
+   "alias": "CALC-001",
+   "canonical": "HIS-015",
+   "index_line": 206,
+   "note": "注：CALC-001 芝诺悖论迁移为 HIS-015。CALC-003 夹逼法是极限的判定工具，但思想原型来自古希腊，同时登记在 HIS-016（历史脉络）与 LIM（作为方法）。条目文件单一，引用时两处互指。",
+   "subrepo": "calculus"
+  },
+  {
+   "alias": "CALC-003",
+   "canonical": "HIS-016",
+   "index_line": 206,
+   "note": "注：CALC-001 芝诺悖论迁移为 HIS-015。CALC-003 夹逼法是极限的判定工具，但思想原型来自古希腊，同时登记在 HIS-016（历史脉络）与 LIM（作为方法）。条目文件单一，引用时两处互指。",
+   "subrepo": "calculus"
+  },
+  {
+   "alias": "CALC-008",
+   "canonical": "LIM-007",
+   "index_line": 68,
+   "note": "注：CALC-008 极限（严格定义）迁移为 LIM-007 epsilon-delta 定义。",
+   "subrepo": "calculus"
+  },
+  {
+   "alias": "CALC-031",
+   "canonical": "DIFF-032",
+   "index_line": 109,
+   "note": "注：CALC-031 作为瞬时速度的导数迁移为 DIFF-032。",
+   "subrepo": "calculus"
+  }
+ ],
+ "carrier_counts": {
+  "可指认未实例化": 5,
+  "已实例化": 19,
+  "无可指认载体": 0
+ },
+ "carrier_matching": [
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "caswire-cascade-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "caswire-cascade-derivation-2026-09-03.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-016"
+    ],
+    "规格引用": [
+     "SPEC-009"
+    ],
+    "金向量消费": []
+   },
+   "name": "cascade"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "elicitwire-elicit-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "elicitwire-elicit-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-008"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "elicit"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "mathpipe-a2-derivation-2026-09-03.md",
+    "facetmath-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "facetmath-derivation-2026-09-04.md": true,
+    "mathpipe-a2-derivation-2026-09-03.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "PROB-010"
+    ],
+    "规格引用": [],
+    "金向量消费": [
+     "APP-009",
+     "APP-010",
+     "DIFF-015",
+     "INT-007",
+     "LIM-004",
+     "LIM-007",
+     "MUL-005",
+     "MUL-008"
+    ]
+   },
+   "name": "facet"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "carrwire-carriers-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-023"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "formatter"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "mathpipe-a3-derivation-2026-09-03.md",
+    "queueing-derivation-2026-09-04.md",
+    "gchart-derivation-2026-09-04.md",
+    "contribmath-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "contribmath-derivation-2026-09-04.md": true,
+    "gchart-derivation-2026-09-04.md": true,
+    "mathpipe-a3-derivation-2026-09-03.md": true,
+    "queueing-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "LIM-007",
+     "ORD-002",
+     "PROB-001",
+     "PROB-003",
+     "PROB-005",
+     "PROB-010",
+     "PROB-013",
+     "PROB-015",
+     "PROB-016"
+    ],
+    "规格引用": [
+     "SPEC-011"
+    ],
+    "金向量消费": []
+   },
+   "name": "gauge"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "idwire-identity-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "idwire-identity-derivation-2026-09-03.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ALG-002",
+     "PROB-013"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "identity"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "latexwire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "latexwire-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ALG-001",
+     "INT-007",
+     "LIM-007",
+     "SER-001"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "latex-helper"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "ordwire-lease-derivation-2026-09-03.md",
+    "leasewire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "leasewire-derivation-2026-09-04.md": true,
+    "ordwire-lease-derivation-2026-09-03.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-020"
+    ],
+    "规格引用": [
+     "SPEC-011"
+    ],
+    "金向量消费": []
+   },
+   "name": "lease"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "locatorwire-locator-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "locatorwire-locator-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-019"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "locator"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "leasewire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "leasewire-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-020"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "locks"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "carrwire-carriers-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "PROB-016"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "meter"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "carrwire-carriers-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-024"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "nomenclator"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "carrwire-carriers-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ALG-012"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "parser"
+  },
+  {
+   "carrier_state": "可指认未实例化",
+   "derivation_dossiers": [],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {},
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005"
+    ],
+    "金向量消费": []
+   },
+   "name": "scribe"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "gatecap-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "gatecap-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-008"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "scrutinator"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "selwire-selector-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "selwire-selector-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ALG-002"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "selector"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "tallywire-tally-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "tallywire-tally-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-006",
+     "ORD-008",
+     "ORD-011"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "tally"
+  },
+  {
+   "carrier_state": "可指认未实例化",
+   "derivation_dossiers": [],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {},
+   "face_refs": {
+    "无载体": [
+     "LIM-001",
+     "MUL-001"
+    ],
+    "源码推导": [],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": []
+   },
+   "name": "ask3repeater"
+  },
+  {
+   "carrier_state": "可指认未实例化",
+   "derivation_dossiers": [],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {},
+   "face_refs": {
+    "无载体": [
+     "LIM-001",
+     "MUL-001"
+    ],
+    "源码推导": [],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": []
+   },
+   "name": "attractor"
+  },
+  {
+   "carrier_state": "可指认未实例化",
+   "derivation_dossiers": [],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {},
+   "face_refs": {
+    "无载体": [
+     "LIM-001",
+     "MUL-001"
+    ],
+    "源码推导": [],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": []
+   },
+   "name": "retriever"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "scriwire-scribe-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {
+    "scriwire-scribe-derivation-2026-09-03.md": true
+   },
+   "face_refs": {
+    "无载体": [
+     "LIM-001",
+     "MUL-001"
+    ],
+    "源码推导": [
+     "ORD-019"
+    ],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": []
+   },
+   "name": "scribe"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "gatecap-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {
+    "gatecap-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ORD-008"
+    ],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": [
+     "LIM-001",
+     "MUL-001"
+    ]
+   },
+   "name": "scrutinator"
+  },
+  {
+   "carrier_state": "可指认未实例化",
+   "derivation_dossiers": [],
+   "domain": "sih-engine",
+   "dossiers_on_disk": {},
+   "face_refs": {
+    "无载体": [
+     "LIM-001",
+     "MUL-001"
+    ],
+    "源码推导": [],
+    "规格引用": [
+     "SPEC-004",
+     "SPEC-005",
+     "SPEC-006",
+     "SPEC-007",
+     "SPEC-008",
+     "SPEC-011",
+     "SPEC-013",
+     "SPEC-014",
+     "SPEC-015"
+    ],
+    "金向量消费": []
+   },
+   "name": "viewer"
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "pk037impl-derivation-2026-09-04.md",
+    "recallloop-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "dossiers_on_disk": {
+    "pk037impl-derivation-2026-09-04.md": true,
+    "recallloop-derivation-2026-09-04.md": true
+   },
+   "face_refs": {
+    "无载体": [],
+    "源码推导": [
+     "ALG-011",
+     "PROB-011",
+     "PROB-014",
+     "PROB-017"
+    ],
+    "规格引用": [],
+    "金向量消费": []
+   },
+   "name": "wikirecall"
+  }
+ ],
+ "classification": {
+  "counts": {
+   "literal_decision": 80,
+   "literal_pending": 520,
+   "literal_total": 600,
+   "named_decision": 34,
+   "named_pending": 76,
+   "named_resource": 16,
+   "named_total": 126
+  },
+  "diff_vs_rev1": {
+   "literal_changed": [],
+   "literal_gone": 1,
+   "literal_gone_items": [
+    {
+     "context": "f\"{r['verdict_v1']:>14s} -> {r['verdict_v2']}{rule}\")",
+     "file": "sih-tools/facet/probes/r3a_gate_v2.py",
+     "line": 170,
+     "rev1_class": "待确认",
+     "value": "14"
+    }
+   ],
+   "literal_new": 48,
+   "literal_new_items": [
+    {
+     "context": "print(f\"{'subrepo':<12}{'entry':<18}{'bridge':<7}{'anchors':<8}{'stem'}\")",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 34,
+     "rev3_class": "待确认",
+     "value": "12"
+    },
+    {
+     "context": "print(f\"{'subrepo':<12}{'entry':<18}{'bridge':<7}{'anchors':<8}{'stem'}\")",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 34,
+     "rev3_class": "待确认",
+     "value": "18"
+    },
+    {
+     "context": "print(f\"{'subrepo':<12}{'entry':<18}{'bridge':<7}{'anchors':<8}{'stem'}\")",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 34,
+     "rev3_class": "待确认",
+     "value": "7"
+    },
+    {
+     "context": "print(f\"{'subrepo':<12}{'entry':<18}{'bridge':<7}{'anchors':<8}{'stem'}\")",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 34,
+     "rev3_class": "待确认",
+     "value": "8"
+    },
+    {
+     "context": "print(f\"{r['subrepo']:<12}{r['entry']:<18}{str(r['has_bridge']):<7}{r['quote_anc",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 36,
+     "rev3_class": "待确认",
+     "value": "12"
+    },
+    {
+     "context": "print(f\"{r['subrepo']:<12}{r['entry']:<18}{str(r['has_bridge']):<7}{r['quote_anc",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 36,
+     "rev3_class": "待确认",
+     "value": "18"
+    },
+    {
+     "context": "print(f\"{r['subrepo']:<12}{r['entry']:<18}{str(r['has_bridge']):<7}{r['quote_anc",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 36,
+     "rev3_class": "待确认",
+     "value": "7"
+    },
+    {
+     "context": "print(f\"{r['subrepo']:<12}{r['entry']:<18}{str(r['has_bridge']):<7}{r['quote_anc",
+     "file": "sih-engine/sih/event/plan/mathquote-solo-materials/enumerate.py",
+     "line": 36,
+     "rev3_class": "待确认",
+     "value": "8"
+    },
+    {
+     "context": "Err(AppendError::TimestampNotMonotonic { .. }) if attempt < 3 => {",
+     "file": "sih-engine/src/bin/scribe.rs",
+     "line": 261,
+     "rev3_class": "待确认",
+     "value": "3"
+    },
+    {
+     "context": "\"ratio_in_service\": \"V3-T 调整后 bdy 率最高值 < 0.34（占比阈值，在役）\",",
+     "file": "sih-tools/facet/probes/facetmath_dual_audit.py",
+     "line": 162,
+     "rev3_class": "判定性",
+     "value": "0.34"
+    },
+    {
+     "context": "双判据门控。缺省 \"ratio\" = 占比阈值判据（V3-T 调整后 bdy 率最高值 < 0.34），",
+     "file": "sih-tools/facet/probes/maturation_gate.py",
+     "line": 381,
+     "rev3_class": "判定性",
+     "value": "0.34"
+    },
+    {
+     "context": "f\"{r['verdict_v1']:>14s} -> {r['verdict_v2']}{rule} \"",
+     "file": "sih-tools/facet/probes/r3a_gate_v2.py",
+     "line": 245,
+     "rev3_class": "待确认",
+     "value": "14"
+    },
+    {
+     "context": "if core_hash is not None and (len(str(core_hash)) != 64",
+     "file": "sih-tools/facet/probes/temp_probe.py",
+     "line": 297,
+     "rev3_class": "待确认",
+     "value": "64"
+    },
+    {
+     "context": "if sigma == 0.0:",
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "line": 308,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if sigma == 0.0:",
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "line": 658,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if days < 1 or not (0.0 < args.alpha < 1.0) or not (0.0 <= args.p0 <= 1.0) \\",
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "line": 794,
+     "rev3_class": "待确认",
+     "value": "1.0"
+    },
+    {
+     "context": "if days < 1 or not (0.0 < args.alpha < 1.0) or not (0.0 <= args.p0 <= 1.0) \\",
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "line": 794,
+     "rev3_class": "待确认",
+     "value": "1.0"
+    },
+    {
+     "context": "assert lo == 0.0, lo",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 116,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert 0 < hi < 0.6, hi",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 117,
+     "rev3_class": "判定性",
+     "value": "0.6"
+    },
+    {
+     "context": "assert hi == 1.0, hi",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 119,
+     "rev3_class": "待确认",
+     "value": "1.0"
+    },
+    {
+     "context": "assert lo < 0.5 < hi, (lo, hi)",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 122,
+     "rev3_class": "判定性",
+     "value": "0.5"
+    },
+    {
+     "context": "assert metrics.z_for_confidence(0.90) > 1.6 and metrics.z_for_confidence(0.90) <",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 132,
+     "rev3_class": "待确认",
+     "value": "1.6"
+    },
+    {
+     "context": "assert metrics.z_for_confidence(0.90) > 1.6 and metrics.z_for_confidence(0.90) <",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 132,
+     "rev3_class": "待确认",
+     "value": "1.65"
+    },
+    {
+     "context": "assert metrics.z_for_confidence(0.99) > 2.57 and metrics.z_for_confidence(0.99) ",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 133,
+     "rev3_class": "待确认",
+     "value": "2.57"
+    },
+    {
+     "context": "assert metrics.z_for_confidence(0.99) > 2.57 and metrics.z_for_confidence(0.99) ",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 133,
+     "rev3_class": "待确认",
+     "value": "2.58"
+    },
+    {
+     "context": "assert metrics.channel_gain(1, 8) == 3.0",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 143,
+     "rev3_class": "待确认",
+     "value": "3.0"
+    },
+    {
+     "context": "assert metrics.channel_gain(2, 8) == 2.0",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 144,
+     "rev3_class": "待确认",
+     "value": "2.0"
+    },
+    {
+     "context": "assert metrics.channel_gain(4, 8) == 1.0",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 145,
+     "rev3_class": "待确认",
+     "value": "1.0"
+    },
+    {
+     "context": "assert metrics.channel_gain(0, 8) == 0.0, \"哑火零增益\"",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 146,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert metrics.channel_gain(8, 8) == 0.0, \"全并无收窄零增益\"",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 147,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert metrics.channel_gain(0, 0) == 0.0, \"零候选零增益\"",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 148,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert m[\"union_size\"] == 3",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 157,
+     "rev3_class": "待确认",
+     "value": "3"
+    },
+    {
+     "context": "assert m[\"channels\"][\"word\"][\"ig_bits\"] == 0.0",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 176,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert word[\"hits\"] == 3 and word[\"total\"] == 3, word",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 188,
+     "rev3_class": "待确认",
+     "value": "3"
+    },
+    {
+     "context": "assert word[\"hits\"] == 3 and word[\"total\"] == 3, word",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 188,
+     "rev3_class": "待确认",
+     "value": "3"
+    },
+    {
+     "context": "assert word[\"ig_bits\"] == 0.0",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 190,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert sk[\"hits\"] == 5 and sk[\"total\"] == 6, sk",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 199,
+     "rev3_class": "待确认",
+     "value": "5"
+    },
+    {
+     "context": "assert sk[\"hits\"] == 5 and sk[\"total\"] == 6, sk",
+     "file": "sih-tools/wikirecall/metrics_selftest.py",
+     "line": 199,
+     "rev3_class": "待确认",
+     "value": "6"
+    },
+    {
+     "context": "if w > 0.0:",
+     "file": "sih-tools/wikirecall/semantic.py",
+     "line": 85,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if w > 0.0:",
+     "file": "sih-tools/wikirecall/semantic.py",
+     "line": 95,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if nq == 0.0 or nd == 0.0:",
+     "file": "sih-tools/wikirecall/semantic.py",
+     "line": 108,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if nq == 0.0 or nd == 0.0:",
+     "file": "sih-tools/wikirecall/semantic.py",
+     "line": 108,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "if score > 0.0:",
+     "file": "sih-tools/wikirecall/semantic.py",
+     "line": 125,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert n == 3, n",
+     "file": "sih-tools/wikirecall/semantic_selftest.py",
+     "line": 163,
+     "rev3_class": "待确认",
+     "value": "3"
+    },
+    {
+     "context": "assert semantic.idf(stats, common) == 0.0, \"df=N 应零鉴别力\"",
+     "file": "sih-tools/wikirecall/semantic_selftest.py",
+     "line": 167,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert semantic.cosine({}, {\"a\": 1.0}) == 0.0, \"零查询向量应零侧\"",
+     "file": "sih-tools/wikirecall/semantic_selftest.py",
+     "line": 178,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert semantic.cosine({\"a\": 1.0}, {}) == 0.0, \"零文档向量应零侧\"",
+     "file": "sih-tools/wikirecall/semantic_selftest.py",
+     "line": 179,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    },
+    {
+     "context": "assert ortho == 0.0, \"无共有词元应零\"",
+     "file": "sih-tools/wikirecall/semantic_selftest.py",
+     "line": 181,
+     "rev3_class": "待确认",
+     "value": "0.0"
+    }
+   ],
+   "named_class_changed": [],
+   "named_only_in_rev1": [],
+   "named_only_in_rev3": [
+    {
+     "file": "sih-engine/src/event_stream/append.rs",
+     "name": "LOCK_EX",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/facet/src/facet_stats_inf.py",
+     "name": "ALPHA",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/facet/src/facet_stats_inf.py",
+     "name": "DEFAULT_BOUNDARY_BASELINE",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "CUSUM_B_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "CUSUM_H_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "GD_ALPHA_DEFAULT",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "GD_BASELINE_N_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "GD_P0_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "GD_WINDOW_DAYS_DEFAULT",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "GQ_WINDOW_DAYS_DEFAULT",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "K_SIGMA_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "PRIOR_ALPHA",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "PRIOR_BETA",
+     "rev3_class": "判定性"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "RHO_BOUND_DEFAULT",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/gauge/src/gauge/cli.py",
+     "name": "Z_95",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/wikirecall/ab_run.py",
+     "name": "DELTA_BITS",
+     "rev3_class": "待确认"
+    },
+    {
+     "file": "sih-tools/wikirecall/recall.py",
+     "name": "DEFAULT_SEMANTIC_K",
+     "rev3_class": "待确认"
+    }
+   ]
+  },
+  "rev2_counts_comparison": {
+   "literal": {
+    "rev2": {
+     "literal_decision": 76,
+     "literal_pending": 485,
+     "literal_total": 561
+    },
+    "rev3": {
+     "literal_decision": 80,
+     "literal_pending": 520,
+     "literal_total": 600
+    }
+   },
+   "named": {
+    "rev2": {
+     "named_decision": 31,
+     "named_pending": 67,
+     "named_resource": 16,
+     "named_total": 114
+    },
+    "rev3": {
+     "named_decision": 34,
+     "named_pending": 76,
+     "named_resource": 16,
+     "named_total": 126
+    }
+   }
+  }
+ },
+ "duibiao_note": "rev1 对挂七行与 rev2 F-3 双实存全表由本表承接；on_disk 判定按子仓条目目录实态枚举（缺陷①修复位）",
+ "f3_inherited_gaps": [],
+ "f3_verification": [
+  {
+   "concept_id": "ORD-016",
+   "concept_name": "良基关系与倒推终止",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "cascade",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-008",
+   "concept_name": "引用图可达与孤悬判定",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "elicit",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "PROB-010",
+   "concept_name": "假设检验与显著性",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "facet",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "ORD-023",
+   "concept_name": "抽象重写系统与确定性范式",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "formatter",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "LIM-007",
+   "concept_name": "epsilon-delta 定义",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "calculus"
+  },
+  {
+   "concept_id": "ORD-002",
+   "concept_name": "完全格",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "PROB-001",
+   "concept_name": "大数定律（WLLN）",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-003",
+   "concept_name": "中心极限定理（CLT）",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-005",
+   "concept_name": "Bayesian 更新",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-010",
+   "concept_name": "假设检验与显著性",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-013",
+   "concept_name": "平稳性与变点检测",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-015",
+   "concept_name": "Little 定律与负载界",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-016",
+   "concept_name": "计数测度与可加性",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "gauge",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "ALG-002",
+   "concept_name": "等价关系与商集隔离",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "identity",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "algebra"
+  },
+  {
+   "concept_id": "PROB-013",
+   "concept_name": "平稳性与变点检测",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "identity",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "ALG-001",
+   "concept_name": "矩阵与特征值",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "latex-helper",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "algebra"
+  },
+  {
+   "concept_id": "INT-007",
+   "concept_name": "微积分基本定理",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "latex-helper",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "calculus"
+  },
+  {
+   "concept_id": "LIM-007",
+   "concept_name": "epsilon-delta 定义",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "latex-helper",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "calculus"
+  },
+  {
+   "concept_id": "SER-001",
+   "concept_name": "无穷级数",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "latex-helper",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "calculus"
+  },
+  {
+   "concept_id": "ORD-020",
+   "concept_name": "全序资源分配与死锁自由",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "lease",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-019",
+   "concept_name": "版本偏序与外化状态存储",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "locator",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-020",
+   "concept_name": "全序资源分配与死锁自由",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "locks",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "PROB-016",
+   "concept_name": "计数测度与可加性",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "meter",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "ORD-024",
+   "concept_name": "区间序与串跨度匹配",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "nomenclator",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ALG-012",
+   "concept_name": "形式文法与解析确定性",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "parser",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "algebra"
+  },
+  {
+   "concept_id": "ORD-008",
+   "concept_name": "引用图可达与孤悬判定",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "scrutinator",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ALG-002",
+   "concept_name": "等价关系与商集隔离",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "selector",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "algebra"
+  },
+  {
+   "concept_id": "ORD-006",
+   "concept_name": "闭包算子与后果算子",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "tally",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-008",
+   "concept_name": "引用图可达与孤悬判定",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "tally",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-011",
+   "concept_name": "良基归纳与递归终止",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "tally",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-019",
+   "concept_name": "版本偏序与外化状态存储",
+   "domain": "sih-engine",
+   "in_index": true,
+   "mechanism": "scribe",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ORD-008",
+   "concept_name": "引用图可达与孤悬判定",
+   "domain": "sih-engine",
+   "in_index": true,
+   "mechanism": "scrutinator",
+   "newly_instantiated": false,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "order"
+  },
+  {
+   "concept_id": "ALG-011",
+   "concept_name": "向量空间与余弦相似度",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "wikirecall",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "algebra"
+  },
+  {
+   "concept_id": "PROB-011",
+   "concept_name": "估计与置信区间",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "wikirecall",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-014",
+   "concept_name": "期望信息增益",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "wikirecall",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  },
+  {
+   "concept_id": "PROB-017",
+   "concept_name": "逆文档频率与自信息加权",
+   "domain": "sih-tools",
+   "in_index": true,
+   "mechanism": "wikirecall",
+   "newly_instantiated": true,
+   "on_disk": true,
+   "result": "实存",
+   "subrepo": "probability"
+  }
+ ],
+ "facetmath_suspended_note": "facetmath-derivation-2026-09-04.md 为门控挂起形：声称消费侧 probes/maturation_gate.py boundary_criterion 门控位实测零 PROB-010 词面命中，PROB-010 源码面仍由 facet_stats_inf.py 既有面承载；本批不扩 facet 载体面，挂起态如实申报不代判",
+ "ledger_caliber": {
+  "alias_registry_size": 4,
+  "disk_minus_index": [],
+  "entry_files_on_disk": 174,
+  "index_minus_disk": [],
+  "note": "白名单按正身号计（别名 CALC 系单列不计数）；index_minus_disk 为 INDEX 在册无磁盘件（含待建概念正常缺省态，已建缺盘为漂移红），disk_minus_index 为磁盘孤儿件；三分列口径防 165/171 式误报复发",
+  "whitelist_canonical_ids": 174,
+  "whitelist_subrepo_sizes": {
+   "algebra": 12,
+   "calculus": 114,
+   "order": 21,
+   "probability": 19,
+   "topology": 8
+  }
+ },
+ "mechanism_roster_addendum": [
+  {
+   "basis": "pk037impl-solo 语义层接线批落位（PROB-017 与 ALG-011 源码推导）；rev2 名册 23 件无此位；任务包所称 retriever 语义层以磁盘实态勘误为 sih-tools/wikirecall（引擎 retriever src 实扫零数学 ID 词面）",
+   "domain": "sih-tools",
+   "name": "wikirecall"
+  }
+ ],
+ "reclassification_inherited": [
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 10\n\n",
+   "file": "sih-tools/facet/probes/anchor_gradient.py",
+   "line": 25,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "10"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 10\n\n",
+   "file": "sih-tools/facet/probes/bps_gradient.py",
+   "line": 29,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "10"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 15\n\n",
+   "file": "sih-tools/facet/probes/calibration_quality_comparison.py",
+   "line": 38,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "15"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 10\n\n",
+   "file": "sih-tools/facet/probes/horizontal_interaction_matrix.py",
+   "line": 30,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "10"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 15\n\n",
+   "file": "sih-tools/facet/probes/p3_experiment_matrix.py",
+   "line": 36,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "15"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 15\n\n",
+   "file": "sih-tools/facet/probes/p3_path_b_experiment.py",
+   "line": 38,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "15"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 15\n",
+   "file": "sih-tools/facet/probes/rerun_reflective.py",
+   "line": 28,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "15"
+  },
+  {
+   "basis": "重试上限，改变只改容错次数不改判定",
+   "context": "MAX_RETRIES = 5",
+   "file": "sih-tools/facet/probes/retry_qwen_failed.py",
+   "line": 34,
+   "name": "MAX_RETRIES",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "5"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "GLOBAL_MAX_CONCURRENT = 15\n\n# 已有数据基线",
+   "file": "sih-tools/facet/probes/validity_verification_matrix.py",
+   "line": 41,
+   "name": "GLOBAL_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "15"
+  },
+  {
+   "basis": "令牌上限，改变只改资源用量不改判定",
+   "context": "MAX_TOKENS = 4096\n\n",
+   "file": "sih-tools/facet/probes/verify_thinking_silent.py",
+   "line": 70,
+   "name": "MAX_TOKENS",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "4096"
+  },
+  {
+   "basis": "并发上限族",
+   "context": "DEFAULT_MAX_CONCURRENT = 5  # 与 counter orchestrator 默认并发对齐",
+   "file": "sih-tools/facet/src/concurrency.py",
+   "line": 11,
+   "name": "DEFAULT_MAX_CONCURRENT",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "5"
+  },
+  {
+   "basis": "进程并发上限，改判资源性",
+   "context": "PROC_CAP = 32",
+   "file": "sih-tools/identity/src/identity/core.py",
+   "line": 46,
+   "name": "PROC_CAP",
+   "new_class": "资源性",
+   "old_class": "判定性",
+   "value": "32"
+  }
+ ],
+ "revision": "mathscan-solo rev3",
+ "root": "/Users/moc/workspaces/SiHankor",
+ "run_date": "2026-09-04",
+ "scan_findings": [],
+ "scan_report": {
+  "sih-engine/ask3repeater": {
+   "corpus_files": 6,
+   "nonspec_hits": [],
+   "uncovered": []
+  },
+  "sih-engine/attractor": {
+   "corpus_files": 21,
+   "nonspec_hits": [],
+   "uncovered": []
+  },
+  "sih-engine/retriever": {
+   "corpus_files": 6,
+   "nonspec_hits": [],
+   "uncovered": []
+  },
+  "sih-engine/scribe": {
+   "corpus_files": 15,
+   "nonspec_hits": [
+    "ORD-019"
+   ],
+   "uncovered": []
+  },
+  "sih-engine/scrutinator": {
+   "corpus_files": 12,
+   "nonspec_hits": [
+    "LIM-001",
+    "MUL-001",
+    "ORD-008"
+   ],
+   "uncovered": []
+  },
+  "sih-engine/viewer": {
+   "corpus_files": 5,
+   "nonspec_hits": [],
+   "uncovered": []
+  },
+  "sih-tools/cascade": {
+   "corpus_files": 4,
+   "nonspec_hits": [
+    "ORD-016"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/elicit": {
+   "corpus_files": 3,
+   "nonspec_hits": [
+    "ORD-008"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/facet": {
+   "corpus_files": 132,
+   "nonspec_hits": [
+    "APP-009",
+    "APP-010",
+    "DIFF-015",
+    "INT-007",
+    "LIM-004",
+    "LIM-007",
+    "MUL-005",
+    "MUL-008",
+    "PROB-010"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/formatter": {
+   "corpus_files": 12,
+   "nonspec_hits": [
+    "ORD-023"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/gauge": {
+   "corpus_files": 3,
+   "nonspec_hits": [
+    "LIM-007",
+    "ORD-002",
+    "PROB-001",
+    "PROB-003",
+    "PROB-005",
+    "PROB-010",
+    "PROB-013",
+    "PROB-015",
+    "PROB-016"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/identity": {
+   "corpus_files": 4,
+   "nonspec_hits": [
+    "ALG-002",
+    "PROB-013"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/latex-helper": {
+   "corpus_files": 9,
+   "nonspec_hits": [
+    "ALG-001",
+    "INT-007",
+    "LIM-007",
+    "SER-001"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/lease": {
+   "corpus_files": 10,
+   "nonspec_hits": [
+    "ORD-020"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/locator": {
+   "corpus_files": 17,
+   "nonspec_hits": [
+    "ORD-019"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/locks": {
+   "corpus_files": 4,
+   "nonspec_hits": [
+    "ORD-020"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/meter": {
+   "corpus_files": 3,
+   "nonspec_hits": [
+    "PROB-016"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/nomenclator": {
+   "corpus_files": 8,
+   "nonspec_hits": [
+    "ORD-024"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/parser": {
+   "corpus_files": 17,
+   "nonspec_hits": [
+    "ALG-012"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/scribe": {
+   "corpus_files": 7,
+   "nonspec_hits": [],
+   "uncovered": []
+  },
+  "sih-tools/scrutinator": {
+   "corpus_files": 17,
+   "nonspec_hits": [
+    "ORD-008"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/selector": {
+   "corpus_files": 12,
+   "nonspec_hits": [
+    "ALG-002"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/tally": {
+   "corpus_files": 3,
+   "nonspec_hits": [
+    "ORD-006",
+    "ORD-008",
+    "ORD-011"
+   ],
+   "uncovered": []
+  },
+  "sih-tools/wikirecall": {
+   "corpus_files": 9,
+   "nonspec_hits": [
+    "ALG-011",
+    "PROB-011",
+    "PROB-014",
+    "PROB-017"
+   ],
+   "uncovered": []
+  }
+ },
+ "spec_disambiguation": {
+  "engine_spec_ids": [
+   "SPEC-001",
+   "SPEC-002",
+   "SPEC-003",
+   "SPEC-004",
+   "SPEC-005",
+   "SPEC-006",
+   "SPEC-007",
+   "SPEC-008",
+   "SPEC-009",
+   "SPEC-010",
+   "SPEC-011",
+   "SPEC-012",
+   "SPEC-013",
+   "SPEC-014",
+   "SPEC-015",
+   "SPEC-016",
+   "SPEC-017",
+   "SPEC-018"
+  ],
+  "overlap": [
+   "SPEC-001",
+   "SPEC-002",
+   "SPEC-003",
+   "SPEC-004",
+   "SPEC-005",
+   "SPEC-006",
+   "SPEC-007"
+  ],
+  "rule": "引擎 src 引用位默认引擎侧，除非白名单命中且引用上下文明示数学条目（承 rev1）",
+  "whitelist_spec_ids": [
+   "SPEC-001",
+   "SPEC-002",
+   "SPEC-003",
+   "SPEC-004",
+   "SPEC-005",
+   "SPEC-006",
+   "SPEC-007"
+  ]
+ },
+ "subrepo_entries_layout": {
+  "algebra": [
+   "algebra/entries"
+  ],
+  "calculus": [
+   "calculus/llm-friendly-build/entries"
+  ],
+  "order": [
+   "order/entries"
+  ],
+  "probability": [
+   "probability/entries"
+  ],
+  "topology": [
+   "topology/entries"
+  ]
+ },
+ "whitelist_size": 174,
+ "whitelist_subrepo_sizes": {
+  "algebra": 12,
+  "calculus": 114,
+  "order": 21,
+  "probability": 19,
+  "topology": 8
+ },
+ "wiring_reflected": [
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "tallywire-tally-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "tally",
+   "source_derivation_ids": [
+    "ORD-006",
+    "ORD-008",
+    "ORD-011"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "selwire-selector-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "selector",
+   "source_derivation_ids": [
+    "ALG-002"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "ordwire-lease-derivation-2026-09-03.md",
+    "leasewire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "lease",
+   "source_derivation_ids": [
+    "ORD-020"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "scriwire-scribe-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-engine",
+   "mechanism": "scribe",
+   "source_derivation_ids": [
+    "ORD-019"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "idwire-identity-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "identity",
+   "source_derivation_ids": [
+    "ALG-002",
+    "PROB-013"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "caswire-cascade-derivation-2026-09-03.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "cascade",
+   "source_derivation_ids": [
+    "ORD-016"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "gatecap-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "scrutinator",
+   "source_derivation_ids": [
+    "ORD-008"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "gatecap-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-engine",
+   "mechanism": "scrutinator",
+   "source_derivation_ids": [
+    "ORD-008"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "mathpipe-a2-derivation-2026-09-03.md",
+    "facetmath-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "facet",
+   "source_derivation_ids": [
+    "PROB-010"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "mathpipe-a3-derivation-2026-09-03.md",
+    "queueing-derivation-2026-09-04.md",
+    "gchart-derivation-2026-09-04.md",
+    "contribmath-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "gauge",
+   "source_derivation_ids": [
+    "LIM-007",
+    "ORD-002",
+    "PROB-001",
+    "PROB-003",
+    "PROB-005",
+    "PROB-010",
+    "PROB-013",
+    "PROB-015",
+    "PROB-016"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "formatter",
+   "source_derivation_ids": [
+    "ORD-023"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "meter",
+   "source_derivation_ids": [
+    "PROB-016"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "nomenclator",
+   "source_derivation_ids": [
+    "ORD-024"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "carrwire-carriers-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "parser",
+   "source_derivation_ids": [
+    "ALG-012"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "pk037impl-derivation-2026-09-04.md",
+    "recallloop-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "wikirecall",
+   "source_derivation_ids": [
+    "ALG-011",
+    "PROB-011",
+    "PROB-014",
+    "PROB-017"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "leasewire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "locks",
+   "source_derivation_ids": [
+    "ORD-020"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "elicitwire-elicit-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "elicit",
+   "source_derivation_ids": [
+    "ORD-008"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "locatorwire-locator-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "locator",
+   "source_derivation_ids": [
+    "ORD-019"
+   ]
+  },
+  {
+   "carrier_state": "已实例化",
+   "derivation_dossiers": [
+    "latexwire-derivation-2026-09-04.md"
+   ],
+   "domain": "sih-tools",
+   "mechanism": "latex-helper",
+   "source_derivation_ids": [
+    "ALG-001",
+    "INT-007",
+    "LIM-007",
+    "SER-001"
+   ]
+  }
+ ]
+}
