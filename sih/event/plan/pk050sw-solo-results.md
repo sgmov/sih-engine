@@ -85,6 +85,11 @@
 - 泊界心跳（会话首动作）：双线 exit 0 零告警；tools 线 19 件主线 18 侧线 1（pk-042 名册行无泊材料件走侧线 P102 不判）；engine 线 17 件主线 16 废注 1（pk-013 泊材料缺名册现行行走废注 P101 与 P102 不判）——两笔为存量态如实转录，本批不越权处置。
 - close 与 reconcile 与终态 verify 读数与双仓提交号见文末收口附记（close 后补记）。
 
+## 收口附记（close 后补记）
+
+- 主树复验：名册 doc/governance/PARKING-v1.md des-001 核阅 exit 0 零违规（归并后主树实跑）；金向量过已提交树复现关即主树 semantic_selftest --golden-only 与全套 semantic_selftest 十三用例与 selftest 六用例与 metrics_selftest 十一用例全 exit 0；缺省路径主树终验语义通道在场与 --word 零语义键，同语料下 word 对切前缺省与缺省对切前 --semantic 3 双 IDENTICAL 复证（对照构造期读数的差异为 leasewire 归并后语料漂移即语料驱动差异非代码行为变化）；checkcite 守卫 pass（cited 即本批载体引用 PROB-017 与 ALG-011 与 PROB-014 落书单闭包；PROB-011 与 PROB-003 初版引用件不在本批书单面，引用面收窄如实申报——两载体为 pk037impl 批终签在链引用，非本批新增书单消费）。
+- 本笔回填提交：close 通道外 wip 形（--no-verify 加 lease bypass 登记），pk037impl 收口附记先例同形。
+
 ## 十、队形验证
 
 单线形 solo 成立：本批全部写入由会话 d70d406c04a2afa3（sess-zcode-260904-pk050sw）亲写，零 Agent/Task 子代理调用；缺省判定由 semantic.py 确定性统计程序承载零 LLM，七项核对由 switch_gate.py 机械承载，终签由 attractor R1 至 R7 确定性核对承载，本批采样为零（承工程基线第五条减少 LLM 参与）；链写入全经引擎 scribe 闸三与 attractor sign 专属 crosscheck 通道，零直写链文件。
