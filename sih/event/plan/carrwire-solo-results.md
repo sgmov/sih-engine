@@ -107,3 +107,13 @@ nomenclator CONTRACT rc=1 六处存量词全在融回门与修订记录既有节
 ## 十一、队形验证
 
 单线形 solo 零子代理全程成立：本批全部写入由会话 ba187edb54e1ee7a（sess-zcode-260904-carrwire）亲写，零 Agent/Task 子代理调用；锚点定位与接线与金向量全由确定性程序承载（ast.dump 机械对表、cmp 双跑、测试对表、checkcite 并集书单），链写入经引擎 scribe 闸三（--session 加 --sessions）零直写链文件。
+
+## 收口附记（close 后补记）
+
+- math/docs 锁终局：pk037impl-solo exclusive sih-math/docs 于本批批中释放，第 9 次重试得手（01:08:51），取得即证面空闲；close 前按锁清零要求放回，随即 close 归并，未越他 session 主张。
+- close 三跑：首跑拒于本会话 math 锁在持（锁清零前置）；二跑拒于闸四前置态（引擎 trail 工地快照与主树活链分叉，并行批续写所致），按并集超集条款以主树为权威源刷新快照、scribe verify 过、wip 提交 19434f3 消解；三跑引擎腿 merge_failed（主树 trail 活文件修改态加同名未跟踪件撞），tools 与 math 两腿先并；按备份让位归并对表法四步：备份 trail 与 dispatch 与任务包三件（/tmp/carrwire-yield-backup）、让位、close 复跑成（failed 空、会话 ba187edb54e1ee7a 吊销）、备份与归并结果逐件 cmp 全数 IDENTICAL 零丢失零漂移。
+- 三仓提交号：sih-tools 段1 84341269 加归并 52a830b5；sih-engine 段1 9655b71 加 trail 刷新 wip 19434f3 加归并 bd023b5；sih-math 段1 d502ef1 加归并 9c07bd2。
+- reconcile（close 后）：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 批前存量）；sih-math unrouted 0 与 unbypassed 1（零号基线初始提交存量）与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 批前存量）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 114 事件，first_hash 05a8a75e 与批前一致零分叉，last_hash f9520776；本批六笔即意图 0a573995 加认证五笔（526e33ca 与 4ec3e0f1 与 aad981c6 与 526a6d32 与 93266461），他批共笔并存。
+- 共享活面对表：引擎 trail 与 tools 锁册与会话册与 claims 册与 meter 计数册与两 CALL-LOG 留主树活写（共享追加面，归主会会计通道），本批 scribe CALL-LOG 一笔主树直append（短锁在持）。
+- 本笔回填提交：close 通道外 wip 形（--no-verify 加 lease bypass 登记），queueing 9806c1d 与 newcarr 先例同形。
