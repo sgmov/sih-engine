@@ -52,3 +52,7 @@
 - recall-m3clear.json：{"envelope":"recall","topics":["M-3清账"],"count":0} 零命中如实记。
 - rev1 账本三件（summary-rev1.md 与 ledger-rev1.json 与 env-params-rev1.json）只读零改动；ledger.json 原账本只读作证据源。
 - env-params 既有行只增不改：本批增量件独立成件，既有两件零触碰。
+
+## 更正（主会批注 2026-09-04）
+
+locks 行"已实例化账清"判误：ORD-020 四判据位在 lease/src/lease/lockcore.py（lease 的锁核心），独立工具 sih-tools/locks/ 全仓零 ORD-020 引用，实态为可指认未实例化——两工具混审。更正后 locks 实例化候选行成立，接线批 leasewire-solo 承接。
