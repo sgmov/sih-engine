@@ -111,4 +111,15 @@
 
 ## 收口附记（close 后补记）
 
-（认证哈希回填与 close 归并与 reconcile 与 verify 与三仓提交号与主树复验读数随 close 后补记。）
+- 认证清单回填：pipeline 9612ddba 与 derivation 13132034 与 golden 读数件 f8c88f73 与 golden 冻结向量哈希件 659036ea 与 changed-files b9b0b8c7 与 checkcite 88765ae7 六笔全在链；derivation 首试报告件未建即拒 rc=2 零留痕如实申报后补件复跑。
+- settle 三仓：sih-tools 段1 f8a5e1e5、sih-engine 段1 d5b80c7、sih-math 段1 ffb2359，cert 9612ddba 全过 cert_on_chain 闸。
+- 放锁：九把 exclusive 一射全放零残留，status held 零。
+- close 三跑：首跑 math 腿并（归并 2c4d6f1）而 tools 与 engine 两腿 merge_failed，即主树同名未跟踪报告件撞与 trail 活写态阻并，与 carrwire 与 leasewire 同款；按备份让位归并对表法处置，二跑 engine 腿并（归并 0c319c7），三跑 tools 腿并（归并 6e2b3ec9）拆本吊销全成，failed 空、会话 1a70a4e901564b09 吊销。
+- 归并对表：engine trail 备份对表 IDENTICAL；engine materials 六件与结果档与任务包八面 cmp IDENTICAL；tools 本批十一件 cmp IDENTICAL，合计二十面全 IDENTICAL 零 clobber 零漂移。
+- reconcile（close 后）：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 2026-09-03 旧账存量）；sih-math unrouted 0 与 unbypassed 1 与 cert_missing 2（mathfix2 与 fmtfix 批前存量）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 157 事件，first_hash 05a8a75e 与批前一致零分叉，last_hash 88765ae7。
+- 金向量复现关：主树已提交源重放 cmp IDENTICAL，冻结向量 fb3a893ba9e2a015 前十六位三跑同哈希，2026-09-04 坑位勘误重放寻径条款达成。
+- 主树复验：locks 主树 pytest 10 绿；引擎主树 t7 复跑绿；cargo build 主树重编后复验（承旧二进制事故勘误条款）。
+- **主树域内核阅复验红转绿（越线申报）**：工地期核阅域外 exit-2 十四路如实记，归并后主树域内复验 SPEC-018 出 findings 22 笔与名册出 findings 11 笔，全为全角括号散文与 U+2192 与 U+03B1 字符集违例，即本批初版行文不合 des-001 字符纪律，亲读逐处重写为顿号串与 ASCII 形后三门复跑全绿（核阅 0 加化格 0 加检词 0 双件）；修复走 close 通道外整备形即 --no-verify 加 lease bypass 登记（pkhyg 与 leasewire 收口回填先例同形）。
+- **让位面过宽误差申报**：首跑 close 后备份让位时误将主树 scribe/reports 五百个历史未跟踪报告件全数让位（本批面锁在 allow 内但操作面过宽），全量先备份至 /tmp/basefix-yield-backup 后即时逐字节回置，回置后完整性 diff 零差异零丢失，本批十一件照常让位给归并；操作教训如实入账。
+- 本笔回填提交：close 通道外整备形（--no-verify 加 lease bypass 登记），queueing 与 contribmath 与 packhyg 先例同形。
