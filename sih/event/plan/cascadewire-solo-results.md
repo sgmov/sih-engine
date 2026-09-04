@@ -102,12 +102,23 @@ AST 同形机械证：主树与工地 core.py ast.dump 全同 True（本批三�
 
 ## 十、收口读数（认证时点）
 
-- 链：sih-engine/sih/event/trail/2026-09-04.ndjson 认证时点 verify valid 163 事件（批前 157，本批意图一笔加认证五笔；首哈希 05a8a75e 与批前一致零分叉）。
+- 链：sih-engine/sih/event/trail/2026-09-04.ndjson 认证时点 verify valid 158 事件（批前 157，本批意图一笔加认证五笔；首哈希 05a8a75e 与批前一致零分叉）。
 - 锁：六把在持（cascade 目录加 terms.json 加推导档加任务包四 exclusive 长持加 materials 与 results 两 append），段2 settle 后放锁收约。
-- 工地：三仓批件落齐（tools 四件修改含 CALL-LOG 新立；math 推导档一件；engine materials 九件与结果档，trail 快照让位申报在案）。
-- 三仓 settle 段1：sih-tools f1253dd9 与 sih-math 202db0d 与 sih-engine 1890326。
+- 工地：三仓批件落齐（tools 四件修改含 CALL-LOG 新立；math 推导档一件；engine materials 十件与结果档，trail 快照让位申报在案）。
+- 三仓 settle 段1：sih-tools f1253dd9 与 sih-math 202db0d 与 sih-engine 1890326；engine 段2 fbe29aa（结果档）。
 - close 与 reconcile 与终态 verify 读数与三仓提交号与归并号见文末收口附记（close 后补记）。
 
 ## 队形验证
 
 单线形 solo 零子代理：本批零 Agent/Task 子代理调用，全部机械链亲跑亲读，findings 亲读无管道掩码，链写入全经引擎 scribe 唯一写位。
+
+## 收口附记（close 后补记）
+
+- close 两跑：首跑 tools 与 math 两腿并（归并 922c49c 与 1498a8f，工地删支），engine 腿 merge_failed（主树同名未跟踪件阻挡归并，leasewire 同款）；按备份让位归并对表法处置——主树 materials 十件与结果档备份至 /tmp/cw-yield-backup 后让位，close 复跑前并集复查闸（1.17.0 代码闸）读现行链零 re_certify 补笔清单，二跑 engine 腿并（归并 c9f1ce0）拆本吊销全成，failed 空、会话 5b46cca3df980ab5 吊销；tools 与 math 腿二跑计 missing 或 already_gone 幂等收敛不判败。
+- 备份让位十一面对表：materials 十件加结果档逐件 cmp IDENTICAL，零漂移。
+- 三仓提交号：sih-tools（integral-stage-build）settle 段1 f1253dd9 加归并 922c49c 加收口补笔 bce976af（bypass 登记）；sih-math（main）settle 段1 202db0d 加归并 1498a8f；sih-engine（main）settle 段1 1890326 加段2 fbe29aa 加归并 c9f1ce0 加本笔回填一笔。
+- scribe CALL-LOG 补笔：bce976af 经 --no-verify 加 lease bypass 登记入台账（basefix 先例同形）。
+- reconcile（close 后）：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净 rc=0；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 段2，2026-09-03 旧账非本批新增）；sih-math unrouted 0 与 unbypassed 1（零号基线存量）与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 批前存量）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 167 事件，first_hash 05a8a75e 与批前一致零分叉，last_hash e196cc29 即本批 checkcite 认证笔居链尾；本批六笔即意图 e92b2331 加认证五笔（e51bbd3e 与 a373fae1 与 9bb47078 与 b5ae0859 与 e196cc29）全数在链。
+- 共享活面对表：当日链与会话册与锁册与 bypass 册与 meter 计数册留主树活写（共享追加面，归会计通道）；批期并行会话 mathscan-solo（dc38bb4c）已 issued 零持锁零交锋。
+- 本笔回填提交：close 通道外整备形（--no-verify 加 lease bypass 登记），leasewire 先例同形。
