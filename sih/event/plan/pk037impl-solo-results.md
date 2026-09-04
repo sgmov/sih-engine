@@ -97,4 +97,10 @@
 
 ## 收口附记（close 后补记）
 
-（待 close 后回填：close 读数、撞名让位记录、三仓提交号、reconcile 读数、终态链 verify、主树名册复验）
+- close 两跑：第一跑 tools 与 math 归并成功，engine 撞主树两件未跟踪件（主会预置的任务包与 dispatch），按备份让位归并对表法四步：备份两件、让位、close 归并、逐件 diff 全数 IDENTICAL，让位零丢失零漂移；第二跑成：engine 归并、三工地拆除、会话 744d2c9fbcb173a2 吊销。
+- 三仓提交号：sih-tools 段1 0c811d0a 与归并 ec8037c1；sih-math 段1 7d23724 与归并 4d7e143；sih-engine 段1 a78f08d 与归并 fc5d097。
+- reconcile：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 cert_missing 1（entryunique-solo 先前批既有旧账）；sih-math unrouted 0 与 unbypassed 1（零号基线初始提交既有）与 cert_missing 2（mathfix2-solo 与 fmtfix-solo 先前批既有）——相比批前零新增，本批贡献零。
+- 链 verify（close 后）：status valid 114 事件，first_hash 05a8a75e 与批前一致零分叉；本批八笔即意图 636bbfe7、出泊 b68b178a、终签 6b3723e8 与 70da4959、入泊 0b3da7ec、认证 01d24914 与 4bcda053 与 d3a81b3d；并行批 carrwire-solo 交错七笔（102 与 106 至 110 与 114）零覆盖零丢失。
+- 主树复验：名册 doc/governance/PARKING-v1.md des-001 核阅 exit 0 零违规（C006 存量修后过已归并树实证）；金向量过已提交树复现关即主树 semantic_selftest --golden-only 与全套自测与 metrics_selftest 全 exit 0；缺省路径主树终验三查询中置信区间与不动点对批前基线逐字节一致，死锁位词通道零变化、图并集因本批新条目 ALG-011 引用 ORD-020 扩一跳，即语料驱动差异非代码行为变化，词面缺省回退位零改结论不变。
+- 本笔回填提交：close 通道外 wip 形（--no-verify 加 lease bypass 登记），newcarr 收口附记先例同形。
+
