@@ -1,0 +1,10 @@
+{
+  "entry_id": "pk-054",
+  "title": "facet LLM 探针退役与上下文注入替代意图",
+  "context": "令源：用户 2026-09-04 会话裁定；出泊条件：measure-poly 程序批四起 A/B 门切换批开工时承接出泊",
+  "exit_condition": "measure-poly 程序批四起 A/B 门切换批开工",
+  "ttl_days": 30,
+  "created_at": "2026-09-04",
+  "source": "2026-09-04 会话 measure-poly 补课批任务二",
+  "related": ["measure-poly-rev1-progdoc", "pk-044"]
+}
