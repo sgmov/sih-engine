@@ -93,3 +93,13 @@ settle 双仓提交号、放锁、close 归并、reconcile、当日链 verify、
 ## 十、队形验证
 
 单线形 solo 零子代理全程成立：本批全部写入由会话 23b7ea6c7850a6b7（sess-zcode-2026-09-04-packhyg）亲写，零 Agent/Task 子代理调用；规范形与包装补件与勘误全由确定性程序承载（化格 targets_changed 0、canonical 断言、pytest 对表、checkcite），链写入经引擎 scribe 闸三（--session 加 --sessions）零直写链文件；零裁决点，机械链全绿自行收口。
+
+## 十一、收口附记（close 后回填，pk050sw-solo 收口回填先例同形）
+
+- settle 双仓：tools 段1 c6af8ad4（base integral-stage-build@6cf28e63，cert a198349f，三验 staged_in_scope 加 cert_on_chain 加 session_active 全过）、engine 段1 5ffb404（base main@30575a6 同 cert）；归并 merge 17440396（tools）与 2c25ca9（engine）。
+- 范围闸让位实录：tools 工地首轮 settle 遭 staged_out_of_scope 拒（nomenclator 与 scribe 两 CALL-LOG 未纳 allow，真实退出码 1；首轮读数经管道取尾掩码失真误差并入六节申报），照 facepark/selwire 先例工地回退让位 scoped settle，两笔随收约经 bypass 通道补笔入版控，bypass 台账登记 sha 9d749624。
+- close 两段式：首轮 close tools 侧成（worktree 删支净）engine 侧 merge_failed——主树当日链活写未提交加任务包与 materials 未跟踪件双阻（git 拒并详情在 close 台账）；备份让位归并对表法四步响应即备份当日链 145 事件与任务包与 materials 四件、checkout 加 rm 让位、close 重跑自愈（CONTRACT 自愈条款，failed 清零 revoked true）、diff 四件逐字节 identical 全过。
+- reconcile 双仓：engine exit 0（unrouted 0 加 cert_missing 0 加 unbypassed 0）；tools exit 1 系 cert_missing 1——sha 526e2be 日期 2026-09-03 entryunique-solo 段2 旧账非本批新增（本批提交零新增 cert_missing，unrouted 0），判据「相比批前零新增」达成如实记。
+- 当日链 verify：145 事件 valid，first 05a8a75e（当日首事件不变）尾 a198349f（本批 checkcite 认证即链尾）。
+- 主树复验：parser 直跑形 uv run --project . pytest 82 绿 2 存量红同名同理由（收集错误解除，退出码 1 系两存量红如实记）；nomenclator 30 绿；canonical 五件机械复断全绿；conftest.py 主树在案（c6af8ad4 落地）；BATCH-FACE 勘误补遗节与两条主树在案（grep 三读数 1/1/1）。
+- 本附记随收约经 bypass 通道入版控（close 通道外提交 --no-verify 加 lease bypass 登记）。
