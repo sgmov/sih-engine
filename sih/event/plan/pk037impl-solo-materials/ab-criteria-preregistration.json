@@ -1,0 +1,46 @@
+{
+  "kind": "ab-gate-criteria-preregistration",
+  "batch": "pk037impl-solo",
+  "date": "2026-09-04",
+  "registered_at": "A/B 实测开跑前，本件随批入版控为预登记凭证，考后不改",
+  "corpus": {
+    "repo": "sih-math 主树工作副本（/Users/moc/workspaces/SiHankor/sih-math）",
+    "state": "2026-09-04 批前实态 66ff0f0，本批新载体条目不入测验语料",
+    "inventory_digest_note": "语料清单 sha256 由 ab_run.py 实跑时计算并回填读数件"
+  },
+  "query_fixture": {
+    "file": "sih-tools/wikirecall/fixtures/ab-queries.json",
+    "design": "八查询固定：四条字面查询（词面子串可命中）加四条转述查询（查询词串不在标题与触发问句字面出现，词面通道预期哑火，语义通道应按加权部分匹配命中目标族）",
+    "freeze": "查询集 sha256 记入读数件，测量前冻结禁改"
+  },
+  "paths": {
+    "A": "旧路径即 recall.py 缺省词面种子（无 --semantic）",
+    "B": "新路径即 recall.py --semantic 3，种子取语义通道前 3 正分命中",
+    "K": 3,
+    "K_rationale": "语料约 163 条目，前 3 正分即候选收窄到约百分之二量级的可读书单头部，K 一次性登记不调参"
+  },
+  "criteria": [
+    {
+      "id": "C1",
+      "name": "新路径零退化",
+      "carrier": "PROB-014 定理一零增益判退化",
+      "test": "对全部八查询，新路径种子通道读数 state 均为 active 即 0 < hits < total，骨架通道 complete；任一查询哑火或全并即判不达"
+    },
+    {
+      "id": "C2",
+      "name": "收窄提升",
+      "carrier": "PROB-014 期望信息增益",
+      "test": "聚合增益差 ΔIG = Σ_查询 IG_B(种子通道) − Σ_查询 IG_A(词面通道) ≥ 0.5 比特；效应量 0.5 比特为考前登记值，意为命中集对并集的收窄比整体再收窄约四成一",
+      "delta_bits": 0.5
+    },
+    {
+      "id": "C3",
+      "name": "覆盖连续性",
+      "carrier": "PROB-011 区间出具",
+      "test": "聚合语义命中集与词面命中集交集非空即 Σ_查询 |hits_B ∩ hits_A| ≥ 1，新路径与旧路径判定不全脱钩"
+    }
+  ],
+  "verdict_rule": "C1 且 C2 且 C3 全过即切换候选成立，判变件泊界登记待用户裁切换；任一不过即如实申报 A/B 不达标，停批泊界登记，禁调参钓鱼，缺省位保持词面",
+  "judge": "metrics.py 现行件零改动，B 路径计划经种子通道映射后出读数，映射规则固定于 ab_run.py",
+  "reproducibility": "中间量逐字节可复现：同语料同查询同 K 双跑计划与读数逐字节一致"
+}
