@@ -71,4 +71,10 @@
 
 ## 收口附记（close 后补记，本节经 close 通道外 bypass 提交回填）
 
-（close 后回填）
+- close 两跑：首跑 tools 腿撞主树未跟踪报告原件（拷工地时未让位），让位后二跑全绿：三仓归并、分支删、工地拆、会话吊销（revoked true）。
+- 三仓主树归并提交：sih-math 895798a 段二加 1c34741 归并、sih-tools 与 sih-engine 各 settle 加归并成对；sih-math 合并后工作树零本地改动，两行在途勘误逐字在 merged 内（对表判据达成，出处归委外在途批已在 settle 事述与本档第六节申报）。
+- 让位对表：materials 全件与任务包备份 cmp IDENTICAL；勘误两行与五行已建与五条目在盘九项核对零 bad。
+- 链读数：close 后当日链 211 事件 verify valid；本批认证五笔（9335b044 / 549b6cb2 / c21690bd / 3b216bff / 68568dce）全在链。
+- reconcile：三仓 unrouted 零、session_orphan 零、unbypassed 零；cert_missing tools 2 / engine 1 / math 2 与 math unbypassed 1 均为批前历史存量非本批新增。
+- coverage 目录出现未跟踪 __pycache__（非本批产物，本批复跑走 /tmp 拷贝件），照录不处置。
+- 本附记经 close 通道外 --no-verify 提交加 lease bypass 登记回填。
