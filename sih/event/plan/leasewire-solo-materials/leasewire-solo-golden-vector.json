@@ -1,0 +1,295 @@
+{
+  "at": "2026-09-04T08:00:00+00:00",
+  "batch": "leasewire-solo",
+  "carrier": "ORD-020",
+  "cases": [
+    {
+      "case": "l1_lease_full_order_ascending",
+      "status_held": [
+        {
+          "acquired_at": "2026-09-04T08:00:00+00:00",
+          "event": "acquired",
+          "mode": "exclusive",
+          "path": "batch/a.md",
+          "session_id": "S1"
+        },
+        {
+          "acquired_at": "2026-09-04T08:00:00+00:00",
+          "event": "acquired",
+          "mode": "exclusive",
+          "path": "batch/b/c.md",
+          "session_id": "S1"
+        },
+        {
+          "acquired_at": "2026-09-04T08:00:00+00:00",
+          "event": "acquired",
+          "mode": "exclusive",
+          "path": "batch/b/d.md",
+          "session_id": "S1"
+        }
+      ],
+      "steps": [
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/a.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/a.md",
+          "session": "S1",
+          "tool": "lease"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/a.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ],
+            "batch/b/c.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/b/c.md",
+          "session": "S1",
+          "tool": "lease"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/a.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ],
+            "batch/b/c.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ],
+            "batch/b/d.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/b/d.md",
+          "session": "S1",
+          "tool": "lease"
+        }
+      ]
+    },
+    {
+      "case": "l2_deadlock_freedom_counterexample",
+      "steps": [
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/m/z.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/m/z.md",
+          "session": "S1",
+          "tool": "lease"
+        },
+        {
+          "decision": "locked_elsewhere",
+          "detail": {
+            "held_mode": "exclusive",
+            "held_path": "batch/m/z.md",
+            "holder": "S1",
+            "path": "batch/m/z.md"
+          },
+          "held_after": {
+            "batch/m/z.md": [
+              [
+                "S1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/m/z.md",
+          "session": "S2",
+          "tool": "lease"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/m/z.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/m/z.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "locked_elsewhere",
+          "detail": {
+            "holder": "W1",
+            "path": "batch/m/z.md"
+          },
+          "held_after": {
+            "batch/m/z.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/m/z.md",
+          "session": "W2",
+          "tool": "locks"
+        }
+      ]
+    },
+    {
+      "case": "l3_locks_ledger_pairing_consistency",
+      "status_held": [
+        {
+          "acquired_at": "2026-09-04T08:00:00+00:00",
+          "event": "acquired",
+          "path": "batch/p/two.md",
+          "session_id": "W1"
+        }
+      ],
+      "steps": [
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/p/one.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/p/one.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "released",
+          "held_after": {},
+          "op": "unlock",
+          "path": "batch/p/one.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/p/two.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/p/two.md",
+          "session": "W1",
+          "tool": "locks"
+        }
+      ]
+    },
+    {
+      "case": "l4_locks_pairing_twopass_deviation_documentation",
+      "status_held": [
+        {
+          "acquired_at": "2026-09-04T08:00:00+00:00",
+          "event": "acquired",
+          "path": "batch/q.md",
+          "session_id": "W2"
+        }
+      ],
+      "steps": [
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/q.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/q.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "released",
+          "held_after": {},
+          "op": "unlock",
+          "path": "batch/q.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/q.md": [
+              [
+                "W1",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/q.md",
+          "session": "W1",
+          "tool": "locks"
+        },
+        {
+          "decision": "granted",
+          "held_after": {
+            "batch/q.md": [
+              [
+                "W1",
+                "exclusive"
+              ],
+              [
+                "W2",
+                "exclusive"
+              ]
+            ]
+          },
+          "op": "lock",
+          "path": "batch/q.md",
+          "session": "W2",
+          "tool": "locks"
+        }
+      ]
+    }
+  ],
+  "formula_version": "lw-1"
+}
