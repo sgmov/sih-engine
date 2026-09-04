@@ -1,71 +1,86 @@
+# ===== docmath-b3-solo 逐条挂锚（2026-09-04，只加注记零判变：谓词与参数与退出码语义零变化） =====
+# 挂锚形承 gatecap 先例；判定性四候选与纯约定八件逐条注记见各规则 id 行后，推导档
+# sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md。
 [[rules]]
 id = "C001"
+# [docmath-b3-solo 挂锚] C001 纯约定 归依:env-params（标点风格，判定性扰动缺席）
 kind = "charset_forbid"
 params = { strings = ["——"] }
 message = "禁止破折号「——」,中文连接请使用全角冒号「:」"
 
 [[rules]]
 id = "C002"
+# [docmath-b3-solo 挂锚] C002 纯约定 归依:env-params（字符面风格，判定性扰动缺席）
 kind = "charset_allow"
 params = { ranges = ["0020-007E", "00A0-00FF", "4E00-9FFF", "3000-303F", "FF00-FFEF"] }
 message = "字符 U+{char} 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
 
 [[rules]]
 id = "C006"
+# [docmath-b3-solo 挂锚] C006 纯约定 归依:env-params（标点与括号内容风格，判定性扰动缺席）
 kind = "forbid_pattern"
 params = { pattern = '（(?!(?:[A-Za-z0-9 ./&+=,-]*|[A-Za-z][A-Za-z0-9 ./&+-]*，以下简写为：[A-Za-z0-9]+)）)[^）]*）' }
 message = "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
 
 [[rules]]
 id = "S002"
+# [docmath-b3-solo 挂锚] S002 判定性 载体:ALG-012(mapping.md:212)（标题树根唯一即解析确定） 推导档:sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md
 kind = "header_structure"
 params = { check = "single_h1" }
 message = "全文仅允许一个一级标题"
 
 [[rules]]
 id = "S004"
+# [docmath-b3-solo 挂锚] S004 判定性 载体:ALG-012(mapping.md:212),ORD-008(mapping.md:184)（锚点是引用稳定端点） 推导档:sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md
 kind = "header_structure"
 params = { check = "anchor_required", min_level = 2 }
 message = "第 {level} 级标题必须显式声明 {{#锚点}}"
 
 [[rules]]
 id = "S005"
+# [docmath-b3-solo 挂锚] S005 纯约定 归依:env-params（节序观感，判定性扰动缺席）
 kind = "header_structure"
 params = { check = "first_h2_name", name = "概览" }
 message = "全文第一个二级标题必须为「概览」(现为「{title}」)"
 
 [[rules]]
 id = "S006"
+# [docmath-b3-solo 挂锚] S006 判定性 载体:ALG-012(mapping.md:212)（层级不跳即父子派生全且唯一） 推导档:sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md
 kind = "header_structure"
 params = { check = "no_level_skip" }
 message = "标题层级跳级:上一级为 {prev} 级,当前为 {level} 级"
 
 [[rules]]
 id = "F000"
+# [docmath-b3-solo 挂锚] F000 纯约定 归依:env-params（围栏语言范围，判定性扰动缺席）
 kind = "line_flag"
 params = { flag = "fence_open", allow_langs = ["mermaid", "filetree"] }
 message = "业务文档禁止使用标记语言围栏代码块,仅允许 mermaid / filetree"
 
 [[rules]]
 id = "F002"
+# [docmath-b3-solo 挂锚] F002 纯约定 归依:env-params（排版元素禁用，判定性扰动缺席）
 kind = "line_flag"
 params = { flag = "blockquote" }
 message = "禁止块引用「>」"
 
 [[rules]]
 id = "F003"
+# [docmath-b3-solo 挂锚] F003 纯约定 归依:env-params（排版元素禁用，判定性扰动缺席）
 kind = "line_flag"
 params = { flag = "bold" }
 message = "禁止粗体「**」"
 
 [[rules]]
 id = "F005"
+# [docmath-b3-solo 挂锚] F005 纯约定 归依:env-params（排版元素禁用，判定性扰动缺席）
 kind = "line_flag"
 params = { flag = "table" }
 message = "禁止表格"
 
 [[rules]]
 id = "N002"
+# [docmath-b3-solo 挂锚] N002 判定性 载体:ALG-012(mapping.md:212),ORD-008(mapping.md:184)（导航项行文法与锚点引用端点） 推导档:sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md
 kind = "nav_format"
 params = { }
 message = "导航项格式必须为「章节简述::[链接文本](#锚点)」"
@@ -99,6 +114,7 @@ message = "推导档指针缺失:声明形行仅携单指针,须载体与推导�
 # 加 APP 附录族，推导档承 sih-math/docs/derivation 命名族。机械边界如实声明：散文后置形与节级邻近
 # 不可及（SPEC-019 机械边界节），归 tally R8 与人工抽检承载。载体：ORD-008 引用图可达与孤悬判定
 # （mapping.md:184「引用是否可达无孤悬」）。判变只向前生效不溯往，C007 与 C008 判定位零触碰。
+# [docmath-b3-solo 补实指] C009 推导档实指：sih-math/docs/gatecap-derivation-2026-09-04.md 与 sih-engine/doc/spec/SPEC-019-constant-nearby-floor.md（命名族声明自本批落实指，规则参数零触碰）
 
 [[rules]]
 id = "C009"

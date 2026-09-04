@@ -1,0 +1,58 @@
+{
+ "all_green": true,
+ "checks": {
+  "batch1_candidates_now_anchored": true,
+  "derivations_on_disk": {
+   "anchors_derivation": true,
+   "carriers_derivation": true
+  },
+  "des001_anchor_states": {
+   "C001": "纯约定",
+   "C002": "纯约定",
+   "C006": "纯约定",
+   "C007": null,
+   "C008": null,
+   "C009": "判定性",
+   "F000": "纯约定",
+   "F002": "纯约定",
+   "F003": "纯约定",
+   "F005": "纯约定",
+   "N002": "判定性",
+   "S002": "判定性",
+   "S004": "判定性",
+   "S005": "纯约定",
+   "S006": "判定性"
+  },
+  "des001_naked": [],
+  "dual_impl_identical": true,
+  "l001_anchored": true,
+  "mapping_line_claims": {
+   "ALG-002:197": true,
+   "ALG-012:212": true,
+   "ORD-002:75": true,
+   "ORD-003:77": true,
+   "ORD-008:184": true,
+   "ORD-010:186": true,
+   "ORD-023:209": true,
+   "ORD-024:210": true,
+   "PROB-008:193": true,
+   "PROB-009:194": true
+  },
+  "mapping_line_drift": [],
+  "nomenclator_anchor_manifest": {
+   "anchors": [
+    "ALG-002",
+    "ORD-024"
+   ],
+   "derivation_present": true,
+   "present": true
+  },
+  "nomenclator_face_naked": false,
+  "rules_source": "worktree_batch_phase"
+ },
+ "naked_count": 0,
+ "naked_count_acceptance": "零",
+ "program": "docmath-b3-solo",
+ "rules_source": "worktree_batch_phase",
+ "run_date": "2026-09-04"
+}
