@@ -1,0 +1,34 @@
+{
+ "carrier": {
+  "已实例化": 19,
+  "可指认未实例化": 5,
+  "无可指认载体": 0
+ },
+ "named": {
+  "named_total": 126,
+  "named_decision": 34,
+  "named_resource": 16,
+  "named_pending": 76
+ },
+ "literal": {
+  "literal_total": 600,
+  "literal_decision": 80,
+  "literal_pending": 520
+ },
+ "whitelist_canonical": 172,
+ "entry_files_on_disk": 172,
+ "alias_registry": 4,
+ "mechanisms": 24,
+ "f3_rows": 36,
+ "findings": [],
+ "diff": {
+  "named_class_changed": 0,
+  "named_new": 17,
+  "named_gone": 0,
+  "lit_changed": 0,
+  "lit_new": 48,
+  "lit_gone": 1
+ },
+ "reclass_inherited_hits": 12
+}
+rev3 三件已写入（同参双跑逐字节一致）
