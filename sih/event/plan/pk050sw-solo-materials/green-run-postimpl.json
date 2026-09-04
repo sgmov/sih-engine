@@ -1,0 +1,58 @@
+{
+ "total": 13,
+ "failed": 0,
+ "results": [
+  {
+   "case": "test_tokenize_fixed_forms",
+   "ok": true
+  },
+  {
+   "case": "test_idf_saturation_zero_and_monotone",
+   "ok": true
+  },
+  {
+   "case": "test_cosine_bounds_and_zero_side",
+   "ok": true
+  },
+  {
+   "case": "test_ranking_total_order_tiebreak",
+   "ok": true
+  },
+  {
+   "case": "test_semantic_fires_where_word_degenerates",
+   "ok": true
+  },
+  {
+   "case": "test_word_channel_unchanged_with_flag_off",
+   "ok": true
+  },
+  {
+   "case": "test_cli_default_is_semantic_k3",
+   "ok": true
+  },
+  {
+   "case": "test_cli_word_flag_fallback_matches_word_function",
+   "ok": true
+  },
+  {
+   "case": "test_cli_word_fallback_matches_preswitch_default",
+   "ok": true
+  },
+  {
+   "case": "test_cli_semantic_zero_still_off",
+   "ok": true
+  },
+  {
+   "case": "test_cli_semantic_explicit_k_matches_function",
+   "ok": true
+  },
+  {
+   "case": "test_golden_double_run_byte_identical_and_frozen_match",
+   "ok": true
+  },
+  {
+   "case": "test_golden_default_and_fallback_families_frozen_match",
+   "ok": true
+  }
+ ]
+}

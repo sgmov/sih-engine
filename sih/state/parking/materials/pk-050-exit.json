@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-050",
+  "id": "pk-050",
+  "parking": {
+    "entered_at": "2026-09-04",
+    "exited_at": "2026-09-04",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-04 预签设计「A/B 门过即切」（pk037impl-solo 判变件入泊时登记的切换通道）+ 得一裁定材料 m-pk050-switch-1（boundary 九发→通道分解→确定性七项核对全绿：预登记 A/B pass、semantic.py 仅 stdlib 零 LLM、零新增依赖、双跑逐字节一致、载体 PROB-017/ALG-011 终签在链、判变 pk-050 登记在链、词面回退位设计在位）；政策行（用户 2026-09-04）「继续推进数学仓的完善，遇到裁决点过得一裁，退人节点」——批内零新裁决点，人节点退位由得一材料加确定性七项核对承载；切换落地批 pk050sw-solo 承接，机器终签 crosscheck-m-pk050-switch-1 b0651374 在链",
+  "state": "exited",
+  "ttl_days": 30
+}

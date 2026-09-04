@@ -1,0 +1,6 @@
+# pk050sw-solo 实仓对表证据（sih-math 主树 2026-09-04 实态，aliases-seed 同参）
+# 判式：切前 HEAD 版 recall.py 缺省 vs 工地版 --word（回退位零改）；切前 --semantic 3 vs 工地版无旗标（缺省切换等价）；工地版缺省双跑 sha256 前 16 位（可复现）
+query=置信区间  word_vs_preswitch_default=IDENTICAL  default_vs_preswitch_sem3=IDENTICAL  default_doublerun=EQUAL(06451acf629cad6e)
+query=不动点  word_vs_preswitch_default=IDENTICAL  default_vs_preswitch_sem3=IDENTICAL  default_doublerun=EQUAL(d3eeca9ec7b6cd92)
+query=全序锁序  word_vs_preswitch_default=IDENTICAL  default_vs_preswitch_sem3=IDENTICAL  default_doublerun=EQUAL(7927004460c6e952)
+query=迭代什么时候能停  word_vs_preswitch_default=IDENTICAL  default_vs_preswitch_sem3=IDENTICAL  default_doublerun=EQUAL(23ec3b630835884b)
