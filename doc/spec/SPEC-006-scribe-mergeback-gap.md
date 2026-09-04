@@ -86,3 +86,10 @@ T6 退出码
 ## 修订记录 {#revisions}
 
 2026-09-03 修订三：承 guardrail-solo 防分叉护栏，`scribe` CLI 四写入入口（append/intent/park/record）加 `worktree_trail_guard`，`--trail` 路径含 `worktrees/` 段即拒 exit 2 载错文「工地链副本禁追加即认证先落主链」，显式 `--allow-worktree-trail` 留应急位默认关；tdd 新增四测，全红后全绿；USAGE 文档同步标记旗标；以上事项全过即修订闭。
+
+## 内容充分性 {#sufficiency}
+
+- 本节为 docmath-b4-solo 收尾批按新旧都管裁定补齐，模板见 SPEC-TEMPLATE-sufficiency-v1，只加节不改本文实质。
+- 判据红证对表：本文判据条目见 现面盘点、入口落差、对拍与复验、组件边界等节。按证伪覆盖度载体如实申报：历史判据清单未逐件附可构造红证即零信息部分，清账路径为后继修订批逐件补红证，承 sih-math/docs/docmath-carriers-derivation-2026-09-04.md。
+- 判定性常数挂锚对表：本文档无声明的判定性常数。des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验。
+- 约束算子对表：本文无约束算子面，如实申报。

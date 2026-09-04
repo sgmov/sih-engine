@@ -69,3 +69,10 @@ suspend 即挂起记录：--signals 落 state suspended 于 --log，升级后无
 ## 版本与固定 {#version}
 
 v1.1 于 2026-08-30 随 elicitgate 批修订即 suspend 操作入冻结面与 check 参数 --words 收紧淘汰 --input 并增 --topics 与 --conflict-words 与 --history-face、分词不做、破冻显式留痕。v1 于 2026-08-29 随 elicitinit-solo 批落盘。接口冻结即 check 与 digest 两操作名与信号件五字段经修订记录留痕方可改。正名已签即叩问 Elicit，词条在检词包 code elicit。
+
+## 内容充分性 {#sufficiency}
+
+- 本节为 docmath-b4-solo 收尾批按新旧都管裁定补齐，模板见 SPEC-TEMPLATE-sufficiency-v1，只加节不改本文实质。
+- 判据红证对表：本文判据条目见 定位、接口签名、三扳机、消化闸等节。按证伪覆盖度载体如实申报：历史判据清单未逐件附可构造红证即零信息部分，清账路径为后继修订批逐件补红证，承 sih-math/docs/docmath-carriers-derivation-2026-09-04.md。
+- 判定性常数挂锚对表：本文档无声明的判定性常数。des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验。
+- 约束算子对表：本文无约束算子面，如实申报。
