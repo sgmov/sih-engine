@@ -1,0 +1,17 @@
+{
+ "action": "enter",
+ "entry_id": "pk-053",
+ "id": "pk-053",
+ "title": "判定性命名常数冻结件合并泊位——rev3 账本判定性命名常数 34 件三态清账中 23 件无可指认载体件合并一泊位承载",
+ "context": "constclear-solo 批 F-1/F-3（2026-09-04）：rev3 账本 classification 节判定性命名常数 34 件逐件三态清账，磁盘实态重取与账本计数零偏差（named 34/16/76/126），三态分布推导八件、改判三件、冻结二十三件；M-4 红线引用无推导即违规，诚实冻结是合法输出禁硬凑。本泊位为二十三件冻结件合并承载（数值零改动，冻结是可见状态带清账路径非隐藏回退），逐件常数位与现值与无载体要点落推导档 sih-math/docs/constclear-derivation-2026-09-04.md §4，四组即判据族标定值十二件（BUDGET_PER_GID 九发契约两件 sih-engine/src/attractor/tally.rs:34 与 sih-tools/tally/src/tally/cli.py:32、F21 至 F25 阶段二标定五件 sih-tools/facet/probes/analyze_merged_v2.py:29-33、层占比预登记两件 check_layer_proportion.py:48 与 53、飞轮占比 0.60 一件 contribution_metric.py:85 源码注记自承非数学推导、翻桌率实测基线 0.004 一件 facet_stats_inf.py:48、占比判据在役挂起线 0.34 一件 r3a_gate_v2.py:63 承 pk-049）、结构与量纲约定六件（THRESHOLD_N 5000 与 THRESHOLD_C 5000.0 与 THRESHOLD_NEW_MECHANISM_COVERAGE 1 三件 contribution_metric.py:65/66/68、USER_POSTURE 尺度端点两件 program_signoff.py:99/100 用户裁决、TIME_WINDOW_HOURS_DEFAULT 0 一件 program_signoff.py:107）、启发式检出阈值两件（VERIFY_TOKEN_DIFF_THRESHOLD 500 run_siliconflow_factcheck.py:47、SKEW_MAX_SECONDS 300 identity core.py:47）、待裁与零容忍三件（EPS 0.1 n_convergence_probe.py:31 LIM-007 只承载概念无值级锚故不硬凑、GD_ALPHA_DEFAULT 0.05 gauge cli.py:79 源码注记自承候选值随 pk-049 一并裁、DEFAULT_INCONSISTENCY_MAX_RATE 0.0 check_verdict_consistency.py:48 零容忍属定性要求非概率条目承载）",
+ "exit_condition": "后继批逐件承载体立项推导落档出泊（载体条目须实文承载该常数取值的判定语义与族惯例或约束锚，过 M-4），或用户裁改判环境参数登记面，或维持冻结按 ttl 续泊",
+ "ttl_days": 30,
+ "path": "doc/governance/PARKING-v1.md",
+ "anchors": [],
+ "requested_writes": [],
+ "state": "parked",
+ "parking": {
+  "entered_at": "2026-09-04",
+  "ttl_days": 30
+ }
+}
