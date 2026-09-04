@@ -74,9 +74,9 @@ ask3 记录 sha256 2b9d1e73fb044fc42689b464d804a50ee1ffc8e82cb54d3c585666ccedfc2
 | 5 | constclear-scr-des001-roster-worktree.json（名册核阅工地路径域外） | 2 | ecb999a5 |
 | 6 | constclear-scr-des001-roster-corpuscopy.json（域匹配副本终跑） | 0 | 23d66e85 |
 | 7 | constclear-nom-roster.json（检词名册） | 0 | d6744a62 |
-| 8 | constclear-fmt-results.json（化格结果档） | 0 | 待认证回填 |
-| 9 | constclear-scr-des001-results.json（核阅结果档，event/plan 域外） | 2 | 待认证回填 |
-| 10 | constclear-nom-results.json（检词结果档） | 0 | 待认证回填 |
+| 8 | constclear-fmt-results.json（化格结果档） | 0 | 56301550 |
+| 9 | constclear-scr-des001-results.json（核阅结果档，event/plan 域外） | 2 | 0fdf7b41 |
+| 10 | constclear-nom-results.json（检词结果档） | 0 | 07a31cdb |
 
 自指限制申报：第 10 笔结果档检词认证在结果档定稿后上链，哈希不在本表（本档文本先于该笔固化），越线节照录；settle cert 取第 9 笔前八位。
 
@@ -106,7 +106,14 @@ ask3 记录 sha256 2b9d1e73fb044fc42689b464d804a50ee1ffc8e82cb54d3c585666ccedfc2
 
 ## 收口读数（收约后回填）
 
-- settle 提交号与 cert、放锁读数、close 轮次与 chain_union、reconcile 双仓读数、链 verify 终读数：本节在 close 后经 close 通道外 --no-verify 提交加 lease bypass 登记回填（ordwire 与 pk037impl 与 basefix 与 mathscan 收口回填先例同形）。
+- settle 提交号（cert 0fdf7b41 全仓同签）：engine 04c5833 归并 b287f5e（base main@f6789b0）、math 01b9162 归并 c1521d9（base main@ecdfdcf）、tools 51acc716 归并 3826a79a（base integral-stage-build@23f5f6e8），三仓 settle exit 0 三闸全过。
+- 放锁：九锁一次放清零持留，锁账对表 acquired 32 = released 32（九长持加二十四短持轮即取即放）。
+- close 一轮成三仓全过：tools 与 engine 与 math 归并删支拆工地会话吊销；chain_union 两面即 meter counts 与 trail live_only_count 均 0、re_certify 空（快照后零活写丢失，并集复查闸零动作）。
+- 四步法对表：主树十八件备份（任务包与 dispatch 与 first-run 全树与 pk-053 与报告件十四件）让位归并后 diff 逐件 IDENTICAL 零差异。
+- reconcile：sih-tools 与 sih-engine 与 sih-math 三仓 exit 0，unrouted 与 cert_missing 与 session_orphan 与 unbypassed 相比批前零新增。
+- 链 verify：valid，231 事件，first 05a8a75e 不变，末 07a31cdb（本批第 10 笔认证即结果档检词件）。批前开工 207 行（会话启动检时点）→ 完工 231 行：本批净增 15 笔即例行读数三维（686364cd 与 d4700a58 与 124653aa）加 intent f4cb68b8 加停泊 c01eb5e7 加认证十笔，其余 9 笔系他批共笔（newcarr2-solo 在途活动）直续零冲突零覆盖。
+- 批后心跳：工具线 total 19（mainline 18、siding 1 即 pk-042 已知形）批前批后同态；引擎线 total 22（mainline 22、scrap_track 0、siding 0）即 pk-053 入泊 mainline 加一，两线告警空。
+- 本节回填与认证表八至十行哈希回填走 close 通道外 --no-verify 提交加 lease bypass 登记（ordwire 与 pk037impl 与 basefix 与 mathscan 收口回填先例同形）。
 
 ## 队形验证
 
