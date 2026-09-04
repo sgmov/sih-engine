@@ -78,7 +78,39 @@
 
 ## 八、收口读数
 
-（收口后回填：三仓 settle 与归并与整备提交号、reconcile 读数、链 verify 读数、共享面对表）
+### 三仓 settle 与归并提交号
+
+| 仓 | settle 段1 | 归并 |
+|---|---|---|
+| sih-tools（integral-stage-build） | 507c1da6 | 528a109a |
+| sih-engine（main） | 2b941f0 | 39b8a5c |
+| sih-math（main） | b956f35 | 7e1bb74 |
+
+settle cert 取链上认证事件哈希 38646ecc（tools 与 engine）与 9bccf925（math）；首试取 intent 哈希 2f0dd1ba 报 cert_not_on_chain 一笔如实记（intent 非认证事件），改认证哈希即过。
+
+### close 与归并对表
+
+close 首试 tools 与 engine 撞主树同名未跟踪件（备份让位归并对表法触发），备份二十二件让位移除后归并，备份与归并结果 22 文件逐字节对表 IDENTICAL 零漂移；math 首试即净归并。
+
+### reconcile 读数（三仓，异常均旧账零新增）
+
+| 仓 | unrouted | unbypassed | cert_missing | 异常归属 |
+|---|---|---|---|---|
+| sih-tools | 0 | 0 | 1 | entryunique-solo 段2（526e2be，2026-09-03 旧账，非本批新增） |
+| sih-engine | 0 | 0 | 0 | 全净 |
+| sih-math | 0 | 1 | 2 | baseline 零号 c556abb 与 mathfix2 段2（93c4f0b）与 fmtfix 段2（d561f17），均 2026-08-30 旧账，非本批新增 |
+
+### 链 verify（close 后）
+
+status valid，121 事件，首哈希 05a8a75e，末哈希 484df515（本批 checkcite 认证居链尾）；批前 114 笔加本批 intent 一笔加认证六笔恰 121，与并行批零丢失。
+
+### 共享面对表与主树复现
+
+- scribe/CALL-LOG.md 与 lease/CALL-LOG.md：本批各一笔留痕在档尾，随整备提交入版控。
+- 词表零新登记：本批叩问五轻信号处置均转后续术语批，terms.json 零触碰。
+- 主树 gauge 全测试族复跑：42 passed 3 skipped（ga-2 与 gc-1 与 gq-1 与 gd-1 四代共存在役），金向量 attains 与 not_attains 两态主树重放 cmp 逐字节一致（已提交树复现关过）。
+- 本笔回填提交：close 通道外整备形（--no-verify 加 bypass 登记），queueing-solo 先例同形。
+- 任务包与 dispatch 与判据命题已裁材料九件随批入版控（备份让位归并对表 22 件 IDENTICAL）。
 
 ## 九、队形验证
 
