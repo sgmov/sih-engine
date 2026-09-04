@@ -1,0 +1,130 @@
+{
+ "batch": "pk050sw-solo",
+ "date": "2026-09-04",
+ "gid": "m-pk050-switch-1",
+ "items": [
+  {
+   "evidence": {
+    "criteria": {
+     "C1_new_path_zero_degeneration": true,
+     "C2_narrowing_gain_delta_ge_registered": true,
+     "C3_coverage_continuity": true
+    },
+    "delta_ig_bits": 12.452289647183061,
+    "k": 3,
+    "prereg_sha256": "881e6735e253f9962f8ec16e6c4de28f862fa9432a2b7dd247c0f6fd81e129db",
+    "readings_sha256": "82646398de8eb01ca8450a7f9f047a32ef14479b288fb48fd3f6263826242423",
+    "verdict": "pass"
+   },
+   "id": "S1",
+   "name": "预登记 A/B pass",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "files": {
+     "recall.py": {
+      "imports": [
+       "argparse",
+       "json",
+       "pathlib",
+       "re",
+       "semantic",
+       "sys"
+      ],
+      "out_of_allow": []
+     },
+     "semantic.py": {
+      "imports": [
+       "math",
+       "re"
+      ],
+      "out_of_allow": []
+     }
+    },
+    "forbidden_hits": []
+   },
+   "id": "S2",
+   "name": "semantic.py 仅 stdlib 零 LLM",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "dep_manifests": [],
+    "diff_files": [
+     "wikirecall/CALL-LOG.md",
+     "wikirecall/recall.py",
+     "wikirecall/semantic_selftest.py"
+    ],
+    "new_files": [
+     "wikirecall/fixtures/golden/recall-default-default-broad.json",
+     "wikirecall/fixtures/golden/recall-default-default-literal.json",
+     "wikirecall/fixtures/golden/recall-default-default-paraphrase.json",
+     "wikirecall/fixtures/golden/recall-fallback-fallback-cjk.json",
+     "wikirecall/fixtures/golden/recall-fallback-fallback-empty.json",
+     "wikirecall/fixtures/golden/recall-fallback-fallback-literal.json"
+    ],
+    "outside_allow": []
+   },
+   "id": "S3",
+   "name": "零新增依赖",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "queries": {
+     "不动点": {
+      "equal": true,
+      "sha_run1": "d84ea899c55fd86713f1c6ee03214d9b478de67442ad0ce9155a8a68f2018e7a",
+      "sha_run2": "d84ea899c55fd86713f1c6ee03214d9b478de67442ad0ce9155a8a68f2018e7a"
+     },
+     "置信区间": {
+      "equal": true,
+      "sha_run1": "3780898f71c2a6253d1062751a6845eaadaf3c323f4f33922722e7f92be13d14",
+      "sha_run2": "3780898f71c2a6253d1062751a6845eaadaf3c323f4f33922722e7f92be13d14"
+     }
+    }
+   },
+   "id": "S4",
+   "name": "双跑逐字节一致",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "doc_ids": {
+     "ALG-011": "crosscheck-m-pk037-cos-1",
+     "PROB-017": "crosscheck-m-pk037-idf-1"
+    },
+    "found": {
+     "ALG-011": "70da49592419b1e24eb33ec2df79f430c0b8d36b58b1ce2316c8a5c2f71f3110",
+     "PROB-017": "6b3723e8603f5436605dcba178b60a98c68e232fc0038730158f1cabd8dab8bd"
+    }
+   },
+   "id": "S5",
+   "name": "载体 PROB-017/ALG-011 终签在链",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "doc_id": "pk-050",
+    "parking_entered_hash": "0b3da7ec2c8a5a1d1d722d64ed68a35a727fb4dc5c08f348efd985e9e5cdb63f"
+   },
+   "id": "S6",
+   "name": "判变 pk-050 登记在链",
+   "pass": true
+  },
+  {
+   "evidence": {
+    "default_has_semantic_channel": true,
+    "fixture_corpus_entries": 2,
+    "word_plan_has_no_semantic_key": true,
+    "word_vs_preswitch_default_identical": true
+   },
+   "id": "S7",
+   "name": "词面回退位设计在位",
+   "pass": true
+  }
+ ],
+ "schema": "switch-gate-checklist/1",
+ "verdict": "pass"
+}

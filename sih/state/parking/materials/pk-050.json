@@ -1,16 +1,17 @@
 {
   "action": "enter",
-  "entry_id": "pk-050",
-  "title": "retriever 缺省位切换裁定",
-  "exit_condition": "用户裁检索缺省位切换与否，裁切换即另开切换批把语义通道升缺省，裁不切即闭项出泊保持词面缺省",
-  "ttl_days": 30,
-  "id": "pk-050",
-  "path": "doc/governance/PARKING-v1.md",
   "anchors": [],
-  "requested_writes": [],
-  "state": "parked",
+  "entry_id": "pk-050",
+  "exit_condition": "用户裁检索缺省位切换与否，裁切换即另开切换批把语义通道升缺省，裁不切即闭项出泊保持词面缺省",
+  "id": "pk-050",
   "parking": {
     "entered_at": "2026-09-04",
+    "exited_at": "2026-09-04",
     "ttl_days": 30
-  }
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "requested_writes": [],
+  "state": "exited",
+  "title": "retriever 缺省位切换裁定",
+  "ttl_days": 30
 }
