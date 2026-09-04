@@ -87,7 +87,13 @@
 
 ## 收口附记（close 后补记）
 
-- 主树复验：名册 doc/governance/PARKING-v1.md des-001 核阅 exit 0 零违规（归并后主树实跑）；金向量过已提交树复现关即主树 semantic_selftest --golden-only 与全套 semantic_selftest 十三用例与 selftest 六用例与 metrics_selftest 十一用例全 exit 0；缺省路径主树终验语义通道在场与 --word 零语义键，同语料下 word 对切前缺省与缺省对切前 --semantic 3 双 IDENTICAL 复证（对照构造期读数的差异为 leasewire 归并后语料漂移即语料驱动差异非代码行为变化）；checkcite 守卫 pass（cited 即本批载体引用 PROB-017 与 ALG-011 与 PROB-014 落书单闭包；PROB-011 与 PROB-003 初版引用件不在本批书单面，引用面收窄如实申报——两载体为 pk037impl 批终签在链引用，非本批新增书单消费）。
+- close 五跑实录：第一跑 trail append 锁残持被拒即放锁；第二跑 engine merge_diverge（trail，因并行批 leasewire-solo 归并在途提交了链快照使 base..main 集合扩大）；第三跑 merge-tree 内容冲突（trail 两边各改，我支已按 carrwire 整备形拷入活链超集 wip 70ca29d，main 侧有 leasewire 快照提交）；消解承 queueing 与 latexwire「主树活链通道外提交让位」先例即活链 138 事件超集快照通道外提交 ab0dcdf（--no-verify 加 bypass 登记，scribe verify valid 首哈希 05a8a75e 不变）；第四跑撞主树同名未跟踪件四件（tools DES cell 两件加 engine 任务包与 dispatch），按备份让位归并对表法四步：备份、让位、close 归并、逐件 diff 四件全数 IDENTICAL；第五跑成：双仓归并、双工地拆除、双支删除、会话吊销。
+- 双仓提交号：sih-tools 段1 dbc9e560 与归并 62be0e3b 与回填 6cf28e63（scribe CALL-LOG 尾行通道外）；sih-engine 段1 9cf62f8 与链快照 wip 70ca29d 与让位整备 ab0dcdf 与归并 25d257b 与回填 c6bf228；sih-math 零触碰（HEAD 366298b 保持批前）。
+- reconcile：sih-engine unrouted 0 与 unbypassed 0 与 cert_missing 0 与 session_orphan 0 全净；sih-tools unrouted 0 与 unbypassed 0 与 session_orphan 0 与 cert_missing 1（entryunique-solo 先前批既有旧账，批前即 1）——相比批前零新增，本批贡献零。
+- 链 verify（close 后终态）：status valid 138 事件，first_hash 05a8a75e 与批前一致零分叉，last_hash e76fafa2 即本批 changed-files 认证；本批八笔在链即 intent 120646b2、终签 b0651374、出泊 e4042c80、认证 c9ab0cfb（遭覆盖丢失）与 9a1bf670 与补签 a4c63bea 与 a3df50dd 与 e76fafa2；并行批窗口内交错共笔如实共存。
+- 净态终读：lease status active_sessions 0 与 held_locks 0。
+- 主树复验：名册 doc/governance/PARKING-v1.md des-001 核阅 exit 0 零违规（归并后主树实跑）；金向量过已提交树复现关即主树 semantic_selftest --golden-only 与全套 semantic_selftest 十三用例与 selftest 六用例与 metrics_selftest 十一用例全 exit 0；缺省路径主树终验语义通道在场（不动点查询头部 ORD-003 与 TOP-003 与 ORD-015）与 --word 零语义键，同语料下 word 对切前缺省与缺省对切前 --semantic 3 双 IDENTICAL 复证（对照构造期读数的差异为 leasewire 归并后语料漂移即语料驱动差异非代码行为变化，承 pk037impl 主树复验同形判读）。
+- checkcite 守卫（BATCH-FACE 十点五节）：批主题词首跑 cited 五件两件不在书单闭包如实记 fail，引用面收窄后 pass——本批载体引用 PROB-017 与 ALG-011 与 PROB-014 落书单闭包 exit 0；PROB-011 与 PROB-003 为 pk037impl 批 A/B 读数件内引用非本批新增书单消费，两轮读数件 2026-09-04-pk050sw-solo-checkcite.json 在案。
 - 本笔回填提交：close 通道外 wip 形（--no-verify 加 lease bypass 登记），pk037impl 收口附记先例同形。
 
 ## 十、队形验证
