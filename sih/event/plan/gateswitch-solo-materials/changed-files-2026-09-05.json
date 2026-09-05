@@ -1,0 +1,20 @@
+{
+ "batch": "gateswitch-solo",
+ "date": "2026-09-05",
+ "tools_worktree": [
+  "facet/probes/calibration/ledger.jsonl",
+  "facet/probes/maturation_gate.py",
+  "facet/tests/test_boundary_switch.py",
+  "facet/tests/test_maturation_gate.py",
+  "facet/tests/test_maturation_gate_strict.py",
+  "facet/contracts/gateswitch-260905/",
+  "proposition/DES/gateswitch-switch-2/",
+  "proposition/topics/2026-09-05-gateswitch-switch-2.md"
+ ],
+ "engine_worktree": [
+  "sih/event/plan/gateswitch-solo-materials/",
+  "sih/event/plan/gateswitch-solo-results.md",
+  "sih/state/plan/gateswitch-solo.md"
+ ],
+ "allow_face_note": "全部变更在租约 allow 面（sih-tools/facet/ 与 proposition/topics/ 与 materials/ 与 results.md 与任务包与 worktrees）"
+}

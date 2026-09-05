@@ -1,0 +1,21 @@
+{
+ "batch": "gateswitch-solo",
+ "date": "2026-09-05",
+ "pipeline_order": "化格→核阅→检词（笔在核前）",
+ "targets": [
+  {
+   "target": "worktrees/sih-engine/gateswitch-solo/sih/event/plan/gateswitch-solo-results.md",
+   "formatter": {"exit": 0, "changed": 0},
+   "scrutinator": {"exit": 2, "reading": "域外如实记档（des-001 域只盖 sih-engine/doc，event/plan 域外，报文 unmatched_targets 在场）"},
+   "nomenclator": {"exit": 0, "findings": 0, "skipped": 0}
+  },
+  {
+   "target": "worktrees/sih-engine/gateswitch-solo/sih/event/plan/gateswitch-solo-materials/pk054-ab-gate-design.md",
+   "formatter": {"exit": 0, "changed": 0},
+   "scrutinator": {"exit": 2, "reading": "域外如实记档（同上）"},
+   "nomenclator": {"exit": 0, "findings": 0, "skipped": 0}
+  }
+ ],
+ "pitfall_disclosure": "首轮四检经管道取退出码被掩（scrutinator 域外真值 2 被掩为 0），亲读报文后无管道重跑取真值，BATCH-FACE 坑位「禁管道掩退出码」本批实测再证",
+ "facet_tests": {"boundary_switch": "7 passed", "full_suite": "482 passed 6 failed（worktree 缺不入版控 AGENTS.md 环境态，主树同件 9/9 绿证实非回归）"}
+}
