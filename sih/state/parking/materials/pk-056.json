@@ -1,10 +1,12 @@
 {
+  "action": "enter",
   "entry_id": "pk-056",
-  "title": "判据观察转 facet 融回：机制类命题依据族双源与 basis_consensus 结构性偏严",
-  "context": "用户 2026-09-05 裁定「得一归 facet 那边融回」：连续五件机制与修复类命题（fixguard、lockdb、lockqueue 两跳、ledgerrepair）同落 near_threshold，成因恒为依据族两值分散（baseline_4 与 baseline_1 双源真实），basis_consensus 子判据对此类命题结构性偏严。处置方向：facet 判据面评估机制类命题的依据族通道化或确认通道常设化，由 facet 侧融回承载，租约线不动判据。出泊条件：facet 侧裁评估立项与否",
-  "exit_condition": "facet 侧裁评估立项与否",
+  "title": "温故引擎侧语义通道缺位与检索族引擎化收口——语义召回现由工具壳 wikirecall 承载，引擎组件位未对齐",
+  "context": "引擎温故即 src/retriever（组件第六席）现有词面通道经寻址只读桥（locator_bridge 子进程 build 加 query），无语义通道；确定性统计向量语义召回落在工具侧 wikirecall（semantic.py，pk-037 用户裁路线即确定性统计向量不做向量库、pk037impl 实装 A/B 门三判据全过、pk-050 promoted 后 recall.py 缺省即语义 K=3 附 --word 回退），agents 实际召回面走工具壳。检索族底座即句读 v1 加 v2 与寻址 v1 已交付，缺引擎温故语义通道接线与消费面最终归位，即检索族引擎化收口未发生。关联在泊件 pk-039 即温档案面扩容、pk-055 即级联投影更新。令源：2026-09-04 主会用户令「入泊界」。复位披露：材料曾遭活写覆盖误载他件且随 dc4c8fb 入版控，2026-09-05 parkrecon-solo 批按链上进泊事件细节复位，链为准。",
+  "exit_condition": "用户裁引擎化收口立项与否与形态，候选即引擎温故增语义通道接线对齐 wikirecall 语义算法承 pk-037 既裁、或维持工具壳承载另裁温故消费面归位、或与 pk-039 档案面扩容并批承载；裁立项即另开实装批。",
   "ttl_days": 30,
-  "created_at": "2026-09-05",
-  "source": "leaseopt 线五批结果档判据观察节与用户 2026-09-05 裁定",
-  "related": ["pk-048", "pk-049"]
+  "parking": {
+    "entered_at": "2026-09-04",
+    "ttl_days": 30
+  }
 }

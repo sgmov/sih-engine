@@ -1,0 +1,19 @@
+{
+  "action": "enter",
+  "entry_id": "pk-058",
+  "title": "判据观察转 facet 融回：机制类命题依据族双源与 basis_consensus 结构性偏严",
+  "context": "用户 2026-09-05 裁定「得一归 facet 那边融回」：连续五件机制与修复类命题（fixguard、lockdb、lockqueue 两跳、ledgerrepair）同落 near_threshold，成因恒为依据族两值分散（baseline_4 与 baseline_1 双源真实），basis_consensus 子判据对此类命题结构性偏严。处置方向：facet 判据面评估机制类命题的依据族通道化或确认通道常设化，由 facet 侧融回承载，租约线不动判据。出泊条件：facet 侧裁评估立项与否。撞号披露照录：本件首笔误占 pk-056 号位，材料活写覆盖随 dc4c8fb 入版控而链上进泊事件被重入拒拦零落链（链上 pk-056 为温故语义通道件真在泊），2026-09-05 parkrecon-solo 承用户在泊授权改正重编 pk-058。",
+  "exit_condition": "facet 侧裁评估立项与否",
+  "ttl_days": 30,
+  "created_at": "2026-09-05",
+  "source": "leaseopt 线五批结果档判据观察节、用户 2026-09-05 裁定与 parkrecon-solo 账实对表",
+  "related": [
+    "pk-048",
+    "pk-049",
+    "pk-056"
+  ],
+  "parking": {
+    "entered_at": "2026-09-05",
+    "ttl_days": 30
+  }
+}

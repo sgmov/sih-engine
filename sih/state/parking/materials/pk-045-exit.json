@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-045",
+  "id": "pk-045",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「pk045出泊」即出泊裁决。出泊条件双枝达成：样本库足量——二十类经 leaseopt-audit-solo 批全量盘点入账本 sih-tools/proposition/DES/leaseopt-audit/census-ledger.json 且复算逐字节一致；冲突处置机制硬化已立项交付——租约优化线在役即收约守卫假阳性修复 1.19.0、SQLite 锁库 1.20.0、排队候叫与接管与心跳 1.21.0、开约预检 1.22.0、台账补录通道 1.23.0。样本销账按盘点账本逐类对表：已硬化在役八类直接销账；裸奔十二类中九类由租约线批二至批五收口销账即批二收收约半程不可达与守卫盲区、批三收 frozen scope 重开与跨批锚竞态与包面锁面分叉、批四收撞锁竞态、批五收悬会话与批中途死亡与同包双开僵尸；余三类跨批调用册行丢失与审阅者中途突变与停在收约主会代收转 leaseopt 线批六 watch 视图批跟踪，随线收工结算入泊承载。账本 in pk045.categories 逐类在案可复算。",
+  "state": "exited",
+  "ttl_days": 30
+}

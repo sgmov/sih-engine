@@ -1,10 +1,12 @@
 {
+  "action": "enter",
   "entry_id": "pk-055",
-  "title": "会话台账活写覆盖根因硬化（收约机械重写台账竞态）",
-  "context": "令源：leaseopt-ledger-repair-solo 批事故申报（docmath-b4 与 fixguard 台账四行遭并行批收约活写覆盖丢失，pk-047 facepark 先例同根）。补录通道（ledger-repair 1.23.0）已修数据，本件承载根因硬化：收约归并机械对台账 ndjson 的自持快照重写竞态（closeguard pre-close commit 与 merge 语义下被跟踪台账的固有竞态），方向即台账面并集超集归并通道扩展或台账写点唯一化。出泊条件：用户裁硬化方案立项，或随批六视图面顺带承载",
-  "exit_condition": "用户裁硬化立项或随批六承载",
+  "title": "级联边册投影更新机制缺位——文档与代码修改认证后引擎侧投影 CASCADE.json 不随动，无陈旧检测无告警",
+  "context": "级联修订五（0.4.0）重建引擎侧投影 sih-engine/doc/CASCADE.json，边册无常驻正本链即账本。现行修改文档或代码并过管线认证后，投影不自动重建即滞后于链；级联工具自身无 stale 子命令（寻址有 stale_check 三态而级联无），投影滞后无机械告警；消费位即租约乐观锁基线对表，读旧投影即漏检新边与陈旧边。令源：2026-09-04 主会用户令「修改了文件、代码，相关联的级联文件也需要更新，这个要入泊界」。账本在链，投影可重建，缺的是何时重建、谁触发、陈旧谁报的机制位。复位披露：材料曾遭活写覆盖误载他件且随 dc4c8fb 入版控，2026-09-05 parkrecon-solo 批按链上进泊事件细节复位，链为准。",
+  "exit_condition": "用户裁投影更新机制形态与立项与否，候选即批尾收约前重建（挂 close 流程，与 pk-052 择案同族）、或级联增 stale 检测子命令接线告警、或消费位实时 build；裁立项即另开实装批，裁不立项即闭项出泊",
   "ttl_days": 30,
-  "created_at": "2026-09-05",
-  "source": "leaseopt-ledger-repair-solo 结果档第二节与数学侧事故报告",
-  "related": ["pk-045", "pk-047", "leaseopt-ledger-repair-solo"]
+  "parking": {
+    "entered_at": "2026-09-04",
+    "ttl_days": 30
+  }
 }
