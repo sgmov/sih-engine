@@ -109,11 +109,11 @@ human seat 与 v3 身份串在 envelope 字段同存的命名冲突,以三分域
 | 仓 | settle 段 1 | 归并 |
 |---|---|---|
 | sih-tools | 6f97044e | msh/idenlane-human-solo → main(close 归并) |
-| sih-engine | (段 2 补记) | msh/idenlane-human-solo → main(close 归并) |
+| sih-engine | 9245eac(段 1 结果档)与本段(段 2 终化) | msh/idenlane-human-solo → main(close 归并) |
 
 - 工具侧随批件:identity(src/identity core.py 与 cli.py 与 __init__.py、pyproject.toml、tests/test_human_seat.py、CONTRACT.md 修订九)、facet/contracts/idenlane-human-260905/m-human-seat-1/(topic.md、contract.json、responses.jsonl、flywheel-trail.jsonl、cal-pack.json、cal-responses.jsonl、seat-baseline.json、tally-material.json、tally-check-report.json、contract-score-material.json、m-human-seat-1-signcheck.json)、CALL-LOG 双笔
 - 引擎侧随批件:sih/event/plan/idenlane-human-solo-results.md(本档)
-- close 后链 verify 与 reconcile 读数:(收口后补记)
+- close 后链 verify 与 reconcile 读数:收口前读数——reconcile tools unrouted 0 / cert_missing 1(批前已有系 watchcheck-solo 段1 eaa9568 非本批新增) / unbypassed 60(历史存量),reconcile engine unrouted 0 / cert_missing 0 / unbypassed 31(历史存量);链 verify valid 129 事件,首 29c7dd2... 尾 2872e249...(本批 tally-check-report 认证笔即尾)。close 归并后终读数随收约检查点呈报。
 
 ## 十、批 C 起步状态(idenlane-guard-solo 令)
 
