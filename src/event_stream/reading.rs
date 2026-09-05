@@ -250,6 +250,8 @@ pub fn reading_event(text: &str, actor: Actor) -> Result<EventInput, ReadingErro
         prev_hash: None,
         event_class: Some("consumable".to_string()),
         verification_result: None,
+        session_id: None,
+        identity_hash: None,
     })
 }
 

@@ -138,6 +138,8 @@ mod tests {
             event_hash: "abcdef1234567890".into(),
             event_class: None,
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         };
         assert_eq!(event_reference(&e), "id-1/abcdef12");
     }

@@ -12,7 +12,7 @@ use sih_engine::event_stream::{
     append, certification_event, check_intent_reused, check_locks, check_session,
     compute_event_hash, intent_event, load_events, AppendError,
     crosscheck_event, lockgate::LockGateError, park_event, query,
-    reading_event, sessiongate::SessionGateError, verify, Event, EventFilter, VerifyRange,
+    reading_event, sessiongate::SessionGateError, verify, Event, EventFilter, EventInput, VerifyRange,
     GENESIS_PREV_HASH,
 };
 use std::path::{Path, PathBuf};
@@ -119,6 +119,64 @@ fn session_guard(opts: &std::collections::HashMap<String, String>) -> Option<Str
         Err(SessionGateError::Unreadable(e)) => {
             emit(json!({"error": format!("会话台账不可读 {e}")}), 2)
         }
+    }
+}
+
+/// 链上正身绑定解析（idenlane-solo iden-01）：按会话号从会话台账查得
+/// 生产者身份哈希落事件信封，零新增必填参数（--session 与 --sessions
+/// 即闸三既有参）。单遍事件序语义同 check_session：issued 行载该会话
+/// 当前身份（最新 issued 在册覆盖），revoked 即不在册。会话号或台账
+/// 缺席即 None（直改笔位另以身份件解析）；台账不可读即工具异常不静默。
+fn resolve_envelope(
+    sessions: Option<&str>,
+    session: Option<&str>,
+) -> Result<Option<(String, Option<String>)>, String> {
+    let Some(sid) = session else { return Ok(None) };
+    let Some(sp) = sessions else { return Ok(None) };
+    let text = std::fs::read_to_string(sp).map_err(|e| format!("会话台账不可读 {e}"))?;
+    let mut identity: Option<String> = None;
+    let mut active = false;
+    for line in text.lines() {
+        let line = line.trim();
+        if line.is_empty() {
+            continue;
+        }
+        let row: serde_json::Value = serde_json::from_str(line).map_err(|_| "会话台账行非法".to_string())?;
+        if row.get("session_id").and_then(|v| v.as_str()) != Some(sid) {
+            continue;
+        }
+        match row.get("event").and_then(|v| v.as_str()) {
+            Some("issued") => {
+                active = true;
+                identity = row
+                    .get("identity")
+                    .and_then(|v| v.get("identity_hash"))
+                    .and_then(|v| v.as_str())
+                    .map(|s| s.to_string());
+            }
+            Some("revoked") => active = false,
+            _ => {}
+        }
+    }
+    if active {
+        Ok(Some((sid.to_string(), identity)))
+    } else {
+        Ok(None)
+    }
+}
+
+/// 链上正身绑定写入（idenlane-solo iden-01）：会话在场即在册即把
+/// session_id 与 identity_hash 落进事件输入信封；缺省即不改动旧行为。
+fn bind_envelope(opts: &std::collections::HashMap<String, String>, input: &mut EventInput) {
+    let sessions = opts.get("sessions").map(|s| s.as_str());
+    let session = opts.get("session").map(|s| s.as_str());
+    match resolve_envelope(sessions, session) {
+        Ok(Some((sid, id_hash))) => {
+            input.session_id = Some(sid);
+            input.identity_hash = id_hash;
+        }
+        Ok(None) => {}
+        Err(e) => emit(json!({"error": e}), 2),
     }
 }
 
@@ -243,7 +301,7 @@ fn main() {
             // 时间戳有界重试三次，事件内容仍由报告件确定性派生零伪造。
             let mut attempt = 0u8;
             loop {
-                let input = match certification_event(
+                let mut input = match certification_event(
                     PathBuf::from(&report).as_path(),
                     &text,
                     exit_code,
@@ -253,6 +311,7 @@ fn main() {
                     Ok(i) => i,
                     Err(e) => emit(json!({"error": format!("报告不识别 {e:?}")}), 2),
                 };
+                bind_envelope(&opts, &mut input);
                 match append(input, &mut store, Some(&PathBuf::from(&trail))) {
                     Ok(ok) => emit(
                         json!({"status": "appended", "event_id": ok.event_id, "event_hash": ok.event_hash}),
@@ -290,7 +349,7 @@ fn main() {
                 }
                 Err(e) => emit(json!({"error": format!("重意图拒异常 {e:?}")}), 2),
             }
-            let input = match intent_event(
+            let mut input = match intent_event(
                 PathBuf::from(&record).as_path(),
                 &rtext,
                 PathBuf::from(&validation).as_path(),
@@ -301,6 +360,7 @@ fn main() {
                 Ok(i) => i,
                 Err(e) => emit(json!({"error": format!("意图拒 {e:?}")}), 1),
             };
+            bind_envelope(&opts, &mut input);
             let mut store = load_store(&trail);
             match append(input, &mut store, Some(&PathBuf::from(&trail))) {
                 Ok(ok) => emit(
@@ -322,10 +382,11 @@ fn main() {
                 Ok(s) => s,
                 Err(e) => emit(json!({"error": format!("重放面不可读 {e:?}")}), 2),
             };
-            let input = match park_event(&text, &scope, gate_actor(), Utc::now()) {
+            let mut input = match park_event(&text, &scope, gate_actor(), Utc::now()) {
                 Ok(i) => i,
                 Err(e) => emit(json!({"error": format!("停泊拒 {e:?}")}), 1),
             };
+            bind_envelope(&opts, &mut input);
             let mut store = store;
             match append(input, &mut store, Some(&PathBuf::from(&trail))) {
                 Ok(ok) => emit(
@@ -342,10 +403,11 @@ fn main() {
             lockgate_guard(&opts, &trail);
             worktree_trail_guard(&opts, &trail);
             let Some(text) = read_text(&reading) else { emit(json!({"error": "读数件不存在"}), 2) };
-            let input = match reading_event(&text, gate_actor()) {
+            let mut input = match reading_event(&text, gate_actor()) {
                 Ok(i) => i,
                 Err(e) => emit(json!({"error": format!("读数守卫拒 {e}")}), 1),
             };
+            bind_envelope(&opts, &mut input);
             let doc_id = input.doc_id.clone();
             let mut store = load_store(&trail);
             match append(input, &mut store, Some(&PathBuf::from(&trail))) {
@@ -372,10 +434,11 @@ fn main() {
             let Some(mat_text) = read_text(&material) else {
                 emit(json!({"error": format!("所指材料不存在 {material}")}), 2)
             };
-            let input = match crosscheck_event(&text, &mat_text, gate_actor()) {
+            let mut input = match crosscheck_event(&text, &mat_text, gate_actor()) {
                 Ok(i) => i,
                 Err(e) => emit(json!({"error": format!("跨方核毕守卫拒 {e}")}), 1),
             };
+            bind_envelope(&opts, &mut input);
             let doc_id = input.doc_id.clone();
             let mut store = load_store(&trail);
             match append(input, &mut store, Some(&PathBuf::from(&trail))) {
@@ -438,6 +501,8 @@ fn golden_vectors() -> serde_json::Value {
             event_hash: String::new(),
             event_class,
             verification_result,
+            session_id: None,
+            identity_hash: None,
         };
         e.event_hash = compute_event_hash(&e);
         e

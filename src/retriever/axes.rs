@@ -81,6 +81,8 @@ mod tests {
             event_hash: "0".into(),
             event_class: None,
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 

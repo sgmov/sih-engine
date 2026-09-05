@@ -256,6 +256,8 @@ pub fn crosscheck_event(
         prev_hash: None,
         event_class: Some(event_class),
         verification_result: None,
+        session_id: None,
+        identity_hash: None,
     })
 }
 

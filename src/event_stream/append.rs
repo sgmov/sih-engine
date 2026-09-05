@@ -201,6 +201,8 @@ fn append_in_memory(
         event_hash: String::new(), // 先占位，计算完再填
         event_class: input.event_class.clone(),
         verification_result: input.verification_result.clone(),
+        session_id: input.session_id.clone(),
+        identity_hash: input.identity_hash.clone(),
     };
 
     let event_hash = compute_event_hash(&event);
@@ -282,6 +284,8 @@ mod tests {
             prev_hash: None,
             verification_result: None,
             event_class: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 

@@ -98,5 +98,7 @@ pub fn certification_event(
         prev_hash: None,
         event_class: Some("record_only".to_string()),
         verification_result: Some(verification_result),
+        session_id: None,
+        identity_hash: None,
     })
 }

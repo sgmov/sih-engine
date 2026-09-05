@@ -115,6 +115,8 @@ pub fn park_event(
                 prev_hash: None,
                 event_class: Some("record_only".to_string()),
                 verification_result: None,
+                session_id: None,
+                identity_hash: None,
             })
         }
         "exit" => {
@@ -153,6 +155,8 @@ pub fn park_event(
                 prev_hash: None,
                 event_class: Some("record_only".to_string()),
                 verification_result: None,
+                session_id: None,
+                identity_hash: None,
             })
         }
         _ => Err(ParkError::ActionMissing),

@@ -159,6 +159,8 @@ pub fn intent_event(
         prev_hash: None,
         event_class: Some("record_only".to_string()),
         verification_result: None,
+        session_id: None,
+        identity_hash: None,
     })
 }
 #[cfg(test)]
@@ -220,6 +222,8 @@ mod intent_status_tests {
             event_hash: String::new(),
             event_class: None,
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 
