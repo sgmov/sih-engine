@@ -1,0 +1,34 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/leaseoptsettle-solo/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/leaseoptsettle-solo/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md": "a8b450da37470a0c20bdddadd57c6ddc99fa4569def0b1f9f5fcb5c06837fd6a"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}
