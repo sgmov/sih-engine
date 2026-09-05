@@ -1,4 +1,4 @@
-# docmath-namefit-solo 结果档：docmath 程序正名立名裁决批
+# docmath-namefit-solo 结果档：docmath 程序（正名文规，en Regula，代号 regula）正名立名裁决批
 
 > 批：docmath-namefit-solo（立名裁决批，纯测量与登记零代码变更）
 > 会话：ab0aa6b23047a03d
