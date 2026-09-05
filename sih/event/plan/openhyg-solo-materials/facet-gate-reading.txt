@@ -1,0 +1,9 @@
+facet 合同模式九发读数（m-openhyg-selfclear-1）
+==================================================================
+席位：ZCode:GLM-5.3-Flash:self-reported（当日基线可用，体温 0.0，无漂移告警）
+采样：9/9 comply，变卦 0%，谨慎信号 0/9，规约引用 baseline_1
+闸门裁决（判据 v3）：清晰稳定 stable_clear（非 near_threshold，不呈主会，走机器终签）
+attractor check：verdict pass，passed 12 项，alarms 空，failed 空（R1-R7 全过）
+attractor verify：identical，disposition 裁决通过
+attractor sign：链笔 event cf7356c1，event_hash 7018cade…，doc_id crosscheck-m-openhyg-selfclear-1
+对己不利声明：判 comply 即处置责任收窄到确定性程序判据正确性，误判即实现责任（topic.md 在档）
