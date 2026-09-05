@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-057",
+  "id": "pk-057",
+  "parking": {
+    "entered_at": "2026-09-05",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「同意，跑这个修复方案」即硬化立项裁决，出泊条件达成。交付：ledgerwrite.py 唯一写点（flock 排他 + O_APPEND 原子整行，行格式字节不变零迁移）与 ledger_lock 合并窗口互斥与 restore_missing 回补网；core/lockcore 双 append_event 薄委托；8 进程×25 行压测 200 行零丢零交错（F-1）、互斥阻塞实测（F-2）、回补网构造用例（F-3）、行格式逐字节一致（F-4）、全测试族 110 绿（F-5）；CONTRACT 1.24.0 修订三十六与 BATCH-FACE 台账写点纪律节随批。会话现势表入 lockdb 列二期，零判定语义变更。当日四例竞态（docmath-b4、facepark、gateswitch、constmodel）自本批起机制性封死。",
+  "state": "exited",
+  "ttl_days": 30
+}
