@@ -69,4 +69,10 @@ pk-045 出泊 promoted 落链（出泊事件 1a5f0799），账实对表查出并
 
 ## 八、收口读数（close 后回填）
 
-- 待回填：双仓 settle 号、主树 des-001 补跑读数、reconcile 读数、链 verify 终读、归并对表与 bypass 登记
+- 收约实录：tools 侧 CALL-LOG 两笔因 open allow 面漏 sih-tools 路径 settle 报 staged_out_of_scope，改显式 bypass 通道（d7b85df0，bypass 台账在册即先例合法兜底形）；closeguard 机制 pre-close 提交 fc5c4a9b 带锁与会话台账快照两件；close 复跑成，双支归并删支拆本，revoked true，会话 1ee1f144bef914ad
+- 提交号：engine 批分支 ebe288d 即主树 394d4d2 归并；tools 批分支 d7b85df0 与 fc5c4a9b 即主树 ae3a714e 归并
+- 核阅真判读：主树域内补跑 PARKING-v1.md 首跑 3 findings（C001 禁破折号、C002 U+2014 越字符集、C006 全角括号中文）逐笔核为本批新增行引入，就地修复两处即破折号改全角冒号与括号改顿号串，复跑 findings 0 化格 0 检词 0；工作树路径在 des-001 include 形 sih-engine/doc/** 之外致域外 exit-2 掩真判读，教训如实申报呈视图
+- reconcile 读数：tools unrouted 0、cert_missing 1（2026-09-03 entryunique-solo 批前既有非本批新增）、unbypassed 44、session_orphan 19；engine unrouted 0、cert_missing 0、unbypassed 25、session_orphan 23；判据项 unrouted 与 cert_missing 零新增达成，unbypassed 与 session_orphan 机制面累积如实转述
+- 链 verify：status valid、33 事件；四笔停泊与七笔认证与意图与读数全在当日链
+- 心跳复跑：引擎 attractor route 双目录退出码 0/0 零告警，泊界十三项与名录投影一致
+- 本笔附记与核阅修复两件一并以 bypass 通道入版控（先例形 dc4c8fb 同款 close 后回填）
