@@ -1,0 +1,12 @@
+{
+ "pack": "pk-054-exit-evidence",
+ "parking_entry": "pk-054",
+ "exit_condition": "measure-poly 程序批四起 A/B 门切换批开工",
+ "evidence": [
+  "A/B 门切换批开工即本批：gateswitch-solo 任务包段三明载承接 pk-054，租约会话 4bdcc62b5357c7a8 已开工",
+  "A/B 门设计呈裁件在档：sih-engine/sih/event/plan/gateswitch-solo-materials/pk054-ab-gate-design.md（老路径温度探针标定 vs 上下文注入新路径，四判据三切换条件，pk-044 独立性来源裁定为硬前置，键不随件走）",
+  "A 路基线读数在档：冻结语料 904 件复算（批内 recompute，archived_mismatch=0）即现行探针通路的可复算基线",
+  "实装门未过：设计过得一裁前零实装，键位移除与探针文件退役零代落，facet/.env 零触碰"
+ ],
+ "exit_event": "本批零代落，出泊裁决呈人节点"
+}

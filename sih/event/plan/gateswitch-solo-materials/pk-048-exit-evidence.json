@@ -1,0 +1,13 @@
+{
+ "pack": "pk-048-exit-evidence",
+ "parking_entry": "pk-048",
+ "exit_condition": "切换在役批即另批重测切换命题过得一裁 stable_clear 拨门控在役时承接逐件复核入档，或用户裁另案处理即废弃出泊",
+ "evidence": [
+  "切换命题重测过得一裁：gid gateswitch-switch-2（facetmath-switch-1 通道分解改写新 gid）九发测量 stable_clear，9/9 comply 依据族单源 baseline_4，测量材料在 sih-tools/facet/contracts/gateswitch-260905/（合同 sha256 f8fa7765f0d0029b 前十六位起，响应 sha256 ab94ade3d8d97f15 前十六位起）",
+  "执契机器终签落据：引擎 attractor check 12 项全过 verify identical sign 裁决通过，链 crosscheck 事件 fb2e6d9d-8d19-476e-ae6e-888ece9a3793（event_hash 304289ac0ad49fb5 前十六位起），重放锚 proposition/DES/gateswitch-switch-2/gateswitch-switch-2-signcheck.json",
+  "门控在役：maturation_gate.py boundary_criterion 缺省已拨 test（v3_base 与 v3 两缺省位），生产行为变更只向前生效，在档历史 verdict 零改写",
+  "逐件复核入档：复核账本 114 件（74 near_threshold→boundary 加 40 stable_clear→boundary，零由严到宽）落 sih-engine/sih/event/plan/gateswitch-solo-materials/first-run-2026-09-05/run1 与 run2 双跑逐字节一致，冻结 868 件逐字段零漂移，独立 p 值复算 114/114 全符",
+  "金向量重放：拨闸后全量复算 904 件 archived_mismatch=0，冻结 868 件为其子集逐件零漂移"
+ ],
+ "exit_event": "本批零代落，出泊裁决呈人节点"
+}

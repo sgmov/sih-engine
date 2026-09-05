@@ -1,0 +1,13 @@
+{
+ "pack": "pk-049-exit-evidence",
+ "parking_entry": "pk-049",
+ "exit_condition": "另批以新测量（法层通道分解后新 gid 或人重写上下文）重测切换命题过得一裁 stable_clear 即拨 boundary_criterion 缺省为 test 在役并承接 pk-048 判变逐件复核，或用户裁废弃即门控位与测试改型随批退役",
+ "evidence": [
+  "法层通道分解后新 gid 重测：gateswitch-switch-2 谱系披露接 facetmath-switch-1，改写走修订一通道分解（规范面收窄至基线四单通道，事实面归确定性核对），对己不利方向声明在档，改写次数 1 在 R7 三次告警线内",
+  "九发合同模式测量 stable_clear：9/9 comply、boundary_rate 0.0、谨慎信号 0/9、规约引用单类 baseline_4——前例依据族三值分散签名未复现（pk-058 同源条件未触发，零停批）",
+  "过得一裁：执契机器终签裁决通过（链 fb2e6d9d，重放锚 DES/gateswitch-switch-2/gateswitch-switch-2-signcheck.json），承修订七机器签署即人授权",
+  "缺省拨 test 在役：maturation_gate.py 两缺省位 ratio→test 拨闸，七用例与全测试族 482 绿（6 红为 worktree 缺不入版控 AGENTS.md 环境态，主树同件 9/9 绿证实与批无关），引擎 attractor 无内嵌同款判据（grep boundary_criterion 零命中，compiler.rs declared_boundary_rate≥0.5 为 cell 路由位非同款）零重编",
+  "pk-048 判变逐件复核承接：114 件复核账本双跑逐字节一致，构成 74+40 与泊件登记逐件吻合，零由严到宽"
+ ],
+ "exit_event": "本批零代落，出泊裁决呈人节点"
+}
