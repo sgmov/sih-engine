@@ -44,3 +44,10 @@
 ## 五、待复核后收口路径
 
 人节点确认后：confirmation 落链 → 执契 check→verify（sign 机制不可用先例同形）→ 三仓 settle → close 归并 → reconcile → 链 verify → 主树复验 → 收口附记。租约线至此收官，pk-045 出泊呈裁。
+
+## 六、收口附记（close 后回填）
+
+- 人节点复核：用户 2026-09-05 会话令「同意」落链（confirmation ae375a3e51761ea1），near_threshold 挂起位放行，排队调度与接管与 wait-turn 生效。sign 未执行系 near_threshold 机制仅 stable_clear 可签（批二批四先例同形），check pass 与 verify identical 在档。
+- 收约实录：放锁后 close 一次通过（守卫与锁库与排队协同第二个活体，零拦截零 bypass）。
+- reconcile 三仓 unrouted 全零，tools cert_missing 1（entryunique 既有）与 math 2（批前既有）零新增；链 verify valid；主树亲跑全族 104 件绿；1.21.0 三源主树对齐。
+- 租约优化线五批全毕：批一盘点（账本）→ 批二守卫修复（在役）→ 批三并入批五预检待后评估 → 批四锁库（在役）→ 批五排队接管 wait-turn（在役）。批三（批前施工面交集预检）未实施，其价值在批二批四落位后收窄为真冲突预检，呈人节点裁：并入后续批或独立小批。
