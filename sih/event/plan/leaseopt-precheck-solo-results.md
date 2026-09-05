@@ -27,3 +27,10 @@
 ## 五、待复核后收口路径
 
 同批四批五：confirmation 落链 → 执契 → 三仓 settle → close → reconcile → 主树复验 → 收口附记。收口后租约线六批全毕（含用户裁定的批三独立实施），线纲批三节同步更新。
+
+## 六、收口附记（close 后回填）
+
+- 人节点复核：用户 2026-09-05 会话令「同意」落链（confirmation c22896446f3f0873），near_threshold 挂起位放行，开工预检生效。sign 未执行系 near_threshold 机制仅 stable_clear 可签（四批先例同形），check pass 与 verify identical 在档。
+- 收约实录：放锁后 close 一次通过（新机制协同第三个活体，零拦截零 bypass）。
+- reconcile 三仓 unrouted 全零（tools cert_missing 1 与 math 2 皆批前既有），链 verify valid 15 事件；主树亲跑全族 105 件绿；1.22.0 三源主树对齐。
+- 线纲批三节更新承载用户裁定与本批实施，随本笔入版控。
