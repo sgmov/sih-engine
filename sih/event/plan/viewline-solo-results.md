@@ -38,4 +38,10 @@
 
 ## 四、收口读数（close 后回填）
 
-- 待回填：双仓 settle 号、主树 des-001 复跑读数、reconcile 读数、链 verify 终读、CALL-LOG bypass 补笔
+- 收约实录：tools 侧零变更 nothing_staged（CALL-LOG 两笔已撤 allow 面属预期）；engine 结算 3396c90；close 成双支归并，revoked true，会话 46241a09291b2124
+- 主树 des-001 复跑：GOV-002 findings 0；PARKING 首跑 2 findings 即本批新增历史住户行全角括号中文两处，就地改顿号串与即字串后复跑 0；化格 0 检词 0
+- reconcile：tools unrouted 0、cert_missing 1（批前既有）、unbypassed 55；engine unrouted 0、cert_missing 0、unbypassed 30；判据项零新增达成，unbypassed 增量含在飞委外批机制面累积如实转述
+- 链 verify：valid 83 事件；双出泊与意图 07f23a4f 与认证十三笔全在当日链
+- CALL-LOG 双笔：gateswitch 独占持锁移出 allow 面，收约后经 bypass 通道补笔（978fec71 先例形），与收口读数随批入版控
+- 缺陷申报：lease open 检验文件先建后检、预检拒绝不回收致每次拒绝自锁 300 秒（本批实测两轮，takeover 两笔在册），登记移交 lease 工具线
+- 主线结算顺延申报：退出标准第四条在档，主线 v2 结算待视图组件在役，四条全绿即开结算
