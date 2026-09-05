@@ -92,3 +92,11 @@ watchcheck-solo 批交付：稽 watchcheck 工具首立（对表判定式实装�
 - reconcile:双仓 unrouted 0；tools cert_missing 1（e6880a63/526e2be，2026-09-03 entryunique-solo 批陈项，批前已有零新增）；unbypassed 61/31 为历史累积非本批新增
 - 链 verify:valid 134 事件，首 29c7dd29 尾 9a44ab2d
 - 收约补笔:本节与 scribe CALL-LOG 笔经 bypass 通道入版控（facepark/packhyg/idenlane-envelope 先例同形）
+
+## 九、收口事故记录：close pre-close stash 卷走未跟踪活写面（发现与恢复实录）
+
+- 发现:close 后主树位 smoke 跑 watchcheck 报「当日 trail 缺席」exit-2（fail-closed 如设计），实查 sih-engine/sih/event/trail/2026-09-05.ndjson 整件消失——本日链 134 事件在主树正典位静默缺席约十分钟
+- 根因:close 的 closeguard pre-close stash 以 `git stash -u` 形把主树全部未跟踪件卷入 stash（engine 33 件、tools 1151 件，含当日链与 identity/reports 与 scribe/reports 与 proposition 与 tally/reports 等全部合法活写面）且 close 流程不回放，stash@{0} 留档
+- 恢复:逐件 `git show stash@{0}^3:<path>` 只回放「当前缺失且不在 HEAD」件（tools 1148、engine 32 含当日链），零覆盖零暂存；恢复后 scribe verify valid 134 事件逐字节，双仓活写面全数归位，stash@{0} 原样保留作备份不删
+- 定性:此缺陷形态恰是本批病灶二的镜像——收约机械动作本身制造了「合法活写面静默消失」窗口；watch 对表挂点若在 close 后跑即以 exit-2 拦截如实告警（本批实测即如此拦住），fail-closed 语义生效
+- 处置建议（候裁）:leaseopt 线应对 close stash 加豁免面排除（trail 与 ledger 与 reports 等冻结面不入 stash）或 close 后自动回放；本批零代修 lease 源，转泊界或线排期由人节点裁
