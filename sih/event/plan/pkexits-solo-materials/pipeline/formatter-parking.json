@@ -1,0 +1,34 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pkexits-solo/doc/governance/PARKING-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pkexits-solo/doc/governance/PARKING-v1.md": "f3d0646b4d11da1b6b3f28592e1ae90b8d54d755bc9aeea21c4cc5497b9ea4ea"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}

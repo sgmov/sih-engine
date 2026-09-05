@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-054",
+  "id": "pk-054",
+  "parking": {
+    "entered_at": "2026-09-05",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「全部用新的得一裁继续」即出泊裁决授权，出泊条件达成经两道核过：确定性核对道 xcheck-054 全过（A/B 门切换批开工在链、设计文在档含四判据三切换条件）+ 采样道 m-abdesign-2 九发 stable_clear 执契机器终签 d2977bdf（裁决通过 verify identical，重放锚 tally/reports/m-abdesign-2-signcheck.json）。A/B 实装批承接：设计已批，实装与键位移除归后继批，批前 pk-044 独立性来源硬前置仍须用户裁。",
+  "state": "exited",
+  "ttl_days": 30
+}
