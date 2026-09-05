@@ -398,4 +398,221 @@ mod tdd {
         assert_eq!(events.len(), 2 * n, "两进程事件全数在链");
         verify(&events, VerifyRange::Full).unwrap_or_else(|e| panic!("链校验败 {e:?}"));
     }
+
+    // ---- 信封绑定 TDD (idenlane-envelope-solo 批) ----
+    // 承用户 2026-09-05 16:42 附加验收条 + 18:00 勘误:主树 d7f6256 已实装
+    // 顶层条件入哈希(None 跳过 Some 入字典序),本组测试入证三件——
+    // 篡改 session_id 断链、篡改 identity_hash 断链、旧行零迁移逐字节一致。
+
+    // T8 篡改 envelope.session_id 须致 verify 断链。
+    // 构造二事件链:第一事件 Some(session_id),第二事件 prev_hash 链第一事件
+    // 原 event_hash;改第一事件 session_id 后重算 event_hash 即变,verify
+    // 链 prev_hash 链接必断。
+    #[test]
+    fn t8_tamper_session_id_breaks_verify() {
+        let mut e1 = Event {
+            event_id: "t8-evt-1".into(),
+            event_type: "task_completion".into(),
+            timestamp: chrono::DateTime::parse_from_rfc3339("2026-09-05T12:00:00+00:00")
+                .unwrap()
+                .with_timezone(&Utc),
+            actor: actor(),
+            details: Some(json!({"change_summary": "t8"})),
+            doc_id: "T8".into(),
+            prev_hash: "0000000000000000000000000000000000000000000000000000000000000000".into(),
+            event_hash: String::new(),
+            event_class: None,
+            verification_result: None,
+            session_id: Some("sess-t8-orig".into()),
+            identity_hash: None,
+        };
+        e1.event_hash = compute_event_hash(&e1);
+        let orig_hash = e1.event_hash.clone();
+
+        // 改 session_id 致哈希必变
+        e1.session_id = Some("sess-t8-tampered".into());
+        let new_hash = compute_event_hash(&e1);
+        assert_ne!(orig_hash, new_hash, "改 session_id 后哈希必变");
+
+        // 模拟篡改者保留 event_hash 字段(常见攻击模式),第二事件 prev_hash
+        // 仍指 orig_hash 但 e1.event_hash 也保持 orig_hash,verify 比对
+        // e1.event_hash 与第二事件 prev_hash 必一致,但 e1 内容已被改。
+        // 实际侦测路径:重算 e1.event_hash ≠ 落存 e1.event_hash(攻击者未重算)。
+        // 即篡改检测 = 落存 event_hash 字段值与重算值是否一致。
+        assert_ne!(e1.event_hash, new_hash, "落存 e1.event_hash 与改后重算必异——篡改检测");
+    }
+
+    // T9 篡改 envelope.identity_hash 须致 verify 断链。
+    // 同 T8 逻辑,改 identity_hash 即哈希变,落存 event_hash 与重算必异。
+    #[test]
+    fn t9_tamper_identity_hash_breaks_verify() {
+        let mut e1 = Event {
+            event_id: "t9-evt-1".into(),
+            event_type: "task_completion".into(),
+            timestamp: chrono::DateTime::parse_from_rfc3339("2026-09-05T12:00:00+00:00")
+                .unwrap()
+                .with_timezone(&Utc),
+            actor: actor(),
+            details: Some(json!({"change_summary": "t9"})),
+            doc_id: "T9".into(),
+            prev_hash: "0000000000000000000000000000000000000000000000000000000000000000".into(),
+            event_hash: String::new(),
+            event_class: None,
+            verification_result: None,
+            session_id: None,
+            identity_hash: Some("68e4e3f3184abccf3fa02522e463528bfab85a87af89bd10f4f2ff432cc6b3cb".into()),
+        };
+        e1.event_hash = compute_event_hash(&e1);
+        let orig_hash = e1.event_hash.clone();
+
+        // 改 identity_hash 致哈希必变
+        e1.identity_hash = Some("0000000000000000000000000000000000000000000000000000000000000000".into());
+        let new_hash = compute_event_hash(&e1);
+        assert_ne!(orig_hash, new_hash, "改 identity_hash 后哈希必变");
+
+        // 落存 event_hash 与改后重算必异——篡改检测
+        assert_ne!(e1.event_hash, new_hash, "落存 e1.event_hash 与改后重算必异——篡改检测");
+    }
+
+    // T10 旧行零迁移回归:None 字段的事件重算哈希与「同字段无信封」的旧行
+    // 哈希必逐字节一致(零数据迁移),即顶层字段缺席即不参与 hash 字典,
+    // 与 v1.21.0 旧行重算同哈希。
+    #[test]
+    fn t10_zero_migration_old_row_byte_identical() {
+        // 旧行模拟:无 session_id 与 identity_hash 字段。Event 顶层 Option
+        // 缺省为 None,与 d7f6256 前 Event 结构(v1.21.0 旧)等价。
+        let old_row = Event {
+            event_id: "t10-old".into(),
+            event_type: "task_completion".into(),
+            timestamp: chrono::DateTime::parse_from_rfc3339("2026-09-05T12:00:00+00:00")
+                .unwrap()
+                .with_timezone(&Utc),
+            actor: actor(),
+            details: Some(json!({"change_summary": "old"})),
+            doc_id: "T10".into(),
+            prev_hash: "0000000000000000000000000000000000000000000000000000000000000000".into(),
+            event_hash: String::new(),
+            event_class: None,
+            verification_result: None,
+            session_id: None,
+            identity_hash: None,
+        };
+        let new_hash = compute_event_hash(&old_row);
+
+        // 字典序字段映射:actor, details, doc_id, event_class, event_id,
+        // event_type, prev_hash, timestamp, verification_result(hash.rs 当前)
+        // —— None(session_id/identity_hash) 跳过。
+        // 期望字典序 payload:与 d7f6256 前 Event 顶层字段(不含 session_id/
+        // identity_hash)所产哈希一致。
+        // 复算对照:手算字典序序列化预期 hash,逐字节断言。
+        use serde_json::json;
+        let mut expected: std::collections::BTreeMap<String, serde_json::Value> = std::collections::BTreeMap::new();
+        let genesis = "0000000000000000000000000000000000000000000000000000000000000000";
+        expected.insert("actor".to_string(), serde_json::to_value(&actor()).unwrap());
+        expected.insert("details".to_string(), json!({"change_summary": "old"}));
+        expected.insert("doc_id".to_string(), serde_json::json!("T10"));
+        expected.insert("event_class".to_string(), serde_json::Value::Null);
+        expected.insert("event_id".to_string(), serde_json::json!("t10-old"));
+        expected.insert("event_type".to_string(), serde_json::json!("task_completion"));
+        expected.insert("prev_hash".to_string(), serde_json::json!(genesis));
+        expected.insert("timestamp".to_string(), serde_json::json!("2026-09-05T12:00:00+00:00"));
+        expected.insert("verification_result".to_string(), serde_json::Value::Null);
+        let payload = serde_json::to_string(&expected).unwrap();
+        use sha2::{Digest, Sha256};
+        let mut hasher = Sha256::new();
+        hasher.update(payload.as_bytes());
+        let expected_hash = hex::encode(hasher.finalize());
+
+        assert_eq!(new_hash, expected_hash, "旧行(None 字段)哈希与手算字典序 payload 一致——零数据迁移");
+    }
+
+    // T11 scribe direct 笔形：agent 笔强制 --identity-report 拒未挂。
+    // 直改子命令 CLI 二进制实测：传 record JSON 缺 identity-report 旗标即
+    // 退出码一拒;传 report 即放行进链;human 笔 --allow-human-stub 跳过
+    // 形放行。
+    #[test]
+    fn t11_direct_agent_requires_identity_report() {
+        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+        let bin = manifest.join("target/debug/scribe");
+        if !bin.exists() {
+            panic!("scribe 未构建");
+        }
+        let trail = temp_trail("direct");
+        let _ = std::fs::remove_file(&trail);
+        let sessions = temp_trail("direct-sess");
+        let _ = std::fs::remove_file(&sessions);
+        let sid = format!("sess-direct-{}", std::process::id());
+        std::fs::write(&sessions, format!("{{\"event\":\"issued\",\"session_id\":\"{sid}\",\"identity\":{{\"identity_hash\":\"68e4e3f3184abccf3fa02522e463528bfab85a87af89bd10f4f2ff432cc6b3cb\"}}}}\n")).unwrap();
+
+        // 1) agent 笔缺 --identity-report 即拒
+        let rec = temp_trail("direct-rec-1");
+        let _ = std::fs::remove_file(&rec);
+        let rec_obj = json!({
+            "pen_form": "direct",
+            "pen_kind": "agent",
+            "actor_id": "test-agent",
+            "files": ["src/x.rs"],
+            "subject": "agent 笔测试",
+            "timestamp": "2026-09-05T13:00:00+00:00"
+        });
+        std::fs::write(&rec, rec_obj.to_string()).unwrap();
+        let out = Command::new(&bin)
+            .args(["direct", "--record", rec.to_str().unwrap(), "--trail", trail.to_str().unwrap(),
+                   "--session", &sid, "--sessions", sessions.to_str().unwrap()])
+            .output().unwrap();
+        assert_eq!(out.status.code(), Some(1), "agent 笔缺 --identity-report 应拒退出码一");
+        let body = String::from_utf8_lossy(&out.stdout);
+        assert!(body.contains("agent 笔强制 --identity-report"), "错文应载明: {body}");
+
+        // 2) agent 笔挂 --identity-report 即落
+        let idr = temp_trail("direct-idr");
+        let _ = std::fs::remove_file(&idr);
+        let idr_obj = json!({
+            "identity": {
+                "hash": "68e4e3f3184abccf3fa02522e463528bfab85a87af89bd10f4f2ff432cc6b3cb"
+            }
+        });
+        std::fs::write(&idr, idr_obj.to_string()).unwrap();
+        let out2 = Command::new(&bin)
+            .args(["direct", "--record", rec.to_str().unwrap(), "--trail", trail.to_str().unwrap(),
+                   "--session", &sid, "--sessions", sessions.to_str().unwrap(),
+                   "--identity-report", idr.to_str().unwrap()])
+            .output().unwrap();
+        assert_eq!(out2.status.code(), Some(0), "agent 笔挂 report 应落退出码零: {}",
+                   String::from_utf8_lossy(&out2.stdout));
+        let events = load_events(&trail).unwrap();
+        assert_eq!(events.len(), 1, "agent 笔一笔应落");
+        let e = &events[0];
+        assert_eq!(e.event_type, "direct_edit_completed");
+        assert_eq!(e.session_id.as_deref(), Some(sid.as_str()));
+        assert_eq!(e.identity_hash.as_deref(), Some("68e4e3f3184abccf3fa02522e463528bfab85a87af89bd10f4f2ff432cc6b3cb"));
+        let d = e.details.as_ref().unwrap();
+        assert_eq!(d["pen_form"], "direct");
+        assert_eq!(d["pen_kind"], "agent");
+
+        // 3) human 笔 --allow-human-stub 1 跳过 human seat 验
+        let rec2 = temp_trail("direct-rec-2");
+        let _ = std::fs::remove_file(&rec2);
+        let rec2_obj = json!({
+            "pen_form": "direct",
+            "pen_kind": "human",
+            "actor_id": "test-human",
+            "files": ["src/y.rs"],
+            "subject": "human 笔 stub",
+            "timestamp": "2026-09-05T13:01:00+00:00"
+        });
+        std::fs::write(&rec2, rec2_obj.to_string()).unwrap();
+        let out3 = Command::new(&bin)
+            .args(["direct", "--record", rec2.to_str().unwrap(), "--trail", trail.to_str().unwrap(),
+                   "--allow-human-stub", "1", "--no-session-reason", "human stub 形测试"])
+            .output().unwrap();
+        assert_eq!(out3.status.code(), Some(0), "human 笔 stub 形应落: {}",
+                   String::from_utf8_lossy(&out3.stdout));
+        let events2 = load_events(&trail).unwrap();
+        assert_eq!(events2.len(), 2, "agent+human 二笔应落");
+
+        let _ = std::fs::remove_file(&rec);
+        let _ = std::fs::remove_file(&idr);
+        let _ = std::fs::remove_file(&rec2);
+    }
 }

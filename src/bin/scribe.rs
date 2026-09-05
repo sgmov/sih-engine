@@ -461,8 +461,155 @@ fn main() {
             std::fs::write(&out, text).expect("向量集写入");
             emit(json!({"status": "written", "count": vectors.as_array().map(|a| a.len()).unwrap_or(0)}), 0);
         }
+        "direct" => {
+            // 直改笔形（idenlane-envelope-solo 批）：无租约轻量链笔，agent
+            // 笔强制挂 --identity-report，human 笔接口位（human seat 件在
+            // 批 B，批 A 留接口位校验形 + 测试跳过形）。
+            let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
+                emit(json!({"error": "direct 缺少必填参数，需 --record <直改链笔 JSON> --trail <链文件>"}), 2)
+            };
+            lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
+            session_guard(&opts);
+            let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
+            let record_value: serde_json::Value = match serde_json::from_str(&text) {
+                Ok(v) => v,
+                Err(e) => emit(json!({"error": format!("记录非法 JSON {e}")}), 2),
+            };
+            let pen_form = record_value.get("pen_form").and_then(|v| v.as_str()).unwrap_or("");
+            let pen_kind = record_value.get("pen_kind").and_then(|v| v.as_str()).unwrap_or("");
+            if pen_form != "direct" {
+                emit(json!({"error": "pen_form 必为 direct"}), 1);
+            }
+            let actor_id = record_value.get("actor_id").and_then(|v| v.as_str()).unwrap_or("unknown");
+            let files = record_value.get("files").and_then(|v| v.as_array()).cloned().unwrap_or_default();
+            let subject = record_value.get("subject").and_then(|v| v.as_str()).unwrap_or("");
+            let timestamp_str = record_value.get("timestamp").and_then(|v| v.as_str()).unwrap_or("");
+            let timestamp: chrono::DateTime<chrono::Utc> = if timestamp_str.is_empty() {
+                chrono::Utc::now()
+            } else {
+                match chrono::DateTime::parse_from_rfc3339(timestamp_str) {
+                    Ok(t) => t.with_timezone(&chrono::Utc),
+                    Err(_) => emit(json!({"error": "timestamp 非 ISO8601"}), 1),
+                }
+            };
+            // 笔形分类判定语义一裁（idenlane-envelope-solo 批 F-5）：
+            // agent 笔强制挂 --identity-report 拒未挂；human 笔接口位留
+            // 批 B（human seat 件）；其他笔形拒。
+            let id_report_path = opt("identity-report");
+            let human_seat_path = opt("human-seat");
+            let session_opt = opts.get("session").map(|s| s.as_str());
+            let mut actor = Actor {
+                actor_id: actor_id.to_string(),
+                actor_type: ActorType::Human,
+                invoked_via: "direct-pen".to_string(),
+            };
+            let mut identity_hash: Option<String> = None;
+            let mut session_id_to_bind: Option<String> = None;
+            match pen_kind {
+                "agent" => {
+                    let Some(irp) = id_report_path else {
+                        emit(json!({"error": "agent 笔强制 --identity-report 正身报告，拒未挂"}), 1);
+                    };
+                    let Some(ir_text) = read_text(&irp) else {
+                        emit(json!({"error": format!("正身报告不可读 {irp}")}), 2);
+                    };
+                    let ir: serde_json::Value = match serde_json::from_str(&ir_text) {
+                        Ok(v) => v,
+                        Err(e) => emit(json!({"error": format!("正身报告非法 {e}")}), 2),
+                    };
+                    identity_hash = ir
+                        .get("identity")
+                        .and_then(|v| v.get("hash"))
+                        .and_then(|v| v.as_str())
+                        .map(|s| s.to_string());
+                    if identity_hash.is_none() {
+                        emit(json!({"error": "正身报告缺 identity.hash"}), 1);
+                    }
+                    actor.actor_type = ActorType::Agent;
+                    if let Some(sid) = session_opt {
+                        session_id_to_bind = Some(sid.to_string());
+                    }
+                }
+                "human" => {
+                    // human 笔接口位：批 B 实装 human seat 件前，--human-seat
+                    // 必挂且为合法 JSON 对象含 seat=="human"，否则拒。
+                    // 测试跳过形即 --allow-human-stub 旗标供 TDD 跳过此验。
+                    let allow_stub = opts.get("allow-human-stub").map(|s| s == "1" || s == "true").unwrap_or(false);
+                    if !allow_stub {
+                        let Some(hsp) = human_seat_path else {
+                            emit(json!({"error": "human 笔强制 --human-seat 验真件（批 B 承载），或 --allow-human-stub 1 跳过（测试形）"}), 1);
+                        };
+                        let Some(hs_text) = read_text(&hsp) else {
+                            emit(json!({"error": format!("人席位验真件不可读 {hsp}")}), 2);
+                        };
+                        let hs: serde_json::Value = match serde_json::from_str(&hs_text) {
+                            Ok(v) => v,
+                            Err(e) => emit(json!({"error": format!("人席位验真件非法 {e}")}), 2),
+                        };
+                        if hs.get("seat").and_then(|v| v.as_str()) != Some("human") {
+                            emit(json!({"error": "人席位验真件 seat 字段必为 human"}), 1);
+                        }
+                        if hs.get("name").and_then(|v| v.as_str()).map_or(true, |s| s.is_empty()) {
+                            emit(json!({"error": "人席位验真件缺 name 字段"}), 1);
+                        }
+                        if hs.get("attest_at").and_then(|v| v.as_str()).map_or(true, |s| s.is_empty()) {
+                            emit(json!({"error": "人席位验真件缺 attest_at 字段"}), 1);
+                        }
+                    }
+                    actor.actor_type = ActorType::Human;
+                }
+                _ => emit(json!({"error": "pen_kind 必为 agent 或 human"}), 1),
+            }
+            // 直改链笔事件构造：event_type = direct_edit_completed，
+            // event_class = record_only，details 载笔体（pen_form、pen_kind、
+            // actor_id、files、subject、timestamp）；envelope 字段即
+            // session_id + identity_hash 由 bind_envelope 与本批手动注入。
+            let event_id = uuid::Uuid::new_v4().to_string();
+            let doc_id = format!("direct-{pen_kind}-{}", &event_id[..8]);
+            let details = json!({
+                "pen_form": pen_form,
+                "pen_kind": pen_kind,
+                "actor_id": actor_id,
+                "files": files,
+                "subject": subject,
+                "timestamp": timestamp.to_rfc3339(),
+            });
+            let mut input = EventInput {
+                event_id: event_id.clone(),
+                event_type: "direct_edit_completed".to_string(),
+                timestamp,
+                actor,
+                details: Some(details),
+                doc_id: doc_id.clone(),
+                prev_hash: None,
+                event_class: Some("record_only".to_string()),
+                verification_result: None,
+                session_id: None,
+                identity_hash: None,
+            };
+            // 直改笔形信封：session_id 与 identity_hash 注入
+            if let Some(sid) = session_id_to_bind {
+                input.session_id = Some(sid);
+            }
+            input.identity_hash = identity_hash;
+            // human 笔无 identity_hash 走 None（受保护：None 跳过 hash 入）
+            let mut store = load_store(&trail);
+            match append(input, &mut store, Some(&PathBuf::from(&trail))) {
+                Ok(ok) => emit(
+                    json!({
+                        "status": "appended",
+                        "event_id": ok.event_id,
+                        "event_hash": ok.event_hash,
+                        "doc_id": doc_id,
+                    }),
+                    0,
+                ),
+                Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+            }
+        }
         _ => emit(
-            json!({"error": "用法 scribe <append|verify|query|intent|park|record|crosscheck|vectors> --trail <路径>"}),
+            json!({"error": "用法 scribe <append|verify|query|intent|park|record|crosscheck|direct|vectors> --trail <路径>"}),
             2,
         ),
     }
