@@ -1,0 +1,95 @@
+{
+  "batch": "genpark-solo",
+  "date": "2026-09-06",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/state/plan/genpark-solo.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/event/plan/genpark-solo-results.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "json-canonical-v1",
+      "target": "sih/state/parking/materials/pk-067.json",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "json-canonical-v1",
+      "target": "sih/state/parking/materials/pk-068.json",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "json-canonical-v1",
+      "target": "sih/state/parking/materials/pk-069.json",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "sih/state/plan/genpark-solo.md",
+      "exit_code": 2,
+      "note": "des-001 域外（域只盖 sih-engine/doc），不属违规如实记档"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "sih/event/plan/genpark-solo-results.md",
+      "exit_code": 2,
+      "note": "des-001 域外，不属违规如实记档"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "sih/state/parking/materials/pk-067.json",
+      "exit_code": 2,
+      "note": "des-001 域外，不属违规如实记档"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "sih/state/plan/genpark-solo.md",
+      "exit_code": 0,
+      "note": "零违例"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "sih/event/plan/genpark-solo-results.md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "elicit": {
+    "check_exit": 1,
+    "signals": 7,
+    "digest": "passed",
+    "covered": 7
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest",
+    "anomalies": 0
+  },
+  "watchcheck_pre": {
+    "exit": 1,
+    "note": "19 件在盘遗留无主件均 mtime 2026-09-05T18:06 即 archpark 收约时刻，先例批已呈报候人节点裁，本批零新增无主写"
+  }
+}

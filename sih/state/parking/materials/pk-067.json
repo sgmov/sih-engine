@@ -1,0 +1,20 @@
+{
+  "action": "enter",
+  "context": "用户 2026-09-06 会话讨论提出 SDD 的文档生成想借鉴 Fission-AI/OpenSpec 项目，即 openspec/ 下 specs 在役规约目录与 changes 提案目录两分、ADDED 与 MODIFIED 与 REMOVED Requirements 差分语法、WHEN 与 THEN 场景块、archive 归档合并回在役规约四件。可借面即差分语法机器可解析（句读已有 markdown 文法包可承载解析）与归档合并纪律（与向界结算追加制同构）；不可借面即其信任模型无确定性验证层与留痕链，只能以施工段材料形态嵌入批机械链。新差分语法即新增一类包容器形态，与 pk-061 包容器格式统一议题相交。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-067",
+  "exit_condition": "用户裁借鉴范围（差分语法、归档合并纪律、两者、零借鉴）与承接批次（文规收尾批或后继批）",
+  "id": "pk-067",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "pk-061"
+  ],
+  "source": "用户 2026-09-06 会话生成面讨论（含 OpenSpec 项目考察）、genpark-solo 批",
+  "state": "parked",
+  "title": "SDD 增量语法借鉴取舍：规约差分语法与归档合并纪律",
+  "ttl_days": 30
+}
