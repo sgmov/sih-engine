@@ -73,7 +73,9 @@ pk054-ab-gate-design.md 呈裁：A 路温度探针标定（模式一 agent 侧 +
 2. 开工预检拦截一回：idenlane-solo 批在途持五把独占锁（CALL-LOG 两笔、BATCH-FACE.md、identity、trail），排队等其收约后重开；期间本批首次 open 被拦回留下无会话僵尸窗（opened 09:54:50Z，session_id null 零锁），超 300 秒停滞阈后 lease takeover 机械自清（released_locks 空数组，零涉他批），如实留痕；
 3. 全测试族 6 红：test_ng_assembler 读 worktrees/sih-tools/AGENTS.md（不入版控活文件，工地 checkout 无此件）——环境态非本批回归，主树同件 9/9 绿证实；
 4. 冻结语料增长申报：pk-048 冻结 868 件，现行可复算 904 件（冻结后新入档 36 件，含本批 gateswitch-switch-2 与后继批件），新增判变 2 件（m-docmath-conflux-1 与 m-pk037-route-1，均 near→boundary 由宽到紧）；冻结 868 件为子集逐字段零漂移；
-5. tally 材料路径为工地绝对形（assemble 按当时仓根解析），收约归并后重放按 sih-tools 根相对形（facet/contracts/gateswitch-260905/ 与 proposition/DES/gateswitch-switch-2/）解析，重放寻径约定随批。
+5. tally 材料路径为工地绝对形（assemble 按当时仓根解析），收约归并后重放按 sih-tools 根相对形（facet/contracts/gateswitch-260905/ 与 proposition/DES/gateswitch-switch-2/）解析，重放寻径约定随批；
+6. **并行批台账重写事故与补录**：10:17Z 前后并行批（bak-mathclose-181734 佐证重写窗口）重写会话台账，本批 issued 行被洗失（locks 正典 SQLite 完好，七锁在册；sessions.ndjson 镜像缺行致认证被拒 SessionNotActive）。按 ledger-repair 补录通道由在档事实重建 issued 行（allow 与 repos 取 open 参数，identity 与 intent 哈希在档现算，gauge 字段不可逐字节恢复缺省不伪装），repair 标记显式在案（payload sih-tools/scribe/reports/2026-09-05-gateswitch-solo-repair-payload.ndjson）。根因属 basefix 批修过的 close 快照 clobber 类残余，建议台账线后批核验 ndjson 镜像重写路径的并集复查覆盖面；
+7. DES 工件越域申报：测量飞轮 trail 与计分材料与 signcheck 落 sih-tools/proposition/DES/gateswitch-switch-2/（facet 测量管线标准落位），open allow 面起草疏漏未含该路径，域内锁面取锁被范围闸正确拒（scope_violation），走 bypass 通道提交 62880edf 显式登记。
 
 ## 八、CALL-LOG
 
@@ -83,7 +85,13 @@ pk054-ab-gate-design.md 呈裁：A 路温度探针标定（模式一 agent 侧 +
 
 ## 九、认证清单与收约读数
 
-（认证与收约读数随收尾链补录）
+管线三步真值读数（无管道复跑取真值）：化格两件 exit 0 零改动；核阅两件 exit 2 域外（des-001 域只盖 sih-engine/doc，event/plan 域外，unmatched_targets 报文在场，如实记档不属违规）；检词两件 exit 0 零违例。首轮四检曾踩「管道掩退出码」坑（域外 2 被掩为 0），亲读报文后无管道重跑取真值，坑位本批实测再证。
+
+认证两笔上链：管线报告 01dcb702（b37c22e2）、变更件清单 74e55146（7e44e4fa），全 meter 包裹闸三 --session 加 --sessions 双带。
+
+双仓 settle：tools 工地 settle 落笔（cert 7e44e4fa，seq 1）加 DES 工件 bypass 提交 62880edf 显式登记（open allow 面起草疏漏未含 proposition/DES 路径，范围闸让位 facepark/selwire/packhyg/basefix 先例同形）；engine 工地 settle 落笔（cert 7e44e4fa，seq 1）。
+
+收约读数随收约链补录（unlock 与 close 与 reconcile 与链 verify）。
 
 ## 十、队形验证
 
