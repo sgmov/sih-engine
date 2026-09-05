@@ -1,0 +1,16 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/watchcheck-solo/facet/contracts/watchcheck-260905/contract.json",
+  "contract_sha256": "3ec129b851fbc8a736c60a8d6610771ab8142723dd1a30f3872a69d1869d92c8",
+  "gate_verdict": "boundary",
+  "gid": "m-watchcheck-judge-1",
+  "identity_hash": "f536ad565f15dd695a984a3c9ef8149adb36f9ba29497be63ef43e2bb5f0d4e9",
+  "kind": "facet-contract-score",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/watchcheck-solo/facet/contracts/watchcheck-260905/responses.jsonl",
+  "responses_sha256": "02157c66d43908b5a8f5449acf6fa8c9252256584df5ab0be77174e07728deca",
+  "runs_written": 9,
+  "score_version": 2,
+  "seat_string": "ZCode:GLM-5.3:self-reported",
+  "trail_path": "/Users/moc/workspaces/SiHankor/sih-tools/proposition/DES/m-watchcheck-judge-1/flywheel-trail.jsonl",
+  "voids": []
+}
