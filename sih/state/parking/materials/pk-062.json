@@ -4,15 +4,18 @@
   "created_at": "2026-09-06",
   "entry_id": "pk-062",
   "exit_condition": "用户裁共享单元层立项与否与家位形态，裁立项即另开实装批，裁不立项即闭项出泊",
+  "id": "pk-062",
   "parking": {
     "entered_at": "2026-09-06",
     "ttl_days": 30
   },
+  "path": "doc/governance/PARKING-v1.md",
   "related": [
     "pk-060",
     "pk-061"
   ],
   "source": "全治理态展开域外草稿 components-expansion-draft-2026-09-06.md 单元级与模块级审计（2026-09-06 两轮源码与契约实核）、archpark-solo 批、用户 2026-09-06 令泊二界",
+  "state": "parked",
   "title": "引擎共享单元层家位：五族单元级无主重复",
   "ttl_days": 30
 }

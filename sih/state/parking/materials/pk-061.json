@@ -4,14 +4,17 @@
   "created_at": "2026-09-06",
   "entry_id": "pk-061",
   "exit_condition": "用户裁统一与否与家位形态，裁立项即另开实装批，裁不立项即闭项出泊",
+  "id": "pk-061",
   "parking": {
     "entered_at": "2026-09-06",
     "ttl_days": 30
   },
+  "path": "doc/governance/PARKING-v1.md",
   "related": [
     "pk-060"
   ],
   "source": "全治理态展开域外草稿 components-expansion-draft-2026-09-06.md 单元级与模块级审计（2026-09-06 两轮源码与契约实核）、archpark-solo 批、用户 2026-09-06 令泊二界",
+  "state": "parked",
   "title": "规则包与谓词包容器格式统一与否：四套包格式并存",
   "ttl_days": 30
 }

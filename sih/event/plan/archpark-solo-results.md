@@ -54,7 +54,7 @@
 |---|---|---|---|
 | F-1 七件全上链 | 数据治理 | 当日链 parking_entered 七笔 entry_id 即 pk-060 至 pk-066 逐件在链，重入拒零触发 | 通过（七笔 event_hash 在档，全部 exit 0 首次入链） |
 | F-2 写入仅 allow | 治理 | 写入仅请求写入节所列 | 通过（写入面即任务包、七件泊材料、结果档与批材料、链文件、报告目录、CALL-LOG） |
-| F-3 心跳可复算 | 跨族治理 | 路择 parking 包对两线材料路由退出码 0，七件新件入 mainline 计数 | 随收口段复算读数补记 |
+| F-3 心跳可复算 | 跨族治理 | 路择 parking 包对两线材料路由退出码 0，七件新件入 mainline 计数 | 通过（复算即引擎线 mainline 29 至 33、工具线 18 至 21，七件全入 mainline，告警零；首跑七件落废轨，根因即材料缺路由三字段 id 与 path 与 state，补字段规范化后复算入列，如实记档） |
 | F-4 真值不越权 | 治理 | 泊材料只列审计事实与出泊条件，不预设出泊裁决，不触碰在泊件 | 通过（七件 context 零建议零裁决预设，八件在泊件零触碰） |
 
 ## 越线与误差申报
@@ -63,9 +63,15 @@
 - 首轮命令编排一次工作目录漂移致生成器路径错（退出码二），绝对路径重跑即过，零残留。
 - 无越线项。其余误差零申报。
 
+## 缺陷披露（本批顺带发现，候人节点裁）
+
+- 引擎线近期泊材料缺路由三字段即 id 与 path 与 state（正形先例 pk-016 与 pk-039 与 pk-053 均携，pk-058 起缺失），致心跳对其失明即老化告警不可见：复算后引擎线仍有六件废轨其中含在泊件 pk-055 与 pk-056 与 pk-058 的材料件。本批不触碰在泊件即 F-4 红线，仅披露；处置形态（补字段修复批或心跳谓词面调整）候人节点裁。
+
 ## 结算读数
 
-- 双仓 settle：engine 与 tools 工地提交号与 cert 对表随收约段补记。
-- 放锁收约：九路径 unlock 后 close，读数随收约段补记。
-- 链 verify 与 reconcile：收约后跑，读数随收约补笔。
-- 心跳复算（F-3）：收约后对两线材料跑路择 parking 包，读数随收约补笔。
+- 双仓 settle：engine 工地提交 c5f5323（base main@f56049c，三查即 session_active 与 staged_in_scope 与 cert_on_chain 全过），tools 工地提交 c3d7c8c8（base integral-stage-build@d16401db，三查过）；cert 取 ac94542b 即 ask3 记录认证哈希前八位。
+- 放锁收约：九路径 unlock 毕（首轮缺 --identity 退出码二即补参重放，如实记档）；close 首跑被真分叉检测拦即主树未跟踪批材料目录与工地分支碰撞，按备份让位归并对表法四步处置即备份删除让位重跑收约 diff IDENTICAL；close 成功即双仓归并、工地与分支清除、会话 722d25c79c614f83 revoked、零失败。
+- 链 verify：2026-09-06 当日链 valid，末哈希 53510b6e 即本批末笔认证。
+- reconcile：双仓 unrouted 零；engine cert_missing 零；tools cert_missing 一属在盘历史账面项（本批双 settle 提交 cert_on_chain 过、close 通道提交与 openhyg-solo 先例同形），如实记档不代清。
+- 心跳复算（F-3）：见 F 表行，两线退出码 0 告警零。
+- 收约补笔：路由三字段补齐与结果档 F-3 与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（openhyg-solo 收约补笔先例同形）。
