@@ -84,3 +84,11 @@ watchcheck-solo 批交付：稽 watchcheck 工具首立（对表判定式实装�
 - 前置批:idenlane-envelope-solo（声明面 direct_edit_completed 来源，主树 a099478）
 - 承载泊件:pk-059（病灶二首账；出泊 promoted 1186efa3 由 viewline-solo 承办，本批为承载面首账交付，出泊材料 pk-059-exit.json 在泊位档案）
 - 工具面:sih-tools/watchcheck/（CONTRACT.md 判定语义正典）
+
+## 八、收口读数（close 后回填）
+
+- 双仓 settle:tools eaa95689 / engine f268d32（段 1 单段，cert 9a44ab2d / 2ea30651 在链）
+- close:445c12fbb3e4283c revoked true，双工地与分支双拆归并（tools merge 17ec7a34 入 integral-stage-build，engine merge 0b71f3e 入 main），双仓零锁
+- reconcile:双仓 unrouted 0；tools cert_missing 1（e6880a63/526e2be，2026-09-03 entryunique-solo 批陈项，批前已有零新增）；unbypassed 61/31 为历史累积非本批新增
+- 链 verify:valid 134 事件，首 29c7dd29 尾 9a44ab2d
+- 收约补笔:本节与 scribe CALL-LOG 笔经 bypass 通道入版控（facepark/packhyg/idenlane-envelope 先例同形）
