@@ -1,0 +1,13 @@
+活体验收实录：docmath-namefit-solo 裸 stem 重开（openhyg-solo 批事故正主）
+==================================================================
+命令：lease open --package docmath-namefit-solo（裸 stem，lease 1.25.0 工地代码，--root 真实根）
+结果：exit 0
+  session_id: 1c924498519b0dc8
+  package_path: /Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/docmath-namefit-solo.md
+检验文件出生即全（签发后）：
+  {"package": "docmath-namefit-solo", "opened_at": "2026-09-05T17:19:18+00:00",
+   "pid": 48449, "session_id": "1c924498519b0dc8"}
+验收即收：lease close exit 0，revoked True，凭据转写
+  sih-engine/sih/state/plan/docmath-namefit-solo.lease-check.json（未跟踪运行件）
+  活件 checks/docmath-namefit-solo.json 已清
+判定：裸 stem 按表解析重开成功，事故链（解析失败+残件堵位）闭环。
