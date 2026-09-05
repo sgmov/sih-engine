@@ -1,0 +1,21 @@
+{
+ "xcheck": "xcheck-048",
+ "checks": [
+  {
+   "item": "证据包含 114 复核断言",
+   "pass": true,
+   "evidence": "['pack', 'parking_entry', 'exit_condition', 'evidence', 'exit_event']"
+  },
+  {
+   "item": "零由严到宽断言",
+   "pass": true,
+   "evidence": "[]"
+  },
+  {
+   "item": "双跑一致断言",
+   "pass": true,
+   "evidence": "grep"
+  }
+ ],
+ "pass": true
+}

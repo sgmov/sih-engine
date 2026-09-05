@@ -1,0 +1,26 @@
+{
+ "xcheck": "xcheck-054",
+ "checks": [
+  {
+   "item": "设计文在档且含四判据",
+   "pass": true,
+   "evidence": "len=2070"
+  },
+  {
+   "item": "设计文含三切换条件",
+   "pass": true,
+   "evidence": "grep"
+  },
+  {
+   "item": "gateswitch 批开工事实在链（本批认证在当日链）",
+   "pass": true,
+   "evidence": "grep"
+  },
+  {
+   "item": "证据包含批开工与设计指针",
+   "pass": true,
+   "evidence": "['pack', 'parking_entry', 'exit_condition', 'evidence', 'exit_event']"
+  }
+ ],
+ "pass": true
+}

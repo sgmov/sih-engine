@@ -1,0 +1,27 @@
+{
+ "xcheck": "xcheck-049",
+ "checks": [
+  {
+   "item": "缺省 boundary_criterion=test 两处",
+   "pass": true,
+   "evidence": "count=6"
+  },
+  {
+   "item": "终签 fb2e6d9d 在当日链",
+   "pass": true,
+   "evidence": "grep"
+  },
+  {
+   "item": "证据包五条目（重测/测量/终签/拨闸/复核承接）",
+   "pass": true,
+   "evidence": "len=5"
+  },
+  {
+   "item": "金向量 archived_mismatch=0 实测产物",
+   "pass": true,
+   "evidence": "[('/recompute_archived_mismatch', 0)]"
+  }
+ ],
+ "pass": true,
+ "note": "v2：凭据位置修正为 recheck 实测产物与证据包五条目数组（v1 启发式读错形，误报见批内申报）"
+}

@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-048",
+  "id": "pk-048",
+  "parking": {
+    "entered_at": "2026-09-04",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「全部用新的得一裁继续」即出泊裁决授权，出泊条件达成经确定性核对道核过：切换在役（test 缺省）+ 114 件判变逐件复核入档（gateswitch recheck_114 双跑逐字节一致、独立 p 值复算 114/114 全符、零由严到宽、新增语料 2 件新判变亦全由宽到紧）+ 金向量 archived_mismatch=0（xcheck-048 全过）。历史 verdict 零改写得证，114 件收紧全部追认。",
+  "state": "exited",
+  "ttl_days": 30
+}
