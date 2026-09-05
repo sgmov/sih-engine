@@ -40,4 +40,9 @@
 
 ## 五、收口读数（close 后回填）
 
-- 待回填：双仓 settle 号、主树 des-001 复跑、reconcile、verify 终读、CALL-LOG 双笔 bypass 补笔
+- 收约实录：engine 结算 65d2100；close 首跑被守卫以 materials 目录真分叉拒（crosscheck 报告误写主树工地外），按备份让位归并对表法处置——四件补入分支 wip、主树让位、close 归并后 diff 逐件 identical，零损失；旧会话解锁因 shell 变量丢失静默失败一轮即补正，两处如实申报
+- 主树 des-001 复跑：PARKING 首跑 3 findings 即本批新增历史住户行全角括号中文三处，就地改写后复跑 0；化格 0 检词 0
+- reconcile：tools unrouted 0、cert_missing 1（批前既有）、unbypassed 56；engine unrouted 0、cert_missing 0、unbypassed 31；判据项零新增达成
+- 链 verify：valid 97 事件；三笔出泊与意图 54d98e8b 与认证七笔与一裁终签 d2977bdf 全在当日链
+- CALL-LOG 双笔：bypass 通道收约后补笔（先例形）
+- 主线结算记分板：退出标准一 ✅ 二（gateswitch 三子项 ✅ + 常数承载批待开）三（pk-053 随常数批清账）四（视图组件待实装）
