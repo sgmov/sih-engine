@@ -31,3 +31,10 @@
 ## 四、待复核后收口路径
 
 confirmation 落链 → 执契 → 真实载荷导入 + status/reconcile/verify 三重核验 → 三仓 settle → close → 收口附记。人裁退回则改写链重立。
+
+## 六、收口附记（close 后回填）
+
+- 人节点复核：用户 2026-09-05 会话令「同意」落链（confirmation a63fdcc5dcb8a296）并附两点裁决——判据观察归 facet 融回（pk-056 入泊承载）、异常与建议入泊（pk-055 活写覆盖根因硬化入泊承载）。
+- 真实导入读数：首次 repaired 4 skipped 0 rejected 0；幂等重放 repaired 0 skipped 4；其中 069a640d issued 行去重豁免（本就在账，数学侧报告计为丢失属多计，去重机制正确处理如实申报）——真实修复三行即 eaf80aa8 issued、75c5a058 issued、069a640d revoked，全带 repair verbatim 标记。
+- 三重核验：reconcile 三仓 unrouted 全零（session_orphan tools 21→19、engine 23、math 10 为历史累积类），链 verify valid 19 事件，主树亲跑全族 106 件绿，1.23.0 三源对齐。
+- 流程事故申报：任务包 allow 行折叠（多路径挤一行）致 allow 解析三折叠行全不匹配，两轮重开（force close 与 open 静默失败各一次后裸跑定位），settle 形变为 wip 直提加 bypass，全程留痕在案。
