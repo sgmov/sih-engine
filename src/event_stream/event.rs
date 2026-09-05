@@ -78,6 +78,15 @@ pub struct Event {
     /// 校验结果，部分事件类型承载。
     #[serde(default)]
     pub verification_result: Option<JsonValue>,
+    /// 链上正身绑定（idenlane-solo iden-01）：事件信封所载会话标识。
+    /// 租约笔承载会话号；直改笔为空或直改标记。旧事件行缺省即 None，
+    /// 零数据迁移零改动，verify 重算兼容（新增字段只出现在新行）。
+    #[serde(default)]
+    pub session_id: Option<String>,
+    /// 链上正身绑定（idenlane-solo iden-01）：生产者身份哈希。
+    /// 租约笔按会话号从台账查得；直改笔按身份件查得。旧事件行缺省即 None。
+    #[serde(default)]
+    pub identity_hash: Option<String>,
 }
 
 /// 构建 Event 时的输入结构，不含 computed 字段（event_hash、prev_hash）。
@@ -96,6 +105,11 @@ pub struct EventInput {
     pub event_class: Option<String>,
     /// 可选校验结果，承 SPEC-006 报告消费入口透传，缺省 None。
     pub verification_result: Option<JsonValue>,
+    /// 链上正身绑定写入（idenlane-solo iden-01）：会话号与生产者身份
+    /// 哈希，追加时由调用方按会话台账或直改身份件解析后填入，None 即旧
+    /// 行为零改动。
+    pub session_id: Option<String>,
+    pub identity_hash: Option<String>,
 }
 
 impl Event {
@@ -152,6 +166,8 @@ mod tests {
             event_hash: "abc123".into(),
             event_class: Some("consumable".into()),
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         };
 
         let line = event.to_json_line().unwrap();

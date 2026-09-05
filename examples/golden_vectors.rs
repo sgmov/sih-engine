@@ -44,6 +44,8 @@ fn make_event(
         event_hash: String::new(),
         event_class: event_class.map(|s| s.to_string()),
         verification_result,
+        session_id: None,
+        identity_hash: None,
     }
 }
 

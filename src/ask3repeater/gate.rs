@@ -30,6 +30,8 @@ pub fn intent_event_input(record: &OutputRecord, actor: Actor) -> Result<EventIn
         prev_hash: None,
         event_class: Some(INTENT_EVENT_CLASS.into()),
         verification_result: None,
+        session_id: None,
+        identity_hash: None,
     })
 }
 

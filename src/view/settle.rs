@@ -115,6 +115,8 @@ mod tests {
             event_hash: format!("h-{event_id}"),
             event_class: class.map(String::from),
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 

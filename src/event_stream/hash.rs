@@ -52,6 +52,15 @@ pub fn compute_event_hash(event: &Event) -> String {
             .clone()
             .unwrap_or(serde_json::Value::Null),
     );
+    // 链上正身绑定（idenlane-solo iden-01）：session_id 与 identity_hash
+    // 仅在场即 Some 时入哈希，缺省即 None 跳过 → 旧事件行重算逐字节不变，
+    // verify 兼容零数据迁移；新行在场即参与哈希由新行自有约定覆盖。
+    if let Some(sid) = &event.session_id {
+        map.insert("session_id", serde_json::json!(sid));
+    }
+    if let Some(ih) = &event.identity_hash {
+        map.insert("identity_hash", serde_json::json!(ih));
+    }
 
     let payload = serde_json::to_string(&map).expect("BTreeMap serializable");
     let mut hasher = Sha256::new();
@@ -125,6 +134,8 @@ mod tests {
             event_hash: event_hash.into(),
             event_class: None,
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 

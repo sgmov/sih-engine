@@ -131,6 +131,8 @@ mod tests {
             event_hash: event_hash.into(),
             event_class: None,
             verification_result: None,
+            session_id: None,
+            identity_hash: None,
         }
     }
 
