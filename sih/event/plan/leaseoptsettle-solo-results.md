@@ -41,4 +41,9 @@ leaseopt 线正式关闭：结算单 SETTLEMENT-LEASEOPT-2026-09-05.md 落 doc/g
 
 ## 五、收口读数（close 后回填）
 
-- 待回填：双仓 settle 号、主树 des-001 复跑读数、reconcile 读数、链 verify 终读
+- 收约实录：双仓 settle 即 tools b2335d0d 与 engine ed80b58；close 成，双支归并删支拆本，revoked true，会话 d647c8ff1cc1025c；本批 allow 面显式含 CALL-LOG 两笔零 staged_out_of_scope，bypass 零用
+- 主树 des-001 复跑：结算单首跑 13 findings 即全角括号中文十一笔与导航项双链一笔与版本行缺锚一笔，逐笔核为本批起草引入，就地改写十二处与两处导航拆分与锚点补全，复跑 findings 0；GOV-002 复跑 findings 0；PARKING-v1 名录 pk-059 行复跑 exit 0；复跑后化格 0 检词 0；工作树域外 exit-2 掩真判读教训二次实证，主树复跑为准
+- reconcile 读数：tools unrouted 0、cert_missing 1（批前既有）、unbypassed 45、session_orphan 19；engine unrouted 0、cert_missing 0、unbypassed 25、session_orphan 23；判据项 unrouted 与 cert_missing 零新增达成
+- 链 verify：status valid、48 事件；停泊一笔与认证十三笔与意图与读数全在当日链
+- 心跳复跑：双目录退出码 0/0 零告警，泊界十四项与名录投影一致
+- 本笔附记与结算单核阅修复一并走 bypass 通道入版控（parkrecon 先例同形 close 后回填）

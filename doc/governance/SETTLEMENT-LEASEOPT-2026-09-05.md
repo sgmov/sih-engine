@@ -8,12 +8,13 @@
 - 线级验收七条逐条对照即线总纲第六节::[线级验收](#acceptance)
 - 泊界复检必经栏即心跳实跑与在泊实况与 pk-059 进泊::[泊界复检必经栏](#parking-check)
 - 遗留与指针即批六与观察项与隔离缺陷俱不阻塞结算::[遗留与指针](#residuals)
-- 链证与签署即用户收工令在链::[链证](#chain)::[签署](#signature)
-- 版本 v1 于 2026-09-05 结算执行时起草::[version]
+- 链证即管线与认证与停泊落链::[链证](#chain)
+- 签署即用户收工令在链::[签署](#signature)
+- 版本 v1 于 2026-09-05 结算执行时起草::[版本](#version)
 
 ## 结算范围 {#scope}
 
-本结算为 leaseopt 线（租约优化线，主线 v2 排序第 1 位）线级结算。令源即用户 2026-09-04「租约的优化也要加入，多agents协调一直撞车」与「锁竞态导致多agents冲突，空转消耗token对我来说比较重要」，线总纲 sih/state/plan/leaseopt-line-v1.md 承载。结算依据即线总纲第六节线级验收七条全数达成，与用户 2026-09-05「收工。继续收工」批准令在链。结算动作四件：
+本结算为 leaseopt 线线级结算，leaseopt 线即租约优化线，主线 v2 排序第 1 位。令源即用户 2026-09-04「租约的优化也要加入，多agents协调一直撞车」与「锁竞态导致多agents冲突，空转消耗token对我来说比较重要」，线总纲 sih/state/plan/leaseopt-line-v1.md 承载。结算依据即线总纲第六节线级验收七条全数达成，与用户 2026-09-05「收工。继续收工」批准令在链。结算动作四件：
 
 - 六批证据逐条指针落档，即本单六批证据节。
 - 线总纲关线追记，线状态改已结算。
@@ -31,19 +32,19 @@
 
 每条指针亲开文件核在档才落笔，核验时点 2026-09-05 本结算执行时，测试净读数为本日主树归并态实跑。
 
-- 批一 leaseopt-audit-solo（盘点，委外交付零行为变更）：撞车分类账本 sih-tools/proposition/DES/leaseopt-audit/census-ledger.json 在档，close_failed 176 事件行 234 失败条目六签名类全覆盖，复算逐字节一致；病灶七件核验带源码行号；pk-045 二十类逐类二值标注；meter 基线即撞车日日均 201.71 对平静日 100.80。结果档 sih/event/plan/leaseopt-audit-solo-results.md。
-- 批二 leaseopt-fixguard-solo（1.19.0 修订三十一）：守卫假阳性根因修复，detect_merge_conflicts 改真实脏位判定即盘上对 HEAD 脏集与未跟踪集，净态修改件退出冲突面交三方合并仲裁；夹具先红后绿；测试全绿。测量材料 sih-tools/facet/contracts/leaseopt-fixguard-260905/，near_threshold 经用户 2026-09-05 同意确认。结果档 sih/event/plan/leaseopt-fixguard-solo-results.md。
-- 批三 leaseopt-precheck-solo（1.22.0 修订三十四，用户 2026-09-05 令「直接收了批3吧」提前实施）：open 开工预检闸在役，allow 面对活跃会话独占持锁面交集只读探测，共享白名单六路径豁免；今日 A/B 实证即结算会话持 sih-engine/doc/governance/ 时夹具 open 被正确拒开、放锁即过，闸行为正确。结果档 sih/event/plan/leaseopt-precheck-solo-results.md。
-- 批四 leaseopt-lockdb-solo（1.20.0 修订三十二）：SQLite WAL 锁库在役，lock_state 复合主键支持追加面多持，lock_event 仅插入，同包 O_EXCL 检验文件钥匙闸，heartbeat 子命令与收约回执；判定常数 HEARTBEAT_STALE_SECONDS 300 冻结登记在账。测量材料 sih-tools/facet/contracts/leaseopt-lockdb-260905/，near_threshold 经用户同意确认。结果档 sih/event/plan/leaseopt-lockdb-solo-results.md。
-- 批五 leaseopt-lockqueue-solo（1.21.0 修订三十三）：锁排队在役，--wait 入队返位次，wait-turn 阻塞轮到即取零 token 空转，takeover 人节点显式接管两态即窗口活跃拒清与陈旧清理；排队常驻服务形态承用户「排队的常驻服务」裁定。测量材料 sih-tools/facet/contracts/leaseopt-lockqueue-260905/，near_threshold 经用户同意确认。结果档 sih/event/plan/leaseopt-lockqueue-solo-results.md。
-- 批六外事故批 leaseopt-ledger-repair-solo（1.23.0 修订三十五）：台账补录通道在役，逐行校验逐字节去重 repair 标记显式幂等；docmath-b4 四行修复载荷导入三重核验；测量材料 sih-tools/facet/contracts/leaseopt-ledger-repair-260905/，near_threshold 经用户同意确认，判据观察转 pk-058 facet 融回。结果档 sih/event/plan/leaseopt-ledger-repair-solo-results.md。
+- 批一 leaseopt-audit-solo，盘点批委外交付零行为变更：撞车分类账本 sih-tools/proposition/DES/leaseopt-audit/census-ledger.json 在档，close_failed 176 事件行 234 失败条目六签名类全覆盖，复算逐字节一致；病灶七件核验带源码行号；pk-045 二十类逐类二值标注；meter 基线即撞车日日均 201.71 对平静日 100.80。结果档 sih/event/plan/leaseopt-audit-solo-results.md。
+- 批二 leaseopt-fixguard-solo 即 1.19.0 修订三十一：守卫假阳性根因修复，detect_merge_conflicts 改真实脏位判定即盘上对 HEAD 脏集与未跟踪集，净态修改件退出冲突面交三方合并仲裁；夹具先红后绿；测试全绿。测量材料 sih-tools/facet/contracts/leaseopt-fixguard-260905/，near_threshold 经用户 2026-09-05 同意确认。结果档 sih/event/plan/leaseopt-fixguard-solo-results.md。
+- 批三 leaseopt-precheck-solo 即 1.22.0 修订三十四，用户 2026-09-05 令「直接收了批3吧」提前实施：open 开工预检闸在役，allow 面对活跃会话独占持锁面交集只读探测，共享白名单六路径豁免；今日 A/B 实证即结算会话持 sih-engine/doc/governance/ 时夹具 open 被正确拒开、放锁即过，闸行为正确。结果档 sih/event/plan/leaseopt-precheck-solo-results.md。
+- 批四 leaseopt-lockdb-solo 即 1.20.0 修订三十二：SQLite WAL 锁库在役，lock_state 复合主键支持追加面多持，lock_event 仅插入，同包 O_EXCL 检验文件钥匙闸，heartbeat 子命令与收约回执；判定常数 HEARTBEAT_STALE_SECONDS 300 冻结登记在账。测量材料 sih-tools/facet/contracts/leaseopt-lockdb-260905/，near_threshold 经用户同意确认。结果档 sih/event/plan/leaseopt-lockdb-solo-results.md。
+- 批五 leaseopt-lockqueue-solo 即 1.21.0 修订三十三：锁排队在役，--wait 入队返位次，wait-turn 阻塞轮到即取零 token 空转，takeover 人节点显式接管两态即窗口活跃拒清与陈旧清理；排队常驻服务形态承用户「排队的常驻服务」裁定。测量材料 sih-tools/facet/contracts/leaseopt-lockqueue-260905/，near_threshold 经用户同意确认。结果档 sih/event/plan/leaseopt-lockqueue-solo-results.md。
+- 批六外事故批 leaseopt-ledger-repair-solo 即 1.23.0 修订三十五：台账补录通道在役，逐行校验逐字节去重 repair 标记显式幂等；docmath-b4 四行修复载荷导入三重核验；测量材料 sih-tools/facet/contracts/leaseopt-ledger-repair-260905/，near_threshold 经用户同意确认，判据观察转 pk-058 facet 融回。结果档 sih/event/plan/leaseopt-ledger-repair-solo-results.md。
 - 收尾批 pk-045 出泊：经用户 2026-09-05 令「pk045出泊」出泊 promoted，出泊事件 1a5f0799 在当日链，样本销账按盘点账本八类硬化九类线收口三类转批六，执行批 parkrecon-solo 承载，出泊材料 pk-045-exit.json。
 - 回归净读数：本日主树归并态全量测试 uv run pytest tests/ 实跑 106 passed 0 failed，净态收约语义零回归。
 
 ## 痛点对照 {#pain}
 
-- 痛点一多 agents 撞车：守卫假阳性病灶修复（批二）后净态修改件不再误判 diverged 整批拒，批前预检闸（批三）把施工面真交集拦在开工前，双保险在役。批一账本即修复前基线：234 失败条目中假阳性与收约处置面直接产生 151 条占 64.5%。
-- 痛点二空转消耗 token：排队与 wait-turn 阻塞形（批五）替代轮询重试，agent 撞锁即入队挂起零 LLM 轮次消耗；批一账本基线即重试空转 137 条占失败 58.5%、最长 18 连击。meter 前后对比降幅待运行数据，转例行读数观察项见遗留节。
+- 痛点一多 agents 撞车：守卫假阳性病灶修复即批二交付后净态修改件不再误判 diverged 整批拒，批前预检闸即批三交付把施工面真交集拦在开工前，双保险在役。批一账本即修复前基线：234 失败条目中假阳性与收约处置面直接产生 151 条占 64.5%。
+- 痛点二空转消耗 token：排队与 wait-turn 阻塞形即批五交付替代轮询重试，agent 撞锁即入队挂起零 LLM 轮次消耗；批一账本基线即重试空转 137 条占失败 58.5%、最长 18 连击。meter 前后对比降幅待运行数据，转例行读数观察项见遗留节。
 
 ## 线级验收 {#acceptance}
 
@@ -68,7 +69,7 @@
 
 ## 遗留与指针 {#residuals}
 
-- pk-059 批六视图批（本批进泊）：病灶五无协调视图、病灶二残留无租约活写零实时告警、empty-detail 静默失败签名不明 16 条诊断面、pk-045 三类转承即跨批调用册行丢失与审阅者中途突变与停在收约主会代收、pk-057 台账活写根因硬化随本件承载选项。出泊条件即用户裁批六立项开工与否。
+- pk-059 批六视图批，本批进泊：病灶五无协调视图、病灶二残留无租约活写零实时告警、empty-detail 静默失败签名不明 16 条诊断面、pk-045 三类转承即跨批调用册行丢失与审阅者中途突变与停在收约主会代收、pk-057 台账活写根因硬化随本件承载选项。出泊条件即用户裁批六立项开工与否。
 - meter 前后对比观察项：例行读数挂观察，两周运行数据后对批一基线 201.71 与 6.0342 读对比值，归例行读数轨迹不另立载体。
 - 测试隔离缺陷：tests/test_lease.py open 夹具缺 --locks 覆写致预检闸回落全局锁库，活跃会话在场即假红；今日 A/B 实证即持锁红放锁绿、全量净跑 106 绿；生产行为正确，缺陷在测试隔离面，后继触 lease 工具批顺手修。
 - 在泊件指针：pk-057 台账活写根因硬化、pk-058 判据观察 facet 融回、pk-055 级联投影更新机制、pk-054 facet 探针退役，出泊俱唯人节点，指针 doc/governance/PARKING-v1.md 在泊名录。
