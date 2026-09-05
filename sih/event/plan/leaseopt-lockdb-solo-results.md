@@ -40,3 +40,9 @@ gid m-lockdb-switch-1 九发：decision_stable T、boundary_low T、basis_consen
 ## 五、待复核后收口路径
 
 人节点确认后：confirmation 件落链 → 执契 check→verify（sign 因 near_threshold 机制不可用，同批二先例如实）→ 三仓 settle → close 归并 → reconcile → 链 verify → 主树复验 → 本档收口附记。人裁退回则命题改写链重立。
+
+## 六、收口附记（close 后回填）
+
+- 人节点复核：用户 2026-09-05 会话令「同意」落链（confirmation 517861a1a0510b5d），near_threshold 挂起位放行，锁面重构生效。sign 未执行系 near_threshold 机制仅 stable_clear 可签（批二先例同形），check pass 与 verify identical 在档，原挂起裁决留痕不抹。
+- 收约实录：放锁后 close **一次通过**——批二守卫修复在役后首个活体收约，零假阳性拦截零 bypass，即修复与新守卫协同的活体证据。
+- 三仓 settle 提交挂本档编号；reconcile 三仓 unrouted 全零，tools cert_missing 1（entryunique 既有）与 math 2（批前既有）零新增；链 verify valid 8 事件；主树亲跑全族 100 件绿；1.20.0 三源在主树对齐；locks.db 懒建（首个锁操作时生成），镜像 ndjson 照旧入版控。
