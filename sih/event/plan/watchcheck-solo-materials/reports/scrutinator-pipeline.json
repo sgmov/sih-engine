@@ -1,0 +1,1 @@
+{"tool": "scrutinator", "pack": "des-001", "batch": "watchcheck-solo", "date": "2026-09-05", "targets": ["watchcheck/CONTRACT.md", "BATCH-FACE.md", "facet/contracts/watchcheck-260905/topic.md", "watchcheck/CALL-LOG.md", "sih/event/plan/watchcheck-solo-results.md"], "domain_exits": "五件全域外 exit-2（des-001 域只盖 sih-engine/doc），如实记档不属违规", "exit_code": 2}

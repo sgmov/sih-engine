@@ -1,0 +1,90 @@
+{
+  "contract_version": 1,
+  "kind": "facet-sampling-contract",
+  "meta": {
+    "measurement_entry": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/watchcheck-solo/facet/contracts/watchcheck-260905/topic.md",
+    "n_declared": 9
+  },
+  "pack": {
+    "atom": "integrator",
+    "direction": "judge",
+    "ng_label": "medium",
+    "ng_text_sha256": "d4f847016697d5be0701ce7630e49b1ec328a2ace64169a3cdd1bd49c99af32c",
+    "paradigm_id": "normative_convergence"
+  },
+  "proposition": {
+    "gid": "m-watchcheck-judge-1",
+    "title": "watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界",
+    "topic_sha256": "4cf5c70ab1367da6f678987ff89274ae22d604b2de6e7cd1888540c7f34f9b09"
+  },
+  "responses_format": {
+    "discipline": "逐发模型完整原文回填，不改写、不摘要、不挑选",
+    "fields": [
+      "key",
+      "shot",
+      "raw"
+    ],
+    "file": "jsonl"
+  },
+  "seat": {
+    "framework": "ZCode",
+    "model_id": "GLM-5.3",
+    "version": "self-reported"
+  },
+  "shots": [
+    {
+      "key": "m-watchcheck-judge-1#r1",
+      "shot": 1,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r2",
+      "shot": 2,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r3",
+      "shot": 3,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r4",
+      "shot": 4,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r5",
+      "shot": 5,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r6",
+      "shot": 6,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r7",
+      "shot": 7,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r8",
+      "shot": 8,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    },
+    {
+      "key": "m-watchcheck-judge-1#r9",
+      "shot": 9,
+      "system_prompt": "你是治理规约裁定者。严格依据以下规约判定命题：\n\n基线一：确定性程序是治理唯一执行者，LLM 只生成材料。\n基线四：写入操作须可追溯、可校验、不可篡改。\n基线五：治理延伸是减少 LLM 参与。\n\n\n前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：\n\n（无前置微分数据，发散发谱为空）\n\n按指定 JSON schema 输出，不要输出 JSON 以外的文本。\n\n输出格式：\n{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}\n\n字段说明：\n- decision: 命题是否符合规约（comply=符合, violate=违反）\n- basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）\n- reason: 一句话理由，指明依据哪条规约的哪条要求\n- boundary_flag: 本命题是否落在规范边界（基线不直接回答、须推理适用）\n",
+      "user_prompt": "命题：---\ntitle: \"watchcheck 无主判定规则命题：对表判定式、豁免面冻结登记与只呈报不代裁边界\"\nauthored: watchcheck-solo 批起草，AI 起草（ZCode/GLM-5.3），2026-09-05，谱系披露：首测，改写链第 0 次\nng: medium\nn: 9\ngid: m-watchcheck-judge-1\n---\n\n# 待裁命题\n\nwatchcheck 对表哨判定规则规定：主树活写对表以确定性判定式「脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单」机械执行，全程零 LLM 零网络零写面；豁免面（合法活写面）以 constants.py 冻结登记逐面带出处，零裸奔，新增或收缩须走批与 CONTRACT 修订；判定输出只呈报不代裁——无主清单即视图告警呈人节点二值裁决（「不是我的」机械回滚、「我的」走司衡治理通道），工具零回滚零代行零处置建议；声明面只取当日 trail 的 direct_edit_completed 事件，跨日声明不覆盖为如实边界非静默扩面；同参双跑输出逐字节一致且退出码一致为判定可重复要件。\n\n## anchors\n\n- path: ../../watchcheck/src/watchcheck/constants.py\n  range: 1-20\n  note: 豁免面冻结登记与判定式与退出码语义的常数在册位（零裸奔承载件）\n- path: ../../watchcheck/src/watchcheck/core.py\n  range: 80-125\n  note: 覆盖判定 covered 与无主判定 judge 的谓词实现位（声明笔精确、租约锁精确与目录前缀、豁免面前缀三级覆盖）\n- path: ../../watchcheck/CONTRACT.md\n  range: 10-30\n  note: 判定语义边界（锁面读镜像 rationale、当日边界、只呈报不代裁、双跑判据）正典承载位\n\n"
+    }
+  ]
+}

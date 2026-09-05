@@ -1,0 +1,24 @@
+稽 watchcheck 对表读数 2026-09-05（v0.1.0）
+判定式：脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单
+输入面：双仓 git status --porcelain -uall；锁面镜像 /Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/locks.ndjson（现势 17 面）；声明面 /Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-05.ndjson（声明 8 件）；豁免面冻结登记 16 面（constants.py）
+扫描：脏文件 1177 件
+结论：无主修改 18 件，呈人节点二值裁决——「我的」：走司衡治理通道（域内管线三步加直改链笔）；「不是我的」：机械回滚（git restore 或对未跟踪件删除，操作见 BATCH-FACE 处置协议节；本工具零代行）。
+无主清单：
+- sih-tools/lease/pk023spec-solo.md | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/scripts/poll_shares.py | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures-intent-closeguard.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/close-failures/contains-modified/sample.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/close-failures/local-changes/CALL-LOG.md | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/close-failures/local-changes/sample.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/close-failures/untracked/sample.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/duplicate-run.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/golden-run.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/test-local-changes.ndjson | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/test-modified-deny.ndjson | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/lease/tests/fixtures/test-untracked.ndjson | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/m-wengui-fit-1-check.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/m-wengui-fit-1-signcheck.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/meter-quiet-probe.txt | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/nomenclator/packs/core/.-tmp-entry-programslicing.json | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/wikirecall/verify_triggers.py | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件
+- sih-tools/worktrees_placeholder | mtime 2026-09-05T15:26:53+00:00 | 未跟踪新件

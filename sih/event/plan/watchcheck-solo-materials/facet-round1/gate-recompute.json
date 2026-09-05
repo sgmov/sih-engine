@@ -1,0 +1,16 @@
+{
+ "gid": "m-watchcheck-judge-1",
+ "verdict_v3": "boundary",
+ "failed_criteria": [
+  "basis_consensus"
+ ],
+ "criteria": {
+  "decision_stable": true,
+  "boundary_low": true,
+  "basis_consensus": false,
+  "foregrounding_stable": true
+ },
+ "boundary_flag_sum": 0,
+ "note": "九发全 comply 零变卦 boundary_flag 0/9；basis_consensus 挂因回填依据轮换三值（回填方法论失误非命题刀锋）；distinct_basis<=1 硬共识下同 gid 补采不可收敛，新 gid 重测即重写上下文位归人节点（agent 不得代写）；呈用户候裁",
+ "recompute_defaults": "assess_maturation_v3 缺省参复算，与 score 半同参"
+}
