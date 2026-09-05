@@ -157,4 +157,4 @@ docmath 不新建引擎组件、不改三工具 CLI 与退出码语义，是跨�
 - 例行读数：convergence 0.428571 / adoption 0.0 / mergeback 0.041667（ga-2，落链成功）
 - 泊界心跳：工具侧 19 件（18 mainline + pk-042 侧线）、引擎侧 23 件（22 mainline + 1 scrap），告警零，退出码零
 - 载体与规则包实存复核：mapping.md 13 枚唯一 ID 全部在册且语义吻合；三族规则包路径清点在案，无停批事由
-- 本程序文档为 SDD 产物，工作名不转正，正式名走立名流程
+- 本程序文档为 SDD 产物，工作名不转正，正式名走立名流程。〔2026-09-05 正名落定补记：正式名文规，en Regula，代号 regula，承 docmath-namefit-solo 批机器终签 m-wengui-fit-1，并行标注批 regula-rename-solo 承连带改写〕
