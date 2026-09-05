@@ -54,3 +54,10 @@
 ## 七、收约读数 {#close-reading}
 
 收约链（settle + close + reconcile + verify）读数由完工报告呈报并经收约补笔入本节（先例同形）。
+
+- close（2026-09-06）：revoked true，会话 4e5f2ad1dee20ffa，双仓工地拆除分支删除（tools worktree removed + branch deleted；engine 同），凭据转写 sih/state/plan/openhyg-solo.lease-check.json，检验活件清除。
+- 提交链：tools 主树 wip ba60b278（pyproject 版本件，allow 漏列收编）→ settle cf4d5c2a（cert c13cdd1f）→ closeguard b8556e0 → merge f09e174d → 补笔 d16401db；engine 主树 settle 5119d21 → wip f12fe17（结果档 allow 目录笔误收编）→ merge 332df85 → 补笔见本笔。
+- bypass 登记：tools b8556e0（closeguard 标准机制）与 d16401db（补笔）；engine 本笔随登。
+- reconcile：tools unrouted 0、cert_missing 1（批前既有，fixguard 批读数同源如实申报）；engine unrouted 0、cert_missing 0；unbypassed 与 session_orphan 基数为批前遗留（idenlane 系台账行缺失申报在案，候令补录），本批自身提交全数 routed 或已登记。
+- 链 verify：2026-09-06.ndjson status valid，末笔 669170f3（活体验收认证）。
+- 工位让位申报：工地位 sessions.ndjson 两行（首跑验收行）与标定账本一行按范围闸申报重置，本补笔即范围闸三处收编的版控落位（pyproject wip 笔、结果档 wip 笔、本笔）。
