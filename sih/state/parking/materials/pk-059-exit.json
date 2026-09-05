@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-059",
+  "id": "pk-059",
+  "parking": {
+    "entered_at": "2026-09-05",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「视图要进入向界」点名 pk-059 即裁批六立项开工，出泊条件达成。承接形即视图线立项（线程序包 viewline-line-v1.md，GOV-002 v2.2 退出标准第四条承载）：watch 对表段由 watchcheck-solo 批在飞承接，协调视图面板与 empty-detail 诊断面与 pk-045 三类转承与 pk-057 台账写点唯一化随批选项由视图线批一契约起草批与批二实装批承接。数据源承用户双写裁定即链投影库，人类视图统一由视图组件承载。",
+  "state": "exited",
+  "ttl_days": 30
+}

@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-047",
+  "id": "pk-047",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "exited_at": "2026-09-05",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-05 令「视图要进入向界」点名 pk-047，出泊条件双枝达成即视图组件契约起草批（视图线批一）开工在即与用户点名即裁参考。处置即裁参考：OpenTelemetry GenAI 语义约定（gen_ai.* 属性族，agent 与 MCP 遥测提案）入视图契约参考材料面，由视图线批一契约起草批承接采撷。撞号披露照录沿名录原文（首笔 99b85acc 活写覆盖丢失事故 facepark-solo 申报在档，本件承 pk-043 先例改正重编）。",
+  "state": "exited",
+  "ttl_days": 30
+}
