@@ -1,0 +1,17 @@
+{
+  "action": "enter",
+  "context": "审计发现四套包容器格式并存：核阅 packs（rules.toml 单件）、得一 packs（manifest.toml 加 routes.toml）、化格 packs（manifest.toml 加 operations.toml）、检词 packs（terms 加 lazy 加 dead 加 candidates 四文件 JSON）。空腹包引擎思想已统一即数据驱动零引擎改动，容器格式未统一。统一属基础设施层候选（DEC-007 判据即不承接哲学命题且提供运行前提），涉及引擎与工具两域。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-061",
+  "exit_condition": "用户裁统一与否与家位形态，裁立项即另开实装批，裁不立项即闭项出泊",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "related": [
+    "pk-060"
+  ],
+  "source": "全治理态展开域外草稿 components-expansion-draft-2026-09-06.md 单元级与模块级审计（2026-09-06 两轮源码与契约实核）、archpark-solo 批、用户 2026-09-06 令泊二界",
+  "title": "规则包与谓词包容器格式统一与否：四套包格式并存",
+  "ttl_days": 30
+}
