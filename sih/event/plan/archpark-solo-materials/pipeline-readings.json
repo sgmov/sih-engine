@@ -1,0 +1,25 @@
+{
+  "formatter_general_v1": {
+    "archpark-solo.md": 0,
+    "archpark-solo-results.md": 0
+  },
+  "formatter_json_canonical_v1": {
+    "pk-060": 1,
+    "pk-061": 1,
+    "pk-062": 1,
+    "pk-063": 1,
+    "pk-064": 1,
+    "pk-065": 1,
+    "pk-066": 1
+  },
+  "scrutinator_des_001": {
+    "archpark-solo.md": 2,
+    "archpark-solo-results.md": 2,
+    "note": "state/plan 与 event/plan 属 des-001 域外，退出码二如实记档不属违规"
+  },
+  "nomenclator_core": {
+    "archpark-solo.md": 0,
+    "archpark-solo-results.md": 0
+  },
+  "note_json_canonical": "泊材料上链后键序规范化，park 事件载荷只携语义字段不含记录哈希，链上真相零漂移，终态即 canonical 形"
+}

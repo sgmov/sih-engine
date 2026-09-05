@@ -1,0 +1,18 @@
+{
+  "action": "enter",
+  "context": "审计发现引擎 lib.rs 仅声明六组件模块、无共享单元层，五族单元重复实现：六个命令行件各自手写参数解析循环与错误发射助手、SHA-256 摘要内联约八处（certify 与 tally 两处与 contract_mode 与 scrutinator 两处与 tdd_tests，compute_event_hash 为事件形非通用件）、ndjson 行读散布十一文件、工作区根定位两实现（温故 derive_root 对锁门 ancestors 第四级）、退出封套六套。根因即共享单元无家位。按 DEC-007 判据归基础设施层候选。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-062",
+  "exit_condition": "用户裁共享单元层立项与否与家位形态，裁立项即另开实装批，裁不立项即闭项出泊",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "related": [
+    "pk-060",
+    "pk-061"
+  ],
+  "source": "全治理态展开域外草稿 components-expansion-draft-2026-09-06.md 单元级与模块级审计（2026-09-06 两轮源码与契约实核）、archpark-solo 批、用户 2026-09-06 令泊二界",
+  "title": "引擎共享单元层家位：五族单元级无主重复",
+  "ttl_days": 30
+}

@@ -1,0 +1,15 @@
+{
+  "action": "enter",
+  "context": "审计发现锚定与分拣登记面四种先例形态并存：mathpipe 分拣账本（sih-math/docs/mathpipe-coverage-2026-09-03/ledger.json）、文规批一账本（承 mathpipe 先例形）、constclear 账本（constclear-derivation-2026-09-04 第四节）、资产回锚登记面（asset-anchor-registry-2026-09-02.md）。文规批一已在收敛先例形态，长期是否升统一登记面基础设施未决，不抢文规在途批。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-063",
+  "exit_condition": "文规批一结算后呈报，用户裁升统一登记面与否",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "related": [],
+  "source": "全治理态展开域外草稿 components-expansion-draft-2026-09-06.md 单元级与模块级审计（2026-09-06 两轮源码与契约实核）、archpark-solo 批、用户 2026-09-06 令泊二界",
+  "title": "锚定登记面长期统一与否：四种先例形态并存",
+  "ttl_days": 30
+}
