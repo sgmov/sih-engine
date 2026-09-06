@@ -97,6 +97,9 @@
 
 ## 收口读数
 
-- 双仓 settle：tools（归并在档）、engine（归并在档）；cert 取 `0f3405c8`；结果档随 seq 2 补提交
-- 放锁收约：十一锁 unlock 全放零失败；close 经差集闸拦截后按指引补提交重跑
+- 双仓 settle：tools 段1（归并 `ac42903a`）、engine 段1（closeguard `3fdb6ff`）加段2 结果档 `6aff52b`（归并 `8726092`）；cert 取 `0f3405c8`
+- 放锁收约：十一锁 unlock 全放零失败；close 首跑被**差集闸拦截**（declared_uncommitted：结果档未提交即拒，租约硬化新闸首次实战），按闸指引段2 补提交后 close exit 0，会话 f373819d5719bf66 revoked
+- 链 verify：2026-09-07 当日链 valid，last `dc59de64`
+- reconcile：双仓 unrouted 0；engine cert_missing 0；tools cert_missing 1 为历史在账项，相比批前零新增
+- 心跳复算：两线 exit 0 零告警
 - 本结果档经收约补笔 bypass 通道入版控（先例同形）
