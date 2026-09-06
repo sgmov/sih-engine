@@ -56,7 +56,7 @@
 
 ## 六、untracked 面复扫读数（如实）
 
-批前（会话启动时点）主树 untracked 计数：引擎仓 69 件（含 lease-check 族三十五件与未跟踪任务包二十三件与结果档材料等）、工具仓 61 件（identity/reports 大宗与 facet contracts 等，俱豁免面活写件）、数学仓 5 件（本批归位三件加 lease-check 一件加 __pycache__ 一件）。
+批前（会话启动时点）主树 untracked 计数：引擎仓 69 件（含 lease-check 族三十五件与未跟踪任务包二十三件与结果档材料等）、工具仓大宗俱豁免面活写件（scribe/reports 与 identity/reports 与 proposition 与 tally/reports 等；批首观测用截断视图误记 61 件，收约后实测同量级现势 957 件，特此更正申报）、数学仓 5 件（本批归位三件加 lease-check 一件加 __pycache__ 一件）。
 
 本批归位并收约后消账：引擎仓 6 路径、数学仓 3 路径、工具仓错径位 1 路径（归正后新位收编）。剩余面构成如实申报：lease-check 族三十七件（候 declguard 承接）、在途批面（redkeep 已收约、sddpacks-solo 在途其面零触碰）、豁免面活写件（identity/reports 与 scribe/reports 与 facet/contracts 与 elicit/signals 等，constants.py 十六面在册）、未跟踪任务包二十一件（非本批八件清单内，审计未指派，候归档批次裁）与引擎 trail 2026-09-05 未跟踪一件（事件流只追加面，候后继批随批收编）与数学仓 __pycache__ 一件（构建残渣候清理令）。以上俱如实呈报不代清，收约后终读数见 scribe CALL-LOG 补笔行。
 
@@ -74,10 +74,19 @@ ask3 双门过（scrutinator ask3 包退出码零；ask3repeater status ok 三�
 1. 双仓变三仓：任务包验收标准写双仓 settle，但 F-1 判据为所属仓 commit 号在档，八件中数学仓占三件，故租约按三仓先例（docmath 各批与 mathprobe 与 mathreg 三仓形）开立，三仓 settle 加 close 加 reconcile 加 verify 全跑。
 2. scribe/CALL-LOG.md 一笔未随批：redkeep-solo 批（先于本批开工）持该路径 exclusive 锁，按 viewline 与 idenlane-envelope 与 ledgerloss5 先例形移出本批 allow 面，收约后走 bypass 通道补笔。
 3. redkeep-solo.lease-check.json 即时新增：清点时点在途批收约产件，全族计数如实采三十七。
+4. 第六节工具仓批前计数误记更正：批首以截断视图（head 40 行）误记 61 件，收约补笔时实测工具仓 untracked 同量级现势 957 件俱豁免面活写件，本补笔行更正并如实申报（先红留痕纪律同精神：误记不清洗，更正在档）。
 
-## 十、收口读数
+## 十、收口读数（收约补笔回填）
 
-收约归并与 reconcile 与链 verify 与 watchcheck 终读数与 untracked 终计数落 scribe CALL-LOG 补笔行（第九节申报 2 通道），本档段2 settle 时点收口前读数：段1 三仓提交 fcb4887a 与 d32bcd9 与 0786e27，工作树洁净。
+- 收约：close 退出码零，revoked true，三仓归并零失败，worktree 三仓自拆、分支三仓自删；close 收据落 sih-engine/sih/state/plan/leftover-solo.lease-check.json（全族第 38 件，随 declguard 承接迁移）。
+- 归并提交：sih-tools a1d1d800d3821a806de3695da188c3429486f942、sih-engine 1564de150da30b99079aa54550fc1441034ed205、sih-math 1fe621f39871b0f7afccf96f541ecf02e5c5de24。
+- 八件终态：三仓主树对应路径已全部 tracked、零 untracked（tools 1 路径、engine 6 路径、math 3 路径逐路径 git ls-files 核实在案）。
+- reconcile：三仓 unrouted 全零；cert_missing tools 1 与 math 2 俱批前既有（docmath-b4 时代同值在案），本批零新增；本批零 bypass 笔。
+- 链 verify：主树正典二进制读数 status valid，158 事件。
+- watchcheck 终读数：净态退出码零，无主修改零处（批前唯一无主件即本批第八件，归正即消）。
+- untracked 终计数（如实）：工具仓 957、引擎仓 69、数学仓 2，俱豁免面活写件与 lease-check 族与未跟踪任务包（第六节逐类构成在案）；本批八件路径零残留。
+
+本档段2 settle 时点收口前读数：段1 三仓提交 fcb4887a 与 d32bcd9 与 0786e27，段2 引擎 48fa368 与工具 e06e1fac，工作树洁净。
 
 ## 十一、关联文件
 
