@@ -53,3 +53,10 @@ facet 合同模式：gid m-declguard-gate-1，九发亲笔回填（温度零谱�
 - 材料：sih-engine/sih/event/plan/declguard-solo-materials/（TDD 红证复原件、一裁 boundary 计分材料、管线报告）
 - 一裁工件：sih-tools/facet/contracts/declguard-260906/m-declguard-gate-1/（topic 与合同与九发响应与计分材料）
 - CALL-LOG 双笔：sih-tools/lease/CALL-LOG.md（随批）、sih-tools/scribe/CALL-LOG.md（认领通道收约后 bypass 补笔）
+
+## 十、收尾补做（主会代补，2026-09-07，shell 故障阻断四件闭卷） {#closure-main}
+
+- 终对账与链终读数（阻断件一）:双仓 reconcile unrouted 0 与 unbypassed 0 亲核在案;链 verify 主树二进制 2026-09-07 当日链 valid（事件数随批后写入增长至 32，时戳严格单调亲核即链铸时戳生产读数）
+- §九更正（阻断件三）:close 首试实况为 --ack-uncommitted 所认领路径落在差集外触发 unknown_acks 拒（认领差集外即拒，反乱认方向活体触发在案），随后零差集放行——原文「认领放行」表述照实更正为本句，闸行为零缺陷且反向防护实证
+- watchcheck 终态（阻断件四）:2026-09-07 复跑净态无主零处，退出码零
+- CALL-LOG 补笔与 bypass 登记（阻断件二）:主会代补 scribe 与 lease 两笔，c0d48b2b 持锁窗已过锁面归零后落笔
