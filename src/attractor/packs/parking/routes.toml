@@ -5,6 +5,11 @@ fields = ["id", "path", "state"]
 route_on_fail = "scrap_track"
 
 [[predicates]]
+id = "P104"
+kind = "gate_hold"
+route_on_fail = "siding"
+
+[[predicates]]
 id = "P102"
 kind = "time_deadline"
 route_on_fail = "siding"
