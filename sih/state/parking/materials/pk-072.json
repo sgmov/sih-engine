@@ -1,0 +1,21 @@
+{
+  "action": "enter",
+  "context": "令源：closefix-solo 批 2026-09-06 活体验收首跑发现。缺陷：close_session 的 append_event（core.py）函数体内延迟 import ledgerwrite——当收约代码自工地执行（新机械自举调用形即合并前主树仍载旧版须自工地跑 close）且工地被本进程 worktree remove 自拆后，sys.modules 未载 lease.ledgerwrite 即 import 机械访问已删除的源码树，抛 ModuleNotFoundError 未被 cli 例外族捕获即零 stdout 静默退出。后果：revoked 行未落、会话暂不吊销、零读数；零数据损失（双仓归并与拆本删支俱成），复跑幂等收敛在证（already_gone 收敛 revoked 落账）。该延迟 import 形系 pk057fix 既有形态非 closefix-solo 批引入，自举调用形使其可达。修法候选：ledgerwrite import 顶置 core 模块面（模块顶 import 无循环依赖风险）加回归夹具（自毁 cwd 下 revoked 行照落）。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-072",
+  "exit_condition": "修复批把 ledgerwrite import 顶置 core 模块面加回归夹具（工地自举调用形下收约全路径含 revoked 落账零静默退出），裁修即开小批裁缓即续泊",
+  "id": "pk-072",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "closefix-solo",
+    "pk057fix-solo"
+  ],
+  "source": "closefix-solo 批活体验收首跑钉死（结果档第九节根因段）",
+  "state": "parked",
+  "title": "收约尾部延迟 import 自毁 fragility（工地自举 close 自拆后 revoked 行未落）",
+  "ttl_days": 30
+}

@@ -90,9 +90,13 @@
 
 ## 九、收约读数（活体验收 F-1/F-2 生产实证）
 
-收约前主树台账活面未冻结（冻结避坑令已退役）：sessions.ndjson 与 locks.ndjson 与 bypass.ndjson 三台账带未提交活行直入收约。收约读数（走新机械 lease 1.27.0）：
+收约前主树台账活面未冻结（冻结避坑令已退役）：sessions.ndjson（762 行含未提交活行）与 locks.ndjson（5903 行）与 bypass.ndjson（158 行）三台账带脏直入收约，tools 未跟踪 915 项加 engine 未跟踪 47 项在盘，双仓 stash 俱空。
 
-（本节随收约补笔回填，先例 idenlane-guard 同形。）
+自举形：主树在合并前仍载 1.26.0 即收约代码须自工地执行（新机械即工地 1.27.0，--root 与 --ledger 与 --locks 显式指主树正身位，resolve_root 双仓祖先搜上回真根）。
+
+首跑（工地执行）读数：双仓归并俱成（tools merge 1a99d017 与 engine merge c1c12a4）即预收提交最小化兑现（engine 仅固化任务包一件 778af31 即面内未跟踪同内容让位后 checkout 入 index 的机械结果，内容逐字节同零损失）、双工地拆、双分支删、stash 零新增；但 revoked 行未落即进程静默退出零 stdout——根因钉死为 append_event 函数体内延迟 import ledgerwrite 在工地自拆后 sys.modules 未载该模块即 import 机械访问已删除源码树抛 ModuleNotFoundError（未被 cli 例外族捕获即零输出退出）；该延迟 import 形系 pk057fix 既有形态非本批引入，本批自举调用形使其可达，登记 pk-072 承载修复（import 顶置加回归夹具）；影响面即会话暂不吊销加零读数，零数据损失，复跑幂等收敛。
+
+二跑（主树执行即合并后 1.27.0 在役）读数：revoked=true 双仓 already_gone 收敛，revoked 行 15:41:17 落账（762→763 即 issued 1 加 revoked 1），收约凭据 closefix-solo.lease-check.json 转写；收约毕对表：sessions 763 行、locks 5916 行（含本批 13 取 13 放）、bypass 158 行、trail 2026-09-05 137 行 2026-09-06 69 行零损、tools 未跟踪 915 项 engine 未跟踪 46 项（任务包一件经 merge 转跟踪即净减一）零离盘、双仓 stash 仍空——F-1 台账活行零丢失与 F-2 未跟踪件零离盘俱获生产实证。
 
 ## 十、F 表自检
 
