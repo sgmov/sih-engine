@@ -1,0 +1,90 @@
+{
+  "batch": "halfmerge-solo",
+  "date": "2026-09-06",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "state/plan/halfmerge-solo.md",
+      "exit_code": 0
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "state/plan/kernelmerge-solo.md",
+      "exit_code": 0
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "state/plan/kernelmerge-solo-prompt.md",
+      "exit_code": 0
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "event/plan/halfmerge-solo-results.md",
+      "exit_code": 0
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "state/plan/halfmerge-solo.md",
+      "exit_code": 0,
+      "note": "工地路径经域解析命中，零违规"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "state/plan/kernelmerge-solo.md",
+      "exit_code": 0,
+      "note": "同上"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "state/plan/kernelmerge-solo-prompt.md",
+      "exit_code": 0,
+      "note": "同上"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "event/plan/halfmerge-solo-results.md",
+      "exit_code": 0,
+      "note": "同上"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "四件 md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "elicit": {
+    "check_exit": 1,
+    "signals": 5,
+    "digest": "passed",
+    "covered": 5
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest",
+    "anomalies": 0,
+    "identity_hash": "4678be6530d62ced7c7ec76fb46bbeeb79d8f246cff1ceb4338a72b5697498f2"
+  },
+  "measurement": {
+    "emit_contract": "exit 0, 9 shots, seat ZCode:GLM-5.3:self-reported, ng medium",
+    "seat_calibration": "temp_probe agent 模式批内自跑，四命题二十发全一致，knife bdy 1.0 检出，判定可用",
+    "score": "exit 0, 9 实写 0 voids, gate stable_clear",
+    "assemble": "exit 0 (baseline 携当日席位基线)",
+    "check": "exit 0, direction comply, 裁决通过",
+    "verify": "exit 0, identical",
+    "sign": "crosscheck_completed 2a7d0e0e (event f704cade) 在链"
+  }
+}
