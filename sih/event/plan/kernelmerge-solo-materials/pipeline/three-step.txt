@@ -1,0 +1,43 @@
+=== 化格核阅检词三步读数 ===
+BATCH=kernelmerge-solo DATE=2026-09-06
+域外声明：predkernel 是 Rust 源码（.rs 扩展），des-001 / general-v1 / core 域均仅盖 .md/.json/.yaml/.yml/.toml 等文档格式
+三步对 Rust 源码呈域外 exit-2 标记，按 des-001 域规则'域外目标 exit-2 如实记入档不属违规'
+
+=== src/predkernel/mod.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=0 findings=0
+
+=== src/predkernel/glob.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=0 findings=0
+
+=== src/predkernel/error.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=0 findings=0
+
+=== src/scrutinator/rule.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=0 findings=0
+
+=== src/attractor/route.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=1 findings=2
+
+=== src/lib.rs ===
+fmt: exit=2 changes=0 lines=0 mismatches=1
+scru: exit=2 findings=0 mismatches=0
+nom: exit=0 findings=0
+
+=== route.rs findings 详情 ===
+line=371 word=轮级 rule=lazy_in_doc source=PRO-007 簇一两族配置名 severity=medium
+line=860 word=轮级 rule=lazy_in_doc source=PRO-007 簇一两族配置名 severity=medium
+
+归并前后 '轮级' 字样数对比：
+  worktree (归并后): 2
+  main    (归并前): 2
+归并前后数量一致 = pre-existing 现象,本批未引入

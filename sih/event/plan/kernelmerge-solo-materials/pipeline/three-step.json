@@ -1,0 +1,16 @@
+{
+  "engine": {
+    "name": "sih-engine",
+    "kind": "pipeline-report",
+    "version": "0.1.0"
+  },
+  "report": {
+    "name": "three-step-v2",
+    "summary": "v2 三步对 predkernel Rust 源码域外 exit-2,route.rs 2 pre-existing findings 归并前后各 2 次一致",
+    "content_sha256": "109d72ba867db5f21b2f1a20853bb6d670130a57e8ca941c80be7d991e978ab7",
+    "bytes": 835
+  },
+  "pipeline_step": "three-step-v2",
+  "batch": "kernelmerge-solo",
+  "date": "2026-09-06"
+}

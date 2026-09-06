@@ -1,0 +1,193 @@
+{
+ "inventory": "lease-check 全族清点（leftover-solo T-3，只清点零迁移零清理）",
+ "count": 37,
+ "items": [
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/archpark-solo.lease-check.json",
+   "bytes": 381
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/basisunion-solo.lease-check.json",
+   "bytes": 383
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/billwire-solo.lease-check.json",
+   "bytes": 381
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/closefix-solo.lease-check.json",
+   "bytes": 381
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/constmodel-solo.lease-check.json",
+   "bytes": 262
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/docmath-anchor-registry.lease-check.json",
+   "bytes": 270
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/docmath-namefit-solo.lease-check.json",
+   "bytes": 388
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/gateswitch-solo.lease-check.json",
+   "bytes": 324
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/genpark-solo.lease-check.json",
+   "bytes": 318
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/gvec-v2-serial.lease-check.json",
+   "bytes": 319
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/halfmerge-solo.lease-check.json",
+   "bytes": 306
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/idenlane-envelope-solo.lease-check.json",
+   "bytes": 331
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/idenlane-guard-solo.lease-check.json",
+   "bytes": 387
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/idenlane-human-solo.lease-check.json",
+   "bytes": 328
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/idenlane-solo.lease-check.json",
+   "bytes": 322
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/kernelmerge-solo.lease-check.json",
+   "bytes": 384
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+   "bytes": 336
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+   "bytes": 332
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+   "bytes": 331
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseoptsettle-solo.lease-check.json",
+   "bytes": 328
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseup-solo.lease-check.json",
+   "bytes": 380
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/leaseupclose-solo.lease-check.json",
+   "bytes": 323
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/ledgerhyg-solo.lease-check.json",
+   "bytes": 382
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/ledgerloss5-solo.lease-check.json",
+   "bytes": 384
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/modou-namefit-solo.lease-check.json",
+   "bytes": 323
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/openhyg-solo.lease-check.json",
+   "bytes": 321
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/parkrecon-solo.lease-check.json",
+   "bytes": 323
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/pk057fix-solo.lease-check.json",
+   "bytes": 322
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/pkexits-solo.lease-check.json",
+   "bytes": 321
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/redkeep-solo.lease-check.json",
+   "bytes": 380
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/regula-rename-solo.lease-check.json",
+   "bytes": 327
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/regulamath-solo.lease-check.json",
+   "bytes": 383
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/rootanchor-solo.lease-check.json",
+   "bytes": 383
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/toolincub-solo.lease-check.json",
+   "bytes": 382
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/viewline-solo.lease-check.json",
+   "bytes": 322
+  },
+  {
+   "repo": "sih-engine",
+   "path": "sih-engine/sih/state/plan/watchcheck-solo.lease-check.json",
+   "bytes": 324
+  },
+  {
+   "repo": "sih-math",
+   "path": "sih-math/sih/event/plan/gvecmath-solo.lease-check.json",
+   "bytes": 381
+  }
+ ],
+ "handoff": "处置权移交 declguard-solo（声明守卫批）：写位迁移 lease/ledger/receipts/ 单一目录 + SCOPE_SHARED_SURFACE 白名单登记 + 本清单 36 件存量一次迁入。leftover-solo 按协同条款零迁移。",
+ "note": "工作区根 rglob 全扫（排除 sihankor 旧仓与 worktrees 工地副本），扫描时间 2026-09-06T16:31Z 前后；批前 watchcheck 代理审计盘点为 36 件，扫描时点 redkeep-solo 批刚收约新增第 37 件（redkeep-solo.lease-check.json），在途批产收据即时在册即全族如实计数。"
+}

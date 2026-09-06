@@ -1,0 +1,37 @@
+{
+ "evidence": "rootanchor 双工地半拆查实证据链（leftover-solo T-2）",
+ "sessions": [
+  {
+   "session_id": "f8c7e4c3536ef8cc",
+   "issued_at": "2026-09-06T11:01:12+00:00",
+   "revoked_at": "2026-09-06T11:01:39+00:00",
+   "note": "27 秒首会话，revoked 行含 removed 数组"
+  },
+  {
+   "session_id": "ba7aa2b83fbb90f8",
+   "issued_at": "2026-09-06T11:02:36+00:00",
+   "revoked_at": "2026-09-06T11:06:40+00:00",
+   "note": "正式批会话，revoked 行含 removed 数组，worktree_result=removed 两仓 branch_result=deleted"
+  }
+ ],
+ "git_side_teardown_complete": [
+  "git worktree list 双仓 rootanchor 零注册（拆除前后复核一致）",
+  "msh/rootanchor-solo 分支双仓已删（branch -a 零命中）",
+  ".git/worktrees 管理目录双仓零 rootanchor 残留（仅 redkeep-solo→现势 sddpacks-solo 在册）",
+  "locks 台账现势 rootanchor 零 active 锁（拆除前复核 2026-09-06T16:4xZ）"
+ ],
+ "disk_residue": {
+  "worktrees/sih-tools/rootanchor-solo": [
+   "BATCH-FACE.md（2674B，rootanchor 勘误节双份，非主树 31259B 全文）",
+   "sih-tools/scribe/reports/ask3 record+validation（与主树同名件 cmp 逐字节 IDENTICAL）"
+  ],
+  "worktrees/sih-engine/rootanchor-solo": [
+   "sih/event/plan/rootanchor-solo-results.md（与主树 tracked 版 DIFFER，主树 11:32UTC 较新）",
+   "sih/event/plan/rootanchor-solo-materials/ 三件（与主树同名件 DIFFER，主树 11:24UTC 较新）"
+  ]
+ },
+ "residue_mtime": "2026-09-06T11:07Z（晚于吊销 11:06:40Z）",
+ "verdict": "git 侧拆除完整（注册/分支/管理目录三清，revoked 行如实）；盘面残片系拆除后写入再创造的孤儿件，非 close 半失败在 git 侧。写入者带工地自举形路径错根特征：同批四件材料 recall-topic.md 落主树、三件落工地形路径的分裂实证；残片 BATCH-FACE.md 勘误节双份重复亦为写入期混乱痕迹。深层成因与 rootanchor 批自述病史同类（worktree prune/close 同步竞态，results 档 74/146 行在案），叠加同窗 kernelmerge/billwire 并发批。",
+ "zero_silent_discard": "残片 7 件整体留档本目录 rootanchor-worktree-remnants/（拆前 cp -R），主树均有较新或等同版本；残片段落与主树差异属早 drafted 中间稿，零独有内容丢失",
+ "teardown": "2026-09-06 拆除双目录，worktree list 复核净态（rootanchor 零注册零目录）"
+}

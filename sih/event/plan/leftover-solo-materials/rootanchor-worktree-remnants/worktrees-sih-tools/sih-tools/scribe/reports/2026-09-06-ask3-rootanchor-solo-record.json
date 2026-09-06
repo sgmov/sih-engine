@@ -1,0 +1,87 @@
+{
+    "session_id": "sess-zcode-260906-rootanchor",
+    "raw_input": "用户 2026-09-06 令「修」,承主会 billwire-solo 验收定性:活体账单随工地蒸发(同坑第三批)、本批链证为零、交付声明与实态不符连续两批。rootanchor-solo 批 T6 单线 solo 委外代理亲写零子代理。任务包 sih-engine/sih/state/plan/rootanchor-solo.md 唯一规格源。T-1 位置锚换根 + T-2 自举自卫 + T-3 链证守门 + T-4 真形态夹具 + T-5 billwire 补证 + T-6 判定语义一裁 + T-7 全测零回归与双仓 settle close reconcile verify。",
+    "round": 1,
+    "intent_contract": {
+        "goal": "rootanchor-solo 批 leaseup 线第三批位置锚与链证两缺口一次钉死:T-1 根锚发现(台账与账单位经工作区根发现函数解析 tool_dir 降回退位+告警)+ T-2 自举自卫(CLI 入口自检工地 cwd 硬拒 exit 2 零读写 三参显式全传放行 旁路 env 可用)+ T-3 链证守门(close 前核本会话在正典链上有 intent_refined + certification_completed 笔 跨日查 缺即拒 报文指明缺笔类 直改车道零影响)+ T-5 billwire 补证(意图笔按 ask3 记录补落正典链 补录事实如实不伪造 认证笔能补尽补缺则如实申报 账单三事件 open_face_bill 3pts + lock_free 0pts + lock_charged 1pts 按报告在案重放落主树 lockface-bills.ndjson 带 repair 标记 锁表同笔)+ 判定语义自举硬拒与链证守门属行为变更共过一裁(facet 合同模式 九发 stable_clear near_threshold 呈用户转主会不自行终签)+ 183 基线全绿零回归+ 五前批交付零动(closefix 并集归并 + openhyg + 批C + leaseup + billwire 接线)+ 本批活体三证落档不粉饰(主树账单有本批笔 + 链上本批意图与认证 + close 过守门)+ 双仓 settle close 加你的新守门 + 你的批材料必须落档(不重蹈空目录)",
+        "exclusions": [
+            "一裁红线:自举硬拒与链证守门属行为变更共过一裁 facet 合同模式 九发 stable_clear near_threshold 呈用户转主会不自行终签",
+            "台账行格式零变更;sessions 与 locks 与 bypass 零改面;ledgerwrite 唯一写点零动;补证重放带 repair 标记不伪装原笔;补录时序如实不伪造",
+            "引擎零改动(链位 scribe --trail 显式传参既定);五前批交付零回归(closefix 并集归并与 openhyg 与批 C 与 leaseup 与 billwire 接线)",
+            "范畴排除未裁五项不动:T-9 执法位 与 四陈旧会话销账 与 wenguobs 双写 与 locks 镜像 与 T-10 乙案",
+            "scribe 裸调逐笔 grep 禁 meter 包裹掩败;退出码真值核禁管道掩(当日掩败家族三连咬教训)",
+            "本批活体即考试:批自身账单必须落主树正典位、正典链上必须有本批意图与认证笔、close 必须过自己装的守门——三样缺一样即 F 不及格如实申报不粉饰",
+            "收约走 closefix 新机械加本批新守门;任务包绝对路径;des-001 域外 exit-2 如实记",
+            "billwire 工地材料目录空在案:本批材料必须落档不重蹈空目录"
+        ],
+        "output_format": "ask3 记录与验证件、叩问信号与 digest、正身件、租约开收约与锁实录、书简意图裸调 grep、例行读数与泊界心跳、TDD 先红后绿与全测试族读数、活体三证读数(主树账单逐笔 + 链上意图与认证笔哈希 + close 守门通过读数)、billwire 补证读数(补了什么 + 缺口申报什么)、一裁读数、F-1 至 F-6 逐条判定、CONTRACT 修订与 BATCH-FACE 坑位更新、链 verify 读数、reconcile 读数、结果档 rootanchor-solo-results.md 与 materials/(本批材料必须落档)、完工报告",
+        "injected_constraints": [
+            "工程基线第一条确定性程序是治理唯一执行者:根锚发现与自举硬拒与链证守门都是机械实装不靠代理自觉,三参旁路仅作测试与复盘合法形",
+            "工程基线第二条信息洪流是旧仓失败根因:工地定位陷阱三连(openhyg 活体验收、leaseup 自举窗、billwire 本体)即工地自举形下 tool_dir 解析致台账与账单落工位即蒸发,根锚换根闭合",
+            "工程基线第四条可验证性:本批活体即考试即真跑 lease open + lock + close 看主树 lockface-bills.ndjson + 链上本批意图与认证笔 + close 过自己装的守门,三证俱在方为 F 过",
+            "PRO-07 鉴映照:真形态夹具即工地代码副本内跑 CLI(非主树代码加工地 cwd 的模拟形),billwire 夹具全绿而生产照坑即测错形态",
+            "PRO-08 应不触发鉴:补证重放带 repair 标记如实记即重放非原笔,补录时序如实不伪造,缺口如实申报不粉饰"
+        ]
+    },
+    "domain_contract": {
+        "target_domain": {
+            "scope": "sih-tools/lease/src/lease/(core.py 与 cli.py 与 lockcore.py 若及)与 CONTRACT.md 与 CALL-LOG.md 与 sih-tools/lease/tests/(test_rootanchor.py 真形态夹具 与 conftest.py 自举硬拒旁路)与 sih-tools/lease/ledger/lockface-bills.ndjson(本批活体账单 + billwire 三事件重放随批落)与 sih-tools/lease/ledger/sessions.ndjson 与 locks.ndjson 与 bypass.ndjson(全经根锚发现函数解析非 tool_dir)与 sih-tools/BATCH-FACE.md(坑位更新)与 sih-engine/sih/event/plan/rootanchor-solo-results.md 与 materials/(本批材料必落档) 与 sih-tools/scribe/CALL-LOG.md 与 sih-engine/sih/event/trail/2026-09-06.ndjson(本批意图与认证笔与补证意图笔)",
+            "max_depth": 1
+        },
+        "support_domain": {
+            "scope": "任务包 sih-engine/sih/state/plan/rootanchor-solo.md(唯一规格源只读)与 billwire-solo-results.md(主会验收定性:活体账单随工地蒸发同坑第三批与链证为零连续两批只读)与 idenlane-guard-solo-results.md(T-10 甲案材料只读)与 openhyg-solo-results.md(工地定位陷阱先例一 只读)与 leaseup-solo-results.md(工地定位陷阱先例二 越线申报二只读)与 closefix-solo-results.md(并集归并机械只读)与 sih-tools/proposition/DES/m-leaseup-bill-1/(前裁 m-leaseup-bill-1 终签 1fda6a88 承前裁只读)与 sih-tools/scribe/reports/2026-09-06-ask3-billwire-solo-record.json(billwire 意图笔按此补录只读)与 sih-philosophy/emanation/proodos/07-on-assay.md 与 08-on-settle.md(哲学引文原文逐字节子串只读切片)",
+            "max_depth": 1
+        }
+    },
+    "anchors": [
+        {
+            "anchor_seq": 1,
+            "text": "T-1 根锚发现与 T-5 billwire 补证是鉴的映照位:根锚从仓 git toplevel 向上找 AGENTS.md 标记单实现回退加告警(零隐式默认),billwire 三事件按报告在案读数(open_face_bill 3pts + lock_free 0pts + lock_charged 1pts)重放带 repair 标记不伪造原时序,补录事实如实入档;链上 0 billwire 笔如实申报零",
+            "inquiry_stage": "first",
+            "domain_tag": "target",
+            "depth": 0,
+            "rationale": "鉴要求检验只反映事实不投射判断:根锚发现函数可验证(回退路径加告警),billwire 补证事实可核(报告字段照录加 repair 标记),链上零笔如实申报不粉饰;台账行格式零变更即 append-only 历史行零改写。",
+            "confidence": 0.95,
+            "philosophy_ref": {
+                "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+                "quote": "司衡的鉴要求：检验时只反映事实（这段代码做了什么），不投射判断（这段代码\"应该\"做什么）。判断是治理动作（法/术），不是认识动作（鉴）。"
+            },
+            "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:67"
+        },
+        {
+            "anchor_seq": 2,
+            "text": "T-2 自举硬拒与 T-3 链证守门是应不触发鉴的边界:自举硬拒工地 cwd 三参未全传即 exit 2 零读写先于任何副作用(旁路 env 可用 ROOTANCHOR_DISABLE_SELF_BOOT=1 测试与复盘合法形),链证守门 close 前核本会话在正典链上有 intent_refined 与 certification_completed 笔缺即拒报文指明缺笔类(直改车道与无租约形零影响),二者皆工程基线四可验证性承载与工程基线一确定性程序承载",
+            "inquiry_stage": "first",
+            "domain_tag": "target",
+            "depth": 0,
+            "rationale": "应不触发鉴:自举硬拒与链证守门是契约与机械承载不投射判断,工地定位陷阱三连(openhyg/leaseup/billwire)即旧仓失败根因(信息洪流承工程基线二),直改车道零影响即不波及人节点指令通道(承工程基线五治理延伸);两守门共过一裁(判定行为变更)facet 合同模式九发 stable_clear near_threshold 呈用户转主会不自行终签。",
+            "confidence": 0.95,
+            "philosophy_ref": {
+                "source": "sih-philosophy/emanation/proodos/08-on-settle.md",
+                "quote": "在道家语境中，\"应\"特指\"应而不藏\"的姿态——回应而不隐藏。"
+            },
+            "evidence": "sih-philosophy/emanation/proodos/08-on-settle.md:36"
+        },
+        {
+            "anchor_seq": 3,
+            "text": "T-4 真形态夹具与本批活体即考试是机械先于自律的落点:真形态夹具即工地代码副本内跑 CLI(非主树代码加工地 cwd 模拟,billwire 夹具全绿而生产照坑即测错形态),本批活体三证在档方为 F 过(主树账单有本批笔 + 链上本批意图与认证 + close 过自己装的守门),缺一样即 F 不及格如实申报不粉饰",
+            "inquiry_stage": "first",
+            "domain_tag": "target",
+            "depth": 0,
+            "rationale": "鉴要求检验只反映事实不投射判断:真形态夹具即判定面集中(真形态 vs 模拟形),活体三证即判定基准走真跑(非理论非 mock);机械先于自律即确定性程序消除掷骰子窗口,三守门共过一裁(basisunion 已在役,本批纯实装承前裁同源)+ 旁路 env 可用即自测与复盘合法形承载。",
+            "confidence": 0.92,
+            "philosophy_ref": {
+                "source": "sih-philosophy/emanation/proodos/07-on-assay.md",
+                "quote": "司衡的鉴要求：检验时保持\"虚\"（不预设立场）和\"静\"（不急于下判断）。验证报告应只列事实，不列\"应该怎样\"的建议——建议是法的范畴，不是鉴的范畴。"
+            },
+            "evidence": "sih-philosophy/emanation/proodos/07-on-assay.md:55"
+        }
+    ],
+    "calls_in": 0,
+    "calls_out": 0,
+    "elicitation": {
+        "signals_file": "sih-tools/scribe/reports/2026-09-06-rootanchor-solo-elicit-signals.ndjson",
+        "signals": 0,
+        "disposition": []
+    }
+}

@@ -1,0 +1,98 @@
+{
+ "batch": "leftover-solo",
+ "session": "3f4c69f5433bd358",
+ "date": "2026-09-06",
+ "stage": 1,
+ "routine_readings": {
+  "gauge_record": {
+   "exit": 0,
+   "dims": {
+    "convergence": 0.375,
+    "adoption": 0.777778,
+    "mergeback": 0.038462
+   },
+   "event_hashes": [
+    "3dec57256b0b6cb0d0f7743402ebbac4325b80aa4d57ac7621669416b485963b",
+    "e8d6cc16eb766bb0722b3b0e6ecfd3d030d21252f3cc47847e47bb5a6989fc42",
+    "855278d2ad19336bbd7aba3331b9bddba75f95a19d996d898f7105b128f2acde"
+   ]
+  },
+  "parking_heartbeat": {
+   "tools_line": {
+    "exit": 0,
+    "alarms": 0,
+    "routes": "21 mainline + 1 siding (22件)"
+   },
+   "engine_line": {
+    "exit": 0,
+    "alarms": 0,
+    "routes": "46 mainline + 6 scrap_track (52件)"
+   }
+  },
+  "watchcheck_pre": {
+   "exit": 0,
+   "unowned": 1,
+   "item": "sih-tools/lease/.sih-tools/scribe/reports/2026-09-06-ask3-billwire-live-test-record.json（本批 T-1 第八件，归正即消）"
+  }
+ },
+ "chain_front": {
+  "ask3_double_gate": {
+   "scrutinator_ask3_exit": 0,
+   "ask3repeater_status": "ok"
+  },
+  "elicit_digest": {
+   "exit": 0,
+   "covered": 5
+  },
+  "identity": {
+   "anomalies": 0,
+   "status": "attest",
+   "identity_hash": "5a983dff43532103903eeeadb20606d32a42511f1c3dfcbc3ab3d46fbc6eba02"
+  },
+  "intent_event_hash": "68cfb8f800e32b1d2d3fdc451c36767377cbc512ccd326df034e1ef92e5ac8b9",
+  "locks": {
+   "count": 16,
+   "append": 3,
+   "exclusive": 13
+  }
+ },
+ "t1_homing": {
+  "sih-tools": [
+   "scribe/reports/2026-09-06-ask3-billwire-live-test-record.json（先归正自主树 lease/.sih-tools 嵌套错径位，与已认证 billwire ask3 记录 cmp 逐字节 IDENTICAL，链 record_hash 62218e03 对表一致）"
+  ],
+  "sih-engine": [
+   "sih/event/plan/kernelmerge-solo-materials/",
+   "sih/event/plan/kernelmerge-solo-results.md",
+   "sih/event/plan/kernelmerge-solo-results.json",
+   "sih/event/plan/idenlane-solo-results.md",
+   "sih/event/plan/idenlane-envelope-solo-results.md",
+   "sih/event/plan/docmath-task-package-2026-09-04.md"
+  ],
+  "sih-math": [
+   "probability/entries/PROB-018-data-processing-inequality-and-lossy-chain.md",
+   "probability/entries/PROB-019-gap-growth-dynamics.md",
+   "sih/event/plan/gvecmath-solo.md"
+  ]
+ },
+ "t2_teardown": {
+  "evidence_file": "rootanchor-teardown-evidence.json",
+  "remnant_files_archived": 7,
+  "worktree_list_after": "rootanchor 零注册零目录"
+ },
+ "t3_inventory": {
+  "file": "lease-check-family-inventory.json",
+  "count": 37,
+  "handoff": "declguard-solo"
+ },
+ "materials": {
+  "lease-check-family-inventory.json": "9ade6991fadc301eef85c18a8cc87bb66d6bebb8a37b096c9b08fe409cf43066",
+  "rootanchor-teardown-evidence.json": "24fe23d8884ff0099622ae8ba46269461c84466d3b480644901b807efd613799",
+  "billwire-replay-record.json": "7905d84e9f53bb71b9c600b1bb21fd3db43cc7bd6b662f3dbd612697bff3872d",
+  "pipeline-report.json": "3668599415ec1b980380905749bab4eb88859ad3b14eae5a37d07b673875a8d1",
+  "self-boot-and-chain-gate-evidence.json": "d55fcc9960370cb2361faa3c61270560d93f68be939c2324a8a06af067edc734",
+  "rootanchor-solo-results.md": "5c94183ac479260b3cda2706725c5485a614c58a7ee160cf007a4ec527fb2d93",
+  "BATCH-FACE.md": "f7bbf1cc4d6574e43804cf95c7f4c275eeb41111d0c240845722f12fd269d816",
+  "2026-09-06-ask3-rootanchor-solo-record.json": "67e68ca40739a314c9ca72d7fb3ea543e375ee7919922381fa4cdb4bf298d734",
+  "2026-09-06-ask3-rootanchor-solo-validation.json": "d0e1c2d951e70e630d0499fc1877714759b96973f45b1baa8bd37a744d151388"
+ }
+}

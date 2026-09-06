@@ -1,0 +1,369 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "scribe/trail/**",
+        "PARKING-v1.md",
+        "parking/**",
+        "../sih-engine/parking/**",
+        "../sih-engine/doc/governance/PARKING-v1.md"
+      ]
+    },
+    "pack": {
+      "name": "parking",
+      "version": "0.2.0"
+    },
+    "reference_time": "2026-09-02",
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-026",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-027",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-027",
+      "parking": true,
+      "path": "parking/records/pk-027-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-029",
+      "parking": true,
+      "path": "parking/records/pk-029-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-030",
+      "parking": true,
+      "path": "parking/records/pk-030-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-031",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-031",
+      "parking": true,
+      "path": "parking/records/pk-031-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-032",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-032",
+      "parking": true,
+      "path": "parking/records/pk-032-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-033",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-033",
+      "parking": true,
+      "path": "parking/records/pk-033-enter.json",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-034",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-034",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-035",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-035",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-036",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [],
+    "mainline": 16,
+    "scrap_track": 0,
+    "siding": 0,
+    "total": 16
+  }
+}

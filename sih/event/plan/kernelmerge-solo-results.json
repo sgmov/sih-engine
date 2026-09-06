@@ -1,0 +1,16 @@
+{
+  "engine": {
+    "name": "sih-engine",
+    "kind": "pipeline-report",
+    "version": "0.1.0"
+  },
+  "report": {
+    "name": "results",
+    "summary": "结果档 11 节含退出码表、零漂移判据、实装摘要、工程妥协披露、批材料清单、settle 提交号、链 verify、对账、误差申报、收口读数、遗留事项",
+    "content_sha256": "496473c4307b41e5a0f1507e908aa3b01b8d388af9c182e33429806731b0ecc5",
+    "bytes": 9353
+  },
+  "pipeline_step": "results",
+  "batch": "kernelmerge-solo",
+  "date": "2026-09-06"
+}

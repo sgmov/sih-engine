@@ -1,0 +1,16 @@
+{
+  "engine": {
+    "name": "sih-engine",
+    "kind": "pipeline-report",
+    "version": "0.1.0"
+  },
+  "report": {
+    "name": "double-run",
+    "summary": "v2 双跑 20/20 cmp IDENTICAL,red 集合一致,predkernel 形式从属 scrutinator(工程妥协)",
+    "content_sha256": "eb7407d5f208102739fc7fbb72f4390be4d1ffe465ffde5ffe6c343235a4be42",
+    "bytes": 1333
+  },
+  "pipeline_step": "double-run",
+  "batch": "kernelmerge-solo",
+  "date": "2026-09-06"
+}

@@ -1,0 +1,59 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    },
+    {
+      "name": "des-001-mathe",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-math/calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-math/calculus/llm-friendly-build/entries/LIM-001-limit-mathematics.md": "3f3e71748f3f13ffdef71d7aba802c745847fe031a827564e8401ce9bf484150"
+  },
+  "findings": [],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 0,
+    "by_rule": {},
+    "by_pack": {}
+  }
+}

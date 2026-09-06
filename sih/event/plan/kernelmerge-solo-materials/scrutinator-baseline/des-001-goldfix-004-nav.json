@@ -1,0 +1,112 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    },
+    {
+      "name": "des-001-mathe",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md": "1912d05c8fc1927b080090227f1236ac8285809db45371eae9bdb70580bcc4fe"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "S002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全文仅允许一个一级标题"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "location": {
+        "line": 7
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "location": {
+        "line": 7
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「首 H2 必须「概览」」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "N002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "location": {
+        "line": 3
+      },
+      "message": "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "N002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/src/scrutinator/fixtures/corpus/goldfix-004-nav.md",
+      "location": {
+        "line": 9
+      },
+      "message": "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 5,
+    "by_rule": {
+      "S002": 1,
+      "S004": 1,
+      "S005": 1,
+      "N002": 2
+    },
+    "by_pack": {
+      "des-001": 5
+    }
+  }
+}

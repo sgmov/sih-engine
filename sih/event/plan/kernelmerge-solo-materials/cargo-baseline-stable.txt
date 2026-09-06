@@ -1,0 +1,6 @@
+scrutinator::tests::cli_positional_and_flag_forms_byte_identical --- FAILED
+scrutinator::tests::cli_positional_form_matches_golden --- FAILED
+scrutinator::tests::exit_compliant_zero --- FAILED
+scrutinator::tests::golden_des001_gov002 --- FAILED
+scrutinator::tests::multipack_attribution_pack_names --- FAILED
+test result: FAILED. 165 passed; 5 failed; 6 ignored; 0 measured; 0 filtered out; finished in 1.31s

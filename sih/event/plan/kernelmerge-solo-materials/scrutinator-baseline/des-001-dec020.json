@@ -1,0 +1,119 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    },
+    {
+      "name": "des-001-mathe",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+          "sih-math/**/topology/entries/*.md",
+          "sih-math/**/probability/entries/*.md",
+          "sih-math/**/order/entries/*.md",
+          "sih-math/**/algebra/entries/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/INDEX.md",
+          "**/README.md",
+          "**/mapping.md",
+          "**/agent-bootstrap-prompt.md",
+          "**/task-package-build-entries.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md": "4a34b8213196fea7547db352cbfc3a89bb9df24b065d6d5ec948edffa923e2e6"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 16
+      },
+      "message": "字符 U+2026 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 16
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 32
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/decision/020-deyi-component-naming.md",
+      "location": {
+        "line": 47
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 6,
+    "by_rule": {
+      "C002": 1,
+      "C006": 5
+    },
+    "by_pack": {
+      "des-001": 6
+    }
+  }
+}
