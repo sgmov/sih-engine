@@ -45,9 +45,10 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证（读数随认证实录补记） |
-| ask3 验证件 | 双门读数 | 书简认证（同上） |
-| 正身件 | 身份报告 | 书简认证（同上） |
+| ask3 记录 | 意图记录 | 书简认证 `b550a99a`（event_hash 前8） |
+| ask3 验证件 | 双门读数 | 书简认证 `04a101b1` |
+| 正身件 | 身份报告 | 书简认证 `54b7e812` |
+| 推导档 v2 | sih-math 载体档 | 内容哈希经 settle cert b550a99a 挂链（md 档不走 append，genpark 先例形） |
 | 一裁终签 | crosscheck_completed | `70af572e`（sign 落链，direction comply） |
 
 ## F 表
@@ -70,4 +71,9 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 三仓 settle：sih-math 工地提交 f358cf8、sih-tools 工地提交 7379387c、sih-engine 工地提交 16dd543（cert b550a99a，base main@5458255；engine 首跑 staged_out_of_scope 拦即 confconst-solo-prompt.md 不在 allow 表——剔除后重提即过，提示词留主树由 closeguard 预提交吸收，genpark 先例同形；另一次重跑因台账路径笔误零副作用如实记档）。
+- 放锁收约：十一路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（三仓归并、三工地与分支清除、会话 852ed37f5beef12e revoked、零失败）。
+- 链 verify：2026-09-07 当日链 valid 32 事件。
+- reconcile：三仓 exit 1 由历史账面项致（unrouted_tail 即 routed_merge 历史归并显示，math 104/tools 200/engine 200 行；cert_missing 存量与陈旧会话候后继台账卫生批），本批 unrouted 零新增，confmath 先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零（mainline 47／scrap 6 历史存量）；工具线 exit 0 告警零（mainline 21／siding 1 即 pk-042 校准窗在泊项）。
+- 收约补笔：本结果档回填（认证清单与结算读数）即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath 先例同形）。
