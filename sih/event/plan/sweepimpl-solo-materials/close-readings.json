@@ -1,0 +1,43 @@
+{
+  "close_receipt": {
+    "check_file_removed": "/Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/checks/sweepimpl-solo.json",
+    "receipt": "/Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/receipts/sweepimpl-solo.json"
+  },
+  "declaration_gate": {
+    "acks": [],
+    "exempt_conditional": [],
+    "gate": "declared_uncommitted",
+    "shared_surface_exempt": [
+      "sih-engine/sih/event/trail/2026-09-07.ndjson",
+      "sih-tools/scribe/reports/",
+      "sih-tools/identity/reports/"
+    ],
+    "uncommitted": [],
+    "unparsed": [
+      "sweepimpl-solo-materials/"
+    ]
+  },
+  "failed": [],
+  "removed": [
+    {
+      "base_branch": "integral-stage-build",
+      "branch": "msh/sweepimpl-solo",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepimpl-solo",
+      "worktree_result": "removed"
+    },
+    {
+      "base_branch": "main",
+      "branch": "msh/sweepimpl-solo",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/sweepimpl-solo",
+      "worktree_result": "removed"
+    }
+  ],
+  "revoked": true,
+  "session_id": "9920edf3eb4d4124"
+}

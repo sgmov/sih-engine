@@ -31,9 +31,9 @@
 | 件 | 认证 event_hash |
 |---|---|
 | 意图笔（intent_refined） | 03ce2f5e15de681c94da03209c0a4ef8036248a786850c2f5bb6d6640af56f2f |
-| 管线读数 pipeline-readings.md | （认证后回填） |
-| F-1/F-2 测试读数 f1-f2-test-sweep-readings.txt | （认证后回填） |
-| F-4 实态读数 f4-sweep-real-scan.json | （认证后回填） |
+| F-4 实态读数 f4-sweep-real-scan.json | 8b77f1d9e2c706cce08003881810c7ebf5c19a299ab44e539d280afbc8e04656 |
+| F-4 实态 fix 读数 f4-sweep-real-fix.json | 4b14671a86806fefd48ff76c79cb6b5c28e0845100cb4348dcd353782d95a146 |
+| 文档哈希清单（md/txt 件 JSON 面认证载体，载回填前草稿哈希） | 5699044eb5ef4e5a84fb35f3e34a55aff028a8194473afc971498f3ffc879c97 |
 
 ## 四、结算读数（收约后回填）
 
@@ -48,7 +48,9 @@
 1. 防搁浅守卫（设计细化，CONTRACT 修订四十六登记）：任务包 §2.2 停滞检验文件行判据 pid_dead 与 legacy_stale 即自清，实态首跑即证纯 pid 判死会误伤一切活批——检验文件 pid 载一次性 open 进程号，进程退出即 pid_dead 属结构性现象（本批自窗与彼时 basemgrimpl 窗俱 pid 死而会话活跃）。细化：window_session 仍在会话册活跃或仍持锁即候裁不自动清，人节点显式 takeover 或批自行复振；window_session 不在册不持锁即自清。守卫被实态 F-4 即时验证（自窗被拦，零自伤）。此为防误伤同源精神（§八四证取二）的检验文件面落点，非判定权扩张。
 2. 幻影候裁情形降净：证据不足其二不列报（含单证形），承 F-4 不误报与活批零触碰；实态活会话形（持锁+副本在+结果档草稿在案=单证）有专门测试钉死。
 3. scribe/CALL-LOG.md 未入 allow 面：活批 basemgrimpl-solo 独占持锁（open 预检拦截面，declguard viewline 先例形），移出 allow 面改认领通道；本批对该文件零改动，收约 --ack-uncommitted 认领事由留档；候而不扰全程零候叫动作（wait-turn 对会话 scope 外路径机械无效，scope_violation 必然，不强跑）。
-4. 收约补笔预期：结果档结算读数回填走 bypass 登记通道（anchwave/facepatch 先例同形）。
+4. 收约补笔即本节回填随结果档定形经 bypass 登记通道入版控（anchwave/facepatch 先例同形）；第三节文档哈希清单载回填前草稿哈希如实保留，回填后以本件正文自证。
+6. 邻批残面申报：basemgrimpl-solo 的 closeguard pre-close 提交 7d4f082 未经其批 bypass 登记落在对表窗内，本批不代登不代清，留其批或人节点处置（候而不扰）。
+7. 主树 lease 1.31.0 缺陷观察（非本批引入零触碰）：CONTRACT 修订四十三宣称的 close 前链证守门 chain_gate_check 在 close_session 无调用点（定义在 core.py:168），本批 close 实测未过该门；本批意图笔与认证笔俱在链，门若在位亦过。如实登记候后继批处置。
 5. 零命中检索：/tmp/lesweep-recall-topic.json 与 lesweep-recall-topic2.json（主会备妥）随材料入档，本批另跑 retriever recall 事件切面与 topic 切面两份。
 
 ## 六、队形验证

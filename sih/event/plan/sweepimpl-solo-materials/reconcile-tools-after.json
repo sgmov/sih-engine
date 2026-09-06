@@ -1,0 +1,1423 @@
+{
+  "base": "91d14d4f^",
+  "base_source": {
+    "boundary": "91d14d4f",
+    "kind": "seal_line",
+    "range_base": "91d14d4f^"
+  },
+  "first_routed": "2a9182a",
+  "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+  "summary": {
+    "bypass": 62,
+    "cert_missing": 1,
+    "routed": 243,
+    "routed_direct": 1,
+    "sealed": 0,
+    "session_orphan": 19,
+    "total": 409,
+    "unbypassed": 84,
+    "unrouted": 0
+  },
+  "unrouted_tail": [
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "1b98ba8",
+      "subject": "merge: sweepimpl-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "848a876",
+      "subject": "merge: basemgrimpl-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "4bec356",
+      "subject": "merge: parkgate-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "e2c83d8",
+      "subject": "closeguard-solo: pre-close working tree commit (parkgate-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "57c529f",
+      "subject": "merge: anchwave-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "39b128e",
+      "subject": "closeguard-solo: pre-close working tree commit (anchwave-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "09486ab",
+      "subject": "merge: facepatch-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "89e8fd5",
+      "subject": "closeguard-solo: pre-close working tree commit (facepatch-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "35d6abd",
+      "subject": "chainstamp-solo 收约凭据归家 receipts 正典位（包旁散位存量迁移，内容逐字保留；用户 2026-09-07 立策「残留不需人裁直接清」；"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "786696b",
+      "subject": "confrevise-solo 收约补笔：CALL-LOG 落笔（编排误差申报，先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "ac42903",
+      "subject": "merge: acceptorimpl-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "82e39d9",
+      "subject": "merge: confrulegate-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "7b406b7",
+      "subject": "closeguard-solo: pre-close working tree commit (confrulegate-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "e205938",
+      "subject": "declguard-solo 收尾 CALL-LOG 双笔代补（shell 阻断件，主会处置位）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "215f8ed",
+      "subject": "merge: confconst-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "a9955ac",
+      "subject": "closeguard-solo: pre-close working tree commit (confconst-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "60f7958",
+      "subject": "merge: declguard-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "790ffa4",
+      "subject": "closeguard-solo: pre-close working tree commit (declguard-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "2a36fbf",
+      "subject": "chainstamp-solo 收约补笔：BATCH-FACE 勘误四条（链铸时戳/写即回执与confirm/verify同cwd形/请求写入节逐路径）+ sc"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "f1498de",
+      "subject": "merge: checkerimpl-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "14e53b3",
+      "subject": "merge: confmath-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "d40f0b6",
+      "subject": "closeguard-solo: pre-close working tree commit (confmath-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "30b478b",
+      "subject": "leftover-solo scribe CALL-LOG 收约补笔：书简裸调四笔认证与意图笔 grep 读数与 md 拒笔如实记档（bypass 通道先例形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "b0e43e8",
+      "subject": "merge: sddpacks-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "a1d1d80",
+      "subject": "merge: leftover-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "228b7e7",
+      "subject": "closeguard-solo: pre-close working tree commit (leftover-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "814b16e",
+      "subject": "merge: redkeep-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "628a4b8",
+      "subject": "merge: toolincub-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "77881ac",
+      "subject": "regulamath-solo scribe/CALL-LOG.md 一笔：意图与三命题 facet 一裁与三仓 settle 收约补笔"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "3880450",
+      "subject": "merge: regulamath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "8abf4e2",
+      "subject": "merge: leaseupclose-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "85086a7",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseupclose-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "d229feb",
+      "subject": "merge: modou-namefit-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "0e6f45a",
+      "subject": "closeguard-solo: pre-close working tree commit (modou-namefit-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "29fa7f2",
+      "subject": "merge: ledgerhyg-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "2d87b4b",
+      "subject": "closeguard-solo: pre-close working tree commit (ledgerhyg-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "d295dc4",
+      "subject": "merge: rootanchor-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "48b94ae",
+      "subject": "merge: halfmerge-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "005aa42",
+      "subject": "closeguard-solo: pre-close working tree commit (halfmerge-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "7dd1280",
+      "subject": "BATCH-FACE 先红留痕纪律节直改入档：首跑红证必归档禁删（用户直改令，直改链笔 83a77535）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "0b9f4bd",
+      "subject": "merge: billwire-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "3a6765b",
+      "subject": "merge: leaseup-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "9ad7229",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseup-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "ecbde85",
+      "subject": "merge: gvecmath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "1a99d01",
+      "subject": "merge: closefix-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "5daac42",
+      "subject": "伤亡 7 行补录：七行俱逐字自 VCS 与收约备份恢复（ledgerloss5 §六盘点销账），链笔 1234b5b9；连带登记 wenguobs 历史双写行候"
+    },
+    {
+      "class": "routed_direct",
+      "date": "2026-09-06",
+      "detail": "7762ffdd",
+      "sha": "ab66aaa",
+      "subject": "idenlane-guard-solo 锁台账镜像复位:close 首跑让位盖版所伤 30 行复位(15 acquired 自 b69631d7 逐字+15 r"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "edc3226",
+      "subject": "merge: idenlane-guard-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "ea91a47",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-guard-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "6943032",
+      "subject": "merge: basisunion-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "5f2460a",
+      "subject": "closeguard-solo: pre-close working tree commit (basisunion-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "a2ad6f8",
+      "subject": "ledgerloss5-solo 收约后补笔:scribe CALL-LOG 一笔(viewline 先例形,gvec 独占持锁让位)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "5a7cf7f",
+      "subject": "ledgerloss5-solo 锁台账恢复直改笔:本批收约盖版所伤 29 行复位(26 行自 662ac8bb 逐字恢复+3 行 released 按 loc"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "db91a52",
+      "subject": "merge: ledgerloss5-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "0aca5f6",
+      "subject": "closeguard-solo: pre-close working tree commit (ledgerloss5-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "662ac8b",
+      "subject": "ledgerloss5-solo close 前活写面冻结直改笔:会话台账现态入 VCS(规避收约让位归并盖版缺陷第五笔同款触发,内容零改,候裁)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "03e4b5e",
+      "subject": "merge: gvec-v2-serial 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "8b49709",
+      "subject": "closeguard-solo: pre-close working tree commit (gvec-v2-serial)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "e4c77b0",
+      "subject": "无主 18 件处置 CALL-LOG 留痕（A 入 fe6af59a、B/C 删、watchcheck 复跑归零）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "fe6af59",
+      "subject": "无主 18 件处置 A 类：lease 测试夹具九件入版控（watchcheck 呈报清单候裁项，用户裁「入」）"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "5cba19e",
+      "subject": "台账补录三笔：watchcheck 两行（issued 逐字 + revoked 凭据重建）与 idenlane-envelope issued（逐字），链笔 "
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "cc0ef1b",
+      "subject": "merge: genpark-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "82a8874",
+      "subject": "closeguard-solo: pre-close working tree commit (genpark-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "6982509",
+      "subject": "archpark-solo 收约补笔：泊材料路由三字段补齐（先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "32204ed",
+      "subject": "merge: archpark-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "f0ecfb7",
+      "subject": "closeguard-solo: pre-close working tree commit (archpark-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "f09e174",
+      "subject": "merge: openhyg-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "b8556e0",
+      "subject": "closeguard-solo: pre-close working tree commit (openhyg-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "f943fbf",
+      "subject": "merge: idenlane-human-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "cc2f36c",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-human-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "82ba663",
+      "subject": "regula-rename-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "d977c4d",
+      "subject": "merge: regula-rename-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "3a7ad35",
+      "subject": "closeguard-solo: pre-close working tree commit (regula-rename-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "9ba3db8",
+      "subject": "merge: integral-stage-build 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "2b7b1ce",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-human-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "f165e0a",
+      "subject": "watchcheck-solo 收约补笔：scribe CALL-LOG 一笔（意图 b9808ea8 与读数三笔与认证六笔实录，F-5 boundary 候裁"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "17ec7a3",
+      "subject": "merge: watchcheck-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "e8d632d",
+      "subject": "closeguard-solo: pre-close working tree commit (watchcheck-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "e9dc3cf",
+      "subject": "closeguard-solo: pre-close working tree commit (watchcheck-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "e00edcc",
+      "subject": "gaugecontrib-gd2-solo: contrib 判据面由推断式（gd-1）重构为构造式（gd-2）"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "206ec6e",
+      "subject": "docmath-namefit-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "2de9dc3",
+      "subject": "merge: docmath-namefit-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "682d243",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-namefit-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "c8861e9",
+      "subject": "constmodel-solo 台账两行补录直改笔（ledger-repair --source 来源声明扩展 + CONTRACT 修订三十七 + 会话 92"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "2c202aa",
+      "subject": "merge: pk057fix-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "59c48b2",
+      "subject": "closeguard-solo: pre-close working tree commit (pk057fix-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "c53f362",
+      "subject": "closeguard-solo: pre-close working tree commit (pkexits-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "90d2552",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-envelope-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "ebb8c62",
+      "subject": "viewline-solo CALL-LOG 双笔 bypass 补笔（gateswitch 独占持锁移出 allow 面先例形）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "c47eef8",
+      "subject": "closeguard-solo: pre-close working tree commit (viewline-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "a5845ce",
+      "subject": "gateswitch-solo: CALL-LOG 三笔收约补笔（scribe 终签与认证链加 lease 全链序加 facet 拨闸），bypass 通道显式"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "16fe4b7",
+      "subject": "merge: gateswitch-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "6777cef",
+      "subject": "closeguard-solo: pre-close working tree commit (gateswitch-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "62880ed",
+      "subject": "gateswitch-solo: 测量飞轮 trail 与计分材料与 signcheck（DES/gateswitch-switch-2，measure.py "
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "e623317",
+      "subject": "idenlane-envelope-solo 收口补笔 CALL-LOG 双笔留痕"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "ec76229",
+      "subject": "merge: idenlane-envelope-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "b679086",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-envelope-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "40e7cf8",
+      "subject": "idenlane-envelope-solo 段1 idenlane-envelope-solo 段1:facet 测量材料 + tally 终签落据"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "3d42ff6",
+      "subject": "closeguard-solo: pre-close working tree commit (constmodel-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "978fec7",
+      "subject": "idenlane-solo 旧会话处置 CALL-LOG 双笔留痕"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "c6f92b1",
+      "subject": "merge: idenlane-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "13b9d89",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "d5cd596",
+      "subject": "idenlane-solo wip 守卫直改车道 WIP,批重拆三批随冻实态承继"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "309d83b",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-anchor-registry)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "a2293ad",
+      "subject": "closeguard-solo: pre-close working tree commit (idenlane-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "ae237cc",
+      "subject": "merge: leaseoptsettle-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "0df2417",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseoptsettle-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "ae3a714",
+      "subject": "merge: parkrecon-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "fc5c4a9",
+      "subject": "closeguard-solo: pre-close working tree commit (parkrecon-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "d7b85df",
+      "subject": "parkrecon-solo tools 段：lease 与 scribe CALL-LOG 各一笔（零代码变更批随批留痕，allow 面疏漏申报，显式 byp"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "3438e53",
+      "subject": "merge: leaseopt-ledger-repair-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "161a6a2",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-ledger-repair-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "7bc3f2f",
+      "subject": "leaseopt-ledger-repair-solo wip 段1：ledger-repair 补录通道与CONTRACT 1.23.0（settle 形变为"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "a23f61e",
+      "subject": "merge: leaseopt-precheck-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "0f2cf05",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-precheck-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "d198f4f",
+      "subject": "merge: leaseopt-lockqueue-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "477d28b",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-lockqueue-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "5d3ac84",
+      "subject": "merge: leaseopt-lockdb-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "9f7d0ae",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-lockdb-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "dd1e70a",
+      "subject": "leaseopt-fixguard-solo 收口附记（close 后 bypass 补笔，先例同形）"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "3edebb9",
+      "subject": "leaseopt-fixguard-solo: 三源对齐 1.19.0 主树侧两行（closeguard 1.18.0 失对齐缺陷一并修正），收约后通道外补笔 "
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "b61266b",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-fixguard-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "a5c6d3c",
+      "subject": "merge: leaseopt-fixguard-solo 副本归并（守卫假阳性 bypass 通道，修复对象自指实证；CALL-LOG 并集解冲突）"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "492f1f3",
+      "subject": "docmath-b4-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "6770480",
+      "subject": "merge: docmath-b4-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "1097f40",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-b4-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "ef98012",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-fixguard-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "80b4129",
+      "subject": "docmath-b3-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "991cf9b",
+      "subject": "merge: docmath-b3-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "7d706c5",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-b3-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "f1b849a",
+      "subject": "docmath-b2-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道先例同形）"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "7769bd5",
+      "subject": "merge: docmath-b2-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "cbcf156",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-b2-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "aa868ed",
+      "subject": "docmath-b1-solo 收约后补笔：五件 CALL-LOG 留痕行（bypass 通道，范围闸让位 facepark/packhyg/selwire 先"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "efad5cf",
+      "subject": "merge: docmath-b1-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "9ff1dfc",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-b1-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "9b87b34",
+      "subject": "closeguard-solo: pre-close working tree commit (leaseopt-audit-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "f538e68",
+      "subject": "merge: gov002v2-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "db3a3a4",
+      "subject": "closeguard-solo: pre-close working tree commit (gov002v2-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "321ef22",
+      "subject": "merge: mainord-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "f9cf2ac",
+      "subject": "closeguard-solo: pre-close working tree commit (mainord-solo)"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "5cefd22",
+      "subject": "merge: base 前进收编（closeguard 1.18.0 落库）消解收约假阳性脏位，承 latexwire no_merge_hanger 通道外先"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "568ae29",
+      "subject": "closeguard-solo 1.18.0 CONTRACT 修订二十九：实装过程修补（is_pure_append_conflict 严义 + git ch"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "f2fb26d",
+      "subject": "closeguard-solo 1.18.0 实装过程修补：is_pure_append_conflict 同内容改严义只判 ondisk==branch_co"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "1fcc98e",
+      "subject": "closeguard-solo pk-045 补活体收约验证段：6a94b6724eede61b 双仓 revoked 实录 + 撞线路径覆盖 + 三签名实测 "
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "d9f8710",
+      "subject": "closeguard-solo 收尾：lease CALL-LOG 补 closeguard-solo 收约尾行（活体验证通过 + 三签名夹具 + 65 件全绿"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "cfcc7e3",
+      "subject": "merge: closeguard-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "01af9e9",
+      "subject": "fix close stash untracked before merge"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "36c4efb",
+      "subject": "fix close stage all working tree before merge"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "86fcfe8",
+      "subject": "fix close stage all working-tree-dirty files to prevent merge"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "140298f",
+      "subject": "fix close add staged files after allowance to prevent merge conflict"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "33e5a6b",
+      "subject": "fix allow_and_merge checkout from branch not HEAD"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "a890d31",
+      "subject": "closeguard-solo wip 1.18.0 实装完整 + 三签名测试 + 三源对齐 + BATCH-FACE 收约段"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "4e01a3ac45787da3",
+      "sha": "dead4c0",
+      "subject": "closeguard-solo 段1 closeguard-solo 段1 lease 1.18.0 实装与三签名夹具与三源对齐与 BATCH-FACE 收约段"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "4004806",
+      "subject": "gatemath-solo 收约补笔（close 通道外）：nomenclator 与 scribe 两 CALL-LOG 随收约笔入版控，范围闸让位承 fac"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "d907980",
+      "subject": "merge: gatemath-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "b11ea2f893a72fd9",
+      "sha": "71c7898",
+      "subject": "gatemath-solo 段1 gatemath-solo 段1 工具段结算：C009 邻近级地板工具侧实现与包 0.3.0 与测试与 CONTRACT 修订"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "b11ea2f893a72fd9",
+      "sha": "c0a3a69",
+      "subject": "gatemath-solo wip gatemath-solo 施工面落盘：第三棒绿态复验后原样入盘前两棒工具侧成果，C009 邻近级地板双实现包 0.3.0 "
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "3826a79",
+      "subject": "merge: constclear-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "99ed74655df99ca4",
+      "sha": "51acc71",
+      "subject": "constclear-solo 段1 constclear-solo 判定性命名常数清账：ask3 与叩问与管线报告件与 meter 计数随批"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "23f5f6e",
+      "subject": "merge: shelfm4a-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "63f3ecf43cf7f713",
+      "sha": "ab00bfd",
+      "subject": "shelfm4a-solo 段1 shelfm4a-solo 工具侧件：ask3 件与认证报告四件与正身件"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "f89be52",
+      "subject": "merge: newcarr2-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "432678779a3f0663",
+      "sha": "b92d361",
+      "subject": "newcarr2-solo 段1 newcarr2-solo 工具侧件：ask3 件与认证报告四件与正身件"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "c3cae27",
+      "subject": "merge: exscanwire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "8040c9fae7c90e0e",
+      "sha": "92f5de3",
+      "subject": "exscanwire-solo 段3 exscanwire-solo 补笔：正身报告件入版控（unlock 依赖件）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "926c1ca",
+      "subject": "merge: exscanwire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "8040c9fae7c90e0e",
+      "sha": "cd7ce60",
+      "subject": "exscanwire-solo 段1 exscanwire-solo 收口：BATCH-FACE 例扫日扫调用形节加 ask3 与认证报告件（主会代收段）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "50638d5",
+      "subject": "merge: mainqm-adjud-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "8b6ca23f35207c8a",
+      "sha": "f183d7b",
+      "subject": "mainqm-adjud-solo 段1 mainqm-adjud-solo 三裁终签工具侧件：六命题稿与 DES 飞轮链与合同响应与当日基线与 ask3 件与"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "317e9b3",
+      "subject": "poolclear-solo 报告件随批入版控：ask3 记录与验证件与叩问信号 digest 与双门 gate1 与管线三步报告与心跳四读数与结果档检词与 m"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "c3e296d",
+      "subject": "merge: poolclear-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "4c807de2ead52808",
+      "sha": "2db3337",
+      "subject": "poolclear-solo 段1 poolclear-solo 段1 席位基线生产侧收尾：temp_probe score 落 core_hash（TDD 先"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "2a9eb02",
+      "subject": "merge: mathscan-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "a214bff",
+      "subject": "mathscan-solo 收口补笔：facet 合同与标定基线与命题区裁决材料经 bypass 通道入版控（范围闸让位 facepack 与 basefix "
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "dc38bb4cc47e343b",
+      "sha": "ccb78bb",
+      "subject": "mathscan-solo 段1 mathscan-solo 结算：ask3 与叩问与正身与管线认证报告件与例行读数册与调用册随批入版控（allow 内段）"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "bce976a",
+      "subject": "cascadewire-solo 收口补笔：scribe CALL-LOG 尾行留痕经 bypass 通道入版控（范围闸让位 facepark 与 packhy"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "922c49c",
+      "subject": "merge: cascadewire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "5b46cca3df980ab5",
+      "sha": "f1253dd",
+      "subject": "cascadewire-solo 段1 cascadewire-solo 段1 cascade ORD-016 深锚：三锚点增注与 CONTRACT 载体引用节"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "4fd1474",
+      "subject": "basefix-solo 收口补笔：scribe CALL-LOG 尾行留痕经 bypass 通道入版控（范围闸让位 facepark 与 packhyg 先例"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "6e2b3ec",
+      "subject": "merge: basefix-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "1a70a4e901564b09",
+      "sha": "f8a5e1e",
+      "subject": "basefix-solo 段1 basefix-solo 段1 地基修复：locks 互斥两偏差修复（单遍配对加路径同一化，CONTRACT 修订二加金向量重冻"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "9d74962",
+      "subject": "packhyg-solo 收口补笔：nomenclator 与 scribe 两 CALL-LOG 尾行留痕经 bypass 通道入版控（范围闸让位 facep"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "1744039",
+      "subject": "merge: packhyg-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "23b7ea6c7850a6b7",
+      "sha": "c6af8ad",
+      "subject": "packhyg-solo 段1 packhyg-solo 段1 出货包卫生：parser 测试包装 conftest 补件解主树收集错误与 BATCH-FACE"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "6cf28e6",
+      "subject": "pk050sw-solo 收口回填：scribe CALL-LOG 尾行留痕（意图与终签与出泊与认证五笔读数，含覆盖丢失补签实录；contribmath 整备先"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "62be0e3",
+      "subject": "merge: pk050sw-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "d70d406c04a2afa3",
+      "sha": "dbc9e56",
+      "subject": "pk050sw-solo 段1 pk050sw-solo 段1：recall 调用位缺省切确定性向量语义层 K=3 与 --word 词面回退旗标（词面回退位行"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "bc2ca80",
+      "subject": "merge: leasewire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "3a012326cae52fa6",
+      "sha": "3716884",
+      "subject": "leasewire-solo 段1 leasewire-solo settle 段1：lease 增注三锚加 CONTRACT 载体节增补加 locks 首锚六"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "72b23f1",
+      "subject": "contribmath-solo 整备：scribe 与 lease 两 CALL-LOG 尾行留痕（意图与认证六笔读数、锁与收约实录）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "528a109",
+      "subject": "merge: contribmath-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "bbaa06e60d6195f1",
+      "sha": "507c1da",
+      "subject": "contribmath-solo 段1 contribmath-solo 段1：gauge contrib 只读子命令 gd-1 实装（承重三判据并集计数测度加"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "52a830b",
+      "subject": "merge: carrwire-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "ec8037c",
+      "subject": "merge: pk037impl-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "744d2c9fbcb173a2",
+      "sha": "0c811d0",
+      "subject": "pk037impl-solo 段1 pk037impl-solo 段1：retriever 语义层实现与 A/B 度量门与双载体 facet 测量材料与标定基线"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "ba187edb54e1ee7a",
+      "sha": "8434126",
+      "subject": "carrwire-solo 段1 carrwire-solo 四载体接线：formatter SPEC 与 meter 与 nomenclator 与 pars"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "960760d",
+      "subject": "pk-037 路线裁决材料：确定性统计向量形两轮九发测量（route-1/2，十八发 comply 全收敛零变卦，near_threshold 于 basis "
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "4e231a9",
+      "subject": "checkpoint-main-260904 终：活账本收编（facel calibration/调用册/claims/locks/sessions/meter"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "9fbdba6",
+      "subject": "merge: newcarr-solo 副本归并"
+    }
+  ]
+}
