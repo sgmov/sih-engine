@@ -1,0 +1,24 @@
+{
+  "action": "exit",
+  "context": "令源：用户 2026-09-06 令「修复」即 closefix-solo 批承载（任务包 sih-engine/sih/state/plan/closefix-solo.md 修复承载出泊条款）。缺陷 close 前置舞步对主树未跟踪件 git stash push -u 后无 pop 通道已经 lease 1.27.0 机械根除：结构性替代即未跟踪件照单登记不清场（stash 舞步整体废止，含 .git 标记备份还原舞步），收约全路径成功失败拒三态未跟踪件零离盘，三态夹具测试在档（test_closefix.py）。连带处置：双仓历史 closeguard stash 二十三笔逐笔 LIFO 复位 drop（tools 1149 未跟踪件离盘复位含 2026-09-06 13:59 收约窗活吞 1142 件、engine 1 件复位余已在盘）加 WIP 二笔内容核实已被盘面超越随批 drop；审计件双仓 git bundle 与逐笔对表 JSON 与复位日志在 sih-engine/sih/event/plan/closefix-solo-materials/stash-audit/。",
+  "created_at": "2026-09-06",
+  "entered_at": "2026-09-06",
+  "entry_id": "pk-071",
+  "exit_condition": "用户裁修复立项与否，裁立项即随台账盖版修复批并案或另批承载",
+  "id": "pk-071",
+  "outcome": "promoted",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "closefix-solo",
+    "ledgerloss5-solo",
+    "idenlane-guard-solo"
+  ],
+  "source": "closefix-solo 批修复实装与三态夹具绿证（lease 1.27.0 修订四十）",
+  "state": "exited",
+  "title": "close 前置 stash 吞未跟踪件系统性缺陷（stash push -u 无 pop 通道）",
+  "ttl_days": 30
+}

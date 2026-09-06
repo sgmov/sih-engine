@@ -1,0 +1,13 @@
+{
+ "scenario": "并发活写窗 close 压测：close 进行期间他进程 append_row 追加 20 行（无前置 sleep，活写窗与 close 全程交叠）",
+ "baseline_rows": 1,
+ "final_rows": 22,
+ "stress_rows_present": 20,
+ "stress_rows_expected": 20,
+ "revoked_present": 1,
+ "session_issued_present": 1,
+ "close_seconds": 0.15,
+ "appender_stdout": "appended 20",
+ "stash_list_empty": true,
+ "PASS": true
+}

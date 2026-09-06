@@ -1,0 +1,1721 @@
+[
+ {
+  "ref": "stash@{0}",
+  "sha": "50e79f69d2c15b033bb69a97be23bc6bd026f187",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/regula-expansion-program-v1.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/archpark-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/basisunion-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/basisunion-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/genpark-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gvec-v2-serial.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/ledgerloss5-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/ledgerloss5-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/regula-rename-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{1}",
+  "sha": "3667ec1daca91e1d765b908018b388f36cd115cd",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/basisunion-solo-materials/recall-topic.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/basisunion-solo-materials/recall-zero.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/ledgerloss5-solo-materials/recall-topic.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/regula-expansion-program-v1.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/archpark-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/basisunion-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/genpark-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gvec-v2-serial.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/ledgerloss5-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/regula-rename-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{2}",
+  "sha": "11dc8519048c362bc8fc4ac97037d6850e0f720b",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/regula-expansion-program-v1.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/archpark-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/genpark-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/regula-rename-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "tally-check-report.json",
+    "status": "A",
+    "state": "missing-on-disk"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{3}",
+  "sha": "7efe2237bc0ee90dd35cdb63f6437292bcc2b93c",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/archpark-solo-results.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/regula-expansion-program-v1.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-060.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-061.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-062.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-063.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/archpark-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/openhyg-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/regula-rename-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "tally-check-report.json",
+    "status": "A",
+    "state": "missing-on-disk"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{4}",
+  "sha": "0c1e648675bf4d9ae13a5c5ea8617ae80285d5d0",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/regula-rename-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "tally-check-report.json",
+    "status": "A",
+    "state": "missing-on-disk"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{5}",
+  "sha": "6f407377667f8080c8fae04f91fe1c1d2d2299af",
+  "date": "2026-09-06",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.lease-check.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "tally-check-report.json",
+    "status": "A",
+    "state": "missing-on-disk"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{6}",
+  "sha": "eeb3966eff6d7bfb33a1f42cccc0b6837d90a377",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-namefit-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pk057fix-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/pkexits-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{7}",
+  "sha": "e6d6a858965b5016b89e0f7f0a530ae55413d8f0",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-envelope-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/idenlane-solo-results.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/constmodel-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-anchor-registry.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gateswitch-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.lease-check.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-envelope-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-guard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/idenlane-human-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/idenlane-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-ledger-repair-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-lockqueue-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-precheck-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseoptsettle-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.lease-check.json",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/parkrecon-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/viewline-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/watchcheck-solo.md",
+    "status": "A",
+    "state": "identical"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{8}",
+  "sha": "334479e84de3763a7f5822fd74520fe1fa531138",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "doc/spec/SPEC-TEMPLATE-sufficiency-v1.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/event/trail/2026-09-05.ndjson",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-056.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/docmath-b4-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-fixguard-solo.md",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-line-v1.md",
+    "status": "A",
+    "state": "differs"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{9}",
+  "sha": "9648a0746a5ba7c5094393e7ef7083571f2a83b0",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-056.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/docmath-b3-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-line-v1.md",
+    "status": "A",
+    "state": "differs"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{10}",
+  "sha": "e531b95bd65db9ac85b1eaa8999077fbc60fcae0",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-056.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/docmath-b2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-line-v1.md",
+    "status": "A",
+    "state": "differs"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{11}",
+  "sha": "411b8f89e2f78a62b69d57abc744fc3e537a6a4e",
+  "date": "2026-09-05",
+  "msg": "On main: closeguard-solo pre-close stash",
+  "files": [
+   {
+    "path": "sih/event/plan/docmath-task-package-2026-09-04.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-056.json",
+    "status": "A",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/plan/docmath-b1-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/gov002v2-solo.md",
+    "status": "A",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/plan/leaseopt-line-v1.md",
+    "status": "A",
+    "state": "differs"
+   }
+  ]
+ },
+ {
+  "ref": "stash@{12}",
+  "sha": "ca3fec5eb6b83a65b0ff79da2d69e7de29fd3eea",
+  "date": "2026-09-03",
+  "msg": "WIP on main: e6024b6 merge: gvec-method-solo 副本归并",
+  "files": [
+   {
+    "path": "doc/governance/PARKING-v1.md",
+    "status": "M",
+    "state": "differs"
+   },
+   {
+    "path": "sih/event/trail/2026-09-03.ndjson",
+    "status": "M",
+    "state": "differs"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-046.json",
+    "status": "M",
+    "state": "identical"
+   },
+   {
+    "path": "sih/state/parking/materials/pk-047.json",
+    "status": "A",
+    "state": "identical"
+   }
+  ]
+ }
+]

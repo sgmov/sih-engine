@@ -1,0 +1,21 @@
+#!/bin/sh
+# 直提守卫预检（guardhook-solo 2026-09-02，承 adisp-guard-1 裁决与用户批准令）。
+# 守卫的形态判定落 hooks/commit-msg 位即信息既定阶段（pre-commit 阶段
+# COMMIT_EDITMSG 未写即无信息可校验，2026-09-02 实测在案）。
+# 本件只做环境预检即 python3 可用与 guardcore 可导入，破即 fail-closed
+# 不让守卫失效静默开通道。合规形与指引见 hooks/commit-msg。
+HOOK_DIR=$(cd "$(dirname "$0")" && pwd) || exit 1
+python3 - "$HOOK_DIR" <<'GUARDPREFLIGHT'
+import sys
+
+sys.path.insert(0, sys.argv[1] + "/../src")
+try:
+    from lease.guardcore import GUARD_VERSION, validate_commit_message
+except Exception as exc:  # noqa: BLE001 - fail-closed 预检不区分异常族
+    sys.stderr.write(
+        "直提守卫环境预检失败：guardcore 不可导入（%s）。fail-closed 拒提交。\n"
+        "指引：修复 sih-tools/lease 守卫环境后重试，或 lease uninstall-hooks 拆卸守卫。\n" % exc
+    )
+    sys.exit(1)
+sys.exit(0)
+GUARDPREFLIGHT

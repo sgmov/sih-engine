@@ -1,0 +1,9 @@
+{
+ "package": "demo-pkg",
+ "opened_at": "2026-09-06T12:30:00+00:00",
+ "heartbeat_at": "2026-09-06T12:30:00+00:00",
+ "identity_core": null,
+ "pid": 40607,
+ "pid_started": "Sun Sep  6 15:19:03 2026",
+ "session_id": "113dbf6d96a5cf3f"
+}

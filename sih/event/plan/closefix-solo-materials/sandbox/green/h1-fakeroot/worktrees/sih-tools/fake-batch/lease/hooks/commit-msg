@@ -1,0 +1,65 @@
+#!/bin/sh
+# 直提守卫（guardhook-solo 2026-09-02，承 adisp-guard-1 裁决与用户批准令）：
+# 只拦提交信息形态不判内容。合规形覆盖 lease 全部 message 形态——
+# settle 形（正文含 session: 十六位与 cert: 挂接行）、
+# wip 形（首行含 wip 标记加 session: 挂接行，wip 无认证门故无 cert）、
+# merge 形（首行 merge: <批名> 副本归并）。两形皆非即拒并出指引。
+# 直改车道（idenlane-solo iden-02）：提交信息携带「直改链笔: <事件哈希
+# 前八位>」即形态放行；真实在链由本钩子对当日 trail grep 核验，不核引用
+# 即形同虚设（fail-closed：引用不在当日链即拒）。
+# 判定纯函数单源 guardcore.py（钩子以 sys.path 直入 src 导入，禁依赖 venv）。
+# git 钩位注记：pre-commit 阶段 COMMIT_EDITMSG 未写即无信息可校验（实测在案），
+# 故形态判定落 commit-msg 位即提交落成前的最后机械闸，拦截语义与 pre-commit 同。
+HOOK_DIR=$(cd "$(dirname "$0")" && pwd) || exit 1
+MSG_FILE="${1:-${GIT_DIR:-.git}/COMMIT_EDITMSG}"
+ROOT_DIR=$(cd "$HOOK_DIR/../../.." && pwd) || exit 1
+exec python3 - "$MSG_FILE" "$HOOK_DIR" "$ROOT_DIR" <<'GUARDCORE'
+import sys
+
+sys.path.insert(0, sys.argv[2] + "/../src")
+try:
+    from lease.guardcore import DIRECT_PEN, GUIDANCE, validate_commit_message
+except Exception as exc:  # noqa: BLE001 - fail-closed 不区分异常族
+    sys.stderr.write(
+        "直提守卫不可用：guardcore 导入失败（%s）。fail-closed 拒提交。\n"
+        "指引：修复 sih-tools/lease 守卫环境，或 lease uninstall-hooks 拆卸守卫。\n" % exc
+    )
+    sys.exit(1)
+try:
+    with open(sys.argv[1], encoding="utf-8", errors="replace") as handle:
+        text = handle.read()
+except OSError as exc:
+    sys.stderr.write(
+        "直提守卫不可用：提交信息文件不可读（%s）。fail-closed 拒提交。\n" % exc
+    )
+    sys.exit(1)
+ok, reason = validate_commit_message(text)
+if ok:
+    if reason == "ok_direct":
+        # 直改链笔真实在链核验：引用的事件哈希前八位须对应当日 trail。
+        m = DIRECT_PEN.search(text)
+        hash8 = m.group(1) if m else ""
+        root = sys.argv[3]
+        from datetime import date
+        trail = f"{root}/sih-engine/sih/event/trail/{date.today().isoformat()}.ndjson"
+        try:
+            with open(trail, encoding="utf-8", errors="replace") as tf:
+                trail_text = tf.read()
+        except OSError:
+            sys.stderr.write(
+                "直改守卫不可用：当日 trail 不可读（%s）。fail-closed 拒直改提交。\n"
+                "指引：先 scribe pen 落链笔，再以「直改链笔: <哈希前八位>」引用提交。\n" % trail
+            )
+            sys.exit(1)
+        if not any(("\"" + hash8) in ln for ln in trail_text.splitlines()):
+            sys.stderr.write(
+                "直改守卫拦截：链笔引用 %s 不在当日 trail 真实在链。fail-closed 拒提交。\n"
+                "指引：链笔引用必须对应当日 scribe pen 落链事件哈希前八位。\n" % hash8
+            )
+            sys.exit(1)
+    sys.exit(0)
+sys.stderr.write(
+    "%s\n拒因：%s\n守卫版本见 lease/src/lease/guardcore.py GUARD_VERSION。\n" % (GUIDANCE, reason)
+)
+sys.exit(1)
+GUARDCORE

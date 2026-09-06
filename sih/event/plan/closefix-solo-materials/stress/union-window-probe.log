@@ -1,0 +1,28 @@
+{
+ "scenario": "并集窗探针：分支改台账（settle 形 2 行）加主树活写 2 行，close 处置",
+ "close_exit": 1,
+ "close_error_head": "收约预检被阻（merge-tree 本场归并有内容冲突即整批拒零动作半程不可达被堵）：详情 [{\"repo\": \"/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/closefix-solo-materials/stress/union-probe-rep",
+ "rows_before_close_ids": [
+  "113dbf6d96a5cf3f",
+  "B0",
+  "B1",
+  "B2",
+  "LV1",
+  "LV2"
+ ],
+ "rows_after_ids": [
+  "113dbf6d96a5cf3f",
+  "B0",
+  "B1",
+  "B2",
+  "BR1",
+  "BR2",
+  "LV1",
+  "LV2"
+ ],
+ "base_rows_survived": true,
+ "branch_rows_in_working_tree": true,
+ "revoked_appended": false,
+ "stash_list_empty": true,
+ "zero_loss_invariant": true
+}

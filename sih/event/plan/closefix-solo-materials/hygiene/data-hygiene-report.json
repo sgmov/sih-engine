@@ -1,0 +1,69 @@
+{
+ "locks_mirror_vs_lockdb": {
+  "mirror_rows_total": 5903,
+  "mirror_acquired_released": 5901,
+  "db_lock_event_acquired_released": 6032,
+  "mirror_only_rows": 0,
+  "db_only_rows": 131,
+  "db_only_by_event": {
+   "acquired": 69,
+   "released": 62
+  },
+  "db_only_by_date": {
+   "2026-09-05": 109,
+   "2026-09-06": 22
+  },
+  "db_only_by_session_top": {
+   "164006f3ac45fcaf": 28,
+   "ab0aa6b23047a03d": 22,
+   "917bbc4e8c948f38": 22,
+   "8ed84146513364f2": 18,
+   "be316fe3596bf16e": 18,
+   "445c12fbb3e4283c": 16,
+   "4bdcc62b5357c7a8": 7
+  },
+  "state_divergence": {
+   "mirror_derived": 13,
+   "db_lock_state": 13,
+   "only_in_mirror": 0,
+   "only_in_db": 0
+  },
+  "verdict": "镜像是正典严格子集：现势零漂移；db 独有 131 笔即盖版窗被抹的镜像行（日期分布与 ledgerloss5 §一伤亡窗吻合），镜像缺行属可见性损失不属判定漂移（判定正典在 lockdb 无损）；修不修随用户裁（补镜像即按 lockdb 正典重放追加，append-only 通道可承载）"
+ },
+ "sessions_wenguobs_doublewrite": {
+  "total_rows": 762,
+  "session_id": "3a1171b19da42244",
+  "package": "wenguobs-solo",
+  "duplicate_pairs": [
+   {
+    "issued_line": 335,
+    "revoked_line": 336,
+    "reason": "范围闸拦改包重开"
+   },
+   {
+    "issued_line": 337,
+    "revoked_line": 338,
+    "reason": "lease 1.9.0 重开同 session_id 漏 identity_hash 三开换新 session_id"
+   },
+   {
+    "issued_line": 339,
+    "revoked_line": 341,
+    "reason": "lease 1.9.0 lockcore active_sessions 重复 pop bug 触发 session_not_active 改任务包 12 节加新件四开"
+   },
+   {
+    "issued_line": 342,
+    "revoked_line": 343,
+    "reason": "换新 identity 报告五开换 session_id"
+   }
+  ],
+  "row_diffs": "四笔 issued 行字段全同唯 allow 面递增（335 面 14 项，337/339/342 面 16 项即追加 resolo-results 与 wenguobs-trail 两面）；四笔 revoked 行 reason 各异如实载重开事由",
+  "net_semantic_effect": "issued/revoked 成对四组净效果即 revoked 终态，active_sessions 事件序配对判不活跃，对表与判定零歪曲",
+  "dedup_view": {
+   "raw_rows": 8,
+   "unique_sessions": 2,
+   "issued_events": 4,
+   "revoked_events": 4
+  },
+  "verdict": "2026-08-31 lease 1.9.0 重开舞步遗留（先于修订十八 session_not_active 修复与修订三十七会话号重开修复），append-only 台账不改写历史行，双写行留档披露；处置（count 视图去重或保持原样）随用户裁"
+ }
+}

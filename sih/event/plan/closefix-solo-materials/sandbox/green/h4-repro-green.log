@@ -1,0 +1,41 @@
+{
+ "h4_a": {
+  "scenario": "甲 生产 SPEC-020 子序列(detect→classify→backup→allow_and_merge→预收提交→merge)",
+  "conflict_type": "same",
+  "classified_files": {},
+  "before_rows": 10,
+  "after_checkout_rows": 10,
+  "rows_lost_working_tree": 0,
+  "backup_rows": 0,
+  "committed_after_preclose": 10,
+  "chain_append_grown_post_clobber": "None",
+  "final_merged_rows": 10,
+  "RED": false,
+  "GREEN": true
+ },
+ "h2_unit": {
+  "scenario": "H-2 单元 restore_missing(无外持锁,缺 6 行回补)",
+  "restored": 6,
+  "RED": true
+ },
+ "h4_b": {
+  "scenario": "乙 basefix _chain_union_yield 子进程直调(恢复非空,12 秒超时探针)",
+  "before_rows": 10,
+  "self_deadlock_reproduced": false,
+  "mechanism": "_chain_union_yield 持 ledger_lock → restore_missing → append_row → ledger_lock 同路径二次 flock,flock 按 open file description 判定,同进程同线程亦阻塞",
+  "RED": false,
+  "detail": {
+   "returncode": 0,
+   "stdout_tail": "andbox/green/h4-b-backups/lease/ledger/sessions.ndjson', 'live_only': ['{\"event\":\"revoked\",\"package\":\"wc2-issued-analog\",\"revoked_at\":\"2026-09-05T15:57:47+00:00\",\"session_id\":\"R9\"}'], 'restored': 0}}\n",
+   "stderr_tail": ""
+  }
+ },
+ "h4_c": {
+  "scenario": "丙 修复方向:单锁窗 + 窗内差集 O_APPEND(语义与 restore_missing 同,锁不重入)",
+  "before_rows": 10,
+  "after_rows": 10,
+  "rows_lost": 0,
+  "RED": true
+ },
+ "timestamp": "2026-09-06T15:15:33+0800"
+}
