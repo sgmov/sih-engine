@@ -73,5 +73,14 @@
  "materials": {
   "contract-score-material.json": "e857593cb90088b389d133817a883c30339ec5a5b0428e9ff233fb20f33ea4b3",
   "tdd-red-first-run.log": "d815e35795f575400d95a4412fcecee98850f02b84bfb8d6a356d0427456f3fb"
+ },
+ "stage2": {
+  "results_md": {
+   "formatter_exit": 0,
+   "nomenclator_first_run_exit": 1,
+   "first_red": "死档禁词引用触碰（结果档引用基线禁词字面本身触检），改写转述后复跑 exit 0，红证见会话实录不清洗",
+   "append_attempt": "ReportNotJson 拒 exit 2（halfmerge 先例同形）如实记档"
+  },
+  "note": "段2 settle 后 unlock 收约，close 过自装差集闸，认领通道活体验收"
  }
 }
