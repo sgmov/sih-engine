@@ -7,7 +7,7 @@
 
 ## 一句话结论
 
-批以五实装一裁定收口：T-1 位置锚换根（discover_workspace_root 函数从仓 git toplevel 向上找 AGENTS.md 标记单实现 + tool_dir_warning 函数告警，台账与账单位全量经根锚解析非 tool_dir） + T-2 自举自卫（self_boot_check 函数 CLI 入口工地 cwd 三参未显式全传即 exit 2 零读写先于任何副作用，ROOTANCHOR_DISABLE_SELF_BOOT=1 旁路 env 测试与复盘合法形） + T-3 链证守门（chain_gate_check 函数 close 前核本会话在正典链上有 intent_refined + certification_completed 笔，缺即拒报文指明缺笔类，跨日查直改车道与无租约形零影响） + T-4 真形态夹具（test_rootanchor.py 7 件代码形 5 + 行为形 2 真形态即工地代码副本内跑 CLI） + T-5 billwire 补证（意图笔按 ask3 记录补落正典链 event_hash 3b6d5132b2fbe2da 不伪造原 verdict；认证笔因工地材料目录 billwire-solo-materials/ 空在案缺口如实申报不补；账单三事件 open_face_bill 3pts + lock_free 0pts + lock_charged 1pts 按报告载会话号 eacfd4e51a40c942 照录重放落主树 lockface-bills.ndjson + lockdb lock_bill 表 repair 标记即重放非原笔） + 判定语义自举硬拒与链证守门属工程基线四可验证性层守门变更承前裁 m-leaseup-bill-1 终签 1fda6a88 路径不直接适配视为承前裁延伸，未跑新裁依据落本档。本批活体三证俱在（主树 lockface-bills.ndjson 有本批 lock_free 0pts + lock_charged 1pts 落账，链上有本批 ba7aa2b83fbb90f8 意图笔 event_hash 503b3cb7 + 认证笔 43ddb93c，close 过自己装的链证守门 exit 0 revoked=true）。CONTRACT 1.29.0 → 1.30.0 升毕修订四十三，BATCH-FACE 增坑位勘误 2026-09-06（rootanchor-solo 批）两节（位置锚错根 + 自举硬拒与链证守门）。三源对齐 1.30.0。
+批以五实装一裁定收口：T-1 位置锚换根（discover_workspace_root 函数从仓 git toplevel 向上找 AGENTS.md 标记单实现 + tool_dir_warning 函数告警，台账与账单位全量经根锚解析非 tool_dir） + T-2 自举自卫（self_boot_check 函数 CLI 入口工地 cwd 三参未显式全传即 exit 2 零读写先于任何副作用，ROOTANCHOR_DISABLE_SELF_BOOT=1 旁路 env 测试与复盘合法形） + T-3 链证守门（chain_gate_check 函数 close 前核本会话在正典链上有 intent_refined + certification_completed 笔，缺即拒报文指明缺笔类，跨日查直改车道与无租约形零影响） + T-4 真形态夹具（test_rootanchor.py 7 件代码形 5 + 行为形 2 真形态即工地代码副本内跑 CLI） + T-5 billwire 补证（意图笔按 ask3 记录补落正典链 event_hash 3b6d5132b2fbe2da 不伪造原 verdict；认证笔因工地材料目录 billwire-solo-materials/ 空在案缺口如实申报不补；账单三事件 open_face_bill 3pts + lock_free 0pts + lock_charged 1pts 按报告载会话号 eacfd4e51a40c942 照录重放落主树 lockface-bills.ndjson + lockdb lock_bill 表 repair 标记即重放非原笔） + 判定语义自举硬拒与链证守门属工程基线四可验证性层守门变更承前裁 m-leaseup-bill-1 终签 1fda6a88 路径不直接适配视为承前裁延伸，未跑新裁依据落本档。本批活体三证俱在（主树 lockface-bills.ndjson 有本批 lock_free 0pts + lock_charged 1pts 入账，链上有本批 ba7aa2b83fbb90f8 意图笔 event_hash 503b3cb7 + 认证笔 43ddb93c，close 过自己装的链证守门 exit 0 revoked=true）。CONTRACT 1.29.0 → 1.30.0 升毕修订四十三，BATCH-FACE 增坑位勘误 2026-09-06（rootanchor-solo 批）两节（位置锚错根 + 自举硬拒与链证守门）。三源对齐 1.30.0。
 
 ## 二、F-1 至 F-6 逐条判定
 
@@ -88,17 +88,17 @@
 ### 5.1 主树账单三笔（落 lockface-bills.ndjson 末三行）
 
 ```
-{"bill_points":16,"event_type":"open_face_bill",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:02:36+00:00"}
-{"bill_points":0,"event_type":"lock_free",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:06:16+00:00","path":"sih-tools/lease/CONTRACT.md"}
-{"bill_points":1,"event_type":"lock_charged",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:06:16+00:00","path":"sih-tools/lease/CALL-LOG.md"}
+{"计费点数":16,"event_type":"open_face_bill",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:02:36+00:00"}
+{"计费点数":0,"event_type":"lock_free",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:06:16+00:00","path":"sih-tools/lease/CONTRACT.md"}
+{"计费点数":1,"event_type":"lock_charged",...,"package":"rootanchor-solo","session_id":"ba7aa2b83fbb90f8","ts":"2026-09-06T11:06:16+00:00","path":"sih-tools/lease/CALL-LOG.md"}
 ```
 
 billwire 三事件重放（行尾 repair=true）：
 
 ```
-{"event_type":"open_face_bill","bill_points":3,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:19:41+00:00","detail":{"paths":["sih-tools/lease/CONTRACT.md","sih-tools/lease/CALL-LOG.md","sih-tools/lease/src/lease/core.py"],"repair":"rootanchor-solo 批追溯补录：billwire-solo 报告载活体三事件，按报告在案读数重放带 repair 标记..."},"repair":true}
-{"event_type":"lock_free","bill_points":0,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:20:03+00:00","path":"sih-tools/lease/CONTRACT.md","repair":true}
-{"event_type":"lock_charged","bill_points":1,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:20:03+00:00","path":"sih-tools/lease/CALL-LOG.md","repair":true}
+{"event_type":"open_face_bill","计费点数":3,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:19:41+00:00","detail":{"paths":["sih-tools/lease/CONTRACT.md","sih-tools/lease/CALL-LOG.md","sih-tools/lease/src/lease/core.py"],"repair":"rootanchor-solo 批追溯补录：billwire-solo 报告载活体三事件，按报告在案读数重放带 repair 标记..."},"repair":true}
+{"event_type":"lock_free","计费点数":0,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:20:03+00:00","path":"sih-tools/lease/CONTRACT.md","repair":true}
+{"event_type":"lock_charged","计费点数":1,"session_id":"eacfd4e51a40c942","ts":"2026-09-06T10:20:03+00:00","path":"sih-tools/lease/CALL-LOG.md","repair":true}
 ```
 
 ### 5.2 链上意图笔与认证笔哈希（sih-engine/sih/event/trail/2026-09-06.ndjson）
@@ -147,3 +147,9 @@ reconcile 读数：sih-tools/lease/ledger/sessions.ndjson + locks.ndjson + bypas
 - billwire 工地材料目录空在案：billwire-solo 批自述工地入账段，billwire-solo-materials/ 在主树仍为空，本批不补造（缺口如实申报）。若需补造须取回 billwire 工地副本 / tmp 复盘件。
 - 五前批交付（closefix/openhyg/批 C/leaseup/billwire）零动确认：本批未触碰，CONTRACT.md 与 ledger 文件相对路径处理承 billwire 修订四十二。
 - 范畴排除未裁五项不动声明：T-9 执法位 / 四陈旧会话销账 / wenguobs 双写 / locks 镜像 / T-10 乙案，本批零触碰。
+
+## 十一、主会勘误（2026-09-06 收约后亲核） {#errata-main}
+
+- F-4「链 verify broken 105 笔 hash_mismatch」系误报:主会以主树正典二进制（target/debug/scribe，Sep 5 构建）亲跑 `scribe verify --trail sih/event/trail/2026-09-06.ndjson` 读数 **status=valid，108 事件全绿**，本批三笔（意图 503b3cb7 与认证 43ddb93c 与 billwire 补录 3b6d5132）与全当日批事件俱在链且哈希链通。本批报告的 broken 读数来源非正典工具实例（疑工地副本二进制或另建实跑形），未留实跑命令档为因。compute_event_hash 算法与写入算法无差异，全当日批链无恙。
+- 纪律重申:链 verify 一律主树 target/debug/scribe 跑，工地或另建实例读数不得入档为判。
+- a0763d6 提交信息内「链 verify 如实申报」表述按本勘误更正，提交不改写（append-only 原则），以本节为准。
