@@ -44,7 +44,7 @@
 
 - 化格核阅检词：本批 md 产出件（结果档）随管线实录补记；源码件不走文规管线（工具代码，TDD 加判定包承载验收）。
 - 书单对表：拼接扫描形扫结果档（批引用产出），读数随实录补记。
-- 认证清单：ask3 记录与验证件与正身件三笔（读数随认证实录补记）。
+- 认证清单：ask3 记录 `96e331de`、验证件 `f91ab7fe`、正身件 `4b26b3a7`（event_hash 前8，全裸调逐笔验证）。
 
 ## 越线与误差申报
 
@@ -55,4 +55,10 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：sih-tools 工地提交 6f388c61、sih-engine 工地提交 02ae1b8（cert 96e331de，三查过）。
+- 放锁收约：八路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（双仓归并 tools 78760e4a／engine 2f4d538、双工地与分支清除、会话 4f85a0ac5a1c3b2c revoked、零失败）。
+- 链 verify：2026-09-07 当日链 valid 100 事件。
+- reconcile：双仓 exit 1 由历史账面项致（unrouted_tail 即 routed_merge 历史归并显示；cert_missing 存量候台账卫生批），本批 unrouted 零新增，先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零（mainline 46／scrap 6／siding 1）；工具线 exit 0 告警零（mainline 22／siding 1 即 pk-042 校准窗在泊项）。
+- T₀ 启用笔确认：event_hash 63d4f48664f2 在当日链（grep 计 2 即笔本体与账本 ref 对表），主树真账本 confledger/ledger/confledger.ndjson verify valid 零 findings，首账户 82f460c2 余额零起点——台账数据面自此攒量。
+- 收约补笔：本结果档回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath／confconst／confrulegate／confrevise／facepatch 先例同形）。
