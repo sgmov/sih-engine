@@ -1,0 +1,17 @@
+
+==================================== ERRORS ====================================
+__________________ ERROR collecting tests/test_confledger.py ___________________
+ImportError while importing test module '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/confledger-solo/confledger/tests/test_confledger.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Users/moc/.pyenv/versions/3.14.4/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_confledger.py:14: in <module>
+    from confledger import cli  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ImportError: cannot import name 'cli' from 'confledger' (/Users/moc/workspaces/SiHankor/worktrees/sih-tools/confledger-solo/confledger/src/confledger/__init__.py)
+=========================== short test summary info ============================
+ERROR tests/test_confledger.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.06s

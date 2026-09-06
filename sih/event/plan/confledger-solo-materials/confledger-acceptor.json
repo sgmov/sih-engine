@@ -1,0 +1,33 @@
+{
+ "declaration": {
+  "claim": "unchanged-only",
+  "v0_out_of_scope": [
+   "标定通道真值产出",
+   "抢占业务环",
+   "休眠门激活"
+  ]
+ },
+ "engine": "acceptor",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "confledger-v0-acceptance",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "check_name": "red_then_green",
+   "id": "C1-red-then-green",
+   "state": "pass"
+  },
+  {
+   "check_name": "double_run",
+   "id": "C2-double-run",
+   "state": "pass"
+  },
+  {
+   "check_name": "baseline_freeze",
+   "id": "C3-baseline-freeze",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}
