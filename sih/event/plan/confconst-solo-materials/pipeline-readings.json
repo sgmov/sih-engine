@@ -1,0 +1,121 @@
+{
+  "batch": "confconst-solo",
+  "date": "2026-09-07",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih-math/docs/confmodel-derivation-2026-09-07.md",
+      "exit_code": 0
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/event/plan/confconst-solo-results.md",
+      "exit_code": 0
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "confmodel-derivation-2026-09-07.md（工地路径形）",
+      "exit_code": 0,
+      "note": "先例域外 exit 2 预期未现——工地路径形下零违规发现全过，如实记档行为差异"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "confconst-solo-results.md（工地路径形）",
+      "exit_code": 0,
+      "note": "同上"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "topic.md（工地路径形）",
+      "exit_code": 0,
+      "note": "同上"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "confmodel-derivation-2026-09-07.md",
+      "exit_code": 0,
+      "note": "零违例"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "confconst-solo-results.md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "elicit": {
+    "check_exit": 0,
+    "signals": 7,
+    "digest": "passed",
+    "covered": 7
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "findings": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest",
+    "identity_hash": "0c83c5fc",
+    "core_hash": "82f460c2"
+  },
+  "estimator_fixture": {
+    "double_run_cmp": "IDENTICAL",
+    "fixture_values_disclaimer": "确定性证明件，非模型常数断言",
+    "outputs": {
+      "w_days": 3,
+      "n_max": 2,
+      "U_plus": 2,
+      "U_minus": 2
+    }
+  },
+  "axiom_diff": {
+    "A_group": "IDENTICAL",
+    "B_group": "IDENTICAL",
+    "baseline": "git 2cd22f7 (v1)"
+  },
+  "checkcite": {
+    "first_run": "fail PROB-015 missing（真扫描拦截位生效）",
+    "recall_routes": [
+      "计数测度",
+      "常数模型化",
+      "monotone",
+      "外化",
+      "Little定律",
+      "负载界",
+      "排队"
+    ],
+    "union_entries": 101,
+    "final_verdict": "pass",
+    "cited": [
+      "ORD-001",
+      "ORD-004",
+      "ORD-019",
+      "PROB-005",
+      "PROB-015",
+      "PROB-016"
+    ],
+    "note": "首跑 pass 空转假阳性已申报——--cited 单值参数仅末位生效"
+  },
+  "adjudication": {
+    "emit_contract": "ok seat ZCode:GLM-5.3-Flash 9 shots",
+    "responses": "9/9 comply 变卦 0%",
+    "score": "stable_clear",
+    "basis": [
+      "baseline_4 x7",
+      "baseline_5 x2"
+    ],
+    "assemble": "stable_clear criteria v3 voids 空",
+    "attractor_check": "pass 12 项",
+    "attractor_verify": "identical",
+    "sign": "signed 70af572e direction comply"
+  }
+}

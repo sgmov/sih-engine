@@ -1,0 +1,1 @@
+{"N_min_formula": "floor(n_max)+1 (推导通道复算式，非本程序产出断言)", "U_minus": 2, "U_plus": 2, "U_symmetric": 2, "n_max": 2, "w_days": 3}
