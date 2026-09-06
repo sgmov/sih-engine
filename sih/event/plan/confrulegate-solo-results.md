@@ -55,9 +55,9 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证（读数随认证实录补记） |
-| ask3 验证件 | 双门读数 | 书简认证（同上） |
-| 正身件 | 身份报告 | 书简认证（同上） |
+| ask3 记录 | 意图记录 | 书简认证 `4ce66367`（event_hash 前8） |
+| ask3 验证件 | 双门读数 | 书简认证 `e7e1cfed` |
+| 正身件 | 身份报告 | 书简认证 `6c544752` |
 | 一裁终签 | crosscheck_completed | `18ba3476`（sign 落链，direction comply） |
 
 ## 越线补位
@@ -66,4 +66,9 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：sih-tools 工地提交 42716d3f、sih-engine 工地提交 657708e（cert 4ce66367，三查过）。
+- 放锁收约：十一路径 unlock 毕全部 exit 0；close 首跑被真分叉检测拦（主树未跟踪命题原稿对工地已跟踪修复版，非纯追加形整批拒零动作——拦截位生效如实记档），按备份让位归并对表法四步处置即备份原稿、让位、close 归并、diff 核对差异面恰为修复项（frontmatter 与段名与三照录块重嵌与修复头注与 anchors 共 32 行，判定文本零触碰，对表干净）；close 二跑成功即双仓归并（tools 82e39d9b／engine b1da365）、双工地与分支清除、会话 0aae1960c42f09a3 revoked、零失败。
+- 链 verify：2026-09-07 当日链 valid 41 事件。
+- reconcile：双仓 exit 1 由历史账面项致（unrouted_tail 即 routed_merge 历史归并显示；cert_missing 存量候台账卫生批），本批 unrouted 零新增，confmath／confconst 先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零（mainline 47／scrap 6 历史存量）；工具线 exit 0 告警零（mainline 21／siding 1 即 pk-042 校准窗在泊项）。
+- 收约补笔：本结果档回填（认证清单与结算读数）即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath／confconst 先例同形）。
