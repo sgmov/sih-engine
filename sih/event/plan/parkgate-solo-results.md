@@ -74,7 +74,12 @@
 
 ## 结算读数
 
-- 双仓 settle 与放锁收约与对表读数随收口补记。
+- 双仓 settle：tools 工地提交 6b83fcf6、engine 工地提交 817bf41，cert 取 db8520ad 即链末哈希可证。
+- 放锁收约：十七路径 unlock 毕、close 一次过即双工地归并拆除、会话 dc82224e07001c4b 收约、零失败。
+- 合并后主树真形态复验：des-001 对主树 PARKING-v1.md exit 0 零违规即权威门；心跳复算 pk-070 siding failed P104、引擎线 mainline 46、siding 1、告警零；gate_hold 落 predicates.py 与两份 routes.toml 逐处在位。
+- 链 verify：2026-09-07 当日链 valid 85 笔，末哈希 db8520ad 即本批末笔认证。
+- reconcile：双仓 unrouted 零；engine cert_missing 零，tools 一属在盘历史账面项；unbypassed 增量四笔即两批 closeguard 自动 pre-close 提交已补 bypass 登记，登记后增量归零。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控，genpark-solo 先例同形。
 
 ## 缺陷披露（本批顺带发现，候人节点裁）
 
