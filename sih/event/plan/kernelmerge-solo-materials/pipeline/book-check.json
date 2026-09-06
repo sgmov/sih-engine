@@ -1,0 +1,16 @@
+{
+  "engine": {
+    "name": "sih-engine",
+    "kind": "pipeline-report",
+    "version": "0.1.0"
+  },
+  "report": {
+    "name": "book-check",
+    "summary": "recall 三路 0 命中显式申报 + checkcite verdict=pass exit=0 引用在图闭包内",
+    "content_sha256": "b837d77104375cb7dbc84d877b5a4206652279e935000b9799e3f9c1fbddaa62",
+    "bytes": 977
+  },
+  "pipeline_step": "book-check",
+  "batch": "kernelmerge-solo",
+  "date": "2026-09-06"
+}

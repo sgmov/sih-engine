@@ -1,0 +1,27 @@
+=== 书单对表读数 ===
+BATCH=kernelmerge-solo DATE=2026-09-06
+
+recall 三路并集(谓词求值内核 / glob 匹配 / 错误信封)→ 全 0 命中,如实申报
+
+checkcite plan:
+{
+  "reading_list": {
+    "entry_paths": [
+      "/Users/moc/workspaces/SiHankor/sih-philosophy/emanation/proodos/07-on-assay.md",
+      "/Users/moc/workspaces/SiHankor/sih-philosophy/emanation/proodos/08-on-settle.md",
+      "/Users/moc/workspaces/SiHankor/sih-philosophy/emanation/proodos/04-on-third-tao.md"
+    ],
+    "entry_ids": [
+      "PRO-07",
+      "PRO-08",
+      "PRO-04"
+    ],
+    "skeleton_files": [
+      "/Users/moc/workspaces/SiHankor/sih-philosophy/AGENTS.md",
+      "/Users/moc/workspaces/SiHankor/sih-tools/proposition/DES/m-halfmerge-1/topic.md"
+    ]
+  }
+}
+checkcite 验证本批 ask3 记录:verdict=pass,exit=0
+allowed_size=5 (entry_paths 3 件哲学原文 + skeleton_files 2 件 m-halfmerge-1 + AGENTS.md)
+本批 ask3 锚三件均在 reading_list 内,引用落图闭包

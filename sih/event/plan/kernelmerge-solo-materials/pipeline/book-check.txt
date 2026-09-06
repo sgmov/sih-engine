@@ -1,0 +1,28 @@
+=== 零命中显式申报 ===
+BATCH=kernelmerge-solo DATE=2026-09-06
+
+recall 三路并集：
+  - 谓词求值内核: 0 命中
+  - glob 匹配: 0 命中
+  - 错误信封: 0 命中
+
+哲学仓无直接命名实体,承 ask3 记录 disposition 数组声明.
+本批引用在以下图闭包内(已在 ask3 记录 philosophy_ref.evidence 给出具体路径):
+  - sih-philosophy/emanation/proodos/07-on-assay.md:55 (PRO-07 鉴)
+  - sih-philosophy/emanation/proodos/08-on-settle.md:110 (PRO-08 应而不藏)
+  - sih-philosophy/emanation/proodos/04-on-third-tao.md:15 (PRO-04 道三代码自晦)
+  - sih-tools/proposition/DES/m-halfmerge-1/topic.md (m-halfmerge-1 stable_clear 2a7d0e0e)
+
+=== checkcite 验证 ===
+Traceback (most recent call last):
+  File "/Users/moc/workspaces/SiHankor/sih-tools/wikirecall/checkcite.py", line 75, in <module>
+    sys.exit(main())
+---
+Traceback (most recent call last):
+  File "/Users/moc/workspaces/SiHankor/sih-tools/wikirecall/checkcite.py", line 75, in <module>
+    sys.exit(main())
+---
+Traceback (most recent call last):
+  File "/Users/moc/workspaces/SiHankor/sih-tools/wikirecall/checkcite.py", line 75, in <module>
+    sys.exit(main())
+---

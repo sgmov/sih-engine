@@ -1,0 +1,38 @@
+{
+  "error": "目标不在任何已加载规则包声明的治理域内",
+  "unmatched_targets": [
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-08-31-ask3-scrutmerge-sdd-record.json"
+  ],
+  "packs": {
+    "des-001": {
+      "include": [
+        "sih-engine/doc/**/*.md",
+        "**/scrutinator/fixtures/corpus/**/*.md",
+        "**/formatter/fixtures/**/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/skill_like.md"
+      ]
+    },
+    "des-001-mathe": {
+      "include": [
+        "sih-math/**/calculus/llm-friendly-build/entries/*.md",
+        "sih-math/**/topology/entries/*.md",
+        "sih-math/**/probability/entries/*.md",
+        "sih-math/**/order/entries/*.md",
+        "sih-math/**/algebra/entries/*.md"
+      ],
+      "exclude": [
+        "**/skills/**",
+        "**/.agents/**",
+        "**/INDEX.md",
+        "**/README.md",
+        "**/mapping.md",
+        "**/agent-bootstrap-prompt.md",
+        "**/task-package-build-entries.md"
+      ]
+    }
+  }
+}

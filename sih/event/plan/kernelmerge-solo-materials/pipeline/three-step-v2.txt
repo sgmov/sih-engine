@@ -1,0 +1,17 @@
+=== 化格核阅检词三步读数 v2 ===
+BATCH=kernelmerge-solo DATE=2026-09-06
+域外声明:predkernel 在 src/scrutinator/predkernel/ 是 Rust 源码,des-001/general-v1/core 域均仅盖 .md/.json/.yaml/.yml/.toml,呈域外 exit-2
+工程妥协:predkernel 形式上从属 scrutinator 子模块
+
+=== src/scrutinator/predkernel/mod.rs ===
+fmt: exit=2 | scru: exit=2 | nom: exit=0 findings=0
+=== src/scrutinator/predkernel/glob.rs ===
+fmt: exit=2 | scru: exit=2 | nom: exit=0 findings=0
+=== src/scrutinator/predkernel/error.rs ===
+fmt: exit=2 | scru: exit=2 | nom: exit=0 findings=0
+=== src/scrutinator/rule.rs ===
+fmt: exit=2 | scru: exit=2 | nom: exit=0 findings=0
+=== src/attractor/route.rs ===
+fmt: exit=2 | scru: exit=2 | nom: exit=1 findings=2
+
+route.rs 2 findings 是 pre-existing '轮级'(归并前后各 2 次,本批未引入)

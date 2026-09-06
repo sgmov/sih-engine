@@ -1,0 +1,61 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "task-packages/**",
+        "doc/**"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.1.0"
+    },
+    "reference_time": "2026-09-02",
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "R001",
+          "pass": true
+        },
+        {
+          "id": "R002",
+          "pass": false
+        },
+        {
+          "id": "R003",
+          "pass": false
+        },
+        {
+          "id": "R004",
+          "pass": false
+        }
+      ],
+      "failed_predicate": "R002",
+      "id": "pk-dirty-expired",
+      "parking": true,
+      "path": "parking/pk-dirty-expired.json",
+      "route": "siding"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [
+      {
+        "count": 0,
+        "kind": "mainline_starvation",
+        "threshold": 1
+      }
+    ],
+    "mainline": 0,
+    "scrap_track": 0,
+    "siding": 1,
+    "total": 1
+  }
+}
