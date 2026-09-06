@@ -1,0 +1,9 @@
+四会话共 8 行在档
+  be316fe3596bf16e revoked  verbatim=None  source=
+  1d463181f4bf7570 issued  verbatim=True  source=verbatim-from-vcs
+  1d463181f4bf7570 revoked  verbatim=True  source=verbatim-from-vcs
+  be316fe3596bf16e issued  verbatim=True  source=verbatim-from-vcs
+  ab0aa6b23047a03d issued  verbatim=True  source=verbatim-from-vcs
+  ab0aa6b23047a03d revoked  verbatim=True  source=verbatim-from-vcs
+  dc8a180223aa590f issued  verbatim=True  source=verbatim-from-vcs
+  dc8a180223aa590f revoked  verbatim=True  source=verbatim-from-vcs
