@@ -4,6 +4,11 @@
   "created_at": "2026-09-06",
   "entry_id": "pk-070",
   "exit_condition": "用户裁正典落位形态（doc/governance/ 决策档或向界族或另立宪法档）即开迁移批迁文走管线与认证，迁移毕 AGENTS.md 改指针收口出泊；或用户裁维持现状即闭项出泊",
+  "gate": {
+    "declared_at": "2026-09-07",
+    "source": "用户 2026-09-07 会话裁定原话「pk-070是mcp实装的时候才决定的事情，现在迁移手动阶段无法模拟了」",
+    "trigger": "MCP 实装结算件落 sih-engine/sih/event/plan/"
+  },
   "id": "pk-070",
   "parking": {
     "entered_at": "2026-09-06",
