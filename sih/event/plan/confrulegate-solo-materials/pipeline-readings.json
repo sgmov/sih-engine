@@ -1,0 +1,87 @@
+{
+  "batch": "confrulegate-solo",
+  "date": "2026-09-07",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "confrulegate-solo-results.md",
+      "exit_code": 0
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "topic.md（DES 单元格）",
+      "exit_code": 0
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "confrulegate-solo-results.md（工地路径形）",
+      "exit_code": 0,
+      "note": "confconst 先例同形：工地路径形零违规全过"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "topic.md（工地路径形）",
+      "exit_code": 0
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "confrulegate-solo-results.md",
+      "exit_code": 0,
+      "note": "零违例"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "topic.md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "elicit": {
+    "check_exit": 1,
+    "signals": 7,
+    "digest": "passed",
+    "covered": 7
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "findings": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest",
+    "identity_hash": "ae7f06b1",
+    "core_hash": "82f460c2"
+  },
+  "f1_quote_check": {
+    "first_run": "红（三照录块手打转述形）",
+    "repair": "程序切片重嵌四照录块",
+    "reverify": "IDENTICAL 四块全过"
+  },
+  "topic_form_repair": [
+    "frontmatter 补齐",
+    "主标题归位待裁命题段",
+    "ng 3 归位 medium"
+  ],
+  "checkcite": {
+    "scan": "拼接扫描形（推导档 v2+topic+结果档合并文）",
+    "plan": "confconst 七路并集书单 101 条目复用",
+    "verdict": "见 checkcite.json"
+  },
+  "adjudication": {
+    "emit_contract": "ok seat ZCode:GLM-5.3-Flash 9 shots",
+    "responses": "9/9 comply 变卦 0%",
+    "score": "stable_clear",
+    "basis": "baseline_4 单类",
+    "assemble": "stable_clear criteria v3 voids 空",
+    "attractor_check": "pass 12 项",
+    "attractor_verify": "identical",
+    "sign": "signed 18ba3476 direction comply"
+  }
+}
