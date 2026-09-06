@@ -1,0 +1,34 @@
+{
+ "findings": [],
+ "fixtures": {
+  "proposal.md": [],
+  "scenarios.md": [],
+  "spec-delta.md": [],
+  "tasks.md": [],
+  "tech-design.md": []
+ },
+ "pack_family": "sdd-v1",
+ "packs": {
+  "change-proposal.json": {
+   "ok": true,
+   "rules": 6
+  },
+  "scenario-list.json": {
+   "ok": true,
+   "rules": 7
+  },
+  "spec-delta.json": {
+   "ok": true,
+   "rules": 6
+  },
+  "task-list.json": {
+   "ok": true,
+   "rules": 6
+  },
+  "tech-design.json": {
+   "ok": true,
+   "rules": 5
+  }
+ },
+ "verdict": "pass"
+}

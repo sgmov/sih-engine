@@ -1,0 +1,85 @@
+{
+ "batch": "sddpacks-solo",
+ "date": "2026-09-07",
+ "formatter": [
+  {
+   "pack": "json-canonical-v1",
+   "targets": [
+    "manifest.json",
+    "change-proposal.json",
+    "spec-delta.json",
+    "scenario-list.json",
+    "tech-design.json",
+    "task-list.json"
+   ],
+   "runs": "首跑 exit 1 归一六件；重建后复跑 exit 1 归一六件；终态归一形",
+   "note": "归一落笔属治理窄域正常"
+  },
+  {
+   "pack": "general-v1",
+   "targets": [
+    "fixtures/*.md 五件"
+   ],
+   "exit": 0,
+   "changed": 0
+  }
+ ],
+ "scrutinator": {
+  "pack": "des-001",
+  "targets": 11,
+  "exit": "2 x 11 域外如实记档",
+  "note": "des-001 域只盖 sih-engine/doc，sih-tools 目标全域外，不属违规"
+ },
+ "nomenclator": {
+  "pack": "core",
+  "targets": 11,
+  "first_run_exit": 1,
+  "first_run_findings": [
+   {
+    "word": "文规检查器",
+    "file": "manifest.json",
+    "rule": "lazy_in_doc"
+   }
+  ],
+  "fix": "manifest retirement 字段改「检查器（孵化登记件工作名）」表述，复跑 exit 0 零违例；重建后复跑 exit 0 零违例"
+ },
+ "validate": {
+  "script": "validate.py",
+  "first_run": "exit 1 TypeError 红证归档 validate-red-evidence/first-run-traceback.json",
+  "fix": "删除脚本内一行残渣调用",
+  "post_fix": "exit 0/0 cmp IDENTICAL verdict pass findings 0",
+  "rebuild_recheck": "exit 0/0 cmp IDENTICAL verdict pass"
+ },
+ "incident_declaration": {
+  "what": "工地内误删自建件：清理误建的嵌套 sih-tools/ 前缀位时，把当时落位于嵌套位的包族十二件（manifest 加五包加五样例加 validate.py）一并误删",
+  "cause": "建件时写入工地嵌套前缀位（本仓内容直出工地根，嵌套 sih-tools/ 非正位），误判嵌套位为纯错径而整删",
+  "remediation": "正位 incubation/packs/sdd-v1/ 原内容重建十二件（内容本代理全量持有），化格归一复跑、validate 双跑绿、检词零违例全数复验",
+  "impact": "零主树影响、零他批影响、零链影响；终签材料（topic 与 contract 与 tally-material）在直出位未受牵连，哈希链完好；命题文内嵌套前缀路径字样与归并后实际落位差一笔前缀，归并后主树位与设计一致，如实申报",
+  "red_evidence": "误删事实与本申报即红证，重建前后读数全留批材料"
+ },
+ "exscan": {
+  "rev3": "exit 1/1 双跑一致 findings none，cmp 四路 IDENTICAL",
+  "checkmath": "exit 0 verdict zero_drift reds 0 greys 6（灰项声明滞后只记不代修）"
+ },
+ "heartbeat": {
+  "tools": "exit 0 total 22（21 mainline + 1 siding）",
+  "engine": "exit 0 total 52（46 mainline + 6 scrap_track）",
+  "alerts": 0
+ },
+ "watchcheck": {
+  "exit": 1,
+  "unowned": 1,
+  "detail": "billwire 残件既往在案候人节点二值裁决，零代行零触碰"
+ },
+ "gauge": {
+  "convergence": 0.0,
+  "adoption": 0.0,
+  "mergeback": 0.038462,
+  "events": [
+   "89f24da4",
+   "826483db",
+   "f205d261"
+  ]
+ },
+ "chain_gate_errata": "首次 intent 调用缺 --sessions 被闸拒（exit 2 零留痕），补参重跑过（BATCH-FACE 勘误 2026-09-04 在案）；attractor verify 首跑 divergent 系 check 与 verify 传参路径不同形（绝对对相对），同参形（双绝对路径）重跑 identical；R5 首跑挂起系基线携 09-06 正身哈希跨日不一致，按 regulamath 先例手工制当日 seat-baseline 重装配后裁决通过"
+}

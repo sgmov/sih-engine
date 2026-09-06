@@ -1,0 +1,66 @@
+{
+ "batch": "sddpacks-solo",
+ "date": "2026-09-07",
+ "files": [
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/manifest.json",
+   "sha256": "f4dc62350222da7c20df6598765545a458c9ff552a37192295c2a16e2c9aadff"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/change-proposal.json",
+   "sha256": "7290a8e6bff4952fbf8eac2e4a5b57fccc9b7d758b182e7d759edab1ce392b60"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/spec-delta.json",
+   "sha256": "efa190a979ec801cbb5f052bb3d3d930df67a171ce58de6d524588a12d8f472e"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/scenario-list.json",
+   "sha256": "2b44b19847f509b76bea802d48d391d9100a2fe3fd92da7b3e7d3f10f5ac1a0c"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/tech-design.json",
+   "sha256": "3819489b1354522fb5ae2818d87bbf30e9f35285e9de088050968879037d5490"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/task-list.json",
+   "sha256": "f3b125b4f603632d858eb3d7a2d3ecf752d6b12abb48ad6560861df908744834"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/validate.py",
+   "sha256": "8063a34ce25efe3a10be12cc311388e0a7df537b5c6e60435ce67aa9c186223f"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/fixtures/proposal.md",
+   "sha256": "eb57f8c6c1da50180f22e6ca52e3ec117dca2dab7091a7b3b4d63c5401fe3919"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/fixtures/spec-delta.md",
+   "sha256": "bee6d35184ef6e8749e8bfcfaea55db341636d725b63e446c55a70285ab13214"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/fixtures/scenarios.md",
+   "sha256": "b4af966bcf9e42b6702159a430921d74dfeeca2594427ffd13e6372ac0bd5fe5"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/fixtures/tech-design.md",
+   "sha256": "eab0fdd93b8933a5586c042426e06035eb936180121ed16aaddb7af6d27978e6"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/fixtures/tasks.md",
+   "sha256": "aefc9811171f07d5dccee1bcf3e1c734ece40dbfc81bb530e85f08c02c4ea1a6"
+  },
+  {
+   "path": "sih-tools/proposition/DES/m-sddpacks-pack-1/tally-material.json",
+   "sha256": "815a90ba4c5326cc2d6f7c272ed5b377a29397c844e802b987ac8b57f71a0a7b"
+  },
+  {
+   "path": "sih-tools/proposition/DES/m-sddpacks-pack-1/m-sddpacks-pack-1-signcheck.json",
+   "sha256": "124634e06059d9b290a70d08afb08d6625b7a219bc23a7bc3d2881104a8bda48"
+  },
+  {
+   "path": "sih-tools/proposition/DES/m-sddpacks-pack-1/topic.md",
+   "sha256": "db727a7694535f545996c71884e3a9d557e7be048f3dd62199c833cb075dd6a5"
+  }
+ ]
+}
