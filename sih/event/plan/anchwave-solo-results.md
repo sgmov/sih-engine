@@ -36,11 +36,11 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证即 scribe append 事件入链 |
-| ask3 验证件 | 双门读数 | 书简认证 |
-| 正身件 | 身份报告 | 书简认证 |
-| checkcite 件 | 书单对表 | 书简认证 |
-| 登记面 | 批产出 | 书简认证 |
+| ask3 记录 | 意图记录 | 书简认证 `96cbde44` |
+| ask3 验证件 | 双门读数 | 书简认证 `d49e906d` |
+| checkcite 件 | 书单对表 | 书简认证 `be829103` |
+| 正身件 | 身份报告 | 书简认证 `176dffdb` |
+| 登记面 | 批产出 | JSON 认证件 `699c1a20` 即 sha256 61d0b61b 内容哈希绑定 |
 
 ## F 表
 
@@ -62,7 +62,11 @@
 
 ## 结算读数
 
-- 三仓 settle 与放锁收约与对表读数随收口补记。
+- 三仓 settle：engine 工地提交 6f74897、math 工地提交 521ca3f、tools 工地提交 d85ee007，cert 皆取 699c1a20 即链末哈希可证。
+- 放锁收约：七路径 unlock 毕、close 首跑一次过即三工地归并拆除、会话 57bd678cb0a9e391 收约、零失败。
+- 链 verify：2026-09-07 当日链 valid 76 笔，末哈希 699c1a20 即本批末笔认证。
+- reconcile：三仓 unrouted 零；engine cert_missing 零，tools 一与 math 二属在盘历史账面项即本批三 settle 提交 cert 在链、三归并皆 routed_merge 类；unbypassed 计数 tools 85 与 engine 55 与 math 18 属在盘历史债非本批新增，本批除收约补笔一笔外零 --no-verify。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控，openhyg-solo 与 genpark-solo 先例同形。
 
 ## 缺陷披露（本批顺带发现，候人节点裁）
 
