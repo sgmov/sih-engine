@@ -1,0 +1,20 @@
+{
+  "action": "enter",
+  "context": "令源：idenlane-guard-solo 批 2026-09-06 收约时重大新发现呈报。缺陷：close 前置舞步对主树未跟踪件 git stash push -u 后无 pop 通道——engine 主树六笔 closeguard stash 在册累积（archpark 起历次 close），2026-09-05 整日链文件与四十五项未跟踪件（各批结果档与任务包与泊材料与 lease-check 凭据）一度全体离盘。批 C 以 stash apply 保引用方式全量复位（六笔 stash 引用保留作审计），复位后双日链 valid 亲核在案。与 ledgerloss5-solo 钉死的台账盖版根因同属 close 归并机械族（core.py allow_and_merge 与前置舞步族），修复宜并案或同批承载。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-071",
+  "exit_condition": "用户裁修复立项与否，裁立项即随台账盖版修复批并案或另批承载（方向候选即前置舞步增 pop 通道或重构收约前置序使未跟踪件零离盘），裁不立项即闭项出泊",
+  "id": "pk-071",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "ledgerloss5-solo"
+  ],
+  "source": "idenlane-guard-solo 结果档重大新发现节与主会亲核（stash list 六笔与复位抽查在案）",
+  "state": "parked",
+  "title": "close 前置 stash 吞未跟踪件系统性缺陷（stash push -u 无 pop 通道）",
+  "ttl_days": 30
+}
