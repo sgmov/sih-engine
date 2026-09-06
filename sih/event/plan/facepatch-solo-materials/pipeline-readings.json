@@ -1,0 +1,55 @@
+{
+  "batch": "facepatch-solo",
+  "date": "2026-09-07",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "BATCH-FACE.md",
+      "exit_code": 0
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "BATCH-FACE.md",
+      "exit_code": 2,
+      "note": "sih-tools 属 des-001 域外如实记档"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "BATCH-FACE.md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "append_only_check": {
+    "added_lines": 7,
+    "deleted_lines": 0
+  },
+  "overlap_check": {
+    "facet工地": "无既有条目",
+    "checkcite单值": "无既有条目",
+    "F1修复": "无既有条目",
+    "逐仓核对": "与 lease repo 路径条语义分面，延伸注记合并"
+  },
+  "elicit": {
+    "check_exit": 1,
+    "signals": 5,
+    "digest": "passed",
+    "covered": 5
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest"
+  },
+  "checkcite": {
+    "first_scan_wholefile": "fail（SPEC-014/015/019 引擎规格号位被 ID_RE SPEC 前缀误命中，扫描域误选非产出引用）",
+    "rescan_appended_section": "pass（追加节零数学载体 ID）",
+    "candidate_errata": "ID_RE SPEC 前缀在引擎文档语境的范围限制"
+  }
+}

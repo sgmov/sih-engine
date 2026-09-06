@@ -51,8 +51,14 @@
 ## 越线与误差申报
 
 - checkcite 首扫整档 fail（扫描域误选）：守卫语义是批引用产出对表，本批产出为追加节非整档既有正文；改追加节扫描 pass，SPEC 前缀范围限制申报勘误候选，如实记档。
+- **材料件 settle 外置一笔（已处置如实申报）**：任务包请求写入节漏列 facepatch-solo-materials 目录致 allow 不含（本批即新勘误第四条的活例——逐仓核对了 repos 但请求写入节自身的目录覆盖仍是漏网面），首跑 staged_out_of_scope 拦；处置即材料件（checkcite.json 与 pipeline-readings.json）剔出 settle、收约后经 bypass 补笔通道落主树 materials 目录，先例同形。候后继批：任务包起草时请求写入节须含 materials 目录惯例化。
 - 其余零越线零申报。
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：sih-tools 工地提交 777d4a32、sih-engine 工地提交 6ea2e1c（cert 98f58abf，三查过；engine 首跑 staged_out_of_scope 拦即材料件剔出重提，如实记档见误差申报）。
+- 放锁收约：七路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（双仓归并 tools 09486ab1／engine 6696f1a、双工地与分支清除、会话 d20b841ac39f1fa8 revoked、零失败）。
+- 链 verify：2026-09-07 当日链 valid 65 事件。
+- reconcile：双仓 exit 1 由历史账面项致（unrouted_tail 即 routed_merge 历史归并显示；cert_missing 存量候台账卫生批），本批 unrouted 零新增，先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零（mainline 47／scrap 6 历史存量）；工具线 exit 0 告警零（mainline 21／siding 1 即 pk-042 校准窗在泊项）。
+- 收约补笔：材料件落主树 materials 目录与本结果档回填合并本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath／confconst／confrulegate／confrevise 先例同形）。
