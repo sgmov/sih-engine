@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-068",
+  "id": "pk-068",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "exited_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-06 开工令承裁＋单锚重裁 stable_clear 终签 dedc76e9。TDD 生成双种拆分裁落位：规约测试与基线金向量分立即 SPEC-021 一词两物节成文，基线向量答没变、规约向量答对，甲乙分界红线钉死，生成面 SDD 场景导出承接位 pk-067 与 pk-069 不变，与 pk-046 方法论条款组重订并入 gvec-v2-serial 批一并出泊。",
+  "state": "exited",
+  "ttl_days": 30
+}

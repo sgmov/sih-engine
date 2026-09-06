@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-046",
+  "id": "pk-046",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "exited_at": "2026-09-06",
+    "ttl_days": 14
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-06 开工令承裁＋单锚重裁 stable_clear 终签 dedc76e9。金向量生命周期与覆盖方法论载体与条款组重订落位：修订条款组 T1 至 T11 经 gid gvec-v2-guard-1 单基线锚（即可验证性）九发重采全 comply、依据族单值 baseline_4、闸裁 stable_clear，引擎 attractor check R1 至 R7 全过、verify identical、机器终签 crosscheck-gvec-v2-guard-1 落链 dedc76e9，载体即引擎向界层规范文件 SPEC-021（doc/spec/SPEC-021-golden-vector-dual-method.md，管线化格核阅检词全过）。上回 gvec-method-guard-1 依据族三值分散 boundary 根因由单锚归约封口。",
+  "state": "exited",
+  "ttl_days": 14
+}
