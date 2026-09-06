@@ -6,15 +6,15 @@
 ## 意图锚定
 
 - 意图事件：intent_refined `88d0443f-7f47-4bf8-9c57-f35f29e7abf1`（event_hash `d4687885...`）
-- record：sih-tools/scribe/reports/2026-09-06-ask3-halfmerge-solo-record.json（书简认证待补）
-- validation：sih-tools/scribe/reports/2026-09-06-ask3-halfmerge-solo-validation.json（书简认证待补）
+- record：sih-tools/scribe/reports/2026-09-06-ask3-halfmerge-solo-record.json（书简认证 `2ec6f44f`）
+- validation：sih-tools/scribe/reports/2026-09-06-ask3-halfmerge-solo-validation.json（书简认证 `c1defb73`）
 - 三锚引文程序切片（08-on-settle.md L13 应几、08-on-settle.md L110 应而不藏、07-on-assay.md L55 鉴只列事实）于 ask3 记录，禁手打承契约。
 
 ## 前置读数
 
 - 三问双门：核阅 ask3 包 exit 0 零违规；引擎 ask3repeater exit 0 status ok anchor_count 3。
 - 叩问：elicit check 五词轻信号即半归并、求值内核、命令面、委外件、单锚未登记；五条叩问处置（普通词面描述性使用本批不立名不登记）后 digest passed covered 5。
-- 正身：identity verify attest 零异常，identity_hash `4678be65...`（书简认证待补）。
+- 正身：identity verify attest 零异常，identity_hash `4678be65...`（书简认证 `1571b254`）。
 - 泊界心跳（开工前）：双线零告警（本会话例行节）。
 
 ## 件读数：一裁九发全绿
@@ -45,11 +45,11 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证待补 |
-| ask3 验证件 | 双门读数 | 书简认证待补 |
-| 正身件 | 身份报告 | 书简认证待补 |
-| kernelmerge-solo.md | 委外任务包 | 书简认证待补 |
-| kernelmerge-solo-prompt.md | 委外提示词 | 书简认证待补 |
+| ask3 记录 | 意图记录 | 书简认证 `2ec6f44f` |
+| ask3 验证件 | 双门读数 | 书简认证 `c1defb73` |
+| 正身件 | 身份报告 | 书简认证 `1571b254` |
+| kernelmerge-solo.md | 委外任务包 | append 对 md 报 ReportNotJson 拒如实记档，随双仓 settle 入版控（md 件不经 append 先例同形） |
+| kernelmerge-solo-prompt.md | 委外提示词 | 同上 |
 | m-halfmerge-1 终签 | 机器裁决 | crosscheck_completed 2a7d0e0e 在链即落据，不另走 append |
 
 ## F 表
@@ -58,7 +58,7 @@
 |---|---|---|---|
 | F-1 一裁终签 | 治理 | m-halfmerge-1 九发经引擎 attractor，stable_clear 即 crosscheck_completed 在链 | 通过（stable_clear，2a7d0e0e 在链） |
 | F-2 委外件仅裁后 | 治理 | 两件仅在 stable_clear 后落位 | 通过（终签先落，委外件后写） |
-| F-3 写入仅 allow | 治理 | 写入仅请求写入节所列 | 待补 |
+| F-3 写入仅 allow | 治理 | 写入仅请求写入节所列 | 通过（写入面即命题合同计分标定件、任务包与结果档与批材料、委外件两件、链文件、报告目录、CALL-LOG；标定两件首落 facet 根越 allow 即移批材料重结算如实记档） |
 | F-4 谱系不遮蔽 | 治理 | 谱系披露双向如实，九发亲笔温度零，依据族单锚 | 通过（命题内披露在档，九发单值 baseline_4） |
 
 ## 越线与误差申报
@@ -70,4 +70,10 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：engine 工地提交 0c05dd3 与 81361cf 两段（base main@1164de0，三查过），tools 工地提交 0dc700a2（base integral-stage-build@7dd12802 即含用户 BATCH-FACE 直改笔，三查过）；cert 取 2ec6f44f 即 ask3 记录认证哈希前八位。
+- 工具侧首跑 staged_out_of_scope 即标定两件落 facet 根越 allow，移入引擎批材料后重结算即过，如实记档。
+- 放锁收约：十二路径 unlock 毕全 exit 0；close 首跑即成功零碰撞（closeguard 预提交 885a91f 吸收主树未跟踪任务包后归并 d39b494，双工地与分支清除、会话 14f29af4cb8b2320 revoked、零失败）。
+- 链 verify：2026-09-06 当日链 valid，91 事件。
+- reconcile（退出码直读）：双仓真实退出码均 1，驱动项 unrouted 双仓 0、engine cert_missing 0、tools cert_missing 1 即 2026-09-03 entryunique-solo 旧账（archpark 档已登记同一笔）；unbypassed 40/75 与 session_orphan 24/19 含今日多批历史增量，本批提交全路由零新增未登记绕行；本笔补笔将至并随批登记 bypass。
+- 心跳复算：双线退出码 0 告警零（工具线 21 主线 1 侧线、引擎线 44 主线 6 废轨存量不变）。
+- 收约补笔：本结果档回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（先例同形）。
