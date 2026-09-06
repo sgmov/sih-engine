@@ -1,9 +1,0 @@
-{"event":"issued","issued_at":"2026-09-05T10:00:00+00:00","package":"batch-one","session_id":"R1"}
-{"event":"issued","issued_at":"2026-09-05T11:00:00+00:00","package":"batch-two","session_id":"R2"}
-{"event":"issued","issued_at":"2026-09-05T12:00:00+00:00","package":"batch-three","session_id":"R3"}
-{"event":"issued","issued_at":"2026-09-05T15:13:52+00:00","package":"docmath-analog","session_id":"R4"}
-{"event":"issued","issued_at":"2026-09-05T15:14:57+00:00","package":"idenlane-analog","session_id":"R5"}
-{"event":"issued","issued_at":"2026-09-05T15:17:43+00:00","package":"docmath-rv-analog","session_id":"R6"}
-{"event":"issued","issued_at":"2026-09-05T15:25:45+00:00","package":"wc1-issued-analog","session_id":"R7"}
-{"event":"issued","issued_at":"2026-09-05T15:26:53+00:00","package":"wc1-revoked-analog","session_id":"R8"}
-{"event":"issued","issued_at":"2026-09-05T15:27:05+00:00","package":"wc2-issued-analog","session_id":"R9"}
