@@ -6,7 +6,7 @@
 
 ## 一、执行概要
 
-T-1 声明对提交差集闸实装：close_session 末位（_merge_tree_precheck 后、归并循环前，前序闸零动）挂 declared_uncommitted_diff——声明面取任务包请求写入节逐行结构化（parse_declared_writes）非 allow 全集，对分支提交树 ls-tree 机械事实逐路径求「声明未提交」；处置三态：差集空放行、非空无认领整批拒零动作（报文逐件列路径）、条件形行含「若」字样（冻结启发 DECLARATION_CONDITIONAL_MARK）自动豁免入报告零静默；显式认领通道 close --ack-uncommitted「路径=事由」逐路径带事由放行、事由入 revoked 行新 detail 键留档零粉饰、认领差集外路径与缺事由俱拒；自由文本解析不了呈报告不猜；共享追加面声明路径入 shared_surface_exempt 豁免态零误伤。T-2 收据归家：写位迁 root 锚定 sih-tools/lease/ledger/receipts/<stem>.json 单一目录，SCOPE_SHARED_SURFACE 六路扩七路（常量单源化移 core 供闸复用，cli 具名导入命名空间照旧），migrate_legacy_receipts 存量一次迁入幂等。T-3 TDD 五族九件先红后绿，204 全绿零回归。T-4 判定语义一裁 facet 合同模式九发亲笔回填，verdict boundary 呈用户候裁不终签（第七节）。T-5 全测零回归加双仓 settle 加 close 过自装差集闸活体验收（第九节）加 reconcile 加 verify。
+T-1 声明对提交差集闸实装：close_session 末位（_merge_tree_precheck 后、归并循环前，前序闸零动）挂 declared_uncommitted_diff——声明面取任务包请求写入节逐行结构化（parse_declared_writes）非 allow 全集，对分支提交树 ls-tree 机械事实逐路径求「声明未提交」；处置三态：差集空放行、非空无认领整批拒零动作（报文逐件列路径）、条件形行含「若」字样（冻结启发 DECLARATION_CONDITIONAL_MARK）自动豁免入报告零静默；显式认领通道 close --ack-uncommitted「路径=事由」逐路径带事由放行、事由入 revoked 行新 detail 键留档零粉饰、认领差集外路径与缺事由俱拒；自由文本解析不了呈报告不猜；共享追加面声明路径入 shared_surface_exempt 豁免态零误伤。T-2 收据归家：写位迁 root 锚定 sih-tools/lease/ledger/receipts/<stem>.json 单一目录，SCOPE_SHARED_SURFACE 六路扩七路（常量单源化移 core 供闸复用，cli 具名导入命名空间照旧），migrate_legacy_receipts 存量一次迁入幂等。T-3 TDD 五族九件先红后绿，204 全绿零回归。T-4 判定语义一裁 facet 合同模式九发亲笔回填，verdict boundary 呈用户候裁后经用户 2026-09-07 令「同意」骑边确认落链放行（确认笔 e4284768，第七节与第十一节）。T-5 全测零回归加双仓 settle 加 close 过自装差集闸活体验收（第九节）加 reconcile 加 verify。
 
 ## 二、F 锚定逐条判定
 
@@ -14,7 +14,7 @@ T-1 声明对提交差集闸实装：close_session 末位（_merge_tree_precheck
 |---|---|---|
 | F-1 差集闸 | 过（一裁项除外） | PROB-018 形复现夹具 test_gate_rejects_declared_uncommitted 红转绿；条件形 test_gate_conditional_line_auto_exempt_recorded 自动豁免入 revoked detail；--ack-uncommitted test_gate_ack_uncommitted_allows_with_reason 事由入 revoked 行，认领差集外与缺事由两拒形夹具绿；本批自身 close 走认领通道活体验收（第九节） |
 | F-2 收据归家 | 过 | 新收据落 receipts/（本批 close 凭据 receipts/declguard-solo.json 即活证）；白名单登记后共享面豁免态生效；存量 41 件全量迁入零残留（engine 0 与 math 0）幂等 |
-| F-3 一裁 | 呈用户候裁 | facet 合同模式九发亲笔回填 verdict boundary（4/9 boundary_flag 如实标记），红线纪律不终签不代写不清洗重跑，呈主会裁决（第七节），候裁期间本批其余面不受阻 |
+| F-3 一裁 | 过（骑边确认落链放行） | 九发全 comply 零 void，boundary_flag 4/9 如实标记即三处设计本就骑边；用户 2026-09-07 令「同意」经骑边确认通道放行，确认笔 e4284768 在 2026-09-07 当日链，boundary 原判保留不清洗不重跑，承 near_threshold 用户同意先例同款形 |
 | F-4 零回归 | 过 | 204 passed = 195 基线 + 9 新增；closefix 与 rootanchor 与 ledgerhyg 交付零动；台账行既有键零变更（revoked 行 detail 键系本闸任务设计留痕位）；ledgerwrite 唯一写点零动；账单台账与链证守门零动；leaseup 钉数测试 6→7 随 CONTRACT 修订四十五同批更新 |
 | F-5 活体验收 | 过 | 本批自身 close 过自装差集闸：声明未提交路径 sih-tools/scribe/CALL-LOG.md 走 --ack-uncommitted 认领放行（事由：开约时在途批独占持锁移出 allow 面，收约后 bypass 补笔，viewline/idenlane-envelope/leftover-solo 先例形），事由入 revoked 行 detail；收据落新位 |
 
@@ -60,3 +60,9 @@ facet 合同模式：gid m-declguard-gate-1，九发亲笔回填（温度零谱�
 - §九更正（阻断件三）:close 首试实况为 --ack-uncommitted 所认领路径落在差集外触发 unknown_acks 拒（认领差集外即拒，反乱认方向活体触发在案），随后零差集放行——原文「认领放行」表述照实更正为本句，闸行为零缺陷且反向防护实证
 - watchcheck 终态（阻断件四）:2026-09-07 复跑净态无主零处，退出码零
 - CALL-LOG 补笔与 bypass 登记（阻断件二）:主会代补 scribe 与 lease 两笔，c0d48b2b 持锁窗已过锁面归零后落笔
+
+## 十一、T-4 骑边确认落定（2026-09-07 用户令「同意」） {#t4-confirmed}
+
+- 用户经主会呈报建议裁骑边确认通道：4/9 boundary_flag 系考官如实标记，条件形冻结启发与共享面豁免域与 Path.replace accommodation 三处设计本就骑边，人节点确认骑边成立即放行。
+- 确认笔 e4284768 落 2026-09-07 当日链（certification_completed 载 gid m-declguard-gate-1 与先例指针）；boundary 原判与计分材料原样保留，不清洗不重跑零粉饰。
+- T-4 至此落定，本批 F 面全过收口；差集闸与收据归家交付维持，退回重议分支不触发。
