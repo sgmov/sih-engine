@@ -1,0 +1,411 @@
+FFFFFFFFFF.F                                                             [100%]
+=================================== FAILURES ===================================
+______________________ test_frozen_append_faces_constant _______________________
+
+    def test_frozen_append_faces_constant():
+        """冻结常量对表：台账追加面四条目（sessions/locks/bypass/checks），命中判定前缀形。"""
+>       from lease.core import LEASE_LEDGER_APPEND_FACES, _is_ledger_append_face
+E       ImportError: cannot import name 'LEASE_LEDGER_APPEND_FACES' from 'lease.core' (/Users/moc/workspaces/SiHankor/worktrees/sih-tools/closefix-solo/lease/src/lease/core.py)
+
+tests/test_closefix.py:104: ImportError
+_____________________ test_sandbox_a_ledger_face_zero_loss _____________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_a_ledger_face_zer0')
+
+    def test_sandbox_a_ledger_face_zero_loss(tmp_path):
+        """甲景：生产让位归并子序列重放——主链前进 6 行加活面 1 行，收约归并全路径零丢失。"""
+        repo = _sandbox_repo(tmp_path, "cf-a", branch_extra=True)
+        ondisk = len(_rd(repo))
+        assert ondisk == 10
+        conflicts = detect_merge_conflicts(str(repo), "main", "msh/beta")
+        ctype = is_pure_append_conflict(conflicts)
+        append_files = [f for f in ctype["files"] if ctype["files"][f].get("type") == "append"]
+        allow = allow_and_merge(str(repo), "main", "msh/beta", append_files)
+        after = len(_rd(repo))
+        _g(repo, "add", "-A")
+        _g(repo, "commit", "-q", "-m", "closeguard pre-close commit (beta-analog)")
+        committed = len(_g(repo, "show", f"HEAD:{LEDGER_REL}").splitlines())
+        _g(repo, "merge", "-q", "--no-ff", "msh/beta", "-m", "merge: beta-analog")
+        final = len(_g(repo, "show", f"HEAD:{LEDGER_REL}").splitlines())
+        # 修复判据：工作面零丢失（10 行俱在），预收提交不固化盖版，merge 终局零丢失
+>       assert after == 10, f"让位归并后活面 {after} 行，丢失 {ondisk - after} 行"
+E       AssertionError: 让位归并后活面 3 行，丢失 7 行
+E       assert 3 == 10
+
+tests/test_closefix.py:135: AssertionError
+_________________ test_sandbox_b_union_yield_no_self_deadlock __________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_b_union_yield_no_0')
+
+    def test_sandbox_b_union_yield_no_self_deadlock(tmp_path):
+        """乙景：恢复非空时 _chain_union_yield 子进程直调，12 秒超时探针零死锁且行零丢失。"""
+        repo = _sandbox_repo(tmp_path, "cf-b")
+        code = (
+            "import sys, pathlib;"
+            f"sys.path.insert(0, {str(Path(__file__).resolve().parents[1] / 'src')!r});"
+            "from lease.core import _chain_union_yield;"
+            f"_chain_union_yield(pathlib.Path({str(repo)!r}), 'main', 'msh/beta', [{LEDGER_REL!r}], "
+            f"pathlib.Path({str(tmp_path / 'cf-b-backups')!r}));"
+            "print('done')"
+        )
+        try:
+>           r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=12)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_closefix.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/subprocess.py:557: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/subprocess.py:1221: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/subprocess.py:2154: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/Users/moc/workspaces/SiHankor/worktrees/sih-...>
+endtime = 760892.579730083, orig_timeout = 12, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/Users/moc/workspaces/SiHankor/worktrees/sih-tools/closefix-solo/lease/.venv/bin/python3', '-c', "import sys, pathlib;sys.path.insert(0, '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/closefix-solo/lease/src');from lease.core import _chain_union_yield;_chain_union_yield(pathlib.Path('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_b_union_yield_no_0/cf-b'), 'main', 'msh/beta', ['lease/ledger/sessions.ndjson'], pathlib.Path('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_b_union_yield_no_0/cf-b-backups'));print('done')"]' timed out after 12 seconds
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/subprocess.py:1268: TimeoutExpired
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_b_union_yield_no_0')
+
+    def test_sandbox_b_union_yield_no_self_deadlock(tmp_path):
+        """乙景：恢复非空时 _chain_union_yield 子进程直调，12 秒超时探针零死锁且行零丢失。"""
+        repo = _sandbox_repo(tmp_path, "cf-b")
+        code = (
+            "import sys, pathlib;"
+            f"sys.path.insert(0, {str(Path(__file__).resolve().parents[1] / 'src')!r});"
+            "from lease.core import _chain_union_yield;"
+            f"_chain_union_yield(pathlib.Path({str(repo)!r}), 'main', 'msh/beta', [{LEDGER_REL!r}], "
+            f"pathlib.Path({str(tmp_path / 'cf-b-backups')!r}));"
+            "print('done')"
+        )
+        try:
+            r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=12)
+            assert r.returncode == 0, r.stderr[-300:]
+        except subprocess.TimeoutExpired:
+>           pytest.fail("回补网自死锁复现：_chain_union_yield 同进程二次 flock 12 秒超时")
+E           Failed: 回补网自死锁复现：_chain_union_yield 同进程二次 flock 12 秒超时
+
+tests/test_closefix.py:157: Failed
+_____________________ test_sandbox_c_union_append_channel ______________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_c_union_append_ch0')
+
+    def test_sandbox_c_union_append_channel(tmp_path):
+        """丙景：并集追加通道——活面原序原行保持，分支独有行按序补尾，行零丢失。"""
+        repo = tmp_path / "cf-c"
+        repo.mkdir(parents=True)
+        led = repo / LEDGER_REL
+        led.parent.mkdir(parents=True)
+        _g(repo, "init", "-q", "-b", "main")
+        _g(repo, "config", "user.email", "s@s")
+        _g(repo, "config", "user.name", "s")
+        led.write_text(_dump(BASE), encoding="utf-8")
+        _g(repo, "add", "-A")
+        _g(repo, "commit", "-q", "-m", "base")
+        _g(repo, "checkout", "-q", "-b", "msh/beta")
+        led.write_text(_dump(BASE + [_row("B1", "branch-add-1", "2026-09-06T01:00:00+00:00"),
+                                     _row("B2", "branch-add-2", "2026-09-06T02:00:00+00:00")]),
+                       encoding="utf-8")
+        _g(repo, "add", "-A")
+        _g(repo, "commit", "-q", "-m", "branch adds two rows")
+        _g(repo, "checkout", "-q", "main")
+        append_row(led, LIVE)  # 主树活写一行（并发追加者）
+        result = allow_and_merge(str(repo), "main", "msh/beta", [LEDGER_REL])
+        assert not result["errors"], result["errors"]
+        rows = _rd(repo)
+>       assert len(rows) == 6, f"并集结果 {len(rows)} 行（base 3 + live 1 + branch 2）"
+E       AssertionError: 并集结果 5 行（base 3 + live 1 + branch 2）
+E       assert 5 == 6
+E        +  where 5 = len([{'event': 'issued', 'issued_at': '2026-09-05T10:00:00+00:00', 'package': 'batch-one', 'session_id': 'R1'}, {'event': ...': 'B1'}, {'event': 'issued', 'issued_at': '2026-09-06T02:00:00+00:00', 'package': 'branch-add-2', 'session_id': 'B2'}])
+
+tests/test_closefix.py:185: AssertionError
+___________ test_sandbox_h3_ledger_face_write_respects_foreign_lock ____________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_sandbox_h3_ledger_face_wr0')
+
+    def test_sandbox_h3_ledger_face_write_respects_foreign_lock(tmp_path):
+        """H-3：他进程持 ledger_lock 时台账面让位归并写点阻塞至释放且活行存活（绕锁根除）。"""
+        repo = tmp_path / "cf-h3"
+        repo.mkdir(parents=True)
+        led = repo / LEDGER_REL
+        led.parent.mkdir(parents=True)
+        _g(repo, "init", "-q", "-b", "main")
+        _g(repo, "config", "user.email", "s@s")
+        _g(repo, "config", "user.name", "s")
+        led.write_text(_dump([_row("S1", "p1", "2026-09-06T00:00:00+00:00")]), encoding="utf-8")
+        _g(repo, "add", "-A")
+        _g(repo, "commit", "-q", "-m", "base")
+        _g(repo, "checkout", "-q", "-b", "msh/beta")
+        (repo / "doc.txt").write_text("branch file\n", encoding="utf-8")
+        _g(repo, "add", "-A")
+        _g(repo, "commit", "-q", "-m", "branch change")
+        _g(repo, "checkout", "-q", "main")
+        append_row(led, _row("S2", "p2", "2026-09-06T00:01:00+00:00"))
+        q = multiprocessing.Queue()
+        p = multiprocessing.Process(target=_hold_lock, args=(led, 2.0, q))
+        p.start()
+        assert q.get() == "held"
+        t0 = time.monotonic()
+        result = allow_and_merge(str(repo), "main", "msh/beta", [LEDGER_REL])
+        dt = time.monotonic() - t0
+        p.join(timeout=6)
+        if p.is_alive():
+            p.terminate()
+            p.join()
+>       assert dt >= 1.5, f"台账面让位归并在他进程持锁下 {dt:.3f} 秒即完成（绕锁）"
+E       AssertionError: 台账面让位归并在他进程持锁下 0.008 秒即完成（绕锁）
+E       assert 0.00829645898193121 >= 1.5
+
+tests/test_closefix.py:227: AssertionError
+___________________ test_close_live_ledger_in_repo_zero_loss ___________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x10977e900>
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_live_ledger_in_repo0')
+
+    def test_close_live_ledger_in_repo_zero_loss(capsys, tmp_path):
+        """F-1 活体形：台账在仓内为跟踪件，close 期间主树台账带未提交活行——收约毕行全在。"""
+        ws = _mkws(tmp_path, ledger_in_repo=True)
+        _run(capsys, *_open_args(ws))
+        wt = _wt(ws)
+        (wt / "own-file.md").write_text("分支产物\n", encoding="utf-8")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "branch work")
+        led = ws["repo"] / LEDGER_REL
+        # 模拟批期内他批收约前进（提交 6 行）加在途活写 1 行（未提交）
+        for r in ADV:
+            append_row(led, r)
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "other batches advance")
+        append_row(led, LIVE)
+        before = len(_rd(ws["repo"]))
+>       assert before == 7
+E       assert 8 == 7
+
+tests/test_closefix.py:310: AssertionError
+___________________ test_close_untracked_survive_reject_path ___________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x109763ed0>
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_r0')
+
+    def test_close_untracked_survive_reject_path(capsys, tmp_path):
+        """三态之拒：闸四 merge-tree 冲突整批拒后，主树未跟踪件仍在盘、stash 零新增。
+    
+        拒点选在旧预收舞步（stash push -u）之后的闸四——旧码拒后 stash 无 pop
+        通道即吞件离盘（idenlane-guard 五笔 closeguard stash 实证形）。
+        """
+        ws = _mkws(tmp_path)
+        (ws["repo"] / "shared.md").write_text("v1\n", encoding="utf-8")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "shared base")
+        _run(capsys, *_open_args(ws))
+        wt = _wt(ws)
+        (wt / "shared.md").write_text("branch-line\n", encoding="utf-8")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "branch change")
+        (ws["repo"] / "shared.md").write_text("main-line\n", encoding="utf-8")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "main advance")
+        (ws["repo"] / "bystander.txt").write_text("未跟踪旁观件\n", encoding="utf-8")
+        code, payload = _run(capsys, *_close_args(ws))
+        assert code == 1
+        # 拒后未跟踪件零离盘
+>       assert (ws["repo"] / "bystander.txt").read_text(encoding="utf-8") == "未跟踪旁观件\n"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_closefix.py:342: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_r0/main/sih-engine/bystander.txt')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_r0/main/sih-engine/bystander.txt'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+__________________ test_close_untracked_survive_failure_path ___________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x1097639d0>
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_f0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10974f820>
+
+    def test_close_untracked_survive_failure_path(capsys, tmp_path, monkeypatch):
+        """三态之败：merge 失败落 close_failed 后，主树未跟踪件仍在盘、stash 零新增。"""
+        ws = _mkws(tmp_path)
+        _run(capsys, *_open_args(ws))
+        wt = _wt(ws)
+        (wt / "own-file.md").write_text("分支产物\n", encoding="utf-8")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "branch work")
+        (ws["repo"] / "untracked-keeps.txt").write_text("未跟踪活件\n", encoding="utf-8")
+        import lease.core as core_mod
+        real_git = core_mod._git
+    
+        def failing_git(repo, *args):
+            if args[:2] == ("merge", "--no-ff"):
+                return 1, "", "simulated merge failure"
+            return real_git(repo, *args)
+    
+        monkeypatch.setattr(core_mod, "_git", failing_git)
+        code, payload = _run(capsys, *_close_args(ws))
+        monkeypatch.undo()
+        assert code == 1
+>       assert (ws["repo"] / "untracked-keeps.txt").read_text(encoding="utf-8") == "未跟踪活件\n"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_closefix.py:367: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_f0/main/sih-engine/untracked-keeps.txt')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_untracked_survive_f0/main/sih-engine/untracked-keeps.txt'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+_________________ test_close_preclose_commit_narrowed_to_face __________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x10974fbb0>
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_close_preclose_commit_nar0')
+
+    def test_close_preclose_commit_narrowed_to_face(capsys, tmp_path):
+        """预收提交最小化：非归并面脏件（base 跟踪件未提交修改）不被 add -A 固化。"""
+        ws = _mkws(tmp_path)
+        # base 先落一件分支永不触碰的跟踪件
+        (ws["repo"] / "outside-tracked.md").write_text("base 版\n", encoding="utf-8")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(ws["repo"], "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "base adds outside file")
+        _run(capsys, *_open_args(ws))
+        wt = _wt(ws)
+        (wt / "face-file.md").write_text("分支产物\n", encoding="utf-8")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "add", "-A")
+        _g(wt, "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "branch adds face file")
+        # 主树：面内同内容让位 + 面外跟踪件未提交修改（分支未触碰）
+        (ws["repo"] / "face-file.md").write_text("分支产物\n", encoding="utf-8")
+        (ws["repo"] / "outside-tracked.md").write_text("面外未提交改动\n", encoding="utf-8")
+        code, payload = _run(capsys, *_close_args(ws))
+        assert code == 0, payload
+        # 面外跟踪件保持未提交态（未被预收提交固化）
+        status = _g(ws["repo"], "status", "--porcelain")
+>       assert "outside-tracked.md" in status, "面外脏件不应被预收提交固化"
+E       AssertionError: 面外脏件不应被预收提交固化
+E       assert 'outside-tracked.md' in '?? sih/state/plan/demo-pkg.lease-check.json\n'
+
+tests/test_closefix.py:392: AssertionError
+____________________ test_ledger_lock_reentrant_same_thread ____________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_ledger_lock_reentrant_sam0')
+
+    def test_ledger_lock_reentrant_same_thread(tmp_path):
+        """同线程同路径嵌套持锁零死锁（子进程 6 秒超时探针机械固定）。"""
+        led = tmp_path / "reent.ndjson"
+        append_row(led, {"seq": 1})
+        code = (
+            "import sys;"
+            f"sys.path.insert(0, {str(Path(__file__).resolve().parents[1] / 'src')!r});"
+            "from lease.ledgerwrite import ledger_lock, append_row;"
+            f"p = {str(led)!r};"
+            "with ledger_lock(p):\n"
+            "    with ledger_lock(p):\n"
+            "        append_row(p, {'seq': 2})\n"
+            "print('done')"
+        )
+        try:
+            r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=6)
+>           assert r.returncode == 0, r.stderr[-300:]
+E           AssertionError:                                                                                                                                                                                                                                                                            ^^^^
+E             SyntaxError: invalid syntax
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['/Users/moc/workspaces/SiHankor/worktrees/sih-tools/closefix-solo/lease/.venv/bin/python3', '-c...                                                                                  ^^^^\nSyntaxError: invalid syntax\n').returncode
+
+tests/test_closefix.py:416: AssertionError
+_________________ test_restore_missing_under_outer_lock_window _________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_restore_missing_under_out0')
+
+    def test_restore_missing_under_outer_lock_window(tmp_path):
+        """回补网在已持锁窗内直接调用零死锁（病三去重入的活体形，6 秒超时探针子进程承载）。"""
+        led = tmp_path / "restore2.ndjson"
+        backup = tmp_path / "restore2.bak"
+        append_row(led, {"seq": 1})
+        append_row(led, {"seq": 2})
+        backup.write_text(led.read_text(encoding="utf-8"), encoding="utf-8")
+        led.write_text(json.dumps({"seq": 3}, sort_keys=True, separators=(",", ":")) + "\n",
+                       encoding="utf-8")
+        code = (
+            "import sys;"
+            f"sys.path.insert(0, {str(Path(__file__).resolve().parents[1] / 'src')!r});"
+            "from lease.ledgerwrite import ledger_lock, restore_missing;"
+            f"with ledger_lock({str(led)!r}):\n"
+            f"    n = restore_missing({str(led)!r}, {str(backup)!r})\n"
+            "print(n)"
+        )
+        try:
+            r = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=6)
+>           assert r.returncode == 0, r.stderr[-300:]
+E           AssertionError: sb9prgqfc4w0000gn/T/pytest-of-moc/pytest-537/test_restore_missing_under_out0/restore2.ndjson'):
+E                                                                                                                                                                                        ^^^^
+E             SyntaxError: invalid syntax
+E             
+E           assert 1 == 0
+E            +  where 1 = CompletedProcess(args=['/Users/moc/workspaces/SiHankor/worktrees/sih-tools/closefix-solo/lease/.venv/bin/python3', '-c...                                                                                  ^^^^\nSyntaxError: invalid syntax\n').returncode
+
+tests/test_closefix.py:463: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_closefix.py::test_frozen_append_faces_constant - ImportErro...
+FAILED tests/test_closefix.py::test_sandbox_a_ledger_face_zero_loss - Asserti...
+FAILED tests/test_closefix.py::test_sandbox_b_union_yield_no_self_deadlock - ...
+FAILED tests/test_closefix.py::test_sandbox_c_union_append_channel - Assertio...
+FAILED tests/test_closefix.py::test_sandbox_h3_ledger_face_write_respects_foreign_lock
+FAILED tests/test_closefix.py::test_close_live_ledger_in_repo_zero_loss - ass...
+FAILED tests/test_closefix.py::test_close_untracked_survive_reject_path - Fil...
+FAILED tests/test_closefix.py::test_close_untracked_survive_failure_path - Fi...
+FAILED tests/test_closefix.py::test_close_preclose_commit_narrowed_to_face - ...
+FAILED tests/test_closefix.py::test_ledger_lock_reentrant_same_thread - Asser...
+FAILED tests/test_closefix.py::test_restore_missing_under_outer_lock_window
+11 failed, 1 passed in 18.00s

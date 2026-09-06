@@ -1,0 +1,5810 @@
+{
+ "engine": {
+  "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+  "restored": [
+   {
+    "ref": "stash@{2}",
+    "path": "tally-check-report.json",
+    "bytes": 61
+   }
+  ],
+  "skipped_existing": 319,
+  "kept_disk_newer": [
+   {
+    "ref": "stash@{12}",
+    "path": "doc/governance/PARKING-v1.md",
+    "status": "M"
+   },
+   {
+    "ref": "stash@{12}",
+    "path": "sih/event/trail/2026-09-03.ndjson",
+    "status": "M"
+   },
+   {
+    "ref": "stash@{12}",
+    "path": "sih/state/parking/materials/pk-046.json",
+    "status": "M"
+   }
+  ],
+  "errors": []
+ },
+ "tools": {
+  "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+  "restored": [
+   {
+    "ref": "stash@{0}",
+    "path": "elicit/signals/2026-09-02-predmerge-guard-solo-signals.ndjson",
+    "bytes": 679
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "elicit/signals/2026-09-03-mathrefmt-solo-suspend.ndjson",
+    "bytes": 121
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "elicit/signals/wenguobs-signals.ndjson",
+    "bytes": 352
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-1/contract-score-material.json",
+    "bytes": 761
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-1/contract.json",
+    "bytes": 22483
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-1/responses.jsonl",
+    "bytes": 2363
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-2/contract-score-material.json",
+    "bytes": 859
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-2/contract.json",
+    "bytes": 24455
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-abdesign-2/responses.jsonl",
+    "bytes": 2146
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-idenlane-pen-1/contract-score-material.json",
+    "bytes": 783
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-idenlane-pen-1/contract.json",
+    "bytes": 22800
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/idenlane-envelope-260905/m-idenlane-pen-1/responses.jsonl",
+    "bytes": 2643
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/pkexits-260905/cal-pack.json",
+    "bytes": 6556
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/pkexits-260905/cal-responses.jsonl",
+    "bytes": 5126
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/pkexits-260905/seat-baseline-zcode-2026-09-05-pkexits.json",
+    "bytes": 860
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/cal-pack.json",
+    "bytes": 6556
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/cal-responses.jsonl",
+    "bytes": 6000
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/responses.jsonl",
+    "bytes": 3027
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/seat-baseline-zcode-2026-09-05-m-wengui-fit-1.json",
+    "bytes": 785
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/wengui-namefit-1-score-material.json",
+    "bytes": 829
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/wengui-namefit-1-tally-material.json",
+    "bytes": 1197
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/wengui-260905/wengui-namefit-1.json",
+    "bytes": 30067
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-06.json",
+    "bytes": 6945
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-06.responses.jsonl",
+    "bytes": 906
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-06.score-material.json",
+    "bytes": 702
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-09.json",
+    "bytes": 6943
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-09.responses.jsonl",
+    "bytes": 789
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c1-09.score-material.json",
+    "bytes": 706
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-02.json",
+    "bytes": 6619
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-02.responses.jsonl",
+    "bytes": 804
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-02.score-material.json",
+    "bytes": 706
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-04.json",
+    "bytes": 5397
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-04.responses.jsonl",
+    "bytes": 774
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-c2-04.score-material.json",
+    "bytes": 706
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-e1-01b.json",
+    "bytes": 6655
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-e1-01b.responses.jsonl",
+    "bytes": 798
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-e1-01b.score-material.json",
+    "bytes": 710
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-06.json",
+    "bytes": 6475
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-06.responses.jsonl",
+    "bytes": 786
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-06.score-material.json",
+    "bytes": 702
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-12.json",
+    "bytes": 6371
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-12.responses.jsonl",
+    "bytes": 720
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/contracts/zc-glm53flash-20260830/zc-p-12.score-material.json",
+    "bytes": 702
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/facet_task_packages/mathrelease-1/contract-score-material.json",
+    "bytes": 745
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/facet_task_packages/mathrelease-1/contract.json",
+    "bytes": 14661
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "facet/facet_task_packages/mathrelease-1/responses.jsonl",
+    "bytes": 1383
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/--identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-08-31-viewreg-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-08-31-wenguobs-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-08-31-wenguobs-resolo-2-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-08-31-wenguobs-resolo-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-01-agentslim-solo-identity.json",
+    "bytes": 1177
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-01-cmdface-identity.json",
+    "bytes": 1177
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-01-cmdface-r2-identity.json",
+    "bytes": 1177
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-01-outslim-identity.json",
+    "bytes": 1177
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-01-scrutmerge-switch-solo-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-adjudisp-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-algidx-solo-identity.json",
+    "bytes": 1153
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-anchorsort-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-assetwave-a-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-assetwave-b-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-assetwave-c-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-assetwave-d-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-assetwave-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-autoflow2-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-degladder-identity.json",
+    "bytes": 1153
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-deyimerge-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-deyisw-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-deyitdd-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-extinv-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-guardhook-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-legacytwo-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-listzero-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-matcatch-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-mathver-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-p3xbridge-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-parkingpk-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-philwave-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-pk013-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-predab-identity.json",
+    "bytes": 1153
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-predmg-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-predsp2-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-relaud-solo-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-settle-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-sweep6-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-trigwave-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-02-wikirecallp12-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-caswire-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-caswire2-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-debtswp-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-entryunique-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-facepark-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-goldlim-refreeze-solo-identity.json",
+    "bytes": 1505
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-guardrail-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-guardrail2-solo-identity.json",
+    "bytes": 1487
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-gvec-method-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-idcore-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-idwire-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-ledgrev-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-locksplit-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathclose-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathpipe-a1-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathpipe-a2-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathpipe-a3-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathquote-calc-solo-identity.json",
+    "bytes": 1505
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathquote-solo-identity.json",
+    "bytes": 1483
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathquote2-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathrefmt-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-mathrefmt2-solo-identity.json",
+    "bytes": 1505
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-ordwire-lease-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-parkreplay-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-pendsweep-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-resarch-solo-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-scriwire-solo-identity.json",
+    "bytes": 1509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-03-scriwire2-solo-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-basefix-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-carrwire-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-cascadewire-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-claimgate-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-constclear-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-covrefresh-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-docmath-b1-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-elicitwire-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-facetmath-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-gatecap-solo-identity.json",
+    "bytes": 1489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-gatemath-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-gchart-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-gov002v2-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-leaseopt-audit-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-leasewire-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-mainord-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-packhyg-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-pk037impl-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-pk050sw-solo-identity.json",
+    "bytes": 1489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-poolclear-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-queueing-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-recallloop-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-selwire-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-tallywire-solo-identity.json",
+    "bytes": 1489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-04-tallywire2-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-constmodel-repair-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-constmodel-solo-identity.json",
+    "bytes": 257
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-docmath-anchor-registry-identity.json",
+    "bytes": 257
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-gateswitch-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-idenlane-envelope-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-idenlane-human-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-idenlane-solo-identity.json",
+    "bytes": 1471
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseopt-fixguard-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseopt-ledger-repair-solo-identity.json",
+    "bytes": 1489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseopt-lockdb-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseopt-lockqueue-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseopt-precheck-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-leaseoptsettle-solo-identity.json",
+    "bytes": 1471
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-parkrecon-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-pk057fix-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-pkexits-solo-identity.json",
+    "bytes": 1471
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-viewline-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-05-watchcheck-solo-identity.json",
+    "bytes": 1471
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-06-basisunion-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-06-genpark-solo-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-06-gvec-v2-serial-identity.json",
+    "bytes": 187
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-06-ledgerloss5-solo-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "identity/reports/2026-09-06-triple-repair-identity.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "lease/ledger/locks.ndjson.bak-mathclose-181734",
+    "bytes": 840372
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "lease/ledger/release-orphans-locksplit.py",
+    "bytes": 2327
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "meter/counts/2026-09-05.ndjson",
+    "bytes": 3149
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-027.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-029.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-030.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-031.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-032.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-033.json",
+    "bytes": 203
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/materials/pk-035-enter.json",
+    "bytes": 1369
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-027-enter.json",
+    "bytes": 964
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-029-enter.json",
+    "bytes": 618
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-029-exit.json",
+    "bytes": 455
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-030-enter.json",
+    "bytes": 509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-030-exit.json",
+    "bytes": 430
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-031-enter.json",
+    "bytes": 622
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-032-enter.json",
+    "bytes": 487
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-033-enter.json",
+    "bytes": 356
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "parking/records/pk-055-enter.json",
+    "bytes": 1318
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/closeguard-solo/closeguard-solo-contract-sync.md",
+    "bytes": 7697
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/closeguard-solo/closeguard-solo-mechanism.md",
+    "bytes": 13849
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/closeguard-solo/closeguard-solo-summary.json",
+    "bytes": 3743
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/closeguard-solo/closeguard-solo-test-plan.md",
+    "bytes": 11340
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/gvec-method-guard-1/flywheel-trail.jsonl",
+    "bytes": 10055
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/lw-minimax-m3-off-3000-20260826/summary.partial.json",
+    "bytes": 12706
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-abdesign-1/flywheel-trail.jsonl",
+    "bytes": 7276
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-abdesign-2/flywheel-trail.jsonl",
+    "bytes": 8870
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-abdesign-2/m-abdesign-2-score-material.json",
+    "bytes": 859
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-abdesign-2/m-abdesign-2-signcheck.json",
+    "bytes": 1222
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-assetanchor-rev/assetanchor-rev-contract-score-material.json",
+    "bytes": 721
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-assetanchor-rev/assetanchor-rev-tally-material.json",
+    "bytes": 956
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-assetanchor-rev/flywheel-trail.jsonl",
+    "bytes": 5137
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-assetanchor/flywheel-trail.jsonl",
+    "bytes": 5219
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-bridgereg/bridgereg-contract-score-material.json",
+    "bytes": 707
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-bridgereg/bridgereg-tally-material.json",
+    "bytes": 936
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-bridgereg/flywheel-trail.jsonl",
+    "bytes": 4862
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-carrierwave/carrierwave-contract-score-material.json",
+    "bytes": 711
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-carrierwave/carrierwave-tally-material.json",
+    "bytes": 942
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-carrierwave/flywheel-trail.jsonl",
+    "bytes": 5200
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract-n6-score-material.json",
+    "bytes": 581
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract-n6.json",
+    "bytes": 11765
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract-n9-score-material.json",
+    "bytes": 581
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract-n9.json",
+    "bytes": 17192
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract-score-material.json",
+    "bytes": 578
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/contract.json",
+    "bytes": 6338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/flywheel-trail.jsonl",
+    "bytes": 12728
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-ctdemo/responses.jsonl",
+    "bytes": 2474
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-degladder/degladder-contract-score-material.json",
+    "bytes": 703
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-degladder/degladder-tally-material.json",
+    "bytes": 932
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-degladder/flywheel-trail.jsonl",
+    "bytes": 4919
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/flywheel-trail.jsonl",
+    "bytes": 6539
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/scheme-m-r1.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/scheme-m-r2.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/scheme-m-r3.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/scheme-m-r4.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/scheme-m-r5.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-1/topic.md",
+    "bytes": 1728
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/flywheel-trail.jsonl",
+    "bytes": 6517
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/scheme-m-r1.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/scheme-m-r2.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/scheme-m-r3.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/scheme-m-r4.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/scheme-m-r5.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-carrier-2/topic.md",
+    "bytes": 1695
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/flywheel-trail.jsonl",
+    "bytes": 8000
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r1.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r2.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r3.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r4.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r5.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r6.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/scheme-m-r7.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-conflux-1/topic.md",
+    "bytes": 1363
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/flywheel-trail.jsonl",
+    "bytes": 6142
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/scheme-m-r1.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/scheme-m-r2.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/scheme-m-r3.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/scheme-m-r4.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/scheme-m-r5.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-gate-1/topic.md",
+    "bytes": 1392
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/flywheel-trail.jsonl",
+    "bytes": 6394
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/scheme-m-r1.yaml",
+    "bytes": 350
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/scheme-m-r2.yaml",
+    "bytes": 350
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/scheme-m-r3.yaml",
+    "bytes": 350
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/scheme-m-r4.yaml",
+    "bytes": 350
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/scheme-m-r5.yaml",
+    "bytes": 350
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-docmath-tplscope-1/topic.md",
+    "bytes": 1375
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-env-penform-1/flywheel-trail.jsonl",
+    "bytes": 14874
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-extinv/extinv-contract-score-material.json",
+    "bytes": 701
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-extinv/extinv-tally-material.json",
+    "bytes": 927
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-extinv/flywheel-trail.jsonl",
+    "bytes": 4912
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-fix4/flywheel-trail.jsonl",
+    "bytes": 7148
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-fix4b/contract-score-material.json",
+    "bytes": 2567
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-fix4b/flywheel-trail.jsonl",
+    "bytes": 7138
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-fmtc2/contract-score-material.json",
+    "bytes": 2567
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-fmtc2/flywheel-trail.jsonl",
+    "bytes": 7076
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/flywheel-trail.jsonl",
+    "bytes": 6106
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/scheme-m-r1.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/scheme-m-r2.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/scheme-m-r3.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/scheme-m-r4.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/scheme-m-r5.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore/topic.md",
+    "bytes": 1579
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/flywheel-trail.jsonl",
+    "bytes": 5972
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/scheme-m-r1.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/scheme-m-r2.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/scheme-m-r3.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/scheme-m-r4.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/scheme-m-r5.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idcore2/topic.md",
+    "bytes": 1445
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-idenlane-pen-1/flywheel-trail.jsonl",
+    "bytes": 7614
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathnext/flywheel-trail.jsonl",
+    "bytes": 5095
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathnext/m-mathnext-signcheck.json",
+    "bytes": 873
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathnext/mathnext-contract-score-material.json",
+    "bytes": 699
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathnext/mathnext-tally-material.json",
+    "bytes": 926
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/flywheel-trail.jsonl",
+    "bytes": 4932
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/m-mathrelease-check-report.json",
+    "bytes": 925
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/m-mathrelease-score-material.json",
+    "bytes": 742
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/m-mathrelease-signcheck.json",
+    "bytes": 897
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/m-mathrelease-tally-material.json",
+    "bytes": 1189
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mathrelease/seat-baseline-zcode-2026-09-02.json",
+    "bytes": 785
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-deyi/contract-score-material.json",
+    "bytes": 726
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-deyi/contract.json",
+    "bytes": 12545
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-deyi/flywheel-trail.jsonl",
+    "bytes": 5878
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-scrut/contract-score-material.json",
+    "bytes": 730
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-scrut/contract.json",
+    "bytes": 10063
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-mbgate-scrut/flywheel-trail.jsonl",
+    "bytes": 5816
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-namefit/contract-score-material.json",
+    "bytes": 580
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-namefit/contract.json",
+    "bytes": 7021
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-namefit/flywheel-trail.jsonl",
+    "bytes": 3868
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-namefit/responses.jsonl",
+    "bytes": 1068
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-p3xcarr/flywheel-trail.jsonl",
+    "bytes": 7828
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-p3xcarr/m-p3xcarr-signcheck.json",
+    "bytes": 870
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-p3xcarr/p3xcarr-contract-score-material.json",
+    "bytes": 695
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-p3xcarr/p3xcarr-tally-material.json",
+    "bytes": 920
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-passive5/contract-score-material.json",
+    "bytes": 584
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-passive5/contract.json",
+    "bytes": 7647
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-passive5/flywheel-trail.jsonl",
+    "bytes": 3818
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-passive5/responses.jsonl",
+    "bytes": 1011
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pilgate/flywheel-trail.jsonl",
+    "bytes": 4872
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pilgate/pilgate-contract-score-material.json",
+    "bytes": 703
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pilgate/pilgate-tally-material.json",
+    "bytes": 930
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/flywheel-trail.jsonl",
+    "bytes": 6217
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/scheme-m-r1.yaml",
+    "bytes": 351
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/scheme-m-r2.yaml",
+    "bytes": 351
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/scheme-m-r3.yaml",
+    "bytes": 351
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/scheme-m-r4.yaml",
+    "bytes": 351
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/scheme-m-r5.yaml",
+    "bytes": 351
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain-rev/topic.md",
+    "bytes": 750
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/flywheel-trail.jsonl",
+    "bytes": 5981
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/scheme-m-r1.yaml",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/scheme-m-r2.yaml",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/scheme-m-r3.yaml",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/scheme-m-r4.yaml",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/scheme-m-r5.yaml",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-fourchain/topic.md",
+    "bytes": 886
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/flywheel-trail.jsonl",
+    "bytes": 7889
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r1.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r2.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r3.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r4.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r5.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r6.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/scheme-m-r7.yaml",
+    "bytes": 349
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom-rev/topic.md",
+    "bytes": 697
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/flywheel-trail.jsonl",
+    "bytes": 6554
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/scheme-m-r1.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/scheme-m-r2.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/scheme-m-r3.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/scheme-m-r4.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/scheme-m-r5.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk017-minatom/topic.md",
+    "bytes": 929
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r1.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r2.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r3.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r4.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r5.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r6.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r7.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r8.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-pk050-switch-1/scheme-m-r9.yaml",
+    "bytes": 346
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/flywheel-trail.jsonl",
+    "bytes": 5816
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/scheme-m-r1.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/scheme-m-r2.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/scheme-m-r3.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/scheme-m-r4.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/scheme-m-r5.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep-inv/topic.md",
+    "bytes": 916
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/flywheel-trail.jsonl",
+    "bytes": 7267
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r1.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r2.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r3.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r4.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r5.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r6.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/scheme-m-r7.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-refsep/topic.md",
+    "bytes": 956
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wengui-fit-1/flywheel-trail.jsonl",
+    "bytes": 8126
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wengui-fit-1/m-wengui-fit-1-signcheck.json",
+    "bytes": 929
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wengui-fit-1/wengui-namefit-1-score-material.json",
+    "bytes": 829
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wikirecall/flywheel-trail.jsonl",
+    "bytes": 5041
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wikirecall/wikirecall-contract-score-material.json",
+    "bytes": 707
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/m-wikirecall/wikirecall-tally-material.json",
+    "bytes": 937
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/measure-poly-rev1/measure-poly-rev1-progdoc.md",
+    "bytes": 13545
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/flywheel-trail.jsonl",
+    "bytes": 5866
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/scheme-m-r1.yaml",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/scheme-m-r2.yaml",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/scheme-m-r3.yaml",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/scheme-m-r4.yaml",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/scheme-m-r5.yaml",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-chenxing/topic.md",
+    "bytes": 698
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/flywheel-trail.jsonl",
+    "bytes": 6190
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/scheme-m-r1.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/scheme-m-r2.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/scheme-m-r3.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/scheme-m-r4.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/scheme-m-r5.yaml",
+    "bytes": 345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-guanxiang/topic.md",
+    "bytes": 699
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/flywheel-trail.jsonl",
+    "bytes": 6242
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/scheme-m-r1.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/scheme-m-r2.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/scheme-m-r3.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/scheme-m-r4.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/scheme-m-r5.yaml",
+    "bytes": 342
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029-shishu/topic.md",
+    "bytes": 696
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch1-lineage/adjudication-material.json",
+    "bytes": 925
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch1-lineage/contract-score-material.json",
+    "bytes": 620
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch1-lineage/contract.json",
+    "bytes": 9292
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch1-lineage/flywheel-trail.jsonl",
+    "bytes": 3974
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch1-lineage/responses.jsonl",
+    "bytes": 1122
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch2-semantics/adjudication-material.json",
+    "bytes": 935
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch2-semantics/contract-score-material.json",
+    "bytes": 628
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch2-semantics/contract.json",
+    "bytes": 9542
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch2-semantics/flywheel-trail.jsonl",
+    "bytes": 3990
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch2-semantics/responses.jsonl",
+    "bytes": 1128
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch3-coverage/adjudication-material.json",
+    "bytes": 930
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch3-coverage/contract-score-material.json",
+    "bytes": 624
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch3-coverage/contract.json",
+    "bytes": 9225
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch3-coverage/flywheel-trail.jsonl",
+    "bytes": 3910
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch3-coverage/responses.jsonl",
+    "bytes": 1053
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch4-gauge/adjudication-material.json",
+    "bytes": 915
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch4-gauge/contract-score-material.json",
+    "bytes": 612
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch4-gauge/contract.json",
+    "bytes": 8874
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch4-gauge/flywheel-trail.jsonl",
+    "bytes": 3814
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk029v2-ch4-gauge/responses.jsonl",
+    "bytes": 972
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch1-identity/adjudication-material.json",
+    "bytes": 920
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch1-identity/contract-score-material.json",
+    "bytes": 616
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch1-identity/contract.json",
+    "bytes": 9398
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch1-identity/flywheel-trail.jsonl",
+    "bytes": 8907
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch1-identity/responses.jsonl",
+    "bytes": 831
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch2-carry/adjudication-material.json",
+    "bytes": 905
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch2-carry/contract-score-material.json",
+    "bytes": 604
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch2-carry/contract.json",
+    "bytes": 8933
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch2-carry/flywheel-trail.jsonl",
+    "bytes": 8865
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch2-carry/responses.jsonl",
+    "bytes": 822
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch3-pairing/adjudication-material.json",
+    "bytes": 915
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch3-pairing/contract-score-material.json",
+    "bytes": 612
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch3-pairing/contract.json",
+    "bytes": 8992
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch3-pairing/flywheel-trail.jsonl",
+    "bytes": 8830
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch3-pairing/responses.jsonl",
+    "bytes": 765
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch4-boundary/adjudication-material.json",
+    "bytes": 920
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch4-boundary/contract-score-material.json",
+    "bytes": 616
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch4-boundary/contract.json",
+    "bytes": 9080
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch4-boundary/flywheel-trail.jsonl",
+    "bytes": 8832
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/pk035-ch4-boundary/responses.jsonl",
+    "bytes": 756
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-06/flywheel-trail.jsonl",
+    "bytes": 3692
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-06/scheme-k2t.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-06/topic.md",
+    "bytes": 715
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-09/flywheel-trail.jsonl",
+    "bytes": 3537
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-09/scheme-k2t.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c1-09/topic.md",
+    "bytes": 714
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-02/flywheel-trail.jsonl",
+    "bytes": 3552
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-02/scheme-k2t.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-02/topic.md",
+    "bytes": 605
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-04/flywheel-trail.jsonl",
+    "bytes": 3522
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-04/scheme-k2t.yaml",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-c2-04/topic.md",
+    "bytes": 205
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-e1-01b/flywheel-trail.jsonl",
+    "bytes": 3550
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-e1-01b/scheme-k2t.yaml",
+    "bytes": 339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-e1-01b/topic.md",
+    "bytes": 616
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-glm53flash-contract-20260830/topic_ids.txt",
+    "bytes": 225
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-06/flywheel-trail.jsonl",
+    "bytes": 3528
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-06/scheme-k2t.yaml",
+    "bytes": 337
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-06/topic.md",
+    "bytes": 558
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-12/flywheel-trail.jsonl",
+    "bytes": 3462
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-12/scheme-k2t.yaml",
+    "bytes": 337
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/DES/zc-p-12/topic.md",
+    "bytes": 526
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-pk017-fourchain-rev.md",
+    "bytes": 750
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-pk017-fourchain.md",
+    "bytes": 886
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-pk017-minatom-rev.md",
+    "bytes": 697
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-pk017-minatom.md",
+    "bytes": 929
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-refsep-inv.md",
+    "bytes": 916
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-27-refsep.md",
+    "bytes": 956
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-29-contract-demo.md",
+    "bytes": 511
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-component-naming-review.md",
+    "bytes": 3070
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-fix4.md",
+    "bytes": 1013
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-fix4b.md",
+    "bytes": 1254
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-fmtc2.md",
+    "bytes": 1194
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-gauge-name-review.md",
+    "bytes": 3610
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-namefit.md",
+    "bytes": 734
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-passive-r5.md",
+    "bytes": 930
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029-chenxing.md",
+    "bytes": 698
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029-guanxiang.md",
+    "bytes": 699
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029-shishu.md",
+    "bytes": 696
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029v2-ch1-lineage.md",
+    "bytes": 1462
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029v2-ch2-semantics.md",
+    "bytes": 1540
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029v2-ch3-coverage.md",
+    "bytes": 1437
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk029v2-ch4-gauge.md",
+    "bytes": 1325
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk035-ch1-identity.md",
+    "bytes": 1487
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk035-ch2-carry.md",
+    "bytes": 1339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk035-ch3-pairing.md",
+    "bytes": 1358
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk035-ch4-boundary.md",
+    "bytes": 1380
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-30-pk035-seat-identity-review.md",
+    "bytes": 2668
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-31-m-mbgate-deyi.md",
+    "bytes": 2539
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-31-m-mbgate-scrut.md",
+    "bytes": 1715
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-08-31-mathnext.md",
+    "bytes": 936
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-assetanchor-rev.md",
+    "bytes": 1804
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-assetanchor.md",
+    "bytes": 1521
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-bridgereg.md",
+    "bytes": 1300
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-carrierwave.md",
+    "bytes": 1489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-degladder.md",
+    "bytes": 1440
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-extinv.md",
+    "bytes": 1344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-mathrelease.md",
+    "bytes": 1435
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-p3xcarr.md",
+    "bytes": 1375
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-pilgate.md",
+    "bytes": 1225
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-02-wikirecall.md",
+    "bytes": 1450
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-03-idcore.md",
+    "bytes": 1580
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-03-idcore2.md",
+    "bytes": 1446
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-04-docmath-carrier.md",
+    "bytes": 1696
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-04-docmath-conflux.md",
+    "bytes": 1364
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-04-docmath-gate.md",
+    "bytes": 1393
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-04-docmath-tplscope.md",
+    "bytes": 1376
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-04-pk050-switch.md",
+    "bytes": 2084
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-05-abdesign.md",
+    "bytes": 1084
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-05-abdesign2.md",
+    "bytes": 1303
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-05-idenlane-direct-pen.md",
+    "bytes": 1114
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-05-wengui-namefit.md",
+    "bytes": 1921
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "proposition/topics/2026-09-05-wengui-naming-review.md",
+    "bytes": 4605
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/-docmath-b3-solo-checkcite.json",
+    "bytes": 249
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-ask3-closeidem-record.json",
+    "bytes": 4210
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-ask3-closeidem-repeat.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-ask3-closeidem-validation.json",
+    "bytes": 609
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-closeidem-formatter.json",
+    "bytes": 1115
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-closeidem-identity.json",
+    "bytes": 1211
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-closeidem-nomenclator-package.json",
+    "bytes": 1011
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-28-closeidem-nomenclator-results.json",
+    "bytes": 1044
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-29-chainfork-tallyinit-note.md",
+    "bytes": 694
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-29-park-formatter.json",
+    "bytes": 801
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-29-park-nomenclator.json",
+    "bytes": 978
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-bridgeacc-record.json",
+    "bytes": 2094
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006fin-record.json",
+    "bytes": 2219
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006sb2-record.json",
+    "bytes": 2653
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006sb2-validation.json",
+    "bytes": 681
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006sb3-record.json",
+    "bytes": 1672
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006sb3-validation.json",
+    "bytes": 681
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-c006settle-record.json",
+    "bytes": 2283
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-charterfix-record.json",
+    "bytes": 3151
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-charterfix-validation.json",
+    "bytes": 605
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-charterfix-validation2.json",
+    "bytes": 605
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-gaugewiring-record.json",
+    "bytes": 4012
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-gaugewiring-repeat.json",
+    "bytes": 78
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-gaugewiring-validation.json",
+    "bytes": 607
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk027expr-record.json",
+    "bytes": 3510
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk027expr-validation.json",
+    "bytes": 603
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk031gap-record.json",
+    "bytes": 3330
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk031gap-validation.json",
+    "bytes": 601
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk032stale-record.json",
+    "bytes": 3632
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk032stale-validation.json",
+    "bytes": 605
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk033casc-record.json",
+    "bytes": 3236
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk033casc-validation.json",
+    "bytes": 603
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk035impl-record.json",
+    "bytes": 4029
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk035impl-repeat.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-pk035impl-validation.json",
+    "bytes": 603
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-retclear-record.json",
+    "bytes": 3077
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-retclear-validation.json",
+    "bytes": 601
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-ask3-rulesem-record.json",
+    "bytes": 2383
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-charterfix-formatter-AGENTS.json",
+    "bytes": 849
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-charterfix-formatter-results.json",
+    "bytes": 987
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-charterfix-nomenclator-results.json",
+    "bytes": 1071
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-crossgraph-elicit-signals.ndjson",
+    "bytes": 601
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-elicit-signals.ndjson",
+    "bytes": 1127
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-formatter-SPEC-011.json",
+    "bytes": 997
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-formatter-results.json",
+    "bytes": 991
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-formatter-results2.json",
+    "bytes": 991
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-nomenclator-SPEC-011.json",
+    "bytes": 1076
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-nomenclator-results.json",
+    "bytes": 1073
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-nomenclator-results2.json",
+    "bytes": 1073
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-recall1.json",
+    "bytes": 7078
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-gaugewiring-scrutinator-SPEC-011.json",
+    "bytes": 819
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk027expr-formatter-CONTRACT.json",
+    "bytes": 937
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk027expr-formatter-results.json",
+    "bytes": 983
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk027expr-nomenclator-CONTRACT.json",
+    "bytes": 1046
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk027expr-nomenclator-results.json",
+    "bytes": 1069
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk029-deyi-rubric.json",
+    "bytes": 1101
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk029-deyi-verdict.json",
+    "bytes": 960
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk029v2-seat-baseline.json",
+    "bytes": 700
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk031gap-elicit-signals.ndjson",
+    "bytes": 703
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk031gap-formatter-leaseCONTRACT.json",
+    "bytes": 933
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk031gap-formatter-results.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk031gap-nomenclator-leaseCONTRACT.json",
+    "bytes": 1044
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk031gap-nomenclator-results.json",
+    "bytes": 1067
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk032stale-elicit-signals.ndjson",
+    "bytes": 703
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk032stale-formatter-results.json",
+    "bytes": 987
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk032stale-nomenclator-AGENTS.json",
+    "bytes": 977
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk032stale-nomenclator-results.json",
+    "bytes": 1071
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk033casc-formatter-CONTRACT.json",
+    "bytes": 939
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk033casc-formatter-results.json",
+    "bytes": 983
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk033casc-nomenclator-CONTRACT.json",
+    "bytes": 1047
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk033casc-nomenclator-results.json",
+    "bytes": 1069
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-elicit-signals.ndjson",
+    "bytes": 988
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-formatter-identityCONTRACT.json",
+    "bytes": 941
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-formatter-results.json",
+    "bytes": 983
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-formatter-tallyCONTRACT.json",
+    "bytes": 935
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-nomenclator-PARKING.json",
+    "bytes": 978
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-nomenclator-identityCONTRACT.json",
+    "bytes": 985
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-nomenclator-results.json",
+    "bytes": 1069
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-nomenclator-tallyCONTRACT.json",
+    "bytes": 982
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-pk035impl-recall1.json",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-formatter-results.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-formatter-results2.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-formatter-results3.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-formatter-results4.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-nomenclator-results.json",
+    "bytes": 1614
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-nomenclator-results2.json",
+    "bytes": 1614
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-nomenclator-results3.json",
+    "bytes": 1614
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-30-retclear-nomenclator-results4.json",
+    "bytes": 1067
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-entryacc-record.json",
+    "bytes": 2072
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-epiacc-record.json",
+    "bytes": 1817
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-leasepatch-record.json",
+    "bytes": 3569
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-leasepatch-validation.json",
+    "bytes": 687
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-ordfound-mat-record.json",
+    "bytes": 2096
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-ordfound-record.json",
+    "bytes": 2191
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-pkgclose-record.json",
+    "bytes": 4479
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-pkgclose-validation.json",
+    "bytes": 683
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-scrutmerge-sdd-record.json",
+    "bytes": 4240
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-scrutmerge-sdd-validation.json",
+    "bytes": 695
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-scrutmerge-tdd-record.json",
+    "bytes": 4249
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-scrutmerge-tdd-validation.json",
+    "bytes": 695
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-tdfix-record.json",
+    "bytes": 5719
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-tdfix-validation.json",
+    "bytes": 677
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-tdfix2-record.json",
+    "bytes": 6841
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-tdfix2-validation.json",
+    "bytes": 603
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-viewimpl-record.json",
+    "bytes": 3949
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-viewimpl-validation.json",
+    "bytes": 683
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-viewrider-record.json",
+    "bytes": 4065
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-viewrider-validation.json",
+    "bytes": 685
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-wenguobs-record.json",
+    "bytes": 5231
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-wenguobs-resolo-record.json",
+    "bytes": 5672
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-wenguobs-resolo-validation.json",
+    "bytes": 697
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-ask3-wenguobs-validation.json",
+    "bytes": 683
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-deyi-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-leasepatch-elicit-contract.txt",
+    "bytes": 193
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-leasepatch-elicit-history.ndjson",
+    "bytes": 3311
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-leasepatch-elicit-signals.ndjson",
+    "bytes": 279
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-leasepatch-identity.json",
+    "bytes": 1177
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-leasepatch-recall-face.json",
+    "bytes": 32344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-pkgclose-reconcile-engine.json",
+    "bytes": 20569
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-pkgclose-reconcile-tools.json",
+    "bytes": 14093
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-elicit-signals.json",
+    "bytes": 2381
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-fmt-pkg.json",
+    "bytes": 927
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-fmt-spec013.json",
+    "bytes": 939
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-nom-pkg.json",
+    "bytes": 1041
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-nom-spec013.json",
+    "bytes": 1047
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-recall1.json",
+    "bytes": 15426
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-scr-pkg.json",
+    "bytes": 943
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-sdd-scr-spec013.json",
+    "bytes": 871
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-elicit-signals.json",
+    "bytes": 2949
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-fmt-spec013.json",
+    "bytes": 999
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-formatter.json",
+    "bytes": 705
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-nom-spec013.json",
+    "bytes": 1077
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-nomenclator.json",
+    "bytes": 768
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-recall1.json",
+    "bytes": 29901
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-scr-spec013.json",
+    "bytes": 1015
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-scrutmerge-tdd-scrutinator.json",
+    "bytes": 1446
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-cmp-engine-flag-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-cmp-engine-positional-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-cmp-engine-positional-gov003.json",
+    "bytes": 875
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-cmp-tool-positional-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-cmp-tool-positional-gov003.json",
+    "bytes": 875
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-elicit-history.ndjson",
+    "bytes": 3893
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-elicit-signals.json",
+    "bytes": 2207
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-fmt-pkg.json",
+    "bytes": 995
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-fmt-spec013.json",
+    "bytes": 939
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-fmt-tddres.json",
+    "bytes": 1007
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-fmt-tdres.json",
+    "bytes": 1011
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-identity.json",
+    "bytes": 1157
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-nom-pkg.json",
+    "bytes": 5415
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-nom-spec013.json",
+    "bytes": 1047
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-nom-tddres.json",
+    "bytes": 1532
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-nom-tdres.json",
+    "bytes": 5132
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-recall-face.json",
+    "bytes": 25274
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-recall-核阅.json",
+    "bytes": 20172
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-recall-融回.json",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-recall-退出码.json",
+    "bytes": 4825
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-recall-金向量.json",
+    "bytes": 277
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-scr-pkg.json",
+    "bytes": 1011
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-scr-spec013.json",
+    "bytes": 871
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-scr-tddres.json",
+    "bytes": 1023
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-scr-tdres.json",
+    "bytes": 1027
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-test-green-trace.txt",
+    "bytes": 7951
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix-test-red-trace.txt",
+    "bytes": 9509
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-cmp-engine-flag-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-cmp-engine-positional-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-cmp-engine-positional-gov003.json",
+    "bytes": 875
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-cmp-tool-positional-gov002.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-cmp-tool-positional-gov003.json",
+    "bytes": 875
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-elicit-signals.ndjson",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-fmt-pkg.json",
+    "bytes": 1651
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-nom-pkg.json",
+    "bytes": 4962
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-recall-face.json",
+    "bytes": 20700
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-scr-pkg.json",
+    "bytes": 1835
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-scr-spec013.json",
+    "bytes": 871
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-scr-tddres.json",
+    "bytes": 1023
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-scr-tdres.json",
+    "bytes": 1027
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-tdfix2-test-green-trace.txt",
+    "bytes": 7493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-view-recall1.json",
+    "bytes": 13168
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-elicit-signals.json",
+    "bytes": 1352
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-fmt-gov003.json",
+    "bytes": 943
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-fmt-vipkg.json",
+    "bytes": 915
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-nom-gov003.json",
+    "bytes": 1049
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-nom-vipkg.json",
+    "bytes": 1035
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-scr-gov003.json",
+    "bytes": 875
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewimpl-scr-vipkg.json",
+    "bytes": 931
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewrider-elicit-signals.json",
+    "bytes": 1998
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewrider-fmt-results.json",
+    "bytes": 983
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewrider-identity.json",
+    "bytes": 1155
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewrider-nom-results.json",
+    "bytes": 1069
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-viewrider-recall1.json",
+    "bytes": 289
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-fmt-plan.json",
+    "bytes": 915
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-fmt-results.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-fmt-spec.json",
+    "bytes": 1009
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-nom-2docs.json",
+    "bytes": 1148
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-resolo-fmt.json",
+    "bytes": 1717
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-resolo-fmt2.json",
+    "bytes": 1547
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-resolo-nom.json",
+    "bytes": 1283
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-resolo-scr.json",
+    "bytes": 1649
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-08-31-wenguobs-scr-3docs.json",
+    "bytes": 1717
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-ask3-sealwin3-solo-record.json",
+    "bytes": 7486
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-ask3-sealwin3-solo-validation.json",
+    "bytes": 438
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-ask3-secondcarr-record.json",
+    "bytes": 2225
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-sealwin3-solo-fmt.json",
+    "bytes": 1493
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-sealwin3-solo-nom.json",
+    "bytes": 2213
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-01-sealwin3-solo-scr.json",
+    "bytes": 519
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-algidx-gates.json",
+    "bytes": 330
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-algidx-solo-elicit-signals.ndjson",
+    "bytes": 521
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-elicit-contract.md",
+    "bytes": 340
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-elicit-signals.ndjson",
+    "bytes": 253
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-fmt-mapping.json",
+    "bytes": 783
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-fmt-sort.json",
+    "bytes": 799
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-nom-two.json",
+    "bytes": 1170
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-anchorsort-scr.json",
+    "bytes": 866
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-algidx-solo-record.json",
+    "bytes": 3200
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-algidx-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-anchorsort-record.json",
+    "bytes": 3361
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-anchorsort-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-autoflow2-solo-record.json",
+    "bytes": 9849
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-autoflow2-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-degladder-record.json",
+    "bytes": 3090
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-degladder-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-sdd-solo-record.json",
+    "bytes": 7314
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-sdd-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-switch-solo-record.json",
+    "bytes": 8226
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-switch-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-tdd-solo-record.json",
+    "bytes": 6818
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-deyimerge-tdd-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-extinv-record.json",
+    "bytes": 3337
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-extinv-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-legacytwo-solo-record.json",
+    "bytes": 5036
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-legacytwo-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-listzero-solo-record.json",
+    "bytes": 5772
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-listzero-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-mathver-solo-record.json",
+    "bytes": 6889
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-mathver-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-p3xbridge-solo-record.json",
+    "bytes": 6127
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-p3xbridge-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-parkingpk-solo-record.json",
+    "bytes": 5094
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-parkingpk-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-philwave-record.json",
+    "bytes": 3123
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-philwave-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predmerge-guard-solo-record.json",
+    "bytes": 6833
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predmerge-guard-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predspec2-solo-record.json",
+    "bytes": 8713
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predspec2-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predsplitAB-solo-record.json",
+    "bytes": 7933
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-predsplitAB-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-relaud-solo-record.json",
+    "bytes": 5175
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-relaud-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-settlement-v1-solo-record.json",
+    "bytes": 3421
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-settlement-v1-solo-validation.json",
+    "bytes": 80
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-trigwave-record.json",
+    "bytes": 3076
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-trigwave-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-wikirecallp12-record.json",
+    "bytes": 3232
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-ask3-wikirecallp12-validation.json",
+    "bytes": 80
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-autoflow2-solo-elicit-contract.md",
+    "bytes": 1077
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-autoflow2-solo-elicit-signals.ndjson",
+    "bytes": 676
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-elicit-contract.md",
+    "bytes": 353
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-elicit-signals.ndjson",
+    "bytes": 259
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-fmt-entry.json",
+    "bytes": 833
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-fmt-index.json",
+    "bytes": 751
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-fmt-mapping.json",
+    "bytes": 781
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-nom-all.json",
+    "bytes": 1321
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-scr-dom.json",
+    "bytes": 889
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-degladder-scr-entry.json",
+    "bytes": 1205
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-deyimerge-sdd-solo-elicit-contract.md",
+    "bytes": 1372
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-deyimerge-sdd-solo-elicit-signals.ndjson",
+    "bytes": 1005
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-deyimerge-switch-solo-elicit-signals.ndjson",
+    "bytes": 495
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-deyimerge-tdd-solo-elicit-contract.md",
+    "bytes": 1372
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-deyimerge-tdd-solo-elicit-signals.ndjson",
+    "bytes": 821
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-elicit-contract.md",
+    "bytes": 361
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-elicit-signals.ndjson",
+    "bytes": 259
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-fmt-candidates.json",
+    "bytes": 797
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-fmt-registry.json",
+    "bytes": 805
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-nom-two.json",
+    "bytes": 1178
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-extinv-scr-docs.json",
+    "bytes": 876
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-guardhook-solo-install-hooks.json",
+    "bytes": 478
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-guardhook-solo-intercept-engine-main.log",
+    "bytes": 399
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-guardhook-solo-reconcile-engine.json",
+    "bytes": 1796
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-guardhook-solo-reconcile-tools.json",
+    "bytes": 1453
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-listzero-solo-elicit-contract.md",
+    "bytes": 878
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-listzero-solo-elicit-signals.ndjson",
+    "bytes": 527
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-mathver-fmt.json",
+    "bytes": 385
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-mathver-nom.json",
+    "bytes": 365
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-mathver-scr.json",
+    "bytes": 800
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-mathver-solo-elicit-contract.md",
+    "bytes": 1016
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-mathver-solo-elicit-signals.ndjson",
+    "bytes": 521
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-p3xbridge-solo-elicit-contract.md",
+    "bytes": 1228
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-p3xbridge-solo-elicit-signals.ndjson",
+    "bytes": 792
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-philwave-nom.json",
+    "bytes": 4297
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-philwave-verify.json",
+    "bytes": 34
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-SPEC016-doc.json",
+    "bytes": 489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-fmt-five.json",
+    "bytes": 1647
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-nom-parking.json",
+    "bytes": 1057
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-nom-results.json",
+    "bytes": 1069
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-nom-taskpkg.json",
+    "bytes": 1061
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-nom-topic.json",
+    "bytes": 1080
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-responses.json",
+    "bytes": 519
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-route-pk040exit.json",
+    "bytes": 962
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-scr-PARKING-indomain.json",
+    "bytes": 897
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-scr-SPEC016-indomain.json",
+    "bytes": 915
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-scr-domainexit2.json",
+    "bytes": 823
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-solo-elicit-contract.md",
+    "bytes": 585
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predspec2-solo-elicit-signals.ndjson",
+    "bytes": 501
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predsplitAB-solo-elicit-contract.md",
+    "bytes": 1003
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-predsplitAB-solo-elicit-signals.ndjson",
+    "bytes": 674
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-relaud-gates.json",
+    "bytes": 413
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-relaud-solo-elicit-contract.md",
+    "bytes": 658
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-relaud-solo-elicit-signals.ndjson",
+    "bytes": 384
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-fmt-doc.json",
+    "bytes": 819
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-fmt-gov002.json",
+    "bytes": 819
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-fmt-gov003.json",
+    "bytes": 825
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-nom-doc.json",
+    "bytes": 1075
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-nom-gov002.json",
+    "bytes": 1075
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-nom-gov003.json",
+    "bytes": 1078
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-nom-results.json",
+    "bytes": 1077
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-scr-doc.json",
+    "bytes": 895
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-scr-gov002.json",
+    "bytes": 901
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-scr-gov003.json",
+    "bytes": 901
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-settlement-v1-solo-elicit-signals.ndjson",
+    "bytes": 335
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-fmt-agents.json",
+    "bytes": 673
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-fmt-entries.json",
+    "bytes": 86013
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-nom-agents.json",
+    "bytes": 1002
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-nom-entries.json",
+    "bytes": 23487
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-scr-entries.json",
+    "bytes": 56885
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-trigwave-verify.json",
+    "bytes": 35
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-wikirecallp12-fmt-batchface.json",
+    "bytes": 761
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-02-wikirecallp12-nom-batchface.json",
+    "bytes": 1046
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-caswire-solo-record.json",
+    "bytes": 7882
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-caswire-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-caswire2-solo-record.json",
+    "bytes": 8480
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-caswire2-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-guardrail-solo-record.json",
+    "bytes": 7758
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-guardrail-solo-validation.json",
+    "bytes": 104
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-guardrail2-solo-record.json",
+    "bytes": 10261
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-guardrail2-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-gvec-method-solo-record.json",
+    "bytes": 6753
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-gvec-method-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-idwire-solo-record.json",
+    "bytes": 8337
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-idwire-solo-validation.json",
+    "bytes": 72
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-ledgrev-solo-record.json",
+    "bytes": 10441
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-ledgrev-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-locksplit-solo-record.json",
+    "bytes": 9424
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-locksplit-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathclose-solo-record.json",
+    "bytes": 9199
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathclose-solo-validation.json",
+    "bytes": 290
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathpipe-a3-solo-record.json",
+    "bytes": 7091
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathpipe-a3-solo-validation.json",
+    "bytes": 71
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathquote-calc-solo-record.json",
+    "bytes": 7904
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathquote-calc-solo-validation.err",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathquote-calc-solo-validation.json",
+    "bytes": 83
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathquote-solo-record.json",
+    "bytes": 7537
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathquote-solo-validation.json",
+    "bytes": 290
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathrefmt-solo-record.json",
+    "bytes": 7216
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-mathrefmt-solo-validation.json",
+    "bytes": 290
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-resarch-solo-record.json",
+    "bytes": 6362
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-resarch-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-scriwire-solo-record.json",
+    "bytes": 7916
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-scriwire-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-scriwire2-solo-record.json",
+    "bytes": 8543
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ask3-scriwire2-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-caswire-solo-elicit-digest.json",
+    "bytes": 35
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-caswire-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-caswire2-solo-elicit-signals.ndjson",
+    "bytes": 166
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail-solo-changed-files.json",
+    "bytes": 1057
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail-solo-elicit-digest.json",
+    "bytes": 777
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail-solo-elicit-signals.ndjson",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail-solo-pipeline.json",
+    "bytes": 1687
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail2-solo-changed-files.json",
+    "bytes": 2433
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-guardrail2-solo-elicit-signals.ndjson",
+    "bytes": 679
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-gvec-method-solo-elicit-signals.ndjson",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-idwire-solo-elicit-digest.json",
+    "bytes": 568
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-idwire-solo-elicit-signals.ndjson",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ledgrev-solo-elicit-signals.ndjson",
+    "bytes": 2217
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ledgrev-solo-pipeline.json",
+    "bytes": 2584
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-ledgrev-solo-script.json",
+    "bytes": 368
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-changed-files.json",
+    "bytes": 1045
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-derivation.json",
+    "bytes": 951
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-elicit-signals.ndjson",
+    "bytes": 516
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-golden.json",
+    "bytes": 468
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-pipeline.json",
+    "bytes": 809
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-locksplit-solo-tests.json",
+    "bytes": 884
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-elicit-signals.ndjson",
+    "bytes": 332
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-elicit.json",
+    "bytes": 640
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-fmt-general.json",
+    "bytes": 160
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-golden.json",
+    "bytes": 881
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-nomen.json",
+    "bytes": 164
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-riders.json",
+    "bytes": 521
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathclose-solo-scr.json",
+    "bytes": 236
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathpipe-a3-solo-elicit-signals.ndjson",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathquote-calc-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathquote-solo-elicit-contract.md",
+    "bytes": 2183
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathquote-solo-elicit-signals.ndjson",
+    "bytes": 489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathrefmt-solo-elicit-contract.md",
+    "bytes": 2339
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-mathrefmt-solo-elicit-signals.ndjson",
+    "bytes": 655
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-resarch-solo-elicit-signals.ndjson",
+    "bytes": 513
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-resarch-solo-pipeline.json",
+    "bytes": 1235
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire2-solo-changed-files.json",
+    "bytes": 565
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire2-solo-derivation.json",
+    "bytes": 362
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire2-solo-elicit-signals.ndjson",
+    "bytes": 166
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire2-solo-golden.json",
+    "bytes": 330
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-03-scriwire2-solo-pipeline.json",
+    "bytes": 1197
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-carrwire-solo-record.json",
+    "bytes": 11793
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-carrwire-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-cascadewire-solo-record.json",
+    "bytes": 12088
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-cascadewire-solo-validation.json",
+    "bytes": 78
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-claimgate-solo-record.json",
+    "bytes": 9686
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-claimgate-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-docmath-anchor-registry-record.json",
+    "bytes": 8382
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-docmath-anchor-registry-validation.json",
+    "bytes": 90
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-facetmath-solo-record.json",
+    "bytes": 9414
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-facetmath-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gatemath-solo-record.json",
+    "bytes": 10045
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gatemath-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gchart-solo-record.json",
+    "bytes": 13004
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gchart-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gov002v2-solo-record.json",
+    "bytes": 4934
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-gov002v2-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-leaseopt-audit-solo-record.json",
+    "bytes": 7385
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-leaseopt-audit-solo-validation.json",
+    "bytes": 82
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-leasewire-solo-record.json",
+    "bytes": 12072
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-leasewire-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-mainord-solo-record.json",
+    "bytes": 6326
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-mainord-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-packhyg-solo-record.json",
+    "bytes": 11576
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-packhyg-solo-validation.json",
+    "bytes": 78
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-pk037impl-solo-record.json",
+    "bytes": 13261
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-pk037impl-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-pk050sw-solo-record.json",
+    "bytes": 11959
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-pk050sw-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-queueing-solo-record.json",
+    "bytes": 13754
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-queueing-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-selwire-solo-record.json",
+    "bytes": 9045
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-selwire-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-tallywire-solo-record.json",
+    "bytes": 12828
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-tallywire-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-tallywire2-solo-record.json",
+    "bytes": 7907
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-ask3-tallywire2-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-changed-files.json",
+    "bytes": 3675
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-checkcite.json",
+    "bytes": 128
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-derivation.json",
+    "bytes": 2075
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-elicit-signals.ndjson",
+    "bytes": 679
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-golden.json",
+    "bytes": 2182
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-pipeline.json",
+    "bytes": 3938
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-carrwire-solo-plan.json",
+    "bytes": 3003
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-cascadewire-solo-checkcite.json",
+    "bytes": 101
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-cascadewire-solo-elicit-signals.ndjson",
+    "bytes": 667
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-claimgate-solo-changed-files.json",
+    "bytes": 1375
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-claimgate-solo-elicit-signals.ndjson",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-claimgate-solo-golden.json",
+    "bytes": 597
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-claimgate-solo-pipeline.json",
+    "bytes": 1235
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-claimgate-solo-probes.json",
+    "bytes": 1131
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-docmath-anchor-registry-solo-pipeline.json",
+    "bytes": 411
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-facetmath-solo-checkcite.json",
+    "bytes": 89
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-facetmath-solo-elicit-signals.ndjson",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gatemath-solo-changed-files.json",
+    "bytes": 3111
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gatemath-solo-checkcite.json",
+    "bytes": 114
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gatemath-solo-elicit-signals.ndjson",
+    "bytes": 332
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gatemath-solo-golden.json",
+    "bytes": 1383
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gatemath-solo-pipeline.json",
+    "bytes": 4307
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-changed-files.json",
+    "bytes": 1386
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-checkcite.json",
+    "bytes": 144
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-derivation.json",
+    "bytes": 647
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-elicit-signals.ndjson",
+    "bytes": 987
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-golden.json",
+    "bytes": 1095
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gchart-solo-pipeline.json",
+    "bytes": 1173
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-gov002v2-solo-elicit-signals.ndjson",
+    "bytes": 344
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leaseopt-audit-solo-elicit-signals.ndjson",
+    "bytes": 1016
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-changed-files.json",
+    "bytes": 1456
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-checkcite.json",
+    "bytes": 127
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-derivation.json",
+    "bytes": 1092
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-elicit-signals.ndjson",
+    "bytes": 682
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-golden.json",
+    "bytes": 1171
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-leasewire-solo-pipeline.json",
+    "bytes": 4911
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-mainord-solo-elicit-signals.ndjson",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-packhyg-solo-changed-files.json",
+    "bytes": 2113
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-packhyg-solo-checkcite.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-packhyg-solo-elicit-signals.ndjson",
+    "bytes": 842
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-packhyg-solo-pipeline.json",
+    "bytes": 2953
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk037impl-solo-changed-files.json",
+    "bytes": 2122
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk037impl-solo-checkcite.json",
+    "bytes": 145
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk037impl-solo-elicit-signals.ndjson",
+    "bytes": 839
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk037impl-solo-measurements.json",
+    "bytes": 1840
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk037impl-solo-pipeline.json",
+    "bytes": 2093
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk050sw-solo-changed-files.json",
+    "bytes": 2288
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk050sw-solo-checkcite.json",
+    "bytes": 117
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk050sw-solo-elicit-signals.ndjson",
+    "bytes": 815
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-pk050sw-solo-pipeline.json",
+    "bytes": 2529
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-queueing-solo-checkcite.json",
+    "bytes": 103
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-queueing-solo-derivation.json",
+    "bytes": 784
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-queueing-solo-elicit-signals.ndjson",
+    "bytes": 1156
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-queueing-solo-golden.json",
+    "bytes": 2137
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-queueing-solo-pipeline.json",
+    "bytes": 1704
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-selwire-solo-changed-files.json",
+    "bytes": 657
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-selwire-solo-derivation.json",
+    "bytes": 507
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-selwire-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-selwire-solo-golden.json",
+    "bytes": 407
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-selwire-solo-pipeline.json",
+    "bytes": 2508
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-tallywire-solo-elicit-signals.ndjson",
+    "bytes": 1355
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-04-tallywire2-solo-elicit-signals.ndjson",
+    "bytes": 338
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-constmodel-solo-record.json",
+    "bytes": 8345
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-constmodel-solo-validation.json",
+    "bytes": 82
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-gateswitch-solo-record.json",
+    "bytes": 12140
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-gateswitch-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-envelope-solo-record.json",
+    "bytes": 4374
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-envelope-solo-validation.json",
+    "bytes": 84
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-human-solo-record.json",
+    "bytes": 4734
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-human-solo-validation.json",
+    "bytes": 81
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-solo-record.json",
+    "bytes": 8872
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-idenlane-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-fixguard-solo-record.json",
+    "bytes": 5312
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-fixguard-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-ledger-repair-solo-record.json",
+    "bytes": 3424
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-ledger-repair-solo-validation.json",
+    "bytes": 80
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-lockdb-solo-record.json",
+    "bytes": 5410
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-lockdb-solo-validation.json",
+    "bytes": 73
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-lockqueue-solo-record.json",
+    "bytes": 4513
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-lockqueue-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-precheck-solo-record.json",
+    "bytes": 3932
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseopt-precheck-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseoptsettle-solo-record.json",
+    "bytes": 4646
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-leaseoptsettle-solo-validation.json",
+    "bytes": 81
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-parkrecon-solo-record.json",
+    "bytes": 4806
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-parkrecon-solo-validation.json",
+    "bytes": 76
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-pk057fix-solo-record.json",
+    "bytes": 3854
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-pk057fix-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-pkexits-solo-record.json",
+    "bytes": 4120
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-pkexits-solo-validation.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-viewline-solo-record.json",
+    "bytes": 4326
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-viewline-solo-validation.json",
+    "bytes": 75
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-watchcheck-solo-record.json",
+    "bytes": 9008
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-ask3-watchcheck-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-constmodel-solo-pipeline.json",
+    "bytes": 516
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-docmath-b4-ledger-repair.json",
+    "bytes": 64
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-gateswitch-solo-elicit-signals.ndjson",
+    "bytes": 1244
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-gateswitch-solo-repair-payload.ndjson",
+    "bytes": 2010
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-envelope-solo-elicit-signals.ndjson",
+    "bytes": 670
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-envelope-solo-formatter.json",
+    "bytes": 883
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-envelope-solo-nomenclator.json",
+    "bytes": 1097
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-elicit-signals.ndjson",
+    "bytes": 667
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-formatter-contract.json",
+    "bytes": 775
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-formatter-results.json",
+    "bytes": 827
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-formatter-tallymaterial.json",
+    "bytes": 879
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-formatter-topic.json",
+    "bytes": 857
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-nomenclator-contract.json",
+    "bytes": 1054
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-nomenclator-results.json",
+    "bytes": 1080
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-nomenclator-topic.json",
+    "bytes": 1095
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-human-solo-recertify.json",
+    "bytes": 716
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-idenlane-solo-elicit-signals.ndjson",
+    "bytes": 1466
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-fixguard-solo-checkcite.json",
+    "bytes": 114
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-fixguard-solo-elicit-signals.ndjson",
+    "bytes": 347
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-ledger-repair-solo-checkcite.json",
+    "bytes": 101
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-ledger-repair-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-lockdb-solo-checkcite.json",
+    "bytes": 88
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-lockdb-solo-elicit-signals.ndjson",
+    "bytes": 501
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-lockqueue-solo-checkcite.json",
+    "bytes": 115
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-lockqueue-solo-elicit-signals.ndjson",
+    "bytes": 335
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-precheck-solo-checkcite.json",
+    "bytes": 88
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseopt-precheck-solo-elicit-signals.ndjson",
+    "bytes": 169
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-leaseoptsettle-solo-elicit-signals.ndjson",
+    "bytes": 815
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-parkrecon-solo-elicit-signals.ndjson",
+    "bytes": 827
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-pk057fix-solo-elicit-signals.ndjson",
+    "bytes": 489
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-pkexits-solo-elicit-signals.ndjson",
+    "bytes": 658
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-regula-rename-solo-results.md",
+    "bytes": 1738
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-viewline-solo-elicit-signals.ndjson",
+    "bytes": 655
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-05-watchcheck-solo-elicit-signals.ndjson",
+    "bytes": 989
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-ask3-basisunion-solo-record.json",
+    "bytes": 11243
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-ask3-basisunion-solo-validation.json",
+    "bytes": 77
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-ask3-ledgerloss5-solo-record.json",
+    "bytes": 7267
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-ask3-ledgerloss5-solo-validation.json",
+    "bytes": 78
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-basisunion-solo-checkcite.json",
+    "bytes": 74
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-basisunion-solo-elicit-signals.ndjson",
+    "bytes": 1147
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/2026-09-06-ledgerloss5-solo-elicit-signals.ndjson",
+    "bytes": 821
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/idwire-solo-entry-biandian.json",
+    "bytes": 380
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/idwire-solo-entry-shangji.json",
+    "bytes": 366
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_carrwire.py",
+    "bytes": 14089
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_claimgate.py",
+    "bytes": 11551
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_constmodel-solo.py",
+    "bytes": 9709
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_docmath-anchor-registry.py",
+    "bytes": 9761
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_facetmath.py",
+    "bytes": 10954
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_gatemath.py",
+    "bytes": 11909
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_gateswitch.py",
+    "bytes": 15897
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_guardrail2.py",
+    "bytes": 12078
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_leasewire.py",
+    "bytes": 14358
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_locksplit.py",
+    "bytes": 10252
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_packhyg.py",
+    "bytes": 13834
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_selwire.py",
+    "bytes": 10762
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/make_ask3_watchcheck-solo.py",
+    "bytes": 9998
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/reports/scriwire-solo-lockout.txt",
+    "bytes": 3575
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "scribe/trail/2026-08-28.ndjson",
+    "bytes": 4827
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/fixguard-m-fixguard-switch-1-check.json",
+    "bytes": 979
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/gov002v2-m-gov002v2-sign-1-check.json",
+    "bytes": 959
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/gov002v2-m-gov002v2-sign-1-sign/m-gov002v2-sign-1-signcheck.json",
+    "bytes": 928
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/lockdb-m-lockdb-switch-1-check.json",
+    "bytes": 986
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/lockqueue-m-lockqueue-switch-2-check.json",
+    "bytes": 998
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-abdesign-2-signcheck.json",
+    "bytes": 889
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-assetanchor-rev-signcheck.json",
+    "bytes": 894
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-bridgereg-signcheck.json",
+    "bytes": 876
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-carrierwave-signcheck.json",
+    "bytes": 882
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-degladder-signcheck.json",
+    "bytes": 876
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-extinv-signcheck.json",
+    "bytes": 867
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-deyi-check-input.json",
+    "bytes": 980
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-deyi-check-report.json",
+    "bytes": 859
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-deyi-signcheck.json",
+    "bytes": 859
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-scrut-check-input.json",
+    "bytes": 985
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-scrut-check-report.json",
+    "bytes": 861
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-mbgate-scrut-signcheck.json",
+    "bytes": 861
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-namefit-check-input.json",
+    "bytes": 999
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-namefit-check-report.json",
+    "bytes": 830
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-namefit-signcheck.json",
+    "bytes": 830
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-passive5-check-input.json",
+    "bytes": 1006
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-passive5-check-report.json",
+    "bytes": 832
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-passive5-signcheck.json",
+    "bytes": 832
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-pilgate-signcheck.json",
+    "bytes": 870
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/m-wikirecall-signcheck.json",
+    "bytes": 879
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/mainord-m-mlord-ctxinj-1-check.json",
+    "bytes": 955
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/mainord-m-mlord-ctxinj-1-sign/m-mlord-ctxinj-1-signcheck.json",
+    "bytes": 924
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/mainord-m-mlord-mpolyrev-1-check.json",
+    "bytes": 959
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/mainord-m-mlord-mpolyrev-1-sign/m-mlord-mpolyrev-1-signcheck.json",
+    "bytes": 928
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk029v2/pk029v2-ch1-lineage-signcheck.json",
+    "bytes": 909
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk029v2/pk029v2-ch2-semantics-signcheck.json",
+    "bytes": 913
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk029v2/pk029v2-ch3-coverage-signcheck.json",
+    "bytes": 911
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk029v2/pk029v2-ch4-gauge-signcheck.json",
+    "bytes": 905
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk029v2/verdict-summary.md",
+    "bytes": 1977
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk035/pk035-ch1-identity-signcheck.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk035/pk035-ch2-carry-signcheck.json",
+    "bytes": 863
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk035/pk035-ch3-pairing-signcheck.json",
+    "bytes": 867
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk035/pk035-ch4-boundary-signcheck.json",
+    "bytes": 869
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/pk035/verdict-summary.md",
+    "bytes": 2234
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/precheck-m-precheck-switch-1-check.json",
+    "bytes": 994
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/repair-m-ledgerrepair-switch-1-check.json",
+    "bytes": 1012
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/seat-baseline-zcode-2026-08-31.json",
+    "bytes": 685
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/seat-baseline-zcode-2026-09-04-gov002v2-solo.json",
+    "bytes": 861
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/seat-baseline-zcode-2026-09-04-mainord-solo.json",
+    "bytes": 861
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/seat-baseline-zcode-2026-09-05-fixguard.json",
+    "bytes": 861
+   },
+   {
+    "ref": "stash@{0}",
+    "path": "tally/reports/seat-baseline-zcode-2026-09-05-idenlane-env.json",
+    "bytes": 982
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "lease/pk023spec-solo.md",
+    "bytes": 4693
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "lease/scripts/poll_shares.py",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "m-wengui-fit-1-check.json",
+    "bytes": 891
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "m-wengui-fit-1-signcheck.json",
+    "bytes": 891
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "meter-quiet-probe.txt",
+    "bytes": 298
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "nomenclator/packs/core/.-tmp-entry-programslicing.json",
+    "bytes": 0
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "wikirecall/verify_triggers.py",
+    "bytes": 1188
+   },
+   {
+    "ref": "stash@{2}",
+    "path": "worktrees_placeholder",
+    "bytes": 1111
+   }
+  ],
+  "skipped_existing": 11010,
+  "kept_disk_newer": [
+   {
+    "ref": "stash@{0}",
+    "path": "lease/ledger/locks.ndjson",
+    "status": "M"
+   },
+   {
+    "ref": "stash@{5}",
+    "path": "lease/ledger/locks.ndjson",
+    "status": "M"
+   },
+   {
+    "ref": "stash@{5}",
+    "path": "lease/ledger/sessions.ndjson",
+    "status": "M"
+   },
+   {
+    "ref": "stash@{11}",
+    "path": "facet/probes/maturation_gate.py",
+    "status": "M"
+   }
+  ],
+  "errors": []
+ }
+}

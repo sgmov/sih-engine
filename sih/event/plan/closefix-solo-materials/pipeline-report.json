@@ -1,0 +1,25 @@
+{
+  "batch": "closefix-solo",
+  "date": "2026-09-06",
+  "order": "化格(笔在核前) → 核阅 → 检词(判在书简前)",
+  "formatter": {
+    "pack": "general-v1",
+    "targets": [
+      "sih-tools/lease/CONTRACT.md", "sih-tools/lease/CALL-LOG.md",
+      "sih-tools/scribe/CALL-LOG.md", "sih-tools/BATCH-FACE.md",
+      "sih-engine/sih/event/plan/closefix-solo-results.md"
+    ],
+    "exit_codes": [0, 0, 0, 0, 0],
+    "total_changed_lines": 0
+  },
+  "scrutinator": {
+    "pack": "des-001",
+    "exit_codes": [2, 2, 2, 2, 2],
+    "note": "des-001 域只盖 sih-engine/doc；五目标俱域外即 exit-2 如实记入档不属违规（state/plan 与 event/plan 与工具侧文件零域内件）"
+  },
+  "nomenclator": {
+    "pack": "core",
+    "exit_codes": [0, 0, 0, 0, 0],
+    "note": "零违例"
+  }
+}
