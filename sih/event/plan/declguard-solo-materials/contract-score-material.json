@@ -1,0 +1,16 @@
+{
+  "contract_path": "contract.json",
+  "contract_sha256": "806b7a163d1394bd39eac7ad36e7911f33dcb4d909333fe7a4fd2d303410b2ec",
+  "gate_verdict": "boundary",
+  "gid": "m-declguard-gate-1",
+  "identity_hash": "5a983dff43532103903eeeadb20606d32a42511f1c3dfcbc3ab3d46fbc6eba02",
+  "kind": "facet-contract-score",
+  "n_shots": 9,
+  "responses_path": "responses.jsonl",
+  "responses_sha256": "7e1592a84c7512796a05db7495606386a6333c3faf4ed317fcbd058c9cd11e89",
+  "runs_written": 9,
+  "score_version": 2,
+  "seat_string": "ZCode:GLM-5.3:self-reported",
+  "trail_path": "/Users/moc/workspaces/SiHankor/sih-tools/proposition/DES/m-declguard-gate-1/flywheel-trail.jsonl",
+  "voids": []
+}
