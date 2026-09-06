@@ -1,0 +1,18 @@
+{
+  "action": "enter",
+  "context": "令源：用户 2026-09-06 裁定原话「这个工程基线应该是司衡引擎的运行机制的基石，不应该放在AGENTS里。你这个记一笔，未来要清的。」工程基线五条与工程禁止条款现为引擎运行机制的构成性约束，却居留在 AGENTS.md 即 agent 指令层文件，该文件不在任何 git 仓内、零版本化、零链锚、零管线审，权威锚位与其基石地位错配；引擎侧确定性程序不读 AGENTS.md 即基线对程序的约束力靠间接承继非直接正典。迁移属文档正典位变更，候选落位即 doc/governance/ 决策档或治理向界族，迁移须走管线三步与认证上链，AGENTS.md 改为引用指针即 agent 层只留消费位不立正典位。",
+  "created_at": "2026-09-06",
+  "entry_id": "pk-070",
+  "exit_condition": "用户裁正典落位形态（doc/governance/ 决策档或向界族或另立宪法档）即开迁移批迁文走管线与认证，迁移毕 AGENTS.md 改指针收口出泊；或用户裁维持现状即闭项出泊",
+  "id": "pk-070",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [],
+  "source": "主会 2026-09-06 会话用户裁定（facet 基线考题讨论延伸）",
+  "state": "parked",
+  "title": "工程基线五条正典居所迁离 AGENTS.md（基线归引擎治理域）",
+  "ttl_days": 30
+}
