@@ -1,0 +1,77 @@
+{
+  "batch": "leaseupclose-solo",
+  "date": "2026-09-06",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "doc/governance/GOV-002-mainline-lock-v1.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/state/plan/leaseupclose-solo.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/event/plan/leaseupclose-solo-results.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "sih/event/plan/leaseup-line-v1.md",
+      "exit_code": 0,
+      "note": "无需改"
+    },
+    {
+      "step": "formatter",
+      "pack": "json-canonical-v1",
+      "target": "sih/state/parking/materials/pk-072-exit.json",
+      "exit_code": 1,
+      "note": "已修改即四空格缩进归一到规范形"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "doc/governance/GOV-002-mainline-lock-v1.md（工地路径）",
+      "exit_code": 2,
+      "note": "工地路径不匹配 des-001 工作区相对域 pattern 即 sih-engine/doc/**，域外如实记档，主树复跑为准（viewline-solo 先例同形）"
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "任务包与结果档与线程序包与泊材料（工地路径）",
+      "exit_code": 2,
+      "note": "域外如实记档不属违规"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "GOV-002 与任务包与结果档与线程序包",
+      "exit_code": 0,
+      "note": "零违例四件"
+    }
+  ],
+  "elicit": {
+    "check_exit": 1,
+    "signals": 6,
+    "digest": "passed",
+    "covered": 6
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest",
+    "anomalies": 0
+  }
+}
