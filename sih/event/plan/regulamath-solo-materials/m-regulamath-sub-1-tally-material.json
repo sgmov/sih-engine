@@ -1,0 +1,21 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/regulamath-solo/facet/contracts/regulamath-260906/m-regulamath-sub-1/m-regulamath-sub-1.json",
+  "contract_sha256": "d99a43bf0f88823e0e888386c4439d397bd7835eb76a9b9cbd414faa039989d2",
+  "core_hash": "9550cba28a5599bbf6b7f393a97b864e560dd74b42023e86b99e65a56b8a6aae",
+  "criteria_version": "v3",
+  "date": "2026-09-06",
+  "dc_fingerprint": "d84a143f34b1ac89",
+  "gate_verdict": "stable_clear",
+  "gid": "m-regulamath-sub-1",
+  "identity_hash": "63d42934ee676705afc925ce295091d4b1693a178fa587df2a826d5bd7c1cc5c",
+  "kind": "tally-check-input",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/regulamath-solo/facet/contracts/regulamath-260906/m-regulamath-sub-1/responses.jsonl",
+  "responses_sha256": "1a1c94915b9d2b2401ca502927695737a62e903de44b35f0f1135d9a35255d46",
+  "rules_version": "des-011-r1",
+  "seat_baseline_path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/regulamath-solo-materials/seat-baseline-minimax-m3-2026-09-06.json",
+  "topic_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/regulamath-solo/facet/contracts/regulamath-260906/m-regulamath-sub-1/topic.md",
+  "topic_sha256": "7d8355db5266bc07737d71394f72c1b9f2392076ebcef70799493c520acecee8",
+  "trail_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/regulamath-solo/proposition/DES/m-regulamath-sub-1/flywheel-trail.jsonl",
+  "voids": []
+}

@@ -1,0 +1,72 @@
+{
+  "entry": "ALG-014",
+  "scenarios": [
+    {
+      "C": [
+        "forall",
+        "x",
+        [
+          "implies",
+          [
+            "pred",
+            "P",
+            [
+              [
+                "var",
+                "x"
+              ]
+            ]
+          ],
+          [
+            "pred",
+            "Q",
+            [
+              [
+                "var",
+                "x"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "D": [
+        "forall",
+        "x",
+        [
+          "pred",
+          "Q",
+          [
+            [
+              "var",
+              "x"
+            ]
+          ]
+        ]
+      ],
+      "scenario": "scenario_substitution_fidelity_positive",
+      "sigma": {
+        "x": [
+          "const",
+          0
+        ]
+      },
+      "sigma_C_structure_ok": true,
+      "substitution_deterministic": true,
+      "verdict": "pass"
+    },
+    {
+      "idempotent_on_ground": true,
+      "no_extra_pred_introduced": true,
+      "scenario": "scenario_substitution_fidelity_negative",
+      "sigma_in_dom_only_substitutes_x": true,
+      "verdict": "pass"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "passed": 2,
+    "total": 2,
+    "verdict": "pass"
+  },
+  "tool": "regulamath-solo sub scenarios"
+}

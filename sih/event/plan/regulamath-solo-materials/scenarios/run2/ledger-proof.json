@@ -1,0 +1,43 @@
+{
+  "entry": "ALG-015",
+  "scenarios": [
+    {
+      "result": {
+        "open": [],
+        "over_discharged": [],
+        "verdict": "pass"
+      },
+      "scenario": "scenario_all_discharged_pass",
+      "verdict": "pass"
+    },
+    {
+      "result": {
+        "open": [
+          "o3"
+        ],
+        "over_discharged": [],
+        "verdict": "fail"
+      },
+      "scenario": "scenario_missing_open_fail",
+      "verdict": "pass"
+    },
+    {
+      "result": {
+        "open": [],
+        "over_discharged": [
+          "o2"
+        ],
+        "verdict": "fail"
+      },
+      "scenario": "scenario_over_discharged_fail",
+      "verdict": "pass"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "passed": 3,
+    "total": 3,
+    "verdict": "pass"
+  },
+  "tool": "regulamath-solo proof scenarios"
+}

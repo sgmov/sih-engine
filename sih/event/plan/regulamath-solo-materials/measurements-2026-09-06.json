@@ -1,0 +1,36 @@
+{
+  "batch": "regulamath-solo",
+  "date": "2026-09-06",
+  "propositions": {
+    "m-regulamath-proof-1": {
+      "check_disposition": "裁决通过",
+      "check_failed_count": 0,
+      "check_passed_count": 12,
+      "event_hash": "8ffd07a3bd9b27eb8ff1efba7e5d5d2f0f097785fe0a260b7daf3b054f3bdda2",
+      "gid": "m-regulamath-proof-1",
+      "n_runs": 9,
+      "verdict": "stable_clear",
+      "voids": 0
+    },
+    "m-regulamath-rel-1": {
+      "check_disposition": "裁决通过",
+      "check_failed_count": 0,
+      "check_passed_count": 12,
+      "event_hash": "fd0db3bdffbe6221f1286f6345e6e3000feaf5cb4f74fd28b356d3ef847170da",
+      "gid": "m-regulamath-rel-1",
+      "n_runs": 9,
+      "verdict": "stable_clear",
+      "voids": 0
+    },
+    "m-regulamath-sub-1": {
+      "check_disposition": "裁决通过",
+      "check_failed_count": 0,
+      "check_passed_count": 12,
+      "event_hash": "90d0e5893fe816e61d0c93658f0d392d63e87033259d2ba331896afad29e0bb6",
+      "gid": "m-regulamath-sub-1",
+      "n_runs": 9,
+      "verdict": "stable_clear",
+      "voids": 0
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "batch": "regulamath-solo",
+  "changed_files": [
+    "sih-math/algebra/entries/ALG-013-typed-relational-model-and-eventized-projection.md (new)",
+    "sih-math/algebra/entries/ALG-014-substitution-and-fidelity-to-general-clauses.md (new)",
+    "sih-math/algebra/entries/ALG-015-proof-obligation-and-gate-correctness.md (new)",
+    "sih-math/algebra/INDEX.md (3 new rows: ALG-013/014/015 + 1 history line)",
+    "sih-math/llm-friendly-build/mapping.md (3 new rows in 线性代数/谱分析 section)",
+    "sih-math/docs/regulamath-scenarios-2026-09-06/rel_scenarios.py (new)",
+    "sih-math/docs/regulamath-scenarios-2026-09-06/sub_scenarios.py (new)",
+    "sih-math/docs/regulamath-scenarios-2026-09-06/proof_scenarios.py (new)",
+    "sih-tools/facet/contracts/regulamath-260906/m-regulamath-rel-1/{topic.md,*.json,responses.jsonl,*-score-material.json}",
+    "sih-tools/facet/contracts/regulamath-260906/m-regulamath-sub-1/{topic.md,*.json,responses.jsonl,*-score-material.json}",
+    "sih-tools/facet/contracts/regulamath-260906/m-regulamath-proof-1/{topic.md,*.json,responses.jsonl,*-score-material.json}",
+    "sih-tools/proposition/DES/m-regulamath-{rel,sub,proof}-1/{flywheel-trail.jsonl,*-score-material.json}",
+    "sih-engine/sih/event/plan/regulamath-solo-results.md (new)",
+    "sih-engine/sih/event/plan/regulamath-solo-materials/ (8 files)"
+  ],
+  "date": "2026-09-06",
+  "unchanged_external": [
+    "AGENTS.md, BATCH-FACE.md, three engines/tools source code"
+  ]
+}

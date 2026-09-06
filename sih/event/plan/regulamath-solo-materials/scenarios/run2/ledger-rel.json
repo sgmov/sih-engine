@@ -1,0 +1,90 @@
+{
+  "entry": "ALG-013",
+  "scenarios": [
+    {
+      "dup_rejected": true,
+      "ok_unique": true,
+      "scenario": "scenario_key_uniqueness",
+      "verdict": "pass"
+    },
+    {
+      "different_stream_different_state": true,
+      "same_stream_same_state": true,
+      "scenario": "scenario_projection_uniqueness",
+      "verdict": "pass"
+    },
+    {
+      "cases": [
+        {
+          "accepted": false,
+          "correct": true,
+          "expected_accept": false,
+          "msg": "mixed contradiction (in_progress, passed) rejected",
+          "row": {
+            "progress": "in_progress",
+            "terminal": "passed"
+          }
+        },
+        {
+          "accepted": false,
+          "correct": true,
+          "expected_accept": false,
+          "msg": "mixed contradiction (pending, passed) rejected",
+          "row": {
+            "progress": "pending",
+            "terminal": "passed"
+          }
+        },
+        {
+          "accepted": true,
+          "correct": true,
+          "expected_accept": true,
+          "msg": "row accepted (pending, not_run)",
+          "row": {
+            "progress": "pending",
+            "terminal": "not_run"
+          }
+        },
+        {
+          "accepted": true,
+          "correct": true,
+          "expected_accept": true,
+          "msg": "row accepted (in_progress, not_run)",
+          "row": {
+            "progress": "in_progress",
+            "terminal": "not_run"
+          }
+        },
+        {
+          "accepted": true,
+          "correct": true,
+          "expected_accept": true,
+          "msg": "row accepted (in_progress, failed)",
+          "row": {
+            "progress": "in_progress",
+            "terminal": "failed"
+          }
+        },
+        {
+          "accepted": true,
+          "correct": true,
+          "expected_accept": true,
+          "msg": "row accepted (pending, failed)",
+          "row": {
+            "progress": "pending",
+            "terminal": "failed"
+          }
+        }
+      ],
+      "scenario": "scenario_mixed_contradiction_inconstructible",
+      "verdict": "pass"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "passed": 3,
+    "total": 3,
+    "verdict": "pass"
+  },
+  "tool": "regulamath-solo rel scenarios"
+}
