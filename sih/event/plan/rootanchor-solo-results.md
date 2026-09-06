@@ -14,7 +14,7 @@
 - F-1（活体三证俱在）：过。主树 lockface-bills.ndjson 末三行读数见 § 五，链上本批 ba7aa2b83fbb90f8 意图笔 event_hash 503b3cb7（sih-tools/scribe/reports/2026-09-06-ask3-rootanchor-solo-record.json 内附链笔 sha256）+ 认证笔 event_hash 43ddb93c，close 过自己装的 chain_gate_check exit 0 revoked=true（sessions.ndjson 末行 ba7aa2b83fbb90f8 2026-09-06T11:06:40+00:00 tool.version 1.30.0）。
 - F-2（183 基线全绿零回归）：过。174 基线 + 6 billwire + 7 rootanchor 真形态 = 187 件绿（pytest tests/ -q 实测 187 passed in 85.88s）。billwire 夹具 6 件保留证明 174 → 180 落档在前，rootanchor 7 件补档后 180 → 187。
 - F-3（双仓 commit）：本批 close 已走 lease 驱动的 closefix 新归并机械 1.27.0+1.28.0+1.29.0+1.30.0 四线叠加（sih-tools d295dc42 merge: rootanchor-solo 副本归并 / 3fe7060f session wip / sih-engine 087adfdb halfmerge-solo 收约补笔后笔 → 后续本批补 commit），落地见 § 七。
-- F-4（链 verify valid）：过。sih-engine/sih/event/trail/2026-09-06.ndjson 双日链 verify valid，零断链；本批新增事件 17 行：intent 503b3cb7、cert 43ddb93c、billwire 意图补录 3b6d5132b2fbe2da、rootanchor 会话开/收/锁等。
+- F-4（链 verify valid）：**未过（待补正）**。`scribe verify --trail sih/event/trail/2026-09-06.ndjson` 报 status=broken，108 事件，~105 笔 hash_mismatch（line 1-3 gauge_reading 三笔过，line 4 起全 mismatch）。同坑波及所有批：openhyg/halfmerge/kernelmerge/rootanchor 本批事件都受影响（line 93 503b3cb7 / line 94 3b6d5132b2fbe2da / line 95 43ddb93c 等本批三笔也 mismatch）。**根因疑似 scribe compute_event_hash 算法与事件写入时算法差异，非本批引入、非本批数据问题**（事件 prev_hash 链正确：1→2→3→…→108 链路通，line N 的 prev_hash 即 line N-1 的 stored hash 验证通；仅 recompute ≠ stored）。halfmerge-solo 结果档载"当日链 valid 91 事件"系基于不同 verify 工具版本或未实跑 verify，**应作为工具 bug 待修披露**。本批如实申报零粉饰，待 scribe 工具修复后复验。
 - F-5（一裁落档）：承前裁延伸 1fda6a88。判定：本批核心变更是工程基线层守门（非判定语义层判定），计费数值与判定条件零动仅接线与解析+机械层守门，承前裁 m-leaseup-bill-1 终签 1fda6a88 路径不直接适配按工程基线四可验证性承载视为承前裁延伸，未跑新裁。
 - F-6（材料落档）：过。本批材料 rootanchor-solo-materials/ 落四件：recall-topic.md、pipeline-report.json、billwire-replay-record.json、self-boot-and-chain-gate-evidence.json，不重蹈 billwire 工地材料目录空在案。
 
@@ -137,7 +137,7 @@ sih-engine：
 - 087adfdb halfmerge-solo 收约补笔（先例同形）
 - rootanchor-solo 本批补 commit（test_rootanchor.py 补档 + 修订四十三 + 批材料）由本档指引
 
-链 verify：sih-engine/sih/event/trail/2026-09-06.ndjson 双日链 verify valid 零断链；本批新增事件 17 行（intent 503b3cb7 + cert 43ddb93c + billwire 意图补录 3b6d5132b2fbe2da + 14 行 close 收约 + lock 事件）。
+链 verify：sih-engine/sih/event/trail/2026-09-06.ndjson 108 事件 scribe verify status=broken 105 笔 hash_mismatch（line 1-3 gauge_reading 过，line 4 起 mismatch），prev_hash 链通即 event N.prev_hash == event N-1.event_hash 验证通，仅 recompute ≠ stored；同坑波及所有当日批（openhyg/halfmerge/kernelmerge），根因疑似 scribe compute_event_hash 算法与事件写入时算法差异，**工具 bug 待修披露不粉饰**。本批事件 line 93 503b3cb7（intent）+ line 94 3b6d5132b2fbe2da（billwire 意图补录）+ line 95 43ddb93c（cert）也在 mismatch 之列。
 
 reconcile 读数：sih-tools/lease/ledger/sessions.ndjson + locks.ndjson + bypass.ndjson + lockface-bills.ndjson 四面与 lockdb SQL 三表（sessions / locks / lock_bill）双跑逐笔一致。
 
