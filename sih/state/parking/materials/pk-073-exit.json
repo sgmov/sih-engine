@@ -1,0 +1,25 @@
+{
+  "action": "exit",
+  "context": "建模承载出泊：confmath-solo 批置信度数学模型推导档（sih-math/docs/confmodel-derivation-2026-09-07.md）承载 pk-073 泊位出泊 promoted。公理组 A 六要件程序切片照录零改写，公理组 B 既裁四条照录（含 B6 实跑 3/0/1 pts 显式裁定 grandfather）；D1 至 D11 定义与算子、I1 至 I8 不变量、常数候选表十一槽位逐值携依据行全部呈用户裁；置信度语义二择一裁定甲案 c:=b 依 A1 原文；新概念三件提案态显式申报。一裁 gid m-confmodel-1 九发 stable_clear（attractor check R1 至 R7 pass、verify identical、执契机器终签 2384af26 在链），checkcite pass 六条引用全落书单及图闭包。阶段二（置信度台账与付费抢占实装）按出泊条件原文待后继批。",
+  "created_at": "2026-09-07",
+  "disposition": "promoted",
+  "entry_id": "pk-073",
+  "exit_condition_met_at": "2026-09-07",
+  "id": "pk-073",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "promoted_to": "confmath-solo 批推导档与常数候选表",
+  "related": [
+    "pk-070",
+    "pk-074",
+    "confmath-solo"
+  ],
+  "ruling": "用户 2026-09-07 令「置信度数学模型先行，你出任务提示词和任务包」承裁立项出泊；建模批委外执行（会话 sess-zcode-260907-confmath，session_id 82eac6da32737d82）按任务包与提示词四命门执行，一裁过即 F-1 至 F-5 全过后出泊；数值终裁仍归人节点，常数候选表随完工报告呈裁。",
+  "source": "confmath-solo 批建模承载；用户 2026-09-07 立项令",
+  "state": "exited",
+  "title": "置信度数学模型立项（信用点经济与抢占制度的数学化前置，含涨停跌停类市场机制候选）",
+  "ttl_days": 30
+}
