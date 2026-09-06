@@ -1,0 +1,78 @@
+{
+  "batch": "confledger-solo",
+  "date": "2026-09-07",
+  "pipeline": [
+    {
+      "step": "formatter",
+      "pack": "general-v1",
+      "target": "confledger-solo-results.md",
+      "exit_code": 0
+    },
+    {
+      "step": "scrutinator",
+      "pack": "des-001",
+      "target": "confledger-solo-results.md",
+      "exit_code": 2,
+      "note": "event/plan 域外如实记档"
+    },
+    {
+      "step": "nomenclator",
+      "pack": "core",
+      "target": "confledger-solo-results.md",
+      "exit_code": 0,
+      "note": "零违例"
+    }
+  ],
+  "elicit": {
+    "check_exit": 1,
+    "signals": 5,
+    "digest": "passed",
+    "covered": 5
+  },
+  "ask3_gates": {
+    "scrutinator_ask3_exit": 0,
+    "ask3repeater": "ok anchor_count 3"
+  },
+  "identity": {
+    "exit": 0,
+    "status": "attest"
+  },
+  "tdd": {
+    "red": "exit 2, 红证 sha256 91c2ca66...",
+    "green": "13 passed",
+    "iterations": [
+      "balance 契约形",
+      "夹具纪元"
+    ]
+  },
+  "acceptor": {
+    "pack": "tests/acceptance-pack.json",
+    "checks": {
+      "C1-red-then-green": "pass",
+      "C2-double-run": "pass",
+      "C3-baseline-freeze": "pass"
+    },
+    "exit": 0,
+    "findings": 0
+  },
+  "t0_pen": {
+    "event_hash": "63d4f48664f2",
+    "ts": "2026-09-06T23:12:00.034390Z"
+  },
+  "real_ledger": {
+    "events": 2,
+    "verify": "valid 零 findings",
+    "first_account": "82f460c2...（agent 席）"
+  },
+  "bills_readonly": {
+    "count": 349,
+    "points": 875,
+    "by_type": {
+      "lock_charged": 291,
+      "lock_free": 28,
+      "open_face_bill": 30,
+      "unused_lock_penalty": 16
+    }
+  },
+  "f2_grep": "零 LLM 零网络零主观打分字面；cli/ledger 无两位数以上字面常量"
+}

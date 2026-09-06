@@ -1,0 +1,18 @@
+{
+  "pack": "confledger-v0-acceptance",
+  "version": "0.1.0",
+  "doc_class": "TDD 判定包",
+  "checks": [
+    {"id": "C1-red-then-green", "check_name": "red_then_green",
+     "command": ["uv", "run", "--project", "{ROOT}", "pytest", "-q", "{ROOT}/tests"],
+     "red_evidence": "{ROOT}/tests/red/tdd-red.log",
+     "red_hash": "91c2ca66dfea00144fbc061c765c0bcc51dab5fc2d63f9cd8f45ef4a908bed50",
+     "expect_exit": 0},
+    {"id": "C2-double-run", "check_name": "double_run",
+     "command": ["uv", "run", "--project", "{ROOT}", "confledger", "replay", "--ledger", "{ROOT}/tests/fixtures/ledger-demo.ndjson"]},
+    {"id": "C3-baseline-freeze", "check_name": "baseline_freeze",
+     "command": ["uv", "run", "--project", "{ROOT}", "confledger", "replay", "--ledger", "{ROOT}/tests/fixtures/ledger-demo.ndjson"],
+     "frozen": "{ROOT}/tests/frozen/replay-demo.json"}
+  ],
+  "declaration": {"claim": "unchanged-only", "v0_out_of_scope": ["标定通道真值产出", "抢占业务环", "休眠门激活"]}
+}
