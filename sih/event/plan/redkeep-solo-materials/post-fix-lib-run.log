@@ -1,0 +1,12 @@
+test view::settle::tests::r4_byte_identical_repeated_call ... ok
+test scrutinator::tests::golden_des001_goldfix_004_nav ... ok
+test scrutinator::tests::golden_des001_goldfix_003_fence ... ok
+test scrutinator::tests::golden_des001_gov003 ... ok
+test scrutinator::tests::golden_des001_gov002 ... ok
+test scrutinator::tests::golden_des001mathe_mul001 ... ok
+test scrutinator::tests::golden_des001mathe_lim001 ... ok
+test scrutinator::tests::multipack_attribution_pack_names ... ok
+test event_stream::tdd_tests::tdd::t7_concurrent_append_race_two_processes ... ok
+
+test result: ok. 170 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 0.24s
+

@@ -1,0 +1,4 @@
+28c28
+<     "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "27131b1acc1c128c6069d76ed71facd86cd7b37fd2a99dcba7c3a8e2fbe60417"
+---
+>     "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "567afa99b22e92151bc57303bcc64042a602b5f0ae52879dd5771ed679c31233"

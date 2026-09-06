@@ -1,0 +1,26 @@
+{
+ "batch": "redkeep-solo",
+ "date": "2026-09-06",
+ "pipeline": "化格→核阅→检词（笔在核前）",
+ "formatter": {
+  "target": "src/scrutinator/fixtures/golden/des-001-gov002.json",
+  "exit": 0,
+  "note": "check 形 would-change 0，引擎序列化形与化格规范形一致，与在役绿金向量 gov003 同形对照"
+ },
+ "scrutinator": {
+  "target": "金向量 json 与结果档 md",
+  "exit": 2,
+  "note": "des-001 域外（json 非 doc 域 md；event/plan 域外），如实记档不属违规"
+ },
+ "nomenclator": {
+  "target": "金向量 json 与结果档 md",
+  "exit": 0,
+  "findings": 0,
+  "note": "json 域外零检；md 零违例"
+ },
+ "fix": {
+  "file": "src/scrutinator/fixtures/golden/des-001-gov002.json",
+  "kind": "金向量数据件重生成",
+  "rust_code_changes": 0
+ }
+}
