@@ -56,16 +56,26 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证（读数随认证实录补记） |
-| ask3 验证件 | 双门读数 | 书简认证（同上） |
-| 正身件 | 身份报告 | 书简认证（同上） |
+| ask3 记录 | 意图记录 | 书简认证 `d20fbfc0`（event_hash 前8） |
+| ask3 验证件 | 双门读数 | 书简认证 `e283734d` |
+| 正身件 | 身份报告 | 书简认证 `16f885e3` |
 
 ## 越线与误差申报
 
 - E6 老串首跑未命中一处（"两形随裁"对实际"两形随机制裁"，三字差）：脚本原子性保证零部分写入，修正后全量重放，如实记档。
 - 排队候叫一轮（acceptorimpl-solo 在飞约十五分钟）：轮询至锁清开工，零绕行零抢跑。
+- **租约编排误差一笔（已处置如实申报）**：本批 open 漏传 --repo sih-tools（写入面实有 sih-tools/scribe/reports 与 identity/reports 与 CALL-LOG），致 tools 侧无工地通道。实际影响零——ask3 三件与正身件为主树在位原件（认证已挂链），无副本随批需求；CALL-LOG 落笔无工地可写，改经收约补笔 bypass 通道与结果档回填合并一笔落主树（openhyg/genpark 补笔先例同形）。候 BATCH-FACE 勘误候选：委外批 open 前以请求写入节逐仓核对 --repo 覆盖。
 - 其余零越线零申报。
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：sih-math 工地提交 de88461、sih-engine 工地提交 b9d2bd6（cert d20fbfc0，三查过）。
+- 放锁收约：八路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（双仓归并 math 199ba00／engine 4e2f1c7、双工地与分支清除、会话 8766bfaa4d1fb99f revoked、零失败）。
+- 链 verify：2026-09-07 当日链 valid 56 事件。
+- reconcile：双仓 exit 1 由历史账面项致（unrouted_tail 即 routed_merge 历史归并显示；cert_missing 存量候台账卫生批），本批 unrouted 零新增，先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零（mainline 47／scrap 6 历史存量）；工具线 exit 0 告警零（mainline 21／siding 1 即 pk-042 校准窗在泊项）。
+- 收约补笔：本结果档回填与 CALL-LOG 落笔合并本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath／confconst／confrulegate 先例同形）。
+
+## 附：CALL-LOG 落笔（sih-tools/scribe/CALL-LOG.md，随本补笔通道落主树）
+
+- 2026-09-07 confrevise-solo（会话 8766bfaa4d1fb99f）：书简意图一笔 d98f0117 即 ask3 三锚（承载不撤回 01-ontology-of-names.md L18、鉴只列事实 07-on-assay.md L55、应而不藏 08-on-settle.md L110 程序切片逐字节；双门零违规 digest covered 5）；本批零重裁零终签调用，授权源即 m-confrule-1 终签 18ba3476；认证三笔 d20fbfc0/e283734d/16f885e3 裸调逐笔验证；acceptorimpl 在飞候叫约十五分钟锁清开工如实申报；推导档 v3 三处改式 11 笔编辑零偏差落位（de88461）。
