@@ -68,3 +68,4 @@
 - 心跳复算（F-3）：见 F 表行，退出码 0 告警零。
 - watch 复验：exit 1 仍为同 19 件在盘遗留件，本批零新增无主写。
 - 收约补笔：本结果档回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark-solo 与 openhyg-solo 先例同形）。
+- 勘误（2026-09-06，gvec-v2-serial 批主线验收时发现）：上 行「reconcile：双仓 exit 0」系管道掩码误差，reconcile 调用接了文本管道致退出码取了管道尾命令的 0；当日真实退出码亦为 1，驱动项为历史账面（unbypassed、session_orphan、工具仓一笔 2026-09-03 cert_missing 旧账），本批零新增的实质判断不变。

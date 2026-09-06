@@ -76,4 +76,10 @@
 
 ## 结算读数
 
-- 待补留节：双仓 settle 提交号、链 verify、reconcile 对表、收约读数由主线验收后回填。
+- 双仓 settle：engine 工地提交 d55f518（base main@1164de0，三查过），tools 工地提交 f16d16a5（base integral-stage-build@e4c77b05，三查过）；cert 取 cde2f17f 即 ask3 记录认证哈希前八位。
+- 放锁收约：十一路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（closeguard 预提交 05ea572 吸收主树未跟踪件后归并 fa14d39，双工地与分支清除、会话 c41ce2afaaa8cc45 revoked、零失败）。
+- 链 verify：2026-09-06 当日链 valid，37 事件，末笔即出泊 pk-068 7718d15f。
+- reconcile（无管道真码）：双仓真实退出码均 1，驱动项全为历史账面即 unbypassed 38/72、session_orphan 29/22、工具仓 cert_missing 1 笔属 2026-09-03 entryunique-solo 旧账（archpark 档已登记同一笔）；本批对照批前零新增成立（unrouted 双仓 0、engine cert_missing 0、无本批 sha 落违规类）。
+- 越线与误差申报追记（主线）：genpark-solo 结果档「reconcile：双仓 exit 0」系管道掩码误差（管道尾取了 tail 的退出码），当时真实退出码亦为 1 且同为历史账面零新增；勘误行已随本笔补笔加注于 genpark 档尾。
+- 心跳复算：引擎线 mainline 39、告警零、六件存量废轨不变；出泊两件 enter 件留册、exit 件入废轨属常态。
+- 收约补笔：本结果档回填与 genpark 勘误即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark-solo 与 openhyg-solo 先例同形）。
