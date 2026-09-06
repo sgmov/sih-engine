@@ -26,6 +26,12 @@ fn gate_actor() -> Actor {
     }
 }
 
+/// confirm 查询形（chainstamp-solo）：哈希前缀或事件 ID 二择一
+enum ConfirmQuery {
+    Hash(String),
+    EventId(String),
+}
+
 fn read_text(path: &str) -> Option<String> {
     std::fs::read_to_string(path).ok()
 }
@@ -205,6 +211,13 @@ const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
   verify    校验链完整性（读）
     必填：--trail <链文件>
     示例：scribe verify --trail trail.ndjson
+    纪律：全文 verify 归批收约与审计，一律主树 target/debug/scribe 跑；
+      日常写后确认用 confirm（写即回执，chainstamp-solo）。
+
+  confirm   单笔确认（读）：写即回执的廉价查疑通道，疑笔下链与否一查便知
+    必填：--trail <链文件> 且 --hash <事件哈希前八位及以上> 与 --event-id <事件ID> 二择一
+    退出码：0 在档（回 found+index+event_type+event_hash+event_id）/ 1 未在档 / 2 用法错
+    示例：scribe confirm --trail trail.ndjson --hash 8857af11
 
   query     检索链事件（读）
     必填：--trail <链文件>
@@ -263,6 +276,49 @@ fn main() {
                     0,
                 ),
                 Err(e) => emit(json!({"status": "broken", "error": format!("{e:?}")}), 1),
+            }
+        }
+        "confirm" => {
+            // chainstamp-solo 写即回执廉价查疑通道：单笔在档确认，零全文校验
+            let Some(trail) = opt("trail") else { emit(json!({"error": "confirm 缺 --trail，用法：scribe confirm --trail <链文件> --hash <前八位及以上> | --event-id <事件ID>"}), 2) };
+            let hashq = opt("hash");
+            let idq = opt("event-id");
+            if !std::path::Path::new(&trail).exists() {
+                emit(json!({"error": "trail 不存在"}), 2);
+            }
+            let query: ConfirmQuery = match (hashq, idq) {
+                (Some(h), None) => {
+                    if h.len() < 8 {
+                        emit(json!({"error": "confirm --hash 前缀须八位起", "given_len": h.len()}), 2);
+                    }
+                    ConfirmQuery::Hash(h)
+                }
+                (None, Some(i)) => ConfirmQuery::EventId(i),
+                _ => emit(json!({"error": "confirm 须 --hash 与 --event-id 二择一，用法：scribe confirm --trail <链文件> --hash <前八位及以上> | --event-id <事件ID>"}), 2),
+            };
+            let events = load_store(&trail);
+            let hit = events.iter().enumerate().find(|(_, e)| match &query {
+                ConfirmQuery::Hash(h) => e.event_hash.starts_with(h.as_str()),
+                ConfirmQuery::EventId(i) => e.event_id == *i,
+            });
+            match hit {
+                Some((idx, e)) => emit(
+                    json!({
+                        "found": true,
+                        "index": idx,
+                        "event_type": e.event_type,
+                        "event_hash": e.event_hash,
+                        "event_id": e.event_id,
+                    }),
+                    0,
+                ),
+                None => {
+                    let queried = match &query {
+                        ConfirmQuery::Hash(h) => json!(format!("hash:{}…", &h[..8])),
+                        ConfirmQuery::EventId(i) => json!(i),
+                    };
+                    emit(json!({"found": false, "queried": queried}), 1)
+                }
             }
         }
         "query" => {

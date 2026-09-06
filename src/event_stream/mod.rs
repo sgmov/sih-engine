@@ -23,6 +23,9 @@ pub mod verify;
 #[cfg(test)]
 mod tdd_tests;
 
+#[cfg(test)]
+mod chainstamp_tests;
+
 // Re-export key types
 pub use append::{append, load_events, AppendError, AppendSuccess};
 pub use certify::{certification_event, CertifyError};

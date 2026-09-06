@@ -21,7 +21,9 @@ pub struct AppendSuccess {
 pub enum AppendError {
     /// event_id 在事件流中已存在
     DuplicateEventId(String),
-    /// 时间戳小于等于上一事件的 timestamp
+    /// 时间戳小于等于上一事件的 timestamp（chainstamp-solo 链铸时戳后常规
+    /// 路径不可达：铸值 max(提示, 链尾+1ms) 恒严格大于链尾；变体保留仅为
+    /// API 兼容与内存直调形防御）
     TimestampNotMonotonic {
         event_timestamp: String,
         last_timestamp: String,
@@ -154,7 +156,12 @@ fn append_in_memory(
         }
     }
 
-    // ── 第二项校验：时间戳单调递增 ───────────────────────────────────────
+    // ── 第二项校验（chainstamp-solo 链铸时戳改造）：排序时戳由写位机械自铸
+    //    final_ts = max(调用方提示, 链尾 + 1ms)，单调性由构造保证，
+    //    TimestampNotMonotonic 排序拒收类从根消失（错误变体保留仅为 API 兼
+    //    容，常规路径不可达）；调用方时戳低于铸值即降级 details.declared_ts
+    //    元数据留档。旧链行零迁移，哈希公式零动（timestamp 字段仍入哈希，
+    //    只是值改铸）。──
     let prev_hash = if let Some(ref ph) = input.prev_hash {
         ph.clone()
     } else if let Some(last) = store.last() {
@@ -163,13 +170,19 @@ fn append_in_memory(
         GENESIS_PREV_HASH.to_string()
     };
 
-    if let Some(last) = store.last() {
-        if input.timestamp <= last.timestamp {
-            return Err(AppendError::TimestampNotMonotonic {
-                event_timestamp: input.timestamp.to_rfc3339(),
-                last_timestamp: last.timestamp.to_rfc3339(),
-            });
+    let (minted_ts, declared_ts) = match store.last() {
+        Some(last) => {
+            let floor = last.timestamp + chrono::Duration::milliseconds(1);
+            if input.timestamp >= floor {
+                (input.timestamp, None)
+            } else {
+                (floor, Some(input.timestamp))
+            }
         }
+        None => (input.timestamp, None),
+    };
+
+    if let Some(last) = store.last() {
         // ── 第三项校验：prev_hash 匹配前事件哈希 ───────────────────────
         if input.prev_hash.is_some() && input.prev_hash.as_ref().unwrap() != &last.event_hash {
             return Err(AppendError::PrevHashMismatch {
@@ -190,12 +203,29 @@ fn append_in_memory(
 
     // ── 构建完整事件 ─────────────────────────────────────────────────────
     let now = chrono::Utc::now();
+    // declared_ts 元数据注入：调用方时戳低于铸值即留档原声明（chainstamp-solo）
+    let details = match declared_ts {
+        Some(decl) => {
+            let mut d = input
+                .details
+                .clone()
+                .unwrap_or_else(|| serde_json::Value::Object(serde_json::Map::new()));
+            if let Some(obj) = d.as_object_mut() {
+                obj.insert(
+                    "declared_ts".to_string(),
+                    serde_json::Value::String(decl.to_rfc3339()),
+                );
+            }
+            Some(d)
+        }
+        None => input.details.clone(),
+    };
     let event = Event {
         event_id: input.event_id.clone(),
         event_type: input.event_type.clone(),
-        timestamp: input.timestamp,
+        timestamp: minted_ts,
         actor: input.actor.clone(),
-        details: input.details.clone(),
+        details,
         doc_id: input.doc_id.clone(),
         prev_hash: prev_hash.clone(),
         event_hash: String::new(), // 先占位，计算完再填
@@ -334,16 +364,26 @@ mod tests {
     }
 
     #[test]
-    fn test_reject_non_monotonic_timestamp() {
+    // chainstamp-solo 适配（如实记）：旧断言为迟到时戳抛 TimestampNotMonotonic，
+    // 链铸时戳语义下迟到 hint 铸值抬升不再拒收，单调拒收对任何 hint 不可达；
+    // TimestampNotMonotonic 变体保留仅为 API 兼容，常规路径不可达。
+    #[test]
+    fn test_mint_non_monotonic_hint_instead_of_reject() {
         let mut store = Vec::new();
         let input1 = make_input("evt-001", "2026-07-27T14:00:00.000000+00:00");
         append(input1, &mut store, None).unwrap();
 
+        // 迟到 hint：铸值抬升为链尾 + 1ms，原声明降级 declared_ts 元数据
         let input2 = make_input("evt-002", "2026-07-27T13:00:00.000000+00:00");
         let result = append(input2, &mut store, None);
-        assert!(result.is_err());
-        let err = result.unwrap_err();
-        assert!(matches!(err, AppendError::TimestampNotMonotonic { .. }));
+        assert!(result.is_ok(), "链铸时戳下迟到 hint 不再拒收");
+        let last = store.last().unwrap();
+        assert_eq!(
+            last.timestamp.to_rfc3339(),
+            "2026-07-27T14:00:00.001+00:00"
+        );
+        let det = last.details.as_ref().expect("原声明须留档 declared_ts");
+        assert_eq!(det["declared_ts"], "2026-07-27T13:00:00+00:00");
     }
 
     #[test]
