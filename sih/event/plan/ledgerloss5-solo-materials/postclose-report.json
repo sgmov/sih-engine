@@ -1,0 +1,26 @@
+{
+ "batch": "ledgerloss5-solo",
+ "pen": "post-close supplement",
+ "results_doc_final_sha256": "dd1bd82aff2add8044de8f067bf264e9f24d12034c627528dc54347ea60e18a5",
+ "locks_ledger_restored_lines": 5859,
+ "restoration_commits": {
+  "locks": "5a7cf7ff",
+  "engine_supplement": "b566f31",
+  "tools_supplement": "a2ad6f8c"
+ },
+ "freeze_commits": {
+  "tools_sessions": "662ac8bb",
+  "engine_trail": "d6400c1"
+ },
+ "settle_commits": {
+  "tools": "598e313e",
+  "engine": "ba4ee39"
+ },
+ "close": {
+  "revoked": true,
+  "tools_merge": "db91a523",
+  "engine_merge": "d191b20-pre"
+ },
+ "sessions_ledger_lines": 750,
+ "trail_lines": 41
+}
