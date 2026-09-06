@@ -47,12 +47,12 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 认证待补 |
-| ask3 验证件 | 双门读数 | 认证待补 |
-| 正身件 | 身份报告 | 认证待补 |
-| 推导档 | sih-math 载体档 | 认证待补 |
+| ask3 记录 | 意图记录 | 书简认证 `60c2f575` |
+| ask3 验证件 | 双门读数 | 书简认证 `3804499c` |
+| 正身件 | 身份报告 | 书简认证 `82e8612d` |
+| 推导档 | sih-math 载体档 | 内容哈希经 settle cert 60c2f575 挂链（md 档不走 append，genpark 先例形） |
 | pk-073-exit.json | 泊界出泊材料 | parking_exited `c8a09b5e`（不另走 append） |
-| 一裁终签 | crosscheck_completed | `2384af26`（sign 落链） |
+| 一裁终签 | crosscheck_completed | `2384af26`（sign 落链，direction comply） |
 
 ## F 表
 
@@ -74,4 +74,9 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 三仓 settle：sih-math 工地提交 2cd22f7、sih-tools 工地提交 b58f06ed、sih-engine 工地提交 6d3f24a（cert 60c2f575，三查各过；engine 首跑 staged_out_of_scope 拦即生成器脚本移入 materials 面重提，如实记档）。
+- 放锁收约：十二路径 unlock 毕全部 exit 0；close 首跑即成功零碰撞（closeguard 预提交 c2e0595 吸收主树未跟踪件后归并 8ed2115，三工地与分支清除、会话 82eac6da32737d82 revoked、零失败）。
+- 链 verify：2026-09-07 当日链 valid 19 事件。
+- reconcile：三仓 unrouted 全零零新增；cert_missing tools 1 与批前持平、math 2 与 engine 0 属历史账面项（本批三提交 cert_on_chain 三查过）；session_orphan 与 unbypassed 为历史累计账面（四陈旧会话等，ledgerhyg 后继批代清）；exit 1 由历史账面项致非本批新增，archpark 先例同形如实记档不代清。
+- 心跳复验：引擎线 exit 0 告警零，pk-073 出泊件与出泊材料两笔全入 mainline（mainline 47／scrap 6 历史存量不变）。
+- 收约补笔：本结果档回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark 先例同形）。
