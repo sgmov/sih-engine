@@ -1,0 +1,33 @@
+{
+  "batch": "idenlane-guard-solo",
+  "stage": "管线三步",
+  "date": "2026-09-06",
+  "order": "化格落笔 → 核阅复验 → 检词核查（笔在核前、判在书简前）",
+  "formatter": [
+    "lease/CONTRACT.md rc=0",
+    "lease/CALL-LOG.md rc=0",
+    "scribe/CALL-LOG.md rc=0",
+    "nomenclator/packs/core/terms.json rc=0",
+    "idenlane-guard-solo-results.md rc=0"
+  ],
+  "scrutinator_des001": [
+    "lease/CONTRACT.md exit=2 域外如实记（des-001 域只盖 sih-engine/doc，目标在 sih-tools）",
+    "idenlane-guard-solo-results.md exit=2 域外如实记（event/plan 不在 des-001 域）",
+    "本批零 sih-engine/doc 目标即零域内件"
+  ],
+  "nomenclator": [
+    "五件 rc=0 零违例（八新词随批登记后核查过）"
+  ],
+  "terms_registered": [
+    "轻车道",
+    "白名单",
+    "认账",
+    "锁门",
+    "追加面",
+    "独占",
+    "候位",
+    "文件类"
+  ],
+  "terms_pack": "209→217，化格归一 rc=0（packhyg 并集收编纪律）",
+  "errata_note": "attractor emit-contract --seat 须两段形 framework:model，版本经 --version-label self-reported（首试三段形被拒实录）；ng-medium 提取须带尾换行才是正典 d4f84701"
+}

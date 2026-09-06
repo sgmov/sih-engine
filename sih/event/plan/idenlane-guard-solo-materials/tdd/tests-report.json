@@ -1,0 +1,20 @@
+{
+  "batch": "idenlane-guard-solo",
+  "date": "2026-09-06",
+  "baseline_before": "139 passed（openhyg-solo 收约数一致，工作树起点 69430329）",
+  "red_current": "4 failed 20 passed（新夹具对现行码：routed_direct 三件与白名单一件红）",
+  "red_prefeature": "对 d5cd596f^ 即 GUARD_VERSION 1.13.0（guardcore 与 hooks/commit-msg 与 commitcore 三件前代版）：7 failed 3 passed——绿三件为无挂接拒与形不符拒两边皆拒的安全回归项，如实注记",
+  "green_final": "149 passed in 50.71s（139 基线零回归 + 新增直改车道族 10 件）",
+  "new_tests": [
+    "test_hook_direct_edit_without_pen_rejected T-1",
+    "test_hook_direct_pen_not_on_trail_rejected T-2",
+    "test_hook_direct_pen_on_trail_allowed T-3",
+    "test_hook_malformed_pen_form_rejected T-4",
+    "test_guardcore_ok_direct_form",
+    "test_guardcore_malformed_pen_falls_to_plain",
+    "test_direct_lane_file_whitelist_frozen T-9",
+    "test_reconcile_ok_direct_routed T-8",
+    "test_reconcile_direct_ref_not_on_chain_alarms T-8",
+    "test_reconcile_registered_bypass_direct_stays_bypass T-8"
+  ]
+}

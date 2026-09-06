@@ -1,0 +1,39 @@
+{
+  "batch": "idenlane-guard-solo",
+  "stage": "判定语义三裁（批 C 裁合法提交形）",
+  "gid": "m-idenlane-okform-1",
+  "mode": "facet 合同模式",
+  "shots": 9,
+  "verdict": "9/9 comply 变卦 0%",
+  "caution": "0/9",
+  "basis": "baseline_4 ×9（集内单类）",
+  "gate": "stable_clear",
+  "near_threshold": false,
+  "seat_baseline": {
+    "seat": "ZCode:GLM-5.3-Flash:self-reported",
+    "date": "2026-09-06",
+    "verdict": "可用",
+    "temperature": 0.0,
+    "accuracy_ok": true,
+    "drift_alarm": [],
+    "identity_hash_prefix": "5068160a9807",
+    "core_hash_prefix": "82f460c2ac27",
+    "calibration": "temp_probe agent 模式 4 命题 × 5 发亲答，parse_fail 0"
+  },
+  "emit": "attractor emit-contract（引擎件）ng medium 正典 d4f84701 seat ZCode:GLM-5.3-Flash:self-reported",
+  "score": {
+    "coop": "measure.py --score（围堰上游闸）runs 实写 9 空转 0",
+    "engine": "attractor score runs_written 0 如实载（围堰腿先写幂等复入）"
+  },
+  "assemble": "tally assemble --des-root proposition/DES --baseline seat-baseline.json --identity-report 正身件",
+  "check": "attractor verdict pass 12 项零失败",
+  "verify": "attractor verify identical",
+  "sign": {
+    "event_id": "91bd1416-0c35-4376-8575-af2039b6163e",
+    "event_hash": "8e97cadcf3fd04991812ee82d13bf90850e9fc2ee3389f993d96b41fc2669851",
+    "doc_id": "crosscheck-m-idenlane-okform-1",
+    "direction": "comply",
+    "disposition": "裁决通过"
+  },
+  "chain_grep": "8e97cadc 在当日链 grep 命中 1 笔，scribe verify valid"
+}

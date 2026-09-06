@@ -1,0 +1,122 @@
+{
+  "kind": "t10-lockgate-evidence",
+  "batch": "idenlane-guard-solo",
+  "date": "2026-09-06",
+  "question": "直改笔（scribe direct）对他会话独占 trail 锁的锁门语义：豁免（甲案）还是尊重（乙案）",
+  "mechanism_finding": {
+    "source": "sih-engine/src/bin/scribe.rs direct 分支调用 lockgate_guard(&opts,&trail)",
+    "fact": "lockgate_guard 在 --locks 缺席时零查即返回（lockguard-solo 旧行为逐字节不变）；直改笔调用形（watch 协议 scribe direct --record --identity-report）不带 --locks 即锁门不生效，锁门是参数门控非路径门控",
+    "implication": "现行既成事实不是引擎显式豁免直改笔，而是锁门开关落在调用方参数上；两案实质是把这一开关从调用方手上收归引擎判定"
+  },
+  "pens": [
+    {
+      "event_hash8": "3c8d20d0",
+      "doc_id": "direct-agent-364f2919",
+      "event_type": "direct_edit_completed",
+      "timestamp": "2026-09-06T01:03:59Z",
+      "files": [
+        "sih-tools/lease/ledger/sessions.ndjson"
+      ],
+      "pen_kind": "agent"
+    },
+    {
+      "event_hash8": "d3db0787",
+      "doc_id": "direct-agent-d79628ac",
+      "event_type": "direct_edit_completed",
+      "timestamp": "2026-09-06T01:27:15Z",
+      "files": [
+        "sih-engine/doc/governance/PARKING-v1.md",
+        "sih-engine/sih/state/parking/materials/pk-070.json"
+      ],
+      "pen_kind": "agent"
+    }
+  ],
+  "trail_lock_windows_2026_09_06": [
+    {
+      "event": "acquired",
+      "mode": "append",
+      "session_id": "4e5f2ad1dee20ffa",
+      "acquired_at": "2026-09-05T16:40:45+00:00"
+    },
+    {
+      "event": "released",
+      "session_id": "4e5f2ad1dee20ffa",
+      "released_at": "2026-09-05T17:26:03+00:00"
+    },
+    {
+      "event": "acquired",
+      "mode": "exclusive",
+      "session_id": "722d25c79c614f83",
+      "acquired_at": "2026-09-05T18:03:16+00:00"
+    },
+    {
+      "event": "released",
+      "session_id": "722d25c79c614f83",
+      "released_at": "2026-09-05T18:06:05+00:00"
+    },
+    {
+      "event": "acquired",
+      "mode": "exclusive",
+      "session_id": "7c1775d58254cce6",
+      "acquired_at": "2026-09-05T18:43:15+00:00"
+    },
+    {
+      "event": "released",
+      "session_id": "7c1775d58254cce6",
+      "released_at": "2026-09-05T18:45:09+00:00"
+    },
+    {
+      "event": "acquired",
+      "mode": "exclusive",
+      "session_id": "c41ce2afaaa8cc45",
+      "acquired_at": "2026-09-06T01:24:39+00:00"
+    },
+    {
+      "event": "released",
+      "session_id": "c41ce2afaaa8cc45",
+      "released_at": "2026-09-06T01:53:08+00:00"
+    },
+    {
+      "event": "acquired",
+      "mode": "append",
+      "session_id": "337307effbb94e41",
+      "acquired_at": "2026-09-06T02:45:13+00:00"
+    }
+  ],
+  "fact_check": {
+    "d3db0787": "01:27:15Z 落链，落在 gvec-v2-serial（c41ce2af）独占窗 01:24:39Z 至 01:53:08Z 内——独占持有期直改笔落链畅通坐实",
+    "364f2919": "系 01:03:59Z 直改笔（事件哈希 3c8d20d0，台账补录 sessions.ndjson）的 doc_id direct-agent-364f2919 非事件哈希；该时点 trail 锁面为空（gvec 01:24:39Z 才取锁），任务包「两笔俱在独占持有期入链」表述对此笔不成立，如实勘误：独占窗内实证为 d3db0787 一笔，364f2919 笔为无锁窗落链"
+  },
+  "case_a": {
+    "name": "甲案 追加面豁免合法化",
+    "semantics": "trail 与台账属治理共享追加面（SCOPE_SHARED_SURFACE 六路已冻结登记），直改笔对追加面免锁门即现行既成事实正典化；引擎侧把 direct 分支的 lockgate 判定改为追加面恒放行（或维持 --locks 可选形并在 CONTRACT 明文）",
+    "pros": [
+      "与 SCOPE_SHARED_SURFACE 追加共存语义一致（append 持位互不憋）",
+      "零实装成本即现行行为，只补文书正典化",
+      "文书类轻车道小改动零排队即人节点补笔不烧等待"
+    ],
+    "cons": [
+      "他批取 exclusive 于 trail 时（gvec 先例）其独占语义被直改笔穿透即 exclusive 名不副实",
+      "锁门对直改笔失效面扩大即写点唯一化纪律（pk-057）少一道并发防线",
+      "独占期链尾竞态即 append 原子性由 O_APPEND 承载而非锁承载，理论上够用但违反锁面可读性"
+    ],
+    "successor_impl": "零引擎实装或仅 CONTRACT 文书补正典"
+  },
+  "case_b": {
+    "name": "乙案 直改笔尊重全锁面",
+    "semantics": "scribe direct 强制 --locks（或自工作区根解析锁台账路径缺省启用），他会话 exclusive 持 trail 即拒写并出 wait-turn/排队指引；append 持位不拦（既有 G8 语义）",
+    "pros": [
+      "锁面语义单一即 exclusive 对一切写者有效，与 lease 锁库互斥谓词同义",
+      "独占期链尾竞态由锁承载，pk-057 同族并发防线闭合",
+      "直改笔与租约笔在锁门前平权（生产方平权裁定同形）"
+    ],
+    "cons": [
+      "人节点补笔在他批独占期被拒即须等或排队，零 token 二值协议的即时性受损",
+      "他批误取 exclusive 于本应 append 的追加面（gvec 形）会连带憋住全部直改笔即错误锁形放大",
+      "需引擎实装即 direct 分支 --locks 必填或缺省解析加拒写指引，归后继批"
+    ],
+    "successor_impl": "引擎 scribe.rs direct 分支：--locks 缺省自 ROOT/sih-tools/lease/ledger/locks.ndjson 解析启用，Held 即 exit 1 出 wait-turn 指引；TDD 一红一绿"
+  },
+  "batch_position": "本批只出材料不代裁（PRO-07 鉴不投射判断）；裁定权归用户。若裁乙案，引擎实装归后继批；若裁甲案，CONTRACT/SPEC 文书正典化归后继批或直改笔补文",
+  "collateral_note": "gvec-v2-serial 对 trail 取 exclusive 而非 SCOPE_SHARED_SURFACE 约定的 append 形，是本次实证成立的前提；追加面锁形纪律（trail 取 append）若被守住，两案差异只在 exclusive 误取时显形"
+}
