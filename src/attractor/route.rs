@@ -20,6 +20,7 @@ use chrono::NaiveDate;
 use serde_json::{json, Map, Value};
 
 use super::jsonc::{canonical_json, parse_json, py_compact_sorted, verr, PyError};
+use crate::scrutinator::rule::predkernel::glob::match_fnmatch_glob;
 
 /// 围堰契约面版本字面：报告头 tool.version 承围堰 __version__，承 tally
 /// 先例即工件工具名字段是契约面标识非二进制身份。
@@ -344,64 +345,6 @@ fn parse_tail(data: &toml::Value, directory: &Path) -> Result<(String, i64, i64)
 // 谓词求值（对表 predicates.py，fail-closed 语义零漂移）
 // ---------------------------------------------------------------------------
 
-/// Python fnmatch.translate 对表实现：`*`→`.*`、`?`→`.`、`[seq]`/`[!seq]`
-/// 字符类（集内 `!` 首位转 `^`、首 `]` 字面、`]` 截止、`^` 首位转义）、
-/// 其余字符 re.escape；未闭合 `[` 按字面。全串匹配大小写敏感
-/// （fnmatchcase），dotall 承 Python `(?s:...)\Z` 即 Rust `(?s:...)\z`。
-fn glob_to_regex(pattern: &str) -> Result<regex::Regex, PyError> {
-    if pattern == "*" {
-        return regex::Regex::new("(?s:.*)\\z").map_err(|e| verr(format!("pattern invalid: {e}")));
-    }
-    let chars: Vec<char> = pattern.chars().collect();
-    let n = chars.len();
-    let mut res = String::new();
-    let mut i = 0usize;
-    while i < n {
-        let c = chars[i];
-        i += 1;
-        match c {
-            '*' => res.push_str(".*"),
-            '?' => res.push('.'),
-            '[' => {
-                let mut j = i;
-                if j < n && chars[j] == '!' {
-                    j += 1;
-                }
-                if j < n && chars[j] == ']' {
-                    j += 1;
-                }
-                while j < n && chars[j] != ']' {
-                    j += 1;
-                }
-                if j >= n {
-                    res.push_str("\\[");
-                } else {
-                    let mut stuff: String = chars[i..j].iter().collect();
-                    if stuff.starts_with('!') {
-                        stuff = format!("^{}", &stuff[1..]);
-                    } else if stuff.starts_with('^') {
-                        stuff = format!("\\{stuff}");
-                    }
-                    res.push('[');
-                    res.push_str(&stuff);
-                    res.push(']');
-                    i = j + 1;
-                }
-            }
-            _ => res.push_str(&regex::escape(&c.to_string())),
-        }
-    }
-    regex::Regex::new(&format!("(?s:{res})\\z")).map_err(|e| verr(format!("pattern invalid: {e}")))
-}
-
-fn fnmatch_case(text: &str, pattern: &str) -> bool {
-    // 逐次编译小而稀疏；包内模式有限，确定性优先
-    match glob_to_regex(pattern) {
-        Ok(re) => re.is_match(text),
-        Err(_) => false,
-    }
-}
-
 fn all_match(values: Option<&Value>, patterns: &[String]) -> bool {
     let Some(Value::Array(items)) = values else {
         return false;
@@ -410,7 +353,7 @@ fn all_match(values: Option<&Value>, patterns: &[String]) -> bool {
         let Some(s) = value.as_str() else {
             return false;
         };
-        if !patterns.iter().any(|p| fnmatch_case(s, p)) {
+        if !patterns.iter().any(|p| match_fnmatch_glob(s, p)) {
             return false;
         }
     }
