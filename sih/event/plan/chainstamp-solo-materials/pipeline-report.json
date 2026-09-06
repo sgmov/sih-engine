@@ -1,0 +1,24 @@
+{
+ "batch": "chainstamp-solo",
+ "date": "2026-09-07",
+ "session": "bef656c078834e4d",
+ "pipeline_steps": [
+  {"step": "化格 formatter --pack packs/general-v1 --write", "targets": ["sih/event/plan/chainstamp-solo-results.md"], "reading": "exit 0"},
+  {"step": "核阅 scrutinator --pack des-001", "targets": ["sih/event/plan/chainstamp-solo-results.md"], "reading": "exit 2 域外如实记（event/plan 不属 des-001 域）"},
+  {"step": "检词 nomenclator check --pack packs/core", "targets": ["sih/event/plan/chainstamp-solo-results.md"], "reading": "exit 0 零违例"}
+ ],
+ "engine_tests": {"total": 175, "passed": 175, "failed": 0, "note": "既存 171 含适配改名 1 件 + chainstamp 新 4 件"},
+ "adjudication": {"gid": "m-chainstamp-stamp-1", "shots": 9, "comply": 9, "basis": "baseline_4", "gate": "stable_clear", "check": "12 项 pass", "verify": "identical", "sign_hash": "940b18fe58bd27350535eaecabe1dfffbcd7955d8a8b424663e4995e678b1cab"},
+ "live": {
+  "intent_pen": "8857af112df427ad58ed5879471145dfe3b45903d16028eb858bda66cb334a61",
+  "parallel_batches_zero_reject": "与 leftover 与 sddpacks 与 declguard 与 confmath 活跃窗全交叠零拒收零等待",
+  "confirm": "意图笔 index 10 与终签 index 24 俱查中 found=true"
+ },
+ "deviations": [
+  "既存测试适配一件：test_reject_non_monotonic_timestamp 改名改断言（链铸新契约）",
+  "scribe/CALL-LOG.md 越线写一笔：锁被正确拒 scope_violation（allow 面未含）后写入先行，写入时点零并发写者，commit 走 bypass 登记认领（viewline 先例形）",
+  "任务包请求写入节散文路径粗粒度缺陷：勘误入 BATCH-FACE",
+  "attractor verify cwd 相对形勘误入 BATCH-FACE",
+  "USAGE 无独立文件：纪律文落 scribe help USAGE 常量与 BATCH-FACE"
+ ]
+}
