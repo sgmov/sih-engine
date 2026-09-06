@@ -1,0 +1,25 @@
+{
+ "batch": "basisunion-solo",
+ "date": "2026-09-06",
+ "session": "917bbc4e8c948f38",
+ "pipeline_steps": [
+  {"step": "化格 formatter --pack packs/general-v1 --write", "targets": [
+    "sih-engine/sih/event/plan/basisunion-solo-results.md", "exit 0",
+    "sih-engine/sih/event/plan/watchcheck-solo-results.md", "exit 0",
+    "sih-tools/facet/CONTRACT.md", "exit 0"], "reading": "三件 exit 0 零改动"},
+  {"step": "核阅 scrutinator --pack des-001", "targets": [
+    "sih-engine/sih/event/plan/basisunion-solo-results.md", "exit 2",
+    "sih-engine/sih/event/plan/watchcheck-solo-results.md", "exit 2"],
+   "reading": "两件 exit 2 域外（des-001 域只盖 sih-engine/doc，event/plan 域外，unmatched_targets 报文在场），如实记入档不属违规"},
+  {"step": "检词 nomenclator check --pack packs/core", "targets": [
+    "sih-engine/sih/event/plan/basisunion-solo-results.md", "exit 0",
+    "sih-engine/sih/event/plan/watchcheck-solo-results.md", "exit 0",
+    "sih-tools/facet/CONTRACT.md", "exit 0"], "reading": "三件 exit 0 零违例"}
+ ],
+ "scribe_writes": [
+  {"event": "intent_refined", "event_hash": "557a8bfa9dd4eeef4426badec63d279c5795127c578b266c9e641975a0f59e3f", "verify": "grep 在链"},
+  {"event": "crosscheck_completed m-watchcheck-judge-1", "event_hash": "e292b2e5385d7cae80c968c00b2a5925122daf025fb4c077f1f8d3357750dfe7", "verify": "grep 在链"},
+  {"event": "crosscheck_completed m-basisunion-gate-1", "event_hash": "c03647daba30fdaa60f825769456af69b8acc9ab7f5366be1e72534dd8414d4a", "verify": "grep 在链"}
+ ],
+ "reading_recorded": ["204762cf convergence", "a1fad0cd adoption", "d8dd71e7 mergeback"]
+}

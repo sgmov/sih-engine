@@ -1,0 +1,21 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basisunion-solo/facet/contracts/basisunion-260906/m-basisunion-gate-1.json",
+  "contract_sha256": "544e4eba11ce498da1b0a36068cca49a60412f2b0687f4f6e85299649ea125c6",
+  "core_hash": "82f460c2ac2741fc4ee8d104d7ef14803f744da14a24b1d7356bd3bd3531d1dc",
+  "criteria_version": "v3",
+  "date": "2026-09-06",
+  "dc_fingerprint": "edd2144bc6fbd473",
+  "gate_verdict": "stable_clear",
+  "gid": "m-basisunion-gate-1",
+  "identity_hash": "d4018b161be1b4b02b4a2cf0d73337548d993e8255b7fbdc144f468eb0f53a96",
+  "kind": "tally-check-input",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basisunion-solo/facet/contracts/basisunion-260906/responses.jsonl",
+  "responses_sha256": "2114b1e2275f1509ec7da5a5caf3813c69ca68e8dd3eef0612070dc9dea02050",
+  "rules_version": "des-011-r1",
+  "seat_baseline_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/basisunion-solo/sih/event/plan/basisunion-solo-materials/seat-baseline-zcode-2026-09-06-basisunion.json",
+  "topic_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basisunion-solo/facet/contracts/basisunion-260906/topic.md",
+  "topic_sha256": "6f9b0681f6249e64b79a578362edd90bb8263ac741419650abd5d31e077ab967",
+  "trail_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basisunion-solo/proposition/DES/m-basisunion-gate-1/flywheel-trail.jsonl",
+  "voids": []
+}

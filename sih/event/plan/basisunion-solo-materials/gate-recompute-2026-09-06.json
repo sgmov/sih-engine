@@ -1,0 +1,45 @@
+{
+ "gid": "m-watchcheck-judge-1",
+ "recompute_batch": "basisunion-solo",
+ "recompute_date": "2026-09-06",
+ "verdict_before": "boundary",
+ "verdict_after": "stable_clear",
+ "criteria_after": {
+  "decision_stable": true,
+  "boundary_low": true,
+  "basis_consensus": true,
+  "foregrounding_stable": true
+ },
+ "near_flags_after": {
+  "decision_near": false,
+  "boundary_near": false,
+  "basis_near": false,
+  "foregrounding_near": false
+ },
+ "basis_criterion": "union",
+ "basis_union_version": "v1-2026-09-06-union",
+ "basis_failure": null,
+ "distinct_basis": [
+  "baseline_1",
+  "baseline_4",
+  "baseline_5"
+ ],
+ "basis_allowed": [
+  "baseline_1",
+  "baseline_4",
+  "baseline_5"
+ ],
+ "basis_missing": 0,
+ "basis_out_of_set": [],
+ "boundary_test_p": 1.0,
+ "boundary_flag_sum": 0,
+ "n_runs": 9,
+ "responses_zero_modification": true,
+ "hashes": {
+  "/Users/moc/workspaces/SiHankor/sih-tools/facet/contracts/watchcheck-260905/responses.jsonl": "02157c66d43908b5a8f5449acf6fa8c9252256584df5ab0be77174e07728deca",
+  "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/watchcheck-solo-materials/facet-round1/responses.jsonl": "02157c66d43908b5a8f5449acf6fa8c9252256584df5ab0be77174e07728deca",
+  "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/watchcheck-solo-materials/facet-round1/contract.json": "3ec129b851fbc8a736c60a8d6610771ab8142723dd1a30f3872a69d1869d92c8"
+ },
+ "recompute_defaults": "assess_maturation_v3 缺省参 + basis_allowed=declared_basis_enum(contract)，与 score 半同参（T-1 后产线形）",
+ "ruling": "用户 2026-09-06 裁定原话「watchcheck 改题文本不需要改，只要改判定，依据只要是基线，无论是哪个，都是同一个语义的判决。」"
+}

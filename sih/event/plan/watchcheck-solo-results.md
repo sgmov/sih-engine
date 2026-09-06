@@ -19,7 +19,7 @@ watchcheck-solo 批交付：稽 watchcheck 工具首立（对表判定式实装�
 | **F-2** | 双跑一致 | 同参双跑输出逐字节一致 | 过 | 夹具 test_dual_run_byte_identical 绿；活跑 run1/run2 cmp IDENTICAL 退出码 1/1（materials/first-run-2026-09-05） |
 | **F-3** | 挂点 | 例行读数后同跑实测在档，BATCH-FACE 登记节在档 | 过 | 例行读数 ga-2 三维落链（convergence 0.714286 / adoption 0.857143 / mergeback 0.043478）后同跑 watchcheck 双跑在档；BATCH-FACE「watch 对表挂点与处置协议」节在档 |
 | **F-4** | 零 LLM | 命令全程零模型调用零网络 | 过 | 实现纯 stdlib（json/subprocess/sqlite 弃用/pathlib），零网络调用零模型调用，显式给参禁钟读 |
-| **F-5** | 判定语义 | 无主判定谓词与豁免面过得一裁，near_threshold 呈用户 | **未过（boundary 呈用户候裁）** | round1 九发全 comply 变卦 0% 谨慎 0/9，basis_consensus 子判据挂（distinct_basis=3>1）→ verdict boundary；按「boundary 停批、刀锋类须人重写上下文、agent 不得代写」纪律停执契呈报，不代写不重滚；详见第四节 |
+| **F-5** | 判定语义 | 无主判定谓词与豁免面过得一裁，near_threshold 呈用户 | **过（basisunion-solo 批 2026-09-06 补记落定）** | round1 九发全 comply 变卦 0% 谨慎 0/9，旧判据 distinct_basis=3>1 挂落 boundary 候裁；用户 2026-09-06 裁定依据族语义同一后，basisunion-solo 批改 basis_consensus 为集合成员语义并只读复算（原始 responses 哈希前后一致）verdict 翻 stable_clear，执契三步 check 12 项全过、verify identical、机器终签在链（event_hash e292b2e5385d7cae），watchcheck 判定语义命题 m-watchcheck-judge-1 裁决通过落据；详见第四节与第十节补记 |
 | **F-6** | 呈报形 | 输出即人话清单，人节点可二值裁决，零代裁动作 | 过 | 输出形：判定式行加输入面行加结论行加逐件清单（路径加 mtime 加 git 态）；处置二值指引随附；core.py 零写零 restore 零建议 |
 
 ## 二、交付清单
@@ -100,3 +100,12 @@ watchcheck-solo 批交付：稽 watchcheck 工具首立（对表判定式实装�
 - 恢复:逐件 `git show stash@{0}^3:<path>` 只回放「当前缺失且不在 HEAD」件（tools 1148、engine 32 含当日链），零覆盖零暂存；恢复后 scribe verify valid 134 事件逐字节，双仓活写面全数归位，stash@{0} 原样保留作备份不删
 - 定性:此缺陷形态恰是本批病灶二的镜像——收约机械动作本身制造了「合法活写面静默消失」窗口；watch 对表挂点若在 close 后跑即以 exit-2 拦截如实告警（本批实测即如此拦住），fail-closed 语义生效
 - 处置建议（候裁）:leaseopt 线应对 close stash 加豁免面排除（trail 与 ledger 与 reports 等冻结面不入 stash）或 close 后自动回放；本批零代修 lease 源，转泊界或线排期由人节点裁
+
+## 十、F-5 补记（basisunion-solo 批 2026-09-06，收约冻结令形随批）
+
+用户 2026-09-06 裁定原话「watchcheck 改题文本不需要改，只要改判定，依据只要是基线，无论是哪个，都是同一个语义的判决。」即依据族语义同一裁定。承接批 basisunion-solo（任务包 sih-engine/sih/state/plan/basisunion-solo.md）落地：
+
+- **判据修订**:maturation_gate.py basis_consensus 改集合成员语义（合法枚举集从合同各发 system_prompt 声明提取单源，集内即过、集外/缺失/无法解析仍挂），判据变更自身经 facet 合同模式得一裁（gid m-basisunion-gate-1 九发 stable_clear，机器终签 event_hash c03647daba30fdaa）
+- **复算落定**:round1 九发原始 responses 零改动零重采样（contract/responses sha256 前后一致对表），只读复算 verdict 由 boundary 翻 stable_clear（四子判据全真，basis_criterion=union），复算读数在 basisunion-solo-materials/gate-recompute-2026-09-06.json
+- **执契三步**:tally 装配（n_shots 9，gate_verdict stable_clear）→ 引擎 attractor check 十二项全过（R5 席位当日基线可用且身份核哈希一致）→ verify identical → 机器终签落链（crosscheck_completed，event_hash e292b2e5385d7cae80c968c00b2a5925122daf025fb4c077f1f8d3357750dfe7），重放锚 basisunion-solo-materials/m-watchcheck-judge-1-signcheck.json
+- **第四节候裁事项处置**:候裁二选一由用户裁定以第三路了结——不改题文本（选项 b 的重写上下文不采）、不重测新 gid（选项 a 不采），判定语义修正后原九发即终局；第四节「basis 三值轮换系回填方法论失误」的根因申报随之改判：轮换引用在集内语义同一裁定下即同一语义判决的等价依据，非命题刀锋（boundary_flag 0/9 原读数即席位未判任何边界性，与此一致）
