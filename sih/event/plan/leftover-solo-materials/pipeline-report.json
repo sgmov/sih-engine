@@ -94,5 +94,31 @@
   "BATCH-FACE.md": "f7bbf1cc4d6574e43804cf95c7f4c275eeb41111d0c240845722f12fd269d816",
   "2026-09-06-ask3-rootanchor-solo-record.json": "67e68ca40739a314c9ca72d7fb3ea543e375ee7919922381fa4cdb4bf298d734",
   "2026-09-06-ask3-rootanchor-solo-validation.json": "d0e1c2d951e70e630d0499fc1877714759b96973f45b1baa8bd37a744d151388"
+ },
+ "stage2": {
+  "results_md": {
+   "formatter_exit": 0,
+   "formatter_changes": 0,
+   "scrutinator_des001_exit": 2,
+   "scrutinator_note": "event/plan 域外如实记档（BATCH-FACE des-001 域只盖 sih-engine/doc）",
+   "nomenclator_first_run_exit": 1,
+   "first_red": "dead_ban 死档禁词『存证』一条（PRO-007 司法证据效力主张越权），红证归档 pipeline-first-red-nomenclator.json 不清洗",
+   "nomenclature_fix": "『以存证』改『以留痕』后复跑 exit 0 零违例",
+   "append_attempt": "ReportNotJson 拒 exit 2（halfmerge 先例同形）如实记档，md 件不伪认证随 settle 入版控"
+  },
+  "lease_calllog_md": {
+   "nomenclator_exit": 0,
+   "findings": 0,
+   "append_attempt": "ReportNotJson 拒 exit 2 同形如实记档"
+  },
+  "certifications": {
+   "stage1": [
+    "6fc738db",
+    "cb682c5c",
+    "10f08319",
+    "e11956e4"
+   ],
+   "note": "四笔裸调逐笔 grep 验证 session_id=3f4c69f5433bd358 绑定在链；md 拒笔两笔不补造不粉饰"
+  }
  }
 }
