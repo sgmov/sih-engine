@@ -1,4 +1,4 @@
-//! 引擎侧共享求值内核（predkernel）
+//! 墨斗（snapline）：引擎共享谓词求值基座——纯求值原语，零治理语义，无包消费，无命令面。
 //!
 //! 承接 DES-007#cargo-layout 与 kernelmerge-solo 批：把核阅
 //! （`scrutinator/rule.rs`）与得一（`attractor/route.rs`）两侧求值辅助归并

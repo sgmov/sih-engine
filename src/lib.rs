@@ -9,6 +9,7 @@ pub mod ask3repeater;
 pub mod attractor;
 pub mod event_stream;
 pub mod retriever;
+pub mod snapline;
 pub mod scrutinator;
 pub mod view;
 
