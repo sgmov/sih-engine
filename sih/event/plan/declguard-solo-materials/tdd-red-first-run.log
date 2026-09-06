@@ -1,0 +1,11 @@
+# 首跑红证复原件：原件随收桌重开旧 engine 工地拆除丢失，本件按会话转录逐字复原，出处申报在结果档（先红留痕纪律：不清洗不粉饰）
+
+```
+ImportError while importing test module 'tests/test_declguard.py':
+    from lease.core import migrate_legacy_receipts  # noqa: E402
+E   ImportError: cannot import name 'migrate_legacy_receipts' from 'lease.core' (src/lease/core.py)
+=========================== short test summary info ============================
+ERROR tests/test_declguard.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!
+1 error in 0.10s
+```

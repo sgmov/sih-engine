@@ -1,0 +1,77 @@
+{
+ "batch": "declguard-solo",
+ "session": "c0d48b2baad5228a",
+ "session_history": "首会话 32517d4b687ee66b 因 allow 漏 pyproject.toml 版本位 settle 拒（staged_out_of_scope），收桌重开（modou allow 漏先例形）；工地改动保全 tar 复原零损失；旧会话意图笔 e0e0cd11 与认证四笔（d0192b6c/9bc1a155/e89d5519/d4039cb6）留链为历史不可篡改",
+ "date": "2026-09-06",
+ "stage": 1,
+ "chain_front": {
+  "ask3_double_gate": {
+   "scrutinator_ask3_exit": 0,
+   "ask3repeater_status": "ok"
+  },
+  "elicit": {
+   "signals": 4,
+   "digest": "passed",
+   "covered": 4
+  },
+  "identity": {
+   "anomalies": 0,
+   "status": "attest",
+   "identity_hash": "5a983dff43532103903eeeadb20606d32a42511f1c3dfcbc3ab3d46fbc6eba02"
+  },
+  "locks": {
+   "count": 11,
+   "append": 3,
+   "exclusive": 8
+  }
+ },
+ "t1_gate": {
+  "impl": "core.py parse_declared_writes + declared_uncommitted_diff + close_session 末位挂位 + cli.py --ack-uncommitted",
+  "frozen_constants": [
+   "DECLARATION_CONDITIONAL_MARK=若",
+   "DECLARATION_PATH_TOKEN",
+   "LEGACY_RECEIPT_DIRS"
+  ],
+  "shared_surface": "SCOPE_SHARED_SURFACE 命中入 shared_surface_exempt 豁免态零误伤"
+ },
+ "t2_receipts": {
+  "write_point": "receipts_dir(root) = sih-tools/lease/ledger/receipts/<stem>.json",
+  "whitelist": "六路扩七路，常量单源化移 core，cli 具名导入",
+  "migration": {
+   "moved_count": 41,
+   "skipped_count": 0,
+   "residue_engine": 0,
+   "residue_math": 0,
+   "note": "T-3 清点时点 37 件，迁移窗实态 41 件（sddpacks 与 checkerimpl 等批收约续产），全量迁入"
+  },
+  "accommodation": "Path.replace 原子搬移，零写面纪律辖台账活面盖版类原语，本迁移非台账写面，CONTRACT 修订四十五显式申报"
+ },
+ "t3_tdd": {
+  "families": [
+   "差集非空拒",
+   "全提交放行",
+   "共享面零误伤",
+   "条件豁免",
+   "显式认领",
+   "认领拒形二件",
+   "收据新位",
+   "存量迁移"
+  ],
+  "first_red": "tdd-red-first-run.log（复原件带出处声明，原件随旧工地拆除丢失如实申报）",
+  "green": "204 passed = 195 基线 + 9 新增，零回归",
+  "leaseup_pin_update": "钉数测试 6→7 随修订同批"
+ },
+ "t4_adjudication": {
+  "gid": "m-declguard-gate-1",
+  "mode": "facet 合同模式九发亲笔回填，seat ZCode:GLM-5.3:self-reported，identity_hash 5a983dff",
+  "verdict": "boundary",
+  "boundary_flags": "9 发中 4 发如实标记（条件启发/共享面豁免/零写面 accommodation 落规范边界）",
+  "disposition": "红线纪律：不终签不代写不清洗重跑，boundary 呈用户候裁（watchcheck-solo F-5 先例形）",
+  "material": "contract-score-material.json（facet 合同目录原件复制）"
+ },
+ "contract_revision": "修订四十五 1.31.0 三源对齐",
+ "materials": {
+  "contract-score-material.json": "e857593cb90088b389d133817a883c30339ec5a5b0428e9ff233fb20f33ea4b3",
+  "tdd-red-first-run.log": "d815e35795f575400d95a4412fcecee98850f02b84bfb8d6a356d0427456f3fb"
+ }
+}
