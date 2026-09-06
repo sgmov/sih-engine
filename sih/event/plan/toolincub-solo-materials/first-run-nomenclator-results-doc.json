@@ -1,0 +1,70 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/toolincub-solo/sih/event/plan/toolincub-solo-results.md"
+  ],
+  "findings": [
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "-2 如实记档；检词首跑 2 笔死档词「入册」红证入 materials，改「收录」复跑零违例 |",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/toolincub-solo/sih/event/plan/toolincub-solo-results.md",
+      "line": 19,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    },
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "- 检词首跑 2 笔死档词「入册」：笔在核前管线首跑违例红证归档入 materials，改「收录」后复跑零违例，判据零改",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/toolincub-solo/sih/event/plan/toolincub-solo-results.md",
+      "line": 72,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.11.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 2,
+    "skipped": 0
+  }
+}

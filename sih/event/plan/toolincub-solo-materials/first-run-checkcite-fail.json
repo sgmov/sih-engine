@@ -1,0 +1,4 @@
+{
+ "note": "首跑红证：recall 检索词未命中载体重跑前 checkcite exit 1 fail（allowed_size 6，ORD-007 与 SPEC-021 双缺）；本件为会话转写忠实记录，原件被重跑输出覆盖，处置为换检索词重跑后 verdict=pass exit 0",
+ "first_run": {"allowed_size": 6, "cited": ["ORD-007", "SPEC-021"], "missing": ["ORD-007", "SPEC-021"], "verdict": "fail"}
+}

@@ -1,0 +1,29 @@
+{
+ "batch": "toolincub-solo",
+ "date": "2026-09-06",
+ "pipeline": "化格→核阅→检词（笔在核前）",
+ "formatter": {
+  "target": "sih-tools/incubation/regula-line-tools-2026-09-06.md",
+  "exit": 0,
+  "note": "零改动即已规范形；lazy.json 同 exit 0"
+ },
+ "scrutinator": {
+  "target": "同上",
+  "exit": 2,
+  "note": "des-001 域外（sih-tools 非引擎 doc 域），如实记档不属违规，findings 0"
+ },
+ "nomenclator": {
+  "target": "同上",
+  "first_run": {
+   "exit": 1,
+   "findings": 2,
+   "rule": "dead_ban",
+   "word": "入册"
+  },
+  "final": {
+   "exit": 0,
+   "findings": 0
+  },
+  "note": "首跑红证入 materials，改词收录后复跑零违例"
+ }
+}

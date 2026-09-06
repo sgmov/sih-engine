@@ -1,0 +1,22 @@
+{
+ "batch": "toolincub-solo",
+ "repos": {
+  "sih-tools": {
+   "worktree_files": [
+    "incubation/regula-line-tools-2026-09-06.md",
+    "facet/contracts/toolincub-260906/m-toolincub-contract-1/",
+    "facet/probes/calibration/ledger.jsonl",
+    "nomenclator/packs/core/lazy.json",
+    "scribe/CALL-LOG.md"
+   ]
+  },
+  "sih-engine": {
+   "worktree_files": [
+    "sih/state/plan/toolincub-solo.md",
+    "sih/state/plan/toolincub-redkeep-prompt.md",
+    "sih/event/plan/toolincub-solo-results.md",
+    "sih/event/plan/toolincub-solo-materials/"
+   ]
+  }
+ }
+}
