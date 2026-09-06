@@ -1,0 +1,70 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/toolincub-solo/incubation/regula-line-tools-2026-09-06.md"
+  ],
+  "findings": [
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "心四查与甲乙红线与三拒绝面与类代表充分性入册 ORD-007 扩条目；待裁即两道门实装范围在泊设计稿 §九第四批拆分。",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/toolincub-solo/incubation/regula-line-tools-2026-09-06.md",
+      "line": 71,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    },
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "excerpt": "、条款组 T1 至 T11、类代表充分性入册 ORD-007；待裁即渲染基线形态在泊 pk-069、五子模块细目待实装批",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/toolincub-solo/incubation/regula-line-tools-2026-09-06.md",
+      "line": 109,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.11.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 2,
+    "skipped": 0
+  }
+}
