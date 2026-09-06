@@ -1,0 +1,8 @@
+
+tests/test_guard.py:633: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_guard.py::test_direct_lane_file_whitelist_frozen - ImportEr...
+FAILED tests/test_guard.py::test_reconcile_ok_direct_routed - assert 1 == 0
+FAILED tests/test_guard.py::test_reconcile_direct_ref_not_on_chain_alarms - K...
+FAILED tests/test_guard.py::test_reconcile_registered_bypass_direct_stays_bypass
+4 failed, 20 passed in 5.21s
