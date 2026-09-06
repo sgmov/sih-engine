@@ -69,13 +69,14 @@
 
 | 阶段 | 命令 | 退出码 | 证据 |
 |---|---|---|---|
-| 管线三步 | 化格 → 核阅 → 检词 | 0 系列 | 见 materials/pipeline-report.json(化格在核前,检词在书简前,域外如实记) |
-| 认证 | scribe append 裸调逐笔 grep | 0 | 认证清单见 materials/certifications.json |
-| 双仓 settle | lease commit --stage settle | 0 | tools 提交号与 engine 提交号见收约补笔 |
-| 台账冻结 | 主会避坑令执行 | 0 | 收约前 lease/ledger 三台账 git add + commit 冻结 |
-| 放锁收约 | unlock 15 + close | 0 | revoked true,双工地双分支拆 |
-| reconcile | 双仓各一 | 读数见下 | unrouted 与 cert_missing 相比批前零新增 |
-| 链 verify | scribe verify | valid | 当日链零断链 |
+| 管线三步 | 化格 → 核阅 → 检词 | 0 系列 | 见 materials/pipeline-report.json(化格在核前,检词在书简前,des-001 域外 exit-2 两件如实记,零域内件) |
+| 认证 | scribe append 裸调逐笔 grep | 0 | 四笔 94015fcc 与 00a0bfbb 与 37b46a46 与 2558eb81 全 grep 命中在链 |
+| 双仓 settle | lease commit --stage settle | 0 | tools 7ed03c86(段1)与 5490b5f9(段2 CALL-LOG 并集),engine dacc664(段1),cert 2558eb81 三验全过 |
+| 台账冻结 | 主会避坑令执行 | 0 | 冻结笔 b69631d7(ledger 三台账 + pyproject 版本对齐) |
+| 放锁收约 | unlock 15 + close | 0 | 首跑被闸四拦(scribe/CALL-LOG 三方冲突)零合并,并集对齐后二跑 revoked true 双工地双分支拆,merge edc3226c 与 13b41d6 |
+| 台账复位 | 直改链笔 7762ffdd + 直改车道提交 | 0 | ab66aaac 以「直改链笔: 7762ffdd」挂接过合并版守卫 GUARD 1.15.0 即 ok_direct 活体放行,reconcile 归 routed_direct 计入 routed(F-3 与 T-8 双活体证) |
+| reconcile | 双仓各一 | 读数 | tools unrouted 0(批前 0 零新增)cert_missing 9(全部 2026-09-05 存量即 stash 事故致 09-05 链临时离盘窗口读数,复位后归位),engine unrouted 0 cert_missing 12(存量),routed_direct 1 即 ab66aaac |
+| 链 verify | scribe verify | valid | 2026-09-05 与 2026-09-06 双日 valid 零断链 |
 
 ## 八、越线与误差申报
 
@@ -84,6 +85,10 @@
 3. **T-9 白名单声明位零执法如实申报**:commit-msg 钩位不见文件面即白名单本批无机械执法,源代码提交携合法链笔今日仍可过 ok_direct;机械执法归后继裁定面(可挂 T-10 乙案同批或独立批),不假装已执法
 4. **候位实录**:gvec-v2-serial 在途持 11 独占锁,本批预会话三件先行(写白名单共享面新件零冲突),等其 01:54:49Z 收约让位后 open,未用 wait-turn 阻塞形(让位先于本批 open 完成),basisunion-solo 已先收约未撞面
 5. **scribe 写入纪律**:intent 与认证 append 与 attractor sign 全程裸调逐笔 grep 验证在链,禁 meter 包裹掩败(pk-057 附记)执行无例外
+6. **pyproject 版本对齐越 allow 面**:三源对齐件 lease/pyproject.toml 漏入 allow 清单,settle 首试 staged_out_of_scope 如实拦;处置即 worktree 回退该件、版本对齐随主树冻结笔 b69631d7 显式承载(wip 形过守卫,subject 明示漏报处置),不偷走 pre-close 搭车通道不越白名单走直改车道(源代码类不入选自守)
+7. **scribe/CALL-LOG 批期内基线前进三方冲突**:basisunion 收约补笔 926aab2b(10:45Z)与本批 CALL-LOG 笔同位追加,close 首跑闸四 merge-tree 拦即整批拒;处置即双侧归并同内容并集(工地 settle2 5490b5f9 与主树 wip b1d12210,blob 逐字节 identical 复核)后二跑过闸
+8. **close 首跑让位盖版雷实录(冻结避坑令兑现)**:首跑 pre-close 阶段把主树 locks.ndjson 削 15 取锁行(ea91a476,放锁行未入 VCS 同失),冻结笔 b69631d7 保住底本即 15 行逐字恢复加 15 放锁行按 lockdb 正典重建,复位提交 ab66aaac 走直改车道零 bypass(ledgerloss5 5a7cf7ff 同形对照:彼批走 bypass 本批 T-8 落地后免例外登记)
+9. **pre-close stash 吞未跟踪件系统性缺陷(新发现,呈报主会与用户)**:close 的 pre-close 舞步对主树未跟踪件 git stash push -u 后不复原,engine 主树五笔 closeguard stash 在册(archpark 至本批五次 close 累积),2026-09-05 整日链文件与四十五项未跟踪件(各批结果档与任务包与泊材料与 lease-check)一度全体离盘;本批以 stash apply 保引用方式全量复位(五笔 stash 引用保留作审计),复位后双日链 verify valid;根因属 close 收约机制即 stash 后无 pop 通道,建议立泊件承载修复
 
 ## 九、关联
 
