@@ -82,7 +82,13 @@ basisunion-solo 批交付:maturation_gate.py basis_consensus 判据由 distinct_
 
 ## 九、收口读数（close 后回填）
 
-- 双仓 settle 提交号、台账冻结笔、close、reconcile、链 verify 读数:收约后补
+- 双仓 settle:tools 段 1 dc8e929b（cert bcee0627）；engine 段 1 f314789（cert bcee0627）与段 2 a2911ff（cert 5c1a9d10，收编落包前温故检索两件消真分叉）
+- 台账冻结笔:9e05a523（lease/ledger 三台账 sessions/locks/bypass.ndjson 工作面冻结，bypass.ndjson 首次入版控，收约冻结避坑令执行在档）
+- close:917bbc4e8c948f38 revoked true，双工地与分支双拆归并（tools merge 6943032 入 integral-stage-build、engine merge 351317a 入 main），双仓零锁；首跑两撞真分叉（主树未跟踪活面:tools 侧 DES m-watchcheck-judge-1、engine 侧本批 materials 目录）按备份让位归并对表法处置——DES 前十行逐字节 identical 加两笔 gate_assessment 追加纯超集零丢失、recall 两件 cmp identical，备份在 /tmp/basisunion-des-backup-2026-09-06 与 /tmp/basisunion-engine-materials-backup，如实申报
+- 台账镜像实测申报:close 的 closeguard pre-close 工作树提交（tools 5f2460a、engine c221f35）将本会话 11 行 acquired 镜像行清出 locks.ndjson（核对删除行 session 集恰为本会话零旁伤）；正典 lockdb 全史在册（acquired 11 与 released 11、现持 0），冻结笔 9e05a523 保全镜像快照，sessions 台账 issued 与 revoked 两行在册——非 ledgerloss5 旁伤亡形，实测形态如实记档候台账线复核
+- reconcile:双仓 unrouted 0 零新增；tools cert_missing 1（e6880a63 entryunique-solo 陈项批前已有零新增）；unbypassed 累积含本批 closeguard 两笔自动提交（历代批同形未登记通道）
+- 链 verify:valid 49 事件，首 7ac5aefc 尾 5c1a9d10
+- 收约后 watchcheck 复跑:净态零无主修改（exit 0）
 
 ## 十、CALL-LOG
 
