@@ -1,0 +1,32 @@
+{
+ "batch": "ledgerloss5-solo",
+ "red_evidence": {
+  "h4_a_loss_replay": {
+   "RED": true,
+   "before": 10,
+   "after": 3,
+   "lost": 7
+  },
+  "h4_b_union_yield_self_deadlock": {
+   "RED": true,
+   "timeout_seconds": 12
+  },
+  "h4_c_fix_direction_zero_loss": {
+   "RED": true,
+   "lost": 0
+  },
+  "h2_restore_missing_unit": {
+   "RED": true,
+   "restored": 6
+  },
+  "h1_tool_dir_premise": {
+   "mislocated": true
+  },
+  "h3_lock_bypass": {
+   "checkout_seconds_under_foreign_lock": 0.008,
+   "control_append_blocked_seconds": 2.01,
+   "live_row_survived": false
+  }
+ },
+ "results_doc_sha256": "286cec39e2b00c4e13f60ea865f96fcd7be7cbb02761f42e637926f6b9167838"
+}

@@ -1,0 +1,19 @@
+{
+ "batch": "ledgerloss5-solo",
+ "session_id": "e04b0a380af622cf",
+ "date": "2026-09-06",
+ "pipeline": [
+  {"step": "化格 formatter general-v1 --write", "target": "sih/event/plan/ledgerloss5-solo-results.md", "exit_code": 0, "note": "total_changed_lines=0 无需改"},
+  {"step": "核阅 scrutinator des-001", "target": "sih/event/plan/ledgerloss5-solo-results.md", "exit_code": 2, "note": "event/plan 在 des-001 域外,exit-2 如实记不属违规(BATCH-FACE 坑位注记)"},
+  {"step": "检词 nomenclator packs/core", "target": "sih/event/plan/ledgerloss5-solo-results.md", "exit_code": 0, "note": "findings=0"},
+  {"step": "检词 nomenclator packs/core", "target": "sih-tools/lease/CALL-LOG.md", "exit_code": 0, "note": "findings=0 skipped=1"},
+  {"step": "书单对表 checkcite", "target": "sih/event/plan/ledgerloss5-solo-results.md", "exit_code": 0, "note": "verdict=pass;首跑曾拦 SPEC-020 字样(引擎 spec 号非数学引用),措辞改写后过,checkcite.json 在 materials"}
+ ],
+ "gates": [
+  {"step": "ask3 门一 scrutinator packs/ask3", "exit_code": 0},
+  {"step": "ask3 门二 ask3repeater", "exit_code": 0, "validation": "2026-09-06-ask3-ledgerloss5-solo-validation.json"},
+  {"step": "elicit check", "exit_code": 0, "signals": 5, "digest": "passed covered=5"},
+  {"step": "identity verify", "exit_code": 0, "anomalies": 0}
+ ],
+ "intent_pen": {"event_id": "6f2c9469-2d66-4b5c-a0d8-1580fc5291c3", "grep_verified": true}
+}

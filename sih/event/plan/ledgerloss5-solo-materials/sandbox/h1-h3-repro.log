@@ -1,0 +1,22 @@
+{
+ "h1": {
+  "scenario": "H-1 前提验证:工地副本内执行 tool_dir/缺省台账位",
+  "tool_dir_from_worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ledgerloss5-solo/sih/event/plan/ledgerloss5-solo-materials/sandbox/h1-fakeroot/worktrees/sih-tools/fake-batch/lease",
+  "resolve_root_from_worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ledgerloss5-solo/sih/event/plan/ledgerloss5-solo-materials/sandbox/h1-fakeroot",
+  "default_ledger_in_worktree_copy": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/ledgerloss5-solo/sih/event/plan/ledgerloss5-solo-materials/sandbox/h1-fakeroot/worktrees/sih-tools/fake-batch/lease/ledger/sessions.ndjson",
+  "production_ledger": "/Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/sessions.ndjson",
+  "mislocated": true,
+  "note": "前提为真:tool_dir 随源码树漂移;resolve_root 双仓祖先搜上仍回真根。"
+ },
+ "h3": {
+  "scenario": "H-3 SPEC-020 checkout 绕锁验证",
+  "checkout_completed_in_seconds_under_foreign_lock": 0.008,
+  "checkout_waited_for_lock": false,
+  "rows_after_checkout": 1,
+  "s2_live_row_survived_checkout": false,
+  "control_append_row_blocked_seconds": 2.01,
+  "control_append_waited": true,
+  "note": "checkout 持锁窗内即时完成且活写行被盖即机械证明让位归并写点绕开互斥网;对照组 append_row 阻塞至锁释放。"
+ },
+ "timestamp": "2026-09-06T10:00:40+0800"
+}
