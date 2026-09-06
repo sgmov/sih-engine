@@ -1,0 +1,2 @@
+{"code":2,"command":"status","session_id":null,"summary":{"error":"self_boot_rejected"},"tool":"lease"}
+status_rc=2

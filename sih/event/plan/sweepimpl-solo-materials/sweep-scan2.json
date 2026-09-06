@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-07T05:00:00+00:00",
+  "classes": {
+    "orphan_worksites": [],
+    "phantom_sessions": [],
+    "stale_check_files": [],
+    "stray_receipts": [],
+    "zombie_locks": []
+  },
+  "command": "sweep",
+  "exit_code": 0,
+  "root": "/tmp/lesweep-f3/ws",
+  "summary": {
+    "auto_cleanable": 0,
+    "awaiting": 0,
+    "evaluated_active_sessions": 1,
+    "info": 0
+  },
+  "tool": {
+    "name": "lease",
+    "version": "1.32.0"
+  },
+  "verdict": "clean"
+}

@@ -1,0 +1,22 @@
+{
+ "report": "sweepimpl-solo 文档哈希清单（md/txt 件 scribe JSON 面认证载体）",
+ "batch": "sweepimpl-solo",
+ "docs": {
+  "pipeline-readings.md": {
+   "sha256": "322e4c1529fcfc5646441d95b421572071c2ca44d2c4b152a49e1438a35df166",
+   "bytes": 3617
+  },
+  "f1-f2-test-sweep-readings.txt": {
+   "sha256": "c58c8702ba4ca1f4d1d5b247e788015c59cd25757448d7519601f0d95a38b371",
+   "bytes": 888
+  },
+  "first-run-red-evidence.md": {
+   "sha256": "ae5a8c16b6a8c7e61d499c238deff9ca7e9195d86f02d2df0a963aea96f5bc96",
+   "bytes": 1729
+  },
+  "sweepimpl-solo-results.md": {
+   "sha256": "fe9b0b422e430c26c72f2f9acbfe861692c3b5c6d3eabd304a0cd439ab07ef8e",
+   "bytes": 6832
+  }
+ }
+}

@@ -1,0 +1,14 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepimpl-solo/lease/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepimpl-solo/lease
+configfile: pyproject.toml
+collecting ... collected 5 items
+
+tests/test_sweep.py::test_sweep_scan_classifies_fixtures PASSED          [ 20%]
+tests/test_sweep.py::test_sweep_fix_clears_auto_and_zero_touches_live PASSED [ 40%]
+tests/test_sweep.py::test_sweep_fix_reaches_clean_when_no_awaiting PASSED [ 60%]
+tests/test_sweep.py::test_sweep_scan_readonly_status_unchanged PASSED    [ 80%]
+tests/test_sweep.py::test_sweep_exit_code_semantics_unchanged PASSED     [100%]
+
+============================== 5 passed in 0.81s ===============================
