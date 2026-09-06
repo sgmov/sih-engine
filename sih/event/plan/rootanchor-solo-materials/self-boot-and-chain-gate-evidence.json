@@ -1,0 +1,60 @@
+{
+  "batch": "rootanchor-solo",
+  "subject": "自举硬拒与链证守门活体证据",
+  "date": "2026-09-06",
+  "self_boot_evidence": {
+    "code_function": "lease.core.self_boot_check",
+    "behavior_hard_reject": {
+      "fixture": "test_rootanchor.py::test_cli_rejects_self_boot_in_worktree_copy",
+      "fixture_type": "真形态（real-form）",
+      "fixture_description": "把 src/lease/ 完整 shutil.copytree 到 tmp/worktrees/sih-tools/rootanchor-test/，subprocess 在副本 cwd 跑 python -m lease.cli status（不传 --ledger/--locks/--bills 且不设 ROOTANCHOR_DISABLE_SELF_BOOT 旁路）",
+      "expected": "exit 2 + stdout 含 self_boot_rejected + 台账三文件零字节",
+      "actual": "exit 2 + stdout 含 self_boot_rejected + 台账 sessions.ndjson/locks.ndjson/lockface-bills.ndjson 全部零字节（硬拒先于副作用验证）"
+    },
+    "production_session": {
+      "session_id": "ba7aa2b83fbb90f8",
+      "worktree_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/rootanchor-solo",
+      "worktree_path_note": "工地副本 leakworktree 后已蒸发，本字段留作历史痕迹",
+      "lock_acquired_at": "2026-09-06T11:02:36+00:00",
+      "three_args_explicit": true,
+      "lock_explicit_paths_in_logs": true,
+      "self_boot_rejected": false
+    }
+  },
+  "chain_gate_evidence": {
+    "code_function": "lease.core.chain_gate_check",
+    "trails_param": "close_session 接受 trails 形参（链文件路径列表）",
+    "behavior_reject_when_missing": {
+      "fixture": "test_rootanchor.py::test_chain_gate_check_rejects_missing",
+      "fixture_type": "代码形",
+      "fixture_description": "tmp trail 一行（仅 intent_refined），断言 (False, ['certification_completed'])",
+      "expected": "(False, ['certification_completed'])",
+      "actual": "(False, ['certification_completed'])"
+    },
+    "behavior_pass_when_both": {
+      "fixture": "test_rootanchor.py::test_chain_gate_check_passes_both",
+      "fixture_type": "代码形",
+      "fixture_description": "tmp trail 两行（intent_refined + certification_completed），断言 (True, [])",
+      "expected": "(True, [])",
+      "actual": "(True, [])"
+    },
+    "production_close": {
+      "session_id": "ba7aa2b83fbb90f8",
+      "trails_passed": [
+        "sih-engine/sih/event/trail/2026-09-06.ndjson"
+      ],
+      "intent_event_hash": "503b3cb7",
+      "intent_event_type": "intent_refined",
+      "cert_event_hash": "43ddb93c",
+      "cert_event_type": "certification_completed",
+      "chain_gate_passed": true,
+      "missing": [],
+      "close_exit": 0,
+      "revoked_at": "2026-09-06T11:06:40+00:00"
+    }
+  },
+  "carries": {
+    "phi_07_assy": "司衡的鉴要求：检验时只反映事实（这段代码做了什么），不投射判断（这段代码'应该'做什么）。判断是治理动作（法/术），不是认识动作（鉴）。[anchor 1: T-1/T-5]",
+    "phi_08_settle": "应而不藏——回应而不隐藏[anchor 2: T-2/T-3]"
+  }
+}

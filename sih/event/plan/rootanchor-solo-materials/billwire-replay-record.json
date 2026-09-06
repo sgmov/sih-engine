@@ -1,0 +1,71 @@
+{
+  "batch": "rootanchor-solo",
+  "subject": "billwire 补证：账单三事件重放落主树",
+  "date": "2026-09-06",
+  "rationale": "billwire-solo 工地材料目录 billwire-solo-materials/ 空在案，活体三事件随工地蒸发，链上 0 billwire 笔；本批按 billwire-solo 报告在案读数重放，repair 标记即重放非原笔，不伪造原 verdict 与原 ts",
+  "source_report": "sih-tools/scribe/reports/2026-09-06-ask3-billwire-solo-record.json",
+  "session_id_recorded": "eacfd4e51a40c942",
+  "session_id_note": "报告载两会话号 f70734cb（真批但无 lock 步骤故仅 open 事件）与 eacfd4e51a40c942（即 live-test 形三事件俱全），本批按报告载三事件俱全的 live-test 会话号照录",
+  "events_replayed": [
+    {
+      "ts": "2026-09-06T10:19:41+00:00",
+      "event_type": "open_face_bill",
+      "package": "billwire-live",
+      "session_id": "eacfd4e51a40c942",
+      "path_count": 3,
+      "bill_points": 3,
+      "paths": [
+        "sih-tools/lease/CONTRACT.md",
+        "sih-tools/lease/CALL-LOG.md",
+        "sih-tools/lease/src/lease/core.py"
+      ],
+      "repair": true,
+      "ndjson_line_path": "sih-tools/lease/ledger/lockface-bills.ndjson",
+      "lockdb_table": "lock_bill",
+      "lockdb_row_count": 1
+    },
+    {
+      "ts": "2026-09-06T10:20:03+00:00",
+      "event_type": "lock_free",
+      "package": "billwire-live",
+      "session_id": "eacfd4e51a40c942",
+      "path": "sih-tools/lease/CONTRACT.md",
+      "mode": "exclusive",
+      "bill_points": 0,
+      "repair": true,
+      "lockdb_table": "lock_bill",
+      "lockdb_row_count": 1
+    },
+    {
+      "ts": "2026-09-06T10:20:03+00:00",
+      "event_type": "lock_charged",
+      "package": "billwire-live",
+      "session_id": "eacfd4e51a40c942",
+      "path": "sih-tools/lease/CALL-LOG.md",
+      "mode": "exclusive",
+      "bill_points": 1,
+      "repair": true,
+      "lockdb_table": "lock_bill",
+      "lockdb_row_count": 1
+    }
+  ],
+  "gaps_disclosed": {
+    "certification_completed_replay": {
+      "status": "缺如实申报不补",
+      "reason": "billwire-solo 工地材料目录 billwire-solo-materials/ 在主树为空（billwire-solo 批报告自述工地入账段与主会核数时已披露），无 cert 笔事实可补造，按缺口如实申报不粉饰原则仅申报不补"
+    },
+    "intentional_intent_replay": {
+      "status": "已补录",
+      "channel": "ledger-repair",
+      "source": "verbatim-from-ask3",
+      "reason": "billwire 意图笔按 ask3 记录补录",
+      "event_hash": "3b6d5132b2fbe2da"
+    }
+  },
+  "verification": {
+    "ndjson_dual_run": "lockface-bills.ndjson 末三行带 repair 字段，逐行 ndjson+lockdb lock_bill 表 grep 命中",
+    "lockdb_row_counts": [1, 1, 1],
+    "lockdb_total_rows_for_eacfd4e51a40c942": 3,
+    "session_id_consistent_ndjson_lockdb": true
+  }
+}

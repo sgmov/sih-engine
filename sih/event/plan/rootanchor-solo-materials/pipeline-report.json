@@ -1,0 +1,137 @@
+{
+  "batch": "rootanchor-solo",
+  "session_id": "ba7aa2b83fbb90f8",
+  "date": "2026-09-06",
+  "tool_version_issued": "1.29.0",
+  "tool_version_revoked": "1.30.0",
+  "stages": {
+    "ask3_scrutinator": {
+      "exit": 0,
+      "record": "sih-tools/scribe/reports/2026-09-06-ask3-rootanchor-solo-record.json",
+      "validation": "sih-tools/scribe/reports/2026-09-06-ask3-rootanchor-solo-validation.json",
+      "anchors_count": 3,
+      "anchors_check": "PRO-07×2 + PRO-08 逐字节子串程序核验"
+    },
+    "ask3repeater": {
+      "exit": "ok"
+    },
+    "elicit_check": {
+      "exit": 0,
+      "signals": 0
+    },
+    "digest": {
+      "exit": 0,
+      "covered": 5
+    },
+    "identity_verify": {
+      "exit": 0,
+      "identity_hash": "cc0d9ddd5bf43e0e4880cb4e4effe9e0b91e7b52fac750f3a71332a36214d40d",
+      "core_hash": "82f460c2ac2741fc4ee8d104d7ef14803f744da14a24b1d7356bd3bd3531d1dc"
+    },
+    "lease_open": {
+      "exit": 0,
+      "session_id": "ba7aa2b83fbb90f8",
+      "scope_source": "explicit",
+      "package": "rootanchor-solo",
+      "package_path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/rootanchor-solo.md",
+      "repos": [
+        {"repo": "/Users/moc/workspaces/SiHankor/sih-tools", "branch": "msh/rootanchor-solo", "base_branch": "integral-stage-build"},
+        {"repo": "/Users/moc/workspaces/SiHankor/sih-engine", "branch": "msh/rootanchor-solo", "base_branch": "main"}
+      ],
+      "worktrees": [
+        "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/rootanchor-solo",
+        "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/rootanchor-solo"
+      ],
+      "allow_paths": [
+        "sih-tools/lease/src/lease/(cli.py、core.py、lockcore.py 若及)与 CONTRACT.md 与 CALL-LOG.md",
+        "sih-tools/lease/tests/(真形态夹具与守门夹具)",
+        "sih-tools/lease/ledger/lockface-bills.ndjson(本批活体账单 + billwire 三事件重放随批落)",
+        "sih-tools/BATCH-FACE.md(坑位更新)",
+        "sih-engine/sih/event/plan/rootanchor-solo-results.md 与 materials/(本批材料必落档)",
+        "sih-tools/scribe/CALL-LOG.md",
+        "sih-engine/sih/event/trail/2026-09-06.ndjson(本批意图与认证笔与补证意图笔)"
+      ]
+    },
+    "lock_multiple": {
+      "exit": 0,
+      "n_locks": 14,
+      "first_free": true,
+      "free_path": "sih-tools/lease/CONTRACT.md"
+    },
+    "gauge_record": {
+      "exit": 0,
+      "report": "rootanchor-solo-materials/recall-topic.md",
+      "at": "2026-09-06",
+      "window_days": 30
+    },
+    "selector_route_parking": {
+      "exit": 0,
+      "in_parking": 0
+    },
+    "scribe_intent": {
+      "exit": 0,
+      "event_hash": "503b3cb7",
+      "raw_call": "scribe intent --record <ask3 json>",
+      "verified_via_grep": true
+    },
+    "certification": {
+      "exit": 0,
+      "event_hash": "43ddb93c"
+    },
+    "billwire_intent_replay": {
+      "exit": 0,
+      "event_hash": "3b6d5132b2fbe2da",
+      "channel": "ledger-repair",
+      "source": "verbatim-from-ask3",
+      "reason": "billwire 意图笔按 ask3 记录补录"
+    },
+    "tdd_red_green": {
+      "test_file": "sih-tools/lease/tests/test_rootanchor.py",
+      "tests": 7,
+      "code_form": 5,
+      "behavior_form": 2,
+      "behavior_real_form": "test_cli_rejects_self_boot_in_worktree_copy 真形态即工地代码副本内跑 CLI",
+      "worktree_verified_green": 7,
+      "main_tree_initial": 0,
+      "main_tree_after_supplement": 7,
+      "worktree_lost": true,
+      "supplement_recorded_in_results": true
+    },
+    "full_suite": {
+      "baseline": 174,
+      "billwire": 6,
+      "rootanchor": 7,
+      "total": 187,
+      "exit": 0,
+      "regression": 0
+    },
+    "billwire_replay": {
+      "events": 3,
+      "open_face_bill_pts": 3,
+      "lock_free_pts": 0,
+      "lock_charged_pts": 1,
+      "session_id_recorded": "eacfd4e51a40c942",
+      "repair_mark": true,
+      "ndjson_written": true,
+      "lockdb_written": true,
+      "dual_run_consistent": true
+    },
+    "lease_close_chain_gate": {
+      "exit": 0,
+      "revoked": true,
+      "revoked_at": "2026-09-06T11:06:40+00:00",
+      "chain_gate_passed": true,
+      "intent_found": true,
+      "cert_found": true,
+      "missing": []
+    },
+    "f1_f6_checkpoints": {
+      "F-1_live_three_proofs": "pass",
+      "F-2_full_suite_green_no_regression": "pass",
+      "F-3_dual_repo_commit": "pass",
+      "F-4_chain_verify_valid": "pass",
+      "F-5_judgment_recorded": "pass_extends_prior_1fda6a88",
+      "F-6_materials_archived": "pass"
+    }
+  }
+}
