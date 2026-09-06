@@ -22,10 +22,10 @@
     }
   ],
   "targets": [
-    "/private/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md"
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md"
   ],
   "content_hashes": {
-    "/private/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "e98baca7898ca56bae47e787557fd66839fc3b6e22db40ceadee520776572885"
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md": "e98baca7898ca56bae47e787557fd66839fc3b6e22db40ceadee520776572885"
   },
   "findings": [],
   "domain_mismatches": [],

@@ -60,7 +60,13 @@
 
 ## 结算读数
 
-- 双仓 settle 与放锁收约与对表读数随收口补记。
+- 双仓 settle：engine 工地提交 b2608e3、tools 工地提交 c5bdc63c，cert 取 644f10f4 即链末哈希可证。
+- 放锁收约：十二路径 unlock 毕即变量名笔误一次全空跑如实记档、修正重放后毕，close 经差集闸 ack 空材料目录一次即收约毕、会话 b3199024ca7e01a7 收约。
+- 主树真形态复验：des-001 对四件主树真路径 exit 0；cargo test --lib golden_des001_gov 两件绿即 F-4 闭。
+- 金向量重录法勘误：首法经同形根跑出后以 python 重排 JSON 破坏二进制字节形即 cargo test 首跑两红，真重冻法即收约后主树真内容直接捕获二进制 stdout 原样落盘，复跑两绿即红绿档在案。
+- 链 verify：2026-09-07 当日链 valid 106 笔，末哈希 644f10f4 即本批末笔认证。
+- reconcile：双仓 unrouted 零；engine cert_missing 零，tools 一属在盘历史账面项；unbypassed 增量即本批 closeguard 自动提交与补笔，随补笔 bypass 登记归零。
+- 收约补笔：结算读数回填与金向量真重冻两件即本笔，经 --no-verify 加 lease bypass 登记通道入版控，先例同形。
 
 ## 缺陷披露（本批顺带发现，候人节点裁）
 
