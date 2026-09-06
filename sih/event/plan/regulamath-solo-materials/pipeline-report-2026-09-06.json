@@ -1,0 +1,42 @@
+{
+  "batch": "regulamath-solo",
+  "date": "2026-09-06",
+  "pipeline_steps": {
+    "formatter_general_v1": {
+      "python_scenarios_excluded": "3 .py files exit=2 (domain mismatch; not markdown)",
+      "results": "all exit=0 (no changes; markdown already canonical)",
+      "targets": [
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-013-typed-relational-model-and-eventized-projection.md",
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-014-substitution-and-fidelity-to-general-clauses.md",
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-015-proof-obligation-and-gate-correctness.md",
+        "worktrees/sih-math/regulamath-solo/algebra/INDEX.md",
+        "worktrees/sih-math/regulamath-solo/llm-friendly-build/mapping.md",
+        "sih-engine/sih/state/plan/regulamath-solo.md",
+        "sih-engine/sih/state/plan/regulamath-solo-prompt.md"
+      ]
+    },
+    "nomenclator_core": {
+      "findings": 0,
+      "results": "exit=0 zero violations on all 7 files",
+      "targets_count": 7
+    },
+    "scenarios_double_run": {
+      "proof_scenarios.py": "3/3 passed, run1==run2 IDENTICAL",
+      "rel_scenarios.py": "3/3 passed, run1==run2 IDENTICAL (cmp exit 0)",
+      "sub_scenarios.py": "2/2 passed, run1==run2 IDENTICAL"
+    },
+    "scrutinator_des_001_mathe": {
+      "results": "total=0 findings on all three entries (after fixing em-dash to full-width colon and full-width parens to half-width)",
+      "targets": [
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-013",
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-014",
+        "worktrees/sih-math/regulamath-solo/algebra/entries/ALG-015"
+      ]
+    },
+    "scrutinator_des_001_mathe_outside_domain": {
+      "INDEX.md": "total=0 (excluded by manifest)",
+      "mapping.md": "total=0 (excluded by manifest)",
+      "state_plan": "total=0 (excluded by manifest)"
+    }
+  }
+}
