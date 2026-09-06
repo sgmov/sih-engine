@@ -3,8 +3,13 @@
 //! 承 SPEC-013 § 接口对表 + § 验收判据 A1-A6。
 //! 零规则知识：具体领域字段名不内嵌，规则全在数据。
 
+#[path = "../predkernel/mod.rs"]
+pub mod predkernel;
+
 use serde::Deserialize;
 use toml::Value;
+
+use crate::scrutinator::rule::predkernel::glob::match_path_glob;
 
 /// 标题尾部 anchor `{#...}` 剥离，承工具件 ANCHOR_RE
 static ANCHOR_RE: std::sync::OnceLock<regex::Regex> = std::sync::OnceLock::new();
@@ -201,46 +206,10 @@ pub struct DomainSpec {
 /// domain include/exclude glob 匹配
 /// 承工具件 Python `(?:^|/)` 锚定语义：双星跨目录段，单星段内任意，模式可自任一路径边界锚定
 pub fn domain_match(spec: &DomainSpec, path: &str) -> bool {
-    if spec.exclude.iter().any(|p| glob_match(p, path)) {
+    if spec.exclude.iter().any(|p| match_path_glob(p, path)) {
         return false;
     }
-    spec.include.iter().any(|p| glob_match(p, path))
-}
-
-fn glob_match(pattern: &str, path: &str) -> bool {
-    if pattern == "**" || pattern == "**/*" {
-        return true;
-    }
-    // 编译模式为正则：(?:^|/) 前缀 + 模式体
-    // 模式体：`**/` → `(?:[^/]+/)*`、`*` → `[^/]*`、`?` → `[^/]`、其他字面量
-    let mut body = String::new();
-    let mut i = 0;
-    let n = pattern.len();
-    let bytes = pattern.as_bytes();
-    while i < n {
-        if i + 3 <= n && &bytes[i..i + 3] == b"**/" {
-            body.push_str("(?:[^/]+/)*");
-            i += 3;
-        } else if bytes[i] == b'*' {
-            body.push_str("[^/]*");
-            i += 1;
-        } else if bytes[i] == b'?' {
-            body.push_str("[^/]");
-            i += 1;
-        } else {
-            // ASCII 字面量用 regex::escape，非 ASCII 直接 push
-            let c = pattern[i..].chars().next().unwrap();
-            let clen = c.len_utf8();
-            // escape 只对 ASCII 安全字母元字符；非 ASCII 视为字面
-            body.push_str(&regex::escape(&pattern[i..i + clen]));
-            i += clen;
-        }
-    }
-    let full = format!("(?:^|/){body}");
-    match regex::Regex::new(&full) {
-        Ok(re) => re.is_match(path),
-        Err(_) => false,
-    }
+    spec.include.iter().any(|p| match_path_glob(p, path))
 }
 
 /// 规则对单条文本检查，返回 findings
