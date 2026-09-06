@@ -1,0 +1,98 @@
+{
+ "batch": "checkerimpl-solo",
+ "date": "2026-09-07",
+ "files": [
+  {
+   "path": "sih-tools/checker/CONTRACT.md",
+   "sha256": "2a929edd1134c81f4a7a5ffc253530979b5ab7250b165d31e5288c5f62ee37de"
+  },
+  {
+   "path": "sih-tools/checker/pyproject.toml",
+   "sha256": "6c2930054c28a2dacf6343cde9bc0e3958b58b6daaa54fcaa35cd3f511fb2abb"
+  },
+  {
+   "path": "sih-tools/checker/uv.lock",
+   "sha256": "d766b92bccba68e10c57707fc85048da1a573f1f4df68ce8d78fbd5b67d936bb"
+  },
+  {
+   "path": "sih-tools/checker/tests/conftest.py",
+   "sha256": "a7310cb1e9bfc92d590ee5bace4c5f88ee5b2c8d8f059815b6cf82d1b0f347b5"
+  },
+  {
+   "path": "sih-tools/checker/tests/test_engine.py",
+   "sha256": "dbaff048475fb59b20744e6f8ffd27198e1174049fa2e1455b6481266b8a37d4"
+  },
+  {
+   "path": "sih-tools/checker/fixtures/bad-scenarios.md",
+   "sha256": "f86633dbaa7b689e2ed0fd6cef6a6330e3d51d39a40ad49adc2bb4d1027148bf"
+  },
+  {
+   "path": "sih-tools/checker/src/checker/__init__.py",
+   "sha256": "2cf2a9dabf94aab2b8ae22e7fff80b9905d6f6601962255dc4b2d22b4553b3fd"
+  },
+  {
+   "path": "sih-tools/checker/src/checker/cli.py",
+   "sha256": "b0fb70f0ec39eca345117aa880dee047816271c03c5ba0d3c053095a8357b046"
+  },
+  {
+   "path": "sih-tools/checker/src/checker/engine.py",
+   "sha256": "d0feb5ebc8c832f4fb99d94b2df8245f5b6dca36a3b6485620b0d87c94d4fd46"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/manifest.json",
+   "sha256": "1178038cb209e3b88c5342544d13beb0cfb06df31922072bd5148dabe24ffb32"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/change-proposal.json",
+   "sha256": "e98444947be5b58bbbd528d60a11e39db22f33a6110e5385981209e02f64cb34"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/spec-delta.json",
+   "sha256": "65cc9f5c6913bf308a53a91872b7f724aee03ca729174676b61e0f1e95d7f0a9"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/scenario-list.json",
+   "sha256": "9c777073382fb9eea485bd1a5eeb915aee4e6276e804db47e33f1e6c7655426f"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/tech-design.json",
+   "sha256": "af88d7cadbb4f5ac5d6001f05284d35cef3d018a8707d6c79cc363f9b1e73617"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/task-list.json",
+   "sha256": "4a50394ad2ad2f886e046f88d1ac211a65c797fcdcfc70e434c7225a1e22b5de"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-bad-scenarios.json",
+   "sha256": "d8366ecc62efa780f02702d72fc3a525b1ac71a5a9c78551583f3b4f16d503ec"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-proposal.json",
+   "sha256": "24ae4f4b07f7ec91f883ae292805b48c71882722930b466eafbf21aa0213c0fc"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-scenarios.json",
+   "sha256": "24ae4f4b07f7ec91f883ae292805b48c71882722930b466eafbf21aa0213c0fc"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-spec-delta.json",
+   "sha256": "24ae4f4b07f7ec91f883ae292805b48c71882722930b466eafbf21aa0213c0fc"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-tasks.json",
+   "sha256": "24ae4f4b07f7ec91f883ae292805b48c71882722930b466eafbf21aa0213c0fc"
+  },
+  {
+   "path": "sih-tools/incubation/packs/sdd-v1/golden/expected-tech-design.json",
+   "sha256": "24ae4f4b07f7ec91f883ae292805b48c71882722930b466eafbf21aa0213c0fc"
+  },
+  {
+   "path": "sih-tools/proposition/DES/m-checker-impl-1/tally-material.json",
+   "sha256": "3da3385411dcdb38c79eec9106216b66df075fd597a0d98bc728e197dda3890e"
+  },
+  {
+   "path": "sih-tools/proposition/DES/m-checker-impl-1/m-checker-impl-1-signcheck.json",
+   "sha256": "ba1ace98c6aea6801b74cfb73dd881a82fc1b73a52c9d73b3c4dbb7a9a59850f"
+  }
+ ]
+}

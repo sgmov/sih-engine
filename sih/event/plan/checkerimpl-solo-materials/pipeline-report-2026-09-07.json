@@ -1,0 +1,41 @@
+{
+ "batch": "checkerimpl-solo",
+ "date": "2026-09-07",
+ "queue": "open 首跑被 preflight 拦（confmath-solo 会话 82eac6da 持 facet/CALL-LOG/DES 交界面锁），排队候位两轮约 17 分钟（零写入），对方收约后重开过",
+ "tests": {
+  "first_red": "空实现 pytest 5 failed 红证归档 red-evidence/first-red-pytest.txt（另 2 passed 为包机器化静态断言与空腹 grep——不依赖引擎）",
+  "final": "pytest 7/7 passed exit 0"
+ },
+ "cli_three_states": {
+  "green_five": "exit 0 findings 空",
+  "red_fixture": "exit 1 findings SL-003 violation 重号加 SL-007 missing 缺判据行",
+  "missing_target": "exit 2",
+  "bad_pack": "exit 2",
+  "double_run": "exit 0/0 cmp IDENTICAL"
+ },
+ "formatter": {
+  "json-canonical-v1": "六包加 golden 六件归一落笔（exit 1 属治理窄域正常），manifest 懒波修复后复归一",
+  "general-v1": "CONTRACT.md 归一"
+ },
+ "scrutinator": {
+  "pack": "des-001",
+  "note": "sih-tools 与 state/plan 与 event/plan 全域外 exit-2 如实记档不属违规"
+ },
+ "nomenclator": {
+  "first_run_exit": 1,
+  "findings_fixed": [
+   {
+    "word": "基线管",
+    "files": [
+     "CONTRACT.md",
+     "manifest.json"
+    ],
+    "rule": "lazy_in_doc"
+   }
+  ],
+  "fix": "改「孵化登记件工作名」全称表述，复跑 exit 0 零违例"
+ },
+ "incident": "无本批事故（上批 sddpacks 的嵌套位教训已吸收：全部工件直出工地根位落位）",
+ "chain_gate": "intent 带 --sessions 一次过（上批勘误吸收）；attractor verify 首发即同参形 identical",
+ "validate_retired": "包目录 validate.py 移批材料 validate-retired-2026-09-07.py 留档；manifest self_validator.retired=true 指向 sih-tools/checker/"
+}
