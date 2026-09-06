@@ -1,0 +1,23 @@
+{
+  "batch": "modou-namefit-solo",
+  "date": "2026-09-06",
+  "measurement": {
+    "sign": "fd2210e7",
+    "gate": "stable_clear",
+    "seat_calibration": "可用"
+  },
+  "code": {
+    "rename": "src/predkernel->src/snapline",
+    "lib_rs": "pub mod snapline",
+    "path_attr": "退役",
+    "build": "exit 0（2 既有警告）",
+    "test": "165+5+6 五红集合与主树 diff 一致"
+  },
+  "registration": {
+    "terms": "墨斗/snapline 在册",
+    "dead": "准绳 绳墨 入档",
+    "formatter": "json-canonical exit 0",
+    "nomcheck": "exit 0"
+  },
+  "pk060": "parking_exited 53304059 在链"
+}

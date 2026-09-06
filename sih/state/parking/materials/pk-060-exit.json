@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-060",
+  "id": "pk-060",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "exited_at": "2026-09-06",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-06 委外令裁 pk-060「立项实装」——谓词求值内核归并为引擎内共享模块 src/predkernel/，两消费方改调共享件，行为逐字节零漂移；机器裁决 m-halfmerge-1 stable_clear 终签 2a7d0e0e 已签发；实装批 kernelmerge-solo 承接，零漂移硬判据核阅 12 件 + route 8 场景归并前后 cmp 全 IDENTICAL + cargo test 176 测试 red 集合完全一致 + 退出码全部一致，四命门全过，predkernel 三个新件（mod.rs / glob.rs / error.rs）+ 改三件（rule.rs / route.rs / lib.rs）落工地；命令面、子命令、旗标、退出码语义零变化（PRO-04 道三代码自晦），谓词域各自保留（重叠处以包装适配不以内核吞并）",
+  "state": "exited",
+  "ttl_days": 30
+}

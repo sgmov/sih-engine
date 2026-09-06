@@ -3,13 +3,11 @@
 //! 承 SPEC-013 § 接口对表 + § 验收判据 A1-A6。
 //! 零规则知识：具体领域字段名不内嵌，规则全在数据。
 
-#[path = "../predkernel/mod.rs"]
-pub mod predkernel;
 
 use serde::Deserialize;
 use toml::Value;
 
-use crate::scrutinator::rule::predkernel::glob::match_path_glob;
+use crate::snapline::glob::match_path_glob;
 
 /// 标题尾部 anchor `{#...}` 剥离，承工具件 ANCHOR_RE
 static ANCHOR_RE: std::sync::OnceLock<regex::Regex> = std::sync::OnceLock::new();

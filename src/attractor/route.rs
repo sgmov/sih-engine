@@ -20,7 +20,7 @@ use chrono::NaiveDate;
 use serde_json::{json, Map, Value};
 
 use super::jsonc::{canonical_json, parse_json, py_compact_sorted, verr, PyError};
-use crate::scrutinator::rule::predkernel::glob::match_fnmatch_glob;
+use crate::snapline::glob::match_fnmatch_glob;
 
 /// 围堰契约面版本字面：报告头 tool.version 承围堰 __version__，承 tally
 /// 先例即工件工具名字段是契约面标识非二进制身份。
