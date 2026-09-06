@@ -1,0 +1,3 @@
+{"event":"issued","issued_at":"2026-09-05T10:00:00+00:00","package":"batch-one","session_id":"R1"}
+{"event":"issued","issued_at":"2026-09-05T11:00:00+00:00","package":"batch-two","session_id":"R2"}
+{"event":"issued","issued_at":"2026-09-05T12:00:00+00:00","package":"batch-three","session_id":"R3"}
