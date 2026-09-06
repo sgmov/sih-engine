@@ -6,15 +6,15 @@
 ## 意图锚定
 
 - 意图事件：intent_refined event_hash `89074c8d...`
-- record：sih-tools/scribe/reports/2026-09-06-ask3-modou-namefit-solo-record.json（书简认证待补）
-- validation：sih-tools/scribe/reports/2026-09-06-ask3-modou-namefit-solo-validation.json（书简认证待补）
+- record：sih-tools/scribe/reports/2026-09-06-ask3-modou-namefit-solo-record.json（书简认证 `119325b0`）
+- validation：sih-tools/scribe/reports/2026-09-06-ask3-modou-namefit-solo-validation.json（书简认证 `2a3e9d8f`）
 - 三锚引文程序切片（01-ontology-of-names.md L18 承诺不撤回、07-on-assay.md L55 鉴只列事实、08-on-settle.md L110 应而不藏）于 ask3 记录，禁手打承契约。
 
 ## 前置读数
 
 - 三问双门：核阅 ask3 包 exit 0；ask3repeater exit 0 status ok anchor_count 3。
 - 叩问：五词轻信号即墨斗、snapline、立名批、用名纪律、反候选；处置（墨斗与 snapline 立名即登记、余三描述性不登记）后 digest passed covered 5。
-- 正身：identity verify attest 零异常，identity_hash `62d2485a...`（书简认证待补）。
+- 正身：identity verify attest 零异常，identity_hash `62d2485a...`（书简认证 `3ce00c90`）。
 
 ## 立名读数（F-1）
 
@@ -50,9 +50,9 @@
 
 | 件 | 类型 | 状态 |
 |---|---|---|
-| ask3 记录 | 意图记录 | 书简认证待补 |
-| ask3 验证件 | 双门读数 | 书简认证待补 |
-| 正身件 | 身份报告 | 书简认证待补 |
+| ask3 记录 | 意图记录 | 书简认证 `119325b0` |
+| ask3 验证件 | 双门读数 | 书简认证 `2a3e9d8f` |
+| 正身件 | 身份报告 | 书简认证 `3ce00c90` |
 | m-modou-fit-1 终签 | 立名裁决 | crosscheck_completed fd2210e7 在链 |
 | pk-060 出泊 | 泊界补笔 | parking_exited 53304059 在链 |
 
@@ -73,4 +73,10 @@
 
 ## 结算读数
 
-- 待补（收约后经补笔通道回填）。
+- 双仓 settle：engine 工地提交 463099c（三查过），tools 工地提交 06ff743f（三查过）；cert 取 119325b0。
+- 放锁收约：十八路径 unlock 毕；close 首跑即成功零碰撞，双工地与分支清除、会话 715dfc1c0ab4434a revoked、零失败。
+- 链 verify：valid，120 事件。
+- reconcile（退出码直读）：双仓真实退出码 1，驱动项 unrouted 双仓 0、engine cert_missing 0、tools cert_missing 1 即 09-03 旧账；unbypassed 42/77 含今日多批历史增量，本批提交全路由零新增；本笔补笔将至并登记。
+- 心跳复算：退出码 0 告警零（引擎线 46 主线、6 废轨存量不变）；pk-060 出泊后 exit 件入废轨属常态。
+- 主树归位核查：src/snapline 在位 predkernel 清零、terms.json 墨斗在册、当日出泊事件列含 pk-060。
+- 收约补笔：本结果档回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（先例同形）。
