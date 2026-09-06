@@ -1,0 +1,15 @@
+{
+ "allowed_size": 78,
+ "cited": [
+  "APP-011",
+  "ORD-011",
+  "ORD-019",
+  "ORD-021",
+  "ORD-022",
+  "PROB-013",
+  "PROB-014",
+  "PROB-015"
+ ],
+ "missing": [],
+ "verdict": "pass"
+}

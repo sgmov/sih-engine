@@ -1,0 +1,58 @@
+{
+ "batch": "anchwave-solo",
+ "date": "2026-09-07",
+ "ask3_gates": {
+  "scrutinator_ask3_exit": 0,
+  "ask3repeater": "ok anchor_count 3"
+ },
+ "elicit": {
+  "check_exit": 1,
+  "signals": 7,
+  "digest": "passed",
+  "covered": 7
+ },
+ "identity": {
+  "exit": 0,
+  "status": "attest",
+  "anomalies": 0
+ },
+ "gauge": {
+  "convergence": "22bed8c4",
+  "adoption": "9f772200",
+  "mergeback": "6ed222e6"
+ },
+ "lease": {
+  "session_id": "57bd678cb0a9e391",
+  "locks": 7,
+  "lock_mode": "auto",
+  "intent_event_hash": "46457e282cb34b9f23f9aca0447a25893b58c02d59171c3f86cac07a0cf2816d"
+ },
+ "wikirecall": {
+  "recall_queries": 2,
+  "plan_merged_entries": 40,
+  "merge_note": "两次召回三通道并集之并，合并声明入 plan provenance 非手挑",
+  "checkcite_exit": 0,
+  "checkcite_verdict": "pass",
+  "cited": ["APP-011", "ORD-011", "ORD-019", "ORD-021", "ORD-022", "PROB-013", "PROB-014", "PROB-015"],
+  "missing": []
+ },
+ "pipeline": [
+  {"step": "formatter", "pack": "general-v1", "target": "sih/state/plan/anchwave-solo.md", "exit_code": 0, "note": "无需改"},
+  {"step": "formatter", "pack": "general-v1", "target": "sih/event/plan/anchwave-solo-results.md", "exit_code": 0, "note": "无需改"},
+  {"step": "formatter", "pack": "general-v1", "target": "sih-math/docs/anchorwave-parking-course-2026-09-07.md", "exit_code": 0, "note": "无需改"},
+  {"step": "scrutinator", "pack": "des-001", "target": "sih/state/plan/anchwave-solo.md", "exit_code": 2, "note": "des-001 域外即域只盖 sih-engine/doc，不属违规如实记档"},
+  {"step": "scrutinator", "pack": "des-001", "target": "sih/event/plan/anchwave-solo-results.md", "exit_code": 2, "note": "des-001 域外，不属违规如实记档"},
+  {"step": "scrutinator", "pack": "des-001", "target": "sih-math/docs/anchorwave-parking-course-2026-09-07.md", "exit_code": 2, "note": "des-001 域外，不属违规如实记档"},
+  {"step": "nomenclator", "pack": "core", "target": "sih/state/plan/anchwave-solo.md", "exit_code": 0, "note": "零违例"},
+  {"step": "nomenclator", "pack": "core", "target": "sih/event/plan/anchwave-solo-results.md", "exit_code": 0, "note": "零违例"},
+  {"step": "nomenclator", "pack": "core", "target": "sih-math/docs/anchorwave-parking-course-2026-09-07.md", "exit_code": 1, "note": "死档禁词入册一处即 PRO-007 登记义项，改字即在档登记后复验零违例"},
+  {"step": "nomenclator-rerun", "pack": "core", "target": "sih-math/docs/anchorwave-parking-course-2026-09-07.md", "exit_code": 0, "note": "改字后零违例"},
+  {"step": "formatter-rerun", "pack": "general-v1", "target": "sih-math/docs/anchorwave-parking-course-2026-09-07.md", "exit_code": 0, "note": "改字后无需改"}
+ ],
+ "errors_declared": [
+  "lease open 首跑包文件缺位拦，补立文后重开过",
+  "lease open 次跑开工预检拦即 CALL-LOG 与活跃会话独占锁交集，scribe 笔候锁补记不绕行",
+  "scribe intent 首跑缺 --sessions 旗标，补参重跑过",
+  "书单首召回缺终止族，补定向查询双单合并如实记档"
+ ]
+}
