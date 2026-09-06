@@ -1,0 +1,12 @@
+
+thread 'f2_refs_machine_verifiable' (22640546) panicked at tests/mem_recall_f_suite.rs:76:21:
+摘录截断前段不在行区间 sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    f2_refs_machine_verifiable
+
+test result: FAILED. 8 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 134.61s
+
+error: test failed, to rerun pass `--test mem_recall_f_suite`

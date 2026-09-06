@@ -1,0 +1,20 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running unittests src/lib.rs (target/debug/deps/sih_engine-6d7aa693b004146e)
+
+running 1 test
+
+thread 'scrutinator::tests::golden_des001_gov002' (22636101) panicked at src/scrutinator/tests.rs:112:5:
+assertion `left == right` failed: des-001-gov002 引擎件输出与金向量逐字节不一致
+  left: "{\n  \"engine\": {\n    \"name\": \"scrutinator\",\n    \"version\": \"0.1.0\"\n  },\n  \"packs\": [\n    {\n      \"name\": \"des-001\",\n      \"version\": \"0.3.0\",\n      \"domain\": {\n        \"include\": [\n          \"sih-engine/doc/**/*.md\",\n          \"**/scrutinator/fixtures/corpus/**/*.md\",\n          \"**/formatter/fixtures/**/*.md\"\n        ],\n        \"exclude\": [\n          \"**/skills/**\",\n          \"**/.agents/**\",\n          \"**/skill_like.md\"\n        ]\n      }\n    }\n  ],\n  \"targets\": [\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md\"\n  ],\n  \"content_hashes\": {\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md\": \"567afa99b22e92151bc57303bcc64042a602b5f0ae52879dd5771ed679c31233\"\n  },\n  \"findings\": [],\n  \"domain_mismatches\": [],\n  \"summary\": {\n    \"total\": 0,\n    \"by_rule\": {},\n    \"by_pack\": {}\n  }\n}\n"
+ right: "{\n  \"engine\": {\n    \"name\": \"scrutinator\",\n    \"version\": \"0.1.0\"\n  },\n  \"packs\": [\n    {\n      \"name\": \"des-001\",\n      \"version\": \"0.3.0\",\n      \"domain\": {\n        \"include\": [\n          \"sih-engine/doc/**/*.md\",\n          \"**/scrutinator/fixtures/corpus/**/*.md\",\n          \"**/formatter/fixtures/**/*.md\"\n        ],\n        \"exclude\": [\n          \"**/skills/**\",\n          \"**/.agents/**\",\n          \"**/skill_like.md\"\n        ]\n      }\n    }\n  ],\n  \"targets\": [\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md\"\n  ],\n  \"content_hashes\": {\n    \"/Users/moc/workspaces/SiHankor/sih-engine/doc/governance/GOV-002-mainline-lock-v1.md\": \"27131b1acc1c128c6069d76ed71facd86cd7b37fd2a99dcba7c3a8e2fbe60417\"\n  },\n  \"findings\": [],\n  \"domain_mismatches\": [],\n  \"summary\": {\n    \"total\": 0,\n    \"by_rule\": {},\n    \"by_pack\": {}\n  }\n}\n"
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test scrutinator::tests::golden_des001_gov002 ... FAILED
+
+failures:
+
+failures:
+    scrutinator::tests::golden_des001_gov002
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 175 filtered out; finished in 0.06s
+
+error: test failed, to rerun pass `--lib`

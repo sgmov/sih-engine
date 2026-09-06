@@ -1,0 +1,4 @@
+test f2_refs_machine_verifiable ... FAILED
+thread 'f2_refs_machine_verifiable' (22658616) panicked at tests/mem_recall_f_suite.rs:76:21:
+摘录截断前段不在行区间 sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9
+test result: FAILED. 8 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 129.20s
