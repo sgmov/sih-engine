@@ -1,0 +1,4 @@
+usage: lease [-h] [--quiet]
+             {open,claim,unclaim,lock,unlock,status,check,close,commit,reconcile,bypass,install-hooks,uninstall-hooks,heartbeat,takeover,wait-turn,ledger-repair,sweep} ...
+lease: error: unrecognized arguments: --ledger /tmp/lesweep-f3/ws/sessions.ndjson
+check_rc=2

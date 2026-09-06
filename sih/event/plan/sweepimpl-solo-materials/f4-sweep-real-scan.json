@@ -1,0 +1,48 @@
+{
+  "at": "2026-09-06T20:40:35+00:00",
+  "classes": {
+    "orphan_worksites": [],
+    "phantom_sessions": [],
+    "stale_check_files": [
+      {
+        "channel": "human-takeover",
+        "class": "stale_check_file",
+        "criteria": "pid 探针四态=pid_dead 而窗会话在册活跃或仍持锁（防搁浅守卫）",
+        "detail": {
+          "probe": {
+            "basis": "pid-probe",
+            "heartbeat_at": "2026-09-06T20:24:09+00:00",
+            "pid": 1913,
+            "pid_alive": false,
+            "pid_started_probe": null,
+            "pid_started_recorded": "Mon Sep  7 04:24:09 2026",
+            "stale_seconds": 986.0,
+            "start_match": null,
+            "verdict_reason": "process-gone",
+            "window_session": "9920edf3eb4d4124"
+          },
+          "window_session": "9920edf3eb4d4124",
+          "window_state": "pid_dead"
+        },
+        "object": "/Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/checks/sweepimpl-solo.json",
+        "state": "awaiting"
+      }
+    ],
+    "stray_receipts": [],
+    "zombie_locks": []
+  },
+  "command": "sweep",
+  "exit_code": 1,
+  "root": "/Users/moc/workspaces/SiHankor",
+  "summary": {
+    "auto_cleanable": 0,
+    "awaiting": 1,
+    "evaluated_active_sessions": 1,
+    "info": 0
+  },
+  "tool": {
+    "name": "lease",
+    "version": "1.32.0"
+  },
+  "verdict": "residue"
+}
