@@ -1,0 +1,8 @@
+{"ts": "2026-09-01", "kind": "clean_close", "account": "acct-a", "amount": 1}
+{"ts": "2026-09-03", "kind": "clean_close", "account": "acct-a", "amount": 1}
+{"ts": "2026-09-06", "kind": "clean_close", "account": "acct-a", "amount": 1}
+{"ts": "2026-09-02", "kind": "clean_close", "account": "acct-b", "amount": 1}
+{"ts": "2026-09-05", "kind": "active_pen", "account": "acct-b", "amount": 1}
+{"ts": "2026-09-07", "kind": "penalty", "account": "acct-b", "amount": -2}
+{"ts": "2026-09-04", "kind": "clean_close", "account": "acct-c", "amount": 1}
+{"ts": "2026-09-04", "kind": "active_pen", "account": "acct-c", "amount": 1}
