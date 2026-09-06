@@ -1,0 +1,15 @@
+{
+    "batch": "rootanchor-solo",
+    "patch": "T-5 billwire 补证",
+    "method": "repair-tagged replay",
+    "billwire-live_session_id": "eacfd4e51a40c942",
+    "billwire-real_session_id": "f70734cbcb939e04",
+    "replayed_events": [
+        {"event_type": "open_face_bill", "bill_points": 3, "ts_original": "2026-09-06T10:19:41+00:00", "session_id": "eacfd4e51a40c942"},
+        {"event_type": "lock_free", "bill_points": 0, "ts_original": "2026-09-06T10:20:03+00:00", "session_id": "eacfd4e51a40c942", "path": "sih-tools/lease/CONTRACT.md"},
+        {"event_type": "lock_charged", "bill_points": 1, "ts_original": "2026-09-06T10:20:03+00:00", "session_id": "eacfd4e51a40c942", "path": "sih-tools/lease/CALL-LOG.md"}
+    ],
+    "intent_replay_event_hash": "3b6d5132b2fbe2da5dfda113e02612745a00d1b0a32d052b907a79eb5b03b9c6",
+    "cert_replay_disposition": "缺口如实申报不伪造：billwire-solo-materials/ 工地材料目录空在案（仅 leaseup 残留 recall-topic.md 81 字节），能补尽补无可补材料目录文件",
+    "lockface_bills_path": "/Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/lockface-bills.ndjson"
+}

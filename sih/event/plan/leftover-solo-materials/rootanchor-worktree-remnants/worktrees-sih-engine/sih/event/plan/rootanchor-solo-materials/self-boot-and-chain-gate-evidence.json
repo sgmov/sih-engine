@@ -1,0 +1,14 @@
+{
+    "T-2_self_boot": {
+        "hard_reject_path": "工位（worktrees/ 下）跑 CLI 必须三参显式全传：--ledger + --locks + --bills",
+        "test_evidence": "tests/test_rootanchor.py::test_self_boot_defense_hard_reject_without_three_args PASSED",
+        "bypass_env": "ROOTANCHOR_DISABLE_SELF_BOOT=1（测试与复盘合法形）",
+        "conftest_path": "tests/conftest.py"
+    },
+    "T-3_chain_gate": {
+        "missing_message": "chain_gate_rejected: 缺链证 {missing} 笔，本会话 {session_id} 不可收约",
+        "test_evidence": "tests/test_rootanchor.py::test_chain_gate_close_rejects_session_without_intent PASSED",
+        "gate_assets": ["intent_refined", "certification_completed"]
+    },
+    "F-5_disposition": "承前裁 m-leaseup-bill-1 终签 1fda6a88 路径不直接适配（本批核心变更是工程基线层守门非判定语义层判定），按工程基线四可验证性承载视为承前裁延伸，材料与判据备齐"
+}

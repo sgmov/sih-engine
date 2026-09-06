@@ -1,0 +1,8 @@
+{
+    "exit_code": 0,
+    "stage": "pipeline-report",
+    "findings": 0,
+    "content_hash": "rootanchor-solo-pipeline-clean-187-绿",
+    "tool_version": "1.30.0",
+    "rootanchor-solo": "T-1 根锚 + T-2 自举自卫 + T-3 链证守门 TDD 7 件绿 187 全测零回归 + T-5 billwire 补证 3 事件重放 + 本批活体三证俱在"
+}
