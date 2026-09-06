@@ -119,3 +119,14 @@ issued docmath-namefit ab0aa6b23047a03d(15:13:52Z)、issued idenlane-human be316
 - 同族先例:openhyg-solo 申报一(tool_dir 工地定位)、basefix-solo(F-3 回补网)、watchcheck-solo-results.md 第九节(stash 卷走活写面)
 - 补录:主会 5cba19e5(台账补录三笔)
 - 后继:修复批(本档第五节呈报后另立过一裁)
+
+## 九、当场复验:本批自身收约再触发同款盖版(损伤已复位)
+
+本批收约(2026-09-06T02:07Z 前后)按机械链执行时,根因机制在调查批自身重演一次,构成第五笔机制的活体复验:
+
+- 收约前冻结:主树会话台账(sessions.ndjson)与当日链经 bypass 冻结直改笔(tools 662ac8bb 与 engine d6400c1)先行入 VCS,两文件收约时净态——**零损伤**(sessions 749→750 仅追加本批 revoked,链 41 行零损)。
+- 漏网:本批三把锁的 unlock 笔在冻结之后追加 locks.ndjson,使其在收约探测时再度为脏;收约让位归并对 locks.ndjson 触发同款 checkout 盖版,预收提交 0aca5f68 固化,26 行已提交锁行(gvec 全部锁活动与本批三行 acquired)加 3 行 working-tree released 笔俱失(5859→5830)。
+- 复位:26 行自 662ac8bb 逐字恢复,3 行 released 按 lockdb 正典(SQLite lock_event 表 released_at=02:06:59Z)重建,经 ledgerwrite.append_row 逐行追加复位至 5859 行,恢复直改笔 5a7cf7ff bypass 登记在册。
+- 判读:冻结者存、未冻结者亡,同一收约同一机制两种命运——根因结论(让位归并整文件盖版+预收提交固化+回补网不可达)获生产环境当场复验,修复方向第一条(台账面冻结豁免)的必要性同时获证。
+
+另:收约首跑被真分叉拦一次——主树未跟踪目录 ledgerloss5-solo-materials(recall-topic.md,与分支内容逐字相同)与分支新增树在两点位差集以「目录 vs 树」形态相撞,被误判 diverged;按备份让位归并对表法(BATCH-FACE § 10)四步处置(diff 逐字节 IDENTICAL 在档)后收约一次过。此为 detect_merge_conflicts 目录形态误判的旁证,随修复方向第二条(三点式差集)一并呈报。
