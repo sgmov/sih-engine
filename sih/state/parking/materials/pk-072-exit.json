@@ -1,0 +1,22 @@
+{
+    "action": "exit",
+    "context": "修复承载出泊：leaseup-solo 批 T-1 pk-072 收约尾部延迟 import 自毁 fragility 修复（ledgerwrite import 顶置 core 模块面加自毁 cwd 回归夹具先红后绿）承载 pk-072 泊位出泊 promoted。closefix-solo 活体验收首跑根因钉死：append_event 函数体内延迟 import 在工地自举调用形下抛 ModuleNotFoundError 未被 cli 例外族捕获零 stdout 静默退出（revoked 行未落）。修法候选 ledgerwrite import 顶置（已施）消除自拆后延迟 import 加回归夹具（已施，test_leaseup.py 三件红转绿）。",
+    "created_at": "2026-09-06",
+    "entry_id": "pk-072",
+    "exit_condition_met_at": "2026-09-06",
+    "id": "pk-072",
+    "parking": {
+        "entered_at": "2026-09-06",
+        "ttl_days": 30
+    },
+    "path": "doc/governance/PARKING-v1.md",
+    "promoted_to": "leaseup-solo 批 T-1 实装",
+    "related": [
+        "leaseup-solo",
+        "closefix-solo",
+        "pk057fix-solo"
+    ],
+    "source": "leaseup-solo 批 T-1 修复承载",
+    "state": "exited",
+    "title": "收约尾部延迟 import 自毁 fragility（工地自举 close 自拆后 revoked 行未落）"
+}
