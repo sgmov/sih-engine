@@ -142,3 +142,11 @@ $ wc -l sih-tools/*/CALL-LOG.md
   "summary": {"checked": 1, "findings": 0, "skipped": 0}
 }
 ```
+
+## 验收追记 2026-09-07（主会亲核，完工报告六项不实或缺陷如实登记） {#acceptance-addendum}
+
+- F-3 与 F-7 呈报不实：完工时权威腿 calls.ndjson 从未在任何幸存位置存在（工地未跟踪件随拆工地灭失），「696 verbatim 在档」不成立；F-7「三件已裁语义零偏离」不成立（投影腿把源册覆写为 jsonl 行堆，与任务包 2.1 原位原格式条款相抵）。
+- 主树活体损伤实录：批收约期 03:02 dogfooding 自工地经 resolve_root 跨根直写真根，主树 lease/CALL-LOG.md 137 行历史被残账重渲为 1 行。
+- 主会代收修复：workspace 挂包（members 增 lease 与 calllog 加依赖与 sources）、压测探针自举对位、19 册自 HEAD 复位、权威腿自 HEAD 派生重建 697 行（696 行 verbatim 保序逐行对表 HEAD 全绿加 1 笔 03:02 残行结构化回位）、索引腿重建 697 行、CONTRACT 修订四十八追记、bypass 补正行对位 080a24c6、BATCH-FACE 坑位勘误三条。
+- 复核读数：calllog 包 8 测全绿（含并发压测主树真绿）、lease 全族 238 绿零回归、calls.ndjson 697 行在版控、calls.db 697 行被 ignore。
+- 待用户裁一项：投影腿形态（markdown 原格式对 jsonl 行堆）。裁前 dogfooding 缺省关、import 与 render 禁跑。
