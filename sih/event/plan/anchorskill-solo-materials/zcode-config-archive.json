@@ -1,0 +1,16 @@
+{
+  "mcp": {
+    "servers": {
+      "sihankor": {
+        "type": "http",
+        "url": "http://localhost:9741/mcp",
+        "enabled": false,
+        "timeoutMs": 30000
+      }
+    }
+  },
+  "hooks": {
+    "enabled": true,
+    "events": {}
+  }
+}

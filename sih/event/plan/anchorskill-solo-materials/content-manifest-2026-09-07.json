@@ -1,0 +1,36 @@
+{
+ "batch": "anchorskill-solo",
+ "date": "2026-09-07",
+ "kind": "content-hash-manifest",
+ "note": "md 与无仓控件不经 scribe append 直认（ReportNotJson 拒 md 如实记档），以本清单件统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/anchorskill-solo/sih/state/plan/anchorskill-solo.md",
+   "sha256": "abfcf46b792a24c7673c610c9d31578b00afe67db4ba0881ed3837c2d5f4e7cb"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/anchorskill-solo/sih/event/plan/anchorskill-solo-results.md",
+   "sha256": "31f5828b3374744427845ecb4739549cdae85c558249613fdccf982f0566e545"
+  },
+  "attnanchor_contract_rev2": {
+   "path": "worktrees/sih-tools/anchorskill-solo/attnanchor/CONTRACT.md",
+   "sha256": "cc20a7dcdabab210655c2627944d9525380669cacf7b0889a0a71d23ef6229b2"
+  },
+  "batch_face_anchor_section": {
+   "path": "worktrees/sih-tools/anchorskill-solo/BATCH-FACE.md",
+   "sha256": "b22de83600d805ee29e29559523d0953b86afade8d4317d4b56161420b64f336"
+  },
+  "skill_shell": {
+   "path": ".agents/skills/sihankor-attnanchor/SKILL.md",
+   "sha256": "13e66a3bfe85c5e90e2070d3f0271b94647764fafa33a4fafc3fed5b466e51ab"
+  },
+  "agents_md_startup_rev": {
+   "path": "AGENTS.md",
+   "sha256": "f66188d37259f9f4e0a99d3e37c0d70924a35007e0ad724cd24e630599265567"
+  },
+  "session_anchor": {
+   "path": ".session-anchor.md",
+   "sha256": "11442f4bf926e72081eb5b29cf9338bfbef3f8d33abec6f37020d66fd824aad0"
+  }
+ }
+}
