@@ -1,0 +1,20 @@
+F
+=================================== FAILURES ===================================
+____________________________ test_packs_machineized ____________________________
+
+    def test_packs_machineized():
+        total = 0
+        man = json.loads((PACKS / "manifest.json").read_text(encoding="utf-8"))
+>       assert man["version"] == "0.2.0"
+E       AssertionError: assert '0.3.0' == '0.2.0'
+E         
+E         - 0.2.0
+E         ?   ^
+E         + 0.3.0
+E         ?   ^
+
+tests/test_engine.py:50: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_engine.py::test_packs_machineized - AssertionError: assert ...
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed in 0.01s

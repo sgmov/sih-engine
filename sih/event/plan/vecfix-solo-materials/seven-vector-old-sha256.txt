@@ -1,0 +1,9 @@
+# vecfix-solo 七支向量重冻前 expected_sha256 对表入档（vecfix-solo-materials/）
+# 冻结 .bin 不动、命令串与 cwd 改 {ROOT} 寻径层，期望 sha256 逐支一致
+expected-bad-scenarios.json: 78cdc0647c2622669691280fbc72f5839979ecdebd5465a17717ad96cf561253
+expected-proposal.md.json: e54e2c9ef582f258ccd0df810c32e61ca1e755610b0bc7ee563d5b83fe443c1f
+expected-scenarios.md.json: e54e2c9ef582f258ccd0df810c32e61ca1e755610b0bc7ee563d5b83fe443c1f
+expected-spec-delta.md.json: e54e2c9ef582f258ccd0df810c32e61ca1e755610b0bc7ee563d5b83fe443c1f
+expected-tasks.md.json: e54e2c9ef582f258ccd0df810c32e61ca1e755610b0bc7ee563d5b83fe443c1f
+expected-tech-design.md.json: e54e2c9ef582f258ccd0df810c32e61ca1e755610b0bc7ee563d5b83fe443c1f
+self/cli-help.json: 16536d2b320d845a223af3edee7706530505bc623f68019c4e578fa625715ef4

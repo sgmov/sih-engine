@@ -1,0 +1,8 @@
+{
+ "claim": "unchanged-only",
+ "drift_fact": "退出码 2（期望 0），输出 0 字节对期望 40 字节，首差异偏移 0",
+ "kind": "spec",
+ "op": "replay",
+ "vector": "expected-tasks.md",
+ "verdict": "fail"
+}

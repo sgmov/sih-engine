@@ -1,0 +1,20 @@
+{
+  "report": "vecfix-solo-basemgr-pytest",
+  "package": "vecfix-solo",
+  "scope": "sih-tools/basemgr/tests/ (worktree)",
+  "passed": [
+    "test_replay_zero_drift",
+    "test_fingerprint_gate_exit2",
+    "test_refreeze_baseline_impact_paths",
+    "test_refreeze_spec_requires_red",
+    "test_six_objects_change_refuses",
+    "test_double_run_determinism",
+    "test_empty_stomach",
+    "test_vectors_no_worktree_literal",
+    "test_freeze_normalizes_root_prefix",
+    "test_normalize_does_not_touch_non_root_paths"
+  ],
+  "failed": [],
+  "total": 10,
+  "exit_code": 0
+}

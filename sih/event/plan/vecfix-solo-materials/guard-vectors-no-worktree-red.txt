@@ -1,0 +1,50 @@
+Using CPython 3.14.6
+Creating virtual environment at: .venv
+   Building basemgr @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/vecfix-solo/basemgr
+      Built basemgr @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/vecfix-solo/basemgr
+Installed 6 packages in 26ms
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/moc/workspaces/SiHankor/worktrees/sih-tools/vecfix-solo/basemgr/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/vecfix-solo/basemgr
+configfile: pyproject.toml
+collecting ... collected 1 item
+
+tests/test_engine.py::test_vectors_no_worktree_literal FAILED            [100%]
+
+=================================== FAILURES ===================================
+_______________________ test_vectors_no_worktree_literal _______________________
+
+    def test_vectors_no_worktree_literal():
+        """数据面守卫：vectors 数据零 worktrees 字面（污染即红）。
+    
+        vecfix-solo 批立：冻结向量命令串不得嵌 worktree 绝对路径，路径归一以 {ROOT} 寻径层承载。
+        污染红证：七支（checker-golden 六支加 self/cli-help 一支）命令串与 cwd 字段含 worktrees/sih-tools/basemgrimpl-solo 字面。
+        """
+        hits = []
+        for f in sorted(VEC.rglob("*.json")):
+            for i, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+                if "worktrees" in line:
+                    hits.append("%s:%d:%s" % (f.name, i, line.strip()[:80]))
+>       assert not hits, "vectors 数据命中 worktrees 字面：\n" + "\n".join(hits)
+E       AssertionError: vectors 数据命中 worktrees 字面：
+E         expected-bad-scenarios.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-bad-scenarios.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         expected-proposal.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-proposal.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         expected-scenarios.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-scenarios.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         expected-spec-delta.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-spec-delta.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         expected-tasks.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-tasks.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         expected-tech-design.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati
+E         expected-tech-design.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko
+E         cli-help.json:23:"command_cwd": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-s
+E         cli-help.json:24:"context_desc": "cwd=/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgri
+E       assert not ['expected-bad-scenarios.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati', 'expected-bad-scenarios.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko', 'expected-proposal.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati', 'expected-proposal.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko', 'expected-scenarios.md.json:5:"python3 -m checker.cli --pack /Users/moc/workspaces/SiHankor/sih-tools/incubati', 'expected-scenarios.md.json:25:"input_desc": "sh|-c|python3 -m checker.cli --pack /Users/moc/workspaces/SiHanko', ...]
+
+tests/test_engine.py:129: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_engine.py::test_vectors_no_worktree_literal - AssertionErro...
+============================== 1 failed in 0.02s ===============================
