@@ -1,0 +1,26 @@
+{
+  "GLM-5.3": {
+    "date": "2026-09-06",
+    "identity_hash": "62d2485a48963ce42c0e350f7acc269732c58d8fc146a152fe8e54179c7b1daa",
+    "pack_version": 1,
+    "seat": "ZCode:GLM-5.3:self-reported",
+    "source_rows": 7
+  },
+  "GLM-5.3-Flash": {
+    "date": "2026-09-06",
+    "identity_hash": "accc3885d390ec8c95ccc4e3eb8626b216b4ee6fe1007f4f1cc823845cb4caf9",
+    "pack_version": 1,
+    "seat": "ZCode:GLM-5.3-Flash:self-reported",
+    "source_rows": 21
+  },
+  "_frozen_table_families": [
+    "DeepSeek-V4-Flash-A",
+    "Doubao-Seed-1.6-0615-A",
+    "GLM-5.2-A",
+    "Kimi-K2.6-A",
+    "MiniMax-M2.7",
+    "MiniMax-M3",
+    "Qwen3.5-397B-A17B-Pro"
+  ],
+  "_frozen_table_version": "v1-2026-08-15-frozen"
+}
