@@ -1,0 +1,52 @@
+{
+  "batch": "callloghyg-solo",
+  "session_id": "84ac7d6e813ca51f",
+  "recorded_at": "2026-09-07T06:1x:xx+00:00",
+  "pipeline": {
+    "three_questions_two_gates": "ask3 record + validation；核阅 ask3 包 exit 0；引擎 ask3repeater status ok",
+    "elicit_kouwen": "elicit check signals + digest covered（承 elicitwire-solo 词债先例）",
+    "identity_zhengshen": "identity verify anomalies 空；scribe cert 8d065a0f",
+    "lease_open": "session issued 84ac7d6e813ca51f；双仓 worktrees（sih-tools/sih-engine msh/callloghyg-solo）",
+    "scribe_intent": "intent_refined 上链（2026-09-07 trail）",
+    "attribution": "14 件 CALL-LOG 29 增量行逐行归属披露，与权威腿 calls.ndjson 对表 29/29 全过，零悬置零硬归",
+    "gui_account_bypass": "main git commit --no-verify f6b2def8（14 files, 29 insertions）+ lease bypass 单登（2026-09-07T06:01:58+00:00）",
+    "formatter": 1,
+    "scrutinator": 2,
+    "nomenclator_findings": 0,
+    "certifications": [
+      "17b64ae1 ask3 record",
+      "d0c28ac1 ask3 validation",
+      "8d065a0f identity"
+    ],
+    "settle": {
+      "sih_engine": "e45d513（结果档＋披露档落位）",
+      "sih_tools": "6d0765e8（CALL-LOG 自身行落笔，rebase 加性并集解 lease/CALL-LOG.md 冲突）"
+    },
+    "close": {
+      "sih_engine_merge": "50102c3",
+      "sih_tools_merge": "f891a68b",
+      "branch": "msh/callloghyg-solo deleted ×2",
+      "revoked": true
+    }
+  },
+  "post_close_readings": {
+    "scribe_verify": { "status": "valid", "events": 195, "last_hash": "8d065a0f4cabaaed7847f181949363cabfe1deedf6ffb780e90eca94e827d148" },
+    "reconcile_sih_tools": { "cert_missing": 3, "unrouted": 0, "session_orphan": 19 },
+    "reconcile_sih_engine": { "cert_missing": 3, "unrouted": 0, "session_orphan": 24 },
+    "watchcheck": {
+      "at": "2026-09-07",
+      "unowned_mods": 2,
+      "unowned_list": [
+        "sih-tools/attnanchor/anchor.py（he-batch attnanchor 在飞，归属方自收）",
+        "sih-tools/calllog/calls.ndjson（he-batch calllog 在飞，归属方自收）"
+      ],
+      "call_log_cleared": true
+    },
+    "confpreempt_unowned_preecheck": "无主清单由 16 件（14 CALL-LOG＋calls.ndjson＋attnanchor）降至 2 件 he-batch 在飞生产物；CALL-LOG 部分清零"
+  },
+  "dispositions": {
+    "cert_missing": "3 笔（c4b56ec/cb609c9/576828c）对账：cert 事件不在任何 trail，不可机械补链，逐笔如实申报不可补缘由",
+    "stale_sessions": "在册未收仅 confpreempt 与本批自身在飞；历史陈旧已由 ledgerhyg-solo 销账；19/24 session_orphan 属 watchcheck 遗留维持候裁",
+    "proposals": "两件规则面提案（活数据文件节奏二择、CALL-LOG 追加强制随批收约检查位）落结果档候裁，本批零实施"
+  }
+}
