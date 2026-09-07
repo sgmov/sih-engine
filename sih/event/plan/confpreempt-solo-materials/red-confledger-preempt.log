@@ -1,0 +1,39 @@
+Using CPython 3.14.6
+Creating virtual environment at: proj_head/.venv
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 0.1.0 without checking dependencies    
+   Building confledger @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/confpreempt-solo/confledger/tests/red/confpreempt/proj_head
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.32.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(2) @ 26.3 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 1.1.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(4) @ 1.6.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(5) @ 0.15.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(6) @ 2026.6.1.19 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.32.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(2) @ 0.6 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 26.3 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(4) @ 1.1.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(5) @ 1.6.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(6) @ 0.15.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(7) @ 2026.6.1.19 without checking dependencies    
+      Built confledger @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/confpreempt-solo/confledger/tests/red/confpreempt/proj_head
+Installed 1 package in 1ms
+
+==================================== ERRORS ====================================
+____________________ ERROR collecting tests/test_preempt.py ____________________
+ImportError while importing test module '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/confpreempt-solo/confledger/tests/red/confpreempt/proj_head/tests/test_preempt.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Users/moc/.pyenv/versions/3.14.4/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+proj_head/tests/test_preempt.py:14: in <module>
+    from confledger.preempt import preempt_ring  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'confledger.preempt'
+=========================== short test summary info ============================
+ERROR proj_head/tests/test_preempt.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.07s

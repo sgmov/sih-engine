@@ -1,0 +1,21 @@
+{
+  "batch": "confpreempt-solo",
+  "at": "2026-09-07",
+  "stage": "post-pipeline",
+  "session_id": "09326a760119e4ed",
+  "checks": {
+    "checkcite": {
+      "verdict": "pass",
+      "cited": [],
+      "missing": [],
+      "note": "命题锚均为文件路径引用（A4/conformed推导档/CONTRACT.md/cli.py），无标准 math ID 漏册"
+    },
+    "acceptor_confledger": {"verdict": "pass", "checks": ["red_then_green", "double_run", "baseline_freeze"]},
+    "acceptor_lease": {"verdict": "pass", "checks": ["red_then_green", "double_run", "baseline_freeze"]},
+    "nomenclator": {"verdict": "pass", "checked": 2, "findings": 0},
+    "formatter": {"verdict": "canonical", "note": "命题与 DES topic 各归一 1 行空白，json 材料零改动"}
+  },
+  "red_green": {
+    "note": "四守卫与五步环夹具先红后绿：confledger 红证收集期 No module named confledger.preempt（hash 1a0b44...），绿态 22 passed；lease 红证 3 failed no attribute preempt_release（hash c696a9...），绿态 230 passed"
+  }
+}

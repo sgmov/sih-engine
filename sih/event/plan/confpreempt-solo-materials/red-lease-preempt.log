@@ -1,0 +1,77 @@
+Using CPython 3.14.6
+Creating virtual environment at: proj_head/.venv
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.33.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(2) @ 1.33.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 1.33.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(4) @ 9.1.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(5) @ 0.4.6 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(6) @ 0.4.6 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(11) @ 0.4.6 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(7) @ 2.3.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(8) @ 26.3 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(9) @ 1.6.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(10) @ 2.21.0 without checking dependencies    
+   Building lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/confpreempt-solo/lease/tests/red/confpreempt/proj_head
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.32.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(2) @ 26.3 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 1.1.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(4) @ 1.6.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(5) @ 0.15.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(6) @ 2026.6.1.19 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 1.32.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(2) @ 0.6 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(3) @ 26.3 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(4) @ 1.1.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(5) @ 1.6.0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(6) @ 0.15.1 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(7) @ 2026.6.1.19 without checking dependencies    
+      Built lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/confpreempt-solo/lease/tests/red/confpreempt/proj_head
+Installed 6 packages in 28ms
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_________________ test_preempt_release_clears_locks_and_queue __________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-707/test_preempt_release_clears_lo0')
+
+    def test_preempt_release_clears_locks_and_queue(tmp_path):
+        nd = _fresh_lockdb(tmp_path)
+        lockdb.try_acquire(nd, "src/a.py", "victim-sess", "exclusive")
+        lockdb.try_acquire(nd, "src/b.py", "victim-sess", "exclusive")
+        lockdb.enqueue(nd, "src/a.py", "other-sess", "exclusive")
+>       cleared = lockdb.preempt_release(nd, "victim-sess")
+                  ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+
+proj_head/tests/test_preempt.py:23: AttributeError
+__________________ test_preempt_release_zero_penalty_no_bill ___________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-707/test_preempt_release_zero_pena0')
+
+    def test_preempt_release_zero_penalty_no_bill(tmp_path):
+        """无罪回滚零罚金：放锁落链不写任何 lock_bill 罚金事件。"""
+        nd = _fresh_lockdb(tmp_path)
+        lockdb.try_acquire(nd, "src/x.py", "victim-sess", "exclusive")
+>       lockdb.preempt_release(nd, "victim-sess")
+        ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+
+proj_head/tests/test_preempt.py:42: AttributeError
+___________________ test_preempt_release_noop_when_no_locks ____________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-707/test_preempt_release_noop_when0')
+
+    def test_preempt_release_noop_when_no_locks(tmp_path):
+        nd = _fresh_lockdb(tmp_path)
+>       cleared = lockdb.preempt_release(nd, "ghost-sess")
+                  ^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+
+proj_head/tests/test_preempt.py:52: AttributeError
+=========================== short test summary info ============================
+FAILED proj_head/tests/test_preempt.py::test_preempt_release_clears_locks_and_queue - AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+FAILED proj_head/tests/test_preempt.py::test_preempt_release_zero_penalty_no_bill - AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+FAILED proj_head/tests/test_preempt.py::test_preempt_release_noop_when_no_locks - AttributeError: module 'lease.lockdb' has no attribute 'preempt_release'
+3 failed in 0.09s
