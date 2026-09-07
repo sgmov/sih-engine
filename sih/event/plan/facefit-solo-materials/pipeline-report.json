@@ -1,0 +1,22 @@
+{
+ "batch": "facefit-solo",
+ "date": "2026-09-07",
+ "session": "612c797612debac0",
+ "pipeline_steps": [
+  {"step": "化格 formatter --pack packs/general-v1 --write", "reading": "exit 0"},
+  {"step": "核阅 scrutinator --pack des-001", "reading": "exit 2 域外如实记"},
+  {"step": "检词 nomenclator check --pack packs/core", "reading": "exit 0 零违例"}
+ ],
+ "tests": {"baseline": 204, "total_passed": 227, "note": "204 基线 + 姊妹批新增 + facefit 18 件"},
+ "adjudication": {"gid": "m-facefit-stamp-1", "shots": 9, "comply": 9, "basis": "baseline_4", "gate": "stable_clear", "disposition": "裁决通过", "sign": "crosscheck-m-facefit-stamp-1 在链"},
+ "live": {
+  "lock_list_zero_namespace_parents": true,
+  "confmath_parallel_des_cells": "m-confmodel-1 与 m-facefit-stamp-1 并存实录",
+  "namespace_demo": "本会话开于 1.32.0 无保留位面，演示锁被范围闸正确拒，生产翻译自 1.33.0 新开约生效（namespace-live-note.json）"
+ },
+ "deviations": [
+  "nomenclator lazy.json 存量非规范红（toolincub 在途带入）不代修如实记",
+  "retired temp_probe score 落基线线（PYTHONPATH 补齐与 retired/calibration 落账位移回在册账本）如实记",
+  "attractor check 基线相对路径 cwd 形：以绝对形装配收口"
+ ]
+}
