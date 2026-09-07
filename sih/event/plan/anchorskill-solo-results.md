@@ -35,9 +35,10 @@
 
 ## 管线读数
 
-- 化格：任务包与结果档过 packs/general-v1（sih-tools 域件与无仓控件不越域化格，域别纪律即 sih-tools 与工作区根件不受引擎文档格式规范约束，如实申报）。
-- 核阅：des-001 六件逐跑，读数随管线实录补记于本节（state/plan 与 event/plan 与 sih-tools 与根域件均属 des-001 域外，退出码二不属违规，域边界承 BATCH-FACE 坑位注记）。
-- 检词：nomenclator check packs/core 六件逐跑，读数随管线实录补记于本节。
+- 化格：任务包与结果档过 packs/general-v1 双件 exit 0 零改（sih-tools 域件与无仓控件不越域化格，域别纪律即 sih-tools 与工作区根件不受引擎文档格式规范约束，如实申报）。
+- 核阅：des-001 六件逐跑全 exit 0 零违规（任务包、结果档、CONTRACT、BATCH-FACE、AGENTS、SKILL；des-001 现版域判读对六件全数放行零违规，无域外二态触发，如实记档）。
+- 检词：nomenclator check packs/core 六件逐跑全 exit 0 零违例（SKILL 件 checked 列空即根域件不在扫描根内，findings 零，如实记档）。
+- 补笔复验：结算读数回填后结果档三步复跑，读数见收约补笔节。
 
 ## 认证清单
 
@@ -60,14 +61,24 @@
 | F-1 换壳四件落位 | 治理 | skill 壳在位 frontmatter 合形、AGENTS.md 启动节含回锚步、BATCH-FACE 含挂点节、CONTRACT 修订二在档、钩子退役现态核验 | 通过（四件在档，hooks.events 空置核验记档） |
 | F-2 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即换壳四件与任务锚与批输入件与结果档与批材料与链文件与报告目录与工地） |
 | F-3 回锚可复算 | 跨族治理 | anchor.py 同日双跑退出码全零且 cmp 逐字节 IDENTICAL | 通过（0/0 双零，IDENTICAL） |
-| F-4 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 零新增 | 待收约回填 |
+| F-4 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 零新增 | 通过（读数见结算读数节；close 首二跑被拒两次自纠后三跑成，如实申报） |
 
 ## 越线与误差申报
 
 - 本批实践发现工具调用壳的权威源声明漂移：AGENTS.md 文件索引称工具调用壳十一件权威源在 sih-engine/sih/state/skills/，实态即引擎 skills 目录只承载引擎 skill 十一件、调用壳在 .agents/skills/，漂移如实申报不代修，归 AGENTS.md 居所线即 pk-070 候裁。
 - 钩子报错根因未定位（客户端集成面），脚本本体健康读数在档，不猜不修。
+- scribe append 对 md 件报 ReportNotJson 拒收即认证面只认 JSON 报告：六 md 件改走内容哈希清单件认证形（content-manifest 一件绑定七路径 sha256，sddpacks 管线报告件先例同形），先红留痕即六笔 KeyError 失败读数在档。
+- 放锁首轮全 exit 2：让位时误删主树正身件致 unlock 身份验缺件，正身件回位重放 11 锁全过，如实记档。
+- close 首跑被无主闸整批拒即主树他批活面二件（anchor.py 权限位变更零行差与 calls.ndjson callloghyg 在途活面），按闸三通道走 --bypass-orphan 显式绕行落台账留痕；同跑暴露管道掩退出码违一支即 $? 取 tail 非真值，改即时捕获形重跑；close 二跑被包不可读拒即让位过早自纠（close 须读任务包定包位，回位后同内容让位形由 close 机械处置）；三跑成。
 - 其余误差零申报。
 
 ## 结算读数
 
-待收约回填（settle 提交号与 close 与 verify 与 reconcile 与回显锚行随收约补笔入档）。
+- 双仓 settle：engine 工地提交随 closeguard pre-close 工作树提交 ce94dc5 与归并 45c0e2a（base main@b104a19，三查过）；tools 工地提交 57783550（base integral-stage-build@f891a68b，三查过）与归并 7d48065a；cert 取 d4019cd7 即 ask3 记录认证哈希前八位。
+- 认证实录：ask3 记录 d4019cd7、验证件 179557f7、正身件 e3957e1e、内容哈希清单件 f6e1622e（七路径 md 与无仓控件 sha256 统一绑定）四笔在链。
+- 放锁收约：11 锁 unlock 毕；close 三跑成即双仓归并、工地与分支清除、会话 5d6e4ca6027e4e36 revoked、零失败（前二跑被拒自纠详见越线申报）。
+- 归并对表：备份六件 vs 归并件 diff 全 IDENTICAL（任务包、ask3 记录、验证件、叩问信号、生成器、正身件）。
+- 链 verify：valid，events 203，末哈希 f6e1622e 即本批末笔认证。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口；cert_missing（engine 3 与 tools 4）与 session_orphan（engine 24 与 tools 19）与 unbypassed（engine 68 与 tools 98）为在盘历史账面项属 callloghyg-solo 章程序面，本批零新增如实记档不代清。
+- 完工回显：五行锚随完工报告回显即行为承载锚的静默失效补偿位首次执行。
+- 收约补笔：F-4 与管线实录与认证实录与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark 与 genpark 先例同形）。
