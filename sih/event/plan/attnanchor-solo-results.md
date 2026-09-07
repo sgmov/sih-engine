@@ -64,7 +64,12 @@
 
 ## 结算读数
 
-- 双仓 settle 与放锁收约与对表读数随收口补记。
+- 双仓 settle：tools 工地提交 ff47d653、engine 工地提交 6263285，cert 取 cbb9c9bc 即链末哈希可证。
+- 放锁收约：九路径 unlock 毕、close 一次过即双工地归并拆除、会话 b2540a947d8b6484 收约、零失败。
+- 合并后主树真形态：sih-tools/attnanchor/ 四件在位；工作区 config hooks enabled true 与 UserPromptSubmit 在位；任务锚首例在位。
+- 链 verify：2026-09-07 当日链 valid 132 笔，末哈希 cbb9c9bc 即本批末笔认证。
+- reconcile：双仓 unrouted 零；engine cert_missing 零，tools 一属在盘历史账面项；unbypassed 增量即本批 closeguard 两笔已补 bypass 登记。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控，先例同形。
 
 ## 缺陷披露（候人节点裁）
 
