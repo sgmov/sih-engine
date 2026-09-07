@@ -1,0 +1,11 @@
+{
+  "report": "vecfix-solo-acceptor-tdd-equivalent",
+  "package": "vecfix-solo",
+  "scope": "sih-tools/acceptor/packs/tdd-v0-sddchecker.json 等价命令（worktree）",
+  "TC-001": "verdict pass (checker.cli scenario-list 0 findings)",
+  "TC-002": "verdict pass (同上对冻结全报告)",
+  "TC-003": "7 passed in 0.72s (worktree checker pytest 绿)",
+  "TC-004": "verdict pass (期望退出码扫到)",
+  "note": "工地批内绿；主树复跑留收约后补笔节",
+  "exit_code": 0
+}

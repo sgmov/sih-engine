@@ -1,0 +1,17 @@
+{
+  "report": "vecfix-solo-checker-pytest",
+  "package": "vecfix-solo",
+  "scope": "sih-tools/checker/tests/ (worktree)",
+  "passed": [
+    "test_packs_machineized (version pin dynamic read)",
+    "test_green_fixtures_pass",
+    "test_red_fixture_flags",
+    "test_missing_target_exit2",
+    "test_double_run_determinism",
+    "test_empty_stomach",
+    "test_golden_replay"
+  ],
+  "failed": [],
+  "total": 7,
+  "exit_code": 0
+}
