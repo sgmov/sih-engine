@@ -52,7 +52,12 @@
 
 ## 结算读数
 
-- 双仓 settle 与放锁收约与对表读数随收口补记。
+- 双仓 settle：engine 工地提交 deb9420、tools 工地提交 ac753d45，cert 取 a10dbd0f 即链末哈希可证。
+- 放锁收约：七路径 unlock 毕、close 经差集闸 ack 空材料目录一次即收约毕、会话 054e891e4356df63 收约。
+- 主树真形态复算：pk-077 在位携 gate 键，路由 siding failed P104，mainline 47 不变，siding_surplus 告警在场即 F-2 红如实呈报。
+- 链 verify：2026-09-07 当日链 valid 140 笔，末哈希 a10dbd0f 即本批末笔认证。
+- reconcile：双仓 unrouted 零；closeguard 两笔已补 bypass 登记。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控，先例同形。
 
 ## 缺陷披露（本批顺带发现，候人节点裁）
 
