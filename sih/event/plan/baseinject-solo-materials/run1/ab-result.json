@@ -1,0 +1,20 @@
+{
+ "baseline_date": "2026-09-06",
+ "criteria": {
+  "F1_verdict_identity_100pct": true,
+  "F2_injected_temps_verbatim": true,
+  "F3_drift_alarm_zero": true,
+  "F4_identity_binding_intact": true
+ },
+ "enum_errors": [],
+ "frozen_table_version": "v1-2026-08-15-frozen",
+ "identity_rate": 1.0,
+ "injected_extra_families": {
+  "GLM-5.3": 0.0,
+  "GLM-5.3-Flash": 0.0
+ },
+ "mismatches": [],
+ "n_identical": 939,
+ "n_items": 939,
+ "probe": "baseinject_ab_run"
+}

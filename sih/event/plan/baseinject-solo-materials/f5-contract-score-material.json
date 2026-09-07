@@ -1,0 +1,16 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/baseinject-solo/sih/event/plan/baseinject-solo-materials/f5-contract.json",
+  "contract_sha256": "f8fa7765f0d0029b4922d295a71222ec8cc3cde47152a6c4328b3e15035cac76",
+  "gate_verdict": "stable_clear",
+  "gid": "gateswitch-switch-2",
+  "identity_hash": "90dd461f7dcb60f84ba9295ed7660898b7ef69fac1bdc537cdcc086492ee3fa7",
+  "kind": "facet-contract-score",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/sih-tools/facet/contracts/gateswitch-260905/responses.jsonl",
+  "responses_sha256": "ab94ade3d8d97f15d8c69c257f00a2a6d6330f177cbccef3751498c93f96d5ed",
+  "runs_written": 0,
+  "score_version": 2,
+  "seat_string": "ZCode:GLM-5.3-Flash:self-reported",
+  "trail_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/baseinject-solo/proposition/DES/gateswitch-switch-2/flywheel-trail.jsonl",
+  "voids": []
+}

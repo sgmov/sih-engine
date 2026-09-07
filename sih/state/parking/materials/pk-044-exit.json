@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "出泊条件两前置经核已满足：其一数学管线程序收尾批闸门在役即 docmath-b4-solo 收尾合并闸门在数学仓在位且命令面速查注册为 spec 面文档批认证前必跑；其二 facet 重采独立性来源经用户裁定不依赖温度随机性。本批实证：A/B 同场对跑 939 件冻结在档语料（facet_task_packages 合同包与 proposition/DES flywheel trail 全枚举）双路 verdict_v3 与 near_flags 与 basis 指标逐件全同即 939/939 零判变，注入体温表对冻结表逐键逐位相等，漂移告警零，pk-035 哈希绑定不松动，双跑输出逐字节一致；切换后活体链出题半与计分半与装配腿全过即 stable_clear 九发注入基线在役无断粮。温度实态：引擎得一源码零温度命中，单席位 v3 本传空体温表，采样合同发射恒 0.0，探针新鲜采样通路为温度唯一残留职责，今拔除。",
+  "disposition": "promoted",
+  "entry_id": "pk-044",
+  "id": "pk-044",
+  "parking": {
+    "entered_at": "2026-09-03",
+    "exited_at": "2026-09-07",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-07 两笔裁定照录：其一独立性来源＝角度异质＋确定性透镜＋逃逸驱动增长，即鉴的多主体性由异质角度与确定性透镜承载，不依赖同模型多发随机性（measure-poly-rev1 §7 呈裁候选落定，gateswitch A/B 切换硬前置闭合）；其二模型温度退役，判据 v3 闸 V3-T 位体温数值来源改为账本在档读数注入（零新鲜采样），温度探针标定两模式退役，facet/.env MINIMAX 键移除，标定账本转只读。执行批 baseinject-solo 会话 0019c22e12d11645，A/B 四判据与 F-1 至 F-5 全过为出泊前置。",
+  "state": "exited",
+  "ttl_days": 30
+}
