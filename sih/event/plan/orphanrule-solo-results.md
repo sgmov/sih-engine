@@ -65,4 +65,9 @@
 
 ## 结算读数
 
-（收约后回填补笔：双仓 settle 提交号、放锁收约、链 verify、reconcile、心跳复验。）
+- 双仓 settle：sih-tools 工地提交 ffe06fdf、sih-engine 工地提交 dfbc573（cert 035ab4f5，三查过）；归并 merge：tools d8aaf3b8、engine 20455dc。
+- 放锁收约：十一路径 unlock 毕全部 exit 0（首跑漏 --identity 参数全 exit 2，补参即过，如实记档）；close 首跑被 closeguard 拦（tools 工地未跟踪 topics 修复版 scope 外锁不上——请求写入节漏列 topics 路径而工作清单要求落命题区，锁面补锁亦 scope_violation 拒，按备份让位法处置即备份出工地后删除未跟踪件）；close 二跑被真分叉检测拦（主树 materials 目录含主会起草温故检索件 recall-precedents.json 未跟踪，与分支 10 件同名目录级冲突而文件级零重叠，拦截位生效如实记档，同法备份让位）；close 三跑被无主闸拦（主树无主 5 件即本批裁定对象与 callloghyg 归账面，候裁零代清红线禁触碰）；close 四跑按工具自陈三通道走显式绕行 `--bypass-orphan` 落 bypass.ndjson 一笔留痕，另 `--ack-uncommitted` 认领主树任务包件（主会起草落位非本批交付面零改动，callloghyg 先例同形）；materials 假路径属报告性 unparsed 不拦（chainstamp 勘误散文形解析残留，如实记档）；close 五跑成功即双仓归并（tools d8aaf3b8／engine 20455dc）、双工地与分支清除、会话 677fe2d1a120c4b7 revoked、零失败。topics 修复版按命题区不入版控既有形态落主树（与备份件 cmp 逐字节一致）；recall-precedents.json 回填主树 materials 随补笔入库。
+- 链 verify：2026-09-07 当日链 valid 212 事件（first 89f24da4，last 095857e9 即本批正身件认证笔）。
+- reconcile：双仓 exit 1 由历史账面项致——unrouted 双侧 0 零新增；cert_missing tools 明细 3 笔（b15cddcf／cb609c9／970c8299）与 callloghyg 存量逐笔一致零新增（summary 计数 4 与明细 3 的口径差如实记档候台账卫生批），engine 3 笔存量同态；session_orphan 与 unbypassed 均历史存量维持候裁零代清。
+- 心跳复验：见 pipeline-readings.json 心跳节——工具线 exit 0 告警零（mainline 23／siding 1 即 pk-042 校准窗在泊项）；引擎线 exit 1 告警一类即 siding_surplus count 2（历史存量与开工锚读数一致）。
+- 收约补笔：本节结算读数与 recall-precedents.json 入库即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark／genpark／confmath／confconst／anchorskill 先例同形）。
