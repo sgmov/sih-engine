@@ -1,0 +1,26 @@
+{
+  "action": "enter",
+  "context": "令源：用户 2026-09-07 令「那就进入 mcp 实装的泊界」。讨论源即本会话注入式回锚通用性结论：钩子触发位是 ZCode 专机制，通用核加薄适配器分层已落 attnanchor 即 anchor.py 零 harness 依赖唯六行配置专属；MCP 本身是跨工具标准但拉式即 agent 调用才有数据，解决工具面通用化不解决每回合推式注入；注入面通用化终局是自有对话循环即引擎运行时实装，届时每回合拼上下文是代码不是适配。参考面：工作区 .zcode/config.json 存退役 sihankor MCP server 即 enabled false；AGENTS.md MCP 节归档载功能承载映射即 record_trail 由书简上链承接、validate_sihmd 由核阅承接、会话反查由 scribe query 加 meter crosscheck 承接、租约由 sih-tools/lease 承接。关联 pk-070：其 gate 触发器即 MCP 实装结算件落 event/plan，本件点火并完成实装结算后 pk-070 同步点火构成先后链。",
+  "created_at": "2026-09-07",
+  "entry_id": "pk-077",
+  "exit_condition": "主线 v2 结算后用户裁 MCP 实装立项与否与形态即裁立项则开实装线承载自有运行时与注入面通用化、裁维持现状即闭项出泊；实装结算件落 event/plan 时 pk-070 的 gate 同步点火候裁",
+  "gate": {
+    "declared_at": "2026-09-07",
+    "fired_at": null,
+    "source": "用户 2026-09-07 令「那就进入 mcp 实装的泊界」即远景件自带界限生而搁置",
+    "trigger": "主线 v2 结算件落 sih-engine/sih/event/plan/"
+  },
+  "id": "pk-077",
+  "parking": {
+    "entered_at": "2026-09-07",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "pk-070"
+  ],
+  "source": "主会 2026-09-07 会话注入式回锚通用性讨论",
+  "state": "parked",
+  "title": "MCP 实装远景件：注入通用化终局与自有运行时",
+  "ttl_days": 30
+}
