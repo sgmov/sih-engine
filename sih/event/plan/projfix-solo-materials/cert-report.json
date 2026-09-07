@@ -1,0 +1,49 @@
+{
+  "package": "projfix-solo",
+  "session_id": "feb031fe3f7c387b",
+  "ask3_session": "sess-zcode-260907-projfix",
+  "results_summary": {
+    "F1": {
+      "status": "pass",
+      "details": "主树真跑 19/19 册 verbatim 重组 = git HEAD 逐字节一致"
+    },
+    "F2": {
+      "status": "pass",
+      "details": "import 投影步去自毁 19 册 5 行原文 verbatim 重组 = 源 markdown 字节相等"
+    },
+    "F3": {
+      "status": "pass",
+      "details": "跨根 dogfood 卫 9 测先红后绿，工地 CWD + 缺显式根即拒"
+    },
+    "F4": {
+      "status": "pass",
+      "details": "append 6 列表格行 verbatim 重组进投影"
+    },
+    "F5": {
+      "status": "pass",
+      "details": "append 同参双跑结构与值一致（event_id/at 不同是设计内）"
+    },
+    "F6": {
+      "status": "pass",
+      "details": "calllog 包零 LLM 库导入"
+    },
+    "F7": {
+      "status": "pass",
+      "details": "verbatim 重组形承接 m-calllog-proj-1 机器终签 2564e16b"
+    }
+  },
+  "tests": {
+    "calllog": 12,
+    "lease": 248,
+    "total": 260,
+    "all_green": true
+  },
+  "t6_pipeline": {
+    "formatter": "exit 0 (0 changed_lines)",
+    "scrutinator_des_001": "exit 2 (域外 event/plan 如实记)",
+    "nomenclator": "0 finding"
+  },
+  "contract_revision": "修订四十九（升版本位 1.34.0 零变更，缺陷修复非语义升级）",
+  "batchface_errata": "坑位勘误 2026-09-07 节",
+  "frontier_exit_code": 0
+}

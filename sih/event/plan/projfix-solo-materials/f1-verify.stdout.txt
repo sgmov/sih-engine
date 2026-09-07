@@ -1,0 +1,26 @@
+FAIL: 权威腿行数 698 非 697
+=== F-1 主树真跑对表（commit c11b2c5a）===
+权威腿 ndjson 总行: 698（应 697）
+  cascade              PASS  rows=  7  bytes=796
+  elicit               PASS  rows= 10  bytes=1587
+  facet                PASS  rows= 17  bytes=7775
+  formatter            PASS  rows=111  bytes=19569
+  gauge                PASS  rows=  7  bytes=3357
+  identity             PASS  rows= 15  bytes=2191
+  latex-helper         PASS  rows= 44  bytes=2535
+  lease                PASS  rows=139  bytes=62847  (尾行差异 +3 行)
+  locator              PASS  rows=  5  bytes=947
+  locks                PASS  rows= 11  bytes=1968
+  meter                PASS  rows= 11  bytes=2501
+  nomenclator          PASS  rows=125  bytes=27997
+  parser               PASS  rows=  6  bytes=1520
+  scribe               PASS  rows= 26  bytes=1461
+  scrutinator          PASS  rows=116  bytes=25318
+  selector             PASS  rows= 17  bytes=3651
+  tally                PASS  rows= 15  bytes=6277
+  watchcheck           PASS  rows=  3  bytes=605
+  wikirecall           PASS  rows= 13  bytes=2284
+
+=== 总结 ===
+全册 19 册：pass=19 skip=0 fail=0
+F-1 PASS：渲染对表 HEAD 逐字节一致（含已知尾行差异类）
