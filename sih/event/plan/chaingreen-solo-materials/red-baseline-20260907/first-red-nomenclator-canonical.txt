@@ -1,0 +1,26 @@
+................F.............                                           [100%]
+=================================== FAILURES ===================================
+_______________________ test_core_pack_shipped_canonical _______________________
+
+    def test_core_pack_shipped_canonical():
+        for name in ("manifest", "terms", "lazy", "dead", "candidates"):
+            path = CORE / f"{name}.json"
+            raw = path.read_text(encoding="utf-8")
+            recanonical = json.dumps(json.loads(raw), **CANONICAL) + "\n"
+>           assert recanonical == raw, f"{name}.json 非规范化形态"
+E           AssertionError: lazy.json 非规范化形态
+E           assert '{\n  "lazy":...  }\n  ]\n}\n' == '{\n "lazy": ...n  }\n ]\n}\n'
+E             
+E               {
+E             -  "lazy": [
+E             +   "lazy": [
+E             ? +
+E             -   {
+E             +     {...
+E             
+E             ...Full output truncated (152 lines hidden), use '-vv' to show
+
+tests/test_realpack.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_realpack.py::test_core_pack_shipped_canonical - AssertionEr...
+1 failed, 29 passed in 0.08s

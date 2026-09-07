@@ -1,0 +1,19 @@
+......F                                                                  [100%]
+=================================== FAILURES ===================================
+______________________________ test_golden_replay ______________________________
+
+    def test_golden_replay():
+        golden = PACKS / "golden"
+        assert golden.is_dir(), "golden/ 缺席：冻结期望报告未生成"
+        for pack, target, extra in PAIRS:
+            expect = json.loads((golden / f"expected-{pathlib.Path(target).stem}.json").read_text(encoding="utf-8"))
+            p = run_cli(pack, target, extra)
+            got = json.loads(p.stdout)
+>           assert got["findings"] == expect["findings"], target
+                                      ^^^^^^^^^^^^^^^^^^
+E           KeyError: 'findings'
+
+tests/test_engine.py:116: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_engine.py::test_golden_replay - KeyError: 'findings'
+1 failed, 6 passed in 0.35s
