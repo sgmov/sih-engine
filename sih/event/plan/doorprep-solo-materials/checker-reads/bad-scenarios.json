@@ -1,0 +1,52 @@
+{
+ "doc_class": "SDD 场景清单",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [
+  {
+   "detail": "重号：S-001",
+   "hint": "编号缺形或重号报行号（三刀之一：编号唯一可达）",
+   "rule": "SL-003",
+   "state": "violation"
+  },
+  {
+   "detail": "要素缺项：#### Scenario: S-001 流程包数据形落位读数 行缺「期望产物\\s*\\S+」",
+   "hint": "判据行缺席或三要素缺项报 S- 编号（三刀之二：THEN 判据绑定；翻不成机械判据的 THEN 不通过，D-3）",
+   "rule": "SL-007",
+   "state": "missing"
+  }
+ ],
+ "pack": "scenario-list",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "SL-001",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-002",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-003",
+   "state": "violation"
+  },
+  {
+   "rule": "SL-004",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-005",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-006",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-007",
+   "state": "missing"
+  }
+ ],
+ "verdict": "fail"
+}

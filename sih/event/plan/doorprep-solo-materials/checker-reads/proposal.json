@@ -1,0 +1,35 @@
+{
+ "doc_class": "SDD 变更提案",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "change-proposal",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "CP-001",
+   "state": "pass"
+  },
+  {
+   "rule": "CP-002",
+   "state": "pass"
+  },
+  {
+   "rule": "CP-003",
+   "state": "pass"
+  },
+  {
+   "rule": "CP-004",
+   "state": "pass"
+  },
+  {
+   "rule": "CP-005",
+   "state": "pass"
+  },
+  {
+   "rule": "CP-006",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}
