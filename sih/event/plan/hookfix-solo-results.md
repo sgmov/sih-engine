@@ -67,4 +67,9 @@
 
 ## 结算读数
 
-- 双仓 settle 与放锁收约与对表读数随收口补记。
+- 双仓 settle：tools 工地提交 576828c1、engine 工地提交 0621bd3，cert 取 970c8299 即链末哈希可证。
+- 放锁收约：十路径 unlock 毕、close 一次过、会话 60d3d7c37bc8f913 收约。
+- 主树真形态：anchor.py 上溯形根判据与 CONTRACT 修订一与八测随归并在位；工作区 config 热修形在位。
+- 链 verify：2026-09-07 当日链 valid，末哈希 970c8299 即本批末笔认证。
+- reconcile：双仓 unrouted 零；closeguard 两笔已补 bypass 登记。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控，先例同形。
