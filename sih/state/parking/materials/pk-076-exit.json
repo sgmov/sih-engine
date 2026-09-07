@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "entry_id": "pk-076",
+  "title": "主树 tracked 改件零拦截即缺口三（文规窗口提名，下一租约硬化项候选）",
+  "exit_reason": "closegate-solo 批交付：m-closegate-1 终签 6a7a7237 落地，close_session 闸序内挂无主闸（chain_gate_check 后 / declared_uncommitted_diff 前）复用 watchcheck unowned_list 谓词单源（脏文件集减租约锁面减直改链笔声明面减共享追加面豁免面），非零即拦收约退出码一 fail-visible 含 bypass-orphan 例外通道落 bypass.ndjson 留痕；活体实证（calllog-solo 跨根写抹 137 行历史）以收约位闸兜底批尾，加 pre-commit 文件面执法位（m-precommit-1 终签 b558220e）提交位先拦，两闸合围主树改件零常驻拦截缺口闭合（提交位先拦 / 收约位兜底，互补不互取代）。三源对齐 1.35.0 即 pyproject 与 __init__ 与 CONTRACT。新增 18 测（lease 端 11 + watchcheck 端 7）全过、watchcheck 21 测零回归、lease 266 测零回归。",
+  "closed_at": "2026-09-07",
+  "deliverable": "sih-tools/lease/src/lease/core.py（close_session 闸序挂入无主闸 + no_master_check 谓词函数 + bypass 落 bypass.ndjson 通道） + sih-tools/lease/src/lease/cli.py（--bypass-orphan 显式通道） + sih-tools/lease/src/lease/guardcore.py（staged_enforce 判定函数 + STAGED_REJECT_GUIDANCE 三通道指引） + sih-tools/lease/hooks/pre-commit（薄壳扩为执法壳） + sih-tools/lease/CONTRACT.md（修订五十） + sih-tools/lease/src/lease/__init__.py（升 1.35.0） + sih-tools/lease/pyproject.toml（升 1.35.0 + watchcheck 依赖 + workspace member 增位） + sih-tools/lease/tests/test_closegate.py（7 件） + sih-tools/lease/tests/test_precommit.py（11 件） + sih-tools/watchcheck/src/watchcheck/core.py（unowned_list 函数） + sih-tools/watchcheck/tests/test_unowned_list.py（7 件） + sih-tools/lease/tests/test_guard.py（兼容升级 SIHANKOR_LOCKS_LEDGER 注入）",
+  "linked_batch": "closegate-solo",
+  "f_anchors_passed": ["F-1", "F-2", "F-3", "F-4", "F-5", "F-6", "F-7", "F-8", "F-9"],
+  "out_chain_event": "本件出泊事件随 closegate-solo 收约补笔回填链，先例同形",
+  "related": ["pk-074-iii"],
+  "session_id": "e5003cc16eef94ca",
+  "source": "closegate-solo 批 2026-09-07 收口",
+  "state": "exited"
+}
