@@ -1,0 +1,15 @@
+{
+  "action": "exit",
+  "entry_id": "pk-074-iii",
+  "title": "T-9 白名单机械执法位（轻车道十条目现处声明位零机器拦，直改车道开放多代理使用时自觉纪律失效即须上执法闸）",
+  "exit_reason": "closegate-solo 批承子项三触发条件：calllog-solo 批 03:02 dogfooding 跨根直写真根主树 lease 册 137 行历史被残账重渲为 1 行即活体实证，多代理直改已实质发生，触发条件达成。子项三实装：m-precommit-1 终签 b558220e 落地，DIRECT_LANE_FILE_WHITELIST 30 条目自声明位升执法位（hooks/pre-commit 薄壳扩为执法壳），staged 文件集逐件判定命中白名单即放行，未命中即拒并指引三通道。白名单与共享追加面扩面仍走 CONTRACT 修订禁裸奔（修订三十九与四十八既裁约束）。",
+  "closed_at": "2026-09-07",
+  "deliverable": "sih-tools/lease/src/lease/guardcore.py（staged_enforce 判定 + STAGED_REJECT_GUIDANCE） + sih-tools/lease/hooks/pre-commit（执法壳） + sih-tools/lease/tests/test_precommit.py（11 件含 F-3/F-4 夹具） + sih-tools/lease/CONTRACT.md（修订五十 m-precommit-1 落地节）",
+  "linked_batch": "closegate-solo",
+  "f_anchors_passed": ["F-3-C（白名单过）", "F-4-B（白名外面拒）"],
+  "out_chain_event": "本件出泊事件随 closegate-solo 收约补笔回填链",
+  "related": ["pk-076"],
+  "session_id": "e5003cc16eef94ca",
+  "source": "closegate-solo 批 2026-09-07 收口（子项三随批出泊，子项一与二仍留泊）",
+  "state": "exited"
+}
