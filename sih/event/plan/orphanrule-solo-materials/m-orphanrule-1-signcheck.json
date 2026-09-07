@@ -1,0 +1,27 @@
+{
+  "alarms": [],
+  "direction": "comply",
+  "disposition": "裁决通过",
+  "failed": [],
+  "gate_verdict": "stable_clear",
+  "gid": "m-orphanrule-1",
+  "material": "proposition/DES/m-orphanrule-1/tally-material.json",
+  "passed": [
+    "R1: 核对程序版本署名 tally/1.0.0，材料只读消费",
+    "R2: topic_sha256 复算一致",
+    "R2: trail 文件在场",
+    "R2: contract_sha256 复算一致",
+    "R2: responses_sha256 复算一致",
+    "R3: 闸裁决 stable_clear 在三值集合",
+    "R3: criteria_version v3",
+    "R3: dc_fingerprint 复算一致",
+    "R3: per_actor 七字段与方向枚举全符",
+    "R5: 席位当日基线判定可用且身份哈希一致",
+    "R6: 同 gid 累计 9 发未超预算",
+    "R7: trail 判定流同 gid 一致"
+  ],
+  "rules_version": "des-011-r1",
+  "tool": "tally",
+  "verdict": "pass",
+  "version": "1.0.0"
+}

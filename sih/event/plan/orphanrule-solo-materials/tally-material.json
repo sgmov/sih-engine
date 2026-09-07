@@ -1,0 +1,20 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanrule-solo/facet/contracts/orphanrule-260907/m-orphanrule-1.json",
+  "contract_sha256": "97692e3c62c5b08e5b41ad9b073b0aaa5d9c7a00a8dbe3cc85c01eabba792bca",
+  "core_hash": "e1c9a7faf2f63d8333768ac94b0101a84fde506745eeebce180ae5c74a6c992b",
+  "criteria_version": "v3",
+  "dc_fingerprint": "5b3448bc84afb691",
+  "gate_verdict": "stable_clear",
+  "gid": "m-orphanrule-1",
+  "identity_hash": "ef2253ccf246bff59c1505bcdfb1f39f5491bcf94321154e1f2f2bb752fd4152",
+  "kind": "tally-check-input",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanrule-solo/facet/contracts/orphanrule-260907/responses.jsonl",
+  "responses_sha256": "0c5d16cfff3ffb92ca433735a3c78f72f1df4d258e427ed76c4ed96958f94fce",
+  "rules_version": "des-011-r1",
+  "seat_baseline_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanrule-solo/facet/contracts/orphanrule-260907/seat-baseline.json",
+  "topic_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanrule-solo/proposition/DES/m-orphanrule-1/topic.md",
+  "topic_sha256": "9212480ee877339204943f7f3d3b0815507825bb6d0ee483c314a2ea82493521",
+  "trail_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanrule-solo/proposition/DES/m-orphanrule-1/flywheel-trail.jsonl",
+  "voids": []
+}
