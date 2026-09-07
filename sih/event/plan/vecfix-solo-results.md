@@ -42,15 +42,24 @@
 
 ## 五、主树复跑补笔节（收约后）
 
-> 此节留待主树 merge 后补跑判定包端到端退出码零读数。当前工地批内绿已立。
+> 工地批内绿已立为收口前半；主树 merge 后跑判定包端到端退出码零读数回填此节。
 
-主树复跑将跑：
-```
-cd $R/sih-tools/acceptor
-uv run acceptor --pack packs/tdd-v0-sddchecker.json --root $R
-```
+主树归并：
+- sih-tools 仓 merge commit `fbe69e96`（vecfix-solo 副本归并）
+- sih-engine 仓 merge commit `32ab8f9`（vecfix-solo 副本归并）
 
-退出码预期 0、TC-001 至 TC-004 全 pass。如遇环境差异红（先例即幂等补跑分列），如实分列不硬闯。
+主树复跑实测（2026-09-07 收约后即时）：
+
+| 检查 | 结果 | 说明 |
+|---|---|---|
+| `basemgr pytest tests/ -q` | ✅ 10 passed in 1.31s | 含 test_vectors_no_worktree_literal 守卫 + test_freeze_normalizes_root_prefix 归一规则 + test_normalize_does_not_touch_non_root_paths 面界 |
+| `checker pytest tests/test_engine.py::test_packs_machineized` | ✅ 1 passed | 本批关键修复——版本钉改从 manifest 动态对表后过，0.3.0 进位脱节免疫 |
+| `checker pytest tests/ -q` | ⚠️ 6 passed, 1 failed | test_golden_replay 报 KeyError 'findings'——预存病非本批引入：主树有 8 件 incubation/packs/sdd-v1/golden/* uncommitted 改动（前批遗留 user 已知不并批，watch 协议如实转述），该件形已迁为 `{batch, date, migrated_to, retired}` 而 test 仍按旧形访问 `findings` 键 |
+| `acceptor --pack packs/tdd-v0-sddchecker.json` | ⚠️ verdict fail，3/4 TC 过 | TC-001/002/004 pass；TC-003 red_then_green state violation（根因同上：test_golden_replay 红致 pytest -q 非零退出，与本批 test_packs_machineized 无关） |
+
+**判定**：本批关键修复（freeze 归一规则、7 支向量归一重冻、版本钉动态对表、m-vecfix-1 终签）在主树 merge 后独立可验证（`test_packs_machineized` 1 passed、`basemgr` 10/10 pass、vectors 零 worktrees 字面 grep 验证 0 残留）。
+
+主树复跑红腿为预存病（uncommitted 8 件 golden 改动 + test_golden_replay 旧形访问），按先例「幂等补跑分列」如实分列不硬闯——本批不承载其修复面（任务包 §六约束 3 零越权，golden 件非本批 allow 面）。修先决条件：清 8 件 uncommitted（watch 协议二值裁决：人节点"不是我的"机械回滚或"我的"走司衡通道），再跑判定包预期全过。
 
 ## 六、逐命令退出码与链上事件
 
@@ -88,9 +97,15 @@ uv run acceptor --pack packs/tdd-v0-sddchecker.json --root $R
 
 - lease session：ad2a5c1fc6d45ec7
 - m-vecfix-1 sign event_hash：`3ad97407d585ff1758fd55dbbb176bbace2f826d341e48e973a2829a7f29f365`（cert 3ad97407）
-- tools 仓 commit 1：59ff07426b232cce45e958a57f6c1756e4cf2374（16 files）
-- tools 仓 commit 2：9c79f48335f24a3dc1af411b45b8df029a6969dc（5 files，bypass 登记）
+- tools 仓 commit 1：59ff07426b232cce45e958a57f6c1756e4cf2374（16 files，bypass 登记）
+- tools 仓 commit 2：9c79f48335f24a3dc1af411b45b8df029a6969dc（5 files，bypass 登记，facet/sign 工具输出）
+- tools 仓 commit 3：3f030e1a9fb53e44e15dc720f376859945baf75e（CALL-LOG，bypass 登记）
+- tools 仓 merge：fbe69e96（vecfix-solo 副本归并）
+- engine 仓 commit 1：49662d9c20472cba6defdbf0a20c4822412e66f4（results + materials，bypass 登记）
+- engine 仓 commit 2：46d3b393364377732d27a525e7ea76d3dc96958e（任务包拷入工地，bypass 登记）
+- engine 仓 merge：32ab8f9（vecfix-solo 副本归并）
 - intent event_hash：380f3a67fc334d2371fc58bb7362662ff08553895161b6e813d71811544610fb
+- 链 verify 终态：valid 125 events
 - 7 支向量原 expected_sha256：78cdc0647c262266 + e54e2c9ef582f258 × 5 + 16536d2b320d845a
 - identity_hash：5fff88a4d5bc46e1063372e8665385c436093b0b7949477e66607f12955dc4cb
 
