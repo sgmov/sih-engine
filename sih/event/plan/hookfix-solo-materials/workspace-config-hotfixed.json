@@ -1,0 +1,28 @@
+{
+  "mcp": {
+    "servers": {
+      "sihankor": {
+        "type": "http",
+        "url": "http://localhost:9741/mcp",
+        "enabled": false,
+        "timeoutMs": 30000
+      }
+    }
+  },
+  "hooks": {
+    "enabled": true,
+    "events": {
+      "UserPromptSubmit": [
+        {
+          "hooks": [
+            {
+              "type": "command",
+              "command": "python3 \"/Users/moc/workspaces/SiHankor/sih-tools/attnanchor/anchor.py\" || true",
+              "timeout": 25
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
