@@ -1,0 +1,39 @@
+{
+ "doc_class": "SDD 场景清单",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "scenario-list",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "SL-001",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-002",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-003",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-004",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-005",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-006",
+   "state": "pass"
+  },
+  {
+   "rule": "SL-007",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}

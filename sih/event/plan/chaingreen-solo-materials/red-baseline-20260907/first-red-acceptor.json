@@ -1,0 +1,46 @@
+{
+ "declaration": {
+  "claim": "unchanged-only",
+  "note": "基线类查只主张没变不主张对（甲乙红线）；漂移不归因，三态归因全量机制属基线向量管理工具后继",
+  "v0_out_of_scope": [
+   "漂移三态归因",
+   "申报影响集包含判定"
+  ]
+ },
+ "engine": "acceptor",
+ "engine_version": "0.1.0",
+ "findings": [
+  {
+   "check_name": "red_then_green",
+   "detail": "当前不绿：退出码 1（期望 0）",
+   "hint": "红证哈希对表加当前全绿（四查之一）；红证件只读引用零触碰",
+   "id": "TC-003",
+   "state": "violation"
+  }
+ ],
+ "pack": "tdd-v0-sddchecker",
+ "pack_version": "0.2.0",
+ "results": [
+  {
+   "check_name": "double_run",
+   "id": "TC-001",
+   "state": "pass"
+  },
+  {
+   "check_name": "baseline_freeze",
+   "id": "TC-002",
+   "state": "pass"
+  },
+  {
+   "check_name": "red_then_green",
+   "id": "TC-003",
+   "state": "violation"
+  },
+  {
+   "check_name": "scenario_coverage",
+   "id": "TC-004",
+   "state": "pass"
+  }
+ ],
+ "verdict": "fail"
+}
