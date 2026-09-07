@@ -54,7 +54,8 @@
 
 ## 结算读数
 
-- 双仓 settle：tools 工地提交〈settle 时落〉，engine 工地提交〈settle 时落〉；cert 取〈ask3 认证哈希前八位〉。
-- 放锁收约：十路径 unlock，close 归并，会话 0019c22e12d11645 revoked。
-- 链 verify：〈收约后回填〉；reconcile：〈收约后回填〉；心跳复算：〈收约后回填，pk-044 材料件应离在泊计数〉。
-- 收约补笔：本结果档结算读数回填即本笔，先例同形。
+- 双仓 settle：tools 工地段二补全提交 18f91c66，engine 工地段二补全提交 01baf0c；cert 取 b0ad4582 即 ask3 记录认证哈希前八位。close 首跑被工地卫生检查拦（settle 段一仅提交了暂存改名件，其余批件未暂存），按其报文补 stage 双仓段二提交后 close 即成功：双仓归并（engine c6a35bf／tools ccef5671）、双工地与分支清除、会话 0019c22e12d11645 revoked、零失败。
+- 链 verify：2026-09-07 当日链 valid，112 事件。
+- reconcile：unrouted 双仓零新增；cert_missing engine 零、tools 一属在盘历史账面项（archpark 批已呈报同项，不代清）；本批四笔 --no-verify 段二与 closeguard 提交已逐笔 bypass 登记（01baf0c／62244ab／18f91c6／2699718），登记后本批 unbypassed 残留双仓皆零；历史 unbypassed 余量（engine 56／tools 85）系他批在盘账面，候人节点不代清。
+- 心跳复算：引擎线 exit 0 告警零，pk-044 进出泊材料对俱在册常态轨道。
+- 收约补笔：本结果档结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（openhyg-solo／archpark-solo／genpark-solo 先例同形）。
