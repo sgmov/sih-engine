@@ -1,0 +1,31 @@
+{
+ "doc_class": "SDD 技术方案",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "tech-design",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "TD-001",
+   "state": "pass"
+  },
+  {
+   "rule": "TD-002",
+   "state": "pass"
+  },
+  {
+   "rule": "TD-003",
+   "state": "pass"
+  },
+  {
+   "rule": "TD-004",
+   "state": "pass"
+  },
+  {
+   "rule": "TD-005",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}

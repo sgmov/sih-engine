@@ -1,0 +1,35 @@
+{
+ "doc_class": "SDD 任务清单",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "task-list",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "TL-001",
+   "state": "pass"
+  },
+  {
+   "rule": "TL-002",
+   "state": "pass"
+  },
+  {
+   "rule": "TL-003",
+   "state": "pass"
+  },
+  {
+   "rule": "TL-004",
+   "state": "pass"
+  },
+  {
+   "rule": "TL-005",
+   "state": "pass"
+  },
+  {
+   "rule": "TL-006",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}

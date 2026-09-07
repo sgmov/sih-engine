@@ -1,0 +1,35 @@
+{
+ "doc_class": "SDD 规格差分",
+ "engine": "checker",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "spec-delta",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "rule": "SD-001",
+   "state": "pass"
+  },
+  {
+   "rule": "SD-002",
+   "state": "pass"
+  },
+  {
+   "rule": "SD-003",
+   "state": "pass"
+  },
+  {
+   "rule": "SD-004",
+   "state": "pass"
+  },
+  {
+   "rule": "SD-005",
+   "state": "pass"
+  },
+  {
+   "rule": "SD-006",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}
