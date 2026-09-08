@@ -79,4 +79,9 @@
 
 ## 结算读数
 
-- 候收约补笔回填：双仓 settle 提交号、链 verify 全文、reconcile 增量、收约读数。
+- 双仓 settle：engine 工地提交 26cecf2、tools 工地提交 3f976569，cert 取 949672f7 即链上内容清单认证笔；归并 engine 8d8fe67、tools ef0876ff。
+- 放锁收约：十锁 unlock 毕，close 经无主 bypass 登记一次即收约毕，会话 d1731d5e59403dee 收约吊销，双工地 removed。
+- 主树真形态复算：pk-081.json 在位携 gate 键，PARKING-v1.md 归并 diff 纯增两行零删改即他行零触碰，路由 siding failed P104 告警零。
+- 链 verify：2026-09-09 当日链 valid 129 笔，末哈希 949672f7 即本批末笔认证。
+- reconcile：双仓 unrouted 零、cert_missing 零即判据双零；本批三笔机械提交补 bypass 登记（engine d987f53 closeguard 预收；tools 2f1a66a closeguard 预收与 5298684 CALL-LOG 投影归集）。
+- 收约补笔：结算读数回填即本笔，经直改链笔加 --no-verify 加 bypass 登记通道入版控，mcppark 与 s2park 与 mcpcold 先例同形。
