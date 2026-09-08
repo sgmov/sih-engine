@@ -1,0 +1,68 @@
+{
+ "batch": "constclear2c-solo",
+ "kind": "content-manifest（批件内容哈希清单）",
+ "date": "2026-09-08",
+ "note": "结算前工地态绑定；结果档结算读数与误差申报节由收约补笔回填属既定后续写位",
+ "entries": [
+  {
+   "path": "sih-engine-in-worktree:sih/state/plan/constclear2c-solo.md",
+   "sha256": "50d807c6bc2b92c0928b0872853a6f82ff36dad95c356ab5ecb2b52b431cae00"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/state/plan/constclear2c-solo-prompt.md",
+   "sha256": "639ea97ea471d3a14dc2d4e2468ddff3ccf4d724e591cb61671924e03bc5683a"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-results.md",
+   "sha256": "f3376e3be932df0c4de0af321421e12bac3e2dcbbf4dfef1621d4e5696959b32"
+  },
+  {
+   "path": "sih-engine-in-worktree:doc/governance/GOV-002-mainline-lock-v1.md",
+   "sha256": "049786a9fc503675229461a3f3d006b281a8d722fd11fe0fc13a295efe528236"
+  },
+  {
+   "path": "sih-engine-in-worktree:doc/governance/GOV-002-history-v1.md",
+   "sha256": "995993c1e1e16e28df8fb92f3c835e4ee43d2a8d3ce37e9180196e35544a54ad"
+  },
+  {
+   "path": "sih-engine-in-worktree:doc/governance/PARKING-v1.md",
+   "sha256": "99786519a4f44acfb4b2632267e0503867aaed6b704f56f50637213e24775746"
+  },
+  {
+   "path": "sih-math-in-worktree:docs/constclear-registry-v2.md",
+   "sha256": "281d71003f98ada82873514462ddde5bd5bacdc1abc703c0cebe8ce8675ed0bc"
+  },
+  {
+   "path": "sih-math-in-worktree:docs/constclear-registry-v2.json",
+   "sha256": "19867a3050ba71f22cc0eae64387c8c839ff85d972d1c2ddde534b4bdbfac61f"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-materials/constants-annotations.json",
+   "sha256": "409cd8e72a42fabd35cf2687ea744639a1e8e29689c6e52bf5ec7770415b7bf3"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-materials/annotations-diff-selfcert-2026-09-08.json",
+   "sha256": "1a789d6c8d4b14b1a62de59b145c4166330bc7da4c894be3994211fa2b57f413"
+  },
+  {
+   "path": "sih-tools-in-worktree:critsweep/make_registry.py",
+   "sha256": "0c89b293d7dae2acfb54e04a25c22d9c7ece690f3cb54604ff82981fb2e9f7e0"
+  },
+  {
+   "path": "sih-tools-in-worktree:critsweep/registry.json",
+   "sha256": "9e65d22f50947e4bf060306d48dcef579ac3708f86f2c56e100bee643b64b23f"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-materials/apply_annotations.py",
+   "sha256": "0d30f31e1ac48c0aaeb00515026a075c2660ec6aff6a543955971d4f1c1519f1"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-materials/verify_annotations_diff.py",
+   "sha256": "ae646048e8f4436de90ffa0d4e551b4abf9785e4dc7035a0b7007b00a30c1cd4"
+  },
+  {
+   "path": "sih-engine-in-worktree:sih/event/plan/constclear2c-solo-materials/make_registry_v2.py",
+   "sha256": "e187a14c42ede250642b9154b34dc0efdfb0da14f5812f29848db0e710ebe354"
+  }
+ ]
+}

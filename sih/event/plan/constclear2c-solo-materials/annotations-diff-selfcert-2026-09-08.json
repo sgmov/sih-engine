@@ -1,0 +1,192 @@
+{
+ "batch": "constclear2c-solo",
+ "kind": "annotations-diff-selfcert",
+ "date": "2026-09-08",
+ "verdict": "pass",
+ "files": [
+  {
+   "repo": "tools",
+   "file": "calllog/src/calllog/core.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "confledger/src/confledger/constants.py",
+   "added_comment_lines": 2,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "critsweep/sweep.py",
+   "added_comment_lines": 2,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/analyze_merged_v2.py",
+   "added_comment_lines": 5,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/bootstrap_partial.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/check_layer_proportion.py",
+   "added_comment_lines": 2,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/check_verdict_consistency.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/contribution_metric.py",
+   "added_comment_lines": 4,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/d1_anova.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/eir_ecr_gate_probe.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/lightweight_mode_probe.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/multiround_convergence_probe.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/n_convergence_probe.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/program_signoff.py",
+   "added_comment_lines": 3,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/r3a_gate_v2.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/reference_stats.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/probes/run_siliconflow_factcheck.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "facet/src/facet_stats_inf.py",
+   "added_comment_lines": 2,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "gauge/src/gauge/cli.py",
+   "added_comment_lines": 11,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "identity/src/identity/core.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "lease/src/lease/cli.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "lease/src/lease/core.py",
+   "added_comment_lines": 3,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "lease/src/lease/lockdb.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "tally/src/tally/cli.py",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "tools",
+   "file": "watchcheck/src/watchcheck/constants.py",
+   "added_comment_lines": 4,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  },
+  {
+   "repo": "engine",
+   "file": "src/attractor/tally.rs",
+   "added_comment_lines": 1,
+   "deleted_lines": 0,
+   "non_comment_additions": 0
+  }
+ ],
+ "total_added_comment_lines": 54,
+ "total_files": 26
+}

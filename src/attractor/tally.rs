@@ -31,6 +31,7 @@ use super::jsonc::{
 
 pub const VERSION: &str = "1.0.0";
 pub const CRITERIA_VERSION: &str = "v3";
+// [constclear2c] 登记行 f1 态工程实践三件套｜账面 sih-math/docs/constclear2-routing-2026-09-08.md
 pub const BUDGET_PER_GID: i64 = 9;
 pub const RULES_VERSION: &str = "des-011-r1";
 
