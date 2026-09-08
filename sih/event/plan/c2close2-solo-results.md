@@ -84,7 +84,7 @@
 | F-2 测量先行条件执行 | 治理 | 席 stable_clear 加执契终签才开工腿三至腿五 | 通过（stable_clear 9/9 加终签 3944ecaa 先落，腿三至腿五后开工，零刀锋零停摆） |
 | F-3 三条件重验实 | 治理 | viewer 双跑逐字节一致、投影器五源源码级复核、对表映射构造性对齐结论落档 | 通过（三路 cmp 全 0 退出码成对一致；五源行级指针在档；构造性对齐重验件在档承 52c2dbb6 与修订五十三） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即 19 路径 allow 面：两预落件与结果档与材料目录与 GOV-002 两件与 registry 与构建器与席位两目录与 scribe/reports 与 identity/reports 与 trail 经 scribe 与 CALL-LOG 直改车道六件；sih-visual 零写入） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | （收约后补笔回填） |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 段一 bab8fb1c 归并 b84dd53a 与 engine 段一 5a20b78 归并 deef2b3 即 closeguard 预收 88520ed；close 收约一跑成即会话 25e529a3617a9f11 revoked、双工地拆、双分支删，跑步机收编实收 14 件 c035752c，双旗 bypass 两件系收编面陈旧见误差节；verify valid events 309；reconcile 双仓 unrouted 俱零、cert_missing 俱零即 recclsf 认补录形后存量清零、unbypassed 与 session_orphan 俱与 s2park 基线同数零新增） |
 
 ## 越线与误差申报
 
@@ -95,11 +95,18 @@
 - **dualrun-summary 字段名两处自伤**：摘要首版 heartbeat 取键 consumable 与 settle 取键 by_type 俱非实键（实键 consumable_count 与 event_type_counts），读数空值即自查自证即改，红证在批材料申报在案。
 - **viewsource-pointers.md 截断哈希笔误**：首版投影器 sha256 误写 16 位截断形当 64 位全值，即查即改全值（8cef8483…27dd），认证前归零如实申报。
 - **GOV-002 两件核阅首跑 C006 五处红**：v2.8 追记句与历史档条目首版用全角括号组即（c2close-solo 首验加 c2close2-solo 复测）等五组，核阅 des-001 C006 判论证补充性括号内容非法；处置承 v2.4 版本史行违例归零先例即括号组改即字串（经…与…形）内容词零增删，修正后两件 exit 0 零违规；registry 判据文本系程序切片同步重切（构建器重跑），红证即首跑 findings 五笔在档承先红留痕纪律。
+- **close 首跑无主闸拦与收编面陈旧发现（呈人节点）**：首跑拦两件俱 CALL-LOG 族即 acceptor 与 critsweep 两册；本批跑步机收编已实收 14 件（c035752c），余两件系 DIRECT_LANE_FILE_WHITELIST 冻结 19 册收编面未含后生 CALL-LOG 即 acceptor 与 critsweep 两册俱白名单冻结后出生，内容俱纯追加 canonical call-log 行零删改（critsweep 含本批 clog-1cdb0785、acceptor 系跨批存量 mtime 11:36Z），双旗 bypass 显式留痕候 callloghyg 扩面裁；此系收编面陈旧非本批缺陷不属空收（实收在案）。
 - 其余误差零申报（叩问预登记数与实测数一致；检词零违例；标定账本 /tmp 副本系先例同形非越线）。
 
 ## 结算读数
 
-（收约后补笔回填：双仓 settle 提交号、close 收约读数、链 verify 笔数、reconcile 读数、判据扫复算五判据现态、registry 主树重放对表）
+- 双仓 settle：tools 段一 `bab8fb1c`（base integral-stage-build@692ba5d8）、engine 段一 `5a20b78`（base main@9af9b69），cert 统一取本批 ask3 记录认证 `5e6e290c`；归并 tools `b84dd53a`、engine `deef2b3`（closeguard 预收 `88520ed`）。
+- 放锁收约：19 路径 unlock 全过零失败；close 首跑无主闸拦（红证两件俱 CALL-LOG 族见误差节），跑步机收编首跑实收 14 件即 calls.ndjson 五笔与八册投影随批入版控（`c035752c`），复跑收编面内残余为零属首跑已收尽；双旗标 bypass 显式留痕两笔即 bypassed_orphan 与 bypassed_calllog（acceptor 与 critsweep 两册系冻结收编面未含后生 CALL-LOG，呈人节点候扩面）；close 复跑一跑成即会话 25e529a3617a9f11 revoked 真值、双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/c2close2-solo.json。
+- 链 verify：valid，events 309；本批链面笔序即意图 22df0454 与例行读数三笔与终签 crosscheck 3944ecaa 与认证十笔（末笔 80231d44）。
+- reconcile：双仓 unrouted 俱零即本批零新增路由缺口；cert_missing 双仓俱零（recclsf 认补录形后存量清零，engine 3 与 tools 5 俱经 cert_backfilled 转出）；unbypassed 即 tools 111 与 engine 78、session_orphan 即 tools 19 与 engine 24，俱与 s2park 批基线同数零新增，跨批存量不代清。
+- 判据扫复算（主树正典位）：五判据现态全 achieved 即 C1 与 C2 与 C3 与 C4 与 C5，C2 viewline 转证据形后 evidence 面全过（双跑读数与五源复核与对表重验与 CONTRACT 修订五十三四文件指针加 pk-047 与 pk-059 链锚俱 ok），degraded 假零沉底；主线 v2 五条退出判据全数达成即主线至结算门槛。
+- registry 主树重放：make_registry.py 缺省参重放 cmp 逐字节 IDENTICAL（归并版与重放版零差）。
+- 收约补笔：本节与 F-5 与误差节即本笔，经直改链笔申报加 --no-verify 提交替 lease bypass 登记通道（先例同形）。
 
 ## 大白话节
 
