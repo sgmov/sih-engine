@@ -1,0 +1,93 @@
+{
+  "batch": "orphanexec-solo",
+  "session_id": "2fcdf691c035a034",
+  "issued_at": "2026-09-08T00:01:35+00:00",
+  "chain_date": "2026-09-07",
+  "prechecks": {
+    "hooks_path_tools": "sih-tools/lease/hooks",
+    "hooks_path_engine": "sih-tools/lease/hooks",
+    "watchcheck_baseline": {
+      "at": "2026-09-07",
+      "exit_code": 1,
+      "unowned_count": 5,
+      "items": [
+        "sih-tools/attnanchor/CALL-LOG.md (untracked)",
+        "sih-tools/attnanchor/anchor.py (modified)",
+        "sih-tools/calllog/calls.ndjson (modified)",
+        "sih-tools/lease/CALL-LOG.md (modified)",
+        "sih-tools/scribe/CALL-LOG.md (modified)"
+      ]
+    },
+    "lease_test_baseline": {"passed": 266, "failed": 0, "note": "任务包载 269 与实态 266 差三位见结果档误差申报二"}
+  },
+  "ask3": {
+    "scrutinator_ask3_exit": 0,
+    "scrutinator_findings": 0,
+    "record_sha256_prefix": "78b420b2",
+    "ask3repeater_exit": 0,
+    "ask3repeater_status": "ok",
+    "anchor_count": 3,
+    "generator": "sih-tools/scribe/reports/make_ask3_orphanexec-solo.py",
+    "quote_slices": [
+      "sih-philosophy/emanation/proodos/07-on-assay.md:55",
+      "sih-philosophy/emanation/proodos/08-on-settle.md:110",
+      "sih-philosophy/emanation/proodos/01-ontology-of-names.md:18"
+    ]
+  },
+  "elicit": {
+    "check_exit": 1,
+    "signals": 9,
+    "signals_file": "sih-tools/scribe/reports/2026-09-07-orphanexec-solo-elicit-signals.ndjson",
+    "digest_exit": 0,
+    "digest": "passed",
+    "covered": 9
+  },
+  "identity": {
+    "exit": 0,
+    "anomalies": 0,
+    "identity_hash_prefix": "f64dc01a",
+    "core_hash_prefix": "e1c9a7fa",
+    "report": "sih-tools/identity/reports/2026-09-07-orphanexec-solo-identity.json"
+  },
+  "lease_open": {
+    "exit": 0,
+    "repos": ["sih-tools", "sih-engine"],
+    "branches": {"sih-tools": "msh/orphanexec-solo@integral-stage-build@d8aaf3b8", "sih-engine": "msh/orphanexec-solo@main@f50392d"},
+    "locks_taken": 15,
+    "locks_exit_all_zero": true
+  },
+  "intent": {
+    "exit": 0,
+    "event_id": "96d8397a-d3e5-48e7-a786-23581afdfdb1",
+    "event_hash_prefix": "8394abb3",
+    "trail": "sih-engine/sih/event/trail/2026-09-07.ndjson"
+  },
+  "cluster_a": {
+    "a1_anchor_py": {"commit": "f2da1eb9", "repo": "sih-tools", "bypass_at": "2026-09-08T00:02:23+00:00", "ruling": "m-orphanrule-1 P1", "verify": "git diff --summary 仅 mode change 100644=>100755 零内容变化"},
+    "a2_calls_ndjson": {"commit": "da0b8190", "repo": "sih-tools", "bypass_at": "2026-09-08T00:02:44+00:00", "ruling": "m-orphanrule-1 P2", "verify": "HEAD 697→729 行 32 行纯追加 head 为逐字节前缀"},
+    "a3_tools": {"commit": "187a6ad1", "repo": "sih-tools", "files": ["proposition/topics/2026-09-07-orphanrule.md", "scribe/reports/make_topic_orphanrule.py"], "bypass_registered": true},
+    "a3_engine": {"commit": "68c66ca1", "repo": "sih-engine", "files": ["sih/state/plan/orphanrule-solo.md", "sih/state/plan/orphanrule-solo-prompt.md"], "bypass_registered": true}
+  },
+  "cluster_b": {
+    "tdd_red": {"file": "tdd-red.log", "pytest_exit": 2, "cause": "ImportError CALLLOG_GUARD_EFFECTIVE_AT 即位缺"},
+    "tdd_green_first": {"file": "tdd-green-first.log", "pytest_exit": 1, "failed": 3, "cause": "夹具活写恢复步缺失与 git status 目录折叠漏检，留痕不清洗"},
+    "tdd_green": {"file": "tdd-green.log", "pytest_exit": 0, "passed": 16},
+    "full_suite": {"file": "testsuite-full.log", "pytest_exit": 0, "passed": 282, "baseline": 266, "regression": 0},
+    "dual_run": {"files": ["dualrun-calllog-check-run1.json", "dualrun-calllog-check-run2.json"], "cmp_exit": 0, "identical": true, "live_state_detected": ["lease/CALL-LOG.md modified", "scribe/CALL-LOG.md modified", "attnanchor/CALL-LOG.md untracked"]},
+    "version": "1.36.0",
+    "contract_revision": "修订五十一"
+  },
+  "pipeline": {
+    "formatter": {"exit": 0, "changed": 0, "pack": "general-v1", "target": "results doc 工地副本"},
+    "scrutinator": {"exit": 2, "domain": "des-001 域只盖 sih-engine/doc，event/plan 域外如实记入档不属违规", "pack": "des-001"},
+    "nomenclator": {"exit": 0, "findings": 0, "pack": "core"}
+  },
+  "checkcite": {
+    "recall_exit": 0,
+    "recall_allowed_size": 53,
+    "batch_surface": {"exit": 0, "verdict": "pass", "cited": 0, "missing": 0, "merge": "results doc + 本批自产材料（tdd 三日志、全测试族日志、双跑件、回锚读数）"},
+    "full_merge_with_recall_precedents": {"exit": 1, "verdict": "fail", "cited": ["LIM-007", "PROB-003", "PROB-005", "PROB-018", "SPEC-004", "SPEC-011", "SPEC-013", "SPEC-014", "SPEC-017", "SPEC-018", "SPEC-019"], "provenance": "十一 ID 俱落主会起草温故检索件 recall-precedents.json 的 excerpt 引文字段内（第三方历史批结果档切片），零 ID 在本批自产内容；判定与本批引用面口径 pass 并存如实双读数"},
+    "report": "sih-tools/scribe/reports/2026-09-07-orphanexec-solo-checkcite.json"
+  },
+  "anchor_reading": {"exit": 0, "file": "anchor-reading.json", "degradation": "链面当日链不可读降级（09-08 无链文件）与任务锚行指前批，如实转述"}
+}

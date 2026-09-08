@@ -1,0 +1,32 @@
+{
+ "dirty": [
+  {
+   "path": "lease/CALL-LOG.md",
+   "status": "modified"
+  },
+  {
+   "path": "scribe/CALL-LOG.md",
+   "status": "modified"
+  },
+  {
+   "path": "attnanchor/CALL-LOG.md",
+   "status": "untracked"
+  }
+ ],
+ "ok": false,
+ "released": [],
+ "unreleased": [
+  {
+   "path": "lease/CALL-LOG.md",
+   "status": "modified"
+  },
+  {
+   "path": "scribe/CALL-LOG.md",
+   "status": "modified"
+  },
+  {
+   "path": "attnanchor/CALL-LOG.md",
+   "status": "untracked"
+  }
+ ]
+}

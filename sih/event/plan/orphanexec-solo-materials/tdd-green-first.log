@@ -1,0 +1,66 @@
+   Building lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanexec-solo/lease
+      Built lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanexec-solo/lease
+Uninstalled 1 package in 1ms
+Installed 1 package in 1ms
+......F..FF.....                                                         [100%]
+=================================== FAILURES ===================================
+_______________________ test_dirty_untracked_unreleased ________________________
+
+tmp_repo = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-766/test_dirty_untracked_unrelease0/repo')
+
+    def test_dirty_untracked_unreleased(tmp_repo):
+        """未跟踪 CALL-LOG.md 即 unreleased，ok=False。"""
+        (tmp_repo / "sub").mkdir()
+        (tmp_repo / "sub" / "CALL-LOG.md").write_text("# new book\n", encoding="utf-8")
+        r = calllog_face_check(str(tmp_repo), "main", _session())
+>       assert r["ok"] is False, r
+E       AssertionError: {'ok': True, 'dirty': [], 'released': [], 'unreleased': []}
+E       assert True is False
+
+tests/test_calllogguard.py:111: AssertionError
+______________________ test_released_by_settle_same_bytes ______________________
+
+tmp_repo = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-766/test_released_by_settle_same_b0/repo')
+
+    def test_released_by_settle_same_bytes(tmp_repo):
+        """脏面与分支 tip 字节一致（settle 提交了同一字节态）即 released。"""
+        (tmp_repo / "CALL-LOG.md").write_text(
+            "| 日期 | 事由 | 调用 | 退出码 | 会话号 | 备注 |\n| 新行 | x | y | 0 | s | n |\n",
+            encoding="utf-8")
+        _g(tmp_repo, "-c", "user.email=t@t", "-c", "user.name=t",
+           "checkout", "-q", "-b", "msh/demo")
+        _commit_all(tmp_repo, "settle calllog face")
+        _g(tmp_repo, "checkout", "-q", "main")
+        r = calllog_face_check(str(tmp_repo), "msh/demo", _session())
+        assert r["ok"] is True, r
+>       assert r["released"] and r["released"][0]["released_by"] == "settle"
+E       assert ([])
+
+tests/test_calllogguard.py:142: AssertionError
+________________ test_not_released_when_branch_content_differs _________________
+
+tmp_repo = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-766/test_not_released_when_branch_0/repo')
+
+    def test_not_released_when_branch_content_differs(tmp_repo):
+        """分支在席但内容不一致（settle 后又有追加）即 unreleased（v1 严义）。"""
+        (tmp_repo / "CALL-LOG.md").write_text(
+            "| 日期 | 事由 | 调用 | 退出码 | 会话号 | 备注 |\n| 追加 | a | b | 0 | s | n |\n",
+            encoding="utf-8")
+        _g(tmp_repo, "-c", "user.email=t@t", "-c", "user.name=t",
+           "checkout", "-q", "-b", "msh/demo")
+        (tmp_repo / "CALL-LOG.md").write_text(
+            "| 日期 | 事由 | 调用 | 退出码 | 会话号 | 备注 |\n| 旧行 | c | d | 0 | s | n |\n",
+            encoding="utf-8")
+        _commit_all(tmp_repo, "settle older face")
+        _g(tmp_repo, "checkout", "-q", "main")
+        r = calllog_face_check(str(tmp_repo), "msh/demo", _session())
+>       assert r["ok"] is False, r
+E       AssertionError: {'ok': True, 'dirty': [], 'released': [], 'unreleased': []}
+E       assert True is False
+
+tests/test_calllogguard.py:158: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calllogguard.py::test_dirty_untracked_unreleased - Assertio...
+FAILED tests/test_calllogguard.py::test_released_by_settle_same_bytes - asser...
+FAILED tests/test_calllogguard.py::test_not_released_when_branch_content_differs
+3 failed, 13 passed in 0.36s
