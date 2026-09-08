@@ -1,0 +1,60 @@
+{
+ "batch": "sitruling-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与工件经内容哈希清单件统一绑定（anchorskill ReportNotJson 先例），sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "sih/state/plan/sitruling-solo.md",
+   "sha256": "1ac52ed8f600be41ebdde4a0350c4bf70d5844b95fe52fbe003dce4d9e9c387d"
+  },
+  "results_doc_v1": {
+   "path": "sih/event/plan/sitruling-solo-results.md",
+   "sha256": "06a167261e3ed78401699c34e602b495ce0930645fd3192c110291aa0de3118a"
+  },
+  "topic_m1": {
+   "path": "proposition/DES/m-sitruling-1/topic.md",
+   "sha256": "d69223c15afd136ec50e18599accc70b64751d19a2d05c97e39f37c3d5cf33f8"
+  },
+  "topic_m2": {
+   "path": "proposition/DES/m-sitruling-2/topic.md",
+   "sha256": "f047b45363a1be85686e694288fdd6910f4c504cbd900a21f4e880bda29e1fe1"
+  },
+  "topic_m3": {
+   "path": "proposition/DES/m-sitruling-3/topic.md",
+   "sha256": "a501c82e8dd4302eb17dc1d1a43e3ba42806968534645317511021c33c31d1e0"
+  },
+  "topic_m4": {
+   "path": "proposition/DES/m-sitruling-4/topic.md",
+   "sha256": "7ae747ed397cf4709dc3a694a560048f014c6db41ce7182287bba7010c913988"
+  },
+  "tally_material_m1": {
+   "path": "proposition/DES/m-sitruling-1/tally-material.json",
+   "sha256": "eb0d35c4a366c23cea6777198810b20bd84461e36d7bd4743647c3785e01d542"
+  },
+  "tally_material_m3": {
+   "path": "proposition/DES/m-sitruling-3/tally-material.json",
+   "sha256": "423e0ef3453d12c5574850c68f013ba7ce19428fafed7a7a72de543347bd444d"
+  },
+  "tally_material_m4": {
+   "path": "proposition/DES/m-sitruling-4/tally-material.json",
+   "sha256": "c1068dff07ef2844d32f5c38814e196c3e0672633050599c305e8fb7080543d6"
+  },
+  "signcheck_m1": {
+   "path": "proposition/DES/m-sitruling-1/sign-reports/m-sitruling-1-signcheck.json",
+   "sha256": "346c35fe7d115a08270ccc973106d4141ee33df9631214d9b694a62f54568faf"
+  },
+  "signcheck_m3": {
+   "path": "proposition/DES/m-sitruling-3/sign-reports/m-sitruling-3-signcheck.json",
+   "sha256": "c5503d7975efb79c235d7b32777cf18a917aef04735dad53de3dc41923f84b8e"
+  },
+  "signcheck_m4": {
+   "path": "proposition/DES/m-sitruling-4/sign-reports/m-sitruling-4-signcheck.json",
+   "sha256": "15697f851f0cc34830c7e9a51eb29d72f9b33619fdf822200efc9329f309f846"
+  },
+  "seat_baseline": {
+   "path": "facet/contracts/sitruling-260908/seat-baseline.json",
+   "sha256": "0793720a5863b49e940c270a65020b09ac54e558d223460398d3ec2595d44078"
+  }
+ }
+}
