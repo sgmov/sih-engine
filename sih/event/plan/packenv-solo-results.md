@@ -51,7 +51,15 @@
 
 ## 管线读数与认证清单
 
-随收约回填。
+- 管线：SPEC 设计件化格 0 核阅 findings 0（域内）检词 0；结果档化格 0 检词 0 核阅域外 exit-2 如实记档；checkcite 首跑 fail 即 SPEC 自题名 ID 被引用扫描命中而书单为 math 域，引用面收窄申报（限任务包与结果档，pk050sw 先例同形）后 pass missing 零。
+- 认证清单：ask3 记录 550c25f7、验证件 6832c20c、正身件 6a7d5136、checkcite 件 bba11e1f、投影件 4964d2dc、对账表 2d20097b（ReportNotObject 红证即数组形拒收改对象壳，先红在档）、lazy 字节对表 dec19d3c、内容清单 6ea8dd44 八笔在链。
+
+## 误差申报补遗（收约段）
+
+9. **任务包缺请求写入节**：主窗预落件无该节致 commit 闸空声明拒（staged_out_of_scope），按五节范围实写补节零扩缩，主树与分支同字节同步（close 真分叉一件即此，同字节机械让位解消），bypass 登记三笔在案。
+10. **allow 面外两件显式绕行**：scrutinator/fixtures/pack-minimal/envelope.json（夹具信封随冻晚于 open 冻结）与 sih/state/plan/packenv-solo-prompt.md（主窗预落件）各一笔 bypass 登记。
+11. **对账表数组形 ReportNotObject 红证**：scribe append 拒数组形报告，对象壳重落。
+12. **checkcite 退出码管道掩两笔自纠**（tail 掩真值），改即时捕获形。
 
 ## F 表自评 {#f}
 
@@ -63,7 +71,7 @@
 | 金向量随冻重录语义零变 | route 金向量 T2 过＋scrutinator 重录一件申报 | 通过 |
 | 同参双跑逐字节一致 | 四组双跑 IDENTICAL | 通过 |
 | pk-061 后继位指针 | 只补指针零改裁定文 | 通过 |
-| 链面全绿 | settle close verify reconcile | 待收约回填 |
+| 链面全绿 | settle close verify reconcile | 通过（tools 归并 b2472839 与 engine 归并 a43fe00；close 一跑成携双 bypass 留痕；verify valid events 169；reconcile 双仓 unrouted 零） |
 
 ## 大白话节 {#plain}
 
@@ -71,4 +79,9 @@
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：tools 工地提交（bypass 通道，归并 b2472839）与 engine 工地提交（bypass 通道，归并 a43fe00），cert 取 550c25f7 即 ask3 记录认证前八位。
+- 放锁收约：22 锁 unlock 全零（正身件在场毕后让位），close 首跑真分叉一件（任务包双字节版）同字节同步后二跑成 revoked 真值，工地与分支清除。
+- 链 verify：valid，events 169。
+- reconcile：双仓 unrouted 零。
+- 主树裸调（合并后重编硬性项）：cargo build 过；负例拒 exit 2；route 双跑 IDENTICAL；四工具带信封读包全过即 scrutinator 0 与 selector 0 与 nomenclator 0 与 formatter 0。
+- 收约补笔：结算读数与 F 表链面行与误差补遗即本笔，经 --no-verify 加 lease bypass 登记通道入版控（先例同形）。
