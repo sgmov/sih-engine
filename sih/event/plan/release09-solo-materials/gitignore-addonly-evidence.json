@@ -1,0 +1,20 @@
+{
+  "what": "sih-math/.gitignore 只增红线证据件：diff 主树现行三行 vs release09-solo 工地十二行",
+  "at": "2026-09-09",
+  "command": "diff /Users/moc/workspaces/SiHankor/sih-math/.gitignore /Users/moc/workspaces/SiHankor/worktrees/sih-math/release09-solo/.gitignore",
+  "diff_exit": 1,
+  "diff_exit_semantics": "diff 退出码 1 即两文件有差异，差量形态 3a4,12 纯追加零删改即只增成立",
+  "base_lines": [".DS_Store", "*.swp", "tmp/"],
+  "added_lines": [
+    "# release09-solo 批增：运行残留与缓存类，只增不删",
+    "__pycache__/",
+    "*.py[cod]",
+    ".pytest_cache/",
+    ".ruff_cache/",
+    ".mypy_cache/",
+    ".venv/",
+    ".coverage",
+    "htmlcov/"
+  ],
+  "bytes_evidence": "gitignore-addonly.diff 同目录在档"
+}

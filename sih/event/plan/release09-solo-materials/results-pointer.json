@@ -1,0 +1,6 @@
+{
+  "what": "release09-solo 批结果档指针件：结果档 markdown 不入 scribe append JSON 报告面，以指针件代认证",
+  "results_file": "sih-engine/sih/event/plan/release09-solo-results.md",
+  "results_sha256": "b96523e5b91e32458b46374428ac8f096e6af72a9fa93ac95f3169af1ba27eb8",
+  "note": "结果档本体随三仓 settle 提交版控，链上以本指针件哈希锚定"
+}

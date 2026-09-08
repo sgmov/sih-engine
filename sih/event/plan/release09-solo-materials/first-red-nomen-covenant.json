@@ -1,0 +1,13 @@
+{
+  "what": "release09-solo 批检词首跑红证归档：DEC-022 锚名 covenant 命死档禁用词表，先红留痕纪律（2026-09-06）防复发处置",
+  "at": "2026-09-09",
+  "run": "first",
+  "tool": "sih-tools/nomenclator nomenclator check --pack packs/core",
+  "pack_version": "0.11.0",
+  "findings": [
+    {"rule": "dead_ban", "word": "Covenant", "class": "strict", "severity": "high", "cause": "宗教重载", "source": "PRO-007 死档登记", "line": 9, "excerpt": "、PATCH 执法面修补::[定约](#covenant)"},
+    {"rule": "dead_ban", "word": "Covenant", "class": "strict", "severity": "high", "cause": "宗教重载", "source": "PRO-007 死档登记", "line": 34, "excerpt": "## 治理语义 SemVer 定约 {#covenant}"}
+  ],
+  "nomen_dec_exit": 1,
+  "disposition": "材料修复即锚名 covenant 改 agreement，正文零改动，改后化格核阅检词三步全序复跑如实记档"
+}
