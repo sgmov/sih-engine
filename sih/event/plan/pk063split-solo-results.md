@@ -62,7 +62,12 @@ ask3 记录、验证件、正身件（JSON 三件 scribe append）＋内容哈�
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：engine 工地提交随归并（base main@本批前 HEAD，三查过）；tools 工地归并同期；cert 取 db283616 即 ask3 记录认证前八位。
+- 认证实录：ask3 记录 db283616、验证件 8e9814d3、正身件 3b4abbdd、checkcite 件 b481e386、内容哈希清单件 0febe1ca（9 路径 sha256）五笔在链，另两笔终签 crosscheck 即 67353ed9 与 f4b8f93f（confirm 双笔在档）。
+- 放锁收约：9 锁 unlock 一次全过（正身件保持主树在场直至 unlock 毕后让位删除——sitruling 与 anchorskill 双坑位规避，零重蹈）；close 一次过即双 bypass-orphan 加 bypass-calllog 显式留痕（CALL-LOG 族七件并行线活面非本批所属），会话 fc77e5aff4d3a451 revoked、双仓归并、工地与分支清除。
+- 链 verify：valid（笔数见 verify 读数，含本批意图一认证五终签二）。
+- reconcile：双仓 unrouted 零即本批零新增；cert_missing 存量与批前同数，零新增如实记档不代清。
+- 收约补笔：F-5 与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 critsweep 与 sitruling 先例同形）。
 
 ## 完工呈报
 
