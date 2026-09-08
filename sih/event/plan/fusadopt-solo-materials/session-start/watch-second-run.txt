@@ -1,0 +1,12 @@
+稽 watchcheck 对表读数 2026-09-09（v0.2.0）
+判定式：脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单
+输入面：双仓 git status --porcelain -uall；锁面镜像 /Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/locks.ndjson（现势 21 面）；声明面 /Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson（声明 0 件）；豁免面冻结登记 16 面（constants.py）
+扫描：脏文件 1522 件
+结论：无主修改 3 件，呈人节点二值裁决——「我的」：走司衡治理通道（域内管线三步加直改链笔）；「不是我的」：机械回滚（git restore 或对未跟踪件删除，操作见 BATCH-FACE 处置协议节；本工具零代行）。
+无主清单：
+- sih-engine/doc/governance/SETTLEMENT-V2-2026-09-09.md | mtime 2026-09-08T16:40:13+00:00 | 未跟踪新件
+- sih-tools/acceptor/CALL-LOG.md | mtime 2026-09-08T11:36:06+00:00 | 已跟踪修改
+- sih-tools/critsweep/CALL-LOG.md | mtime 2026-09-08T14:50:12+00:00 | 已跟踪修改
+
+锁面超宽面哨兵呈报（leaseup-solo T-4）：1 项，只报不拦：
+  - session_over_threshold: session=633a768d3e6e4e5c locks=21 threshold=20

@@ -1,0 +1,1 @@
+{"disposition": "裁决通过", "gid": "m-fusadopt-a1", "verify": "identical"}
