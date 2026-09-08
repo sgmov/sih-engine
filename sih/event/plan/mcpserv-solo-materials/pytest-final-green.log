@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpserv-solo/mcpline/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpserv-solo/mcpline
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collecting ... collected 14 items
+
+tests/test_stdio_smoke.py::test_stdio_smoke_all_five PASSED              [  7%]
+tests/test_tools_unit.py::test_chain_query_happy PASSED                  [ 14%]
+tests/test_tools_unit.py::test_chain_query_happy_filter PASSED           [ 21%]
+tests/test_tools_unit.py::test_chain_query_error_bad_date PASSED         [ 28%]
+tests/test_tools_unit.py::test_chain_verify_happy PASSED                 [ 35%]
+tests/test_tools_unit.py::test_chain_verify_error_missing_day PASSED     [ 42%]
+tests/test_tools_unit.py::test_critsweep_happy PASSED                    [ 50%]
+tests/test_tools_unit.py::test_critsweep_error_bad_date PASSED           [ 57%]
+tests/test_tools_unit.py::test_heartbeat_happy PASSED                    [ 64%]
+tests/test_tools_unit.py::test_heartbeat_error_bogus_root PASSED         [ 71%]
+tests/test_tools_unit.py::test_locks_read_happy PASSED                   [ 78%]
+tests/test_tools_unit.py::test_locks_read_error_bogus_root PASSED        [ 85%]
+tests/test_zero_write.py::test_zero_write_guard_source_grep PASSED       [ 92%]
+tests/test_zero_write.py::test_zero_write_proof_git_status_unchanged PASSED [100%]
+
+============================== 14 passed in 2.18s ==============================
