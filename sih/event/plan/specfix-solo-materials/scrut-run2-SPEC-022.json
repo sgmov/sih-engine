@@ -1,0 +1,79 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md": "6dd296d9ee2ddc744d1d52ffed093a4a9a8b4669a84c0e2117565127a15fe79f"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md",
+      "location": {
+        "line": 49
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md",
+      "location": {
+        "line": 3
+      },
+      "message": "禁止块引用「>」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-022-envelope-v1.md",
+      "location": {
+        "line": 4
+      },
+      "message": "禁止块引用「>」"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 4,
+    "by_rule": {
+      "C006": 2,
+      "F002": 2
+    },
+    "by_pack": {
+      "des-001": 4
+    }
+  }
+}

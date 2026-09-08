@@ -1,0 +1,61 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-021-golden-vector-dual-method.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-021-golden-vector-dual-method.md": "acdaae5db0abc56977dc573d76daf05a864f74469b6f09561a20685abe7e9f06"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-021-golden-vector-dual-method.md",
+      "location": {
+        "line": 116
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/sih-engine/doc/spec/SPEC-021-golden-vector-dual-method.md",
+      "location": {
+        "line": 116
+      },
+      "message": "禁止粗体「**」"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 2,
+    "by_rule": {
+      "C006": 1,
+      "F003": 1
+    },
+    "by_pack": {
+      "des-001": 2
+    }
+  }
+}
