@@ -1,0 +1,195 @@
+{
+ "batch": "parksi-solo",
+ "date": "2026-09-09",
+ "pipeline": [
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/state/plan/parksi-solo.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/state/plan/parksi-solo-prompt.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "formatter",
+   "pack": "json-canonical-v1",
+   "target": "sih/state/parking/materials/pk-081.json",
+   "exit_code": 0,
+   "note": "首写即二空格键序正形"
+  },
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "doc/governance/PARKING-v1.md",
+   "exit_code": 0,
+   "note": "册行插入后全档零改动即他行零触碰"
+  },
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/event/plan/parksi-solo-results.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "doc/governance/PARKING-v1.md",
+   "exit_code": 0,
+   "note": "域内 findings 零"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/plan/parksi-solo.md",
+   "exit_code": 2,
+   "note": "des-001 域外如实记档不属违规"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/plan/parksi-solo-prompt.md",
+   "exit_code": 2,
+   "note": "des-001 域外如实记档不属违规"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/parking/materials/pk-081.json",
+   "exit_code": 2,
+   "note": "des-001 域外如实记档不属违规"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/event/plan/parksi-solo-results.md",
+   "exit_code": 2,
+   "note": "des-001 域外如实记档不属违规"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/state/plan/parksi-solo.md",
+   "exit_code": 0,
+   "note": "零违例"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/state/plan/parksi-solo-prompt.md",
+   "exit_code": 0,
+   "note": "零违例"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "doc/governance/PARKING-v1.md",
+   "exit_code": 0,
+   "note": "零违例"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/event/plan/parksi-solo-results.md",
+   "exit_code": 0,
+   "note": "零违例"
+  }
+ ],
+ "elicit": {
+  "check_exit": 1,
+  "signals": 6,
+  "digest": "passed",
+  "covered": 6
+ },
+ "ask3_gates": {
+  "scrutinator_ask3_exit": 0,
+  "ask3repeater": "ok anchor_count 3"
+ },
+ "identity": {
+  "exit": 0,
+  "anomalies": 0,
+  "core_hash_prefix": "e1c9a7fa",
+  "identity_hash_prefix": "69a4aacd"
+ },
+ "gauge_session": {
+  "convergence": 0.625,
+  "adoption": 0.0,
+  "mergeback": 0.028571,
+  "formula_version": "ga-2"
+ },
+ "critsweep_pre": {
+  "degraded": false,
+  "alarms": 0,
+  "note": "净态五判据全 achieved"
+ },
+ "parking_heartbeat_pre": {
+  "tools": {
+   "exit_code": 0,
+   "mainline": 24,
+   "siding": 1,
+   "scrap": 0,
+   "alarms": 0
+  },
+  "engine": {
+   "exit_code": 0,
+   "mainline": 53,
+   "siding": 3,
+   "scrap": 9,
+   "alarms": 0
+  }
+ },
+ "parking_heartbeat_worktree": {
+  "exit_code": 0,
+  "mainline": 53,
+  "siding": 4,
+  "scrap": 9,
+  "alarms": 0,
+  "pk081_route": "siding",
+  "pk081_failed_predicate": "P104"
+ },
+ "watchcheck_pre": {
+  "exit": 1,
+  "unowned": 2,
+  "note": "attnanchor 与 attractor 两 CALL-LOG 册 mtime 皆 2026-09-08T17:32Z 早于本批开工即 callloghyg 候清项，本批零新增无主写，读数全文落 watchcheck-2026-09-09.txt"
+ },
+ "renumber": {
+  "task_package_id": "pk-080",
+  "entered_id": "pk-081",
+  "reason": "toolhyg-solo 批先手入泊 pk-080 即 zcode CLI 三死旗标漂移件事件 9bd4b2e0 在链，本批 park 首试重入拒 exit 1 零留痕",
+  "rule": "PARKING-v1 出入口协议单一名册续号不重号加 pk-043 撞号改正重编先例",
+  "park_event_hash": "262e2d1d90dc7281be029a86c9068ee7535f99404470bc93afb0c26c2b93bf54",
+  "park_event_id": "3389f683-9385-4645-9510-c28b490b1929",
+  "sessions": {
+   "first": {
+    "session_id": "f12aa5128d79e0d8",
+    "fate": "revoked 拆除让位",
+    "pens": [
+     "intent b062a33b",
+     "park 262e2d1d",
+     "cert 8c1c8a4c",
+     "cert 125fe9cf",
+     "cert 9782b4a8",
+     "cert eac90cc5",
+     "cert 41e33903"
+    ],
+    "reason": "commit 闸 staged_out_of_scope 即 allow 名单固化 pk-080 路径"
+   },
+   "current": {
+    "session_id": "d1731d5e59403dee",
+    "allow_fixed": "pk-081.json",
+    "note": "intent 与认证笔本段重落，park 不重落即重入拒为设计"
+   }
+  }
+ },
+ "intent_event": {
+  "event_type": "intent_refined",
+  "event_hash": "b062a33b85b9769bab6877a6b1fac521f0fae378188923013da7ff5ea7b00865",
+  "event_id": "f8dce0d8-ab32-4fae-abe0-b00b286b28f5"
+ }
+}
