@@ -1,0 +1,59 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-021-golden-vector-dual-method.md"
+  ],
+  "findings": [
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "- 共享家位：两物同住基线管即五子模块，规约向量生成后冻结进基线管",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/specfix-solo/doc/spec/SPEC-021-golden-vector-dual-method.md",
+      "line": 25,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "toolincub-solo 批基线管工作名懒波登记，承 SPEC-021 在用词",
+      "word": "基线管"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.11.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 1,
+    "skipped": 0
+  }
+}
