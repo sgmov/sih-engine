@@ -1,0 +1,54 @@
+{
+ "batch": "adjudicate2-solo",
+ "date": "2026-09-08",
+ "session": "sess-zcode-260908-main-adjudicate2",
+ "lease_session_id": "b0408f6862154700",
+ "intent_event_hash8": "04144fc2",
+ "kind": "adjudication-projection",
+ "adjudications": [
+  {
+   "gid": "m-adjudicate2-a1",
+   "subject": "心跳主线计数语义裁定",
+   "proposition": "心跳主线计数语义裁定甲案维持现状：出泊件材料留存两线 materials 目录、按 parking 包 P101 schema 谓词计入 mainline 计数属包面既有行为且继续有效；谓词零改、目录零迁移；审计可见性优先，显示层分轨归视图线；乙案 state 分轨谓词与丙案移档 historic 不采。言说域限心跳计数语义，不涉名册投影维护与结算单口径。",
+   "verdict": "裁决通过",
+   "direction": "comply",
+   "gate": "stable_clear",
+   "event_hash": "e6ab6bd71e3b3832f236390cc69fa6c314e7335da2e3d13cc85a2bec9cf468f7",
+   "evidence": {
+    "topic_sha256": "b66a077d2a8e265bff74572d338d6aca5e4fdb25f0f25200a1f3455167e09005",
+    "contract_sha256": "76a45079a57ea2219231f003e0cf4091c7520f3c2e6dce3f5c2500263b019b88",
+    "responses_sha256": "427bead32377da0cbe9dda143ff6832f1848e0bb346759d64df974a118d599a2",
+    "dc_fingerprint": "b513a55fb406282f",
+    "n_shots": 9,
+    "flip_rate": 0.0,
+    "caution_count": 0,
+    "basis_regulations": ["baseline_4", "baseline_1"],
+    "replay_anchor": "proposition/DES/m-adjudicate2-a1/m-adjudicate2-a1-signcheck.json",
+    "execution_leg": "PARKING-v1.md 心跳节落注句改裁定形甲案承终签，乙丙选项文留档不删"
+   },
+   "signed_at": "2026-09-08"
+  },
+  {
+   "gid": "m-adjudicate2-a2",
+   "subject": "confpreempt 会话壳处置裁定",
+   "proposition": "confpreempt 停滞会话经 2026-09-08 接管清理后，会话壳保留在册作置信度线续作锚不销账：进度锚即 09-07 意图笔 05762749 与工地现场在档，残留普查 clean 持锁零；重开时从锚与现场续作，会话随线结算收口；不立即销账不代清。言说域限会话壳处置，不涉置信度线工程内容。",
+   "verdict": "裁决通过",
+   "direction": "comply",
+   "gate": "stable_clear",
+   "event_hash": "63df2888638ce71571822788de4ac93a144ff86e0b0155bf48717d4ab4f30eb4",
+   "evidence": {
+    "topic_sha256": "987a9e63f2d9d2a9872d31b093c36a79ba4311bef7a20be17b7a21c993b2d7a4",
+    "contract_sha256": "c7ec0d56f63ea11deb3e38b33b2f3098a39ea39501b97ae1b48f68377a7ce09f",
+    "responses_sha256": "9ddf6c7701de6409ea5426abcc4c7bc485af09cc0420f162c76c55cd1354c45d",
+    "dc_fingerprint": "18a9e9d7a2adca45",
+    "n_shots": 9,
+    "flip_rate": 0.0,
+    "caution_count": 0,
+    "basis_regulations": ["baseline_4", "baseline_5", "baseline_1"],
+    "replay_anchor": "proposition/DES/m-adjudicate2-a2/m-adjudicate2-a2-signcheck.json",
+    "execution_leg": "零写入即现状保留，裁定记录入结果档与本投影与链笔 context"
+   },
+   "signed_at": "2026-09-08"
+  }
+ ]
+}

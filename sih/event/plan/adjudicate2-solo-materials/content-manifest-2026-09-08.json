@@ -1,0 +1,24 @@
+{
+ "batch": "adjudicate2-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 件经本清单统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/adjudicate2-solo/sih/state/plan/adjudicate2-solo.md",
+   "sha256": "b9cd1705148a7ed9cd6ad3de616a89b2670b9ceb7d1a1a2ee5624e50d98773ed"
+  },
+  "prompt_doc": {
+   "path": "worktrees/sih-engine/adjudicate2-solo/sih/state/plan/adjudicate2-solo-prompt.md",
+   "sha256": "01a10e9f9332690704267bcd5d6469ddceb0e08a152111bdb9cec26473bf458c"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/adjudicate2-solo/sih/event/plan/adjudicate2-solo-results.md",
+   "sha256": "85fb116f273dadabf83cacd3eda728e12f2dbbce3e66c1eb5231e580b9d16317"
+  },
+  "parking_v1_edited": {
+   "path": "worktrees/sih-engine/adjudicate2-solo/doc/governance/PARKING-v1.md",
+   "sha256": "9c544c1e6a929fd374a746abf7d2265f747b7df74c00f7987d28cfa868ec3069"
+  }
+ }
+}
