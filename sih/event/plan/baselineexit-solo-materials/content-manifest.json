@@ -1,0 +1,13 @@
+{
+ "batch": "baselineexit-solo",
+ "date": "2026-09-08",
+ "algorithm": "sha256",
+ "files": {
+  "sih-engine/doc/governance/BASELINE-v1.md": "41ecb4477a8a13d57c526cab0a18f18276262cea52fc177826e41f1f08d7605f",
+  "sih-engine/doc/governance/PARKING-v1.md": "96bb805411fc6cb5ca280a991c2061fc2b05161471b3b0ae40567eec75e5f2c7",
+  "sih-engine/sih/state/plan/baselineexit-solo.md": "69265b02d8b6c488cba2d4bcd760c55021472acace2f4a8e8e2e535f2411ca96",
+  "sih-engine/sih/event/plan/baselineexit-solo-results.md": "4ce99f34f8c189dd179f2adf5b24010e8d6e6bb1891bd3631bcd053f555cfbe0",
+  "AGENTS.md": "0e62e08955186f222feeef74857aacaf549c60c9923ee5b09742c3dfbd37533b"
+ },
+ "note": "md 五件内容哈希清单件，认证上链；结果档结算读数经收约补笔回填走 bypass 登记通道先例形"
+}

@@ -1,0 +1,25 @@
+{
+ "allowed_size": 65,
+ "cited": [
+  "ALG-002",
+  "APP-009",
+  "APP-01",
+  "APP-011",
+  "ORD-019",
+  "ORD-020",
+  "ORD-022",
+  "PROB-010",
+  "SPEC-017",
+  "TOP-008"
+ ],
+ "missing": [
+  "APP-009",
+  "APP-01",
+  "ORD-020",
+  "ORD-022",
+  "PROB-010",
+  "SPEC-017",
+  "TOP-008"
+ ],
+ "verdict": "fail"
+}

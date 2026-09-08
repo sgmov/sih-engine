@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "出泊条件经用户 2026-09-08 令「PK-070 过得一」测量落据达成：m-hygp070-1 九发 stable_clear 终签 f6263808 裁甲案即迁入 sih-engine/doc/governance/ 治理决策档族新立 BASELINE 正典档，AGENTS.md 改指针，乙向界族与丙宪法档不采。本批实证：BASELINE-v1.md 正典档已新立，正文自 AGENTS.md 同名节程序切片逐字节迁入零语义改动 diff 自证在档，文走化格核阅检词管线；AGENTS.md 同名节正文已替换为指针其余节零触碰，指针残留态如实记档；三层固定达成即 git 版本化随批 settle 归并加内容哈希入 trail 认证加结果档在链；名册行移历史住户随本批。",
+  "disposition": "promoted",
+  "entry_id": "pk-070",
+  "id": "pk-070",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "exited_at": "2026-09-08",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-08 令原话「PK-070 过得一」测量落据：m-hygp070-1 九发 stable_clear 执契终签 f6263808（crosscheck-m-hygp070-1，2026-09-08 当日链，重放锚 sih-tools/proposition/DES/m-hygp070-1/m-hygp070-1-signcheck.json）裁甲案成立即迁入 doc/governance 治理决策档族新立 BASELINE 正典档与 AGENTS.md 改指针，乙向界族与丙宪法档不采；承用户 2026-09-06 入泊裁定原话「这个工程基线应该是司衡引擎的运行机制的基石，不应该放在AGENTS里。你这个记一笔，未来要清的。」出泊条件即用户裁正典落位形态，裁即开迁移批迁文走管线与认证，迁移毕 AGENTS.md 改指针收口出泊。",
+  "state": "exited",
+  "ttl_days": 30
+}
