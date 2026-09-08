@@ -1,0 +1,76 @@
+== sweepjson-solo TDD 红证（先红后绿承先红留痕纪律）==
+时间: 2026-09-08T13:15:35Z 目标: worktrees/sih-tools/sweepjson-solo/lease
+命令: uv run --project . pytest tests/test_sweepjson.py -x -q
+红证: 现行码（1.37.0）sweep 无 --out 参即 argparse 拒收 SystemExit 2（unrecognized arguments: --out）
+
+Using CPython 3.14.6
+Creating virtual environment at: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/.venv
+   Building lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/lease
+   Building calllog @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/calllog
+   Building watchcheck @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/watchcheck
+      Built watchcheck @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/watchcheck
+      Built calllog @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/calllog
+      Built lease @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/sweepjson-solo/lease
+Installed 8 packages in 28ms
+F
+=================================== FAILURES ===================================
+_______________________ test_out_bytes_equal_json_stdout _______________________
+
+ws = {'root': PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-815/test_out_bytes_e...folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-815/test_out_bytes_equal_json_stdo0/ws/locks.ndjson')}
+
+    def test_out_bytes_equal_json_stdout(ws):
+        """出件与 --json stdout 同报告对象同序列化：逐字节一致。"""
+        out_file = ws["root"] / "reports" / "sweep-latest.json"
+>       code_out, stdout_with_out = _run(_sweep_argv(ws, ["--out", str(out_file), "--at", PINNED_AT]))
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_sweepjson.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_sweepjson.py:76: in _run
+    code = cli.main(argv)
+           ^^^^^^^^^^^^^^
+src/lease/cli.py:975: in main
+    args = parser.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2009: in parse_args
+    self.error(msg)
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2782: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='lease', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'lease: error: unrecognized arguments: --out /private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-815/test_out_bytes_equal_json_stdo0/ws/reports/sweep-latest.json\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2769: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: lease [-h] [--quiet]
+             {open,claim,unclaim,lock,unlock,status,check,close,commit,reconcile,bypass,install-hooks,uninstall-hooks,heartbeat,takeover,preempt-release,wait-turn,ledger-repair,sweep,call-log} ...
+lease: error: unrecognized arguments: --out /private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-815/test_out_bytes_equal_json_stdo0/ws/reports/sweep-latest.json
+=========================== short test summary info ============================
+FAILED tests/test_sweepjson.py::test_out_bytes_equal_json_stdout - SystemExit: 2
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed in 0.97s
+
+== 绿证 1: test_sweepjson.py 八测（2026-09-08，实装 --out 后）==
+命令: uv run --project . pytest tests/test_sweepjson.py -q
+Installed 1 package in 1ms
+........                                                                 [100%]
+8 passed in 0.50s
+
+== 过程申报: 首跑绿相 7 过 1 败，败因系测试件自伤两笔（str 直用 / 运算子 TypeError；金向量未先冻结 FileNotFoundError 加 self_boot 三参缺 --bills），实装零改动后修测试件并补 --bills 参即全绿，非实现红==
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_sweepjson.py::test_out_golden_vector_frozen - FileNotFoundE...
+1 failed, 7 passed in 0.47s
+
+== 绿证 2: 全族回归（300 passed，含本批八测）==
+命令: uv run --project . pytest tests/ -q
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+300 passed, 1 warning in 59.47s
