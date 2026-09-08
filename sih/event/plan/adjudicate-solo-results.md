@@ -39,11 +39,25 @@
 
 ## 管线读数
 
-随收约回填。
+- 化格：引擎域两件过 packs/general-v1 全 exit 0 零改。
+- 核阅：des-001 对任务包与结果档 exit 2 域外如实记档（des-001 域只盖 sih-engine/doc，BATCH-FACE 坑位正形；pkexits2 批同形目标 0 读数与本次 2 读数并存如实记档候口径复核）。
+- 检词：nomenclator check packs/core 两件全 exit 0 零违例（任务包首跑 exit 2 系漏镜像工地目标缺席，补镜像重跑过，红证即缺席报文在申报）。
+- checkcite：首跑在任务包缺席输入上 pass 即输入不完整，补镜像后完整输入重跑 verdict pass missing 零（两次报告件以后者为准在档）。
 
 ## 认证清单
 
-随收约回填。
+| 件 | 认证哈希前 8 |
+|---|---|
+| ask3 记录 | a5a33cea |
+| 验证件 | 7cb589f1 |
+| 正身件 | f52dbc22 |
+| m-adjudicate-a1 执契材料 | bedc44b2 |
+| m-adjudicate-a2 执契材料 | 3f1155eb |
+| m-adjudicate-a3 执契材料 | e035bd81 |
+| m-adjudicate-a4 执契材料 | 02a2418f |
+| checkcite 件 | e08846bd |
+| A4 接管读数件 | 17566b5d |
+| 内容清单件（md 与出泊材料 sha256） | 442f95a3 |
 
 ## F 表
 
@@ -53,7 +67,7 @@
 | F-2 A1 执行 | 数据治理 | pk-063 出泊 promoted 上链，ruling 照录，context 载双锚与进泊笔，材料按先例形 | 通过（472ec2b4，材料随批提交） |
 | F-3 A4 执行 | 治理 | takeover 读数上链留痕在档 | 通过（读数件随批认证留痕） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即任务包、出泊材料、结果档与批材料、facet 合同目录、四 DES 单元格、链文件、报告目录） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 归并 3607b566 与 engine 归并 9a58e3a；close 一跑成携 bypass-orphan 与 bypass-calllog 即无主活面均 callloghyg 候清项；verify valid events 117；reconcile 双仓 unrouted 零） |
 
 ## 越线与误差申报
 
@@ -64,4 +78,9 @@
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：tools 段一提交（归并 3607b566）与 engine 段一提交（归并 9a58e3a），cert 取 a5a33cea 即 ask3 记录认证前八位。
+- 认证实录：十一笔在链即 ask3 a5a33cea、验证件 7cb589f1、正身件 f52dbc22、四执契材料 bedc44b2 与 3f1155eb 与 e035bd81 与 02a2418f、checkcite e08846bd、A4 接管读数 17566b5d、内容清单 442f95a3，另四笔 crosscheck 4073c5fa 与 15f9a0ad 与 1f03de72 与 f4165e2b 与出泊笔 472ec2b4 与意图笔 5e847e45。
+- 放锁收约：12 锁 unlock 全零（正身件在场直至 unlock 毕后让位删除，坑位规避零重蹈），close 一跑成 revoked 真值，工地与分支清除。
+- 链 verify：valid，events 117。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口。
+- 收约补笔：管线实录与认证清单与 F-5 与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（先例同形）。
