@@ -66,7 +66,14 @@ ask3 记录、验证件、正身件（JSON 三件 scribe append）＋内容哈�
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：engine 工地提交随 closeguard pre-close 1d65ad3 与归并 7afdcb8（base main@ad0a201）；tools 工地归并 87357f46（base integral-stage-build@23a2f6aa）；cert 取 a15feb3f 即 ask3 记录认证前八位。
+- 认证实录：ask3 记录 a15feb3f、验证件 43cddb21、正身件 6f09f6a8、checkcite 件 157b8ac0、内容哈希清单件 eb0a25e9（13 路径 sha256）五笔在链，另三笔终签 crosscheck 即 8d489e00 与 fc17e1ce 与 4f94b63f。
+- 放锁收约：unlock 首轮全 exit 2 即让位又误删正身件（anchorskill 同款坑重蹈，如实记档），工地回位重放 11 锁全过；close 三闸三跑即无主闸与 CALL-LOG 闸各一次拦后双旗标 bypass-orphan 加 bypass-calllog 显式留痕第三跑成，会话 03b5f220f2e82155 revoked、双仓归并、工地与分支清除、零失败。
+- 归并对表：任务包备份 vs 归并件 IDENTICAL；报告件以工地提交为正（主树让位后经归并回落）。
+- 链 verify：valid，events 49（含 W1 reroute 三笔与本批意图一认证五终签三共读数三）。
+- reconcile：双仓 unrouted 零即本批零新增；cert_missing（engine 3 与 tools 4）为在盘历史账面项与批前同数，零新增如实记档不代清。
+- 收约补笔：F-5 与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 critsweep 先例同形）。
+- 协调面终读：W1 reroute-solo 已收约归并（归并笔 4c974af5 在档）；本批全程与其零路径碰撞。
 
 ## 完工呈报
 
