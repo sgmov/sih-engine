@@ -1,0 +1,60 @@
+{
+ "batch": "settlement-v2-solo",
+ "date": "2026-09-09",
+ "session": "sess-zcode-260909-main-settlev2",
+ "lease_session": "3bcd26e3db3b94b5",
+ "purpose": "主线 v2 结算件内容哈希绑定认证清单：结算单与批件 sha256（腿一载体）",
+ "settlement_doc": {
+  "path": "sih-engine/doc/governance/SETTLEMENT-V2-2026-09-09.md",
+  "sha256": "fcff91c178cc67930e8e2bb1fb9b24c3593b9795525ff11b9df3dae8f00c16de",
+  "pipeline": "主窗已绿三步照录＋本批复跑俱绿：fmt exit0 targets_changed 0、scr des-001 域内 exit0 findings 0、nom exit0 零违例",
+  "byte_identical_to_main_tree": true
+ },
+ "files": [
+  {
+   "path": "sih-engine/doc/governance/SETTLEMENT-V2-2026-09-09.md",
+   "sha256": "fcff91c178cc67930e8e2bb1fb9b24c3593b9795525ff11b9df3dae8f00c16de"
+  },
+  {
+   "path": "sih-engine/sih/state/plan/settlement-v2-solo.md",
+   "sha256": "7d30ee4d7f12d6bf82f44533030718d4dcc8a040c14fe1991d71eca6e9c87530"
+  },
+  {
+   "path": "sih-engine/sih/state/plan/settlement-v2-solo-prompt.md",
+   "sha256": "08b9c00690e28099cf6980e9ef984083d6dff2c7dcd94cb48180929d052faee9"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-ask3-settlement-v2-solo-record.json",
+   "sha256": "a40c6f1b3a67617d688660317744946e9c74282f4db5ff01d0a09f140ca59791"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-ask3-settlement-v2-solo-validation.json",
+   "sha256": "5260842e5c99ae3f23cc9f8c2c329f314b8207efa33c27e7a831363456183a43"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-settlement-v2-solo-elicit-signals.ndjson",
+   "sha256": "6adf0073379c9b68d5aa212721e78b57f935fd68fe29b077c3cc7bd0e1f41c8d"
+  },
+  {
+   "path": "sih-tools/scribe/reports/make_ask3_settlement-v2-solo.py",
+   "sha256": "305b398de8a6a4d8ff8ba3504bde3d2c28d0918a478c3411c635148502813aaf"
+  },
+  {
+   "path": "sih-tools/identity/reports/2026-09-09-settlement-v2-solo-identity.json",
+   "sha256": "c5edec944e38fe9ba13537b7dc74e857a8a253a2dfda1491b1228768ba12231d"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-settlement-v2-fmt-settlement.json",
+   "sha256": "ae6a1705fc3ade2a9eb4adaa26f874130cb7032708602dd4157c89a96ef214b9"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-settlement-v2-scr-settlement.json",
+   "sha256": "1fac944078604ccb2ee65e6b3eef623d6c45da77394723317385bfe950869cc6"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-settlement-v2-nom-settlement.json",
+   "sha256": "9eebc7f0b4b380a5e924eda6a0eb47401880235104a70e09687254e2953a024b"
+  }
+ ],
+ "note": "结果档 settlement-v2-solo-results.md 完整性由 settle 提交与收约补笔直改链笔承载（先例同形）；本清单件即 v1 结算撮要 settlement-summary.json 的 v2 承形"
+}

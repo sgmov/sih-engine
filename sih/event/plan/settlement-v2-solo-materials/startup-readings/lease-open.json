@@ -1,0 +1,65 @@
+{
+  "allow": [
+    "sih-engine/doc/governance/SETTLEMENT-V2-2026-09-09.md",
+    "sih-engine/sih/state/plan/settlement-v2-solo.md",
+    "sih-engine/sih/state/plan/settlement-v2-solo-prompt.md",
+    "sih-engine/sih/event/plan/settlement-v2-solo-results.md",
+    "sih-engine/sih/event/plan/settlement-v2-solo-materials",
+    "sih-engine/sih/event/trail/2026-09-09.ndjson",
+    "sih-tools/scribe/reports",
+    "sih-tools/identity/reports"
+  ],
+  "event": "issued",
+  "gauge": {
+    "at": "2026-09-08",
+    "formula_version": "ga-2",
+    "values": {
+      "adoption": {
+        "sequence": "ok",
+        "value": 0.938338
+      },
+      "convergence": {
+        "sequence": "ok",
+        "value": 1.0
+      },
+      "mergeback": {
+        "sequence": "ok",
+        "value": 0.029412
+      }
+    },
+    "window_days": 30
+  },
+  "identity": {
+    "core_hash": "e1c9a7faf2f63d8333768ac94b0101a84fde506745eeebce180ae5c74a6c992b",
+    "file_sha256": "c5edec944e38fe9ba13537b7dc74e857a8a253a2dfda1491b1228768ba12231d",
+    "identity_hash": "443b8c0d96d3add22b3d249e0d8eb6a0fb6641001137e3b7765f434843c9e611"
+  },
+  "intent": {
+    "anchor_count": 3,
+    "record_sha256": "a40c6f1b3a67617d688660317744946e9c74282f4db5ff01d0a09f140ca59791",
+    "validated_by": "scrutinator-ask3"
+  },
+  "issued_at": "2026-09-08T16:52:34+00:00",
+  "package": "settlement-v2-solo",
+  "package_path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/settlement-v2-solo.md",
+  "repos": [
+    {
+      "base_branch": "integral-stage-build",
+      "branch": "msh/settlement-v2-solo",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/settlement-v2-solo"
+    },
+    {
+      "base_branch": "main",
+      "branch": "msh/settlement-v2-solo",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/settlement-v2-solo"
+    }
+  ],
+  "scope_source": "explicit",
+  "session_id": "3bcd26e3db3b94b5",
+  "tool": {
+    "name": "lease",
+    "version": "1.39.0"
+  }
+}
