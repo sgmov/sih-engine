@@ -27,4 +27,9 @@
 
 ## 结算读数 {#settlement}
 
-（收约补笔回填位：双仓 settle 提交号、gate 归并后双跑绿复证、reconcile 增量、链 verify 全文）
+- 双仓 settle 提交号：tools 412ea560（cert 74c56ce3）、engine de93039（cert 74c56ce3）；归并提交号：tools 79a0dff2、engine f63f559；closeguard pre-close 提交 tools aedcf6fd 与 engine 336d706 系 close 工具自动活面提交如实呈报
+- 收约补笔前主树复算：两档核阅 rc=0 findings 0、两档检词 rc=0 findings 0
+- docmath 闸门归并后双跑绿复证：run1 与 run2 exit 0 双 0，cmp 逐字节一致，verdict green violations 0，读数落 materials/post-merge-2026-09-09/，认证前主树缺节态红两笔读数存 materials/first-run-2026-09-09/ 先红留痕
+- reconcile 双仓：unrouted 0 与 cert_missing 0 双零达成；tools 侧 reconcile 退出码 1 系 unbypassed 既有类计数在案（含本批 closeguard pre-close 一笔同 parksi 与 toolhyg 同形），如实转述候人节点
+- 链 verify：status valid，133 笔，first_hash 25989caf，last_hash bdea246b
+- 收约补笔：本节回填走直改链笔（会话 8daf996a94e659e9 已收约吊销，--no-session-reason 事由在链），补笔后化格与检词复跑俱绿

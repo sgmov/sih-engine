@@ -50,9 +50,15 @@
 - 标定账本落 /tmp 副本（adjudicate2 与 sweepjson 与 mcpopen 先例同形）：temp_probe score 账本落点随脚本目录解析，本批在 /tmp 副本实跑使主树与工地标定账本零污染零直写，drift 对真实账本副本历史配对（同族 0905 与 0906 两行在册）读数为无
 - temp_probe 已退役归档（baseinject-solo 批）申报：本批标定走 probes/retired/temp_probe.py 在 /tmp 副本实跑，零改退役件本体，零主树写入；当日基线以账本尾行 verbatim 出件，build-baseline 读档注入通道（baseline_inject.py）未用因其取末条可用行为 GLM-5.3-Flash 席位与本席不符，如实申报择路理由
 - 起草与作答同席申报：委外单席位批无跨席隔离，命题起草与九发作答同席，topic authored 行与谱系披露节双载
+- tools settle 首跑 staged_out_of_scope 拦截：facet/contracts/m-mcpsec-1/ 四件不在任务包第五节 allow 面（mcpopen 先例任务包有该路本包无），lease 机械拦零落提交；按授权面保材料即合同四件以快照形复制入 allow 覆盖的 proposition/DES/m-mcpsec-1/contract-snapshot/，字节与原件逐一 IDENTICAL 对表在案；facet/contracts 原位随工地拆除散失如实申报；facet/contracts 出 stage 复跑 settle 5ad97044 一次过；红证即 close 首跑卫生闸拦文件存批材料
+- 首跑 tools settle 退出码被 tail 管道掩码申报：首跑取码写法有误（管道尾命令码顶替真码），机械拦截内容经输出全文捕获未失真，即改重定向取真码复跑，禁管道掩码铁律自违一笔如实申报
+- close 五跑形：一跑工地卫生闸拦（facet/contracts 未跟踪残件，快照已入 git 即清残件）；二跑卫生闸拦（本批自存红证件落 engine 工地未跟踪，自缴自清即补 settle 第 2 序 72b1fed）；其间补笔首试撞 pre-commit 守卫（放锁后补笔不在锁面）即重取锁补笔再放锁机械闭环；三跑卫生闸再拦同前；四跑 CALL-LOG 随批闸拦两册跨批存量脏面（attnanchor 与 attractor，先于本批开工 mtime 2026-09-08，非本批产物不在本批 allow）；五跑带 --bypass-calllog 显式留痕候 callloghyg 扩面人裁收约成；红证 close-firstrun-dirty-red.json 存批材料
+- closeguard 让位笔两笔申报：close 通道外机械让位提交 tools 5f355cb7 与 engine f5464ae（内容即两册跨批存量 CALL-LOG 脏面，非本批手写内容），已走 lease bypass 正典登记通道双仓各一笔落台账，reconcile 复跑后两笔归类 bypass
 - 其余误差零申报：ask3 双门首跑绿、叩问预登记十二词与实测十二信号一致、租约九锁一次全取、intent 与 park 未复跑、sign 一次过未复踩闸三坑位
 
 ## 链笔与收约 {#settle}
 
-- 意图笔 intent_refined bba1b257（session 02a0fd176dd15fbc）；终签笔 crosscheck_completed 1763a223 index 92；认证 append 笔见当日链 confirm 复算
-- 双仓 settle 提交号与 reconcile 增量与 verify 全文见完工回报，收约后回锚重跑
+- 意图笔 intent_refined bba1b25700b6dffb（session 02a0fd176dd15fbc）；终签笔 crosscheck_completed 1763a223d6751363 index 92 经 confirm 确认；认证 append 四笔即管线报告 889742d0 与计分材料 753fa8e5 与 check 报告 6a015810 与 signcheck 1ebecdb3
+- 双仓 settle：engine 45d1a0c（第 2 序 72b1fed 红证补笔）与 tools 5ad97044
+- 链 verify：status valid 110 笔（首哈希 25989caf 末哈希 262e2d1d）；reconcile 终读数双仓 unrouted 0 与 cert_missing 0 即验收双零达成，reconcile 退出码 1 由跨批存量 alarm 族承载（tools unbypassed 122 加 session_orphan 19、engine unbypassed 84 加 session_orphan 24，俱先于本批在册候裁，本批增量仅 bypass +3 即显式 bypass-calllog 一笔加让位笔登记两笔）
+- 收约五跑读数与回锚：会话 02a0fd176dd15fbc revoked true，双工地拆双分支删，收据 lease/ledger/receipts/mcpsec-solo.json；批后回锚重跑五行锚入完工回报

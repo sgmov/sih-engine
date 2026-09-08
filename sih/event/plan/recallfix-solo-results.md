@@ -75,4 +75,13 @@
 4. integration_root dead-code 警告批前既有（主树 HEAD 同参编译同出），本批零新增警告。
 5. CALL-LOG：本批零 sih-tools 工具改动，scribe 册未记（任务包 allow 清单未列 calllog 面，从严不越线）。
 
-## 八、收口附记（回填）
+## 八、收口附记（回填，2026-09-09 收约补笔）
+
+- 双仓 settle 提交号：engine 3b4fd31 与 tools e0bdd55f（cert 39b2228e 即 cargo test 认证笔；三检 session_active 与 staged_in_scope 与 cert_on_chain 全绿）。
+- 归并提交号：engine 2e8d032 与 tools 25c0641a（close 机械归并，双工地拆除、分支 msh/recallfix-solo 双删、会话 47832042590d8e6d 吊销）。
+- closeguard 收约对表件：tools a39460f（主树批件六件 pre-close 提交）。
+- 链 verify：valid 142 笔（尾笔 39b2228e 即本批全测认证）。
+- reconcile：双仓 unrouted 0 加 cert_missing 0（比批前零新增）；unbypassed tools 125 加 engine 89 如实转述（含本批 closeguard 对表件 a39460f 与主窗 release 提交，属既有告警类非本批绕行）。
+- 主树复验：主树重编后 mem_recall_f_suite 9 passed 0 failed 退出码 0（101.88 秒）。
+- 越线申报两笔：其一 Cargo.lock 工地内 staged_out_of_scope（cargo build 触碰 0.1.0 改 0.9.0，主窗发布版本面）还原因零入提交；其二 close 无主闸拦主树 Cargo.lock（主窗在飞件非本批写入）走 --bypass-orphan 显式绕行落 bypass 台账留痕，件零触碰候主窗发布流结算。
+- 直改链笔：本节回填经 scribe direct agent 笔落 direct_edit_completed 声明，正身件挂 identity 0.5.0 报告；补笔后化格与检词复跑俱绿。
