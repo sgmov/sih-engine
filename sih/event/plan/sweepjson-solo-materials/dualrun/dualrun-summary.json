@@ -1,0 +1,21 @@
+{
+  "tool": "lease sweep --out 出件双跑读数（sweepjson-solo）",
+  "params": {
+    "at": "2026-09-08T13:30:00+00:00",
+    "root": "/Users/moc/workspaces/SiHankor",
+    "ledger": "sih-tools/lease/ledger/sessions.ndjson",
+    "locks": "sih-tools/lease/ledger/locks.ndjson"
+  },
+  "run1_exit": 1,
+  "run2_exit": 1,
+  "cmp_exit": 0,
+  "byte_identical": true,
+  "sha256_run1": "be65896736970b120280c80813967bf2377049a178b95af27b86533e926ac567",
+  "sha256_run2": "be65896736970b120280c80813967bf2377049a178b95af27b86533e926ac567",
+  "verdict": "residue",
+  "summary_counts": {
+    "auto_cleanable": 0,
+    "awaiting": 1,
+    "info": 0
+  }
+}
