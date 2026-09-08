@@ -1,0 +1,24 @@
+{
+ "batch": "constclear2-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与 registry 经清单件统一绑定内容哈希 sha256（anchorskill 先例）",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/constclear2-solo/sih/state/plan/constclear2-solo.md",
+   "sha256": "fce4f2b730c1d2df92b3fdfccf12c746f74f054ace65c664d6b532dd4097841b"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/constclear2-solo/sih/event/plan/constclear2-solo-results.md",
+   "sha256": "aad885fb75b618863cf5570814c899f78fd39f14504cec9e729cbd4a5d9abfe1"
+  },
+  "routing_md": {
+   "path": "worktrees/sih-math/constclear2-solo/docs/constclear2-routing-2026-09-08.md",
+   "sha256": "fb0b5e0c0927326ab1bd9425de136bcf67343d038afb994300a780d104b60c12"
+  },
+  "critsweep_registry": {
+   "path": "worktrees/sih-tools/constclear2-solo/critsweep/registry.json",
+   "sha256": "5623f68227e5b7c3efa21acd3e6adf287c1bae72fde0916ac08ee434e5b6a443"
+  }
+ }
+}

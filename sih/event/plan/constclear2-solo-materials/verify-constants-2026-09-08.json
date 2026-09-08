@@ -1,0 +1,656 @@
+{
+ "at": "2026-09-08",
+ "batch": "constclear2-solo",
+ "summary": {
+  "total": 34,
+  "found": 33,
+  "value_match": 33,
+  "line_drift": 1,
+  "missing": [
+   "f22"
+  ],
+  "value_drift": []
+ },
+ "items": [
+  {
+   "id": "d1",
+   "file": "sih-tools/facet/src/facet_stats_inf.py",
+   "doc_line": 42,
+   "name": "ALPHA",
+   "doc_value": "0.05",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 42,
+     "text": "ALPHA = 0.05",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d2",
+   "file": "sih-tools/facet/probes/bootstrap_partial.py",
+   "doc_line": 34,
+   "name": "ALPHA",
+   "doc_value": "0.05",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 34,
+     "text": "ALPHA = 0.05    # 显著性水平",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d3",
+   "file": "sih-tools/facet/probes/d1_anova.py",
+   "doc_line": 52,
+   "name": "ALPHA",
+   "doc_value": "0.05",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 52,
+     "text": "ALPHA = 0.05",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d4",
+   "file": "sih-tools/gauge/src/gauge/cli.py",
+   "doc_line": 66,
+   "name": "PRIOR_ALPHA",
+   "doc_value": "1.0",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 66,
+     "text": "PRIOR_ALPHA = 1.0  # Beta(1,1) 均匀先验，后验均值即拉普拉斯续则 (k+1)/(n+2)",
+     "value": 1.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d5",
+   "file": "sih-tools/gauge/src/gauge/cli.py",
+   "doc_line": 67,
+   "name": "PRIOR_BETA",
+   "doc_value": "1.0",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 67,
+     "text": "PRIOR_BETA = 1.0",
+     "value": 1.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d6",
+   "file": "sih-tools/gauge/src/gauge/cli.py",
+   "doc_line": 74,
+   "name": "GQ_WINDOW_DAYS_DEFAULT",
+   "doc_value": "7",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 74,
+     "text": "GQ_WINDOW_DAYS_DEFAULT = 7  # 到达/服务率时平均窗口天数，须远长于单件时长",
+     "value": 7
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "d7",
+   "file": "sih-tools/gauge/src/gauge/cli.py",
+   "doc_line": 77,
+   "name": "GD_WINDOW_DAYS_DEFAULT",
+   "doc_value": "7",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 78,
+     "text": "GD_WINDOW_DAYS_DEFAULT = 7  # 贡献度观察窗天数，体量与时间两重门槛降级后的观察窗参数",
+     "value": 7
+    }
+   ],
+   "value_match": true,
+   "line_drift": true
+  },
+  {
+   "id": "d8",
+   "file": "sih-tools/facet/probes/reference_stats.py",
+   "doc_line": 30,
+   "name": "MIN_DECIDED",
+   "doc_value": "30",
+   "group": "derived",
+   "state_0904": "推导",
+   "found": true,
+   "hits": [
+    {
+     "line": 30,
+     "text": "MIN_DECIDED = 30",
+     "value": 30
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "r1",
+   "file": "sih-tools/facet/probes/eir_ecr_gate_probe.py",
+   "doc_line": 78,
+   "name": "MAX_ROUND",
+   "doc_value": "3",
+   "group": "reclassified",
+   "state_0904": "改判",
+   "found": true,
+   "hits": [
+    {
+     "line": 78,
+     "text": "MAX_ROUND = 3",
+     "value": 3
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "r2",
+   "file": "sih-tools/facet/probes/lightweight_mode_probe.py",
+   "doc_line": 146,
+   "name": "MAX_SHOTS",
+   "doc_value": "7",
+   "group": "reclassified",
+   "state_0904": "改判",
+   "found": true,
+   "hits": [
+    {
+     "line": 146,
+     "text": "MAX_SHOTS = 7        # 档2 上限",
+     "value": 7
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "r3",
+   "file": "sih-tools/facet/probes/multiround_convergence_probe.py",
+   "doc_line": 108,
+   "name": "MAX_ROUND",
+   "doc_value": "5",
+   "group": "reclassified",
+   "state_0904": "改判",
+   "found": true,
+   "hits": [
+    {
+     "line": 108,
+     "text": "MAX_ROUND = 5  # 跑 5 轮 Markov 链，观测点 1/2/3/5（4 为过渡，仍记录）",
+     "value": 5
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f1",
+   "file": "sih-engine/src/attractor/tally.rs",
+   "doc_line": 34,
+   "name": "BUDGET_PER_GID",
+   "doc_value": "9",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 34,
+     "text": "pub const BUDGET_PER_GID: i64 = 9;",
+     "value": 9
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f2",
+   "file": "sih-tools/tally/src/tally/cli.py",
+   "doc_line": 32,
+   "name": "BUDGET_PER_GID",
+   "doc_value": "9",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 32,
+     "text": "BUDGET_PER_GID = 9",
+     "value": 9
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f3",
+   "file": "sih-tools/facet/probes/analyze_merged_v2.py",
+   "doc_line": 29,
+   "name": "F21_THRESHOLD",
+   "doc_value": "0.25",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 29,
+     "text": "F21_THRESHOLD = 0.25  # 探针/审题成本比上限（修订后放宽 15pp）",
+     "value": 0.25
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f4",
+   "file": "sih-tools/facet/probes/analyze_merged_v2.py",
+   "doc_line": 30,
+   "name": "F22_THRESHOLD",
+   "doc_value": "0.10",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 30,
+     "text": "F22_THRESHOLD = 0.10  # 同 LLM 跨轮差异",
+     "value": 0.1
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f5",
+   "file": "sih-tools/facet/probes/analyze_merged_v2.py",
+   "doc_line": 31,
+   "name": "F23_THRESHOLD",
+   "doc_value": "0.20",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 31,
+     "text": "F23_THRESHOLD = 0.20  # retro 翻判率上限",
+     "value": 0.2
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f6",
+   "file": "sih-tools/facet/probes/analyze_merged_v2.py",
+   "doc_line": 32,
+   "name": "F24_THRESHOLD",
+   "doc_value": "0.05",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 32,
+     "text": "F24_THRESHOLD = 0.05  # 4 模型 mean_comply_rate range 下限（修订后从 flip_rate 改 comply_rate）",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f7",
+   "file": "sih-tools/facet/probes/analyze_merged_v2.py",
+   "doc_line": 33,
+   "name": "F25_THRESHOLD",
+   "doc_value": "0.05",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 33,
+     "text": "F25_THRESHOLD = 0.05  # 429 错误率上限（修订后从 0 容忍改 ≤ 5%）",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f8",
+   "file": "sih-tools/facet/probes/check_layer_proportion.py",
+   "doc_line": 48,
+   "name": "DEFAULT_FLYWHEEL_RUN_MAX_SHARE",
+   "doc_value": "0.70",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 48,
+     "text": "DEFAULT_FLYWHEEL_RUN_MAX_SHARE = 0.70",
+     "value": 0.7
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f9",
+   "file": "sih-tools/facet/probes/check_layer_proportion.py",
+   "doc_line": 53,
+   "name": "DEFAULT_LAYER2PLUS_MIN_SHARE",
+   "doc_value": "0.05",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 53,
+     "text": "DEFAULT_LAYER2PLUS_MIN_SHARE = 0.05",
+     "value": 0.05
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f10",
+   "file": "sih-tools/facet/probes/contribution_metric.py",
+   "doc_line": 85,
+   "name": "THRESHOLD_FLYWHEEL_RUN_RATIO",
+   "doc_value": "0.60",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 85,
+     "text": "THRESHOLD_FLYWHEEL_RUN_RATIO = 0.60",
+     "value": 0.6
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f11",
+   "file": "sih-tools/facet/src/facet_stats_inf.py",
+   "doc_line": 48,
+   "name": "DEFAULT_BOUNDARY_BASELINE",
+   "doc_value": "0.004",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 48,
+     "text": "DEFAULT_BOUNDARY_BASELINE = 0.004",
+     "value": 0.004
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f12",
+   "file": "sih-tools/facet/probes/r3a_gate_v2.py",
+   "doc_line": 63,
+   "name": "BOUNDARY_RATE_THRESHOLD",
+   "doc_value": "0.34",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 63,
+     "text": "BOUNDARY_RATE_THRESHOLD = 0.34",
+     "value": 0.34
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f13",
+   "file": "sih-tools/facet/probes/contribution_metric.py",
+   "doc_line": 65,
+   "name": "THRESHOLD_N",
+   "doc_value": "5000",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 65,
+     "text": "THRESHOLD_N = 5000",
+     "value": 5000
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f14",
+   "file": "sih-tools/facet/probes/contribution_metric.py",
+   "doc_line": 66,
+   "name": "THRESHOLD_C",
+   "doc_value": "5000.0",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 66,
+     "text": "THRESHOLD_C = 5000.0",
+     "value": 5000.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f15",
+   "file": "sih-tools/facet/probes/contribution_metric.py",
+   "doc_line": 68,
+   "name": "THRESHOLD_NEW_MECHANISM_COVERAGE",
+   "doc_value": "1",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 68,
+     "text": "THRESHOLD_NEW_MECHANISM_COVERAGE = 1   # 每种至少 1 条",
+     "value": 1
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f16",
+   "file": "sih-tools/facet/probes/program_signoff.py",
+   "doc_line": 99,
+   "name": "USER_POSTURE_MIN",
+   "doc_value": "0.0",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 99,
+     "text": "USER_POSTURE_MIN = 0.0",
+     "value": 0.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f17",
+   "file": "sih-tools/facet/probes/program_signoff.py",
+   "doc_line": 100,
+   "name": "USER_POSTURE_MAX",
+   "doc_value": "2.0",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 100,
+     "text": "USER_POSTURE_MAX = 2.0",
+     "value": 2.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f18",
+   "file": "sih-tools/facet/probes/program_signoff.py",
+   "doc_line": 107,
+   "name": "TIME_WINDOW_HOURS_DEFAULT",
+   "doc_value": "0",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 107,
+     "text": "TIME_WINDOW_HOURS_DEFAULT = 0",
+     "value": 0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f19",
+   "file": "sih-tools/facet/probes/run_siliconflow_factcheck.py",
+   "doc_line": 47,
+   "name": "VERIFY_TOKEN_DIFF_THRESHOLD",
+   "doc_value": "500",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 47,
+     "text": "VERIFY_TOKEN_DIFF_THRESHOLD = 500",
+     "value": 500
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f20",
+   "file": "sih-tools/identity/src/identity/core.py",
+   "doc_line": 47,
+   "name": "SKEW_MAX_SECONDS",
+   "doc_value": "300",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 47,
+     "text": "SKEW_MAX_SECONDS = 300",
+     "value": 300
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f21",
+   "file": "sih-tools/facet/probes/n_convergence_probe.py",
+   "doc_line": 31,
+   "name": "EPS",
+   "doc_value": "0.1",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 31,
+     "text": "EPS = 0.1",
+     "value": 0.1
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  },
+  {
+   "id": "f22",
+   "file": "sih-tools/gauge/src/gauge/cli.py",
+   "doc_line": 79,
+   "name": "GD_ALPHA_DEFAULT",
+   "doc_value": "0.05",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": false,
+   "hits": [],
+   "value_match": false,
+   "line_drift": null
+  },
+  {
+   "id": "f23",
+   "file": "sih-tools/facet/probes/check_verdict_consistency.py",
+   "doc_line": 48,
+   "name": "DEFAULT_INCONSISTENCY_MAX_RATE",
+   "doc_value": "0.0",
+   "group": "frozen",
+   "state_0904": "冻结",
+   "found": true,
+   "hits": [
+    {
+     "line": 48,
+     "text": "DEFAULT_INCONSISTENCY_MAX_RATE = 0.0",
+     "value": 0.0
+    }
+   ],
+   "value_match": true,
+   "line_drift": false
+  }
+ ]
+}
