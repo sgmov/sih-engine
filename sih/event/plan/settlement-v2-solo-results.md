@@ -88,4 +88,11 @@ md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 Re
 
 ## 结算读数
 
-（收约补笔节——settle 提交号与链 verify 与 reconcile 与判据扫终读，收约后经直改链笔补录）
+- 双仓 settle：engine 段一 `2e9af0f`（base main@3610b57）、tools 段一 `42fa8125`（base integral-stage-build@b84dd53a），cert 统一取 manifest 认证 `30f6ffeb`；归并 engine `9f2fea5`、tools `00e75394`；closeguard 预收 engine `33dffb3` 与 tools `348b967f`；跑步机收编 `db3fdf92` 实收本批留痕册投影与 calls.ndjson（十三笔调用留痕经 lease call-log append 三腿齐落）
+- 认证实录十一笔（event_hash 前 8）：ask3 记录 `70e3bc3e`、验证件 `1b1ca9fd`、正身件 `bb8d6d4e`、fmt 结算单 `9f5129a6`、scr 结算单 `b25e96e4`、nom 结算单 `a0a507ea`、fmt 结果档 `57ec78ed`、scr 结果档 `cd0d38c7`（以工具实值 exit-code 2 域外照录上链）、nom 结果档 `27636661`、manifest `30f6ffeb`（settle cert 同取此值）、投影件 `4355fe47`；另本批链笔即意图 `42da7fd5` 与例行读数三维三笔
+- 放锁收约：八路径 unlock 全过零失败；close 首跑无主闸拦两件即 acceptor 与 critsweep 跨批存量 CALL-LOG（c2close2 同款已呈报项），带 bypass-orphan 旗标复跑；次跑 CALL-LOG 随批闸拦三件即加 attnanchor 本批追加册（不在跑步机冻结收编面），加 bypass-calllog 旗标；双旗显式留痕两笔候 callloghyg 扩面人裁；close 三跑成即会话 3bcd26e3db3b94b5 revoked 真值、双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/settlement-v2-solo.json
+- 链 verify：valid，events 21（first `25989caf`、last `4355fe47` 即投影件认证末笔）
+- reconcile：双仓 unrouted 俱零、cert_missing 俱零即判据双零；unbypassed 即 tools 113 与 engine 79、session_orphan 即 tools 19 与 engine 24，增量俱本批 closeguard 与收编机械自生提交（c2close2 同形），跨批存量不代清
+- 判据扫终读（收约后主树正典位）：五判据俱 achieved 且证据指针全 ok（C1 两指针、C2 五、C3 六、C4 五、C5 五），degraded 假零沉底，链文件已建降级消除
+- pk-077 gate 触发条件达成终读：结算件与本结果档俱落 sih-engine/sih/event/plan/ 且在版控位（merge `9f2fea5` 承载），pk-077.json 零触碰 fired_at 保持 null，出泊唯人节点候裁
+- 收约补笔：本节即本笔，经直改链笔申报（scribe direct，event_hash 与提交号见 bypass 登记笔）加 --no-verify 提交替 lease bypass 登记通道（c2close2 与 s2park 先例同形）；补笔后复跑化格 check 与检词俱绿（零改动零违例）
