@@ -1,0 +1,9 @@
+{
+  "red": "settle 首跑被拒",
+  "error": "cert_not_on_chain",
+  "cert_passed": "ef2f0b32",
+  "root_cause": "cert 语义是 certification_completed 事件哈希前八位（commitcore._load_trail_hashes 只收认证笔），ef2f0b32 是 intent_refined 意图笔不合；anchorskill 先例 cert d4019cd7 即 ask3 记录认证笔哈希",
+  "fix": "补 ask3 记录 JSON 认证笔后以其哈希前八位为 settle cert 重跑",
+  "also": "首跑捕获形误用管道掩退出码（uv|python3 读出 EXIT=0 假绿），改即时捕获形重跑",
+  "at": "2026-09-08"
+}
