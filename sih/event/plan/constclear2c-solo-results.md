@@ -49,15 +49,29 @@
 | F-2 注记自证 | 数据治理 | diff 逐件仅注释行、值零改动、行号位移照录 | 通过（26 文件 54 注释行零删除零非注释新增，值绑定 54/54 相等，py_compile 25 件绿） |
 | F-3 registry 换版 | 数据治理 | v1 至 v2 行 id 稳定与 evidence 指针对齐 C4 判据文本双形态 | 通过（§4 四类指针携链证；位列注记后行号） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即 42 路径 allow 面：三工地与 trail 与 scribe/reports 与 identity/reports 与 CALL-LOG 直改车道两件） |
-| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | （收约补笔回填位） |
+| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（engine 归并 9ffb42f、tools 归并 4cb075ad、math 归并 ac423cd；close 一跑成 revoked 2026-09-08T08:28 双旗 bypass 留痕；verify valid events 152；reconcile 三仓 unrouted 全零 cert_missing 零新增即明细全为 09-07 前存量） |
 
 ## 越线与误差申报
 
-（收约补笔回填位）
+- **unlock 首跑缺 --identity 参**：批量放锁首跑漏 --identity 即全部 exit 2 用法错零残留，补参即 42 路径全释零失败，红证即首跑报文集
+- **GOV-002-history-v1.md 主树正形核阅首红五处（C001 与 C002 与 C006 三组）**：五处俱为 reroute-solo 批 v2.6 条目存量违例（破折号一处与全角括号组三处）非本批引入，本批 v2.7 条目零违例；处置承 v2.4 版本史行违例归零先例即补笔就地归零，破折号改即字与括号组改即字串，内容词零增删，其中口径令引文内标点重塑如实申报（逐字节原话在任务包与结果档本件在档不受影响）；修正后管线三步全绿即化格零改与核阅 exit 0 与检词零违例；直改链笔见结算读数
+- **C3 判据文本手工续编漂移修复申报**：主树 registry.json 原 C3 criterion_text 较 GOV-002 第二十五行少「即 pk-044 出泊链事件与 baseinject 与 attnanchor 与 critsweep 结果档与 pk-078 进泊与 progdoc 注记」一串即 reroute-solo 批手工续编时缩写形非逐字节切片；本批构建器单源再生即恢复逐字节保真，属修复非违例如实记档
+- **close 无主闸与 CALL-LOG 闸双旗 bypass**：六件无主清单中 facet 与 lease 与 wikirecall 三册 CALL-LOG 系 callloghyg 候清项非本批活面不代收；calls.ndjson 与 critsweep 与 scribe 两册 CALL-LOG 系本批 lease call-log append 直改车道正形写入（三腿齐落 clog-a54843bb 与 clog-33ce6801），批前 watch 读数同五件在案零新增候清项
+- **closeguard 预收提交 eeab6fc unbypassed 存量形**：close 机制自动预收主树两件预落件（任务包与提示词件），承 adjudicate2 即 a16d4b3 与 constclear2b 即 957469b 同形在档，非本批独有缺陷如实记档
+- 其余误差零申报
 
 ## 结算读数
 
-（收约补笔回填位）
+- 三仓 settle：engine be03899 归并 9ffb42f（closeguard 预收 eeab6fc）、tools 9ad9169e 归并 4cb075ad、math e877c38 归并 ac423cd；cert 统一取本批 ask3 记录认证事件 fa130440（批二 cert 误传教训在案本批即正形）
+- 放锁收约：42 锁 unlock 全过零失败；close 一跑成（无主闸首拦即双旗 bypass 显式留痕 bypass.ndjson 两笔 2026-09-08T08:28），会话 9b08f4627b93322b revoked、三工地拆、三分支删除
+- 链 verify：valid，events 152（2026-09-08 链含本批意图 1 笔与例行读数 3 笔与认证 8 笔）
+- reconcile 三仓：unrouted 全零；cert_missing 即 engine 3 与 tools 4 与 math 2 俱为 09-07 及更早存量（chaingreen 与 projfix 与 hookfix 与 mathfix2 与 fmtfix 族）本批零新增
+- 判据扫复算：GOV2-C4-math-attribution 转 evidence 形即 status achieved，四文件指针与链谓词全真；全判据现态即 C1 与 C3 与 C4 与 C5 achieved、C2 viewline in_flight 唯一余项，degraded 假零沉底
+- 主树正形与重放：des-001 对 GOV-002 两件与 PARKING 逐件 exit 0（history 首红五处处置见误差节）；make_registry.py 主树缺省参重放 cmp 逐字节 IDENTICAL
+- rev3 再生对表：双跑四路 cmp IDENTICAL（exit 1 即 drift 旗照录）；与批二再生基线对表即键集零差与值字段零差，差异面恰为五行行号位移（r3a 即 r1 即 r2 即 r3 位与 gauge 位 310 至 321）与一处 context 窗含注记行，值零漂移机械成立
+- 直改链笔：GOV-002-history 存量违例归零笔 direct_edit_completed `3ff88d2f`（收约后主会处置位即 --no-session-reason 形；正身件全形态版 identity.hash 076b1528 承载，--quiet 瘦形态首跑缺 identity.hash 即 exit 1 零留痕红证补全形态即过如实申报）
+- 收约补笔：F-5 与本节与误差节即本笔，经 --no-verify 加 lease bypass 登记通道入版控（先例同形）
+- 完工回显：五行锚随完工报告回显
 
 ## 大白话节
 
