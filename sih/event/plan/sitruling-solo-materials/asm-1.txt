@@ -1,0 +1,1 @@
+{"assembled": "../proposition/DES/m-sitruling-1/tally-material.json", "gate_verdict": "stable_clear", "gid": "m-sitruling-1", "n_shots": 9}
