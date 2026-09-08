@@ -69,6 +69,7 @@ md 件直证承先例走内容哈希清单件（manifest 覆盖任务包定稿�
 ## 越线与误差申报
 
 - 暂存 HOME 机制：裸 CLI 无头路径要求用户级配置带 model 键，真实用户配置不在本批写入面，故经 HOME 环境变量重定 /tmp 暂存存储承载模型选择；真实用户配置与工作区治理面零触碰，apiKey 零入档。此系起跑基建非冷 agent 变量，冷跑两笔请求的模型引用与装载实证在 cold-launch-record.json
+- close 首跑红证：真分叉冲突整批拒（主树主窗预落派单件 mcpcold-solo-prompt.md 与工地域内本代理所写冷 prompt 记录件同路径相叉）；备份让位归并对表法处置——本代理版本字节备份 cold-prompt-record.md，工地域内件让位换入派单正典字节，冷 prompt 证明职能由 cold-launch-record.json 承载；首跑退出码经管道 tail 误捕一次（禁管道掩码违例）如实留痕 close-firstrun-red.json；manifest 因本件与 prompt 件哈希变动重定格并补认证笔，前笔 manifest 认证被后笔取代如实申报
 - CLI 帮助面漂移：--allowed-tools 与 --max-turns 与 --settings 三旗标帮助面宣示而解析器拒识（bundle 零命中实测）；零写授权改由 --disallowed-tools 单旗标承载，禁用清单与 toolNames 缺席实证在档。漂移记档候工具线处置，不在本批修
 - 叩问 check 先于 ask3 记录定稿一跑（预登记 8/8，闸门位序不变，mcpserv 先例同形）
 - m-mcpcold-1 DES 路径 allow 预占零写入：本批无得一测量腿，照录不增删，预占位如实申报零写入

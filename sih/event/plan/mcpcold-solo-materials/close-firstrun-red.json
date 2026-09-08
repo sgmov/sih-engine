@@ -1,0 +1,15 @@
+{
+ "kind": "close-first-run-red (先红留痕)",
+ "batch": "mcpcold-solo",
+ "date": "2026-09-09",
+ "what": "close 首跑被阻：真分叉冲突（非纯追加形）整批拒零动作",
+ "error_verbatim": "收约被阻：存在真分叉冲突（非纯追加形），整批拒零动作。{\"repo\": \"/Users/moc/workspaces/SiHankor/sih-engine\", \"diverged_files\": [\"sih/state/plan/mcpcold-solo-prompt.md\"]}",
+ "root_cause": "主树存主窗预落派单件 mcpcold-solo-prompt.md（2026-09-09 02:47，系批执行代理的派单正典）；本批执行代理未察，在工地域内另写了冷 agent prompt 记录件同路径，收约归并时两版本真分叉",
+ "additional_fault": "首跑 close 退出码经管道 tail 捕获（禁管道掩码铁律违例一次，读得 tail 退出码 0）；阻断事实以报文为准如实留痕，复跑改直捕",
+ "resolution": "备份让位归并对表法：本代理版本字节备份入 materials/cold-prompt-record.md；工地域内件以主树派单正典字节替换（让位）；冷 agent prompt 记录的证明职能由 materials/cold-launch-record.json（prompt_verbatim 字段）承载；results.md 越线申报补两条；manifest 重定格补认证笔；段 2 补提交后复收",
+ "diverged_versions": {
+  "canonical_main_tree": "sih/state/plan/mcpcold-solo-prompt.md sha256 前 8 见复冻 manifest",
+  "agent_authored_backup": "materials/cold-prompt-record.md"
+ },
+ "second_block": "段 2 补提交被 pre-commit 守卫拦（staged 件不在活跃锁面）：因首跑 close 被阻前十锁已放；处置即对受影响三路径复锁后补段，复锁事实随本件留痕"
+}

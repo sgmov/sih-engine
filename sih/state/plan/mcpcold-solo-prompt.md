@@ -1,17 +1,19 @@
-# mcpcold-solo 派单：冷 agent prompt 与起跑形
+# mcpcold-solo 派单提示词
 
-> 承任务包 mcpcold-solo.md 第三节程序形第二件；本件是冷 agent prompt 的正典记录件，prompt 全文照录不增删。
+你是司衡治理体系的批执行代理，批名 mcpcold-solo。工作区根 /Users/moc/workspaces/SiHankor。
 
-## 任务句（prompt 全文，verbatim）
+先读三件再动手：sih-engine/sih/state/plan/mcpcold-solo.md（本批任务包：使命与线级验收判据与程序形与红线与 allow 清单与完工回报形）、sih-tools/BATCH-FACE.md（批机械链全序命令正典，逐命令 verbatim 照跑）、sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md（α 相契约正典，对表基准）。
 
-用 sih 工具查一下今天的治理链并验证它完整，告诉我结论。sih MCP 工具面在本会话可用。
+前批基线（已主窗复算过）：mcpspec-solo 与 mcpserv-solo 俱收约，今日链 73 笔末笔 bf5dce59 valid；服务器在 sih-tools/mcpline/，五工具 chain_query 与 chain_verify 与 critsweep 与 heartbeat 与 locks_read 经主窗独立 stdio 冒烟全绿。
 
-构成声明：前句系任务包第三节定句原文照录；后句系任务包允许的「MCP 工具面可用事实」一句。除此之外零内容——零工具用法示例、零参数表、零路径指引、零治理语境、零批名。工具描述自足是冷 agent 唯一教学面（红线一）。
+使命：按任务包第三节程序形执行——注册 sih server 入工作区 ZCode 配置（只增不改，退役 sihankor 条目原样保留）、起真冷 agent（零上下文，prompt 只含任务句）、断言其经 MCP 面零辅助完成一次被治理交互且链 verify valid、与 SPEC-023 契约表逐项对表、证据与 α 结算件落 event/plan，走完批机械链收约。
 
-## 起跑形
+铁律提醒：
+- 零辅助红线：冷 agent 的 prompt 禁出现工具用法示例、参数表、路径指引；工具自描述是它唯一教学面
+- 失败即如实判 fail：冷 agent 卡死、误用、越界、拿不到 sih 工具（配置热载不生效等），全部照录判 fail 回报候裁，禁降格为非 MCP 面的伪验收，禁在批内改 sih-tools/mcpline 代码
+- 每条命令立即取退出码，失败即停整链，禁管道掩码
+- scribe 二进制一律主树 sih-engine/target/debug/scribe；commit 须指向登记 worktree
+- 结算件落 event/plan 即达成 pk-070 的 gate 触发条件，回报里显式申明 pk-070 点火候裁
+- 完工回报按任务包第八节形给出，主窗要独立复算
 
-- 新起进程新会话（非 resume 非续聊），零上下文；会话号 sess_b8dccf1f-1130-46db-bac4-b1f8288cc5e0
-- 工作目录工作区根：工作区 ZCode 配置 sih server 条目由此装载
-- 进程级零写授权：禁用清单见材料 cold-launch-record.json，写与文件读写类工具全禁，读写只经 MCP 面（红线二机械承载）
-- 模型配置经暂存 HOME 承载（零治理面写入），详见 cold-launch-record.json
-- 起跑时点与退出码与回执：cold-run-cli-response.json；调用实录：cold-transcript-extract.json 与 cold-rollout-model-io.jsonl
+完工回报以「✅ mcpcold-solo 批机械链全序执行完毕」或「❌ mcpcold-solo 批失败于第 N 步」开头，冷 agent verdict（pass/fail）单独一行。
