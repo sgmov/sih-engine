@@ -1,0 +1,4 @@
+attractor verify 首跑红证 2026-09-09：
+命令：attractor verify --material proposition/DES/m-mcpsec-1/tally-material.json --report proposition/DES/m-mcpsec-1/check-report.json（cwd 工地根）
+输出：{"error": "OSError: No such file or directory (os error 2)"} exit 2
+根因：check 判定输出走 stdout 未自动落盘，报告文件缺席即 verify 拒；复跑 check 重定向落盘后 verify identical 一次过。

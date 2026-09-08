@@ -1,0 +1,3 @@
+{
+  "error": "工地卫生检查失败：存在未提交修改或未跟踪文件，提交归代理责任，工具不代提交。{\"issues\": [{\"type\": \"untracked\", \"path\": \"facet/contracts/m-mcpsec-1\", \"action\": \"git add facet/contracts/m-mcpsec-1 && git commit or remove file\"}]}"
+}
