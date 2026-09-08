@@ -1,0 +1,21 @@
+{
+  "what": "release09-solo 批核阅首跑红证归档：两文档 des-001 C002 字符集违例，先红留痕纪律（2026-09-06）防复发处置",
+  "at": "2026-09-09",
+  "run": "first",
+  "tool": "sih-engine/target/debug/scrutinator --pack des-001",
+  "pack_version": "0.3.0",
+  "predecessor_precedent": "SPEC-023-mcpline-alpha-readonly-v1.md 相名转写声明：线程序包原文以希腊字母书写相名，本文承域字符集闸一律拉丁转写",
+  "findings_dec_022": [
+    {"rule_id": "C002", "line": 7, "message": "字符 U+03B1 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"},
+    {"rule_id": "C002", "line": 16, "message": "字符 U+03B1 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"}
+  ],
+  "scrut_dec_exit": 1,
+  "findings_release_plan": [
+    {"rule_id": "C002", "line": 9, "message": "字符 U+03B2 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"},
+    {"rule_id": "C002", "line": 21, "message": "字符 U+03B1 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"},
+    {"rule_id": "C002", "line": 45, "message": "字符 U+03B2 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"},
+    {"rule_id": "C002", "line": 52, "message": "字符 U+03B1 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"}
+  ],
+  "scrut_plan_exit": 1,
+  "disposition": "材料修复即希腊字母相名拉丁转写为 alpha 相与 beta 相并补转写声明，判定文本零改动，改后复跑核阅如实记档"
+}

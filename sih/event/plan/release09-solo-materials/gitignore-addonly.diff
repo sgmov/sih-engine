@@ -1,0 +1,10 @@
+3a4,12
+> # release09-solo 批增：运行残留与缓存类，只增不删
+> __pycache__/
+> *.py[cod]
+> .pytest_cache/
+> .ruff_cache/
+> .mypy_cache/
+> .venv/
+> .coverage
+> htmlcov/

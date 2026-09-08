@@ -1,0 +1,30 @@
+{
+  "batch": "release09-solo",
+  "at": "2026-09-09",
+  "pipeline_order": "化格在核前、判在书简前，每件序固定 formatter、scrutinator、nomenclator",
+  "items": [
+    {
+      "file": "sih-engine/doc/decision/022-semver-release-v1.md",
+      "worktree": "worktrees/sih-engine/release09-solo/doc/decision/022-semver-release-v1.md",
+      "final_sha256": "d1302966ea1681a2fcd21015dec399fcac2911b51f51b3d70000ef49383c7e1f",
+      "formatter_general_v1": {"exit": 0, "changed": 0},
+      "scrutinator_des_001": {"exit": 0, "findings": 0, "note": "首跑红二笔 C002 希腊字母，转写修复后复跑绿，红证见 first-red-scrut-c002.json"},
+      "nomenclator_core": {"exit": 0, "findings": 0, "note": "首跑红二笔 dead_ban covenant，锚名改 agreement 后复跑绿，红证见 first-red-nomen-covenant.json"}
+    },
+    {
+      "file": "sih-engine/doc/plan/release-0.9.0-v1.md",
+      "worktree": "worktrees/sih-engine/release09-solo/doc/plan/release-0.9.0-v1.md",
+      "final_sha256": "6abd97691a556312b5e271bd382e24d818a7dfcd7e6294394121985c858cc088",
+      "formatter_general_v1": {"exit": 0, "changed": 0},
+      "scrutinator_des_001": {"exit": 0, "findings": 0, "note": "首跑红四笔 C002 希腊字母，转写修复后复跑绿，红证见 first-red-scrut-c002.json"},
+      "nomenclator_core": {"exit": 0, "findings": 0}
+    }
+  ],
+  "math_gitignore": {
+    "file": "sih-math/.gitignore",
+    "worktree": "worktrees/sih-math/release09-solo/.gitignore",
+    "only_additions_proof": "gitignore-addonly.diff 即 diff 主树现行三行 vs 工地十二行，输出 3a4,12 纯增行零删改",
+    "note": "gitignore 非 des-001 域，管线三步不适用，只增红线以 diff 为凭"
+  },
+  "first_run_red_rule": "先红留痕纪律 2026-09-06：两件首跑红证归档本目录，重跑不覆盖首跑记录"
+}
