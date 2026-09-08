@@ -1,0 +1,205 @@
+{
+ "batch": "certarch-solo",
+ "date": "2026-09-08",
+ "session_id": "3326c23ab0cb450f",
+ "session_label": "sess-zcode-260908-main-certarch",
+ "intent_event_hash": "e009d789a50ec179a9998d6b62b15b226050e5b6f30833dc8ea47161590dd50e",
+ "family_discovered": {
+  "reconcile_before": {
+   "sih-tools": {
+    "cert_missing": 5,
+    "session_orphan": 19
+   },
+   "sih-engine": {
+    "cert_missing": 3,
+    "session_orphan": 24
+   },
+   "sih-math": {
+    "cert_missing": 2,
+    "session_orphan": 10
+   }
+  },
+  "distinct_certs": 7,
+  "commits": 10
+ },
+ "dispositions": [
+  {
+   "cert": "b15cddcf",
+   "batch": "chaingreen-solo 段1",
+   "original_date": "2026-09-07",
+   "commits": [
+    {
+     "repo": "sih-tools",
+     "sha": "c4b56ece10f36aa7e3c20ede680579b08acf1055"
+    },
+    {
+     "repo": "sih-engine",
+     "sha": "ead18e524f1ffce67b22228cc21c44b48db38490"
+    }
+   ],
+   "disposition": "补笔",
+   "original_event_id": "f9bb171e-54a9-44a0-9bbe-05bf0a7aecb6",
+   "original_event_hash": "b15cddcf0248955ca4206e45d63b0c28fe27d1338cb30feeae88998fb9187190",
+   "recovered_from": "worktrees/.close-backups/chaingreen-solo/27492fc552700ace/sih-engine/sih/event/trail/2026-09-07.ndjson",
+   "report_recheck": {
+    "path": "/Users/moc/workspaces/SiHankor/sih-tools/proposition/DES/m-chaingreen-1/m-chaingreen-1-signcheck.json",
+    "sha256": "fb2e85f0291c2abaf3854f03b8411f40450ed8b237eed0b81f843b6781990b57",
+    "matches_original": true
+   },
+   "backfill_event_hash_prefix": "58ecf653"
+  },
+  {
+   "cert": "4ff60c8f",
+   "batch": "confpreempt-solo 段1",
+   "original_date": "2026-09-07",
+   "commits": [
+    {
+     "repo": "sih-tools",
+     "sha": "71c34f3e61ed0a5bcd1b625224f0ce878d1e8f91"
+    }
+   ],
+   "disposition": "补笔",
+   "original_event_id": "ad6f9bdf-9a8c-4494-aabe-a2a26675a368",
+   "original_event_hash": "4ff60c8f81f2708f063fb4a6239fe7acc1e04dee7d9e95f881ffd9c2b65678ef",
+   "recovered_from": "sih-engine git be496cc:sih/event/trail/2026-09-07.ndjson:142",
+   "report_recheck": {
+    "path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/confpreempt-solo-materials/pipeline-checkpoint.json",
+    "sha256": "bf5d94af0ddf57036761eb76ed468b9a1770e38ef32023dbbeb894ab6e843ffc",
+    "matches_original": true
+   },
+   "backfill_event_hash_prefix": "601a340e"
+  },
+  {
+   "cert": "1da6f777",
+   "batch": "projfix-solo 段1",
+   "original_date": "2026-09-07",
+   "commits": [
+    {
+     "repo": "sih-tools",
+     "sha": "cb609c9979c9e926d78517067cf9c3dbe9263dff"
+    },
+    {
+     "repo": "sih-engine",
+     "sha": "3bc29ae6c9147d34d99af8bf381230785c13cb2d"
+    }
+   ],
+   "disposition": "补笔",
+   "original_event_id": "fc46c588-08ea-48b5-a47b-67f10d0c8489",
+   "original_event_hash": "1da6f777f242a8e277ec87b09d0384755f36da3c493e4c92cb37796eb5f9d918",
+   "recovered_from": "sih-engine git 悬空对象 157f20c7:sih/event/trail/2026-09-07.ndjson",
+   "report_recheck": {
+    "path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/projfix-solo-materials/cert-report.json",
+    "sha256": "c1a9e9c7dce893f41f9107c5e12364b058730acd08ff83c913b4d82f24232b23",
+    "matches_original": true
+   },
+   "backfill_event_hash_prefix": "91399093"
+  },
+  {
+   "cert": "970c8299",
+   "batch": "hookfix-solo 段1",
+   "original_date": "2026-09-07",
+   "commits": [
+    {
+     "repo": "sih-tools",
+     "sha": "576828c1ed81dc349de93b5b3cfd6439eebbaf20"
+    },
+    {
+     "repo": "sih-engine",
+     "sha": "0621bd3698de92ea44b1929c3bcf9b729c4d7225"
+    }
+   ],
+   "disposition": "补笔",
+   "original_event_id": "4b2ed4fa-953a-4a95-8f73-55952bd764fd",
+   "original_event_hash": "970c8299ccae19b181733fe8c70609f79928ae31b7613fe8e64a8172f80267e9",
+   "recovered_from": "sih-engine git be496cc:sih/event/trail/2026-09-07.ndjson:153",
+   "report_recheck": {
+    "path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-07-hookfix-solo-verify.json",
+    "sha256": "9d68c82ca688942c46babc8ba9bdc3888ec3851060419a30ea1dbd4c49a4ea96",
+    "matches_original": true
+   },
+   "backfill_event_hash_prefix": "d2aa0d15"
+  },
+  {
+   "cert": "e6880a63",
+   "batch": "entryunique-solo 段2",
+   "original_date": "2026-09-03",
+   "commits": [
+    {
+     "repo": "sih-tools",
+     "sha": "526e2be17092a7921bf42693ea3ef4286726a04b"
+    }
+   ],
+   "disposition": "补笔",
+   "original_event_id": "16824095-a069-40b2-b058-8652acc7e88e",
+   "original_event_hash": "e6880a6328a7855573ffc77048c67d7417205a3fa6f0732c889cfe4953dbe492",
+   "recovered_from": "sih-engine git 悬空对象 cd2f28f7:sih/event/trail/2026-09-03.ndjson",
+   "report_recheck": {
+    "path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-03-entryunique-solo-results-tests.json",
+    "sha256": "3b5f203224319e01ce8e87df4af1a3e7c9877628e466d3909fad5033b3d2be7b",
+    "matches_original": true
+   },
+   "backfill_event_hash_prefix": "41547345"
+  },
+  {
+   "cert": "81ef1c7a",
+   "batch": "mathfix2-solo 段2",
+   "original_date": "2026-08-30",
+   "commits": [
+    {
+     "repo": "sih-math",
+     "sha": "93c4f0b7f981589d3bd2f4e198774ca5aa79787c"
+    }
+   ],
+   "disposition": "销账",
+   "original_event_hash": null,
+   "recovered_from": null,
+   "archaeology": "engine 与 tools 双仓 git 全史、414/393 悬空提交、close-backups、老家 scribe/trail 目录六面零命中；老家目录未版控且 2026-08-30 当日链文件已失；仅提交体 8 位前缀在盘",
+   "bypass_registered": {
+    "at": "2026-09-08T13:07:53+00:00",
+    "ledger": "sih-tools/lease/ledger/bypass.ndjson"
+   }
+  },
+  {
+   "cert": "06c30867",
+   "batch": "fmtfix-solo 段2",
+   "original_date": "2026-08-30",
+   "commits": [
+    {
+     "repo": "sih-math",
+     "sha": "d561f17a86028c27940649818094738c9d6a61ba"
+    }
+   ],
+   "disposition": "销账",
+   "original_event_hash": null,
+   "recovered_from": null,
+   "archaeology": "同 mathfix2 六面零命中；materials 原始报告体在盘（report-formatter/nomenclator/scrutinator-fmtfix）但认证笔全形不可重构",
+   "bypass_registered": {
+    "at": "2026-09-08T13:08:00+00:00",
+    "ledger": "sih-tools/lease/ledger/bypass.ndjson"
+   }
+  }
+ ],
+ "authenticity_check": {
+  "method": "compute_event_hash 重算（外层字段字典序、内层插入序、时戳 +00:00 形、session_id 与 identity_hash 在场即入哈希）",
+  "all_five_consistent": true
+ },
+ "non_clearable_finding": {
+  "reconcile_after": {
+   "sih-tools": {
+    "cert_missing": 5
+   },
+   "sih-engine": {
+    "cert_missing": 3
+   },
+   "sih-math": {
+    "cert_missing": 2
+   }
+  },
+  "mechanical_proof": [
+   "lease/src/lease/commitcore.py 分类先序：session 行分支（cert_missing）先于 bypass 分支，bypass 登记不改分类（临时台账实验实证 bypass 类零变化）",
+   "scribe append 恒新生成 event_hash（UUID v4 加链铸时戳 max(提示,链尾+1ms) 加重算哈希），永不等于原前缀；_cert_on_chain 只认 certification_completed 的 event_hash 前缀",
+   "ledger-repair 只盖 sessions 台账 issued/revoked 形，无 trail 恢复写位；手写链文件属禁手写台账红线且断 prev_hash 链"
+  ],
+  "disposition": "七 cert 余件全部不可机械清除，随批呈人裁"
+ }
+}
