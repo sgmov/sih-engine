@@ -1,0 +1,20 @@
+{
+ "batch": "main-window-release",
+ "at": "2026-09-09",
+ "what": "0.9.0 发布宣告认证：清单九步执行实录与宣告件内容哈希绑定",
+ "announcement_doc": "sih/event/plan/release-0.9.0-announcement-v1.md",
+ "announcement_sha256": "57d8b7d1828e468e47dfc607a25e56fc94e2fc0d23da51559665c395cf53d3b7",
+ "tag": "v0.9.0",
+ "tag_commit": "f7dd9ca91f758685ac012b4142591f2fa0a5ac7d",
+ "checklist": "doc/plan/release-0.9.0-v1.md",
+ "readings": {
+  "cargo_version": "0.9.0",
+  "cargo_build_rc": 0,
+  "lib_tests": "191 passed 0 failed",
+  "mem_suite": "8 passed 1 failed (f2 declared boundary, recallfix-solo in flight)",
+  "reconcile": "tools unrouted 0 cert_missing 0; engine unrouted 0 cert_missing 0",
+  "chain_verify": "valid",
+  "mcp_smoke": "15 tools (5 alpha read + 10 beta write), alpha regression green, net state zero locks",
+  "push": "held for human node order"
+ }
+}
