@@ -1,0 +1,106 @@
+{
+ "batch": "c2close2-solo",
+ "date": "2026-09-08",
+ "session": "sess-zcode-260908-main-c2close2",
+ "lease_session": "25e529a3617a9f11",
+ "criterion": "GOV2-C2-viewline",
+ "intent_event_hash8": "22df0454",
+ "legs": {
+  "leg1_deyi_seat": {
+   "gid": "m-c2close2-1",
+   "seat": "ZCode:GLM-5.3:self-reported",
+   "n_shots": 9,
+   "decisions": "9/9 comply",
+   "flip_rate": 0.0,
+   "caution": "0/9",
+   "basis_regulations": ["baseline_1", "baseline_4", "baseline_5"],
+   "gate_verdict": "stable_clear",
+   "baseline": {
+    "verdict": "可用",
+    "temperature": 0.0,
+    "identity_hash8": "31f3bdf8",
+    "core_hash8": "e1c9a7fa",
+    "knife_bdy": 1.0,
+    "violate_5of5": true
+   },
+   "tally": {
+    "check": "pass (12 checks)",
+    "verify": "identical",
+    "sign_chain_pen8": "3944ecaa",
+    "sign_chain_index": 298,
+    "disposition": "裁决通过",
+    "direction": "comply"
+   },
+   "knife_edge": false,
+   "stall": false
+  },
+  "leg2_conditional_gate": {
+   "condition": "stable_clear 加执契终签",
+   "satisfied": true,
+   "legs_opened": ["leg3", "leg4", "leg5"]
+  },
+  "leg3_three_conditions_reverify": {
+   "condition1_viewer_in_service": {
+    "verdict": "green",
+    "binary_sha256_16": "afbe848c6607e470",
+    "subcommands": {
+     "alarms": {"rc_run1": 1, "rc_run2": 1, "cmp": "IDENTICAL", "alarm_count": 66, "alarm_event_types": ["reading_recorded"], "exit_code_suggested": 1},
+     "heartbeat": {"rc_run1": 0, "rc_run2": 0, "cmp": "IDENTICAL", "parking_ids": ["pk-078", "pk-079"], "states": ["在泊未到期"]},
+     "settle": {"rc_run1": 0, "rc_run2": 0, "cmp": "IDENTICAL", "total_events": 299, "certification": 176, "intent": 27, "parking_entered": 2, "parking_exited": 6, "direct_edit": 7, "crosscheck": 15, "reading": 66}
+    },
+    "reading": "sih/event/plan/c2close2-solo-materials/viewer-dualrun/"
+   },
+   "condition2_view_source_projection": {
+    "verdict": "green",
+    "five_sources": ["trail", "sessions", "parking_engine", "parking_tools", "sweep_out"],
+    "sweep_face": "present",
+    "sweep_verdict": "residue",
+    "sweep_items_verbatim": 1,
+    "red_light_semantics": "收约即消解 + 活红限在飞末笔（violBatches 0）",
+    "sih_visual_writes": 0,
+    "sih_visual_runs": 0,
+    "reading": "sih/event/plan/c2close2-solo-materials/viewsource-pointers.md"
+   },
+   "condition3_alarm_semantics_alignment": {
+    "verdict": "green",
+    "reading": "对哨检族正典即 lease sweep 五类对表（CONTRACT 修订五十三其二）",
+    "carried_by_sign": "52c2dbb6（m-c2route2-1，index 248）",
+    "five_classes": ["phantom_sessions", "zombie_locks", "stale_check_files", "stray_receipts", "orphan_worksites"],
+    "alignment": "构造性对齐（判定在哨检、呈面在视图黄灯区、判定零迁移）",
+    "reading_file": "sih/event/plan/c2close2-solo-materials/alarm-watchcheck-reverify.md"
+   }
+  },
+  "leg4_gov002_v28": {
+   "mainline_file": "sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+   "history_file": "sih-engine/doc/governance/GOV-002-history-v1.md",
+   "annotation_position": "退出标准第二条行内追记（23-27 五行不改行数）",
+   "history_entry_position": "v2.8 条目入历史档首位",
+   "freeze_list_touched": false,
+   "scope_exclusion_touched": false,
+   "deyi_sign_attached_to_version": false,
+   "deyi_sign_note": "本批得一签 m-c2close2-1 属收口裁决先例即 sweepjson 条件执行形非版本签署"
+  },
+  "leg5_registry_evidence_form": {
+   "registry_file": "sih-tools/critsweep/registry.json",
+   "builder": "sih-tools/critsweep/make_registry.py",
+   "version": "1.2.0",
+   "criterion_id": "GOV2-C2-viewline",
+   "from_status_kind": "activity",
+   "to_status_kind": "evidence",
+   "evidence_files": [
+    "sih-engine/sih/event/plan/c2close2-solo-materials/viewer-dualrun/dualrun-summary.json",
+    "sih-engine/sih/event/plan/c2close2-solo-materials/viewsource-pointers.md",
+    "sih-engine/sih/event/plan/c2close2-solo-materials/alarm-watchcheck-reverify.md",
+    "sih-tools/lease/CONTRACT.md"
+   ],
+   "evidence_chain": [
+    {"event_type": "parking_exited", "entry_id": "pk-047", "disposition": "promoted", "hash8": "35b2820e"},
+    {"event_type": "parking_exited", "entry_id": "pk-059", "disposition": "promoted", "hash8": "1186efa3"}
+   ],
+   "tests": "critsweep 18 passed"
+  }
+ },
+ "three_state_conclusion": "C2 视图判据收口条件成立即三条件全绿，判据达成",
+ "red_light_history_semantics": "收约消解属审计注记不入判据面",
+ "command_source": "用户 2026-09-08 令「过得一」"
+}

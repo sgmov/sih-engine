@@ -1,0 +1,45 @@
+{
+ "batch": "c2close2-solo",
+ "discipline": "先红留痕纪律（BATCH-FACE red-evidence-retention 节）：重跑不覆盖首跑记录",
+ "reds": [
+  {
+   "where": "scribe intent 首跑",
+   "rc": 1,
+   "error": "会话不在册即拒 SessionNotActive（--session 传 sess-zcode 标识）",
+   "resolution": "改传 lease 会话号 25e529a3617a9f11 即过（双标识空间坑位）",
+   "zero_write": true
+  },
+  {
+   "where": "emit-contract 首跑",
+   "rc": 1,
+   "error": "ValueError: --seat 须为 framework:model 形：ZCode:GLM-5.3:self-reported",
+   "resolution": "改两段形 ZCode:GLM-5.3（version 工具自填 self-reported）",
+   "zero_write": true
+  },
+  {
+   "where": "tally assemble 首跑",
+   "rc": 2,
+   "error": "无计分材料与当前响应文件哈希一致（响应已变而未重计分？）——计分半以 facet 相对路径跑致材料内路径按工地根解析不到",
+   "resolution": "绝对路径形重计分（幂等实写 0 空转 0）后 assemble 即过",
+   "zero_write": true
+  },
+  {
+   "where": "lease open 首跑 RC 捕获",
+   "rc": null,
+   "error": "输出经 tail 管道，zsh 下 PIPESTATUS 空读（bash 形误用）",
+   "resolution": "lease status 裸跑复核 RC 0 会话在册",
+   "zero_write": false
+  },
+  {
+   "where": "核阅首跑 GOV-002 两件",
+   "rc": 1,
+   "error": "C006 五处即全角括号组非法（mainline L24 三处与 history L5 两处）",
+   "resolution": "括号组改即字串内容词零增删后 exit 0；registry 重切同步",
+   "zero_write": true,
+   "detail_files": [
+    "scrutinator-first-red-mainline.json",
+    "scrutinator-first-red-history.json"
+   ]
+  }
+ ]
+}
