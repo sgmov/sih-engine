@@ -26,3 +26,30 @@
 - 正文文件字节纪律：正文动一字即逐字节对表申报。
 - 主树零直写（两件预落除外），链文件只经引擎 scribe 写位，禁管道掩退出码，误差红证如实记档。
 - 在泊件材料除 pk-061-exit.json 后继位指针外零触碰；视图板块与审计追溯条款同前批即大白话节＋投影件＋零裸断言。
+
+
+## 请求写入 {#requested-writes}
+
+- sih-engine/sih/state/plan/packenv-solo.md
+- sih-engine/sih/state/plan/packenv-solo-prompt.md
+- sih-engine/doc/spec/SPEC-022-envelope-v1.md
+- sih-engine/sih/state/parking/materials/pk-061-exit.json
+- sih-engine/sih/event/plan/packenv-solo-results.md
+- sih-engine/sih/event/plan/packenv-solo-materials/
+- sih-engine/sih/event/trail/2026-09-08.ndjson
+- sih-engine/src/attractor/
+- sih-engine/src/scrutinator/
+- sih-tools/scrutinator/src/
+- sih-tools/scrutinator/packs/
+- sih-tools/scrutinator/tests/
+- sih-tools/selector/src/
+- sih-tools/selector/packs/
+- sih-tools/selector/tests/
+- sih-tools/formatter/src/
+- sih-tools/formatter/packs/
+- sih-tools/formatter/tests/
+- sih-tools/nomenclator/src/
+- sih-tools/nomenclator/packs/
+- sih-tools/nomenclator/tests/
+- sih-tools/scribe/reports/
+- sih-tools/identity/reports/
