@@ -32,7 +32,8 @@ ask3 记录、验证件、正身件、checkcite 报告、投影件 scrutpath-rea
 - 首轮 green 跑在 build 前: 21 失败全是「binary 未找到」类(tests.rs bin() 前置要求 cargo build --bins),非断言红;真红为 tdd-red.log 编译红 E0425 与其后实现后全绿,时序如实并陈。
 - materials 写入车道申报: 本批 materials(tdd 日志与红绿证与 diff)落主树 sih-engine/sih/event/plan/scrutpath-solo-materials/(租约 allow 面内已锁路径,exscan 例扫正典位先例),非工地归并通道,多批同形在档,如实申报。
 - 主树任务包化格 --write 未跑(不在 allow 面),以只读核阅检词代替,如实申报。
-- CALL-LOG 留痕未追加: 任务包唯一权威范围未列 CALL-LOG 产出,本批零改 sih-tools 工具本体,且 CALL-LOG 投影面现处 watchcheck 无主候裁态(今晨批遗留),追加会扩候裁面;如实申报候人节点裁。
+- CALL-LOG 留痕申报: 本会话工具调用经跑步机自动追加 CALL-LOG 投影行(acceptor 与 calllog/calls.ndjson 与 critsweep 与 elicit 与 gauge 与 identity 等册 mtime 11:36:06 读数在档),非本批手工写入;任务包唯一权威范围未列 CALL-LOG 产出,本批零改 sih-tools 工具本体;投影面含今晨批遗留候裁集,close 按任务包红线走双旗 bypass 留痕不代收。
+- close 无主闸首拦申报: 首跑 close exit 2 无主闸拦截(tracked 无主 14 件全为 CALL-LOG 投影面与 calls.ndjson,含本会话工具自写行与今晨遗留),零动作零副作用,红证如实记档;按红线双旗 bypass 复跑,不代收不代清。
 - 锚首行申报: .session-anchor.md 首行仍为 constclear2c 任务锚,任务包红线明定零触碰,未改写;完工回显五行锚以机械对表补偿。
 - watchcheck 会话启动读数 exit 1: 无主清单九件全为 CALL-LOG 投影面已跟踪修改(今晨批遗留候跑步机收编),与 hygspots 与 entrydocs 收约记录同一集,零触碰零代清,如实呈报候人节点裁。
 - 其余误差零申报。
