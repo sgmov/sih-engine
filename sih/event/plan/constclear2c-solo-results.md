@@ -56,7 +56,7 @@
 - **unlock 首跑缺 --identity 参**：批量放锁首跑漏 --identity 即全部 exit 2 用法错零残留，补参即 42 路径全释零失败，红证即首跑报文集
 - **GOV-002-history-v1.md 主树正形核阅首红五处（C001 与 C002 与 C006 三组）**：五处俱为 reroute-solo 批 v2.6 条目存量违例（破折号一处与全角括号组三处）非本批引入，本批 v2.7 条目零违例；处置承 v2.4 版本史行违例归零先例即补笔就地归零，破折号改即字与括号组改即字串，内容词零增删，其中口径令引文内标点重塑如实申报（逐字节原话在任务包与结果档本件在档不受影响）；修正后管线三步全绿即化格零改与核阅 exit 0 与检词零违例；直改链笔见结算读数
 - **C3 判据文本手工续编漂移修复申报**：主树 registry.json 原 C3 criterion_text 较 GOV-002 第二十五行少「即 pk-044 出泊链事件与 baseinject 与 attnanchor 与 critsweep 结果档与 pk-078 进泊与 progdoc 注记」一串即 reroute-solo 批手工续编时缩写形非逐字节切片；本批构建器单源再生即恢复逐字节保真，属修复非违例如实记档
-- **close 无主闸与 CALL-LOG 闸双旗 bypass**：六件无主清单中 facet 与 lease 与 wikirecall 三册 CALL-LOG 系 callloghyg 候清项非本批活面不代收；calls.ndjson 与 critsweep 与 scribe 两册 CALL-LOG 系本批 lease call-log append 直改车道正形写入（三腿齐落 clog-a54843bb 与 clog-33ce6801），批前 watch 读数同五件在案零新增候清项
+- **close 无主闸与 CALL-LOG 闸双旗 bypass**：六件无主清单中 facet 与 lease 与 wikirecall 三册 CALL-LOG 系 callloghyg 候清项非本批活面不代收；calls.ndjson 与 critsweep 与 scribe 两册 CALL-LOG 系本批 lease call-log append 直改车道正形写入（三腿齐落 clog-a54843bb 与 clog-33ce6801）；watch 面口径如实记：批前无主五件（calls.ndjson 与 facet 与 lease 与 scribe 与 wikirecall），批后六件即新增 critsweep/CALL-LOG.md 一件系本批 append 所致（原净态），calls.ndjson 与 scribe/CALL-LOG.md 为批前在案文件的追加写入，候 callloghyg 清账线处置不代清
 - **closeguard 预收提交 eeab6fc unbypassed 存量形**：close 机制自动预收主树两件预落件（任务包与提示词件），承 adjudicate2 即 a16d4b3 与 constclear2b 即 957469b 同形在档，非本批独有缺陷如实记档
 - 其余误差零申报
 
