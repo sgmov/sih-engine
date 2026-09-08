@@ -1,0 +1,56 @@
+{
+ "batch": "settlement-v2-solo",
+ "title": "主线 v2 结算落链批",
+ "date": "2026-09-09",
+ "session": "sess-zcode-260909-main-settlev2",
+ "lease_session": "3bcd26e3db3b94b5",
+ "legs": {
+  "leg1_certification": {
+   "settlement_doc": "sih-engine/doc/governance/SETTLEMENT-V2-2026-09-09.md",
+   "settlement_doc_sha256": "fcff91c178cc67930e8e2bb1fb9b24c3593b9795525ff11b9df3dae8f00c16de",
+   "manifest": "sih/event/plan/settlement-v2-solo-materials/manifest-sha256.json",
+   "manifest_files": 11,
+   "zero_modification": true,
+   "pipeline_reread": "fmt exit0 targets_changed 0 / scr des-001 exit0 findings 0 / nom exit0"
+  },
+  "leg2_machine_chain": {
+   "intent_event_hash_prefix8": "42da7fd5",
+   "intent_event_id": "7d8da63c-d89f-41fe-adea-9c95a0e8bf17",
+   "gauge_reading_events": ["30e8a12b convergence 0.0", "e124d350 adoption 0.0", "363d59ee mergeback 0.029412"],
+   "ask3_record_sha256": "a40c6f1b3a67617d688660317744946e9c74282f4db5ff01d0a09f140ca59791",
+   "dual_gate": "scrutinator ask3 exit0 findings0 + ask3repeater ok anchors3",
+   "elicit": "6 signals digest passed covered 6",
+   "identity": "attest anomalies0 identity_hash 443b8c0d core e1c9a7fa",
+   "allow_paths": 8,
+   "locks": "8 acquired 0 queue 0 collision"
+  },
+  "leg3_results_and_pk077_gate": {
+   "results_doc": "sih-engine/sih/event/plan/settlement-v2-solo-results.md",
+   "pk077_gate_trigger": "主线 v2 结算件落 sih-engine/sih/event/plan/",
+   "pk077_gate_condition_met": true,
+   "pk077_material_touched": false,
+   "pk077_fired_at": null,
+   "pk077_disposition": "出泊唯人节点候裁，点火事实以链与结果档承载",
+   "pk070_followup": "实装结算件落 event/plan 时 pk-070 gate 同步点火候裁（先后链在 pk-077 exit_condition）"
+  },
+  "leg4_closing_readings": {
+   "trail": "sih-engine/sih/event/trail/2026-09-09.ndjson",
+   "criteria_sweep_startup": "GOV2-C1..C5 all achieved",
+   "final": "见结果档结算读数节（收约补笔）"
+  }
+ },
+ "criteria_five": {
+  "GOV2-C1-leaseopt": "achieved",
+  "GOV2-C2-viewline": "achieved",
+  "GOV2-C3-measure-determinism": "achieved",
+  "GOV2-C4-math-attribution": "achieved",
+  "GOV2-C5-lease-line": "achieved"
+ },
+ "redlines_held": [
+  "GOV-002 节点换版 v3 不入本批即候人裁先例",
+  "结算单文本零改动即已批准形逐字入版控",
+  "在泊件材料含 pk-077 与 pk-079 零触碰",
+  "主树零直写（三件预落除外），链文件只经引擎 scribe 写位",
+  "GOV-002 v3 与 pk-077 出泊俱候人裁"
+ ]
+}
