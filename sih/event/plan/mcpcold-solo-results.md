@@ -47,11 +47,12 @@
 
 | 件 | 认证哈希前 8 |
 |---|---|
-| ask3 记录 | （见投影件与完工回报） |
-| 验证件 | （同上） |
-| 正身件 | （同上） |
-| manifest 内容哈希清单件 | （settle cert 同取此值） |
-| 投影件 mcpcold-solo.json | （本件认证笔哈希见完工回报） |
+| ask3 记录 | 2c5c2ff9 |
+| 验证件 | 30b5631b |
+| 正身件 | 163a7a5f |
+| manifest 内容哈希清单件 rev1 | 91ac9b2d（settle 段一 cert 同取此值；被 rev2 取代如实申报） |
+| 投影件 mcpcold-solo.json | 7b9cdd65 |
+| manifest rev2 | d1b200ba（settle 段二 cert 同取此值） |
 
 md 件直证承先例走内容哈希清单件（manifest 覆盖任务包定稿件与 prompt 件与结果档与结算件与对表单五件，定格 settle 前实值；收约补笔后哈希漂移如实申报）。
 
@@ -98,4 +99,9 @@ md 件直证承先例走内容哈希清单件（manifest 覆盖任务包定稿�
 
 ## 结算读数（收约补笔）
 
-- （本节收约后经直改链笔补：双仓 settle 提交号、放锁收约读数、链 verify 终值、reconcile 增量）
+- 双仓 settle：tools 段一 `cd9495f6`（base integral-stage-build，批机械链侧写六件）、engine 段一 `b865ef2`（base main@200a535，注册证据与冷跑证据与五读数与对表单与结算件）与段二 `bb6cbf5`（cert d1b200ba，close 首跑真分叉红证处置）；closeguard 预收 tools `5f5ca21c`（报告五件）与 engine `36ae44d`（主窗预落派单件）；归并 tools `002f7563`、engine `adcdf6c`。
+- 放锁收约：close 三跑形即首跑真分叉拒（prompt 件相叉，红证 close-firstrun-red.json）、二跑无主闸拦 attnanchor 与 attractor 两册 CALL-LOG 跨批存量脏件（mtime 2026-09-08T17:32 先于本批）、三跑带双旗 bypass-orphan 与 bypass-calllog 显式留痕成（bypass 台账两笔）；十路径锁 unlock 俱过、中途复锁三路径补段后复放；双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/mcpcold-solo.json。
+- 链 verify：valid，events 80（first `25989caf`、last `d1b200ba` 即 manifest rev2 认证末笔）；本批链笔序即意图 `8d1e2340` 加认证六笔（ask3 `2c5c2ff9`、验证件 `30b5631b`、正身 `163a7a5f`、manifest rev1 `91ac9b2d`、投影件 `7b9cdd65`、manifest rev2 `d1b200ba`）。
+- reconcile：双仓 unrouted 俱零、cert_missing 俱零即判据双零；unbypassed tools 120 与 engine 84（前批基线 119 与 83 各 +1，增量归本批 closeguard 预收与归并机械自生提交）；session_orphan tools 19 与 engine 24 与前批基线同值；跨批存量不代清。
+- 主树零直写申明：工作区 `.zcode/config.json` 一处增补系任务包 allow 面内写入；本补笔前双仓主树零直写（一切待提交件经工地与链）。
+- 补笔申报：本节与认证清单实值回填即本笔，经直改链笔申报（scribe direct）加 --no-verify 提交替 lease bypass 登记通道（pkexits2 与 settlement-v2 与 mcpopen-solo 与 mcpserv-solo 先例同形）；任务包 mcpcold-solo.md（主窗预落，closeguard 本批未扫）随本补笔提交版控；补笔后复跑化格 check 与检词俱绿。
