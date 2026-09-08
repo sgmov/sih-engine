@@ -1,0 +1,52 @@
+{
+ "batch": "confreopen-solo",
+ "date": "2026-09-08",
+ "agent_session": "sess-zcode-260908-forkB-confreopen",
+ "lease_session": "be29d8352b7ed7e6",
+ "lease_version": "1.37.0",
+ "continuation_of": {
+  "batch": "confpreempt-solo",
+  "intent_event": "05762749",
+  "ruling_signed": "411cea73",
+  "session_shell": "09326a760119e4ed",
+  "shell_disposition": "preserved_per_adjudicate2_a2_63df2888"
+ },
+ "intent_event": "3a2cde61",
+ "identity_hash": "8b894837",
+ "site_survey": {
+  "done": ["m-confpreempt-1 stable_clear sign 411cea73", "confledger preempt.py loop 141L tests 208L", "lease preempt-release additive lockdb preempt_release", "red-green evidence both sides", "acceptor 3-check both packs", "pipeline checkpoint pass", "segment-1 settle tools 71c34f3e engine 0e05592"],
+  "undone": ["branch merge to base both repos", "close settlement", "attribution declaration for engine materials already in main via 130e12a", "re-verification on lease 1.37.0 base"],
+  "changed": ["lease 1.12 to 1.37.0", "confledger constclear2c registration line", "entrydocs closed 11:09:15Z; baselineexit scrutpath in flight zero conflict"]
+ },
+ "coverage_contradiction_verdict": "not_covered_not_contradicted",
+ "takeover": {
+  "tools_mode": "merge",
+  "tools_merge_commit": "2c42c625",
+  "tools_auto_merge_files": ["confledger/src/confledger/constants.py", "lease/src/lease/cli.py", "lease/src/lease/lockdb.py"],
+  "engine_mode": "verified_continuation_zero_commit",
+  "engine_evidence": "five material files blob-identical between msh/confpreempt-solo and main (130e12a pre-close channel)",
+  "empty_merge_aborted": true
+ },
+ "implementation_readings": {
+  "confledger_tests": "22 passed",
+  "lease_tests": "292 passed (289 hygspots baseline + 3 preempt)",
+  "acceptor_lease": {"red_then_green": "pass", "double_run": "pass", "baseline_freeze": "pass"},
+  "acceptor_confledger": {"red_then_green": "pass", "double_run": "pass", "baseline_freeze": "pass"},
+  "smoke": {"confledger_preempt_cli": "exit 0", "lease_preempt_release": "in place"},
+  "code_changes_by_this_batch": 0,
+  "model_changes": 0
+ },
+ "judgment_semantics_change": "none",
+ "facet_measurement": "none_required_rule_411cea73_unchanged",
+ "sleep_gate": {"PREEMPT_PRICE": null, "activation": "calibration_channel_only"},
+ "f_table": {
+  "F1": "pass_411cea73",
+  "F2": "pass_292_green_reverified",
+  "F3": "pass_acceptor_rerun",
+  "F4": "pass_additive_zero_new_constants",
+  "F5": "pass_sleep_gate_declared",
+  "F6": "pending_settlement"
+ },
+ "red_evidence": "sih/event/plan/confreopen-solo-materials/red-evidence/red-log.md",
+ "settlement": "see confreopen-solo-results.md settlement section"
+}

@@ -1,0 +1,15 @@
+{
+ "batch": "confreopen-solo",
+ "at": "2026-09-08",
+ "manifest": "md_content_sha256",
+ "items": [
+  {
+   "path": "sih/event/plan/confreopen-solo-results.md",
+   "sha256": "a1226bca616a7f88c2ceca86917c82ad46a1c5cb514a24398e4e343e0df6018a"
+  },
+  {
+   "path": "sih/event/plan/confreopen-solo-materials/red-evidence/red-log.md",
+   "sha256": "e499fb4c411cb2fdc4adccae840360c3a893f4e2e59e5e76f672452d0c935c41"
+  }
+ ]
+}
