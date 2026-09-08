@@ -78,7 +78,7 @@ md 件直证申报：腿二核验件与腿三映射表两 md 直证首跑 RC 2 R
 - 放锁收约：10 路径 unlock 全过零失败（放后锁台账现势零锁复核在档）；close 首跑无主闸拦（红证 16 件俱 CALL-LOG 族与 calls.ndjson 候清项，归档 red-evidence-close-first.json），双旗标 bypass 显式留痕即 bypassed_orphan 与 bypassed_calllog 两笔（bypass.ndjson 2026-09-08T11:54:16），close 复跑一跑成即会话 a241ff588d325ba0 revoked、双工地拆、双分支删
 - 归并提交号：tools 归并 e56e316b（closeguard 预收 de111421）、engine 归并 aae12d9
 - reconcile：双仓 unrouted 俱零；cert_missing 即 tools 5 与 engine 3，tools 较前批存量增一笔系本批 closeguard 预收提交 de111421 机械自生无 cert 属存量形（承 constclear2c 即 eeab6fc unbypassed 存量形先例同款如实记档），engine 与批前同数；unbypassed 与 session_orphan 俱为跨批存量不代清
-- 链 verify：valid，events 224，末笔即本批管线报告认证 a009696c（2026-09-08 链含本批意图 1 笔与例行读数 3 笔与认证 9 笔，同窗他会话笔共存如实记）
+- 链 verify：valid，events 225（含直改笔后终验），末笔即本批直改链笔 bb7233c4；本批链面即意图 1 笔与例行读数 3 笔与认证 9 笔与直改笔 1 笔，同窗他会话笔共存如实记
 - 判据扫复算：C1 与 C3 与 C4 与 C5 achieved、C2 viewline 维持 in_flight（本批零 viewline 命名空间命中即判据未收口如实呈），degraded 假零沉底；C2 收口未达成系腿三部分对齐挂起候人裁，差距申报六条与补齐候选三件见映射表件
 - 收约补笔：本节与 F-5 与误差节即本笔，任务包与提示词件两预落件随本笔入版控，经直改链笔申报加 --no-verify 提交替 lease bypass 登记通道（先例同形）
 
