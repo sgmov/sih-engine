@@ -1,0 +1,7 @@
+Using CPython 3.14.6
+Creating virtual environment at: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/lazyclear-solo/.venv
+   Building nomenclator @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/lazyclear-solo/nomenclator
+      Built nomenclator @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/lazyclear-solo/nomenclator
+Installed 6 packages in 9ms
+..............................                                           [100%]
+30 passed in 1.42s

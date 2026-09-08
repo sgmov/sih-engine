@@ -1,0 +1,76 @@
+{
+ "batch": "lazyclear-solo",
+ "at": "2026-09-09",
+ "session": "8afc560ae1ac9fb3",
+ "pipeline": [
+  {
+   "step": "formatter lazy.json",
+   "exit": 0
+  },
+  {
+   "step": "formatter terms.json",
+   "exit": 0
+  },
+  {
+   "step": "formatter results.md",
+   "exit": 0
+  },
+  {
+   "step": "scrutinator des-001 results.md",
+   "exit": 2,
+   "note": "域外如实记，event/plan 不在 des-001 域，不属违规"
+  },
+  {
+   "step": "nomenclator check results.md (worktree pack)",
+   "exit": 0,
+   "findings": 0
+  }
+ ],
+ "register": {
+  "exit": 0,
+  "status": "registered",
+  "written": [
+   "lazy.json",
+   "terms.json"
+  ],
+  "hints": [
+   "懒波升格：基线管 自懒波区移入已立区，词条记 prior_state"
+  ],
+  "rejects": []
+ },
+ "tests": {
+  "pre": "30 passed",
+  "post": "30 passed",
+  "exit": [
+   0,
+   0
+  ]
+ },
+ "acceptance": [
+  {
+   "target": "SPEC-021-golden-vector-dual-method.md",
+   "exit": 0,
+   "findings": 0
+  },
+  {
+   "target": "SPEC-022-envelope-v1.md",
+   "exit": 0,
+   "findings": 0
+  },
+  {
+   "target": "SPEC-023-mcpline-alpha-readonly-v1.md",
+   "exit": 0,
+   "findings": 0
+  },
+  {
+   "target": "README.md",
+   "exit": 0,
+   "findings": 0
+  }
+ ],
+ "no_bump": {
+  "manifest.json": "e2bedb8fcdcad84c564aa0adf1fae69c61fbaf872abf53564607251f6a705e5a",
+  "envelope.json": "0448c53751bfdd41ca53d2d16a4f38ade672ed0e89ef7ffc9122d826dfa05828",
+  "note": "前后逐字节不变"
+ }
+}

@@ -1,0 +1,5 @@
+{"since": "2026-09-06", "source": "toolincub-solo 批基线管工作名懒波登记，承 SPEC-021 在用词", "word": "基线管"}
+lazy count: 10
+terms count: 230
+基线管 in terms: False
+basemgr in terms: False

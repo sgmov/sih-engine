@@ -1,0 +1,3 @@
+ nomenclator/packs/core/lazy.json  | 5 -----
+ nomenclator/packs/core/terms.json | 9 +++++++++
+ 2 files changed, 9 insertions(+), 5 deletions(-)

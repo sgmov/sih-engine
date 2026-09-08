@@ -1,0 +1,46 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.11.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "hints": [
+    "懒波升格：基线管 自懒波区移入已立区，词条记 prior_state"
+  ],
+  "rejects": [],
+  "status": "registered",
+  "written": [
+    "lazy.json",
+    "terms.json"
+  ]
+}
