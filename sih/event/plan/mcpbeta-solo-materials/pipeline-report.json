@@ -1,0 +1,44 @@
+{
+ "batch": "mcpbeta-solo",
+ "at": "2026-09-09",
+ "pipeline": [
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "targets": [
+    "sih/event/plan/mcpbeta-solo-results.md",
+    "sih/event/plan/mcpbeta-solo-materials/red-evidence-first-runs.md"
+   ],
+   "exit_code": 0,
+   "changed": 0
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "targets": [
+    "sih/event/plan/mcpbeta-solo-results.md",
+    "sih/event/plan/mcpbeta-solo-materials/red-evidence-first-runs.md"
+   ],
+   "exit_code": 2,
+   "note": "des-001 域只盖 sih-engine/doc；event/plan 目标域外 exit-2 如实记入档，不属违规（BATCH-FACE 坑位注记）"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core (0.11.0)",
+   "targets": [
+    "sih/event/plan/mcpbeta-solo-results.md",
+    "sih/event/plan/mcpbeta-solo-materials/red-evidence-first-runs.md"
+   ],
+   "exit_code": 0,
+   "findings": 0
+  }
+ ],
+ "tests": {
+  "suite": "55 passed, 0 failed",
+  "matrix_rows_covered": 12,
+  "gates_passthrough": 17,
+  "stdio_smoke": 3,
+  "zero_write_proof": "suite-window dual-repo git-status equality held"
+ },
+ "notes": "化格在核前；核阅域外 exit-2 非违规；检词零违例；判在书简前管线序照走。"
+}

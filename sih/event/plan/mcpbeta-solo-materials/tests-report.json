@@ -1,0 +1,18 @@
+{
+ "batch": "mcpbeta-solo",
+ "at": "2026-09-09",
+ "what": "mcpline beta 写面全量测试与冒烟与零写证明读数",
+ "suite": {
+  "result": "55 passed, 0 failed",
+  "exit_code": 0,
+  "log": "full-suite-final.log"
+ },
+ "stdio_smoke": {
+  "beta_write_path_verify_loop": "pass (open->lock->intent->append->chain_verify valid->park->unlock->close 八步全零)",
+  "alpha_five_regression": "pass",
+  "local_full_face": "pass",
+  "excerpt": "beta-smoke-excerpt.log"
+ },
+ "zero_write_proof": "suite-window dual-repo git-status equality held (test_zero_write_proof_whole_suite_window)",
+ "red_evidence": "red-evidence-first-runs.md (九发首跑红证全量留痕)"
+}
