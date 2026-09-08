@@ -1,0 +1,26 @@
+# f2_refs_machine_verifiable 首跑红证（先红留痕，2026-09-09）
+
+命令：cd sih-engine && cargo test --test mem_recall_f_suite f2_refs_machine_verifiable
+树态：主树 HEAD 39e6b1d（release-0.9.0 清单步骤九），工地分支 msh/recallfix-solo 同基；src/retriever 零改动即存量红态
+
+```
+failures:
+
+---- f2_refs_machine_verifiable stdout ----
+
+thread 'f2_refs_machine_verifiable' panicked at tests/mem_recall_f_suite.rs:76:21:
+摘录截断前段不在行区间 sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    f2_refs_machine_verifiable
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 8 filtered out; finished in 60.81s
+
+error: test failed, to rerun pass `--test mem_recall_f_suite`
+```
+
+断言位：tests/mem_recall_f_suite.rs:76（window.contains(head) 摘录截断前段不在行区间）
+涉事行 reference：sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9（axis=topic，matched=recall）
+批前全量召回快照：recall-prefix-run-2026-09-09.ndjson（topics pk-024+recall，event certification_completed）

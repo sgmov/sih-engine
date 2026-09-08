@@ -1,0 +1,21 @@
+{
+ "tool": {
+  "name": "cargo-test",
+  "version": "recallfix-solo"
+ },
+ "packs": [],
+ "findings": [],
+ "suite": "sih-engine 全目标",
+ "summary": {
+  "passed": 239,
+  "failed": 0,
+  "exit_code": 0
+ },
+ "log_ref": "sih/event/plan/recallfix-solo-materials/cargo-test-full-2026-09-09.log",
+ "mem_recall_f_suite": {
+  "passed": 9,
+  "failed": 0,
+  "seconds": 104.71,
+  "note": "f2 自然转绿断言零改"
+ }
+}
