@@ -1,0 +1,58 @@
+{
+ "header": {
+  "domain": {
+   "exclude": [
+    "**/.agents/**",
+    "**/01-ontology-of-names.md",
+    "**/CALL-LOG.md",
+    "**/PRO-007*",
+    "**/fixtures/**",
+    "**/llm-friendly-build/**",
+    "**/nomenclator/packs/**",
+    "**/nomenclator/reports/**",
+    "**/nomenclator/tests/**",
+    "**/reports/**",
+    "**/sih-philosophy/**",
+    "**/trail/**"
+   ],
+   "include": [
+    "AGENTS.md",
+    "sih-engine/doc/**/*.md",
+    "sih-engine/skills/**/*.md",
+    "sih-tools/*.md",
+    "sih-tools/*/CALL-LOG.md",
+    "sih-tools/*/CONTRACT.md",
+    "sih-tools/*/INCUBATION.md"
+   ]
+  },
+  "pack": {
+   "name": "core",
+   "version": "0.11.0"
+  },
+  "tool": {
+   "name": "nomenclator",
+   "version": "0.2.0"
+  }
+ },
+ "hits": [
+  {
+   "cause": null,
+   "class": null,
+   "code": "basemgr",
+   "definition": "基线向量与规约向量双种共享家位工具：freeze 冻结 replay 重放 refreeze 重冻三操作，答没变与答对两物分立，重放只读零写入，冻结与重冻落笔仅限显式指名向量件；SPEC-021 金向量双方法论的载体，实装位 sih-tools/basemgr",
+   "en": "basemgr",
+   "note": null,
+   "signed": "2026-09-09",
+   "since": null,
+   "source": "2026-09-09 lazyclear-solo 批升格立名：名随实达即 basemgr 工具 basemgrimpl-solo 批 2026-09-07 已实装（sih-tools/basemgr）；正典在用即 SPEC-021 一词两物节在用词先于 2026-09-06 懒波登记且持续；人节点 2026-09-09 裁二明授升格立名（specfix-solo 停批候裁选项二先清债后复链）；工作名来历承 toolincub-solo 批孵化登记件 sih-tools/incubation/regula-line-tools-2026-09-06.md",
+   "state": "established",
+   "word": null,
+   "zh": "基线管"
+  }
+ ],
+ "state": "established",
+ "states": [
+  "established"
+ ],
+ "word": "基线管"
+}
