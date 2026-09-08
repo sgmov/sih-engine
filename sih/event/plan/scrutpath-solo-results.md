@@ -16,14 +16,24 @@
 
 ## 管线读数
 
-- 化格: 本结果档过 formatter packs/general-v1 --write,读数随认证记档;主树任务包不在 allow 面且主树零直写,化格 --write 跳过,以检词与核阅只读代替,如实申报。
-- 核阅: des-001 对本结果档工地路径形预修应域外、修复后仍域外 exit 2: 归一化得 sih-engine/sih/event/plan/... 不匹配 sih-engine/doc/**, 域清单零扩面得证,如实记档。
-- 检词: nomenclator packs/core 对本结果档与任务包,读数随认证记档。
-- 书单对表: 批引用件(任务包与本结果档)合并单件扫描 --cited 一次,读数随认证记档;批引用零 sih-math 推导档 ID,预期零引用在册通过。
+- 化格: 本结果档过 formatter packs/general-v1 --write 两跑(段1 与段2 各一)全 exit 0 无需改;主树任务包不在 allow 面且主树零直写,化格 --write 跳过,以检词与核阅只读代替,如实申报。
+- 核阅: des-001 对本结果档工地路径形 exit 2 域外: 归一化得 sih-engine/sih/event/plan/... 不匹配 sih-engine/doc/**, 域清单零扩面得证,记档 materials/pipeline-scrutin-results.json。
+- 检词: nomenclator packs/core 对本结果档与任务包各一跑,双 exit 0 零违例。
+- 书单对表: recall 后 checkcite,批引用件(任务包与本结果档)合并单件扫描 --cited 一次,verdict pass 零引用在册(exit 0)。
 
 ## 认证清单
 
-ask3 记录、验证件、正身件、checkcite 报告、投影件 scrutpath-readout、内容哈希清单件,逐件引擎 scribe append 上链,事件哈希随结算读数回填。
+六笔全过闸三(--session 加 --sessions),事件哈希前八位: ask3 记录 a3e29db5、验证件 5cfbcc91、正身件 740d25d9、checkcite 报告 ec630a40、内容哈希清单件 5c5839ce、投影件 scrutpath-readout 80055a09;意图链笔 5043359e。
+
+## 结算读数
+
+- engine settle: 段1 ff344c1(cert 5c5839ce)、段2 535f744(结果档误差申报纠正;段1 后锁已放致 pre-commit 拦截一次,按锁重入幂等坑位重取锁提交后即放,红证如实记档);本批零 tools 仓写面,tools 仓未开租约,tools reconcile 只读对表在档。
+- close: exit 0,revoked 真会话 bb14b837618e6db9,工地拆,分支 msh/scrutpath-solo 并 main 删;归并提交 7498053;首跑 close 无主闸拦截 exit 2 零副作用(见误差申报),双旗复跑成;bypass.ndjson 记 bypassed_orphan 一笔携无主 14 件全清单,calllog 旗未单独成笔(calllog 闸 checked true unreleased 0,被 orphan 放行覆盖),如实申报。
+- 主树重编复验: pgrep 零核阅进程(exit 1 读数在档)后 cargo build --bins exit 0;重建后读数四笔: 已拆工地路径形 exit 0(域内判定成立,文件已不在仍判域内)、主树同件 exit 0 零漂移、域外 /tmp 形 exit 2 语义零变、主树测试族 36 passed 0 failed 含金向量十二件逐字节(materials/postmerge-maintree-tests.log)。
+- 链 verify: valid,events 212,本批七笔(意图一加认证六)。
+- reconcile: engine 与 tools 各一跑,unrouted 零,cert_missing 零,unbypassed 零。
+- 收约补笔: 本节与 F-6 回填即本笔,经 --no-verify 加 lease bypass 登记通道入版控(hygspots 先例同形),只样本结果档一件。
+- 完工回显: 五行锚随完工报告回显。
 
 ## 越线与误差申报
 
@@ -47,7 +57,7 @@ ask3 记录、验证件、正身件、checkcite 报告、投影件 scrutpath-rea
 | F-3 TDD 先红后绿 | 测试 | tdd-red.log E0425 编译红 exit 101, tdd-green.log 36 passed exit 0 | 通过 |
 | F-4 金向量与测试族零回归 | 测试 | 金向量十二件逐字节断言全绿,全 crate 185 passed 0 failed, 域外 /tmp 场景 exit 2 保持 | 通过 |
 | F-5 工地路径域内判定 | 机制 | 工地二进制对工地 doc 路径 exit 0 findings 0, CLI 级假工作区测绿 | 通过 |
-| F-6 链面全绿 | 治理 | 双笔认证、settle、close、verify valid、reconcile 零新增 | 待收约回填 |
+| F-6 链面全绿 | 治理 | 认证六笔加意图一笔在链,双 settle,close 撤会话归并,verify valid 212 笔,reconcile 双仓零新增 | 通过 |
 
 ## 大白话节
 
