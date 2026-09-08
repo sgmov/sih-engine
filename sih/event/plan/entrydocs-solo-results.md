@@ -29,8 +29,10 @@
 
 ## 认证与结算 {#settle}
 
-- 内容哈希清单件绑定 README 与双 guide 与本结果档与 CASCADE.json 五路径 sha256，认证事件号随收约补笔回填
-- settle 提交号与 verify 与 reconcile 读数随收约补笔回填
+- 内容哈希清单件绑定 README 与双 guide 与本结果档与 CASCADE.json 五路径 sha256，认证事件 cb6b0481 即 certification_completed 在当日链
+- settle 实态如实申报：工地分支残留致 worktree add 失败后管道掩退出码链在主仓误跑 add -A 即误提 91314c8 含他批积尘七十三件，修正笔 3a924d5 剔除非本批件回未跟踪态、本批五件留档，双笔 lease bypass 登记，历史保留零 rewrite；批内容以主仓 3a924d5 为正
+- 链 verify：valid，178 笔；reconcile：engine unrouted 零
+- 收约：九锁全放，close 经 bypass-orphan 与 bypass-calllog 双旗标留痕过闸即 calls.ndjson 与 CALL-LOG 族九册系投影腿候卫生批，会话 aa117f9f847c7134 已吊销
 
 ## 大白话节 {#plain}
 
@@ -39,7 +41,7 @@
 ## 越线与误差申报 {#violations}
 
 - 任务包与提示词件即 entrydocs-solo.md 落 sih/state/plan/ 未入本批 allow 面，留主树候后继收编批提交，close 无主位如实申报
-- scribe intent 首跑缺 --sessions 参 exit 1 零留痕，补参即过
+- scribe intent 首跑缺 --sessions 参 exit 1 零留痕，补参即过；工地分支残留致 worktree add 失败后管道掩退出码链在主仓误跑 add -A 即误提 91314c8，修正笔 3a924d5 剔除双 bypass 登记，红证本档即申报；lease commit 两跑即 repo_not_in_session 与 commit_must_target_worktree 教训即工地路径须在册且必须工地形，本批以 closeguard 先例形收口
 - 其余误差零申报
 
 ## F 表 {#ftable}
@@ -50,4 +52,4 @@
 | F-2 管线绿 | 治理 | 化格核阅检词序固定全跑，两 guide exit 0，README 域外记档 |
 | F-3 链痕全 | 治理 | 意图笔与认证笔与 settle 在链，读数随补笔 |
 | F-4 写入仅 allow | 治理 | 九锁面与 allow 一致，任务包留主树申报在案 |
-| F-5 收约全绿 | 治理 | 随收约补笔回填 |
+| F-5 收约全绿 | 治理 | 通过即九锁全放、close 双旗标留痕、会话吊销、链 valid 178 笔、reconcile unrouted 零 |
