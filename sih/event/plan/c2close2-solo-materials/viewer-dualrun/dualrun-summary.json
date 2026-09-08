@@ -1,0 +1,87 @@
+{
+ "tool": "viewer",
+ "binary_sha256": "afbe848c6607e470e8d9a3963270005f11f437c79e7fad714d09ee19373b4968",
+ "trail": "sih-engine/sih/event/trail/2026-09-08.ndjson",
+ "date": "2026-09-08",
+ "runs": [
+  {
+   "subcommand": "alarms",
+   "rc_run1": 1,
+   "rc_run2": 1,
+   "rc_equal": true,
+   "cmp_identical": true,
+   "sha256_run1": "1c057077f471122929084f20e4741dbecb6777f39acc972fe2315a36ecb38ef3",
+   "sha256_run2": "1c057077f471122929084f20e4741dbecb6777f39acc972fe2315a36ecb38ef3",
+   "alarm_count": 66,
+   "alarm_event_types": [
+    "reading_recorded"
+   ],
+   "exit_code_suggested": 1
+  },
+  {
+   "subcommand": "heartbeat",
+   "rc_run1": 0,
+   "rc_run2": 0,
+   "rc_equal": true,
+   "cmp_identical": true,
+   "sha256_run1": "f5b9170ff9dc77abba9cfdeaff4c7e8f423bb40b9fad1d34defd2f1a89e0e494",
+   "sha256_run2": "f5b9170ff9dc77abba9cfdeaff4c7e8f423bb40b9fad1d34defd2f1a89e0e494",
+   "keys": [
+    "consumable_count",
+    "parking",
+    "recent_readings",
+    "reference_date",
+    "trail"
+   ],
+   "consumable_count": 66,
+   "parking_ids": [
+    "pk-078",
+    "pk-079"
+   ]
+  },
+  {
+   "subcommand": "settle",
+   "rc_run1": 0,
+   "rc_run2": 0,
+   "rc_equal": true,
+   "cmp_identical": true,
+   "sha256_run1": "a068b7ba0cc0845e99e13e1c63ea246667392dd3f96fe4805a18ec7145eef709",
+   "sha256_run2": "a068b7ba0cc0845e99e13e1c63ea246667392dd3f96fe4805a18ec7145eef709",
+   "total_events": 299,
+   "event_type_counts": [
+    [
+     "certification_completed",
+     176
+    ],
+    [
+     "crosscheck_completed",
+     15
+    ],
+    [
+     "direct_edit_completed",
+     7
+    ],
+    [
+     "intent_refined",
+     27
+    ],
+    [
+     "parking_entered",
+     2
+    ],
+    [
+     "parking_exited",
+     6
+    ],
+    [
+     "reading_recorded",
+     66
+    ]
+   ],
+   "certification_count": 176,
+   "intent_count": 27,
+   "consumable_count": 66
+  }
+ ],
+ "verdict": "IDENTICAL"
+}
