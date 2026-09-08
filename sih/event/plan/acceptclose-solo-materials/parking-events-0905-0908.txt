@@ -1,0 +1,43 @@
+2026-09-05 parking_entered pk-054 
+2026-09-05 parking_entered pk-057 
+2026-09-05 parking_entered pk-058 
+2026-09-05 parking_entered pk-059 
+2026-09-05 parking_exited pk-045 promoted
+2026-09-05 parking_exited pk-047 promoted
+2026-09-05 parking_exited pk-048 promoted
+2026-09-05 parking_exited pk-049 promoted
+2026-09-05 parking_exited pk-054 promoted
+2026-09-05 parking_exited pk-057 promoted
+2026-09-05 parking_exited pk-059 promoted
+2026-09-06 parking_entered pk-060 
+2026-09-06 parking_entered pk-061 
+2026-09-06 parking_entered pk-062 
+2026-09-06 parking_entered pk-063 
+2026-09-06 parking_entered pk-064 
+2026-09-06 parking_entered pk-065 
+2026-09-06 parking_entered pk-066 
+2026-09-06 parking_entered pk-067 
+2026-09-06 parking_entered pk-068 
+2026-09-06 parking_entered pk-069 
+2026-09-06 parking_entered pk-070 
+2026-09-06 parking_entered pk-071 
+2026-09-06 parking_entered pk-072 
+2026-09-06 parking_entered pk-073 
+2026-09-06 parking_entered pk-074 
+2026-09-06 parking_exited pk-046 promoted
+2026-09-06 parking_exited pk-060 promoted
+2026-09-06 parking_exited pk-068 promoted
+2026-09-06 parking_exited pk-071 promoted
+2026-09-06 parking_exited pk-072 promoted
+2026-09-07 parking_entered pk-075 
+2026-09-07 parking_entered pk-076 
+2026-09-07 parking_entered pk-077 
+2026-09-07 parking_exited pk-044 promoted
+2026-09-07 parking_exited pk-073 promoted
+2026-09-07 parking_exited pk-075 promoted
+2026-09-07 parking_exited pk-076 promoted
+2026-09-08 parking_entered pk-078 
+2026-09-08 parking_exited pk-042 promoted
+2026-09-08 parking_exited pk-053 promoted
+2026-09-08 parking_exited pk-061 promoted
+2026-09-08 parking_exited pk-067 promoted

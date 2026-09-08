@@ -1,0 +1,13 @@
+稽 watchcheck 对表读数 2026-09-08（v0.2.0）
+判定式：脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单
+输入面：双仓 git status --porcelain -uall；锁面镜像 /Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/locks.ndjson（现势 0 面）；声明面 /Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-08.ndjson（声明 0 件）；豁免面冻结登记 16 面（constants.py）
+扫描：脏文件 1426 件
+结论：无主修改 7 件，呈人节点二值裁决——「我的」：走司衡治理通道（域内管线三步加直改链笔）；「不是我的」：机械回滚（git restore 或对未跟踪件删除，操作见 BATCH-FACE 处置协议节；本工具零代行）。
+无主清单：
+- sih-tools/attractor/CALL-LOG.md | mtime 2026-09-08T04:45:10+00:00 | 未跟踪新件
+- sih-tools/calllog/calls.ndjson | mtime 2026-09-08T05:04:46+00:00 | 已跟踪修改
+- sih-tools/critsweep/CALL-LOG.md | mtime 2026-09-08T05:04:46+00:00 | 未跟踪新件
+- sih-tools/facet/CALL-LOG.md | mtime 2026-09-08T04:45:10+00:00 | 已跟踪修改
+- sih-tools/lease/CALL-LOG.md | mtime 2026-09-08T05:04:46+00:00 | 已跟踪修改
+- sih-tools/scribe/CALL-LOG.md | mtime 2026-09-08T05:04:46+00:00 | 已跟踪修改
+- sih-tools/selector/CALL-LOG.md | mtime 2026-09-08T03:38:01+00:00 | 已跟踪修改
