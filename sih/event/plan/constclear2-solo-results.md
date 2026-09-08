@@ -51,8 +51,10 @@
 
 ## 管线读数
 
-- 随管线实录补记于本节（补笔回填）
-- checkcite 与认证清单随批落
+- 化格 general-v1：任务包与结果档与路由表 md 三件 exit 0（registry 与 json 件不越域化格如实申报）
+- 核阅 des-001：三 md 件首跑全 exit 0；路由表复验一笔 exit 2 域外如实记档（sih-math 与 state/event/plan 域边界，不属违规）
+- 检词 core：三 md 件零违例
+- checkcite：首跑 fail missing 四件（PROB-010/013/015/SPEC-017）与二跑 fail missing 一件（PROB-016）与假 pass 红证一笔（cited 拼接触败空转 pass，facepatch 勘误同族）俱留档 materials；终跑 pass missing 零——recall 正形即 --word 词面通道加被引载体 stem 多查询（aliases 种子键即 stem），无旗标语义 top-K 换词非单调为本次病根，如实记档
 
 ## F 表
 
@@ -62,14 +64,25 @@
 | F-2 改判三件呈裁表 | 治理 | 呈裁表在档零代裁 | 通过（路由表 §4；env-params 三行核验在证据件） |
 | F-3 冻结廿三件两态路由全覆盖 | 数据治理 | 逐件恰一态零残留，数学态载锚形，工程态三件套齐 | 通过（2 数学＋20 工程＋1 退场核销显式申报；每行携核验证据） |
 | F-4 写入仅 allow 与零改值 | 治理 | 源码与在泊件与已结算档零触碰 | 通过（核验脚本只读；写入面见请求写入节） |
-| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（读数见结算读数节） |
 
 ## 越线与误差申报
 
 - 令源账面与链面实态存在第三层（constmodel-solo 09-05），本批以三层对账为准并如实申报；若主会意指仅两层，路由表仍兼容（constmodel 处置列明可回溯）
 - 生成器 TypeError 与 sweep 空变量两笔我方笔误红证在档
+- checkcite 三笔红证在档（两 fail 一假 pass），终跑 pass 前的 recall 调形探索全记录于管线读数节；假 pass 根因即 cited 拼接触败后空转判 pass（facepatch 勘误同族第五案）
+- close 两跑被拒红证：首跑无主闸（七件 CALL-LOG 族他窗活面）与二跑 CALL-LOG 专属闸（callloghyg 后新闸位），终跑双旗 bypass-orphan 加 bypass-calllog 显式留痕过闸，非静默
+- reconcile 存量计数较晨间基线有增量（engine unbypassed 68→74、tools 98→102），构成含 closeguard pre-close 机械提交与他窗批绕行，归属对表候主窗验收批，本批自身绕行两笔均登记
 - 其余误差零申报
 
 ## 结算读数
 
-待收约回填（三仓 settle 提交号与 close 与 verify 与 reconcile 与管线实录与回显锚行随收约补笔入档）。
+- 三仓 settle：engine 与 tools 与 math 工地提交（cert 取 f4a89ffa 即 ask3 记录认证前八位），归并 engine bfb1a14、tools cdb8a2ee、math 35b76ad
+- 认证实录七笔：ask3 记录 f4a89ffa、验证件 a8e450e4、正身件 5a96fcb8、checkcite 件 9fab2a7a、核验证据件 414b4e8b、路由表 json effeda73、内容清单件 c7b3f7c0（四 md 与 registry 哈希绑定）
+- 放锁收约：九锁 unlock 全过；close 三跑成（前两跑被拒红证见越线申报），会话 14ffe60e9571ee1e revoked、三工地拆、零失败
+- 归并对表：主树批输入件与分支同内容由 close 机械处置；三主件（路由表双形态与结果档）归并在位
+- 链 verify：valid，events 89
+- reconcile 三仓 unrouted 全零（本批零新增路由缺口）；存量计数见越线申报
+- C4 收约后读数：in_flight gap 0 last_hit 2026-09-08，令牌 constclear2 自登记生效——判据沉底转在飞机械可见
+- 完工回显：五行锚随完工报告回显
+- 收约补笔：管线实录与 F-5 与认证实录与本节即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 archpark 先例同形）
