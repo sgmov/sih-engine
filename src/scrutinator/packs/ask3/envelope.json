@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "ask3",
+  "family": "scrutinator",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "rules.toml"
+  ]
+}

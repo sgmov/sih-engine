@@ -1,0 +1,34 @@
+{
+  "engine": {
+    "name": "formatter",
+    "version": "0.2.0"
+  },
+  "packs": [
+    {
+      "name": "general-v1",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.md",
+          "**/*.json",
+          "**/*.yaml",
+          "**/*.yml",
+          "**/*.toml"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/tmp/fmt-target-run.md"
+  ],
+  "content_hashes": {
+    "/tmp/fmt-target-run.md": "ab40f614f5859bda666d974ccc0f1b2ea9f6db3acb8ad6804f55d55ee78a6c97"
+  },
+  "changes": [],
+  "domain_mismatches": [],
+  "summary": {
+    "targets_changed": 0,
+    "total_changed_lines": 0
+  }
+}

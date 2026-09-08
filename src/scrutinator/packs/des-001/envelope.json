@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "des-001",
+  "family": "scrutinator",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "rules.toml"
+  ]
+}

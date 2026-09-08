@@ -1,0 +1,8 @@
+{
+ "file": "sih-tools/nomenclator/packs/core/lazy.json",
+ "pre_sha256": "8d942038c2bcc7b13dc706778999b59e1761d203f27572c1b070c58b22e90edd",
+ "post_sha256": "e6d1ed543e5a61ef3ffce8195eaede3d389b82d7cb910ae581201e634d2eb6b8",
+ "semantic_equal": true,
+ "diff_class": "whitespace-only canonicalization (packhyg 收编规则正形化)",
+ "cause": "主树存量非规范形（toolincub-solo 1f760cb0 带入），非本批正文改动"
+}

@@ -1,0 +1,24 @@
+{
+ "batch": "packenv-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 件统一绑定内容哈希 sha256",
+ "content_hashes": {
+  "spec_022_design": {
+   "path": "worktrees/sih-engine/packenv-solo/doc/spec/SPEC-022-envelope-v1.md",
+   "sha256": "d5798175629529e3de71348f3a1da7eeaa94bd9416ebb76c6e0ac105ea513e04"
+  },
+  "task_package": {
+   "path": "worktrees/sih-engine/packenv-solo/sih/state/plan/packenv-solo.md",
+   "sha256": "035ecfb94c49301a67fda31c14b2137d2e6e04f8c2a82a2cd62f2b311cdba7f4"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/packenv-solo/sih/event/plan/packenv-solo-results.md",
+   "sha256": "f9a1bcbae24afabe92dbd8f011b8a037b15d4d5b82c817e2236ff950c8abdc09"
+  },
+  "pk061_exit_successor": {
+   "path": "worktrees/sih-engine/packenv-solo/sih/state/parking/materials/pk-061-exit.json",
+   "sha256": "7d1741265fe818202511c063801b59ffffa7f836e4d182caa4c85e9d08feebf8"
+  }
+ }
+}

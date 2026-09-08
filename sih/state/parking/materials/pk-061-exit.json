@@ -12,5 +12,10 @@
   "path": "doc/governance/PARKING-v1.md",
   "ruling": "用户 2026-09-08 FORK-1 令照录「pk-061 出泊：裁统一即立项，形态为信封统一、正文两型保留（m-sitruling-3 终签 fc17e1ce）；候实装批另立项，本批只出泊登记后继位。」",
   "state": "exited",
-  "ttl_days": 30
+  "ttl_days": 30,
+  "successor": {
+    "batch": "packenv-solo",
+    "date": "2026-09-08",
+    "note": "信封统一实装批（SPEC-022），本指针为出泊后继位登记，裁定文零改"
+  }
 }
