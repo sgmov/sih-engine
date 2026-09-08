@@ -62,7 +62,14 @@
 
 ## 结算读数
 
-（收约补笔回填）
+- 双仓 settle：engine 工地提交 888df61（base main@6a94aeb，三查过即 session_active 与 staged_in_scope 与 cert_on_chain），tools 工地提交 dde77e54（base integral-stage-build@08988c2b，三查过）；cert 取 4df45aae 即 ask3 记录认证哈希前八位。
+- 认证实录：ask3 记录 4df45aae、验证件 5e885d83、正身件 9caf49bd、pk-079 泊材料 986310cc、内容清单 894ea4ff 五笔 append 在链，另 intent 333e37b6 与 park enter 7d524f44 两笔写位笔。
+- 放锁收约：八路径 unlock 毕（首试漏 --identity 参即 RC2 用法错零台账写入，补参后八笔全 RC0，如实记档）；close 首跑无主闸拦即 15 件全为 CALL-LOG 册 14 面与 calls.ndjson（本批经 lease call-log append 正典通道追加所致，mtime 13:48 即本批追加时刻），携 --bypass-orphan 与 --bypass-calllog 双旗标留痕后成，revoked 真值，双工地与分支清除零失败；calllog_treadmill collected 空（CALL-LOG 面收编空承 recclsf 呈报形态如实记档不视为本批失败）。
+- 主树真形态复算：pk-079 在位携 gate 键，路由 siding failed P104，mainline 52 不变，siding 2 至 3，告警零，exit 0。
+- 哈希对表：任务包 dd2243ed 与提示词件 04c75a8b 与结果档 c2bbdbbb 与泊材料 a6db1c96 四件主树实哈希与内容清单及化格读数逐件一致，零盖版。
+- 链 verify：2026-09-08 当日链 valid，283 笔。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口；exit 1 驱动项为历史账面（engine unbypassed 78 与 session_orphan 24 与 cert_missing 3，tools 对应 111 与 19 与 5，皆在盘旧账归后继清账批）；closeguard 两笔（engine 7d44584 与 tools 20f1d90e）已补 bypass 登记。
+- 收约补笔：结算读数回填即本笔，经 --no-verify 加 lease bypass 登记通道入版控（genpark 与 mcppark 与 reroute 先例同形）。
 
 ## 大白话节
 
