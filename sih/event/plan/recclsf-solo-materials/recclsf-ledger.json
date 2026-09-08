@@ -1,0 +1,57 @@
+{
+  "batch": "recclsf-solo",
+  "date": "2026-09-08",
+  "session_id": "c159eb61c72ecb2c",
+  "session_label": "sess-zcode-260908-main-recclsf",
+  "intent_event_hash": "09fea05009ff6067e376d1261a1a1572d8ae54e0f69e3de500045fc97487eae6",
+  "leg0_treadmill_path_fix": {
+    "defect": "calllog_treadmill_collect 的 faces 根相对模式对 git status 仓相对路径永不匹配致收编恒空（hygspots G2 生产缺陷，sweepjson-solo 批 2026-09-08 两度 close 实测呈报候人裁，主窗折入本批即缺陷修复非裁决）",
+    "fix": "calllog_treadmill_faces 增可选 repo 参即同时收录该仓仓相对形（根相对形剥仓名首段，仓名按 repo 路径组成件对表承 pk-031 同形），根相对与仓相对两形俱命中；不传 repo 保旧形向后兼容；清单单源断言零改；收编判定语义零改",
+    "red_green": "T-0-1 仓相对形收编先红（faces 空即生产缺陷复现）后绿；T-0-2 根相对形俱命中；T-0-3 双形并存；金向量外既有 hygspots 六测零回归",
+    "realstate_dryrun": {
+      "sih-tools": {"git_status_face_hits": 14, "all_pure_append": true},
+      "sih-engine": {"git_status_face_hits": 0}
+    },
+    "live_retest_at_close": "待收约 close 时 calllog_treadmill 节回填"
+  },
+  "leg1_classifier_revision": {
+    "version": "1.39.0",
+    "contract_revision": "修订五十四",
+    "new_classes": ["cert_backfilled", "cert_writtenoff"],
+    "backfilled_binding": "链上补录认证笔（certification_completed 且 details.content_hashes.backfill 为真）绑定两条即 cert 前缀逐字节命中 original_event_hash 或 referencing_settle_commits 含仓名对表且全 sha 逐字节相等的条目；绑定数据单源取链上事件内嵌报告体不读盘",
+    "writtenoff_binding": "bypass 台账存在绑定该提交 sha 的销账登记（_bypass_hit 既有判定零改）",
+    "strictness": "绑定不符（引用清单声称该提交而该笔原始哈希与提交体 cert 不符）仍 cert_missing 且 detail 载 binding_mismatch 告警行；不认无绑定与绑定不符件；两形转新类显式计数零隐藏零降格不计入退出码归零要件；session_orphan 与 routed 等既有分类零改；退出码条件零改",
+    "precedent": "先例承引 bypass 台账形同物种即分类器已认台账形"
+  },
+  "reconcile_before_after": {
+    "before": {
+      "sih-tools": {"cert_missing": 5, "session_orphan": 19, "exit_code": 1},
+      "sih-engine": {"cert_missing": 3, "session_orphan": 24, "exit_code": 1},
+      "sih-math": {"cert_missing": 2, "session_orphan": 10, "exit_code": 1}
+    },
+    "after": {
+      "sih-tools": {"cert_missing": 0, "cert_backfilled": 5, "cert_writtenoff": 0, "session_orphan": 19, "unrouted": 0},
+      "sih-engine": {"cert_missing": 0, "cert_backfilled": 3, "cert_writtenoff": 0, "session_orphan": 24, "unrouted": 0},
+      "sih-math": {"cert_missing": 0, "cert_backfilled": 0, "cert_writtenoff": 2, "session_orphan": 10, "unrouted": 0}
+    },
+    "transferred": {
+      "cert_backfilled": {
+        "sih-tools": ["c4b56ece (b15cddcf)", "71c34f3e (4ff60c8f)", "cb609c99 (1da6f777)", "576828c1 (970c8299)", "526e2be1 (e6880a63)"],
+        "sih-engine": ["ead18e52 (b15cddcf)", "3bc29ae6 (1da6f777)", "0621bd36 (970c8299)"]
+      },
+      "cert_writtenoff": {
+        "sih-math": ["93c4f0b7 (81ef1c7a)", "d561f17a (06c30867)"]
+      }
+    },
+    "distinct_certs": {"backfilled": 5, "writtenoff": 2, "total_family": 7}
+  },
+  "red_green_evidence": {
+    "before_fix": "三仓 reconcile 现分类器读数即 tools 5 engine 3 math 2 俱 cert_missing（reconcile-before-*.json 在档，RC 1）",
+    "after_fix": "七件转新类即 backfilled 5+3 与 writtenoff 2，cert_missing 三仓归零（reconcile-after-*.json 在档）",
+    "tdd": "test_recclsf.py 九测先红（七败两过）后绿（九过），红绿证 tdd-red-green.log 在档承先红留痕纪律",
+    "negative_case": "绑定不符反例在测即引用清单声称该提交而原始哈希与 cert 不符仍 cert_missing 加 binding_mismatch 告警行（T-1-3）",
+    "golden": "tests/frozen/recclsf/golden-reconcile.json 随冻，双跑逐字节一致（cmp 退出码零）",
+    "regression": "全族 309 测零回归（基线 300 加本批 9）"
+  },
+  "classification_note": "本投影件为批材料非补录认证笔；certarch 五笔补录认证笔的 content_hashes 绑定即本批分类器认账的数据面，账面可追索"
+}
