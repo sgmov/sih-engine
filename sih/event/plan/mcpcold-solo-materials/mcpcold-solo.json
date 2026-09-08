@@ -1,0 +1,71 @@
+{
+ "batch": "mcpcold-solo",
+ "date": "2026-09-09",
+ "session": "sess-zcode-260909-mcpcold",
+ "lease_session": "fd958af0c311a10a",
+ "intent_event_hash": "8d1e2340",
+ "line": "mcpline（α 相批三，前批 mcpspec-solo 与 mcpserv-solo 俱收约）",
+ "legs": {
+  "registration": {
+   "target": "工作区 .zcode/config.json mcp.servers.sih",
+   "form": "stdio，command /opt/homebrew/bin/uv 绝对路径，args 指 sih-tools/mcpline python -m mcpline，env SIH_ROOT 显式，timeoutMs 60000",
+   "add_only_proof": "before/after 双影像比对：sihankor identical、hooks identical、added {sih}、removed 空；sha256 15c2f425 与 6f2b7e5a",
+   "load_proof": "冷 agent 进程日志 mcpServerCount 2"
+  },
+  "cold_agent": {
+   "session_id": "sess_b8dccf1f-1130-46db-bac4-b1f8288cc5e0",
+   "verdict": "pass",
+   "prompt": "任务句加 MCP 工具面可用事实一句，其余零内容（mcpcold-solo-prompt.md 正典）",
+   "zero_write_mechanics": "--disallowed-tools 二十具禁用清单，冷会话 toolNames 写与文件读类全缺席",
+   "tool_calls": [
+    {"name": "mcp__sih__chain_query", "input": {"date": "2026-09-09"}},
+    {"name": "mcp__sih__chain_verify", "input": {"date": "2026-09-09"}}
+   ],
+   "verdict_word": "valid true，首 25989caf 末 8d1e2340",
+   "independent_recheck": "主窗 scribe verify valid 74 笔同读数",
+   "help_seeking": "零",
+   "out_of_bounds_write": "零（双仓 status 前后全等加链 74 笔不变加配置哈希不变）"
+  },
+  "contract_compare": {
+   "spec": "SPEC-023",
+   "result": "零实质差异",
+   "declarations": ["chain_query 出参信封字段超集", "sweep-latest.json 系 2026-09-08 开发期遗留跟踪件与本批零涉"]
+  },
+  "five_tool_readings": {
+   "file": "stdio-five-tool-readings.json",
+   "tool_count": 5,
+   "chain_query": "matches 74",
+   "chain_verify": "status valid",
+   "critsweep": "严格 JSON 单对象五判据俱 achieved",
+   "heartbeat": "三维 convergence 0.125 与 adoption 0.0 与 mergeback 0.028571",
+   "locks_read": "held_count 10 成对核算（本批十锁实证）",
+   "error_probes": "两笔载荷恰四字段"
+  }
+ },
+ "redlines": {
+  "zero_assist": "held（prompt 正典照录，transcript 双证）",
+  "cold_agent_zero_write": "held（进程级禁用清单机械承载）",
+  "no_code_patch": "held（sih-tools/mcpline 零改动）",
+  "fail_as_fail": "held（本批首跑绿，零降格情形发生）"
+ },
+ "declarations": [
+  "暂存 HOME 机制承载模型选择（真实用户配置与治理面零触碰，apiKey 零入档）",
+  "CLI 帮助面三死旗标漂移记档（--allowed-tools 与 --max-turns 与 --settings）",
+  "叩问 check 先于 ask3 定稿一跑（预登记 8/8）",
+  "m-mcpcold-1 allow 预占零写入",
+  "gauge record 归主窗节律位本批零代跑",
+  "书单对表无对象（零推导档引用 ID）"
+ ],
+ "pipeline": {
+  "formatter": {"exit": 0, "targets": 5, "changed": 0},
+  "scrutinator": {"exit": 0, "verdict": "五件俱「目标不在任何已加载规则包声明的治理域内」域外如实记档不属违规；与 BATCH-FACE 所记 exit-2 形漂移照实申明"},
+  "nomenclator": {"exit": 0, "findings": 0, "targets": 5}
+ },
+ "certifications": {
+  "ask3_record": "见完工回报与投影认证笔",
+  "validation": "同上",
+  "identity": "同上",
+  "manifest": "settle cert 同取，完工回报承载",
+  "projection": "本件认证笔哈希见完工回报"
+ }
+}

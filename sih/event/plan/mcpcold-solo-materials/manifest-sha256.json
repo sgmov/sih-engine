@@ -1,0 +1,12 @@
+{
+ "kind": "content-hash-manifest",
+ "batch": "mcpcold-solo",
+ "date": "2026-09-09",
+ "files": {
+  "sih/state/plan/mcpcold-solo.md": "d440e08d4ed5776e2cc039061e8bf5371a81d3fc40ef1f46b349b03ec272131d",
+  "sih/state/plan/mcpcold-solo-prompt.md": "2d07315b328b8f3f98c6c710bc9ee38e9d41cb9f6d977fba2a2b655dd79d088e",
+  "sih/event/plan/mcpcold-solo-results.md": "e995253f39fd5a0f139175dc8fc3381567ec6c53b404b6471fab3f40f34991ee",
+  "sih/event/plan/mcpline-alpha-settlement-v1.md": "ec556ca1faa464db8c226d6194ba54b52ee42894f8d92fe32382bb85a34cb400",
+  "sih/event/plan/mcpcold-solo-materials/spec-023-contract-compare.md": "160adee1c0e8b0bb936d6e4e3c87a3b455a622e017bd76c65f5ead0064647876"
+ }
+}

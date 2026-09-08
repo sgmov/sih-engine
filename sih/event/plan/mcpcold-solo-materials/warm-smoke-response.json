@@ -1,0 +1,26 @@
+{
+  "sessionId": "sess_b6545524-ace5-40e2-a0b9-5abe7d0e1e5e",
+  "traceId": "c3342600-665d-42e9-a9c2-5d7e4a83848b",
+  "turnId": "turn_8c661de1-5a71-412d-b229-69d35683fadf",
+  "response": "工具存在且调用成功，出参 JSON 原样如下：\n\n```json\n{\n  \"date\": \"2026-09-09\",\n  \"readings\": {\n    \"convergence\": {\n      \"value\": 0.125,\n      \"computed_at\": \"2026-09-09\",\n      \"sequence\": \"ok\"\n    },\n    \"adoption\": {\n      \"value\": 0.0,\n      \"computed_at\": \"2026-09-09\",\n      \"sequence\": \"ok\"\n    },\n    \"mergeback\": {\n      \"value\": 0.028571,\n      \"computed_at\": \"2026-09-09\",\n      \"sequence\": \"ok\"\n    }\n  },\n  \"last_snapshot_at\": \"2026-09-09\",\n  \"days_since_last_snapshot\": 0\n}\n```",
+  "usage": {
+    "source": "provider",
+    "modelRequestCount": 2,
+    "inputTokens": 30685,
+    "outputTokens": 197,
+    "totalTokens": 30882,
+    "cacheReadTokens": 19136,
+    "cacheWriteTokens": 0,
+    "reasoningTokens": 0,
+    "webFetchRequests": 0,
+    "webSearchRequests": 0
+  },
+  "eventCount": 213,
+  "projection": {
+    "status": "idle",
+    "turnCount": 1,
+    "totalTokenCount": 30882,
+    "contextUsed": 15616,
+    "contextWindow": 1000000
+  }
+}
