@@ -210,6 +210,66 @@ pub fn domain_match(spec: &DomainSpec, path: &str) -> bool {
     spec.include.iter().any(|p| match_path_glob(p, path))
 }
 
+/// 工作区根标记件（scrutpath-solo 批增，anchor.py 同款上溯判根先例：
+/// sih-tools/attnanchor/anchor.py root() 即按此标记件逐级上溯）
+pub const WORKSPACE_ROOT_MARKER: &str = "sih-tools/lease/ledger/sessions.ndjson";
+
+/// 上溯判根：从目标路径逐级上溯找工作区根标记件，命中即返回根目录。
+/// 目标文件或中间目录不存在也可判（按路径串词法上溯，各祖先逐一实查标记件），
+/// 无标记件面返回 None（域外纵深守卫，退出码三值语义零变承此）。
+pub fn discover_workspace_root(path: &str) -> Option<String> {
+    let p = std::path::Path::new(path);
+    let mut cur: std::path::PathBuf = if p.is_dir() {
+        p.to_path_buf()
+    } else {
+        p.parent()?.to_path_buf()
+    };
+    loop {
+        if cur.join(WORKSPACE_ROOT_MARKER).is_file() {
+            return cur.to_str().map(String::from);
+        }
+        if !cur.pop() || cur.as_os_str().is_empty() {
+            return None;
+        }
+    }
+}
+
+/// worktree 路径归一化：根相对形若为 worktrees/<仓>/<批>/... 即剥前三段，
+/// 前置仓段回仓相对形（工地内容是仓的完整检出）：
+/// worktrees/sih-engine/<批>/doc/x.md → sih-engine/doc/x.md。
+/// 段数不足四或首段非 worktrees 返回 None。
+pub fn normalize_worktree_rel(rel: &str) -> Option<String> {
+    let comps: Vec<&str> = rel.split('/').collect();
+    if comps.len() < 4 || comps[0] != "worktrees" {
+        return None;
+    }
+    Some(format!("{}/{}", comps[1], comps[3..].join("/")))
+}
+
+/// 根锚定域判定（显式根参形，纯函数可测）：
+/// 原路径串命中即短路；否则取根相对形与 worktree 归一化形再判，
+/// 任一命中即域内。exclude 逐候选生效，域清单语义零变。
+pub fn domain_match_rooted(spec: &DomainSpec, root: &str, path: &str) -> bool {
+    if domain_match(spec, path) {
+        return true;
+    }
+    let root_trimmed = root.trim_end_matches('/');
+    let rel = match path.strip_prefix(root_trimmed) {
+        Some(r) => r.trim_start_matches('/'),
+        None => return false,
+    };
+    if rel.is_empty() {
+        return false;
+    }
+    if domain_match(spec, rel) {
+        return true;
+    }
+    match normalize_worktree_rel(rel) {
+        Some(norm) => domain_match(spec, &norm),
+        None => false,
+    }
+}
+
 /// 规则对单条文本检查，返回 findings
 pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
     let mut out = Vec::new();
