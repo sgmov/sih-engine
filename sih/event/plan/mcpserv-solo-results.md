@@ -49,8 +49,8 @@
 | ask3 记录 | a80b1772 |
 | 验证件 | d4c1caf4 |
 | 正身件 | c873c680 |
-| manifest 内容哈希清单件 | 见投影件 mcpserv-solo.json 内载与完工回报（settle cert 同取此值，补笔回填本表） |
-| 投影件 mcpserv-solo.json | 见完工回报（补笔回填本表） |
+| manifest 内容哈希清单件 | 3cb4e68f（settle cert 同取此值） |
+| 投影件 mcpserv-solo.json | cd56abda |
 
 md 件直证承先例走内容哈希清单件（manifest 覆盖任务包两件与结果档与 tdd-red-green.md 四件，定格 settle 前实值；收约补笔后哈希漂移如实申报）。
 
@@ -88,3 +88,13 @@ md 件直证承先例走内容哈希清单件（manifest 覆盖任务包两件�
 - smoke 摘录：sih-engine/sih/event/plan/mcpserv-solo-materials/smoke-excerpts.json（生成器 make_smoke_excerpts.py 同目录）
 - ask3 生成器：sih-tools/scribe/reports/make_ask3_mcpserv-solo.py（随批提交）
 - 实装区：sih-tools/mcpline/（pyproject 与 src/mcpline 与 tests 三族与 README）
+
+## 结算读数（收约补笔）
+
+- 双仓 settle：tools 段一 `bb25fe70`（base integral-stage-build@14cce319，16 件 982 行）、engine 段一 `5236352`（base main@9350777，12 件 578 行），cert 统一取 manifest 认证 `3cb4e68f`；预收与红证补段即 engine 段二 `25ddc26`（close 首跑无主闸红证归档）与段三 `a701875`（close 三跑 CALL-LOG 随批闸红证归档），tools closeguard 预收 `f482a8de`、engine closeguard 预收 `bfd4e74`；归并 tools `e4067459`、engine `989f422`。
+- 放锁收约：九路径 unlock 全过（unlock --identity 参缺首跑 rc=2 补参即过如实记档；材料目录残余三锁二次补放）；close 五跑形即首跑无主闸拦两件（attnanchor 与 attractor 两册 CALL-LOG 跨批存量族）、次跑工地卫生闸拦红证归档件（段二补收）、三跑 CALL-LOG 随批闸拦同两册、四跑同款卫生闸（段三补收）、五跑成（双旗 bypass-orphan 与 bypass-calllog 显式留痕落 bypass 台账）；会话 90ab7417cb4410dd revoked 真值，双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/mcpserv-solo.json。
+- 链 verify：valid，events 72（first `25989caf`、last `cd56abda` 即投影件认证末笔）；本批链笔序即意图 `bba35d36` 与认证五笔（ask3 `a80b1772`、验证件 `d4c1caf4`、正身 `c873c680`、manifest `3cb4e68f`、投影件 `cd56abda`）与双仓 settle 段链笔；与 mcpspec-solo 批链笔交织同链，全链 valid。
+- reconcile：双仓 unrouted 俱零、cert_missing 俱零即判据双零；unbypassed 即 tools 119 与 engine 83、session_orphan 即 tools 19 与 engine 24，增量俱本批 closeguard 预收与归并机械自生提交（mcpopen-solo 同形），跨批存量不代清。
+- 主树裸调用验收（接线硬性项）：主树 sih-tools/mcpline 位置跑测试族 14 绿含零写入双证（RC 0），工地条件验证不算接线之坑位已闭合。
+- 补笔申报：本节与认证清单实值回填即本笔，经直改链笔申报（scribe direct）加 --no-verify 提交替 lease bypass 登记通道（pkexits2 与 settlement-v2 与 mcpopen-solo 先例同形）；补笔后复跑化格 check 与检词俱绿。
+
