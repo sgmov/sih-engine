@@ -1,0 +1,27 @@
+{
+ "batch": "hygspots-solo",
+ "date": "2026-09-08",
+ "session": "sess-zcode-260908-main-hygspots",
+ "lease_session": "1bdb0de99fa97d62",
+ "readouts": [
+  {
+   "leg": "G1",
+   "subject": "lease 锁重入幂等语义",
+   "verdict": "contract_explicit+2_regression_pins",
+   "evidence": "CONTRACT.md 修订五十二其一；tests/test_lease.py test_lock_reentry_slash_variant_duplicate_ok 与 test_lock_triple_reentry_single_release_clears"
+  },
+  {
+   "leg": "G2",
+   "subject": "CALL-LOG 跑步机收编位",
+   "verdict": "implemented_1.37.0_transition_gated",
+   "evidence": "src/lease/core.py calllog_treadmill_collect；CALLLOG_TREADMILL_EFFECTIVE_AT=2026-09-08T08:00:00+00:00；tests/test_hygspots.py 五测"
+  },
+  {
+   "leg": "G3",
+   "subject": "pk-070 正典落位甲案",
+   "verdict": "stable_clear_9/9_裁决通过",
+   "event_hash": "f62638089bf59faf7289255135a5391c73cc7a1b333d9682d4376de155e91458",
+   "evidence": "proposition/DES/m-hygp070-1/ 终签材料与重放锚"
+  }
+ ]
+}
