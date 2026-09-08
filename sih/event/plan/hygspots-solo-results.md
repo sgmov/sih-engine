@@ -66,7 +66,15 @@
 
 ## 结算读数
 
-- 待收约回填：双仓 settle 提交号、放锁收约实录、链 verify、reconcile、收约补笔。
+- 双仓 settle：tools 2b58692b（归并 9f5aaff0）、engine 8a10e13 pre-close 携段件（归并 fc9a880）；cert 取 13f6ba07 即内容清单件前八位。
+- 认证实录六笔：ask3 记录 16de37b1、验证件 1156b82d、正身件 6e0cf182、checkcite 1a67cdc8、投影件 hygspots-readout 75d3c91f、内容清单件 13f6ba07；另 G3 终签 crosscheck f6263808。
+- 放锁收约：九锁 unlock 全过零失败；close 一跑成（revoked、双仓归并拆工地），双 bypass 旗标留痕（无主面系前窗批遗留候归属线；CALL-LOG 面受过渡条款豁免照 orphanexec 先例），收据落 ledger/receipts/hygspots-solo.json。
+- 主树正形核阅复验：des-001 对归并后 results 档 exit 0 零违规（工地路径域外 exit-2 已照先例申报）。
+- 链 verify：valid，events 177（含意图 c6336ef0 与终签 f6263808 与认证六笔）。
+- reconcile：双仓 unrouted 零，cert_missing 零新增（存量 3/4 与批前同数）。
+- packenv-solo 并行窗已归并（tools b2472839 在档），全程与本批零锁冲突。
+- 收约补笔：F-5 与本节结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 先例同形）。
+- 完工回显：五行锚随完工报告回显。
 - 大白话节：
   - G1：同一个会话对同一个文件重复上锁，现在白纸黑字写明这是「已经锁过了」不是出错，重复第三次也只算一次，解锁一次就全解开；以前两个窗口看到的报错是它们自己命令敲错了，不是锁的毛病。
   - G2：每批干完活，调用日志都会在总账上多几行，以前要专门派人手工抄进档案，现在收约程序顺手把这几行自动归档，只有改了旧记录（不是追加）才照旧拦下报人。
