@@ -116,7 +116,7 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 | F-2 两态零悬空 | 治理 | 每件处置必居其一即补笔或销账 | 通过（补笔 5 cert＋销账 2 cert＝7 cert 全覆盖零例外） |
 | F-3 补笔补录语境显式 | 治理 | 事件属显式标注补录、载原始哈希与现盘复核语句 | 通过（五笔 content_hashes 载 backfill 真值＋原始全值哈希＋现盘 sha256 对表语句，落当日 trail 零回写） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过面申报（七路 allow 面内全合规；越线一笔即 lock 路径参误写错误目录，红证归档后即时机械清除并正确路径重取，详见误差申报） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 见结算读数 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 0e886f42 与 engine 73c58cf 双 settle、归并 a6f59aac 与 49affba、close 双旗标 bypass 一跑成、verify valid 249 笔；cert_missing 零新增即余件不可清呈人裁非缺件，unbypassed 增量经 bypass 登记归零） |
 
 ## 越线与误差申报
 
@@ -128,7 +128,12 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 
 ## 结算读数
 
-- 本节由收约补笔回填（anchorskill 与 c2close 先例同形）：双仓 settle 提交号、归并提交号、close 实录、链 verify 笔数、三仓 reconcile 终读数、批链面笔数。
+- 双仓 settle：tools 段一 0e886f42（base integral-stage-build@e56e316b）、engine 段一 73c58cf（base main@2cc428e），cert 统一取本批 ask3 记录认证 c4ac69b7
+- 放锁收约：七路径 unlock 全过零失败（放后他会话 sweepjson-solo b0487ab 共享追加面九锁共存实录，主会协调纪律在册）；close 首跑无主闸拦（红证 16 件俱 CALL-LOG 族与 calls.ndjson 候清项，归档 red-evidence-close-first.json 两件），双旗标 bypass 显式留痕即 bypassed_orphan 与 bypassed_calllog 两笔，close 复跑一跑成即会话 3326c23ab0cb450f revoked、双工地拆、双分支删
+- 归并提交号：tools 归并 a6f59aac（closeguard 预收 76928493）、engine 归并 49affba（closeguard 预收 5982427）；预收提交与收约补笔提交俱经 bypass 通道登记即本批对 unbypassed 零新增
+- 链 verify：valid，events 249，末哈希 52c2dbb6；本批链面即意图 1 笔与例行读数 3 笔与补录认证 5 笔与批件认证 10 笔（ask3 与验证与正身与 checkcite 与投影与红证与清单 v1v2 与管线 v1v2），同窗他会话笔共存如实记
+- 三仓 reconcile 终读数：cert_missing 即 tools 5 与 engine 3 与 math 2 与批前逐仓同数零新增零清除（本批两 settle 提交 cert 在链归 routed 类）；unrouted 俱零；unbypassed 增量即预收两笔经 bypass 登记后归零；session_orphan 与 unbypassed 存量系跨批不代清
+- 收约补笔：本节与红证归档两件即本笔，经直改链笔申报与 bypass 通道提交（anchorskill 与 c2close 先例同形）
 
 ## 大白话节
 
