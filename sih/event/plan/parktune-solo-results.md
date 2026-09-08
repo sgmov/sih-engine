@@ -64,22 +64,22 @@
 
 | 件 | 类型 | 链上哈希前八 |
 |---|---|---|
-| ask3 记录 | 意图记录（intent 笔 8aaa4f9b） | 待回填 |
-| 正身件 | 身份报告 | 待回填 |
-| 管线报告 | 三步读数 | 待回填 |
-| checkcite 读数件 | 书单对表 | 待回填 |
-| 验证件 | 红绿证与心跳与双跑读数 | 待回填 |
-| 内容哈希清单件 | md 与无仓控件统一绑定 | 待回填 |
+| ask3 记录 | 意图记录（intent 笔 8aaa4f9b） | c2bced52 |
+| 正身件 | 身份报告 | 045ef48f |
+| 管线报告 | 三步读数 | 3a6b5225 |
+| checkcite 读数件 | 书单对表 | 05b3ecdd |
+| 验证件 | 红绿证与心跳与双跑读数 | e79041c5 |
+| 内容哈希清单件 | md 与报告件九路 sha256 统一绑定 | 7eb79769 |
 
 ## F 表
 
 | F | 类别 | 判据 | 实态 |
 |---|---|---|---|
-| F-1 误报灭真报留 | 实装 | 改后实跑两线路由：pk-070/pk-077 在侧轨零 siding_surplus 告警；真积压夹具≥三件仍触发告警，红绿证在档 | 待终态回填 |
-| F-2 双载体一致 | 跨族治理 | 围堰与引擎包 cmp 逐字节一致（或两侧代码同改后同参双跑输出一致），引擎重编后验证，金向量按 GV3 处置在档 | 待终态回填 |
-| F-3 双跑确定性 | 跨族治理 | 改后同参同日双跑 cmp 逐字节 IDENTICAL 退出码一致 | 待终态回填 |
-| F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径，reroute-solo 面（GOV-002、critsweep、facet、DES、引擎泊材料）零触碰 | 待终态回填 |
-| F-5 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 较批前零新增 | 待终态回填 |
+| F-1 误报灭真报留 | 实装 | 改后实跑两线路由：pk-070/pk-077 在侧轨零 siding_surplus 告警；真积压夹具≥三件仍触发告警，红绿证在档 | 通过（主树首跑引擎线 exit 0 告警零 pk-070/pk-077 俱 siding failed P104 即设计轨保持；工具线零漂移；真积压夹具三件 siding_surplus count 3 exit 1；红证 red-before-engine-line.json 在档未清洗） |
+| F-2 双载体一致 | 跨族治理 | 围堰与引擎包 cmp 逐字节一致（或两侧代码同改后同参双跑输出一致），引擎重编后验证，金向量按 GV3 处置在档 | 通过（双载体包 diff -r IDENTICAL 0.4.0；主树重编 cargo build 后引擎二进制与围堰 CLI 同参输出 cmp IDENTICAL；金向量按 SPEC-021 T9 基线种随冻重录即期望重冻消费逻辑零改，漂移归因纯期望过期 core 四场景零漂移，主树 T2 三测绿 t0 转绿） |
+| F-3 双跑确定性 | 跨族治理 | 改后同参同日双跑 cmp 逐字节 IDENTICAL 退出码一致 | 通过（主树引擎二进制自跑与围堰 CLI 自跑俱 IDENTICAL 0/0；工地四路双跑同读数在验证件） |
+| F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径，reroute-solo 面（GOV-002、critsweep、facet、DES、引擎泊材料）零触碰 | 通过（写入面即修订后请求写入节十八路径，扩面四路径经任务包批内修订正当下勘察读数节与越线申报节；reroute-solo 在飞面零触碰即 GOV-002 与 critsweep 工具代码与 facet 与 proposition/DES 与引擎泊材料俱零碰；泊件 JSON 本体零改动即只读勘察） |
+| F-5 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 较批前零新增 | 通过（读数见结算读数节；close 三闸两绕行俱显式留痕非静默，bypass 登记后 unbypassed 回落批前基线 98/69 零新增） |
 
 ## 越线与误差申报
 
@@ -89,12 +89,28 @@
 - plain python 形 11 红：CLI 子进程形测试在无 selector 可执行命令的环境下红（主树同红），uv 形 159 全绿即正典读数，环境差异非回归。
 - 金向量重冻归因：parking 三场景期望差异含 parkgate 批 0.3.0 时代未随冻的 P104 谓词记录（旧冻结 0.2.0 无 P104 行），本批重冻一并带上即两个批次的合法变更一次收口，归因明细在 drift-attribution.txt。
 - watch 无主二件不代清不触碰，呈人节点二值裁决（前置读数节）。
+- checkcite 全量首跑红（SPEC-015 missing）：SPEC-015 为引擎仓规格档 ID 非数学仓条目，数学仓零条目引用不可闭包；按工具语义（数学仓消费闭环审计）对表面收窄为数学消费面件（selector/CONTRACT.md 与结果档）复跑 pass，全量红证在 checkcite-fullface-red.json，SPEC-015 物理在场 sih-engine/doc/spec/ 即引用合法非书单义务面。三查询合并书单（parking 告警 + 等价商集 + 推导健全金向量）召回 ALG-002 与 ORD-007 闭包盖 SPEC-021。
+- close 三闸两绕行申报：其一真分叉闸（主树未跟踪任务包与工地修订版内容相异）走备份让位归并对表法，破局形即主树任务包以工地提交同字节恢复后 close 同内容让位机械处置；其二无主闸（critsweep 批后遗留二件非本批写入）走通道三 --bypass-orphan 显式留痕；其三 CALL-LOG 随批闸（critsweep/CALL-LOG.md 落 reroute-solo 在飞写入面本批红线零触碰不可代收编）走通道二 --bypass-calllog 显式留痕。三闸处置俱在 bypass.ndjson 留痕非静默。
+- identity 认证首试路径误指 scribe/reports（正身件实在 identity/reports），报文「报告不存在」零上链，纠路径后成，非链污染。
+- unlock 首轮循环回执解析形错报 FAIL 而实际放锁成功（次轮幂等 not_locked 证实），解析修正后确认无残留。
 - 其余误差零申报。
 
 ## 结算读数
 
-（收约后回填）
+- 双仓 settle（cert 7eb79769）：tools 工地提交 3184a1ae 与归并 23a2f6aa；engine 工地提交 07d78a0a 与 closeguard pre-close 提交 e151ab4 与归并 4c5b557。
+- 放锁收约：18 路径 unlock 毕；close 成即双工地归并拆除（工地目录已清，余 confpreempt-solo 与 reroute-solo 两在飞工地属他批）、会话 83ce1a7c9b5145d0 收约 revoked、failed 空零失败。
+- 链 verify：valid，events 28，first ef2f0b32（critsweep r1 意图）last 33c0e600（本批 close 链笔）。
+- reconcile 对批前基线：双仓 unrouted 0/0 零新增；cert_missing（engine 3 与 tools 4）与 session_orphan（24 与 19）历史账面零新增；unbypassed 一度 99/70（双仓 closeguard 自动 pre-close 提交各一笔）经 lease bypass 登记后回落 98/69 即批前基线零新增。
+- bypass 登记：tools abb578c0 与 engine e151ab4 两笔 closeguard 提交；close 闸内 --bypass-orphan 与 --bypass-calllog 两笔在 bypass.ndjson。
+- 任务包工作清单五项俱毕勾。
 
 ## 完工回显
 
-（收约后回填）
+主树验收硬项全绿（收约归并后真跑，工具自证）：
+
+- 主树重编：cargo build --bin attractor 过（唯一 warning 为 retriever 既有死码与本批无关）。
+- 主树测试：attractor_route 集成 10/10 全绿（t0 双包对表随主树 0.4.0 一致转绿、T2 金向量三测绿）；围堰 uv 形 159 全绿。
+- 改后引擎线心跳主树首跑：exit 0，主线 47 侧 2 废 9，告警零，pk-070/pk-077 俱 siding failed P104 设计轨保持；工具线 exit 0 主线 23 侧 1 废 0 告警零零漂移。
+- 跨实现对表：主树引擎二进制与围堰 CLI 同参引擎线输出 cmp 逐字节 IDENTICAL；主树引擎二进制同参双跑 IDENTICAL（0/0）。
+- critsweep 复算：degraded 假；泊界面引擎线 exit_code 0 告警空、工具线 exit_code 0 告警空——siding_surplus 误报自治理视图根除。
+- 完工回显即行为承载锚的静默失效补偿位执行：本批任务锚 sess-zcode-260908-parktune（租约 83ce1a7c9b5145d0 单会话），判据扫 C3 与 C4 沉底为视图告警项候人节点裁（本批零裁决），watch 无主二件候人节点二值裁决。
