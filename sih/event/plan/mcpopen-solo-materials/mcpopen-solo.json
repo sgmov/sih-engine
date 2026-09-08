@@ -1,0 +1,49 @@
+{
+ "batch": "mcpopen-solo",
+ "date": "2026-09-09",
+ "session": "sess-zcode-260909-main-mcpopen",
+ "lease_session": "c2849d6a10cbee95",
+ "intent_event_hash": "1c273224",
+ "legs": {
+  "measurement": {
+   "gid": "m-mcpopen-1",
+   "seat": "ZCode:GLM-5.3:self-reported",
+   "gate_verdict": "stable_clear",
+   "n_shots": 9,
+   "sign_event_hash_prefix8": "05353825",
+   "sign_doc_id": "crosscheck-m-mcpopen-1",
+   "disposition": "裁决通过",
+   "direction": "comply"
+  },
+  "exit": {
+   "card": "pk-077",
+   "disposition": "promoted",
+   "event_hash_prefix8": "2a32688a",
+   "enter_event_hash_prefix8": "11d7c38d",
+   "material": "sih-engine/sih/state/parking/materials/pk-077-exit.json",
+   "ruling_source": "用户 2026-09-09 令「得一裁」",
+   "pk070_precheck": "already-exited 87e85363 zero-linkage-action",
+   "registry_projection": "untouched"
+  },
+  "registration": {
+   "file": "sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "precedent": "viewline-line-v1",
+   "phases": {
+    "alpha": "只读面先行即链查询与验链与判据扫与心跳与锁面读数包为 MCP 工具，零写入零治理语义，工具描述自足与报错即教学",
+    "beta": "写面候前置即 record 与 lease 写操作经 MCP，先过会话与租约映射安全模型设计批",
+    "runtime": "自有运行时归 pk-079 分相承载不并入本线"
+   },
+   "acceptance": "冷 agent 形即零上下文外部 agent 经 MCP 面零辅助完成一次被治理交互且链 verify valid"
+  }
+ },
+ "redlines": {
+  "implementation": "zero",
+  "gov002_v3": "untouched",
+  "parking_materials_other": "untouched"
+ },
+ "checkcite": {
+  "verdict": "pass",
+  "cited": 0,
+  "missing": 0
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "formula_version": "ga-2",
+ "recorded": [
+  {
+   "dimension": "convergence",
+   "event_hash": "7d2608bb84cd7f286e32e890a610afb6c95a54fc7681ff92fcb0c18e41cab670",
+   "subject": "sih-engine",
+   "value": 0.0
+  },
+  {
+   "dimension": "adoption",
+   "event_hash": "95e9845ee4e5405f8204df5f2690b5209654e57256cf2306e9ac651ee2c7911d",
+   "subject": "agents",
+   "value": 0.0
+  },
+  {
+   "dimension": "mergeback",
+   "event_hash": "58d99067dbb4e16abf98c0aca1131b95ff28567609af90cac4615dcd5a2d50d9",
+   "subject": "tools-wheel",
+   "value": 0.029412
+  }
+ ]
+}
