@@ -27,10 +27,10 @@
 
 ## 管线读数
 
-- 化格：引擎域件过 packs/general-v1（读数随收约回填）。
-- 核阅：des-001 逐件（读数随收约回填；event/plan 与 sih-tools 与根域件域外 exit-2 如实记档）。
-- 检词：nomenclator check packs/core 逐件（读数随收约回填）。
-- checkcite：recall 加 checkcite（读数随收约回填）。
+- 化格：引擎域四件过 packs/general-v1 全 exit 0 零改。
+- 核阅：des-001 引擎域五件全 exit 0 零违规（GOV-002 两件、progdoc、结果档、任务包）。
+- 检词：nomenclator check packs/core 三件全 exit 0 零违例。
+- checkcite：recall 判据改道测量确定性主题后 checkcite verdict pass missing 零（报告件随批落档）。
 
 ## 认证清单
 
@@ -52,9 +52,9 @@
 |---|---|---|---|
 | F-1 v2.6 与签署链 | 治理 | GOV-002 v2.6 在档且得一签署链笔在链 | 通过（crosscheck 33c0e600，裁决通过，verify identical） |
 | F-2 两泊笔在链 | 数据治理 | pk-053 出泊 promoted 与 pk-078 进泊两笔在当日链，ruling 含口径原文照录 | 通过（41fb339c 与 1093400d；pk-054 已于 09-05 出泊在案零触碰如实记档） |
-| F-3 判据扫复算 | 跨族治理 | sweep 复算 C3 报 achieved 新证据指针，双跑 IDENTICAL 退出码零，其余判据不漂 | 待收约后主树复算回填 |
+| F-3 判据扫复算 | 跨族治理 | sweep 复算 C3 报 achieved 新证据指针，双跑 IDENTICAL 退出码零，其余判据不漂 | 通过（收约后主树复算即 GOV2-C3-measure-determinism achieved gap 0 hits 19，双跑 IDENTICAL 退出码零，C1/C2/C4/C5 零漂移，degraded 假） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即 GOV-002 两件、progdoc、pk-078 材料、任务包与提示词、结果档与批材料、registry 与 tests、facet 合同目录、DES 单元格、链文件、报告目录、工地） |
-| F-5 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle 提交号在档，close 零失败，verify valid，reconcile 零新增 | 通过（engine 462dcd9 与归并 5c2ab09，tools 归并 4c974af5；close 携 bypass-orphan 与 bypass-calllog 即无主五件均非本批活面如实留痕；verify valid events 41；reconcile 双仓 unrouted 零即零新增，cert_missing 与 session_orphan 与 unbypassed 为在盘历史账面项归 callloghyg 与后继清账批） |
 
 ## 越线与误差申报
 
@@ -66,4 +66,11 @@
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：engine 462dcd9（归并 5c2ab09，closeguard 预收提交 f5073ab）；tools 归并 4c974af5（预收 7903f01a）；cert 取 72850bf2 即 ask3 v2 记录认证前八位。
+- 认证实录：ask3v2 72850bf2、验证件 349e52ac、正身件 766baeb0、pk53 出泊记录 6fea544d、pk078 进泊记录 f2cdb682、执契材料 c870ed21、计分材料 46319f33、终签重放锚 01e45726、内容清单 6450be58 九笔在链，另 crosscheck 33c0e600 与泊笔 41fb339c、1093400d。
+- 放锁收约：三阶段放锁即首会话 14 锁（拆重开前）、承载会话 13 锁、补锁 7 锁与两把 facet 自动派生窄锁（reroute-260908 与 reroute-solo 无尾斜杠形）；close 三跑即首跑无主闸五件（attractor 与 scribe 的 CALL-LOG 投影腿与 calllog 台账与 anchor.py 权限位，均 callloghyg 候清项非本批活面）携 bypass-orphan 与 bypass-calllog 留痕后成，revoked 真值，工地与分支清除。
+- 链 verify：valid，events 41。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口。
+- F-3 复算：见 F 表行。
+- 施工期发现缺陷两笔申报：其一 lease commit pre-commit 守卫对非 ASCII 文件名（红证.json 八进制转义形）锁面对表失败致引擎 settle 首拒，改名 ASCII 形后过，缺陷候 guardcore 面；其二 facet 合同模式跑批自动派生无尾斜杠窄锁两把，unlock 需按派生形精确放行，先例申报。
+- 收约补笔：F-3 与 F-5 与管线实录与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 critsweep 先例同形）。
