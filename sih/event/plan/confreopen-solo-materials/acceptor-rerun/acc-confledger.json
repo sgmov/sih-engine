@@ -1,0 +1,34 @@
+{
+ "declaration": {
+  "claim": "unchanged-only",
+  "note": "confpreempt-solo：抢占环五步实装红绿证（先红后绿）；在役 replay 确定性回归冻结",
+  "v0_out_of_scope": [
+   "标定通道真值产出",
+   "真实触发样例（贫账期休眠）",
+   "休眠门激活路径"
+  ]
+ },
+ "engine": "acceptor",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "confpreempt-confledger-acceptance",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "check_name": "red_then_green",
+   "id": "PC1-red-then-green",
+   "state": "pass"
+  },
+  {
+   "check_name": "double_run",
+   "id": "PC2-double-run",
+   "state": "pass"
+  },
+  {
+   "check_name": "baseline_freeze",
+   "id": "PC3-baseline-freeze",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}

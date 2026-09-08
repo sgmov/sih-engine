@@ -1,0 +1,34 @@
+{
+ "declaration": {
+  "claim": "unchanged-only",
+  "note": "confpreempt-solo：lease 侧抢占放锁落链 additive 红绿证（先红后绿）；回归冻结用例无锁零动作确定性",
+  "v0_out_of_scope": [
+   "真实抢占触发样例（贫账期休眠）",
+   "active_pen 铸造兑付",
+   "报销 IOU 兑付"
+  ]
+ },
+ "engine": "acceptor",
+ "engine_version": "0.1.0",
+ "findings": [],
+ "pack": "confpreempt-lease-acceptance",
+ "pack_version": "0.1.0",
+ "results": [
+  {
+   "check_name": "red_then_green",
+   "id": "PL1-red-then-green",
+   "state": "pass"
+  },
+  {
+   "check_name": "double_run",
+   "id": "PL2-double-run",
+   "state": "pass"
+  },
+  {
+   "check_name": "baseline_freeze",
+   "id": "PL3-baseline-freeze",
+   "state": "pass"
+  }
+ ],
+ "verdict": "pass"
+}
