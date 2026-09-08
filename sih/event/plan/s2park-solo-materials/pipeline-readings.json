@@ -1,0 +1,158 @@
+{
+ "batch": "s2park-solo",
+ "date": "2026-09-08",
+ "pipeline": [
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/state/plan/s2park-solo.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/state/plan/s2park-solo-prompt.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "formatter",
+   "pack": "general-v1",
+   "target": "sih/event/plan/s2park-solo-results.md",
+   "exit_code": 0,
+   "note": "无需改"
+  },
+  {
+   "step": "formatter",
+   "pack": "json-canonical-v1",
+   "target": "sih/state/parking/materials/pk-079.json",
+   "exit_code": 1,
+   "note": "已归一即一空格首写形归一为二空格正形，化格写在治理窄域不属修改范畴"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/plan/s2park-solo.md",
+   "exit_code": 2,
+   "note": "des-001 域外（域只盖 sih-engine/doc），不属违规如实记档"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/plan/s2park-solo-prompt.md",
+   "exit_code": 2,
+   "note": "des-001 域外，不属违规如实记档"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/event/plan/s2park-solo-results.md",
+   "exit_code": 2,
+   "note": "des-001 域外，不属违规如实记档"
+  },
+  {
+   "step": "scrutinator",
+   "pack": "des-001",
+   "target": "sih/state/parking/materials/pk-079.json",
+   "exit_code": 2,
+   "note": "des-001 域外，不属违规如实记档"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/state/plan/s2park-solo.md",
+   "exit_code": 0,
+   "note": "零违例"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/state/plan/s2park-solo-prompt.md",
+   "exit_code": 0,
+   "note": "零违例"
+  },
+  {
+   "step": "nomenclator",
+   "pack": "core",
+   "target": "sih/event/plan/s2park-solo-results.md",
+   "exit_code": 0,
+   "note": "零违例"
+  }
+ ],
+ "elicit": {
+  "check_exit": 1,
+  "signals": 6,
+  "digest": "passed",
+  "covered": 6
+ },
+ "ask3_gates": {
+  "scrutinator_ask3_exit": 0,
+  "ask3repeater": "ok anchor_count 3"
+ },
+ "identity": {
+  "exit": 0,
+  "anomalies": 0,
+  "core_hash_prefix": "e1c9a7fa",
+  "identity_hash_prefix": "baf6ee86"
+ },
+ "critsweep_pre": {
+  "degraded": false,
+  "alarms": 0,
+  "note": "净态即 C1 C3 C4 C5 achieved 与 C2 in_flight"
+ },
+ "gauge_session": {
+  "convergence": 0.5,
+  "adoption": 0.84,
+  "mergeback": 0.029412,
+  "formula_version": "ga-2"
+ },
+ "parking_heartbeat_pre": {
+  "tools": {
+   "exit_code": 0,
+   "mainline": 24,
+   "siding": 1,
+   "scrap": 0,
+   "alarms": 0
+  },
+  "engine": {
+   "exit_code": 0,
+   "mainline": 52,
+   "siding": 2,
+   "scrap": 9,
+   "alarms": 0
+  }
+ },
+ "parking_heartbeat_worktree": {
+  "exit_code": 0,
+  "mainline": 52,
+  "siding": 3,
+  "scrap": 9,
+  "alarms": 0,
+  "pk079_route": "siding",
+  "pk079_failed_predicate": "P104"
+ },
+ "watchcheck_pre": {
+  "exit": 1,
+  "unowned": 16,
+  "note": "全为 CALL-LOG 册 15 面与 calls.ndjson，mtime 皆本批开工前即今日在先会话 calllog 追加所致，callloghyg 候清项，本批零新增无主写"
+ },
+ "checkcite": {
+  "exit": 0,
+  "verdict": "pass",
+  "cited": 0,
+  "missing": 0,
+  "note": "批引用件零推导档引用 ID"
+ },
+ "park_event": {
+  "event_type": "parking_entered",
+  "event_hash": "7d524f4419b1c649e46d99c61e0d7b6d715330b7a5e4d0c9951a32327fded8b1",
+  "event_id": "9a4e3f29-aaaa-49bb-8647-1cf598a8e8bc",
+  "chain_index": 273
+ },
+ "intent_event": {
+  "event_type": "intent_refined",
+  "event_hash": "333e37b67719aba6ef28136e368d2adbfc64cae3c2c9ee5dee997963ded319c7",
+  "event_id": "b5be2220-cea2-4091-b341-df4e6e74eb3d"
+ }
+}
