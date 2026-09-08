@@ -1,0 +1,9 @@
+稽 watchcheck 对表读数 2026-09-09（v0.2.0）
+判定式：脏文件集 −（租约锁面 ∪ 直改链笔声明面 ∪ 豁免面）= 无主清单
+输入面：双仓 git status --porcelain -uall；锁面镜像 locks.ndjson（现势 0 面）；声明面 trail 2026-09-09.ndjson（声明 1 件）；豁免面冻结登记 16 面（constants.py）
+扫描：脏文件 1511 件
+结论：无主修改 2 件，呈人节点二值裁决（处置协议见 BATCH-FACE）。
+无主清单：
+- sih-tools/attnanchor/CALL-LOG.md | mtime 2026-09-08T17:10:48+00:00 | 已跟踪修改
+- sih-tools/attractor/CALL-LOG.md | mtime 2026-09-08T17:11:01+00:00 | 已跟踪修改
+exit_code=1（跨批存量 CALL-LOG 族，settlement-v2 同款已呈报项，呈报不代清）

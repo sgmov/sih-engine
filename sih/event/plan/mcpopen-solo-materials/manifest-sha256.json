@@ -1,0 +1,12 @@
+{
+ "kind": "content-hash-manifest",
+ "batch": "mcpopen-solo",
+ "date": "2026-09-09",
+ "files": {
+  "sih/state/plan/mcpopen-solo.md": "d0ee59470ce738c2e2a924e6ebcf601f4307e2a2713377432f39dc43d72481a8",
+  "sih/state/plan/mcpopen-solo-prompt.md": "e00bf2f541952913bb20a3871bbf7090d0c5c3f1c4cd32f3f0018d6f59471746",
+  "sih/state/plan/mcpline-line-v1.md": "1dd8a351072a3ccb8431974714595fc437e915c4f937a1faaa12cc4023b0bc2a",
+  "sih/event/plan/mcpopen-solo-results.md": "a3c5c1a51c6fc914d7c0a8efb5044d6b1e40b3de94b09f6bae202ec5a0015b08",
+  "sih/state/parking/materials/pk-077-exit.json": "199e91c2cd7c92334b92fb55ab53e11424a1509edc94a081f208eb994738a8cd"
+ }
+}

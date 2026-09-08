@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "链上实证：进泊笔 11d7c38d（2026-09-07 当日链）与 gate 触发条件机械达成读数（settlement-v2-solo-results.md 的 pk-077 gate 触发达成读数节在档即触发条件为主线 v2 结算件落 sih-engine/sih/event/plan/）与终签 crosscheck_completed m-mcpopen-1 event_hash 前 8 05353825（2026-09-09 当日链，mcpopen-solo 批，重放锚 sih-tools/proposition/DES/m-mcpopen-1/m-mcpopen-1-signcheck.json）俱在档预核。pk-070 先后链核验：已出泊笔 87e85363（2026-09-08 当日链 parking_exited promoted）在档，pk-077 exit_condition 所载「实装结算件落 event/plan 时 pk-070 的 gate 同步点火候裁」之点火对象已出泊即无联动动作，如实记档。名册投影 PARKING-v1.md 零触碰留泊界复检批。执行批 mcpopen-solo 会话 c2849d6a10cbee95。",
+  "disposition": "promoted",
+  "entry_id": "pk-077",
+  "id": "pk-077",
+  "parking": {
+    "entered_at": "2026-09-07",
+    "exited_at": "2026-09-09",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-09 令照录「得一裁」：pk-077 MCP 实装立项裁决承得一测量前置，m-mcpopen-1 九发 stable_clear（判据 v3，9/9 合零变卦零谨慎）执契终签 05353825（crosscheck-m-mcpopen-1）裁出泊 promoted 即 MCP 实装线立项；形态分三相即 α 相只读面先行（链查询与验链与判据扫与心跳与锁面读数包为 MCP 工具，零写入零治理语义，工具描述自足与报错即教学）、β 相写面候前置（record 与 lease 写操作经 MCP，先过会话与租约映射安全模型设计批）、自有运行时归 pk-079 分相不并入本线；验收判据即冷 agent 形即零上下文外部 agent 经 MCP 面零辅助完成一次被治理交互且链 verify valid；线序登记 mcpline-line-v1.md 随批落位承 viewline 先例形。",
+  "state": "exited",
+  "ttl_days": 30
+}
