@@ -1,0 +1,28 @@
+{
+ "batch": "acceptclose-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与对表材料经内容哈希清单件统一绑定（anchorskill 先例），sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "sih/state/plan/acceptclose-solo.md",
+   "sha256": "597c7fd33341510a2ac7176c8e196e93e5a99533b3681458b811e67cc845aab7"
+  },
+  "results_doc_v1": {
+   "path": "sih/event/plan/acceptclose-solo-results.md",
+   "sha256": "c013e6e9b7bfd30d94d9fafaf389f14d001302a0566ad8789f59161143c61b76"
+  },
+  "parking_v1_rev": {
+   "path": "doc/governance/PARKING-v1.md",
+   "sha256": "ad11a270ca5e70eae6f6810d287e7f1850478bc1f14b0156a2a5563a9d42c06e"
+  },
+  "parking_events_list": {
+   "path": "sih/event/plan/acceptclose-solo-materials/parking-events-0905-0908.txt",
+   "sha256": "f3283d094d78f6b62bd0e6bfa4d010293f212489632cc07f6c8d932add96d2c9"
+  },
+  "before_hash_snapshot": {
+   "path": "sih/event/plan/acceptclose-solo-materials/acc-before.sha",
+   "sha256": "e5143bbb3f7a0c1d9bbe5193fd6e879e629ad17687b93b1e80e07fb65f1b49e2"
+  }
+ }
+}
