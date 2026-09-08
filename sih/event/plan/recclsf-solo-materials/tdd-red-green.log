@@ -1,0 +1,124 @@
+F.FFFF.FF                                                                [100%]
+=================================== FAILURES ===================================
+___________________ test_t_0_1_repo_relative_form_collected ____________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_0_1_repo_relative_form_0')
+
+    def test_t_0_1_repo_relative_form_collected(tmp_path):
+        repo = _mk_repo_sih_tools(tmp_path)
+        with open(repo / "lease/CALL-LOG.md", "a", encoding="utf-8") as fh:
+            fh.write("| 2026-09-08 | 生产 | lease lock | 0 | sess | 仓相对形 |\n")
+        report = calllog_treadmill_collect(repo, "recclsf-solo")
+>       assert len(report["faces"]) == 1, report
+E       AssertionError: {'faces': [], 'kept': [], 'commit': None}
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_recclsf.py:174: AssertionError
+__________________________ test_t_0_3_faces_dual_form __________________________
+
+    def test_t_0_3_faces_dual_form():
+>       faces = calllog_treadmill_faces("/tmp/x/sih-tools")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: calllog_treadmill_faces() takes 0 positional arguments but 1 was given
+
+tests/test_recclsf.py:202: TypeError
+_________________ test_t_1_1_backfilled_via_original_cert_hash _________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_1_1_backfilled_via_orig0')
+
+    def test_t_1_1_backfilled_via_original_cert_hash(tmp_path):
+        fx = build_fixture(tmp_path)
+        report = reconcile(str(fx["repo"]), fx["ledger"], [fx["trail"]],
+                           bypass_ledger=fx["bypass"])
+        classes = {r["sha"]: r["class"] for r in _records_all(report)}
+>       assert classes[fx["shas"]["backfilled"][:7]] == "cert_backfilled"
+E       AssertionError: assert 'cert_missing' == 'cert_backfilled'
+E         
+E         - cert_backfilled
+E         + cert_missing
+
+tests/test_recclsf.py:221: AssertionError
+_________________ test_t_1_2_writtenoff_via_bypass_sha_binding _________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_1_2_writtenoff_via_bypa0')
+
+    def test_t_1_2_writtenoff_via_bypass_sha_binding(tmp_path):
+        fx = build_fixture(tmp_path)
+        report = reconcile(str(fx["repo"]), fx["ledger"], [fx["trail"]],
+                           bypass_ledger=fx["bypass"])
+        classes = {r["sha"]: r["class"] for r in _records_all(report)}
+>       assert classes[fx["shas"]["writtenoff"][:7]] == "cert_writtenoff"
+E       AssertionError: assert 'cert_missing' == 'cert_writtenoff'
+E         
+E         - cert_writtenoff
+E         + cert_missing
+
+tests/test_recclsf.py:230: AssertionError
+____________ test_t_1_3_binding_mismatch_stays_missing_with_warning ____________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_1_3_binding_mismatch_st0')
+
+    def test_t_1_3_binding_mismatch_stays_missing_with_warning(tmp_path):
+        fx = build_fixture(tmp_path)
+        report = reconcile(str(fx["repo"]), fx["ledger"], [fx["trail"]],
+                           bypass_ledger=fx["bypass"])
+        rec = {r["sha"]: r for r in _records_all(report)}[fx["shas"]["mismatch"][:7]]
+        assert rec["class"] == "cert_missing"
+>       assert "binding_mismatch" in rec["detail"]
+E       AssertionError: assert 'binding_mismatch' in 'eeeeeeee'
+
+tests/test_recclsf.py:240: AssertionError
+______________________ test_t_1_5_summary_explicit_counts ______________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_1_5_summary_explicit_co0')
+
+    def test_t_1_5_summary_explicit_counts(tmp_path):
+        fx = build_fixture(tmp_path)
+        report = reconcile(str(fx["repo"]), fx["ledger"], [fx["trail"]],
+                           bypass_ledger=fx["bypass"])
+        s = report["summary"]
+>       assert s["cert_backfilled"] == 1
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'cert_backfilled'
+
+tests/test_recclsf.py:257: KeyError
+___________________________ test_t_1_6_golden_vector ___________________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-824/test_t_1_6_golden_vector0')
+
+    def test_t_1_6_golden_vector(tmp_path):
+        frozen = Path(__file__).resolve().parents[1] / "tests" / "frozen" / "recclsf" / "golden-reconcile.json"
+>       assert frozen.is_file(), "金向量缺席：先跑构建形冻结（python3 tests/test_recclsf.py <目录>）"
+E       AssertionError: 金向量缺席：先跑构建形冻结（python3 tests/test_recclsf.py <目录>）
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/recclsf-solo/lease/tests/frozen/recclsf/golden-reconcile.json').is_file
+
+tests/test_recclsf.py:268: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_recclsf.py::test_t_0_1_repo_relative_form_collected - Asser...
+FAILED tests/test_recclsf.py::test_t_0_3_faces_dual_form - TypeError: calllog...
+FAILED tests/test_recclsf.py::test_t_1_1_backfilled_via_original_cert_hash - ...
+FAILED tests/test_recclsf.py::test_t_1_2_writtenoff_via_bypass_sha_binding - ...
+FAILED tests/test_recclsf.py::test_t_1_3_binding_mismatch_stays_missing_with_warning
+FAILED tests/test_recclsf.py::test_t_1_5_summary_explicit_counts - KeyError: ...
+FAILED tests/test_recclsf.py::test_t_1_6_golden_vector - AssertionError: 金向...
+7 failed, 2 passed in 1.31s
+.........                                                                [100%]
+9 passed in 1.38s
+
+==== GREEN PHASE (post-fix) ====
+$ cd worktrees/sih-tools/recclsf-solo/lease && pytest tests/test_recclsf.py -q
+.........                                                               [100%]
+9 passed in 1.38s
+
+==== FULL FAMILY (regression) ====
+$ cd worktrees/sih-tools/recclsf-solo/lease && sih-tools/.venv/bin/python -m pytest tests/ -q
+309 passed, 1 warning in 71.24s
+(基线 300 加本批 9，零回归；首轮以 lease/.venv 跑出 10 环境失败系 watchcheck 未入该 venv
+ 的环境态非代码红，换工作区根 venv 即全绿，如实申报见结果档误差申报节)
+
+==== GOLDEN DUAL RUN ====
+$ python3 tests/test_recclsf.py /tmp/recclsf-golden-run1 (同 run2)
+cmp run1/golden-reconcile.json run2/golden-reconcile.json -> exit 0 逐字节一致

@@ -1,0 +1,93 @@
+{
+ "tool": {
+  "name": "recclsf-summary",
+  "version": "recclsf-solo-1"
+ },
+ "packs": [],
+ "findings": [],
+ "golden_baseline": "",
+ "content_hashes": {
+  "phase": "reconcile 前后对账汇总（修订前红证与修订后绿证读数，逐仓 summary 摘录，源件同目录在档）",
+  "before_classifier": "lease 1.38.0 主树现行码",
+  "after_classifier": "lease 1.39.0 工地修订码（直调 reconcile 函数同参形，trails 即引擎链全量日序）",
+  "rows": {
+   "sih-tools": {
+    "before": {
+     "cert_missing": 5,
+     "cert_backfilled": null,
+     "cert_writtenoff": null,
+     "session_orphan": 19,
+     "unrouted": 0,
+     "unbypassed": 110,
+     "routed": 316,
+     "total": 533
+    },
+    "after": {
+     "cert_missing": 0,
+     "cert_backfilled": 5,
+     "cert_writtenoff": 0,
+     "session_orphan": 19,
+     "unrouted": 0,
+     "unbypassed": 110,
+     "routed": 318,
+     "total": 536
+    }
+   },
+   "sih-engine": {
+    "before": {
+     "cert_missing": 3,
+     "cert_backfilled": null,
+     "cert_writtenoff": null,
+     "session_orphan": 24,
+     "unrouted": 0,
+     "unbypassed": 77,
+     "routed": 376,
+     "total": 642
+    },
+    "after": {
+     "cert_missing": 0,
+     "cert_backfilled": 3,
+     "cert_writtenoff": 0,
+     "session_orphan": 24,
+     "unrouted": 0,
+     "unbypassed": 77,
+     "routed": 378,
+     "total": 646
+    }
+   },
+   "sih-math": {
+    "before": {
+     "cert_missing": 2,
+     "cert_backfilled": null,
+     "cert_writtenoff": null,
+     "session_orphan": 10,
+     "unrouted": 0,
+     "unbypassed": 18,
+     "routed": 151,
+     "total": 183
+    },
+    "after": {
+     "cert_missing": 0,
+     "cert_backfilled": 0,
+     "cert_writtenoff": 2,
+     "session_orphan": 10,
+     "unrouted": 0,
+     "unbypassed": 18,
+     "routed": 151,
+     "total": 183
+    }
+   }
+  },
+  "redline_check": {
+   "cert_missing_zero_after": true,
+   "backfilled_total_commits": 8,
+   "writtenoff_total_commits": 2,
+   "distinct_certs": {
+    "backfilled": 5,
+    "writtenoff": 2
+   },
+   "session_orphan_unchanged": true,
+   "unrouted_zero_after": true
+  }
+ }
+}

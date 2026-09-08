@@ -1,0 +1,35 @@
+{
+ "tool": {
+  "name": "recclsf-pipeline",
+  "version": "recclsf-solo-1"
+ },
+ "packs": [],
+ "findings": [],
+ "golden_baseline": "",
+ "content_hashes": {
+  "phase": "管线三步读数（笔在核前序固定）",
+  "formatter_general_v1": {
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo.md": "exit 0",
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo-prompt.md": "exit 0",
+   "worktrees/sih-engine/recclsf-solo/sih/event/plan/recclsf-solo-results.md": "exit 0",
+   "worktrees/sih-tools/recclsf-solo/lease/CONTRACT.md": "exit 0"
+  },
+  "scrutinator_des001": {
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo.md": "exit 2 域外（des-001 域只盖 sih-engine/doc）",
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo-prompt.md": "exit 2 域外（des-001 域只盖 sih-engine/doc）",
+   "worktrees/sih-engine/recclsf-solo/sih/event/plan/recclsf-solo-results.md": "exit 2 域外（des-001 域只盖 sih-engine/doc）",
+   "worktrees/sih-tools/recclsf-solo/lease/CONTRACT.md": "exit 2 域外（des-001 域只盖 sih-engine/doc）"
+  },
+  "nomenclator_core": {
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo.md": "exit 0 零违例",
+   "worktrees/sih-engine/recclsf-solo/sih/state/plan/recclsf-solo-prompt.md": "exit 0 零违例",
+   "worktrees/sih-engine/recclsf-solo/sih/event/plan/recclsf-solo-results.md": "exit 0 零违例",
+   "worktrees/sih-tools/recclsf-solo/lease/CONTRACT.md": "exit 1 一笔存量违例（修订四十九文本死档登记词，主树同形在案，非本批新引入）"
+  },
+  "checkcite": {
+   "verdict": "pass",
+   "cited": 0,
+   "missing": 0
+  }
+ }
+}

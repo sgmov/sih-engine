@@ -1,0 +1,16 @@
+{
+ "tool": {
+  "name": "recclsf-close-red",
+  "version": "recclsf-solo-1"
+ },
+ "packs": [],
+ "findings": [],
+ "golden_baseline": "",
+ "content_hashes": {
+  "phase": "close 首跑无主闸红证（先红留痕纪律）",
+  "what": "close 首跑（无双旗标）被无主闸拦退出码一，无主 16 件俱 CALL-LOG 族与 calls.ndjson 跨批候清项（callloghyg 线）",
+  "why_treadmill_did_not_collect": "close 跑主树 1.38.0 旧码，跑步机修复在本批分支内即本次 close 的归并对象，机械序为收编先于归并，故本批 close 即所修缺陷的最后一次旧码空转；修复随本次归并落主树，首次新码收编机会归下一会话 close",
+  "orphan_count": 16,
+  "error_head": "无主闸拦截：主树存在无主 tracked 改件（脏文件集 − 锁面 ∪ 链笔声明面 ∪ 豁免面 = 无主清单，共 16 件），整批拒零动作。\n三通道：\n  1) 走司衡治理通道开租约持锁后再改（lease open + lease lock"
+ }
+}

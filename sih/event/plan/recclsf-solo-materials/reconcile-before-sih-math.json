@@ -1,0 +1,781 @@
+{
+  "base": "",
+  "first_routed": "57824c6",
+  "repo": "/Users/moc/workspaces/SiHankor/sih-math",
+  "summary": {
+    "bypass": 2,
+    "cert_missing": 2,
+    "routed": 151,
+    "routed_direct": 0,
+    "sealed": 0,
+    "session_orphan": 10,
+    "total": 183,
+    "unbypassed": 18,
+    "unrouted": 0
+  },
+  "unrouted_tail": [
+    {
+      "class": "routed_merge",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "ac423cd",
+      "subject": "merge: constclear2c-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "bbb9958",
+      "subject": "merge: constclear2b-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "35b76ad",
+      "subject": "merge: constclear2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "2c2dbf9",
+      "subject": "merge: anchwave-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "199ba00",
+      "subject": "merge: confrevise-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "f89fc79",
+      "subject": "merge: confconst-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "9fc3e7e",
+      "subject": "merge: confmath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "1fe621f",
+      "subject": "merge: leftover-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-07",
+      "detail": null,
+      "sha": "0e3c2fd",
+      "subject": "closeguard-solo: pre-close working tree commit (leftover-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "473230a",
+      "subject": "merge: regulamath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "2fd1fed",
+      "subject": "merge: gvecmath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "a887117",
+      "subject": "merge: regula-rename-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-06",
+      "detail": null,
+      "sha": "8ee91a2",
+      "subject": "closeguard-solo: pre-close working tree commit (regula-rename-solo)"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "41dc98f",
+      "subject": "merge: constmodel-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "79df50e",
+      "subject": "constmodel-solo: 任务包"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "57a16ff",
+      "subject": "constmodel-solo: pk-053 冻结件二十三件模型化推导档与结果档"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "81b4891",
+      "subject": "merge: docmath-anchor-registry 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "8802c26",
+      "subject": "docmath-anchor-registry: 资产回锚登记面 v2.1 补 docmath 三载体回锚补记节"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "f5e3c1f",
+      "subject": "merge: leaseopt-ledger-repair-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "d596bf5",
+      "subject": "merge: leaseopt-precheck-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "215ee50",
+      "subject": "merge: leaseopt-lockqueue-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "c003477",
+      "subject": "merge: leaseopt-lockdb-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "84007ed",
+      "subject": "merge: leaseopt-fixguard-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "5150ee9",
+      "subject": "merge: docmath-b4-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "39bae00",
+      "subject": "merge: docmath-b3-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "25bea62",
+      "subject": "merge: docmath-b2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "b23e560",
+      "subject": "merge: docmath-b1-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-05",
+      "detail": null,
+      "sha": "3f8c78f",
+      "subject": "closeguard-solo: pre-close working tree commit (docmath-b1-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "2143f6b",
+      "subject": "math closeguard-solo 1.18.0 推广段：三分界判别挂 ORD-019/020 载"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "c1521d9",
+      "subject": "merge: constclear-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "99ed74655df99ca4",
+      "sha": "01b9162",
+      "subject": "constclear-solo 段1 constclear-solo 判定性命名常数清账：推导档 34 件三态与 env-params 改判三行增量随批"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "ecdfdcf",
+      "subject": "merge: shelfm4a-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "63f3ecf43cf7f713",
+      "sha": "9025241",
+      "subject": "shelfm4a-solo 段2 shelfm4a-solo 数学仓段：五条目补可证伪节 +4/-0 与推导档"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "1c34741",
+      "subject": "merge: newcarr2-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "432678779a3f0663",
+      "sha": "895798a",
+      "subject": "newcarr2-solo 段2 newcarr2-solo 数学仓段：五载体条目与登记面联动与推导档，含吸收在途勘误两行（出处归委外在途批）"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "e274cd8",
+      "subject": "merge: mathscan-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "dc38bb4cc47e343b",
+      "sha": "dd97fa0",
+      "subject": "mathscan-solo 段1 mathscan-solo 结算：数学仓全盘扫描 rev3 三件与四表核对器与书架层盘点与复用对表与例扫挂点过得一泊界 pk-"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "1498a8f",
+      "subject": "merge: cascadewire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "5b46cca3df980ab5",
+      "sha": "202db0d",
+      "subject": "cascadewire-solo 段1 cascadewire-solo 段1 深锚推导档：ORD-016 深锚 cascade 逐判定位六节与金向量四场景正对"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "2c4d6f1",
+      "subject": "merge: basefix-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "1a70a4e901564b09",
+      "sha": "ffb2359",
+      "subject": "basefix-solo 段1 basefix-solo 段1 basefix 推导档：ORD-020 配对洞即全序性破坏点修复即回归与 ORD-019 并发位"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "366298b",
+      "subject": "merge: leasewire-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "3a012326cae52fa6",
+      "sha": "73c0423",
+      "subject": "leasewire-solo 段1 leasewire-solo settle 段1：leasewire 推导档合一两节（ORD-020 深锚 lease 与 "
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "7e1bb74",
+      "subject": "merge: contribmath-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "bbaa06e60d6195f1",
+      "sha": "b956f35",
+      "subject": "contribmath-solo 段1 contribmath-solo 段1：contribmath 推导档落 docs（PROB-016 可加性与 PROB"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "9c07bd2",
+      "subject": "merge: carrwire-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "4d7e143",
+      "subject": "merge: pk037impl-solo 副本归并"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "744d2c9fbcb173a2",
+      "sha": "7d23724",
+      "subject": "pk037impl-solo 段1 pk037impl-solo 段1：新载体 PROB-017 与 ALG-011 条目落位加 INDEX 与 mapping"
+    },
+    {
+      "class": "session_orphan",
+      "date": "2026-09-04",
+      "detail": "ba187edb54e1ee7a",
+      "sha": "d502ef1",
+      "subject": "carrwire-solo 段1 carrwire-solo 推导档：carrwire-carriers-derivation-2026-09-04.md 合一"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "66ff0f0",
+      "subject": "merge: newcarr-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "d18ceac",
+      "subject": "merge: queueing-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "42c288f",
+      "subject": "merge: locatorwire-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "f64d390",
+      "subject": "merge: latexwire-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "85826d5",
+      "subject": "merge: gchart-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "021887a",
+      "subject": "merge: recallloop-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "3b62ace",
+      "subject": "merge: elicitwire-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "8d0bce2",
+      "subject": "summary-rev2 LIM-007 承继缺口更正为实存：calculus 条目目录约定例外致误报，主会验收批注"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "04ec06f",
+      "subject": "merge: m3clear-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "624b770",
+      "subject": "merge: covrefresh-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "d25e124",
+      "subject": "merge: facetmath-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "cedb139",
+      "subject": "merge: gatecap-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "2bc17c8",
+      "subject": "merge: selwire-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-04",
+      "detail": null,
+      "sha": "911adff",
+      "subject": "merge: tallywire2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "ddb6f7d",
+      "subject": "merge: caswire2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "85b8489",
+      "subject": "merge: scriwire2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "23f342b",
+      "subject": "merge: locksplit-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "d51d5e2",
+      "subject": "merge: idwire-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "6f9a114",
+      "subject": "merge: mathclose-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "51c6784",
+      "subject": "merge: mathrefmt2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "74a60e8",
+      "subject": "merge: mathquote-calc-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "e8d928f",
+      "subject": "merge: mathquote2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "cf4ce61",
+      "subject": "merge: mathrefmt-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "cb79c04",
+      "subject": "merge: mathpipe-a3-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "cef0f16",
+      "subject": "merge: ordwire-lease-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "b2066cf",
+      "subject": "merge: ledgrev-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "9751353",
+      "subject": "merge: mathpipe-a2-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "3f3594c",
+      "subject": "merge: mathpipe-a1-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-03",
+      "detail": null,
+      "sha": "9c745c4",
+      "subject": "merge: intanchor-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "409a0f3",
+      "subject": "merge: relaud-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "64f1809",
+      "subject": "merge: algidx-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "24dc5ab",
+      "subject": "merge: mathver-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "d847026",
+      "subject": "merge: trigwave-parallel 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "ebc22a6",
+      "subject": "merge: degladder-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "447d9e1",
+      "subject": "merge: anchorsort-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "e6ffd85",
+      "subject": "merge: extinv-parallel 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "54f3a31",
+      "subject": "merge: assetwave-b-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "62e36b2",
+      "subject": "merge: assetwave-a-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "144c1b8",
+      "subject": "merge: legacytwo-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "3e65da6",
+      "subject": "merge: p3xbridge-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-09-02",
+      "detail": null,
+      "sha": "38fcc9b",
+      "subject": "merge: secondcarr-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-31",
+      "detail": null,
+      "sha": "6f04180",
+      "subject": "merge: ordfound-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-31",
+      "detail": null,
+      "sha": "f241503",
+      "subject": "merge: epiacc-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-31",
+      "detail": null,
+      "sha": "dc008f6",
+      "subject": "merge: entryacc-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "004aa7a",
+      "subject": "merge: rulesem-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "861fd61",
+      "subject": "merge: bridgeacc-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "4d705da",
+      "subject": "merge: c006fin-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "303adbf",
+      "subject": "merge: c006settle-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "96c1a5c",
+      "subject": "merge: fmtc2b-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "7b5ae77",
+      "subject": "merge: fmtcontent1-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "86254b0",
+      "subject": "merge: mathfix4-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "899acd8",
+      "subject": "merge: redteamfix-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "5568502",
+      "subject": "merge: mathfix2-solo 副本归并"
+    },
+    {
+      "class": "cert_missing",
+      "date": "2026-08-30",
+      "detail": "81ef1c7a",
+      "sha": "93c4f0b",
+      "subject": "mathfix2-solo 段2 mathfix2 概率卷结算"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "b6adf6f",
+      "subject": "merge: mathfix1-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "1bd75f2",
+      "subject": "merge: fmtfix-solo 副本归并"
+    },
+    {
+      "class": "cert_missing",
+      "date": "2026-08-30",
+      "detail": "06c30867",
+      "sha": "d561f17",
+      "subject": "fmtfix-solo 段2 fmtfix 机械类归零结算"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "231b8ff",
+      "subject": "merge: mathreg-solo 副本归并"
+    },
+    {
+      "class": "routed_merge",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "09dc9ce",
+      "subject": "merge: mathprobe-solo 副本归并"
+    },
+    {
+      "class": "unbypassed",
+      "date": "2026-08-30",
+      "detail": null,
+      "sha": "c556abb",
+      "subject": "baseline: 数学仓全量基线（git init 零号动作）"
+    }
+  ]
+}
