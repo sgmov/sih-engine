@@ -54,14 +54,14 @@
 
 | 件 | 认证哈希前 8 |
 |---|---|
-| ask3 记录 | 见结算读数节补笔 |
-| 验证件 | 见结算读数节补笔 |
-| 正身件 | 见结算读数节补笔 |
-| 执契材料 tally-material.json | 见结算读数节补笔 |
-| 出泊材料 pk-077-exit.json | 见结算读数节补笔 |
-| checkcite 件 | 见结算读数节补笔 |
-| manifest 内容哈希清单件 | 见结算读数节补笔 |
-| 投影件 mcpopen-solo.json | 见结算读数节补笔 |
+| ask3 记录 | 5c198dac |
+| 验证件 | dfed9dbc |
+| 正身件 | 501d1e68 |
+| 执契材料 tally-material.json | 0994e3f9 |
+| 出泊材料 pk-077-exit.json | e354ac87 |
+| checkcite 件 | 7f5d6453 |
+| manifest 内容哈希清单件 | b2d8da3b（settle cert 同取此值） |
+| 投影件 mcpopen-solo.json | e4d6a161 |
 
 md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 ReportNotJson 先例）。
 
@@ -95,3 +95,12 @@ md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 Re
 - 前置读数：sih-engine/sih/event/plan/mcpopen-solo-materials/startup-readings/
 - ask3 生成器：sih-tools/scribe/reports/make_ask3_mcpopen-solo.py（随批提交）
 - 测量席：sih-tools/facet/contracts/m-mcpopen-1/（topic 与 contract 与 responses 与 baseline 与计分材料）与 sih-tools/proposition/DES/m-mcpopen-1/（飞轮 trail 与 tally 材料与 check 报告与 signcheck）
+
+## 结算读数（收约补笔）
+
+- 双仓 settle：tools 段一 `3daf8221`（base integral-stage-build@a2b5c317）、engine 段一 `e83bb77`（base main@5970958），cert 统一取 manifest 认证 `b2d8da3b`；归并 tools `14cce319`、engine `2d204c9`；closeguard 预收 tools `726f8127` 与 engine `36c60c4`；跑步机收编 `1c00d89b` 实收本批留痕册投影与 calls.ndjson（十七笔调用留痕经 lease call-log append 三腿齐落）。
+- 放锁收约：11 路径 unlock 全过零失败；close 三跑形即首跑无主闸拦两件（attnanchor 与 attractor 两册 CALL-LOG 跨批存量族）带 bypass-orphan 复跑、次跑 CALL-LOG 随批闸拦同两册带 bypass-calllog 三跑成；会话 c2849d6a10cbee95 revoked 真值（2026-09-08T17:33:53Z），双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/mcpopen-solo.json；双旗显式留痕两笔候 callloghyg 扩面人裁（settlement-v2 先例同形）。
+- 链 verify：valid，events 51（first `25989caf`、last `e4d6a161` 即投影件认证末笔）；本批链笔序即例行读数三维三笔与意图 `1c273224`（index 40）与终签 crosscheck `05353825`（index 41）与出泊 `2a32688a`（index 42）与认证八笔（index 43 至 50）。
+- reconcile：双仓 unrouted 俱零、cert_missing 俱零即判据双零；unbypassed 即 tools 117 与 engine 81、session_orphan 即 tools 19 与 engine 24，增量俱本批 closeguard 与收编与归并机械自生提交（settlement-v2 同形），跨批存量不代清。
+- 收约补笔：本节与认证清单实值即本笔，经直改链笔申报（scribe direct）加 --no-verify 提交替 lease bypass 登记通道（pkexits2 与 settlement-v2 先例同形）；补笔后复跑化格 check 与检词俱绿（零改动零违例）。
+
