@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "链上实证：进泊笔 ebec521e（2026-09-06 当日链）与终签 crosscheck_completed m-sitruling-4 event_hash 前 8 4f94b63f（2026-09-08 当日链，sitruling-solo 批）俱在档预核；借鉴范围即差分语法采纳，文档规格与配置规格两型分立，统一解释器不立项挂 spec-delta 触发器；归档合并纪律与向界结算追加制同构，落注不另立项；候文规后继批。执行批 pkexits2-solo。",
+  "disposition": "promoted",
+  "entry_id": "pk-067",
+  "id": "pk-067",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "exited_at": "2026-09-08",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-08 FORK-1 令照录「pk-067 出泊：借鉴范围裁差分语法采纳，文档规格与配置规格两型分立，统一解释器不立项挂 spec-delta 触发器（m-sitruling-4 终签 4f94b63f）；归档合并纪律与向界结算追加制同构，落注不另立项；候文规后继批。」",
+  "state": "exited",
+  "ttl_days": 30
+}

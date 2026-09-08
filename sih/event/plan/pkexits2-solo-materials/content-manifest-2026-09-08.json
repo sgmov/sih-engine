@@ -1,0 +1,16 @@
+{
+ "batch": "pkexits2-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 件不经 scribe append 直认，以本清单件统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/pkexits2-solo/sih/state/plan/pkexits2-solo.md",
+   "sha256": "cd491714d43bfc363ec98a853f0b3a30500ebb4c970403b539a89d412172f49e"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/pkexits2-solo/sih/event/plan/pkexits2-solo-results.md",
+   "sha256": "9928b0541face8ac5e924ea362db561fce61fbbc59a5601c673ec0f219a4ec5f"
+  }
+ }
+}
