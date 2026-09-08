@@ -1,0 +1,22 @@
+{
+ "batch": "hygspots-solo",
+ "date": "2026-09-08",
+ "content_hashes": {
+  "sih-tools/worktree CONTRACT": {
+   "sha256": "9747d04a81bdd6ae474ee1cf648c5dbe6fa9af81b02f3529c0bf511d880e8abd",
+   "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/hygspots-solo/lease/CONTRACT.md"
+  },
+  "engine results": {
+   "sha256": "970f746943685267b0a6dcdcd8fdce241f22276215d64c495fa0b33d45a237bd",
+   "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/hygspots-solo/sih/event/plan/hygspots-solo-results.md"
+  },
+  "engine task package": {
+   "sha256": "89eaabff28bed0880746ed0e815a2c92a3cbbb7568966008e0dbb3d8d1badc7d",
+   "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/hygspots-solo/sih/state/plan/hygspots-solo.md"
+  },
+  "topic": {
+   "sha256": "cd742b4c8522c6e29b5ca43d59076b06350da37b3c39194f0eb21adcad9cbe97",
+   "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/hygspots-solo/facet/contracts/hygspots-260908/m-hygp070-1/topic.md"
+  }
+ }
+}
