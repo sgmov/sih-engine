@@ -91,7 +91,8 @@
 - 双仓 settle（r2）：tools 工地提交 27241fed、engine 工地提交 94ab23c（cert 8affef44，三查过）。
 - 放锁收约：r1 12 锁、r2 7 锁 unlock 全过；close 两轮三跑成（r1 第三跑、r2 第二跑）即双仓归并、工地与分支清除、会话 b06c3c1e5b58feed 与 e4d9f6f05b092d28 俱 revoked、零失败；归并对表四处全 IDENTICAL（任务包主树备份 vs 归并、温故检索件、裸调 run1/run2、r2 红证）。
 - 链 verify：valid，events 12，first ef2f0b32（r1 意图）last 8734d1dc（r2 管线认证）。
-- reconcile 对基线：双仓 unrouted 0/0 较批前零新增；cert_missing（engine 3 与 tools 4）与 session_orphan（engine 24 与 tools 19）历史账面零新增；unbypassed tools 98 零新增、engine 68→69→70 即 closeguard pre-close 两笔与收约补笔一笔属本批活面，随 bypass 登记归零回基线，如实记档。
+- reconcile 对基线：双仓 unrouted 0/0 较批前零新增；cert_missing（engine 3 与 tools 4）与 session_orphan（engine 24 与 tools 19）历史账面零新增，exit 1/1 与批前同源；unbypassed tools 98 零新增，engine 类计数 68→69（closeguard 预收提交一类计数 +1，非未决议题）而未决 unbypassed 议题清单空 0 笔，本批收约补笔两笔（tools 65494510 与 engine babbc8a）经 lease bypass 登记后议题清单保持空，如实记档。
+- 收约补笔更正一笔：本节首写 engine 计数误作「68→69→70」，实数 68→69，更正件经同款 bypass 通道入版控，错数留痕于更正说明（应而不藏）。
 - 温故检索：retriever recall --event critsweep-solo --since/until 2026-09-08 命中本批当日链笔（certification d3d95f65 等），落批材料 retriever-recall-2026-09-08.json；落包前主会零命中读数 critsweep-recall-pre-2026-09-08.json 随补笔入档。
 - 收约补笔：结算读数与管线实录与认证实录与 F 表终态与完工回显即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 archpark 与 genpark 先例同形）。
 
