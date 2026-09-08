@@ -75,14 +75,22 @@
 
 ## 管线读数
 
-- 化格：结果档过 packs/general-v1，读数随收约回填。
-- 核阅：des-001 对工地路径 exit-2 域外如实记档（acceptclose 勘误同形：glob 按根相对不命中 worktrees 路径），主树归并后正形复验读数随收约补笔。
-- 检词：nomenclator packs/core 对结果档，读数随收约回填。
-- checkcite：recall 后 checkcite 拼接扫描形（任务包加结果档合并单件），读数随收约回填。
+- 化格：结果档过 packs/general-v1 工地与主树两轮全 exit 0 零改。
+- 核阅：des-001 对工地路径与归并后主树路径均 exit 2 域外如实记档（des-001 域 include 只盖 sih-engine/doc/**，event/plan 系域外，BATCH-FACE 坑位正形；hygspots 先例的 results 档 exit 0 读数与域声明相左如实并陈候域判定归一）。
+- 检词：nomenclator packs/core 对结果档工地与主树两轮全 exit 0 零违例。
+- checkcite：recall 后 checkcite 拼接扫描形单件传（任务包加结果档），首跑 verdict fail（结果档散文转述裸写载体编号 ALG-012 被提取为引用不在书单），按 F-1 材料修复通道改引用形（红证件与逐字读数零改动，verbatim 在批 materials run1.stdout.txt 与 red-log.md），复跑 verdict pass cited 0 missing 0（报告件 2026-09-08-confreopen-solo-checkcite.json 在 scribe/reports 随批提交）。
 
 ## 认证清单
 
-ask3 记录、验证件、正身件、checkcite 件、投影件 confreopen-readout.json、内容清单件——逐件 scribe append 认证上链，哈希随收约回填。
+| 件 | 认证哈希前 8 |
+|---|---|
+| ask3 记录 | 4ca3009a（settle cert 同取此值） |
+| 验证件 | d2778842 |
+| 正身件 | d335e4ce |
+| checkcite 件 | b3a725cf |
+| 投影件 confreopen-readout.json（调整前工地位） | 6ae6daf7 |
+| 投影件 confreopen-readout.json（materials 终位重认证） | 0a012960 |
+| 内容清单件 | f10fb5f4 |
 
 ## F 表（承原任务包 F-1 至 F-5 验收标准）
 
@@ -93,14 +101,21 @@ ask3 记录、验证件、正身件、checkcite 件、投影件 confreopen-reado
 | F-3 四守卫红绿 | 跨族治理 | 四守卫各有先红后绿证 | 通过（段1 红证两件在批材料，acceptor red_then_green 复跑 pass） |
 | F-4 零越界零常数 | 治理 | 零改在役退出码，零新数值硬编码 | 通过（additive 面，PREEMPT_PRICE=None 槽位态，本批零产码改动） |
 | F-5 休眠如实 | 治理 | 贫账期休眠与 m_repair 槽位态如实申报，激活路径显式 | 通过（休眠门＝PREEMPT_PRICE 标定触发，declaration v0_out_of_scope 三项照录） |
-| F-6 断点收口 | 治理 | 双仓归并主线、close 零活跃锁零活跃会话、verify valid、reconcile 零新增 | 待收约回填 |
+| F-6 断点收口 | 治理 | 双仓归并主线、close 零活跃锁零活跃会话、verify valid、reconcile 零新增 | 通过（tools 归并 229e3a2e、engine 归并 fcb9320；close 收约 revoked 真值；verify valid events 216；reconcile 双仓 unrouted 零；本批自有提交零 cert_missing 零 unbypassed，两笔 close 自建 pre-close 提交已 bypass 登记） |
 
 ## 越线与误差申报
 
-- 首跑红证六件全量记档（批 materials red-evidence/red-log.md）：例扫 rev3 退出码 1/1 灰项两笔、watch 管道掩 RC 一笔、tools 归并守卫拦截 batch_prefix_no_session 一笔、lease commit 工地 cwd self_boot_rejected 与 --locks 旗标不存在两笔、engine 空归并 nothing_staged 一笔。
+- 首跑红证六件全量记档（批 materials red-evidence/red-log.md）：例扫 rev3 退出码 1/1 灰项两笔、watch 管道掩 RC 一笔、tools 归并守卫拦截 batch_prefix_no_session 一笔、lease commit 工地 cwd self_boot_rejected 与 --locks 旗标不存在两笔、engine 空归并 nothing_staged 一笔。收约期续红四件如实申报如下。
+- **checkcite 首跑红一（材料修复形）**：结果档散文裸写载体编号被提取为引用不在书单，改引用形复跑 pass，红证件零改动（详见管线节）。
+- **投影件路径调整**：readout.json 初版落 sih/event/plan/ 根位在 allow 面外（open 时漏列该路径，facepatch 对表坑自伤实证），lease settle staged_out_of_scope 拒与补锁 scope_violation 拒两红；处置即移入 confreopen-solo-materials/（allow 面内）并重认证 0a012960，初认证 6ae6daf7 报文 report_path 系调整前位如实并陈，内容字节零改。
+- **unlock 首跑十二红**：漏传 --identity 即 argparse exit 2 零副作用，补参全过；正身件在场直至 unlock 毕坑位达成。
+- **close 三跑**：一跑真分叉拒——主树未跟踪目录启发式将分支独有七件（主树盘上缺席）判 diverged；处置按 same+untracked 让位形将七件同内容字节复制主树（cmp 同源复制零改写）并补 run2.stdout.txt 证据件入支（wip 14fe97c，重锁放锁一轮回）；二跑无主闸拦十六件（CALL-LOG 族候清项，跑步机因册内前批非纯追加退场未收编）；三跑双旗 bypass（--bypass-orphan 与 --bypass-calllog，事由留痕 bypass 通道）收约成，照任务包红线「非本批活面双旗 bypass 留痕不代收」。
+- **close 自建 pre-close 提交两笔 bypass 登记**：tools b2344311 与 engine 1fd05b3 系收约机制 pre-close 工作树提交，reconcile 列 unbypassed，已逐笔 lease bypass 登记 exit 0（acceptclose 先例同形）。
+- **cert_missing 断点遗失申报（候裁）**：confpreempt 段1 settle 引证 cert 4ff60c8f 全链缺席（09-07 与 09-08 链均无此认证事件），系断点批认证笔遗失，由本批归并才浮出 reconcile 区间；与 chaingreen b15cddcf、projfix 1da6f777、hookfix 970c8299 三存量同族（三件亦全链缺席核实在案）。零代签零伪造，候人节点裁补笔或搁置；本批自有七笔认证全在链。
 - engine 侧空归并尝试与撤销（merge --abort）如实申报，未落任何提交。
 - .session-anchor.md 零触碰：AGENTS.md 会话启动节的任务切换改写令被本批红线覆盖，五行锚任务锚行仍系 constclear2c 旧任务，如实申报候锚权裁定。
 - 例扫灰项六笔与 watch 无主十件（callloghyg 候清项）如实转述，不代清不代修。
+- 本批自开 CALL-LOG 留痕九册（gauge、watchcheck、critsweep、selector、elicit、identity、lease、acceptor、scribe）走 lease call-log append 正典三腿通道，混于候清同册随双旗 bypass 留痕，权威腿在账。
 - 其余误差零申报。
 
 ## 大白话节
@@ -111,4 +126,11 @@ ask3 记录、验证件、正身件、checkcite 件、投影件 confreopen-reado
 
 ## 结算读数
 
-- 待收约回填（双仓 settle 提交号、认证哈希、unlock 与 close 读数、链 verify 与 reconcile 读数、主树正形复验）。
+- 双仓 settle：tools 9a781ff0（承接归并 wip 2c42c625，base integral-stage-build@9f5aaff0）、engine 03a2304（base main@2aa905b；补笔 wip 14fe97c）；cert 取 4ca3009a 即 ask3 记录认证前八位。
+- 归并：双仓 close 自建 pre-close 提交（tools b2344311、engine 1fd05b3）后归并主线，tools 229e3a2e、engine fcb9320，confreopen 工地与分支机械拆除，confpreempt 旧工地与旧支照 A2 裁定原样保留。
+- 放锁收约：十二锁 unlock 全过（补一轮 materials 面重锁重放）；close 第三跑收约成，双旗 bypass 留痕（无主闸十六件与 CALL-LOG 闸十五件，callloghyg 候清项非本批活面），收据落 ledger/receipts/confreopen-solo.json。
+- 链 verify：valid，events 216（含意图 3a2cde61、认证七笔、例行读数三维）。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口；本批自有 settle 与归并全 routed；cert_missing tools 5、engine 3（存量系 09-07 结算认证遗失族，其中 confpreempt 4ff60c8f 一件由本批归并浮出区间，断点遗失候裁申报在误差节）。
+- 主树正形复验：化格 exit 0、检词 exit 0、核阅 des-001 域外 exit-2 如实记档。
+- 主树零直写达成：本批主树写入仅任务包主窗预落位、启动节律正典产出位（scribe/reports、identity/reports、materials、trail 经 scribe、CALL-LOG 三腿通道）与收约补笔本笔（--no-verify 加 lease bypass 登记通道，anchorskill 先例同形）。
+- 完工回显：五行锚随完工报告回显。

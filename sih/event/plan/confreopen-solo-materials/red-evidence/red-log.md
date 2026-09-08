@@ -27,3 +27,12 @@
 ```
 lease: error: unrecognized arguments: --locks /Users/moc/workspaces/SiHankor/sih-tools/lease/ledger/locks.ndjson
 ```
+
+## 收约期续红（R7 至 R10，先红留痕纪律）
+
+| # | 时点 | 红证 | 退出码 | 处置 |
+|---|---|---|---|---|
+| R7 | checkcite 首跑 | verdict fail：结果档散文裸写载体编号被提取为引用不在书单 | 1 | F-1 材料修复通道改引用形复跑 pass，红证件与逐字读数零改动 |
+| R8 | 投影件路径 | lease settle staged_out_of_scope 拒（readout 在 allow 面外）＋补锁 scope_violation 拒 | 1/1 | 移入 materials 面内重认证 0a012960，内容字节零改 |
+| R9 | unlock 首跑 | 漏传 --identity 即 argparse 用法错 | 2×12 | 补参全过零副作用 |
+| R10 | close 三跑 | 一跑真分叉拒（未跟踪目录启发式判分支独有七件 diverged）；二跑无主闸拦十六件 CALL-LOG 族候清项 | 1/1 | 七件同内容字节复制主树让位＋run2 证据件补笔入支（14fe97c）；三跑双旗 bypass 收约成，事由留痕不代收 |
