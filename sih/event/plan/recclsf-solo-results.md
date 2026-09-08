@@ -104,7 +104,8 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 - math 修订前红证首跑路径形错：shell 相对路径 `../sih-math` 按 cwd 解析错跑成 sih-tools 重复读数，改绝对路径重跑即正确（certarch lockpath 同族路径参误写形，零写入零污染）。
 - CONTRACT 检词存量违例一笔：修订四十九文本内死档登记词（projfix-solo 批载入，词面以检词报告为准），主树同形在案，本批新增文本零违例，不代清候人节点。
 - 本批工具代码改动即 lease 一件（core.py 与 commitcore.py 与 CONTRACT 与 pyproject 与 __init__ 与 tests）：CALL-LOG 留痕义务两笔即 lease 一笔与 scribe 一笔，经 lease call-log append 三腿齐落。
-- 其余误差零申报（scribe intent 一次过、闸三 --sessions 参首跑即带、锁 13 路一次过、settle 未红）。
+- 版本升位破冻结金向量一笔（收约后主树裸跑全族复验时撞见）：lease 版本号嵌入 sweep 报告即 sweepjson 批冻结金向量含版本字段，本批升 1.39.0 后该向量版本行漂移致 test_sweepjson 金向量测试红（其余字节零差异，复算 diff 仅一行即 1.38.0 至 1.39.0）；批内全族 309 绿读数系版本升位前所跑即未覆盖此窗，如实申报。处置即直改车道重冻（同夹具同参形再生，逐字节对表仅版本行随版本号更新），重冻后主树裸跑全族 309 绿复验在档，经直改链笔申报与 --no-verify 加 bypass 登记通道提交；教训即版本升位批须复跑全族含冻结向量面，后继批引以为戒。
+- 其余误差零申报（scribe intent 一次过、闸三 --sessions 参首跑即带、锁 13 路一次过、settle 首过即成；段二红证归档提交系 close 首跑后补件，取锁窗单锁重取正典通道提交非红）。
 
 ## 结算读数
 
@@ -114,7 +115,8 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 - 归并提交号：tools `556f0dc9`（closeguard 预收 1b8a08d0 经 bypass 登记）、engine `b4999aa`（预收 30ada57 经 bypass 登记）；预收两笔俱 close 机械自生非手写，bypass 通道登记即本批对 unbypassed 零新增
 - 链 verify：valid，events 292，末哈希 f4ca842b；本批链面笔序即意图 1 笔（09fea050）与例行读数 3 笔与认证 9 笔（ask3 a1fab761 与验证 4a0ea5e2 与正身 9d389f19 与投影 05a0614d 与前后对账汇总 71062d61 与跑步机 dry 54ff3353 与 checkcite 4a89dbfc 与管线报告 880b6891 与内容清单 f4ca842b），同窗他会话笔共存如实记
 - 三仓 reconcile 终读数（归并后主树 1.39.0 正典 CLI 形）：cert_missing 三仓俱零，cert_backfilled 即 tools 5 与 engine 3，cert_writtenoff 即 math 2，unrouted 俱零即本批零新增路由缺口；退出码一系 session_orphan 与 unbypassed 跨批存量（各批 closeguard 预收与历史遗留，不代清红线）非本批新增；本批自产提交分类俱正即 settle 三笔 routed、归并两笔 routed_merge、预收两笔 bypass 已登记
-- 收约补笔：本节与 F-5 即本笔，经直改链笔申报与 --no-verify 加 bypass 登记通道提交（anchorskill 与 certarch 先例同形）
+- 收约补笔：本节与 F-5 即本笔，经直改链笔申报与 --no-verify 加 bypass 登记通道提交（anchorskill 与 certarch 先例同形）；另笔即 sweepjson 冻结金向量版本行重冻（版本升位连带，见误差申报末条），同通道提交
+- 主树裸跑硬性项：归并后主树 lease 即 1.39.0，test_recclsf.py 九测裸跑九绿、全族 309 绿（重冻后复验读数），主树 reconcile 正典 CLI 形三仓终读数见上
 - 投影件 recclsf-ledger.json 的 live_retest_at_close 字段载「待回填」，实态以本节跑步机 live 复读段为准（投影件随段一定格，补笔不回改已认证件）
 
 ## 大白话节
