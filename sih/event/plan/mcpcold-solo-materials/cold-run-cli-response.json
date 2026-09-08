@@ -1,0 +1,26 @@
+{
+  "sessionId": "sess_b8dccf1f-1130-46db-bac4-b1f8288cc5e0",
+  "traceId": "314230f9-26ee-4013-8bb1-c60b4d13eceb",
+  "turnId": "turn_542c7e54-71fe-4db5-8513-6a0b41fb6d43",
+  "response": "结论：今天（2026-09-09）的治理链完整且验证通过。\n\n- 查询结果：链上共 74 笔事件（`sih-engine/sih/event/trail/2026-09-09.ndjson`），全部返回。\n- 验证结果：`chain_verify` 判词 **valid（true）**，逐笔哈希校验与整链校验全部通过；首笔哈希 `25989caf…`，末笔哈希 `8d1e2340…`。\n\n事件构成概览：以 `certification_completed`（认证）为主，另含 `reading_recorded`（秤星读数）、`intent_refined`（会话意图）、`crosscheck_completed`、`parking_exited`（pk-077 出泊）和 4 笔 `direct_edit_completed`（settlement-v2、fusadopt、mcpspec、mcpserv 四批的收约补笔）。时间跨度从 2026-09-08T16:50 至 2026-09-09T02:40（UTC），与当日结算批流水一致，无断链迹象。",
+  "usage": {
+    "source": "provider",
+    "modelRequestCount": 2,
+    "inputTokens": 39507,
+    "outputTokens": 356,
+    "totalTokens": 39863,
+    "cacheReadTokens": 27008,
+    "cacheWriteTokens": 0,
+    "reasoningTokens": 0,
+    "webFetchRequests": 0,
+    "webSearchRequests": 0
+  },
+  "eventCount": 356,
+  "projection": {
+    "status": "idle",
+    "turnCount": 1,
+    "totalTokenCount": 39863,
+    "contextUsed": 24519,
+    "contextWindow": 1000000
+  }
+}

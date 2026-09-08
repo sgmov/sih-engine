@@ -1,0 +1,44 @@
+{
+ "kind": "cold-agent launch record",
+ "batch": "mcpcold-solo",
+ "date": "2026-09-09",
+ "cli": {
+  "binary": "/Applications/ZCode.app/Contents/Resources/glm/zcode.cjs",
+  "runner": "node v25.9.0",
+  "version": "zcode 0.16.5",
+  "mode": "headless print (--json -p)",
+  "cwd": "/Users/moc/workspaces/SiHankor"
+ },
+ "prompt_verbatim": "用 sih 工具查一下今天的治理链并验证它完整，告诉我结论。sih MCP 工具面在本会话可用。",
+ "prompt_redline_check": "任务句与 MCP 工具面可用事实之外零内容：无工具用法示例、无参数表、无路径指引、无治理语境、无批名；工具自描述是唯一教学面",
+ "zero_write_authorization_mechanics": {
+  "flag": "--disallowed-tools",
+  "list_verbatim": "Bash,Read,Write,Edit,Glob,Grep,WebFetch,WebSearch,Task,Skill,TodoWrite,TodoRead,NotebookEdit,Compat,mcp__node_repl__js,mcp__node_repl__js_reset,mcp__node_repl__js_add_node_module_dir,mcp__plugin_document-skills_image_search__search_image,mcp__web_reader__webReader",
+  "effect_evidence": "冷会话两笔模型请求的 toolNames 清单只含 Agent/AskUserQuestion/EnterPlanMode/ExitPlanMode/TaskOutput/TaskStop/SendMessage/ReadSessionContext 与五 sih MCP 工具，Bash 与 Read 与 Write 与 Edit 与 Glob 与 Grep 等写与文件读类工具全部缺席（cold-transcript-extract.json available_tool_names）"
+ },
+ "model_config_mechanics": {
+  "problem": "裸 CLI 无头路径要求用户级配置带顶层 model 键，桌面壳经程序面注入 modelConfig 故不受此限；真实用户配置 ~/.zcode/cli/config.json 无 model 键且不在本批写入面",
+  "solution": "HOME 环境变量重定至暂存存储 /tmp/mcpcold-zstore-home（node os.homedir() 走 $HOME），暂存 .zcode/cli/config.json 只载一个有效 provider（builtin:bigmodel-coding-plan，apiKey 抄自真实用户配置）加 model.main 引用；工作区 .zcode/config.json 的 sih server 照常经 --cwd 装载（日志 mcpServerCount 2 实证）",
+  "governed_surface_impact": "零：真实用户配置零触碰，工作区仅 sih 条目一处增补，暂存存储全在 /tmp",
+  "secret_redaction": "apiKey 不入本材料，仅在暂存文件内落盘（0700 目录，/tmp 生命周期）",
+  "dead_help_flags_discovered": ["--allowed-tools（帮助面宣示，解析器拒识，bundle 零命中）", "--max-turns（同前）", "--settings（同前）"],
+  "warm_smoke_session": "sess_b6545524-ace5-40e2-a0b9-5abe7d0e1e5e（冒烟证据 warm-smoke-response.json，冒烟 prompt 含工具名系批方基建验证，非冷 agent）"
+ },
+ "cold_run": {
+  "session_id": "sess_b8dccf1f-1130-46db-bac4-b1f8288cc5e0",
+  "turn_id": "turn_542c7e54-71fe-4db5-8513-6a0b41fb6d43",
+  "started_at_utc": "2026-09-08T19:21:00+0000",
+  "finished_at_utc": "2026-09-08T19:21:22+0000",
+  "cli_exit": 0,
+  "model_requests": 2,
+  "tool_calls": [
+   {"name": "mcp__sih__chain_query", "input": {"date": "2026-09-09"}},
+   {"name": "mcp__sih__chain_verify", "input": {"date": "2026-09-09"}}
+  ],
+  "help_seeking": "零（单轮自主完成，零追问零报错求助）"
+ },
+ "environment_facts": [
+  "工作区 AGENTS.md 经 ZCode 环境自动在场（transcript user system-reminder 可证），系环境投影非 prompt 输入；冷 agent 实际只经 MCP 面两工具完成任务，未用 AGENTS.md 内任何路径或 CLI 形",
+  "链路径字样出现在冷 agent 结论里，来源是 chain_query 出参 trail 字段（工具自描述与出参教学），非 prompt 教学"
+]
+}

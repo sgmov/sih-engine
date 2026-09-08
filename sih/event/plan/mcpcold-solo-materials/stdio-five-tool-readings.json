@@ -1,0 +1,1312 @@
+{
+ "tool_count": 5,
+ "tools": [
+  {
+   "name": "chain_query",
+   "description": "查当日治理链事件清单（哈希、事件型、主体字段）。Query one day's governance chain events (hash, event type, subject). 承接 CLI：sih-engine/target/debug/scribe query --trail。正典：sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md；sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "input_schema": {
+    "properties": {
+     "date": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "default": null,
+      "title": "Date"
+     },
+     "event_type": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ],
+      "default": null,
+      "title": "Event Type"
+     }
+    },
+    "title": "chain_queryArguments",
+    "type": "object"
+   }
+  },
+  {
+   "name": "chain_verify",
+   "description": "验当日治理链：逐笔哈希校验与整链 valid 判词。Verify one day's chain: per-event hash checks and whole-chain valid verdict. 承接 CLI：scribe verify --trail。正典：sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md；sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "input_schema": {
+    "properties": {
+     "date": {
+      "title": "Date",
+      "type": "string"
+     }
+    },
+    "required": [
+     "date"
+    ],
+    "title": "chain_verifyArguments",
+    "type": "object"
+   }
+  },
+  {
+   "name": "critsweep",
+   "description": "判据扫：GOV-002 五判据三态、泊界两线路由、两账本在飞，严格 JSON 单对象。Criterion sweep: five GOV-002 criteria tri-state, parking routing, two in-flight ledgers. 承接 CLI：python3 sih-tools/critsweep/sweep.py --at <date> --root <root>。正典：sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md；sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "input_schema": {
+    "properties": {
+     "date": {
+      "title": "Date",
+      "type": "string"
+     }
+    },
+    "required": [
+     "date"
+    ],
+    "title": "critsweepArguments",
+    "type": "object"
+   }
+  },
+  {
+   "name": "heartbeat",
+   "description": "心跳：秤星三维最新读数与距上快照间隔日（只读不落链）。Heartbeat: latest gauge tri-dimension readings and days since last snapshot (read-only). 承接 CLI：cd sih-tools/gauge 且 PYTHONPATH=src python3 -m gauge.cli read。正典：sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md；sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "input_schema": {
+    "properties": {},
+    "title": "heartbeatArguments",
+    "type": "object"
+   }
+  },
+  {
+   "name": "locks_read",
+   "description": "锁面读数：未释放锁成对核算与活跃会话数。Locks reading: unreleased lock accounting and active session count. 承接 CLI：uv run --project sih-tools/lease lease status（查册）。正典：sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md；sih-engine/sih/state/plan/mcpline-line-v1.md",
+   "input_schema": {
+    "properties": {},
+    "title": "locks_readArguments",
+    "type": "object"
+   }
+  }
+ ],
+ "calls": {
+  "chain_query": {
+   "is_error": false,
+   "payload": {
+    "date": "2026-09-09",
+    "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson",
+    "event_type_filter": null,
+    "matches": 74,
+    "returned": 74,
+    "events": [
+     {
+      "event_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+      "event_type": "reading_recorded",
+      "subject": "sih-engine",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T16:50:43.793723Z"
+     },
+     {
+      "event_hash": "12201d03e03151726d900644afca0aba306c29112a523b2456de35a6e522ba84",
+      "event_type": "reading_recorded",
+      "subject": "agents",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T16:50:43.888990Z"
+     },
+     {
+      "event_hash": "6421deb0a51cf832d53367d359cee913acb1dce819112460d3955733945723c2",
+      "event_type": "reading_recorded",
+      "subject": "tools-wheel",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T16:50:43.967994Z"
+     },
+     {
+      "event_hash": "de4d2658ab7ba0a99804aabced3bea6e65bc728595cec3aa86a4ffdaf508cbd7",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-main-fusadopt",
+      "timestamp": "2026-09-08T16:50:53.859190Z"
+     },
+     {
+      "event_hash": "30e8a12bbb1d87983b0ef28474d54d6e4b899515a46c958673abd98b20ab7f0b",
+      "event_type": "reading_recorded",
+      "subject": "sih-engine",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T16:53:08.144200Z"
+     },
+     {
+      "event_hash": "e124d3501a058ec4bd13692a8edd3ce0354357c25acac6af7f80c9b515156bd8",
+      "event_type": "reading_recorded",
+      "subject": "agents",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T16:53:08.233256Z"
+     },
+     {
+      "event_hash": "363d59ee27dabf6459cb6f04e5d4ebccc61cb42d43d798f2b8080dc5045d848f",
+      "event_type": "reading_recorded",
+      "subject": "tools-wheel",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T16:53:08.313906Z"
+     },
+     {
+      "event_hash": "42da7fd5f67339732a5e89e37460a87fb49c2b4d7e0d1fc105474e5b52c7ab7a",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-main-settlev2",
+      "timestamp": "2026-09-08T16:53:26.481572Z"
+     },
+     {
+      "event_hash": "0e79f34a00b43e0c5b94113d4a89a13099a75f111c73a5ef73bc9f1f470b6a15",
+      "event_type": "crosscheck_completed",
+      "subject": null,
+      "doc_id": "crosscheck-m-fusadopt-a1",
+      "timestamp": "2026-09-08T16:54:38.818450Z"
+     },
+     {
+      "event_hash": "44fa67d16eb9ef9d4671aebcd53c3a527e11ed8ea987d1979c64b6c4944e1a24",
+      "event_type": "crosscheck_completed",
+      "subject": null,
+      "doc_id": "crosscheck-m-fusadopt-b1",
+      "timestamp": "2026-09-08T16:54:45.897999Z"
+     },
+     {
+      "event_hash": "70e3bc3e49dc00a93423d762d1126b1b7fdc64741cfc96879f4c055a32d2095b",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-settlement-v2-solo-record",
+      "timestamp": "2026-09-08T16:56:45.096570Z"
+     },
+     {
+      "event_hash": "1b1ca9fdcc8ffb3d6888e82a6cb2753eaa56bd3c948279dcd68671b6ddee0335",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-settlement-v2-solo-validation",
+      "timestamp": "2026-09-08T16:56:45.305501Z"
+     },
+     {
+      "event_hash": "bb8d6d4e4fe8422a52e8f805cfacefb9908c1ddd0c98c1ee2f5aecaf84c3280a",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-solo-identity",
+      "timestamp": "2026-09-08T16:56:45.548506Z"
+     },
+     {
+      "event_hash": "9f5129a68ca141402d6fe9ac993c36d9e42243f8a608099252064614f453248c",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-fmt-settlement",
+      "timestamp": "2026-09-08T16:56:51.218113Z"
+     },
+     {
+      "event_hash": "b25e96e41df164f0fbe2c4e49e48adb893864e061b3f2d18f9c1a8da53dcff41",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-scr-settlement",
+      "timestamp": "2026-09-08T16:56:51.425768Z"
+     },
+     {
+      "event_hash": "a0a507ea7364cbc8d26ac51ea32427a8dcf04d55e24cce8ba61d8e51f2dbca32",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-nom-settlement",
+      "timestamp": "2026-09-08T16:56:51.628218Z"
+     },
+     {
+      "event_hash": "57ec78ed897228d1c7738304f824d7cb30e95be6188b00d10ecaa0e674f54472",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-fmt-results",
+      "timestamp": "2026-09-08T16:56:51.832647Z"
+     },
+     {
+      "event_hash": "cd0d38c7bc20bd4209eac65a18caf83fc8e1ce72e74e9483d79f010637d37662",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-scr-results",
+      "timestamp": "2026-09-08T16:56:52.030968Z"
+     },
+     {
+      "event_hash": "27636661a131fb4ba6afa6d1cb985d67551a4007973c3037353b0ad53f1ba4c7",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-settlement-v2-nom-results",
+      "timestamp": "2026-09-08T16:56:52.229599Z"
+     },
+     {
+      "event_hash": "30f6ffeb6ddf33cf51c307c35d38f36fb7eeab16782b4daf6008ad48b2aa943b",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "manifest-sha256",
+      "timestamp": "2026-09-08T16:56:52.419118Z"
+     },
+     {
+      "event_hash": "4355fe4724f06d66cc50ad9e0eb0dde4b8fe23478bb9b3acedcffd18e4c11e09",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "settlement-v2",
+      "timestamp": "2026-09-08T16:56:52.619614Z"
+     },
+     {
+      "event_hash": "855a70880a2b9925b053c63391404f1b49144ee4ecd3be5915440f97c24c9cd1",
+      "event_type": "direct_edit_completed",
+      "subject": "settlement-v2-solo 收约补笔：结果档结算读数节回填即双仓 settle 提交号与归并号与认证十一笔实录与放锁收约三跑实录与链 verify valid 21 笔与 reconcile 双零与判据扫终读五 achieved 与 pk-077 gate 触发条件达成终读；会话 3bcd26e3db3b94b5 已收约吊销即走主会处置位；补笔后化格 check 与检词复跑俱绿；c2close2 与 s2park 先例同形",
+      "doc_id": "direct-agent-9de3f2ab",
+      "timestamp": "2026-09-09T01:20:00Z"
+     },
+     {
+      "event_hash": "3a855dc76d4ba82f70ebc43fda01beb2ed8984fff95736ca80ddbea51dcbebe1",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-fusadopt-solo-record",
+      "timestamp": "2026-09-09T01:20:00.001Z"
+     },
+     {
+      "event_hash": "26aa99ab318e5eac3f631fd56651dbe521d89100872c6a92c4419257a3861dfc",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-fusadopt-solo-validation",
+      "timestamp": "2026-09-09T01:20:00.002Z"
+     },
+     {
+      "event_hash": "d351fc444ca041be5c180a67d113eaea3cea4cabf317e18568d99c8203dd6f34",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-identity",
+      "timestamp": "2026-09-09T01:20:00.003Z"
+     },
+     {
+      "event_hash": "03cb2068db1a0a4c134837964917f5f70ab3217f46a3fa93ac834e70e0b8781a",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "seat-baseline-score",
+      "timestamp": "2026-09-09T01:20:00.004Z"
+     },
+     {
+      "event_hash": "ee6f300c14a4f8426f9c50b7e1b579db7be15f57df9f769b6c4b12346986672f",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "tally-material",
+      "timestamp": "2026-09-09T01:20:00.005Z"
+     },
+     {
+      "event_hash": "85539fb51231bf258f93f7344c3dd3835b4d241f648b22f701d7a5762e4e74d3",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "tally-material",
+      "timestamp": "2026-09-09T01:20:00.006Z"
+     },
+     {
+      "event_hash": "a5f2eb4be383e7b0dbc0803cdd871febfbb0e17a23b8861d1e5ef4c289d625c4",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "check-report",
+      "timestamp": "2026-09-09T01:20:00.007Z"
+     },
+     {
+      "event_hash": "40d2d629e680d615630c7683a4b60753d303b329394eac59bc40cb38c44fb32b",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "check-report",
+      "timestamp": "2026-09-09T01:20:00.008Z"
+     },
+     {
+      "event_hash": "a55bfcabf1e430d9de2335aaa218941a1de44ed6c14d39fd5504d3b5977f0447",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-lease-tests",
+      "timestamp": "2026-09-09T01:20:00.009Z"
+     },
+     {
+      "event_hash": "9c490a92d2d9c44b1c6e3392aa4d1c31fa0cc353808e08e68a7add82a05060cd",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "gauge-record",
+      "timestamp": "2026-09-09T01:20:00.010Z"
+     },
+     {
+      "event_hash": "b624fd2160122df6e563039a86843322852592c287599c5612928aa69739b4a1",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "fusadopt-solo-projection",
+      "timestamp": "2026-09-09T01:20:00.011Z"
+     },
+     {
+      "event_hash": "f25c322e8d6dbe1764a9c2efa7fcaa3073a1a9f3709f185c79d2c5de342d2ce6",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-checkcite",
+      "timestamp": "2026-09-09T01:20:00.012Z"
+     },
+     {
+      "event_hash": "b442cc02c52a51ff0ddc3722624c7dbb6808e787133b8d9f64c797894857b071",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-pipeline-report",
+      "timestamp": "2026-09-09T01:20:00.013Z"
+     },
+     {
+      "event_hash": "63bdb9fd0d207af44206d70dc2101133562c203c52c22ed8cf7426f01085e2f7",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-manifest",
+      "timestamp": "2026-09-09T01:20:00.014Z"
+     },
+     {
+      "event_hash": "e7ce145a215a650574c034efaa11bd36c307e7d8898a9fb27d327d960f109879",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-fusadopt-solo-postscript",
+      "timestamp": "2026-09-09T01:20:00.015Z"
+     },
+     {
+      "event_hash": "7d2608bb84cd7f286e32e890a610afb6c95a54fc7681ff92fcb0c18e41cab670",
+      "event_type": "reading_recorded",
+      "subject": "sih-engine",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-09T01:20:00.016Z"
+     },
+     {
+      "event_hash": "95e9845ee4e5405f8204df5f2690b5209654e57256cf2306e9ac651ee2c7911d",
+      "event_type": "reading_recorded",
+      "subject": "agents",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-09T01:20:00.017Z"
+     },
+     {
+      "event_hash": "58d99067dbb4e16abf98c0aca1131b95ff28567609af90cac4615dcd5a2d50d9",
+      "event_type": "reading_recorded",
+      "subject": "tools-wheel",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-09T01:20:00.018Z"
+     },
+     {
+      "event_hash": "1c2732247ee07971000517613207da0109604035cfd12e557d174a97d9a4b37d",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-main-mcpopen",
+      "timestamp": "2026-09-09T01:20:00.019Z"
+     },
+     {
+      "event_hash": "05353825c4a9cde9cc192e0cc0ac611805dc3c2342f81c5017198a04b996a1ec",
+      "event_type": "crosscheck_completed",
+      "subject": null,
+      "doc_id": "crosscheck-m-mcpopen-1",
+      "timestamp": "2026-09-09T01:20:00.020Z"
+     },
+     {
+      "event_hash": "2a32688a7a42330597ad6640a27e76d41327bd97b72c455d6ac65d90a7aa9a58",
+      "event_type": "parking_exited",
+      "subject": null,
+      "doc_id": "pk-077",
+      "timestamp": "2026-09-09T01:20:00.021Z"
+     },
+     {
+      "event_hash": "5c198dacce85233d976bcff3f281a3648091adb27eb4fc1c881d4db330f8dbe3",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpopen-solo-record",
+      "timestamp": "2026-09-09T01:20:00.022Z"
+     },
+     {
+      "event_hash": "dfed9dbc4a31c49d722c1300fc107b9c2246386e61b7f3ad259a21b6f8e21f6b",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpopen-solo-validation",
+      "timestamp": "2026-09-09T01:20:00.023Z"
+     },
+     {
+      "event_hash": "501d1e68270e0a54759526df9926984ea0b69c5a6608c6ae12c7b9c4dbb6a0e4",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-mcpopen-solo-identity",
+      "timestamp": "2026-09-09T01:20:00.024Z"
+     },
+     {
+      "event_hash": "0994e3f9d2a39b9e3e7d4361118f132c827f92c0a313383be5f8509518c90385",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "tally-material",
+      "timestamp": "2026-09-09T01:20:00.025Z"
+     },
+     {
+      "event_hash": "e354ac874523601a0f78adf80ad053067864f77b2ab3fab6fc091145ed99deb9",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "pk-077-exit",
+      "timestamp": "2026-09-09T01:20:00.026Z"
+     },
+     {
+      "event_hash": "7f5d6453508b5193508ffd0aadaa5b429c6bc65f641b387211bdfcb4ccf42929",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "checkcite",
+      "timestamp": "2026-09-09T01:20:00.027Z"
+     },
+     {
+      "event_hash": "b2d8da3bba60d07d3ed9b3a52a2f5528189944faef5f1aee3334b5031e187e34",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "manifest-sha256",
+      "timestamp": "2026-09-09T01:20:00.028Z"
+     },
+     {
+      "event_hash": "e4d6a161ef786d41362f54588b3973eb70be39ddd91e0f66a8d9414bd37e880e",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "mcpopen-solo",
+      "timestamp": "2026-09-09T01:20:00.029Z"
+     },
+     {
+      "event_hash": "dd3f923651e370b0575ecb11d6ebe304c1d7d28ad9a7fe775fc72b5d9860ec40",
+      "event_type": "direct_edit_completed",
+      "subject": "mcpopen-solo 收约补笔：结果档结算读数节追加与认证清单实值回填即八笔认证哈希与双仓 settle 与归并号与 close 三跑实录与链 verify valid 51 笔与 reconcile 双零；会话 c2849d6a10cbee95 已收约吊销即走主会处置位；补笔后化格 check 与检词复跑俱绿；pkexits2 与 settlement-v2 先例同形",
+      "doc_id": "direct-agent-0b9f9917",
+      "timestamp": "2026-09-09T01:40:00Z"
+     },
+     {
+      "event_hash": "1bce0fee1747ce9cc5f2c422e0186354d4af4a05ef2dd1bf3714980476b7fb29",
+      "event_type": "reading_recorded",
+      "subject": "sih-engine",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-09T01:40:00.001Z"
+     },
+     {
+      "event_hash": "cba5e390b1826ad93806a6e3566e98d4989a8075b64757b4d4347be8e9f561bd",
+      "event_type": "reading_recorded",
+      "subject": "agents",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-09T01:40:00.002Z"
+     },
+     {
+      "event_hash": "21204e797a83a4f5ff601a94003c356db3b13b7c6f8286f0ef79a032ea2dcc8b",
+      "event_type": "reading_recorded",
+      "subject": "tools-wheel",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-09T01:40:00.003Z"
+     },
+     {
+      "event_hash": "04d1201c01a3c3c3e46ae18d05744a0b8154b8e3ebcca675e9380c5d40e7a7e1",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-mcpspec",
+      "timestamp": "2026-09-09T01:40:00.004Z"
+     },
+     {
+      "event_hash": "bba35d3628f25c0031319f9d6072fcb9913fe27cc7082d1a70d6b3106e9452ab",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-mcpserv",
+      "timestamp": "2026-09-09T01:40:00.005Z"
+     },
+     {
+      "event_hash": "ae04742890415472a1915db49961143e3fe6aef3de7fb68f4853cd3a81057216",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpspec-solo-record",
+      "timestamp": "2026-09-09T01:40:00.006Z"
+     },
+     {
+      "event_hash": "eb01499bc8f379a01409fdf4427643bf7eaa470ce398d87e64a0772c70889b75",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpspec-solo-validation",
+      "timestamp": "2026-09-09T01:40:00.007Z"
+     },
+     {
+      "event_hash": "fb0e69e6a153ddefb713e686b82d857b91e3064efce210b8b7f550eca180095d",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-mcpspec-solo-identity",
+      "timestamp": "2026-09-09T01:40:00.008Z"
+     },
+     {
+      "event_hash": "f3de6826bf179e612c4c9147c3f4480d74618188b1c0074ab26f31b2f85d70c9",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-mcpspec-solo-checkcite",
+      "timestamp": "2026-09-09T01:40:00.009Z"
+     },
+     {
+      "event_hash": "94ccc452e4f12e5dead9b9f10ee408895d2cec12e28963fca7ba2b9bea14cecc",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-mcpspec-solo-pipeline-report",
+      "timestamp": "2026-09-09T01:40:00.010Z"
+     },
+     {
+      "event_hash": "92844f1b493ceb382dca0d85f19fe01b1047a315ce769ec2cf794c94ccedfbdc",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "docmath_gate",
+      "timestamp": "2026-09-09T01:40:00.011Z"
+     },
+     {
+      "event_hash": "9102cf6d7a84717dfb930ec7f57d7fe890eadccb2a53e75f92863eb98c944e2f",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "batch-file-sufficiency-check",
+      "timestamp": "2026-09-09T01:40:00.012Z"
+     },
+     {
+      "event_hash": "2ca3e158d4b8e2ddc222b77868e940c6c33690885e4ebb534afbfa14c7f5a348",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "manifest-sha256",
+      "timestamp": "2026-09-09T01:40:00.013Z"
+     },
+     {
+      "event_hash": "04e58cadd9b3da3230b55a57252826abb48d9ea7ce3a82c8f181e0cbdbea1317",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "mcpspec-solo",
+      "timestamp": "2026-09-09T01:40:00.014Z"
+     },
+     {
+      "event_hash": "cc526368b473801642d58b64191d4210fde76466f0bea967bf33ebb40403fa7b",
+      "event_type": "direct_edit_completed",
+      "subject": "mcpspec-solo 收约补笔：结果档结算读数节回填即双仓 settle 提交号 tools aca75758 与 engine ddabdc6b 与 cert 2ca3e158 与认证九笔实录与放锁收约三跑双旗实录与链 verify valid 66 笔与 reconcile 双仓 unrouted cert_missing 双零与 docmath 闸门存量红两笔 SPEC-021 SPEC-022 申报候人裁；会话 bd45929ddeb6ff5e 已收约吊销即走主会处置位；补笔后化格 check 与检词复跑俱绿；pkexits2 与 settlement-v2 先例同形",
+      "doc_id": "direct-agent-de04a23b",
+      "timestamp": "2026-09-09T02:40:00Z"
+     },
+     {
+      "event_hash": "a80b1772d08f4dc470750020a936ccff04d77fb7a06298e9f81a6fa90457dad1",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpserv-solo-record",
+      "timestamp": "2026-09-09T02:40:00.001Z"
+     },
+     {
+      "event_hash": "d4c1caf4895d6440b0ea816b95b39b26623ffdefc4718ce21bd8859987fdc8d8",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-ask3-mcpserv-solo-validation",
+      "timestamp": "2026-09-09T02:40:00.002Z"
+     },
+     {
+      "event_hash": "c873c680b25452d2cd690e09cf8967759b626fe5fd75aa44df3329ea369251fa",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "2026-09-09-mcpserv-solo-identity",
+      "timestamp": "2026-09-09T02:40:00.003Z"
+     },
+     {
+      "event_hash": "3cb4e68fae7bea635d7a0ac8a9631da5cc99a492f64f05bbf5d607fb85601a07",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "manifest-sha256",
+      "timestamp": "2026-09-09T02:40:00.004Z"
+     },
+     {
+      "event_hash": "cd56abda40d0678dc93190a73fd8fe42034263ba9bbe6e36001c35982d3bb085",
+      "event_type": "certification_completed",
+      "subject": null,
+      "doc_id": "mcpserv-solo",
+      "timestamp": "2026-09-09T02:40:00.005Z"
+     },
+     {
+      "event_hash": "bf5dce59a11c78d9576de4c9bd15c85c22846f4f19bf688d6aea5b326b8bf802",
+      "event_type": "direct_edit_completed",
+      "subject": "mcpserv-solo 收约补笔：结算读数节追加与认证清单实值回填即 manifest 3cb4e68f 与投影件 cd56abda 两笔认证哈希与双仓 settle 段（tools bb25fe70 与 engine 5236352 及红证补段 25ddc26 与 a701875）与 closeguard 预收（f482a8de 与 bfd4e74）与归并（e4067459 与 989f422）与 close 五跑实录（双旗 bypass-orphan 与 bypass-calllog 留痕）与链 verify valid 72 笔与 reconcile 判据双零与主树裸调用 14 绿验收；会话 90ab7417cb4410dd 已收约吊销即走直改通道；补笔后化格 check 与检词复跑俱绿；pkexits2 与 settlement-v2 与 mcpopen-solo 先例同形",
+      "doc_id": "direct-agent-19dbfbe9",
+      "timestamp": "2026-09-09T02:40:00.006Z"
+     },
+     {
+      "event_hash": "8d1e2340693f2faee535c6df5193c8f6496b13fd682a0aa3a55b0d76a6bc3962",
+      "event_type": "intent_refined",
+      "subject": null,
+      "doc_id": "sess-zcode-260909-mcpcold",
+      "timestamp": "2026-09-09T02:40:00.007Z"
+     }
+    ]
+   },
+   "raw_text_head": null
+  },
+  "chain_verify": {
+   "is_error": false,
+   "payload": {
+    "date": "2026-09-09",
+    "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson",
+    "status": "valid",
+    "valid": true,
+    "events": 74,
+    "first_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+    "last_hash": "8d1e2340693f2faee535c6df5193c8f6496b13fd682a0aa3a55b0d76a6bc3962"
+   },
+   "raw_text_head": null
+  },
+  "critsweep": {
+   "is_error": false,
+   "payload": {
+    "at": "2026-09-09",
+    "criteria": [
+     {
+      "evidence": [
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md"
+       },
+       {
+        "chain": [
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-045",
+          "event_type": "parking_exited"
+         }
+        ],
+        "ok": true
+       }
+      ],
+      "expected": "achieved",
+      "gap_basis": "last_hit",
+      "gap_days": 4,
+      "id": "GOV2-C1-leaseopt",
+      "last_hit": "2026-09-05",
+      "namespace_hits": 39,
+      "status": "achieved",
+      "status_kind": "evidence",
+      "title": "leaseopt 线级验收达成",
+      "token_scope": [
+       "leaseopt"
+      ]
+     },
+     {
+      "evidence": [
+       {
+        "contains": "IDENTICAL",
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewer-dualrun/dualrun-summary.json"
+       },
+       {
+        "contains": "五源",
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewsource-pointers.md"
+       },
+       {
+        "contains": "构造性对齐",
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/c2close2-solo-materials/alarm-watchcheck-reverify.md"
+       },
+       {
+        "contains": "修订五十三",
+        "ok": true,
+        "path": "sih-tools/lease/CONTRACT.md"
+       },
+       {
+        "chain": [
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-047",
+          "event_type": "parking_exited"
+         },
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-059",
+          "event_type": "parking_exited"
+         }
+        ],
+        "ok": true
+       }
+      ],
+      "expected": "achieved",
+      "gap_basis": "last_hit",
+      "gap_days": 4,
+      "id": "GOV2-C2-viewline",
+      "last_hit": "2026-09-05",
+      "namespace_hits": 14,
+      "status": "achieved",
+      "status_kind": "evidence",
+      "title": "视图组件在役",
+      "token_scope": [
+       "viewline"
+      ]
+     },
+     {
+      "evidence": [
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/baseinject-solo-results.md"
+       },
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/attnanchor-solo-results.md"
+       },
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/critsweep-solo-results.md"
+       },
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/sih/state/parking/materials/pk-078.json"
+       },
+       {
+        "contains": "改道闭项",
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/measure-poly-rev1-progdoc.md"
+       },
+       {
+        "chain": [
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-044",
+          "event_type": "parking_exited"
+         },
+         {
+          "entry_id": "pk-078",
+          "event_type": "parking_entered"
+         }
+        ],
+        "ok": true
+       }
+      ],
+      "expected": "achieved",
+      "gap_basis": "last_hit",
+      "gap_days": 1,
+      "id": "GOV2-C3-measure-determinism",
+      "last_hit": "2026-09-08",
+      "namespace_hits": 19,
+      "status": "achieved",
+      "status_kind": "evidence",
+      "title": "测量面确定性化验收达成",
+      "token_scope": [
+       "attnanchor",
+       "critsweep",
+       "baseinject"
+      ]
+     },
+     {
+      "evidence": [
+       {
+        "contains": "pk-053",
+        "ok": true,
+        "path": "sih-math/docs/constclear2-routing-2026-09-08.json"
+       },
+       {
+        "contains": "41fb339c",
+        "ok": true,
+        "path": "sih-math/docs/constclear2b-routing-2026-09-08.json"
+       },
+       {
+        "contains": "pk-053",
+        "ok": true,
+        "path": "sih-math/docs/constclear-registry-v2.json"
+       },
+       {
+        "contains": "constclear2c",
+        "ok": true,
+        "path": "sih-engine/sih/event/plan/constclear2c-solo-materials/constants-annotations.json"
+       },
+       {
+        "chain": [
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-053",
+          "event_type": "parking_exited"
+         }
+        ],
+        "ok": true
+       }
+      ],
+      "expected": "achieved",
+      "gap_basis": "last_hit",
+      "gap_days": 1,
+      "id": "GOV2-C4-math-attribution",
+      "last_hit": "2026-09-08",
+      "namespace_hits": 33,
+      "status": "achieved",
+      "status_kind": "evidence",
+      "title": "数学归因长尾收口",
+      "token_scope": [
+       "pk-053",
+       "mathclose",
+       "mathreg",
+       "constclear2"
+      ]
+     },
+     {
+      "evidence": [
+       {
+        "contains": null,
+        "ok": true,
+        "path": "sih-engine/doc/governance/SETTLEMENT-LEASEUP-2026-09-07.md"
+       },
+       {
+        "contains": "修订四十一",
+        "ok": true,
+        "path": "sih-tools/lease/CONTRACT.md"
+       },
+       {
+        "contains": "修订四十二",
+        "ok": true,
+        "path": "sih-tools/lease/CONTRACT.md"
+       },
+       {
+        "contains": "修订四十三",
+        "ok": true,
+        "path": "sih-tools/lease/CONTRACT.md"
+       },
+       {
+        "chain": [
+         {
+          "disposition": "promoted",
+          "entry_id": "pk-072",
+          "event_type": "parking_exited"
+         }
+        ],
+        "ok": true
+       }
+      ],
+      "expected": "achieved",
+      "gap_basis": "last_hit",
+      "gap_days": 3,
+      "id": "GOV2-C5-lease-line",
+      "last_hit": "2026-09-06",
+      "namespace_hits": 7,
+      "status": "achieved",
+      "status_kind": "evidence",
+      "title": "租约修复升级线级验收达成",
+      "token_scope": [
+       "leaseup"
+      ]
+     }
+    ],
+    "degradations": [],
+    "degraded": false,
+    "inflight": {
+     "active_sessions": 2,
+     "held_locks": 10
+    },
+    "namespace_fields": [
+     "record_path",
+     "report_path",
+     "package"
+    ],
+    "parking": {
+     "engine": {
+      "exit_code": 0,
+      "route": "routed",
+      "summary": {
+       "alarms": [],
+       "mainline": 53,
+       "scrap_track": 9,
+       "siding": 3,
+       "total": 65
+      }
+     },
+     "tools": {
+      "exit_code": 0,
+      "route": "routed",
+      "summary": {
+       "alarms": [],
+       "mainline": 24,
+       "scrap_track": 0,
+       "siding": 1,
+       "total": 25
+      }
+     }
+    },
+    "prose_control": {
+     "events": {
+      "attnanchor": [
+       {
+        "day": "2026-09-07",
+        "event_id": "d09d5955-29af-4a41-8ab5-d28c326eae58",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-07",
+        "event_id": "bfdd63cd-31f7-47a8-9302-1cc9cb54905c",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-07",
+        "event_id": "3162adfd-0b6e-4db7-93b9-120c11122493",
+        "event_type": "certification_completed"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "9a4e3f29-aaaa-49bb-8647-1cf598a8e8bc",
+        "event_type": "parking_entered"
+       }
+      ],
+      "baseinject": [
+       {
+        "day": "2026-09-07",
+        "event_id": "0f813f08-8fe0-41a1-a9ee-647aaf525b1c",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "399a42aa-71ac-4216-8360-843e0dd44dc0",
+        "event_type": "parking_entered"
+       }
+      ],
+      "constclear2": [
+       {
+        "day": "2026-09-08",
+        "event_id": "63cb5070-0885-4eac-a0e1-47ff22fa34cb",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "f80b91cb-3ac6-4636-8705-190386829b12",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "f4e8c693-ab67-4a98-8677-182c05351642",
+        "event_type": "direct_edit_completed"
+       }
+      ],
+      "critsweep": [
+       {
+        "day": "2026-09-08",
+        "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "a25540d7-ffb4-42e2-a5a6-d7b50e13905a",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "6e961c0f-1b33-4201-b39a-87dddce2dd96",
+        "event_type": "certification_completed"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "7ab9cc7d-fca9-4d24-a501-bd47f058ce28",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "fa0221bf-6c7c-4be3-adc4-32cccdb840e7",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "903bc902-9861-4aa4-8dcc-11c830a49804",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "e1839622-f990-499c-81b4-083bd06b049b",
+        "event_type": "direct_edit_completed"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "109edc85-b21e-43ed-ad31-b6f5501814b4",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-09",
+        "event_id": "993f18c0-c94c-4c12-ae90-2b1473a65dd0",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-09",
+        "event_id": "c4b26009-d595-41af-a233-95ea9ec65fd6",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-09",
+        "event_id": "24dbf2ba-0f34-44e2-8b2c-16f0e7378715",
+        "event_type": "intent_refined"
+       }
+      ],
+      "leaseopt": [
+       {
+        "day": "2026-09-05",
+        "event_id": "66315030-d327-49dc-b383-1659eb4ec7e3",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-05",
+        "event_id": "6cd912be-9c5d-41f7-a5c3-bc8f9c33ac1c",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-05",
+        "event_id": "4238da7d-d9ad-4e07-b250-bf9fe2dfe8b4",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "95d55948-6b26-417b-85de-aa5794053cd8",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-07",
+        "event_id": "ce6544f1-1783-49f9-a84d-a333f1c89c48",
+        "event_type": "direct_edit_completed"
+       }
+      ],
+      "leaseup": [
+       {
+        "day": "2026-09-06",
+        "event_id": "05c108e6-1f7c-4843-8ab1-74dce0bf0bff",
+        "event_type": "crosscheck_completed"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "0eacba93-f92d-4692-984c-33acf9e4ee88",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "47e2e88c-090d-4bd8-bd66-352676941c57",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "564dcb49-1dde-4986-b21f-3d5151375ff3",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "fbd934eb-8547-4ca8-b938-c528846aaea5",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-07",
+        "event_id": "05277256-af5a-4da4-83d4-4aa76e51f08d",
+        "event_type": "parking_exited"
+       }
+      ],
+      "mathclose": [
+       {
+        "day": "2026-09-03",
+        "event_id": "04eaafb5-35ec-4d3b-993b-5cc4352a4661",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-05",
+        "event_id": "2ba1b440-f43c-4076-8fcd-8d1af7eae9a8",
+        "event_type": "direct_edit_completed"
+       }
+      ],
+      "pk-053": [
+       {
+        "day": "2026-09-04",
+        "event_id": "cda6594b-5d69-4b04-a394-dfd2aca3e39a",
+        "event_type": "parking_entered"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "63cb5070-0885-4eac-a0e1-47ff22fa34cb",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "f80b91cb-3ac6-4636-8705-190386829b12",
+        "event_type": "parking_exited"
+       }
+      ],
+      "viewline": [
+       {
+        "day": "2026-09-05",
+        "event_id": "f27fcdbc-42a5-4de5-a0d7-67c0378e0a9a",
+        "event_type": "parking_exited"
+       },
+       {
+        "day": "2026-09-06",
+        "event_id": "14d94196-4e03-405b-8a60-74791be51f4d",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "903bc902-9861-4aa4-8dcc-11c830a49804",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-08",
+        "event_id": "109edc85-b21e-43ed-ad31-b6f5501814b4",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-09",
+        "event_id": "5f5cbec1-b2ed-415b-8fd0-9cbeb9e08d24",
+        "event_type": "intent_refined"
+       },
+       {
+        "day": "2026-09-09",
+        "event_id": "83cd6fa8-9794-4ae8-8a22-9bae12a721f5",
+        "event_type": "parking_exited"
+       }
+      ]
+     },
+     "note": "散文命中而命名空间零命中的事件即设计引用非程序活动，不计活动（pk-044 对照）"
+    },
+    "replay": "python3 sih-tools/critsweep/sweep.py --at 2026-09-09 --root /Users/moc/workspaces/SiHankor [--threshold N] [--criterion <id>]",
+    "root": "/Users/moc/workspaces/SiHankor",
+    "root_basis": "arg",
+    "threshold_days": 3,
+    "tool": "critsweep",
+    "trail": {
+     "events_scanned": 1901,
+     "missing_days": [],
+     "unreadable_days": []
+    },
+    "version": "1.0.0",
+    "window": [
+     "2026-08-31",
+     "2026-09-09"
+    ],
+    "window_days": 10
+   },
+   "raw_text_head": null
+  },
+  "heartbeat": {
+   "is_error": false,
+   "payload": {
+    "date": "2026-09-09",
+    "readings": {
+     "convergence": {
+      "value": 0.125,
+      "computed_at": "2026-09-09",
+      "sequence": "ok"
+     },
+     "adoption": {
+      "value": 0.0,
+      "computed_at": "2026-09-09",
+      "sequence": "ok"
+     },
+     "mergeback": {
+      "value": 0.028571,
+      "computed_at": "2026-09-09",
+      "sequence": "ok"
+     }
+    },
+    "last_snapshot_at": "2026-09-09",
+    "days_since_last_snapshot": 0
+   },
+   "raw_text_head": null
+  },
+  "locks_read": {
+   "is_error": false,
+   "payload": {
+    "held_count": 10,
+    "held_locks": [
+     {
+      "path": ".zcode/config.json",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/mcpcold-solo-materials",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/mcpcold-solo-results.md",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/mcpline-alpha-settlement-v1.md",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/event/trail/2026-09-09.ndjson",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/state/plan/mcpcold-solo-prompt.md",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-engine/sih/state/plan/mcpcold-solo.md",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-tools/identity/reports",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-tools/proposition/DES/m-mcpcold-1",
+      "session_id": "fd958af0c311a10a"
+     },
+     {
+      "path": "sih-tools/scribe/reports",
+      "session_id": "fd958af0c311a10a"
+     }
+    ],
+    "active_sessions": 2,
+    "active_session_ids": [
+     "09326a760119e4ed",
+     "fd958af0c311a10a"
+    ]
+   },
+   "raw_text_head": null
+  }
+ },
+ "error_probes": {
+  "chain_query": {
+   "is_error": false,
+   "payload": {
+    "error": "date 非法: '2026-9-9'，须 YYYY-MM-DD",
+    "what_this_tool_does": "查当日治理链事件清单（哈希、事件型、主体字段），只读投影 scribe query。",
+    "valid_params": [
+     "date: YYYY-MM-DD，缺省实日",
+     "event_type: 可选事件型过滤字符串"
+    ],
+    "canonical_pointers": [
+     "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+     "sih-engine/sih/state/plan/mcpline-line-v1.md"
+    ]
+   },
+   "raw_text_head": null
+  },
+  "chain_verify": {
+   "is_error": false,
+   "payload": {
+    "error": "date 非法: 'not-a-date'，须 YYYY-MM-DD",
+    "what_this_tool_does": "验当日治理链：逐笔哈希校验与整链 valid 判词，只读投影 scribe verify。",
+    "valid_params": [
+     "date: YYYY-MM-DD（必填）"
+    ],
+    "canonical_pointers": [
+     "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+     "sih-engine/sih/state/plan/mcpline-line-v1.md"
+    ]
+   },
+   "raw_text_head": null
+  }
+ }
+}

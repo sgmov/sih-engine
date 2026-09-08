@@ -1,0 +1,14 @@
+{
+ "kind": "content-hash-manifest",
+ "batch": "mcpcold-solo",
+ "date": "2026-09-09",
+ "rev": 2,
+ "note": "rev2：prompt 件让位换入主窗预落派单正典字节（close 首跑真分叉红证处置，close-firstrun-red.json）；results 件补越线申报两条；rev1 认证 91ac9b2d 被本笔取代如实申报",
+ "files": {
+  "sih/state/plan/mcpcold-solo.md": "d440e08d4ed5776e2cc039061e8bf5371a81d3fc40ef1f46b349b03ec272131d",
+  "sih/state/plan/mcpcold-solo-prompt.md": "8ac6c9951f729c25f643735e3fef3b95cd570724a1bfabb4d179aeada246b420",
+  "sih/event/plan/mcpcold-solo-results.md": "0ef75da46559315fe65939fe53cd2e9117fbb5db3185f2856619361209471c57",
+  "sih/event/plan/mcpline-alpha-settlement-v1.md": "ec556ca1faa464db8c226d6194ba54b52ee42894f8d92fe32382bb85a34cb400",
+  "sih/event/plan/mcpcold-solo-materials/spec-023-contract-compare.md": "160adee1c0e8b0bb936d6e4e3c87a3b455a622e017bd76c65f5ead0064647876"
+ }
+}

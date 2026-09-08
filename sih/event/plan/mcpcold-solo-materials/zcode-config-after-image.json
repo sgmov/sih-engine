@@ -1,0 +1,33 @@
+{
+  "mcp": {
+    "servers": {
+      "sihankor": {
+        "type": "http",
+        "url": "http://localhost:9741/mcp",
+        "enabled": false,
+        "timeoutMs": 30000
+      },
+      "sih": {
+        "type": "stdio",
+        "command": "/opt/homebrew/bin/uv",
+        "args": [
+          "run",
+          "--project",
+          "/Users/moc/workspaces/SiHankor/sih-tools/mcpline",
+          "python",
+          "-m",
+          "mcpline"
+        ],
+        "env": {
+          "SIH_ROOT": "/Users/moc/workspaces/SiHankor"
+        },
+        "enabled": true,
+        "timeoutMs": 60000
+      }
+    }
+  },
+  "hooks": {
+    "enabled": true,
+    "events": {}
+  }
+}
