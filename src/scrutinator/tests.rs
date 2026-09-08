@@ -405,3 +405,111 @@ fn c9_bridge_chars_fire() {
     assert_eq!(c9_lines(&rule, text), vec![3, 4, 5]);
 }
 
+// ============================================================================
+// scrutpath-solo 批增：域判定路径基根锚定（工地路径域外误判修复）
+//
+// 病灶：des-001 include 按根相对 glob（sih-engine/doc/**），引擎件按
+// canonicalize 绝对路径匹配，工地路径形 worktrees/<仓>/<批>/doc/... 不命中
+// 即域外 exit 2（acceptclose 与 constclear2c 与 adjudicate2 三窗申报同款，
+// 本批修复前红证 materials/prefix-red-worktree-exit2.json 在档）。
+// 修法：anchor.py 同款上溯判根（标记件 sih-tools/lease/ledger/sessions.ndjson）
+// 加 worktree 路径归一化（剥 worktrees/<仓>/<批> 前缀回仓相对形）。
+// 红线：域清单零扩面（des-001 仍只盖 sih-engine/doc）、退出码三值语义零变。
+// ============================================================================
+
+fn des001_spec() -> crate::scrutinator::rule::DomainSpec {
+    let (dom, _) = crate::scrutinator::rule::load_pack("des-001").expect("des-001 包应可加载");
+    dom
+}
+
+#[test]
+fn scrutpath_rooted_worktree_doc_in_domain() {
+    // 工地路径形经根锚定归一后应判域内（修复前 false 即三窗申报病灶）
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    let path = "/fake/ws-root/worktrees/sih-engine/scrutpath-solo/doc/GOV-900.md";
+    assert!(
+        crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
+        "工地 doc 路径形经根锚定归一后应判域内"
+    );
+}
+
+#[test]
+fn scrutpath_rooted_maintree_rel_zero_regression() {
+    // 主树根相对形既有判定零回归
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    let path = "/fake/ws-root/sih-engine/doc/GOV-900.md";
+    assert!(
+        crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
+        "主树根相对 doc 形应域内"
+    );
+}
+
+#[test]
+fn scrutpath_rooted_out_of_domain_unchanged() {
+    // 域清单零扩面与 exclude 语义零变：域外路径不得因根锚定入域，skills 排除仍生效
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    assert!(
+        !crate::scrutinator::rule::domain_match_rooted(&dom, root, "/fake/ws-root/other/doc/x.md"),
+        "域外路径不得因根锚定扩面入域"
+    );
+    assert!(
+        !crate::scrutinator::rule::domain_match_rooted(
+            &dom,
+            root,
+            "/fake/ws-root/worktrees/sih-engine/b/doc/skills/x.md"
+        ),
+        "exclude 语义零变：worktree 形下 skills 排除仍生效"
+    );
+}
+
+#[test]
+fn scrutpath_normalize_worktree_rel() {
+    // 归一化单元：剥 worktrees/<仓>/<批> 前缀回仓相对形；非 worktree 形返回 None
+    assert_eq!(
+        crate::scrutinator::rule::normalize_worktree_rel(
+            "worktrees/sih-engine/scrutpath-solo/doc/x.md"
+        )
+        .as_deref(),
+        Some("sih-engine/doc/x.md")
+    );
+    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("sih-engine/doc/x.md"), None);
+    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("worktrees/sih-engine"), None);
+}
+
+#[test]
+fn scrutpath_discover_workspace_root_finds_marker() {
+    // 上溯判根（anchor.py 同款标记件）：从目标路径逐级上溯找 sih-tools/lease/ledger/sessions.ndjson
+    let ws = tempfile::tempdir().expect("tempdir");
+    let marker = ws.path().join("sih-tools/lease/ledger/sessions.ndjson");
+    std::fs::create_dir_all(marker.parent().unwrap()).expect("marker 目录创建");
+    std::fs::write(&marker, "").expect("marker 写");
+    let target = ws.path().join("worktrees/sih-engine/b/doc/x.md");
+    std::fs::create_dir_all(target.parent().unwrap()).expect("target 目录创建");
+    let root = crate::scrutinator::rule::discover_workspace_root(target.to_str().unwrap())
+        .expect("应发现工作区根");
+    assert_eq!(std::path::Path::new(&root), ws.path(), "判根应落在标记件所在目录");
+}
+
+#[test]
+fn scrutpath_discover_workspace_root_none_without_marker() {
+    // 无标记件面（域外纵深守卫）：/tmp 上溯无根应返回 None，退出码三值语义零变承此
+    assert!(crate::scrutinator::rule::discover_workspace_root("/tmp").is_none());
+}
+
+#[test]
+fn scrutpath_worktree_path_form_exit_zero() {
+    // CLI 级（假工作区全链）：工地 doc 路径应判域内（修复前 exit 2 即三窗申报形）
+    let ws = tempfile::tempdir().expect("tempdir");
+    let marker = ws.path().join("sih-tools/lease/ledger/sessions.ndjson");
+    std::fs::create_dir_all(marker.parent().unwrap()).expect("marker 目录创建");
+    std::fs::write(&marker, "").expect("marker 写");
+    let doc = ws.path().join("worktrees/sih-engine/scrutpath-solo/doc/SCRUTPATH-TEST.md");
+    std::fs::create_dir_all(doc.parent().unwrap()).expect("doc 目录创建");
+    std::fs::write(&doc, "# 测试标题\n\n零违规正文。\n").expect("doc 写");
+    let (code, _stdout) = run_flag(&["des-001"], &[doc.to_str().unwrap()]);
+    assert_eq!(code, 0, "工地 doc 路径形应判域内退出 0（域外即三窗病灶形），实际 {}", code);
+}
+

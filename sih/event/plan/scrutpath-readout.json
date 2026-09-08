@@ -1,0 +1,38 @@
+{
+ "batch": "scrutpath-solo",
+ "date": "2026-09-08",
+ "session": "sess-zcode-260908-forkC-scrutpath",
+ "lease_session": "bb14b837618e6db9",
+ "readouts": [
+  {
+   "leg": "F-1",
+   "subject": "des-001 域判定路径基病灶",
+   "verdict": "located_cli_abs_vs_root_glob",
+   "evidence": "src/bin/scrutinator.rs 域判定 canonicalize 绝对路径对根相对 glob sih-engine/doc/**;三窗申报(acceptclose/constclear2c/adjudicate2)同款;修复前红证 materials/prefix-red-worktree-exit2.json exit 2"
+  },
+  {
+   "leg": "F-2",
+   "subject": "根锚定加 worktree 归一化修法",
+   "verdict": "implemented_3fns_1funnel_minimal",
+   "evidence": "src/scrutinator/rule.rs WORKSPACE_ROOT_MARKER + discover_workspace_root(anchor.py 标记件先例) + normalize_worktree_rel + domain_match_rooted;src/bin/scrutinator.rs target_in_domain 收口两处域判定;diff materials/diff.patch 195/16"
+  },
+  {
+   "leg": "F-3",
+   "subject": "TDD 先红后绿",
+   "verdict": "red_E0425_exit101_then_green_36passed",
+   "evidence": "materials/tdd-red.log;materials/tdd-green.log;scrutpath 测试族七件含 CLI 级假工作区工地路径形"
+  },
+  {
+   "leg": "F-4",
+   "subject": "金向量与测试族零回归",
+   "verdict": "golden12_byte_exact_185passed_0failed",
+   "evidence": "materials/test-family-full.log;金向量十二件逐字节断言含于 36;域外 /tmp 场景 exit 2 保持"
+  },
+  {
+   "leg": "F-5",
+   "subject": "工地路径域内判定成立",
+   "verdict": "worktree_doc_exit0_findings0_outdomain_exit2_unchanged",
+   "evidence": "materials/postfix-green-worktree.json;重建前 pgrep exit 1 零核阅进程读数在档"
+  }
+ ]
+}

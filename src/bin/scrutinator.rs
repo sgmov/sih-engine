@@ -31,6 +31,26 @@ fn read_text(path: &str) -> Option<String> {
     std::fs::read_to_string(path).ok()
 }
 
+/// 域判定（scrutpath-solo 批增根锚定）：原路径形与 canonicalize 绝对形先判
+/// （主树形短路，输出零漂移）；未命中则上溯判根（anchor.py 同款标记件）后
+/// 以根相对形与 worktree 归一化形再判——工地内的 sih-engine/doc/... 即域内。
+/// 无根面返回 false（域外纵深守卫，/tmp 域外场景退出码 2 语义零变）。
+fn target_in_domain(dom: &sih_engine::scrutinator::rule::DomainSpec, path: &str) -> bool {
+    let abs = std::fs::canonicalize(path)
+        .ok()
+        .and_then(|p| p.to_str().map(String::from))
+        .unwrap_or_else(|| path.to_string());
+    if sih_engine::scrutinator::rule::domain_match(dom, &abs)
+        || sih_engine::scrutinator::rule::domain_match(dom, path)
+    {
+        return true;
+    }
+    match sih_engine::scrutinator::rule::discover_workspace_root(&abs) {
+        Some(root) => sih_engine::scrutinator::rule::domain_match_rooted(dom, &root, &abs),
+        None => false,
+    }
+}
+
 /// CLI 解析结果。
 /// opts: 旗标位（不含 --pack 后立即的位置参数）
 /// positional_targets: 位置参数按出现顺序收集的目标
@@ -142,14 +162,9 @@ fn main() {
     let mut all_in_domain = true;
     let mut domain_mismatches: Vec<String> = Vec::new();
     for path in &target_paths {
-        let in_any = packs_data.iter().any(|(_, dom, _)| {
-            let abs = std::fs::canonicalize(path)
-                .ok()
-                .and_then(|p| p.to_str().map(String::from))
-                .unwrap_or_else(|| path.clone());
-            sih_engine::scrutinator::rule::domain_match(dom, &abs)
-                || sih_engine::scrutinator::rule::domain_match(dom, path)
-        });
+        let in_any = packs_data
+            .iter()
+            .any(|(_, dom, _)| target_in_domain(dom, path));
         if !in_any {
             all_in_domain = false;
             domain_mismatches.push(path.clone());
@@ -188,18 +203,14 @@ fn main() {
     for (pack_name, dom, rules) in &packs_data {
         for (path, text_opt) in &targets {
             if let Some(text) = text_opt {
-                // 域内判定：target 在 pack 域内才跑
-                let abs = std::fs::canonicalize(path)
-                    .ok()
-                    .and_then(|p| p.to_str().map(String::from))
-                    .unwrap_or_else(|| path.clone());
-                let in_domain = sih_engine::scrutinator::rule::domain_match(dom, &abs)
-                    || sih_engine::scrutinator::rule::domain_match(dom, path);
+                // 域内判定：target 在 pack 域内才跑（scrutpath-solo 起含根锚定工地形）
+                let in_domain = target_in_domain(dom, path);
                 if !in_domain {
                     continue;
                 }
                 // finding 的 path 字段填绝对路径，与工具件 Python `str(path)` 行为对表
-                let finding_path = abs.clone();
+                // （targets 已按 canonicalize 绝对化，此处即 targets 的 path 本形）
+                let finding_path = path.clone();
                 // 判断材料轴：manifest 标 json 走 json 规则，否则 text
                 let manifest = sih_engine::scrutinator::asset::manifest(pack_name);
                 let is_json_pack = manifest.contains("material = \"json\"")
