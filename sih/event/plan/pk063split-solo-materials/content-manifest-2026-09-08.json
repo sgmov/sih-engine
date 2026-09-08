@@ -1,0 +1,44 @@
+{
+ "batch": "pk063split-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与工件经内容哈希清单件统一绑定（anchorskill 先例），sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "sih/state/plan/pk063split-solo.md",
+   "sha256": "49e16554ee22adb6e6350fbc8a9bdbe9a97c3a73f699a77430e3cdb3b56dd1f5"
+  },
+  "results_doc_v1": {
+   "path": "sih/event/plan/pk063split-solo-results.md",
+   "sha256": "332bb7a969481a625baa5644ed29dbd7b4194f135007dd455294355ec90ac4b4"
+  },
+  "topic_p1": {
+   "path": "proposition/DES/m-pk063split-1/topic.md",
+   "sha256": "1d63ec9bfc78174236e0c0177f399a22eb39883bfa17fba717bc31485cbb9ae7"
+  },
+  "topic_p2": {
+   "path": "proposition/DES/m-pk063split-2/topic.md",
+   "sha256": "7c827fbec130f0de64d02bff2cbb6300675e7c2c1d5ca6356de8c413ccff84af"
+  },
+  "tally_material_p1": {
+   "path": "proposition/DES/m-pk063split-1/tally-material.json",
+   "sha256": "19d7d67fd4dc9dca4a67fb4b2cdd1d4c48346d66b1e836206769b9ecbe1196a7"
+  },
+  "tally_material_p2": {
+   "path": "proposition/DES/m-pk063split-2/tally-material.json",
+   "sha256": "69c55cd3eb717c34d1514dd575349cf95d0ab7ab427c72bce7f46282b57002ad"
+  },
+  "signcheck_p1": {
+   "path": "proposition/DES/m-pk063split-1/sign-reports/m-pk063split-1-signcheck.json",
+   "sha256": "abc856a1f110e8090466b9c20562f6b16ac004be102568feb2b0e19f0e86df6f"
+  },
+  "signcheck_p2": {
+   "path": "proposition/DES/m-pk063split-2/sign-reports/m-pk063split-2-signcheck.json",
+   "sha256": "8907f06388a0777d337e12c1010c94eff3dd409585bea0fd9b5df53006da06f6"
+  },
+  "seat_baseline": {
+   "path": "facet/contracts/pk063split-260908/m-pk063split-1/seat-baseline.json",
+   "sha256": "03b6bb66dea8232cda5f630c9fb8aeacf39df4e6a5213b05befc07812c04cae2"
+  }
+ }
+}

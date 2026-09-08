@@ -1,0 +1,7 @@
+{
+  "status": "appended",
+  "event_id": "722c8629-be50-4c16-a982-20ba7367a9db",
+  "event_hash": "f4b8f93f47823cf972447832fabfd769d1f2ee5b23855c4367ccf8d34784e477",
+  "doc_id": "crosscheck-m-pk063split-2"
+}
+{"direction": "comply", "disposition": "裁决通过", "note": "人类知晓无需复签；一票绝对反对经 append inconsistency 翻案；边界变更经 watch 浮出", "replay_anchor": "proposition/DES/m-pk063split-2/sign-reports/m-pk063split-2-signcheck.json", "signed": "m-pk063split-2"}

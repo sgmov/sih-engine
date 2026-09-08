@@ -1,0 +1,1 @@
+zsh:24: no such file or directory: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/pk063split-solo/tally/.venv/bin/tally
