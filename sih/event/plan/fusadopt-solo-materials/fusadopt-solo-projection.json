@@ -1,0 +1,102 @@
+{
+  "batch": "fusadopt-solo",
+  "date": "2026-09-09",
+  "session_id": "633a768d3e6e4e5c",
+  "session_label": "sess-zcode-260909-main-fusadopt",
+  "intent_event_hash8": "de4d2658",
+  "seats": [
+    {
+      "gid": "m-fusadopt-a1",
+      "proposition_scope": "材料收编与白名单扩面",
+      "n_shots": 9,
+      "gate_verdict": "stable_clear",
+      "flip_rate": "0%",
+      "caution_signals": "0/9",
+      "basis_regulation": "baseline_4",
+      "attractor_check": "12 项全过 disposition 裁决通过 direction comply",
+      "attractor_verify": "identical",
+      "sign_doc_id": "crosscheck-m-fusadopt-a1",
+      "sign_event_hash8": "0e79f34a",
+      "sign_chain_index": 8
+    },
+    {
+      "gid": "m-fusadopt-b1",
+      "proposition_scope": "DEC-013 与 SPEC-017 正典随动",
+      "n_shots": 9,
+      "gate_verdict": "stable_clear",
+      "flip_rate": "0%",
+      "caution_signals": "0/9",
+      "basis_regulation": "baseline_4",
+      "attractor_check": "12 项全过 disposition 裁决通过 direction comply",
+      "attractor_verify": "identical",
+      "sign_doc_id": "crosscheck-m-fusadopt-b1",
+      "sign_event_hash8": "44fa67d1",
+      "sign_chain_index": 9
+    }
+  ],
+  "seat_baseline": {
+    "probe": "temp_probe_agent",
+    "seat": "ZCode:GLM-5.3:self-reported",
+    "identity_hash8": "d564eab8",
+    "core_hash8": "e1c9a7fa",
+    "props": "safe-1 与 safe-2 与 violate 与 knife 各 5 发全票",
+    "temperature": 0.0,
+    "accuracy_ok": true,
+    "verdict": "可用",
+    "ledger": "/tmp/fusadopt-cal-ledger/ledger.jsonl 副本形承 c2close2 先例"
+  },
+  "leg_a": {
+    "incorporated_facets": [
+      "sih-tools/proposition/topics/2026-09-08-fusiongate.md",
+      "sih-tools/proposition/topics/2026-09-08-fusiongate-rev.md",
+      "sih-tools/facet/contracts/fusiongate-260908/",
+      "sih-tools/proposition/DES/m-fusiongate-1/",
+      "sih-tools/proposition/DES/m-fusiongate-2/",
+      "sih-tools/identity/reports/2026-09-08-fusiongate-identity.json"
+    ],
+    "channel": "lease 正典通道经工地与 settle 零手提交",
+    "whitelist_expansion": {
+      "constant": "DIRECT_LANE_FILE_WHITELIST",
+      "added": ["sih-tools/acceptor/CALL-LOG.md", "sih-tools/critsweep/CALL-LOG.md"],
+      "books_before": 19,
+      "books_after": 21,
+      "contract_revision": "修订五十五 零版本变更 1.39.0",
+      "tests": "test_guard.py 白名单冻结测 expected 集合随钉，全族 309 passed 零回归"
+    }
+  },
+  "leg_b": {
+    "dec013": {
+      "file": "sih-engine/doc/decision/013-mergeback-gate.md",
+      "revision": "v1.5 修订五",
+      "gate_clause": "达标句改三件合同参数合取形 formula gd-2，三参数缺省值以 constclear 登记册行指针随引，PROB-010 与 PROB-013 转理论史登记"
+    },
+    "spec017": {
+      "file": "sih-engine/doc/spec/SPEC-017-contribution-measure.md",
+      "revision": "规格修订记录 修订一",
+      "scope": "关联句随动即概览达标句与检验判据族与窗口参数与输出 schema 与可证伪金向量与判定性常数挂锚行，计数底座与承重三判据与可加性恒等式三节零触碰"
+    },
+    "gauge_implementation_touched": false
+  },
+  "registry_row_pointers": {
+    "GD_UNION_THRESHOLD_DEFAULT": "sih-math/docs/constclear2b-routing-2026-09-08.md §3 工程实践三件套态 value 5",
+    "GD_SUSTAINED_MIN_DAYS_DEFAULT": "sih-math/docs/constclear2b-routing-2026-09-08.md §3 工程实践三件套态 value 3",
+    "GD_MONOTONICITY_DEFAULT": "无登记册行即账面外常数族候后继清账批收编，源码缺省 non_decreasing 见 gauge cli.py:92"
+  },
+  "pipeline": {
+    "formatter": "DEC-013 与 SPEC-017 与结果档等 md 件 exit 0 零改",
+    "scrutinator": "DEC-013 与 SPEC-017 exit 0 零违规（首跑 C006 一笔与 C002 两笔 C006 一笔红证在档修正后全绿）",
+    "nomenclator": "逐件 exit 0 零违例",
+    "domain_outside": "state/plan 与 event/plan 目标 des-001 域外 exit 2 如实记档"
+  },
+  "session_start": {
+    "hooks": "双仓 core.hooksPath 俱指 sih-tools/lease/hooks",
+    "critsweep": "五判据全 achieved 零沉底，降级行即 2026-09-09 当日链未开预期态",
+    "watch": "首跑 RC2 trail 缺席 fail-closed，链开后 RC1 无主 3 件即 SETTLEMENT-V2 主窗件与 acceptor 与 critsweep 两册，锁面超宽哨兵 21>20 只报不拦",
+    "parking": "tools 24/1/0 与 engine 52/3/9 告警零",
+    "gauge_record": {
+      "convergence": "25989caf",
+      "adoption": "12201d03",
+      "mergeback": "6421deb0"
+    }
+  }
+}

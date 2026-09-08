@@ -1,14 +1,14 @@
 # SPEC-017 贡献度测度规范：contrib 读路径承重事件计数与检验判据
 
-本规范承接 gid m-contrib-load-1 stable_clear 终签即 2026-09-04 当日链 crosscheck-m-contrib-load-1 终签 f9520776 成文，把融回贡献度判据数学化落为引擎向界可机械校验的读路径规格。令源即用户 2026-09-04 裁定原话「融合贡献度应该走数学公理，不走人节点」，达标判定由用户裁量改检验判据，DEC-013 修订记录 v1.4 随本规范同批承接。体例承 SPEC-014 与 SPEC-015 与 SPEC-016。范围收敛声明：本规范 v1 只承载贡献度读路径的七节条款，alpha 具体取值属候选值随 pk-049 一并裁，实装载体 gauge contrib 子命令随本批 TDD 落地。
+本规范承接 gid m-contrib-load-1 stable_clear 终签即 2026-09-04 当日链 crosscheck-m-contrib-load-1 终签 f9520776 成文，把融回贡献度判据数学化落为引擎向界可机械校验的读路径规格。令源即用户 2026-09-04 裁定原话「融合贡献度应该走数学公理，不走人节点」，达标判定由用户裁量改检验判据，DEC-013 修订记录 v1.4 随本规范同批承接；判据面 gd-2 收口经 gid m-fusadopt-b1 stable_clear 终签 44fa67d1 承 fusadopt-solo 批随动，关联句修订记录见规格修订记录节。体例承 SPEC-014 与 SPEC-015 与 SPEC-016。范围收敛声明：本规范 v1 只承载贡献度读路径的七节条款，gd-1 推断式常数族即 alpha 与 p0 与 k_sigma 与 cusum_b 与 cusum_h 已随 gd-2 退场为理论史登记，实装载体 gauge contrib 子命令随本批 TDD 落地。
 
 ## 概览 {#overview}
 
 - 事件底座即 meter 调用计数册，贡献度是窗内承重事件计数测度承 PROB-016::[计数底座](#measure)
 - 承重集由三判据并集承载，三判据全机械复算零 LLM 零网络::[承重三判据](#criteria)
 - 可加性恒等式即分日承重计数之和恒等于窗内总计数，破坏即对账拒::[可加性恒等式](#additivity)
-- 达标即检验判据两腿，二项检验对空转基线加控制图连续窗判读::[检验判据族](#test)
-- 窗口与基线与 alpha 与 p0 全部显式给参，体量与时间两重门槛降级为观察窗参数::[窗口参数](#params)
+- 达标即检验判据三件合同参数合取，union_threshold 与 sustained_min_days 与 monotonicity 构造式承 P3.2.1::[检验判据族](#test)
+- 窗口与三件合同参数全部显式给参，体量与时间两重门槛降级为观察窗参数::[窗口参数](#params)
 - 输出面单行 JSON 只报不判，退出码三值::[输出 schema](#schema)
 - 可证伪条款与金向量场景逐条钉死::[可证伪与金向量](#falsifiable)
 
@@ -38,37 +38,42 @@
 
 ## 检验判据族 {#test}
 
-达标判定是两腿合取，替代原用户裁量条款，DEC-013 v1.4 修订承接；判据只出达标与否的读数，融回评估启动仍走批令留痕与融回门三查，判据外处置不因达标而跳步。
+达标判定是三件合同参数合取，替代原用户裁量条款与 gd-1 两腿推断式，DEC-013 v1.4 修订承接、v1.5 随 gd-2 收口经 fusadopt-solo 批承接；判据只出达标与否的读数，融回评估启动仍走批令留痕与融回门三查，判据外处置不因达标而跳步。
 
-- 检验腿承 PROB-010 假设检验与显著性，映射面 mapping.md:200，facetmath 检验族同构：H0 即窗内承重率不超过 p0 空转基线，H1 即高于 p0；n 为窗内调用数，k 为承重数，尾概率为二项分布上尾逐项精确计算零近似；尾概率不超过 alpha 即 reject_H0，否则 fail_to_reject；n 为零即 insufficient 零虚构率与尾概率。拒绝语义承 PROB-010 公理二：只断言空转解释下观测稀有，不断言因果。
-- 控制图腿承 PROB-013 平稳性与变点检测，映射面 mapping.md:203，与 gchart gc-1 先例同构：窗内逐日承重计数序列，基线期取前 baseline_n 日，样本标准差 ddof=1 定控制限，控制限为基线均值加减 k_sigma 倍标准差；监测期越限告警与 CUSUM 变点信号两谓词照 gc-1；status 四值 ok 与 insufficient 即窗日数不足 baseline_n 加一或 baseline_n 不足二与 degenerate 即基线零散布控制限收缩为均值，语义照 gc-1；chart verdict 取 sustained 即 status ok 且零下侧告警，或 collapsed 即有下侧告警即连续窗塌陷，或 insufficient 或 degenerate。
-- 合取：两腿 verdict 分别 reject_H0 与 sustained 即 attains；任一腿 insufficient 即 overall insufficient 零虚构；其余即 not_attains。attainment 块载 verdict 与两腿子块，各子块载统计依据行 basis 不裸报布尔。
-- 依据行载判定性常数语义：alpha=0.05 是候选值随 pk-049 一并裁即待裁登记非已裁，p0 缺省 0.5 是保守空转基线无数学载体属环境参数登记面显式给参，两常数改值走参数面不改公式。
+- 合同一 union_threshold 即窗内承重并集计数至少 N 件，union_count >= N 即过；缺省 5 以 constclear 登记册行指针随引即 GD_UNION_THRESHOLD_DEFAULT 见 sih-math/docs/constclear2b-routing-2026-09-08.md 工程实践三件套态表。
+- 合同二 sustained_min_days 即至少连续 D 天每日承重计数大于零，sustained_run 逐段连续区间至少一段长度 >= D 即过；缺省 3 以 constclear 登记册行指针随引即 GD_SUSTAINED_MIN_DAYS_DEFAULT 见同表。
+- 合同三 monotonicity 即逐日承重计数序列形态承诺四枚举即 non_decreasing 与 non_increasing 与 median_stable 即中位数整数即稳与 any；缺省 non_decreasing 系账面外常数族候后继清账批收编见 constclear2-routing 账面外新增常数族在役行。
+- 合取：三件合同全过即 attains；窗内零调用即 insufficient 零虚构；数据充分而三件合同不齐即 not_attains。attainment 块载 verdict 与证人面即 union_count 与 sustained_run 与 monotonicity_satisfied，依据行 basis 载构造性可达性原则不裸报布尔，N 与 D 为一且 M 有效即退化合法形。
+- 依据行载判定性常数语义：三件合同参数属构造式合同参数显式给参，改值走参数面不改公式；gd-1 推断式常数族即 alpha 与 p0 与 k_sigma 与 cusum_b 与 cusum_h 已随 gd-2 退场为理论史登记即 PROB-010 与 PROB-013 不参与新判据面，两腿原文见本节理论史登记即检验腿二项检验对空转基线与控制图腿连续窗判读。
 
 ## 窗口参数 {#params}
 
 - 窗口 W 即 --window-days 缺省 7，观察窗参数：体量与时间两重门槛降级为贡献度的载体与观察窗，承 2026-08-22 用户裁定的本批数学化落位，窗长入环境参数登记面，资源性不入数学域。
-- p0 即 --p0 缺省 0.5，alpha 即 --alpha 缺省 0.05，baseline_n 即 --baseline-n 缺省 3，k_sigma 缺省 3.0 与 cusum_b 缺省 0.5 与 cusum_h 缺省 5.0 照 gc-1 先例同参；全参数输出 params 块显式回显。
+- 三件合同参数即 --union-threshold 与 --sustained-min-days 与 --monotonicity 显式给参，缺省值以 constclear 登记册行指针随引见检验判据族节；gd-1 旧参数族即 p0 与 alpha 与 baseline_n 与 k_sigma 与 cusum_b 与 cusum_h 已随 gd-2 退场为理论史登记；全参数输出 params 块显式回显。
 - --at 是参照时间 YYYY-MM-DD 显式给参禁 now，承 SPEC-011 先例。
 
 ## 输出 schema {#schema}
 
-- 调用形：gauge contrib --at YYYY-MM-DD --counts meter 计数册可重复 --trail 链文件可重复 --corpus 语料文件可重复，可选 --window-days 与 --p0 与 --alpha 与 --baseline-n 与 --k-sigma 与 --cusum-b 与 --cusum-h；只读不落链，计数册与链与语料零写。
-- 输出 stdout 单行 JSON 即 contrib 单键包裹：formula_version gd-1，status 两值 ok 与 insufficient 即窗内零调用，块序 contribution 与 additivity 与 attainment 与 params 与 inputs_digest 与 inputs。contribution 块载 total 与 calls 与 rate 即 n 为零出 null 与 uniform_weight 与 criteria 三并列加并集计数。
-- inputs_digest 承 ga-2 口径：计数册内容摘要与链文件内容摘要与语料文件内容摘要与窗口与全参数排序拼接 SHA-256，可机械解析回证据源。
-- 退出码三值：零成即 ok 与 insufficient 均成只报不判、一拦即参数违例如 window_days 小于一或 alpha 出开区间或 p0 出闭区间或 baseline_n 小于二、二异常即底座件缺席如 counts 或 trail 或 corpus 任一缺席并在 stderr 报缺席件名。
+- 调用形：gauge contrib --at YYYY-MM-DD --counts meter 计数册可重复 --trail 链文件可重复 --corpus 语料文件可重复，可选 --window-days 与 --union-threshold 与 --sustained-min-days 与 --monotonicity；只读不落链，计数册与链与语料零写。
+- 输出 stdout 单行 JSON 即 contrib 单键包裹：formula_version gd-2，status 两值 ok 与 insufficient 即窗内零调用，块序 contribution 与 additivity 与 attainment 与 params 与 inputs_digest 与 inputs。contribution 块载 total 与 calls 与 rate 即 n 为零出 null 与 uniform_weight 与 criteria 三并列加并集计数。
+- inputs_digest 承 ga-2 口径：计数册内容摘要与链文件内容摘要与语料文件内容摘要与窗口与三件合同参数排序拼接 SHA-256，可机械解析回证据源。
+- 退出码三值：零成即 ok 与 insufficient 均成只报不判、一拦即参数违例如 window_days 小于一或 union_threshold 小于一或 sustained_min_days 小于一或 monotonicity 出四枚举、二异常即底座件缺席如 counts 或 trail 或 corpus 任一缺席并在 stderr 报缺席件名。
 
 ## 可证伪与金向量 {#falsifiable}
 
 - 证伪形态一：构造判据外调用被计入承重或判据内调用被漏计的实录，即三判据并集承载伪；构造同输入两次运行输出不逐字节一致，即零 LLM 可复算伪。
-- 证伪形态二：构造分日之和与总数不等而对账不报 violated 的实录，即可加性恒等式承载伪；构造 n 为零而出 rate 与尾概率的实录，即零虚构条款伪。
-- 证伪形态三：构造承重率显著高于 p0 而判 not_attains 或全空转而判 attains 的实录，即检验判据族伪；金向量场景漂移即实现漂移。
-- 金向量场景两态冻结于 gauge tests/fixtures/contrib/：attains 态即三判据各有命中且检验腿拒绝且控制图 sustained，not_attains 态即全空转零承重；双跑同参逐字节一致为冻结判据，夹具与金向量以仓根为 cwd 的相对路径寻址，禁绝对路径冻结，重放寻径约定随夹具在档。
+- 证伪形态二：构造分日之和与总数不等而对账不报 violated 的实录，即可加性恒等式承载伪；构造 n 为零而出 rate 与达标读数的实录，即零虚构条款伪。
+- 证伪形态三：构造三件合同全过而判 not_attains 或合同不达而判 attains 的实录，即检验判据族伪；金向量场景漂移即实现漂移。
+- 金向量场景两态冻结于 gauge tests/fixtures/contrib/：attains 态即三判据各有命中且三件合同全过，not_attains 态即全空转零承重，两态按 gd-2 形态随 gaugecontrib-gd2-solo 批重写冻结；双跑同参逐字节一致为冻结判据，夹具与金向量以仓根为 cwd 的相对路径寻址，禁绝对路径冻结，重放寻径约定随夹具在档。
 - ga-2 三维读数与 gchart 与 gqueue 判据零触碰零回归是本规范的硬边界，新增只增不改。
 
 ## 内容充分性 {#sufficiency}
 
 - 本节为 docmath-b4-solo 收尾批按新旧都管裁定补齐，模板见 SPEC-TEMPLATE-sufficiency-v1，只加节不改本文实质。
 - 判据红证对表：本文判据条目见 计数底座、承重三判据、可加性恒等式、检验判据族等节。按证伪覆盖度载体如实申报：历史判据清单未逐件附可构造红证即零信息部分，清账路径为后继修订批逐件补红证，承 sih-math/docs/docmath-carriers-derivation-2026-09-04.md。
-- 判定性常数挂锚对表：本文档无声明的判定性常数。des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验。
+- 判定性常数挂锚对表：三件合同参数即 union_threshold 与 sustained_min_days 与 monotonicity 挂 constclear 登记册行指针即 GD_UNION_THRESHOLD_DEFAULT 与 GD_SUSTAINED_MIN_DAYS_DEFAULT 见 constclear2b-routing 工程实践三件套态表，GD_MONOTONICITY_DEFAULT 账面外候收编如实申报。des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验。
 - 约束算子对表：本文无约束算子面，如实申报。
+
+## 规格修订记录 {#revisions}
+
+2026-09-09 修订一，fusadopt-solo 批正典随动记录：承 gid m-fusadopt-b1 stable_clear 终签 44fa67d1 在链，令源即用户 2026-09-09「你的两个参考过得一」即 fusiongate 后继批，锚即 fusiongate 处置档确定性核对五查全过与 DEC-013 v1.5 同批收口。改笔即关联句随动：概览达标句与检验判据族节由 gd-1 两腿推断式改 gd-2 三件合同参数构造式即 union_threshold 与 sustained_min_days 与 monotonicity 四枚举加证人面 union_count 与 sustained_run 与 monotonicity_satisfied 承 P3.2.1 构造性可达性；窗口参数节参数族随动即旧参数族 p0 与 alpha 与 baseline_n 与 k_sigma 与 cusum_b 与 cusum_h 转理论史登记；输出 schema 节 formula_version 改 gd-2 与调用参数面与退出码违例清单随动；可证伪形态三与金向量两态描述随 gd-2 形态随动；内容充分性判定性常数挂锚行随动；三参数缺省值以 constclear 登记册行指针随引。判据语义外内容词零增删即计数底座与承重三判据与可加性恒等式三节零触碰；gauge 载体任何实现零改动即现行正典读数见 gauge CONTRACT 0.8.0 版本行；gd-1 两腿原文以 DEC-013 v1.4 修订记录与 git 历史承载不重写。

@@ -1,0 +1,171 @@
+{
+ "channels": {
+  "graph": [
+   "ALG-001",
+   "ORD-007",
+   "ORD-022",
+   "ORD-023",
+   "PROB-001",
+   "PROB-002",
+   "PROB-003",
+   "PROB-004",
+   "PROB-005",
+   "PROB-007",
+   "PROB-008",
+   "PROB-009",
+   "PROB-012",
+   "PROB-015",
+   "PROB-017",
+   "PROB-018",
+   "PROB-019",
+   "TOP-005"
+  ],
+  "semantic": [
+   "PROB-013",
+   "PROB-016",
+   "PROB-006"
+  ],
+  "semantic_scores": {
+   "PROB-006": 0.11801644797044152,
+   "PROB-013": 0.25172193675489857,
+   "PROB-016": 0.2273512426550007
+  },
+  "skeleton": [
+   "llm-friendly-build/mapping.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "probability/INDEX.md",
+   "order/INDEX.md",
+   "topology/INDEX.md",
+   "algebra/INDEX.md"
+  ],
+  "word": []
+ },
+ "expanded": [
+  "贡献度测度 计数测度 可加性 假设检验 平稳性 变点检测 构造性可达性 判定常数登记"
+ ],
+ "provenance": {
+  "ALG-001": [
+   "graph"
+  ],
+  "ORD-007": [
+   "graph"
+  ],
+  "ORD-022": [
+   "graph"
+  ],
+  "ORD-023": [
+   "graph"
+  ],
+  "PROB-001": [
+   "graph"
+  ],
+  "PROB-002": [
+   "graph"
+  ],
+  "PROB-003": [
+   "graph"
+  ],
+  "PROB-004": [
+   "graph"
+  ],
+  "PROB-005": [
+   "graph"
+  ],
+  "PROB-006": [
+   "semantic"
+  ],
+  "PROB-007": [
+   "graph"
+  ],
+  "PROB-008": [
+   "graph"
+  ],
+  "PROB-009": [
+   "graph"
+  ],
+  "PROB-012": [
+   "graph"
+  ],
+  "PROB-013": [
+   "semantic"
+  ],
+  "PROB-015": [
+   "graph"
+  ],
+  "PROB-016": [
+   "semantic"
+  ],
+  "PROB-017": [
+   "graph"
+  ],
+  "PROB-018": [
+   "graph"
+  ],
+  "PROB-019": [
+   "graph"
+  ],
+  "TOP-005": [
+   "graph"
+  ]
+ },
+ "query": [
+  "贡献度测度 计数测度 可加性 假设检验 平稳性 变点检测 构造性可达性 判定常数登记"
+ ],
+ "reading_list": {
+  "entry_ids": [
+   "ALG-001",
+   "ORD-007",
+   "ORD-022",
+   "ORD-023",
+   "PROB-001",
+   "PROB-002",
+   "PROB-003",
+   "PROB-004",
+   "PROB-005",
+   "PROB-006",
+   "PROB-007",
+   "PROB-008",
+   "PROB-009",
+   "PROB-012",
+   "PROB-013",
+   "PROB-015",
+   "PROB-016",
+   "PROB-017",
+   "PROB-018",
+   "PROB-019",
+   "TOP-005"
+  ],
+  "entry_paths": [
+   "/Users/moc/workspaces/SiHankor/sih-math/algebra/entries/ALG-001-matrix-and-eigenvalue.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-007-derivation-soundness-and-mirror.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-022-degradation-well-founded-chain.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/order/entries/ORD-023-abstract-rewrite-system-deterministic-normal-form.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-001-law-of-large-numbers.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-002-strong-law-of-large-numbers.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-003-central-limit-theorem.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-004-large-deviation-principle.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-005-bayesian-updating.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-006-probability-measure.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-007-expectation.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-008-information-content-and-falsifiability.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-009-fano-inequality-and-recovery-bound.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-012-correlation-and-regression.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-013-stationarity-and-change-point.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-015-littles-law-and-load-bound.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-016-counting-measure-and-additivity.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-017-idf-and-self-information-weighting.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-018-data-processing-inequality-and-lossy-chain.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/probability/entries/PROB-019-gap-growth-dynamics.md",
+   "/Users/moc/workspaces/SiHankor/sih-math/topology/entries/TOP-005-complete-metric-space.md"
+  ],
+  "skeleton_files": [
+   "algebra/INDEX.md",
+   "calculus/llm-friendly-build/mapping.md",
+   "llm-friendly-build/mapping.md",
+   "order/INDEX.md",
+   "probability/INDEX.md",
+   "topology/INDEX.md"
+  ]
+ },
+ "repo": "/Users/moc/workspaces/SiHankor/sih-math"
+}

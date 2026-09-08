@@ -1,0 +1,7 @@
+{
+  "status": "appended",
+  "event_id": "f9d4f25d-7d43-40b3-ac52-13d0fa73207a",
+  "event_hash": "0e79f34a00b43e0c5b94113d4a89a13099a75f111c73a5ef73bc9f1f470b6a15",
+  "doc_id": "crosscheck-m-fusadopt-a1"
+}
+{"direction": "comply", "disposition": "裁决通过", "note": "人类知晓无需复签；一票绝对反对经 append inconsistency 翻案；边界变更经 watch 浮出", "replay_anchor": "proposition/DES/m-fusadopt-a1/sign-reports/m-fusadopt-a1-signcheck.json", "signed": "m-fusadopt-a1"}
