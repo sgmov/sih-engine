@@ -106,7 +106,35 @@ pub enum RecallError {
     Internal(String),
 }
 
+/// md 原始行区间窗口即按路径缓存整档行取行区间逐字词面，出处可机械回验由构造保证。
+///
+/// 档不可开档或行区间越界回 None，调用位不录活引用；窗口词面含行首标记，
+/// 与重开比对位（md 行区间重开比对）同词面零语义视图加工。
+fn md_raw_window(
+    root: &Path,
+    cache: &mut std::collections::HashMap<String, Option<Vec<String>>>,
+    path: &str,
+    line_start: u32,
+    line_end: u32,
+) -> Option<String> {
+    let lines = cache.entry(path.to_string()).or_insert_with(|| {
+        std::fs::read_to_string(root.join(path))
+            .ok()
+            .map(|text| text.lines().map(|line| line.to_string()).collect())
+    });
+    let lines = lines.as_ref()?;
+    let ls = line_start as usize;
+    let le = line_end as usize;
+    if ls < 1 || le < ls || le > lines.len() {
+        return None;
+    }
+    Some(lines[ls - 1..le].join("\n"))
+}
+
 /// 单操作 recall 即四轴编排取切面行序列，排序机械承 SPEC-008 确定性与排序节。
+///
+/// md 活引用抽取规则即出处可机械回验由构造保证：md 行摘录取原始行区间窗口词面
+/// （逐字含行首标记），窗口不可开档或行区间越界即不录活引用。
 pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     let mut keep: Vec<Archive> = Vec::new();
     for name in &args.archives {
@@ -147,6 +175,8 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     if !args.topics.is_empty() || !args.words.is_empty() {
         let index = locator_bridge::build_index(&args.root)?;
         let entries = locator_bridge::load_entries(&index)?;
+        let mut md_windows: std::collections::HashMap<String, Option<Vec<String>>> =
+            std::collections::HashMap::new();
         if !args.topics.is_empty() {
             for topic in &args.topics {
                 for entry in locator_bridge::query_word_entries(&args.root, &index, topic)? {
@@ -157,9 +187,22 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
                         continue;
                     }
                     let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
-                    let reference = match (carrier, entry.line_start, entry.line_end) {
-                        ("json", _, _) => format!("{}@{}", entry.path, entry.id),
-                        ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
+                    let (reference, excerpt) = match (carrier, entry.line_start, entry.line_end) {
+                        ("json", _, _) => (
+                            format!("{}@{}", entry.path, entry.id),
+                            facet::excerpt_of_text(&entry.text),
+                        ),
+                        ("md", Some(ls), Some(le)) => {
+                            let Some(window) =
+                                md_raw_window(&args.root, &mut md_windows, &entry.path, ls, le)
+                            else {
+                                continue;
+                            };
+                            (
+                                format!("{}@{ls}-{le}", entry.path),
+                                facet::excerpt_of_text(&window),
+                            )
+                        }
                         _ => continue,
                     };
                     rows.push(FacetRow {
@@ -167,7 +210,7 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
                         carrier,
                         reference,
                         axis: Axis::Topic,
-                        excerpt: facet::excerpt_of_text(&entry.text),
+                        excerpt,
                         matched: topic.clone(),
                         at: args.at.clone(),
                     });
@@ -188,21 +231,34 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
                     }
                     let carrier: &'static str =
                         if entry.carrier == "json" { "json" } else { "md" };
-                    let reference = match (carrier, entry.line_start, entry.line_end) {
-                        ("json", _, _) => format!("{}@{}", entry.path, entry.id),
-                        ("md", Some(ls), Some(le)) => format!("{}@{ls}-{le}", entry.path),
-                        _ => continue,
-                    };
                     if !entry.text.contains(word.as_str()) {
                         continue;
                     }
+                    let (reference, excerpt) = match (carrier, entry.line_start, entry.line_end) {
+                        ("json", _, _) => (
+                            format!("{}@{}", entry.path, entry.id),
+                            facet::excerpt_of_text(&entry.text),
+                        ),
+                        ("md", Some(ls), Some(le)) => {
+                            let Some(window) =
+                                md_raw_window(&args.root, &mut md_windows, &entry.path, ls, le)
+                            else {
+                                continue;
+                            };
+                            (
+                                format!("{}@{ls}-{le}", entry.path),
+                                facet::excerpt_of_text(&window),
+                            )
+                        }
+                        _ => continue,
+                    };
                     count += 1;
                     rows.push(FacetRow {
                         archive,
                         carrier,
                         reference,
                         axis: Axis::Word,
-                        excerpt: facet::excerpt_of_text(&entry.text),
+                        excerpt,
                         matched: word.clone(),
                         at: args.at.clone(),
                     });
@@ -347,6 +403,43 @@ mod derive_tests {
         std::fs::create_dir_all(root.join("sih-engine")).unwrap();
         std::fs::create_dir_all(root.join("sih-tools")).unwrap();
         assert_eq!(derive_root(&batch), Some(root));
+    }
+}
+
+#[cfg(test)]
+mod md_window_tests {
+    use super::*;
+
+    /// md 窗口即原始行词面逐字承载：行首标记保留在窗内，与重开比对位同词面。
+    #[test]
+    fn md_raw_window_verbatim_includes_line_markers() {
+        let tmp = tempfile::tempdir().unwrap();
+        let rel = "doc/note.md";
+        std::fs::create_dir_all(tmp.path().join("doc")).unwrap();
+        std::fs::write(tmp.path().join(rel), "# t\n\n> 批：a 批\n> 会话：s1\n\n后文\n").unwrap();
+        let mut cache = std::collections::HashMap::new();
+        let window = md_raw_window(tmp.path(), &mut cache, rel, 3, 4).unwrap();
+        assert_eq!(window, "> 批：a 批\n> 会话：s1");
+        let again = md_raw_window(tmp.path(), &mut cache, rel, 3, 4).unwrap();
+        assert_eq!(window, again, "同路径二查缓存同读数");
+    }
+
+    /// 行区间越界与逆区间与档缺席即不录：None 不 panic 不误录。
+    #[test]
+    fn md_raw_window_oob_or_missing_is_none() {
+        let tmp = tempfile::tempdir().unwrap();
+        let rel = "doc/note.md";
+        std::fs::create_dir_all(tmp.path().join("doc")).unwrap();
+        std::fs::write(tmp.path().join(rel), "一行\n二行\n").unwrap();
+        let mut cache = std::collections::HashMap::new();
+        assert_eq!(md_raw_window(tmp.path(), &mut cache, rel, 0, 1), None, "行号零越下界");
+        assert_eq!(md_raw_window(tmp.path(), &mut cache, rel, 2, 5), None, "越上界");
+        assert_eq!(md_raw_window(tmp.path(), &mut cache, rel, 3, 2), None, "逆区间");
+        assert_eq!(
+            md_raw_window(tmp.path(), &mut cache, "doc/absent.md", 1, 1),
+            None,
+            "档缺席"
+        );
     }
 }
 

@@ -1,0 +1,29 @@
+{
+ "batch": "recallfix-solo",
+ "at": "2026-09-09",
+ "question": "f2 红的抽取位与机制：检索器把引用形字串录为活引用的假设是否成立",
+ "verdict": [
+  "任务包假设（basefix-solo-results.md 第 63 行红申报文本内引用形字串 pk050sw-solo-results.md@3-9 被抽取为活引用）被证据否证：retriever 与 locator_bridge 均无引用形字串扫描位，md 行 reference 全部由 locator 索引条目的 path+line_start+line_end 构造（src/retriever/mod.rs recall 两轴 md 分支），basefix 第 63 行自身条目 reference 为 basefix-solo-results.md@63-63 形且核验通过",
+  "红行实值：reference=sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9，axis=topic，matched=recall，excerpt 长 259（256+省略号），excerpt 前段即 pk050sw-solo-results.md 自身第 3-9 行 blockquote 头部的 markdown-it 语义视图词面",
+  "红因机制：locator markdown 载体把多行 blockquote 切为单条目，条目 text 为去 > 标记的语义视图词面（550 字符），line range 3-9；f2 重开原档按原始行（含 > 标记）join 后做子串比对，excerpt 在第 57 字符处首个换行失配（excerpt=「…回退位）\\n会话：…」，window=「…回退位）\\n> 会话：…」），substring 必假",
+  "行漂移诊断亦不成立：pk050sw-solo-results.md 自创建提交 9cf62f8 起第 3-9 行即 blockquote 形，头部区段零行漂移；scriwire2-solo-results.md@3-10 同款 blockquote 失配",
+  "批前全量 md 行 153 条中 f2 失配恰 2 条（pk050sw@3-9 与 scriwire2@3-10，俱 blockquote）；全索引带行区间 md 条目 20077 条中非逐字承载 335 条（blockquote 与多行列表语义视图），俱是 locator 语义视图词面对原始窗口的结构性失配，非个别文件漂移"
+ ],
+ "fix_rule": "md 活引用出处可机械回验由构造保证：md 行摘录改取原始行区间窗口词面（逐字含行首标记），窗口不可开档或行区间越界即不录活引用；词面视图与原始窗口的对齐语义仍归 locator 底座（本批零触碰）",
+ "evidence": {
+  "index_entry_pk050sw_3_9": {
+   "path": "sih-engine/sih/event/plan/pk050sw-solo-results.md",
+   "line_start": 3,
+   "line_end": 9,
+   "text_len": 550
+  },
+  "failing_rows_prefix_run": [
+   "sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9",
+   "sih-engine/sih/event/plan/scriwire2-solo-results.md@3-10"
+  ],
+  "corpus_md_entries_with_range": 20077,
+  "corpus_not_verbatim": 335,
+  "git_history": "9cf62f8（pk050sw 结果档创建）第 3-9 行即 blockquote 形，与 HEAD 一致"
+ },
+ "out_of_bounds_note": "sih-tools/locator 不在本批写入面，底座切分语义零触碰；修复落点 sih-engine/src/retriever/mod.rs 两轴 md 分支与 md_raw_window 辅助位"
+}

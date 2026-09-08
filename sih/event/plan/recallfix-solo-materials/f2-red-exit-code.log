@@ -1,0 +1,35 @@
+# f2 红证复跑取退出码（主树未修态 HEAD 39e6b1d，2026-09-09）
+命令：cd sih-engine && cargo test --test mem_recall_f_suite f2_refs_machine_verifiable
+退出码：101
+
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:356:4
+    |
+356 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.17s
+     Running tests/mem_recall_f_suite.rs (target/debug/deps/mem_recall_f_suite-16ff3fd05c918ce4)
+
+running 1 test
+test f2_refs_machine_verifiable has been running for over 60 seconds
+test f2_refs_machine_verifiable ... FAILED
+
+failures:
+
+---- f2_refs_machine_verifiable stdout ----
+
+thread 'f2_refs_machine_verifiable' (29540025) panicked at tests/mem_recall_f_suite.rs:76:21:
+摘录截断前段不在行区间 sih-engine/sih/event/plan/pk050sw-solo-results.md@3-9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    f2_refs_machine_verifiable
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 8 filtered out; finished in 63.69s
+
+error: test failed, to rerun pass `--test mem_recall_f_suite`
