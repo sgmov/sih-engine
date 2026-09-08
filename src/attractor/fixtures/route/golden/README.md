@@ -1,8 +1,15 @@
-# 路由金向量冻结说明（autoflow2-solo）
+# 路由金向量冻结说明（autoflow2-solo；parktune-solo 重冻）
 
 本目录是 SPEC-015 A1 金向量：期望输出全部由围堰 Python 原件
 （sih-tools/selector）跑出冻结，围堰输出是唯一基准，禁自造期望。
-冻结于 2026-09-02，冻结后零漂移由 T2 哈希对表测试钉死。
+初冻于 2026-09-02；2026-09-08 随 parktune-solo 批按 SPEC-021 T9 基线种
+随冻重录即期望由围堰原件（有余告警豁免语义与 parking 包 0.4.0）重跑
+重冻、消费逻辑零改，重冻后零漂移由 T2 哈希对表测试钉死。
+
+重冻归因即纯期望过期：漂移集包含于申报影响集，parking 三场景差异仅
+header.pack.version（0.2.0 至 0.4.0，含 parkgate 批 0.3.0 未随冻的
+P104 谓词记录补上）与 badpack-kind 报文 ALL_KINDS 扩 gate_hold，core
+四场景逐字节零漂移，读数见 parktune-solo 批材料。
 
 ## 目录构成
 

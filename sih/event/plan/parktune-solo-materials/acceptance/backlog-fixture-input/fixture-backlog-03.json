@@ -1,0 +1,11 @@
+{
+ "id": "fixture-backlog-03",
+ "path": "doc/governance/PARKING-v1.md",
+ "anchors": [],
+ "requested_writes": [],
+ "state": "parked",
+ "parking": {
+  "entered_at": "2026-08-01",
+  "ttl_days": 30
+ }
+}

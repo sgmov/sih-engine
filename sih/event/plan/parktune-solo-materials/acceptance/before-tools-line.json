@@ -12,9 +12,9 @@
     },
     "pack": {
       "name": "parking",
-      "version": "0.4.0"
+      "version": "0.3.0"
     },
-    "reference_time": "2026-09-02",
+    "reference_time": "2026-09-08",
     "tool": {
       "name": "selector",
       "version": "0.4.0"
@@ -420,14 +420,213 @@
       "parking": true,
       "path": "PARKING-v1.md",
       "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-040",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-040",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "pk-042",
+      "path": "PARKING-v1.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-064",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-065",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-066",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-075",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": true
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": null,
+      "id": "pk-075",
+      "parking": true,
+      "path": "PARKING-v1.md",
+      "route": "mainline"
     }
   ],
   "status": "routed",
   "summary": {
     "alarms": [],
-    "mainline": 16,
+    "mainline": 23,
     "scrap_track": 0,
-    "siding": 0,
-    "total": 16
+    "siding": 1,
+    "total": 24
   }
 }

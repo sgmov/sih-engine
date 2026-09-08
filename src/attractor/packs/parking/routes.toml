@@ -25,3 +25,4 @@ pass_route = "mainline"
 [alarms]
 siding_surplus_threshold = 2
 mainline_starvation_threshold = 0
+siding_surplus_exempt_kinds = ["gate_hold"]

@@ -285,9 +285,9 @@ fn t6_intercept_load_and_round() {
     let by_id = |id: &str| results.iter().find(|r| r["id"] == id).unwrap()["pass"]
         == Value::Bool(true);
     assert!(by_id("R001") && by_id("R002") && by_id("R003"), "单件族四件查材料层须过");
-    // parking 包经装配位装载即时间族可用
+    // parking 包经装配位装载即时间族可用（parkgate 后四谓词即 P101/P104/P102/P103）
     let parking = intercept::load_intercept_pack(&engine_packs().join("parking")).unwrap();
-    assert_eq!(parking.predicates.len(), 3);
+    assert_eq!(parking.predicates.len(), 4);
     // 包非法即装配位拒
     let bad = golden().join("badpack-kind").join("input").join("pack");
     assert!(intercept::load_intercept_pack(&bad).is_err(), "未知 kind 装配位须拒包");

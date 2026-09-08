@@ -12,14 +12,20 @@
   },
   "files": {
     "attribution-core/expected.json": "5bd0cc82eecddd25980f1ed41d777576b18b1cc3aae77b709f4fb129b8e85dfe",
-    "attribution-parking/expected.json": "54b111c4aba4a501e6f071fa08d6166b4cbe0af971cd31716f6e51268e06aca3",
-    "badpack-kind/expected.json": "cc819c5a778ce4baa61aeb5f5bc9c79d0aa1a4c67e725bf3a0e22a4a743d8bec",
+    "attribution-parking/expected.json": "74da0ece3e8d29964edde0054877a94d565867e8518e9f0d4ee0ed235f68d008",
+    "badpack-kind/expected.json": "ac5770e21bcd45a5c884bdf1de96c4f0211cc12019e117ff9c17b4830a369396",
     "dirty-anchor-domain/expected.json": "e4e6d8e9f4c7f71fe2cefa559b16fe7cd23dff863eadf7b37af3c556ab3471f3",
-    "dirty-expired/expected.json": "4c4362022b2fdcc950129d2454d91a8fcb17e2f4c0bcf5ff36421606b6cbac85",
+    "dirty-expired/expected.json": "e779f8fb78a631621acbd1859f8cc2a7ff4508a75f4072faf9c34c78c4961278",
     "dirty-schema/expected.json": "cfd7ed5d73aa8144f303fe88289c281ab148e9969420d67992ff0e208b8a5ad3",
     "net-core/expected.json": "10280aed9631f29c27ee1c3a25b943295248a7f80caf8244e9243af4dba50fb0",
-    "net-parking/expected.json": "6000c89ba48ded8b037b258e17f97fb0391807d340211f26e9c6a24f686d3489"
+    "net-parking/expected.json": "4cc30bd41f89f6466a142ce8009f6506d4d166bb307cd5f9c77756f74f73c107"
   },
-  "frozen_at": "2026-09-02",
+  "frozen_at": "2026-09-08",
+  "refrozen": {
+    "batch": "parktune-solo",
+    "basis": "SPEC-021 T9 基线种随冻重录：期望由围堰 Python 原件（工地新代码与新包 0.4.0）重跑重冻，消费逻辑零改",
+    "attribution": "纯期望过期即漂移集包含于申报影响集（parking 包 0.3.0→0.4.0 版本与 P104 谓词记录、ALL_KINDS 报文扩 gate_hold、有余告警 count 语义），core 四场景逐字节零漂移",
+    "prior_frozen_at": "2026-09-02"
+  },
   "spec": "SPEC-015"
 }

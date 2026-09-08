@@ -1,0 +1,6 @@
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 170 filtered out; finished in 0.02s
+test t0_migrated_packs_byte_identical ... FAILED
+---- t0_migrated_packs_byte_identical stdout ----
+thread 't0_migrated_packs_byte_identical' (26719811) panicked at tests/attractor_route.rs:55:13:
+    t0_migrated_packs_byte_identical
+test result: FAILED. 9 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
