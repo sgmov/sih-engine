@@ -34,16 +34,17 @@
 
 | 件 | 认证哈希前 8 |
 |---|---|
-| ask3 记录 | 见结算读数补笔 |
-| 验证件 | 见结算读数补笔 |
-| 正身件 | 见结算读数补笔 |
-| 管线报告 | 见结算读数补笔 |
-| docmath 闸门件 | 见结算读数补笔 |
-| checkcite 件 | 见结算读数补笔 |
-| manifest 内容哈希清单件 | 见结算读数补笔 |
-| 投影件 | 见结算读数补笔 |
+| ask3 记录 | ae047428 |
+| 验证件 | eb01499b |
+| 正身件 | fb0e69e6 |
+| checkcite 件 | f3de6826 |
+| 管线报告 | 94ccc452 |
+| docmath 闸门件 | 92844f1b（exit 1 存量红如实上链） |
+| 批内充分性复核件 | 9102cf6d |
+| manifest 内容哈希清单件 | 2ca3e158（settle cert 同取此值） |
+| 投影件 | 04e58cad |
 
-md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 ReportNotJson 先例）；本表实值结算读数节收约补笔回填。
+md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 ReportNotJson 先例）。
 
 ## F 表
 
@@ -53,7 +54,7 @@ md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 Re
 | F-2 照录不增删 | 契约 | 任务包第二节至第五节契约表与红线与验收程序与 allow 清单逐项在 SPEC 中转写零增删 | 通过（四栏逐项对照在档；表格改条目形与相名拉丁转写为域闸格式承接收录） |
 | F-3 管线三闸 | 治理 | 化格 0、核阅 0、检词 0，域外 exit-2 如实记档 | 通过（读数见认证清单表） |
 | F-4 写入仅 allow | 治理 | 写入仅 9 路径 allow 面内加双工地加链经 scribe | 通过（报告两目录承前裁惯例；主树预落两件随批提交零改动） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 见结算读数补笔 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（读数见结算读数节，收约补笔载终值） |
 
 ## 越线与误差申报
 
@@ -74,3 +75,12 @@ md 件直证承先例走内容哈希清单件（书简 append 只收 JSON 即 Re
 - 前置读数：sih-engine/sih/event/plan/mcpspec-solo-materials/startup-readings/
 - docmath 闸门：sih-engine/sih/event/plan/mcpspec-solo-materials/first-run-2026-09-09/
 - ask3 生成器：sih-tools/scribe/reports/make_ask3_mcpspec-solo.py（随批提交）
+
+## 结算读数（收约补笔）
+
+- 双仓 settle：tools 段一 `aca75758`（base integral-stage-build@14cce319）、engine 段一 `ddabdc6b`（base main@9350777），cert 统一取 manifest 认证 `2ca3e158`；归并 tools `66495ce2`、engine `7325d4a`；closeguard 预收 tools `ba3546c6` 与 engine `d52ed57`。
+- 放锁收约：9 路径 unlock 全过零失败；close 三跑形即首跑无主闸拦两件（attnanchor 与 attractor 两册 CALL-LOG 跨批存量族）带 bypass-orphan 复跑、次跑 CALL-LOG 随批闸拦同两册带 bypass-calllog 三跑成；会话 bd45929ddeb6ff5e revoked 真值，双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/mcpspec-solo.json；双旗显式留痕两笔候人节点裁（settlement-v2 与 mcpopen 先例同形）。
+- 链 verify：valid，events 66（first `25989caf`、last `04e58cad` 即投影件认证末笔）；本批链笔序即意图 `04d1201c` 与认证九笔（ask3 `ae047428` 至投影 `04e58cad`），并行批 mcpserv 会话 90ab7417 意图笔 `bba35d36` 与本批交错在档零拒收零冲突（chainstamp 铸时戳语义承载）。
+- reconcile：双仓 unrouted 俱零、cert_missing 俱零即判据双零；unbypassed 即 tools 118 与 engine 82（批前 117 与 81，增量各 1 俱本批 closeguard 与归并机械自生提交，mcpopen 先例同形）、session_orphan 即 tools 19 与 engine 24 零新增，跨批存量不代清。
+- 收约补笔：本节与认证清单实值即本笔，经直改链笔申报（scribe direct）加 --no-verify 提交替 lease bypass 登记通道（pkexits2 与 settlement-v2 先例同形）；补笔后复跑化格 check 与检词俱绿（零改动零违例）。
+- 存量申报：docmath 收尾闸门主树红两笔即 SPEC-021 与 SPEC-022 缺内容充分性节，双跑 cmp 逐字节一致先红留痕在批材料 first-run-2026-09-09，两件不在本批 allow 面零代修，候人节点裁立存量补齐批；本批 SPEC-023 按查二同款机械复核 green 在档。
