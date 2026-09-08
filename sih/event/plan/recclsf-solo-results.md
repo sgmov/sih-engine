@@ -94,7 +94,7 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 | F-2 认账不降格 | 第一红线 | 两形转新类显式计数零隐藏零降格 | 通过（summary 两新键＋unrouted_tail 可见＋不并入 routed 不清零＋T-1-5 在测） |
 | F-3 绑定严格 | 第一红线 | sha 逐字节比对，绑定不符仍 missing 加告警，不认无绑定与绑定不符件 | 通过（cert_prefix 逐字节前缀＋referencing sha 全值相等＋binding_mismatch 告警行＋T-1-3/T-1-4 反例） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（13 路 allow 面内全合规，双工地写入，链经 scribe；差件零） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools ed2f8507 与 engine a286ef5 加 cdb7a68 settle、归并 556f0dc9 与 b4999aa、close 复跑一跑成 revoked、verify valid 292 笔；cert_missing 三仓归零、unrouted 零；close 首跑无主闸拦系 CALL-LOG 族候清项非本批活面，双旗标 bypass 留痕红证在档） |
 
 ## 越线与误差申报
 
@@ -108,7 +108,14 @@ md 件直证申报：scribe append 只收 json 报告件，md 面经内容清单
 
 ## 结算读数
 
-随收约补笔回填（直改链笔申报，anchorskill 与 certarch 先例同形）。
+- 双仓 settle：tools 段一 `ed2f8507`（base integral-stage-build@08988c2b）、engine 段一 `a286ef5`（base main@6a94aeb）加段二 `cdb7a68`（close 首跑红证归档，取锁窗重取单锁正典通道提交），cert 统一取本批 ask3 记录认证 `a1fab761`
+- 放锁收约：13 路径 unlock 全过零失败（段二取锁窗单锁重取重放）；close 首跑无主闸拦（红证 16 件俱 CALL-LOG 族与 calls.ndjson 候清项，归档 red-evidence-close-first-run.json 与 close-run1 双件随批段二），双旗标 bypass 显式留痕即 bypassed_orphan 与 bypassed_calllog 两笔，close 复跑一跑成即会话 c159eb61c72ecb2c revoked、双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/recclsf-solo.json
+- 跑步机 live 复读：close 收约报告 calllog_treadmill 节即 checked true 与 collected 空列表——close 跑主树 1.38.0 旧码，跑步机修复在本批分支内即本次 close 的归并对象，机械序为收编先于归并，故本批 close 即所修缺陷的最后一次旧码空转实录（红证在档）；修复随归并落主树（merge 后主树 1.39.0），首次新码收编机会归下一会话 close，dry 实态读数（14 面纯追加命中）与真 git 仓收编测试俱在档兜底
+- 归并提交号：tools `556f0dc9`（closeguard 预收 1b8a08d0 经 bypass 登记）、engine `b4999aa`（预收 30ada57 经 bypass 登记）；预收两笔俱 close 机械自生非手写，bypass 通道登记即本批对 unbypassed 零新增
+- 链 verify：valid，events 292，末哈希 f4ca842b；本批链面笔序即意图 1 笔（09fea050）与例行读数 3 笔与认证 9 笔（ask3 a1fab761 与验证 4a0ea5e2 与正身 9d389f19 与投影 05a0614d 与前后对账汇总 71062d61 与跑步机 dry 54ff3353 与 checkcite 4a89dbfc 与管线报告 880b6891 与内容清单 f4ca842b），同窗他会话笔共存如实记
+- 三仓 reconcile 终读数（归并后主树 1.39.0 正典 CLI 形）：cert_missing 三仓俱零，cert_backfilled 即 tools 5 与 engine 3，cert_writtenoff 即 math 2，unrouted 俱零即本批零新增路由缺口；退出码一系 session_orphan 与 unbypassed 跨批存量（各批 closeguard 预收与历史遗留，不代清红线）非本批新增；本批自产提交分类俱正即 settle 三笔 routed、归并两笔 routed_merge、预收两笔 bypass 已登记
+- 收约补笔：本节与 F-5 即本笔，经直改链笔申报与 --no-verify 加 bypass 登记通道提交（anchorskill 与 certarch 先例同形）
+- 投影件 recclsf-ledger.json 的 live_retest_at_close 字段载「待回填」，实态以本节跑步机 live 复读段为准（投影件随段一定格，补笔不回改已认证件）
 
 ## 大白话节
 
