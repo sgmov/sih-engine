@@ -1,0 +1,364 @@
+{
+  "alarms": [
+    {
+      "event_id": "7750a49c-2604-478a-8873-90ba1309ef46",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T00:17:36.371582+00:00",
+      "event_hash": "fc1e73ec058836d458e1ba5ca020d4bbc6017559051f2ad084d32ed05f25bef0"
+    },
+    {
+      "event_id": "5d9b4983-6f0b-41ce-a872-46c9902a6c04",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T00:17:36.440844+00:00",
+      "event_hash": "af2fbcb8cabcb252d727945bf6d430eda9966163f083f2174b9991f26862daf3"
+    },
+    {
+      "event_id": "57d640cc-3499-4814-9fd9-de89ac95e378",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T00:17:36.504162+00:00",
+      "event_hash": "7699a880e884fe88418565362c8625b6eff8c01871e627efab15a4b22b23c727"
+    },
+    {
+      "event_id": "0c6d1c6a-2687-4f09-b462-29fd0697139a",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T03:10:43.782342+00:00",
+      "event_hash": "4b24ce70284c7ef515394e6fb9e73aebd63dc2ed244e2f90b74d5ac122a618a7"
+    },
+    {
+      "event_id": "24a1ea25-3ccb-4f7c-8271-bf5b0cede4d6",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T03:10:43.871194+00:00",
+      "event_hash": "b61133092e87491816308a74d79abc4a8e49cb24b342af24b189ebf0795ea2ee"
+    },
+    {
+      "event_id": "58c815c8-b791-4533-978d-71c1c879e970",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T03:10:43.946926+00:00",
+      "event_hash": "cb6d28919644264a3ee3b6754ac3027b0ef901d384ea5dc30e7f3ab9c43f297e"
+    },
+    {
+      "event_id": "546535e4-d63c-4019-9f1c-76078ad8cb26",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T03:36:31.816652+00:00",
+      "event_hash": "f550293f05d20202ff67644c3bfef65adf6e2de3529d03a9f7f49069acc53ea7"
+    },
+    {
+      "event_id": "99f1b4cf-2160-4224-8cf1-76ec5cc4b068",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T03:36:31.906902+00:00",
+      "event_hash": "5a61b498570900c3c063ffef2d545d03b97a2554bebafe32ca35ac4a843154cd"
+    },
+    {
+      "event_id": "41f15e38-8c2f-4238-adb7-6a51a1c79ca1",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T03:36:31.985148+00:00",
+      "event_hash": "3cd0ffd5e41685625412ad0524e137beaedc1846ffdcc3b5186ed5cdb0c75276"
+    },
+    {
+      "event_id": "94a1bfb7-b9ca-46c4-b04c-5eb3e68f33e8",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T04:02:45.604198+00:00",
+      "event_hash": "49e81f7159d6fda4d944cbf08bff2392c1c197914809afc6cb91880ad053150c"
+    },
+    {
+      "event_id": "4f3f623e-69ec-4a30-8aa9-24227a0d813f",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T04:02:45.680940+00:00",
+      "event_hash": "4d5857b5cd8d3ce7aa0479bb0ac5f1e8d766f89c709a5bdce0e93873f3214699"
+    },
+    {
+      "event_id": "02cf2545-3c92-4656-8062-cef71471e447",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T04:02:45.750563+00:00",
+      "event_hash": "76435fa19b4ef43325aeae04b540cee177f556f0087505064a8b759b1884545b"
+    },
+    {
+      "event_id": "165e08ce-446e-4041-90c0-c017adfa1433",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T04:36:39.350736+00:00",
+      "event_hash": "7dd405549e7063645d375c8ac39106898b15b07df794a2d89e3c0a33b94f0a81"
+    },
+    {
+      "event_id": "380d85bc-841c-4a71-84d2-9d914a9ac622",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T04:36:39.427989+00:00",
+      "event_hash": "acb3d2696f0702667168104d7a1ef986fcf25b4596fee1dbe4973f5803ef5144"
+    },
+    {
+      "event_id": "12fae956-dde7-443d-aa14-6ce9e115d0eb",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T04:36:39.497553+00:00",
+      "event_hash": "5091621af0c1a8297cac54b7367794a053074f99d12bc2a490d8dd31c4bfc205"
+    },
+    {
+      "event_id": "1bc32e11-d117-4c75-8fb6-3d188316bc08",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T04:36:52.951917+00:00",
+      "event_hash": "023c6f81f812bb1358df35b1dcb483607f0f3da5b0702b541f7107a8f9c07af5"
+    },
+    {
+      "event_id": "d0616104-9220-4a80-9d59-a1c5eeee757e",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T04:36:53.027297+00:00",
+      "event_hash": "85c9e16902f24c3fd3fe630e9f10d9bc3e6f305dcca620b866239fb4dfb238c5"
+    },
+    {
+      "event_id": "c1d9b8a4-4e5c-404a-8492-7c4601c4f640",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T04:36:53.097467+00:00",
+      "event_hash": "792da42b3a924407631032b0bd8145ac8a1d5b29fbd459f404cd8ebe7ee0aba9"
+    },
+    {
+      "event_id": "a38c7982-f6f4-43e1-a688-bd62207afb9a",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T04:38:25.797144+00:00",
+      "event_hash": "49a84461860c69f09a90f82644dec1eca86bb319081ba49a8d6259c979f84101"
+    },
+    {
+      "event_id": "9839ef6d-ae15-41ca-8c33-155931b2d1f5",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T04:38:25.897160+00:00",
+      "event_hash": "90af8a157d9b8f5cf9de5dc4e54cf31953c5e153e1501c1688d0adf732185a0b"
+    },
+    {
+      "event_id": "f81e76a0-cc75-48aa-8b5b-3688189aa856",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T04:38:25.970573+00:00",
+      "event_hash": "d64d8db6f6b371dc05bdf83c29d8b4e085037b1a61234d13029cc6d4e48fb656"
+    },
+    {
+      "event_id": "c2249d87-cc48-41b0-8bd1-c0a07a489762",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T05:20:39.765298+00:00",
+      "event_hash": "b5b1ec068452fab2d85d20b7f9b21c4190b39f4d0c3e28bf855e5bf530ff4ef9"
+    },
+    {
+      "event_id": "c1e9affb-bbc9-4214-85c9-e42a8e7987d0",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T05:20:39.845972+00:00",
+      "event_hash": "838440e14070504ea44fa6ccae4a46589775d39f79af85bd513a6a2c8007b589"
+    },
+    {
+      "event_id": "b7653f09-ea64-49b6-922a-37332136bcc4",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T05:20:39.930835+00:00",
+      "event_hash": "860909de4aa0e24a699d070e98fe9f996ce04307a0d1f71f9ebeb22ced63b835"
+    },
+    {
+      "event_id": "2d1803a1-8c36-43fc-abc7-33dd95e722f3",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T05:21:37.938793+00:00",
+      "event_hash": "c0e50e667bd2ab05655aa0c80a132782f31eb8bb90f2f2fe0e94f2d3f6722224"
+    },
+    {
+      "event_id": "cdaa0176-198d-464a-92b1-f0f6185e8b16",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T05:21:38.021146+00:00",
+      "event_hash": "6b8ab8ee100799264f4600502d221ae435abcb7613a92f691092706182d3d798"
+    },
+    {
+      "event_id": "266b3069-03e6-4783-a2b0-50aaedeeabcb",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T05:21:38.100840+00:00",
+      "event_hash": "b63189c1d2b3deec3e79f10bb2a8686b427e24e3a844b8cb38e3038f0143ddb0"
+    },
+    {
+      "event_id": "f5ee748f-0697-4d8e-9271-a2097bd52838",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T06:17:00.704912+00:00",
+      "event_hash": "cdc30056367e134b3bab0b38f5fc2e6281140b02e168d941df1e4972d3e47ccd"
+    },
+    {
+      "event_id": "7c0e49db-402d-4371-85af-a4809360c82f",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T06:17:00.786738+00:00",
+      "event_hash": "db784fd9586a2638656c9d8b4453c7722eb0c96bddc3e7bc81e5f7921037f8f5"
+    },
+    {
+      "event_id": "f9933119-78dd-4b6a-be50-530d21256f71",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T06:17:00.860019+00:00",
+      "event_hash": "436671e9755150ca2898918568de45a64d3278c40f9b4b9514643fd0699f4d50"
+    },
+    {
+      "event_id": "60009557-daf6-43da-b1ea-8ac29ddb6fa5",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T08:17:54.819801+00:00",
+      "event_hash": "e45d61fedba95fea867e5e10e976860aee5040bbeac67544e0f65e9f9d6682e1"
+    },
+    {
+      "event_id": "d56e3b53-baef-4cdb-bd1c-eccc27ddf2ea",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T08:17:54.998278+00:00",
+      "event_hash": "635bcfcf73aed60b8c45c73f200eb4f0b5b87752753434713a9d535e9cee1cb1"
+    },
+    {
+      "event_id": "2cf1a66a-613d-485a-a281-c1a02b666ae7",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T08:17:55.149520+00:00",
+      "event_hash": "2ba9981a20186541d69df84c167763fa71a7a0a8c3e63aa3789e0ed43d03513c"
+    },
+    {
+      "event_id": "d2de5b5a-3932-4bbd-bbcf-242440f3e11e",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T10:16:08.118869+00:00",
+      "event_hash": "7b189641f71d94729e7900ee577c826b0021728581c7dca6d7589b8df9373413"
+    },
+    {
+      "event_id": "35a3da05-3b91-4913-83b7-df7413b57181",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T10:16:08.208196+00:00",
+      "event_hash": "c143856425ad4b1ced966f572975bd7923c47c00a36e8d7193cb8e500b85f2e4"
+    },
+    {
+      "event_id": "a5fb3692-532e-4272-a6f3-753f22be0116",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T10:16:08.288891+00:00",
+      "event_hash": "72153c8247880b35f4233660f166b92692240727ade8de8afcca185b440abaa9"
+    },
+    {
+      "event_id": "32e812a2-1f26-4faa-a3eb-e3a404abe32a",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T10:47:46.478740+00:00",
+      "event_hash": "19957a431932720c6c020d48d9fd7087e91d7a34e9fa75efa72402bfd6b6e018"
+    },
+    {
+      "event_id": "d783b9df-155d-4731-ab97-4b7d66912ba6",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T10:47:46.560772+00:00",
+      "event_hash": "d462caf30508ed865ddb791be9318590d957b4b863ea8a8babf1041bcc81698b"
+    },
+    {
+      "event_id": "e932869a-6585-4681-83f8-16ce860526d9",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T10:47:46.634662+00:00",
+      "event_hash": "e8b13fe01304fb21c06b87a0929cd37a86b73c3fc07f1e0c6d7ed5c944b7b4ea"
+    },
+    {
+      "event_id": "b639aa7b-97c9-4a41-9723-b75b561682ee",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T11:20:29.028553+00:00",
+      "event_hash": "516863b4383fd0a8d68cf1bdfa4447b2061e2c24b30359e69adde98016d9f0b3"
+    },
+    {
+      "event_id": "a66bb3ca-e679-4755-90a7-56546277fb76",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T11:20:29.112547+00:00",
+      "event_hash": "78b8dc14c48b19205a78a1d9fdcde9d7b26d0383070ff3fafaa74b526ec26d18"
+    },
+    {
+      "event_id": "8262103f-4a3c-401a-ac37-053557926df3",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T11:20:29.187589+00:00",
+      "event_hash": "d18691135835c24f84b463471726cb2ff86980566ffc8f69051a757a1290ba0c"
+    },
+    {
+      "event_id": "f605d432-618b-4fd7-8415-3ddbb64a7816",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T11:20:37.396507+00:00",
+      "event_hash": "d3e7db5ade2f2cb982a9d4d74e6a855cb13046aef2c16425c4c5bf3ea6f7d5d0"
+    },
+    {
+      "event_id": "80735380-bcc4-4d40-add2-b581587a3c3f",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T11:20:37.480896+00:00",
+      "event_hash": "a8459210c710568966914a68198926ab687ad7d4e850ee6d768b72302a05059c"
+    },
+    {
+      "event_id": "8e3ab1ae-a10d-436d-879d-19099cf8ced5",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T11:20:37.560129+00:00",
+      "event_hash": "38161d884f830a0b0aaaa2a78f42f97d51959497744c2fb965952442a2caa078"
+    },
+    {
+      "event_id": "b03de812-5665-4f05-b216-e1c7110c0778",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T11:22:52.127965+00:00",
+      "event_hash": "f90030ea0c4538ccdbe60b41d161e397ee03b5e216478cc0751b54cb0c8cbc91"
+    },
+    {
+      "event_id": "feeed10e-5bb5-4e3b-9278-b26bf5661ea0",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T11:22:52.209626+00:00",
+      "event_hash": "b9b0a0df902a812f885c6c2349a168fe49b258fbef76a904c18ccd63e779d5c4"
+    },
+    {
+      "event_id": "ce305382-8ef4-45a8-b4c0-299febab2fc0",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T11:22:52.284765+00:00",
+      "event_hash": "6cd740bd17d250e558a9498a6b3b4b1f95bea54212bbb1719a5223b1712b6d2b"
+    },
+    {
+      "event_id": "de815f2f-3c31-454f-9af0-69e00c91d09c",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "timestamp": "2026-09-08T11:45:15.371927+00:00",
+      "event_hash": "824a0580964436e63ba10521fa66c044b5ffa972137aeb7768ce7e0f698c0657"
+    },
+    {
+      "event_id": "e02e96a0-bf71-4a11-9ebd-7b3269700d53",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-adoption-agents",
+      "timestamp": "2026-09-08T11:45:15.455747+00:00",
+      "event_hash": "2174e88f56f2e16d79bee79e459811e3fe9906856ae284560457af452a977ae8"
+    },
+    {
+      "event_id": "978cbdc7-c039-4984-9a3b-bd948e0757b6",
+      "event_type": "reading_recorded",
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "timestamp": "2026-09-08T11:45:15.533627+00:00",
+      "event_hash": "199ce04ca8f509db00601bc04bb2b6833060224980eaf220adb0dadb7bc4463c"
+    }
+  ],
+  "total": 51,
+  "exit_code_suggested": 1,
+  "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-08.ndjson"
+}

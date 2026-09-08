@@ -1,0 +1,73 @@
+{
+ "leg": 1,
+ "binary": "sih-engine/target/debug/viewer",
+ "binary_sha256": "afbe848c6607e470e8d9a3963270005f11f437c79e7fad714d09ee19373b4968",
+ "binary_mtime": "2026-09-08T18:59 (local)",
+ "trail": "sih-engine/sih/event/trail/2026-09-08.ndjson",
+ "dualrun": {
+  "alarms": {
+   "same_params": "--trail <2026-09-08>",
+   "byte_identical": true,
+   "exit_code": 1,
+   "sha256_run1": "a1406e57ac2d93f767e4743eb1cb9fe8ebffc0ea0a002988445189c11b86e970",
+   "sha256_run2": "a1406e57ac2d93f767e4743eb1cb9fe8ebffc0ea0a002988445189c11b86e970",
+   "bytes": 15777,
+   "reading": {
+    "total": 51,
+    "exit_code_suggested": 1,
+    "by_event_type": {
+     "reading_recorded": 51
+    }
+   }
+  },
+  "heartbeat": {
+   "same_params": "--trail <2026-09-08> --at 2026-09-08",
+   "byte_identical": true,
+   "exit_code": 0,
+   "sha256_run1": "86f5a66c3843163836d54443f8a1d169fd6cf70087edb9cb59f665101db92e06",
+   "sha256_run2": "86f5a66c3843163836d54443f8a1d169fd6cf70087edb9cb59f665101db92e06",
+   "bytes": 1173,
+   "reading": {
+    "reference_date": "2026-09-08",
+    "parking_entries": [
+     {
+      "entry_id": "pk-078",
+      "state_label": "在泊未到期"
+     }
+    ],
+    "consumable_count": 51,
+    "recent_readings": 3
+   }
+  },
+  "settle": {
+   "same_params": "--trail <2026-09-08> --date 2026-09-08",
+   "byte_identical": true,
+   "exit_code": 0,
+   "sha256_run1": "c0b8b090918fbabfe75fe68a8093ab3b3d34f20d7ed9426af59814087979e5f7",
+   "sha256_run2": "c0b8b090918fbabfe75fe68a8093ab3b3d34f20d7ed9426af59814087979e5f7",
+   "bytes": 1002,
+   "reading": {
+    "date": "2026-09-08",
+    "total_events": 216,
+    "certification_count": 122,
+    "intent_count": 21,
+    "event_type_counts": {
+     "certification_completed": 122,
+     "crosscheck_completed": 13,
+     "direct_edit_completed": 2,
+     "intent_refined": 21,
+     "parking_entered": 1,
+     "parking_exited": 6,
+     "reading_recorded": 51
+    },
+    "parking_review": [
+     {
+      "entry_id": "pk-078",
+      "state_label": "在泊未到期"
+     }
+    ]
+   }
+  }
+ },
+ "note": "alarms 双跑退出码 1 系 alarms 非空即 exit_code_suggested 语义（viewer.rs 头注退出码三值），双跑一致；heartbeat 与 settle 退出码 0"
+}
