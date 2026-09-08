@@ -660,6 +660,7 @@ pub struct TextFinding {
 
 /// 解析 manifest 加载规则集
 pub fn load_pack(pack_name: &str) -> Result<(DomainSpec, Vec<RuleEntry>), String> {
+crate::scrutinator::asset::check_envelope(pack_name)?;
     let manifest_text = crate::scrutinator::asset::manifest(pack_name);
     if manifest_text.is_empty() {
         return Err(format!("未知名包: {pack_name}"));

@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "parking",
+  "family": "attractor",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "routes.toml"
+  ]
+}

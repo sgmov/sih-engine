@@ -98,6 +98,52 @@ pub struct Pack {
     pub siding_surplus_exempt_kinds: Vec<String>,
 }
 
+
+/// 信封校验（SPEC-022）：缺信封拒包、字段非法拒包、配置体缺席拒包。
+/// 先信封后正文：本函数在 load_pack 读任何配置体之前调用。
+fn validate_envelope(pack_dir: &Path) -> Result<(), PyError> {
+    let path = pack_dir.join("envelope.json");
+    if !path.is_file() {
+        return Err(verr(format!("envelope missing: {}", pack_dir.display())));
+    }
+    let text = fs::read_to_string(&path).map_err(|e| {
+        verr(format!("envelope invalid: {}: unreadable: {}", pack_dir.display(), e))
+    })?;
+    let v: serde_json::Value = serde_json::from_str(&text).map_err(|e| {
+        verr(format!("envelope invalid: {}: {}", pack_dir.display(), e))
+    })?;
+    if v.get("envelope_version").and_then(|x| x.as_i64()) != Some(1) {
+        return Err(verr(format!("envelope invalid: {}: envelope_version must be 1", pack_dir.display())));
+    }
+    let id_ok = v.get("id").and_then(|x| x.as_str()).map(|s| !s.is_empty()).unwrap_or(false);
+    if !id_ok {
+        return Err(verr(format!("envelope invalid: {}: id must be non-empty string", pack_dir.display())));
+    }
+    let family_ok = v.get("family").and_then(|x| x.as_str())
+        .map(|s| matches!(s, "scrutinator" | "attractor" | "formatter" | "nomenclator"))
+        .unwrap_or(false);
+    if !family_ok {
+        return Err(verr(format!("envelope invalid: {}: family illegal", pack_dir.display())));
+    }
+    let bt_ok = v.get("body_type").and_then(|x| x.as_str())
+        .map(|s| matches!(s, "config" | "doc_spec"))
+        .unwrap_or(false);
+    if !bt_ok {
+        return Err(verr(format!("envelope invalid: {}: body_type illegal", pack_dir.display())));
+    }
+    let bodies = match v.get("bodies").and_then(|x| x.as_array()) {
+        Some(a) if !a.is_empty() && a.iter().all(|x| x.is_string()) => a,
+        _ => return Err(verr(format!("envelope invalid: {}: bodies must be non-empty string list", pack_dir.display()))),
+    };
+    for b in bodies {
+        let name = b.as_str().unwrap_or_default();
+        if !pack_dir.join(name).is_file() {
+            return Err(verr(format!("envelope body missing: {}: {}", pack_dir.display(), name)));
+        }
+    }
+    Ok(())
+}
+
 /// 读包目录下 manifest.toml 与 routes.toml，全量校验后返回 Pack。
 ///
 /// 错误信封消息承围堰 PackError f-string 原文形（对表 pack.py）。
@@ -105,6 +151,7 @@ pub fn load_pack(pack_dir: &Path) -> Result<Pack, PyError> {
     if !pack_dir.is_dir() {
         return Err(verr(format!("pack directory missing: {}", pack_dir.display())));
     }
+    validate_envelope(pack_dir)?;
     let manifest = load_toml_file(&pack_dir.join("manifest.toml"), "manifest.toml")?;
     let routes = load_toml_file(&pack_dir.join("routes.toml"), "routes.toml")?;
     let (name, version, domain) = parse_manifest(&manifest, pack_dir)?;
@@ -1153,6 +1200,8 @@ mod tests {
         let dir = std::env::temp_dir().join(format!("route-pack-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(dir.join("p1")).unwrap();
+        // SPEC-022 硬切换：信封在位使拒包位到达体校验（缺信封形态归 t4_error_envelope_shapes）
+        fs::write(dir.join("p1").join("envelope.json"), "{\"envelope_version\": 1, \"id\": \"p1\", \"family\": \"attractor\", \"body_type\": \"config\", \"bodies\": [\"manifest.toml\", \"routes.toml\"]}").unwrap();
         // manifest 缺 domain
         fs::write(dir.join("p1").join("manifest.toml"), "name = \"x\"\nversion = \"1\"\n").unwrap();
         fs::write(dir.join("p1").join("routes.toml"), "[defaults]\npass_route = \"mainline\"\n\n[alarms]\nsiding_surplus_threshold = 5\nmainline_starvation_threshold = 1\n").unwrap();
@@ -1187,10 +1236,11 @@ mod tests {
         let err = load_pack(&dir.join("p1")).unwrap_err();
         assert!(err.message().contains("siding_surplus_exempt_kinds entries must be one of"), "{}", err);
         assert!(err.message().ends_with("got gate_hod"), "{}", err);
-        // routes.toml 缺席
+        // routes.toml 缺席（SPEC-022：信封体缺席校验先于正文装载）
         fs::remove_file(dir.join("p1").join("routes.toml")).unwrap();
         let err = load_pack(&dir.join("p1")).unwrap_err();
-        assert!(err.message().contains("routes.toml missing"), "{}", err);
+        assert!(err.message().contains("envelope body missing"), "{}", err);
+        assert!(err.message().ends_with("routes.toml"), "{}", err);
         // 包目录缺席
         let err = load_pack(&dir.join("nope")).unwrap_err();
         assert_eq!(err.message(), format!("pack directory missing: {}", dir.join("nope").display()));
@@ -1204,6 +1254,8 @@ mod tests {
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(dir.join("pack")).unwrap();
         fs::write(dir.join("pack").join("manifest.toml"), "name = \"badpack\"\nversion = \"0.1.0\"\n\n[domain]\ninclude = [\"**/**\"]\nexclude = []\n").unwrap();
+        // SPEC-022 硬切换：先补信封使拒包位到达 kind 校验；缺信封形态另测于下方
+        fs::write(dir.join("pack").join("envelope.json"), "{\"envelope_version\": 1, \"id\": \"badpack\", \"family\": \"attractor\", \"body_type\": \"config\", \"bodies\": [\"manifest.toml\", \"routes.toml\"]}").unwrap();
         fs::write(dir.join("pack").join("routes.toml"), "[[predicates]]\nid = \"X001\"\nkind = \"no_such_kind\"\nroute_on_fail = \"siding\"\n\n[defaults]\npass_route = \"mainline\"\n\n[alarms]\nsiding_surplus_threshold = 5\nmainline_starvation_threshold = 1\n").unwrap();
         let result = run_route(&dir.join("pack"), None, &[]);
         let (envelope, code) = result.unwrap_err();
@@ -1215,7 +1267,15 @@ mod tests {
         .replace("@PACKDIR@", &dir.join("pack").to_string_lossy());
         // 信封文本加换行即二进制 stdout 形（围堰 print 形）
         assert_eq!(format!("{envelope}\n"), expected_template, "拒包信封须与冻结形逐字节一致");
-        let _ = fs::remove_dir_all(&dir);
+        // SPEC-022 硬切换形态：缺信封即拒（信封层先于正文校验）
+        let dir2 = std::env::temp_dir().join(format!("route-env-missing-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&dir2);
+        fs::create_dir_all(dir2.join("pack")).unwrap();
+        let result2 = run_route(&dir2.join("pack"), None, &[]);
+        let (envelope2, code2) = result2.unwrap_err();
+        assert_eq!(code2, 2);
+        assert!(envelope2.contains("envelope missing"), "{}", envelope2);
+        let _ = fs::remove_dir_all(&dir2);
     }
 }
 

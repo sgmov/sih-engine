@@ -1,0 +1,332 @@
+{
+ "batch": "packenv-solo",
+ "date": "2026-09-08",
+ "kind": "migration-reconciliation",
+ "rows": [
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/attractor/packs/core",
+   "id": "core",
+   "family": "attractor",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "acd455bbf040",
+     "worktree_sha256": "acd455bbf040",
+     "unchanged": true
+    },
+    "routes.toml": {
+     "head_sha256": "92d2bd7354a3",
+     "worktree_sha256": "92d2bd7354a3",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/attractor/packs/parking",
+   "id": "parking",
+   "family": "attractor",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "d3b858d8c96f",
+     "worktree_sha256": "d3b858d8c96f",
+     "unchanged": true
+    },
+    "routes.toml": {
+     "head_sha256": "e8fe62dcf64b",
+     "worktree_sha256": "e8fe62dcf64b",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/ask3",
+   "id": "ask3",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "4bc094b69c7f",
+     "worktree_sha256": "4bc094b69c7f",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "71bd287b642d",
+     "worktree_sha256": "71bd287b642d",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/des-001",
+   "id": "des-001",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "c56ea184a737",
+     "worktree_sha256": "c56ea184a737",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "2e8deed02e70",
+     "worktree_sha256": "2e8deed02e70",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/des-001-mathe",
+   "id": "des-001-mathe",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "1fd191b5e701",
+     "worktree_sha256": "1fd191b5e701",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "7755beefc93b",
+     "worktree_sha256": "7755beefc93b",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/ask3",
+   "id": "ask3",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "4bc094b69c7f",
+     "worktree_sha256": "4bc094b69c7f",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "71bd287b642d",
+     "worktree_sha256": "71bd287b642d",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/des-001",
+   "id": "des-001",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "c56ea184a737",
+     "worktree_sha256": "c56ea184a737",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "2e8deed02e70",
+     "worktree_sha256": "2e8deed02e70",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/des-001-mathe",
+   "id": "des-001-mathe",
+   "family": "scrutinator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "1fd191b5e701",
+     "worktree_sha256": "1fd191b5e701",
+     "unchanged": true
+    },
+    "rules.toml": {
+     "head_sha256": "7755beefc93b",
+     "worktree_sha256": "7755beefc93b",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/core",
+   "id": "core",
+   "family": "attractor",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "acd455bbf040",
+     "worktree_sha256": "acd455bbf040",
+     "unchanged": true
+    },
+    "routes.toml": {
+     "head_sha256": "92d2bd7354a3",
+     "worktree_sha256": "92d2bd7354a3",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/parking",
+   "id": "parking",
+   "family": "attractor",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "d3b858d8c96f",
+     "worktree_sha256": "d3b858d8c96f",
+     "unchanged": true
+    },
+    "routes.toml": {
+     "head_sha256": "e8fe62dcf64b",
+     "worktree_sha256": "e8fe62dcf64b",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/round",
+   "id": "round",
+   "family": "attractor",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "ce607d2d0dc7",
+     "worktree_sha256": "ce607d2d0dc7",
+     "unchanged": true
+    },
+    "routes.toml": {
+     "head_sha256": "8f039e614ea6",
+     "worktree_sha256": "8f039e614ea6",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "formatter/packs/general-v1",
+   "id": "general-v1",
+   "family": "formatter",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "adf00868dfcc",
+     "worktree_sha256": "adf00868dfcc",
+     "unchanged": true
+    },
+    "operations.toml": {
+     "head_sha256": "6142dd7a11c7",
+     "worktree_sha256": "6142dd7a11c7",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "formatter/packs/json-canonical-v1",
+   "id": "json-canonical-v1",
+   "family": "formatter",
+   "body_type": "config",
+   "bodies": {
+    "manifest.toml": {
+     "head_sha256": "4f71aa77ef34",
+     "worktree_sha256": "4f71aa77ef34",
+     "unchanged": true
+    },
+    "operations.toml": {
+     "head_sha256": "386143a3d536",
+     "worktree_sha256": "386143a3d536",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": true
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "nomenclator/packs/core",
+   "id": "core",
+   "family": "nomenclator",
+   "body_type": "config",
+   "bodies": {
+    "manifest.json": {
+     "head_sha256": "e2bedb8fcdca",
+     "worktree_sha256": "e2bedb8fcdca",
+     "unchanged": true
+    },
+    "terms.json": {
+     "head_sha256": "7b1f6c2e4245",
+     "worktree_sha256": "7b1f6c2e4245",
+     "unchanged": true
+    },
+    "lazy.json": {
+     "head_sha256": "8d942038c2bc",
+     "worktree_sha256": "e6d1ed543e5a",
+     "unchanged": false
+    },
+    "dead.json": {
+     "head_sha256": "9a847536d38f",
+     "worktree_sha256": "9a847536d38f",
+     "unchanged": true
+    },
+    "candidates.json": {
+     "head_sha256": "0761f53f3cfe",
+     "worktree_sha256": "0761f53f3cfe",
+     "unchanged": true
+    },
+    "anchors.json": {
+     "head_sha256": "82fa1cc26bb9",
+     "worktree_sha256": "82fa1cc26bb9",
+     "unchanged": true
+    }
+   },
+   "envelope_added": true,
+   "body_bytes_unchanged": false
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "nomenclator/packs/core",
+   "id": "core",
+   "exception": "lazy.json 正形化（packhyg 收编规则）",
+   "pre_sha256": "8d942038",
+   "post_sha256": "e6d1ed54",
+   "semantic_equal": true,
+   "diff_class": "whitespace-only",
+   "cause": "主树存量非规范形非本批正文语义改动"
+  }
+ ]
+}

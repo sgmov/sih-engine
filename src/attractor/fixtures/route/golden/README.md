@@ -36,3 +36,8 @@ badpack-kind/expected.json 含 `@PACKDIR@` token（包目录绝对路径），
 一致（输入 json 同源）、参照时间一致（同值同形）、绝对路径形态运行。
 活体双跑对表证据：sih/event/plan/autoflow2-solo-materials/route-double-run-cmp.log
 （三场景 cmp 全 IDENTICAL）。
+
+
+## 信封随冻注记（packenv-solo 2026-09-08）
+
+SPEC-022 硬切换随冻：badpack-kind/input/pack 补 envelope.json（场景输入结构位，manifest 与 routes 字节零动），期望件零变即 kind 拒包报文逐字节原冻；缺信封拒包形态由引擎 t4_error_envelope_shapes 新断言与工具侧负例读数承载。

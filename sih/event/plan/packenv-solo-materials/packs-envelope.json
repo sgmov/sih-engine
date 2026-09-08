@@ -1,0 +1,224 @@
+{
+ "spec": "envelope-spec",
+ "batch": "packenv-solo",
+ "date": "2026-09-08",
+ "packs": [
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/attractor/packs/core",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "core",
+    "family": "attractor",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "routes.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/attractor/packs/parking",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "parking",
+    "family": "attractor",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "routes.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/ask3",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "ask3",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/des-001",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "des-001",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-engine",
+   "pack_dir": "src/scrutinator/packs/des-001-mathe",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "des-001-mathe",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/ask3",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "ask3",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/des-001",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "des-001",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "scrutinator/packs/des-001-mathe",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "des-001-mathe",
+    "family": "scrutinator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "rules.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/core",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "core",
+    "family": "attractor",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "routes.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/parking",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "parking",
+    "family": "attractor",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "routes.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "selector/packs/round",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "round",
+    "family": "attractor",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "routes.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "formatter/packs/general-v1",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "general-v1",
+    "family": "formatter",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "operations.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "formatter/packs/json-canonical-v1",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "json-canonical-v1",
+    "family": "formatter",
+    "body_type": "config",
+    "bodies": [
+     "manifest.toml",
+     "operations.toml"
+    ]
+   },
+   "validation": "pass"
+  },
+  {
+   "repo": "sih-tools",
+   "pack_dir": "nomenclator/packs/core",
+   "envelope": {
+    "envelope_version": 1,
+    "id": "core",
+    "family": "nomenclator",
+    "body_type": "config",
+    "bodies": [
+     "manifest.json",
+     "terms.json",
+     "lazy.json",
+     "dead.json",
+     "candidates.json",
+     "anchors.json"
+    ]
+   },
+   "validation": "pass"
+  }
+ ],
+ "counts": {
+  "total": 14
+ }
+}
