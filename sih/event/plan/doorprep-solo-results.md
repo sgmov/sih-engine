@@ -33,14 +33,25 @@
 
 ## 五、双仓结算
 
-| 仓 | 段 1 | 段 2 | 归并 |
-|---|---|---|---|
-| sih-tools | （见 §六回填） | | |
-| sih-engine | （见 §六回填） | | |
+| 仓 | 段 1 | 归并 |
+|---|---|---|
+| sih-tools | `8ce25bbd` | `28587566` merge: doorprep-solo 副本归并 |
+| sih-engine | `7e08831` | `05bee47` merge: doorprep-solo 副本归并 |
 
 ## 六、收约对表节（收约后回填）
 
-待收约后回填：双仓提交号与归并提交、链 verify 读数、reconcile 读数、心跳读数。
+主树读数（2026-09-07 收约后即时）：
+
+| 检查 | 结果 |
+|---|---|
+| flow-v1 与模板件主树落位 | ✅ `sih-tools/incubation/packs/flow-v1/flow-v1.json` 与 `sih-tools/incubation/TASK-PACKAGE-SDD-TEMPLATE.md` 归并在位 |
+| TASK-PACKAGE-TEMPLATE 原件 | ✅ sha256 `487bf0ed…812ee` 与批前对表零变（F-4） |
+| 链 verify | ✅ valid，188 笔（收约时点） |
+| reconcile | unrouted 零；cert_missing 4/3 与批一收约后同态零新增；unbypassed 98/67（closeguard 机器提交与本批 bypass-orphan 绕行登记 1 笔）；session_orphan 19/24 同态 |
+| 泊界心跳 | 工具线绿零告警；引擎线既知告警 1 同态零新增 |
+| 收约碰撞 | 无主闸拦 16 件（14 册 CALL-LOG 投影腿加 calls.ndjson 系 calllog 直改车道活面含本批追加，attnanchor/anchor.py 系在途批活写），按闸面第三通道 `close --bypass-orphan` 显式绕行落 bypass 台账留痕，事由全文在 bypass 行 |
+
+**判定**：F-1 至 F-4 全过；两道门备料三件（流程包数据形、SDD 形模板、样例红绿双证）在役，两道门实装批接线对象即此三件。
 
 ## 七、越线与误差申报
 

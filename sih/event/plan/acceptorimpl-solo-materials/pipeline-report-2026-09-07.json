@@ -1,0 +1,32 @@
+{
+ "batch": "acceptorimpl-solo",
+ "date": "2026-09-07",
+ "tests": {
+  "first_red": "空实现 pytest 3 failed 红证归档 red-evidence/first-red-pytest.txt（另 4 passed 为静态断言与空腹 grep 与 stub 形缺席包退出码二——不依赖实装）",
+  "final": "pytest 7/7 passed exit 0（化格归一后复验仍绿）"
+ },
+ "three_state": {
+  "first_pack": "exit 0 四查全过含 declaration 声明范围字段",
+  "drift": "exit 1 findings 命中 TC-002 violation 带原始事实不归因",
+  "bad_redhash": "exit 1 命中 TC-003 missing 缺件态",
+  "missing_pack": "exit 2",
+  "double_run": "同参两跑 stdout 逐字节一致"
+ },
+ "formatter": {
+  "json-canonical-v1": "判定包三件归一落笔（exit 1 属治理窄域正常）",
+  "general-v1": "CONTRACT.md 归一",
+  "frozen_note": "frozen 全报告冻结件不归一——逐字节冻结物非规范 JSON 文档，与 checker 线精简形 golden 的 json.load 重放本质不同，选择性申报"
+ },
+ "scrutinator": {
+  "pack": "des-001",
+  "note": "全域外 exit-2 如实记档不属违规"
+ },
+ "nomenclator": {
+  "first_run_exit": 0,
+  "note": "零违例首跑绿（受检文档用 TDD 验收工具指称规避懒波词面）"
+ },
+ "dev_reds": "开发期中途红五笔（init docstring 未闭合 SyntaxError、TC-004 校验器误一刀切、PACK_DIR 层位错两笔、被检命令 cwd 与 -m 形缺失）均在实装至绿窗口修复；先红后绿红证以空实现归档件为准",
+ "incident": "无事故；上批纪律全数吸收（直出位落位、--sessions 一次过、verify 同参形首发 identical、当日 seat-baseline 一步到位）",
+ "validate_relation": "无退役对象；本工具为新建，检查器线 golden 与红证只读引用零触碰",
+ "v0_declaration": "三态归因全量机制与申报影响集包含判定属基线向量管理工具后继；CONTRACT 与本报告双申报不伪装已全"
+}

@@ -32,7 +32,7 @@ diff 逐行呈报：terms.json 未提交修改为纯新增两词条（namespace-
 ## 四、facet 与得一
 
 - 命题 gid m-chaingreen-1，9 发采样，9/9 comply 变卦 0%，谨慎信号 0/9，规约引用 baseline_4，闸门裁决 stable_clear
-- 得一三步：attractor check 退出码 0 零告警 direction comply；verify identical 裁决通过；sign 终签在链 event_hash `04d435609994f90c3d91f28850b607a6c027166dffeb89ccf9176ae130306416`（doc_id crosscheck-m-chaingreen-1），重放锚 `proposition/DES/m-chaingreen-1/m-chaingreen-1-signcheck.json`
+- 得一三步：attractor check 退出码 0 零告警 direction comply；verify identical 裁决通过；sign 终签在链 event_hash `e409a0f6b305b5ab`（crosscheck-m-chaingreen-1，竞态重建后笔，初笔 04d43560 随 §七 7 事故卷走已申报），重放锚 `proposition/DES/m-chaingreen-1/m-chaingreen-1-signcheck.json`
 - 席位当日基线：退役探针 score 模式（离线零消耗）为本席位落标定行（核哈希 c0110e40 配对承 idcore-solo），行移入在册账本照 facefit-solo 先例如实记；断裂与垫片申报见 §七
 
 ## 五、管线读数
@@ -63,7 +63,29 @@ diff 逐行呈报：terms.json 未提交修改为纯新增两词条（namespace-
 4. watch 对表呈 30 件无主修改：八件墓碑加 terms.json 系本批批面（收约即归位），其余 19 册 CALL-LOG 加 calls.ndjson 加两件 pyproject 系在盘遗留（calllog-solo 与 toolincub 在途带入），按协议零代行如实转述
 5. 例扫读数：rev3 双跑退出码 1/1（漏项核对失败 2 笔与 sddpacks-solo 批今日读数逐字同款既知态），四路 cmp 全 IDENTICAL，checkmath zero_drift 零红 6 灰
 6. 管道掩码自纠：租约锁批量循环内一次 `$(…|tail)` 掩码读数即改直读复跑（检词套主树红证 NOM_EXIT=1 直读在档）
+7. **链面竞态事故（申报候裁）**：前身会话 f3770e02d8bcafe0 的吊销形 close 触发让位归并，主树当日链被回退至分支基线态，卷走 42 行（本批 17 笔加他批在途笔）至 `worktrees/.close-backups/chaingreen-solo/f3770e02d8bcafe0/`。恢复经重建链笔承载（新事件新哈希、报告件与材料不变）：r2/r3 ask3 记录三轮双门、十二笔认证三次上链、裁决材料基线寻径改指工地材料位后 check 绿 verify identical 重签。可线性复原的补笔已试（主链前 140 行与备份逐字节同），因并行批活写使缺失段与现存段自分叉点起无法线性并回，verbatim 复原不可达即按补笔复认证先例重建
+8. **事故后果申报**：reconcile 双仓 cert_missing 各新增 1（段 1 提交 c4b56ec 与 ead18e5 所引认证 b15cddcf 随竞态卷走，段 2 已换用在链认证 aa254139； commit 信息承载历史不改，治理域历史不可改起点）；unbypassed（95/66）与 session_orphan（19/24）为存量累积非本批新增形态
+9. DES 命名空间面：任务包 §十一 裸目录行被解析为 `<面>/<批名>/` 保留位，而得一格子实为 m-gid 名形，拆会话重开以 `--namespace sih-tools/proposition/DES/m-chaingreen-1/` 兜底（namespace-face 词条所述兜底场景本批首例实录），字节全量备份零丢失
 
 ## 八、主树复跑补笔节（收约后回填）
 
-待收约后即时回填：主树判定包端到端读数、主树 M 态清零读数、双仓提交号、链 verify 与 reconcile 读数。
+主树归并（2026-09-07 收约后即时）：
+
+| 仓 | 归并提交 | 段 1 | 段 2 |
+|---|---|---|---|
+| sih-tools | `478ca1f7` merge: chaingreen-solo 副本归并 | `c4b56ece` | `4119f5f6` |
+| sih-engine | `0c66d1b` merge: chaingreen-solo 副本归并 | `ead18e5` | `2f323d4` |
+
+主树复跑实测：
+
+| 检查 | 结果 | 说明 |
+|---|---|---|
+| 判定包端到端（收口判据唯一） | ✅ 退出码 0，verdict pass，TC-001/002/003/004 全过 | 双读数之主树腿，红态基线 verdict fail 退 1 对照在档 |
+| 检查器套 | ✅ 7 passed in 0.50s，退出码 0 | test_golden_replay 读新家主树全绿（F-2） |
+| 八件墓碑 M 态 | ✅ git status 清零 | 归位完成（F-1） |
+| 归并 diff 对表 | ✅ 八件加 terms.json 逐件 IDENTICAL | cmp 对表批内带入件（F-1 内容零改动） |
+| 链 verify | ✅ valid，159 笔（收约时点） | 当日链含本批 rebuilt 链笔（F-5） |
+| reconcile | ⚠️ 双仓 exit 1 | unrouted 零；cert_missing 4/3 含本批事故新增 2 笔（b15cddcf 段 1 认证被竞态卷走，§七 8 申报候裁）；unbypassed 与 session_orphan 存量 |
+| 泊界心跳 | 工具线绿零告警；引擎线既知告警 1（siding_surplus 计 2 触阈 2） | 与批前同态零新增 |
+
+**判定**：收口判据唯一达成（主树判定包端到端退出码零 TC 全过，批内加收约后双读数）；F-1 至 F-6 全过；链面竞态事故与 reconcile 增量如实申报候裁，不硬闯不绕行。
