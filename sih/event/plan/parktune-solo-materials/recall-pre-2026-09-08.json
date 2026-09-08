@@ -1,0 +1,499 @@
+{
+  "matches": 16,
+  "events": [
+    {
+      "event_id": "65b64a23-df51-4793-94cf-ce339a94d50f",
+      "event_type": "intent_refined",
+      "timestamp": "2026-09-08T00:17:31.461703Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "record_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-record.json",
+        "record_hash": "e1bf992714977f515524d2e5ff9be5b327482d9d2fca0584c8e97a4bc5cf6953",
+        "validation_report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-validation.json",
+        "validation_report_hash": "e58754ce23f9e7d22e2ae07f7f1099138586d2a724d85adde97eaffc86e0fae1",
+        "pack_versions": [],
+        "session_id": "sess-zcode-260908-critsweep",
+        "round": 1,
+        "anchor_count": 3,
+        "calls_in": 0,
+        "calls_out": 0,
+        "goal": "critsweep-solo 判据扫 v1 批：其一工具 sih-tools/critsweep/ 四件即 sweep.py（纯标准库零 LLM 零网络退出码恒零，根判据承 anchor.py 上溯形）与 registry.json（空腹五判据登记）与 CONTRACT.md 与 tests/（pytest 加夹具链切片加金向量，含缺 trail 降级用例与双跑一致用例与 pk-044 对照用例）；其二回算三面即判据面按批名令牌扫近 10 日 trail 的 record_path 与 report_path 与 package 字段（禁全文散文匹配）加泊界面 selector parking 包路由回算加在飞面两账本回算；其三接线两件即 AGENTS.md 启动节三件套改五件套与 BATCH-FACE.md 增判据扫挂点节；其四 pyproject members 收编与主树裸调验收；机械链全绿自行收口不设等你令节；写入仅 allow",
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "sess-zcode-260908-critsweep",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "event_hash": "ef2f0b321b62442104fb11b8c1580f01572bf51b01892fdb6176e33ee0c09b99",
+      "event_class": "record_only",
+      "verification_result": null,
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "7750a49c-2604-478a-8873-90ba1309ef46",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T00:17:36.371582Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "dimension": "convergence",
+        "formula_version": "ga-2",
+        "inputs_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "subject": "sih-engine",
+        "value": 0.0,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "prev_hash": "ef2f0b321b62442104fb11b8c1580f01572bf51b01892fdb6176e33ee0c09b99",
+      "event_hash": "fc1e73ec058836d458e1ba5ca020d4bbc6017559051f2ad084d32ed05f25bef0",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "5d9b4983-6f0b-41ce-a872-46c9902a6c04",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T00:17:36.440844Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "confidence_band": {
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        "dimension": "adoption",
+        "formula_version": "ga-2",
+        "inputs_digest": "bf34973258adae800a9882d64f42e1d9ea951a1f0a660bd761faf48a91e04b6c",
+        "posterior_mean": 0.75,
+        "subject": "agents",
+        "value": 1.0,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-adoption-agents",
+      "prev_hash": "fc1e73ec058836d458e1ba5ca020d4bbc6017559051f2ad084d32ed05f25bef0",
+      "event_hash": "af2fbcb8cabcb252d727945bf6d430eda9966163f083f2174b9991f26862daf3",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "57d640cc-3499-4814-9fd9-de89ac95e378",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T00:17:36.504162Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "dimension": "mergeback",
+        "formula_version": "ga-2",
+        "inputs_digest": "54f273a91e9600097c31bbce8b7fa7ab69a4f84be2da86bfb73ce36f45906dd1",
+        "subject": "tools-wheel",
+        "value": 0.03125,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "prev_hash": "af2fbcb8cabcb252d727945bf6d430eda9966163f083f2174b9991f26862daf3",
+      "event_hash": "7699a880e884fe88418565362c8625b6eff8c01871e627efab15a4b22b23c727",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "a2ef55e3-dcd7-463d-92e1-b989bc218b1e",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:30:25.694612Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-critsweep-solo-pipeline.json",
+        "report_hash": "1c08562aba12183a9992e9d0f20baf62159c01490576413176507748374e723c",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-critsweep-solo-pipeline",
+      "prev_hash": "7699a880e884fe88418565362c8625b6eff8c01871e627efab15a4b22b23c727",
+      "event_hash": "1aeb4952f860e4f8051afccf9b34622992d93a3bf14c4a72d39f7cf6337fd569",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "02f6e2ca-36d6-4509-b314-1c72c37d2104",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:30:25.915455Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-critsweep-solo-checkcite.json",
+        "report_hash": "bc43468654e3b7d79fa5d9a797213fea912210636243c061c56d145f9c863935",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-critsweep-solo-checkcite",
+      "prev_hash": "1aeb4952f860e4f8051afccf9b34622992d93a3bf14c4a72d39f7cf6337fd569",
+      "event_hash": "d3d95f65ffbc88885ce1388c18135673d7471ce407d338465b24a02d989624ba",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "6cae2fb8-bd8f-4ba5-b664-87c3dab8d748",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:30:26.135713Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/identity/reports/2026-09-08-critsweep-solo-identity.json",
+        "report_hash": "d2e19d28b3de0e129f0b560c27841e086eba4e739d15f371717af4c67fa2dab8",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-critsweep-solo-identity",
+      "prev_hash": "d3d95f65ffbc88885ce1388c18135673d7471ce407d338465b24a02d989624ba",
+      "event_hash": "ed2843b1766daf7e922932f2e740026ceddb4ea3e47da18938421777264e0ba5",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "8e56b930-216b-43c2-9c7d-49d4d20203d1",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:30:26.354693Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-critsweep-solo-content-manifest.json",
+        "report_hash": "d512841656f355347380adb41460799f1001072bbdc3bfc169e9cd39debbb6b5",
+        "pack_versions": [],
+        "content_hashes": {
+          "worktrees/sih-tools/critsweep-solo/critsweep/sweep.py": "d79da1867ab82831978527abcfcdbbb9112ffc12e18e42473edce6f51f87aaa2",
+          "worktrees/sih-tools/critsweep-solo/critsweep/registry.json": "80fda7e8973af72710cb798f0858e26a7fe4372a700920a83598328d14d3aa8c",
+          "worktrees/sih-tools/critsweep-solo/critsweep/CONTRACT.md": "2c830eee2156b0158163258d17c0b1029270aabe6474024f23b4d49173167f2b",
+          "worktrees/sih-tools/critsweep-solo/critsweep/pyproject.toml": "55d2cb8734f9bda2063e0298323d474c5d371040c536770347260b4ad52bc00b",
+          "worktrees/sih-tools/critsweep-solo/critsweep/tests/test_sweep.py": "699e6067156a5083c9bc1cae8888eb67c6ac8d00ad14a94a69122f2b81577355",
+          "worktrees/sih-tools/critsweep-solo/critsweep/make_registry.py": "62e104c1ac1a1d3f06b159eec0625b667ab012befa5480bb027269c92d22e6df",
+          "worktrees/sih-tools/critsweep-solo/pyproject.toml": "8b8294701e4dd80137b992591b248918899b6c23551cc40995fb9a50b9720a63",
+          "worktrees/sih-tools/critsweep-solo/BATCH-FACE.md": "1b23dd5d8505774219f9279ee73532cbcb5d3ed5348d28581e0a480f12ba9e88",
+          "AGENTS.md": "55d006da9536b869b27b2fa38f00977738156f83bbf2af4e0ffd8649584e8254",
+          "worktrees/sih-engine/critsweep-solo/sih/state/plan/critsweep-solo.md": "4d145aa8dc5b4c6a502908721d25f2827b4d921b0362245de222187b34bbea63",
+          "worktrees/sih-engine/critsweep-solo/sih/event/plan/critsweep-solo-results.md": "489526d47c51536827052467204cb70eadf7e33a2140a2ec13c2788a289677fd",
+          "worktrees/sih-engine/critsweep-solo/sih/event/plan/critsweep-solo-materials/registry-derivation-2026-09-08.md": "bf89f64417b5956532690e3d7c04ac48fcd4ae608032f2e9b48c14c2c16e5bcc",
+          "worktrees/sih-engine/critsweep-solo/sih/event/plan/critsweep-solo-materials/AGENTS-archive-2026-09-08.md": "55d006da9536b869b27b2fa38f00977738156f83bbf2af4e0ffd8649584e8254",
+          "worktrees/sih-engine/critsweep-solo/sih/event/plan/critsweep-solo-materials/make_registry.py": "62e104c1ac1a1d3f06b159eec0625b667ab012befa5480bb027269c92d22e6df"
+        },
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-critsweep-solo-content-manifest",
+      "prev_hash": "ed2843b1766daf7e922932f2e740026ceddb4ea3e47da18938421777264e0ba5",
+      "event_hash": "780f7c4698470afba23fe4c3386d0f25c995aeab4d41f5727d323cd8d034f88c",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "0ec15660-f201-423f-b657-81abdac50767",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:31:16.156341Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-record.json",
+        "report_hash": "e1bf992714977f515524d2e5ff9be5b327482d9d2fca0584c8e97a4bc5cf6953",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-ask3-critsweep-solo-record",
+      "prev_hash": "780f7c4698470afba23fe4c3386d0f25c995aeab4d41f5727d323cd8d034f88c",
+      "event_hash": "4a638fe9f43ba2bb81922c45b4a644ba682d6d8c1f3df135f5e9f87489b0fb57",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "b06c3c1e5b58feed",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "949ccd57-31df-4137-a734-b01d65919fee",
+      "event_type": "intent_refined",
+      "timestamp": "2026-09-08T00:38:20.452191Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "record_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-r2-record.json",
+        "record_hash": "fa3ff866584a5954ff2c3441e8c115e207d780dc2494ef3a4543f51400fe7b31",
+        "validation_report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-r2-validation.json",
+        "validation_report_hash": "e58754ce23f9e7d22e2ae07f7f1099138586d2a724d85adde97eaffc86e0fae1",
+        "pack_versions": [],
+        "session_id": "sess-zcode-260908-critsweep",
+        "round": 2,
+        "anchor_count": 3,
+        "calls_in": 0,
+        "calls_out": 0,
+        "goal": "critsweep-solo r2 修复相：其一 sweep.py parking_face 增退出码门即 selector 路由退出码非零一律降级（0 与 1 为路由成立，2 及其余降级可见）并要求 summary 键在；其二 tests 增回归用例即退出码二加 JSON 错误报文 stdout 必判降级（uv 嵌套红证复现形）；其三主树裸调双跑重取读数；写入仅 allow",
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "sess-zcode-260908-critsweep",
+      "prev_hash": "4a638fe9f43ba2bb81922c45b4a644ba682d6d8c1f3df135f5e9f87489b0fb57",
+      "event_hash": "b345b8964833c5690fcb3cbb3c8343484531f7e9532122307158f6ca7d838b25",
+      "event_class": "record_only",
+      "verification_result": null,
+      "session_id": "e4d9f6f05b092d28",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "757ad33e-d187-424e-ab50-1d7ce1568283",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:39:12.295362Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-critsweep-solo-r2-record.json",
+        "report_hash": "fa3ff866584a5954ff2c3441e8c115e207d780dc2494ef3a4543f51400fe7b31",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-ask3-critsweep-solo-r2-record",
+      "prev_hash": "b345b8964833c5690fcb3cbb3c8343484531f7e9532122307158f6ca7d838b25",
+      "event_hash": "8affef445d4782fc1de3d43f35f48239d0b46aae57c8b95720816bd10f39a562",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "e4d9f6f05b092d28",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "3475811a-410f-48c7-8aa9-bb331bf4772f",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-08T00:39:12.516948Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-critsweep-solo-r2-pipeline.json",
+        "report_hash": "687da43c8c5d162be496cf5aa346899a14f61ad37a1fbe34b31fefdc967c5062",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "2026-09-08-critsweep-solo-r2-pipeline",
+      "prev_hash": "8affef445d4782fc1de3d43f35f48239d0b46aae57c8b95720816bd10f39a562",
+      "event_hash": "8734d1dcc6dfaaa2666bee51c208c5454bf77448ded142e0383069db195701ff",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": "e4d9f6f05b092d28",
+      "identity_hash": "af32fbb5d01fc1cf0f8d6286934f4bb384b9eae851fc9202bb99cc8969302833"
+    },
+    {
+      "event_id": "0c6d1c6a-2687-4f09-b462-29fd0697139a",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T03:10:43.782342Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "dimension": "convergence",
+        "formula_version": "ga-2",
+        "inputs_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "subject": "sih-engine",
+        "value": 0.0,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-convergence-sih-engine",
+      "prev_hash": "8734d1dcc6dfaaa2666bee51c208c5454bf77448ded142e0383069db195701ff",
+      "event_hash": "4b24ce70284c7ef515394e6fb9e73aebd63dc2ed244e2f90b74d5ac122a618a7",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "24a1ea25-3ccb-4f7c-8271-bf5b0cede4d6",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T03:10:43.871194Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "confidence_band": {
+          "lower": 1.0,
+          "upper": 1.0
+        },
+        "dimension": "adoption",
+        "formula_version": "ga-2",
+        "inputs_digest": "089f850a689f9870703f75066b204cb2ff76b28b00368b68c46f480dce45b817",
+        "posterior_mean": 0.8,
+        "subject": "agents",
+        "value": 1.0,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-adoption-agents",
+      "prev_hash": "4b24ce70284c7ef515394e6fb9e73aebd63dc2ed244e2f90b74d5ac122a618a7",
+      "event_hash": "b61133092e87491816308a74d79abc4a8e49cb24b342af24b189ebf0795ea2ee",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "58c815c8-b791-4533-978d-71c1c879e970",
+      "event_type": "reading_recorded",
+      "timestamp": "2026-09-08T03:10:43.946926Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "computed_at": "2026-09-08",
+        "dimension": "mergeback",
+        "formula_version": "ga-2",
+        "inputs_digest": "dbd0d7e76f889e18e704c2b32a70149111e068f90bdd988bcf86dd49b40d5c59",
+        "subject": "tools-wheel",
+        "value": 0.030303,
+        "window": "2026-09-08/2026-09-08"
+      },
+      "doc_id": "gauge-reading-mergeback-tools-wheel",
+      "prev_hash": "b61133092e87491816308a74d79abc4a8e49cb24b342af24b189ebf0795ea2ee",
+      "event_hash": "cb6d28919644264a3ee3b6754ac3027b0ef901d384ea5dc30e7f3ab9c43f297e",
+      "event_class": "consumable",
+      "verification_result": null,
+      "session_id": null,
+      "identity_hash": null
+    },
+    {
+      "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+      "event_type": "intent_refined",
+      "timestamp": "2026-09-08T03:12:46.292657Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "record_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-reroute-solo-record.json",
+        "record_hash": "e539f3ef3ef309bd18c88461511b4480d2f2f05b888bc36da95c4d74c9c35396",
+        "validation_report_path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-08-ask3-reroute-solo-validation.json",
+        "validation_report_hash": "551f7284724787a3e7ca67425ab535739d1ac15a7d379be57dca22a57fcc6102",
+        "pack_versions": [],
+        "session_id": "sess-zcode-260908-reroute",
+        "round": 1,
+        "anchor_count": 3,
+        "calls_in": 0,
+        "calls_out": 0,
+        "goal": "reroute-solo 改道批：其一 GOV-002 v2.5 换版即第三条退出标准改写为测量面确定性化验收（四指针即 pk-044 出泊裁定与 baseinject 探针退役、attnanchor 与 critsweep 在役、残余测量数学载体 pk-078 带 gate、progdoc 改道注记）加主线判定面句随改写加版本史 v2.5 行，签署经得一 m-gov002v25-sign-1 stable_clear 加执契终签；其二 pk-054 出泊 closed 吸收闭项、pk-053 出泊 promoted 承口径令照录、pk-078 进泊带 gate；其三 critsweep registry C3 条目更新与测试复跑；机械链全绿自行收口；写入仅 allow",
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "sess-zcode-260908-reroute",
+      "prev_hash": "cb6d28919644264a3ee3b6754ac3027b0ef901d384ea5dc30e7f3ab9c43f297e",
+      "event_hash": "73fa0f84963761bc94d38f1f4b0556551ceb826a4fcd6e737a40f21b30625b9c",
+      "event_class": "record_only",
+      "verification_result": null,
+      "session_id": "dbd8b8bce64ac52d",
+      "identity_hash": "01cd226ca8a630c9e9e0964f24f52ceb01a9b686604d79d6b4955bae5c6d1e9c"
+    }
+  ]
+}

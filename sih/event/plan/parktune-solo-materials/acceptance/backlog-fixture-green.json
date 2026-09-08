@@ -1,0 +1,119 @@
+{
+  "header": {
+    "domain": {
+      "exclude": [],
+      "include": [
+        "scribe/trail/**",
+        "PARKING-v1.md",
+        "parking/**",
+        "../sih-engine/parking/**",
+        "../sih-engine/doc/governance/PARKING-v1.md"
+      ]
+    },
+    "pack": {
+      "name": "parking",
+      "version": "0.4.0"
+    },
+    "reference_time": "2026-09-08",
+    "tool": {
+      "name": "selector",
+      "version": "0.4.0"
+    }
+  },
+  "routed": [
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fixture-backlog-01",
+      "parking": true,
+      "path": "doc/governance/PARKING-v1.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fixture-backlog-02",
+      "parking": true,
+      "path": "doc/governance/PARKING-v1.md",
+      "route": "siding"
+    },
+    {
+      "checks": [
+        {
+          "id": "P101",
+          "pass": true
+        },
+        {
+          "id": "P104",
+          "pass": true
+        },
+        {
+          "id": "P102",
+          "pass": false
+        },
+        {
+          "id": "P103",
+          "pass": true
+        }
+      ],
+      "failed_predicate": "P102",
+      "id": "fixture-backlog-03",
+      "parking": true,
+      "path": "doc/governance/PARKING-v1.md",
+      "route": "siding"
+    }
+  ],
+  "status": "routed",
+  "summary": {
+    "alarms": [
+      {
+        "count": 3,
+        "kind": "siding_surplus",
+        "threshold": 2
+      },
+      {
+        "count": 0,
+        "kind": "mainline_starvation",
+        "threshold": 0
+      }
+    ],
+    "mainline": 0,
+    "scrap_track": 0,
+    "siding": 3,
+    "total": 3
+  }
+}

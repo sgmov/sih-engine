@@ -1,0 +1,168 @@
+=== net-core ===
+IDENTICAL (zero drift)
+=== dirty-schema ===
+IDENTICAL (zero drift)
+=== dirty-anchor-domain ===
+IDENTICAL (zero drift)
+=== attribution-core ===
+IDENTICAL (zero drift)
+=== net-parking ===
+15c15
+<       "version": "0.2.0"
+---
+>       "version": "0.4.0"
+30a31,34
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+51a56,59
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+72a81,84
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+93a106,109
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+114a131,134
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+135a156,159
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+156a181,184
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+174a203,206
+>           "pass": true
+>         },
+>         {
+>           "id": "P104",
+198a231,234
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+219a256,259
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+240a281,284
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+261a306,309
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+282a331,334
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+303a356,359
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+324a381,384
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+345a406,409
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+=== dirty-expired ===
+15c15
+<       "version": "0.2.0"
+---
+>       "version": "0.4.0"
+30a31,34
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+=== attribution-parking ===
+15c15
+<       "version": "0.2.0"
+---
+>       "version": "0.4.0"
+30a31,34
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+50a55,58
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+70a79,82
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+90a103,106
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+110a127,130
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+127a148,151
+>           "pass": true
+>         },
+>         {
+>           "id": "P104",
+150a175,178
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+170a199,202
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+190a223,226
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+211a248,251
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+232a273,276
+>           "id": "P104",
+>           "pass": true
+>         },
+>         {
+=== badpack-kind (token-normalized) ===
+1c1
+< {"error": "pack invalid: /tmp/X/routes.toml predicates[0]: kind must be one of ('schema_required', 'state_annotation', 'anchor_whitelist', 'write_boundary', 'anchor_density', 'standing_constraints', 'assertion_lists', 'registry_conflict', 'time_deadline', 'parking_aging'), got no_such_kind"}
+---
+> {"error": "pack invalid: @PACKDIR@/routes.toml predicates[0]: kind must be one of ('schema_required', 'state_annotation', 'anchor_whitelist', 'write_boundary', 'anchor_density', 'standing_constraints', 'assertion_lists', 'registry_conflict', 'time_deadline', 'parking_aging', 'gate_hold'), got no_such_kind"}

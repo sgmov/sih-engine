@@ -7,8 +7,11 @@
 //! key 读取零目标仓写入，判在别处。
 //!
 //! 谓词机对表基准：sih-tools/selector/src/selector/{predicates,route,pack,cli}.py
-//! 现行文，十 kinds 与 fail-closed 语义零漂移；包纯数据随迁
+//! 现行文，十一 kinds 与 fail-closed 语义零漂移；包纯数据随迁
 //! src/attractor/packs/{core,parking}/ 与围堰逐字节一致（同参形构成条件）。
+//! 有余告警豁免语义随 parktune-solo 批对表围堰修订七：[alarms] 节可选键
+//! siding_surplus_exempt_kinds 声明豁免清单即首败谓词 kind 属清单的侧轨件
+//! 不计入积压计数，缺省零豁免，summary.siding 仍全量不隐藏。
 //! 错误信封承围堰 f-string 原文形，其中 toml 解析失败与 json 解析失败的
 //! 异常报文是运行时差异面（CPython 异常文本不逐字节复刻，拒收退出码与
 //! 信封形态对表，字节冻结面只钉包校验可枚举类），此为显式范畴排除。
@@ -31,12 +34,12 @@ pub const TOOL_KEY: &str = "selector";
 pub const ROUTES: [&str; 3] = ["mainline", "siding", "scrap_track"];
 const ROUTES_REPR: &str = "('mainline', 'siding', 'scrap_track')";
 
-/// 十谓词 kinds：单件材料判定族四件、按轮判定族四件、时间维度族两件。
+/// 十一谓词 kinds：单件材料判定族四件、按轮判定族四件、时间维度族三件。
 pub const KINDS: [&str; 4] = ["schema_required", "state_annotation", "anchor_whitelist", "write_boundary"];
 pub const ROUND_KINDS: [&str; 4] = ["anchor_density", "standing_constraints", "assertion_lists", "registry_conflict"];
-pub const PARKING_KINDS: [&str; 2] = ["time_deadline", "parking_aging"];
+pub const PARKING_KINDS: [&str; 3] = ["time_deadline", "parking_aging", "gate_hold"];
 
-const ALL_KINDS: [&str; 10] = [
+const ALL_KINDS: [&str; 11] = [
     "schema_required",
     "state_annotation",
     "anchor_whitelist",
@@ -47,8 +50,9 @@ const ALL_KINDS: [&str; 10] = [
     "registry_conflict",
     "time_deadline",
     "parking_aging",
+    "gate_hold",
 ];
-const ALL_KINDS_REPR: &str = "('schema_required', 'state_annotation', 'anchor_whitelist', 'write_boundary', 'anchor_density', 'standing_constraints', 'assertion_lists', 'registry_conflict', 'time_deadline', 'parking_aging')";
+const ALL_KINDS_REPR: &str = "('schema_required', 'state_annotation', 'anchor_whitelist', 'write_boundary', 'anchor_density', 'standing_constraints', 'assertion_lists', 'registry_conflict', 'time_deadline', 'parking_aging', 'gate_hold')";
 
 /// route_on_fail 缺省四件即缺省 siding。
 const ROUTE_ON_FAIL_DEFAULT: [&str; 4] = ["anchor_density", "standing_constraints", "assertion_lists", "time_deadline"];
@@ -90,6 +94,8 @@ pub struct Pack {
     pub pass_route: String,
     pub siding_surplus_threshold: i64,
     pub mainline_starvation_threshold: i64,
+    /// 有余告警豁免清单（承围堰修订七 [alarms] 可选键，缺省空即零豁免）。
+    pub siding_surplus_exempt_kinds: Vec<String>,
 }
 
 /// 读包目录下 manifest.toml 与 routes.toml，全量校验后返回 Pack。
@@ -103,8 +109,8 @@ pub fn load_pack(pack_dir: &Path) -> Result<Pack, PyError> {
     let routes = load_toml_file(&pack_dir.join("routes.toml"), "routes.toml")?;
     let (name, version, domain) = parse_manifest(&manifest, pack_dir)?;
     let predicates = parse_predicates(&routes, pack_dir)?;
-    let (pass_route, siding, starvation) = parse_tail(&routes, pack_dir)?;
-    Ok(Pack { name, version, domain, predicates, pass_route, siding_surplus_threshold: siding, mainline_starvation_threshold: starvation })
+    let (pass_route, siding, starvation, exempt_kinds) = parse_tail(&routes, pack_dir)?;
+    Ok(Pack { name, version, domain, predicates, pass_route, siding_surplus_threshold: siding, mainline_starvation_threshold: starvation, siding_surplus_exempt_kinds: exempt_kinds })
 }
 
 fn load_toml_file(path: &Path, label: &str) -> Result<toml::Value, PyError> {
@@ -287,7 +293,7 @@ fn parse_params(kind: &str, table: &toml::Value, pctx: &str) -> Result<Params, P
             };
             Ok(Params::AgingThresholdDays(threshold))
         }
-        "assertion_lists" | "registry_conflict" | "time_deadline" => Ok(Params::None),
+        "assertion_lists" | "registry_conflict" | "time_deadline" | "gate_hold" => Ok(Params::None),
         other => {
             // 四单件族：schema_required/state_annotation/anchor_whitelist/write_boundary
             let key = match other {
@@ -308,7 +314,7 @@ fn parse_params(kind: &str, table: &toml::Value, pctx: &str) -> Result<Params, P
     }
 }
 
-fn parse_tail(data: &toml::Value, directory: &Path) -> Result<(String, i64, i64), PyError> {
+fn parse_tail(data: &toml::Value, directory: &Path) -> Result<(String, i64, i64, Vec<String>), PyError> {
     let ctx = format!("{}/routes.toml", directory.display());
     let Some(defaults) = data.get("defaults") else {
         return Err(verr(format!("{ctx}: defaults must be a table")));
@@ -338,7 +344,33 @@ fn parse_tail(data: &toml::Value, directory: &Path) -> Result<(String, i64, i64)
     };
     let siding = require_threshold(alarms, "siding_surplus_threshold", &format!("{ctx} alarms"))?;
     let starvation = require_threshold(alarms, "mainline_starvation_threshold", &format!("{ctx} alarms"))?;
-    Ok((pass_route, siding, starvation))
+    let exempt = parse_exempt_kinds(alarms, &format!("{ctx} alarms"))?;
+    Ok((pass_route, siding, starvation, exempt))
+}
+
+/// siding_surplus_exempt_kinds 解析（对表围堰 _parse_exempt_kinds）：
+/// 可选键缺省空即零豁免，值须为字符串数组且逐项合法谓词 kind，typo 拒包。
+fn parse_exempt_kinds(alarms: &toml::Value, ctx: &str) -> Result<Vec<String>, PyError> {
+    let raw = match alarms.get("siding_surplus_exempt_kinds") {
+        None => return Ok(Vec::new()),
+        Some(toml::Value::Array(items)) => items.clone(),
+        Some(_) => {
+            return Err(verr(format!("{ctx}: siding_surplus_exempt_kinds must be a string array")))
+        }
+    };
+    let mut out = Vec::new();
+    for item in raw {
+        let Some(s) = item.as_str() else {
+            return Err(verr(format!("{ctx}: siding_surplus_exempt_kinds must be a string array")));
+        };
+        if !ALL_KINDS.contains(&s) {
+            return Err(verr(format!(
+                "{ctx}: siding_surplus_exempt_kinds entries must be one of {ALL_KINDS_REPR}, got {s}"
+            )));
+        }
+        out.push(s.to_string());
+    }
+    Ok(out)
 }
 
 // ---------------------------------------------------------------------------
@@ -502,6 +534,20 @@ fn check_time_deadline(material: &Value, context: Option<&Value>) -> bool {
     reference < deadline
 }
 
+/// 搁置判定（对表围堰 check_gate_hold）：gate 键为对象且 fired_at 缺省或
+/// 非字符串即未点火判败走 route_on_fail，fired_at 在场即已点火判过交后续
+/// 谓词定路。gate 键缺省或非对象即非搁置件判过零影响。只查结构不解读
+/// 触发器语义，点火判定在别处。
+fn check_gate_hold(material: &Value) -> bool {
+    let Some(gate) = material.get("gate") else {
+        return true;
+    };
+    if !gate.is_object() {
+        return true;
+    }
+    gate.get("fired_at").map(|v| v.is_string()).unwrap_or(false)
+}
+
 // ---------------------------------------------------------------------------
 // 路由与批装配（对表 route.py）
 // ---------------------------------------------------------------------------
@@ -519,6 +565,7 @@ pub fn evaluate(material: &Value, predicate: &Predicate, context: Option<&Value>
         "registry_conflict" => true,
         "time_deadline" => check_time_deadline(material, context),
         "parking_aging" => true,
+        "gate_hold" => check_gate_hold(material),
         _ => false,
     }
 }
@@ -587,8 +634,15 @@ fn registry_conflict_alarms(material: &Value) -> Vec<Value> {
 }
 
 /// 参照时间与 entered_at 差值达阈值逐件产告警（对表 parking_agings）。
+/// 未点火搁置件即 gate 键为对象且 fired_at 非字符串时零告警即停计
+/// （围堰 parkgate 修订六语义，引擎随 parktune-solo 批追平）。
 fn parking_aging_alarms(material: &Value, threshold: &Value, context: Option<&Value>) -> Vec<Value> {
     let mut alarms = Vec::new();
+    if let Some(gate) = material.get("gate") {
+        if gate.is_object() && !gate.get("fired_at").map(|v| v.is_string()).unwrap_or(false) {
+            return alarms;
+        }
+    }
     let Some(threshold_days) = threshold.as_f64() else {
         return alarms;
     };
@@ -628,9 +682,26 @@ pub fn route_batch(materials: &[Value], pack: &Pack, reference_time: Option<&str
     }
     let mut alarms: Vec<Value> = Vec::new();
     if !routed.is_empty() {
-        let siding = counts.get("siding").copied().unwrap_or(0);
-        if siding >= pack.siding_surplus_threshold {
-            alarms.push(json!({"kind": "siding_surplus", "count": siding, "threshold": pack.siding_surplus_threshold}));
+        // 有余告警积压计数排除首败谓词 kind 属豁免清单的侧轨件（对表围堰
+        // 修订七 siding_surplus_exempt_kinds 声明面），summary.siding 仍全量。
+        let exempt_ids: std::collections::HashSet<&str> = pack
+            .predicates
+            .iter()
+            .filter(|p| pack.siding_surplus_exempt_kinds.iter().any(|k| k == &p.kind))
+            .map(|p| p.id.as_str())
+            .collect();
+        let siding_countable = routed
+            .iter()
+            .filter(|item| {
+                item["route"].as_str() == Some("siding")
+                    && !item["failed_predicate"]
+                        .as_str()
+                        .map(|fp| exempt_ids.contains(fp))
+                        .unwrap_or(false)
+            })
+            .count() as i64;
+        if siding_countable >= pack.siding_surplus_threshold {
+            alarms.push(json!({"kind": "siding_surplus", "count": siding_countable, "threshold": pack.siding_surplus_threshold}));
         }
         let mainline = counts.get("mainline").copied().unwrap_or(0);
         if mainline <= pack.mainline_starvation_threshold {
@@ -814,6 +885,7 @@ mod tests {
             pass_route: "mainline".into(),
             siding_surplus_threshold: 99,
             mainline_starvation_threshold: 0,
+            siding_surplus_exempt_kinds: Vec::new(),
         }
     }
 
@@ -1005,6 +1077,78 @@ mod tests {
     }
 
     #[test]
+    fn t4_gate_hold_hold_and_release() {
+        let pack = pack_of(json!([{"id": "P104", "kind": "gate_hold", "route_on_fail": "siding"}]));
+        // 未点火（fired_at 缺省与显式 null 两形）判败走 siding
+        let unfired = json!({"id": "pk-070", "gate": {"trigger": "MCP 实装结算件落 event/plan/", "declared_at": "2026-09-07"}});
+        assert!(!evaluate(&unfired, &pack.predicates[0], None));
+        let null_fired = json!({"id": "pk-077", "gate": {"trigger": "t", "declared_at": "2026-09-07", "fired_at": null}});
+        assert!(!evaluate(&null_fired, &pack.predicates[0], None), "显式 null 即未点火判败");
+        // 点火在场判过
+        let fired = json!({"id": "g", "gate": {"trigger": "t", "fired_at": "2026-09-09"}});
+        assert!(evaluate(&fired, &pack.predicates[0], None));
+        // gate 缺省或非对象判过零影响
+        assert!(evaluate(&json!({"id": "m"}), &pack.predicates[0], None));
+        assert!(evaluate(&json!({"id": "m", "gate": "not-a-object"}), &pack.predicates[0], None));
+    }
+
+    #[test]
+    fn t4_surplus_exempt_kinds_parktune() {
+        // 豁免语义（对表围堰修订七）：首败谓词 kind 属豁免清单的侧轨件不计入
+        // 有余告警积压计数；真积压（time_deadline 首败）仍告警；缺省零豁免。
+        let mut pack = pack_of(json!([
+            {"id": "P104", "kind": "gate_hold", "route_on_fail": "siding"},
+            {"id": "P102", "kind": "time_deadline", "route_on_fail": "siding"}
+        ]));
+        pack.siding_surplus_threshold = 2;
+        pack.mainline_starvation_threshold = 0;
+        pack.pass_route = "mainline".into();
+        let gated = |id: &str| json!({"id": id, "path": "doc/governance/PARKING-v1.md", "state": "parked",
+            "parking": {"entered_at": "2026-09-01", "ttl_days": 60},
+            "gate": {"trigger": "MCP 实装结算件落 event/plan/", "declared_at": "2026-09-07"}});
+        let expired = |id: &str| json!({"id": id, "path": "doc/governance/PARKING-v1.md", "state": "parked",
+            "parking": {"entered_at": "2026-08-01", "ttl_days": 30}});
+        // 缺省零豁免：两件 gate 落 siding 计入计数即旧行为
+        let (_, s_old) = route_batch(&[gated("pk-070"), gated("pk-077")], &pack, Some("2026-09-08"));
+        let surplus_old: Vec<&Value> = s_old["alarms"].as_array().unwrap().iter().filter(|a| a["kind"] == "siding_surplus").collect();
+        assert_eq!(surplus_old.len(), 1);
+        assert_eq!(surplus_old[0]["count"], 2, "缺省零豁免即全量计数");
+        // 声明豁免：同批零有余告警而 summary.siding 全量不隐藏
+        pack.siding_surplus_exempt_kinds = vec!["gate_hold".into()];
+        let (routed, s_ex) = route_batch(&[gated("pk-070"), gated("pk-077")], &pack, Some("2026-09-08"));
+        assert_eq!(s_ex["siding"], 2, "全量侧轨数不隐藏");
+        assert!(s_ex["alarms"].as_array().unwrap().iter().all(|a| a["kind"] != "siding_surplus"), "豁免后零有余告警");
+        assert!(routed.iter().all(|r| r["failed_predicate"] == "P104"));
+        // 真积压：三件到期侧轨仍告警 count 三
+        let (_, s_real) = route_batch(&[expired("e1"), expired("e2"), expired("e3")], &pack, Some("2026-09-08"));
+        let surplus_real: Vec<&Value> = s_real["alarms"].as_array().unwrap().iter().filter(|a| a["kind"] == "siding_surplus").collect();
+        assert_eq!(surplus_real.len(), 1);
+        assert_eq!(surplus_real[0]["count"], 3, "真积压仍告警");
+        // 点火后到期不豁免：fired_at 在场即 P104 过 P102 首败计入
+        let fired_expired = json!({"id": "g9", "path": "doc/governance/PARKING-v1.md", "state": "parked",
+            "parking": {"entered_at": "2026-08-01", "ttl_days": 30},
+            "gate": {"trigger": "t", "fired_at": "2026-09-06"}});
+        let (routed_fe, s_fe) = route_batch(&[fired_expired, expired("e2")], &pack, Some("2026-09-08"));
+        assert!(routed_fe.iter().all(|r| r["failed_predicate"] == "P102"));
+        let surplus_fe: Vec<&Value> = s_fe["alarms"].as_array().unwrap().iter().filter(|a| a["kind"] == "siding_surplus").collect();
+        assert_eq!(surplus_fe.len(), 1);
+        assert_eq!(surplus_fe[0]["count"], 2, "点火后到期是真事件即计入");
+    }
+
+    #[test]
+    fn t4_aging_suspended_for_unfired_gate() {
+        let pack = pack_of(json!([{"id": "P103", "kind": "parking_aging", "aging_threshold_days": 45}]));
+        let unfired = json!({"id": "pk-x", "parking": {"entered_at": "2026-01-01", "ttl_days": 365},
+            "gate": {"trigger": "t", "declared_at": "2026-09-07"}});
+        let (_, summary) = route_batch(&[unfired.clone()], &pack, Some("2026-09-08"));
+        assert!(summary["alarms"].as_array().unwrap().iter().all(|a| a["kind"] != "parking_aging"), "未点火搁置件停计零老化告警");
+        let mut fired = unfired.clone();
+        fired["gate"]["fired_at"] = json!("2026-09-06");
+        let (_, s2) = route_batch(&[fired], &pack, Some("2026-09-08"));
+        assert!(s2["alarms"].as_array().unwrap().iter().any(|a| a["kind"] == "parking_aging"), "点火后复计");
+    }
+
+    #[test]
     fn t4_pack_validation_rejects() {
         let dir = std::env::temp_dir().join(format!("route-pack-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&dir);
@@ -1038,6 +1182,11 @@ mod tests {
         fs::write(dir.join("p1").join("routes.toml"), "[defaults]\npass_route = \"mainline\"\n\n[alarms]\nsiding_surplus_threshold = -1\nmainline_starvation_threshold = 1\n").unwrap();
         let err = load_pack(&dir.join("p1")).unwrap_err();
         assert!(err.message().contains("siding_surplus_threshold must be a non-negative integer"), "{}", err);
+        // 豁免清单非法 kind 拒包（typo 不静默失效）
+        fs::write(dir.join("p1").join("routes.toml"), "[defaults]\npass_route = \"mainline\"\n\n[alarms]\nsiding_surplus_threshold = 2\nmainline_starvation_threshold = 0\nsiding_surplus_exempt_kinds = [\"gate_hod\"]\n").unwrap();
+        let err = load_pack(&dir.join("p1")).unwrap_err();
+        assert!(err.message().contains("siding_surplus_exempt_kinds entries must be one of"), "{}", err);
+        assert!(err.message().ends_with("got gate_hod"), "{}", err);
         // routes.toml 缺席
         fs::remove_file(dir.join("p1").join("routes.toml")).unwrap();
         let err = load_pack(&dir.join("p1")).unwrap_err();
