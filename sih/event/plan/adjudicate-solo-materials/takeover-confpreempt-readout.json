@@ -1,0 +1,12 @@
+{
+  "takeover": true,
+  "package": "confpreempt-solo",
+  "window_session": "09326a760119e4ed",
+  "window_state": "pid_dead",
+  "released_locks": [],
+  "progress_anchor": "05762749",
+  "engine_branch_preserved": "msh/confpreempt-solo 五步环实装提交未归并保留工地为续作现场",
+  "reason": "adjudicate-solo A4 裁决执行：停滞会话接管清理（pid_dead 持锁零 09-07 后无活），置信度线择期重开进度锚 09-07 意图笔 05762749",
+  "executed_at": "2026-09-08T12:00:00+00:00",
+  "note": "检验活件已清可重新 open；本接管动作由 adjudicate-solo 批上链留痕即本件认证"
+}

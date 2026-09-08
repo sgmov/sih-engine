@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "链上实证：进泊笔 47101ff6（2026-09-06 当日链）在档；双通道判定标准双签在链即 P1 能数学化的裁决面必须挂数学载体 crosscheck-m-pk063split-1 event_hash 前 8 67353ed9 与 P2 纯约定面必须走登记面且不得伪装成数学 crosscheck-m-pk063split-2 event_hash 前 8 f4b8f93f（均 2026-09-08 当日链 pk063split-solo 批九发 stable_clear 裁决通过）；本批四席测量 m-adjudicate-a1 九发 stable_clear 终签 4073c5fa 承载出泊执行。双通道判定标准随出泊落档：登记面裁决逐件分派即能数学化面挂数学载体与推导档、纯约定面走登记面诚实登记不得伪装数学，承接位 constclear2 批二登记面落位。执行批 adjudicate-solo。",
+  "disposition": "promoted",
+  "entry_id": "pk-063",
+  "id": "pk-063",
+  "parking": {
+    "entered_at": "2026-09-06",
+    "exited_at": "2026-09-08",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-08 FORK-1 令照录「A1 pk-063 出泊：出泊 promoted，登记面裁决按双通道执行即能数学化的面挂数学载体、纯约定面走登记面且不得伪装数学，双通道判定标准随出泊落档（锚 P1 67353ed9、P2 f4b8f93f）」；裁决谱系即 sitruling m-sitruling-2 刀锋处方经用户裁甲案拆双、pk063split-solo P1 与 P2 双签、本批 A1 测量过闸后执行。",
+  "state": "exited",
+  "ttl_days": 30
+}

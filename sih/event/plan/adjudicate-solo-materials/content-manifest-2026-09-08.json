@@ -1,0 +1,20 @@
+{
+ "batch": "adjudicate-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与出泊材料件经本清单统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/adjudicate-solo/sih/state/plan/adjudicate-solo.md",
+   "sha256": "b69930464d3ae6373e6ed8bffc11175407d7ea334a0daff9da0645b88aba2837"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/adjudicate-solo/sih/event/plan/adjudicate-solo-results.md",
+   "sha256": "bb6dca2f72ecd97b2d379371040a07e61f1f1aa4a63d52a4bf5131e0141a7f5f"
+  },
+  "pk063_exit_material": {
+   "path": "worktrees/sih-engine/adjudicate-solo/sih/state/parking/materials/pk-063-exit.json",
+   "sha256": "d8637e86988768a0856ba6cf75976b89179089d0f3258b17fc2f262f2584df88"
+  }
+ }
+}
