@@ -32,11 +32,23 @@
 
 ## 管线读数
 
-随收约回填。
+- 化格：引擎域两件过 packs/general-v1 全 exit 0 零改。
+- 核阅：des-001 两件全 exit 0 零违规（任务包、结果档）。
+- 检词：nomenclator check packs/core 两件全 exit 0 零违例。
+- checkcite：recall 出泊泊界裁决主题后 checkcite verdict pass missing 零（报告件随批落档）。
 
 ## 认证清单
 
-随收约回填。
+| 件 | 认证哈希前 8 |
+|---|---|
+| ask3 记录 | 61c53679 |
+| 验证件 | d8127e26 |
+| 正身件 | 9ef4629f |
+| pk-042 出泊材料 | 6274b71a |
+| pk-061 出泊材料 | 226a7a64 |
+| pk-067 出泊材料 | 2ea7d33c |
+| checkcite 件 | 359df88f |
+| 内容清单件（md 两件 sha256） | aa60b855 |
 
 ## F 表
 
@@ -45,7 +57,7 @@
 | F-1 三笔出泊在链 | 数据治理 | 三笔 parking_exited promoted ruling 照录，预核双锚在链 | 通过（6bbaea21 与 e4898b46 与 d8f8887f，重入拒零触发） |
 | F-2 出泊材料三件 | 数据治理 | 三件 *-exit.json 按 pk-044-exit 形落正确线别，终签哈希入 context，state exited | 通过（两线落位核对在档） |
 | F-3 写入仅 allow | 治理 | 写入仅请求写入节所列路径；名册投影零触碰 | 通过（写入面即任务包、三件出泊材料、结果档与批材料、链文件、报告目录；施工滑步即删主树份在越线申报） |
-| F-4 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-4 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 归并 7e00e48c 与 engine 归并 0c68e9e 各携 closeguard 预收提交；close 一跑成携 bypass-orphan 与 bypass-calllog 留痕即无主活面均 callloghyg 候清项非本批所写；verify valid events 76；reconcile 双仓 unrouted 零即零新增，cert_missing 与 unbypassed 为在盘历史账面项） |
 
 ## 越线与误差申报
 
@@ -54,4 +66,8 @@
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：tools 段一提交（归并 7e00e48c）与 engine 段一提交（归并 0c68e9e），cert 取 61c53679 即 ask3 记录认证前八位；closeguard 预收提交双仓在档。
+- 放锁收约：9 锁 unlock 全零，残余锁零，close 一跑成 revoked 真值，工地与分支清除。
+- 链 verify：valid，events 76。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口。
+- 收约补笔：管线实录与认证清单与 F-4 与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 critsweep 与 reroute 先例同形）。
