@@ -1,0 +1,22 @@
+{
+ "tools": {
+  "alarms": [],
+  "mainline": 23,
+  "scrap_track": 0,
+  "siding": 1,
+  "total": 24
+ },
+ "engine": {
+  "alarms": [
+   {
+    "count": 2,
+    "kind": "siding_surplus",
+    "threshold": 2
+   }
+  ],
+  "mainline": 47,
+  "scrap_track": 9,
+  "siding": 2,
+  "total": 58
+ }
+}

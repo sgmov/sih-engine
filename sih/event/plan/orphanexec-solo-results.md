@@ -67,7 +67,14 @@
 
 ## 结算读数
 
-（收约后补笔回填：双仓 settle 提交号、放锁收约实录、链 verify、reconcile、心跳两线、watchcheck 复跑清零、confpreempt 预检——先例 archpark/genpark/orphanrule 同形 bypass 通道）
+- 双仓 settle：sih-tools 工地提交 ff03984b（cert 91d744ad，另工地方向 pyproject 补笔 9cec825e 见误差申报四）；sih-engine 工地提交 377f777d（cert 91d744ad）。归并 merge：tools 06dd9329、engine 659e5ed（engine 侧伴随 closeguard-solo 预收机械笔 7351f96 即工具自铸 pre-close working tree commit，materials 让位归并承载，已补 bypass 登记清 unbypassed 类）。
+- 放锁收约：十五路径 unlock 全 exit 0；close 首跑被差集闸拦（声明未提交两实路径：任务包件与 A3 主树笔件，逐路径认领放行；散文形 unparsed 一条报告性不拦）；close 二跑成功 revoked，双工地与分支清除，会话 2fcdf691c035a034 吊销，零失败。收约时点 close 以主树 1.35.0 运行（新检查位随本批归并生效，本批会话按过渡条款豁免，两形相符）。
+- 链 verify：2026-09-07 活跃链 valid 218 事件（first 89f24da4，last 41972aaf 即本批管线读数件认证笔）。
+- reconcile：增量段（以本批开工基线为界）双仓俱 exit 0 全零——tools 段内七笔（routed 2＋bypass 5 俱登记）cert_missing 0、session_orphan 0、unbypassed 0；engine 段内四笔（routed 2＋bypass 2）同全零。全量段 rc=1 系历史账面项维持：tools cert_missing 4（既账三笔 b15cddcf/cb609c9/970c8299 加第四笔亦为封线内历史提交，六笔缺证扫描逐笔核非本批段内）、session_orphan 19 legacy 维持；engine session_orphan 24 对 legacy 19 的漂移亦非本批段内（增量段零）。unrouted 双侧 0 零新增。
+- 泊界心跳两线（--reference-time 2026-09-07 活跃链日期）：工具线 exit 0 告警零（mainline 23／siding 1 即 pk-042 校准窗在泊项，与开工锚读数一致）；引擎线 exit 1 告警一类即 siding_surplus count 2（threshold 2 历史存量与开工锚读数一致，零新增）。
+- watchcheck 复跑（--at 2026-09-07）：**净态，无主修改零处，exit 0**（开工基线五件全出清：anchor.py 与 calls.ndjson 经 A1/A2 入账，三册 CALL-LOG 脏面经随批入版控）——F-2 两件出清与 F-5 残面清零读数在档。
+- confpreempt 无主闸预检（no_master_check 谓词直读，锁面镜像在位）：ok=True，unowned_count=0——confpreempt-solo 收约无主闸解堵条件成立（其 close 归其自身会话，本批零触碰）。
+- 收约补笔：本节结算读数与心跳与预检读数件入库即本笔，经 --no-verify 加 lease bypass 登记通道入版控（archpark/genpark/confmath/confconst/anchorskill/orphanrule 先例同形）。
 
 ## 越线与误差申报
 

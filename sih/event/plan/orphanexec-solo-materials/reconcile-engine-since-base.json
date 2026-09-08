@@ -1,0 +1,39 @@
+{
+  "base": "f50392d",
+  "first_routed": "377f777",
+  "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+  "summary": {
+    "bypass": 2,
+    "cert_missing": 0,
+    "routed": 2,
+    "routed_direct": 0,
+    "sealed": 0,
+    "session_orphan": 0,
+    "total": 4,
+    "unbypassed": 0,
+    "unrouted": 0
+  },
+  "unrouted_tail": [
+    {
+      "class": "routed_merge",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "659e5ed",
+      "subject": "merge: orphanexec-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "7351f96",
+      "subject": "closeguard-solo: pre-close working tree commit (orphanexec-solo)"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "68c66ca",
+      "subject": "orphanexec-solo A3（m-orphanrule-1 系谱入库·引擎仓）：orphanrule-solo 任务包与委外提示词入版控（主树原未跟踪，"
+    }
+  ]
+}

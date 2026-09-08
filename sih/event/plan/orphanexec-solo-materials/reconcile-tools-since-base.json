@@ -1,0 +1,60 @@
+{
+  "base": "d8aaf3b8",
+  "first_routed": "ff03984",
+  "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+  "summary": {
+    "bypass": 5,
+    "cert_missing": 0,
+    "routed": 2,
+    "routed_direct": 0,
+    "sealed": 0,
+    "session_orphan": 0,
+    "total": 7,
+    "unbypassed": 0,
+    "unrouted": 0
+  },
+  "unrouted_tail": [
+    {
+      "class": "routed_merge",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "06dd932",
+      "subject": "merge: orphanexec-solo 副本归并"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "9cec825",
+      "subject": "orphanexec-solo lease 版本升位 1.35.0→1.36.0（pyproject 三源对齐件）：open --allow 对 lease 面"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "c026ea7",
+      "subject": "orphanexec-solo CALL-LOG 随批入版控（m-orphanrule-1 P3/P2 B 案随批纪律）：本批三册落笔（lease/scribe"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "187a6ad",
+      "subject": "orphanexec-solo A3（m-orphanrule-1 系谱入库·工具仓）：命题 m-orphanrule-1 正文 topics/2026-09-"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "da0b819",
+      "subject": "orphanexec-solo A2（m-orphanrule-1 P2）：calllog/calls.ndjson B 案脏态整体入账——纯追加态快照（HEA"
+    },
+    {
+      "class": "bypass",
+      "date": "2026-09-08",
+      "detail": null,
+      "sha": "f2da1eb",
+      "subject": "orphanexec-solo A1（m-orphanrule-1 P1）：attnanchor/anchor.py 权限位件入账——mode change 1"
+    }
+  ]
+}
