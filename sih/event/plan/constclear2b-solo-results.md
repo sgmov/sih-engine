@@ -24,7 +24,11 @@
 
 ## 管线读数
 
-- 随管线实录补记于本节（补笔回填）
+- 化格 general-v1：四 md 件（任务包、结果档、路由增补、登记面）exit 0；json 与代码件不越域化格如实申报
+- 核阅 des-001：四 md 件 exit 0 零违规
+- 检词 core：四 md 件零违例
+- checkcite：一次 pass missing 零（--word 词面通道加被引载体 stem 多查询正形，四载体 PROB-010/013/015/016 首跑全在单；承批一三红证教训直接走正形）
+- checkmath（再生账本）：exit 0 verdict zero_drift reds 0（灰项声明滞后照录）
 
 ## F 表
 
@@ -34,15 +38,24 @@
 | F-2 改判三件收编 | 数据治理 | RECLASS 扩表＋env-params native＋逐件两态依据 | 通过（三行 native 核验在案；登记面环境参数类四行） |
 | F-3 新账扫描入两态路由 | 数据治理 | 双跑 IDENTICAL＋25 件逐件两态＋载体实文核验 | 通过（4 数学＋7 工程＋7 纯约定＋3 退场＋1 环境＝25；无实文不硬凑） |
 | F-4 登记面落位与写入边界 | 治理 | registry 双形态＋双通道标准文＋零越界写入 | 通过 |
-| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 三仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（读数见结算读数节） |
 
 ## 越线与误差申报
 
 - rev3 再生 exit 1（drift 旗）与 lit_new 93/lit_gone 8 照录：源码 09-04 后演进使再生账本与在档版存在差集，本批以再生版为收编后正典并全额落仓，差集明细在 regen 输出（materials）
 - digest 首跑 blocked 红证在案（处置节未随批二词更新即生成器改编笔误族，修正重生成）
 - 路由增补分布按行计 17 行盖 25 件（纯约定与退场按组并录），件级清单以 json 为准
+- **settle --cert 误传批一哈希 f4a89ffa（本批 ask3 认证实为 58680ad9）**：三仓提交已落不可改，闸过因该哈希确在链但语义归属错位，如实申报不掩盖；后继对表以本节认证实录为准
 - 其余误差零申报
 
 ## 结算读数
 
-待收约回填（三仓 settle 提交号与 close 与 verify 与 reconcile 与管线实录与 C4 收约后读数与回显锚行随收约补笔入档）。
+- 三仓 settle：三仓工地提交（归并 engine 1aeb935、tools 6c2e5b23、math bbb9958）；cert 误传申报见越线节，本批法定认证实录如下
+- 认证实录八笔：ask3 记录 58680ad9、验证件 d1e2ca96、正身件 182bc15c、checkcite 件 cc5822dd、路由增补 json 65260cd7、登记面 json c25dc8dd、内容清单件 f2bffd25（十路径哈希绑定：四 md 与 rev3_script 与再生三件与 pk-063 两件）
+- 放锁收约：16 锁 unlock 全过零失败；close 一次成（双旗 bypass 显式留痕），会话 747ab81d85ac14f5 revoked、三工地拆
+- 链 verify：valid，events 125
+- reconcile 三仓 unrouted 全零（本批零新增路由缺口）
+- C4 收约后读数：in_flight gap 0 last_hit 2026-09-08——批二落链即判据机械可见；收口剩余＝批三代码注记候选＋pk-049 联动呈报＋registry evidence 指针更新（候换版批对齐判据文本）
+- pk-053 出泊条件全清：批一 34 件路由＋批二收编与新账 25 件路由与登记面落位，冻结态撤销无残留
+- 完工回显：五行锚随完工报告回显
+- 收约补笔：管线实录与 F-5 与认证实录与本节即本笔，经 --no-verify 加 lease bypass 登记通道入版控
