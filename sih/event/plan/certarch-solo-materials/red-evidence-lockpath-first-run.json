@@ -1,0 +1,70 @@
+{
+ "error": "lock 路径参误写即 --locks 传 /Users/moc/workspaces/SiHankor/sih-tools/ledger/locks.ndjson 缺 lease 段，七笔 lock 全落错误位新建目录",
+ "red_evidence": {
+  "wrong_dir": "/Users/moc/workspaces/SiHankor/sih-tools/ledger",
+  "files": {
+   "lockface-bills.ndjson": {
+    "bytes": 2561,
+    "sha256": "8282a148fa2086f27617386f06b3527b1d85351aea31bb363d869cfff945c3b7"
+   },
+   "lockface-bills.ndjson.lock": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "locks.db": {
+    "bytes": 28672,
+    "sha256": "e625e9155d3f590eca3488153a8f0357c130025f4ed8315f3d67323cf6b33276"
+   },
+   "locks.ndjson": {
+    "bytes": 1444,
+    "sha256": "441f705423240e8363fc5309dd25d52e49d786d3f962dc4b5e1fc274b0fce0f1"
+   },
+   "locks.ndjson.lock": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   }
+  },
+  "locks_ndjson_sha256": "441f705423240e8363fc5309dd25d52e49d786d3f962dc4b5e1fc274b0fce0f1",
+  "locks_ndjson_rows": 7,
+  "locks_ndjson_events": [
+   {
+    "event": "acquired",
+    "path": "sih-engine/sih/state/plan/certarch-solo.md",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-engine/sih/state/plan/certarch-solo-prompt.md",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-engine/sih/event/plan/certarch-solo-results.md",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-engine/sih/event/plan/certarch-solo-materials",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-engine/sih/event/trail/2026-09-08.ndjson",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-tools/scribe/reports",
+    "session": "3326c23ab0cb450f"
+   },
+   {
+    "event": "acquired",
+    "path": "sih-tools/identity/reports",
+    "session": "3326c23ab0cb450f"
+   }
+  ]
+ },
+ "canonical_ledger_untouched": "sih-tools/lease/ledger/locks.ndjson 尾三行仍为 c2close 会话 a241ff588d325ba0 于 2026-09-08T11:53:47Z 的 released 行，本会话零笔在册",
+ "disposition": "归档本件后 rm -rf 错误目录，改正确路径重取七锁",
+ "session": "3326c23ab0cb450f"
+}
