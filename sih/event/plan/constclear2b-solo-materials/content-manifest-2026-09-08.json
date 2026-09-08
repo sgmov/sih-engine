@@ -1,0 +1,48 @@
+{
+ "batch": "constclear2b-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 与代码与再生账本与泊件统一绑定内容哈希 sha256（anchorskill 先例）",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/constclear2b-solo/sih/state/plan/constclear2b-solo.md",
+   "sha256": "4ae9b7aad36e9e39089a2462309fa7243043a2af38b41bcad08196f799a59992"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/constclear2b-solo/sih/event/plan/constclear2b-solo-results.md",
+   "sha256": "fc1c88904a485c552f2e3a4415e3d9daa02e9b9013d7a058f03e88a9b7911722"
+  },
+  "routing_md": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/constclear2b-routing-2026-09-08.md",
+   "sha256": "34924c9ed4cf4af95e28d05ec5372fcd479060c5770219e2a94be8b7059d36b6"
+  },
+  "registry_md": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/constclear-registry-v1.md",
+   "sha256": "94f9e2d4cac6a327fd5758d22430155251659646c63fcd209556067ab05ae8b8"
+  },
+  "rev3_script_reclass": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/mathpipe-coverage-2026-09-04/rev3_script.py",
+   "sha256": "b823df827e41ed1eef2f97f542bd268f780c7b95a81f522c48b12d90df886825"
+  },
+  "env_params_regen": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/mathpipe-coverage-2026-09-04/env-params-rev3.json",
+   "sha256": "261e952bab60117cb545db881fe12ef75c4496592602d60ae80f425a4d4a3c59"
+  },
+  "ledger_regen": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/mathpipe-coverage-2026-09-04/ledger-rev3.json",
+   "sha256": "9f51c506b28b83a51a954628e5195fa6d3b3675d19204d94b56c5b2a0fa9dc97"
+  },
+  "summary_regen": {
+   "path": "worktrees/sih-math/constclear2b-solo/docs/mathpipe-coverage-2026-09-04/summary-rev3.md",
+   "sha256": "e32455e3f6abb8cf7e8c0c2ea8f9734894395bd260b41292b0fbae69b173ebad"
+  },
+  "pk063_exit": {
+   "path": "worktrees/sih-engine/constclear2b-solo/sih/state/parking/materials/pk-063-exit.json",
+   "sha256": "36af65538c7d47aa45a398cdc2ecfd02f0f12d96336c1f7a65d021db15f72b40"
+  },
+  "pk063_state": {
+   "path": "worktrees/sih-engine/constclear2b-solo/sih/state/parking/materials/pk-063.json",
+   "sha256": "6afc7c88433a2a1cdfb9ce9e58df9ab5203d7f99d14098e44e3a665593c6b9e8"
+  }
+ }
+}

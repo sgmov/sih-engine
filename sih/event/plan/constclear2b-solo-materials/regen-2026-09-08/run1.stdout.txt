@@ -1,0 +1,37 @@
+FAILED: 2 findings
+{
+ "carrier": {
+  "已实例化": 19,
+  "可指认未实例化": 5,
+  "无可指认载体": 0
+ },
+ "named": {
+  "named_total": 139,
+  "named_decision": 34,
+  "named_resource": 20,
+  "named_pending": 85
+ },
+ "literal": {
+  "literal_total": 638,
+  "literal_decision": 83,
+  "literal_pending": 555
+ },
+ "whitelist_canonical": 177,
+ "entry_files_on_disk": 177,
+ "alias_registry": 4,
+ "mechanisms": 24,
+ "f3_rows": 36,
+ "findings": [
+  "漏项核对失败: sih-tools/scrutinator 语料命中未被载体映射覆盖: ['ALG-012']",
+  "漏项核对失败: sih-engine/scrutinator 语料命中未被载体映射覆盖: ['ALG-002', 'ALG-012', 'ORD-019', 'PROB-010', 'PROB-011', 'TOP-008']"
+ ],
+ "diff": {
+  "named_class_changed": 3,
+  "named_new": 33,
+  "named_gone": 3,
+  "lit_changed": 0,
+  "lit_new": 93,
+  "lit_gone": 8
+ },
+ "reclass_inherited_hits": 15
+}
