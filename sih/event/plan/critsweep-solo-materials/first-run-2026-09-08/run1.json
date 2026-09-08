@@ -1,0 +1,370 @@
+{
+ "at": "2026-09-08",
+ "criteria": [
+  {
+   "evidence": [
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-045",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 3,
+   "id": "GOV2-C1-leaseopt",
+   "last_hit": "2026-09-05",
+   "namespace_hits": 39,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "leaseopt 线级验收达成",
+   "token_scope": [
+    "leaseopt"
+   ]
+  },
+  {
+   "gap_basis": "last_hit",
+   "gap_days": 3,
+   "hit_days": {
+    "viewline": [
+     "2026-09-05"
+    ]
+   },
+   "id": "GOV2-C2-viewline",
+   "last_hit": "2026-09-05",
+   "namespace_hits": 14,
+   "prose_only_control": [
+    [
+     {
+      "day": "2026-09-05",
+      "event_id": "f27fcdbc-42a5-4de5-a0d7-67c0378e0a9a",
+      "event_type": "parking_exited"
+     },
+     {
+      "day": "2026-09-06",
+      "event_id": "14d94196-4e03-405b-8a60-74791be51f4d",
+      "event_type": "intent_refined"
+     }
+    ]
+   ],
+   "status": "in_flight",
+   "status_kind": "activity",
+   "title": "视图组件在役",
+   "token_scope": [
+    "viewline"
+   ]
+  },
+  {
+   "gap_basis": "registered_at",
+   "gap_days": 4,
+   "hit_days": {
+    "measure-poly": [],
+    "measurepoly": []
+   },
+   "id": "GOV2-C3-measure-poly",
+   "last_hit": null,
+   "namespace_hits": 0,
+   "prose_only_control": [
+    [
+     {
+      "day": "2026-09-05",
+      "event_id": "7011095e-5a3a-489e-b01d-eaa20c141532",
+      "event_type": "parking_entered"
+     },
+     {
+      "day": "2026-09-07",
+      "event_id": "0f813f08-8fe0-41a1-a9ee-647aaf525b1c",
+      "event_type": "parking_exited"
+     }
+    ],
+    []
+   ],
+   "status": "sunk",
+   "status_kind": "activity",
+   "title": "measure-poly 程序级验收达成",
+   "token_scope": [
+    "measure-poly",
+    "measurepoly"
+   ]
+  },
+  {
+   "gap_basis": "last_hit",
+   "gap_days": 5,
+   "hit_days": {
+    "mathclose": [
+     "2026-09-03"
+    ],
+    "mathreg": [
+     "2026-08-30"
+    ],
+    "pk-053": []
+   },
+   "id": "GOV2-C4-math-attribution",
+   "last_hit": "2026-09-03",
+   "namespace_hits": 23,
+   "prose_only_control": [
+    [
+     {
+      "day": "2026-09-04",
+      "event_id": "cda6594b-5d69-4b04-a394-dfd2aca3e39a",
+      "event_type": "parking_entered"
+     }
+    ],
+    [
+     {
+      "day": "2026-09-03",
+      "event_id": "04eaafb5-35ec-4d3b-993b-5cc4352a4661",
+      "event_type": "intent_refined"
+     },
+     {
+      "day": "2026-09-05",
+      "event_id": "2ba1b440-f43c-4076-8fcd-8d1af7eae9a8",
+      "event_type": "direct_edit_completed"
+     }
+    ],
+    [
+     {
+      "day": "2026-08-30",
+      "event_id": "0cc72d2e-db90-4d84-aa10-4ce8df7622fe",
+      "event_type": "intent_refined"
+     }
+    ]
+   ],
+   "status": "sunk",
+   "status_kind": "activity",
+   "title": "数学归因长尾收口",
+   "token_scope": [
+    "pk-053",
+    "mathclose",
+    "mathreg"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/doc/governance/SETTLEMENT-LEASEUP-2026-09-07.md"
+    },
+    {
+     "contains": "修订四十一",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "contains": "修订四十二",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "contains": "修订四十三",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-072",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 2,
+   "id": "GOV2-C5-lease-line",
+   "last_hit": "2026-09-06",
+   "namespace_hits": 7,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "租约修复升级线级验收达成",
+   "token_scope": [
+    "leaseup"
+   ]
+  }
+ ],
+ "degradations": [],
+ "degraded": false,
+ "inflight": {
+  "active_sessions": 3,
+  "held_locks": 27
+ },
+ "namespace_fields": [
+  "record_path",
+  "report_path",
+  "package"
+ ],
+ "parking": {
+  "engine": {
+   "exit_code": 1,
+   "route": "routed",
+   "summary": {
+    "alarms": [
+     {
+      "count": 2,
+      "kind": "siding_surplus",
+      "threshold": 2
+     }
+    ],
+    "mainline": 47,
+    "scrap_track": 9,
+    "siding": 2,
+    "total": 58
+   }
+  },
+  "tools": {
+   "exit_code": 0,
+   "route": "routed",
+   "summary": {
+    "alarms": [],
+    "mainline": 23,
+    "scrap_track": 0,
+    "siding": 1,
+    "total": 24
+   }
+  }
+ },
+ "prose_control": {
+  "events": {
+   "leaseopt": [
+    {
+     "day": "2026-09-05",
+     "event_id": "66315030-d327-49dc-b383-1659eb4ec7e3",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "6cd912be-9c5d-41f7-a5c3-bc8f9c33ac1c",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "4238da7d-d9ad-4e07-b250-bf9fe2dfe8b4",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "95d55948-6b26-417b-85de-aa5794053cd8",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "ce6544f1-1783-49f9-a84d-a333f1c89c48",
+     "event_type": "direct_edit_completed"
+    }
+   ],
+   "leaseup": [
+    {
+     "day": "2026-09-06",
+     "event_id": "05c108e6-1f7c-4843-8ab1-74dce0bf0bff",
+     "event_type": "crosscheck_completed"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "0eacba93-f92d-4692-984c-33acf9e4ee88",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "47e2e88c-090d-4bd8-bd66-352676941c57",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "564dcb49-1dde-4986-b21f-3d5151375ff3",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "fbd934eb-8547-4ca8-b938-c528846aaea5",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "05277256-af5a-4da4-83d4-4aa76e51f08d",
+     "event_type": "parking_exited"
+    }
+   ],
+   "mathclose": [
+    {
+     "day": "2026-09-03",
+     "event_id": "04eaafb5-35ec-4d3b-993b-5cc4352a4661",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "2ba1b440-f43c-4076-8fcd-8d1af7eae9a8",
+     "event_type": "direct_edit_completed"
+    }
+   ],
+   "mathreg": [
+    {
+     "day": "2026-08-30",
+     "event_id": "0cc72d2e-db90-4d84-aa10-4ce8df7622fe",
+     "event_type": "intent_refined"
+    }
+   ],
+   "measure-poly": [
+    {
+     "day": "2026-09-05",
+     "event_id": "7011095e-5a3a-489e-b01d-eaa20c141532",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "0f813f08-8fe0-41a1-a9ee-647aaf525b1c",
+     "event_type": "parking_exited"
+    }
+   ],
+   "pk-053": [
+    {
+     "day": "2026-09-04",
+     "event_id": "cda6594b-5d69-4b04-a394-dfd2aca3e39a",
+     "event_type": "parking_entered"
+    }
+   ],
+   "viewline": [
+    {
+     "day": "2026-09-05",
+     "event_id": "f27fcdbc-42a5-4de5-a0d7-67c0378e0a9a",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "14d94196-4e03-405b-8a60-74791be51f4d",
+     "event_type": "intent_refined"
+    }
+   ]
+  },
+  "note": "散文命中而命名空间零命中的事件即设计引用非程序活动，不计活动（pk-044 对照）"
+ },
+ "replay": "python3 sih-tools/critsweep/sweep.py --at 2026-09-08 --root /Users/moc/workspaces/SiHankor [--threshold N] [--criterion <id>]",
+ "root": "/Users/moc/workspaces/SiHankor",
+ "root_basis": "arg",
+ "threshold_days": 3,
+ "tool": "critsweep",
+ "trail": {
+  "events_scanned": 1707,
+  "missing_days": [],
+  "unreadable_days": []
+ },
+ "version": "1.0.0",
+ "window": [
+  "2026-08-30",
+  "2026-09-08"
+ ],
+ "window_days": 10
+}
