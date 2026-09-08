@@ -1,0 +1,16 @@
+{
+ "source": "sih-engine/sih/event/plan/baselineexit-solo-materials/AGENTS-preimage-2026-09-08.md",
+ "source_section": "## 工程基线与禁止条款 {#engineering-baseline} 至 ## 产出前自检核心 前exclusive",
+ "body_lines": 37,
+ "body_sha256": "9eab24de82779e31ada5391904572dc04262b201bc82d37ac32c18dc8c2ed106",
+ "doc_sha256": "41ecb4477a8a13d57c526cab0a18f18276262cea52fc177826e41f1f08d7605f",
+ "method": "程序切片逐字节迁入即 make_baseline_v1.py，正文零手打零改写",
+ "structural_additions": [
+  "H1 题行",
+  "导言节",
+  "概览锚节",
+  "基线正文包装节标题",
+  "版本节"
+ ],
+ "semantic_change": "none"
+}

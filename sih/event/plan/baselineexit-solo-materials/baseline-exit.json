@@ -1,0 +1,49 @@
+{
+ "batch": "baselineexit-solo",
+ "date": "2026-09-08",
+ "session": "sess-zcode-260908-forkA-baselineexit",
+ "lease_session": "c25525d869cec4e3",
+ "intent_event_hash8": "16ae7d33",
+ "pk070": {
+  "disposition": "promoted",
+  "exit_event_hash8": "87e85363",
+  "ruling": "m-hygp070-1 九发 stable_clear 终签 f6263808 裁甲案",
+  "material": "sih-engine/sih/state/parking/materials/pk-070-exit.json"
+ },
+ "canonical_doc": {
+  "path": "sih-engine/doc/governance/BASELINE-v1.md",
+  "doc_sha256": "41ecb4477a8a13d57c526cab0a18f18276262cea52fc177826e41f1f08d7605f",
+  "body_sha256": "9eab24de82779e31ada5391904572dc04262b201bc82d37ac32c18dc8c2ed106",
+  "body_lines": 37,
+  "migration": "程序切片逐字节零语义改动"
+ },
+ "agents_pointer": {
+  "pre_lines": 183,
+  "post_lines": 146,
+  "outside_section_byte_identical": true,
+  "pointer": "正典在此，本文件为入口投影"
+ },
+ "roster": {
+  "in_park_count": "十四项改十三项",
+  "moved_to": "历史住户二十四项首位",
+  "file": "sih-engine/doc/governance/PARKING-v1.md"
+ },
+ "chain_events": {
+  "intent_refined": "16ae7d33",
+  "parking_exited": "87e85363",
+  "certifications": {
+   "ask3_record": "35566349",
+   "validation": "39f02d35",
+   "identity": "b450f29c",
+   "pk070_exit_material": "a3e73722",
+   "checkcite": "cfde58ec",
+   "migration_diff_proof": "0555181a"
+  }
+ },
+ "readings": {
+  "convergence": 0.125,
+  "adoption": 0.777778,
+  "mergeback": 0.029412
+ },
+ "settlement": "见 sih-engine/sih/event/plan/baselineexit-solo-results.md 结算读数（收约补笔回填）"
+}
