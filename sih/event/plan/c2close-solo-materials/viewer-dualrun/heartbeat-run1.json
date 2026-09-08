@@ -1,0 +1,44 @@
+{
+  "reference_date": "2026-09-08",
+  "parking": [
+    {
+      "entry_id": "pk-078",
+      "title": "残余测量数学载体归置信度线：可识别性与方差异质性分解与校准偏差校正",
+      "entered_at": "2026-09-08T03:21:04.435892+00:00",
+      "ttl_days": 30,
+      "reference_date": "2026-09-08",
+      "state": 0,
+      "state_label": "在泊未到期",
+      "exited_at": null,
+      "disposition": null
+    }
+  ],
+  "consumable_count": 51,
+  "recent_readings": [
+    {
+      "dimension": "convergence",
+      "value": 0.5,
+      "computed_at": "2026-09-08",
+      "window": "2026-09-08/2026-09-08",
+      "subject": "sih-engine",
+      "present": true
+    },
+    {
+      "dimension": "adoption",
+      "value": 0.818182,
+      "computed_at": "2026-09-08",
+      "window": "2026-09-08/2026-09-08",
+      "subject": "agents",
+      "present": true
+    },
+    {
+      "dimension": "mergeback",
+      "value": 0.029412,
+      "computed_at": "2026-09-08",
+      "window": "2026-09-08/2026-09-08",
+      "subject": "tools-wheel",
+      "present": true
+    }
+  ],
+  "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-08.ndjson"
+}

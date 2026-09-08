@@ -1,0 +1,102 @@
+{
+ "batch": "c2close-solo",
+ "date": "2026-09-08",
+ "session_id": "a241ff588d325ba0",
+ "session_label": "sess-zcode-260908-main-c2close",
+ "intent_event_hash8": "d00a42ca",
+ "criterion": "GOV2-C2-viewline",
+ "legs": {
+  "leg1_viewer_dualrun": {
+   "status": "green",
+   "evidence": {
+    "summary_file": "sih-engine/sih/event/plan/c2close-solo-materials/viewer-dualrun/dualrun-summary.json",
+    "runs": [
+     "viewer-dualrun/alarms-run1.json",
+     "viewer-dualrun/alarms-run2.json",
+     "viewer-dualrun/heartbeat-run1.json",
+     "viewer-dualrun/heartbeat-run2.json",
+     "viewer-dualrun/settle-run1.json",
+     "viewer-dualrun/settle-run2.json"
+    ],
+    "byte_identical_all": true,
+    "binary_sha256": "afbe848c6607e470…"
+   }
+  },
+  "leg2_viewsource_pointers": {
+   "status": "green",
+   "evidence": {
+    "doc": "sih-engine/sih/event/plan/c2close-solo-materials/viewsource-pointers.md",
+    "dashboard_sha256": "3364845f0477f385…",
+    "projector_sha256": "23eb36b1e45a9219…",
+    "data_js_sha256": "f24e9748759ac0bc…",
+    "projector_sources": [
+     "sih-engine/sih/event/trail (L31,L161-164)",
+     "sih-tools/lease/ledger/sessions.ndjson (L32,L166-172,L272-285)",
+     "sih-engine/sih/state/parking/materials (L33)",
+     "sih-tools/parking/materials (L34)"
+    ]
+   }
+  },
+  "leg3_alarm_watchcheck_mapping": {
+   "status": "partial",
+   "verdict": "部分对齐",
+   "evidence": {
+    "doc": "sih-engine/sih/event/plan/c2close-solo-materials/alarm-watchcheck-mapping.md",
+    "rows": {
+     "semantic_direction": 4,
+     "residual_direction": 5,
+     "watchcheck_native": 2,
+     "total": 11
+    },
+    "aligned_symptom_level": [
+     "在飞未收 <-> 幻影会话（共用会话事件序视图）"
+    ],
+    "orthogonal": [
+     "违例批",
+     "超期泊件",
+     "域外壳"
+    ],
+    "zero_surface": [
+     "僵尸锁",
+     "散位收据",
+     "无主工地",
+     "无主清单",
+     "超宽哨兵"
+    ],
+    "gaps_declared": 6,
+    "completion_candidates": 3
+   }
+  },
+  "leg4_gov002_v28_annotation": {
+   "status": "suspended",
+   "reason": "追记落地前置即腿一至腿三全绿，腿三部分对齐即条件红线触发，追记不落挂起候人裁",
+   "evidence": {
+    "gov002_mainline": "零字节改动（git status 零脏）",
+    "gov002_history": "零字节改动（git status 零脏）"
+   }
+  },
+  "leg5_registry_evidence_form": {
+   "status": "suspended",
+   "reason": "判据未达成即转证据形将虚报 achieved，维持 activity 形",
+   "evidence": {
+    "registry": "sih-tools/critsweep/registry.json 零字节改动（git status 零脏）"
+   }
+  }
+ },
+ "criteria_condition_state": {
+  "cond1_viewer_implemented": "achieved（腿一绿）",
+  "cond2_chain_projection_datasource": "achieved（腿二绿）",
+  "cond3_alarm_watchcheck_crosscheck": "partial（腿三部分对齐挂起候人裁）"
+ },
+ "human_adjudication_items": [
+  "候选一：projector 数据面扩容四源（锁台账/检验文件位/收据位/工地目录），异常台增协调残留黄灯区",
+  "候选二：视图侧消费 lease sweep --json 出件为第五数据源（判定正典仍在 sweep）",
+  "候选三：人节点裁第三条件以症状级对齐为达成充分（语义裁定非工程补齐）"
+ ],
+ "redlines": {
+  "sih_visual_zero_touch": true,
+  "parking_zero_touch": true,
+  "main_tree_zero_direct_write": true,
+  "trail_only_via_scribe": true
+ }
+}

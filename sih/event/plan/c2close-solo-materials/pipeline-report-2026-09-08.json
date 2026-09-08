@@ -1,0 +1,82 @@
+{
+ "batch": "c2close-solo",
+ "date": "2026-09-08",
+ "pipeline_order": "化格→核阅→检词",
+ "files": {
+  "sih-engine/sih/state/plan/c2close-solo.md": {
+   "formatter_general_v1": {
+    "exit_code": 0,
+    "changed": false
+   },
+   "scrutinator_des001": {
+    "exit_code": 2,
+    "note": "des-001 域外即 state/plan 与 event/plan 不在域盖，如实记档不属违规"
+   },
+   "nomenclator_core": {
+    "exit_code": 0,
+    "violations": 0
+   },
+   "sha256": "397fb1f62efc22add9dcd2994c5b5736f5350f3ac03269ac734fd45e0e54cefb"
+  },
+  "sih-engine/sih/state/plan/c2close-solo-prompt.md": {
+   "formatter_general_v1": {
+    "exit_code": 0,
+    "changed": false
+   },
+   "scrutinator_des001": {
+    "exit_code": 2,
+    "note": "des-001 域外即 state/plan 与 event/plan 不在域盖，如实记档不属违规"
+   },
+   "nomenclator_core": {
+    "exit_code": 0,
+    "violations": 0
+   },
+   "sha256": "3a30296b5cab57dacdba0229fb30ae4b6d80f5d23a85db6f868c03e238d6bf33"
+  },
+  "sih-engine/sih/event/plan/c2close-solo-results.md": {
+   "formatter_general_v1": {
+    "exit_code": 0,
+    "changed": false
+   },
+   "scrutinator_des001": {
+    "exit_code": 2,
+    "note": "des-001 域外即 state/plan 与 event/plan 不在域盖，如实记档不属违规"
+   },
+   "nomenclator_core": {
+    "exit_code": 0,
+    "violations": 0
+   },
+   "sha256": "16ba438867f8fb12bf7510f8508ba9bad33a24089807ac3fb4cf4dceb30fe2e0"
+  },
+  "sih-engine/sih/event/plan/c2close-solo-materials/viewsource-pointers.md": {
+   "formatter_general_v1": {
+    "exit_code": 0,
+    "changed": false
+   },
+   "scrutinator_des001": {
+    "exit_code": 2,
+    "note": "des-001 域外即 state/plan 与 event/plan 不在域盖，如实记档不属违规"
+   },
+   "nomenclator_core": {
+    "exit_code": 0,
+    "violations": 0
+   },
+   "sha256": "149909a483728d4974fdd7e097f301a8fa106cf202cc14e03d259007a40fd05e"
+  },
+  "sih-engine/sih/event/plan/c2close-solo-materials/alarm-watchcheck-mapping.md": {
+   "formatter_general_v1": {
+    "exit_code": 0,
+    "changed": false
+   },
+   "scrutinator_des001": {
+    "exit_code": 2,
+    "note": "des-001 域外即 state/plan 与 event/plan 不在域盖，如实记档不属违规"
+   },
+   "nomenclator_core": {
+    "exit_code": 0,
+    "violations": 0
+   },
+   "sha256": "00870e27d38682fe29de422b25f5acd128d75b1e3ff3eafd532c805754a63aa0"
+  }
+ }
+}
