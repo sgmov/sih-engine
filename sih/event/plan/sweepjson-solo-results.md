@@ -74,7 +74,7 @@
 | F-2 判定逻辑零改 | 第一红线 | --out 只换皮不换判定，sweepcore 零字节改动，exit code 语义零改 | 通过（结构全等测试钉死＋sweepcore 零触碰＋金向量冻结） |
 | F-3 测量先行条件执行 | 治理 | 席 stable_clear 加执契终签才开工腿三腿四 | 通过（stable_clear 9/9＋终签 52c2dbb6 先落，腿三腿四后开工，零刀锋零停摆） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即九路径 allow 面加双工地加链经 scribe；sih-visual 两件伴生面显式申报域外；正典消费位快照落工地待归并） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 归并 08988c2b 与 engine 归并 7b37e00；close 一跑成 revoked 真值携双旗 bypass 即 CALL-LOG 族候清项非本批活面；verify valid events 268；reconcile 双仓 unrouted 零，cert_missing tools 5 与 engine 3 与批前同数零新增不代清） |
 
 ## 越线与误差申报
 
@@ -86,7 +86,23 @@
 
 ## 结算读数
 
-（随收约补笔回填：双仓 settle 提交号、认证实录、放锁收约、归并提交号、verify 与 reconcile 读数、判据扫复算）
+- 双仓 settle：tools 段一 `5f52bbcd`（base integral-stage-build@812ed651）、engine 段一 `b05c963`（base main@33aee57），cert 统一取重开段 ask3 记录认证 `c26ada5d`；归并 tools `08988c2b`（closeguard 预收 4d420ff5）、engine `7b37e00`（预收 2c75728）。
+- 放锁收约：10 路径 unlock 全过零失败；close 一跑成即会话 e3adf66f9f37d22b revoked 真值、双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/sweepjson-solo.json；双旗标 bypass 显式留痕即 bypassed_orphan 与 bypassed_calllog 两笔（CALL-LOG 族 16 件俱 callloghyg 线跨批候清项非本批活面，先例同形不代收）。
+- 链 verify 与 reconcile 读数与判据扫复算见完工呈报（直改链笔随本补笔落链）：
+  - 链 verify：valid，events 268；本批链面笔序即首会话 intent 1db8643c 与例读数三笔与认证八笔与终签 crosscheck 52c2dbb6，中间收约 revoked 侧零链笔，二会话 intent 71a4283e 与认证九笔（含清单件双版 86d3dd4d 与 2e3958f1）。
+  - reconcile：双仓 unrouted 俱零即本批零新增路由缺口；cert_missing 即 tools 5 与 engine 3 与批前同数零新增；session_orphan 与 unbypassed 俱跨批存量不代清。
+  - 判据扫复算：C1 与 C3 与 C4 与 C5 达成，C2 viewline 维持 in_flight（本批零 viewline 命名空间命中即零追记零 registry 改笔红线正确执行，收口验收归独立会话 c2close2），degraded 假零沉底。
+  - 收约补笔：本节与 F-5 与会话重开实录即本笔，经直改链笔申报加 --no-verify 提交替 lease bypass 登记通道（先例同形）。
+- 投影器 present 相复跑（归并后正典消费位在场）：face=present，verdict residue，判定原文一条逐字段照录即 stale_check_file/awaiting/pid 探针四态判据原文/human-takeover，视图零判定；缺档相与在场相双验证俱在档（批材料 projector-run-absent.txt 与本节）。
+- 快照时点申报：正典消费位 sweep-latest.json 系批内 2026-09-08T13:30Z 快照（其时 awaiting 件为重开前会话检验文件），投影快照按需经 --out 再生属设计语义非缺陷。
+
+## 会话重开实录（allow 面声明缺陷修复，全证据在档）
+
+- 首会话 b0487ab35391be36（九锁）settle 首红即 staged_out_of_scope：open 时漏申报 sih-tools/lease 代码面（任务包产出节明载 sweep 实现与测试与 CONTRACT 修订，open 声明未覆盖即声明缺陷非范围扩张）。
+- 修复路走正典通道：批件工件 39 件备份 /tmp/sweepjson-reopen-backup → 双工地清零 → 九锁全放 → 中间 close 一会话 revoked（双旗标 bypass 留痕）→ 带 sih-tools/lease 补齐的十路径 allow 面重开即二会话 e3adf66f9f37d22b → 工件复放（两处嵌套错位即 DES 与 facet 单元格即时修正，八测复绿复核）→ 十锁 → intent 重笔 71a4283e（--allow-reintent 合法通道即闸二既设旗标）→ 认证八笔重落 → 双仓 settle。
+- 终签归属申报：测量席终签 crosscheck 52c2dbb6 出自首会话（重开前），判定与工件零改动随重开复放字节一致（内容哈希清单件双版在链即 a8b8e3dc 与 2e3958f1 可对表）；首会话 intent 1db8643c 与例读数三笔及认证八笔俱在链为既定事实零撤回。
+- 连带发现申报（呈人节点，本批零越权修复）：hygspots-solo G2 跑步机生产缺陷即 calllog_treadmill_faces 取 DIRECT_LANE_FILE_WHITELIST 根相对模式（sih-tools/...）对 git status 仓相对路径（lease/...）永不匹配，收编恒空即本批两度 close 实测 CALL-LOG 族 16 件俱走 bypass 通道；批内不修（四腿范围外），候人节点裁修复批。
+
 
 ## 大白话节
 
