@@ -1,0 +1,16 @@
+
+==================================== ERRORS ====================================
+_________________ ERROR collecting tests/test_calllogguard.py __________________
+ImportError while importing test module '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanexec-solo/lease/tests/test_calllogguard.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_calllogguard.py:22: in <module>
+    from lease.core import (  # noqa: E402
+E   ImportError: cannot import name 'CALLLOG_GUARD_EFFECTIVE_AT' from 'lease.core' (/Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanexec-solo/lease/src/lease/core.py)
+=========================== short test summary info ============================
+ERROR tests/test_calllogguard.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.04s

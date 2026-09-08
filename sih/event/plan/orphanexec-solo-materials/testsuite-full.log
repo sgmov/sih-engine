@@ -1,0 +1,11 @@
+........................................................................ [ 25%]
+........................................................................ [ 51%]
+........................................................................ [ 76%]
+..................................................................       [100%]
+=============================== warnings summary ===============================
+tests/test_leaseup_bill.py:102
+  /Users/moc/workspaces/SiHankor/worktrees/sih-tools/orphanexec-solo/lease/tests/test_leaseup_bill.py:102: SyntaxWarning: "\ " is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\ "? A raw string is also an option.
+    """未用锁罚：收工时 locked_paths \ used_paths 逐件罚 UNUSED_LOCK_MULTIPLIER。"""
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+282 passed, 1 warning in 56.75s
