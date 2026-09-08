@@ -12,7 +12,7 @@
 
 ## 主线 {#mainline}
 
-全态后损补节律的工程落地：协调面经租约与多 agent 优化线硬化，判定面经测量聚合重设计线与探针退役重设计，视图面经视图组件实装承载人类视图与实时告警，辅以数学归因长尾收口，渐进逼近治理核心的确定性运转，排序统一裁决标准挂点解除驱动。
+全态后损补节律的工程落地：协调面经租约与多 agent 优化线硬化，判定面经测量面确定性化即探针退役与注入回算落地与残余数学载体归置信度线，视图面经视图组件实装承载人类视图与实时告警，辅以数学归因长尾收口，渐进逼近治理核心的确定性运转，排序统一裁决标准挂点解除驱动。
 
 租约修复升级线承「收约尾部修复与锁面经济记账与追加形正典化」段位：自 closefix-solo 收约归并修复延伸至 leaseup-solo 升级与 billwire-solo 接线与 rootanchor-solo 加固，pk-072 出泊承载修复，线级验收第五条达成即线结算，线程序包 leaseup-line-v1.md 归档于 event/plan。
 
@@ -22,7 +22,7 @@
 
 - leaseopt 线级验收达成即撞车分类账本在档可复算、六项病灶各处于硬化在役或冻结登记二态、pk-045 出泊事件在链；达成追记 2026-09-05：三项判据全数在档，结算单 SETTLEMENT-LEASEOPT-2026-09-05.md 承载，六批 CONTRACT 1.19.0 至 1.23.0 在役，批六转 pk-059 在泊
 - 视图组件在役即 viewer 实装承载人类视图与实时告警、数据源接链投影库、告警语义接 watchcheck 对表；契约参考面承 pk-047 OpenTelemetry GenAI 材料，线程序包 viewline-line-v1.md 承载
-- measure-poly 程序级验收达成即判定性常数裸奔数为零、核阅裸奔违规类在役、探针退役 A/B 门切换在役、判变清单逐件复核在档
+- 测量面确定性化验收达成即 pk-044 出泊裁定承载独立性来源改道与温度探针经 baseinject 退役、上下文注入与确定性回算基础设施在役即 attnanchor 与 critsweep 结果档在档、残余测量数学载体即改道置信度线泊 pk-078 带 gate、measure-poly-rev1 程序文档改道注记在档；达成追记 2026-09-08：四指针全数在档即 pk-044 出泊链事件与 baseinject 与 attnanchor 与 critsweep 结果档与 pk-078 进泊与 progdoc 注记，经 reroute-solo 批换版 v2.6 承用户改道令
 - 数学归因长尾收口即 pk-053 冻结件逐件清账完毕，处置三态即承载体落档或改判环境参数或维持冻结经用户裁，账面在链
 - 租约修复升级线级验收达成即 pk-072 出泊 promoted 承载修复、锁面账单台账 lockface-bills.ndjson 与 lockdb 投影双写一致零结算、哨兵超宽面三态只报不拦、共享面 append 缺省实装、CONTRACT 1.28.0 与 watchcheck 0.2.0 在役、双仓 settle close reconcile verify 全链；达成追记 2026-09-06：五判据全数在档即 CONTRACT 修订四十一至四十三即 1.28.0 至 1.30.0 在役承载账单双写与哨兵三态与 append 缺省与自举自卫与链证守门、test_leaseup 与 test_leaseup_bill 与 test_leaseup_append 与 test_leaseup_watch 四族二十件及 test_rootanchor 七件先红后绿在档、pk-072 出泊链事件由 leaseupclose-solo 补落即修订四十一文述在先而链事件后至差异如实申报、残留三项即超宽阈值调优与未用罚口径精确化与 T-9 执法位泊 pk-074 承载不属本判据面、线程序包 leaseup-line-v1.md 迁 event/plan 归档
 

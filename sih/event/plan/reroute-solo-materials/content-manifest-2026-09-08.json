@@ -1,0 +1,28 @@
+{
+ "batch": "reroute-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 件不经 scribe append 直认，以本清单件统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "gov002_mainline_v26": {
+   "path": "worktrees/sih-engine/reroute-solo/doc/governance/GOV-002-mainline-lock-v1.md",
+   "sha256": "ce8501427355849672f45b5480d49c266afea4e270e0ed5dee0fa6c6ce30d18c"
+  },
+  "gov002_history_v26": {
+   "path": "worktrees/sih-engine/reroute-solo/doc/governance/GOV-002-history-v1.md",
+   "sha256": "0717bcb9b52b13fa23e613567f5902844060f26f13123f47d680eb0d43da29e5"
+  },
+  "measure_poly_progdoc_note": {
+   "path": "worktrees/sih-engine/reroute-solo/sih/event/plan/measure-poly-rev1-progdoc.md",
+   "sha256": "3207e234ef344d98943d6155f880962d133718e4c75115a8e98e131734c6ac14"
+  },
+  "task_package": {
+   "path": "worktrees/sih-engine/reroute-solo/sih/state/plan/reroute-solo.md",
+   "sha256": "53379e11161cab1bab958a820b3b05c9bacfb0aedef0b89c699bdfdf9e33bcb2"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/reroute-solo/sih/event/plan/reroute-solo-results.md",
+   "sha256": "989ebea3576a9d22ab8202b82fbc9619c4009bcce6fff7cf7b6ab73a07da21bb"
+  }
+ }
+}

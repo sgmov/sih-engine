@@ -1,0 +1,22 @@
+{
+ "action": "enter",
+ "context": "令源：用户 2026-09-08 改道裁定即 GOV-002 v2.6 第三条改写，measure-poly 程序四批不再开工，其残余数学需求不随改道蒸发：可识别性、方差/异质性分解恒等式、校准与偏差校正三类载体缺口（progdoc 数学仓载体缺口节自认）与置信度线统计推断同源（PROB-010 至 015 族），改道置信度线后续阶段承载。pk-054 已于 2026-09-05 出泊在案，探针退役语境由 pk-044 裁定与 baseinject 在役承载，本泊位只承载数学载体安家。",
+ "created_at": "2026-09-08",
+ "entry_id": "pk-078",
+ "exit_condition": "置信度线阶段立项或结算件落 event/plan 时呈裁载体立项形态与批次；或用户裁另立批承载",
+ "id": "pk-078",
+ "parking": {
+  "entered_at": "2026-09-08",
+  "ttl_days": 30
+ },
+ "path": "doc/governance/PARKING-v1.md",
+ "related": [
+  "pk-054",
+  "pk-073",
+  "measure-poly-rev1-progdoc"
+ ],
+ "source": "主会 2026-09-08 改道裁定（reroute-solo 批承载）",
+ "state": "parked",
+ "title": "残余测量数学载体归置信度线：可识别性与方差异质性分解与校准偏差校正",
+ "ttl_days": 30
+}
