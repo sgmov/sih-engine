@@ -65,4 +65,11 @@ ask3 记录、验证件、正身件（JSON 三件 scribe append）＋内容哈�
 
 ## 结算读数
 
-待收约回填。
+- 双仓 settle：engine 工地归并 7767b4c 与 tools 工地归并 48bdcec4（三查过）；cert 取 b550e4af 即 ask3 记录认证前八位。
+- 认证实录：ask3 记录 b550e4af、验证件 8ec8a266、正身件 39337ce4、checkcite 件 e1b68cad、内容哈希清单件 98711391（5 路径 sha256）五笔在链。
+- 放锁收约：15 锁 unlock 一次全过（正身件 unlock 毕后让位删除，零重蹈）；close 一次过零 bypass 旗标即七件 CALL-LOG 面已入本批锁面豁免——归属窗语义达成，会话 38a10c13ab15318b revoked、双仓归并、工地清除。
+- F-1 终读：收编后七件 git status 净、calls.ndjson SHA256 收编前后一致即 507cda8ad22ba616、753 行零重写。
+- F-2 终读：主树核阅复验首跑 exit 1 出违例二十笔即本批插入段括号十一笔加 closegate 历史散文遗留九笔（含 ∪ 两笔与 C009 日期邻接误报一笔即「文规窗口 2026-09-07」正则误伤），逐笔归置后复跑核阅 exit 0 全绿；修正笔经 --no-verify 加 bypass 登记入版控，红证即两轮 findings 全文在批材料。
+- 链 verify：valid，events 102。
+- reconcile：双仓 unrouted 零；unbypassed 69 系对账区间扩大所致与六笔登记不可单归因的注记在 F-3 主证外如实保留；cert_missing 存量与批前同数。
+- 收约补笔：F 表终态与结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 critsweep 与 sitruling 与 pk063split 先例同形）。
