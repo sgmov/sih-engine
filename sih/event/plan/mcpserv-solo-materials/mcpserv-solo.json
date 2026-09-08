@@ -1,0 +1,54 @@
+{
+ "batch": "mcpserv-solo",
+ "date": "2026-09-09",
+ "session": "sess-zcode-260909-mcpserv",
+ "lease_session": "90ab7417cb4410dd",
+ "intent_event_hash": "bba35d36",
+ "line": "mcpline（α 相实装批一之二，与 mcpspec-solo 并行，会话 bd45929ddeb6ff5e）",
+ "legs": {
+  "implementation": {
+   "area": "sih-tools/mcpline/（全新区）",
+   "form": "uv 项目，官方 mcp SDK FastMCP（钉 mcp>=1.2.0,<2），入口 python -m mcpline，stdio",
+   "tools": ["chain_query", "chain_verify", "critsweep", "heartbeat", "locks_read"],
+   "contract_source": "任务包 mcpserv-solo.md 第二节（照录不增删），对表正典 SPEC-023",
+   "root_resolution": "SIH_ROOT 缺省取 sih-tools/mcpline 上两级",
+   "error_payload": ["error", "what_this_tool_does", "valid_params", "canonical_pointers"]
+  },
+  "tests": {
+   "passed": 14,
+   "failed": 0,
+   "families": ["stdio 客户端冒烟 1（列工具恰五、逐工具调用断言出参形）", "单元 11（每工具函数级加错误路径）", "零写入双证 2（源码 grep 写动词守卫 + 五工具前后双仓 git status 全等）"],
+   "red_green": "五跑四红一绿，materials/tdd-red-green.md 全量归档",
+   "smoke_excerpts": "materials/smoke-excerpts.json"
+  },
+  "zero_write": {
+   "guard": "test_zero_write_guard_source_grep 绿（写动词零命中）",
+   "proof": "test_zero_write_proof_git_status_unchanged 绿（两仓工作树前后全等）",
+   "upstream_untouched": "critsweep 与 gauge 与 lease 与 scribe 代码零改动"
+  }
+ },
+ "redlines": {
+  "alpha_zero_write": "held（服务器零写模式子命令，承接 CLI 现成只读形）",
+  "no_second_executor": "held（无状态零重试改写零判定语义，读数即投影）",
+  "spec_023": "mcpspec-solo 域，本批零触碰",
+  "gov002_v3": "untouched"
+ },
+ "declarations": [
+  "叩问 check 先于 ask3 记录定稿一跑（预登记实测 8/8，闸门位序不变）",
+  "m-mcpserv-1 allow 预占零写入（本批无得一测量腿）",
+  "locks_read cwd 定工作区根（lease 工地自检卫语义承接，参数形零改动）",
+  "书单对表无对象（零推导档引用 ID 纯工程批）"
+ ],
+ "pipeline": {
+  "formatter": {"exit": 0, "targets_changed": 0},
+  "scrutinator": {"exit": 2, "verdict": "域外照录（des-001 域只盖 sih-engine/doc，event/plan 目标域外不属违规）"},
+  "nomenclator": {"exit": 0, "findings": 0}
+ },
+ "certifications": {
+  "ask3_record": "a80b1772",
+  "validation": "d4c1caf4",
+  "identity": "c873c680",
+  "manifest": "见链上 manifest 认证笔（settle cert 同取，完工回报与补笔回填）",
+  "projection": "本件认证笔哈希见完工回报"
+ }
+}

@@ -1,0 +1,3 @@
+{
+  "error": "CALL-LOG 随批检查拦截：仓内存在未随批入版控的 CALL-LOG.md 脏面（共 2 件），整批拒零动作。\n缺件事由：CALL-LOG.md 脏面（已修改或未跟踪）未含于该批 settle 提交（v1 判定即脏面路径在会话分支 tip 在席且盘上内容与分支 tip 逐字节一致），亦无显式 bypass 登记事由（m-orphanrule-1 P3 既裁立则，orphanexec-solo 批实施）。\n文件清单：[\n  {\n    \"path\": \"attnanchor/CALL-LOG.md\",\n    \"status\": \"modified\",\n    \"repo\": \"/Users/moc/workspaces/SiHankor/sih-tools\"\n  },\n  {\n    \"path\": \"attractor/CALL-LOG.md\",\n    \"status\": \"modified\",\n    \"repo\": \"/Users/moc/workspaces/SiHankor/sih-tools\"\n  }\n]\n处置指引（三通道）：\n  1) 随批入版控：把脏面现字节态复制入本批工地随 settle 提交（B 案随批节奏）\n  2) 显式绕行：close --bypass-calllog <事由> 落 bypass.ndjson 留痕\n  3) 追加行逐行对权威腿 calls.ndjson 对表属后继加强位，本批不实装（裁定边界）"
+}

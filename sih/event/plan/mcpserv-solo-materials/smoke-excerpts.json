@@ -1,0 +1,126 @@
+{
+ "_tools_listed": [
+  "chain_query",
+  "chain_verify",
+  "critsweep",
+  "heartbeat",
+  "locks_read"
+ ],
+ "chain_query": {
+  "date": "2026-09-09",
+  "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson",
+  "event_type_filter": null,
+  "matches": 67,
+  "returned": 67,
+  "events": [
+   {
+    "event_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+    "event_type": "reading_recorded",
+    "subject": "sih-engine",
+    "doc_id": "gauge-reading-convergence-sih-engine",
+    "timestamp": "2026-09-08T16:50:43.793723Z"
+   },
+   {
+    "event_hash": "12201d03e03151726d900644afca0aba306c29112a523b2456de35a6e522ba84",
+    "event_type": "reading_recorded",
+    "subject": "agents",
+    "doc_id": "gauge-reading-adoption-agents",
+    "timestamp": "2026-09-08T16:50:43.888990Z"
+   },
+   "…截断，全量见链"
+  ]
+ },
+ "chain_verify": {
+  "date": "2026-09-09",
+  "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson",
+  "status": "valid",
+  "valid": true,
+  "events": 67,
+  "first_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+  "last_hash": "cc526368b473801642d58b64191d4210fde76466f0bea967bf33ebb40403fa7b"
+ },
+ "critsweep": {
+  "at": "2026-09-09",
+  "degraded": false,
+  "criteria_ids": [
+   "GOV2-C1-leaseopt",
+   "GOV2-C2-viewline",
+   "GOV2-C3-measure-determinism",
+   "GOV2-C4-math-attribution",
+   "GOV2-C5-lease-line"
+  ],
+  "parking": {
+   "engine": {
+    "exit_code": 0,
+    "route": "routed",
+    "summary": {
+     "alarms": [],
+     "mainline": 53,
+     "scrap_track": 9,
+     "siding": 3,
+     "total": 65
+    }
+   },
+   "tools": {
+    "exit_code": 0,
+    "route": "routed",
+    "summary": {
+     "alarms": [],
+     "mainline": 24,
+     "scrap_track": 0,
+     "siding": 1,
+     "total": 25
+    }
+   }
+  },
+  "inflight": {
+   "active_sessions": 2,
+   "held_locks": 9
+  }
+ },
+ "heartbeat": {
+  "date": "2026-09-09",
+  "readings": {
+   "convergence": {
+    "value": 0.125,
+    "computed_at": "2026-09-09",
+    "sequence": "ok"
+   },
+   "adoption": {
+    "value": 0.0,
+    "computed_at": "2026-09-09",
+    "sequence": "ok"
+   },
+   "mergeback": {
+    "value": 0.029412,
+    "computed_at": "2026-09-09",
+    "sequence": "ok"
+   }
+  },
+  "last_snapshot_at": "2026-09-09",
+  "days_since_last_snapshot": 0
+ },
+ "locks_read": {
+  "held_count": 9,
+  "held_locks": [
+   {
+    "path": "sih-engine/sih/event/plan/mcpserv-solo-materials",
+    "session_id": "90ab7417cb4410dd"
+   },
+   {
+    "path": "sih-engine/sih/event/plan/mcpserv-solo-results.md",
+    "session_id": "90ab7417cb4410dd"
+   },
+   {
+    "path": "sih-engine/sih/event/trail/2026-09-09.ndjson",
+    "session_id": "90ab7417cb4410dd"
+   },
+   "…截断"
+  ],
+  "active_sessions": 2,
+  "active_session_ids": [
+   "09326a760119e4ed",
+   "90ab7417cb4410dd"
+  ]
+ }
+}

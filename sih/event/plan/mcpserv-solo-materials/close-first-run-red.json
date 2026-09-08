@@ -1,0 +1,3 @@
+{
+  "error": "无主闸拦截：主树存在无主 tracked 改件（脏文件集 − 锁面 ∪ 链笔声明面 ∪ 豁免面 = 无主清单，共 2 件），整批拒零动作。\n三通道：\n  1) 走司衡治理通道开租约持锁后再改（lease open + lease lock --path <路径>）\n  2) 走直改链笔申报（scribe pen 落 direct_edit_completed 声明）\n  3) 显式绕行：close --bypass-orphan <事由> 落 bypass.ndjson 留痕\n清单：[\n  {\n    \"path\": \"sih-tools/attnanchor/CALL-LOG.md\",\n    \"xy\": \" M\",\n    \"mtime\": \"2026-09-08T17:32:23+00:00\"\n  },\n  {\n    \"path\": \"sih-tools/attractor/CALL-LOG.md\",\n    \"xy\": \" M\",\n    \"mtime\": \"2026-09-08T17:32:32+00:00\"\n  }\n]"
+}

@@ -1,0 +1,11 @@
+{
+ "kind": "content-hash-manifest",
+ "batch": "mcpserv-solo",
+ "date": "2026-09-09",
+ "files": {
+  "sih/state/plan/mcpserv-solo.md": "258bbf1fe8c9a158d0458ce8b33e6616febb96def25532b2c962f9993b2d5aec",
+  "sih/state/plan/mcpserv-solo-prompt.md": "4685695f435d20e1572dc3486e4d46abc2fc3d1564e100c71e24b9664784c75d",
+  "sih/event/plan/mcpserv-solo-results.md": "44db868c6de10732ef4d322909ff5d9cb036c7d5e950c883025b7c727a41476b",
+  "sih/event/plan/mcpserv-solo-materials/tdd-red-green.md": "11787dbfdacdde3c725215aee226ab13a0e8086f7060abf6ddbd9517f1bc605d"
+ }
+}
