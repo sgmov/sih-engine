@@ -38,6 +38,7 @@
 - 化格：四件即 BASELINE-v1.md 与 PARKING-v1.md 与任务包与结果档过 packs/general-v1 全 exit 0 零改，BASELINE-v1.md 化格后 doc_sha256 不动即逐字保真未损；AGENTS.md 只查不改形 exit 0 零需改。
 - 核阅：des-001 对工地路径四件全 exit 2 即目标不在治理域内报文照录，照先例如实记档非违规，主树归并后复验读数随收约回填。
 - 检词：nomenclator packs/core 四件全 exit 0 零违例；AGENTS.md exit 0 零违例。
+- 主树复验：des-001 对归并后 BASELINE-v1.md 与 PARKING-v1.md exit 0 零违规，对结果档与任务包域外 exit 2 如实记档（BATCH-FACE 域注同款）；主树 BASELINE-v1.md sha256 前 16 `41ecb4477a8a13d5` 与工地认证件逐字节同；独立复算源节 37 行与主树正典正文区逐行全等为真即逐字保真二次证明。
 - checkcite：首跑红 exit 1 即扫描面并入了 AGENTS.md 全文与名册前像旧散文，七缺册 ID 俱前像既有非本批产出即 AGENTS.md 数学仓节六件与名册 pk-046 旧散文 SPEC-017 一件（git show HEAD 名册已含照证）；修扫描面为批产出件三件重跑 verdict pass cited 零 missing 零，首跑红证 checkcite-firstrun-red.json 留档。
 
 ## 认证清单
@@ -63,7 +64,7 @@
 | F-2 AGENTS.md 指针化 | 治理 | 两节正文替换为指针，其余节与锚文件零触碰 | 通过（节外逐字节不变自证为真；.session-anchor.md 零触碰） |
 | F-3 pk-070 出泊在链 | 数据治理 | parking_exited promoted ruling 照录终签入据 | 通过（87e85363，f6263808 入 ruling，重入拒零触发） |
 | F-4 写入仅 allow | 治理 | 写入仅 allow 面所列路径，并行窗面零触碰 | 通过（写入面即 allow 九路径；原泊材料零触碰） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close、verify valid、reconcile 零新增 | 待收约回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close、verify valid、reconcile 零新增 | 通过（settle tools 0843d2f4 与 engine 028c141、归并 tools 57fc8b3c 与 engine 71f4846、close 一跑成 revoked、verify valid 199 笔、reconcile unrouted 双仓零即零新增，cert_missing 存量 4/3 与批前同数） |
 
 ## 越线与误差申报
 
@@ -71,11 +72,16 @@
 - checkcite 首跑红一笔即扫描面过宽并入零触碰前像文本致七缺册假阳，修扫描面为批产出件后 pass，首跑红证留档俱在 materials（先红留痕纪律承形）。
 - 任务锚首行未按会话启动节律改写，因本批红线明令 .session-anchor.md 零触碰（并行窗共用），两约束冲突取红线从严，完工回显五行锚补偿，如实申报。
 - AGENTS.md 指针残留态：同名节留指针即 pk-070 病灶本身的可接受残留，正典入仓后按任务包如实记档。
+- CALL-LOG 脏面归属澄清：收约 bypass 读数中 CALL-LOG 面 mtime 有落在本批窗内者，经 git diff 行级核对全部系并行窗 forkB-confreopen 会话行与前批批次行，本批会话零行，bypass 事由「非本批写点」事实成立，「前窗批遗留」措辞扩为「并行窗与前批遗留」如实补正。
 - 其余误差零申报。
 
 ## 结算读数
 
-- 待收约回填。
+- 双仓 settle：tools 段一提交 0843d2f4（base integral-stage-build@9f5aaff0）与 engine 段一提交 028c141（base main@2aa905b），cert 取 35566349 即 ask3 记录认证前八位；closeguard 预收提交双仓在档（tools 5b04ed87 与 engine d2ceba8）。
+- 放锁收约：九锁 unlock 全零，close 一跑成 revoked 真值，双仓归并 tools 57fc8b3c 与 engine 71f4846，工地与分支清除；chain_gate checked trails 1；收据落 sih-tools/lease/ledger/receipts/baselineexit-solo.json。
+- 双旗 bypass 留痕：bypassed_orphan 与 bypassed_calllog 两笔入 bypass.ndjson 挂本批会话 c25525d869cec4e3；watchcheck 无主面与 CALL-LOG 脏行经 git diff 逐行核对系并行窗 forkB-confreopen 与前批批次行，本批会话零 CALL-LOG 行，留痕不代收照令；calllog_treadmill collected 空。
+- reconcile：双仓 unrouted 零即本批零新增路由缺口；cert_missing tools 4 与 engine 3 与批前存量同数；unbypassed 计数含本批两个 closeguard 预收提交与 archpark 先例同款历史账面类。
+- 收约补笔：主树复验读数与 F-5 与本节结算读数即本笔，经 --no-verify 加 lease bypass 登记通道入版控（anchorskill 与 pkexits2 先例同形）。
 
 ## 大白话节
 
