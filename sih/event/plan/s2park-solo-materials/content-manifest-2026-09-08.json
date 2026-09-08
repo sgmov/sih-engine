@@ -1,0 +1,20 @@
+{
+ "batch": "s2park-solo",
+ "date": "2026-09-08",
+ "kind": "content-hash-manifest",
+ "note": "md 件不经 scribe append 直认，以本清单件统一绑定内容哈希，sha256",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/s2park-solo/sih/state/plan/s2park-solo.md",
+   "sha256": "dd2243ed2ffa600fd64a326954d159cb73dbbd04d1b48f6a6f74fde00c4f9734"
+  },
+  "prompt_file": {
+   "path": "worktrees/sih-engine/s2park-solo/sih/state/plan/s2park-solo-prompt.md",
+   "sha256": "04c75a8bfc8ba329d2f1ef77d5b57daa036b3a0831ed52a538f40723fae1d8d5"
+  },
+  "results_doc_v1": {
+   "path": "worktrees/sih-engine/s2park-solo/sih/event/plan/s2park-solo-results.md",
+   "sha256": "c2bbdbbb13786d63181be0ac384eda4068caed324573572ae6953e93fc89d07a"
+  }
+ }
+}
