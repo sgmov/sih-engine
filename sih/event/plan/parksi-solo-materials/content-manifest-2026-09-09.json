@@ -1,0 +1,24 @@
+{
+ "batch": "parksi-solo",
+ "date": "2026-09-09",
+ "kind": "content-hash-manifest",
+ "note": "md 件不经 scribe append 直认，以本清单件统一绑定内容哈希，sha256；会话两段制本件为现段 d1731d5e59403dee 重落笔",
+ "content_hashes": {
+  "task_package": {
+   "path": "worktrees/sih-engine/parksi-solo/sih/state/plan/parksi-solo.md",
+   "sha256": "02cc200ac720244eff809d1a570ae38a36f5604755ccb6ffbedef6c20be0fca8"
+  },
+  "prompt_file": {
+   "path": "worktrees/sih-engine/parksi-solo/sih/state/plan/parksi-solo-prompt.md",
+   "sha256": "47795b9a71608ddabd5cb50708296734315b15cae9af2916fe88bd73cdc523e4"
+  },
+  "results_doc_v2": {
+   "path": "worktrees/sih-engine/parksi-solo/sih/event/plan/parksi-solo-results.md",
+   "sha256": "a3257fcaa3298c3d40c62602ba4103cd85a1939ed5a474c39cfb2d8abbca9791"
+  },
+  "parking_registry": {
+   "path": "worktrees/sih-engine/parksi-solo/doc/governance/PARKING-v1.md",
+   "sha256": "a7284ea72afe3487aa1638d1fd8d52161dc6ace3e319683a8eabda8fc42f5a9d"
+  }
+ }
+}

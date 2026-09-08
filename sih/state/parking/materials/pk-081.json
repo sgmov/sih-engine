@@ -1,0 +1,26 @@
+{
+  "action": "enter",
+  "context": "令源：用户 2026-09-09 原话「司衡引擎的mcp做好了再上，到时候是那边的agent接入，有问题我会回司衡窗口报，你现在不要管SiInfer」。前情三行：只读踏勘已毕归档会话，要点三件即第一口候选 InferServer/hidream-ft-taste-model.md 已与司衡语义接壤、三源结构须锚 commit hash、SiInfer 侧 .vscode/mcp.json 接入未挂。红线：彩排前司衡侧对 SiInfer 零动作，彼侧 agent 接入后故障由人节点回司衡窗口报。撞号披露照录：任务包原定号位 pk-080，toolhyg-solo 批 2026-09-09 先手入泊 pk-080 即 zcode CLI 0.16.5 三死旗标漂移件在链（parking_entered 事件 9bd4b2e0，declared 2026-09-08T20:11:05Z），本批 park 后手经重入拒机械拦零留痕，承单一名册续号不重号即 PARKING-v1 出入口协议与 pk-043 撞号改正重编先例改正重编为 pk-081，号位让渡不涉两件内容零关联。",
+  "created_at": "2026-09-09",
+  "entry_id": "pk-081",
+  "exit_condition": "人节点裁彩排开工（立彩排批，SiInfer 全程只读加咬死 commit hash 加彼侧 agent 接入形）或裁搁置闭项出泊；gate 触发亦不出泊，唯人节点",
+  "gate": {
+    "declared_at": "2026-09-09",
+    "fired_at": null,
+    "source": "主会 2026-09-09 会话用户裁定，原话照录 context 令源节",
+    "trigger": "mcpline 线批三 β 实装收约结算件落 sih-engine/sih/event/plan/（用户「MCP 做好了」的机械判读）"
+  },
+  "id": "pk-081",
+  "parking": {
+    "entered_at": "2026-09-09",
+    "ttl_days": 90
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "related": [
+    "pk-077"
+  ],
+  "source": "主会 2026-09-09 会话用户裁定",
+  "state": "parked",
+  "title": "SiInfer 彩排泊置——MCP 线毕候令，接入形为彼侧 agent",
+  "ttl_days": 90
+}
