@@ -54,7 +54,7 @@
 
 ## 认证清单
 
-认证实录十四笔（settle cert 取 ask3 记录认证，回填见结算读数节）：
+认证实录十四笔（settle cert 取 ask3 记录认证 `3a855dc7`）：
 
 | 件 | 认证哈希前 8 |
 |---|---|
@@ -83,7 +83,7 @@
 | F-2 两席条件执行 | 治理 | 各席 stable_clear 加执契终签才开工对应腿 | 通过（a1 即 0e79f34a 与 b1 即 44fa67d1 先落，腿 A 与腿 B 后开工，零刀锋零停摆） |
 | F-3 收编实落 | 治理 | fusiongate 材料经租约正典通道提交零手提交 | 通过（七位面入工地随 settle 提交，diff 与主树逐字节一致判定内容零重裁） |
 | F-4 写入仅 allow | 治理 | 写入仅请求写入节所列路径 | 通过（写入面即 21 路径 allow 面：七位面收编与两席 DES 单元格与合同目录与 lease 三件与两预落件与结果档与材料目录与 DEC-013 与 SPEC-017 与 trail 经 scribe 与 scribe/reports 与 identity/reports；CALL-LOG 直改车道经 lease call-log append；主窗 SETTLEMENT-V2 零触碰） |
-| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 待结算回填 |
+| F-5 链面全绿 | 治理 | 双仓 settle、close 零失败、verify valid、reconcile 零新增 | 通过（tools 段一 5f7c31d3 归并 a2b5c317 与 engine 段一 280ce69 归并 23d6553；跑步机首跑实收 17 件 8a6d0067 即扩面两册实收非空收；close 三跑成即会话 revoked 双工地拆双分支删，双旗 bypass 两笔留痕系 attnanchor 与 attractor 两册冻结面未含后生 CALL-LOG 呈人节点候扩面；verify valid events 36 即 09-09 新链首验；reconcile 双仓 unrouted 俱零、cert_missing 俱零，unbypassed 与 session_orphan 增量俱工具笔与并行批同形笔跨批存量类如实申报） |
 
 ## 越线与误差申报
 
@@ -99,7 +99,12 @@
 
 ## 结算读数
 
-（收约后补笔回填）
+- 双仓 settle：tools 段一 `5f7c31d3`（base integral-stage-build）、engine 段一 `280ce69`（base main），cert 统一取本批 ask3 记录认证 `3a855dc7`；归并 tools `a2b5c317`、engine `23d6553`。
+- 跑步机收编实收：首跑 `8a6d0067` 提交入基支即十七件——acceptor/CALL-LOG.md 加一行与 critsweep/CALL-LOG.md 加六行即本批扩面两册实收在案非空收、calllog/calls.ndjson 加十七行权威腿、其余十四册投影各加一行；预收 closeguard `485d118b`（tools）与 `3507f94`（engine）。
+- 放锁收约：21 路径 unlock 全过零失败即 held 归零；close 三跑实录即首跑 RC 1 无主闸拦两件俱 attnanchor 与 attractor 两册（俱冻结面未含后生 CALL-LOG 即本批 call-log append 留痕纯追加零删改，与 c2close2 期 acceptor 与 critsweep 同类陈旧收编面，双旗 bypass 留痕呈人节点候扩面）、二跑 RC 1 tools 工地拆除拒（工地代码跑 close 时 bypass 台账按 tool_dir 落工地副本致工地脏即 rootanchor bypass 位缺口新坑位，差量回灌主树台账加让位工地处置）、三跑主树代码 RC 0 一跑成即会话 633a768d3e6e4e5c revoked 真值、双工地拆、双分支删，收据落 sih-tools/lease/ledger/receipts/fusadopt-solo.json；复跑收编面残余为零属首跑已收尽。
+- 链 verify：valid，events 36（2026-09-09 当日新链首验；含并行 settlement-v2-solo 批共链笔即本批链面笔序为意图 de4d2658 与例行读数三笔与终签 crosscheck 两笔与认证十四笔）。
+- reconcile：双仓 unrouted 俱零即本批零新增路由缺口；cert_missing 双仓俱零；unbypassed 即 tools 115 与 engine 80，较 c2close2 读数增四与增二即本批预收与跑步机工具笔两笔加一并行 settlement-v2-solo 批同形笔两笔加一笔，俱 lease 工具生成无 bypass 登记的跨批存量类不代清；session_orphan 即 tools 19 与 engine 24 与基线同数零新增。
+- 收约补笔：本节与 F-5 即本笔，经直改链笔申报加 --no-verify 提交替 lease bypass 登记通道（c2close2/settlement-v2 先例同形）。
 
 ## 大白话节
 
