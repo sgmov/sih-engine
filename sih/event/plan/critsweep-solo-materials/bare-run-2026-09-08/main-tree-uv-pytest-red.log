@@ -1,0 +1,24 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________________ test_missing_trail_degrades_visibly ______________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-777/test_missing_trail_degrades_vi0')
+
+    def test_missing_trail_degrades_visibly(tmp_path):
+        root = _make_root(tmp_path)
+        p = _run(["--root", str(root)])
+        assert p.returncode == 0
+        d = json.loads(p.stdout)
+        assert d["degraded"] is True
+        assert len(d["trail"]["missing_days"]) == 10
+        assert len(d["criteria"]) == 5
+        assert all(c["namespace_hits"] == 0 for c in d["criteria"])
+        assert any("缺文件" in x for x in d["degradations"])
+>       assert any("泊界" in x for x in d["degradations"])
+E       assert False
+E        +  where False = any(<generator object test_missing_trail_degrades_visibly.<locals>.<genexpr> at 0x1074d31d0>)
+
+critsweep/tests/test_sweep.py:86: AssertionError
+=========================== short test summary info ============================
+FAILED critsweep/tests/test_sweep.py::test_missing_trail_degrades_visibly - a...
+1 failed in 0.11s
