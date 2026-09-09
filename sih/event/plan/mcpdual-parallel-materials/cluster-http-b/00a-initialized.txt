@@ -1,0 +1,9 @@
+HTTP/1.1 202 Accepted
+date: Wed, 09 Sep 2026 23:37:07 GMT
+server: uvicorn
+content-type: application/json
+content-length: 0
+
+
+HTTP_STATUS=202
+EXIT_CODE=0

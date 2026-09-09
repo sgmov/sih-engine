@@ -1,0 +1,54 @@
+COMMAND (verbatim): $ROOT/sih-engine/target/debug/scribe query --help
+ROOT=/Users/moc/workspaces/SiHankor
+{
+  "error": "query 缺少 --trail，用法：scribe query --trail <链文件>"
+}
+EXIT=2
+
+--- 加注复跑（首跑 query --help 退出码 2 已留痕于上，工具无 query 级 help，转探顶层 help）---
+COMMAND (verbatim): $ROOT/sih-engine/target/debug/scribe --help
+scribe 书简：引擎事件链写入与校验命令行
+
+子命令：
+  append    追加认证事件（写）
+    必填：--report <报告文件> --exit-code <退出码> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号> --sessions <会话台账路径> --allow-worktree-trail <1|true> --no-session-reason <事由>
+    示例：scribe append --report report.json --exit-code 0 --trail trail.ndjson
+    闸三会话在册验：--session 须在会话台账为活跃，无或已吊销即拒 SessionNotActive；
+      --no-session-reason <事由> 主会处置位默认关，无会话号时显式开启即放行。
+
+  intent    追加意图精炼事件（写）
+    必填：--record <ask3 记录> --validation <验证件> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号> --sessions <会话台账路径> --allow-worktree-trail <1|true> --allow-reintent <1|true> --no-session-reason <事由>
+    示例：scribe intent --record ask3.json --validation valid.json --trail trail.ndjson
+    闸二重意图拒：同 record 路径已有 intent_refined 在链即拒 IntentRecordUsedRejected；
+      --allow-reintent 默认关留 facepark 丢事件重追加合法通道。
+    闸三会话在册验：同 append，--session 须活跃，--no-session-reason 默认关。
+
+  park      追加停泊事件（写）
+    必填：--record <停泊记录 JSON> --trail <链文件>
+    可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
+
+  verify    校验链完整性（读）
+    必填：--trail <链文件>
+    示例：scribe verify --trail trail.ndjson
+    纪律：全文 verify 归批收约与审计，一律主树 target/debug/scribe 跑；
+      日常写后确认用 confirm（写即回执，chainstamp-solo）。
+
+  confirm   单笔确认（读）：写即回执的廉价查疑通道，疑笔下链与否一查便知
+    必填：--trail <链文件> 且 --hash <事件哈希前八位及以上> 与 --event-id <事件ID> 二择一
+    退出码：0 在档（回 found+index+event_type+event_hash+event_id）/ 1 未在档 / 2 用法错
+    示例：scribe confirm --trail trail.ndjson --hash 8857af11
+
+  query     检索链事件（读）
+    必填：--trail <链文件>
+    可选：--event-type <类型> --doc-id <文档ID>
+
+  record    秤星读数落链（写）
+    七字段守卫，详见 SPEC-011；可选 --allow-worktree-trail <1|true>
+
+  vectors   冻结向量集（读）
+
+退出码：0=成功 1=校验/检索异常 2=工具自身异常
+
+EXIT=0

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:42:09 GMT
+server: uvicorn
+content-type: application/json
+content-length: 1319
+
+{"jsonrpc":"2.0","id":15,"result":{"content":[{"type":"text","text":"{\n  \"held_count\": 9,\n  \"held_locks\": [\n    {\n      \"path\": \".session-anchor.md\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/event/plan/mcpdual-parallel-materials\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/event/plan/mcpdual-parallel-results.md\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/event/trail/2026-09-10.ndjson\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/state/plan/mcpdual-parallel.md\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/state/plan/mcpdual-parallel.md\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-engine/sih/state/plan/mcpdual-parallel.md\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-tools/identity/reports\",\n      \"session_id\": \"a40d82e2618108ac\"\n    },\n    {\n      \"path\": \"sih-tools/scribe/reports\",\n      \"session_id\": \"a40d82e2618108ac\"\n    }\n  ],\n  \"active_sessions\": 1,\n  \"active_session_ids\": [\n    \"a40d82e2618108ac\"\n  ]\n}"}],"isError":false}}
+HTTP_STATUS=200
+EXIT_CODE=0

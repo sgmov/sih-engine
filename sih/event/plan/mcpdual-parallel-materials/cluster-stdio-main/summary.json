@@ -1,0 +1,174 @@
+{
+ "cluster": "stdio-main",
+ "at": "2026-09-10",
+ "face": "ZCode 会话内 mcp__sih__*（工作区 .zcode/config.json sih 条目，stdio 形，SIH_ROOT=/Users/moc/workspaces/SiHankor）",
+ "registered_tools_observed": [
+  "chain_query",
+  "chain_verify",
+  "critsweep",
+  "heartbeat",
+  "locks_read",
+  "lease_open",
+  "lease_lock",
+  "lease_unlock",
+  "lease_wait_turn",
+  "lease_claim",
+  "lease_commit",
+  "lease_close",
+  "record_append",
+  "record_intent",
+  "record_park"
+ ],
+ "registered_tools_count": 15,
+ "structurally_absent_observed": [
+  "record_direct",
+  "lease_unclaim",
+  "takeover",
+  "bypass"
+ ],
+ "agent_class_note": "外部缺省形（record_direct 与 lease_unclaim 未注册），与 README 缺省 external 一致",
+ "items": [
+  {
+   "id": "M1",
+   "tool": "chain_query",
+   "args": {
+    "date": "2026-09-09"
+   },
+   "key_facts": {
+    "matches": 169,
+    "returned": 169,
+    "first_event_hash": "25989caf817bc08b",
+    "last_event_hash": "8d5cd6e75c0ff155",
+    "event_fields": [
+     "event_hash",
+     "event_type",
+     "subject",
+     "doc_id",
+     "timestamp"
+    ]
+   }
+  },
+  {
+   "id": "M2",
+   "tool": "chain_query",
+   "args": {
+    "date": "2026-09-09",
+    "event_type": "intent_refined"
+   },
+   "key_facts": {
+    "matches": 169,
+    "returned": 20,
+    "note": "matches 字段载全日笔数非过滤后命中数，returned=20 为过滤后出参；过滤语义归因候两路对表",
+    "first_filtered_hash": "de4d2658ab7ba0a9"
+   }
+  },
+  {
+   "id": "M3",
+   "tool": "chain_verify",
+   "args": {
+    "date": "2026-09-09"
+   },
+   "key_facts": {
+    "status": "valid",
+    "valid": true,
+    "events": 169,
+    "first_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+    "last_hash": "8d5cd6e75c0ff15562b825f7413b05407c31c2a4c30ea4711fa7aada6a90b3b8"
+   }
+  },
+  {
+   "id": "M4",
+   "tool": "critsweep",
+   "args": {
+    "date": "2026-09-10"
+   },
+   "key_facts": {
+    "criteria_statuses": {
+     "GOV2-C1-leaseopt": "achieved",
+     "GOV2-C2-viewline": "achieved",
+     "GOV2-C3-measure-determinism": "achieved",
+     "GOV2-C4-math-attribution": "achieved",
+     "GOV2-C5-lease-line": "achieved"
+    },
+    "degraded": false,
+    "degradations": [],
+    "trail_events_scanned": 1872,
+    "inflight": {
+     "active_sessions": 1,
+     "held_locks": 7
+    },
+    "parking": {
+     "engine": "routed/0 alarms",
+     "tools": "routed/0 alarms"
+    },
+    "fields": [
+     "at",
+     "criteria",
+     "degradations",
+     "degraded",
+     "inflight",
+     "namespace_fields",
+     "parking",
+     "prose_control",
+     "replay",
+     "root",
+     "root_basis",
+     "threshold_days",
+     "tool",
+     "trail",
+     "version",
+     "window",
+     "window_days"
+    ]
+   }
+  },
+  {
+   "id": "M5",
+   "tool": "heartbeat",
+   "args": {},
+   "key_facts": {
+    "readings": {
+     "convergence": 0.0,
+     "adoption": 0.0,
+     "mergeback": 0.028571
+    },
+    "last_snapshot_at": "2026-09-10",
+    "days_since_last_snapshot": 0
+   }
+  },
+  {
+   "id": "M6",
+   "tool": "locks_read",
+   "args": {},
+   "key_facts": {
+    "held_count": 7,
+    "active_sessions": 1,
+    "active_session_ids": [
+     "a40d82e2618108ac"
+    ]
+   }
+  },
+  {
+   "id": "M7",
+   "tool": "chain_query",
+   "args": {
+    "date": "2026-09-11"
+   },
+   "key_facts": {
+    "error_payload_fields": [
+     "error",
+     "what_this_tool_does",
+     "valid_params",
+     "canonical_pointers"
+    ],
+    "error": "链文件缺席: sih-engine/sih/event/trail/2026-09-11.ndjson（该日零链或日期拼写误）",
+    "abs_path_in_error": false,
+    "teaching_form": "四字段齐"
+   }
+  }
+ ],
+ "anomalies": [
+  "M2 matches 字段语义：过滤态下载全日笔数（169）而非命中数（20），属字段语义位，候三路对表归因（CLI 若同形即承 CLI 语义非 MCP 缺陷）"
+ ],
+ "time_drift_note": "M4 与会话前 CLI 判据扫差异属批自身落链时间漂移（events_scanned 1865→1872、degraded true→false），非路径差异"
+}

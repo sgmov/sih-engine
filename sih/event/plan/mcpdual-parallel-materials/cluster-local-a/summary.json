@@ -1,0 +1,95 @@
+{
+  "cluster": "local-a",
+  "at": "2026-09-10",
+  "ROOT": "/Users/moc/workspaces/SiHankor",
+  "output_dir": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpdual-parallel/sih/event/plan/mcpdual-parallel-materials/cluster-local-a/",
+  "items": [
+    {
+      "id": "R1",
+      "command": "$ROOT/sih-engine/target/debug/scribe query --trail $ROOT/sih-engine/sih/event/trail/2026-09-09.ndjson",
+      "exit_code": 0,
+      "output_file": "r1.txt",
+      "form_note": "全量查询回 {matches:169, events:[...]}；事件型分布 certification_completed=107, reading_recorded=21, intent_refined=20, direct_edit_completed=12, crosscheck_completed=6, parking_entered=2, parking_exited=1"
+    },
+    {
+      "id": "R2",
+      "command": "$ROOT/sih-engine/target/debug/scribe query --trail $ROOT/sih-engine/sih/event/trail/2026-09-09.ndjson --event-type intent_refined",
+      "exit_code": 0,
+      "output_file": "r2.txt",
+      "form_note": "query 子命令无 --help（裸 query --help 即报缺 --trail 退出码 2，首跑留痕于 r2-help.txt）；真实过滤旗标经顶层 scribe --help 发现为 --event-type <类型>（非 --type），另有 --doc-id 可选。回 {matches:20}，与 R1 全量中 intent_refined 计数 20 交叉一致。help 证据在 r2-help.txt（含首跑红与顶层 help 两段）"
+    },
+    {
+      "id": "R3",
+      "command": "$ROOT/sih-engine/target/debug/scribe verify --trail $ROOT/sih-engine/sih/event/trail/2026-09-09.ndjson",
+      "exit_code": 0,
+      "output_file": "r3.txt",
+      "form_note": "判词原文：{\"status\": \"valid\", \"events\": 169, \"first_hash\": \"25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df\", \"last_hash\": \"8d5cd6e75c0ff15562b825f7413b05407c31c2a4c30ea4711fa7aada6a90b3b8\"}"
+    },
+    {
+      "id": "R4",
+      "command": "python3 $ROOT/sih-tools/critsweep/sweep.py --at 2026-09-10 --root $ROOT",
+      "exit_code": 0,
+      "output_file": "r4.txt",
+      "form_note": "stdout 经 json.loads 验为严格 JSON 单对象（多行 pretty 形）；五判据全 achieved（C1 leaseopt/C2 viewline/C3 measure-determinism/C4 math-attribution/C5 lease-line），degraded=false，degradations=[]，inflight={active_sessions:1, held_locks:7}（与 R6 一致），parking 两线 routed 零告警（engine 66 件 tools 26 件），trail.events_scanned=1872 缺日=[]"
+    },
+    {
+      "id": "R5",
+      "command": "cd $ROOT/sih-tools/gauge && PYTHONPATH=src python3 -m gauge.cli read",
+      "exit_code": 2,
+      "output_file": "r5.txt",
+      "form_note": "首跑（裸 read）退出码 2：argparse 报必缺 --dimension --at --trail --sessions-ledger --src-root --tools-root；「三维缺省全出」仅 record 子命令成立（src/gauge/cli.py L801 --dimension default=None），read 要求 --dimension 单维（convergence|adoption|mergeback）。加注复跑按发现真实形三维各一（--at 2026-09-10，--trail 双日 09-09+09-10 可重复旗标，全部只读）：convergence=0.0(sih-engine)/adoption=0.0(agents)/mergeback=0.028571(tools-wheel)，formula_version=ga-2，sequence 均 ok，三跑退出码全 0。首跑红与复跑全量在 r5.txt"
+    },
+    {
+      "id": "R6",
+      "command": "cd $ROOT/sih-tools/lease && env -u PYTHONHOME -u PYTHONPATH uv run --project . lease status",
+      "exit_code": 0,
+      "output_file": "r6.txt",
+      "form_note": "status 子命令名正确无需 --help 兜底；输出为全量大 JSON（44565 行 1.7MB，含逐锁历史与 dedup 摘要 raw_events=965/unique_events=877），末尾 summary={active_sessions:1, held_locks:7}，与 R4 inflight 一致"
+    },
+    {
+      "id": "R7",
+      "command": "$ROOT/sih-engine/target/debug/scribe query --trail $ROOT/sih-engine/sih/event/trail/2026-09-11.ndjson",
+      "exit_code": 2,
+      "output_file": "r7.txt",
+      "form_note": "缺日报错教学载荷：{\"error\": \"trail 不存在\"}，退出码 2，符合预期"
+    }
+  ],
+  "gate_probes": [
+    {
+      "id": "G1",
+      "command": "$ROOT/sih-engine/target/debug/scribe intent --record $ROOT/sih-tools/scribe/reports/2026-09-10-ask3-mcpdual-parallel-record.json --validation $ROOT/sih-tools/scribe/reports/2026-09-10-ask3-mcpdual-parallel-validation.json --trail $ROOT/sih-engine/sih/event/trail/2026-09-10.ndjson --locks $ROOT/sih-tools/lease/ledger/locks.ndjson",
+      "expected": "闸拒（会话外意图，故意不带 --session 与 --sessions）",
+      "actual": "闸拒符合预期",
+      "exit_code": 1,
+      "output_file": "g1.txt",
+      "payload": "{\"error\": \"会话不在册即拒 SessionNotActive：缺 --session，主会处置位 --no-session-reason <事由> 默认关\"}",
+      "trail_bytes_before": 6241,
+      "trail_bytes_after": 6241,
+      "zero_write_confirmed": true
+    },
+    {
+      "id": "G2",
+      "command": "cd $ROOT/sih-tools/lease && env -u PYTHONHOME -u PYTHONPATH uv run --project . lease lock --path \"sih-engine/sih/state/plan/mcpdual-parallel.md\" --identity $ROOT/sih-tools/identity/reports/2026-09-10-mcpdual-parallel-identity.json --root $ROOT --locks $ROOT/sih-tools/lease/ledger/locks.ndjson --ledger $ROOT/sih-tools/lease/ledger/sessions.ndjson",
+      "expected": "拒定（会话外取锁，故意不带 --session）",
+      "actual": "未拒：退出码 0，回 {duplicate:true, line:<原锁行>}；且每次调用向 locks.ndjson 追加一行原锁重述 acquired（+212B/行）",
+      "exit_code": 0,
+      "output_file": "g2.txt",
+      "locks_bytes": {
+        "first_probe_before": 1530058,
+        "first_probe_after": 1530270,
+        "rerun_before": 1530270,
+        "rerun_after": 1530482
+      },
+      "locks_lines": {"rerun_before": 8174, "rerun_after": 8175},
+      "sessions_bytes_before": 1249747,
+      "sessions_bytes_after": 1249747,
+      "write_attribution": "首跑追加第 8174 行（acquired_at 2026-09-09T23:39:55+00:00 即本地 07:39:55，与首跑调用时刻同秒）；诊断性加注复跑（首跑留痕未动）再追加第 8175 行（acquired_at 2026-09-09T23:41:25+00:00 即复跑时刻）——同命令形两次调用各落一笔，timestamp 各等于调用时刻，判明写入归属即本命令形自身；两行 session_id 均为在册会话 a40d82e2618108ac（会话册第 965 行，allow 面即本批路径，属并行簇正规会话原锁）的原锁重述，非新取锁非改属主"
+    }
+  ],
+  "anomalies": [
+    "R2 形不符：scribe query 无子命令级 --help（query --help 退出码 2 报缺 --trail）；事件型过滤真实旗标为 --event-type（非 --type），经顶层 scribe --help 发现，已如实以发现形落档",
+    "R5 形不符：裸 gauge read 非三维全出形（退出码 2）；「三维缺省全出」仅 record 子命令成立，read 须显式 --dimension 单维+--at+--trail+--sessions-ledger+--src-root+--tools-root；AGENTS.md 会话启动节所载 gauge read 调用形与实态不符，候人节点裁",
+    "G2 预期不符且击穿零写入：无会话号 lease lock 撞已持锁路径不被拒（退出码 0 duplicate:true），且该命令形每次调用向 locks.ndjson 追加一行原锁重述 acquired（本簇共致 2 行：8174、8175，各 +212B）；sessions.ndjson 未动、未新取锁、未改属主、原锁持有会话 a40d82e2618108ac 不受影响；账本 dedup 语义可折叠该重述（status dedup_keys 含 event+session_id+issued_at_or_revoked_at），但 raw 事件面已增 2 笔，候人节点裁是否处置",
+    "R7 为预期教学错误非异常：{\"error\": \"trail 不存在\"} 退出码 2，符合预期，此处明示无异常"
+  ]
+}

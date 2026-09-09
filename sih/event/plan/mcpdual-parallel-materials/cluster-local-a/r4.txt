@@ -1,0 +1,566 @@
+COMMAND (verbatim): python3 $ROOT/sih-tools/critsweep/sweep.py --at 2026-09-10 --root $ROOT
+ROOT=/Users/moc/workspaces/SiHankor
+{
+ "at": "2026-09-10",
+ "criteria": [
+  {
+   "evidence": [
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-045",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 5,
+   "id": "GOV2-C1-leaseopt",
+   "last_hit": "2026-09-05",
+   "namespace_hits": 39,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "leaseopt 线级验收达成",
+   "token_scope": [
+    "leaseopt"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "contains": "IDENTICAL",
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewer-dualrun/dualrun-summary.json"
+    },
+    {
+     "contains": "五源",
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewsource-pointers.md"
+    },
+    {
+     "contains": "构造性对齐",
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/c2close2-solo-materials/alarm-watchcheck-reverify.md"
+    },
+    {
+     "contains": "修订五十三",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-047",
+       "event_type": "parking_exited"
+      },
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-059",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 5,
+   "id": "GOV2-C2-viewline",
+   "last_hit": "2026-09-05",
+   "namespace_hits": 14,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "视图组件在役",
+   "token_scope": [
+    "viewline"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/baseinject-solo-results.md"
+    },
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/attnanchor-solo-results.md"
+    },
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/critsweep-solo-results.md"
+    },
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/sih/state/parking/materials/pk-078.json"
+    },
+    {
+     "contains": "改道闭项",
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/measure-poly-rev1-progdoc.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-044",
+       "event_type": "parking_exited"
+      },
+      {
+       "entry_id": "pk-078",
+       "event_type": "parking_entered"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 2,
+   "id": "GOV2-C3-measure-determinism",
+   "last_hit": "2026-09-08",
+   "namespace_hits": 19,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "测量面确定性化验收达成",
+   "token_scope": [
+    "attnanchor",
+    "critsweep",
+    "baseinject"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "contains": "pk-053",
+     "ok": true,
+     "path": "sih-math/docs/constclear2-routing-2026-09-08.json"
+    },
+    {
+     "contains": "41fb339c",
+     "ok": true,
+     "path": "sih-math/docs/constclear2b-routing-2026-09-08.json"
+    },
+    {
+     "contains": "pk-053",
+     "ok": true,
+     "path": "sih-math/docs/constclear-registry-v2.json"
+    },
+    {
+     "contains": "constclear2c",
+     "ok": true,
+     "path": "sih-engine/sih/event/plan/constclear2c-solo-materials/constants-annotations.json"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-053",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 2,
+   "id": "GOV2-C4-math-attribution",
+   "last_hit": "2026-09-08",
+   "namespace_hits": 33,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "数学归因长尾收口",
+   "token_scope": [
+    "pk-053",
+    "mathclose",
+    "mathreg",
+    "constclear2"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "contains": null,
+     "ok": true,
+     "path": "sih-engine/doc/governance/SETTLEMENT-LEASEUP-2026-09-07.md"
+    },
+    {
+     "contains": "修订四十一",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "contains": "修订四十二",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "contains": "修订四十三",
+     "ok": true,
+     "path": "sih-tools/lease/CONTRACT.md"
+    },
+    {
+     "chain": [
+      {
+       "disposition": "promoted",
+       "entry_id": "pk-072",
+       "event_type": "parking_exited"
+      }
+     ],
+     "ok": true
+    }
+   ],
+   "expected": "achieved",
+   "gap_basis": "last_hit",
+   "gap_days": 4,
+   "id": "GOV2-C5-lease-line",
+   "last_hit": "2026-09-06",
+   "namespace_hits": 7,
+   "status": "achieved",
+   "status_kind": "evidence",
+   "title": "租约修复升级线级验收达成",
+   "token_scope": [
+    "leaseup"
+   ]
+  }
+ ],
+ "degradations": [],
+ "degraded": false,
+ "inflight": {
+  "active_sessions": 1,
+  "held_locks": 7
+ },
+ "namespace_fields": [
+  "record_path",
+  "report_path",
+  "package"
+ ],
+ "parking": {
+  "engine": {
+   "exit_code": 0,
+   "route": "routed",
+   "summary": {
+    "alarms": [],
+    "mainline": 53,
+    "scrap_track": 9,
+    "siding": 4,
+    "total": 66
+   }
+  },
+  "tools": {
+   "exit_code": 0,
+   "route": "routed",
+   "summary": {
+    "alarms": [],
+    "mainline": 25,
+    "scrap_track": 0,
+    "siding": 1,
+    "total": 26
+   }
+  }
+ },
+ "prose_control": {
+  "events": {
+   "attnanchor": [
+    {
+     "day": "2026-09-07",
+     "event_id": "d09d5955-29af-4a41-8ab5-d28c326eae58",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "bfdd63cd-31f7-47a8-9302-1cc9cb54905c",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "3162adfd-0b6e-4db7-93b9-120c11122493",
+     "event_type": "certification_completed"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "9a4e3f29-aaaa-49bb-8647-1cf598a8e8bc",
+     "event_type": "parking_entered"
+    }
+   ],
+   "baseinject": [
+    {
+     "day": "2026-09-07",
+     "event_id": "0f813f08-8fe0-41a1-a9ee-647aaf525b1c",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "399a42aa-71ac-4216-8360-843e0dd44dc0",
+     "event_type": "parking_entered"
+    }
+   ],
+   "constclear2": [
+    {
+     "day": "2026-09-08",
+     "event_id": "63cb5070-0885-4eac-a0e1-47ff22fa34cb",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "f80b91cb-3ac6-4636-8705-190386829b12",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "f4e8c693-ab67-4a98-8677-182c05351642",
+     "event_type": "direct_edit_completed"
+    }
+   ],
+   "critsweep": [
+    {
+     "day": "2026-09-08",
+     "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "a25540d7-ffb4-42e2-a5a6-d7b50e13905a",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "6e961c0f-1b33-4201-b39a-87dddce2dd96",
+     "event_type": "certification_completed"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "7ab9cc7d-fca9-4d24-a501-bd47f058ce28",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "fa0221bf-6c7c-4be3-adc4-32cccdb840e7",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "903bc902-9861-4aa4-8dcc-11c830a49804",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "e1839622-f990-499c-81b4-083bd06b049b",
+     "event_type": "direct_edit_completed"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "109edc85-b21e-43ed-ad31-b6f5501814b4",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-09",
+     "event_id": "993f18c0-c94c-4c12-ae90-2b1473a65dd0",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-09",
+     "event_id": "c4b26009-d595-41af-a233-95ea9ec65fd6",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-09",
+     "event_id": "24dbf2ba-0f34-44e2-8b2c-16f0e7378715",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-10",
+     "event_id": "beb489a0-cb81-4e03-9511-552a0ceb4723",
+     "event_type": "intent_refined"
+    }
+   ],
+   "leaseopt": [
+    {
+     "day": "2026-09-05",
+     "event_id": "66315030-d327-49dc-b383-1659eb4ec7e3",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "6cd912be-9c5d-41f7-a5c3-bc8f9c33ac1c",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "4238da7d-d9ad-4e07-b250-bf9fe2dfe8b4",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "95d55948-6b26-417b-85de-aa5794053cd8",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "ce6544f1-1783-49f9-a84d-a333f1c89c48",
+     "event_type": "direct_edit_completed"
+    }
+   ],
+   "leaseup": [
+    {
+     "day": "2026-09-06",
+     "event_id": "05c108e6-1f7c-4843-8ab1-74dce0bf0bff",
+     "event_type": "crosscheck_completed"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "0eacba93-f92d-4692-984c-33acf9e4ee88",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "47e2e88c-090d-4bd8-bd66-352676941c57",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "564dcb49-1dde-4986-b21f-3d5151375ff3",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "fbd934eb-8547-4ca8-b938-c528846aaea5",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-07",
+     "event_id": "05277256-af5a-4da4-83d4-4aa76e51f08d",
+     "event_type": "parking_exited"
+    }
+   ],
+   "mathclose": [
+    {
+     "day": "2026-09-03",
+     "event_id": "04eaafb5-35ec-4d3b-993b-5cc4352a4661",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-05",
+     "event_id": "2ba1b440-f43c-4076-8fcd-8d1af7eae9a8",
+     "event_type": "direct_edit_completed"
+    }
+   ],
+   "pk-053": [
+    {
+     "day": "2026-09-04",
+     "event_id": "cda6594b-5d69-4b04-a394-dfd2aca3e39a",
+     "event_type": "parking_entered"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "05c8c40d-932f-46b7-be2e-e11f2e3ee032",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "defec1c8-74ea-4885-a540-8ae53db2a90e",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "63cb5070-0885-4eac-a0e1-47ff22fa34cb",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "f80b91cb-3ac6-4636-8705-190386829b12",
+     "event_type": "parking_exited"
+    }
+   ],
+   "viewline": [
+    {
+     "day": "2026-09-05",
+     "event_id": "f27fcdbc-42a5-4de5-a0d7-67c0378e0a9a",
+     "event_type": "parking_exited"
+    },
+    {
+     "day": "2026-09-06",
+     "event_id": "14d94196-4e03-405b-8a60-74791be51f4d",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "903bc902-9861-4aa4-8dcc-11c830a49804",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-08",
+     "event_id": "109edc85-b21e-43ed-ad31-b6f5501814b4",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-09",
+     "event_id": "5f5cbec1-b2ed-415b-8fd0-9cbeb9e08d24",
+     "event_type": "intent_refined"
+    },
+    {
+     "day": "2026-09-09",
+     "event_id": "83cd6fa8-9794-4ae8-8a22-9bae12a721f5",
+     "event_type": "parking_exited"
+    }
+   ]
+  },
+  "note": "散文命中而命名空间零命中的事件即设计引用非程序活动，不计活动（pk-044 对照）"
+ },
+ "replay": "python3 sih-tools/critsweep/sweep.py --at 2026-09-10 --root /Users/moc/workspaces/SiHankor [--threshold N] [--criterion <id>]",
+ "root": "/Users/moc/workspaces/SiHankor",
+ "root_basis": "arg",
+ "threshold_days": 3,
+ "tool": "critsweep",
+ "trail": {
+  "events_scanned": 1872,
+  "missing_days": [],
+  "unreadable_days": []
+ },
+ "version": "1.0.0",
+ "window": [
+  "2026-09-01",
+  "2026-09-10"
+ ],
+ "window_days": 10
+}
+EXIT=0

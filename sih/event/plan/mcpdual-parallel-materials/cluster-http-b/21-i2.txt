@@ -1,0 +1,9 @@
+HTTP/1.1 401 Unauthorized
+date: Wed, 09 Sep 2026 23:40:09 GMT
+server: uvicorn
+content-length: 1192
+content-type: application/json
+
+{"error":"缺 Authorization 头：连接须带 Bearer 头携项目标识（Authorization: Bearer <token_id>）；无标识连接降只读投影中央域，写工具一律拒透传","reason_code":"missing_authorization","http_status":401,"gate":"HTTP 识别与域绑定路由层（DES-015）","what_this_tool_does":"HTTP 写面工具经既有 CLI 执法透传：连接须携 Bearer 项目标识且在册 active，写操作只落所绑域","valid_params":["Authorization: Bearer <token_id>（连接头携项目标识）"],"suggested_action":"查管理台 /tokens 列表取在册标识后携头重连，或经管理台签发","retry_discipline":"撞锁改 lease_wait_turn 排队候轮；重试前查会话在册（会话号随 lease_open 出参载出，逐写操作结果回带）；record append 无幂等闸，超时重试即重复认证笔，由信封审计与 meter 交叉核对检出","console":"管理台 /tokens（列表、签发、撤销，签发与撤销各带一步确认）","canonical_pointers":["sih-engine/doc/design/DES-015-mcp-http-multitenant-auth-v1.md","sih-engine/doc/design/DES-014-mcp-beta-security-model-v1.md","sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md"]}
+HTTP_STATUS=401
+EXIT_CODE=0

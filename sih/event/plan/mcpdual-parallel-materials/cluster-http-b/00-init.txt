@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:36:46 GMT
+server: uvicorn
+content-type: application/json
+content-length: 833
+
+{"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2025-03-26","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"mcpline-http","version":"1.30.0"},"instructions":"SiHankor mcpline 统一 web 服务的 MCP streamable HTTP 面（DES-015 识别写面）。SiHankor mcpline unified web service, identified HTTP face per DES-015. 连接头携 Authorization: Bearer <项目标识> 即查册绑定所绑域，写面十具经既有 CLI 执法透传只落所绑域；无标识或停行牌降只读投影中央域；正典指针：sih-engine/doc/design/DES-015-mcp-http-multitenant-auth-v1.md；sih-engine/doc/design/DES-014-mcp-beta-security-model-v1.md；sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md。"}}
+HTTP_STATUS=200
+EXIT_CODE=0

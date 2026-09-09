@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:38:25 GMT
+server: uvicorn
+content-type: application/json
+content-length: 591
+
+{"jsonrpc":"2.0","id":7,"result":{"content":[{"type":"text","text":"{\n  \"date\": \"2026-09-10\",\n  \"readings\": {\n    \"convergence\": {\n      \"value\": 0.0,\n      \"computed_at\": \"2026-09-10\",\n      \"sequence\": \"ok\"\n    },\n    \"adoption\": {\n      \"value\": 0.0,\n      \"computed_at\": \"2026-09-10\",\n      \"sequence\": \"ok\"\n    },\n    \"mergeback\": {\n      \"value\": 0.028571,\n      \"computed_at\": \"2026-09-10\",\n      \"sequence\": \"ok\"\n    }\n  },\n  \"last_snapshot_at\": \"2026-09-10\",\n  \"days_since_last_snapshot\": 0\n}"}],"isError":false}}
+HTTP_STATUS=200
+EXIT_CODE=0
