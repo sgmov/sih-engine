@@ -1,0 +1,141 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md": "ab3ec387d17370b4f72fae5552455abac10b7f34de55b54a3f9f7ac15f0d7d30"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 33
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 87
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 101
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 111
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-rev1-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 123
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 11,
+    "by_rule": {
+      "C006": 11
+    },
+    "by_pack": {
+      "des-001": 11
+    }
+  }
+}
