@@ -1,0 +1,33 @@
+{
+ "A1_get_root": {
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "panel_mark": true,
+  "title": "司衡视图 · Dashboard 样张（v3 风格 × 可读字层）"
+ },
+ "A2_tools_list": {
+  "count": 5,
+  "names": [
+   "chain_query",
+   "chain_verify",
+   "critsweep",
+   "heartbeat",
+   "locks_read"
+  ],
+  "beta_intersect": []
+ },
+ "A4_beta_absence": {
+  "beta_intersect_empty": true,
+  "lease_open_call_isError": true
+ },
+ "A3_chain_verify": {
+  "date": "2026-09-09",
+  "status": "valid",
+  "valid": true,
+  "events": 144
+ },
+ "A5_static": {
+  "dashboard_html_status": 200,
+  "data_js_status": 200
+ }
+}
