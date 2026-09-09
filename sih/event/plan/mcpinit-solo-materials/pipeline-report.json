@@ -1,0 +1,37 @@
+{
+ "batch": "mcpinit-solo",
+ "target": "sih-engine/doc/design/DES-015-mcp-http-multitenant-auth-v1.md（修订三入档，工作区根相对形）",
+ "order": "化格 → 核阅 → 检词（笔在核前、判在书简前）",
+ "formatter": {
+  "exit_code": 0,
+  "summary": {
+   "targets_changed": 0,
+   "total_changed_lines": 0
+  },
+  "version": "0.2.0",
+  "pack": "general-v1"
+ },
+ "scrutinator": {
+  "exit_code": 0,
+  "summary": {
+   "total": 0,
+   "by_rule": {},
+   "by_pack": {}
+  },
+  "version": "0.1.0",
+  "pack": "des-001",
+  "content_hash": "65d9e7dce1131b5af750630831d4af01f729151e904e896bd928858a4e1ab7da"
+ },
+ "nomenclator": {
+  "exit_code": 0,
+  "summary": {
+   "checked": 1,
+   "findings": 0,
+   "skipped": 0
+  },
+  "version": "0.2.0",
+  "pack_version": "0.11.0",
+  "findings": []
+ },
+ "note": "首跑核阅红证（C006 全角括号 12 处）以半角括号形重写后复跑绿，红证未清洗随批留档于结果档第三节"
+}

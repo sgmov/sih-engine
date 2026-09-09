@@ -1,0 +1,64 @@
+# mcpinit-solo 批 TDD 先红后绿实录（先红留痕纪律，承 2026-09-06 用户直改令）
+
+## 一、mcpline init 模块（新模块，红即导入缺席）
+
+红证（实跑，2026-09-09，sih-tools 工地 mcpline 目录，uv run pytest tests/test_init_domain.py -q）：
+
+    tests/test_init_domain.py:23: in <module>
+        from mcpline import init as init_mod
+    E   ImportError: cannot import name 'init' from 'mcpline' (/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpinit-solo/mcpline/src/mcpline/__init__.py)
+    ============================ short test summary info ============================
+    ERROR tests/test_init_domain.py
+    !!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+    1 error in 0.06s
+
+绿证（实现落位后同命令复跑，八件全绿，含真 scribe 二进制开域全流程）：
+
+    8 passed（并入全套件 100 passed，80.20s，见 test-full-run-mcpline-2026-09-09.log）
+
+中途一例夹具笔误先红（IsADirectoryError，测试自伤非实现缺陷）：test_init_half_state_refuses
+误以 mkdir 建散件再写文本，红证即
+
+    E   IsADirectoryError: [Errno 21] Is a directory: '.../init-dom-10003/sih/loose.txt'
+    FAILED tests/test_init_domain.py::test_init_half_state_refuses - IsADirectory...
+    1 failed, 7 passed in 1.53s
+
+修复即 mkdir 父目录加 write_text 散件，复跑 8 绿。
+
+## 二、lease 面表扩面（行为变更，红即正典面缺席）
+
+红证（实跑，2026-09-09，sih-tools 工地 lease 目录，uv run pytest tests/test_mcpinit_facet.py -q，
+core.py 扩面前）：
+
+    ============================ short test summary info ============================
+    FAILED tests/test_mcpinit_facet.py::test_canonical_face_bare_stem_hit - lease...
+    FAILED tests/test_mcpinit_facet.py::test_first_domain_form_zero_new_hit - ass...
+    FAILED tests/test_mcpinit_facet.py::test_two_faces_same_stem_ambiguous_refuses
+    FAILED tests/test_mcpinit_facet.py::test_task_package_dirs_four_faces_frozen
+    4 failed in 0.05s
+
+红因对表：扩面前 TASK_PACKAGE_DIRS 三面，正典面 sih/state/plan 缺席——T-lease-1 零命中
+WorktreeError（列三面）；T-lease-2 第一半零命中报文仅列三面不含正典面；T-lease-2 第二半
+同 stem 仅第一域面命中即唯一命中不歧义；冻结形断言四元组与三元素实形不符。
+
+绿证（core.py 第四面加注释落位后同命令复跑，四测全绿；test_openhyg.py 面表冻结断言
+随扩面适配为四元组同绿）：
+
+    4 passed（并入全套件 313 passed，58.63s，见 test-full-run-lease-2026-09-09.log）
+
+连带金向量重冻：test_sweepjson.py::test_out_golden_vector_frozen 扩面后首跑红（金向量内嵌
+tool.version 1.39.0 与现行 1.40.0 位差，diffs 仅 .tool.version 一件对表在档），按 sweepjson
+批「金向量随冻」既有程序重冻 1.40.0 形，唯一差异即版本位声明，五类残留判定零改。红证即
+
+    E         At index 1997 diff: b'4' != b'3'
+    FAILED tests/test_sweepjson.py::test_out_golden_vector_frozen - assert b'{\n ...
+
+复跑 313 绿。
+
+## 三、mcpline 既有套件锁面交互申报（非本批回归）
+
+mcpline 既有 test_write_gates 族 14 测在批会话持锁形下首跑红（fixture 树无 AGENTS.md 标记，
+lease CLI 缺省解析回主树锁台账，fixture 请求面 sih-engine/doc/ 与批会话所持
+sih-engine/doc/design/DES-015... 锁面冲突，冲突载荷 holder 即本批会话号 0e9f2983b18c01f3
+对表在档）；批中临时放锁两笔（DES-015 面与当日链面）后全套件 100 绿，非本批改动回归，
+属与主窗并行锁面交互既有形态，收约后主窗批会话让位即自复。
