@@ -62,6 +62,8 @@
 ## 链笔与收约 {#settle}
 
 - 意图笔 intent_refined 0cd9e7cbb5c211d1（session 9895d6695cf45290）；终签笔 crosscheck_completed a4f11822dc65383c index 146 经 confirm 确认；认证 append 四笔即管线报告 8e9ca9bb 与计分材料 56eaf042 与 check 报告 78b92a8c 与 signcheck 71085170
-- 双仓 settle：读数见 settle 执行实录（本节随 settle 回执补记提交号）
-- 链 verify 与 reconcile：读数见收约对账实录
-- 收约读数与回锚：收约后回锚重跑五行锚入完工回报
+- 双仓 settle：tools 40cb0be9（段 1，cert 71085170，基 integral-stage-build）与 engine 24c48b0（段 1，cert 71085170，基 main）与 engine 738fd3d（段 2，close 首跑卫生闸红证补笔），两仓 commit 均指向登记 worktree
+- 吞笔申报：段 2 提交面只含当时 staged 的红证件，本档 settle 行回填未入 stage 即段 2 落档为占位旧版，非工具缺陷系操作次序失察，回填内容经段 3 补回，零信息损失申报在案
+- 链 verify：status valid 151 笔（首哈希 25989caf 末哈希 71085170，即本批 signcheck 认证笔）
+- reconcile 双仓：unrouted 0 与 cert_missing 0 即验收双零达成，reconcile 退出码 1 由跨批存量 alarm 族承载（tools unbypassed 125 加 session_orphan 19、engine unbypassed 90 加 session_orphan 24，俱先于本批在册候裁），本批增量零 bypass 零 unrouted 零 cert_missing
+- 收约读数与回锚：close 收据落 lease/ledger/receipts/mcpauth-solo.json，收约后读数（revoked 与双工地拆与分支删）入完工回报转述；批后回锚重跑五行锚入完工回报
