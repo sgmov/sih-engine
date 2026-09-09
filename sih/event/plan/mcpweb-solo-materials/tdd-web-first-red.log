@@ -1,0 +1,33 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpweb-solo/mcpline/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpweb-solo/mcpline
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collecting ... collected 4 items
+
+tests/test_web_smoke.py::test_http_face_structural_readonly_redline FAILED [ 25%]
+tests/test_web_smoke.py::test_default_static_dir_shape PASSED            [ 50%]
+tests/test_web_smoke.py::test_create_app_missing_static_dir_fails PASSED [ 75%]
+tests/test_web_smoke.py::test_http_smoke_panel_and_mcp_face PASSED       [100%]
+
+=================================== FAILURES ===================================
+__________________ test_http_face_structural_readonly_redline __________________
+
+    def test_http_face_structural_readonly_redline():
+        """注册位结构性断言：HTTP 面工具表恰 α 五名，β 十写工具零在列。"""
+>       names = assert_for_readonly_face(create_readonly_mcp())
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+E       NameError: name 'assert_for_readonly_face' is not defined
+
+tests/test_web_smoke.py:40: NameError
+=============================== warnings summary ===============================
+tests/test_web_smoke.py::test_http_smoke_panel_and_mcp_face
+  /Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/contextlib.py:109: DeprecationWarning: Use `streamable_http_client` instead.
+    self.gen = func(*args, **kwds)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_web_smoke.py::test_http_face_structural_readonly_redline - ...
+==================== 1 failed, 3 passed, 1 warning in 0.33s ====================
+scribe append 首跑红证 2026-09-09: --report 指 results.md 报 ReportNotJson exit 2（认证报告须 JSON 形），改落 JSON 认证报告复跑

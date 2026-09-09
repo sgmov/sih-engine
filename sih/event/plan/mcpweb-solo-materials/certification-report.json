@@ -1,0 +1,36 @@
+{
+  "batch": "mcpweb-solo",
+  "date": "2026-09-09",
+  "session_id": "0da504d78c9672e5",
+  "what": "mcpline 统一 web 服务形态认证报告：单端口双面（/ 面板静态页 + /mcp MCP streamable HTTP 只读面）",
+  "deliverables": [
+    "sih-tools/mcpline/src/mcpline/web.py（统一 web 入口与 HTTP 只读面与启动复核 fail-closed）",
+    "sih-tools/mcpline/pyproject.toml（版本 0.2.0 改 0.3.0 与 description 增 web 词面）",
+    "sih-tools/mcpline/src/mcpline/__init__.py（__version__ 0.1.0 改 0.3.0，存量漂移收正）",
+    "sih-tools/mcpline/README.md（统一 web 节与双形态运行命令与测试族六件）",
+    "sih-tools/mcpline/tests/test_web_smoke.py（HTTP 面结构红线单元 + 活服五断言）",
+    "sih-engine/sih/event/plan/mcpweb-solo-results.md 与 mcpweb-solo-materials/"
+  ],
+  "acceptance": {
+    "http_smoke": {
+      "port": 8765,
+      "A1_get_root": "200 text/html 面板标识串在场",
+      "A2_tools_list": "恰五 alpha 只读，β 交集空",
+      "A3_chain_verify": "status valid events 144",
+      "A4_beta_absence": "注册位恰五 + 线上交集空 + lease_open 调用 isError 三重",
+      "A5_stdio_regression_and_zero_write": "全测试族 59 passed 含 stdio 回归与零写证明"
+    },
+    "version_bump": "0.3.0（pyproject 与 __init__ 双位对表）",
+    "test_family": "59 passed exit 0（工地 six 件全绿）"
+  },
+  "pipeline": {
+    "formatter_general_v1": "exit 0 零改",
+    "scrutinator_des_001": "exit 2 域外（sih/event/plan 不在 des-001 域）如实记档",
+    "nomenclator_core": "exit 0 零违例"
+  },
+  "red_evidence": [
+    "test_web_smoke 首跑 NameError 红证 tdd-web-first-red.log 修 import 复跑 4 绿",
+    "scribe append 首跑 --report 指 markdown 报 ReportNotJson exit 2，改 JSON 认证报告复跑"
+  ],
+  "verdict": "pass"
+}
