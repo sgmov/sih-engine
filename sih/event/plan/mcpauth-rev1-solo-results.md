@@ -54,5 +54,5 @@
 - 意图笔 intent_refined e6178c91d3d2ea46（session ef077fb894280586）；终签笔 crosscheck_completed cf8264657c2cc529 index 152 经 confirm 确认；认证 append 四笔即管线报告 db106788 与计分材料 765f673b 与 check 报告 f1f494e0 与 signcheck 62a96aec
 - 链 verify：status valid 157 笔（首哈希 25989caf 末哈希 62a96aec，即本批 signcheck 认证笔）
 - reconcile 双仓：unrouted 0 与 cert_missing 0 即验收双零达成，reconcile 退出码 1 由跨批存量 alarm 族承载（tools unbypassed 125 加 session_orphan 19、engine unbypassed 90 加 session_orphan 24，与 mcpauth-solo 批读数同值俱先于本批在册候裁），本批增量零 bypass 零 unrouted 零 cert_missing
-- 双仓 settle：提交号随段 2 补笔回填本节
+- 双仓 settle：tools 2e7efbe5（段 1，cert 62a96aec，基 integral-stage-build）与 engine 923d17b（段 1，cert 62a96aec，基 main），两仓 commit 均指向登记 worktree
 - 收约读数与回锚：close 收据落 lease/ledger/receipts/mcpauth-rev1-solo.json，收约后读数入完工回报转述；批后回锚重跑五行锚入完工回报
