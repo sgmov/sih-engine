@@ -1,0 +1,61 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md": "a63a82f15315c0817924bf4ea564c81682a04c12a1e5220d60d41f4bca4e448a"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 21
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 21
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 2,
+    "by_rule": {
+      "C001": 1,
+      "C002": 1
+    },
+    "by_pack": {
+      "des-001": 2
+    }
+  }
+}

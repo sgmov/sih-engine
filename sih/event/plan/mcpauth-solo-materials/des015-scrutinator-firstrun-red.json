@@ -1,0 +1,51 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md": "cfc94a98ee0f3a8c44500e6b566165852bf65233c2fa8185e73758a9b6d4034d"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "N002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpauth-solo/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "location": {
+        "line": 8
+      },
+      "message": "导航项格式必须为「章节简述::[链接文本](#锚点)」"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 1,
+    "by_rule": {
+      "N002": 1
+    },
+    "by_pack": {
+      "des-001": 1
+    }
+  }
+}

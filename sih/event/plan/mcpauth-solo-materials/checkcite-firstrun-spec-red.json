@@ -1,0 +1,10 @@
+{
+ "allowed_size": 100,
+ "cited": [
+  "SPEC-023"
+ ],
+ "missing": [
+  "SPEC-023"
+ ],
+ "verdict": "fail"
+}
