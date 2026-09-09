@@ -1,0 +1,60 @@
+{
+ "at": "2026-09-09",
+ "batch": "mcpinit-solo",
+ "session": {
+  "session_id": "0e9f2983b18c01f3",
+  "lease_version": "1.39.0（签发时主树版本；本批升 1.40.0 随 settle 入库）",
+  "package": "mcpinit-solo",
+  "package_path": "sih-engine/sih/state/plan/mcpinit-solo.md",
+  "issued_at": "2026-09-09T09:25:05+00:00",
+  "identity_report": "sih-tools/identity/reports/2026-09-09-mcpinit-solo-identity.json",
+  "identity_anomalies": [],
+  "identity_hash": "9d28c168ae01954bac0cc5079fb6332276ae45bacc5c72875825e1a0f6248db3",
+  "claim": {
+   "claimant": "0e9f2983b18c01f3",
+   "ttl_minutes": 240,
+   "status": "claimed"
+  }
+ },
+ "locks": {
+  "acquired": 16,
+  "paths": "allow 清单 16 路径逐一取锁俱退出码零；批中临时放锁 2 笔（DES-015 面与当日链面）为既有套件锁面交互让位，收工前复锁 2 笔"
+ },
+ "chain_pens": {
+  "intent": "f06e58d04d79889e87a83a292753288ce32d846b253f24c68ad9e48a2b524271（event_id 8f0ff02a-c6d2-4de0-891b-e882ab416f59）",
+  "certification": "（认证笔随批五节上链后回填）"
+ },
+ "versions": {
+  "mcpline": "0.4.0 → 0.5.0（pyproject 与 __init__ __version__ 单点位同步；__init__ 原 0.3.0 陈旧位随本批归一）",
+  "lease": "1.39.0 → 1.40.0（pyproject 与 __init__ 与 CONTRACT 修订五十六三源对齐）"
+ },
+ "central_registry_last_row": {
+  "token_id": "siinfer",
+  "domain_root": "/Users/moc/workspaces/SiInfer/InferServer",
+  "scope": "domain_write",
+  "status": "active",
+  "issued_at": "2026-09-09T14:49:28+08:00",
+  "issued_by": "main-window-rebind:承用户裁定域根改判"
+ },
+ "test_readings": {
+  "mcpline": "100 passed in 80.20s（既有 92 加新增 8，test-full-run-mcpline-2026-09-09.log，退出码零）",
+  "lease": "313 passed in 58.63s（既有 309 加新增 4，test-full-run-lease-2026-09-09.log，退出码零）"
+ },
+ "des015_pipeline": {
+  "formatter_exit": 0,
+  "scrutinator_exit": 0,
+  "nomenclator_exit": 0
+ },
+ "init_cli_probe": "uv run python -m mcpline.init --help 退出码零（usage 面在档）",
+ "worktrees": {
+  "sih-tools": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpinit-solo（branch msh/mcpinit-solo，base integral-stage-build）",
+  "sih-engine": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpinit-solo（branch msh/mcpinit-solo，base main）"
+ },
+ "zero_touch_check": {
+  "SiInfer": "本批零触碰 /Users/moc/workspaces/SiInfer/**（init 只读册不写册，测试全走 fixture 域根）",
+  "central_tokens_ndjson": "只读末行对表在案，零写入",
+  "sih_visual": "零触碰",
+  "spec023": "零触碰",
+  "port_8765": "web 守护进程零重启零 pkill"
+ }
+}
