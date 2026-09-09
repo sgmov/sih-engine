@@ -1,0 +1,104 @@
+{
+ "open_session": {
+  "exit_code": 0,
+  "session_id": "ab59c6c79364d927",
+  "repos": [
+   "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/alpha"
+  ],
+  "err": ""
+ },
+ "cross_domain_lock_abs_beta": {
+  "reason_code": "path_outside_domain",
+  "http_status": 403,
+  "error": "path 越界所绑域根（绑定验：操作目标路径前缀须属所绑域根；路径传域根相对形或域内绝对形）",
+  "gate": "HTTP 识别与域绑定路由层（DES-015）"
+ },
+ "cross_domain_open_repo_beta": {
+  "reason_code": "path_outside_domain",
+  "http_status": 403,
+  "error": "repo 越界所绑域根（绑定验：操作目标路径前缀须属所绑域根；路径传域根相对形或域内绝对形）"
+ },
+ "beta_ledger_absent": true,
+ "readonly_reject": {
+  "http_status": 403,
+  "reason_code": "scope_violation",
+  "error": "现行档位 readonly 拒写：readonly 档只读五工具可调，写工具一律拒透传"
+ },
+ "missing_header_401": {
+  "status": 401,
+  "reason": "missing_authorization"
+ },
+ "stopped_401": {
+  "status": 401,
+  "reason": "token_stopped"
+ },
+ "lock": 0,
+ "intent": 0,
+ "append": 0,
+ "unlock": 0,
+ "chain_verify": {
+  "status": "valid",
+  "valid": true,
+  "events": 2,
+  "err": ""
+ },
+ "close": 0,
+ "close_err": "",
+ "layout_first": {
+  "form": "first",
+  "trail": "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/sih-engine/sih/event/trail/2026-09-09.ndjson",
+  "tokens": "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/sih-tools/mcpline/ledger/tokens.ndjson",
+  "repos": [
+   "sih-tools",
+   "sih-engine"
+  ]
+ },
+ "layout_canonical": {
+  "form": "canonical",
+  "trail": "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/alpha/sih/event/trail/2026-09-09.ndjson",
+  "tokens": "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/alpha/sih/ledger/tokens.ndjson",
+  "repos": [
+   "/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpw-readings-trthztu5/case-1/SiHankor-fixture/alpha"
+  ]
+ },
+ "critsweep_canonical_degraded": {
+  "degraded": true,
+  "degradation_count": 6,
+  "first_degradation": "trail 近窗缺文件日（降级可见）：2026-08-31,2026-09-01,2026-09-02,2026-09-03,2026-09-04,2026-09-05,2026-09-06,2026"
+ },
+ "console_list": {
+  "status": 200,
+  "在册标识呈现": true
+ },
+ "console_issue_confirm_step": {
+  "status": 200,
+  "确认步标记": true,
+  "落笔前行数": 3
+ },
+ "console_issue_confirmed": {
+  "status": 200,
+  "完成标记": true,
+  "落笔后行数": 4,
+  "新行六字段": [
+   "domain_root",
+   "issued_at",
+   "issued_by",
+   "scope",
+   "status",
+   "token_id"
+  ],
+  "新行status": "active",
+  "新行issued_by": "console"
+ },
+ "console_revoke_confirm_step": {
+  "status": 200,
+  "确认步标记": true
+ },
+ "console_revoke_confirmed": {
+  "status": 200,
+  "完成标记": true,
+  "落笔后行数": 5,
+  "末行status": "stopped",
+  "末行domain承前": true
+ }
+}

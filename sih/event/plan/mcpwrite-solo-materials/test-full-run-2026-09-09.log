@@ -1,0 +1,21 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpwrite-solo/mcpline
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 92 items
+
+tests/test_cross_domain.py ......                                        [  6%]
+tests/test_domain_layout.py .....                                        [ 11%]
+tests/test_http_identity.py .......                                      [ 19%]
+tests/test_http_write_loop.py .                                          [ 20%]
+tests/test_scope_readonly.py .....                                       [ 26%]
+tests/test_stdio_smoke.py ...                                            [ 29%]
+tests/test_token_console.py .......                                      [ 36%]
+tests/test_tools_unit.py ...........                                     [ 48%]
+tests/test_web_smoke.py ....                                             [ 53%]
+tests/test_write_gates.py .................                              [ 71%]
+tests/test_write_matrix.py ...................                           [ 92%]
+tests/test_zero_write.py .......                                         [100%]
+
+======================== 92 passed in 92.18s (0:01:32) =========================
