@@ -42,3 +42,9 @@
 ## 五、完工判定
 
 使命达成：外部项目以标识牌经 HTTP 面绑定自己的域（Bearer alpha-tok 全程写 alpha/sih/ 树），在域内走完整租约流程写自己的链（open→lock→intent→append→verify→close 真 CLI），跨域结构性不可达（绑定验路由加 repo 锚定加既有五验三层）。六件终值俱在第一节，六组测试俱绿，红线零违（零新增执法零 LLM、既有工具代码零改动、sih-visual 与 SPEC-023 与 .zcode 零触碰、冲突走 wait-turn 队列零绕行、逐命令退出码即取即断）。
+
+## 六、双仓 settle 提交号（段2 回填）
+
+- tools 段1：199755e8aa1beb705f8c869a073356a2d0bf6d11（branch msh/mcpwrite-solo，base integral-stage-build）
+- engine 段1：a8c1a7b821f828f048369b5467502de9396c1bca（branch msh/mcpwrite-solo，base main@3e982c5）
+- 两段 settle 认证凭据：cert c3c08cac（链笔 c3c08cacae621ee275fcc0dd592792d0d2ded02f0382ef67a25c1990db2ea2b9，session 62d01f86d6a40ba7）
