@@ -1,0 +1,6 @@
+COMMAND (verbatim): $ROOT/sih-engine/target/debug/scribe query --trail $ROOT/sih-engine/sih/event/trail/2026-09-11.ndjson
+ROOT=/Users/moc/workspaces/SiHankor
+{
+  "error": "trail 不存在"
+}
+EXIT=2

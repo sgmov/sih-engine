@@ -1,0 +1,13 @@
+# I4 path exploration 2026-09-10
+# CMD: ls -la /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail
+total 16
+drwxr-xr-x  4 moc  staff   128 Sep 10 07:21 .
+drwxr-xr-x  3 moc  staff    96 Sep  9 18:49 ..
+-rw-r--r--  1 moc  staff   834 Sep  9 18:49 2026-09-09.ndjson
+-rw-r--r--  1 moc  staff  1446 Sep 10 07:21 2026-09-10.ndjson
+
+# CMD: test -f /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson && echo EXISTS || echo MISSING
+EXISTS
+
+# CMD: wc -l /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson
+       1 /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson

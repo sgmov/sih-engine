@@ -1,0 +1,43 @@
+COMMAND (verbatim，故意不带 --session): cd $ROOT/sih-tools/lease && env -u PYTHONHOME -u PYTHONPATH uv run --project . lease lock --path "sih-engine/sih/state/plan/mcpdual-parallel.md" --identity $ROOT/sih-tools/identity/reports/2026-09-10-mcpdual-parallel-identity.json --root $ROOT --locks $ROOT/sih-tools/lease/ledger/locks.ndjson --ledger $ROOT/sih-tools/lease/ledger/sessions.ndjson
+ROOT=/Users/moc/workspaces/SiHankor
+LOCKS_BYTES_BEFORE=1530058
+SESSIONS_BYTES_BEFORE=1249747
+{
+  "duplicate": true,
+  "line": {
+    "acquired_at": "2026-09-09T23:39:55+00:00",
+    "event": "acquired",
+    "mode": "exclusive",
+    "path": "sih-engine/sih/state/plan/mcpdual-parallel.md",
+    "session_id": "a40d82e2618108ac",
+    "tool": {
+      "name": "lease",
+      "version": "1.40.0"
+    }
+  }
+}
+EXIT=0
+LOCKS_BYTES_AFTER=1530270
+SESSIONS_BYTES_AFTER=1249747
+
+--- 加注复跑（首跑退出码 0 与 +212 字节已留痕于上；本复跑为判明「+212 归属」的诊断性复跑：若字节再增即本命令形自身落笔，若不变即 +212 系并行会话并发写）---
+LOCKS_BYTES_BEFORE=1530270
+LOCKS_LINES_BEFORE=8174
+{
+  "duplicate": true,
+  "line": {
+    "acquired_at": "2026-09-09T23:41:25+00:00",
+    "event": "acquired",
+    "mode": "exclusive",
+    "path": "sih-engine/sih/state/plan/mcpdual-parallel.md",
+    "session_id": "a40d82e2618108ac",
+    "tool": {
+      "name": "lease",
+      "version": "1.40.0"
+    }
+  }
+}
+EXIT=0
+LOCKS_BYTES_AFTER=1530482
+LOCKS_LINES_AFTER=8175
+SESSIONS_BYTES_AFTER=1249747

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:38:25 GMT
+server: uvicorn
+content-type: application/json
+content-length: 654
+
+{"jsonrpc":"2.0","id":9,"result":{"content":[{"type":"text","text":"{\n  \"error\": \"链文件缺席: /Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-11.ndjson（该日零链或日期拼写误）\",\n  \"what_this_tool_does\": \"查当日治理链事件清单（哈希、事件型、主体字段），只读投影 scribe query。\",\n  \"valid_params\": [\n    \"date: YYYY-MM-DD，缺省实日\",\n    \"event_type: 可选事件型过滤字符串\"\n  ],\n  \"canonical_pointers\": [\n    \"sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md\",\n    \"sih-engine/sih/state/plan/mcpline-line-v1.md\"\n  ]\n}"}],"isError":false}}
+HTTP_STATUS=200
+EXIT_CODE=0

@@ -1,0 +1,303 @@
+{
+  "cluster": "http-b",
+  "at": "2026-09-10",
+  "endpoint": "http://127.0.0.1:8765/mcp",
+  "transport_shape": "stateless（initialize 响应头无 Mcp-Session-Id，逐请求独立；全程未回 SSE，所有响应均 application/json；notifications/initialized 得 HTTP 202 Accepted）",
+  "server_info": {
+    "protocolVersion": "2025-03-26",
+    "serverInfo": { "name": "mcpline-http", "version": "1.30.0" },
+    "capabilities": {
+      "experimental": {},
+      "prompts": { "listChanged": false },
+      "resources": { "subscribe": false, "listChanged": false },
+      "tools": { "listChanged": false }
+    },
+    "instructions_excerpt": "SiHankor mcpline 统一 web 服务的 MCP streamable HTTP 面（DES-015 识别写面）。连接头携 Authorization: Bearer <项目标识> 即查册绑定所绑域，写面十具经既有 CLI 执法透传只落所绑域；无标识或停行牌降只读投影中央域。"
+  },
+  "tools_listed": [
+    "chain_query",
+    "chain_verify",
+    "critsweep",
+    "heartbeat",
+    "locks_read",
+    "lease_open",
+    "record_intent",
+    "record_append",
+    "record_park",
+    "lease_lock",
+    "lease_unlock",
+    "lease_wait_turn",
+    "lease_claim",
+    "lease_commit",
+    "lease_close"
+  ],
+  "tools_missing_expected": [
+    "takeover",
+    "bypass",
+    "record_direct",
+    "lease_unclaim"
+  ],
+  "tool_set_assertion": {
+    "count": 15,
+    "expected_fifteen_all_present": true,
+    "unexpected_extra": [],
+    "missing_unexpected": [],
+    "four_forbidden_structurally_absent": {
+      "takeover": true,
+      "bypass": true,
+      "record_direct": true,
+      "lease_unclaim": true
+    },
+    "verdict": "pass（名单断言通过：恰十五具、零多余、零缺漏；四禁具在 tools/list 名单结构性缺席，非调用才报错形）"
+  },
+  "items": [
+    {
+      "id": "T0-init",
+      "tool": "initialize",
+      "args": { "protocolVersion": "2025-03-26", "clientInfo": { "name": "mcpdual-cluster-b", "version": "1.0.0" } },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "00-init.txt",
+      "note": "响应头无 Mcp-Session-Id → stateless 形判定"
+    },
+    {
+      "id": "T0-initialized",
+      "tool": "notifications/initialized",
+      "args": {},
+      "http_status": 202,
+      "is_error": false,
+      "output_file": "00a-initialized.txt"
+    },
+    {
+      "id": "T0-tools-list",
+      "tool": "tools/list",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "01-tools-list.txt"
+    },
+    {
+      "id": "R1",
+      "tool": "chain_query",
+      "args": { "date": "2026-09-09" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "10-r1.txt",
+      "note": "matches=169 returned=169；event_type 直方图 reading_recorded=21, intent_refined=20, crosscheck_completed=6, certification_completed=107, direct_edit_completed=12, parking_exited=1, parking_entered=2"
+    },
+    {
+      "id": "R2",
+      "tool": "chain_query",
+      "args": { "date": "2026-09-09", "event_type": "intent_refined" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "11-r2.txt",
+      "note": "matches=169（当日链全量，未随过滤变）returned=20（恰为 R1 直方图中 intent_refined 全数，过滤后全集）"
+    },
+    {
+      "id": "R3",
+      "tool": "chain_verify",
+      "args": { "date": "2026-09-09" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "12-r3.txt",
+      "note": "判词 status=valid valid=true events=169 first_hash=25989caf…3df last_hash=8d5cd6e7…b3b8"
+    },
+    {
+      "id": "R4",
+      "tool": "critsweep",
+      "args": { "date": "2026-09-10" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "13-r4.txt",
+      "note": "严格 JSON 单对象，at=2026-09-10，window 2026-09-01..2026-09-10，trail events_scanned=1872，missing_days=[] unreadable_days=[]"
+    },
+    {
+      "id": "R5",
+      "tool": "heartbeat",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "14-r5.txt",
+      "note": "三维 convergence=0.0 adoption=0.0 mergeback=0.028571，days_since_last_snapshot=0"
+    },
+    {
+      "id": "R6",
+      "tool": "locks_read",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "15-r6.txt",
+      "note": "基线读数 held_count=7 active_sessions=1（a40d82e2618108ac，主批会话）"
+    },
+    {
+      "id": "R7",
+      "tool": "chain_query",
+      "args": { "date": "2026-09-11" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "16-r7.txt",
+      "note": "缺日教学载荷：error/what_this_tool_does/valid_params/canonical_pointers 四字段齐备（isError=false，教学以正常 result 文本载荷回）"
+    },
+    {
+      "id": "I1",
+      "tool": "locks_read",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "20-i1.txt",
+      "note": "无牌读：出参不带 identity_notice（降只读为静默降级）"
+    },
+    {
+      "id": "I2",
+      "tool": "lease_open",
+      "args": {},
+      "http_status": 401,
+      "is_error": true,
+      "output_file": "21-i2.txt",
+      "note": "无牌写拒透传：HTTP 层 401 直拒（非 JSON-RPC error 信封），reason_code=missing_authorization（三因中之第一因：缺头），屏障在 HTTP 识别与域绑定路由层（DES-015），先于参数校验与任何执行"
+    },
+    {
+      "id": "I3",
+      "tool": "locks_read",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "22-i3.txt",
+      "note": "伪牌读：预期 401 未现，实得 200 降只读成功＋出参尾带 identity_notice；首跑如实记，未改参重试"
+    },
+    {
+      "id": "I4-query",
+      "tool": "chain_query",
+      "args": { "date": "2026-09-09" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "23-i4-query.txt",
+      "note": "携活跃牌 siinfer：域绑定生效，trail=/Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson，matches=1 returned=1；零 identity_notice"
+    },
+    {
+      "id": "I4-verify",
+      "tool": "chain_verify",
+      "args": { "date": "2026-09-09" },
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "24-i4-verify.txt",
+      "note": "域内判词 valid=true events=1 first_hash=last_hash=ef37552f…a3；零 identity_notice"
+    },
+    {
+      "id": "I4-cli-query",
+      "tool": "scribe query (CLI)",
+      "args": { "trail": "/Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson" },
+      "http_status": null,
+      "is_error": false,
+      "exit_code": 0,
+      "output_file": "25-i4-cli-query.txt"
+    },
+    {
+      "id": "I4-cli-verify",
+      "tool": "scribe verify (CLI)",
+      "args": { "trail": "/Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson" },
+      "http_status": null,
+      "is_error": false,
+      "exit_code": 0,
+      "output_file": "26-i4-cli-verify.txt"
+    },
+    {
+      "id": "I4-path",
+      "tool": "path exploration",
+      "args": {},
+      "http_status": null,
+      "is_error": false,
+      "exit_code": 0,
+      "output_file": "27-i4-path.txt",
+      "note": "2026-09-09.ndjson 实存（EXISTS，1 行）"
+    },
+    {
+      "id": "FINAL",
+      "tool": "locks_read",
+      "args": {},
+      "http_status": 200,
+      "is_error": false,
+      "output_file": "30-final-locks.txt",
+      "note": "终态 active_sessions=1（仅 a40d82e2618108ac 主批会话），held_count=9；本簇零会话零锁残留"
+    }
+  ],
+  "identity_states": {
+    "I1_no_token_read": {
+      "state": "无牌读降只读（静默降级）",
+      "http_status": 200,
+      "identity_notice_present": false,
+      "excerpt": "（字段缺席）无牌 locks_read 出参仅含 held_count/held_locks/active_sessions/active_session_ids，无 identity_notice 键",
+      "output_file": "20-i1.txt"
+    },
+    "I2_no_token_write": {
+      "state": "无牌写拒透传（路由层屏障）",
+      "http_status": 401,
+      "reason_of_three": "缺头（reason_code=missing_authorization）",
+      "teaching_body_fields": ["error", "reason_code", "http_status", "gate", "what_this_tool_does", "valid_params", "suggested_action", "retry_discipline", "console", "canonical_pointers"],
+      "gate": "HTTP 识别与域绑定路由层（DES-015），先于参数校验与任何执行",
+      "output_file": "21-i2.txt"
+    },
+    "I3_bogus_token_read": {
+      "state": "与预期不符：非 401，降只读成功＋identity_notice",
+      "http_status": 200,
+      "identity_notice_present": true,
+      "identity_notice_excerpt": "连接携标识但未识别为 active（不在册或已停行）：本连接降只读投影中央域；写工具一律拒透传（401）；管理台 /tokens 可查册或换牌",
+      "cause_specificity": "教学语二因并列（不在册或已停行），未指认哪一因；无 token_unregistered 独立码",
+      "output_file": "22-i3.txt"
+    },
+    "I4_active_token_domain_read": {
+      "state": "有牌域内读（域绑定生效）",
+      "token": "siinfer",
+      "bound_domain_trail": "/Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson",
+      "http_status": 200,
+      "identity_notice_present": false,
+      "crosscheck": {
+        "http_query_events": 1,
+        "cli_query_matches": 1,
+        "event_set_identical": true,
+        "sole_event": "certification_completed doc_id=mcpline-init-report-y0h8aw03 event_hash=ef37552f3604a62bcc1b2a5a5937bbf924a95580ea39a482c12a2a8c930a25a3 timestamp=2026-09-09T10:49:49.627494Z",
+        "http_verify_verdict": "valid=true events=1",
+        "cli_verify_verdict": "status=valid events=1 first_hash=last_hash=ef37552f…",
+        "verdicts_identical": true,
+        "path_exists": true
+      },
+      "output_files": ["23-i4-query.txt", "24-i4-verify.txt", "25-i4-cli-query.txt", "26-i4-cli-verify.txt", "27-i4-path.txt"]
+    }
+  },
+  "residue_check": {
+    "final_active_sessions": 1,
+    "final_active_session_ids": ["a40d82e2618108ac"],
+    "session_id_owner": "mcpdual-parallel 主批既有会话（R6 基线已在），非本簇所立",
+    "cluster_b_residue": false,
+    "note": "本簇全程零写：读矩阵＋识别探针均只读或 401 路由层拒；transport stateless 故本连接未立任何服务端会话"
+  },
+  "anomalies": [
+    {
+      "id": "A1",
+      "item": "I3",
+      "severity": "expectation-mismatch",
+      "detail": "伪牌读预期 HTTP 401 token_unregistered，实得 HTTP 200 降只读成功＋identity_notice。与 initialize instructions 自述（『无标识或停行牌降只读投影中央域』）相容，疑为任务简报预期与实现语义之差而非服务端缺陷；写面 401 屏障不受影响（I2 实证）。首跑如实记，未改参重试。"
+    },
+    {
+      "id": "A2",
+      "item": "I1-vs-I3",
+      "severity": "observation",
+      "detail": "降只读提示不对称：无牌读（I1）出参零 identity_notice（静默降级），携牌不在册读（I3）才带 identity_notice 教学语。无牌调用方收不到任何降态告知。"
+    },
+    {
+      "id": "A3",
+      "item": "R2",
+      "severity": "observation",
+      "detail": "chain_query 出参 matches 字段不受 event_type 过滤影响（R2 matches=169 同 R1 全链量，returned=20 为过滤后全集且经 R1 直方图核实恰为 intent_refined 全数 20）。字段命名易误读为『过滤后命中数』。"
+    },
+    {
+      "id": "A4",
+      "item": "locks ledger drift",
+      "severity": "observation-concurrent",
+      "detail": "探针窗口内锁面读数漂移：R6 held_count=7 → I1/I3 held_count=8（出现同路径重复条目 sih-engine/sih/state/plan/mcpdual-parallel.md 两笔，同会话 a40d82e2618108ac）→ 终态 held_count=9。系主批并行活动所致，非本簇残留（本簇零写）；同路径重复条目现象如实转述候主批裁判。"
+    }
+  ],
+  "artifacts_dir": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpdual-parallel/sih/event/plan/mcpdual-parallel-materials/cluster-http-b/",
+  "command_log": "99-commands.txt"
+}

@@ -1,0 +1,9 @@
+COMMAND (verbatim): $ROOT/sih-engine/target/debug/scribe verify --trail $ROOT/sih-engine/sih/event/trail/2026-09-09.ndjson
+ROOT=/Users/moc/workspaces/SiHankor
+{
+  "status": "valid",
+  "events": 169,
+  "first_hash": "25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df",
+  "last_hash": "8d5cd6e75c0ff15562b825f7413b05407c31c2a4c30ea4711fa7aada6a90b3b8"
+}
+EXIT=0

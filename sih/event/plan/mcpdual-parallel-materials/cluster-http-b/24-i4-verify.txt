@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:41:14 GMT
+server: uvicorn
+content-type: application/json
+content-length: 458
+
+{"jsonrpc":"2.0","id":14,"result":{"content":[{"type":"text","text":"{\n  \"date\": \"2026-09-09\",\n  \"trail\": \"/Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson\",\n  \"status\": \"valid\",\n  \"valid\": true,\n  \"events\": 1,\n  \"first_hash\": \"ef37552f3604a62bcc1b2a5a5937bbf924a95580ea39a482c12a2a8c930a25a3\",\n  \"last_hash\": \"ef37552f3604a62bcc1b2a5a5937bbf924a95580ea39a482c12a2a8c930a25a3\"\n}"}],"isError":false}}
+HTTP_STATUS=200
+EXIT_CODE=0

@@ -1,0 +1,161 @@
+# mcpdual-parallel 子代理乙（MCP HTTP 路径簇）curl 命令 verbatim 记档
+# 全部退出码 0，各调用 HTTP 状态码见对应落档文件尾行 HTTP_STATUS=。
+# 端点 http://127.0.0.1:8765/mcp，全程无 Mcp-Session-Id（stateless 形），无牌调用零 Authorization 头。
+
+## T0 initialize → 00-init.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -D - \
+  --data-binary '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"mcpdual-cluster-b","version":"1.0.0"}}}' \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/00-init.txt" 2>&1
+EXIT_CODE=0
+
+## T0 notifications/initialized → 00a-initialized.txt（HTTP 202）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -D - \
+  --data-binary '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/00a-initialized.txt" 2>&1
+EXIT_CODE=0
+
+## T0 tools/list → 01-tools-list.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -D - \
+  --data-binary '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/01-tools-list.txt" 2>&1
+EXIT_CODE=0
+
+## R1 chain_query {"date":"2026-09-09"} → 10-r1.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"chain_query","arguments":{"date":"2026-09-09"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/10-r1.txt" 2>&1
+EXIT_CODE=0
+
+## R2 chain_query {"date":"2026-09-09","event_type":"intent_refined"} → 11-r2.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"chain_query","arguments":{"date":"2026-09-09","event_type":"intent_refined"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/11-r2.txt" 2>&1
+EXIT_CODE=0
+
+## R3 chain_verify {"date":"2026-09-09"} → 12-r3.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"chain_verify","arguments":{"date":"2026-09-09"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/12-r3.txt" 2>&1
+EXIT_CODE=0
+
+## R4 critsweep {"date":"2026-09-10"} → 13-r4.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":6,"method":"tools/call","params":{"name":"critsweep","arguments":{"date":"2026-09-10"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/13-r4.txt" 2>&1
+EXIT_CODE=0
+
+## R5 heartbeat {} → 14-r5.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":7,"method":"tools/call","params":{"name":"heartbeat","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/14-r5.txt" 2>&1
+EXIT_CODE=0
+
+## R6 locks_read {} → 15-r6.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":8,"method":"tools/call","params":{"name":"locks_read","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/15-r6.txt" 2>&1
+EXIT_CODE=0
+
+## R7 chain_query {"date":"2026-09-11"} 缺日 → 16-r7.txt（HTTP 200，教学载荷）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":9,"method":"tools/call","params":{"name":"chain_query","arguments":{"date":"2026-09-11"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/16-r7.txt" 2>&1
+EXIT_CODE=0
+
+## I1 locks_read {} 无牌专调 → 20-i1.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":10,"method":"tools/call","params":{"name":"locks_read","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/20-i1.txt" 2>&1
+EXIT_CODE=0
+
+## I2 lease_open {} 无牌写探针（唯一允许的写调用形态） → 21-i2.txt（HTTP 401）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":11,"method":"tools/call","params":{"name":"lease_open","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/21-i2.txt" 2>&1
+EXIT_CODE=0
+
+## I3 locks_read {} 携伪牌 → 22-i3.txt（HTTP 200，与预期 401 不符，首跑如实记）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -H 'Authorization: Bearer bogus-token-1234' \
+  --data-binary '{"jsonrpc":"2.0","id":12,"method":"tools/call","params":{"name":"locks_read","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/22-i3.txt" 2>&1
+EXIT_CODE=0
+
+## I4-a chain_query {"date":"2026-09-09"} 携活跃牌 siinfer → 23-i4-query.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -H 'Authorization: Bearer siinfer' \
+  --data-binary '{"jsonrpc":"2.0","id":13,"method":"tools/call","params":{"name":"chain_query","arguments":{"date":"2026-09-09"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/23-i4-query.txt" 2>&1
+EXIT_CODE=0
+
+## I4-b chain_verify {"date":"2026-09-09"} 携活跃牌 siinfer → 24-i4-verify.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -H 'Authorization: Bearer siinfer' \
+  --data-binary '{"jsonrpc":"2.0","id":14,"method":"tools/call","params":{"name":"chain_verify","arguments":{"date":"2026-09-09"}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/24-i4-verify.txt" 2>&1
+EXIT_CODE=0
+
+## I4 路径探索 → 27-i4-path.txt
+ls -la /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail
+test -f /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson && echo EXISTS || echo MISSING
+wc -l /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson
+
+## I4 CLI 交叉核对 query → 25-i4-cli-query.txt（退出码 0）
+/Users/moc/workspaces/SiHankor/sih-engine/target/debug/scribe query --trail /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson
+
+## I4 CLI 交叉核对 verify → 26-i4-cli-verify.txt（退出码 0）
+/Users/moc/workspaces/SiHankor/sih-engine/target/debug/scribe verify --trail /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson
+
+## 终态 locks_read {} → 30-final-locks.txt（HTTP 200）
+curl -sS -X POST 'http://127.0.0.1:8765/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data-binary '{"jsonrpc":"2.0","id":15,"method":"tools/call","params":{"name":"locks_read","arguments":{}}}' \
+  -D - \
+  -w '\nHTTP_STATUS=%{http_code}' > "$OUT/30-final-locks.txt" 2>&1
+EXIT_CODE=0

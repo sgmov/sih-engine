@@ -1,0 +1,8 @@
+COMMAND (verbatim，故意不带 --session 与 --sessions): $ROOT/sih-engine/target/debug/scribe intent --record $ROOT/sih-tools/scribe/reports/2026-09-10-ask3-mcpdual-parallel-record.json --validation $ROOT/sih-tools/scribe/reports/2026-09-10-ask3-mcpdual-parallel-validation.json --trail $ROOT/sih-engine/sih/event/trail/2026-09-10.ndjson --locks $ROOT/sih-tools/lease/ledger/locks.ndjson
+ROOT=/Users/moc/workspaces/SiHankor
+TRAIL_BYTES_BEFORE=6241
+{
+  "error": "会话不在册即拒 SessionNotActive：缺 --session，主会处置位 --no-session-reason <事由> 默认关"
+}
+EXIT=1
+TRAIL_BYTES_AFTER=6241

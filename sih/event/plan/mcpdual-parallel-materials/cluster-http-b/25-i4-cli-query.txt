@@ -1,0 +1,39 @@
+# I4 CLI cross-check: scribe query
+# CMD: /Users/moc/workspaces/SiHankor/sih-engine/target/debug/scribe query --trail /Users/moc/workspaces/SiInfer/InferServer/sih/event/trail/2026-09-09.ndjson
+{
+  "matches": 1,
+  "events": [
+    {
+      "event_id": "52c89798-95e9-46ce-ac9f-2dd00f64425f",
+      "event_type": "certification_completed",
+      "timestamp": "2026-09-09T10:49:49.627494Z",
+      "actor": {
+        "actor_id": "scribe",
+        "actor_type": "system",
+        "invoked_via": "cli"
+      },
+      "details": {
+        "report_path": "/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/mcpline-init-report-y0h8aw03.json",
+        "report_hash": "a3344c4f46a3971833088d274b9ca65e95a644d129c6e064d9e2b630bf221602",
+        "pack_versions": [],
+        "content_hashes": {},
+        "finding_count": 0,
+        "exit_code": 0,
+        "tool_version": "",
+        "golden_baseline": ""
+      },
+      "doc_id": "mcpline-init-report-y0h8aw03",
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "event_hash": "ef37552f3604a62bcc1b2a5a5937bbf924a95580ea39a482c12a2a8c930a25a3",
+      "event_class": "record_only",
+      "verification_result": {
+        "exit_code": 0,
+        "findings": 0,
+        "total": 0
+      },
+      "session_id": null,
+      "identity_hash": null
+    }
+  ]
+}
+EXIT_CODE=0

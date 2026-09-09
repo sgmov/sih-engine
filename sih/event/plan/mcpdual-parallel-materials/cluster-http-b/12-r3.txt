@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+date: Wed, 09 Sep 2026 23:38:12 GMT
+server: uvicorn
+content-type: application/json
+content-length: 459
+
+{"jsonrpc":"2.0","id":5,"result":{"content":[{"type":"text","text":"{\n  \"date\": \"2026-09-09\",\n  \"trail\": \"/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-09.ndjson\",\n  \"status\": \"valid\",\n  \"valid\": true,\n  \"events\": 169,\n  \"first_hash\": \"25989caf817bc08b848d1c1bb819703c913eda9a61ecaab5656c542f663581df\",\n  \"last_hash\": \"8d5cd6e75c0ff15562b825f7413b05407c31c2a4c30ea4711fa7aada6a90b3b8\"\n}"}],"isError":false}}
+HTTP_STATUS=200
+EXIT_CODE=0
