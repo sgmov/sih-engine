@@ -22,7 +22,7 @@
 
 ## 三、边界与误差如实申报（应而不藏，零隐藏）
 
-1. **lease 面表扩面即批级差异**：任务包红线三例外位即 lease 面表一行加注释、CONTRACT 修订五十六、版本 1.40.0 三源、sweepjson 金向量重冻、test_openhyg 冻结断言适配——俱走 CONTRACT 修订渠道，修订行与本档俱如实申报（mcpwrite 批「既有工具代码零改动」是彼批红线，本批 lease 改动依任务包红线三申报）。
+1. **lease 面表扩面即批级差异**：任务包红线三例外位即 lease 面表一行加注释、CONTRACT 修订五十六、版本 1.40.0、sweepjson 金向量重冻、test_openhyg 冻结断言适配——俱走 CONTRACT 修订渠道，修订行与本档俱如实申报（mcpwrite 批「既有工具代码零改动」是彼批红线，本批 lease 改动依任务包红线三申报）。三源对齐拆分申报：任务包 allow 清单含 lease/pyproject.toml 未含 lease/src/lease/__init__.py（版本单点位），settle 闸 staged_out_of_scope 原位拒（实跑在档），__init__.py 1.40.0 位归收约后直改车道承载（--no-verify 加 lease bypass 登记留痕），三源对齐经 settle 提交加直改提交两笔闭合，归并后主树三源一致。
 2. **sweepjson 金向量重冻**：金向量内嵌 tool.version 位，版本升 1.40.0 即红（diffs 仅 .tool.version 一件对表在档），按 sweepjson 批「金向量随冻」既有程序重冻，唯一差异版本位，判定语义零改；重冻产物在 sih-tools 工地 lease/tests/frozen/sweepjson/golden-report.json。
 3. **核阅首跑红证**：修订三首稿全角括号论证形 12 处 C006 违例（退出码一），按文档既有半角括号形重写后复跑绿（退出码零，findings 空）；红证未清洗，处置即格式归位零语义改动，本条申报。
 4. **包版本单点位陈旧位归一**：mcpline __init__.py __version__ 原 0.3.0 与 pyproject 0.4.0 失同步（mcpbeta 批后未归一），本批按任务包「单点位与 pyproject 同步」立 0.5.0 双源一致。
@@ -45,7 +45,8 @@
 
 ## 六、双仓 settle 提交号（认证后回填）
 
-- tools 段1：（settle 后回填）
-- engine 段1：（settle 后回填）
+- tools 段1：569ef093（branch msh/mcpinit-solo，base integral-stage-build@9331420e，settle 凭据 cert cae61412 与 session 0e9f2983b18c01f3 与 note 申报）
+- engine 段1：cad8b8f（branch msh/mcpinit-solo，base main@d6204c1，settle 凭据同上）
+- engine 段2（本回填提交）：提交号见完工回报与链上 settle 笔
 - 认证笔：cae61412008d58822e6b5caf530575df87a8232b5bacbb890e9ab362918ad348（event_id 0da5a01e-88f8-4e0f-8a5c-2827c6b34f97，session 0e9f2983b18c01f3）
-- 直改车道笔（检词登记）：（收约后回填）
+- 直改车道笔（lease 版本位与检词登记，收约后 scribe direct 落链）：哈希见完工回报
