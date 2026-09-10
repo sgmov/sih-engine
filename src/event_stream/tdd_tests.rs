@@ -93,7 +93,7 @@ mod tdd {
         }).to_string();
         let input = intent_event(
             PathBuf::from("r.json").as_path(), &record,
-            PathBuf::from("v.json").as_path(), &validation,
+            Some((PathBuf::from("v.json").as_path(), validation.as_str())),
             actor(), Utc::now(),
         ).expect("零发现放行");
         assert_eq!(input.event_type, "intent_refined");
@@ -114,7 +114,7 @@ mod tdd {
     fn t3_intent_findings_rejected() {
         let record = json!({"session_id": "s", "round": 1, "anchors": [], "calls_in": 0, "calls_out": 0, "intent_contract": {"goal": "g"}}).to_string();
         let bad = json!({"findings": [{"rule_id": "A01"}], "packs": [], "tool": {"name": "x", "version": "0"}}).to_string();
-        let out = intent_event(PathBuf::from("r").as_path(), &record, PathBuf::from("v").as_path(), &bad, actor(), Utc::now());
+        let out = intent_event(PathBuf::from("r").as_path(), &record, Some((PathBuf::from("v").as_path(), bad.as_str())), actor(), Utc::now());
         assert!(out.is_err(), "有发现即拒");
     }
 
