@@ -28,3 +28,11 @@
 ## 四、队形验证
 
 单线 solo 实跑，主线亲跑测量与结算，零子代理，形名相符零偏离。
+
+## 六、重测轮补记（用户选①常识裁定锚定后）
+
+- 用户 2026-09-10 选①并亲给锚定事实「这个不是常识吗？世界上没有任何一个工具承载了哲学仪式」，会话 5caeb2c1393511b5 重开（ask3 round 2，意图笔 4d0c560a）
+- 命题改写链第 1 次：m-des016-2 锚定前置消解边界，3 发 stable_clear 合合合变卦零谨慎信号零；R5 首跑挂起如实记，即基线陈行配对漂移，正道补法为当日计分件确定性装配校准行（identity 0851f84f 与 core e1c9a7fa 全数机读自正身件与计分件，零手工编造）加 baseline_inject 读档重建，复检 R5 同源配对过；temp probe 脚本未入库工具缺口申报候补
+- attractor 查验裁决通过、重放 identical、机器终签 756effb1（crosscheck-m-des016-2）
+- DES-016-mcp-pure-tool-intent-form-v1.md 八问设计档落 doc/design/，管线三步俱绿即化格零改、核阅域内零 findings、检词零违例
+- pk-084 出泊 promoted：出泊件 pk-084-exit.json 与停泊笔与名录出泊行在档；DES-016 候用户终裁开实装批
