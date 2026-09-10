@@ -1,0 +1,9 @@
+{
+  "doc": "016-parser-initiation.md",
+  "pipeline": {
+    "formatter_rc": 0,
+    "nomenclator_rc": 0,
+    "scrutinator_rc": 0
+  },
+  "sha256": "2f29de11885cdf9cb7da5b0da48bdb368785c723d54648ef14794a3765672964"
+}

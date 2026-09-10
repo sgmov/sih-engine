@@ -15,7 +15,7 @@
 | 漂移守卫 | tests/test_ai_manual.py 十测：面十七具名逐一对表、反向鬼工具守卫、本地两具与 takeover/bypass 申报对表、理由码九码抽样、双实例 instructions 指针断言、路由 200 与缺席 404、页脚链接、版本双点位同步 |
 | 词形登记 | mcpmanual（code）与 AI 使用说明书（zh）一词条 established 入 core 包；register 后双 query 读数 established；化格归一双件 exit 0；nomenclator 包测试 30 passed |
 | 版本 | mcpline 0.8.0 升 0.9.0（__init__ 与 pyproject 与 README 同步）；README 增说明书节 |
-| DES-015 修订五 | 说明书位四点登记（正典件、/manual 获取位、双实例 instructions、漂移守卫）；走管线三步 |
+| DES-015 修订六 | 说明书位四点登记（正典件、/manual 获取位、双实例 instructions、漂移守卫）；走管线三步 |
 
 ## 二、测试读数
 

@@ -28,11 +28,15 @@
 
 轴至少给一即 topic 或 event 或时间轴至少一件在场，轴全缺即拦。
 
+v1.3 增 --root 即路径，显式数据根，给定即不上溯且须为布局两形根即 first_domain 中央双仓目录或 canonical 新城正典 sih/ledger，两形标记俱缺即拒退出码二教学报文；缺省自当前目录上溯现形不变，上溯判别同步认 canonical 形。布局两形即静态目录标记判别零读钟零 LLM。canonical 形两根分离即检索数据取本域 root 而 locator 码根自最近祖先供给，城零 sih-tools 亦可检。
+
 ## 数据契约 {#data-contract}
 
 主题轴匹配为机械匹配承寻址词查询语义，逐载体取条目级命中，无语义召回无向量。事件轴作用域限事件在档的记录即链上事件与停泊事件，按事件类型或 entry_id 或 session_id 匹配。时间轴作用域限时间戳在档的记录即链上事件与停泊事件，文件载体不猜时间。
 
 五档映射即事实档经 scribe query 直查 trail 事件流，ndjson 载体不经寻址。结论档经寻址检索 md 载体。经验档经寻址检索 md 载体。悬置档两路即两册 PARKING 投影 md 经寻址与停泊记录 json 经寻址，停泊事件经 query。意图档两路即 ask3 记录 json 经寻址与链上意图事件经 query。
+
+v1.3 增 canonical 城档映射即结论档 sih/event/plan 下 -results.md 后缀件、意图档 sih/state/plan 下任务包 md、悬置档 sih/state/parking/materials 下 json 加 sih/state/parking/PARKING-v1、事实档与停泊与意图事件档属分类表现表两形共用；经验档城无对应载体零命中如实。canonical 形链目录即本域 sih/event/trail。canonical 形索引用内嵌记忆包建至系统临时文件，零城侧配置零工作区落盘；first_domain 形映射与链目录与记忆包逐字节零变。
 
 切面记录字段七件逐一必填。archive 即档名五值枚举。carrier 即载体记号即 md 或 json 或 event。ref 即出处，文件载体为相对工作区根路径加行区间，事件载体为 event_id 加 event_hash 前缀八位。axis 即命中轴即 topic 或 event 或 time，多轴命中各出一行。excerpt 即逐字摘录，上限二百五十六字符，超长截断附三句点省略标记。matched 即命中词或事件记号原文。at 即调用给参的参照时间逐字回显。
 
@@ -75,7 +79,7 @@
 
 ## 版本与固定 {#version}
 
-v1.2 于 2026-08-28 即底座引擎件名随 DEC-017 修订二回滚连带改写三处，接口零改。v1.1 于 2026-08-28 即组件名随 DEC-017 温故立名连带改写，接口零改即参数与退出码与输出形态不动。v1 于 2026-08-27 随立项批 mem-init-t6d 落盘。接口冻结即修订须走修订记录留痕，破冻显式可见。
+v1.2 于 2026-08-28 即底座引擎件名随 DEC-017 修订二回滚连带改写三处，接口零改。v1.1 于 2026-08-28 即组件名随 DEC-017 温故立名连带改写，接口零改即参数与退出码与输出形态不动。v1 于 2026-08-27 随立项批 mem-init-t6d 落盘。接口冻结即修订须走修订记录留痕，破冻显式可见。v1.3 于 2026-09-11 随 wengumcp-parallel 批增 --root 旗标与布局两形判别与 canonical 城档映射与内嵌记忆包，接口增量见接口签名与数据契约两节 v1.3 段，MCP 面投影归 SPEC-023 修订二承载。
 
 ## 内容充分性 {#sufficiency}
 

@@ -8,6 +8,8 @@ pub mod axes;
 pub mod facet;
 pub mod locator_bridge;
 
+pub use archives::Layout;
+
 use std::path::{Path, PathBuf};
 
 use serde::Serialize;
@@ -156,6 +158,10 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
 
     let mut rows: Vec<FacetRow> = Vec::new();
 
+    // 布局宽判：canonical 形走城档面，非两形根回落 first_domain 路径由既有
+    // 降级命名报错如实显形（F-8 语义逐字节承袭）；严判只在 bin --root 显式面。
+    let layout = layout_form(&args.root).unwrap_or(Layout::FirstDomain);
+
     if !args.events.is_empty() || has_time_axis {
         let store = load_chain(&args.root)?;
         if !args.events.is_empty() {
@@ -180,7 +186,7 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
         if !args.topics.is_empty() {
             for topic in &args.topics {
                 for entry in locator_bridge::query_word_entries(&args.root, &index, topic)? {
-                    let Some(archive) = archives::classify_path(&entry.path) else {
+                    let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
                         continue;
                     };
                     if !in_keep(archive) {
@@ -223,7 +229,7 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
             for word in &args.words {
                 let mut count = 0usize;
                 for entry in &entries {
-                    let Some(archive) = archives::classify_path(&entry.path) else {
+                    let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
                         continue;
                     };
                     if !in_keep(archive) {
@@ -380,10 +386,23 @@ pub fn derive_root(from: &Path) -> Option<PathBuf> {
             .file_name()
             .map(|name| name == "worktrees")
             .unwrap_or(false);
-        if !is_scaffold && dir.join("sih-engine").is_dir() && dir.join("sih-tools").is_dir() {
+        if !is_scaffold && layout_form(dir).is_some() {
             return Some(dir.to_path_buf());
         }
         cur = dir.parent();
+    }
+    None
+}
+
+/// 布局判别（wengumcp-parallel 批件二）：root 下 sih-engine 与 sih-tools 目录俱在
+/// 即 first_domain 中央双仓形；root 下 sih/ledger 为目录即 canonical 新城正典域形
+/// （与 mcpline 开域落地形及 lease detect_domain_context 同构）；两形俱缺即 None。
+pub fn layout_form(root: &Path) -> Option<Layout> {
+    if root.join("sih-engine").is_dir() && root.join("sih-tools").is_dir() {
+        return Some(Layout::FirstDomain);
+    }
+    if root.join("sih").join("ledger").is_dir() {
+        return Some(Layout::Canonical);
     }
     None
 }
@@ -647,7 +666,10 @@ mod wenguobs_tests {
 
 /// 跨日链加载即 trail 目录文件名字典序逐文件拼接。
 pub fn load_chain(root: &Path) -> Result<Vec<crate::event_stream::Event>, RecallError> {
-    let dir = root.join("sih-engine").join("sih").join("event").join("trail");
+    let dir = match layout_form(root) {
+        Some(Layout::Canonical) => root.join("sih").join("event").join("trail"),
+        _ => root.join("sih-engine").join("sih").join("event").join("trail"),
+    };
     if !dir.is_dir() {
         return Err(RecallError::TargetUnreadable(
             dir.to_string_lossy().into_owned(),

@@ -1,0 +1,1 @@
+{"zh": "温故检索具", "en": "RetrieverRecall", "code": "retriever_recall", "state": "established", "signed": "2026-09-11", "source": "2026-09-11 wengumcp-parallel 批立名，典承 SPEC-023 修订二 alpha 相八读数面，宿主命令 retriever recall 子命令镜像", "definition": "温故的 MCP 只读工具名：stdio 与 HTTP 两面同名投影，入参 topic 与 word 与 event 与 since 与 until 与 archive 与 at，承接 CLI 全参透传含 --root 域根，NDJSON 与退出码三值透传，只报不判"}

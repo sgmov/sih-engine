@@ -1,0 +1,64 @@
+..Fatal Python error: Segmentation fault
+
+Current thread 0x00000001f8e81e80 (most recent call first):
+  File "<frozen genericpath>", line 19 in exists
+  File "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py", line 671 in exists
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/_code/code.py", line 94 in path
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/_code/code.py", line 1573 in getfslineno
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/python.py", line 328 in reportinfo
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/nodes.py", line 760 in location
+  File "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/functools.py", line 1126 in __get__
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/runner.py", line 117 in pytest_runtest_protocol
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/main.py", line 408 in pytest_runtestloop
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/main.py", line 384 in _main
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/main.py", line 330 in wrap_session
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/main.py", line 377 in pytest_cmdline_main
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py", line 229 in _main
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/lib/python3.14/site-packages/_pytest/config/__init__.py", line 253 in _console_main
+  File "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/judouwire-solo/locator/.venv/bin/pytest", line 10 in <module>
+
+Current thread's C stack trace (most recent call first):
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _Py_DumpStack+0x44 [0x1017e5298]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at faulthandler_dump_c_stack+0x54 [0x10185df48]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at faulthandler_fatal_error+0x16c [0x10185ddf8]
+  Binary file "/usr/lib/system/libsystem_platform.dylib", at _sigtramp+0x38 [0x18cd0b744]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyLong_FromUnsignedLong+0xe8 [0x100f8e350]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _pystat_fromstructstat+0x1b4 [0x100f8dce4]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at posix_do_stat+0xc8 [0x100f8d498]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at os_stat+0xdc [0x100f8d278]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _TAIL_CALL_CALL_BUILTIN_FAST_WITH_KEYWORDS.llvm.15987337413589453803+0xec [0x1011ef874]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyFunction_Vectorcall+0x338 [0x101136a40]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyObject_Vectorcall+0x58 [0x100ef1924]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at slot_tp_descr_get+0x88 [0x1011cddf8]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyObject_GenericGetAttr+0x4c8 [0x100fb0b18]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _TAIL_CALL_LOAD_ATTR.llvm.15987337413589453803+0x70 [0x100f30e64]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyFunction_Vectorcall+0x338 [0x101136a40]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyObject_Call_Prepend+0x128 [0x1010ac414]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at slot_tp_call+0x154 [0x1010ac120]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyObject_Vectorcall+0x200 [0x100ef1acc]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _TAIL_CALL_CALL_KW_NON_PY.llvm.15987337413589453803+0xe8 [0x1011f0720]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyFunction_Vectorcall+0x338 [0x101136a40]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyObject_Call_Prepend+0x128 [0x1010ac414]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at slot_tp_call+0x154 [0x1010ac120]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyObject_Vectorcall+0x200 [0x100ef1acc]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _TAIL_CALL_CALL_KW.llvm.15987337413589453803+0x290 [0x100f63054]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyFunction_Vectorcall+0x338 [0x101136a40]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyObject_Call_Prepend+0x128 [0x1010ac414]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at slot_tp_call+0x154 [0x1010ac120]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyObject_Vectorcall+0x200 [0x100ef1acc]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _TAIL_CALL_CALL_KW.llvm.15987337413589453803+0x290 [0x100f63054]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at _PyEval_Vector+0x30c [0x100feb6b0]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at PyEval_EvalCode+0xa0 [0x100ffaba8]
+  Binary file "/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/bin/python3.14", at run_mod.llvm.15786554712633993554+0x124 [0x10100c7c8]
+  <truncated rest of calls>
+
+Extension modules: tree_sitter_rust._binding, yaml._yaml (total: 2)

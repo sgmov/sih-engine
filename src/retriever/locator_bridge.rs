@@ -1,10 +1,29 @@
 //! 寻址底座只读桥即子进程调用 build 与 query 两步，承接 SPEC-008 组件边界节。
+//! wengumcp-parallel 批增两根分离：canonical 城的检索数据取本域 root，locator
+//! 码根自最近祖先供给（城零 sih-tools 也可检），记忆包用内嵌 canonical 表零城侧
+//! 配置；first_domain 形路径与包逐字节零变。
 
 use std::path::{Path, PathBuf};
 
 use serde::Deserialize;
 
-use super::RecallError;
+use super::{layout_form, Layout, RecallError};
+
+/// canonical 新城正典域内嵌记忆包：城档映射表同源 include 集（archives.rs
+/// classify_path_canonical 对表），建至系统临时文件传 locator，零工作区落盘。
+pub const CANONICAL_MEMORY_PACK: &str = r#"{
+  "name": "memory-canonical",
+  "version": "0.1.0",
+  "include": [
+    "sih/event/plan/*-results.md",
+    "sih/state/plan/*.md",
+    "sih/state/parking/materials/*.json",
+    "sih/state/parking/PARKING-v1.md"
+  ],
+  "exclude": [],
+  "stale_threshold": 0,
+  "max_file_bytes": 2000000
+}"#;
 
 /// 寻址条目十字段的消费子集即 id 与路径与载体与行位与文本。
 #[derive(Clone, Debug, Deserialize)]
@@ -18,6 +37,18 @@ pub struct LocatorEntry {
 }
 
 fn locator_dir(root: &Path) -> PathBuf {
+    if layout_form(root) == Some(Layout::Canonical) {
+        // 码根祖先回溯：canonical 城零 sih-tools，locator 自最近祖先供给；
+        // 缺祖回落现形路径由缺席报文如实显形（MissingBase locator）。
+        let mut cur = root.parent();
+        while let Some(dir) = cur {
+            let cand = dir.join("sih-tools").join("locator");
+            if cand.is_dir() {
+                return cand;
+            }
+            cur = dir.parent();
+        }
+    }
     root.join("sih-tools").join("locator")
 }
 
@@ -57,13 +88,25 @@ fn index_path() -> PathBuf {
 }
 
 /// 建索引于系统临时目录不落工作区，缺席或失败映射 MissingBase 即报缺席件名 locator。
+/// canonical 形用内嵌记忆包（临时文件承载），first_domain 形用仓内既有包零变。
 pub fn build_index(root: &Path) -> Result<PathBuf, RecallError> {
-    let pack = pack_path(root);
-    if !pack.is_file() {
-        return Err(RecallError::MissingBase(
-            "locator packs/memory/pack.json".to_string(),
+    let pack: PathBuf = if layout_form(root) == Some(Layout::Canonical) {
+        let p = std::env::temp_dir().join(format!(
+            "retriever-canonical-pack-{}.json",
+            std::process::id()
         ));
-    }
+        std::fs::write(&p, CANONICAL_MEMORY_PACK)
+            .map_err(|_| RecallError::MissingBase("locator".to_string()))?;
+        p
+    } else {
+        let p = pack_path(root);
+        if !p.is_file() {
+            return Err(RecallError::MissingBase(
+                "locator packs/memory/pack.json".to_string(),
+            ));
+        }
+        p
+    };
     let out = index_path();
     let report = run_locator(
         root,

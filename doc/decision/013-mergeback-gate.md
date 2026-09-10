@@ -27,6 +27,9 @@
 名随物走
 : 融回件家位承 DEC-001 映射。书简家位即 sih/event/trail 与引擎 event_stream，接事件流不重建。命名不另起即书简之名随承诺回家。
 
+占位承载
+: 凡决策文declared占位批或切流或远期融回义务，其承载位必须机械在册即 pk 泊位或后继任务包号两者其一，未承载即该决策不得以收约闭项。义务散文不承载义务，占位蒸发即意图静默降级，judouwire-solo 批判因在案即 DEC-016 第三占位批从未开立致重接债带伤运行。已declared未承载的存量义务随本条生效一次性盘点入泊。
+
 ## 三查 {#checks}
 
 验收判据全过
@@ -61,3 +64,5 @@ v1.3 修订三，2026-09-02 随 autoflow2-solo 批谓词融回三步曲前两步
 v1.4 修订四，2026-09-04 随 contribmath-solo 批融回贡献度判据数学化：门开条款达标判据由用户裁量改检验判据，令源即用户 2026-09-04 裁定原话「融合贡献度应该走数学公理，不走人节点」入修订记录作令源；判据凭据承 m-contrib-load-1 stable_clear 终签 f9520776 在链即 crosscheck-m-contrib-load-1、九发全合变卦 0%、谨慎信号 0/9、R1 至 R7 全过、verify identical，承重三判据即认证引用与闸门改流与材料引用钉为 SPEC-017 条款，贡献度测度即窗内承重事件计数 v1 均匀权重、可加性恒等式承 PROB-016，达标即承重率二项检验对空转基线加控制图连续窗判读两腿合取即 PROB-010 与 PROB-013 在役、facetmath 检验族同构、alpha=0.05 候值随 pk-049 待裁登记，实装载体 gauge contrib 只读子命令 formula gd-1 与推导档 sih-math/docs/contribmath-derivation-2026-09-04.md 随批落位；体量与时间两重门槛降级为贡献度的观察窗参数，窗长入环境参数登记面。判变申报：判变不溯往，本修订前已融回四件即书简、核阅、得一、谓词机不改写不重评，新判据只施于未来门评。孵化环第四步措辞同步随本批。
 
 v1.5 修订五，2026-09-09 随 fusadopt-solo 批门开判据文本随 gd-2 收口：锚即 fusiongate 处置档与主窗复算对表，凭据即确定性核对五查全过即 C1 本档全文零 gd-2 零三件合同、C2 本档两处正典均载两腿检验与控制图与 formula gd-1、C3 gauge CONTRACT 十九行载 formula_version gd-2 与四十四行载两腿整族退场、C4 gauge cli.py GD_FORMULA 即 gd-2 与 _contrib_test 与 _contrib_chart 零命中、C5 contrib 金向量两件俱 formula gd-2，即 v1.4 门开判据文本在 gauge 0.8.0 现行 contrib 中已无对应载体，工具 0.8.0 起为 gd-2 构造式三件合同；判据凭据承 m-fusadopt-b1 stable_clear 终签 44fa67d1 在链即 crosscheck-m-fusadopt-b1、九发全合变卦 0%、谨慎信号 0/9、R1 至 R7 全过、verify identical。改笔即门开条款达标句改三件合同参数合取形即 union_threshold 与 sustained_min_days 与 monotonicity 四枚举、formula gd-1 改 gd-2、三参数缺省值以 constclear 登记册行指针随引即 GD_UNION_THRESHOLD_DEFAULT 与 GD_SUSTAINED_MIN_DAYS_DEFAULT 见 constclear2b-routing 工程实践三件套态表与 GD_MONOTONICITY_DEFAULT 系账面外常数族候后继清账批收编、证人面即 union_count 与 sustained_run 与 monotonicity_satisfied 承 P3.2.1 构造性可达性、PROB-010 与 PROB-013 转理论史登记；SPEC-017 关联句随动同批；gauge 载体任何实现零改动即本修订只动正典文本。判变申报：判变不溯往，v1.4 判据下已启动的门评不改写不重评，新判据文本只施于未来门评；修订为融回门干净裁决的前置件不阻主线结算。
+
+v1.6 修订六，2026-09-11 随 judouwire-solo 批增占位承载条款：令源即 tree-sitter 重接债链上判因——DEC-016 三占位之崩溃语料重接测试批从未开立亦未入泊，实现批 F-1 借名未接实，义务停留散文致意图静默降级，真语料 58 件 rust 旧载体崩 21 件带伤运行至本批切流；改笔即决策内容节增占位承载定义项，已declared未承载存量义务一次性盘点入泊；DEC-016 三占位销账随同批修订落档。

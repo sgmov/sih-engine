@@ -1,0 +1,9 @@
+{
+  "doc": "judouwire-solo-results.md",
+  "pipeline": {
+    "formatter_rc": 0,
+    "nomenclator_rc": 0,
+    "scrutinator_rc": 2
+  },
+  "sha256": "2f38bf12e7e7d2ed909b9ad0160dd8644478de2b52e7220037f72d31ea7bc505"
+}

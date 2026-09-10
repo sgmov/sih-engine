@@ -24,7 +24,7 @@
 **件三 双实例 instructions 指针（server.py 与 httpface.py）**
 
 - stdio 与 HTTP 两 FastMCP instructions 增：说明书两位（/manual URL 与仓内路径）加体检三具速览加五步写入链速览加「被拒是教学改做法不重试」一句
-- 工具描述冻结文本零改动（instructions 是服务器级指针位，改动走 DES-015 修订五申报）
+- 工具描述冻结文本零改动（instructions 是服务器级指针位，改动走 DES-015 修订六申报）
 
 **件四 漂移守卫测试（tests/test_ai_manual.py）**
 
@@ -37,7 +37,7 @@
 
 - nomenclator core 包登记 mcpmanual（code）加 AI 使用说明书（zh）一词条 established；登记后跑化格归一（packhyg 先例）；登记后 query established 双读数在档
 - mcpline 0.8.0 升 0.9.0（__init__ 与 pyproject 与 README 同步）；README 增说明书节（读者、两位获取形、漂移守卫）
-- DES-015 修订五：登记说明书位（/manual 路由加双实例 instructions 指针加漂移守卫测试位加语汇位）；走管线三步
+- DES-015 修订六：登记说明书位（/manual 路由加双实例 instructions 指针加漂移守卫测试位加语汇位）；走管线三步
 
 ## 三、工作清单
 
@@ -47,7 +47,7 @@
 - [ ] T-4 test_ai_manual.py 漂移守卫（先红后绿）
 - [ ] T-5 词形登记在册与化格归一
 - [ ] T-6 版本三处升 0.9.0 与 README 说明书节
-- [ ] T-7 DES-015 修订五走管线三步
+- [ ] T-7 DES-015 修订六走管线三步
 - [ ] T-8 结果档与认证上链与双仓 settle 与收约对账与主树复跑
 
 ## 四、可证伪条件（跑前立文）
@@ -59,7 +59,7 @@
 | F-3 | instructions | 双实例 instructions 载说明书指针与体检三具与五步链速览字样 |
 | F-4 | 登记与归一 | mcpmanual query established 双读数；登记后 core 包 pytest 全绿（canonical 形） |
 | F-5 | 回归 | mcpline 族主树复跑全绿；零写入守卫与套件窗口零写证明不破 |
-| F-6 | 文档 | DES-015 修订五走化格核阅检词（state/plan 与 event/plan 域外 exit-2 如实记）；DES-015 修订记录节升位 |
+| F-6 | 文档 | DES-015 修订六走化格核阅检词（state/plan 与 event/plan 域外 exit-2 如实记）；DES-015 修订记录节升位 |
 
 ## 五、必读文件
 
@@ -74,7 +74,7 @@
 
 1. 说明书是教学面：零新增判定语义零新增工具零契约改动；SPEC-023 与 DES-014 与矩阵零触碰
 2. DES-016 中性化：外部冷代理读者，操作语零哲学引文零哲学代强制
-3. 工具描述冻结文本零改动；instructions 改动走 DES-015 修订五申报
+3. 工具描述冻结文本零改动；instructions 改动走 DES-015 修订六申报
 4. 禁触：sih-visual、中央登记册实测数据、引擎 Rust 零改动零重编、record_direct 与 lease_unclaim 照旧零注册 HTTP 面
 5. 主树零直写：一切待提交件先入工地；先红留痕禁清洗
 6. 每条命令立即取退出码失败即停整链禁管道掩码
@@ -85,7 +85,7 @@
 - test_ai_manual.py 先红后绿实录齐；mcpline 族主树复跑全绿
 - GET /manual 200 markdown 实录；十七具名对表读数在档
 - mcpmanual 登记后 query established 双读数在档；登记后 core 包 pytest 全绿
-- DES-015 修订五管线三步读数在档
+- DES-015 修订六管线三步读数在档
 - 认证上链、双仓 settle、reconcile 双零、scribe verify 全文 valid、收约回执在场
 
 ## 八、风险点

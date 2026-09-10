@@ -1,0 +1,7 @@
+{
+  "command": "uv run --project . pytest -q",
+  "failed": 0,
+  "note": "worktree 绿相全绿；主树复跑于收约归并后另记",
+  "passed": 68,
+  "suite": "locator"
+}
