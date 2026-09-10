@@ -1,0 +1,81 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpnomgate-solo/lease/CONTRACT.md"
+  ],
+  "findings": [
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "接入的初始化工作，比如开sih文件夹，落资产包和模板」；形承 DES-015 域自举程序形段，面表补正即该域自举模板落位",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpnomgate-solo/lease/CONTRACT.md",
+      "line": 5,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令原话「落资产包和模板」加 mcpinit-solo 任务包件一落地五步第三条模板落位语懒波登记",
+      "word": "资产包"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "模板落位面——mcpline init 开域即落 <域根>/sih/state/plan/TEMPLATE-任务包.md",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpnomgate-solo/lease/CONTRACT.md",
+      "line": 7,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令「开sih文件夹，落资产包和模板」加 mcpinit-solo 任务包件一域自举落地完成动作词加 DES-015 修订三懒波登记",
+      "word": "开域"
+    },
+    {
+      "cause": "词典义项负面即银行清空与传送未达",
+      "class": "strict",
+      "excerpt": "erbatim 重组形），import 落账 verbatim 即原册原始行重组即逐字节还原原册，append 新行 v",
+      "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpnomgate-solo/lease/CONTRACT.md",
+      "line": 189,
+      "rule": "dead_ban",
+      "severity": "high",
+      "source": "PRO-007 死档登记",
+      "word": "落账"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.11.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 3,
+    "skipped": 0
+  }
+}

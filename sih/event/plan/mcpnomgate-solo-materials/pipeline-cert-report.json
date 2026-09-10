@@ -1,0 +1,34 @@
+{
+ "batch": "mcpnomgate-solo",
+ "what": "管线与测试读数认证",
+ "pipeline": {
+  "SPEC-023 修订一": {
+   "formatter": 0,
+   "scrutinator": 0,
+   "nomenclator": 0
+  },
+  "DEC-017 修订五": {
+   "formatter": 0,
+   "scrutinator": 0,
+   "nomenclator_first_run": "1 笔 dead_ban 铸名（死因造词反讽即工具恰拒未裁铸词），涤净改循新词认领后 0",
+   "nomenclator_final": 0
+  },
+  "CONTRACT 修订五十八": {
+   "formatter": 0,
+   "scrutinator": "域外 exit 2 如实记",
+   "nomenclator": "3 笔存量（资产包、开域、落账），本批新增文本零违例"
+  },
+  "determinism": "三档双跑逐字节一致"
+ },
+ "tests": {
+  "lease_suite": "330 passed（含 stem 闸十二件）",
+  "mcpline_window": "100 passed 13 failed（write_gates 族持锁互撞环境干扰，主树复跑为准）",
+  "new_green": "stem 闸十二件加两具七件加面计数断言"
+ },
+ "red_evidence": [
+  "fixture 数据根无 uv 工程位致闸首跑孵不出——项目位代码根分离修",
+  "测试隔离缺陷致真台账游离会话一线（db073c5c16e82a5b 已清零残留）——M2 活证",
+  "sweepjson 金向量版本位重冻 1.41.0 升 1.42.0",
+  "DEC-017 铸名 dead_ban 一笔涤净"
+ ]
+}
