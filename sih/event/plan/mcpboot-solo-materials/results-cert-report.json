@@ -1,0 +1,7 @@
+{
+ "batch": "mcpboot-solo",
+ "what": "结果档认证：MCP 引入初始化固化 bootstrap／域自举全链与台面开域视图",
+ "results_doc": "sih/event/plan/mcpboot-solo-results.md",
+ "results_doc_sha256": "0584804797337356ade3a0536eb89d4beca450c92bcb177a50c9f3151419101d",
+ "session": "4945cab007f323e7"
+}

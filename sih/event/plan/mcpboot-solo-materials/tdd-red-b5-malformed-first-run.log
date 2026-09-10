@@ -1,0 +1,12 @@
+        broken = cfg3.read_bytes()
+        rc3, out3, payload3 = _run_bootstrap(
+            monkeypatch, root2, dom2, "--by", "畸形形",
+            "--client-config", str(cfg3))
+        assert rc3 == 1
+>       assert "JSON" in payload3["error"]
+E       AssertionError: assert 'JSON' in '域已开域（sih/domain.json 在位）：/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-924/mcpline-beta-fixture0/case-20002-root/case-20003-cfgmerge/sih/domain.json'
+
+tests/test_bootstrap_domain.py:231: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_bootstrap_domain.py::test_b5_client_config_create_merge_idempotent_reject
+1 failed in 0.31s
