@@ -1,0 +1,4 @@
+== CONTRACT.md 管线三步 2026-09-11
+formatter rc=0 targets_changed=0
+scrutinator rc=2 域外如实记（sih-tools/attnanchor 不在 des-001 域，报文目标不在任何已加载规则包声明的治理域内）
+nomenclator rc=0 findings=0

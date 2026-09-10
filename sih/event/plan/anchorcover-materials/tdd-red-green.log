@@ -1,0 +1,128 @@
+........FFFFFFFF.                                                        [100%]
+=================================== FAILURES ===================================
+__________________________ test_coverage_hole_alarms ___________________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_coverage_hole_alarms0')
+
+    def test_coverage_hole_alarms(tmp_path):
+        today = TODAY.isoformat()
+        hole = (TODAY - timedelta(days=2)).isoformat()
+        _fake_domain(tmp_path, "sim-aesthetic-workbench",
+                     [today] * 2 + [hole] * 5, [today])
+        _fake_registry(tmp_path, [("sim-aesthetic-workbench", "active")])
+        _fake_chain(tmp_path)
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:132: TypeError
+______________ test_coverage_full_keeps_pure_form_byte_identical _______________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_coverage_full_keeps_pure_0')
+
+    def test_coverage_full_keeps_pure_form_byte_identical(tmp_path):
+        day = (TODAY - timedelta(days=1)).isoformat()
+        _fake_domain(tmp_path, "dom", [day] * 3, [day])
+        _fake_registry(tmp_path, [("dom", "active")])
+        _fake_chain(tmp_path)
+>       assert anchor.chain_line(tmp_path, TODAY) == PURE
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:143: TypeError
+__________________ test_registry_missing_no_section_no_crash ___________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_registry_missing_no_secti0')
+
+    def test_registry_missing_no_section_no_crash(tmp_path):
+        _fake_domain(tmp_path, "dom", [TODAY.isoformat()], [])
+        _fake_chain(tmp_path)
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:149: TypeError
+_____________________ test_registry_zero_active_no_section _____________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_registry_zero_active_no_s0')
+
+    def test_registry_zero_active_no_section(tmp_path):
+        _fake_domain(tmp_path, "dom", [TODAY.isoformat()], [])
+        _fake_registry(tmp_path, [("dom", "stopped")])
+        _fake_chain(tmp_path)
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:158: TypeError
+_______________ test_stopped_tokens_ignored_and_domains_deduped ________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_stopped_tokens_ignored_an0')
+
+    def test_stopped_tokens_ignored_and_domains_deduped(tmp_path):
+        hole = (TODAY - timedelta(days=1)).isoformat()
+        _fake_domain(tmp_path, "dom", [hole] * 2, [])
+        _fake_registry(tmp_path, [("dom", "stopped"), ("dom", "active"), ("dom", "active")])
+        _fake_chain(tmp_path)
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:168: TypeError
+________________________ test_coverage_window_boundary _________________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_coverage_window_boundary0')
+
+    def test_coverage_window_boundary(tmp_path):
+        inside = (TODAY - timedelta(days=6)).isoformat()
+        outside = (TODAY - timedelta(days=7)).isoformat()
+        _fake_domain(tmp_path, "dom", [inside, outside], [])
+        _fake_registry(tmp_path, [("dom", "active")])
+        _fake_chain(tmp_path)
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:178: TypeError
+___________________ test_alarm_appended_after_degraded_chain ___________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_alarm_appended_after_degr0')
+
+    def test_alarm_appended_after_degraded_chain(tmp_path):
+        hole = (TODAY - timedelta(days=1)).isoformat()
+        _fake_domain(tmp_path, "dom", [hole], [])
+        _fake_registry(tmp_path, [("dom", "active")])
+>       line = anchor.chain_line(tmp_path, TODAY)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:187: TypeError
+______________ test_multiple_holes_registry_order_days_ascending _______________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1061/test_multiple_holes_registry_o0')
+
+    def test_multiple_holes_registry_order_days_ascending(tmp_path):
+        d1 = (TODAY - timedelta(days=3)).isoformat()
+        d2 = (TODAY - timedelta(days=1)).isoformat()
+        _fake_domain(tmp_path, "alpha", [d2, d1], [])
+        _fake_domain(tmp_path, "beta", [d1], [])
+        _fake_registry(tmp_path, [("alpha", "active"), ("beta", "active")])
+        _fake_chain(tmp_path)
+>       segs = [s for s in anchor.chain_line(tmp_path, TODAY).split(" · ")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                if s.startswith("越限告警")]
+E       TypeError: chain_line() takes 1 positional argument but 2 were given
+
+tests/test_anchor.py:198: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_anchor.py::test_coverage_hole_alarms - TypeError: chain_lin...
+FAILED tests/test_anchor.py::test_coverage_full_keeps_pure_form_byte_identical
+FAILED tests/test_anchor.py::test_registry_missing_no_section_no_crash - Type...
+FAILED tests/test_anchor.py::test_registry_zero_active_no_section - TypeError...
+FAILED tests/test_anchor.py::test_stopped_tokens_ignored_and_domains_deduped
+FAILED tests/test_anchor.py::test_coverage_window_boundary - TypeError: chain...
+FAILED tests/test_anchor.py::test_alarm_appended_after_degraded_chain - TypeE...
+FAILED tests/test_anchor.py::test_multiple_holes_registry_order_days_ascending
+8 failed, 9 passed in 2.24s
+.................                                                        [100%]
+17 passed in 1.92s
