@@ -1,10 +1,10 @@
-# SPEC-023 mcpline alpha 相只读面契约：五读数工具 MCP 面契约正典
+# SPEC-023 mcpline alpha 相只读面契约：读数工具 MCP 面契约正典（v1 五具，修订一起七具）
 
 本规范承 mcpline 线程序包 v1 与 mcpspec-solo 批任务包成文，令源即用户 2026-09-09 令「你拉起多子代理，进行司衡引擎的mcp开发任务」，线立项承 pk-077 出泊 promoted 与得一终签 05353825 在链。本规范把 MCP alpha 相五读数工具的名称、入参、出参、错误语义、零写入红线、冷 agent 验收程序一次定稿，作为 MCP 实装批与冷 agent 验收批的对表正典。任务包第二节至第五节照录不增删。相名转写声明：线程序包原文以希腊字母书写相名，本文承域字符集闸一律拉丁转写为 alpha 相与 beta 相，指称同一。
 
 ## 概览 {#overview}
 
-- 五读数工具即 chain_query 与 chain_verify 与 critsweep 与 heartbeat 与 locks_read，承接路径全是只读子命令，MCP 面零写入零治理语义::[工具契约](#tools)
+- 读数工具自修订一起七具即 chain_query 与 chain_verify 与 critsweep 与 heartbeat 与 locks_read 加 nomenclator_query 与 nomenclator_check（mcpnomgate-solo 批增两检词具），承接路径全是只读子命令，MCP 面零写入零治理语义::[工具契约](#tools)
 - 报错即教学即每错误载荷四字段，工具描述自足双语一句话加正典指针::[错误语义与描述自足](#errors)
 - 红线四条逐条载即零写入零治理语义与 critsweep stdout 捕获零落盘与 beta 相指针与自有运行时归 pk-079::[红线](#redlines)
 - 冷 agent 验收判据与四步程序形与红证形逐条载::[验收程序](#acceptance)
@@ -50,14 +50,26 @@
 - 出参：未释放锁成对核算与活跃会话数
 - 承接 CLI 只读：`uv run --project sih-tools/lease lease status`，查册
 
-### 错误语义与描述自足 {#errors}
+### nomenclator_query {#nomenclator-query}
+
+- 入参：word 即待查词
+- 出参：术语六态（已立、懒波、死档、候补、未知）附出处指针与词条摘要
+- 承接 CLI 只读：`uv run --project sih-tools/nomenclator nomenclator query --pack sih-tools/nomenclator/packs/core --word <word>`；修订一增（mcpnomgate-solo 批），命名动作前查册义务的机械承载位
+
+### nomenclator_check {#nomenclator-check}
+
+- 入参：target 即目标文档路径（工作区根相对或绝对形）
+- 出参：死档禁字级与懒波词两规则检出的行号与摘录入报告
+- 承接 CLI 只读：`uv run --project sih-tools/nomenclator nomenclator check --pack sih-tools/nomenclator/packs/core <target>`；修订一增
+
+### 错误语义与描述自足 {#errors} {#errors}
 
 - 报错即教学：每错误载荷含 error 与 what_this_tool_does 与 valid_params 与 canonical_pointers 四字段；canonical_pointers 即承接 CLI 与 SPEC 位
 - 工具描述自足：描述文本双语一句话加正典指针
 
 ## 红线 {#redlines}
 
-1. alpha 相零写入零治理语义：MCP 面不新增第二个执行者，判定语义正典留确定性程序；五项承接路径全是只读子命令
+1. alpha 相零写入零治理语义：MCP 面不新增第二个执行者，判定语义正典留确定性程序；各项承接路径全是只读子命令（v1 五项，修订一起七项）
 2. critsweep 经 stdout 捕获，不写 sweep-latest.json 或任何仓内文件；实装批须以 git status 洁净证零写入
 3. beta 相写面不在本 SPEC 范围，只留本句指针到线程序包批二即会话与租约映射安全模型设计批未过不开工，见 sih-engine/sih/state/plan/mcpline-line-v1.md
 4. 自有运行时归 pk-079，本 SPEC 不涉注入面
@@ -91,3 +103,7 @@
 - 判据红证对表：验收程序节红证形逐条即断言腿与零写入腿两构造形，任一构造实录在档即令对应判据红，红证构造性在档如实申报
 - 判定性常数挂锚对表：本文无声明的判定性常数；des-001 C007 与 C008 与 C009 行级与邻近级闸在役核验
 - 约束算子对表：本文无约束算子面，如实申报
+
+## 修订记录 {#revisions}
+
+2026-09-10 修订一：随 mcpnomgate-solo 批增两检词具即 nomenclator_query 与 nomenclator_check，令源用户 2026-09-10 令「同意，这个是既有功能没上mcp」承 DEC-017 修订四常设纪律（工程命名动作前查命名集与检词）执行位落 MCP 面；α 相读数面五具扩七具，词典中央位域无涉，register 不投影（登记即立名入口，红线）；stdio 面 17 具升 19 具、HTTP 面 15 具升 17 具同步在 mcpline 0.8.0 实装。
