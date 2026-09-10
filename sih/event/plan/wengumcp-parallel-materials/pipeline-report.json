@@ -1,0 +1,1 @@
+{"report": "wengumcp-parallel 管线与簇验收读数：SPEC-007 v1.3 与 SPEC-023 修订二管线三步全绿（SPEC-023 首跑核阅一红十项含希腊字符与全角括号，逐项精修后绿）；簇 A test_wengu_tools 十测与面计数 stdio 20 与 HTTP 18 断言绿（15 环境红有 HEAD 基线对照证在 materials，放锁窗复跑验）；簇 B retriever_canonical_suite 四测与 mem_recall_f_suite 九测绿；收敛 e2e MCP core 对新二进制打 canonical 夹具三行三档命中；新词温故投影与温故检索具 established 双证，manifest 0.13.0", "exit_code": 0}
