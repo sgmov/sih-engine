@@ -1,0 +1,11 @@
+Resolved 11 packages in 5ms
+locator v0.1.0
+├── markdown-it-py v4.2.0
+│   └── mdurl v0.1.2
+├── parser v0.1.0
+├── pyyaml v6.0.3
+└── pytest v9.1.1 (group: dev)
+    ├── iniconfig v2.3.0
+    ├── packaging v26.3
+    ├── pluggy v1.6.0
+    └── pygments v2.21.0
