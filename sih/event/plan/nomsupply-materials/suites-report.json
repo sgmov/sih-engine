@@ -1,0 +1,1 @@
+{"batch": "nomsupply", "date": "2026-09-11", "worktree_runs": {"lease": {"passed": 344, "failed": 0}, "nomenclator": {"passed": 34, "failed": 0}, "mcpline": {"passed": 151, "failed": 0}}, "baseline": {"mcpline": "143 passed 1 failed(red=heartbeat)", "lease": 340, "nomenclator": 30}, "notes": "write_gates 14红为环境性渗读见tdd-red-green.log；主树重跑归settle后段"}

@@ -1,0 +1,31 @@
+# nomsupply 批先红后绿实录（先红留痕纪律，2026-09-11）
+
+## 件六 test_heartbeat_happy 根因修复
+- 首跑红（主树基线在档）：tests/test_tools_unit.py::test_heartbeat_happy
+  assert isinstance(out["days_since_last_snapshot"], int) -> isinstance(None, int) False
+- 新增钉 test_heartbeat_days_since_snapshot_spans_history 首跑红（工地铁）：
+  assert out["last_snapshot_at"] == past.isoformat() -> None == '2026-09-08'
+- 绿：_heartbeat 域链目录全日 sorted glob 展开传 gauge read（镜像 --domain-root 展开语义）
+  tests/test_tools_unit.py 12 passed
+
+## 件五 lease stem 闸甲兜底
+- 红证（工地铁）：test_stemgate.py 6 failed 10 passed
+  - test_s5_zero_hit_reject_then_claim / s9 / s9b / s9c / s9d / s9e
+  - TypeError: check_stem_gate() got an unexpected keyword argument 'claim'
+  - SystemExit: 2（--claim-zh argparse 拒收）
+  - test_s9b: assert 0 == 1（裸认领旧形放行）
+- 绿：core.py CLAIM_TEACHING 与 parse_claim_derivation 与 _verify_new_stem_claim 落码
+  test_stemgate.py 16 passed；lease 全族 344 passed
+
+## 件四 nomenclator map --concept
+- 红证（工地铁）：test_map.py 4 failed（SystemExit: 2 子命令缺席）
+- 绿：map.py run_map 四段装配 + cli cmd_map 接线
+  test_map.py 4 passed；nomenclator 全族 34 passed
+  （追修一笔：出泊指针段 DEC-017 字面量在指针文本缺席致 F5 断言红，补字面量后绿）
+
+## 环境性红（非本批码坏，如实申报）
+- mcpline tests/test_write_gates.py 14 failed：本会话持 sih-engine/doc 两锁与夹具
+  allow sih-engine/doc/ 前缀交叠，open_precheck_conflict 渗读（mcpnomgate 隔离病族）。
+  主树同参同红对照在案；放两锁后 25 passed。根治候隔离批。
+- tests/test_zero_write.py 套件窗证明红：并行簇（tybound 等）在套件窗口内落
+  真台账行，前后全等判据按条红呈报，不静默豁免。
