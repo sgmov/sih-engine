@@ -1,0 +1,1 @@
+{"what": "trailhome 批先红后绿实录封装件：正文见同目录 tdd-red-green.log", "red_first": ["locks F1 新家链证缺省基线红（单居所旧形对新认证上游 unverified writable 漏拦，payload 无 error 键断言 KeyError）"], "red_first_note": "首跑红证为夹具 v1 rc2 形（cascade check errored：旧形单居所老家缺席 trails 空致级联 rc2），被夹具 v2 红跑覆盖，v2 红形（writable 漏拦）与绿段在 log 在档，覆盖事实如实申报", "green": {"locks": 12}, "log_tail": "12 passed in 0.46s"}

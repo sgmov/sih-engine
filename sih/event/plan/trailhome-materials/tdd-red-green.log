@@ -1,0 +1,26 @@
+.........F..                                                             [100%]
+=================================== FAILURES ===================================
+______________ test_default_trails_engine_new_home_dirty_blocked _______________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x10b0ce350>
+ws = {'identity': PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1094/test_defaul...s/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1094/test_default_trails_engine_new0/sessions.ndjson'), ...}
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1094/test_default_trails_engine_new0')
+
+    def test_default_trails_engine_new_home_dirty_blocked(capsys, ws, tmp_path):
+        """F-1 双居所（pk-092）：引擎新家 sih-engine/sih/event/trail 链证入缺省基线，
+        迁链后新家含哈希链证时脏上游被拦，单居所旧形对新认证上游 unverified 漏拦即本测先红。"""
+        payload = _run_check_default_trails(capsys, ws, tmp_path, "sih-engine/sih/event/trail",
+                                            legacy_covers_target=False)
+>       assert payload["error"] == "dirty_upstream", payload
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'error'
+
+tests/test_locks.py:295: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_locks.py::test_default_trails_engine_new_home_dirty_blocked
+1 failed, 11 passed in 1.33s
+............                                                             [100%]
+12 passed in 0.46s
+
+=== 绿段（修复后复跑）trailhome 批 2026-09-11 ===
+修复形：locks/src/locks/cli.py _default_trails 单居所改双居所并集（引擎新家 sih-engine/sih/event/trail + 工具老家 sih-tools/scribe/trail），与 lease/cli.py 214-228 行先例对齐。

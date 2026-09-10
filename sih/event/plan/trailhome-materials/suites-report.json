@@ -1,0 +1,1 @@
+{"batch": "trailhome", "date": "2026-09-11", "suites": {"locks": {"worktree": "12 passed 0 failed", "main_tree": "pending-settle-rerun"}}, "baseline": {"locks": "10 passed 批前", "delta": "+2 即 F1 与 F2 两测"}}
