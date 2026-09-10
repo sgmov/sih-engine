@@ -1,0 +1,9 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-092",
+  "id": "pk-092",
+  "parking": {"entered_at": "2026-09-11", "exited_at": "2026-09-11", "ttl_days": 30},
+  "path": "sih-tools/locks/src/locks/cli.py",
+  "ruling": "两真患全清：真患一簇K trailhome 修即 locks _default_trails 双居所并集对齐 lease 先例，locks 0.2.0，新家链证入乐观锁基线，现势漏拦止血，会话 4b7dd5c8f1c66849 归并 12540dff；真患二簇M penface 件三修即 runtime 读面缺省分支 detect_layout_form 两形解析加 scribe_bin debug 至 release 兜底序，域令牌分支零变。余患如实注：retriever_bin 仍绑 target/debug 同族同形候后继批，见 gatefix-parallel 结果档未决节。"
+}

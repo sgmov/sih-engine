@@ -1,0 +1,9 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-093",
+  "id": "pk-093",
+  "parking": {"entered_at": "2026-09-11", "exited_at": "2026-09-11", "ttl_days": 30},
+  "path": "sih-tools/mcpline/src/mcpline/writeface/tools.py",
+  "ruling": "四患全清：其一隐式占位会话归一即 _binding_state 三态单点位为 open 与 close 同一绑定查找位，close 收隐式会话透传既有 CLI 收约，两处错误载荷教学互指隐式占位；其二 build_message wip 形纳 note settle 形零变；其三请求写入解析遇「——」截断取路径部，declguard 冻结常数经 lease CONTRACT 修订六十一；其四 path_outside_domain 提示语改教点号列表与域内绝对路径真实合法形。余患如实注：其余写工具 CLI 失败路径 valid_params 仍喂空，机制已备候后继批；stem 单段规则拒 pen 加 face 双段甲表形之机械适配候立名程序终裁。"
+}

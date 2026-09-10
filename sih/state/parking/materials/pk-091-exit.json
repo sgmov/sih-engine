@@ -1,0 +1,9 @@
+{
+  "action": "exit",
+  "disposition": "promoted",
+  "entry_id": "pk-091",
+  "id": "pk-091",
+  "parking": {"entered_at": "2026-09-11", "exited_at": "2026-09-11", "ttl_days": 30},
+  "path": "sih-tools/lease/src/lease/commitcore.py",
+  "ruling": "出泊条件用户令立批达成：用户 2026-09-11 令多子代理全量修复，gatefix-parallel 批兑现。其一其二簇L scoperoot 修即 commit 与 lock 两闸归一共式单一函数共用剥前导点号斜杠、allow 点号语义仓根递归全容、司梦实证点号斜杠前缀存量条目等价兼容，lease 1.45.0 主树 352 绿；其三其四簇M penface 修即 lease_commit MCP 补 trail 与 root 透传 argv 级钉死缺省零变、valid_params 两错误路径四字段喂满，mcpline 0.11.0 主树 160 绿。四缺陷全清，会话 a6d6cfc9b6e35012 与 b8aa24a253bb7fd4，归并 ecfac044 与 14bafd3e。"
+}
