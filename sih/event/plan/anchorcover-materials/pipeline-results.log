@@ -1,0 +1,4 @@
+== anchorcover-results.md 管线三步 2026-09-11
+formatter rc=0 targets_changed=0
+scrutinator rc=2 域外如实记（sih/event/plan 不在 des-001 域）
+nomenclator rc=0 findings=0
