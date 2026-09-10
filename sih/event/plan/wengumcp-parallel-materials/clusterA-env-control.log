@@ -1,0 +1,20 @@
+# clusterA 环境干扰对照证（2026-09-11，簇 A 收敛读数附件）
+
+全量 pytest（clusterA-pytest.log）15 红。对照腿：git archive HEAD 至
+/tmp/mcpline-baseline-clusterA（零簇 A 改动的基线码）同窗复跑两族代表件，
+红态同形复现，证 15 红俱在飞批锁窗与秤星数据态两类环境干扰，非簇 A 改动致。
+
+命令与读数 verbatim：
+cd /tmp/mcpline-baseline-clusterA/mcpline && uv run --project . python -m pytest \
+  tests/test_tools_unit.py::test_heartbeat_happy \
+  tests/test_write_gates.py::test_park_passthrough -q
+=> FAILED tests/test_tools_unit.py::test_heartbeat_happy - assert False
+=> FAILED tests/test_write_gates.py::test_park_passthrough - AssertionError: {'e...
+=> 2 failed in 2.87s
+
+红因摘录（全量日志同形）：
+- test_write_gates 14 件：lease open 退出码 1，conflicts held_path
+  "sih-engine/doc/spec/..."——在飞 wengumcp-parallel 主线租约持锁（施工面预检
+  撞锁），README 测试族在档干扰类：「绿读数以放锁窗复跑为准」（mcpboot-solo 先例）。
+- test_tools_unit::test_heartbeat_happy 1 件：days_since_last_snapshot=None，
+  当日（2026-09-11）例行读数未落链前 history 空——日循环数据态，与改动无涉。

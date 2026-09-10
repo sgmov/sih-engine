@@ -1,11 +1,13 @@
 //! retriever 即温故宿主命令面，承接 SPEC-007#interface-signature 与 SPEC-008#boundary 与修订六。
 //!
-//! 子命令单件 recall，参数九件即 topic 与 word 与 event 与 since 与 until 与 archive 与 miss-log 与 at 与 out，
-//! 退出码三值即零成功一拦二异常。根定位从当前目录上溯，不读系统钟。
+//! 子命令单件 recall，参数十件即 topic 与 word 与 event 与 since 与 until 与 archive 与
+//! root 与 miss-log 与 at 与 out，退出码三值即零成功一拦二异常。根定位 --root 显式给参
+//! 优先（须为布局两形根即 first_domain 双仓目录或 canonical sih/ledger，俱缺 exit 2），
+//! 缺省从当前目录上溯，不读系统钟。wengumcp-parallel 批增 --root 与 canonical 两形。
 
 use std::path::PathBuf;
 
-use sih_engine::retriever::{derive_root, exit_code, recall, rows_to_ndjson, write_output_envelope, RecallArgs};
+use sih_engine::retriever::{derive_root, exit_code, layout_form, recall, rows_to_ndjson, write_output_envelope, RecallArgs};
 
 fn fail(message: &str, code: i32) -> ! {
     eprintln!("{{\"error\": \"{message}\"}}");
@@ -15,7 +17,7 @@ fn fail(message: &str, code: i32) -> ! {
 fn main() {
     let argv: Vec<String> = std::env::args().skip(1).collect();
     if argv.first().map(|s| s.as_str()) != Some("recall") {
-        fail("用法 retriever recall --topic 词 --word 词 --event 记号 --since 日期 --until 日期 --archive 档名 --miss-log 路径 --at 日期 --out 路径", 2);
+        fail("用法 retriever recall --topic 词 --word 词 --event 记号 --since 日期 --until 日期 --archive 档名 --root 路径 --miss-log 路径 --at 日期 --out 路径", 2);
     }
     let mut topics: Vec<String> = Vec::new();
     let mut words: Vec<String> = Vec::new();
@@ -26,6 +28,7 @@ fn main() {
     let mut at: Option<String> = None;
     let mut out: Option<String> = None;
     let mut miss_log: Option<String> = None;
+    let mut explicit_root: Option<PathBuf> = None;
 
     let mut i = 1;
     while i < argv.len() {
@@ -75,13 +78,29 @@ fn main() {
                 miss_log = Some(v.clone());
                 i += 2;
             }
+            "--root" => {
+                let Some(v) = argv.get(i + 1) else { fail("参数缺值", 2); };
+                explicit_root = Some(PathBuf::from(v.clone()));
+                i += 2;
+            }
             other => fail(&format!("未知参数 {other}"), 2),
         }
     }
 
-    let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
-    let Some(root) = derive_root(&cwd) else {
-        fail("工作区根不可定位即上溯无 sih-engine 与 sih-tools 并存层", 2);
+    let root = match explicit_root {
+        Some(path) => {
+            if layout_form(&path).is_none() {
+                fail("显式根非布局两形：first_domain 双仓目录与 canonical sih/ledger 俱缺，拒零动作", 2);
+            }
+            path
+        }
+        None => {
+            let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+            let Some(root) = derive_root(&cwd) else {
+                fail("工作区根不可定位即上溯无 sih-engine 与 sih-tools 并存层亦无 canonical sih/ledger 形", 2);
+            };
+            root
+        }
     };
 
     let args = RecallArgs {
