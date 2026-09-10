@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-092",
+  "entry_id": "pk-092",
+  "title": "写死路径排查真患两件：locks 缺省链册单居所漏拦与 mcpline runtime 读面缺省未分形",
+  "context": "簇C pathaudit 只读排查 2026-09-11，报告全文随 debtclear-parallel-materials/pathaudit-report.md 归档。真患二件。其一：sih-tools/locks/src/locks/cli.py 27 至 30 行 _default_trails 单居所只枚举老家 sih-tools/scribe/trail，lease 同名函数已双居所并集，迁链后新家 sih-engine/sih/event/trail 全部链证不入乐观锁基线，check_baseline 对 unknown_target 不拦即 fail-open 现势实际漏拦，修法即 locks 改双居所并集与 lease 对齐，修序第一。其二：sih-tools/mcpline/src/mcpline/runtime.py 97 至 103 行 trail_path 硬拼 sih-engine/sih/event/trail 且 scribe_bin 绑死 code_root 下 target/debug 档，writeface DomainLayout 仅域令牌绑定注入，server.py 读函数缺省分支零 canonical 探测，SIH_ROOT 指 canonical 域根部署时读面默认路全错位，修法即缺省分支接 detect_layout 同构判定加二进制位 profile 无关解析。有界十五位与误报十三位与零命中三类与基线封闭性五件详见报告。患族收敛两支：trail 迁新家旧缺省未跟、canonical 域缺省读面未分形。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批走引擎域纪律：locks 双居所并集与 mcpline runtime 缺省分支分形两件，可与 pk-091 域写面闸组合批或另批；批名先查册；mcpline 树候簇A nomsupply 收约让出后开，locks 树现无锁可即开；或用户另裁",
+  "path": "sih-tools/locks/src/locks/cli.py",
+  "related": ["pk-091", "domaware-solo", "pk-031", "debtclear-parallel"],
+  "source": "主线 2026-09-11 清账并联批簇C 只读排查，用户令拉子代理对写死路径再排查",
+  "state": "parked",
+  "ttl_days": 30
+}

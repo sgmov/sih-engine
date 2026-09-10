@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-093",
+  "entry_id": "pk-093",
+  "title": "司梦域 MCP 实测缺陷第二批：隐式占位会话互斥与 wip 形丢 note 与请求写入解析污染与 repo 校验误教",
+  "context": "司梦侧 2026-09-11 第二份实测回报，主线对码实锤四条新患，另两条与 pk-091 同根即二度实锤。其一：连接级隐式占位会话与显式 open 互斥，首笔写 lease_claim 即绑会话且 allow 面点号形非递归，此后 lease_open 报 session_already_bound 见 writeface tools.py 74 行、lease_close 报 session_not_bound 见 89 行，两处绑定查找不一致，子路径取锁一律 scope_violation，纯 MCP 连接一度无法开工，司梦靠域根逐请求解析漂移脱困属侥幸，DES-014 连接会话一对一模型的隐式绑定位缺陷。其二：build_message wip 形丢 note，settle 形带 note 而 wip 形 f-string 无之，见 commitcore.py build_message；司梦因 settle 不可用改 wip 落笔，链与提交对账只存会话记录。其三：任务包请求写入解析污染，lease core.py 743 至 762 行逐列表项整行入 allow，「——」后理由散文一并当路径，与包格式目录级声明须附理由行条款冲突；该解析语义属 declguard-solo 批冻结常数，修法走 CONTRACT 修订。其四：lease_open 的 repo 参数校验误教，path_outside_domain 位在 httpface.py，提示语说传域根相对形而实际合法形是点号列表。overlap 申报：commit 点号前缀形与 trails 空两患 pk-091 已立，本次司梦二度实锤并补细节即 allow 显式点号斜杠前缀条目可过 commit 闸，修法参考入 pk-091。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批走引擎域纪律：与 pk-091 与 pk-092 合批评审域面闸组与 MCP 写面修即隐式绑定位与两闸归一共形与 trail 透传与 wip note 与解析净化与误教改正；批名先查册；mcpline 与 lease 树候簇A nomsupply 收约让出后开；或用户另裁",
+  "path": "sih-tools/mcpline/src/mcpline/writeface/tools.py",
+  "related": ["pk-091", "pk-092", "DES-014", "declguard-solo", "debtclear-parallel"],
+  "source": "主会话 2026-09-11 司梦侧第二份实测缺陷报告，主线对码逐条实锤",
+  "state": "parked",
+  "ttl_days": 30
+}

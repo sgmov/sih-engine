@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-091",
+  "entry_id": "pk-091",
+  "title": "域写面闸组四缺陷：根锚定仓 commit 范围验失效与 lock 与 commit 归一互斥与 MCP trail 透传缺位与写面参数教学缺位",
+  "context": "司梦侧 2026-09-11 实测报告四条，主线逐条对码实锤。其一阻断级：commit_staged 的 repo_rel 即 Path(repo).relative_to(root) 在会话仓恰为域根时得点号，受检路径拼成 ./README.md 形，scope_allows 前缀匹配对细粒度 allow 永远失配即 staged_out_of_scope，见 commitcore.py 310 至 316 行。其二互斥：lock 侧锁路径归一 web/src/app 裸相对形见 lockcore.py 157 行拒 allow 点号形，commit 侧只认点号前缀形，根锚定仓不存在同时过两闸的 allow 声明，本批司梦域锁面缺位自申报靠认证链结算。其三：MCP lease_commit 不透传 trail 与 root，默认链发现不含域内 sih/event/trail 即 cert_not_on_chain 且 trails 空，见 commitcore.py 328 行；close 链闸 workspace_chainless 空转为已申报 degradation 见 core.py 1841 行与 writeface tools.py 457 行；本批经 CLI 直传 --trail --root 完成四验同一执法非绕行。其四：lease_open.intent 传自由文本报 intent record unreadable 即实为意图件路径，record_append.report 实为 JSON 报告文件路径且 md 与内联文本两连拒，writeface errors.py 209 行四字段教学契约在而调用点 valid_params 空没给教学。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批走引擎域纪律：commit 与 lock 范围验归一共形即根锚定仓点号归一为仓相对形或 allow 等价形、MCP lease_commit trail 与 root 透传对齐 CLI、写面 valid_params 四字段教学补齐；批名先查册；租约候簇A nomsupply 让出 sih-tools/lease 锁后开；或用户另裁",
+  "path": "sih-tools/lease/src/lease/commitcore.py",
+  "related": ["domaware-solo", "mcpnomgate-solo", "DES-014", "pk-090"],
+  "source": "主会话 2026-09-11 司梦侧实测缺陷报告，主线对码逐条实锤",
+  "state": "parked",
+  "ttl_days": 30
+}
