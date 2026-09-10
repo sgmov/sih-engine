@@ -1,0 +1,55 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "ask3",
+      "version": "0.1.0",
+      "domain": {
+        "include": [
+          "**/*.json"
+        ],
+        "exclude": []
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-11-ask3-bootstrap-solo-record.json"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-11-ask3-bootstrap-solo-record.json": "328bb539332f971f9cae80bd585d28de54bae77c45cf9178a8aa1e1732f9eb59"
+  },
+  "findings": [
+    {
+      "pack": "ask3",
+      "rule_id": "A11",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-11-ask3-bootstrap-solo-record.json",
+      "location": {
+        "path": "intent_contract.output_format"
+      },
+      "message": "intent_contract.output_format 必填且为字符串,任务类型的产出形态约束"
+    },
+    {
+      "pack": "ask3",
+      "rule_id": "A12",
+      "path": "/Users/moc/workspaces/SiHankor/sih-tools/scribe/reports/2026-09-11-ask3-bootstrap-solo-record.json",
+      "location": {
+        "path": "intent_contract.injected_constraints"
+      },
+      "message": "intent_contract.injected_constraints 必填且为数组,每项为可定位可核验的约束出处"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 2,
+    "by_rule": {
+      "A11": 1,
+      "A12": 1
+    },
+    "by_pack": {
+      "ask3": 2
+    }
+  }
+}

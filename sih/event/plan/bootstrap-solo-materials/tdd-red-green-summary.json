@@ -1,0 +1,9 @@
+{
+  "report": "tdd-red-green-log-summary",
+  "evidence_file": "tdd-red-green.log",
+  "baseline": "15 failed 102 passed 改前环境红原集",
+  "tdd_red": "6 failed 8 passed 新测先红",
+  "final": "15 failed 109 passed 环境红与基线逐名全等零新增红",
+  "new_green": "新测 7 全绿 C-2 至 C-8",
+  "note": "环境红族即 write_gates 真台账撞在飞锁与 heartbeat 读数位，批毕放锁后主树真跑为权威读数"
+}

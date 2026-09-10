@@ -1,0 +1,114 @@
+{
+  "checked": [
+    "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md"
+  ],
+  "findings": [
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "程序形四步落地即正典 sih 树四目录、域声明卡、资产包与模板落位、开域首笔经中央 scribe 无会话主会处置位加开域",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 132,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "mcpinit-solo 任务包件一落地五步第二条（sih/domain.json 七字段域声明文件）与 DES-015 修订三懒波登记",
+      "word": "域声明卡"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": " 树四目录、域声明卡、资产包与模板落位、开域首笔经中央 scribe 无会话主会处置位加开域毕即验域，其中域声明卡即 s",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 132,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令「开sih文件夹，落资产包和模板」加 mcpinit-solo 任务包件一域自举落地完成动作词加 DES-015 修订三懒波登记",
+      "word": "开域"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": " 树四目录、域声明卡、资产包与模板落位、开域首笔经中央 scribe 无会话主会处置位加开域毕即验域，其中域声明卡即 s",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 132,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "DES-015 域自举程序形第二步「经中央 scribe 落首笔域登记链事件」实装语加 mcpinit-solo 任务包件一懒波登记",
+      "word": "开域首笔"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "接入的初始化工作，比如开sih文件夹，落资产包和模板」。六点：其一实装形即 mcpline init 命令，调用形 uv",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 132,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令原话「落资产包和模板」加 mcpinit-solo 任务包件一落地五步第三条模板落位语懒波登记",
+      "word": "资产包"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "三裁定即另立新模块与客户端注册旗标选入与开域进视图一并做进本批，立名裁决 bootstrap／域自举双名并行且检词正登在",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 133,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令「开sih文件夹，落资产包和模板」加 mcpinit-solo 任务包件一域自举落地完成动作词加 DES-015 修订三懒波登记",
+      "word": "开域"
+    },
+    {
+      "cause": null,
+      "class": "lazy",
+      "excerpt": "说明节且生成收敛单一正典函数，init 开域与 bootstrap 全链与 bootstrap --complete 三",
+      "file": "/Users/moc/workspaces/SiHankor/sih-engine/doc/design/zz-pipeline-bootstrap-solo.md",
+      "line": 134,
+      "rule": "lazy_in_doc",
+      "severity": "medium",
+      "source": "用户 2026-09-09 令「开sih文件夹，落资产包和模板」加 mcpinit-solo 任务包件一域自举落地完成动作词加 DES-015 修订三懒波登记",
+      "word": "开域"
+    }
+  ],
+  "header": {
+    "domain": {
+      "exclude": [
+        "**/.agents/**",
+        "**/01-ontology-of-names.md",
+        "**/CALL-LOG.md",
+        "**/PRO-007*",
+        "**/fixtures/**",
+        "**/llm-friendly-build/**",
+        "**/nomenclator/packs/**",
+        "**/nomenclator/reports/**",
+        "**/nomenclator/tests/**",
+        "**/reports/**",
+        "**/sih-philosophy/**",
+        "**/trail/**"
+      ],
+      "include": [
+        "AGENTS.md",
+        "sih-engine/doc/**/*.md",
+        "sih-engine/skills/**/*.md",
+        "sih-tools/*.md",
+        "sih-tools/*/CALL-LOG.md",
+        "sih-tools/*/CONTRACT.md",
+        "sih-tools/*/INCUBATION.md"
+      ]
+    },
+    "pack": {
+      "name": "core",
+      "version": "0.13.0"
+    },
+    "tool": {
+      "name": "nomenclator",
+      "version": "0.2.0"
+    }
+  },
+  "skipped": [],
+  "summary": {
+    "checked": 1,
+    "findings": 6,
+    "skipped": 0
+  }
+}
