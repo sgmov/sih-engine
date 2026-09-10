@@ -91,3 +91,4 @@ git hooks 复用：commit-msg 位直提守卫原位，无登记 plain commit 即
 ## 修订记录 {#revisions}
 
 2026-09-09 修订一：随 mcpsec-solo 批起草，承 mcpline 线程序包批二定位与任务包 mcpsec-solo.md 八问，令源用户 2026-09-09 令「继续。多子代理协作」；地面实况核对即 design 目录编号最高 DES-013 顺延 014，执法语义对表 lease 契约修订三十三与修订四十与 identity 契约修订三与引擎 scribe 闸位注记。
+2026-09-10 修订二：随 des016impl-solo 批即意图闸结构校验中性化落笔。设计承 DES-016-mcp-pure-tool-intent-form-v1.md；测量 m-des016-2 三发 stable_clear 经 attractor 裁决通过机器终签 756effb1 在链；令源用户 2026-09-10 常识裁定原话「世界上没有任何一个工具承载了哲学仪式」与同日开工令。意图闸六位闸序第三位描述更新：意图件验收改结构校验形，plain 与 ask3 双形同一必填集即 session_id 与 raw_input 与 round 与 intent_contract 之 goal 必填与 domain_contract；哲学引文逐字节核验摘出机械闸归司衡本域批纪律，BATCH-FACE 三问双门必跑步原位。scribe intent plain 通道即 --validation 对 plain 形豁免，拒因面收窄即 plain 形不触发 ValidationNotOk 与 LineageMismatch 与 FindingsPresent 三拒因。授权矩阵与身份与会话映射与写路径复用与审计与威胁模型与失败语义各节零触碰，本修订只及意图闸校验内容与 scribe 写位参数面；DES-015 标识牌层零涉。

@@ -1,0 +1,15 @@
+{
+ "session_id": "sess-zcode-260910-main-des016impl",
+ "raw_input": "plain 形通道验证记录（des016impl-solo 批工件，零哲学引文）",
+ "round": 1,
+ "intent_contract": {
+  "goal": "验证 plain 通道",
+  "exclusions": []
+ },
+ "domain_contract": {
+  "target_domain": {
+   "scope": "materials/",
+   "max_depth": 1
+  }
+ }
+}

@@ -44,40 +44,61 @@ pub fn check_intent_reused(scope: &[Event], record_path: &str, allow_reintent: b
     Ok(())
 }
 
-/// 双件消费即意图记录加核验报告，核验零发现放行产 intent_refined 事件输入。
+/// 意图记录消费产 intent_refined 事件输入（DES-016 意图形分派）：ask3 形
+/// 带验证件走核验零发现放行；plain 形零验证件零哲学引文放行。
 pub fn intent_event(
     record_path: &Path,
     record_text: &str,
-    validation_path: &Path,
-    validation_text: &str,
+    validation: Option<(&Path, &str)>,
     actor: Actor,
     timestamp: DateTime<Utc>,
 ) -> Result<EventInput, IntentError> {
     let record: Value =
         serde_json::from_str(record_text).map_err(|_| IntentError::RecordNotJson)?;
-    let validation: Value = serde_json::from_str(validation_text)
-        .map_err(|_| IntentError::ValidationNotJson)?;
-
-    let status = validation.get("status").and_then(|s| s.as_str());
-    if let Some(s) = status {
-        if s != "ok" {
-            return Err(IntentError::ValidationNotOk(s.to_string()));
+    let anchor_count = record
+        .get("anchors")
+        .and_then(|v| v.as_array())
+        .map(|a| a.len())
+        .unwrap_or(0);
+    // DES-016 意图形分派：载 anchors 者为 ask3 形（验证件必填），缺省者为
+    // plain 形（验证件豁免，零哲学引文）；闸验结构不验哲学，零语义裁决。
+    let (validation_value, validation_path_str, validation_hash, intent_form): (
+        Option<serde_json::Value>,
+        String,
+        String,
+        &'static str,
+    ) = match validation {
+        None => {
+            if anchor_count > 0 {
+                return Err(IntentError::RecordMissingField("validation"));
+            }
+            (None, String::new(), String::new(), "plain")
         }
-    }
-    let v_session = validation.get("session_id").and_then(|s| s.as_str());
-    let r_session = record.get("session_id").and_then(|s| s.as_str());
-    if let (Some(vs), Some(rs)) = (v_session, r_session) {
-        if vs != rs {
-            return Err(IntentError::LineageMismatch);
+        Some((vp, vtext)) => {
+            let v: Value =
+                serde_json::from_str(vtext).map_err(|_| IntentError::ValidationNotJson)?;
+            let status = v.get("status").and_then(|s| s.as_str());
+            if let Some(s) = status {
+                if s != "ok" {
+                    return Err(IntentError::ValidationNotOk(s.to_string()));
+                }
+            }
+            let v_session = v.get("session_id").and_then(|s| s.as_str());
+            let r_session = record.get("session_id").and_then(|s| s.as_str());
+            if let (Some(vs), Some(rs)) = (v_session, r_session) {
+                if vs != rs {
+                    return Err(IntentError::LineageMismatch);
+                }
+            }
+            let findings = v.get("findings").and_then(|f| f.as_array());
+            if let Some(arr) = findings {
+                if !arr.is_empty() {
+                    return Err(IntentError::FindingsPresent(arr.len()));
+                }
+            }
+            (Some(v), vp.to_string_lossy().to_string(), sha256_hex(vtext), "ask3")
         }
-    }
-
-    let findings = validation.get("findings").and_then(|f| f.as_array());
-    if let Some(arr) = findings {
-        if !arr.is_empty() {
-            return Err(IntentError::FindingsPresent(arr.len()));
-        }
-    }
+    };
 
     let session_id = record
         .get("session_id")
@@ -88,11 +109,6 @@ pub fn intent_event(
         .get("round")
         .and_then(|v| v.as_i64())
         .ok_or(IntentError::RecordMissingField("round"))?;
-    let anchor_count = record
-        .get("anchors")
-        .and_then(|v| v.as_array())
-        .map(|a| a.len())
-        .unwrap_or(0);
     let calls_in = record
         .get("calls_in")
         .and_then(|v| v.as_i64())
@@ -107,8 +123,9 @@ pub fn intent_event(
         .unwrap_or("")
         .to_string();
 
-    let pack_versions: Vec<String> = validation
-        .get("packs")
+    let pack_versions: Vec<String> = validation_value
+        .as_ref()
+        .and_then(|v| v.get("packs"))
         .and_then(|p| p.as_array())
         .map(|arr| {
             arr.iter()
@@ -121,14 +138,16 @@ pub fn intent_event(
         })
         .unwrap_or_default();
 
-    let tool_version = validation
-        .get("tool")
+    let tool_version = validation_value
+        .as_ref()
+        .and_then(|v| v.get("tool"))
         .and_then(|t| t.get("version"))
         .and_then(|v| v.as_str())
         .unwrap_or("")
         .to_string();
-    let golden_baseline = validation
-        .get("golden_baseline")
+    let golden_baseline = validation_value
+        .as_ref()
+        .and_then(|v| v.get("golden_baseline"))
         .and_then(|g| g.as_str())
         .unwrap_or("")
         .to_string();
@@ -136,8 +155,9 @@ pub fn intent_event(
     let details = json!({
         "record_path": record_path.to_string_lossy(),
         "record_hash": sha256_hex(record_text),
-        "validation_report_path": validation_path.to_string_lossy(),
-        "validation_report_hash": sha256_hex(validation_text),
+        "validation_report_path": validation_path_str,
+        "validation_report_hash": validation_hash,
+        "intent_form": intent_form,
         "pack_versions": pack_versions,
         "session_id": session_id,
         "round": round,
@@ -179,7 +199,7 @@ mod intent_status_tests {
         let rec = r#"{"session_id":"s1","round":1}"#;
         let val = r#"{"status":"rejected","findings":[]}"#;
         let err = intent_event(
-            Path::new("r.json"), rec, Path::new("v.json"), val,
+            Path::new("r.json"), rec, Some((Path::new("v.json"), val)),
             actor(), Utc::now(),
         );
         match err {
@@ -193,7 +213,7 @@ mod intent_status_tests {
         let rec = r#"{"session_id":"s1","round":1}"#;
         let val = r#"{"status":"ok","session_id":"s2","findings":[]}"#;
         let err = intent_event(
-            Path::new("r.json"), rec, Path::new("v.json"), val,
+            Path::new("r.json"), rec, Some((Path::new("v.json"), val)),
             actor(), Utc::now(),
         );
         assert!(matches!(err, Err(IntentError::LineageMismatch)));
@@ -204,10 +224,28 @@ mod intent_status_tests {
         let rec = r#"{"session_id":"s1","round":1,"anchors":[],"calls_in":0,"calls_out":0,"intent_contract":{"goal":"g"}}"#;
         let val = r#"{"status":"ok","findings":[]}"#;
         let out = intent_event(
-            Path::new("r.json"), rec, Path::new("v.json"), val,
+            Path::new("r.json"), rec, Some((Path::new("v.json"), val)),
             actor(), Utc::now(),
         );
         assert!(out.is_ok(), "unexpected error: {out:?}");
+    }
+
+    #[test]
+    fn plain_form_without_validation_passes() {
+        let rec = r#"{"session_id":"s1","round":1,"calls_in":0,"calls_out":0,"intent_contract":{"goal":"g"},"domain_contract":{}}"#;
+        let out = intent_event(Path::new("r.json"), rec, None, actor(), Utc::now());
+        let input = out.expect("plain 形零验证件放行");
+        let d = input.details.expect("details");
+        assert_eq!(d["anchor_count"], 0);
+        assert_eq!(d["intent_form"], "plain");
+        assert_eq!(d["validation_report_path"], "");
+    }
+
+    #[test]
+    fn ask3_form_without_validation_refused() {
+        let rec = r#"{"session_id":"s1","round":1,"anchors":[{"a":1}],"intent_contract":{"goal":"g"}}"#;
+        let out = intent_event(Path::new("r.json"), rec, None, actor(), Utc::now());
+        assert!(matches!(out, Err(IntentError::RecordMissingField("validation"))));
     }
 
     fn reused_event(record_path: &str) -> Event {

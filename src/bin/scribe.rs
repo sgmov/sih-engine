@@ -382,17 +382,22 @@ fn main() {
             }
         }
         "intent" => {
-            let (Some(record), Some(validation), Some(trail)) =
-                (opt("record"), opt("validation"), opt("trail"))
-            else {
-                emit(json!({"error": "intent 缺少必填参数，需 --record <ask3 记录> --validation <验证件> --trail <链文件>"}), 2)
+            let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
+                emit(json!({"error": "intent 缺少必填参数，需 --record <意图记录> --trail <链文件>；ask3 形另需 --validation <验证件>（plain 形豁免，DES-016）"}), 2)
             };
             lockgate_guard(&opts, &trail);
             worktree_trail_guard(&opts, &trail);
             session_guard(&opts);
-            let (Some(rtext), Some(vtext)) = (read_text(&record), read_text(&validation)) else {
-                emit(json!({"error": "双件缺失"}), 2)
+            let Some(rtext) = read_text(&record) else {
+                emit(json!({"error": "记录件缺失"}), 2)
             };
+            let validation_pair = opt("validation").map(|v| {
+                let vtext = read_text(&v);
+                match vtext {
+                    Some(t) => (PathBuf::from(&v), t),
+                    None => emit(json!({"error": "验证件缺失"}), 2),
+                }
+            });
             let scope = match load_parking_scope(Path::new(&trail)) {
                 Ok(s) => s,
                 Err(e) => emit(json!({"error": format!("重放面不可读 {e:?}")}), 2),
@@ -408,8 +413,7 @@ fn main() {
             let mut input = match intent_event(
                 PathBuf::from(&record).as_path(),
                 &rtext,
-                PathBuf::from(&validation).as_path(),
-                &vtext,
+                validation_pair.as_ref().map(|(p, t)| (p.as_path(), t.as_str())),
                 gate_actor(),
                 Utc::now(),
             ) {
