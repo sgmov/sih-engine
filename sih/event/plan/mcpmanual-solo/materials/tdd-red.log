@@ -1,0 +1,155 @@
+FFFFFFFFF.                                                               [100%]
+=================================== FAILURES ===================================
+_____________________ test_manual_exists_and_key_sections ______________________
+
+    def test_manual_exists_and_key_sections():
+>       text = _manual_text()
+               ^^^^^^^^^^^^^^
+
+tests/test_ai_manual.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _manual_text() -> str:
+>       assert MANUAL_PATH.is_file(), f"说明书缺席: {MANUAL_PATH}"
+E       AssertionError: 说明书缺席: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md').is_file
+
+tests/test_ai_manual.py:51: AssertionError
+____________________ test_manual_lists_every_http_face_tool ____________________
+
+    def test_manual_lists_every_http_face_tool():
+>       text = _manual_text()
+               ^^^^^^^^^^^^^^
+
+tests/test_ai_manual.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _manual_text() -> str:
+>       assert MANUAL_PATH.is_file(), f"说明书缺席: {MANUAL_PATH}"
+E       AssertionError: 说明书缺席: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md').is_file
+
+tests/test_ai_manual.py:51: AssertionError
+___________________ test_manual_tool_mentions_are_real_tools ___________________
+
+    def test_manual_tool_mentions_are_real_tools():
+        """反向漂移：说明书不得提不存在的工具名（造鬼工具比漏写更误导）。"""
+>       text = _manual_text()
+               ^^^^^^^^^^^^^^
+
+tests/test_ai_manual.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _manual_text() -> str:
+>       assert MANUAL_PATH.is_file(), f"说明书缺席: {MANUAL_PATH}"
+E       AssertionError: 说明书缺席: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md').is_file
+
+tests/test_ai_manual.py:51: AssertionError
+_______________ test_manual_declares_local_only_and_never_tools ________________
+
+    def test_manual_declares_local_only_and_never_tools():
+>       text = _manual_text()
+               ^^^^^^^^^^^^^^
+
+tests/test_ai_manual.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _manual_text() -> str:
+>       assert MANUAL_PATH.is_file(), f"说明书缺席: {MANUAL_PATH}"
+E       AssertionError: 说明书缺席: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md').is_file
+
+tests/test_ai_manual.py:51: AssertionError
+__________________ test_manual_error_table_pins_reason_codes ___________________
+
+    def test_manual_error_table_pins_reason_codes():
+>       text = _manual_text()
+               ^^^^^^^^^^^^^^
+
+tests/test_ai_manual.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _manual_text() -> str:
+>       assert MANUAL_PATH.is_file(), f"说明书缺席: {MANUAL_PATH}"
+E       AssertionError: 说明书缺席: /Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/AI-MANUAL.md').is_file
+
+tests/test_ai_manual.py:51: AssertionError
+______________________ test_manual_route_serves_markdown _______________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-994/mcpline-beta-fixture0/case-1/SiHankor-fixture')
+ws_root = PosixPath('/Users/moc/workspaces/SiHankor')
+
+    def test_manual_route_serves_markdown(fx_root, ws_root):
+        dom = build_canonical_domain(fx_root, "alpha")
+        app = create_app(_visual_dir(ws_root))
+        with LiveServer(app) as srv:
+            r = httpx.get(srv.base + "/manual", timeout=15)
+>       assert r.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_ai_manual.py:94: AssertionError
+____________________ test_manual_route_missing_file_teaches ____________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-994/mcpline-beta-fixture0/case-2/SiHankor-fixture')
+ws_root = PosixPath('/Users/moc/workspaces/SiHankor')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c934510>
+
+    def test_manual_route_missing_file_teaches(fx_root, ws_root, monkeypatch):
+>       monkeypatch.setattr(web_mod, "manual_file", lambda: Path("/nonexistent/AI-MANUAL.md"))
+E       AttributeError: <module 'mcpline.web' from '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/mcpmanual-solo/mcpline/src/mcpline/web.py'> has no attribute 'manual_file'
+
+tests/test_ai_manual.py:100: AttributeError
+________________________ test_console_pages_link_manual ________________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-994/mcpline-beta-fixture0/case-3/SiHankor-fixture')
+ws_root = PosixPath('/Users/moc/workspaces/SiHankor')
+
+    def test_console_pages_link_manual(fx_root, ws_root):
+        dom = build_canonical_domain(fx_root, "alpha")
+        app = create_app(_visual_dir(ws_root))
+        with LiveServer(app) as srv:
+            r = httpx.get(srv.base + "/tokens", timeout=15)
+>       assert 'href="/manual"' in r.text
+E       assert 'href="/manual"' in '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>令牌管理台</title><style>body{font-family:-apple-system,...class="btn" type="submit">开域→确认</button></form><p><a href="/tokens">返回管理台</a> · <a href="/">返回面板</a></p></body></html>'
+E        +  where '<!doctype html><html lang="zh"><head><meta charset="utf-8"><title>令牌管理台</title><style>body{font-family:-apple-system,...class="btn" type="submit">开域→确认</button></form><p><a href="/tokens">返回管理台</a> · <a href="/">返回面板</a></p></body></html>' = <Response [200 OK]>.text
+
+tests/test_ai_manual.py:113: AssertionError
+__________________ test_both_mcp_instructions_point_to_manual __________________
+
+    def test_both_mcp_instructions_point_to_manual():
+        from mcpline.server import mcp as stdio_mcp
+    
+        http_mcp = create_identified_mcp()
+        for label, instructions in (("stdio", stdio_mcp.instructions),
+                                    ("http", http_mcp.instructions)):
+            assert instructions, f"{label} instructions 空"
+>           assert ("AI-MANUAL" in instructions) or ("/manual" in instructions), \
+                f"{label} instructions 缺说明书指针"
+E           AssertionError: stdio instructions 缺说明书指针
+E           assert ('AI-MANUAL' in 'SiHankor mcpline MCP 服务器（alpha 只读面五工具 + beta 写面十二工具）。SiHankor mcpline MCP server (alpha read-only five tools + beta w...odel-v1.md 与 sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md 与 sih-engine/sih/state/plan/mcpline-line-v1.md。' or '/manual' in 'SiHankor mcpline MCP 服务器（alpha 只读面五工具 + beta 写面十二工具）。SiHankor mcpline MCP server (alpha read-only five tools + beta w...odel-v1.md 与 sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md 与 sih-engine/sih/state/plan/mcpline-line-v1.md。')
+
+tests/test_ai_manual.py:123: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ai_manual.py::test_manual_exists_and_key_sections - Asserti...
+FAILED tests/test_ai_manual.py::test_manual_lists_every_http_face_tool - Asse...
+FAILED tests/test_ai_manual.py::test_manual_tool_mentions_are_real_tools - As...
+FAILED tests/test_ai_manual.py::test_manual_declares_local_only_and_never_tools
+FAILED tests/test_ai_manual.py::test_manual_error_table_pins_reason_codes - A...
+FAILED tests/test_ai_manual.py::test_manual_route_serves_markdown - assert 40...
+FAILED tests/test_ai_manual.py::test_manual_route_missing_file_teaches - Attr...
+FAILED tests/test_ai_manual.py::test_console_pages_link_manual - assert 'href...
+FAILED tests/test_ai_manual.py::test_both_mcp_instructions_point_to_manual - ...
+9 failed, 1 passed in 1.08s
