@@ -28,3 +28,17 @@
 ## 四、队形验证
 
 单线 solo 实跑，主线亲跑测量与结算，零子代理，形名相符零偏离。
+
+## 五、结算读数（第一轮收约补笔回填，自主树未提交态并档）
+
+- 双仓 settle：tools 0fc6d2fa 与 engine a00eedd（cert 13c40838），归并 d8923999 与 151e14a；DES-016 allow 位零使用如实申报。
+- 收约：首跑两败如实记（nothing_staged 因未先 git add；无主闸拦三件）——三件无主查实俱非本批写入：tokens.ndjson 新增 sim-aesthetic-workbench 行系主窗承用户裁定开域 SiMuseor 签发动作，facet 两 probe 件系并行 philrev 批席位环境修复（diff 注释自证），依 close --bypass-orphan 留痕通道原样保留呈人节点，closeguard 预收两笔补 bypass 登记（unbypassed 回基线）；mcpline init 期 OutUnwritable 首跑与两处管道掩码自违俱如实记。
+- 链面：2026-09-10 链 verify valid 20 笔；第一轮在链五笔即意图 3233e1b8、停泊 c8324d01 与 5c79a15f、认证 13c40838、补笔本笔。
+
+## 六、重测轮补记（用户选①常识裁定锚定后）
+
+- 用户 2026-09-10 选①并亲给锚定事实「这个不是常识吗？世界上没有任何一个工具承载了哲学仪式」，会话 5caeb2c1393511b5 重开（ask3 round 2，意图笔 4d0c560a）
+- 命题改写链第 1 次：m-des016-2 锚定前置消解边界，3 发 stable_clear 合合合变卦零谨慎信号零；R5 首跑挂起如实记，即基线陈行配对漂移，正道补法为当日计分件确定性装配校准行（identity 0851f84f 与 core e1c9a7fa 全数机读自正身件与计分件，零手工编造）加 baseline_inject 读档重建，复检 R5 同源配对过；temp probe 脚本未入库工具缺口申报候补
+- attractor 查验裁决通过、重放 identical、机器终签 756effb1（crosscheck-m-des016-2）
+- DES-016-mcp-pure-tool-intent-form-v1.md 八问设计档落 doc/design/，管线三步俱绿即化格零改、核阅域内零 findings、检词零违例
+- pk-084 出泊 promoted：出泊件 pk-084-exit.json 与停泊笔与名录出泊行在档；DES-016 候用户终裁开实装批
