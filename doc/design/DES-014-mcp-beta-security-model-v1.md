@@ -18,6 +18,8 @@
 
 绑定形：MCP initialize 握手完成后，server 以本进程正身件调用 lease open 立会话，会话号经工具结果透出给客户端记录；此后该连接上的一切写操作携带该会话号，租内五验逐操作核验。多对一判词是否定：会话是授权与审计的主体粒度，多连接共享一会话即责任面混淆与审计去粒度，事件信封无法区分笔迹来源；连接池判词是不适用且连带禁止：MCP stdio 形态下一客户端进程一连接无池形态，未来多路复用传输出现时池化仍禁，理由同多对一。一对一的依据是基线四可验证性：一会话一连接一 agent 即操作来源可追溯、责任面单一、链笔信封逐笔可归因。
 
+隐式占位态(pk-093 其一归一，penface 批)：连接级自动立会话未成留既成事实(进程内 auto_open_error 在案)而零显式绑定即隐式占位态，会话在租约层可能存在；open 与 close 俱经同一绑定查找位(bound、implicit、unbound 三态)，close 于隐式占位态放行透传既有 CLI 收约(close 能收隐式会话，链闸与 closeguard 原位，零新增判定)，收约成即隐式占位事实清零可显式重开；结构卫两处错误载荷(session_already_bound 与 session_not_bound)教学互指隐式占位事实。
+
 断开收约形：stdio 管道正常关闭即触发收约前置检查；零写连接轻收约即 lease close 拆会话；有在途写的连接走完整 close，链闸与 closeguard 三检照走，收约失败即会话转挂起候人节点 takeover 裁决，server 不强拆不静默弃置。
 
 孤儿连接与僵尸会话处置：server 进程崩溃未走 close 时，既有机械兜底原位承接，即检验文件生死 PID 探针三态判(kill 探针加出生时刻对表)、心跳停滞判据(HEARTBEAT_STALE_SECONDS 冻结常量三百秒)、takeover 人节点显式接管以 takeover_release 清该会话全部现势锁与队列行。零新增清理机制，依据是 lease 契约修订三十三与 openhyg 勘误既有语义。
@@ -49,6 +51,8 @@ lease 写操作授权：open、lock、unlock、wait-turn、claim、unclaim 俱�
 scribe 闸复用：工地链副本禁追加护栏(trail 物理路径含 worktrees 段即拒退出码二，认证先落主链)、闸二重意图拒(同 record 路径已有意图笔在链即拒，IntentRecordUsedRejected)、闸三会话在册验(会话须在会话台账活跃，SessionNotActive)三护栏对 beta 写面逐笔生效，server 禁以任何方式代填或绕过。
 
 lease 执法复用：open 六位闸序(包校验、正身、意图、同包活跃、施工面交集预检、检验钥匙闸)、lock 悲观五验(在册验、会话择定、范围验、身份验、绑定验)、unlock 加持锁验、closeguard 收约三检(脏位枚举、diff 判别、让位补笔拒三态)、close 链闸、claims 领取账本(PackageAlreadyClaimed 拒与 claims_warning 警示)俱原位。
+
+commit trail 与 root 透传(pk-091 其三，penface 批)：MCP lease_commit 补 trail(链路径列表，逐条 --trail)与 root(工作区根覆写)两参对齐 CLI；缺席即 CLI 缺省全链按日序发现原位，缺省发现语义零变；HTTP 面 root 属调用方域指向面零透传(DES-015 主防线，server 锚定所绑域)，trail 逐条绑定验(前缀属所绑域根)后透传。
 
 git hooks 复用：commit-msg 位直提守卫原位，无登记 plain commit 即拒，绕行必经 lease bypass 落台账，reconcile 查 unbypassed。
 
@@ -92,3 +96,4 @@ git hooks 复用：commit-msg 位直提守卫原位，无登记 plain commit 即
 
 2026-09-09 修订一：随 mcpsec-solo 批起草，承 mcpline 线程序包批二定位与任务包 mcpsec-solo.md 八问，令源用户 2026-09-09 令「继续。多子代理协作」；地面实况核对即 design 目录编号最高 DES-013 顺延 014，执法语义对表 lease 契约修订三十三与修订四十与 identity 契约修订三与引擎 scribe 闸位注记。
 2026-09-10 修订二：随 des016impl-solo 批即意图闸结构校验中性化落笔。设计承 DES-016-mcp-pure-tool-intent-form-v1.md；测量 m-des016-2 三发 stable_clear 经 attractor 裁决通过机器终签 756effb1 在链；令源用户 2026-09-10 常识裁定原话「世界上没有任何一个工具承载了哲学仪式」与同日开工令。意图闸六位闸序第三位描述更新：意图件验收改结构校验形，plain 与 ask3 双形同一必填集即 session_id 与 raw_input 与 round 与 intent_contract 之 goal 必填与 domain_contract；哲学引文逐字节核验摘出机械闸归司衡本域批纪律，BATCH-FACE 三问双门必跑步原位。scribe intent plain 通道即 --validation 对 plain 形豁免，拒因面收窄即 plain 形不触发 ValidationNotOk 与 LineageMismatch 与 FindingsPresent 三拒因。授权矩阵与身份与会话映射与写路径复用与审计与威胁模型与失败语义各节零触碰，本修订只及意图闸校验内容与 scribe 写位参数面；DES-015 标识牌层零涉。
+2026-09-11 修订三：随 penface 批(gatefix-parallel 簇M)两部位落笔，令源用户 2026-09-11 令「多子代理全量修复」承 pk-091 与 pk-092 与 pk-093 出泊条件。其一连接与会话映射节增隐式占位态段：绑定查找归一单点位(bound、implicit、unbound 三态)，close 能收隐式会话，两处结构卫错误载荷教学互指隐式占位事实。其二写路径复用节增 commit trail 与 root 透传段：MCP lease_commit 参数面对齐 CLI，缺省发现语义零变，HTTP 面 root 零透传承 DES-015 主防线。授权矩阵与身份与审计与威胁模型与失败语义各节零触碰；DES-016 外部只教不拒零变；first_domain 形零变。锚定测试 tests/test_penface_fixes.py 八红先红后绿，红证认证 171b815c 在链，mcpline 全套 160 绿。
