@@ -1,0 +1,32 @@
+{
+ "batch": "mcpboot-solo",
+ "what": "管线三步与守卫与测试读数认证",
+ "formatter": {
+  "exit": 0,
+  "changed": 0
+ },
+ "scrutinator": {
+  "r1_exit": 1,
+  "r1_findings": "C006 全角括号九笔（修订四行）",
+  "r2_exit": 0,
+  "r2_findings": 0,
+  "red_evidence": "scrutinator-des015-rev4.json"
+ },
+ "nomenclator": {
+  "exit": 1,
+  "lazy": 5,
+  "disposition": "四笔存量（修订三认证文本）加一笔承典，候立名程序人裁",
+  "report": "nomenclator-des015-rev4.json"
+ },
+ "term_register": {
+  "word": "bootstrap／域自举",
+  "state": "established",
+  "first_run_rejected": "缺 state 字段（登记前校验，红证 git 历史在档）"
+ },
+ "tests": {
+  "new_green": 16,
+  "suite_window": "96 passed 14 failed（全数 write_gates 族，与在飞锁面互撞环境干扰，主树对照同红在档；绿读数以收约归并后主树复跑为准）",
+  "red_evidence": "tdd-red-b5-malformed-first-run.log"
+ },
+ "design_fix": "客户端配置形先验随段一（B-5 首跑红证暴露段五才拒不可重跑缺陷，修正申报）"
+}
