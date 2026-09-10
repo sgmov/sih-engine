@@ -42,3 +42,12 @@ test_heartbeat_happy 主树现红（本批开工前即在红，归因洁净）�
 - 双仓 settle 提交号：收约归并时载入
 - reconcile：双仓 unrouted 0 cert_missing 0 目标
 - 主树复跑：mcpline 族放锁窗复跑读数以完工报告载出
+
+## 六、并支与改号实录（结算补记）
+
+- 双度并主：tools 8ae08eb2 与 d31a17e3（wengumcp α 八具并面加 sim 词条直改笔 25d1bb42 加 bootstrap M4 面，CALL-LOG 投影腿自动并合）；engine e2d96ce（DES-015 撞号解投：修订五=M4 bootstrap-solo 先落主树，本批说明书位改号六并注明让位缘由，批件引用同步改号）
+- 并支携带声明：merge 几何携带 main 已提交态的 treadmill CALL-LOG 与他批件，scope 闸拒于合并几何，bypass 四笔登记在案（tools 8ae08eb2 与 d31a17e3、engine e2d96ce 等三笔加 sim 代提交 25d1bb42）
+- 并支后守卫 10 绿；说明书扩 retriever_recall 行随 α 八具实态（wengumcp 并面）
+- 检词改号后 6 笔：5 笔修订三/四存量 lazy（继承债已在案）加 1 笔 M4 修订五段开域懒波词（并行批文本，归并带入，非本批著作，如实记档）
+- 测试隔离缺陷申报：test_ai_manual 置于套件首时闸测夹具施工面预检渗读真实会话面（open_precheck_conflict 撞在飞批锁面，mcpnomgate 隔离病族新面目）；本批自排序垫尾自保（pytest_collection_modifyitems），根因修复归后继夹具密闭批
+- domaware 跨批回归与零写证明两红归因同前节，主树复跑读数以完工报告载出
