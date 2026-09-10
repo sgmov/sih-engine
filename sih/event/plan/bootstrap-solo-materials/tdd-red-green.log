@@ -1,0 +1,792 @@
+# bootstrap-solo TDD 先红后绿全程日志（工地根留证，勿 git add）
+
+## 基线读数（2026-09-11，改动前）
+命令：cd <工地>/mcpline && env -u PYTHONHOME -u PYTHONPATH uv run --project . python -m pytest tests/ -q
+读数：15 failed, 102 passed（现役 117 基线）
+
+### 基线红定性（环境红，先于本批改动，与本批四件零涉）
+- 14 件 tests/test_write_gates.py 红：fixture 写径经真 lease CLI（domaware 合并后台账缺省域解析非 canonical 即落 tool_dir 真台账），真台账现值主会 bootstrap-solo 会话与 wengumcp-parallel 会话持排他锁（sih-engine/doc/design/DES-015-mcp-http-multitenant-auth-v1.md 与 sih-tools/mcpline/CALL-LOG.md 等），与 fixture open 的 allow 面 sih-engine/doc/ 撞锁。批毕放锁即自愈，非码病。
+- 1 件 tests/test_tools_unit.py::test_heartbeat_happy 红：读真树秤星读数位 days_since_last_snapshot=None（真树在飞期无当窗快照），环境读数位非码病。
+
+## 先红留证（T-1，改动前新测跑）
+命令：cd <工地>/mcpline && env -u PYTHONHOME -u PYTHONPATH uv run --project . python -m pytest tests/test_bootstrap_domain.py -q
+读数：6 failed, 8 passed（B-1 至 B-7 与 C-4 绿；C-2 C-3 C-5 C-6 C-7 C-8 红）
+
+红位四件对表：
+- C-2 与 C-8 红：mcpline.init 无 RESTART_SEMANTICS 与 CLIENT_FACE_URL 与 VERIFY_LINE_MCP 与 VERIFY_LINE_HTTP 与 VERIFY_TOOLS_LIST_BODY_TEXT（件一面卡教学常量缺席）
+- C-3 红：--complete unrecognized arguments（件四旗标缺席）与 mirror_action 键缺席
+- C-5 红：VERIFY_TOOLS_LIST_BODY_TEXT 缺席（件三同源常量缺席）
+- C-6 红：桩写畸形结果（缺 sih 键）复核位缺席，链 rc 0 零检出（件一写后复核位缺席）
+- C-7 红：已开域拒教学 fix 无 --complete 指针（件四教学更新缺席）
+
+红日志全文见 pytest 原始输出（追记于下）：
+
+.......FF.FFFF                                                           [100%]
+=================================== FAILURES ===================================
+_________________ test_c2_fresh_chain_card_mirror_and_teaching _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d0419a0>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+
+    def test_c2_fresh_chain_card_mirror_and_teaching(monkeypatch, fixture_base):
+        """C-2／T-2 全链 fresh：--client-config 加新域，镜像行在位加面卡在位含面
+        URL 与标识牌词形与验证行与生效条件行，全篇无「凭据」指称标识牌。"""
+        from mcpline import init as init_mod
+    
+        root = fixture_base / f"case-{_uid()}-root"
+        (root / "sih-tools" / "mcpline" / "ledger").mkdir(parents=True)
+        dom = _bare_domain(root, "cardfresh")
+        cfg = root / "work" / "nested" / "cfg.json"
+        rc, out, payload = _run_bootstrap(
+            monkeypatch, root, dom, "--by", "面卡形", "--token-id", "fxcard",
+            "--client-config", str(cfg))
+        assert rc == 0, out
+        # 面卡在位且定形齐备
+        card = _read_card(dom)
+>       assert init_mod.CLIENT_FACE_URL in card
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'mcpline.init' has no attribute 'CLIENT_FACE_URL'
+
+tests/test_bootstrap_domain.py:330: AttributeError
+______________ test_c3_complete_rerun_idempotent_card_and_config _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d0f0b90>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+
+    def test_c3_complete_rerun_idempotent_card_and_config(monkeypatch, fixture_base):
+        """C-3／T-3 幂等重跑：--complete 面卡重写逐字节恒等；客户端配置幂等且
+        其余键保留。"""
+        root = fixture_base / f"case-{_uid()}-root"
+        (root / "sih-tools" / "mcpline" / "ledger").mkdir(parents=True)
+        dom = _bare_domain(root, "idemcard")
+        cfg = root / "work" / "cfg.json"
+        cfg.parent.mkdir(parents=True)
+        cfg.write_text(json.dumps({"keep": 1}, ensure_ascii=False, indent=2) + "\n",
+                       encoding="utf-8")
+        rc, out, payload = _run_bootstrap(
+            monkeypatch, root, dom, "--by", "幂等形", "--token-id", "fxidem",
+            "--client-config", str(cfg))
+        assert rc == 0, out
+        card_first = _read_card(dom)
+        cfg_first = cfg.read_bytes()
+        for _ in range(2):
+>           rc2, out2, payload2 = _run_bootstrap(
+                monkeypatch, root, dom, "--by", "幂等重跑形", "--complete",
+                "--client-config", str(cfg))
+
+tests/test_bootstrap_domain.py:369: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_bootstrap_domain.py:80: in _run_bootstrap
+    rc = bootstrap_mod.main([str(dom), *extra])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/mcpline/bootstrap.py:373: in main
+    args = parser.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2009: in parse_args
+    self.error(msg)
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2782: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='mcpline.bootstrap', usage=None, description='域自举 bootstrap：新城引入 MCP 开域全链一令（DES-015 域自举程序形固化编排）', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'mcpline.bootstrap: error: unrecognized arguments: --complete\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/argparse.py:2769: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: mcpline.bootstrap [-h] [--by BY] [--token-id TOKEN_ID] [--scope SCOPE]
+                         [--date DATE] [--client-config CLIENT_CONFIG]
+                         domain_root
+mcpline.bootstrap: error: unrecognized arguments: --complete
+__________________ test_c5_live_server_tools_list_same_shape ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b94aa50>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+ws_root = PosixPath('/Users/moc/workspaces/SiHankor')
+
+    def test_c5_live_server_tools_list_same_shape(monkeypatch, fixture_base, ws_root):
+        """C-5／T-5 验证行实证：活服以与教学行完全同形的请求 POST tools/list，
+        断言 200 且工具面含 locks_read（鉴之虚静：实证先于教学列目）。"""
+        import httpx
+        from mcpline import init as init_mod
+        from mcpline.web import create_app
+        from tests.http_harness import LiveServer
+    
+>       body_text = init_mod.VERIFY_TOOLS_LIST_BODY_TEXT  # 与面卡一字同源
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'mcpline.init' has no attribute 'VERIFY_TOOLS_LIST_BODY_TEXT'
+
+tests/test_bootstrap_domain.py:416: AttributeError
+__________________ test_c6_write_verify_rejects_stale_result ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d527860>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+
+    def test_c6_write_verify_rejects_stale_result(monkeypatch, fixture_base):
+        """C-6／T-6 写后复核：正常链复核通过（C-2 已证）；构造缺 sih 键的合法
+        JSON 旧形文件走注册位，畸形结果被复核位检出拒 exit 1 教学零静默。"""
+        root = fixture_base / f"case-{_uid()}-root"
+        (root / "sih-tools" / "mcpline" / "ledger").mkdir(parents=True)
+        dom = _bare_domain(root, "stalecfg")
+        cfg = root / "work" / "old-form.json"
+        cfg.parent.mkdir(parents=True)
+        cfg.write_text(json.dumps({"keep": 1}, ensure_ascii=False, indent=2) + "\n",
+                       encoding="utf-8")
+    
+        def stale_write(path_str, token_id, obj, note):
+            """桩化注册位：写旧形对象不落 sih 键（畸形结果模拟）。"""
+            path = Path(path_str).expanduser()
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(
+                json.dumps(obj, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8")
+            return {"written": True, "path": str(path), "note": note}
+    
+        monkeypatch.setattr(bootstrap_mod, "write_client_config", stale_write)
+        rc, out, payload = _run_bootstrap(
+            monkeypatch, root, dom, "--by", "复核形", "--token-id", "fxstale",
+            "--client-config", str(cfg))
+>       assert rc == 1
+E       assert 0 == 1
+
+tests/test_bootstrap_domain.py:458: AssertionError
+_______________________ test_c7_opened_domain_two_states _______________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d4afdd0>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+
+    def test_c7_opened_domain_two_states(monkeypatch, fixture_base):
+        """C-7／T-7 已开域两态：无 --complete 拒且教学含 --complete 指针零写入；
+        有 --complete 补全全链 active 复用 done:false 加镜像核对加面卡在位加域链
+        verify 事件数恒等（零新笔）。"""
+        root = fixture_base / f"case-{_uid()}-root"
+        (root / "sih-tools" / "mcpline" / "ledger").mkdir(parents=True)
+        dom = _bare_domain(root, "twostate")
+        rc, out, payload = _run_bootstrap(
+            monkeypatch, root, dom, "--by", "首开形", "--token-id", "fxtwo")
+        assert rc == 0, out
+        central_rows_first = len(_registry_rows(_registry_path(root)))
+        trail_first = _trail_lines(dom)
+        card_first = _read_card(dom)
+        # 态一：无 --complete 拒，教学指向 --complete，零写入
+        before = _snapshot(root)
+        rc1, out1, payload1 = _run_bootstrap(monkeypatch, root, dom, "--by", "重跑形")
+        assert rc1 == 1
+        assert payload1["ok"] is False
+>       assert "--complete" in payload1["fix"], payload1
+E       AssertionError: {'ok': False, 'error': '域已开域（sih/domain.json 在位）：/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-mo...城引入 MCP 开域全链一令。序固定五段——前置检查、标识牌签发位（缺牌即签）、开域位（init 既有形零重实现）、令牌双落位（域内镜像行恒等）、客户端注册旗标选入（--client-config 给了才写，合并写保既有键）', ...}
+E       assert '--complete' in '幂等守卫无 reinit 旗标；重开域候后继裁定（先人节点处置既有域状态）'
+
+tests/test_bootstrap_domain.py:483: AssertionError
+_______________________ test_c8_output_shape_strict_json _______________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d4afad0>
+fixture_base = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1027/mcpline-beta-fixture0')
+
+    def test_c8_output_shape_strict_json(monkeypatch, fixture_base):
+        """C-8／T-8 出参形：严格 JSON 单对象，client_config.note 与 next 含重启
+        语义与验证路径。"""
+        from mcpline import init as init_mod
+    
+        root = fixture_base / f"case-{_uid()}-root"
+        (root / "sih-tools" / "mcpline" / "ledger").mkdir(parents=True)
+        dom = _bare_domain(root, "outshape")
+        rc, out, payload = _run_bootstrap(
+            monkeypatch, root, dom, "--by", "出参形", "--token-id", "fxout",
+            "--client-config", str(root / "work" / "cfg.json"))
+        assert rc == 0, out
+        assert isinstance(payload, dict)
+        assert payload["ok"] is True
+        for key in ("domain_id", "domain_root", "issued", "mirror_row_path",
+                    "client_config", "next"):
+            assert key in payload, key
+>       assert init_mod.RESTART_SEMANTICS in payload["client_config"]["note"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'mcpline.init' has no attribute 'RESTART_SEMANTICS'
+
+tests/test_bootstrap_domain.py:528: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_bootstrap_domain.py::test_c2_fresh_chain_card_mirror_and_teaching
+FAILED tests/test_bootstrap_domain.py::test_c3_complete_rerun_idempotent_card_and_config
+FAILED tests/test_bootstrap_domain.py::test_c5_live_server_tools_list_same_shape
+FAILED tests/test_bootstrap_domain.py::test_c6_write_verify_rejects_stale_result
+FAILED tests/test_bootstrap_domain.py::test_c7_opened_domain_two_states - Ass...
+FAILED tests/test_bootstrap_domain.py::test_c8_output_shape_strict_json - Att...
+6 failed, 8 passed in 2.30s
+
+## 后绿读数（实现毕）
+命令：cd <工地>/mcpline && env -u PYTHONHOME -u PYTHONPATH uv run --project . python -m pytest tests/ -q
+读数一（守卫未扩申报面时首跑）：16 failed, 108 passed——新红一件 test_zero_write_guard_bootstrap_declared_write_surface，系 bootstrap write_text 申报计数 1→2 未同步（本批补全链面卡重写为申报写面扩形，守卫测试同步扩申报面：write_text 恰两单点加 domain_readme_text 单源断言）
+读数二（终态）：15 failed, 109 passed——15 红与基线环境红原集逐名全等（1 heartbeat 读数位加 14 write_gates 真台账撞主会在飞锁），零新增红；109 绿=基线 102 加新测 7（C-2 至 C-8 全绿）
+红绿对表：先红 6（C-2 C-3 C-5 C-6 C-7 C-8）转全绿；C-4 与守卫扩面为回归守卫位（C-4 同路径回归位开局即绿，守卫扩面随申报同步）
+
+全套 pytest 终态原始输出（追记于下）：
+
+........................................................................ [ 58%]
+F.......FF..FFFFFFFFFFFF............................                     [100%]
+=================================== FAILURES ===================================
+_____________________________ test_heartbeat_happy _____________________________
+
+    def test_heartbeat_happy():
+        out = _heartbeat()
+        assert "error" not in out
+        assert set(out["readings"]) == {"convergence", "adoption", "mergeback"}
+>       assert isinstance(out["days_since_last_snapshot"], int)
+E       assert False
+E        +  where False = isinstance(None, int)
+
+tests/test_tools_unit.py:74: AssertionError
+________________________ test_open_binds_single_session ________________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-43/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70d8d0>
+
+    def test_open_binds_single_session(fx_root, monkeypatch):
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-43/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70d8d0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+______________________ test_open_twice_refused_one_to_one ______________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-44/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb13cb0>
+
+    def test_open_twice_refused_one_to_one(fx_root, monkeypatch):
+        """一对一结构卫：已绑定连接再开即拒（禁多对一），错误教沿用。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-44/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb13cb0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+________________ test_intent_append_passthrough_and_replay_gate ________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-47/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb116a0>
+
+    def test_intent_append_passthrough_and_replay_gate(fx_root, monkeypatch):
+        """闸二与闸三透传：意图笔在链；重放同 record 即 IntentRecordUsedRejected；
+        append 无幂等闸如实申报（重复认证笔在链可审计检出）。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-47/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb116a0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+____________________________ test_park_passthrough _____________________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-48/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89b540>
+
+    def test_park_passthrough(fx_root, monkeypatch):
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-48/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89b540>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_________________ test_chain_verify_alpha_reads_fixture_chain __________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-49/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89b380>
+
+    def test_chain_verify_alpha_reads_fixture_chain(fx_root, monkeypatch):
+        """alpha chain_verify 回归（fixture 链）：写后 verify 闭环读数位。"""
+        from mcpline.server import _chain_verify
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-49/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89b380>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_________________ test_lock_unlock_passthrough_and_scope_gate __________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-50/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70c670>
+
+    def test_lock_unlock_passthrough_and_scope_gate(fx_root, monkeypatch):
+        """五验范围验透传：allow 面外即 scope_violation；面内取放俱成。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-50/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70c670>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+___________________ test_locked_elsewhere_conflict_surfaces ____________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-51/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89a7b0>
+
+    def test_locked_elsewhere_conflict_surfaces(fx_root, monkeypatch):
+        """锁冲突语义透出形：他持即 locked_elsewhere 拒，不吞不译不重试代劳。"""
+>       conn1 = open_session(fx_root, monkeypatch)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:176: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-51/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c89a7b0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_______________________ test_claims_and_unclaim_routing ________________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-52/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c937e00>
+
+    def test_claims_and_unclaim_routing(fx_root, monkeypatch):
+        """claims 拒透传形：在领即 PackageAlreadyClaimed；unclaim 仅本地行。"""
+>       conn = open_session(fx_root, monkeypatch, cls=AGENT_CLASS_LOCAL)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:192: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-52/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c937e00>
+cls = 'local', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+________________ test_external_class_refuses_direct_and_unclaim ________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-53/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c937f50>
+
+    def test_external_class_refuses_direct_and_unclaim(fx_root, monkeypatch):
+        """路由层矩阵复核（调用位）：外部位调直改与领取释放即拒透传零 CLI 调用。"""
+>       conn = open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-53/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c937f50>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+______________________ test_direct_passthrough_local_only ______________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-54/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70f690>
+
+    def test_direct_passthrough_local_only(fx_root, monkeypatch):
+        """直改车道透传（本地行）：agent 笔挂 server 正身报告，闸位原位。"""
+>       conn = open_session(fx_root, monkeypatch, cls=AGENT_CLASS_LOCAL)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-54/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c70f690>
+cls = 'local', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_________________ test_close_chain_gate_and_session_not_active _________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-55/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c935fd0>
+
+    def test_close_chain_gate_and_session_not_active(fx_root, monkeypatch):
+        """close 链闸透传：有意图笔与认证笔方收约成；收约后写即 SessionNotActive。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:232: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-55/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c935fd0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_________________________ test_commit_wip_passthrough __________________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-56/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c934a60>
+
+    def test_commit_wip_passthrough(fx_root, monkeypatch):
+        """commit 四验透传：工地铁道内 wip 落笔。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:254: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-56/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c934a60>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+____________________ test_disconnect_zero_write_light_close ____________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-57/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c936cf0>
+
+    def test_disconnect_zero_write_light_close(fx_root, monkeypatch):
+        """零写连接轻收约：会话拆除成，链零新增（链闸对本会话零链面空转形）。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:273: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-57/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c936cf0>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+____________________ test_disconnect_with_writes_full_close ____________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-58/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb11080>
+
+    def test_disconnect_with_writes_full_close(fx_root, monkeypatch):
+        """有写连接全收约：链闸照走（意图与认证笔在链），缺笔即挂起显形不强拆。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_write_gates.py:288: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1030/mcpline-beta-fixture0/case-58/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10cb11080>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...-L', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tools_unit.py::test_heartbeat_happy - assert False
+FAILED tests/test_write_gates.py::test_open_binds_single_session - AssertionE...
+FAILED tests/test_write_gates.py::test_open_twice_refused_one_to_one - Assert...
+FAILED tests/test_write_gates.py::test_intent_append_passthrough_and_replay_gate
+FAILED tests/test_write_gates.py::test_park_passthrough - AssertionError: {'e...
+FAILED tests/test_write_gates.py::test_chain_verify_alpha_reads_fixture_chain
+FAILED tests/test_write_gates.py::test_lock_unlock_passthrough_and_scope_gate
+FAILED tests/test_write_gates.py::test_locked_elsewhere_conflict_surfaces - A...
+FAILED tests/test_write_gates.py::test_claims_and_unclaim_routing - Assertion...
+FAILED tests/test_write_gates.py::test_external_class_refuses_direct_and_unclaim
+FAILED tests/test_write_gates.py::test_direct_passthrough_local_only - Assert...
+FAILED tests/test_write_gates.py::test_close_chain_gate_and_session_not_active
+FAILED tests/test_write_gates.py::test_commit_wip_passthrough - AssertionErro...
+FAILED tests/test_write_gates.py::test_disconnect_zero_write_light_close - As...
+FAILED tests/test_write_gates.py::test_disconnect_with_writes_full_close - As...
+15 failed, 109 passed in 83.55s (0:01:23)
+
+## 终态读数（docstring 全角括号纪律修正后复跑）
+命令：cd <工地>/mcpline && env -u PYTHONHOME -u PYTHONPATH uv run --project . python -m pytest tests/ -q
+读数：15 failed, 109 passed（15 红与基线环境红原集逐名全等，零新增红；109 绿=基线 102 加新测 7）
+语汇自检：改动四件「凭据」命中四处皆禁令语与断言文本自身（非以凭据指称标识牌），面卡生成文本零命中；本批新增 docstring 行全角括号已转半角（注释与运行时串承既有风格不动）
+
+改动面 numstat：
+213	42	mcpline/src/mcpline/bootstrap.py
+48	3	mcpline/src/mcpline/init.py
+252	2	mcpline/tests/test_bootstrap_domain.py
+10	7	mcpline/tests/test_zero_write.py
+
+零触碰核验：diff 仅四件（bootstrap.py 与 init.py 与 tests/test_bootstrap_domain.py 与 tests/test_zero_write.py），server.py 与 httpface.py 与 writeface/ 与 __init__.py 与 pyproject.toml 与 README.md 零触碰；版本 0.8.0 维持
