@@ -1,0 +1,89 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md": "a73eeb58b0241792fe4fb2e010d7abdf2c749fb47c55e4f8595eea517114a9a9"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md",
+      "location": {
+        "line": 29
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md",
+      "location": {
+        "line": 27
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md",
+      "location": {
+        "line": 29
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/estpark-solo/doc/governance/PARKING-v1.md",
+      "location": {
+        "line": 29
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 5,
+    "by_rule": {
+      "C001": 2,
+      "C002": 2,
+      "C006": 1
+    },
+    "by_pack": {
+      "des-001": 5
+    }
+  }
+}

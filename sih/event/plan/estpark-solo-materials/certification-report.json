@@ -1,0 +1,42 @@
+{
+  "batch": "estpark-solo",
+  "session_id": "daa3612172283e4d",
+  "date": "2026-09-10",
+  "kind": "pipeline-certification",
+  "order_source": "用户 2026-09-10 下版迭代强化两项裁定（对话直承）",
+  "deliverables": {
+    "parked_entries": [
+      {
+        "entry_id": "pk-087",
+        "title": "间隙漂移微兆检测估计器立项候选：秤星与判据序列的递推状态估计（下版迭代强化项一）",
+        "park_event_hash": "b85e001c88dc0196f6f0bc43e7ccc4cb8c811581e0aa86f04cbc00ac2216f3ae",
+        "material": "sih-engine/sih/state/parking/materials/pk-087.json"
+      },
+      {
+        "entry_id": "pk-088",
+        "title": "LLM 语义判定面多轮采样信念合成立项候选：确定性采样点穿黑盒评审（下版迭代强化项二）",
+        "park_event_hash": "ea6fac5384da428fbbce89e2285407374756d99b7ca1bf55a847cdc6fb103a18",
+        "material": "sih-engine/sih/state/parking/materials/pk-088.json"
+      }
+    ],
+    "register_line": "doc/governance/PARKING-v1.md 名册补记段（只增不改他行）",
+    "results_doc": "sih-engine/sih/event/plan/estpark-solo-results.md"
+  },
+  "readings": {
+    "ask3_scrutinator_exit": 0,
+    "ask3repeater": "ok",
+    "elicit_digest": "passed",
+    "elicit_covered": 5,
+    "identity_anomalies": 0,
+    "parking_md_formatter_exit": 0,
+    "parking_md_scrutinator_exit": 1,
+    "parking_md_scrutinator_findings": 2,
+    "parking_md_scrutinator_note": "2 笔均在第 27 行 parksi 段，与主树基线同位同规，存量非本批引入，新增段零发现",
+    "parking_md_nomenclator_exit": 0,
+    "results_formatter_exit": 0,
+    "results_scrutinator_exit": 2,
+    "results_scrutinator_note": "event/plan 属 des-001 域外，exit 2 如实记",
+    "results_nomenclator_exit": 0
+  },
+  "exit_code": 0
+}
