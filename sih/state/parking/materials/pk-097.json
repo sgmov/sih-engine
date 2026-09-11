@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-097",
+  "entry_id": "pk-097",
+  "title": "commit repo 形参三形证据坐实（pk-094 其一二度实锤）与机械 message 前缀重复新患",
+  "context": "司梦侧第五份实测回报，主线对码两件。其一：pk-094 其一 repo 形参同患二度实锤并补三形证据——列表形（含文件清单与点号列表）被 MCP 层串化为字面量 JSON 字符串致 CLI 解析 repos 空串即 repo_not_in_session；单串点号形过 MCP 达 CLI 即 commit_must_target_worktree（pk-031 主检出直提拒属设计行为但 MCP 层教学未写明工位路径形）；工位相对路径字符串方成功。修法承 pk-094 其一即 repo 形改 list 或 argv 兼容两形，加教学文写明工位路径形与点号形后果。其二：commitcore build_message 机械前缀与 subject 首部同字样重复拼接（126 行 wip 形 f\"{stem} wip {subject}\" 与 131 行 settle 形 f\"{stem} 段{seq} {subject}\"），subject 惯例以 stem 起首即两处同字样，实样 sim-sources-remote wip 双现与本日 askroute-solo 段1 与 refseal-solo 段1 皆同患，纯妆点不影响四验；修法拼接前去重或 subject 规范剥首部。附记：司梦裸 cd 进已删工地踩已知 ENOENT 坑按程序自救无影响，此坑与 leaseface-solo 新记工位读数盲区同族候域面闸组批并览。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批或并入既有候批：其一并入 pk-094 其一写面参数形修后继批，其二随同批小改；工位路径形教学与 pk-096 域锚修同属域面闸组族可合并；批名先查册；零锁可即开",
+  "path": "sih-tools/lease/src/lease/commitcore.py",
+  "related": ["pk-094", "pk-095", "pk-096", "pk-031", "leaseface-solo"],
+  "source": "主会话 2026-09-11 司梦侧第五份实测缺陷报告，主线对码逐行实锤",
+  "state": "parked",
+  "ttl_days": 30
+}
