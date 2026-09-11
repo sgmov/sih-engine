@@ -140,8 +140,11 @@ fn md_raw_window(
 pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     let mut keep: Vec<Archive> = Vec::new();
     for name in &args.archives {
-        let parsed = Archive::parse(name)
-            .ok_or_else(|| RecallError::Blocked(format!("档名非枚举值 {name}")))?;
+        let parsed = Archive::parse(name).ok_or_else(|| {
+            RecallError::Blocked(format!(
+                "档名非枚举值 {name}（合法值：fact、conclusion、experience、parked、intent）"
+            ))
+        })?;
         keep.push(parsed);
     }
     let keep_all = keep.is_empty();
