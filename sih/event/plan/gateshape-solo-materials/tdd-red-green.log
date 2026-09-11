@@ -1,0 +1,14 @@
+# gateshape F2 首跑红证归档（BATCH-FACE 2026-09-06 条款）
+
+实装前首跑（TDD 红先）转录摘录——shell 输出未 tee，逐字自会话转录抄录，如实标注来源：
+
+```
+$ python3 -m pytest tests/test_r9_evidence.py -q   （cwd: worktrees/sih-tools/gateshape/tally，R9 未实装时）
+FAILED tests/test_r9_evidence.py::test_r9_blocks_missing_required - Assertion...
+FAILED tests/test_r9_evidence.py::test_r9_blocks_synthetic_required - Asserti...
+FAILED tests/test_r9_evidence.py::test_r9_passes_all_required_provided - asse...
+FAILED tests/test_r9_evidence.py::test_r9_malformed_entry_blocks - AssertionE...
+4 failed, 2 passed in 0.11s
+```
+
+绿证（实装后全套）：`python3 -m pytest tests/ -q` → `31 passed in 0.73s`（旧 25 全绿即 r1/r2 重放兼容）。
