@@ -1,0 +1,13 @@
+{
+ "action": "exit",
+ "disposition": "promoted",
+ "entry_id": "pk-082",
+ "id": "pk-082",
+ "parking": {
+  "entered_at": "2026-09-10",
+  "exited_at": "2026-09-11",
+  "ttl_days": 90
+ },
+ "path": "sih-math/docs/feedback-channel-2026-09-10.md",
+ "ruling": "出泊条件（首批 FB-001 至 006 逐项裁决全数有裁）达成，用户 2026-09-11 令「都出泊」。兑现全录：FB-001/002/003/007 修复批 philrev-repair1-solo 闭账（检查器红转绿机器验证）；FB-004 建图批闭账（十孤悬候选全部机器推翻零确证孤悬）；FB-005 分族批闭账（38 条全量四检登记）；FB-006 演化为 carrcheck v1.2 常驻传感器在役（328 锚零失败后扩 334）；FB-009 用户裁 A 案批在飞；载体三归属入仓终签 6f7dc392（stable_clear）。通道登记面 sih-math/docs/feedback-channel-2026-09-10.md 全程留痕。"
+}

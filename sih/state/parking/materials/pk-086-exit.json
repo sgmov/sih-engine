@@ -1,0 +1,13 @@
+{
+ "action": "exit",
+ "disposition": "discarded",
+ "entry_id": "pk-086",
+ "id": "pk-086",
+ "parking": {
+  "entered_at": "2026-09-10",
+  "exited_at": "2026-09-11",
+  "ttl_days": 30
+ },
+ "path": "sih-math/docs/feedback-channel-2026-09-10.md",
+ "ruling": "出泊条件三择一的用户裁达成，用户 2026-09-11 令「都出泊」并裁「PRO-02 类属机械解释器职责不再上问」：守惯例闭项（第三枝）。升级批不再执行——其机械核已由 carrcheck v1.1 解释器（FAMILY_DEFAULT/FAMILY_OVERRIDE 词典，金测例三发 PASS）承载，语义归属核由词典可审性兜底，同族裸编号确认为司衡惯例记法。两轮非 clear 判词（near_threshold 与 boundary）与金测例自证材料在档 proposition/DES/m-carrcheck-design 与 m-upgrade-queue 与 m-upgrade-anchor。discarded 指批形态废弃，非事项失败：消歧需求由解释器承接零缺口。"
+}
