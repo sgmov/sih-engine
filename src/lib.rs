@@ -8,6 +8,7 @@
 pub mod ask3repeater;
 pub mod attractor;
 pub mod event_stream;
+pub mod mcpserver;
 pub mod retriever;
 pub mod snapline;
 pub mod scrutinator;
