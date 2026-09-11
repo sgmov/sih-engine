@@ -1,0 +1,9 @@
+IDENTICAL  locks_read 
+IDENTICAL  chain_verify {'date': '2026-09-11'}
+IDENTICAL  chain_query {'date': '2026-09-11', 'event_type': 'intent_refined'}
+IDENTICAL  chain_query {'date': '2026-09-11'}
+IDENTICAL  naming_guide 
+IDENTICAL  nomenclator_query {'word': '司衡'}
+IDENTICAL  heartbeat 
+IDENTICAL  retriever_recall {'topic': ['critsweep'], 'at': '2026-09-11'}
+DUALRUN: ALL-IDENTICAL

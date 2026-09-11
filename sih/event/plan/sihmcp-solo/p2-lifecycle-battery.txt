@@ -1,0 +1,10 @@
+fixture base: /var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/sihmcp-p2-ohfa4cra
+IDENTICAL  lease_open
+IDENTICAL  lease_lock
+IDENTICAL  record_intent
+IDENTICAL  lease_commit_wip
+IDENTICAL  record_append
+IDENTICAL  lease_commit_settle
+IDENTICAL  lease_unlock
+IDENTICAL  lease_close
+P-2 BATTERY: ALL-IDENTICAL
