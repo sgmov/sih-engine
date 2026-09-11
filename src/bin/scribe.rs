@@ -36,6 +36,17 @@ fn read_text(path: &str) -> Option<String> {
     std::fs::read_to_string(path).ok()
 }
 
+/// 缺件报错理由区分（pk-094 其二 CLI 侧）：空串／目录／不存在三形教学文。
+fn missing_file_reason(given: &str) -> &'static str {
+    if given.is_empty() {
+        "路径为空"
+    } else if Path::new(given).is_dir() {
+        "路径为目录非文件"
+    } else {
+        "路径不存在或不可读"
+    }
+}
+
 fn emit(value: serde_json::Value, code: i32) -> ! {
     println!("{}", serde_json::to_string_pretty(&value).unwrap());
     exit(code)
@@ -350,7 +361,9 @@ fn main() {
                 emit(json!({"error": "退出码非数"}), 2)
             };
             session_guard(&opts);
-            let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
+            let Some(text) = read_text(&report) else {
+                emit(json!({"error": format!("报告不存在：应为 JSON 报告文件路径（绝对或相对），收到 {}（{}）", report, missing_file_reason(&report))}), 2)
+            };
             let mut store = load_store(&trail);
             // 追加原子化重试（basefix-solo 批 F-2）：并发下他进程先行落链使
             // 本进程预取时间戳不越新链尾即拒 TimestampNotMonotonic，取新鲜
@@ -389,7 +402,7 @@ fn main() {
             worktree_trail_guard(&opts, &trail);
             session_guard(&opts);
             let Some(rtext) = read_text(&record) else {
-                emit(json!({"error": "记录件缺失"}), 2)
+                emit(json!({"error": format!("记录件缺失：应为意图记录文件路径（绝对或相对），收到 {}（{}）", record, missing_file_reason(&record))}), 2)
             };
             let validation_pair = opt("validation").map(|v| {
                 let vtext = read_text(&v);
@@ -436,7 +449,9 @@ fn main() {
             };
             lockgate_guard(&opts, &trail);
             worktree_trail_guard(&opts, &trail);
-            let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
+            let Some(text) = read_text(&record) else {
+                emit(json!({"error": format!("记录不存在：应为停泊记录 JSON 文件路径（绝对或相对），收到 {}（{}）", record, missing_file_reason(&record))}), 2)
+            };
             let store = load_store(&trail);
             let scope = match load_parking_scope(Path::new(&trail)) {
                 Ok(s) => s,
@@ -490,7 +505,9 @@ fn main() {
                 emit(json!({"error": "record 缺少必填参数，运行 scribe --help 查看用法"}), 2)
             };
             lockgate_guard(&opts, &trail);
-            let Some(text) = read_text(&report) else { emit(json!({"error": "报告不存在"}), 2) };
+            let Some(text) = read_text(&report) else {
+                emit(json!({"error": format!("报告不存在：应为认证报告文件路径（绝对或相对），收到 {}（{}）", report, missing_file_reason(&report))}), 2)
+            };
             let Some(mat_text) = read_text(&material) else {
                 emit(json!({"error": format!("所指材料不存在 {material}")}), 2)
             };
@@ -531,7 +548,9 @@ fn main() {
             lockgate_guard(&opts, &trail);
             worktree_trail_guard(&opts, &trail);
             session_guard(&opts);
-            let Some(text) = read_text(&record) else { emit(json!({"error": "记录不存在"}), 2) };
+            let Some(text) = read_text(&record) else {
+                emit(json!({"error": format!("记录不存在：应为直改链笔 JSON 文件路径（绝对或相对），收到 {}（{}）", record, missing_file_reason(&record))}), 2)
+            };
             let record_value: serde_json::Value = match serde_json::from_str(&text) {
                 Ok(v) => v,
                 Err(e) => emit(json!({"error": format!("记录非法 JSON {e}")}), 2),
