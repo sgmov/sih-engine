@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-094",
+  "entry_id": "pk-094",
+  "title": "司梦域 MCP/CLI 实测缺陷第三批：commit repo 形同传不同解与 record 教学缺位二度实锤与停泊模板校验脱节与 self_boot 缺省指引缺与域装 gauge 底座缺席与 close 归并呈现弱",
+  "context": "司梦侧 2026-09-11 第三份实测回报，主线逐项对码六件。其一：lease_commit 的 MCP repo 参数形为 str 见 mcpline writeface tools.py 456 至 458 行，而 lease_open 同位为 list 见同文件 159 至 160 行，数组入参被字面量化即 detail.repo 取形 [\"…\"] 字符串经 --repo 直传 CLI 解析出 repos 空串即 repo_not_in_session，同传不同解坐实；trail 已是 list 形不受累即 pk-091 其三透传修后 trail 面愈合 repo 面残留，修法 repo 形改 list 或 argv 兼容两形。其二：record 系列参数教学缺位二度实锤与 pk-091 其四与 pk-093 其四同族：scribe.rs 353 与 392 与 439 与 493 与 534 行报错文即报告不存在与记录件缺失与记录不存在均未指明应为文件路径，MCP 层 record_intent 教学已写明路径形见 tools.py 207 至 213 行但 valid_params 喂空与锚面候令其余写工具 valid_params 喂空互证，CLI 错误文与 MCP 教学双层都欠。其三：停泊材料模板与校验器脱节坐实：init.py PARKING_TEMPLATE 见 115 至 127 行无 title 无 exit_condition 且 entered_at 与 ttl_days 嵌 parking 子对象内，而 scribe 双校验器即引擎 src/event_stream/park.rs 87 至 95 行与工具侧 tools/scribe/src/scribe/cli.py 209 至 214 行要求 entry_id 与 title 与 exit_condition 与 ttl_days 顶层平铺且 ttl 正数，照模板写必被拒司梦试错三轮；模板注释自述对表 pk-070-exit.json 即泊界台账行形，与停泊材料件形两典分叉，修法走模板平铺或校验器兼容嵌套的单一源裁定，候 mcpboot 批携带。其四：lease CLI self_boot 三参缺省指引缺：core.py self_boot_check 见 214 至 224 行按路径含 worktrees/ 子串判自举，工地路径不匹配该子串即闸不触发而 domaware 布局推导失败，CLI 退到要求 --ledger 与 --locks 与 --bills 显式全传且错误不告知缺省路径；rootanchor-solo T-2 闸本身属设计，缺的是缺省指引与闸路径启发窄化两患。其五：域安装 gauge 底座缺席：gauge cli.py _die_missing 见 102 至 103 行报底座件缺席即读数不出，域 init 落地五步不含 gauge CLI 源与会话台账与 sih-engine 证据底座，域内读数必死，域安装完整性缺口，修法候 domaware 域件映射或 bootstrap 扩装。其六：lease_close 归并呈现弱，静默丢批患对码不成立诚实改正：司梦报 close 输出无归并记录疑归并失败静默丢批，对码 lease core.py 护栏五层在即前置态整批拒见 1670 行与 merge-tree 闸四内容冲突预检见 1722 与 1747 行与并集复查备份让位见 1591 至 1658 行与哈希补笔工单与输出含 merged 字段见 2590 行，归并失败不静默整批拒；但 canonical 单仓域根 close 链闸空转 workspace_chainless 见 mcpline tools.py 498 至 505 行既有申报使归并事实呈现弱，教学面欠归并记录显式透出，补输出透明即可勿动护栏。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批或并入既有候批：其一候写面参数形修后继批与锚面候令其余写工具 valid_params 喂空同批，其三候 mcpboot 批携带即模板形与校验器单一源裁定，其四其五候域装完整性批，其六补 close 输出归并记录透明面小改；批名先查册；零锁可即开",
+  "path": "sih-tools/mcpline/src/mcpline/writeface/tools.py",
+  "related": ["pk-091", "pk-092", "pk-093", "gatefix-parallel", "mcpboot", "rootanchor-solo"],
+  "source": "主会话 2026-09-11 司梦侧第三份实测缺陷报告，主线对码逐条实锤，其六含诚实改正",
+  "state": "parked",
+  "ttl_days": 30
+}
