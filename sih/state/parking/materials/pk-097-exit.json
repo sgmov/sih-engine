@@ -1,0 +1,12 @@
+{
+  "action": "exit",
+  "entry_id": "pk-097",
+  "title": "pkfix-parallel 出泊",
+  "context": "pkfix-parallel 批修复落地归并在案（本日双仓 settle），出泊随批",
+  "ruling": "用户 2026-09-11 令一次性修复，主线验收抽检过",
+  "state": "exited",
+  "ttl_days": 30,
+  "exit_condition": "已达成",
+  "created_at": "2026-09-11",
+  "disposition": "promoted"
+}

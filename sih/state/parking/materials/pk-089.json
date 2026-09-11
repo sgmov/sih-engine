@@ -1,0 +1,22 @@
+{
+  "action": "enter",
+  "context": "工作台侧核查实锤：sim-aesthetic-workbench/sih-tools/ 下零工具代码，仅 lease/ledger/receipts/ 五回执骨架，系司衡侧写死产物；工作台账本面零污染（五会话账本行全落本域 sih/ledger/，司衡中央册零行），责任面在工具不在调用方。病灶形：凡以变量 root 拼第一域布局相对常量，新城域即沉积假骨架。本泊位只承载 receipts 落位域感知与工作台存量五件一次性迁移两小件，全库路径写死扫查另行走查不并件。",
+  "created_at": "2026-09-10",
+  "entry_id": "pk-089",
+  "exit_condition": "M2 域感知批收约吸收（receipts_dir 改新城正典形 <域根>/sih/ledger/receipts/ + 存量五回执迁移并清假骨架）；或用户另裁",
+  "id": "pk-089",
+  "parking": {
+    "entered_at": "2026-09-10",
+    "ttl_days": 30
+  },
+  "path": "sih-tools/lease/src/lease/core.py:945",
+  "related": [
+    "mcpnomgate-solo",
+    "M2",
+    "sim-aesthetic-workbench"
+  ],
+  "source": "主会 2026-09-10 用户令：M2 另 agent 在修，本件入泊候其收约出泊",
+  "state": "parked",
+  "title": "lease 收据落位写死：receipts_dir 拼第一域形致新城域生假 sih-tools 骨架，域感知归并 M2 批",
+  "ttl_days": 30
+}
