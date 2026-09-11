@@ -1,6 +1,7 @@
 //! sihmcp 二进制入口：MCP 线 Rust 载体（sihmcp-solo 批）。
 //!
-//! stdio 传输；HTTP streamable 面随段3 落地。工具注册面与投影逻辑在
+//! stdio 与 streamable HTTP 双传输（SIH_TRANSPORT=stdio|http，HTTP 绑
+//! 127.0.0.1:8765 /mcp，SIH_HTTP_BIND 与 SIH_HTTP_ENDPOINT 可覆写）。工具注册面与投影逻辑在
 //! sih_engine::mcpserver（DEC-001 源码位：MCP server 与内部模块的承载）。
 //! 进程始即连接生：连接级自动开（部署配置形）于 serve 前承载；stdio 管道
 //! 正常关闭即断开收约（零写轻收约有写全收约，失败显形不强拆）。
@@ -38,8 +39,15 @@ async fn main() -> anyhow::Result<()> {
             guard.cleanup();
             Ok(())
         }
+        "http" => {
+            let bind = std::env::var("SIH_HTTP_BIND")
+                .unwrap_or_else(|_| "127.0.0.1:8765".to_string());
+            let endpoint =
+                std::env::var("SIH_HTTP_ENDPOINT").unwrap_or_else(|_| "/mcp".to_string());
+            sih_engine::mcpserver::httpface::serve_http(&bind, &endpoint).await
+        }
         other => anyhow::bail!(
-            "unsupported SIH_TRANSPORT value `{other}`; expected `stdio`（HTTP streamable 面随 sihmcp-solo 段3 落地）"
+            "unsupported SIH_TRANSPORT value `{other}`; expected `stdio` or `http`"
         ),
     }
 }
