@@ -12,6 +12,9 @@ pub mod runtime;
 pub mod server;
 pub mod session;
 pub mod tokens;
+pub mod httpface;
+pub mod webface;
+pub mod bootstrap;
 pub mod tools;
 
 #[cfg(test)]
