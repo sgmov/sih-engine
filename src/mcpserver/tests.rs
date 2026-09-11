@@ -187,8 +187,9 @@ fn zero_write_guard_writeface_no_direct_writes() {
             }
         }
     }
-    // 白名单单点：session.rs 正身报告 tempfile 暂存（本包唯一文件写位）。
-    let session_src = source_of("src/mcpserver/session.rs");
+    // 白名单单点：session.rs 正身报告 tempfile 暂存与 tokens.rs 标识牌登记册
+    // 追加行（DES-015 签发台 sanctioned 直写位，flock 加 append 单行）两件。
+    let session_src = source_of("src/mcpserver/session.rs") + &source_of("src/mcpserver/tokens.rs");
     for pattern in [r"\bfs::write\b|\bFile::create\b", r"\bremove_file\b"] {
         let re = regex::Regex::new(pattern).unwrap();
         assert!(re.is_match(&session_src) == false || session_src.contains("唯一文件写位"),
