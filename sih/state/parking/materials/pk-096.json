@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-096",
+  "entry_id": "pk-096",
+  "title": "nomenclator_check 相对路径锚定司衡根而非 Bearer 域根（司梦累计第六项）",
+  "context": "司梦侧 2026-09-11 第四份实测回报，主线对码实锤。mcpline server.py _nomenclator_check 相对 target 锚定用 resolve_root() 即司衡中央根而非所绑域根：261 至 262 行 tp 取 resolve_root() 拼接，而函数签名接收的 layout（Bearer 域根）只用于 _nomenclator_pack 选词典包未用于路径锚定，同段 params 教学文亦写「工作区根相对或绝对形」同错双患。后果：HTTP 面携域牌代理传相对路径必落中央根致目标文档缺席拒或误命中中央同名件，须传域内绝对路径才能命中本域文档；stdio 本地面 layout 为 None 不受累。修法一处：layout 存在即锚 layout.root，layout None 才回退 resolve_root()，params 文同步改「所绑域根相对或绝对形」，随补 httpface 层相对路径域锚测试。旁证：read 面同族域锚先例 _nomenclator_pack 已按 layout 域解析（pk-090 件三），本件即同一域解析纪律在路径锚定位的漏铺。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批或并入既有候批：与 pk-094 其五域装完整性及 pk-095 残面同属域面闸组族可合并，修法单点即 layout 域锚回退形加 params 教学文同步加 httpface 相对路径测试；批名先查册；零锁可即开",
+  "path": "sih-tools/mcpline/src/mcpline/server.py",
+  "related": ["pk-094", "pk-095", "SPEC-023", "DES-015", "pk-090"],
+  "source": "主会话 2026-09-11 司梦侧第四份实测缺陷报告，主线对码逐行实锤",
+  "state": "parked",
+  "ttl_days": 30
+}
