@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-100",
+  "entry_id": "pk-100",
+  "title": "pre-commit 守卫工位锁面读数盲区",
+  "context": "refseal-solo 与 leaseface-solo 两批实测：在 worktrees/ 工地内对锁面内文件跑 git commit，pre-commit 守卫（guardcore.staged_enforce）拒自家锁面内文件，理由「staged 文件未在活跃租约锁面」。对码：守卫的锁面读数在工地上下文经 tool_dir 或相对缺省解析，落工地侧空账本即全盲；同批主根侧 locks_read 六面锁俱在。两批均走通道三 --no-verify 加 bypass 绕行在册（事由载明）。修法方向：guardcore 或钩子锁面解析经 git common dir 锚定主树中央账本，工位上下文不再盲；随回归测试（工位内锁面内文件过、无锁面拒）。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批即修（guardcore 锚定修单点加测试）；或并入 lease 面后继批",
+  "path": "sih-tools/lease/src/lease/guardcore.py",
+  "related": ["pk-094", "leaseface-solo", "refseal-solo", "rootanchor-solo"],
+  "source": "主会话 2026-09-11 两批工位提交实测，主根与工地锁面读数对径互核",
+  "state": "parked",
+  "ttl_days": 30
+}

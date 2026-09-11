@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-099",
+  "entry_id": "pk-099",
+  "title": "8765 握手自报版本串 1.30.0 错位",
+  "context": "主根活体探针实测：8765 initialize 应答 serverInfo.version 报 1.30.0，而 mcpline 包版本 0.11.0 且 lease 1.45.0，三面俱对不上；功能无损但诊断误导（refseal 与 domface 批诊断时两次带偏）。根位候查：web.py 或 server.py 版本常数或跨包读数错位。修法：版本串单源化（读包版本），随回归测试钉住。",
+  "created_at": "2026-09-11",
+  "exit_condition": "版本串单源化小改随批或并入写面参数形批；批名先查册",
+  "path": "sih-tools/mcpline/src/mcpline/web.py",
+  "related": ["pk-094", "SPEC-023"],
+  "source": "主会话 2026-09-11 MCP 健康诊断活体探针实测",
+  "state": "parked",
+  "ttl_days": 30
+}
