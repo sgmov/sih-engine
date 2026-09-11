@@ -62,7 +62,7 @@ pub fn valid_date(date: &str) -> bool {
 }
 
 /// 错误载荷四字段：报错即教学。
-pub fn error_payload(tool: &str, what: &str, params: &[&str], message: &str) -> Value {
+pub fn error_payload(_tool: &str, what: &str, params: &[&str], message: &str) -> Value {
     json!({
         "error": message,
         "what_this_tool_does": what,
@@ -99,7 +99,7 @@ pub async fn run_readonly(
         cmd.envs(extra.iter().copied());
     }
     let child = cmd.stdout(std::process::Stdio::piped()).stderr(std::process::Stdio::piped()).stdin(std::process::Stdio::null()).spawn();
-    let mut child = match child {
+    let child = match child {
         Ok(c) => c,
         Err(e) => {
             return RunOutcome { rc: 127, stdout: String::new(), stderr: format!("{e}") };

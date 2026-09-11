@@ -1,7 +1,9 @@
-//! sihmcp 二进制入口：MCP 线 Rust 载体（sihmcp-solo 批段1）。
+//! sihmcp 二进制入口：MCP 线 Rust 载体（sihmcp-solo 批）。
 //!
 //! stdio 传输；HTTP streamable 面随段3 落地。工具注册面与投影逻辑在
 //! sih_engine::mcpserver（DEC-001 源码位：MCP server 与内部模块的承载）。
+//! 进程始即连接生：连接级自动开（部署配置形）于 serve 前承载；stdio 管道
+//! 正常关闭即断开收约（零写轻收约有写全收约，失败显形不强拆）。
 
 use rmcp::ServiceExt;
 use sih_engine::mcpserver::server::SihMcpServer;
@@ -14,10 +16,26 @@ async fn main() -> anyhow::Result<()> {
         .to_ascii_lowercase();
     match transport.as_str() {
         "stdio" => {
-            let service = SihMcpServer
+            let server = SihMcpServer::new();
+            let conn = server.conn.clone();
+            {
+                let mut guard = conn.lock().await;
+                let err = guard.auto_open_from_config().await;
+                if err.is_none() && !guard.is_bound() {
+                    // 部署未配置连接级自动开：连接转未绑形态，客户端经 lease_open 显式立
+                    eprintln!(
+                        "[sihmcp] 连接未绑定会话（部署未配置自动开或配置不齐）：写操作前先调 lease_open"
+                    );
+                }
+            }
+            let service = server
                 .serve((tokio::io::stdin(), tokio::io::stdout()))
                 .await?;
             service.waiting().await?;
+            // 断开收约形（DES-014 第一节）：零写轻收约，有写全收约，失败显形。
+            let mut guard = conn.lock().await;
+            let _ = guard.disconnect_close().await;
+            guard.cleanup();
             Ok(())
         }
         other => anyhow::bail!(

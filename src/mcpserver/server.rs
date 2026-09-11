@@ -1,8 +1,12 @@
-//! 服务器装配：rmcp ServerHandler 注册 alpha 九具（sihmcp-solo 段1 stdio 面）。
+//! 服务器装配：rmcp ServerHandler 注册 alpha 九具与 beta 十二写具（分级裁剪）
+//! （sihmcp-solo 段1 加段2 stdio 面）。
 //!
 //! 工具描述文与正典指针逐字承自 sih-tools/mcpline/src/mcpline/server.py
-//! （工具描述自足是 SPEC-023 契约面）；serverInfo.name 承载体名 sihmcp，
-//! 与旧载体名 mcpline 的差异是有意变更（载体替换，线与契约正典不变）。
+//! （工具描述自足是 SPEC-023 契约面，beta 描述冻结承 DES-014 第七节）；serverInfo
+//! 名称承载体名 sihmcp，与旧载体名 mcpline 的差异是有意变更（载体替换，线与
+//! 契约正典不变）。
+
+use std::sync::Arc;
 
 use rmcp::model::{
     CallToolRequestParam, CallToolResult, Content, Implementation, ListToolsResult,
@@ -11,8 +15,12 @@ use rmcp::model::{
 use rmcp::service::RequestContext;
 use rmcp::{ErrorData as McpError, RoleServer, ServerHandler};
 use serde_json::{json, Map, Value};
+use tokio::sync::Mutex;
 
 use super::alpha;
+use super::matrix::{is_tool_exposed, resolve_agent_class};
+use super::session::ConnectionSession;
+use super::tools;
 
 const SERVER_NAME: &str = "sihmcp";
 const SERVER_VERSION: &str = env!("CARGO_PKG_VERSION");
@@ -22,7 +30,29 @@ const CANON_LINE_PKG: &str = "sih-engine/sih/state/plan/mcpline-line-v1.md";
 const CANON_SPEC_007: &str = "sih-engine/doc/spec/SPEC-007-project-memory-component.md";
 const CANON_DES_014: &str = "sih-engine/doc/design/DES-014-mcp-beta-security-model-v1.md";
 
-pub struct SihMcpServer;
+pub struct SihMcpServer {
+    /// 一连接一会话（DES-014 第一节）：stdio 形态一进程一连接，进程始即连接生。
+    pub conn: Arc<Mutex<ConnectionSession>>,
+    pub agent_class: &'static str,
+}
+
+impl SihMcpServer {
+    /// 连接构造：分级静态解析一次；连接级自动开由 main 于 serve 前调
+    /// auto_open 承载（缺省形客户端经 lease_open 显式立）。
+    pub fn new() -> Self {
+        let agent_class = resolve_agent_class();
+        Self {
+            conn: Arc::new(Mutex::new(ConnectionSession::new(agent_class))),
+            agent_class,
+        }
+    }
+}
+
+impl Default for SihMcpServer {
+    fn default() -> Self {
+        Self::new()
+    }
+}
 
 fn protocol_version() -> ProtocolVersion {
     serde_json::from_value(Value::String(PROTOCOL_VERSION.to_owned()))
@@ -33,7 +63,129 @@ fn canon_pair() -> String {
     format!("{CANON_SPEC_023}；{CANON_LINE_PKG}")
 }
 
-fn tool_defs() -> Vec<Tool> {
+fn beta_defs(agent_class: &str) -> Vec<Tool> {
+    // 工具描述冻结为契约文本（DES-014 第七节缓解位）：静态、随批评审、只载
+    // 操作语义不含可执行指令面。_beta_desc 形：zh 加 en 加 设计正典指针。
+    let canon_beta = format!("{CANON_DES_014}；{CANON_SPEC_023}");
+    let bd = |zh: &str, en: &str| format!("{zh} {en} 设计正典：{canon_beta}");
+    let defs: [(&str, String, Value); 12] = [
+        ("lease_open", bd(
+            "lease open：立约开工立本连接的 lease 会话（一连接恰好一会话），以 server 进程正身件签发，会话号经本工具结果透出记录；意图闸（ask3 验收）与同包活跃闸与施工面预检原位。",
+            "lease open: establish this connection's single lease session with the server process identity; session id is returned in the result."),
+         json!({"properties": {
+             "package": {"title": "Package", "type": "string"},
+             "intent": {"title": "Intent", "type": "string"},
+             "repo": {"items": {"type": "string"}, "title": "Repo", "type": "array"},
+             "allow": {"items": {"type": "string"}, "title": "Allow", "type": "array"},
+         }, "required": ["package", "intent"], "type": "object"})),
+        ("record_intent", bd(
+            "record intent：追加意图精炼事件（写），闸二重意图拒（同 record 路径唯一意图笔）与闸三会话在册验原位；plain 形（零哲学引文）validation 豁免，ask3 形验证件必填（DES-016）。",
+            "record intent: append an intent event via the existing scribe gates (re-intent and session-in-ledger checks in place); plain form (zero philosophy quotes) omits validation, ask3 form requires it (DES-016)."),
+         json!({"properties": {
+             "record": {"title": "Record", "type": "string"},
+             "validation": {"title": "Validation", "type": "string"},
+             "date": {"title": "Date", "type": "string"},
+         }, "required": ["record", "validation"], "type": "object"})),
+        ("record_append", bd(
+            "record append：追加认证事件（写），闸三会话在册验原位；本操作无幂等闸，重放同 report 即重复认证笔（信封审计可检出）。",
+            "record append: append a certification event via the existing session gate; no idempotency gate (declared)."),
+         json!({"properties": {
+             "report": {"title": "Report", "type": "string"},
+             "exit_code": {"title": "Exit Code", "type": "integer"},
+             "date": {"title": "Date", "type": "string"},
+         }, "required": ["report", "exit_code"], "type": "object"})),
+        ("record_park", bd(
+            "record park：追加停泊事件（写），停泊记录 JSON 透传。",
+            "record park: append a parking event via the existing scribe CLI."),
+         json!({"properties": {
+             "record": {"title": "Record", "type": "string"},
+             "date": {"title": "Date", "type": "string"},
+         }, "required": ["record"], "type": "object"})),
+        ("record_direct", bd(
+            "record direct：直改链笔（写，仅本地可信 agent 可调；直改车道免全套租约仪式但免不了治理，agent 笔强制挂 server 正身报告）。",
+            "record direct: direct-pen chain event (local trusted agents only)."),
+         json!({"properties": {
+             "record": {"title": "Record", "type": "string"},
+             "date": {"title": "Date", "type": "string"},
+         }, "required": ["record"], "type": "object"})),
+        ("lease_lock", bd(
+            "lease lock：租内取锁，悲观五验（在册、择定、范围、身份、绑定）原位；撞锁即 locked_elsewhere 拒或 wait 入队受理返位次。",
+            "lease lock: acquire a path lock; five in-place verifications; conflicts surface locked_elsewhere or queue position."),
+         json!({"properties": {
+             "path": {"title": "Path", "type": "string"},
+             "mode": {"title": "Mode", "type": "string"},
+             "wait": {"default": false, "title": "Wait", "type": "boolean"},
+         }, "required": ["path"], "type": "object"})),
+        ("lease_unlock", bd(
+            "lease unlock：放锁，同一五验加持锁验原位。",
+            "lease unlock: release a path lock with the in-place verifications."),
+         json!({"properties": {"path": {"title": "Path", "type": "string"}},
+                "required": ["path"], "type": "object"})),
+        ("lease_wait_turn", bd(
+            "lease wait-turn：排队阻塞至轮到并取锁（机械轮询，timeout 到即如实返退出码与出队事实）。",
+            "lease wait-turn: block until your turn then acquire; timeout surfaces the dequeue fact as-is."),
+         json!({"properties": {
+             "path": {"title": "Path", "type": "string"},
+             "timeout_seconds": {"title": "Timeout Seconds", "type": "number"},
+             "interval_seconds": {"title": "Interval Seconds", "type": "number"},
+             "mode": {"title": "Mode", "type": "string"},
+         }, "required": ["path"], "type": "object"})),
+        ("lease_claim", bd(
+            "lease claim：领取登记（声明位非执法位），同包未过期在领即 PackageAlreadyClaimed 拒。",
+            "lease claim: declaration-style claim on a package; duplicate active claims are rejected."),
+         json!({"properties": {
+             "package": {"title": "Package", "type": "string"},
+             "ttl": {"title": "Ttl", "type": "integer"},
+             "claimant": {"title": "Claimant", "type": "string"},
+         }, "required": ["package", "ttl"], "type": "object"})),
+        ("lease_unclaim", bd(
+            "lease unclaim：领取释放（仅本地可信 agent 可调），无在领即拦。",
+            "lease unclaim: release a claim (local trusted agents only)."),
+         json!({"properties": {
+             "package": {"title": "Package", "type": "string"},
+             "claimant": {"title": "Claimant", "type": "string"},
+         }, "required": ["package"], "type": "object"})),
+        ("lease_commit", bd(
+            "lease commit：提交即四验后机械 message 落笔；settle 须 seq 与 cert（链上认证哈希）。",
+            "lease commit: mechanical commit after the in-place four verifications; settle requires seq and cert."),
+         json!({"properties": {
+             "repo": {"anyOf": [{"type": "string"}, {"items": {"type": "string"}, "type": "array"}], "title": "Repo"},
+             "stage": {"title": "Stage", "type": "string"},
+             "subject": {"title": "Subject", "type": "string"},
+             "seq": {"title": "Seq", "type": "integer"},
+             "cert": {"title": "Cert", "type": "string"},
+             "note": {"title": "Note", "type": "string"},
+             "trail": {"items": {"type": "string"}, "title": "Trail", "type": "array"},
+             "root": {"title": "Root", "type": "string"},
+         }, "required": ["repo", "stage", "subject"], "type": "object"})),
+        ("lease_close", bd(
+            "lease close：收约（锁清零、分支归并删支、拆本吊销），受 close 链闸与 closeguard 约束；强拆与绕行旗标不透传。",
+            "lease close: close the session; chain gate and closeguard apply; force and bypass flags are never forwarded."),
+         json!({"properties": {
+             "package": {"title": "Package", "type": "string"},
+             "reason": {"title": "Reason", "type": "string"},
+         }, "required": ["package"], "type": "object"})),
+    ];
+    // β 写面分级路由：矩阵无行的工具不注册即结构性拒透传（DES-014 第三节）。
+    defs.into_iter()
+        .filter(|(name, _, _)| is_tool_exposed(name, agent_class))
+        .map(|(name, description, schema)| Tool {
+            name: name.to_string().into(),
+            description: Some(description.into()),
+            input_schema: schema.as_object().cloned().unwrap_or_default().into(),
+            output_schema: None,
+            annotations: None,
+        })
+        .collect()
+}
+
+fn tool_defs(agent_class: &str) -> Vec<Tool> {
+    let mut all = alpha_defs();
+    all.extend(beta_defs(agent_class));
+    all
+}
+
+fn alpha_defs() -> Vec<Tool> {
     let canon = canon_pair();
     let desc_query = format!(
         "查当日治理链事件清单（哈希、事件型、主体字段）。Query one day's governance chain events \
@@ -150,6 +302,18 @@ fn get_str(args: &Value, key: &str) -> Option<String> {
     args.get(key).and_then(|v| v.as_str()).map(str::to_owned)
 }
 
+fn get_bool(args: &Value, key: &str) -> Option<bool> {
+    args.get(key).and_then(|v| v.as_bool())
+}
+
+fn get_i64(args: &Value, key: &str) -> Option<i64> {
+    args.get(key).and_then(|v| v.as_i64())
+}
+
+fn get_f64(args: &Value, key: &str) -> Option<f64> {
+    args.get(key).and_then(|v| v.as_f64())
+}
+
 fn get_str_list(args: &Value, key: &str) -> Option<Vec<String>> {
     args.get(key).and_then(|v| v.as_array()).map(|a| {
         a.iter()
@@ -191,7 +355,7 @@ impl ServerHandler for SihMcpServer {
         _request: Option<PaginatedRequestParam>,
         _context: RequestContext<RoleServer>,
     ) -> Result<ListToolsResult, McpError> {
-        Ok(ListToolsResult::with_all_items(tool_defs()))
+        Ok(ListToolsResult::with_all_items(tool_defs(self.agent_class)))
     }
 
     async fn call_tool(
@@ -201,31 +365,141 @@ impl ServerHandler for SihMcpServer {
     ) -> Result<CallToolResult, McpError> {
         let name = request.name.to_string();
         let args = Value::Object(request.arguments.unwrap_or_default());
-        let value = match name.as_str() {
-            "chain_query" => {
-                alpha::chain_query(get_str(&args, "date"), get_str(&args, "event_type")).await
+        let is_beta = super::matrix::MATRIX_ROWS.contains(&name.as_str());
+        let value = if is_beta {
+            // β 写面：会话绑定卫在 tools 层 precheck（矩阵拒透传的未注册工具
+            // 到不了这里；分级残留面以同表复核兜底）。
+            if !is_tool_exposed(&name, self.agent_class) {
+                return Err(McpError::invalid_params(
+                    format!("授权矩阵拒透传：分级 {} 无工具 {name} 行", self.agent_class),
+                    None,
+                ));
             }
-            "chain_verify" => alpha::chain_verify(get_str(&args, "date")).await,
-            "critsweep" => alpha::critsweep(get_str(&args, "date")).await,
-            "heartbeat" => alpha::heartbeat().await,
-            "locks_read" => alpha::locks_read().await,
-            "naming_guide" => alpha::naming_guide().await,
-            "nomenclator_query" => alpha::nomenclator_query(get_str(&args, "word")).await,
-            "nomenclator_check" => alpha::nomenclator_check(get_str(&args, "target")).await,
-            "retriever_recall" => {
-                alpha::retriever_recall(
-                    get_str_list(&args, "topic"),
-                    get_str_list(&args, "word"),
-                    get_str_list(&args, "event"),
-                    get_str(&args, "since"),
-                    get_str(&args, "until"),
-                    get_str(&args, "archive"),
-                    get_str(&args, "at"),
-                )
-                .await
+            let mut guard = self.conn.lock().await;
+            let conn = &mut *guard;
+            match name.as_str() {
+                "lease_open" => {
+                    tools::tool_lease_open(
+                        conn,
+                        get_str(&args, "package"),
+                        get_str(&args, "intent"),
+                        get_str_list(&args, "repo"),
+                        get_str_list(&args, "allow"),
+                    )
+                    .await
+                }
+                "record_intent" => {
+                    tools::tool_record_intent(
+                        conn,
+                        get_str(&args, "record"),
+                        get_str(&args, "validation"),
+                        get_str(&args, "date"),
+                    )
+                    .await
+                }
+                "record_append" => {
+                    tools::tool_record_append(
+                        conn,
+                        get_str(&args, "report"),
+                        get_i64(&args, "exit_code"),
+                        get_str(&args, "date"),
+                    )
+                    .await
+                }
+                "record_park" => {
+                    tools::tool_record_park(conn, get_str(&args, "record"), get_str(&args, "date"))
+                        .await
+                }
+                "record_direct" => {
+                    tools::tool_record_direct(conn, get_str(&args, "record"), get_str(&args, "date"))
+                        .await
+                }
+                "lease_lock" => {
+                    tools::tool_lease_lock(
+                        conn,
+                        get_str(&args, "path"),
+                        get_str(&args, "mode"),
+                        get_bool(&args, "wait"),
+                    )
+                    .await
+                }
+                "lease_unlock" => tools::tool_lease_unlock(conn, get_str(&args, "path")).await,
+                "lease_wait_turn" => {
+                    tools::tool_lease_wait_turn(
+                        conn,
+                        get_str(&args, "path"),
+                        get_f64(&args, "timeout_seconds"),
+                        get_f64(&args, "interval_seconds"),
+                        get_str(&args, "mode"),
+                    )
+                    .await
+                }
+                "lease_claim" => {
+                    tools::tool_lease_claim(
+                        conn,
+                        get_str(&args, "package"),
+                        get_i64(&args, "ttl"),
+                        get_str(&args, "claimant"),
+                    )
+                    .await
+                }
+                "lease_unclaim" => {
+                    tools::tool_lease_unclaim(
+                        conn,
+                        get_str(&args, "package"),
+                        get_str(&args, "claimant"),
+                    )
+                    .await
+                }
+                "lease_commit" => {
+                    tools::tool_lease_commit(
+                        conn,
+                        args.get("repo").cloned(),
+                        get_str(&args, "stage"),
+                        get_str(&args, "subject"),
+                        get_i64(&args, "seq"),
+                        get_str(&args, "cert"),
+                        get_str(&args, "note"),
+                        get_str_list(&args, "trail"),
+                        get_str(&args, "root"),
+                    )
+                    .await
+                }
+                "lease_close" => {
+                    tools::tool_lease_close(conn, get_str(&args, "package"), get_str(&args, "reason"))
+                        .await
+                }
+                other => {
+                    return Err(McpError::invalid_params(format!("未知工具 `{other}`"), None));
+                }
             }
-            other => {
-                return Err(McpError::invalid_params(format!("未知工具 `{other}`"), None));
+        } else {
+            match name.as_str() {
+                "chain_query" => {
+                    alpha::chain_query(get_str(&args, "date"), get_str(&args, "event_type")).await
+                }
+                "chain_verify" => alpha::chain_verify(get_str(&args, "date")).await,
+                "critsweep" => alpha::critsweep(get_str(&args, "date")).await,
+                "heartbeat" => alpha::heartbeat().await,
+                "locks_read" => alpha::locks_read().await,
+                "naming_guide" => alpha::naming_guide().await,
+                "nomenclator_query" => alpha::nomenclator_query(get_str(&args, "word")).await,
+                "nomenclator_check" => alpha::nomenclator_check(get_str(&args, "target")).await,
+                "retriever_recall" => {
+                    alpha::retriever_recall(
+                        get_str_list(&args, "topic"),
+                        get_str_list(&args, "word"),
+                        get_str_list(&args, "event"),
+                        get_str(&args, "since"),
+                        get_str(&args, "until"),
+                        get_str(&args, "archive"),
+                        get_str(&args, "at"),
+                    )
+                    .await
+                }
+                other => {
+                    return Err(McpError::invalid_params(format!("未知工具 `{other}`"), None));
+                }
             }
         };
         Ok(CallToolResult {
@@ -253,9 +527,27 @@ pub fn tool_names() -> [&'static str; 9] {
     ]
 }
 
+/// beta 工具名单（矩阵行全集）供测试对表。
+pub fn beta_tool_names() -> [&'static str; 12] {
+    [
+        "lease_open",
+        "record_intent",
+        "record_append",
+        "record_park",
+        "record_direct",
+        "lease_lock",
+        "lease_unlock",
+        "lease_wait_turn",
+        "lease_claim",
+        "lease_unclaim",
+        "lease_commit",
+        "lease_close",
+    ]
+}
+
 /// schema 构造对表面：schema Map 非空且含 type=object（注册面完整形）。
 pub fn schemas_nonempty() -> bool {
-    tool_defs().iter().all(|t| {
+    tool_defs("local").iter().all(|t| {
         let m: &Map<String, Value> = &t.input_schema;
         m.get("type").and_then(|v| v.as_str()) == Some("object")
     })
