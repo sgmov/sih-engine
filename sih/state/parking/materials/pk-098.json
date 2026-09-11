@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-098",
+  "entry_id": "pk-098",
+  "title": "close 解绑先于锁守卫死锁三角与孤儿锁清偿无门加 retriever_recall archive 枚举不可发现",
+  "context": "司梦侧第六份实测报备，主线对码两件。其一：连接级隐式会话收约出现死锁三角——close 先解绑连接再撞锁守卫（先 unlock），unlock 又要求连接绑定会话（tools.py session_not_bound 118 行），open 则报 session_already_bound（93 行），三点俱在码；残会话 d4323d98 八把 web/ 锁与更早 ava-exam 会话十一把锁成孤儿，MCP close 不透传 force 旗标属 DES-014 设计（server 不强拆人节点裁决位不代行，tools.py 既有申报）致代理侧无解法。修法建议承司梦原案：锁生命周期绑定会话收口即 close 或会话吊销时锁行随零（设计变更须裁）；或人节点清偿通道显式化即孤儿锁 CLI 强拆位与指引入手册。其二：retriever_recall 的 archive 枚举不可发现——报错仅档名非枚举值 X（mod.rs 144 行）不附合法值清单，实测 plan 与 parking 与 trail 与 events 与 memory 与 canon 全拒，真枚举为 fact 与 conclusion 与 experience 与 parked 与 intent 五档（mod.rs 28 至 46 行）与检词五档之说互证。修法：RecallError::Blocked 载荷附枚举全表与各档语义一行，对表 nomenclator unknown 教学形。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批或并入既有候批：其一属 lease 生命周期设计变更须先裁后修（孤儿锁清偿本身可人节点 CLI 先行），其二属报错教学载荷小改可随域面闸组批；批名先查册；零锁可即开",
+  "path": "sih-engine/src/retriever/mod.rs",
+  "related": ["pk-094", "pk-095", "pk-096", "pk-097", "DES-014", "SPEC-008"],
+  "source": "主会话 2026-09-11 司梦侧第六份实测报备，主线对码实锤",
+  "state": "parked",
+  "ttl_days": 30
+}
