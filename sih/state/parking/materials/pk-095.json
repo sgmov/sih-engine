@@ -1,0 +1,14 @@
+{
+  "action": "enter",
+  "id": "pk-095",
+  "entry_id": "pk-095",
+  "title": "司梦域全链验收反馈残面：lease CLI settle 域内链缺省发现两居所不含 canonical 域家致 trails=[] 与 gatefix-parallel 两好转 field 确认在案",
+  "context": "司梦侧 2026-09-11 gatefix-parallel 收口后域内首条全链验收反馈，两好转确认加一残面坐实。好转一：allow 解析净化 field 确认，lease core.py 869 行 scoperoot 批列表项遇「——」截断取路径部理由剥离在役，上批回报 pk-093 其三解析污染已愈。好转二：claim 隐式会话冲突报错自带恢复路径教学 field 确认，mcpline writeface tools.py 91 至 96 行 session_already_bound 报错文已载收约走 lease_close 加 close 能收隐式会话加收约后可显式重开恢复径，且 110 至 116 行隐式占位态放行 close 归一在役，上批回报 pk-093 其一已愈。残面坐实：lease CLI cli.py 214 至 228 行 _default_trails 两居所写死 root/sih-engine/sih/event/trail 与 root/sih-tools/scribe/trail，不含 canonical 域家 root/sih/event/trail，域内 settle 缺省发现必空即 commitcore.py 336 至 338 行 cert_not_on_chain 且 detail.trails=[]，司梦 field 证据 trails=[] 与沿用 wip 加认证哈希对账先例全合；与 pk-092 其一同族即居所枚举家数病（locks 树经簇K 双居所止血而 lease 树未及）与 pk-091 其三同线残面（MCP trail 透传已修而 CLI 缺省发现未及域形）；现行 MCP 教学已言明 cert 四验收敛域内链须显式传 trail 见 mcpline tools.py lease_commit params，故属缺省发现域感知缺位非透传缺位。验收记录：本批域内租约链一次走通 open 加 14 锁加 intent 0b9bbf07 加认证 3994acb4 加 wip 落笔加收约归并，作 gatefix-parallel 域面验收证据在案。",
+  "created_at": "2026-09-11",
+  "exit_condition": "用户令立批：_default_trails 加第三居所 root/sih/event/trail 即 canonical 域家或改 domaware derive，与 pk-092 其一双居所修法对表，候与 pk-094 其五域装完整性及其四 self_boot 缺省指引合批即域形感知批；批名先查册；零锁可即开",
+  "path": "sih-tools/lease/src/lease/cli.py",
+  "related": ["pk-091", "pk-092", "pk-094", "gatefix-parallel", "scoperoot"],
+  "source": "主会话 2026-09-11 司梦侧 gatefix-parallel 域内验收反馈，主线对码实锤，两好转附验收记录",
+  "state": "parked",
+  "ttl_days": 30
+}
