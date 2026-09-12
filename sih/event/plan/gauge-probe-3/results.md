@@ -17,3 +17,7 @@
 ## 验收对表
 
 - 验收材料：本档即对表判词档；跨仓测试承载申报：本批零代码新增，验证材料为 tally 核对报告与 attractor verify identical 判词与 R5 分歧记录，测试族实体在工具仓 facet/tests 与 tally/tests 随批零触碰
+
+## 结算
+
+- tools 仓 settle 11370880（base integral-stage-build@c7c0a72f，cert 5c3be8ff）；本仓 settle 随后；终签 83705a4b 在链
