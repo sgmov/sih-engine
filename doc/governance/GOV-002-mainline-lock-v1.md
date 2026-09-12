@@ -25,6 +25,7 @@
 - 测量面确定性化验收达成即 pk-044 出泊裁定承载独立性来源改道与温度探针经 baseinject 退役、上下文注入与确定性回算基础设施在役即 attnanchor 与 critsweep 结果档在档、残余测量数学载体即改道置信度线泊 pk-078 带 gate、measure-poly-rev1 程序文档改道注记在档；达成追记 2026-09-08：四指针全数在档即 pk-044 出泊链事件与 baseinject 与 attnanchor 与 critsweep 结果档与 pk-078 进泊与 progdoc 注记，经 reroute-solo 批换版 v2.6 承用户改道令
 - 数学归因长尾收口即 pk-053 冻结件逐件清账完毕，处置三态即承载体落档或改判环境参数或维持冻结经用户裁，账面在链；达成追记 2026-09-08：四指针全数在档即路由两批 constclear2-routing-2026-09-08 与 constclear2b-routing-2026-09-08、登记面 constclear-registry-v2 双形态、源码注记自证件 constants-annotations.json、pk-053 出泊笔 41fb339c 在链；批一 34 件与批二 25 件全数清账，批三 54 注记落码位值零改动经 diff 逐件自证；处置实态即承载体落档或改判登记面或退场核销，纯约定与环境参数类入 A1 双通道登记面，旧文维持冻结经用户裁一态与 pk-053 出泊两态制令即冻结撤销零残留存在代际差由本追记收口如实记档；执行批 constclear2c-solo
 - 租约修复升级线级验收达成即 pk-072 出泊 promoted 承载修复、锁面账单台账 lockface-bills.ndjson 与 lockdb 投影双写一致零结算、哨兵超宽面三态只报不拦、共享面 append 缺省实装、CONTRACT 1.28.0 与 watchcheck 0.2.0 在役、双仓 settle close reconcile verify 全链；达成追记 2026-09-06：五判据全数在档即 CONTRACT 修订四十一至四十三即 1.28.0 至 1.30.0 在役承载账单双写与哨兵三态与 append 缺省与自举自卫与链证守门、test_leaseup 与 test_leaseup_bill 与 test_leaseup_append 与 test_leaseup_watch 四族二十件及 test_rootanchor 七件先红后绿在档、pk-072 出泊链事件由 leaseupclose-solo 补落即修订四十一文述在先而链事件后至差异如实申报、残留三项即超宽阈值调优与未用罚口径精确化与 T-9 执法位泊 pk-074 承载不属本判据面、线程序包 leaseup-line-v1.md 迁 event/plan 归档
+- SDD/TDD 完备度闸在役即格式包检查器实装在役吃 sdd-v1 五件格式包对 SDD 文档族机械判定、lease close 轴两道门 SDDG 四判据执法在役、判据正典 DEC-024 在典；达成追记候 sddgate-solo 结算：四判定命令各有确定性实现与单元测试、反身受试批 close 过门、绕行通道留痕可查；执行批 sddgate-solo 承用户 2026-09-12 三令
 
 ## 冻结清单 {#freeze-list}
 
@@ -45,4 +46,4 @@
 
 ## 版本与固定 {#version}
 
-本节自 v2.5 起是沉淀层指针：版本史整体承载于 GOV-002-history-v1.md，只增不减，追记即新条目入该文件首位。旧版经 git 历史可回查即旧版归档由三层固定承载。三层固定即本文件与沉淀层文件、git 版本化 commit 挂结算记录编号、哈希入 trail 链。git 提交与 trail 写入由人与确定性程序执行，本文件落盘为第一层。
+本节自 v2.5 起是沉淀层指针：版本史整体承载于 GOV-002-history-v1.md，只增不减，追记即新条目入该文件首位。v2.7 承 sddgate-solo 批增第六退出标准即 SDD/TDD 完备度闸在役，判据正典 DEC-024 单源承载，史条目随批结算入沉淀层。旧版经 git 历史可回查即旧版归档由三层固定承载。三层固定即本文件与沉淀层文件、git 版本化 commit 挂结算记录编号、哈希入 trail 链。git 提交与 trail 写入由人与确定性程序执行，本文件落盘为第一层。
