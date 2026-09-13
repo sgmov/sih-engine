@@ -1,0 +1,16 @@
+{
+  "action": "exit",
+  "context": "出泊条件经用户 2026-09-10 令「现在立项并且更新数学仓」与 2026-09-13 令「继续，先做数学仓更新，为司衡引擎v2做前导数学模型支撑」达成：用户裁立项。承载批 estinit-solo 交付：数学仓登记档 estinit-carrier-2026-09-13 落 sih-math/docs 与映射表新节三行，estcore 契约三件落 sih-tools/estcore（工作名先行，命名次序承用户裁定），面一治理序列观测器契约随本件，实装批候令。载体 PROB-013 与 PROB-019 指针在册，工程接线前置即载体过得一裁。",
+  "disposition": "promoted",
+  "entry_id": "pk-087",
+  "id": "pk-087",
+  "parking": {
+    "entered_at": "2026-09-10",
+    "exited_at": "2026-09-13",
+    "ttl_days": 30
+  },
+  "path": "doc/governance/PARKING-v1.md",
+  "ruling": "用户 2026-09-13 令原话「继续，先做数学仓更新，为司衡引擎v2做前导数学模型支撑」承 2026-09-10 令原话「现在立项并且更新数学仓」，出泊条件即用户裁立项开孵化批，裁即承载：本批出泊并落登记档与契约，实装归后继批候令；总纲正形与术语对照表经用户会话审定，载体分配与缺口清单见 sih-math/docs/estinit-carrier-2026-09-13.md。",
+  "state": "exited",
+  "ttl_days": 30
+}

@@ -1,0 +1,31 @@
+{
+  "batch": "estinit-solo",
+  "session_id": "1e64dc9692afaa77",
+  "date": "2026-09-13",
+  "kind": "pipeline-certification",
+  "order_source": "用户 2026-09-13 数学仓前导令承 2026-09-10 立项令",
+  "deliverables": {
+    "parking_exits": [
+      {"entry_id": "pk-087", "disposition": "promoted", "material": "sih-engine/sih/state/parking/materials/pk-087-exit.json"},
+      {"entry_id": "pk-088", "disposition": "promoted", "material": "sih-engine/sih/state/parking/materials/pk-088-exit.json"}
+    ],
+    "estcore_contracts": "sih-tools/estcore/{CONTRACT,ACCEPTANCE,INCUBATION}.md",
+    "math_registry": "sih-math/docs/estinit-carrier-2026-09-13.md",
+    "math_mapping": "sih-math/llm-friendly-build/mapping.md 新节三行加覆盖核验加历史",
+    "results_doc": "sih-engine/sih/event/plan/estinit-solo-results.md"
+  },
+  "readings": {
+    "ask3_scrutinator_exit": 0,
+    "ask3repeater": "ok",
+    "elicit_digest": "passed",
+    "elicit_covered": 4,
+    "identity_anomalies": 0,
+    "parking_md_formatter_exit": 0,
+    "parking_md_scrutinator_exit": 1,
+    "parking_md_scrutinator_findings": 2,
+    "parking_md_scrutinator_note": "2 笔在 line 27 parksi 段为主树存量，新增段零发现",
+    "parking_md_nomenclator_exit": 0,
+    "courtesy_nomenclator_five_files_exit": 0
+  },
+  "exit_code": 0
+}
