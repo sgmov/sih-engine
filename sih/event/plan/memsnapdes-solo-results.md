@@ -39,3 +39,8 @@ DES-018 派生快照投影器设计：sih-tools/projsnap 工作名三子命令�
 ## 后续待令 {#next}
 
 - 实装批 TDD 先红后绿候令；专用载体推导数学批候令；pk-055 出泊并入实装批。
+
+## 结算节 {#settle}
+
+- engine wip 238b444，math wip 3422c9b，认证报告经 scribe append fd1df026 落链并锁面内落盘提交。
+- 本段结算尾注为 settle staged 承载件，先例同形。
