@@ -38,3 +38,8 @@ SPEC-024 租约融回落差规格：Rust 原生实装三腿切分（锁核加收
 
 - TDD 批与切换批与退役批另开，台账家位落位候用户裁，裁决前实装批不得开工。
 - 计量供给修复两径即重启 meter 包裹或改链上取数候用户裁。
+
+## 结算节 {#settle}
+
+- wip 提交 0e6b9a0，认证报告 settle-report.json 经 scribe append 落链 d878b84e 后以 git 6747162 绕行落盘并经 bypass 登记归账，事由即任务包请求写入漏报 materials 车道。
+- 本段结算尾注为 settle staged 承载件，先例同形。
