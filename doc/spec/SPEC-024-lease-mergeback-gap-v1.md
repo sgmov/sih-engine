@@ -4,7 +4,7 @@
 
 ## 概览 {#overview}
 
-- 家位与模块形即 Rust 原生实装承 DEC-013 第一步「引擎侧是开发非移植」，库模块 src/lease/ 加二进制 src/bin/lease.rs 加台账家位接 DEC-001 状态层登记方向，具体落位本规格提案候裁::[家位与模块形](#shape)
+- 家位与模块形即 Rust 原生实装承 DEC-013 第一步「引擎侧是开发非移植」，库模块 src/lease/ 加二进制 src/bin/lease.rs 加台账家位落 sih/ledger/ 承用户 2026-09-13 裁定::[家位与模块形](#shape)
 - 接口契约对表即十九顶层子命令加 call-log 五子命令逐件对表围堰 cli.py，退出码与台账 ndjson 行形与回执 json 形零语义漂移::[接口契约对表](#interface)
 - 腿切分清单即体量分腿承 SPEC-014 先例，锁核腿加 CLI 腿加附件腿三件分批实施::[腿切分清单](#legs)
 - 双模并存条款即围堰原位保留为生产写位与融回基准，mcpserver passthrough 照旧，切换批换旗不预写::[双模并存条款](#dual-mode)
@@ -19,7 +19,7 @@
 
 - 租约家位即 src/lease/，承 DEC-013「名随物走」纪律即命名不另起，租约之名随承诺回家，检词词条租约／lease 自 2026-08-26 已立零新增命名
 - 腿切分承围堰模块边界即 core.py 台账与锁核与 CLI 解析为腿一，commitcore.py 与 sddgate.py 与 guardcore.py 收约执法面为腿二，sweepcore.py 与 calllog_import.py 附件面为腿三； Rust 侧模块划分按腿落子模块，接口宁窄勿宽
-- 台账家位即本规格提案位：DEC-001 归位映射行已裁方向即状态层登记族归位动作融回接引擎状态层登记，具体落位提案 sih/state/ledger/ 下五册即 sessions、locks、claims、bypass、lockface-bills，落位候用户裁，裁决前实装批不得开工
+- 台账家位即裁定落位 sih/ledger/ 下五册即 sessions、locks、claims、bypass、lockface-bills：承用户 2026-09-13 裁定「账本应该放到 sih/ 里」，与 DES-015 新城域正典形即域根下 sih/ledger/ 形制统一，第一域历史册零迁移见边界节
 - 域根形承 DES-015 正典：新城域台账住域根下 sih/ledger/，第一域历史映射不迁移，两形并存是登记面既定形非本规格新增
 
 ### 二进制 src/bin/lease.rs {#bin}
@@ -152,7 +152,7 @@ T7 hooks 与附件腿
 ## 边界 {#boundary}
 
 - 本规格不含围堰 sih-tools/lease 任何代码改动即源码零改动
-- 本规格不含实现即零实现，锁核与子命令与台账家位待 TDD 批落码；台账家位具体落位候用户裁，裁决前实装批不得开工
+- 本规格不含实现即零实现，锁核与子命令与台账家位待 TDD 批落码；台账家位已经用户裁定落 sih/ledger/，TDD 批入口条件齐备
 - 围堰 CONTRACT 修订流程照旧即围堰在并存期继续演进，融回基准以切换批开工日现行文为准
 - 第一域台账存量行零迁移即历史行不改写，新册启用形归切换批
 - 上链前必须等绿；读 findings 不只看退出码
@@ -161,6 +161,8 @@ T7 hooks 与附件腿
 ## 规格修订记录 {#revisions}
 
 2026-09-13 v1 随 lease-Reintegration-solo 批起草即 SDD 产物，令源用户 2026-09-13「租约启动融回」，观测缺陷 meter 断流如实申报在案。
+
+2026-09-13 v1.1 修订一，台账家位落位定谳：提案位 sih/state/ledger/ 作废，承用户 2026-09-13 裁定「账本应该放到 sih/ 里」改落 sih/ledger/，与 DES-015 新城域正典形统一，第一域历史册零迁移纪律不动。
 
 ## 内容充分性 {#sufficiency}
 
