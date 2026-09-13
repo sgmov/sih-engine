@@ -37,3 +37,7 @@ sih-tools/projsnap 0.1.0：三节再生器（file-index 决策规格索引加 to
 ## 后续待令 {#next}
 
 - 切换批（真实 AGENTS.md 换旗）与剩余投影源接入与 project-stage 规则候令。
+
+## 结算节 {#settle}
+
+- tools wip 62e5cbc5 加 engine wip 96a4411，认证报告经 scribe append 落链锁面内落盘，先例同形。
