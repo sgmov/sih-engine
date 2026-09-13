@@ -38,3 +38,8 @@ T1 净目标基形金向量六件（open 与 lock 与 unlock 与 close 四Receip
 
 - 腿一绿批：src/lease/ 锁核实装先红后绿，T2 归一 cmp 转绿为入口条件。
 - SPEC-024 v1.2 修订候选：同参形条款增 session_id 归一项。
+
+## 结算节 {#settle}
+
+- wip 提交 da8596d，红测与红证经 git 9ddff61 绕行落盘 bypass 在案，认证报告经 scribe append 7815b2a6 落链后以 git d5f5ac5 绕行落盘 bypass 在案。
+- 本段结算尾注为 settle staged 承载件，先例同形。
