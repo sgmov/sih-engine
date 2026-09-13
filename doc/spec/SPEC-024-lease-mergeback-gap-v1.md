@@ -166,6 +166,8 @@ T7 hooks 与附件腿
 
 2026-09-13 v1.2 修订二，腿二收约执法面执行记录：批即 lease-commitlaw-parallel、队形并联形。commitcore 与 sddgate 与 guardcore 与 close_session 闸序 Rust 对表实装转绿，金向量三十二场景围堰实测冻结于 src/lease/fixtures/golden2/，集成测试五件全绿即 t5_commit 五测、t6_close_gates 五测、t6_sddgate 四测、t7_guard 五测、t2 与 t3 与 t4 回归。落差发现四处如实登记：其一围堰 date-only --at 使 issued_at 入账为 naive 形致 close 在 calllog 过渡条款比较处 TypeError 崩，findings finding-dateonly-at-treadmill-crash 在档，引擎侧 parse 归一 UTC 兼容两形，围堰修复归其契约修订流程；其二 close 期三闸 bypass 留痕行硬锚 tool_dir 真工具台账不受 --root 锚定，引擎侧改 root 锚定加 --bypass-ledger 透传；其三会话号派生式 make_session_id 为确定性 SHA-256 前十六位，引擎腿一随机 uuid 形按本批对表改派生形；其四 macOS /var 与 /private/var 别名归一入金向量同参形条款别名域。未实装面显式申报：同内容与纯追加让位归并机械即 backup 与 allow_and_merge 与 re_certify、bills SQL 投影腿、gauge_summary 全读形，归腿二后继批或切换批裁量。
 
+2026-09-14 v1.3 修订三，腿三附件腿完工记录：批即 lease-attachments-solo、队形单线。sweep 与 call-log import 与 install-hooks 与 uninstall-hooks 四子命令 Rust 对表实装转绿，pk-103 出泊：stem 闸 root 缺省自 cwd 上溯即 core.detect_domain_context 对表且 canonical 标记先检域界即停再双仓标记，加全查路实装即 spawn uv nomenclator query 只读子进程 fail-closed 零静默，加 --new-stem 甲表三件机械核对移植承 pk-090 件五对表，T7 七测全绿即 sweep 净态与幻影修复与停滞候裁守卫与 call-log verbatim 零有损与 hooks 回环与 stem 全查拒与包缺席 skip 回归，t2 至 t6 全族回归不破。三落差如实申报：其一 call-log sqlite 索引腿未实装，Cargo 零 rusqlite 承 A9 依赖零新增，循腿二 bills SQL 同款申报，ndjson 权威腿与投影腿 verbatim 重组再生已实装；其二 sweep 僵尸锁现势锁面从 ndjson 锁册 acquired 与 released 事件序推导，围堰从 sqlite lockdb 投影读语义同构，僵尸锁 fix 落锁册 released 行而围堰走 lockdb.takeover_release INSERT；其三 import 逐行界对表 Python splitlines 即尾换行不产尾空行，Rust split 会，实装期修正在案。A9 机械腿不变量申报面：零网络零 LLM 零 key 读取成立，nomenclator query 为本地子进程；takeover 与 ledger-repair 与 heartbeat 与 wait-turn 与 preempt-release 独立子命令未实装，sweep fix 通道内联覆盖 takeover 与 ledger-repair 两形，余三候后批按需。
+
 ## 内容充分性 {#sufficiency}
 
 - 本节循 SPEC-TEMPLATE-sufficiency-v1 形，只加节不改本文实质。

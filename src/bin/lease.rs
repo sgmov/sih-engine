@@ -12,6 +12,12 @@ mod commitlaw;
 mod guardlaw;
 #[path = "lease/sddgate.rs"]
 mod sddgate;
+#[path = "lease/attachments.rs"]
+mod attachments;
+#[path = "lease/calllogface.rs"]
+mod calllogface;
+#[path = "lease/sweepcore.rs"]
+mod sweepcore;
 
 use chrono::Utc;
 use serde_json::{json, Map, Value};
@@ -180,28 +186,26 @@ fn active_sessions(ledger: &Path) -> Vec<(String, Value)> {
         .collect()
 }
 
-fn stem_check(root: &Path) -> Value {
-    let first = root.join("sih-engine").is_dir() && root.join("sih-tools").is_dir();
-    let pack = root.join("sih-tools/nomenclator/packs/core");
-    if !first {
-        return json!({
-            "checked": true, "domain_scope": "canonical", "segments": [],
-            "disposition": "external_teaching",
-            "teaching": "新城正典域：词典在中央（司衡工作区 sih-tools/nomenclator），查册自愿走 nomenclator query，新词立名走司衡立名程序；本域零代强制（DES-016）"
-        });
-    }
-    if !pack.join("envelope.json").is_file() {
-        return json!({
-            "checked": false, "domain_scope": "first", "segments": [],
-            "disposition": "pack_absent_skip",
-            "teaching": format!("词典包缺席（{}）：本域命名查册未执行，回执显形不遮掩", pack.display())
-        });
-    }
-    die(2, "stem gate full query unsupported in fixture scope", json!({"pack": pack}));
+fn stem_check(
+    root: &Path,
+    stem: &str,
+    m: &BTreeMap<String, Vec<String>>,
+) -> Value {
+    attachments::stem_check_full(
+        root,
+        stem,
+        m.contains_key("new-stem"),
+        one(m, "claim-zh").unwrap_or(""),
+        one(m, "claim-code").unwrap_or(""),
+        one(m, "claim-derivation").unwrap_or(""),
+    )
 }
 
 fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
-    let root = PathBuf::from(one(m, "root").unwrap_or("."));
+    // pk-103 收口：root 缺省自 cwd 上溯（canonical 先检域界即停再双仓标记），
+    // 词典包路径随 root 锚定与 cwd 无关。
+    let root_flag = one(m, "root").map(|s| s.to_string()).filter(|s| !s.is_empty());
+    let root = attachments::detect_domain_context(root_flag.as_deref());
     let stem = one(m, "package").unwrap_or("").to_string();
     if stem.is_empty() {
         die(2, "open 缺 --package", json!(null));
@@ -236,7 +240,7 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
         allow.extend(extra.iter().cloned());
     }
 
-    let sc = stem_check(&root);
+    let sc = stem_check(&root, &stem, m);
 
     let id_bytes = std::fs::read(&identity_path).unwrap_or_default();
     let id_json: Value = serde_json::from_slice(&id_bytes).unwrap_or(Value::Null);
@@ -496,9 +500,13 @@ fn main() {
         "commit" => commitlaw::cmd_commit(&m),
         "bypass" => commitlaw::cmd_bypass(&m),
         "reconcile" => commitlaw::cmd_reconcile(&m),
+        "sweep" => sweepcore::cmd_sweep(&m),
+        "call-log" => calllogface::cmd_calllog_import(&m),
+        "install-hooks" => attachments::cmd_install_hooks(&m),
+        "uninstall-hooks" => attachments::cmd_uninstall_hooks(&m),
         other => die(
             2,
-            &format!("子命令 {} 未在腿一 fixture 对等域：{} 覆盖", other, "open/lock/unlock/close/status/commit/bypass/reconcile"),
+            &format!("子命令 {} 未在融回对等域：{} 覆盖", other, "open/lock/unlock/close/status/commit/bypass/reconcile/sweep/call-log/install-hooks/uninstall-hooks"),
             json!(null),
         ),
     }
