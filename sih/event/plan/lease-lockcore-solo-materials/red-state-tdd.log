@@ -1,0 +1,31 @@
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:471:4
+    |
+471 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.05s
+     Running tests/lease_mergeback_t2_golden.rs (target/debug/deps/lease_mergeback_t2_golden-0e2514e76e0b4068)
+
+running 2 tests
+test t2_golden_receipts_in_place ... ok
+test t2_open_receipt_byte_identical ... FAILED
+
+failures:
+
+---- t2_open_receipt_byte_identical stdout ----
+
+thread 't2_open_receipt_byte_identical' (39089617) panicked at tests/lease_mergeback_t2_golden.rs:35:5:
+TDD 红态：引擎 lease 二进制未建（src/bin/lease.rs 缺席），SPEC-024 T2 无法执行
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    t2_open_receipt_byte_identical
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test lease_mergeback_t2_golden`

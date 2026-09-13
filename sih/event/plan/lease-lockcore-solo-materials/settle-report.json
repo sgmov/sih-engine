@@ -1,0 +1,25 @@
+{
+ "tool": "lease-lockcore-solo",
+ "version": "1.0.0",
+ "session": "edaff98714715d6a",
+ "date": "2026-09-13",
+ "summary": "租约融回 TDD 腿一开工批：T1 金向量六件冻结（五Receipt加归一注记，fixture 双跑实证差量仅域根路径与 session_id 两域零时戳泄漏），T2 至 T4 红测三件平铺落位，cargo test 红态实录三红一绿定格（红因即引擎 lease 二进制未建），红证日志在案。SPEC-024 同参形条款 session_id 归一项落差发现入偏差申报与修订候选。本批只红不绿，绿转归腿一后继批。",
+ "commits": {
+  "sih-engine": "da8596d",
+  "bypass": "9ddff61"
+ },
+ "pipeline": {
+  "note": "本批交付面为 fixtures 与 rust 测试件，零 doc 域文件，管线三步不适用；结果档 nom 域外先例"
+ },
+ "f_table": {
+  "F1_golden_frozen": "pass_after_normalization",
+  "F2_red_state_on_record": "pass",
+  "F3_production_ledgers_clean": "pass"
+ },
+ "declarations": [
+  "session_id 归一项为 SPEC-024 同参形条款落差发现，修订候选归后继修订批",
+  "红测平铺名与 materials 车道经 git 9ddff61 绕行并 bypass 登记归账",
+  "fixture 顺序失误空收约留存为合法对照形偏差三"
+ ],
+ "exit_code": 0
+}

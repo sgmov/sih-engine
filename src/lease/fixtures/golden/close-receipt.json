@@ -1,0 +1,55 @@
+{
+  "calllog_gate": {
+    "checked": true,
+    "unreleased": 0
+  },
+  "calllog_treadmill": {
+    "checked": true,
+    "collected": []
+  },
+  "chain_gate": {
+    "checked": false,
+    "reason": "workspace_chainless"
+  },
+  "close_receipt": {
+    "check_file_removed": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-tools/lease/ledger/checks/golden-a.json",
+    "receipt": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-tools/lease/ledger/receipts/golden-a.json"
+  },
+  "declaration_gate": {
+    "acks": [],
+    "exempt_conditional": [],
+    "gate": "declared_uncommitted",
+    "shared_surface_exempt": [],
+    "uncommitted": [],
+    "unparsed": [
+      "sih/ledger/sessions.ndjson",
+      "sih/ledger/locks.ndjson",
+      "sih/ledger/bills.ndjson"
+    ]
+  },
+  "failed": [],
+  "gates_skipped": {
+    "ack_uncommitted": [],
+    "calllog_bypass": null,
+    "count": 0,
+    "orphan_bypass": null
+  },
+  "removed": [
+    {
+      "base_branch": "master",
+      "branch": "msh/golden-a",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-engine",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/worktrees/sih-engine/golden-a",
+      "worktree_result": "removed"
+    }
+  ],
+  "revoked": true,
+  "sddgate_gate": {
+    "checked": false,
+    "reason": "workspace_chainless",
+    "verdict": "skip"
+  },
+  "session_id": "29869ed8bd9e35ac"
+}
