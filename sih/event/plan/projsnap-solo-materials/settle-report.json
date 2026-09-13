@@ -1,0 +1,24 @@
+{
+ "tool": "projsnap-solo",
+ "version": "1.0.0",
+ "session": "17d4b5b08fe44577",
+ "date": "2026-09-13",
+ "summary": "派生快照投影器实装批：sih-tools/projsnap 0.1.0 三节再生器与三子命令，T1 至 T4 全绿（同参双跑逐字节加手写节字节级零触碰加 stale 三形零漏报加重跑落零），失效裁决条款构成性在场。DES-018 四类节实装三节偏差如实申报，切换批候令。",
+ "commits": {
+  "sih-tools": "62e5cbc5"
+ },
+ "pipeline": {
+  "note": "交付面为 python 实装与测试件，pytest 4 passed；引擎 doc 域零触碰故管线三步不适用"
+ },
+ "f_table": {
+  "F1_t1_t4_green": "pass",
+  "F2_determinism": "pass",
+  "F3_handwritten_guard": "pass"
+ },
+ "declarations": [
+  "四类可派生节实装三节即 project-stage 候后继批承 DES-018 登记制",
+  "真实工作区接入归切换批 pk-055 出泊并入",
+  "允许面前缀错位工序偏差已自纠入偏差申报"
+ ],
+ "exit_code": 0
+}
