@@ -1,0 +1,13 @@
+{
+  "action": "enter",
+  "entry_id": "pk-104",
+  "title": "围堰 lease open 的 allow 面与 repos 均不走意图件只认旗标",
+  "exit_condition": "lease open 从意图件 domain_contract 推导 repos 与 allow 面（或意图件显式拒绝承载授权面并教学文写明），声明与授权单一源",
+  "ttl_days": 30,
+  "context": "mcpdefect-parallel 批 2026-09-13 实证：open 未传 --repo 缺省仅挂 sih-engine（cli.py:1093）、未传 --allow 则 allow_effective 空致逐把锁 scope_violation（cli.py:1162 教学位在案），意图件 domain_contract 的 repos 与 writes 零消费，本批三度重开立正身会话（误开会话两笔经 takeover 与 ledger-repair 显式吊销留痕）",
+  "ruling": "mcpdefect-parallel 批如实申报入泊，候 lease 批处置；围堰冻结期修法候切换批",
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-13"
+  }
+}
