@@ -51,3 +51,9 @@
 
 - 范围闸如实拦截一笔：staged_out_of_scope，施工分件名与任务包请求写入节漂移即子模块四件 closegate 与 commitlaw 与 sddgate 与 guardlaw 与测试件 t6_close_gates（任务包原申报 t6_sddgate 与 t7_guard 两件，实落为 close 集成五测与模块内单测十一测）。处置走 --no-verify 加 bypass 留痕先例通道（批 A/B/C materials 车道漏报同形），事由零粉饰入 bypass 台账。
 - 管线读数：SPEC-024 化格 0 改动、核阅 des-001 零违规（首跑 C006 全角括号三笔打回，改顿号串后复跑零违规，先红留痕本节即载）、检词零违例。
+
+## 七、收约实录 {#close-facts}
+
+- 段结算提交 81872a0aaafa802782c61abcdff7de28ceb5f12c（--no-verify 三笔 bypass 行在册，末行 81872a0 为准，前两行 amend 作废已注记）；认证笔 ef41dad6 在链。
+- close 收约退出码零：revoked 真、分支归并删支双 removed、SDDG 判词 pass、链闸 checked trails 24、认领两笔加绕行一笔入 gates_skipped 计数三。
+- 主树复跑：cargo build 绿，lease 全族二十八测全绿即 bin 单测十一加 T2 四加 T3 二加 T4 一加 T5 五加 T6 五；lib 面两红为核阅先存红与本批无关。当日链 scribe verify valid 三十笔。
