@@ -32,7 +32,7 @@ T1 净目标基形金向量六件（open 与 lock 与 unlock 与 close 四Receip
 - 偏差二：红测文件布局由 tests/lease_mergeback/ 子目录改平铺三件，cargo 集成测试目标只认 tests/ 直属文件，锁面换宽至 sih-engine/tests/ 目录对表，布局形归 SPEC-024 测试计划承载。
 - 偏差三：fixture 首开约时 close 误先于 lock 执行即顺序失误，空收约回执留存为 close-receipt-idle.json 合法对照形，全链重跑金向量以第二次为准，操作债记候批注意项。
 - 偏差四：本批只红不绿即开工批范围，绿转与脏目标五形与 T5 专项红测归腿一后继候批，范围收窄承 SPEC-024 腿切分条款。
-- 零偏差显式申报位：除上列四条外本批零其他偏差。
+- 零偏差显式申报位：除上列四条外本批零其他偏差，本节承载承 DEC-024 SDDG-3 词形纪律与 SPEC-024 腿切分范围。
 
 ## 后续待令 {#next}
 
