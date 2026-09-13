@@ -1,0 +1,20 @@
+{
+  "batch": "estcarr-audit-solo",
+  "session_id": "178136e03def21eb",
+  "date": "2026-09-13",
+  "kind": "pipeline-certification",
+  "order_source": "用户 2026-09-13 令「先考试」",
+  "exam": {
+    "gid": "m-estcarr",
+    "n_shots": 5,
+    "direction": "5/5 comply",
+    "flip": 0,
+    "boundary_flags": 0,
+    "gate_verdict": "stable_clear",
+    "signed": true,
+    "sign_event_hash": "15881635f579579c273d2517096de40051fa20dba5b1f302e02f26a0c0b7b61f",
+    "doc_id": "crosscheck-m-estcarr"
+  },
+  "readings": {"ask3_gate1": 0, "ask3repeater": "ok", "elicit_digest": "passed", "identity_anomalies": 0, "attractor_check": "pass", "attractor_verify": "identical"},
+  "exit_code": 0
+}
