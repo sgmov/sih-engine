@@ -31,7 +31,7 @@
 - 偏差一：实装覆盖域为 fixture 对等域即五子命令，生产级面（真实台账自举与链闸全族与 SDDG 全判据与 hooks）归腿一后继批，承 SPEC-024 腿切分。
 - 偏差二：tool.version 承契约面字面 1.46.0 而二进制版本 0.1.0，承 SPEC-015 工件工具名先例即工件工具名版本字段是契约面标识非二进制身份。
 - 偏差三：全量回归两红即 scrutinator cli_positional_form_matches_golden 与 golden_des001_gov002 经主树对照验实为先存红非本批引入，处置归核阅金向量卫生候批。
-- 偏差四：gauge 探针 all-present 形与 chained workspace 门族未实现即 fixture 域不触发路径，触发即退出码二显式拒不静默。
+- 偏差四：gauge 探针 all-present 形与 chained workspace 门族未实现即 fixture 域不触发路径，触发即退出码二显式拒不静默，覆盖域收窄承 SPEC-024 腿切分条款。
 - 零偏差显式申报位：除上列四条外本批零其他偏差，本节词形承载承 DEC-024 SDDG-3 纪律与 SPEC-024 腿切分。
 
 ## 后续待令 {#next}
