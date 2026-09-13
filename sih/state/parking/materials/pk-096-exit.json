@@ -1,0 +1,11 @@
+{
+  "action": "exit",
+  "entry_id": "pk-096",
+  "disposition": "promoted",
+  "ruling": "domface-solo 段1 eba3b02d 核销：server.py:260-263 域锚加红测三发；mcpdefect-parallel 批 2026-09-13 对表坐实出泊",
+  "context": "出泊条件达成：nomenclator_check 域根锚定已在役经现行源码核实（dossier-b-deferred.md），出泊手续 exit 件缺席由本批补",
+  "state": "exited",
+  "parking": {
+    "entered_at": "2026-09-11"
+  }
+}

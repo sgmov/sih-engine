@@ -1,0 +1,13 @@
+{
+  "action": "enter",
+  "entry_id": "pk-103",
+  "title": "引擎 lease stem 闸全查路未实装且词典包路径随 cwd 解析",
+  "exit_condition": "engine lease stem 闸实装全查路（nomenclator 全六态）且包路径按 root 锚定与 cwd 无关；SPEC-024 落差节补记",
+  "ttl_days": 30,
+  "context": "mcpdefect-parallel 批 2026-09-13 实证：engine lease open 在真根（词典包在位）报 stem gate full query unsupported in fixture scope（src/bin/lease.rs:200）；leg-2 真实批自 sih-engine cwd 起跑时包路径 root.join 随 cwd 解析缺席而静默走 pack_absent_skip，属未申报落差",
+  "ruling": "mcpdefect-parallel 批如实申报入泊，候腿三批或 SPEC 修订批处置",
+  "state": "parked",
+  "parking": {
+    "entered_at": "2026-09-13"
+  }
+}
