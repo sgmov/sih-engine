@@ -23,6 +23,12 @@
 
 并联三簇一次成立：三子代理独立施工零改派，跨簇编译互挡经各簇如实申报并自行消化，主线验收一次过。
 
+## 偏差
+
+- 范围绕行偏差：腿四预备方案稿与 settle 载体件在 open allow 面外，走 SPEC-024 v1.2 落差节同款显式绕行两笔（bypass 台账在档），事由零粉饰。
+- 测试环境偏差：tempdir 跨进程可见性迟滞窗口以 run_stable 稀疏重试承接，处置先例承 SPEC-024 同参形条款环境项，parser 测试头注如实申报。
+- 未实装申报偏差：calllogtool sqlite 索引腿承 SPEC-025 A6 零新增未实装，tally assemble 与 locator vectors 子命令等装饰面缺席，各 bin 头注落差节如实登记，候后批。
+
 ## 明确不做与后件
 
 - 腿四 MCP 分派面 registry 接线与 mcpline 收编让位下批，方案预备稿 leg4-registry-wiring-design.md 已落 state/plan 候升格。
