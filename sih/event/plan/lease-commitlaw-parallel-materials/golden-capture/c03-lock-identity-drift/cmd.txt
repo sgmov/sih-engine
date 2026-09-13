@@ -1,0 +1,2 @@
+# cwd: /Users/moc/workspaces/SiHankor/sih-tools/lease
+uv run --project . lease lock --path sih-engine/workfile.txt --identity /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/inputs/identity-other.json --at 2026-09-13T00:00:00+00:00 --root /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2 --ledger /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/sessions.ndjson --locks /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/locks.ndjson --bills /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/bills.ndjson 

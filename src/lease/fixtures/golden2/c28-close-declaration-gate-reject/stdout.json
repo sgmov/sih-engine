@@ -1,0 +1,3 @@
+{
+  "error": "差集闸拦截：声明未提交（请求写入节对分支提交树差集非空，整批拒零动作；补提交或 close --ack-uncommitted 逐路径带事由放行）{\"gate\": \"declared_uncommitted\", \"uncommitted\": [\"sih-engine/sih/state/plan/goldd-pending.md\"], \"exempt_conditional\": [], \"unparsed\": [], \"acks\": [], \"shared_surface_exempt\": []}"
+}

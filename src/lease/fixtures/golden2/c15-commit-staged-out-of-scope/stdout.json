@@ -1,0 +1,16 @@
+{
+  "detail": {
+    "allow": [
+      "sih-engine/workfile.txt",
+      "sih-engine/ptrmod.py",
+      "sih-engine/goldc-results.md",
+      "sih-engine/newmod.py",
+      "sih-engine/tests/test_goldc.py",
+      "sih-engine/note-a.txt"
+    ],
+    "outside": [
+      "sih-engine/outside.txt"
+    ]
+  },
+  "error": "staged_out_of_scope"
+}

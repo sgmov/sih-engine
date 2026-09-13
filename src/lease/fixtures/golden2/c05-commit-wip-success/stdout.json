@@ -1,0 +1,12 @@
+{
+  "base": "master@e4cc8aa",
+  "checks": [
+    "session_active",
+    "staged_in_scope"
+  ],
+  "commit": "9c7ae34",
+  "message": "goldc wip 金向量捕获：workfile 首笔改动\n\nsession: b516664e0251a887\n\nfixture 捕获批：围堰域\n",
+  "package": "goldc",
+  "session_id": "b516664e0251a887",
+  "stage": "wip"
+}

@@ -68,6 +68,7 @@ fn run_lease(root: &PathBuf, args: &[&str]) -> (i32, String, String) {
 
 fn normalize(text: &str, root: &PathBuf, sid: &str) -> String {
     text.replace(root.to_str().unwrap(), "<ROOT>")
+        .replace("/private<ROOT>", "<ROOT>")
         .replace(sid, "<SID>")
 }
 

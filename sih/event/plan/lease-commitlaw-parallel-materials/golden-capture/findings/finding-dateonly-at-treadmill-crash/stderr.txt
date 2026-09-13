@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/moc/workspaces/SiHankor/sih-tools/lease/.venv/bin/lease", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/leasetool/src/lease/cli.py", line 1362, in main
+    report = close_session(
+        args.package,
+    ...<10 lines>...
+        bypass_sddgate=getattr(args, "bypass_sddgate", None),
+    )
+  File "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/leasetool/src/lease/core.py", line 2013, in close_session
+    if calllog_treadmill_applicable(session):
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/leasetool/src/lease/core.py", line 327, in calllog_treadmill_applicable
+    return datetime.fromisoformat(issued) > datetime.fromisoformat(CALLLOG_TREADMILL_EFFECTIVE_AT)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare offset-naive and offset-aware datetimes

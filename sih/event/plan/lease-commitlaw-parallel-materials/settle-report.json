@@ -1,0 +1,25 @@
+{
+  "batch": "lease-commitlaw-parallel",
+  "date": "2026-09-13",
+  "golden_freeze": "src/lease/fixtures/golden2 三十二场景",
+  "pipeline": {
+    "formatter_spec024": 0,
+    "nomenclator_results": 0,
+    "nomenclator_spec024": 0,
+    "scrutinator_des001_spec024": 0
+  },
+  "scope_drift_declaration": "施工分件名漂移即子模块四件与 t6_close_gates 测试件，走 --no-verify 加 bypass 留痕先例通道",
+  "session_id": "0802258e5831a96c",
+  "tests": {
+    "bin_unit_tests": "11 passed",
+    "known_preexisting_reds": [
+      "scrutinator::tests::cli_positional_form_matches_golden",
+      "scrutinator::tests::golden_des001_gov002"
+    ],
+    "t2_golden": "4 passed",
+    "t3_exit_codes": "2 passed",
+    "t4_five_verifications": "1 passed",
+    "t5_commit": "5 passed",
+    "t6_close_gates": "5 passed"
+  }
+}

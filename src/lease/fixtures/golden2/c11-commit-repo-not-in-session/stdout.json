@@ -1,0 +1,12 @@
+{
+  "detail": {
+    "repo": "/private/tmp/leg2-nonexistent-repo",
+    "repos": [
+      "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine"
+    ],
+    "worktrees": [
+      "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc"
+    ]
+  },
+  "error": "repo_not_in_session"
+}

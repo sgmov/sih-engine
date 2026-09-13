@@ -1,0 +1,9 @@
+{
+  "detail": {
+    "cert": "0000000000000000",
+    "trails": [
+      "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/event/trail/2026-09-13.ndjson"
+    ]
+  },
+  "error": "cert_not_on_chain"
+}

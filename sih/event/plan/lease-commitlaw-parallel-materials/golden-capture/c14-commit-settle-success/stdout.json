@@ -1,0 +1,21 @@
+{
+  "base": "master@e4cc8aa",
+  "checks": [
+    "session_active",
+    "staged_in_scope",
+    "cert_on_chain"
+  ],
+  "commit": "e3c26fb",
+  "gauge": {
+    "missing": [
+      "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/gauge/src/gauge/cli.py",
+      "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/sessions.ndjson"
+    ],
+    "reason": "missing",
+    "skipped": true
+  },
+  "message": "goldc 段1 note-a 段结算\n\nsession: b516664e0251a887 cert: 277c9a17 base: master@e4cc8aa\n",
+  "package": "goldc",
+  "session_id": "b516664e0251a887",
+  "stage": "settle"
+}

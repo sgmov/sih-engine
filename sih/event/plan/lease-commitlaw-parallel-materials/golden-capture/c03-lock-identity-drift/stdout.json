@@ -1,0 +1,7 @@
+{
+  "detail": {
+    "expected": "fixture-host",
+    "observed": "other-host"
+  },
+  "error": "hostname_drift"
+}
