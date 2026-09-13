@@ -542,8 +542,13 @@ pub fn streamable_router(endpoint: &str) -> Router {
             let ident = REQUEST_IDENTITY
                 .try_with(Clone::clone)
                 .unwrap_or_else(|_| HttpIdent::anonymous());
+            let conn = shared.session_conn(&ident);
             Ok(SihMcpServer {
-                conn: shared.session_conn(&ident),
+                registry: crate::mcpserver::providers::build_registry(
+                    AGENT_CLASS_EXTERNAL,
+                    conn.clone(),
+                ),
+                conn,
                 agent_class: AGENT_CLASS_EXTERNAL,
             })
         }
