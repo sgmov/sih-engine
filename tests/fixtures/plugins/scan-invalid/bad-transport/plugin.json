@@ -1,0 +1,7 @@
+{
+  "name": "bad-transport",
+  "version": "0.1.0",
+  "transport": "http",
+  "command": "bad-plugin",
+  "tools": [{"name": "bad_tool"}]
+}
