@@ -1,0 +1,7 @@
+{
+  "detail": {
+    "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+    "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc"
+  },
+  "error": "commit_must_target_worktree"
+}

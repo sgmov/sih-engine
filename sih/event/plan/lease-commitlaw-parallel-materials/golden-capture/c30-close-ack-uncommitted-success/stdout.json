@@ -1,0 +1,89 @@
+{
+  "calllog_gate": {
+    "checked": true,
+    "unreleased": 0
+  },
+  "calllog_treadmill": {
+    "checked": true,
+    "collected": []
+  },
+  "chain_gate": {
+    "checked": true,
+    "trails": 1
+  },
+  "close_receipt": {
+    "check_file_removed": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/checks/goldd.json",
+    "receipt": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/receipts/goldd.json"
+  },
+  "declaration_gate": {
+    "acks": [
+      {
+        "path": "sih-engine/sih/state/plan/goldd-pending.md",
+        "reason": "fixture 捕获：声明未提交认领放行形（零粉饰事由留档）"
+      }
+    ],
+    "exempt_conditional": [],
+    "gate": "declared_uncommitted",
+    "shared_surface_exempt": [],
+    "uncommitted": [],
+    "unparsed": []
+  },
+  "failed": [],
+  "gates_skipped": {
+    "ack_uncommitted": [
+      "sih-engine/sih/state/plan/goldd-pending.md"
+    ],
+    "calllog_bypass": null,
+    "count": 1,
+    "orphan_bypass": null
+  },
+  "removed": [
+    {
+      "base_branch": "master",
+      "branch": "msh/goldd",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldd",
+      "worktree_result": "removed"
+    }
+  ],
+  "revoked": true,
+  "sddgate_gate": {
+    "checked": true,
+    "gate_since": "2026-09-12",
+    "gates": {
+      "SDDG-1": {
+        "first_impl_spec_hits": [],
+        "gate": "SDDG-1",
+        "intent_spec_declared": true,
+        "t0_intent": "2026-09-13T06:13:46.512992Z",
+        "t1_first_impl": null,
+        "verdict": "pass",
+        "window_spec_hits": []
+      },
+      "SDDG-2": {
+        "checked_new_source_files": 0,
+        "gate": "SDDG-2",
+        "verdict": "pass",
+        "zero_pointer_hits": []
+      },
+      "SDDG-3": {
+        "gate": "SDDG-3",
+        "reason": "diff_empty",
+        "uncarried_entries": [],
+        "verdict": "pass"
+      },
+      "SDDG-4": {
+        "acceptance_files": [],
+        "gate": "SDDG-4",
+        "reason": "diff_empty",
+        "test_files": [],
+        "verdict": "pass"
+      }
+    },
+    "sddg_version": "1.0.0",
+    "verdict": "pass"
+  },
+  "session_id": "2af46b28cdc6c2f4"
+}

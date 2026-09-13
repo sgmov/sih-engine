@@ -1,0 +1,3 @@
+{
+  "error": "差集闸认领对表失败：认领路径不在声明未提交差集内（与实态不符零粉饰）{\"unknown_acks\": [\"sih-engine/does-not-exist.txt\"]}"
+}

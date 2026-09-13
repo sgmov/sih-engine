@@ -1,0 +1,2 @@
+# cwd: /Users/moc/workspaces/SiHankor/sih-tools/lease
+uv run --project . lease commit --repo /tmp/leg2-nonexistent-repo --stage wip --subject $'ä¼\232è¯\235å¤\226ä»\223åº\224æ\213\222' --root /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2 --ledger /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/sessions.ndjson --locks /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/locks.ndjson --bills /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/bills.ndjson 

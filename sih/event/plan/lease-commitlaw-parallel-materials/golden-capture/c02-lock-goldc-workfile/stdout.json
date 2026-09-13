@@ -1,0 +1,14 @@
+{
+  "duplicate": false,
+  "line": {
+    "acquired_at": "2026-09-13T00:00:00+00:00",
+    "event": "acquired",
+    "mode": "exclusive",
+    "path": "sih-engine/workfile.txt",
+    "session_id": "b516664e0251a887",
+    "tool": {
+      "name": "lease",
+      "version": "1.46.0"
+    }
+  }
+}

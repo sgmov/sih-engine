@@ -1,0 +1,2 @@
+# cwd: /Users/moc/workspaces/SiHankor/sih-tools/lease
+/Users/moc/workspaces/SiHankor/sih-engine/target/debug/scribe append --report /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/inputs/cert-report-goldd.json --exit-code 0 --trail /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/event/trail/2026-09-13.ndjson --locks /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/locks.ndjson --sessions /Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/sessions.ndjson --session 2af46b28cdc6c2f4 

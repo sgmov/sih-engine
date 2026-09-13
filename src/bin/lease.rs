@@ -1,6 +1,17 @@
 //! 租约引擎件：锁核腿 fixture 对等实装（SPEC-024 腿一，lease-lockcore-solo 批）。
 //! 覆盖域：fixture 域根 ceremony 即 open 与 lock 与 unlock 与 close 与 status 五子命令，
 //! 金向量逐字节对等（归一 session_id 与域根两域）。chained workspace 门族归腿一后继批。
+//! 腿二收约执法面（lease-commitlaw-parallel 批）：commit 与 bypass 与 reconcile 三子命令
+//! 与 SDDG 四判据门与直提守卫纯函数，子模块 lease/{commitlaw,sddgate,guardlaw}.rs。
+
+#[path = "lease/closegate.rs"]
+mod closegate;
+#[path = "lease/commitlaw.rs"]
+mod commitlaw;
+#[path = "lease/guardlaw.rs"]
+mod guardlaw;
+#[path = "lease/sddgate.rs"]
+mod sddgate;
 
 use chrono::Utc;
 use serde_json::{json, Map, Value};
@@ -147,6 +158,16 @@ fn resolve_package(root: &Path, stem: &str) -> PathBuf {
     );
 }
 
+pub(crate) fn resolve_package_quiet(root: &Path, stem: &str) -> PathBuf {
+    for face in FACES {
+        let p = root.join(face).join(format!("{}.md", stem));
+        if p.is_file() {
+            return p;
+        }
+    }
+    root.join(FACES[0]).join(format!("{}.md", stem))
+}
+
 fn active_sessions(ledger: &Path) -> Vec<(String, Value)> {
     let mut last: BTreeMap<String, Value> = BTreeMap::new();
     for row in read_jsonl(ledger) {
@@ -262,7 +283,7 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
         .unwrap_or_else(|| vec!["sih-engine".into()]);
     let mut repos = Vec::new();
     for rn in &repo_names {
-        let repo_dir = root.join(rn);
+        let repo_dir = commitlaw::py_resolve(&root.join(rn));
         let base = Command::new("git")
             .args(["-C", &repo_dir.display().to_string(), "rev-parse", "--abbrev-ref", "HEAD"])
             .output();
@@ -271,7 +292,7 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
             _ => die(2, "repo 面非 git 仓", json!({"repo": repo_dir})),
         };
         let branch = format!("msh/{}", stem);
-        let worktree = root.join("worktrees").join(rn).join(&stem);
+        let worktree_raw = root.join("worktrees").join(rn).join(&stem);
         let wa = Command::new("git")
             .args([
                 "-C",
@@ -280,7 +301,7 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
                 "add",
                 "-b",
                 &branch,
-                &worktree.display().to_string(),
+                &worktree_raw.display().to_string(),
             ])
             .output();
         match wa {
@@ -296,11 +317,23 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
             "base_branch": base_branch,
             "branch": branch,
             "repo": repo_dir.display().to_string(),
-            "worktree": worktree.display().to_string(),
+            "worktree": commitlaw::py_resolve(&worktree_raw).display().to_string(),
         }));
     }
 
-    let sid: String = uuid::Uuid::new_v4().simple().to_string()[..16].to_string();
+    // 会话号即确定性派生（core.make_session_id 对表）：sha256(包名|签发时刻|身份件哈希|仓序列)[:16]
+    let repo_paths: Vec<String> = repos
+        .iter()
+        .map(|r| r.get("repo").and_then(|v| v.as_str()).unwrap_or("").to_string())
+        .collect();
+    let sid_payload = format!(
+        "{}|{}|{}|{}",
+        stem,
+        at,
+        sha256_hex(&id_bytes),
+        repo_paths.join("|")
+    );
+    let sid: String = sha256_hex(sid_payload.as_bytes())[..16].to_string();
     let receipt = json!({
         "allow": allow,
         "allow_derived": [],
@@ -428,178 +461,6 @@ fn cmd_unlock(m: &BTreeMap<String, Vec<String>>) {
     print!("{}", emit(&json!({"line": line})));
 }
 
-fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
-    let root = PathBuf::from(one(m, "root").unwrap_or("."));
-    let stem = one(m, "package").unwrap_or("").to_string();
-    let ledger = PathBuf::from(one(m, "ledger").unwrap_or(""));
-    let locks = PathBuf::from(one(m, "locks").unwrap_or(""));
-    let sessions = read_jsonl(&ledger);
-    let sid = match one(m, "session") {
-        Some(s) => s.to_string(),
-        None => {
-            let act: Vec<&Value> = sessions
-                .iter()
-                .filter(|r| {
-                    r.get("package").and_then(|v| v.as_str()) == Some(stem.as_str())
-                        && r.get("event").and_then(|v| v.as_str()) == Some("issued")
-                })
-                .collect();
-            if act.len() != 1 {
-                die(1, "no active session for package", json!({"package": stem}));
-            }
-            act[0].get("session_id").and_then(|v| v.as_str()).unwrap_or("").to_string()
-        }
-    };
-    let issued_row = sessions
-        .iter()
-        .rev()
-        .find(|r| {
-            r.get("session_id").and_then(|v| v.as_str()) == Some(sid.as_str())
-                && r.get("event").and_then(|v| v.as_str()) == Some("issued")
-        })
-        .cloned()
-        .unwrap_or_else(|| die(1, "session_not_active", json!({"wanted": sid})));
-    let pkg_path = PathBuf::from(
-        issued_row.get("package_path").and_then(|v| v.as_str()).unwrap_or(""),
-    );
-    let declared = std::fs::read_to_string(&pkg_path)
-        .map(|t| parse_requested_writes(&t))
-        .unwrap_or_default();
-
-    // 声明面分类：仓面内路径对工地 git 状态，仓面外即 unparsed
-    let repo_names: Vec<String> = issued_row
-        .get("repos")
-        .and_then(|v| v.as_array())
-        .map(|a| {
-            a.iter()
-                .map(|r| {
-                    Path::new(r.get("repo").and_then(|v| v.as_str()).unwrap_or(""))
-                        .file_name()
-                        .map(|s| s.to_string_lossy().to_string())
-                        .unwrap_or_default()
-                })
-                .collect()
-        })
-        .unwrap_or_default();
-    let mut unparsed = Vec::new();
-    let mut uncommitted: Vec<String> = Vec::new();
-    for d in &declared {
-        let under_repo = repo_names.iter().any(|rn| d.starts_with(&format!("{}/", rn)));
-        if !under_repo {
-            unparsed.push(d.clone());
-        }
-    }
-
-    let chainless = !root.join("sih-engine/sih/event/trail").exists();
-    let chain_gate = if chainless {
-        json!({"checked": false, "reason": "workspace_chainless"})
-    } else {
-        die(2, "chained workspace close unsupported in fixture scope", json!(null))
-    };
-    let sddgate = if chainless {
-        json!({"checked": false, "reason": "workspace_chainless", "verdict": "skip"})
-    } else {
-        json!({"checked": true, "verdict": "pass"})
-    };
-
-    // 工地拆除：worktree remove 加 branch delete
-    let mut removed = Vec::new();
-    if let Some(repos) = issued_row.get("repos").and_then(|v| v.as_array()) {
-        for r in repos {
-            let repo = r.get("repo").and_then(|v| v.as_str()).unwrap_or("");
-            let branch = r.get("branch").and_then(|v| v.as_str()).unwrap_or("");
-            let worktree = r.get("worktree").and_then(|v| v.as_str()).unwrap_or("");
-            let wt_result = Command::new("git")
-                .args(["-C", repo, "worktree", "remove", worktree, "--force"])
-                .output();
-            let wr = if wt_result.map(|o| o.status.success()).unwrap_or(false) || !Path::new(worktree).exists() {
-                "removed"
-            } else {
-                "remove_failed"
-            };
-            let br_result = Command::new("git").args(["-C", repo, "branch", "-D", branch]).output();
-            let br = if br_result.map(|o| o.status.success()).unwrap_or(false) {
-                "deleted"
-            } else {
-                "delete_failed"
-            };
-            removed.push(json!({
-                "base_branch": r.get("base_branch"),
-                "branch": branch,
-                "branch_result": br,
-                "repo": repo,
-                "result": wr,
-                "worktree": worktree,
-                "worktree_result": wr,
-            }));
-        }
-    }
-
-    // 未放锁核算
-    let unreleased: usize = read_jsonl(&locks)
-        .iter()
-        .filter(|r| r.get("session_id").and_then(|v| v.as_str()) == Some(sid.as_str()))
-        .filter(|r| r.get("event").and_then(|v| v.as_str()) == Some("acquired"))
-        .count()
-        - read_jsonl(&locks)
-            .iter()
-            .filter(|r| r.get("session_id").and_then(|v| v.as_str()) == Some(sid.as_str()))
-            .filter(|r| r.get("event").and_then(|v| v.as_str()) == Some("released"))
-            .count();
-    if unreleased > 0 {
-        die(1, "held_locks", json!({"unreleased": unreleased}));
-    }
-
-    let detail = json!({
-        "calllog_gate": {"checked": true, "unreleased": 0},
-        "calllog_treadmill": {"checked": true, "collected": []},
-        "declaration_gate": {
-            "acks": [],
-            "exempt_conditional": [],
-            "gate": "declared_uncommitted",
-            "shared_surface_exempt": [],
-            "uncommitted": uncommitted,
-            "unparsed": unparsed,
-        },
-        "gates_skipped": {"ack_uncommitted": [], "calllog_bypass": null, "count": 0, "orphan_bypass": null},
-        "sddgate_gate": sddgate,
-    });
-
-    let receipt = json!({
-        "calllog_gate": {"checked": true, "unreleased": 0},
-        "calllog_treadmill": {"checked": true, "collected": []},
-        "chain_gate": chain_gate,
-        "close_receipt": {
-            "check_file_removed": root.join(format!("sih-tools/lease/ledger/checks/{}.json", stem)).display().to_string(),
-            "receipt": root.join(format!("sih-tools/lease/ledger/receipts/{}.json", stem)).display().to_string(),
-        },
-        "declaration_gate": detail.get("declaration_gate").cloned().unwrap(),
-        "failed": [],
-        "gates_skipped": detail.get("gates_skipped").cloned().unwrap(),
-        "removed": removed,
-        "revoked": true,
-        "sddgate_gate": sddgate,
-        "session_id": sid,
-    });
-
-    let revoked_row = json!({
-        "detail": detail,
-        "event": "revoked",
-        "package": stem,
-        "reason": Value::Null,
-        "removed": receipt.get("removed").cloned().unwrap(),
-        "revoked_at": now_utc(),
-        "session_id": receipt.get("session_id").cloned().unwrap(),
-        "tool": tool(),
-    });
-    append_row(&ledger, &revoked_row);
-    let check_file = root.join(format!("sih-tools/lease/ledger/checks/{}.json", stem));
-    std::fs::remove_file(&check_file).ok();
-    let receipt_file = root.join(format!("sih-tools/lease/ledger/receipts/{}.json", stem));
-    std::fs::write(&receipt_file, emit(&receipt)).ok();
-    print!("{}", emit(&receipt));
-}
-
 fn cmd_status(m: &BTreeMap<String, Vec<String>>) {
     let ledger = PathBuf::from(one(m, "ledger").unwrap_or("sessions.ndjson"));
     let locks = PathBuf::from(one(m, "locks").unwrap_or("locks.ndjson"));
@@ -630,11 +491,14 @@ fn main() {
         "open" => cmd_open(&m),
         "lock" => cmd_lock(&m),
         "unlock" => cmd_unlock(&m),
-        "close" => cmd_close(&m),
+        "close" => closegate::cmd_close(&m),
         "status" => cmd_status(&m),
+        "commit" => commitlaw::cmd_commit(&m),
+        "bypass" => commitlaw::cmd_bypass(&m),
+        "reconcile" => commitlaw::cmd_reconcile(&m),
         other => die(
             2,
-            &format!("子命令 {} 未在腿一 fixture 对等域：{} 覆盖", other, "open/lock/unlock/close/status"),
+            &format!("子命令 {} 未在腿一 fixture 对等域：{} 覆盖", other, "open/lock/unlock/close/status/commit/bypass/reconcile"),
             json!(null),
         ),
     }

@@ -1,0 +1,671 @@
+{
+  "header": {
+    "locks_ledger": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/locks.ndjson",
+    "sessions_ledger": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/sessions.ndjson",
+    "tool": {
+      "name": "lease",
+      "version": "1.46.0"
+    }
+  },
+  "locks": {
+    "header": {
+      "locks_ledger": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/locks.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.46.0"
+      }
+    },
+    "held": [],
+    "summary": {
+      "held": 0
+    }
+  },
+  "sessions": {
+    "active": [],
+    "events": [
+      {
+        "allow": [
+          "sih-engine/workfile.txt",
+          "sih-engine/ptrmod.py",
+          "sih-engine/goldc-results.md",
+          "sih-engine/newmod.py",
+          "sih-engine/tests/test_goldc.py",
+          "sih-engine/note-a.txt"
+        ],
+        "event": "issued",
+        "gauge": {
+          "missing": [
+            "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/gauge/src/gauge/cli.py",
+            "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/sessions.ndjson"
+          ],
+          "reason": "missing",
+          "skipped": true
+        },
+        "identity": {
+          "core_hash": "fixturecorehash0000000000000000000000000000000000000000000000000000000000",
+          "file_sha256": "cfb59070a1cd595acbbc7ced7d3d65c17e11838438814037c7c0dd7053069016",
+          "identity_hash": "fixtureidentityhash00000000000000000000000000000000000000000000000000000000"
+        },
+        "intent": {
+          "anchor_count": 0,
+          "record_sha256": "0cbb4b83dce2dc3081aa1e86725e8530b9a568b2e90b47daa71099dbe1f57e1f",
+          "validated_by": "lease-structural"
+        },
+        "issued_at": "2026-09-13T00:00:00+00:00",
+        "package": "goldc",
+        "package_path": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/state/plan/goldc.md",
+        "repos": [
+          {
+            "base_branch": "master",
+            "branch": "msh/goldc",
+            "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+            "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc"
+          }
+        ],
+        "scope_source": "package",
+        "session_id": "b516664e0251a887",
+        "tool": {
+          "name": "lease",
+          "version": "1.46.0"
+        }
+      },
+      {
+        "detail": {
+          "calllog_gate": {
+            "checked": true,
+            "unreleased": 0
+          },
+          "calllog_treadmill": {
+            "checked": true,
+            "collected": []
+          },
+          "declaration_gate": {
+            "acks": [],
+            "exempt_conditional": [],
+            "gate": "declared_uncommitted",
+            "shared_surface_exempt": [],
+            "uncommitted": [],
+            "unparsed": []
+          },
+          "gates_skipped": {
+            "ack_uncommitted": [],
+            "calllog_bypass": null,
+            "count": 0,
+            "orphan_bypass": null
+          },
+          "sddgate_gate": {
+            "checked": true,
+            "gate_since": "2026-09-12",
+            "gates": {
+              "SDDG-1": {
+                "first_impl_spec_hits": [],
+                "gate": "SDDG-1",
+                "intent_spec_declared": true,
+                "t0_intent": "2026-09-13T06:11:09.353484Z",
+                "t1_first_impl": "2026-09-13T14:11:09+08:00",
+                "verdict": "pass",
+                "window_spec_hits": []
+              },
+              "SDDG-2": {
+                "checked_new_source_files": 1,
+                "gate": "SDDG-2",
+                "verdict": "pass",
+                "zero_pointer_hits": []
+              },
+              "SDDG-3": {
+                "deviation_section": true,
+                "gate": "SDDG-3",
+                "uncarried_entries": [],
+                "verdict": "pass",
+                "zero_deviation_declared": false
+              },
+              "SDDG-4": {
+                "acceptance_files": [
+                  "goldc-results.md"
+                ],
+                "gate": "SDDG-4",
+                "test_files": [],
+                "verdict": "reject"
+              }
+            },
+            "reason": "fixture 捕获：SDDG-4 绕行通道留痕形（金向量取材，域内台账）",
+            "sddg_version": "1.0.0",
+            "teaching": {
+              "channels": "三通道：先立典（规格物落笔）、补申报（意图或结果档偏差承载）、显式绕行 close --bypass-sddgate <事由> 落 bypass 台账留痕",
+              "counterexamples": {
+                "SDDG-4": "实装笔落而测试件与对表材料俱缺。"
+              },
+              "criteria_commands": {
+                "SDDG-4": "settle 差分文件清单匹配测试词形（tests 路径、test_ 前缀、_test 后缀）至少一件，且验收材料或对表判词档在档；俱无即拒。"
+              },
+              "gate": [
+                "SDDG-4"
+              ],
+              "gate_verdicts": {
+                "SDDG-1": {
+                  "first_impl_spec_hits": [],
+                  "gate": "SDDG-1",
+                  "intent_spec_declared": true,
+                  "t0_intent": "2026-09-13T06:11:09.353484Z",
+                  "t1_first_impl": "2026-09-13T14:11:09+08:00",
+                  "verdict": "pass",
+                  "window_spec_hits": []
+                },
+                "SDDG-2": {
+                  "checked_new_source_files": 1,
+                  "gate": "SDDG-2",
+                  "verdict": "pass",
+                  "zero_pointer_hits": []
+                },
+                "SDDG-3": {
+                  "deviation_section": true,
+                  "gate": "SDDG-3",
+                  "uncarried_entries": [],
+                  "verdict": "pass",
+                  "zero_deviation_declared": false
+                },
+                "SDDG-4": {
+                  "acceptance_files": [
+                    "goldc-results.md"
+                  ],
+                  "gate": "SDDG-4",
+                  "test_files": [],
+                  "verdict": "reject"
+                }
+              },
+              "reason_code": "sddgate_rejected"
+            },
+            "verdict": "bypass"
+          }
+        },
+        "event": "revoked",
+        "package": "goldc",
+        "reason": null,
+        "removed": [
+          {
+            "base_branch": "master",
+            "branch": "msh/goldc",
+            "branch_result": "deleted",
+            "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+            "result": "removed",
+            "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc",
+            "worktree_result": "removed"
+          }
+        ],
+        "revoked_at": "2026-09-13T00:00:00+00:00",
+        "session_id": "b516664e0251a887",
+        "tool": {
+          "name": "lease",
+          "version": "1.46.0"
+        }
+      },
+      {
+        "allow": [
+          "sih-engine/sih/state/plan/goldd-pending.md"
+        ],
+        "event": "issued",
+        "gauge": {
+          "missing": [
+            "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/gauge/src/gauge/cli.py",
+            "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/sessions.ndjson"
+          ],
+          "reason": "missing",
+          "skipped": true
+        },
+        "identity": {
+          "core_hash": "fixturecorehash0000000000000000000000000000000000000000000000000000000000",
+          "file_sha256": "cfb59070a1cd595acbbc7ced7d3d65c17e11838438814037c7c0dd7053069016",
+          "identity_hash": "fixtureidentityhash00000000000000000000000000000000000000000000000000000000"
+        },
+        "intent": {
+          "anchor_count": 0,
+          "record_sha256": "f14fcd43d32f2e3c5750ad72cc007e553eb0a60035335ae89bde9ea5c78b0584",
+          "validated_by": "lease-structural"
+        },
+        "issued_at": "2026-09-13T00:00:00+00:00",
+        "package": "goldd",
+        "package_path": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/state/plan/goldd.md",
+        "repos": [
+          {
+            "base_branch": "master",
+            "branch": "msh/goldd",
+            "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+            "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldd"
+          }
+        ],
+        "scope_source": "package",
+        "session_id": "2af46b28cdc6c2f4",
+        "tool": {
+          "name": "lease",
+          "version": "1.46.0"
+        }
+      },
+      {
+        "detail": {
+          "calllog_gate": {
+            "checked": true,
+            "unreleased": 0
+          },
+          "calllog_treadmill": {
+            "checked": true,
+            "collected": []
+          },
+          "declaration_gate": {
+            "acks": [
+              {
+                "path": "sih-engine/sih/state/plan/goldd-pending.md",
+                "reason": "fixture 捕获：声明未提交认领放行形（零粉饰事由留档）"
+              }
+            ],
+            "exempt_conditional": [],
+            "gate": "declared_uncommitted",
+            "shared_surface_exempt": [],
+            "uncommitted": [],
+            "unparsed": []
+          },
+          "gates_skipped": {
+            "ack_uncommitted": [
+              "sih-engine/sih/state/plan/goldd-pending.md"
+            ],
+            "calllog_bypass": null,
+            "count": 1,
+            "orphan_bypass": null
+          },
+          "sddgate_gate": {
+            "checked": true,
+            "gate_since": "2026-09-12",
+            "gates": {
+              "SDDG-1": {
+                "first_impl_spec_hits": [],
+                "gate": "SDDG-1",
+                "intent_spec_declared": true,
+                "t0_intent": "2026-09-13T06:13:46.512992Z",
+                "t1_first_impl": null,
+                "verdict": "pass",
+                "window_spec_hits": []
+              },
+              "SDDG-2": {
+                "checked_new_source_files": 0,
+                "gate": "SDDG-2",
+                "verdict": "pass",
+                "zero_pointer_hits": []
+              },
+              "SDDG-3": {
+                "gate": "SDDG-3",
+                "reason": "diff_empty",
+                "uncarried_entries": [],
+                "verdict": "pass"
+              },
+              "SDDG-4": {
+                "acceptance_files": [],
+                "gate": "SDDG-4",
+                "reason": "diff_empty",
+                "test_files": [],
+                "verdict": "pass"
+              }
+            },
+            "sddg_version": "1.0.0",
+            "verdict": "pass"
+          }
+        },
+        "event": "revoked",
+        "package": "goldd",
+        "reason": null,
+        "removed": [
+          {
+            "base_branch": "master",
+            "branch": "msh/goldd",
+            "branch_result": "deleted",
+            "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+            "result": "removed",
+            "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldd",
+            "worktree_result": "removed"
+          }
+        ],
+        "revoked_at": "2026-09-13T00:00:00+00:00",
+        "session_id": "2af46b28cdc6c2f4",
+        "tool": {
+          "name": "lease",
+          "version": "1.46.0"
+        }
+      }
+    ],
+    "header": {
+      "events": 4,
+      "ledger": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih/ledger/sessions.ndjson",
+      "tool": {
+        "name": "lease",
+        "version": "1.46.0"
+      }
+    },
+    "summary": {
+      "active": 0,
+      "revoked": 2
+    },
+    "view_dedup": {
+      "events": [
+        {
+          "allow": [
+            "sih-engine/workfile.txt",
+            "sih-engine/ptrmod.py",
+            "sih-engine/goldc-results.md",
+            "sih-engine/newmod.py",
+            "sih-engine/tests/test_goldc.py",
+            "sih-engine/note-a.txt"
+          ],
+          "event": "issued",
+          "gauge": {
+            "missing": [
+              "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/gauge/src/gauge/cli.py",
+              "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/sessions.ndjson"
+            ],
+            "reason": "missing",
+            "skipped": true
+          },
+          "identity": {
+            "core_hash": "fixturecorehash0000000000000000000000000000000000000000000000000000000000",
+            "file_sha256": "cfb59070a1cd595acbbc7ced7d3d65c17e11838438814037c7c0dd7053069016",
+            "identity_hash": "fixtureidentityhash00000000000000000000000000000000000000000000000000000000"
+          },
+          "intent": {
+            "anchor_count": 0,
+            "record_sha256": "0cbb4b83dce2dc3081aa1e86725e8530b9a568b2e90b47daa71099dbe1f57e1f",
+            "validated_by": "lease-structural"
+          },
+          "issued_at": "2026-09-13T00:00:00+00:00",
+          "package": "goldc",
+          "package_path": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/state/plan/goldc.md",
+          "repos": [
+            {
+              "base_branch": "master",
+              "branch": "msh/goldc",
+              "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+              "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc"
+            }
+          ],
+          "scope_source": "package",
+          "session_id": "b516664e0251a887",
+          "tool": {
+            "name": "lease",
+            "version": "1.46.0"
+          }
+        },
+        {
+          "detail": {
+            "calllog_gate": {
+              "checked": true,
+              "unreleased": 0
+            },
+            "calllog_treadmill": {
+              "checked": true,
+              "collected": []
+            },
+            "declaration_gate": {
+              "acks": [],
+              "exempt_conditional": [],
+              "gate": "declared_uncommitted",
+              "shared_surface_exempt": [],
+              "uncommitted": [],
+              "unparsed": []
+            },
+            "gates_skipped": {
+              "ack_uncommitted": [],
+              "calllog_bypass": null,
+              "count": 0,
+              "orphan_bypass": null
+            },
+            "sddgate_gate": {
+              "checked": true,
+              "gate_since": "2026-09-12",
+              "gates": {
+                "SDDG-1": {
+                  "first_impl_spec_hits": [],
+                  "gate": "SDDG-1",
+                  "intent_spec_declared": true,
+                  "t0_intent": "2026-09-13T06:11:09.353484Z",
+                  "t1_first_impl": "2026-09-13T14:11:09+08:00",
+                  "verdict": "pass",
+                  "window_spec_hits": []
+                },
+                "SDDG-2": {
+                  "checked_new_source_files": 1,
+                  "gate": "SDDG-2",
+                  "verdict": "pass",
+                  "zero_pointer_hits": []
+                },
+                "SDDG-3": {
+                  "deviation_section": true,
+                  "gate": "SDDG-3",
+                  "uncarried_entries": [],
+                  "verdict": "pass",
+                  "zero_deviation_declared": false
+                },
+                "SDDG-4": {
+                  "acceptance_files": [
+                    "goldc-results.md"
+                  ],
+                  "gate": "SDDG-4",
+                  "test_files": [],
+                  "verdict": "reject"
+                }
+              },
+              "reason": "fixture 捕获：SDDG-4 绕行通道留痕形（金向量取材，域内台账）",
+              "sddg_version": "1.0.0",
+              "teaching": {
+                "channels": "三通道：先立典（规格物落笔）、补申报（意图或结果档偏差承载）、显式绕行 close --bypass-sddgate <事由> 落 bypass 台账留痕",
+                "counterexamples": {
+                  "SDDG-4": "实装笔落而测试件与对表材料俱缺。"
+                },
+                "criteria_commands": {
+                  "SDDG-4": "settle 差分文件清单匹配测试词形（tests 路径、test_ 前缀、_test 后缀）至少一件，且验收材料或对表判词档在档；俱无即拒。"
+                },
+                "gate": [
+                  "SDDG-4"
+                ],
+                "gate_verdicts": {
+                  "SDDG-1": {
+                    "first_impl_spec_hits": [],
+                    "gate": "SDDG-1",
+                    "intent_spec_declared": true,
+                    "t0_intent": "2026-09-13T06:11:09.353484Z",
+                    "t1_first_impl": "2026-09-13T14:11:09+08:00",
+                    "verdict": "pass",
+                    "window_spec_hits": []
+                  },
+                  "SDDG-2": {
+                    "checked_new_source_files": 1,
+                    "gate": "SDDG-2",
+                    "verdict": "pass",
+                    "zero_pointer_hits": []
+                  },
+                  "SDDG-3": {
+                    "deviation_section": true,
+                    "gate": "SDDG-3",
+                    "uncarried_entries": [],
+                    "verdict": "pass",
+                    "zero_deviation_declared": false
+                  },
+                  "SDDG-4": {
+                    "acceptance_files": [
+                      "goldc-results.md"
+                    ],
+                    "gate": "SDDG-4",
+                    "test_files": [],
+                    "verdict": "reject"
+                  }
+                },
+                "reason_code": "sddgate_rejected"
+              },
+              "verdict": "bypass"
+            }
+          },
+          "event": "revoked",
+          "package": "goldc",
+          "reason": null,
+          "removed": [
+            {
+              "base_branch": "master",
+              "branch": "msh/goldc",
+              "branch_result": "deleted",
+              "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+              "result": "removed",
+              "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc",
+              "worktree_result": "removed"
+            }
+          ],
+          "revoked_at": "2026-09-13T00:00:00+00:00",
+          "session_id": "b516664e0251a887",
+          "tool": {
+            "name": "lease",
+            "version": "1.46.0"
+          }
+        },
+        {
+          "allow": [
+            "sih-engine/sih/state/plan/goldd-pending.md"
+          ],
+          "event": "issued",
+          "gauge": {
+            "missing": [
+              "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/gauge/src/gauge/cli.py",
+              "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/sessions.ndjson"
+            ],
+            "reason": "missing",
+            "skipped": true
+          },
+          "identity": {
+            "core_hash": "fixturecorehash0000000000000000000000000000000000000000000000000000000000",
+            "file_sha256": "cfb59070a1cd595acbbc7ced7d3d65c17e11838438814037c7c0dd7053069016",
+            "identity_hash": "fixtureidentityhash00000000000000000000000000000000000000000000000000000000"
+          },
+          "intent": {
+            "anchor_count": 0,
+            "record_sha256": "f14fcd43d32f2e3c5750ad72cc007e553eb0a60035335ae89bde9ea5c78b0584",
+            "validated_by": "lease-structural"
+          },
+          "issued_at": "2026-09-13T00:00:00+00:00",
+          "package": "goldd",
+          "package_path": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine/sih/state/plan/goldd.md",
+          "repos": [
+            {
+              "base_branch": "master",
+              "branch": "msh/goldd",
+              "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+              "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldd"
+            }
+          ],
+          "scope_source": "package",
+          "session_id": "2af46b28cdc6c2f4",
+          "tool": {
+            "name": "lease",
+            "version": "1.46.0"
+          }
+        },
+        {
+          "detail": {
+            "calllog_gate": {
+              "checked": true,
+              "unreleased": 0
+            },
+            "calllog_treadmill": {
+              "checked": true,
+              "collected": []
+            },
+            "declaration_gate": {
+              "acks": [
+                {
+                  "path": "sih-engine/sih/state/plan/goldd-pending.md",
+                  "reason": "fixture 捕获：声明未提交认领放行形（零粉饰事由留档）"
+                }
+              ],
+              "exempt_conditional": [],
+              "gate": "declared_uncommitted",
+              "shared_surface_exempt": [],
+              "uncommitted": [],
+              "unparsed": []
+            },
+            "gates_skipped": {
+              "ack_uncommitted": [
+                "sih-engine/sih/state/plan/goldd-pending.md"
+              ],
+              "calllog_bypass": null,
+              "count": 1,
+              "orphan_bypass": null
+            },
+            "sddgate_gate": {
+              "checked": true,
+              "gate_since": "2026-09-12",
+              "gates": {
+                "SDDG-1": {
+                  "first_impl_spec_hits": [],
+                  "gate": "SDDG-1",
+                  "intent_spec_declared": true,
+                  "t0_intent": "2026-09-13T06:13:46.512992Z",
+                  "t1_first_impl": null,
+                  "verdict": "pass",
+                  "window_spec_hits": []
+                },
+                "SDDG-2": {
+                  "checked_new_source_files": 0,
+                  "gate": "SDDG-2",
+                  "verdict": "pass",
+                  "zero_pointer_hits": []
+                },
+                "SDDG-3": {
+                  "gate": "SDDG-3",
+                  "reason": "diff_empty",
+                  "uncarried_entries": [],
+                  "verdict": "pass"
+                },
+                "SDDG-4": {
+                  "acceptance_files": [],
+                  "gate": "SDDG-4",
+                  "reason": "diff_empty",
+                  "test_files": [],
+                  "verdict": "pass"
+                }
+              },
+              "sddg_version": "1.0.0",
+              "verdict": "pass"
+            }
+          },
+          "event": "revoked",
+          "package": "goldd",
+          "reason": null,
+          "removed": [
+            {
+              "base_branch": "master",
+              "branch": "msh/goldd",
+              "branch_result": "deleted",
+              "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+              "result": "removed",
+              "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldd",
+              "worktree_result": "removed"
+            }
+          ],
+          "revoked_at": "2026-09-13T00:00:00+00:00",
+          "session_id": "2af46b28cdc6c2f4",
+          "tool": {
+            "name": "lease",
+            "version": "1.46.0"
+          }
+        }
+      ],
+      "summary": {
+        "collapsed_groups": 0,
+        "collapsed_total_extra": 0,
+        "dedup_keys": [
+          "event",
+          "session_id",
+          "issued_at_or_revoked_at"
+        ],
+        "raw_events": 4,
+        "unique_events": 4
+      }
+    }
+  },
+  "summary": {
+    "active_sessions": 0,
+    "held_locks": 0
+  }
+}

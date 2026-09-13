@@ -164,6 +164,8 @@ T7 hooks 与附件腿
 
 2026-09-13 v1.1 修订一，台账家位落位定谳：提案位 sih/state/ledger/ 作废，承用户 2026-09-13 裁定「账本应该放到 sih/ 里」改落 sih/ledger/，与 DES-015 新城域正典形统一，第一域历史册零迁移纪律不动。
 
+2026-09-13 v1.2 修订二，腿二收约执法面执行记录：批即 lease-commitlaw-parallel、队形并联形。commitcore 与 sddgate 与 guardcore 与 close_session 闸序 Rust 对表实装转绿，金向量三十二场景围堰实测冻结于 src/lease/fixtures/golden2/，集成测试五件全绿即 t5_commit 五测、t6_close_gates 五测、t6_sddgate 四测、t7_guard 五测、t2 与 t3 与 t4 回归。落差发现四处如实登记：其一围堰 date-only --at 使 issued_at 入账为 naive 形致 close 在 calllog 过渡条款比较处 TypeError 崩，findings finding-dateonly-at-treadmill-crash 在档，引擎侧 parse 归一 UTC 兼容两形，围堰修复归其契约修订流程；其二 close 期三闸 bypass 留痕行硬锚 tool_dir 真工具台账不受 --root 锚定，引擎侧改 root 锚定加 --bypass-ledger 透传；其三会话号派生式 make_session_id 为确定性 SHA-256 前十六位，引擎腿一随机 uuid 形按本批对表改派生形；其四 macOS /var 与 /private/var 别名归一入金向量同参形条款别名域。未实装面显式申报：同内容与纯追加让位归并机械即 backup 与 allow_and_merge 与 re_certify、bills SQL 投影腿、gauge_summary 全读形，归腿二后继批或切换批裁量。
+
 ## 内容充分性 {#sufficiency}
 
 - 本节循 SPEC-TEMPLATE-sufficiency-v1 形，只加节不改本文实质。

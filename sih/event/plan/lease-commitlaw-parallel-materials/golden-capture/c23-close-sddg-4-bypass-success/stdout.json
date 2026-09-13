@@ -1,0 +1,130 @@
+{
+  "calllog_gate": {
+    "checked": true,
+    "unreleased": 0
+  },
+  "calllog_treadmill": {
+    "checked": true,
+    "collected": []
+  },
+  "chain_gate": {
+    "checked": true,
+    "trails": 1
+  },
+  "close_receipt": {
+    "check_file_removed": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/checks/goldc.json",
+    "receipt": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-tools/lease/ledger/receipts/goldc.json"
+  },
+  "declaration_gate": {
+    "acks": [],
+    "exempt_conditional": [],
+    "gate": "declared_uncommitted",
+    "shared_surface_exempt": [],
+    "uncommitted": [],
+    "unparsed": []
+  },
+  "failed": [],
+  "gates_skipped": {
+    "ack_uncommitted": [],
+    "calllog_bypass": null,
+    "count": 0,
+    "orphan_bypass": null
+  },
+  "removed": [
+    {
+      "base_branch": "master",
+      "branch": "msh/goldc",
+      "branch_result": "deleted",
+      "repo": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/sih-engine",
+      "result": "removed",
+      "worktree": "/Users/moc/workspaces/SiHankor/work/leg2-fixtures/domain2/worktrees/sih-engine/goldc",
+      "worktree_result": "removed"
+    }
+  ],
+  "revoked": true,
+  "sddgate_gate": {
+    "checked": true,
+    "gate_since": "2026-09-12",
+    "gates": {
+      "SDDG-1": {
+        "first_impl_spec_hits": [],
+        "gate": "SDDG-1",
+        "intent_spec_declared": true,
+        "t0_intent": "2026-09-13T06:11:09.353484Z",
+        "t1_first_impl": "2026-09-13T14:11:09+08:00",
+        "verdict": "pass",
+        "window_spec_hits": []
+      },
+      "SDDG-2": {
+        "checked_new_source_files": 1,
+        "gate": "SDDG-2",
+        "verdict": "pass",
+        "zero_pointer_hits": []
+      },
+      "SDDG-3": {
+        "deviation_section": true,
+        "gate": "SDDG-3",
+        "uncarried_entries": [],
+        "verdict": "pass",
+        "zero_deviation_declared": false
+      },
+      "SDDG-4": {
+        "acceptance_files": [
+          "goldc-results.md"
+        ],
+        "gate": "SDDG-4",
+        "test_files": [],
+        "verdict": "reject"
+      }
+    },
+    "reason": "fixture 捕获：SDDG-4 绕行通道留痕形（金向量取材，域内台账）",
+    "sddg_version": "1.0.0",
+    "teaching": {
+      "channels": "三通道：先立典（规格物落笔）、补申报（意图或结果档偏差承载）、显式绕行 close --bypass-sddgate <事由> 落 bypass 台账留痕",
+      "counterexamples": {
+        "SDDG-4": "实装笔落而测试件与对表材料俱缺。"
+      },
+      "criteria_commands": {
+        "SDDG-4": "settle 差分文件清单匹配测试词形（tests 路径、test_ 前缀、_test 后缀）至少一件，且验收材料或对表判词档在档；俱无即拒。"
+      },
+      "gate": [
+        "SDDG-4"
+      ],
+      "gate_verdicts": {
+        "SDDG-1": {
+          "first_impl_spec_hits": [],
+          "gate": "SDDG-1",
+          "intent_spec_declared": true,
+          "t0_intent": "2026-09-13T06:11:09.353484Z",
+          "t1_first_impl": "2026-09-13T14:11:09+08:00",
+          "verdict": "pass",
+          "window_spec_hits": []
+        },
+        "SDDG-2": {
+          "checked_new_source_files": 1,
+          "gate": "SDDG-2",
+          "verdict": "pass",
+          "zero_pointer_hits": []
+        },
+        "SDDG-3": {
+          "deviation_section": true,
+          "gate": "SDDG-3",
+          "uncarried_entries": [],
+          "verdict": "pass",
+          "zero_deviation_declared": false
+        },
+        "SDDG-4": {
+          "acceptance_files": [
+            "goldc-results.md"
+          ],
+          "gate": "SDDG-4",
+          "test_files": [],
+          "verdict": "reject"
+        }
+      },
+      "reason_code": "sddgate_rejected"
+    },
+    "verdict": "bypass"
+  },
+  "session_id": "b516664e0251a887"
+}
