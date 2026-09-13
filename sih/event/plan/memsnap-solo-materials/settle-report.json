@@ -1,0 +1,28 @@
+{
+ "tool": "memsnap-solo",
+ "version": "1.0.0",
+ "session": "15b380b9820dd91b",
+ "date": "2026-09-13",
+ "summary": "项目记忆快照层正式立项批：DEC-025 即 doc/decision/025-project-memory-snapshot-initiation-v1.md 落档，病灶三轮考古失真实例承载，机制即派生快照投影器，收约即再生挂 lease close，启动即加载挂会话启动，投影源五路投影对象 AGENTS.md 可派生节，温故检索面与快照常驻投影两消费形划界，pk-055 出泊并入实施批，实施路线设计加实装加切换三步，组件命名候裁另走立名，立项不含实施。令源用户 2026-09-13「项目记忆，就是我们这几轮考古要正式立项」与「多子代理并行加速」。",
+ "commits": {
+  "sih-engine": "19c8983"
+ },
+ "pipeline": {
+  "formatter_rc": 0,
+  "scrutinator_rc": 0,
+  "scrutinator_findings": 0,
+  "nomenclator_rc": 0,
+  "note": "DEC 初跑 scrut 3 findings 全为全角括号内容逐处修后复跑零；结果档 scrut 退出码 2 为 event/plan 域外记档先例非违规"
+ },
+ "f_table": {
+  "F1_precedent_carry": "pass",
+  "F2_projection_convention": "pass",
+  "F3_pipeline_clean": "pass"
+ },
+ "declarations": [
+  "SDDG-4 测试词形差分缺位属纯立项批形结构性缺位，验收承载归 DEC-025 复用条款实施批路线",
+  "主线工作树四件先存改动非本会话所写零触碰",
+  "组件命名候裁另走立名，memsnap 批名认领非终裁"
+ ],
+ "exit_code": 0
+}
