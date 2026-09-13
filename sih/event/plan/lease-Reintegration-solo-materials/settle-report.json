@@ -1,0 +1,28 @@
+{
+ "tool": "lease-Reintegration-solo",
+ "version": "1.0.0",
+ "session": "b873be23785b2fc1",
+ "date": "2026-09-13",
+ "summary": "租约融回三步曲第一步 SDD 落差规格批：SPEC-024-lease-mergeback-gap-v1.md 落档，Rust 原生三腿切分，接口对表十九加五子命令，台账家位提案 sih/state/ledger/ 候用户裁，散档待清债九处归入验收判据 A3 至 A8，金向量脏目标五形与同参形条款在场，双模并存围堰零改动红线，meter 计量断流观测缺陷如实申报。令源用户 2026-09-13「租约启动融回」；多子代理并行取材双 Explore 已毕，写件主会亲写。",
+ "commits": {
+  "sih-engine": "0e6b9a0"
+ },
+ "pipeline": {
+  "formatter_rc": 0,
+  "scrutinator_rc": 0,
+  "scrutinator_findings": 0,
+  "nomenclator_rc": 0,
+  "note": "结果档 scrut 退出码 2 为 event/plan 域外记档先例非违规；SPEC 初跑 14 findings 逐处修后复跑零"
+ },
+ "f_table": {
+  "F1_debt_collection": "pass",
+  "F2_skeleton_coverage": "pass",
+  "F3_pipeline_clean": "pass"
+ },
+ "declarations": [
+  "主线工作树 domaware-solo-results 与 mcpdual-parallel-results 与 wengumcp-parallel-results 与 trail/2026-09-11 四件先存改动非本会话所写零触碰",
+  "台账家位落位候用户裁，裁决前实装批不得开工",
+  "计量供给修复两径候用户裁"
+ ],
+ "exit_code": 0
+}
