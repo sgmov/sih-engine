@@ -1,0 +1,19 @@
+{
+  "session_id": "sess-zcode-260913-memsnap",
+  "round": 1,
+  "calls_in": 0,
+  "calls_out": 0,
+  "raw_input": "用户 2026-09-13 令「项目记忆（就是我们这几轮考古要正式立项）」",
+  "intent_contract": {
+    "goal": "项目记忆快照层正式立项批：交付 DEC-025 立项决策档，循 DEC-014 先例形，机制定义与权威源声明与分工划界与实施路线，组件命名候裁另走立名，立项不含实施"
+  },
+  "domain_contract": {
+    "repos": ["sih-engine"],
+    "writes": [
+      "sih-engine/doc/decision/025-project-memory-snapshot-initiation-v1.md",
+      "sih-engine/sih/state/plan/memsnap-solo.md",
+      "sih-engine/sih/event/plan/memsnap-solo-results.md",
+      "sih-engine/sih/event/trail/2026-09-13.ndjson"
+    ]
+  }
+}
