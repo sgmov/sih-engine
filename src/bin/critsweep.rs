@@ -1,4 +1,5 @@
 //! 判据扫引擎件（critsweep）：对话框内治理态回算器，v1.2.0 的引擎 bin 形。
+// 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 //! 移植源：sih-tools/critsweep/sweep.py（lease-mergeall-parallel 簇A施工）。
 //! 行为链：GOV-002 判据面（registry 判据单源，近窗 trail 事件命名空间字段
 //! 扫令牌——record_path/report_path/package 禁全文散文匹配——加证据指针核对

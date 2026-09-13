@@ -1,4 +1,5 @@
 //! 引擎侧检词（Nomenclator）命令行面 —— lease-mergeall-parallel 簇B 移植件。
+// 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 //!
 //! 行为面移植自围堰 sih-tools/nomenclator 0.3.0（src/nomenclator/：cli.py、pack.py、
 //! check.py、matching.py、query.py、map.py），只读对表移植，围堰源码零改动。

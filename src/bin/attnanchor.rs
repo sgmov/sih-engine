@@ -16,6 +16,7 @@
 //!    移植一律降级行如实。
 //! 5. 出参 pretty 化（围堰 compact 单行）：JSON 语义等价，注入面解析不受影响。
 //! 6. 域覆盖核对依赖 git 在 PATH（git log --pretty=%cs），与围堰同。
+// 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 
 use serde_json::{json, Map, Value};
 use std::io::Read;

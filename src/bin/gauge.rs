@@ -23,6 +23,7 @@
 //! 8. 出参 pretty 化（围堰 compact sort_keys）：JSON 语义等价；reading 本体
 //!    键序按 sort_keys 排布落链内容可对表。
 //! 退出码：0 成功／1 维度违例或落链拒／2 用法错或缺底座件或混域拒。
+// 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 
 use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};

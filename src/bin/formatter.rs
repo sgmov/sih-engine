@@ -1,4 +1,5 @@
 //! 引擎侧化格（Formatter）命令行面 —— lease-mergeall-parallel 簇B 移植件。
+// 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 //!
 //! 行为面移植自围堰 sih-tools/formatter 0.2.0（src/formatter/：cli.py、packs.py、
 //! format.py、report.py；域判定借 sih-tools/scrutinator/src/scrutinator/domain.py 的
