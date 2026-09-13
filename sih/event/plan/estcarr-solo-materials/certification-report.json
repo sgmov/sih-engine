@@ -1,0 +1,24 @@
+{
+  "batch": "estcarr-solo",
+  "session_id": "48a464f8cc7b9895",
+  "date": "2026-09-13",
+  "kind": "pipeline-certification",
+  "order_source": "用户 2026-09-13 数学仓完善令",
+  "deliverables": {
+    "entries": ["TOP-009", "APP-012", "PROB-020", "PROB-021", "ORD-026"],
+    "index_updates": ["topology", "probability", "order", "calculus"],
+    "mapping_rows_added": 4,
+    "derivation_doc": "sih-math/docs/estcarr-derivation-2026-09-13.md",
+    "results_doc": "sih-engine/sih/event/plan/estcarr-solo-results.md"
+  },
+  "readings": {
+    "ask3_scrutinator_exit": 0,
+    "ask3repeater": "ok",
+    "elicit_digest": "passed",
+    "elicit_covered": 4,
+    "identity_anomalies": 0,
+    "nomenclator_seven_files_exit": 0,
+    "results_formatter_exit": 0
+  },
+  "exit_code": 0
+}
