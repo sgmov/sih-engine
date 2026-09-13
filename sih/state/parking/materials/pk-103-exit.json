@@ -1,0 +1,11 @@
+{
+  "action": "exit",
+  "entry_id": "pk-103",
+  "disposition": "promoted",
+  "ruling": "lease-attachments-solo 批 2026-09-14 收口：engine lease root 缺省自 cwd 上溯（detect_domain_context 对表）加 stem 闸全查路实装（spawn uv nomenclator query fail-closed）加 --new-stem 甲表核对移植，SPEC-024 v1.3 修订三落差申报在案",
+  "context": "出泊条件达成：src/bin/lease/attachments.rs stem_check_full 加 cmd_open root 推导，T7 t7_stem_gate_full_query_rejects_unknown 与 t7_stem_gate_pack_absent_skip_regression 双形绿",
+  "state": "exited",
+  "parking": {
+    "entered_at": "2026-09-13"
+  }
+}
