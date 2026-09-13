@@ -8,6 +8,7 @@ pub mod alpha;
 pub mod errors;
 pub mod matrix;
 pub mod passthrough;
+pub mod providers;
 pub mod runtime;
 pub mod server;
 pub mod session;

@@ -20,7 +20,9 @@ use tokio::sync::Mutex;
 use super::alpha;
 use super::matrix::{is_tool_exposed, resolve_agent_class};
 use super::session::ConnectionSession;
+use super::providers;
 use super::tools;
+use crate::tools_registry::{ToolError, ToolRegistry};
 
 const SERVER_NAME: &str = "sihmcp";
 const SERVER_VERSION: &str = env!("CARGO_PKG_VERSION");
@@ -34,6 +36,9 @@ pub struct SihMcpServer {
     /// 一连接一会话（DES-014 第一节）：stdio 形态一进程一连接，进程始即连接生。
     pub conn: Arc<Mutex<ConnectionSession>>,
     pub agent_class: &'static str,
+    /// A3 统一注册形（SPEC-025 腿四接线）：19 具内置 provider 全数注册，
+    /// list 与 call 经 registry 派生，散点 match 分派退役。
+    pub registry: ToolRegistry,
 }
 
 impl SihMcpServer {
@@ -41,9 +46,12 @@ impl SihMcpServer {
     /// auto_open 承载（缺省形客户端经 lease_open 显式立）。
     pub fn new() -> Self {
         let agent_class = resolve_agent_class();
+        let conn = Arc::new(Mutex::new(ConnectionSession::new(agent_class)));
+        let registry = providers::build_registry(agent_class, conn.clone());
         Self {
-            conn: Arc::new(Mutex::new(ConnectionSession::new(agent_class))),
+            conn,
             agent_class,
+            registry,
         }
     }
 }
@@ -63,7 +71,7 @@ fn canon_pair() -> String {
     format!("{CANON_SPEC_023}；{CANON_LINE_PKG}")
 }
 
-fn beta_defs(agent_class: &str) -> Vec<Tool> {
+pub(crate) fn beta_defs(agent_class: &str) -> Vec<Tool> {
     // 工具描述冻结为契约文本（DES-014 第七节缓解位）：静态、随批评审、只载
     // 操作语义不含可执行指令面。_beta_desc 形：zh 加 en 加 设计正典指针。
     let canon_beta = format!("{CANON_DES_014}；{CANON_SPEC_023}");
@@ -179,13 +187,13 @@ fn beta_defs(agent_class: &str) -> Vec<Tool> {
         .collect()
 }
 
-fn tool_defs(agent_class: &str) -> Vec<Tool> {
+pub fn tool_defs(agent_class: &str) -> Vec<Tool> {
     let mut all = alpha_defs();
     all.extend(beta_defs(agent_class));
     all
 }
 
-fn alpha_defs() -> Vec<Tool> {
+pub(crate) fn alpha_defs() -> Vec<Tool> {
     let canon = canon_pair();
     let desc_query = format!(
         "查当日治理链事件清单（哈希、事件型、主体字段）。Query one day's governance chain events \
@@ -298,23 +306,23 @@ fn alpha_defs() -> Vec<Tool> {
         .collect()
 }
 
-fn get_str(args: &Value, key: &str) -> Option<String> {
+pub(crate) fn get_str(args: &Value, key: &str) -> Option<String> {
     args.get(key).and_then(|v| v.as_str()).map(str::to_owned)
 }
 
-fn get_bool(args: &Value, key: &str) -> Option<bool> {
+pub(crate) fn get_bool(args: &Value, key: &str) -> Option<bool> {
     args.get(key).and_then(|v| v.as_bool())
 }
 
-fn get_i64(args: &Value, key: &str) -> Option<i64> {
+pub(crate) fn get_i64(args: &Value, key: &str) -> Option<i64> {
     args.get(key).and_then(|v| v.as_i64())
 }
 
-fn get_f64(args: &Value, key: &str) -> Option<f64> {
+pub(crate) fn get_f64(args: &Value, key: &str) -> Option<f64> {
     args.get(key).and_then(|v| v.as_f64())
 }
 
-fn get_str_list(args: &Value, key: &str) -> Option<Vec<String>> {
+pub(crate) fn get_str_list(args: &Value, key: &str) -> Option<Vec<String>> {
     args.get(key).and_then(|v| v.as_array()).map(|a| {
         a.iter()
             .filter_map(|x| x.as_str().map(str::to_owned))
@@ -355,7 +363,20 @@ impl ServerHandler for SihMcpServer {
         _request: Option<PaginatedRequestParam>,
         _context: RequestContext<RoleServer>,
     ) -> Result<ListToolsResult, McpError> {
-        Ok(ListToolsResult::with_all_items(tool_defs(self.agent_class)))
+        let tools: Vec<Tool> = self
+            .registry
+            .list()
+            .map_err(|e| McpError::internal_error(e.to_string(), None))?
+            .into_iter()
+            .map(|d| Tool {
+                name: d.name.into(),
+                description: Some(d.description.into()),
+                input_schema: d.input_schema.as_object().cloned().unwrap_or_default().into(),
+                output_schema: None,
+                annotations: None,
+            })
+            .collect();
+        Ok(ListToolsResult::with_all_items(tools))
     }
 
     async fn call_tool(
@@ -365,142 +386,24 @@ impl ServerHandler for SihMcpServer {
     ) -> Result<CallToolResult, McpError> {
         let name = request.name.to_string();
         let args = Value::Object(request.arguments.unwrap_or_default());
+        // β 写面：会话绑定卫在 tools 层 precheck（矩阵拒透传的未注册工具
+        // 到不了这里；分级残留面以同表复核兜底）。
         let is_beta = super::matrix::MATRIX_ROWS.contains(&name.as_str());
-        let value = if is_beta {
-            // β 写面：会话绑定卫在 tools 层 precheck（矩阵拒透传的未注册工具
-            // 到不了这里；分级残留面以同表复核兜底）。
-            if !is_tool_exposed(&name, self.agent_class) {
-                return Err(McpError::invalid_params(
-                    format!("授权矩阵拒透传：分级 {} 无工具 {name} 行", self.agent_class),
-                    None,
-                ));
+        if is_beta && !is_tool_exposed(&name, self.agent_class) {
+            return Err(McpError::invalid_params(
+                format!("授权矩阵拒透传：分级 {} 无工具 {name} 行", self.agent_class),
+                None,
+            ));
+        }
+        // A3 接线（SPEC-025 腿四）：分派全量走 registry；执行级错误载荷经
+        // Execution 通道承 McpError 序列化串，此处逐字还原保 JSON-RPC error
+        // 形零变（双跑对表锁基线 7e1c9328608f7438）。
+        let value = match self.registry.call(&name, args).await {
+            Ok(v) => v,
+            Err(ToolError::NotFound(n)) => {
+                return Err(McpError::invalid_params(format!("未知工具 `{n}`"), None));
             }
-            let mut guard = self.conn.lock().await;
-            let conn = &mut *guard;
-            match name.as_str() {
-                "lease_open" => {
-                    tools::tool_lease_open(
-                        conn,
-                        get_str(&args, "package"),
-                        get_str(&args, "intent"),
-                        get_str_list(&args, "repo"),
-                        get_str_list(&args, "allow"),
-                    )
-                    .await
-                }
-                "record_intent" => {
-                    tools::tool_record_intent(
-                        conn,
-                        get_str(&args, "record"),
-                        get_str(&args, "validation"),
-                        get_str(&args, "date"),
-                    )
-                    .await
-                }
-                "record_append" => {
-                    tools::tool_record_append(
-                        conn,
-                        get_str(&args, "report"),
-                        get_i64(&args, "exit_code"),
-                        get_str(&args, "date"),
-                    )
-                    .await
-                }
-                "record_park" => {
-                    tools::tool_record_park(conn, get_str(&args, "record"), get_str(&args, "date"))
-                        .await
-                }
-                "record_direct" => {
-                    tools::tool_record_direct(conn, get_str(&args, "record"), get_str(&args, "date"))
-                        .await
-                }
-                "lease_lock" => {
-                    tools::tool_lease_lock(
-                        conn,
-                        get_str(&args, "path"),
-                        get_str(&args, "mode"),
-                        get_bool(&args, "wait"),
-                    )
-                    .await
-                }
-                "lease_unlock" => tools::tool_lease_unlock(conn, get_str(&args, "path")).await,
-                "lease_wait_turn" => {
-                    tools::tool_lease_wait_turn(
-                        conn,
-                        get_str(&args, "path"),
-                        get_f64(&args, "timeout_seconds"),
-                        get_f64(&args, "interval_seconds"),
-                        get_str(&args, "mode"),
-                    )
-                    .await
-                }
-                "lease_claim" => {
-                    tools::tool_lease_claim(
-                        conn,
-                        get_str(&args, "package"),
-                        get_i64(&args, "ttl"),
-                        get_str(&args, "claimant"),
-                    )
-                    .await
-                }
-                "lease_unclaim" => {
-                    tools::tool_lease_unclaim(
-                        conn,
-                        get_str(&args, "package"),
-                        get_str(&args, "claimant"),
-                    )
-                    .await
-                }
-                "lease_commit" => {
-                    tools::tool_lease_commit(
-                        conn,
-                        args.get("repo").cloned(),
-                        get_str(&args, "stage"),
-                        get_str(&args, "subject"),
-                        get_i64(&args, "seq"),
-                        get_str(&args, "cert"),
-                        get_str(&args, "note"),
-                        get_str_list(&args, "trail"),
-                        get_str(&args, "root"),
-                    )
-                    .await
-                }
-                "lease_close" => {
-                    tools::tool_lease_close(conn, get_str(&args, "package"), get_str(&args, "reason"))
-                        .await
-                }
-                other => {
-                    return Err(McpError::invalid_params(format!("未知工具 `{other}`"), None));
-                }
-            }
-        } else {
-            match name.as_str() {
-                "chain_query" => {
-                    alpha::chain_query(get_str(&args, "date"), get_str(&args, "event_type")).await
-                }
-                "chain_verify" => alpha::chain_verify(get_str(&args, "date")).await,
-                "critsweep" => alpha::critsweep(get_str(&args, "date")).await,
-                "heartbeat" => alpha::heartbeat().await,
-                "locks_read" => alpha::locks_read().await,
-                "naming_guide" => alpha::naming_guide().await,
-                "nomenclator_query" => alpha::nomenclator_query(get_str(&args, "word")).await,
-                "nomenclator_check" => alpha::nomenclator_check(get_str(&args, "target")).await,
-                "retriever_recall" => {
-                    alpha::retriever_recall(
-                        get_str_list(&args, "topic"),
-                        get_str_list(&args, "word"),
-                        get_str_list(&args, "event"),
-                        get_str(&args, "since"),
-                        get_str(&args, "until"),
-                        get_str(&args, "archive"),
-                        get_str(&args, "at"),
-                    )
-                    .await
-                }
-                other => {
-                    return Err(McpError::invalid_params(format!("未知工具 `{other}`"), None));
-                }
-            }
+            Err(e) => return Err(McpError::internal_error(e.to_string(), None)),
         };
         Ok(CallToolResult {
             content: Some(vec![Content::text(
