@@ -29,10 +29,14 @@ SPEC-024 租约融回落差规格：Rust 原生实装三腿切分（锁核加收
 | F-2 骨架对表 | 节标题覆盖 SPEC-013/014/015 共同骨架全节 | 过：概览加家位加接口对表加双模并存加验收判据加金向量两条款加回迁债加测试计划加边界加修订记录加内容充分性 |
 | F-3 管线零违规 | 化格 0/1、核阅 0、检词 0 | 过：0/0/0 |
 
-## 越线与误差申报 {#declarations}
+## 偏差申报 {#declarations}
 
-- 主线工作树三件先存改动即 domaware-solo-results 与 mcpdual-parallel-results 与 wengumcp-parallel-results 与 trail/2026-09-11 非本会话所写零触碰，收约差集闸如实申报不代清。
-- 取材阶段 meter 勘察即 582 件计数全为 scribe 一件的发现随观测缺陷入规格首段。
+- 偏差一：批名初拟 leasemerge-sdd-solo 被 stem 查册闸拒（DEC-017 修订四执行位），改正 lease-Reintegration-solo 三段全已立词形，随 SPEC-024 落档一并承载。
+- 偏差二：认证报告落 materials 目录而任务包请求写入漏报 materials 车道，经 git 6747162 绕行落盘并 bypass 登记归账，事由即 SPEC-024 批任务包申报缺口，承 DEC-013 迁移动作走批留痕。
+- 偏差三：SDDG-4 测试词形差分缺位如实申报，本批为纯规格批零实装，测试承载归 TDD 候批（SPEC-024 测试计划 T1 至 T7），承 DEC-024 门语义。
+- 偏差四：主线工作树 domaware-solo-results 与 mcpdual-parallel-results 与 wengumcp-parallel-results 与 trail/2026-09-11 四件先存改动非本会话所写零触碰，差集闸如实申报不代清。
+- 偏差五：meter 计量断流勘察发现即 582 件计数全为书简一件，随观测缺陷入 SPEC-024 首段与回迁债节，修复两径候裁。
+- 零偏差显式申报位：除上列五条外本批零其他偏差。
 
 ## 后续待令 {#next}
 
