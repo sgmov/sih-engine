@@ -1,0 +1,57 @@
+{
+  "allow": [
+    "sih/ledger/sessions.ndjson",
+    "sih/ledger/locks.ndjson",
+    "sih/ledger/bills.ndjson"
+  ],
+  "allow_derived": [],
+  "allow_effective": [
+    "sih/ledger/sessions.ndjson",
+    "sih/ledger/locks.ndjson",
+    "sih/ledger/bills.ndjson"
+  ],
+  "event": "issued",
+  "gauge": {
+    "missing": [
+      "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-tools/gauge/src/gauge/cli.py",
+      "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-tools/lease/ledger/sessions.ndjson",
+      "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-engine/sih/event/trail"
+    ],
+    "reason": "missing",
+    "skipped": true
+  },
+  "identity": {
+    "core_hash": "c866cea3d23ef7a2795a95cfd397cdc7be677994422883dfc6423ea0e0939e56",
+    "file_sha256": "3282d61e38d841363f2ccfa7e19181402f0d3b758c29ff6428d04a3b41b55d1e",
+    "identity_hash": "3e3027ffd1916ea1d16a41ce6ca7641bdb14dd13e85acfaa7c5b544c16ffb18f"
+  },
+  "intent": {
+    "anchor_count": 0,
+    "record_sha256": "3d074c4ed6b607c3ad837762086cc75fbd91c0acb146bc85ac8498c2e9b8cda8",
+    "validated_by": "lease-structural"
+  },
+  "issued_at": "2026-09-13T00:00:00+00:00",
+  "package": "golden-a",
+  "package_path": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-engine/sih/state/plan/golden-a.md",
+  "repos": [
+    {
+      "base_branch": "master",
+      "branch": "msh/golden-a",
+      "repo": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-engine",
+      "worktree": "/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/worktrees/sih-engine/golden-a"
+    }
+  ],
+  "scope_source": "package",
+  "session_id": "29869ed8bd9e35ac",
+  "stem_check": {
+    "checked": false,
+    "disposition": "pack_absent_skip",
+    "domain_scope": "first",
+    "segments": [],
+    "teaching": "词典包缺席（/Users/moc/workspaces/SiHankor/work/lease-fixtures/domain1/sih-tools/nomenclator/packs/core）：本域命名查册未执行，回执显形不遮掩"
+  },
+  "tool": {
+    "name": "lease",
+    "version": "1.46.0"
+  }
+}

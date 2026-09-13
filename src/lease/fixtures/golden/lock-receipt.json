@@ -1,0 +1,14 @@
+{
+  "duplicate": false,
+  "line": {
+    "acquired_at": "2026-09-13T00:00:00+00:00",
+    "event": "acquired",
+    "mode": "exclusive",
+    "path": "sih/ledger/sessions.ndjson",
+    "session_id": "29869ed8bd9e35ac",
+    "tool": {
+      "name": "lease",
+      "version": "1.46.0"
+    }
+  }
+}
