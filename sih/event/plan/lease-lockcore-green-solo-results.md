@@ -37,3 +37,7 @@
 ## 后续待令 {#next}
 
 - 腿二收约执法面（commitcore 与 sddgate 与 guardcore 对表）与腿三附件面候令；SPEC-024 同参形 session_id 归一项修订随腿二批承载。
+
+## 结算节 {#settle}
+
+- wip 提交 facee9d，认证报告经 scribe append 后锁面内落盘，先例同形。

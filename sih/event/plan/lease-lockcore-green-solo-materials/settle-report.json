@@ -1,0 +1,24 @@
+{
+ "tool": "lease-lockcore-green-solo",
+ "version": "1.0.0",
+ "session": "060e904854b1e219",
+ "date": "2026-09-13",
+ "summary": "租约融回腿一绿批：src/bin/lease.rs 锁核 fixture 对等实装约五百行五子命令，T2 金向量归一逐字节四Receipt比对转绿加 T3 退出码转绿加 T4 撞锁 locked_elsewhere 转绿，红测三件全绿定格。全量回归 229 绿 2 红即主树先存红如实申报。tool.version 承契约面字面 1.46.0 承 SPEC-015 先例。腿二收约执法面与腿三附件面候令。",
+ "commits": {
+  "sih-engine": "facee9d"
+ },
+ "pipeline": {
+  "note": "本批交付面为 rust 实装与测试件，零 doc 域文件，管线三步不适用；cargo fmt 已过"
+ },
+ "f_table": {
+  "F1_t2_golden_green": "pass",
+  "F2_t3_exit_codes_green": "pass",
+  "F3_t4_locked_elsewhere_green": "pass"
+ },
+ "declarations": [
+  "实装覆盖域为 fixture 对等域，生产级面归腿一后继批承 SPEC-024 腿切分",
+  "全量回归两红为主树先存红经主树对照验实，处置归核阅金向量卫生候批",
+  "chained workspace 门族未实现触发即退出码二显式拒不静默"
+ ],
+ "exit_code": 0
+}
