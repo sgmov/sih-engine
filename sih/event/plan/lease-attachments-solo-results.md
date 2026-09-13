@@ -30,6 +30,12 @@
 
 单线形成立：主线亲写四件与测试与 SPEC 修订，零子代理，上下文连续性保障对表一致性（围堰 7834 行源码参照零转译损耗）。
 
+## 偏差
+
+- 影子副本清批偏差：主树未跟踪批件目录与分支树撞 SPEC-024 v1.2 落差 F4 同款真分叉闸，对表一致后清主树影子件，内容以分支提交为准。
+- 无主闸让位偏差：m-retireform 旧窗遗留三件非本批产物，close --bypass-orphan 让位留痕候其属主窗处置，处置先例承 SPEC-024 v1.2 腿二批同款，本批零触碰。
+- 未实装申报偏差：call-log sqlite 索引腿与 takeover 等三子命令未实装，SPEC-024 v1.3 修订三落差节如实登记，候后批按需。
+
 ## 明确不做与后件
 
 - takeover 与 ledger-repair 与 heartbeat 与 wait-turn 与 preempt-release 独立子命令未实装（sweep fix 已内联覆盖前两形，余三候后批按需）。

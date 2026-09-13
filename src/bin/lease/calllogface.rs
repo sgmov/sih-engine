@@ -1,5 +1,6 @@
 //! call-log import：19 册 markdown 存量迁移到权威腿（calllog_import.py 对表，
-//! P3 迁移忠实形 m-calllog-dual-1 已裁）。
+//! P3 迁移忠实形 m-calllog-dual-1 已裁）。正典指针：SPEC-024 租约融回落差
+//! 规格腿三节与 sih-engine/doc/spec/SPEC-024-lease-mergeback-gap-v1.md。
 //!
 //! 零有损：每行原文整行入 verbatim 载体；尽力解析：类型字段解析失败即空值
 //! 申报不猜不编；对表机械：行数符加 verbatim 零丢加失败清单在档。
