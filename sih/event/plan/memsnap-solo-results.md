@@ -40,3 +40,8 @@ DEC-025 项目记忆快照层立项：病灶三轮失真实例承载，机制即
 ## 后续待令 {#next}
 
 - 设计批落 DES 钉待建面与验收判据，候用户令；pk-055 出泊并入实装批。
+
+## 结算节 {#settle}
+
+- wip 提交 19c8983，认证报告 settle-report.json 经 scribe append 落链 c0c4512d 后以 git 05d7429 绕行落盘并经 bypass 登记归账，事由即任务包请求写入漏报 materials 车道。
+- 本段结算尾注为 settle staged 承载件，先例同形。
