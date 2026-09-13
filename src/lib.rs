@@ -12,6 +12,7 @@ pub mod mcpserver;
 pub mod retriever;
 pub mod snapline;
 pub mod scrutinator;
+pub mod tools_registry;
 pub mod view;
 
 // Re-export the public API

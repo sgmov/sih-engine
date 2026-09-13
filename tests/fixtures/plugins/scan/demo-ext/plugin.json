@@ -1,0 +1,10 @@
+{
+  "name": "demo-ext",
+  "version": "0.1.0",
+  "transport": "stdio",
+  "command": "demo-plugin",
+  "tools": [
+    {"name": "demo_greet", "description": "演示外挂工具：greet。"},
+    {"name": "demo_ping"}
+  ]
+}
