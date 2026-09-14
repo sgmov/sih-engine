@@ -401,12 +401,23 @@ async fn manual_page(State(state): State<WebState>) -> Response {
 }
 
 /// POST /tokens/issue：签发第一步确认面（显示标识与所绑域与档位，零写入）。
+/// 域自举闸（recognize-solo）：目标根未域自举（非中央根且 sih 树缺席）即
+/// 教学拒，杜绝牌先于域——sim-dev 病灶（2026-09-14）源头收口位。
 async fn issue_action(State(state): State<WebState>, Form(form): Form<IssueForm>) -> Response {
     let v = match validate_issue_form(&form) {
         Ok(v) => v,
         Err((m, a)) => return error_page(&m, &a),
     };
     let resolved = resolve_domain_root(&state.root, &v.domain_root);
+    if !crate::mcpserver::httpface::domain_opened(&resolved, &state.root) {
+        return error_page(
+            &format!(
+                "目标根 {} 未域自举（新城正典形 sih 树缺席）：签发闸拒牌先于域",
+                resolved.display()
+            ),
+            "先经本台域自举形（tokens/open）开域，域自举完成后再签发标识牌",
+        );
+    }
     let body = format!(
         "<h2>签发确认（一步确认防手滑）</h2>\
 <p>标识 <code>{tid}</code> · 所绑域根 <code>{res}</code> · 档位 <code>{scope}</code></p>\
@@ -425,13 +436,24 @@ async fn issue_action(State(state): State<WebState>, Form(form): Form<IssueForm>
 }
 
 /// POST /tokens/confirm-issue：签发第二步落笔，动作即台账追加行（status
-/// active，已 active 重发即拒）。
+/// active，已 active 重发即拒）。域自举闸纵深位：第一步拦常态，第二步再验
+/// 一次防表单直投（同源谓词零第二实现）。
 async fn confirm_issue_action(State(state): State<WebState>, Form(form): Form<IssueForm>) -> Response {
     let v = match validate_issue_form(&form) {
         Ok(v) => v,
         Err((m, a)) => return error_page(&m, &a),
     };
-    let resolved = resolve_domain_root(&state.root, &v.domain_root).display().to_string();
+    let resolved_path = resolve_domain_root(&state.root, &v.domain_root);
+    if !crate::mcpserver::httpface::domain_opened(&resolved_path, &state.root) {
+        return error_page(
+            &format!(
+                "目标根 {} 未域自举（新城正典形 sih 树缺席）：签发闸拒牌先于域",
+                resolved_path.display()
+            ),
+            "先经本台域自举形（tokens/open）开域，域自举完成后再签发标识牌",
+        );
+    }
+    let resolved = resolved_path.display().to_string();
     let registry = registry_path(&state.root);
     let rows = match tokens::load_last_rows(&registry) {
         Ok(rows) => rows,
@@ -804,6 +826,8 @@ mod tests {
     async fn issue_then_duplicate_then_revoke_roundtrip() {
         let root = temp_root("roundtrip");
         let state = WebState { root: root.clone() };
+        // 目标域先域自举（recognize-solo 签发闸：未域自举根拒签，sim-dev 病灶收口）。
+        std::fs::create_dir_all(root.join("proj/sih/ledger")).unwrap();
 
         // 签发确认落笔：追加一行 active，落款 sihmcp-console
         let resp = confirm_issue_action(

@@ -76,8 +76,9 @@ pub const HTTP_ALPHA_TOOLS: [&str; 9] = [
 /// 写工具载荷重试纪律（DES-015 失败语义节：写工具载荷加 retry_discipline 字段）。
 pub const RETRY_DISCIPLINE: &str = "撞锁改 lease_wait_turn 排队候轮；重试前查会话在册（会话号随 lease_open 出参载出，逐写操作结果回带）；record append 无幂等闸，超时重试即重复认证笔，由信封审计与 meter 交叉核对检出";
 
-/// 降只读形教学注记（读工具出参附注位；读具域形式待 alpha 收 root 参后启用）。
-pub const IDENTITY_NOTICE_DEGRADED: &str = "连接携标识但未识别为 active（不在册或已停行）：本连接降只读投影中央域；写工具一律拒透传（401）；管理台 /tokens 可查册或换牌";
+/// 降级形教学注记（读工具出参附注位；recognize-solo 起降级形为受控教学面，
+/// 零域数据投影——原「降只读投影中央域」语义随批废止）。
+pub const IDENTITY_NOTICE_DEGRADED: &str = "连接未携有效标识牌（缺头、不在册或已停行）：本连接降受控教学面，域数据读工具不投影任何域数据（出参仅附本教学语与因码）；写工具一律拒透传（401）；管理台 /tokens 可查册、签发或换牌";
 
 // ============================================================ 域布局两形
 // 行为对等基准：writeface/domains.py。一项目一治理域，域目录布局两形并存：
@@ -262,7 +263,7 @@ fn missing_header_payload() -> Value {
     gate_payload(
         StatusCode::UNAUTHORIZED,
         "missing_authorization",
-        "缺 Authorization 头：连接须带 Bearer 头携项目标识（Authorization: Bearer <token_id>）；无标识连接降只读投影中央域，写工具一律拒透传",
+        "缺 Authorization 头：连接须带 Bearer 头携项目标识（Authorization: Bearer <token_id>）；无标识连接降受控教学面，域数据读工具零投影，写工具一律拒透传",
         "查管理台 /tokens 列表取在册标识后携头重连，或经管理台签发",
     )
 }
@@ -300,6 +301,20 @@ fn custom_payload() -> Value {
         "scope_violation",
         "现行档位 custom 零缺省放行：细粒度白名单逐工具显式登记，登记面即授权面；白名单登记形待后继批评审，本批无白名单行即写工具一律拒透传",
         "候管理台换发 domain_write 档标识牌，或候 custom 白名单登记面实装",
+    )
+}
+
+/// 未域自举绑根写拒载荷：绑根未域自举（非中央根且新城正典形标记缺席）时
+/// 写面硬拒教学零落点（recognize-solo 批；签发闸前网收口，防牌先于域）。
+fn domain_not_bootstrapped_payload(domain_root: &Path) -> Value {
+    gate_payload(
+        StatusCode::FORBIDDEN,
+        "domain_not_bootstrapped",
+        &format!(
+            "绑域根 {} 未完成域自举（新城正典形 sih 树缺席）：写工具硬拒教学零落点；先域自举再签发携牌",
+            domain_root.display()
+        ),
+        "经管理台 /tokens 域自举形（tokens/open）开域后重签标识牌携头重连",
     )
 }
 
@@ -356,38 +371,160 @@ fn write_gate_verdict(registry: &Path, token: Option<&str>) -> Option<(StatusCod
     if row.scope == tokens::SCOPE_CUSTOM {
         return Some((StatusCode::FORBIDDEN, custom_payload()));
     }
+    // 域自举闸：active 牌绑根未域自举（非中央根且 sih 树缺席）即写拒。
+    // 签发闸（webface）堵源头，此处堵在册存量牌（recognize-solo）。
+    let central = resolve_root();
+    let d = norm_path(Path::new(&row.domain_root));
+    if !domain_opened(&d, &central) {
+        return Some((StatusCode::FORBIDDEN, domain_not_bootstrapped_payload(&d)));
+    }
     None
 }
 
-/// 请求标识：token_id 与所绑域根二元（读工具域形式与写工具识别的共用识别
-/// 位，对等 _REQUEST_TOKEN ContextVar 的载荷形）。匿名或缺省形 token_id 为
-/// None，root 走缺省中央根形（SIH_ROOT 解析，与 stdio 缺省形同源）。
+/// 请求标识：token_id 与所绑域根与降级因与域自举判据四元（读工具域形式与
+/// 写工具识别的共用识别位，对等 _REQUEST_TOKEN ContextVar 的载荷形）。
+/// degraded 为 Some 即降级形（缺头/不在册/已停行/登记册不可读四因 reason
+/// code），读工具回受控教学面零域数据投影；None 即 active 绑域形，root 即
+/// 所绑域根（绑根即中央根时为中央根）。domain_opened 仅绑域形有意义：绑根
+/// 等于中央根或新城正典形标记在位即已域自举；未域自举绑根读写两面俱硬拒
+/// 教学，零中央回退（recognize-solo 批，DES-015 域隔离实装，清偿本模块头
+/// 申报的待主线位）。
 #[derive(Clone, Debug)]
 pub struct HttpIdent {
     pub token_id: Option<String>,
     pub root: PathBuf,
+    pub degraded: Option<&'static str>,
+    pub domain_opened: bool,
 }
 
 impl HttpIdent {
     pub fn anonymous() -> Self {
-        Self { token_id: None, root: resolve_root() }
+        Self {
+            token_id: None,
+            root: resolve_root(),
+            degraded: Some("missing_authorization"),
+            domain_opened: false,
+        }
+    }
+
+    fn degraded(reason: &'static str) -> Self {
+        Self {
+            token_id: None,
+            root: resolve_root(),
+            degraded: Some(reason),
+            domain_opened: false,
+        }
     }
 }
 
-/// 请求标识解析：无标识或缺省形（不在册或已停行）降只读投影中央域；active
-/// 标识按所绑域组装（域内治理自足）。
+/// 域自举判据（单源谓词）：绑根等于中央根即第一域自锚形，或新城正典形标记
+/// （sih/ledger 目录）在位。签发闸与读写两面识别共用本谓词，零第二实现。
+pub fn domain_opened(domain_root: &Path, central_root: &Path) -> bool {
+    let d = norm_path(domain_root);
+    let c = norm_path(central_root);
+    d == c || detect_form(&d).is_some()
+}
+
+/// 请求标识解析：无标识降缺头因；active 牌按所绑域组装并判域自举形；停行
+/// 与不在册与登记册不可读各降其因（教学语按因给词，零数据投影）。
 fn ident_for_token(token: Option<&str>) -> HttpIdent {
     let Some(t) = token else {
-        return HttpIdent::anonymous();
+        return HttpIdent::degraded("missing_authorization");
     };
     let registry = central_registry_path();
     match tokens::resolve_token(&registry, t) {
         Ok(Some(row)) if row.status == tokens::STATUS_ACTIVE => {
-            let layout = layout_for(Path::new(&row.domain_root), &resolve_root());
-            HttpIdent { token_id: Some(t.to_string()), root: layout.root }
+            let d = norm_path(Path::new(&row.domain_root));
+            let c = norm_path(&resolve_root());
+            let opened = domain_opened(&d, &c);
+            let layout = layout_for(&d, &c);
+            HttpIdent {
+                token_id: Some(t.to_string()),
+                root: layout.root,
+                degraded: None,
+                domain_opened: opened,
+            }
         }
-        _ => HttpIdent::anonymous(),
+        Ok(Some(row)) if row.status != tokens::STATUS_ACTIVE => {
+            HttpIdent::degraded("token_stopped")
+        }
+        Ok(_) => HttpIdent::degraded("token_unregistered"),
+        Err(_) => HttpIdent::degraded("registry_unreadable"),
     }
+}
+
+
+/// 读面域数据六具名册：投影域内治理态（链与判据与锁与档案）。nomenclator
+/// 三具为共享命名登记面零域数据，不在闸。
+const ALPHA_DOMAIN_TOOLS: [&str; 6] = [
+    "chain_query",
+    "chain_verify",
+    "critsweep",
+    "heartbeat",
+    "locks_read",
+    "retriever_recall",
+];
+
+/// tools/call 域数据读具提取（write_call_tool 同款谓词形）：非 tools/call
+/// 或 name 不在域数据六具即 None。
+fn alpha_domain_call_tool(msg: &Value) -> Option<&'static str> {
+    if msg.get("method").and_then(Value::as_str) != Some("tools/call") {
+        return None;
+    }
+    let name = msg
+        .get("params")
+        .and_then(|p| p.get("name"))
+        .and_then(Value::as_str)?;
+    ALPHA_DOMAIN_TOOLS.iter().copied().find(|t| *t == name)
+}
+
+/// 读面闸：降级形回受控教学面（identity_notice 加因码加公共字段，零域数据
+/// 投影）；未域自举绑域形回硬拒教学（isError 教学语指域自举位）。None 即
+/// active 已域自举绑域形放行（读数经 runtime effective_root 落所绑域）。
+fn alpha_read_gate(ident: &HttpIdent, tool: &str) -> Option<Value> {
+    if !ALPHA_DOMAIN_TOOLS.contains(&tool) {
+        return None;
+    }
+    if ident.degraded.is_none() && ident.domain_opened {
+        return None;
+    }
+    let (is_error, payload) = match ident.degraded {
+        Some(reason) => (
+            false,
+            json!({
+                "identity_notice": IDENTITY_NOTICE_DEGRADED,
+                "reason_code": reason,
+                "tool": tool,
+                "public": {
+                    "server": "sihmcp",
+                    "version": env!("CARGO_PKG_VERSION"),
+                },
+                "how_to_fix": "经管理台 /tokens 查册或签发所绑域标识牌后携 Authorization: Bearer 头重连；降级形不投影任何域数据",
+                "gate": "HTTP 读面识别与域绑定路由层（DES-015，recognize-solo）",
+                "canonical_pointers": CANON_POINTERS,
+            }),
+        ),
+        None => (
+            true,
+            json!({
+                "identity_notice": format!(
+                    "绑域根 {} 未完成域自举（新城正典形 sih 树缺席）：读工具硬拒教学零中央回退；先经管理台 /tokens 域自举形（tokens/open）开域后再携牌重连",
+                    ident.root.display()
+                ),
+                "reason_code": "domain_not_bootstrapped",
+                "tool": tool,
+                "gate": "HTTP 读面识别与域绑定路由层（DES-015，recognize-solo）",
+                "canonical_pointers": CANON_POINTERS,
+            }),
+        ),
+    };
+    Some(json!({
+        "content": [
+            {"type": "text", "text": serde_json::to_string(&payload).unwrap_or_default()}
+        ],
+        "structuredContent": payload,
+        "isError": is_error,
+    }))
 }
 
 // ============================================================ 会话一对一表
@@ -487,13 +624,28 @@ async fn bearer_gate(
         }
     };
     let msg: Value = serde_json::from_slice(&bytes).unwrap_or(Value::Null);
+    // 请求标识单次解析（写闸与读闸与会话工厂共用一识别，零二次查册）。
+    let ident = ident_for_token(token.as_deref());
     if write_call_tool(&msg).is_some() {
         let registry = central_registry_path();
         if let Some((status, payload)) = write_gate_verdict(&registry, token.as_deref()) {
             return (status, Json(payload)).into_response();
         }
     }
-    let ident = ident_for_token(token.as_deref());
+    // 读面闸（recognize-solo）：域数据读具在降级形与未域自举绑域形上以
+    // tools/call 结果形回教学面（降级形 isError false 受控教学，未域自举
+    // 形 isError true 硬拒），零域数据投影；放行形经 REQUEST_IDENTITY 使
+    // alpha 读具实效根落所绑域。
+    if let Some(tool) = alpha_domain_call_tool(&msg) {
+        if let Some(result) = alpha_read_gate(&ident, tool) {
+            let body = json!({
+                "jsonrpc": "2.0",
+                "id": msg.get("id").cloned().unwrap_or(Value::Null),
+                "result": result,
+            });
+            return (StatusCode::OK, Json(body)).into_response();
+        }
+    }
     let req = Request::from_parts(parts, Body::from(bytes));
     REQUEST_IDENTITY.scope(ident, next.run(req)).await
 }
@@ -699,12 +851,15 @@ mod tests {
     fn write_gate_verdict_stopped_and_scopes() {
         let dir = tempfile::tempdir().unwrap();
         let registry = dir.path().join("tokens.ndjson");
-        for (tid, scope) in [
-            ("tok-ok", tokens::SCOPE_DOMAIN_WRITE),
-            ("tok-ro", tokens::SCOPE_READONLY),
-            ("tok-custom", tokens::SCOPE_CUSTOM),
+        // tok-ok 绑已域自举根（域自举写闸要求非中央绑根须 sih 树在位）。
+        let opened = dir.path().join("opened-domain");
+        std::fs::create_dir_all(opened.join("sih/ledger")).unwrap();
+        for (tid, scope, bound) in [
+            ("tok-ok", tokens::SCOPE_DOMAIN_WRITE, opened.display().to_string()),
+            ("tok-ro", tokens::SCOPE_READONLY, dir.path().display().to_string()),
+            ("tok-custom", tokens::SCOPE_CUSTOM, dir.path().display().to_string()),
         ] {
-            append_ok(&registry, &issue_row(tid, dir.path().display().to_string().as_str(), scope, "tester"));
+            append_ok(&registry, &issue_row(tid, bound.as_str(), scope, "tester"));
         }
         let stopped_base = issue_row("tok-stopped", dir.path().display().to_string().as_str(), tokens::SCOPE_DOMAIN_WRITE, "tester");
         append_ok(&registry, &stopped_base);
@@ -792,6 +947,8 @@ mod tests {
         let ident_a = HttpIdent {
             token_id: Some("tok-t".to_string()),
             root: PathBuf::from("/tmp/domain-a"),
+            degraded: None,
+            domain_opened: true,
         };
         // 同牌复用同一连接会话对象（一对一表）。
         let c1 = shared.session_conn(&ident_a);
@@ -810,6 +967,8 @@ mod tests {
         let ident_b = HttpIdent {
             token_id: Some("tok-t".to_string()),
             root: PathBuf::from("/tmp/domain-b"),
+            degraded: None,
+            domain_opened: true,
         };
         let c4 = shared.session_conn(&ident_b);
         assert!(!Arc::ptr_eq(&c3, &c4));
@@ -839,5 +998,103 @@ mod tests {
         // 装配冒烟（不绑端口，测试零 8765 依赖）：端点路由可构造即可起服。
         let _app = streamable_router("/mcp");
         let _app2 = streamable_router("/mcp-nested/");
+    }
+
+    #[test]
+    fn alpha_read_gate_degraded_teaching_face() {
+        // 降级三因：读具回受控教学面（isError false），identity_notice 与
+        // 因码在列，零域数据投影（出参无 root 与判据与路径字段）。
+        for reason in [
+            "missing_authorization",
+            "token_unregistered",
+            "token_stopped",
+            "registry_unreadable",
+        ] {
+            let ident = HttpIdent::degraded(reason);
+            let payload = alpha_read_gate(&ident, "critsweep").unwrap();
+            assert_eq!(payload["isError"], false);
+            let sc = &payload["structuredContent"];
+            assert_eq!(sc["reason_code"], reason);
+            assert!(sc["identity_notice"].as_str().unwrap().contains("/tokens"));
+            assert!(sc.get("root").is_none());
+            assert!(sc.get("criteria").is_none());
+            assert!(alpha_read_gate(&ident, "naming_guide").is_none());
+        }
+    }
+
+    #[test]
+    fn alpha_read_gate_unopened_bound_hard_reject() {
+        // 未域自举绑域形：读具硬拒教学（isError true），因码
+        // domain_not_bootstrapped，零中央回退（出参不含中央根路径）。
+        let ident = HttpIdent {
+            token_id: Some("tok-x".to_string()),
+            root: PathBuf::from("/nonexistent-unopened-domain"),
+            degraded: None,
+            domain_opened: false,
+        };
+        for tool in ALPHA_DOMAIN_TOOLS {
+            let payload = alpha_read_gate(&ident, tool).unwrap();
+            assert_eq!(payload["isError"], true);
+            let sc = &payload["structuredContent"];
+            assert_eq!(sc["reason_code"], "domain_not_bootstrapped");
+            assert!(sc["identity_notice"].as_str().unwrap().contains("域自举"));
+        }
+        // 共享命名登记面三具不在闸。
+        assert!(alpha_read_gate(&ident, "nomenclator_query").is_none());
+    }
+
+    #[test]
+    fn alpha_read_gate_opened_bound_passes() {
+        // active 已域自举绑域形（含绑根即中央根形）放行，读数落所绑域。
+        let opened = HttpIdent {
+            token_id: Some("tok-ok".to_string()),
+            root: PathBuf::from("/tmp/opened-domain"),
+            degraded: None,
+            domain_opened: true,
+        };
+        for tool in ALPHA_DOMAIN_TOOLS {
+            assert!(alpha_read_gate(&opened, tool).is_none());
+        }
+    }
+
+    #[test]
+    fn domain_opened_predicate_single_source() {
+        // 中央自锚形与新城正典形在列，无标记裸根不在列。
+        let dir = tempfile::tempdir().unwrap();
+        let central = dir.path().join("central");
+        std::fs::create_dir_all(central.join("sih-engine")).unwrap();
+        std::fs::create_dir_all(central.join("sih-tools")).unwrap();
+        assert!(domain_opened(&central, &central));
+        let canon = dir.path().join("canon");
+        std::fs::create_dir_all(canon.join("sih/ledger")).unwrap();
+        assert!(domain_opened(&canon, &central));
+        let bare = dir.path().join("bare");
+        std::fs::create_dir_all(&bare).unwrap();
+        assert!(!domain_opened(&bare, &central));
+    }
+
+    #[test]
+    fn write_gate_rejects_unopened_bound_domain() {
+        // 域自举写闸：active domain_write 牌绑未域自举根即 403 教学拒
+        // （签发闸前网收口，存量牌防在案）。
+        let dir = tempfile::tempdir().unwrap();
+        let registry = dir.path().join("tokens.ndjson");
+        let bare = dir.path().join("bare-domain");
+        std::fs::create_dir_all(&bare).unwrap();
+        append_ok(
+            &registry,
+            &issue_row("tok-bare", bare.display().to_string().as_str(), tokens::SCOPE_DOMAIN_WRITE, "tester"),
+        );
+        // 域根建 sih/ledger 即已域自举，放行对照。
+        let opened = dir.path().join("opened-domain");
+        std::fs::create_dir_all(opened.join("sih/ledger")).unwrap();
+        append_ok(
+            &registry,
+            &issue_row("tok-opened", opened.display().to_string().as_str(), tokens::SCOPE_DOMAIN_WRITE, "tester"),
+        );
+        let (status, payload) = write_gate_verdict(&registry, Some("tok-bare")).unwrap();
+        assert_eq!(status, StatusCode::FORBIDDEN);
+        assert_eq!(payload["reason_code"], "domain_not_bootstrapped");
+        assert!(write_gate_verdict(&registry, Some("tok-opened")).is_none());
     }
 }

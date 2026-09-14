@@ -8,6 +8,7 @@
 //! 载荷，server 端逐字还原 JSON-RPC error 形（接线前后双跑对表锁，基线
 //! 指纹 7e1c9328608f7438）。
 use std::future::Future;
+use std::path::PathBuf;
 use std::pin::Pin;
 use std::sync::Arc;
 
@@ -55,6 +56,16 @@ impl ToolProvider for ClosuredProvider {
     }
 }
 
+/// 连接实效根：连接会话绑定的域根（HTTP active 牌即所绑域根，stdio 与匿名
+/// 形即中央缺省根）。锁竞争即回落中央根（根不随会话漂移，竞窗口仅重签换
+/// 域瞬间）。recognize-solo：读具根由连接承载，task_local 不跨 rmcp spawn
+/// 任务（2026-09-14 活体验收实证），故弃 REQUEST_IDENTITY 直取形。
+fn conn_root(c: &Conn) -> PathBuf {
+    c.try_lock()
+        .map(|g| g.root.clone())
+        .unwrap_or_else(|_| super::runtime::resolve_root())
+}
+
 fn reg(
     registry: &ToolRegistry,
     conn: &Conn,
@@ -84,16 +95,16 @@ pub fn build_registry(agent_class: &str, conn: Conn) -> ToolRegistry {
         )
     }) {
         let h: Handler = match name {
-            "chain_query" => Box::new(|a, _c| Box::pin(alpha::chain_query(get_str(&a, "date"), get_str(&a, "event_type")))),
-            "chain_verify" => Box::new(|a, _c| Box::pin(alpha::chain_verify(get_str(&a, "date")))),
-            "critsweep" => Box::new(|a, _c| Box::pin(alpha::critsweep(get_str(&a, "date")))),
-            "heartbeat" => Box::new(|_a, _c| Box::pin(alpha::heartbeat())),
-            "locks_read" => Box::new(|_a, _c| Box::pin(alpha::locks_read())),
+            "chain_query" => Box::new(|a, c| Box::pin(alpha::chain_query(conn_root(&c), get_str(&a, "date"), get_str(&a, "event_type")))),
+            "chain_verify" => Box::new(|a, c| Box::pin(alpha::chain_verify(conn_root(&c), get_str(&a, "date")))),
+            "critsweep" => Box::new(|a, c| Box::pin(alpha::critsweep(conn_root(&c), get_str(&a, "date")))),
+            "heartbeat" => Box::new(|_a, c| Box::pin(alpha::heartbeat(conn_root(&c)))),
+            "locks_read" => Box::new(|_a, c| Box::pin(alpha::locks_read(conn_root(&c)))),
             "naming_guide" => Box::new(|_a, _c| Box::pin(alpha::naming_guide())),
             "nomenclator_query" => Box::new(|a, _c| Box::pin(alpha::nomenclator_query(get_str(&a, "word")))),
-            "nomenclator_check" => Box::new(|a, _c| Box::pin(alpha::nomenclator_check(get_str(&a, "target")))),
-            "retriever_recall" => Box::new(|a, _c| {
-                Box::pin(alpha::retriever_recall(
+            "nomenclator_check" => Box::new(|a, c| Box::pin(alpha::nomenclator_check(conn_root(&c), get_str(&a, "target")))),
+            "retriever_recall" => Box::new(|a, c| {
+                Box::pin(alpha::retriever_recall(conn_root(&c), 
                     get_str_list(&a, "topic"),
                     get_str_list(&a, "word"),
                     get_str_list(&a, "event"),

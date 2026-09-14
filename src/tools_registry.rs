@@ -179,7 +179,8 @@ impl ToolProvider for HeartbeatProvider {
     }
 
     async fn call(&self, _args: Value) -> Result<Value, ToolError> {
-        Ok(crate::mcpserver::alpha::heartbeat().await)
+        // 插件槽位心跳无连接会话承载，根走中央缺省解析（recognize-solo 根参化）。
+        Ok(crate::mcpserver::alpha::heartbeat(crate::mcpserver::runtime::resolve_root()).await)
     }
 }
 

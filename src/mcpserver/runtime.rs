@@ -157,3 +157,20 @@ pub fn scribe_bin() -> PathBuf {
 pub fn retriever_bin() -> PathBuf {
     code_root().join("sih-engine/target/debug/retriever")
 }
+
+/// 租约二进制位：debug 与 release 兜底序，两档俱缺回落 debug 位（scribe_bin
+/// 同款承载形；locks_read 由 uv 裸名改引擎 bin 位，launchd 极简 PATH 下
+/// spawn 失败 127 病灶随批根除）。
+pub fn lease_bin() -> PathBuf {
+    let base = code_root().join("sih-engine/target");
+    let debug = base.join("debug/lease");
+    let release = base.join("release/lease");
+    if debug.is_file() {
+        debug
+    } else if release.is_file() {
+        release
+    } else {
+        debug
+    }
+}
+
