@@ -1,0 +1,1 @@
+{"name":"demo-ext","version":"0.1.0","transport":"stdio","command":"./demo-plugin.sh","tools":[{"name":"ext_echo","description":"回显入参（fixture 假插件）"}]}

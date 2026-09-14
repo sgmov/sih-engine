@@ -358,3 +358,221 @@ pub trait ExternalPluginBridge: Send + Sync {
         )))
     }
 }
+
+// ------------------------------------------------- external bridge (A4 转正)
+
+/// 进程外插件桥实装形（SPEC-025 § 插件槽位协议，A4 缺席申报转正）。
+///
+/// 协议定形：插件子进程按 manifest.command 起（stdio 管道），帧为行分隔
+/// JSON-RPC 2.0——请求 `{"jsonrpc":"2.0","id":N,"method":"call","params":…}`
+/// 响应 `{"jsonrpc":"2.0","id":N,"result":…}`（error 形映射 Execution）。
+/// 零网络纯 stdio 承 A9；零新增依赖（tokio process 与 io 全在既有 feature
+/// 面）承 A6。
+use std::collections::HashMap;
+use tokio::io::{AsyncBufReadExt, AsyncWriteExt, BufReader};
+use tokio::process::{Child, ChildStdin, ChildStdout};
+use tokio::sync::Mutex as TMutex;
+
+struct PluginSession {
+    child: Child,
+    stdin: ChildStdin,
+    stdout: BufReader<ChildStdout>,
+    next_id: u64,
+}
+
+/// 共享会话表桥本体（Clone 共享同表，Arc 内嵌）。
+#[derive(Clone, Default)]
+pub struct StdioPluginBridge {
+    sessions: Arc<TMutex<HashMap<String, PluginSession>>>,
+}
+
+impl StdioPluginBridge {
+    pub fn new() -> Self {
+        Self::default()
+    }
+}
+
+#[async_trait]
+impl ExternalPluginBridge for StdioPluginBridge {
+    async fn spawn(&self, manifest: &PluginManifest) -> Result<Value, ToolError> {
+        let mut child = tokio::process::Command::new(&manifest.command)
+            .stdin(std::process::Stdio::piped())
+            .stdout(std::process::Stdio::piped())
+            .stderr(std::process::Stdio::null())
+            .spawn()
+            .map_err(|e| ToolError::Execution {
+                tool: manifest.name.clone(),
+                reason: format!("插件进程启动失败: {e}"),
+            })?;
+        let stdin = child.stdin.take().ok_or_else(|| ToolError::Execution {
+            tool: manifest.name.clone(),
+            reason: "stdin 管道不可得".into(),
+        })?;
+        let stdout = child.stdout.take().ok_or_else(|| ToolError::Execution {
+            tool: manifest.name.clone(),
+            reason: "stdout 管道不可得".into(),
+        })?;
+        self.sessions.lock().await.insert(
+            manifest.name.clone(),
+            PluginSession {
+                child,
+                stdin,
+                stdout: BufReader::new(stdout),
+                next_id: 1,
+            },
+        );
+        Ok(json!({
+            "plugin": manifest.name,
+            "transport": "stdio",
+            "protocol": "line-delimited jsonrpc-2.0",
+            "tools": manifest.tools,
+        }))
+    }
+
+    async fn send_request(&self, plugin: &str, request: Value) -> Result<Value, ToolError> {
+        let mut guard = self.sessions.lock().await;
+        let session = guard
+            .get_mut(plugin)
+            .ok_or_else(|| ToolError::NotFound(format!("plugin `{plugin}` 未启动")))?;
+        let id = session.next_id;
+        session.next_id += 1;
+        let mut frame = request;
+        frame["jsonrpc"] = json!("2.0");
+        frame["id"] = json!(id);
+        let mut line = serde_json::to_string(&frame).map_err(|e| ToolError::Execution {
+            tool: plugin.to_string(),
+            reason: format!("请求序列化失败: {e}"),
+        })?;
+        line.push('\n');
+        session
+            .stdin
+            .write_all(line.as_bytes())
+            .await
+            .map_err(|e| ToolError::Execution { tool: plugin.to_string(), reason: format!("请求写入失败: {e}") })?;
+        session
+            .stdin
+            .flush()
+            .await
+            .map_err(|e| ToolError::Execution { tool: plugin.to_string(), reason: format!("请求冲刷失败: {e}") })?;
+        let mut resp_line = String::new();
+        session
+            .stdout
+            .read_line(&mut resp_line)
+            .await
+            .map_err(|e| ToolError::Execution { tool: plugin.to_string(), reason: format!("响应读取失败: {e}") })?;
+        if resp_line.trim().is_empty() {
+            return Err(ToolError::Execution {
+                tool: plugin.to_string(),
+                reason: "插件进程响应空帧（可能已退出）".into(),
+            });
+        }
+        let resp: Value = serde_json::from_str(resp_line.trim()).map_err(|e| ToolError::Execution {
+            tool: plugin.to_string(),
+            reason: format!("响应非 JSON: {e}"),
+        })?;
+        if let Some(err) = resp.get("error") {
+            return Err(ToolError::Execution {
+                tool: plugin.to_string(),
+                reason: err.to_string(),
+            });
+        }
+        Ok(resp.get("result").cloned().unwrap_or(Value::Null))
+    }
+
+    async fn recv(&self, plugin: &str) -> Result<Value, ToolError> {
+        // 请求-响应一一对应形：响应已在 send_request 同步候回，recv 为在场哨。
+        let guard = self.sessions.lock().await;
+        if guard.contains_key(plugin) {
+            Ok(json!({"plugin": plugin, "state": "session-open"}))
+        } else {
+            Err(ToolError::NotFound(format!("plugin `{plugin}` 未启动")))
+        }
+    }
+
+    async fn shutdown(&self, plugin: &str) -> Result<Value, ToolError> {
+        let mut guard = self.sessions.lock().await;
+        let mut session = guard
+            .remove(plugin)
+            .ok_or_else(|| ToolError::NotFound(format!("plugin `{plugin}` 未启动")))?;
+        let _ = session.stdin.shutdown().await;
+        // 健壮协议形：优雅 EOF 候 3 秒，超时 kill 兜底（外部插件可能不优雅退）。
+        let status = match tokio::time::timeout(
+            std::time::Duration::from_secs(3),
+            session.child.wait(),
+        )
+        .await
+        {
+            Ok(s) => s.map_err(|e| ToolError::Execution {
+                tool: plugin.to_string(),
+                reason: format!("wait 失败: {e}"),
+            })?,
+            Err(_) => {
+                let _ = session.child.kill().await;
+                session.child.wait().await.map_err(|e| ToolError::Execution {
+                    tool: plugin.to_string(),
+                    reason: format!("kill 后 wait 失败: {e}"),
+                })?
+            }
+        };
+        Ok(json!({"plugin": plugin, "shutdown": true, "status": status.to_string()}))
+    }
+}
+
+/// 外部插件工具经桥包装为 ToolProvider（tools/list 显形可调用）。
+pub struct PluginToolProvider {
+    pub tool_name: String,
+    pub plugin_name: String,
+    pub description: String,
+    bridge: StdioPluginBridge,
+}
+
+#[async_trait]
+impl ToolProvider for PluginToolProvider {
+    fn name(&self) -> &str {
+        &self.tool_name
+    }
+    fn description(&self) -> &str {
+        &self.description
+    }
+    fn input_schema(&self) -> Value {
+        json!({"properties": {}, "required": [], "type": "object"})
+    }
+    async fn call(&self, args: Value) -> Result<Value, ToolError> {
+        self.bridge
+            .send_request(
+                &self.plugin_name,
+                json!({"method": "call", "params": {"tool": self.tool_name, "args": args}}),
+            )
+            .await
+    }
+}
+
+impl StdioPluginBridge {
+    /// manifest 全具注册：spawn 起进程加每工具一 provider 入 registry。
+    pub async fn register_plugin(
+        &self,
+        registry: &ToolRegistry,
+        manifest: &PluginManifest,
+    ) -> Result<Value, ToolError> {
+        self.spawn(manifest).await?;
+        for tool in &manifest.tools {
+            registry.register(Box::new(PluginToolProvider {
+                tool_name: tool.name.clone(),
+                plugin_name: manifest.name.clone(),
+                description: if tool.description.is_empty() {
+                    format!(
+                        "外部插件 {} 工具 {}（进程外 stdio JSON-RPC 桥）。正典指针：SPEC-025 插件槽位协议节。",
+                        manifest.name, tool.name
+                    )
+                } else {
+                    format!(
+                        "{}（外部插件 {} 进程外 stdio JSON-RPC 桥。正典指针：SPEC-025 插件槽位协议节。）",
+                        tool.description, manifest.name
+                    )
+                },
+                bridge: self.clone(),
+            }))?;
+        }
+        Ok(json!({"plugin": manifest.name, "registered": manifest.tools}))
+    }
+}
