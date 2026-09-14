@@ -1,0 +1,14 @@
+{
+  "session_id": "5bb82da95e17141a",
+  "batch": "recognize-solo",
+  "event": "open-disposition",
+  "summary": "立约后零写入处置：锁范围验拒因 allow 面为包档九节整行散文（引擎 parse_requested_writes 整行收纳 vs 围堰路径抽取，双跑偏差第二处记档）；处置为补认证笔后轻收约，包档九节改裸路径重开。",
+  "anomalies": [
+    "CLI identity verify 默认形与 --claims 形均退出码 137（子进程采集链被杀），正身改走 MCP server 进程签发",
+    "引擎租约 --new-stem 甲表派生对表等值判定死锁（围堰 core.py 为非对称判定 new 要求实态 unknown），本批 iso-07 修复",
+    "引擎开约 allow 面整行散文收纳致锁范围验必拒（本笔主因）"
+  ],
+  "checks": [
+    {"id": "P101", "pass": true}
+  ]
+}

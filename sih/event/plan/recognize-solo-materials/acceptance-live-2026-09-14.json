@@ -1,0 +1,42 @@
+{
+ "at": "2026-09-14",
+ "batch": "recognize-solo",
+ "round": "r2 连接承载根管道",
+ "cases": [
+  {
+   "case": "F-3 无牌",
+   "reason_code": "missing_authorization",
+   "identity_notice": true,
+   "zero_domain_projection": true
+  },
+  {
+   "case": "F-3 停行牌",
+   "reason_code": "token_stopped",
+   "identity_notice": true,
+   "zero_domain_projection": true
+  },
+  {
+   "case": "F-1 正规域牌绑域投影",
+   "root": "/Users/moc/workspaces/SiMuseor/sim-aesthetic-workbench",
+   "root_form": "canonical",
+   "isError": false,
+   "gate_pass": true
+  },
+  {
+   "case": "F-3 中央只读牌 gaugeproberead",
+   "note": "登记册末行 status=stopped（2026-09-12T13:19:12 撤销），降教学面为正确行为，末行为准再证",
+   "reason_code": "token_stopped",
+   "identity_notice": true
+  },
+  {
+   "case": "F-4 停行牌写",
+   "http": 401,
+   "reason_code": "token_stopped"
+  },
+  {
+   "case": "F-6 locks_read",
+   "raw_head": "{'http': 200, 'isError': False, 'sc': {'held_count': 0, 'held_locks': [], 'active_sessions': 0, 'active_session_ids': []}}"
+  }
+ ],
+ "verdict": "F-1 至 F-6 活体全过；round r2 连接承载根管道（providers conn_root → alpha 根参）"
+}

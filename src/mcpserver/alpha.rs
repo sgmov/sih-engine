@@ -5,13 +5,13 @@
 //! 走进程内库调（消子进程缺陷族）；Python 工具族（critsweep 加 gauge 加 lease
 //! 查册加 nomenclator）子进程包裹与现行 argv 逐一对应。零写入、零判定语义。
 
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use serde_json::{json, Map, Value};
 
 use super::runtime::{
-    code_root, error_payload, retriever_bin, resolve_root, run_readonly, today_str, trail_path,
-    valid_date, RunOutcome, CANON_LINE_PKG, CANON_SPEC_023,
+    code_root, error_payload, lease_bin, retriever_bin, resolve_root, run_readonly, today_str,
+    trail_path, valid_date, RunOutcome, CANON_LINE_PKG, CANON_SPEC_023,
 };
 
 const NAMING_TEACHING: &str = "立名程序摘要（序承先乙后名再甲）：一、乙前注入——立名动作前先拉 nomenclator map --concept 语义映射报告入上下文（概念锚查词典六态与既裁 code 形与近邻词，只报不判），防想错了；二、查册对表——命名动作查册对象是概念本尊非只造出的词形，nomenclator_query 查概念词与候选词形并查命名集与检词（DEC-017 修订四常设纪律）；三、看真材料取名后填甲表三件——概念锚 zh、既裁 code 形或显式申报无承、语素派生；四、甲机械兜底——lease open --new-stem 带甲表，stem 闸机械核对指称完整与派生对表，填不圆即拒（零 LLM 判词位），防真的想错了；五、立名程序终裁登记——语义忠实终裁归立名程序人节点，收敛后 nomenclator register 在册。正典：sih-engine/doc/decision/017-wengu-naming.md；.agents/skills/sihankor-naming/SKILL.md";
@@ -30,8 +30,7 @@ fn argv_of(parts: &[&str]) -> Vec<String> {
 
 // ---------------------------------------------------------------- chain_query
 
-pub async fn chain_query(date: Option<String>, event_type: Option<String>) -> Value {
-    let root = resolve_root();
+pub async fn chain_query(root: PathBuf, date: Option<String>, event_type: Option<String>) -> Value {
     let what = "查当日治理链事件清单（哈希、事件型、主体字段），只读投影 scribe query。";
     let params = ["date: YYYY-MM-DD，缺省实日", "event_type: 可选事件型过滤字符串"];
     let date = date.unwrap_or_else(today_str);
@@ -93,8 +92,7 @@ pub async fn chain_query(date: Option<String>, event_type: Option<String>) -> Va
 
 // --------------------------------------------------------------- chain_verify
 
-pub async fn chain_verify(date: Option<String>) -> Value {
-    let root = resolve_root();
+pub async fn chain_verify(root: PathBuf, date: Option<String>) -> Value {
     let what = "验当日治理链：逐笔哈希校验与整链 valid 判词，只读投影 scribe verify。";
     let params = ["date: YYYY-MM-DD（必填）"];
     let Some(date) = date else {
@@ -151,8 +149,7 @@ pub async fn chain_verify(date: Option<String>) -> Value {
 
 // ------------------------------------------------------------------ critsweep
 
-pub async fn critsweep(date: Option<String>) -> Value {
-    let root = resolve_root();
+pub async fn critsweep(root: PathBuf, date: Option<String>) -> Value {
     let what = "判据扫：GOV-002 五判据三态与泊界路由与两账本在飞，严格 JSON 单对象，只读投影 sweep.py。";
     let params = ["date: YYYY-MM-DD（必填，--at 参照日）"];
     let Some(date) = date else {
@@ -206,8 +203,7 @@ fn truncate(s: &str, n: usize) -> &str {
 
 const GAUGE_DIMS: [&str; 3] = ["convergence", "adoption", "mergeback"];
 
-pub async fn heartbeat() -> Value {
-    let root = resolve_root();
+pub async fn heartbeat(root: PathBuf) -> Value {
     let what = "心跳：秤星三维最新读数与距上快照间隔日，只读投影 gauge.cli read（只读不落链）。";
     let params: [&str; 0] = [];
     let date = today_str();
@@ -313,20 +309,23 @@ pub async fn heartbeat() -> Value {
 
 // ----------------------------------------------------------------- locks_read
 
-pub async fn locks_read() -> Value {
-    let root = resolve_root();
+pub async fn locks_read(root: PathBuf) -> Value {
     let what = "锁面读数：未释放锁成对核算与活跃会话数，只读投影 lease status（查册）。";
     let params: [&str; 0] = [];
-    let argv = argv_of(&[
-        "uv",
-        "run",
-        "--project",
-        &root.join("sih-tools/lease").display().to_string(),
-        "lease",
-        "status",
-        "--root",
-        &root.display().to_string(),
-    ]);
+    // 引擎 bin 位直调（recognize-solo：uv 裸名在 launchd 极简 PATH 下 spawn
+    // 失败 127 病灶根除；台账路径经域布局投影显式传参，两形域各归其位）。
+    let argv = {
+        let central = resolve_root();
+        let lp = super::httpface::layout_for(&root, &central).ledger_paths();
+        argv_of(&[
+            &lease_bin().display().to_string(),
+            "status",
+            "--ledger",
+            &lp["ledger"].display().to_string(),
+            "--locks",
+            &lp["locks"].display().to_string(),
+        ])
+    };
     let out = run_readonly(&argv, Some(&root), None, std::time::Duration::from_secs(120)).await;
     if out.rc != 0 {
         return error_payload(
@@ -422,7 +421,7 @@ pub async fn nomenclator_query(word: Option<String>) -> Value {
     result
 }
 
-pub async fn nomenclator_check(target: Option<String>) -> Value {
+pub async fn nomenclator_check(root: PathBuf, target: Option<String>) -> Value {
     let what = "文档核查：死档禁字级与懒波词两规则字符串级检出，只读投影 nomenclator check。";
     let params = ["target: 目标文档路径（工作区根相对或绝对形）"];
     let t = target.unwrap_or_default().trim().to_string();
@@ -433,7 +432,7 @@ pub async fn nomenclator_check(target: Option<String>) -> Value {
     }
     let mut tp = std::path::PathBuf::from(&t);
     if !tp.is_absolute() {
-        tp = resolve_root().join(tp);
+        tp = root.join(tp);
     }
     if !tp.is_file() {
         let mut out = error_payload(
@@ -547,6 +546,7 @@ pub async fn naming_guide() -> Value {
 
 #[allow(clippy::too_many_arguments)]
 pub async fn retriever_recall(
+    root: PathBuf,
     topic: Option<Vec<String>>,
     word: Option<Vec<String>>,
     event: Option<Vec<String>>,
@@ -555,7 +555,7 @@ pub async fn retriever_recall(
     archive: Option<String>,
     at: Option<String>,
 ) -> Value {
-    let root = resolve_root();
+    // 根参即连接实效根（providers conn_root 传入）。
     let what = "温故检索：治理档案四轴检索 stdout NDJSON 透传，只读投影 retriever recall（只报不判）。";
     let params = [
         "topic: 主题词数组（可选）",

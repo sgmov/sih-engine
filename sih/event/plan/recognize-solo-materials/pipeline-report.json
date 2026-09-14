@@ -1,0 +1,16 @@
+{
+  "batch": "recognize-solo",
+  "at": "2026-09-14",
+  "pipeline": [
+    {"step": "formatter", "pack": "general-v1", "targets": ["sih/state/plan/recognize-solo.md", "sih/event/plan/recognize-solo-results.md"], "exit_code": 0, "note": "零改动"},
+    {"step": "scrutinator", "pack": "des-001", "targets": ["sih/state/plan/recognize-solo.md", "sih/event/plan/recognize-solo-results.md"], "exit_code": 2, "note": "state/plan 与 event/plan 域外，BATCH-FACE 勘误位如实记档"},
+    {"step": "nomenclator", "pack": "core", "targets": ["sih/state/plan/recognize-solo.md", "sih/event/plan/recognize-solo-results.md"], "exit_code": 0, "note": "懒波词两处改写后零违例"}
+  ],
+  "tests": [
+    {"suite": "cargo test mcpserver", "passed": 47, "failed": 0},
+    {"suite": "cargo test --test recognize_http_gate", "passed": 1, "failed": 0},
+    {"suite": "cargo test --bin lease attachments", "passed": 4, "failed": 0},
+    {"suite": "全仓", "passed": 234, "failed": 2, "note": "两件金向量为主树基线既有失败（主树同跑同败），不属本批改动面"}
+  ],
+  "acceptance": "materials/acceptance-live-2026-09-14.json（F-1 至 F-6 活体全过）"
+}

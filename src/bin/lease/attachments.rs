@@ -207,9 +207,17 @@ fn verify_new_stem_claim(
             .map(|(_, k)| k.as_str())
             .unwrap_or("");
         let actual = if v["verdict"] == "pass" { "established" } else { "unknown" };
-        if kind != actual {
+        // 非对称判定（recognize-solo iso-07 对表围堰 core.py _verify_new_stem_claim：
+        // 申报 established 而实态非 established，或申报 new 而实态非 unknown 才拒；
+        // 等值判定形使 new 段对 unknown 实态永拒，认领通道结构性死锁）。
+        if kind == "established" && actual != "established" {
             return Err(format!(
-                "stem 查册闸拒：甲表填不圆：派生对表不圆：段 {seg} 申报 {kind} 而查册实态 {actual}；{CLAIM_TEACHING}"
+                "stem 查册闸拒：甲表填不圆：派生对表不圆：段 {seg} 申报 established 而词典 state={actual}；{CLAIM_TEACHING}"
+            ));
+        }
+        if kind == "new" && actual != "unknown" {
+            return Err(format!(
+                "stem 查册闸拒：甲表填不圆：派生对表不圆：段 {seg} 申报 new 而词典 state={actual}；{CLAIM_TEACHING}"
             ));
         }
         derivation.push(json!({"segment": seg, "kind": kind, "verified_state": actual}));
@@ -427,4 +435,79 @@ pub(crate) fn cmd_uninstall_hooks(m: &BTreeMap<String, Vec<String>>) -> ! {
     let ok = results.iter().all(|r| r["uninstalled"].as_bool().unwrap_or(false));
     print!("{}", emit(&json!({"hooks": results})));
     std::process::exit(if ok { 0 } else { 1 });
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// verdicts 工厂：pass 即 established 段，new_coinage 即未知新词段。
+    fn verdicts_of(segs: &[(&str, &str)]) -> Vec<Value> {
+        segs.iter()
+            .map(|(s, v)| {
+                json!({"segment": s, "state": if *v == "pass" { "established" } else { "unknown" }, "verdict": v})
+            })
+            .collect()
+    }
+
+    #[test]
+    fn new_stem_claim_new_segment_passes() {
+        // iso-07 对表围堰：new 段申报 new 而查册实态 unknown 即过（等值判定
+        // 形下此径结构性死锁，2026-09-14 双跑不一致在案）。
+        let verdicts = verdicts_of(&[("newword", "new_coinage")]);
+        let got = verify_new_stem_claim(
+            "newword=某新概念",
+            CLAIM_CODE_NONE,
+            "newword:new",
+            &verdicts,
+            Path::new("/nonexistent-root"),
+        );
+        assert!(got.is_ok(), "new 段认领应过：{got:?}");
+        let receipt = got.unwrap();
+        assert_eq!(receipt["code_verdict"], "declared_none");
+        assert_eq!(receipt["derivation"][0]["kind"], "new");
+        assert_eq!(receipt["derivation"][0]["verified_state"], "unknown");
+    }
+
+    #[test]
+    fn established_segment_claim_established_passes() {
+        let verdicts = verdicts_of(&[("solo", "pass")]);
+        let got = verify_new_stem_claim(
+            "solo=单线批",
+            CLAIM_CODE_NONE,
+            "solo:established",
+            &verdicts,
+            Path::new("/nonexistent-root"),
+        );
+        assert!(got.is_ok(), "established 段申报 established 应过：{got:?}");
+    }
+
+    #[test]
+    fn established_segment_claimed_new_rejects() {
+        // established 实态申报 new 即拒（非对称判定双向各守其位）。
+        let verdicts = verdicts_of(&[("solo", "pass")]);
+        let got = verify_new_stem_claim(
+            "solo=单线批",
+            CLAIM_CODE_NONE,
+            "solo:new",
+            &verdicts,
+            Path::new("/nonexistent-root"),
+        );
+        assert!(got.is_err());
+        assert!(got.unwrap_err().contains("申报 new"));
+    }
+
+    #[test]
+    fn new_segment_claimed_established_rejects() {
+        let verdicts = verdicts_of(&[("newword", "new_coinage")]);
+        let got = verify_new_stem_claim(
+            "newword=某新概念",
+            CLAIM_CODE_NONE,
+            "newword:established",
+            &verdicts,
+            Path::new("/nonexistent-root"),
+        );
+        assert!(got.is_err());
+        assert!(got.unwrap_err().contains("申报 established"));
+    }
 }
