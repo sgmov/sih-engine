@@ -41,7 +41,7 @@
 - 活体验收：materials/acceptance-live-2026-09-14.json（launchd kickstart 换新二进制后六用例）。
 - 端到端：tests/recognize_http_gate.rs（进程内临时中央根，真 HTTP 六用例）。
 
-## 五、异常与偏离申报 {#deviation}
+## 五、偏差与异常申报 {#deviation}
 
 - CLI identity verify 全形退出码 137（子进程采集链被杀），正身改走围堰 Python identity 件（v3 格式同源），identity 修复候批。
 - 引擎租约 --new-stem 甲表派生对表等值判定死锁（围堰 core.py 非对称判定，DEC-017 修订六执行位），双跑不一致实锤——本批 iso-07 修复加回归；修复前立约曾撞闸，故批名改用既立词 recognize。
