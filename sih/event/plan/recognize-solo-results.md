@@ -43,12 +43,13 @@
 
 ## 五、异常与偏离申报 {#deviation}
 
-- CLI identity verify 全形退出码 137（子进程采集链被杀），正身改走围堰 Python identity 件（v3 格式同源），候修另批。
-- 引擎租约 --new-stem 甲表派生对表等值判定死锁（围堰 core.py 非对称判定），双跑不一致实锤——本批 iso-07 修复加回归；修复前立约曾撞闸，故批名改用既立词 recognize。
-- 引擎开约 allow 面整行散文收纳致锁范围验必拒（围堰为路径抽取），双跑偏差第二处——包档九节改裸路径重开，解析位修复候租约线批。
-- 主树 domaware-solo.md 批名改名时被 mv 覆盖，git restore 即时恢复原档，事故与恢复全程在案。
-- 全仓两件金向量失败（golden_des001_gov002 与 cli_positional_form_matches_golden）：主树基线同跑同败，GOV-002 主线锁文档改动后金向量未更新之既有陈旧，不属本批改动面，候金向量维护批。
-- P2 读面访问审计候另裁；/ 视图面板静态资产缺席教学降级维持；critsweep 出参瘦身与 tools/call 双份回显裁减候另批（越权汇报衍生优化项）。
+- CLI identity verify 全形退出码 137（子进程采集链被杀），正身改走围堰 Python identity 件（v3 格式同源），identity 修复候批。
+- 引擎租约 --new-stem 甲表派生对表等值判定死锁（围堰 core.py 非对称判定，DEC-017 修订六执行位），双跑不一致实锤——本批 iso-07 修复加回归；修复前立约曾撞闸，故批名改用既立词 recognize。
+- 引擎开约 allow 面整行散文收纳致锁范围验必拒（围堰为路径抽取，SPEC-025 融回对表偏差），双跑偏差第二处——包档九节改裸路径重开，解析位修复候租约线批。
+- 主树 domaware-solo.md 批名改名时被 mv 覆盖，git restore 即时恢复原档，事故与恢复全程在案（勘误复核候批）。
+- 全仓两件金向量失败（golden_des001_gov002 与 cli_positional_form_matches_golden）：主树基线同跑同败，GOV-002 主线锁文档改动后金向量未更新之既有陈旧，不属本批改动面，金向量维护候批。
+- P2 读面访问审计候批另裁；/ 视图面板静态资产缺席教学降级维持；critsweep 出参瘦身与 tools/call 双份回显裁减候批（越权汇报衍生优化项）。
+- close 子命令同包多活跃会话歧义无点名形（DES-014 收约执行位缺陷）：判定位补丁在案（work/closegate-session-flag.patch，35 行），运行二进制已携此形用于僵尸会话点名收约；源码修复随 r4 微批正大光明入库，本批不携带。
 
 ## 六、联动改动面 {#touched}
 
