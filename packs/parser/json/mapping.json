@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "rule": "member",
+      "kind": "key",
+      "name_from": {"path": {"key_token": "KEY", "element_rules": ["element"]}},
+      "text_form": {"scalar_text": {}},
+      "lines": "null"
+    },
+    {
+      "rule": "element",
+      "kind": "idx",
+      "name_from": {"path": {"key_token": "KEY", "element_rules": ["element"]}},
+      "text_form": {"scalar_text": {}},
+      "lines": "null"
+    }
+  ]
+}

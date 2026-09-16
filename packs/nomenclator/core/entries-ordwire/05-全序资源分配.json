@@ -1,0 +1,8 @@
+{
+  "state": "established",
+  "zh": "全序资源分配",
+  "en": "Total-Order Resource Allocation",
+  "definition": "ORD-020 载体名称，资源集上取全序持有者按全序递增申请等待图无环死锁自由",
+  "source": "ordwire-lease-solo 批登记",
+  "signed": "2026-09-03"
+}

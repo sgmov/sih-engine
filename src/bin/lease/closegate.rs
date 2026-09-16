@@ -405,11 +405,17 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         }
     }
 
-    // 会话定位（在册配对语义）
+    // 会话定位（在册配对语义）。--session 点名形（recognize-solo iso-08）：
+    // 同包多活跃会话（中断残留）时按会话号收窄，缺点名而多活跃仍歧义拒。
+    let session_want = one(m, "session").map(|s| s.to_string());
     let sessions = sessions_pair(read_jsonl(&ledger));
     let actives: Vec<Value> = sessions
         .values()
         .filter(|s| s.get("package").and_then(|v| v.as_str()) == Some(stem.as_str()))
+        .filter(|s| match &session_want {
+            Some(want) => s.get("session_id").and_then(|v| v.as_str()) == Some(want.as_str()),
+            None => true,
+        })
         .cloned()
         .collect();
     if actives.is_empty() {
@@ -421,7 +427,10 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
     if actives.len() > 1 {
         fail(
             1,
-            json!({"error": format!("ambiguous active sessions for package: {}", stem)}),
+            json!({"error": format!(
+                "ambiguous active sessions for package: {}；以 --session <会话号> 点名（recognize-solo iso-08）",
+                stem
+            )}),
         );
     }
     let session = actives[0].clone();

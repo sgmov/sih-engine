@@ -24,6 +24,12 @@
 //! 4. argparse 用法错为自足解析，stderr 短句回报退出码 2，报文形不对齐。
 //! 5. 锁台账行为 Python json.dumps(sort_keys=True, separators=(",", ":")) 紧凑形
 //!    逐字节同构（ensure_ascii=False 原 UTF-8）；stdout 报告为 indent=2 同构。
+//! 6. 乐观级联腿承载位变更（gap-locksview-cascade-engine-bin）：围堰 run_cascade_check
+//!    经 `uv run --project <cascade-dir> cascade check` 子进程承载，本侧改直调引擎
+//!    cascade bin（CASCADE_BIN_OVERRIDE 显式覆盖位优先——测试缝，围堰无此变量；
+//!    缺省序当前 exe 同目录兄弟位优先，缺席回落 PATH 检索；SPEC-025 A2
+//!    零 sih-tools spawn）；--cascade-dir 旗标仍收参（CLI 面兼容）但不再选 uv
+//!    工地位，其余参形与判词消费面（targets/dirty/verdict）不变。
 
 use serde_json::{json, Value};
 use std::collections::BTreeMap;
@@ -517,19 +523,37 @@ fn default_trails(root: &Path) -> Vec<String> {
     out
 }
 
+/// 引擎 cascade bin 解析（gap-locksview-cascade-engine-bin）：CASCADE_BIN_OVERRIDE
+/// 显式覆盖位（设置即直用，测试缝，围堰无此变量）优先；缺省序为当前 exe 同目录
+/// 兄弟位（开发形即 target/debug/cascade，发布形同级），缺席回落 PATH 检索。
+fn resolve_cascade_bin() -> PathBuf {
+    if let Ok(over) = std::env::var("CASCADE_BIN_OVERRIDE") {
+        if !over.is_empty() {
+            return PathBuf::from(over);
+        }
+    }
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let cand = dir.join("cascade");
+            if cand.is_file() {
+                return cand;
+            }
+        }
+    }
+    PathBuf::from("cascade")
+}
+
 fn run_cascade_check(
-    cascade_dir: &Path,
+    _cascade_dir: &Path,
     registry: &Path,
     doc_root: &Path,
     trails: &[String],
     reports_root: &Path,
 ) -> Result<Value, LErr> {
-    let mut cmd = Command::new("uv");
+    // 围堰 uv run --project <cascade-dir> cascade check 已替换为引擎 bin 直调
+    // （SPEC-025 A2 零 sih-tools spawn）；--cascade-dir 仅收参不承载选位。
+    let mut cmd = Command::new(resolve_cascade_bin());
     cmd.args([
-        "run",
-        "--project",
-        cascade_dir.display().to_string().as_str(),
-        "cascade",
         "check",
         "--registry",
         registry.display().to_string().as_str(),

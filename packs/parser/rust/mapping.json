@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "rule": "fn_item",
+      "kind": "function",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "struct_item",
+      "kind": "struct",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "enum_item",
+      "kind": "enum",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "trait_item",
+      "kind": "trait",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "impl_item",
+      "kind": "impl",
+      "name_from": {
+        "text": {
+          "join_rules": {
+            "rules": [
+              "ty_bounds",
+              "ty"
+            ],
+            "sep": " for ",
+            "direct": true
+          }
+        }
+      }
+    },
+    {
+      "rule": "const_item",
+      "kind": "const",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "static_item",
+      "kind": "static",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "type_item",
+      "kind": "type",
+      "name_from": "IDENT"
+    },
+    {
+      "rule": "mod_item",
+      "kind": "module",
+      "name_from": "IDENT"
+    }
+  ],
+  "revision": 3
+}

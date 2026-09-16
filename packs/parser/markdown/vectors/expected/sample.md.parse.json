@@ -1,0 +1,1430 @@
+{
+  "type": "rule",
+  "name": "doc",
+  "children": [
+    {
+      "type": "rule",
+      "name": "atx",
+      "children": [
+        {
+          "type": "token",
+          "name": "ATX",
+          "text": "#",
+          "line_start": 1,
+          "line_end": 1
+        },
+        {
+          "type": "token",
+          "name": "SP3",
+          "text": " ",
+          "line_start": 1,
+          "line_end": 1
+        },
+        {
+          "type": "rule",
+          "name": "atx_body",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "一级标题",
+              "line_start": 1,
+              "line_end": 1
+            }
+          ],
+          "line_start": 1,
+          "line_end": 1
+        },
+        {
+          "type": "rule",
+          "name": "ln",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 1,
+              "line_end": 1
+            }
+          ],
+          "line_start": 1,
+          "line_end": 1
+        }
+      ],
+      "line_start": 1,
+      "line_end": 1
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 2,
+          "line_end": 2
+        }
+      ],
+      "line_start": 2,
+      "line_end": 2
+    },
+    {
+      "type": "rule",
+      "name": "para",
+      "children": [
+        {
+          "type": "rule",
+          "name": "para_body",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "段落一行",
+              "line_start": 3,
+              "line_end": 3
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 3,
+                  "line_end": 3
+                }
+              ],
+              "line_start": 3,
+              "line_end": 3
+            },
+            {
+              "type": "rule",
+              "name": "contline",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "段落二行续行。",
+                  "line_start": 4,
+                  "line_end": 4
+                }
+              ],
+              "line_start": 4,
+              "line_end": 4
+            }
+          ],
+          "line_start": 3,
+          "line_end": 4
+        },
+        {
+          "type": "rule",
+          "name": "ln",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 4,
+              "line_end": 4
+            }
+          ],
+          "line_start": 4,
+          "line_end": 4
+        }
+      ],
+      "line_start": 3,
+      "line_end": 4
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 5,
+          "line_end": 5
+        }
+      ],
+      "line_start": 5,
+      "line_end": 5
+    },
+    {
+      "type": "rule",
+      "name": "atx",
+      "children": [
+        {
+          "type": "token",
+          "name": "ATX",
+          "text": "##",
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "type": "token",
+          "name": "SP3",
+          "text": " ",
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "type": "rule",
+          "name": "atx_body",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "编号标题 1.1",
+              "line_start": 6,
+              "line_end": 6
+            }
+          ],
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "type": "rule",
+          "name": "ln",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 6,
+              "line_end": 6
+            }
+          ],
+          "line_start": 6,
+          "line_end": 6
+        }
+      ],
+      "line_start": 6,
+      "line_end": 6
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 7,
+          "line_end": 7
+        }
+      ],
+      "line_start": 7,
+      "line_end": 7
+    },
+    {
+      "type": "rule",
+      "name": "ul",
+      "children": [
+        {
+          "type": "rule",
+          "name": "li",
+          "children": [
+            {
+              "type": "token",
+              "name": "BULLET",
+              "text": "-",
+              "line_start": 8,
+              "line_end": 8
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 8,
+              "line_end": 8
+            },
+            {
+              "type": "rule",
+              "name": "li_para",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "无序项一",
+                  "line_start": 8,
+                  "line_end": 8
+                },
+                {
+                  "type": "rule",
+                  "name": "licont",
+                  "children": [
+                    {
+                      "type": "rule",
+                      "name": "ln",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "FLINE",
+                          "text": "\n",
+                          "line_start": 8,
+                          "line_end": 8
+                        }
+                      ],
+                      "line_start": 8,
+                      "line_end": 8
+                    },
+                    {
+                      "type": "token",
+                      "name": "SP2",
+                      "text": "  ",
+                      "line_start": 9,
+                      "line_end": 9
+                    },
+                    {
+                      "type": "token",
+                      "name": "PJOIN",
+                      "text": "项内续行即多行段落",
+                      "line_start": 9,
+                      "line_end": 9
+                    }
+                  ],
+                  "line_start": 8,
+                  "line_end": 9
+                }
+              ],
+              "line_start": 8,
+              "line_end": 9
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 9,
+                  "line_end": 9
+                }
+              ],
+              "line_start": 9,
+              "line_end": 9
+            }
+          ],
+          "line_start": 8,
+          "line_end": 9
+        },
+        {
+          "type": "rule",
+          "name": "li",
+          "children": [
+            {
+              "type": "token",
+              "name": "BULLET",
+              "text": "-",
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "rule",
+              "name": "li_para",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "无序项二带嵌套",
+                  "line_start": 10,
+                  "line_end": 10
+                }
+              ],
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 10,
+                  "line_end": 10
+                }
+              ],
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "rule",
+              "name": "li_more",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "SP2",
+                  "text": "  ",
+                  "line_start": 11,
+                  "line_end": 11
+                },
+                {
+                  "type": "rule",
+                  "name": "ul_in",
+                  "children": [
+                    {
+                      "type": "rule",
+                      "name": "li_in",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "BULLET",
+                          "text": "-",
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "token",
+                          "name": "SP3",
+                          "text": " ",
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "rule",
+                          "name": "li_para",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "PJOIN",
+                              "text": "嵌套项甲",
+                              "line_start": 11,
+                              "line_end": 11
+                            }
+                          ],
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "rule",
+                          "name": "ln",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "FLINE",
+                              "text": "\n",
+                              "line_start": 11,
+                              "line_end": 11
+                            }
+                          ],
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "rule",
+                          "name": "li_more",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "SP2",
+                              "text": "  ",
+                              "line_start": 12,
+                              "line_end": 12
+                            },
+                            {
+                              "type": "rule",
+                              "name": "ul_in",
+                              "children": [
+                                {
+                                  "type": "rule",
+                                  "name": "li_in",
+                                  "children": [
+                                    {
+                                      "type": "token",
+                                      "name": "BULLET",
+                                      "text": "-",
+                                      "line_start": 12,
+                                      "line_end": 12
+                                    },
+                                    {
+                                      "type": "token",
+                                      "name": "SP3",
+                                      "text": " ",
+                                      "line_start": 12,
+                                      "line_end": 12
+                                    },
+                                    {
+                                      "type": "rule",
+                                      "name": "li_para",
+                                      "children": [
+                                        {
+                                          "type": "token",
+                                          "name": "PJOIN",
+                                          "text": "嵌套项乙",
+                                          "line_start": 12,
+                                          "line_end": 12
+                                        }
+                                      ],
+                                      "line_start": 12,
+                                      "line_end": 12
+                                    },
+                                    {
+                                      "type": "rule",
+                                      "name": "ln",
+                                      "children": [
+                                        {
+                                          "type": "token",
+                                          "name": "FLINE",
+                                          "text": "\n",
+                                          "line_start": 12,
+                                          "line_end": 12
+                                        }
+                                      ],
+                                      "line_start": 12,
+                                      "line_end": 12
+                                    }
+                                  ],
+                                  "line_start": 12,
+                                  "line_end": 12
+                                }
+                              ],
+                              "line_start": 12,
+                              "line_end": 12
+                            }
+                          ],
+                          "line_start": 12,
+                          "line_end": 12
+                        }
+                      ],
+                      "line_start": 11,
+                      "line_end": 12
+                    }
+                  ],
+                  "line_start": 11,
+                  "line_end": 12
+                }
+              ],
+              "line_start": 11,
+              "line_end": 12
+            }
+          ],
+          "line_start": 10,
+          "line_end": 12
+        },
+        {
+          "type": "rule",
+          "name": "li",
+          "children": [
+            {
+              "type": "token",
+              "name": "BULLET",
+              "text": "-",
+              "line_start": 13,
+              "line_end": 13
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 13,
+              "line_end": 13
+            },
+            {
+              "type": "rule",
+              "name": "li_para",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "无序项三",
+                  "line_start": 13,
+                  "line_end": 13
+                }
+              ],
+              "line_start": 13,
+              "line_end": 13
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 13,
+                  "line_end": 13
+                }
+              ],
+              "line_start": 13,
+              "line_end": 13
+            },
+            {
+              "type": "rule",
+              "name": "li_tailblank",
+              "children": [
+                {
+                  "type": "rule",
+                  "name": "ln",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FLINE",
+                      "text": "\n",
+                      "line_start": 14,
+                      "line_end": 14
+                    }
+                  ],
+                  "line_start": 14,
+                  "line_end": 14
+                }
+              ],
+              "line_start": 14,
+              "line_end": 14
+            }
+          ],
+          "line_start": 13,
+          "line_end": 14
+        }
+      ],
+      "line_start": 8,
+      "line_end": 14
+    },
+    {
+      "type": "rule",
+      "name": "ol",
+      "children": [
+        {
+          "type": "rule",
+          "name": "oli",
+          "children": [
+            {
+              "type": "token",
+              "name": "OLIST1",
+              "text": "1.",
+              "line_start": 15,
+              "line_end": 15
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 15,
+              "line_end": 15
+            },
+            {
+              "type": "rule",
+              "name": "li_para_o",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "有序项一",
+                  "line_start": 15,
+                  "line_end": 15
+                }
+              ],
+              "line_start": 15,
+              "line_end": 15
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 15,
+                  "line_end": 15
+                }
+              ],
+              "line_start": 15,
+              "line_end": 15
+            }
+          ],
+          "line_start": 15,
+          "line_end": 15
+        },
+        {
+          "type": "rule",
+          "name": "oli",
+          "children": [
+            {
+              "type": "token",
+              "name": "OLIST",
+              "text": "2.",
+              "line_start": 16,
+              "line_end": 16
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 16,
+              "line_end": 16
+            },
+            {
+              "type": "rule",
+              "name": "li_para_o",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "有序项二",
+                  "line_start": 16,
+                  "line_end": 16
+                },
+                {
+                  "type": "rule",
+                  "name": "licont_strict",
+                  "children": [
+                    {
+                      "type": "rule",
+                      "name": "ln",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "FLINE",
+                          "text": "\n",
+                          "line_start": 16,
+                          "line_end": 16
+                        }
+                      ],
+                      "line_start": 16,
+                      "line_end": 16
+                    },
+                    {
+                      "type": "token",
+                      "name": "SP2",
+                      "text": "   ",
+                      "line_start": 17,
+                      "line_end": 17
+                    },
+                    {
+                      "type": "token",
+                      "name": "PJOIN",
+                      "text": "深行内容续行",
+                      "line_start": 17,
+                      "line_end": 17
+                    }
+                  ],
+                  "line_start": 16,
+                  "line_end": 17
+                }
+              ],
+              "line_start": 16,
+              "line_end": 17
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 17,
+                  "line_end": 17
+                }
+              ],
+              "line_start": 17,
+              "line_end": 17
+            },
+            {
+              "type": "rule",
+              "name": "li_tailblank",
+              "children": [
+                {
+                  "type": "rule",
+                  "name": "ln",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FLINE",
+                      "text": "\n",
+                      "line_start": 18,
+                      "line_end": 18
+                    }
+                  ],
+                  "line_start": 18,
+                  "line_end": 18
+                }
+              ],
+              "line_start": 18,
+              "line_end": 18
+            }
+          ],
+          "line_start": 16,
+          "line_end": 18
+        }
+      ],
+      "line_start": 15,
+      "line_end": 18
+    },
+    {
+      "type": "rule",
+      "name": "quote",
+      "children": [
+        {
+          "type": "token",
+          "name": "BQ",
+          "text": "> ",
+          "line_start": 19,
+          "line_end": 19
+        },
+        {
+          "type": "rule",
+          "name": "qblock",
+          "children": [
+            {
+              "type": "rule",
+              "name": "para_q",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "引用内段落文本。",
+                  "line_start": 19,
+                  "line_end": 19
+                },
+                {
+                  "type": "rule",
+                  "name": "ln",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FLINE",
+                      "text": "\n",
+                      "line_start": 19,
+                      "line_end": 19
+                    }
+                  ],
+                  "line_start": 19,
+                  "line_end": 19
+                }
+              ],
+              "line_start": 19,
+              "line_end": 19
+            }
+          ],
+          "line_start": 19,
+          "line_end": 19
+        },
+        {
+          "type": "rule",
+          "name": "qline",
+          "children": [
+            {
+              "type": "token",
+              "name": "BQ",
+              "text": ">",
+              "line_start": 20,
+              "line_end": 20
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 20,
+                  "line_end": 20
+                }
+              ],
+              "line_start": 20,
+              "line_end": 20
+            }
+          ],
+          "line_start": 20,
+          "line_end": 20
+        },
+        {
+          "type": "rule",
+          "name": "qline",
+          "children": [
+            {
+              "type": "token",
+              "name": "BQ",
+              "text": "> ",
+              "line_start": 21,
+              "line_end": 21
+            },
+            {
+              "type": "rule",
+              "name": "qblock",
+              "children": [
+                {
+                  "type": "rule",
+                  "name": "qlist",
+                  "children": [
+                    {
+                      "type": "rule",
+                      "name": "qitem",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "BULLET",
+                          "text": "-",
+                          "line_start": 21,
+                          "line_end": 21
+                        },
+                        {
+                          "type": "token",
+                          "name": "SP3",
+                          "text": " ",
+                          "line_start": 21,
+                          "line_end": 21
+                        },
+                        {
+                          "type": "rule",
+                          "name": "li_para_q",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "PJOIN",
+                              "text": "引用内列表项",
+                              "line_start": 21,
+                              "line_end": 21
+                            }
+                          ],
+                          "line_start": 21,
+                          "line_end": 21
+                        },
+                        {
+                          "type": "rule",
+                          "name": "ln",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "FLINE",
+                              "text": "\n",
+                              "line_start": 21,
+                              "line_end": 21
+                            }
+                          ],
+                          "line_start": 21,
+                          "line_end": 21
+                        }
+                      ],
+                      "line_start": 21,
+                      "line_end": 21
+                    },
+                    {
+                      "type": "token",
+                      "name": "BQ",
+                      "text": "> ",
+                      "line_start": 22,
+                      "line_end": 22
+                    },
+                    {
+                      "type": "rule",
+                      "name": "qitem",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "BULLET",
+                          "text": "-",
+                          "line_start": 22,
+                          "line_end": 22
+                        },
+                        {
+                          "type": "token",
+                          "name": "SP3",
+                          "text": " ",
+                          "line_start": 22,
+                          "line_end": 22
+                        },
+                        {
+                          "type": "rule",
+                          "name": "li_para_q",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "PJOIN",
+                              "text": "引用内第二项",
+                              "line_start": 22,
+                              "line_end": 22
+                            }
+                          ],
+                          "line_start": 22,
+                          "line_end": 22
+                        },
+                        {
+                          "type": "rule",
+                          "name": "ln",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "FLINE",
+                              "text": "\n",
+                              "line_start": 22,
+                              "line_end": 22
+                            }
+                          ],
+                          "line_start": 22,
+                          "line_end": 22
+                        },
+                        {
+                          "type": "token",
+                          "name": "BQ",
+                          "text": ">",
+                          "line_start": 23,
+                          "line_end": 23
+                        },
+                        {
+                          "type": "rule",
+                          "name": "ln",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "FLINE",
+                              "text": "\n",
+                              "line_start": 23,
+                              "line_end": 23
+                            }
+                          ],
+                          "line_start": 23,
+                          "line_end": 23
+                        }
+                      ],
+                      "line_start": 22,
+                      "line_end": 23
+                    }
+                  ],
+                  "line_start": 21,
+                  "line_end": 23
+                }
+              ],
+              "line_start": 21,
+              "line_end": 23
+            }
+          ],
+          "line_start": 21,
+          "line_end": 23
+        },
+        {
+          "type": "rule",
+          "name": "qline",
+          "children": [
+            {
+              "type": "token",
+              "name": "BQ",
+              "text": "> ",
+              "line_start": 24,
+              "line_end": 24
+            },
+            {
+              "type": "rule",
+              "name": "qblock",
+              "children": [
+                {
+                  "type": "rule",
+                  "name": "qfence",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FENCETICK",
+                      "text": "```bash\n",
+                      "line_start": 24,
+                      "line_end": 24
+                    },
+                    {
+                      "type": "token",
+                      "name": "BQ",
+                      "text": "> ",
+                      "line_start": 25,
+                      "line_end": 25
+                    },
+                    {
+                      "type": "rule",
+                      "name": "qfct",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "PJOIN",
+                          "text": "curl -fsSL https://example.com/install.sh | bash",
+                          "line_start": 25,
+                          "line_end": 25
+                        }
+                      ],
+                      "line_start": 25,
+                      "line_end": 25
+                    },
+                    {
+                      "type": "rule",
+                      "name": "ln",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "FLINE",
+                          "text": "\n",
+                          "line_start": 25,
+                          "line_end": 25
+                        }
+                      ],
+                      "line_start": 25,
+                      "line_end": 25
+                    },
+                    {
+                      "type": "token",
+                      "name": "BQ",
+                      "text": "> ",
+                      "line_start": 26,
+                      "line_end": 26
+                    },
+                    {
+                      "type": "token",
+                      "name": "FENCETICK",
+                      "text": "```\n",
+                      "line_start": 26,
+                      "line_end": 26
+                    }
+                  ],
+                  "line_start": 24,
+                  "line_end": 26
+                }
+              ],
+              "line_start": 24,
+              "line_end": 26
+            }
+          ],
+          "line_start": 24,
+          "line_end": 26
+        }
+      ],
+      "line_start": 19,
+      "line_end": 26
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 27,
+          "line_end": 27
+        }
+      ],
+      "line_start": 27,
+      "line_end": 27
+    },
+    {
+      "type": "rule",
+      "name": "fence",
+      "children": [
+        {
+          "type": "token",
+          "name": "FENCETICK",
+          "text": "```python\n",
+          "line_start": 28,
+          "line_end": 28
+        },
+        {
+          "type": "rule",
+          "name": "fenceline",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "def f(x):",
+              "line_start": 29,
+              "line_end": 29
+            }
+          ],
+          "line_start": 29,
+          "line_end": 29
+        },
+        {
+          "type": "rule",
+          "name": "fenceline",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 29,
+              "line_end": 29
+            }
+          ],
+          "line_start": 29,
+          "line_end": 29
+        },
+        {
+          "type": "rule",
+          "name": "fenceline",
+          "children": [
+            {
+              "type": "token",
+              "name": "SP4",
+              "text": "    ",
+              "line_start": 30,
+              "line_end": 30
+            }
+          ],
+          "line_start": 30,
+          "line_end": 30
+        },
+        {
+          "type": "rule",
+          "name": "fenceline",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "return x + 1",
+              "line_start": 30,
+              "line_end": 30
+            }
+          ],
+          "line_start": 30,
+          "line_end": 30
+        },
+        {
+          "type": "rule",
+          "name": "fenceline",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 30,
+              "line_end": 30
+            }
+          ],
+          "line_start": 30,
+          "line_end": 30
+        },
+        {
+          "type": "token",
+          "name": "FENCETICK",
+          "text": "```\n",
+          "line_start": 31,
+          "line_end": 31
+        }
+      ],
+      "line_start": 28,
+      "line_end": 31
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 32,
+          "line_end": 32
+        }
+      ],
+      "line_start": 32,
+      "line_end": 32
+    },
+    {
+      "type": "rule",
+      "name": "para",
+      "children": [
+        {
+          "type": "rule",
+          "name": "para_body",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "| 不产条目表格行 | 第二列 |",
+              "line_start": 33,
+              "line_end": 33
+            }
+          ],
+          "line_start": 33,
+          "line_end": 33
+        },
+        {
+          "type": "rule",
+          "name": "ln",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 33,
+              "line_end": 33
+            }
+          ],
+          "line_start": 33,
+          "line_end": 33
+        }
+      ],
+      "line_start": 33,
+      "line_end": 33
+    },
+    {
+      "type": "rule",
+      "name": "ln",
+      "children": [
+        {
+          "type": "token",
+          "name": "FLINE",
+          "text": "\n",
+          "line_start": 34,
+          "line_end": 34
+        }
+      ],
+      "line_start": 34,
+      "line_end": 34
+    },
+    {
+      "type": "rule",
+      "name": "ol",
+      "children": [
+        {
+          "type": "rule",
+          "name": "oli",
+          "children": [
+            {
+              "type": "token",
+              "name": "OLIST",
+              "text": "2024.",
+              "line_start": 35,
+              "line_end": 35
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 35,
+              "line_end": 35
+            }
+          ],
+          "line_start": 35,
+          "line_end": 35
+        },
+        {
+          "type": "rule",
+          "name": "oli",
+          "children": [
+            {
+              "type": "token",
+              "name": "OLIST",
+              "text": "2024.",
+              "line_start": 35,
+              "line_end": 35
+            },
+            {
+              "type": "token",
+              "name": "SP3",
+              "text": " ",
+              "line_start": 35,
+              "line_end": 35
+            },
+            {
+              "type": "rule",
+              "name": "li_para_o",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "PJOIN",
+                  "text": "数字前缀不切断段落即 CommonMark 非 1 起规则。",
+                  "line_start": 35,
+                  "line_end": 35
+                }
+              ],
+              "line_start": 35,
+              "line_end": 35
+            },
+            {
+              "type": "rule",
+              "name": "ln",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "FLINE",
+                  "text": "\n",
+                  "line_start": 35,
+                  "line_end": 35
+                }
+              ],
+              "line_start": 35,
+              "line_end": 35
+            },
+            {
+              "type": "rule",
+              "name": "li_tailblank",
+              "children": [
+                {
+                  "type": "rule",
+                  "name": "ln",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FLINE",
+                      "text": "\n",
+                      "line_start": 36,
+                      "line_end": 36
+                    }
+                  ],
+                  "line_start": 36,
+                  "line_end": 36
+                }
+              ],
+              "line_start": 36,
+              "line_end": 36
+            }
+          ],
+          "line_start": 35,
+          "line_end": 36
+        }
+      ],
+      "line_start": 35,
+      "line_end": 36
+    },
+    {
+      "type": "rule",
+      "name": "para",
+      "children": [
+        {
+          "type": "rule",
+          "name": "para_body",
+          "children": [
+            {
+              "type": "token",
+              "name": "PJOIN",
+              "text": "尾段文本。",
+              "line_start": 37,
+              "line_end": 37
+            }
+          ],
+          "line_start": 37,
+          "line_end": 37
+        },
+        {
+          "type": "rule",
+          "name": "ln",
+          "children": [
+            {
+              "type": "token",
+              "name": "FLINE",
+              "text": "\n",
+              "line_start": 37,
+              "line_end": 37
+            }
+          ],
+          "line_start": 37,
+          "line_end": 37
+        }
+      ],
+      "line_start": 37,
+      "line_end": 37
+    }
+  ],
+  "line_start": 1,
+  "line_end": 37
+}

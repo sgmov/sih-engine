@@ -170,8 +170,9 @@ mod tests {
     };
     use std::path::PathBuf;
 
-    fn fixture_root() -> PathBuf {
-        let root = std::env::temp_dir().join("ask3-validate-test");
+    /// per-test 唯一路径（tag+pid，同 event_stream 测试惯例），并行跑不互踩。
+    fn fixture_root(tag: &str) -> PathBuf {
+        let root = std::env::temp_dir().join(format!("ask3-validate-{tag}-{}", std::process::id()));
         let _ = std::fs::create_dir_all(root.join("philosophy"));
         std::fs::write(root.join("philography.md"), "应而不藏即回应而不隐藏。\n").unwrap();
         root
@@ -219,13 +220,13 @@ mod tests {
 
     #[test]
     fn test_valid_record_passes() {
-        let root = fixture_root();
+        let root = fixture_root("valid-passes");
         assert!(validate(&valid_record(&root), &root).is_ok());
     }
 
     #[test]
     fn test_shape_error_on_empty_goal() {
-        let root = fixture_root();
+        let root = fixture_root("shape-empty-goal");
         let mut record = valid_record(&root);
         record.intent_contract.goal = " ".into();
         let errors = validate(&record, &root).unwrap_err();
@@ -234,7 +235,7 @@ mod tests {
 
     #[test]
     fn test_contract_error_empty_anchors() {
-        let root = fixture_root();
+        let root = fixture_root("contract-empty-anchors");
         let mut record = valid_record(&root);
         record.anchors.clear();
         let errors = validate(&record, &root).unwrap_err();
@@ -243,7 +244,7 @@ mod tests {
 
     #[test]
     fn test_contract_error_depth_double_check() {
-        let root = fixture_root();
+        let root = fixture_root("contract-depth");
         let mut record = valid_record(&root);
         record.domain_contract.support_domain.max_depth = 2;
         let errors = validate(&record, &root).unwrap_err();
@@ -252,7 +253,7 @@ mod tests {
 
     #[test]
     fn test_lineage_error_quote_mismatch() {
-        let root = fixture_root();
+        let root = fixture_root("lineage-quote");
         let mut record = valid_record(&root);
         record.anchors[0].philosophy_ref.quote = "原文里没有这句话".into();
         let errors = validate(&record, &root).unwrap_err();
@@ -261,7 +262,7 @@ mod tests {
 
     #[test]
     fn test_lineage_error_source_missing() {
-        let root = fixture_root();
+        let root = fixture_root("lineage-source");
         let mut record = valid_record(&root);
         record.anchors[0].philosophy_ref.source = "ghost.md".into();
         let errors = validate(&record, &root).unwrap_err();
@@ -270,7 +271,7 @@ mod tests {
 
     #[test]
     fn test_metering_error_reversed_calls() {
-        let root = fixture_root();
+        let root = fixture_root("metering-calls");
         let mut record = valid_record(&root);
         record.calls_out = 0;
         record.calls_in = 1;
@@ -280,7 +281,7 @@ mod tests {
 
     #[test]
     fn test_evidence_file_path_form() {
-        let root = fixture_root();
+        let root = fixture_root("evidence-file-path");
         let mut record = valid_record(&root);
         record.anchors[0].evidence = "philography.md:1".into();
         assert!(validate(&record, &root).is_ok());

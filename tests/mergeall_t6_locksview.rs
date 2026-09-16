@@ -327,24 +327,25 @@ fn t3_edge_optimistic_and_pairing() {
     let locks_s = fx.p("locks.ndjson");
     let common: [&str; 4] = ["--root", root_s.as_str(), "--locks", locks_s.as_str()];
 
-    // 假 uv：子进程假级联，按调用次数吐三样报告（未知目标 → 净 → 脏）
+    // 假 cascade 可执行 shim：经 CASCADE_BIN_OVERRIDE 覆盖位注入（locksview
+    // 乐观链已直调引擎 cascade bin，不再经 uv），按 $FAKE_CASCADE 吐三样报告
+    // （未知目标 → 净 → 脏）
     let fakebin = fx.root.join("fakebin");
     fs::create_dir_all(&fakebin).unwrap();
-    let uv = fakebin.join("uv");
+    let cascade = fakebin.join("cascade");
     fs::write(
-        &uv,
+        &cascade,
         "#!/bin/sh\ncase \"$FAKE_CASCADE\" in\n\
          unknown) echo '{\"targets\": {}}' ;;\n\
          dirty) echo '{\"targets\": {\"b.md\": {\"dirty\": [\"cascade/old.md\"]}}}' ;;\n\
          *) echo '{\"targets\": {\"a.md\": {\"dirty\": []}}}' ;;\nesac\n",
     )
     .unwrap();
-    fs::set_permissions(&uv, fs::Permissions::from_mode(0o755)).unwrap();
-    let path_env = std::env::var("PATH").unwrap_or_default();
+    fs::set_permissions(&cascade, fs::Permissions::from_mode(0o755)).unwrap();
     let run_with_fake = |fake: &str, args: &[&str]| {
         Command::new(bin())
             .args(args)
-            .env("PATH", format!("{}:{}", fakebin.display(), path_env))
+            .env("CASCADE_BIN_OVERRIDE", cascade.display().to_string())
             .env("FAKE_CASCADE", fake)
             .output()
             .unwrap()

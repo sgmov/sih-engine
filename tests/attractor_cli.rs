@@ -203,8 +203,13 @@ fn t5_zero_network_zero_llm_source_scan() {
 
 #[test]
 fn t5_zero_network_deps_in_cargo() {
+    // 金向量维护（DEC-023 载体豁免）：mcpserver（Rust rmcp 承载 stdio 与 8765
+    // HTTP 面）融回本 crate 后，tokio/rmcp/axum 为已裁网络载体，Cargo.toml 级
+    // 断言对其豁免；attractor 机械腿零网络红线由 t5_zero_network_zero_llm_
+    // source_scan 在源码级继续执法（src/attractor 与 bin/attractor.rs 零禁词）。
+    // 其余直连 HTTP 客户端与 LLM 客户端依赖仍然全禁。
     let cargo = fs::read_to_string(PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("Cargo.toml")).unwrap();
-    for dep in ["reqwest", "hyper", "curl", "ureq", "tokio", "surf", "attohttpc", "openai"] {
+    for dep in ["reqwest", "hyper", "curl", "ureq", "surf", "attohttpc", "openai"] {
         assert!(!cargo.contains(dep), "Cargo.toml 含网络或 LLM 依赖 {dep}");
     }
 }

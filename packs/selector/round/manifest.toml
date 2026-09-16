@@ -1,0 +1,6 @@
+name = "round"
+version = "0.1.0"
+
+[domain]
+include = ["task-packages/**", "doc/**"]
+exclude = []

@@ -1,0 +1,853 @@
+{
+  "type": "rule",
+  "name": "json",
+  "children": [
+    {
+      "type": "rule",
+      "name": "object",
+      "children": [
+        {
+          "type": "token",
+          "name": "LBRACE",
+          "text": "{",
+          "line_start": 1,
+          "line_end": 1
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "version",
+              "line_start": 2,
+              "line_end": 2
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 2,
+              "line_end": 2
+            },
+            {
+              "type": "token",
+              "name": "NUMBER",
+              "text": "1",
+              "line_start": 2,
+              "line_end": 2
+            }
+          ],
+          "line_start": 2,
+          "line_end": 2
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 2,
+          "line_end": 2
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "name",
+              "line_start": 3,
+              "line_end": 3
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 3,
+              "line_end": 3
+            },
+            {
+              "type": "token",
+              "name": "STRING",
+              "text": "金向量样例",
+              "line_start": 3,
+              "line_end": 3
+            }
+          ],
+          "line_start": 3,
+          "line_end": 3
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 3,
+          "line_end": 3
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "escaped",
+              "line_start": 4,
+              "line_end": 4
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 4,
+              "line_end": 4
+            },
+            {
+              "type": "token",
+              "name": "STRING",
+              "text": "带转义 \"引号\" 与 \\ 反斜杠 与 中 文字",
+              "line_start": 4,
+              "line_end": 4
+            }
+          ],
+          "line_start": 4,
+          "line_end": 4
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 4,
+          "line_end": 4
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "count",
+              "line_start": 5,
+              "line_end": 5
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 5,
+              "line_end": 5
+            },
+            {
+              "type": "token",
+              "name": "NUMBER",
+              "text": "42",
+              "line_start": 5,
+              "line_end": 5
+            }
+          ],
+          "line_start": 5,
+          "line_end": 5
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 5,
+          "line_end": 5
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "ratio",
+              "line_start": 6,
+              "line_end": 6
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 6,
+              "line_end": 6
+            },
+            {
+              "type": "token",
+              "name": "NUMBER",
+              "text": "0.97",
+              "line_start": 6,
+              "line_end": 6
+            }
+          ],
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 6,
+          "line_end": 6
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "active",
+              "line_start": 7,
+              "line_end": 7
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 7,
+              "line_end": 7
+            },
+            {
+              "type": "token",
+              "name": "TRUE",
+              "text": "true",
+              "line_start": 7,
+              "line_end": 7
+            }
+          ],
+          "line_start": 7,
+          "line_end": 7
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 7,
+          "line_end": 7
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "note",
+              "line_start": 8,
+              "line_end": 8
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 8,
+              "line_end": 8
+            },
+            {
+              "type": "token",
+              "name": "NULL",
+              "text": "null",
+              "line_start": 8,
+              "line_end": 8
+            }
+          ],
+          "line_start": 8,
+          "line_end": 8
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 8,
+          "line_end": 8
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "tags",
+              "line_start": 9,
+              "line_end": 9
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 9,
+              "line_end": 9
+            },
+            {
+              "type": "rule",
+              "name": "array",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "LBRACKET",
+                  "text": "[",
+                  "line_start": 9,
+                  "line_end": 9
+                },
+                {
+                  "type": "rule",
+                  "name": "element",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "STRING",
+                      "text": "alpha",
+                      "line_start": 9,
+                      "line_end": 9
+                    }
+                  ],
+                  "line_start": 9,
+                  "line_end": 9
+                },
+                {
+                  "type": "token",
+                  "name": "COMMA",
+                  "text": ",",
+                  "line_start": 9,
+                  "line_end": 9
+                },
+                {
+                  "type": "rule",
+                  "name": "element",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "STRING",
+                      "text": "beta",
+                      "line_start": 9,
+                      "line_end": 9
+                    }
+                  ],
+                  "line_start": 9,
+                  "line_end": 9
+                },
+                {
+                  "type": "token",
+                  "name": "RBRACKET",
+                  "text": "]",
+                  "line_start": 9,
+                  "line_end": 9
+                }
+              ],
+              "line_start": 9,
+              "line_end": 9
+            }
+          ],
+          "line_start": 9,
+          "line_end": 9
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 9,
+          "line_end": 9
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "nested",
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 10,
+              "line_end": 10
+            },
+            {
+              "type": "rule",
+              "name": "object",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "LBRACE",
+                  "text": "{",
+                  "line_start": 10,
+                  "line_end": 10
+                },
+                {
+                  "type": "rule",
+                  "name": "member",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "KEY",
+                      "text": "deep",
+                      "line_start": 11,
+                      "line_end": 11
+                    },
+                    {
+                      "type": "token",
+                      "name": "COLON",
+                      "text": ":",
+                      "line_start": 11,
+                      "line_end": 11
+                    },
+                    {
+                      "type": "rule",
+                      "name": "object",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "LBRACE",
+                          "text": "{",
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "rule",
+                          "name": "member",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "KEY",
+                              "text": "key",
+                              "line_start": 11,
+                              "line_end": 11
+                            },
+                            {
+                              "type": "token",
+                              "name": "COLON",
+                              "text": ":",
+                              "line_start": 11,
+                              "line_end": 11
+                            },
+                            {
+                              "type": "token",
+                              "name": "STRING",
+                              "text": "值",
+                              "line_start": 11,
+                              "line_end": 11
+                            }
+                          ],
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "token",
+                          "name": "COMMA",
+                          "text": ",",
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "rule",
+                          "name": "member",
+                          "children": [
+                            {
+                              "type": "token",
+                              "name": "KEY",
+                              "text": "arr",
+                              "line_start": 11,
+                              "line_end": 11
+                            },
+                            {
+                              "type": "token",
+                              "name": "COLON",
+                              "text": ":",
+                              "line_start": 11,
+                              "line_end": 11
+                            },
+                            {
+                              "type": "rule",
+                              "name": "array",
+                              "children": [
+                                {
+                                  "type": "token",
+                                  "name": "LBRACKET",
+                                  "text": "[",
+                                  "line_start": 11,
+                                  "line_end": 11
+                                },
+                                {
+                                  "type": "rule",
+                                  "name": "element",
+                                  "children": [
+                                    {
+                                      "type": "rule",
+                                      "name": "object",
+                                      "children": [
+                                        {
+                                          "type": "token",
+                                          "name": "LBRACE",
+                                          "text": "{",
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        },
+                                        {
+                                          "type": "rule",
+                                          "name": "member",
+                                          "children": [
+                                            {
+                                              "type": "token",
+                                              "name": "KEY",
+                                              "text": "i",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            },
+                                            {
+                                              "type": "token",
+                                              "name": "COLON",
+                                              "text": ":",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            },
+                                            {
+                                              "type": "token",
+                                              "name": "NUMBER",
+                                              "text": "0",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            }
+                                          ],
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        },
+                                        {
+                                          "type": "token",
+                                          "name": "RBRACE",
+                                          "text": "}",
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        }
+                                      ],
+                                      "line_start": 11,
+                                      "line_end": 11
+                                    }
+                                  ],
+                                  "line_start": 11,
+                                  "line_end": 11
+                                },
+                                {
+                                  "type": "token",
+                                  "name": "COMMA",
+                                  "text": ",",
+                                  "line_start": 11,
+                                  "line_end": 11
+                                },
+                                {
+                                  "type": "rule",
+                                  "name": "element",
+                                  "children": [
+                                    {
+                                      "type": "rule",
+                                      "name": "object",
+                                      "children": [
+                                        {
+                                          "type": "token",
+                                          "name": "LBRACE",
+                                          "text": "{",
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        },
+                                        {
+                                          "type": "rule",
+                                          "name": "member",
+                                          "children": [
+                                            {
+                                              "type": "token",
+                                              "name": "KEY",
+                                              "text": "i",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            },
+                                            {
+                                              "type": "token",
+                                              "name": "COLON",
+                                              "text": ":",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            },
+                                            {
+                                              "type": "token",
+                                              "name": "NUMBER",
+                                              "text": "1",
+                                              "line_start": 11,
+                                              "line_end": 11
+                                            }
+                                          ],
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        },
+                                        {
+                                          "type": "token",
+                                          "name": "RBRACE",
+                                          "text": "}",
+                                          "line_start": 11,
+                                          "line_end": 11
+                                        }
+                                      ],
+                                      "line_start": 11,
+                                      "line_end": 11
+                                    }
+                                  ],
+                                  "line_start": 11,
+                                  "line_end": 11
+                                },
+                                {
+                                  "type": "token",
+                                  "name": "RBRACKET",
+                                  "text": "]",
+                                  "line_start": 11,
+                                  "line_end": 11
+                                }
+                              ],
+                              "line_start": 11,
+                              "line_end": 11
+                            }
+                          ],
+                          "line_start": 11,
+                          "line_end": 11
+                        },
+                        {
+                          "type": "token",
+                          "name": "RBRACE",
+                          "text": "}",
+                          "line_start": 11,
+                          "line_end": 11
+                        }
+                      ],
+                      "line_start": 11,
+                      "line_end": 11
+                    }
+                  ],
+                  "line_start": 11,
+                  "line_end": 11
+                },
+                {
+                  "type": "token",
+                  "name": "COMMA",
+                  "text": ",",
+                  "line_start": 11,
+                  "line_end": 11
+                },
+                {
+                  "type": "rule",
+                  "name": "member",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "KEY",
+                      "text": "empty_list",
+                      "line_start": 12,
+                      "line_end": 12
+                    },
+                    {
+                      "type": "token",
+                      "name": "COLON",
+                      "text": ":",
+                      "line_start": 12,
+                      "line_end": 12
+                    },
+                    {
+                      "type": "rule",
+                      "name": "array",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "LBRACKET",
+                          "text": "[",
+                          "line_start": 12,
+                          "line_end": 12
+                        },
+                        {
+                          "type": "token",
+                          "name": "RBRACKET",
+                          "text": "]",
+                          "line_start": 12,
+                          "line_end": 12
+                        }
+                      ],
+                      "line_start": 12,
+                      "line_end": 12
+                    }
+                  ],
+                  "line_start": 12,
+                  "line_end": 12
+                },
+                {
+                  "type": "token",
+                  "name": "COMMA",
+                  "text": ",",
+                  "line_start": 12,
+                  "line_end": 12
+                },
+                {
+                  "type": "rule",
+                  "name": "member",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "KEY",
+                      "text": "empty_obj",
+                      "line_start": 13,
+                      "line_end": 13
+                    },
+                    {
+                      "type": "token",
+                      "name": "COLON",
+                      "text": ":",
+                      "line_start": 13,
+                      "line_end": 13
+                    },
+                    {
+                      "type": "rule",
+                      "name": "object",
+                      "children": [
+                        {
+                          "type": "token",
+                          "name": "LBRACE",
+                          "text": "{",
+                          "line_start": 13,
+                          "line_end": 13
+                        },
+                        {
+                          "type": "token",
+                          "name": "RBRACE",
+                          "text": "}",
+                          "line_start": 13,
+                          "line_end": 13
+                        }
+                      ],
+                      "line_start": 13,
+                      "line_end": 13
+                    }
+                  ],
+                  "line_start": 13,
+                  "line_end": 13
+                },
+                {
+                  "type": "token",
+                  "name": "RBRACE",
+                  "text": "}",
+                  "line_start": 14,
+                  "line_end": 14
+                }
+              ],
+              "line_start": 10,
+              "line_end": 14
+            }
+          ],
+          "line_start": 10,
+          "line_end": 14
+        },
+        {
+          "type": "token",
+          "name": "COMMA",
+          "text": ",",
+          "line_start": 14,
+          "line_end": 14
+        },
+        {
+          "type": "rule",
+          "name": "member",
+          "children": [
+            {
+              "type": "token",
+              "name": "KEY",
+              "text": "top_level_list",
+              "line_start": 15,
+              "line_end": 15
+            },
+            {
+              "type": "token",
+              "name": "COLON",
+              "text": ":",
+              "line_start": 15,
+              "line_end": 15
+            },
+            {
+              "type": "rule",
+              "name": "array",
+              "children": [
+                {
+                  "type": "token",
+                  "name": "LBRACKET",
+                  "text": "[",
+                  "line_start": 15,
+                  "line_end": 15
+                },
+                {
+                  "type": "rule",
+                  "name": "element",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "TRUE",
+                      "text": "true",
+                      "line_start": 15,
+                      "line_end": 15
+                    }
+                  ],
+                  "line_start": 15,
+                  "line_end": 15
+                },
+                {
+                  "type": "token",
+                  "name": "COMMA",
+                  "text": ",",
+                  "line_start": 15,
+                  "line_end": 15
+                },
+                {
+                  "type": "rule",
+                  "name": "element",
+                  "children": [
+                    {
+                      "type": "token",
+                      "name": "FALSE",
+                      "text": "false",
+                      "line_start": 15,
+                      "line_end": 15
+                    }
+                  ],
+                  "line_start": 15,
+                  "line_end": 15
+                },
+                {
+                  "type": "token",
+                  "name": "RBRACKET",
+                  "text": "]",
+                  "line_start": 15,
+                  "line_end": 15
+                }
+              ],
+              "line_start": 15,
+              "line_end": 15
+            }
+          ],
+          "line_start": 15,
+          "line_end": 15
+        },
+        {
+          "type": "token",
+          "name": "RBRACE",
+          "text": "}",
+          "line_start": 16,
+          "line_end": 16
+        }
+      ],
+      "line_start": 1,
+      "line_end": 16
+    }
+  ],
+  "line_start": 1,
+  "line_end": 16
+}

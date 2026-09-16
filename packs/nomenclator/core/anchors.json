@@ -1,0 +1,9 @@
+{
+ "anchors": ["ALG-002", "ORD-024"],
+ "batch": "docmath-b3-solo",
+ "derivation": "sih-math/docs/docmath-coverage-2026-09-04/docmath-anchors-derivation-2026-09-04.md",
+ "face": "nomenclator core 术语三态登记面（terms 与 candidates 与 lazy 与 dead 加 manifest 域声明面）",
+ "kind": "docmath anchor manifest",
+ "note": "纯数据锚位件，包装载器零消费（STATE_FILES 固定名装载），仅供 anchorcheck 脚本与收尾闸门对表；ORD-024 源码接线见 check.py carrwire 注记",
+ "signed": "2026-09-04"
+}

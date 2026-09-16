@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "general-v1",
+  "family": "formatter",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "operations.toml"
+  ]
+}

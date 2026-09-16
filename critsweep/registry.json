@@ -1,0 +1,249 @@
+{
+ "registry": "critsweep",
+ "version": "1.3.0",
+ "source": {
+  "doc": "sih-engine/doc/governance/GOV-002-mainline-lock-v1.md",
+  "section": "退出标准（sddgate-solo 批现版，第六判据条）",
+  "line_span": "23-28",
+  "note": "六判据文本为该节六行程序切片逐字节内嵌，构建器 make_registry.py 随批落档可重放；--gov/--out 参化工地重放与主树正典两用"
+ },
+ "semantics": {
+  "status_kinds": {
+   "evidence": "达成以证据指针在档为准：证据面（文件在场与文本指纹与链事件）全过即 achieved，任一缺席即按活动面回落并降级可见",
+   "activity": "在飞与沉底按活动回算：last_hit 为近窗命名空间命中最新日，gap 为 at 减 last_hit 日数；零批记录自 registered_at 起计 gap；gap 严格大于阈值即 sunk，gap 不大于阈值即 in_flight"
+  },
+  "namespace_fields": [
+   "record_path",
+   "report_path",
+   "package"
+  ],
+  "namespace_note": "活动扫描只认批名命名空间字段，禁全文散文匹配；散文引用属设计引用非程序活动（pk-044 出泊裁定对照例）",
+  "threshold_default_days": 3,
+  "threshold_note": "沉底阈值三日：gap 超过三日即沉底，恰等于三日仍算在飞；--threshold 可覆调",
+  "window_default_days": 10
+ },
+ "criteria": [
+  {
+   "id": "GOV2-C1-leaseopt",
+   "seq": 1,
+   "title": "leaseopt 线级验收达成",
+   "criterion_text": "- leaseopt 线级验收达成即撞车分类账本在档可复算、六项病灶各处于硬化在役或冻结登记二态、pk-045 出泊事件在链；达成追记 2026-09-05：三项判据全数在档，结算单 SETTLEMENT-LEASEOPT-2026-09-05.md 承载，六批 CONTRACT 1.19.0 至 1.23.0 在役，批六转 pk-059 在泊",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-engine/doc/governance/SETTLEMENT-LEASEOPT-2026-09-05.md"
+     }
+    ],
+    "chain": [
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-045",
+      "disposition": "promoted"
+     }
+    ]
+   },
+   "token_scope": [
+    "leaseopt"
+   ],
+   "registered_at": "2026-09-05",
+   "derivation": "达成态承 GOV-002 v2.4 追记：三项判据全数在档，结算单 SETTLEMENT-LEASEOPT-2026-09-05.md 承载，pk-045 出泊事件在链；令牌 leaseopt 取线程序族批名共根，宁窄勿宽"
+  },
+  {
+   "id": "GOV2-C2-viewline",
+   "seq": 2,
+   "title": "视图组件在役",
+   "criterion_text": "- 视图组件在役即 viewer 实装承载人类视图与实时告警、数据源接链投影库、告警语义接 watchcheck 对表；契约参考面承 pk-047 OpenTelemetry GenAI 材料，线程序包 viewline-line-v1.md 承载；达成追记 2026-09-08：三条件全数在档即 viewer 三子命令同参双跑逐字节一致经 c2close-solo 首验与 c2close2-solo 复测、数据源接链投影即投影器五源直读链与会话账本与双线泊材料且黄灯面消费哨检出件构造性对齐经 sweepjson-solo 接线与 c2close2-solo 复核、告警语义对表即读法澄清为对哨检族正典 lease sweep 五类对表承 CONTRACT 修订五十三与 m-c2route2-1 终签 52c2dbb6、五类残留经出件通道构造性对齐即 c2close 部分对齐六差距闭链、红灯历史语义即收约消解属审计注记不入判据面；执行批 c2close2-solo 承用户令「过得一」",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewer-dualrun/dualrun-summary.json",
+      "contains": "IDENTICAL"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/c2close2-solo-materials/viewsource-pointers.md",
+      "contains": "五源"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/c2close2-solo-materials/alarm-watchcheck-reverify.md",
+      "contains": "构造性对齐"
+     },
+     {
+      "path": "sih-tools/lease/CONTRACT.md",
+      "contains": "修订五十三"
+     }
+    ],
+    "chain": [
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-047",
+      "disposition": "promoted"
+     },
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-059",
+      "disposition": "promoted"
+     }
+    ]
+   },
+   "token_scope": [
+    "viewline"
+   ],
+   "registered_at": "2026-09-04",
+   "derivation": "达成态承 GOV-002 v2.8 追记（c2close2-solo 批 2026-09-08）：三条件证据指针在档即 viewer 双跑读数与投影器五源复核件与对表重验件与 lease CONTRACT 修订五十三正典条，链锚 pk-047 与 pk-059 出泊 promoted 即 viewline-solo 双出泊，本条自 activity 转证据形；令牌取线程序包 viewline-line-v1.md 与 viewline-solo 族批名共根 viewline；viewer 一词泛化过宽（散文易撞）不收，宁窄勿宽；2026-09-08 链面核实命名空间命中仅 2026-09-05 viewline-solo 批"
+  },
+  {
+   "id": "GOV2-C3-measure-determinism",
+   "seq": 3,
+   "title": "测量面确定性化验收达成",
+   "criterion_text": "- 测量面确定性化验收达成即 pk-044 出泊裁定承载独立性来源改道与温度探针经 baseinject 退役、上下文注入与确定性回算基础设施在役即 attnanchor 与 critsweep 结果档在档、残余测量数学载体即改道置信度线泊 pk-078 带 gate、measure-poly-rev1 程序文档改道注记在档；达成追记 2026-09-08：四指针全数在档即 pk-044 出泊链事件与 baseinject 与 attnanchor 与 critsweep 结果档与 pk-078 进泊与 progdoc 注记，经 reroute-solo 批换版 v2.6 承用户改道令",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-engine/sih/event/plan/baseinject-solo-results.md"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/attnanchor-solo-results.md"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/critsweep-solo-results.md"
+     },
+     {
+      "path": "sih-engine/sih/state/parking/materials/pk-078.json"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/measure-poly-rev1-progdoc.md",
+      "contains": "改道闭项"
+     }
+    ],
+    "chain": [
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-044",
+      "disposition": "promoted"
+     },
+     {
+      "event_type": "parking_entered",
+      "entry_id": "pk-078"
+     }
+    ]
+   },
+   "token_scope": [
+    "attnanchor",
+    "critsweep",
+    "baseinject"
+   ],
+   "registered_at": "2026-09-08",
+   "derivation": "v2.6 换版（reroute-solo 批 2026-09-08）承用户改道令重写第三条；前条目 GOV2-C3-measure-poly（2026-09-04 立，activity 态，四天零批沉底）随改道退役；其散文对照纪律（pk-044 裁定引用 measure-poly-rev1 §7 属设计引用非活动）移交本 derivation 在档；证据两形即文件在档与链事件在链，判定性常数裸奔与判变复核旧子项由文规线与 pk-053 清账系列承载不属本判据面"
+  },
+  {
+   "id": "GOV2-C4-math-attribution",
+   "seq": 4,
+   "title": "数学归因长尾收口",
+   "criterion_text": "- 数学归因长尾收口即 pk-053 冻结件逐件清账完毕，处置三态即承载体落档或改判环境参数或维持冻结经用户裁，账面在链；达成追记 2026-09-08：四指针全数在档即路由两批 constclear2-routing-2026-09-08 与 constclear2b-routing-2026-09-08、登记面 constclear-registry-v2 双形态、源码注记自证件 constants-annotations.json、pk-053 出泊笔 41fb339c 在链；批一 34 件与批二 25 件全数清账，批三 54 注记落码位值零改动经 diff 逐件自证；处置实态即承载体落档或改判登记面或退场核销，纯约定与环境参数类入 A1 双通道登记面，旧文维持冻结经用户裁一态与 pk-053 出泊两态制令即冻结撤销零残留存在代际差由本追记收口如实记档；执行批 constclear2c-solo",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-math/docs/constclear2-routing-2026-09-08.json",
+      "contains": "pk-053"
+     },
+     {
+      "path": "sih-math/docs/constclear2b-routing-2026-09-08.json",
+      "contains": "41fb339c"
+     },
+     {
+      "path": "sih-math/docs/constclear-registry-v2.json",
+      "contains": "pk-053"
+     },
+     {
+      "path": "sih-engine/sih/event/plan/constclear2c-solo-materials/constants-annotations.json",
+      "contains": "constclear2c"
+     }
+    ],
+    "chain": [
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-053",
+      "disposition": "promoted"
+     }
+    ]
+   },
+   "token_scope": [
+    "pk-053",
+    "mathclose",
+    "mathreg",
+    "constclear2"
+   ],
+   "registered_at": "2026-09-04",
+   "derivation": "达成态承 GOV-002 v2.7 追记（constclear2c-solo 批 2026-09-08）：四指针在档即路由两批与登记面 v2 与注记自证件与 pk-053 出泊笔，本条自 activity 转证据形；令牌 constclear2 系 constclear2-solo 批 2026-09-08 自登记沿用，pk-053 与 mathclose 与 mathreg 系原登记，宁窄勿宽；旧文三态措辞之维持冻结经用户裁一态与两态制令冻结撤销零残留的代际差由 v2.7 追记收口在档"
+  },
+  {
+   "id": "GOV2-C5-lease-line",
+   "seq": 5,
+   "title": "租约修复升级线级验收达成",
+   "criterion_text": "- 租约修复升级线级验收达成即 pk-072 出泊 promoted 承载修复、锁面账单台账 lockface-bills.ndjson 与 lockdb 投影双写一致零结算、哨兵超宽面三态只报不拦、共享面 append 缺省实装、CONTRACT 1.28.0 与 watchcheck 0.2.0 在役、双仓 settle close reconcile verify 全链；达成追记 2026-09-06：五判据全数在档即 CONTRACT 修订四十一至四十三即 1.28.0 至 1.30.0 在役承载账单双写与哨兵三态与 append 缺省与自举自卫与链证守门、test_leaseup 与 test_leaseup_bill 与 test_leaseup_append 与 test_leaseup_watch 四族二十件及 test_rootanchor 七件先红后绿在档、pk-072 出泊链事件由 leaseupclose-solo 补落即修订四十一文述在先而链事件后至差异如实申报、残留三项即超宽阈值调优与未用罚口径精确化与 T-9 执法位泊 pk-074 承载不属本判据面、线程序包 leaseup-line-v1.md 迁 event/plan 归档",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-engine/doc/governance/SETTLEMENT-LEASEUP-2026-09-07.md"
+     },
+     {
+      "path": "sih-tools/lease/CONTRACT.md",
+      "contains": "修订四十一"
+     },
+     {
+      "path": "sih-tools/lease/CONTRACT.md",
+      "contains": "修订四十二"
+     },
+     {
+      "path": "sih-tools/lease/CONTRACT.md",
+      "contains": "修订四十三"
+     }
+    ],
+    "chain": [
+     {
+      "event_type": "parking_exited",
+      "entry_id": "pk-072",
+      "disposition": "promoted"
+     }
+    ]
+   },
+   "token_scope": [
+    "leaseup"
+   ],
+   "registered_at": "2026-09-06",
+   "derivation": "达成态承 GOV-002 v2.4 追记：五判据全数在档即 CONTRACT 修订四十一至四十三（1.28.0 至 1.30.0）在役承载、线程序包 leaseup-line-v1.md 迁 event/plan 归档、结算单 SETTLEMENT-LEASEUP-2026-09-07.md；pk-072 出泊链事件由 leaseupclose-solo 补落在链；令牌 leaseup 取线族批名共根，与 leaseopt 互斥不重叠，宁窄勿宽"
+  },
+  {
+   "id": "GOV2-C6-sddgate",
+   "seq": 6,
+   "title": "SDD/TDD 完备度闸在役",
+   "criterion_text": "- SDD/TDD 完备度闸在役即格式包检查器实装在役吃 sdd-v1 五件格式包对 SDD 文档族机械判定、lease close 轴两道门 SDDG 四判据执法在役、判据正典 DEC-024 在典；达成追记候 sddgate-solo 结算：四判定命令各有确定性实现与单元测试、反身受试批 close 过门、绕行通道留痕可查；执行批 sddgate-solo 承用户 2026-09-12 三令",
+   "status_kind": "evidence",
+   "evidence": {
+    "files": [
+     {
+      "path": "sih-engine/doc/decision/024-sdd-completeness-gates.md",
+      "contains": "GOV2-C6"
+     },
+     {
+      "path": "sih-tools/lease/CONTRACT.md",
+      "contains": "SDDG"
+     },
+     {
+      "path": "sih-tools/incubation/checker/pyproject.toml"
+     }
+    ]
+   },
+   "token_scope": [
+    "sddgate"
+   ],
+   "registered_at": "2026-09-12",
+   "derivation": "sddgate-solo 批丙簇 2026-09-12 立承 GOV-002 第六退出标准与 DEC-024 C 层扫描召回：证据三指针机械可查即 DEC-024 判据正典在档（含 GOV2-C6 判据词指纹）与 lease CONTRACT 含 SDDG 门修订词形（乙簇两道门批落笔即命中）与文规检查器围堰位 pyproject.toml 在位（甲簇孵化实装，围堰位承 sddgate-solo 任务包写入面）；链锚循既有形可缺席如实即两道门与检查器无出泊泊件锚，候批结算后补（leaseupclose-solo 补笔先例）；降级即视图告警候人节点承 DEC-024 C 层；令牌 sddgate 取批名共根，宁窄勿宽；达成态候本批 close 反身受试与结算追记"
+  }
+ ]
+}

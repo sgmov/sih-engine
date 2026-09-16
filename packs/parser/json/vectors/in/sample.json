@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "name": "金向量样例",
+  "escaped": "带转义 \"引号\" 与 \\ 反斜杠 与 \u4e2d 文字",
+  "count": 42,
+  "ratio": 0.97,
+  "active": true,
+  "note": null,
+  "tags": ["alpha", "beta"],
+  "nested": {
+    "deep": {"key": "值", "arr": [{"i": 0}, {"i": 1}]},
+    "empty_list": [],
+    "empty_obj": {}
+  },
+  "top_level_list": [true, false]
+}

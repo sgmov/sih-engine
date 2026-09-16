@@ -15,8 +15,10 @@
 //! 落差申报（相对围堰）：
 //! 1. 外部钟探针以 curl 子进程承载（围堰 urllib.request），--max-time 3 对齐
 //!    NET_TIMEOUT，重定向跟随对齐；curl 缺席或失败即缺席空串与围堰超时形一致。
-//! 2. 子进程采集（sysctl/ps/ifconfig）无超时闸（围堰 subprocess timeout=2；
-//!    std Command 无超时，实践命令瞬回；curl 自带 --max-time）。
+//! 2. 子进程采集（sysctl/ps/ifconfig）超时闸以 SUBPROC_TIMEOUT=2 秒对表围堰
+//!    subprocess timeout=2（spawn 加 try_wait 轮询到闸 SIGKILL 返空串，对表
+//!    TimeoutExpired 落 SubprocessError 捕获返空串形；双管读线程抽干防管道
+//!    满自锁；curl 自带 --max-time）。
 //! 3. MAC 采集以 ifconfig -a 首 ether/lladdr 行承载（围堰 uuid.getnode 多策略
 //!    探测近似），组播位判随机回退语义保留，无址即空串。
 //! 4. 非字符串型 claims/inject 组件值（数值与布尔与 null）的渲染以 JSON 形承载
@@ -33,9 +35,10 @@ use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};
 use std::collections::HashSet;
 use std::fs;
+use std::io::Read;
 use std::net::TcpStream;
-use std::process::{Command, exit};
-use std::time::Duration;
+use std::process::{Command, Stdio, exit};
+use std::time::{Duration, Instant};
 
 /// 围堰版本锚：sih-tools/identity/src/identity/__init__.py __version__。
 const ENGINE_VERSION: &str = "0.5.0";
@@ -175,15 +178,64 @@ fn new_salt() -> String {
 
 // ---------- 组件采集（core.py collect_components 对表） ----------
 
+/// 子命令采集超时闸，对表围堰 _run（core.py:78 subprocess timeout=2）。
+const SUBPROC_TIMEOUT: Duration = Duration::from_secs(2);
+
+/// 子命令采集对表围堰 _run（core.py:76-81）：C 语区钉死、双管捕获、任何失败
+/// 即空串；超时闸 SUBPROC_TIMEOUT 到即 SIGKILL 杀子进程返空串（对表
+/// TimeoutExpired 落入 SubprocessError 捕获返空串形）。stdout/stderr 各起读
+/// 线程抽干管道，防子进程写满管道自锁使 try_wait 轮询永不返回。
 fn run_cmd(cmd: &[&str]) -> String {
-    let Ok(out) = Command::new(cmd[0]).args(&cmd[1..]).env("LC_ALL", "C").output()
-    else {
-        return String::new();
+    let mut child = match Command::new(cmd[0])
+        .args(&cmd[1..])
+        .env("LC_ALL", "C")
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped())
+        .spawn()
+    {
+        Ok(c) => c,
+        Err(_) => return String::new(),
     };
-    if out.status.success() {
-        String::from_utf8_lossy(&out.stdout).trim().to_string()
-    } else {
-        String::new()
+    let mut stdout_pipe = child.stdout.take();
+    let mut stderr_pipe = child.stderr.take();
+    let stdout_reader = std::thread::spawn(move || {
+        let mut buf = Vec::new();
+        if let Some(pipe) = stdout_pipe.as_mut() {
+            let _ = pipe.read_to_end(&mut buf);
+        }
+        buf
+    });
+    let stderr_reader = std::thread::spawn(move || {
+        let mut buf = Vec::new();
+        if let Some(pipe) = stderr_pipe.as_mut() {
+            let _ = pipe.read_to_end(&mut buf);
+        }
+        buf
+    });
+    let deadline = Instant::now() + SUBPROC_TIMEOUT;
+    let status = loop {
+        match child.try_wait() {
+            Ok(Some(st)) => break Some(st),
+            Ok(None) => {
+                if Instant::now() >= deadline {
+                    let _ = child.kill();
+                    let _ = child.wait();
+                    break None;
+                }
+                std::thread::sleep(Duration::from_millis(2));
+            }
+            Err(_) => {
+                let _ = child.kill();
+                let _ = child.wait();
+                break None;
+            }
+        }
+    };
+    let stdout_bytes = stdout_reader.join().unwrap_or_default();
+    let _ = stderr_reader.join();
+    match status {
+        Some(st) if st.success() => String::from_utf8_lossy(&stdout_bytes).trim().to_string(),
+        _ => String::new(),
     }
 }
 

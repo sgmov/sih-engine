@@ -127,6 +127,34 @@ fn one<'a>(m: &'a BTreeMap<String, Vec<String>>, k: &str) -> Option<&'a str> {
     m.get(k).and_then(|v| v.first()).map(|s| s.as_str())
 }
 
+/// allow 条目抽取（gap-lease-allow-parse，recognize-solo 双跑偏差第二处清偿）：
+/// 对表围堰 declguard-solo 冻结启发族（core.py parse_requested_writes 列表项
+/// 语义，CONTRACT 修订六十一其四）——遇「——」截断取路径部，理由散文不入
+/// allow，剥首尾反引号；抽后空串即不入面。
+fn extract_allow_item(raw: &str) -> Option<String> {
+    let p = raw.split("——").next().unwrap_or("").trim().trim_matches('`');
+    if p.is_empty() {
+        None
+    } else {
+        Some(p.to_string())
+    }
+}
+
+/// 包档显式 allow 键与包档抽取面组合（gap-lease-allow-parse）：显式键同经
+/// 散文不入 allow 抽取，再对包档面去重并入（组合形对表围堰 core.py
+/// open_preflight：requested + 显式不在 requested 者原序保留）。
+fn compose_allow(requested: &[String], explicit: &[String]) -> Vec<String> {
+    let mut allow = requested.to_vec();
+    for a in explicit {
+        if let Some(p) = extract_allow_item(a) {
+            if !requested.contains(&p) {
+                allow.push(p);
+            }
+        }
+    }
+    allow
+}
+
 fn parse_requested_writes(text: &str) -> Vec<String> {
     let mut paths = Vec::new();
     let mut in_section = false;
@@ -140,10 +168,8 @@ fn parse_requested_writes(text: &str) -> Vec<String> {
         }
         let s = line.trim();
         if s.starts_with("- ") || s.starts_with("* ") {
-            let item = s[2..].trim();
-            let p = item.split("——").next().unwrap_or(item).trim();
-            if !p.is_empty() && !p.starts_with('<') {
-                paths.push(p.to_string());
+            if let Some(p) = extract_allow_item(&s[2..]) {
+                paths.push(p);
             }
         }
     }
@@ -235,10 +261,9 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
 
     let pkg_path = resolve_package(&root, &stem);
     let pkg_text = std::fs::read_to_string(&pkg_path).unwrap_or_default();
-    let mut allow = parse_requested_writes(&pkg_text);
-    if let Some(extra) = m.get("allow") {
-        allow.extend(extra.iter().cloned());
-    }
+    let requested = parse_requested_writes(&pkg_text);
+    let explicit: Vec<String> = m.get("allow").cloned().unwrap_or_default();
+    let allow = compose_allow(&requested, &explicit);
 
     let sc = stem_check(&root, &stem, m);
 
@@ -509,5 +534,99 @@ fn main() {
             &format!("子命令 {} 未在融回对等域：{} 覆盖", other, "open/lock/unlock/close/status/commit/bypass/reconcile/sweep/call-log/install-hooks/uninstall-hooks"),
             json!(null),
         ),
+    }
+}
+
+#[cfg(test)]
+mod allow_parse_tests {
+    use super::*;
+
+    /// recognize-solo 双跑偏差第二处回归钉：反引号路径附理由散文的包档行，
+    /// 旧形整行收纳（反引号在面致锁范围验必拒），围堰为路径抽取。
+    #[test]
+    fn backticked_path_with_prose_reason_extracts_path() {
+        let pkg = "# 包\n\n## 九、请求写入 {#requested-writes}\n\n\
+                   - `sih-engine/src/mcpserver/httpface.rs`——识别四元化与三闸与教学载荷\n\
+                   - sih-engine/src/bin/lease.rs——锁范围解析位修复\n";
+        assert_eq!(
+            parse_requested_writes(pkg),
+            vec![
+                "sih-engine/src/mcpserver/httpface.rs".to_string(),
+                "sih-engine/src/bin/lease.rs".to_string(),
+            ]
+        );
+    }
+
+    /// 「——」后散文不入面；星号列表项同读；纯净路径行原样。
+    #[test]
+    fn dash_truncation_and_star_marker() {
+        let pkg = "## 请求写入 {#rw}\n\n\
+                   * sih-engine/src/a.rs——理由散文不入\n\
+                   - sih-engine/src/b.rs\n\
+                   - 理由前置散文无截断符\n";
+        assert_eq!(
+            parse_requested_writes(pkg),
+            vec![
+                "sih-engine/src/a.rs".to_string(),
+                "sih-engine/src/b.rs".to_string(),
+                "理由前置散文无截断符".to_string(),
+            ]
+        );
+    }
+
+    /// 节界检测：请求写入节外列表项不入；节题带 {#anchor} 前缀判定同围堰
+    /// line.split("{",1)[0] 含「请求写入」语义。
+    #[test]
+    fn section_scoping_excludes_other_sections() {
+        let pkg = "## 二、关键设计 {#design}\n\n\
+                   - sih-engine/src/wrong.rs\n\n\
+                   ## 九、请求写入 {#requested-writes}\n\n\
+                   - sih-engine/src/right.rs\n";
+        assert_eq!(parse_requested_writes(pkg), vec!["sih-engine/src/right.rs".to_string()]);
+    }
+
+    /// 占位符与裸词对表围堰现行文原样保留（core.py 无 '<' 过滤、无斜杠词形
+    /// 不猜——declguard 冻结启发族在 allow 面只做「——」截断加剥引）。
+    #[test]
+    fn placeholder_and_bare_word_kept_for_weizhan_parity() {
+        let pkg = "## 请求写入 {#rw}\n\n\
+                   - <占位符不入>\n\
+                   - materials\n";
+        assert_eq!(
+            parse_requested_writes(pkg),
+            vec!["<占位符不入>".to_string(), "materials".to_string()]
+        );
+    }
+
+    /// 显式 allow 键同经散文不入 allow 抽取，并对包档抽取面去重（组合形
+    /// 对表围堰 core.py open_preflight）；requested 面序在前原样保留。
+    #[test]
+    fn explicit_allow_extracted_and_deduped_against_requested() {
+        let requested = parse_requested_writes("## 请求写入 {#rw}\n\n- sih-engine/src/a.rs——包档理由\n");
+        let composed = compose_allow(
+            &requested,
+            &[
+                "`sih-engine/src/b.rs`——显式补面散文".to_string(),
+                "sih-engine/src/a.rs——包档已载重复键".to_string(),
+            ],
+        );
+        assert_eq!(
+            composed,
+            vec![
+                "sih-engine/src/a.rs".to_string(),
+                "sih-engine/src/b.rs".to_string(),
+            ]
+        );
+    }
+
+    /// 抽取后空串（裸「——」行）不入面。
+    #[test]
+    fn empty_extraction_dropped() {
+        assert_eq!(extract_allow_item("——纯理由行"), None);
+        assert_eq!(extract_allow_item("``"), None);
+        assert_eq!(
+            extract_allow_item("`sih-engine/src/c.rs`——注"),
+            Some("sih-engine/src/c.rs".to_string())
+        );
     }
 }

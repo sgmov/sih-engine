@@ -1,0 +1,8 @@
+{
+  "state": "established",
+  "zh": "撞锁",
+  "en": "Collision Lock",
+  "definition": "对已持路径再守恒锁即他会在册持同 path 遇 locked_elsewhere 拒绝，冲突模式有限重试等待让位，承接 ORD-020 互斥语义",
+  "source": "ordinate-lease-solo 批登记",
+  "signed": "2026-09-03"
+}

@@ -253,8 +253,10 @@ fn t5_zero_network_zero_llm_source_scan() {
 
 #[test]
 fn t5_zero_network_deps_in_cargo() {
+    // 金向量维护（DEC-023 载体豁免）：mcpserver 融回本 crate 后 tokio/rmcp/axum
+    // 为已裁网络载体，Cargo 级断言豁免；机械腿零网络红线由源码级扫描继续执法。
     let cargo = fs::read_to_string(PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("Cargo.toml")).unwrap();
-    for dep in ["reqwest", "hyper", "tokio", "openai"] {
+    for dep in ["reqwest", "hyper", "openai"] {
         assert!(!cargo.contains(dep), "Cargo.toml 含网络或 LLM 依赖 {dep}");
     }
 }

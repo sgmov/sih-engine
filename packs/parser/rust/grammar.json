@@ -1,0 +1,4254 @@
+{
+  "version": 1,
+  "start": "file",
+  "rules": {
+    "file": {
+      "seq": [
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "item"
+            }
+          }
+        }
+      ]
+    },
+    "item": {
+      "node": {
+        "choice": [
+          {
+            "seq": [
+              {
+                "repeat": {
+                  "min": 0,
+                  "max": null,
+                  "sub": {
+                    "rule": "attr"
+                  }
+                }
+              },
+              {
+                "rule": "item_core"
+              }
+            ]
+          },
+          {
+            "rule": "attr"
+          }
+        ]
+      },
+      "sync": [
+        "HASH",
+        "KW_PUB",
+        "KW_USE",
+        "KW_EXTERN",
+        "KW_FN",
+        "KW_STRUCT",
+        "KW_ENUM",
+        "KW_TRAIT",
+        "KW_IMPL",
+        "KW_STATIC",
+        "KW_TYPE",
+        "KW_MOD",
+        "KW_CONST",
+        "MACRO_RULES"
+      ]
+    },
+    "body_item": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "repeat": {
+                "min": 0,
+                "max": null,
+                "sub": {
+                  "rule": "attr"
+                }
+              }
+            },
+            {
+              "rule": "item_core"
+            }
+          ]
+        },
+        {
+          "rule": "attr"
+        }
+      ]
+    },
+    "item_core": {
+      "choice": [
+        {
+          "rule": "use_item"
+        },
+        {
+          "rule": "extern_crate_item"
+        },
+        {
+          "rule": "foreign_mod_item"
+        },
+        {
+          "rule": "fn_item"
+        },
+        {
+          "rule": "struct_item"
+        },
+        {
+          "rule": "enum_item"
+        },
+        {
+          "rule": "trait_item"
+        },
+        {
+          "rule": "impl_item"
+        },
+        {
+          "rule": "static_item"
+        },
+        {
+          "rule": "type_item"
+        },
+        {
+          "rule": "mod_item"
+        },
+        {
+          "rule": "const_item"
+        },
+        {
+          "rule": "macro_rules_item"
+        },
+        {
+          "rule": "macro_item"
+        }
+      ]
+    },
+    "attr": {
+      "seq": [
+        {
+          "token": "HASH"
+        },
+        {
+          "opt": {
+            "token": "BANG"
+          }
+        },
+        {
+          "rule": "group_bracket"
+        }
+      ]
+    },
+    "vis": {
+      "choice": [
+        {
+          "token": "KW_PUB"
+        },
+        {
+          "seq": [
+            {
+              "token": "KW_PUB"
+            },
+            {
+              "rule": "group_paren"
+            }
+          ]
+        }
+      ]
+    },
+    "fn_qual": {
+      "choice": [
+        {
+          "token": "KW_ASYNC"
+        },
+        {
+          "token": "KW_CONST"
+        },
+        {
+          "token": "KW_UNSAFE"
+        },
+        {
+          "seq": [
+            {
+              "token": "KW_EXTERN"
+            },
+            {
+              "opt": {
+                "token": "STRING"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "fn_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "fn_qual"
+            }
+          }
+        },
+        {
+          "token": "KW_FN"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "rule": "group_paren"
+        },
+        {
+          "opt": {
+            "rule": "fn_ret"
+          }
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "choice": [
+            {
+              "rule": "block"
+            },
+            {
+              "token": "SEMI"
+            }
+          ]
+        }
+      ]
+    },
+    "fn_ret": {
+      "seq": [
+        {
+          "token": "ARROW"
+        },
+        {
+          "rule": "ty"
+        }
+      ]
+    },
+    "generics": {
+      "seq": [
+        {
+          "token": "LT"
+        },
+        {
+          "opt": {
+            "rule": "generic_list"
+          }
+        },
+        {
+          "token": "GT"
+        }
+      ]
+    },
+    "generic_list": {
+      "repeat": {
+        "min": 0,
+        "max": null,
+        "sub": {
+          "seq": [
+            {
+              "rule": "generic_param"
+            },
+            {
+              "opt": {
+                "token": "COMMA"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "generic_param": {
+      "choice": [
+        {
+          "rule": "generic_lifetime"
+        },
+        {
+          "rule": "generic_const"
+        },
+        {
+          "rule": "generic_type"
+        }
+      ]
+    },
+    "generic_lifetime": {
+      "seq": [
+        {
+          "token": "LIFETIME"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "COLON"
+              },
+              {
+                "rule": "ty_bounds"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "token": "LIFETIME"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "generic_const": {
+      "seq": [
+        {
+          "token": "KW_CONST"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "token": "COLON"
+        },
+        {
+          "rule": "ty"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "rule": "discr_chunk"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "generic_type": {
+      "seq": [
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "COLON"
+              },
+              {
+                "rule": "ty_bounds"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "rule": "ty"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "where_clause": {
+      "seq": [
+        {
+          "token": "KW_WHERE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "rule": "where_pred"
+                },
+                {
+                  "opt": {
+                    "token": "COMMA"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "where_pred": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "LIFETIME"
+            },
+            {
+              "rule": "ty"
+            }
+          ]
+        },
+        {
+          "token": "COLON"
+        },
+        {
+          "rule": "ty_bounds"
+        }
+      ]
+    },
+    "ty_bounds": {
+      "seq": [
+        {
+          "rule": "ty_bound"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "PLUS"
+                },
+                {
+                  "rule": "ty_bound"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ty_bound": {
+      "choice": [
+        {
+          "token": "LIFETIME"
+        },
+        {
+          "seq": [
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "QUESTION"
+                  },
+                  {
+                    "token": "BANG"
+                  }
+                ]
+              }
+            },
+            {
+              "rule": "ty"
+            },
+            {
+              "opt": {
+                "seq": [
+                  {
+                    "rule": "group_paren"
+                  },
+                  {
+                    "opt": {
+                      "rule": "fn_ret"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ty": {
+      "choice": [
+        {
+          "rule": "ty_ref"
+        },
+        {
+          "rule": "ty_ptr"
+        },
+        {
+          "rule": "ty_never"
+        },
+        {
+          "rule": "ty_array"
+        },
+        {
+          "rule": "ty_paren"
+        },
+        {
+          "rule": "ty_impl"
+        },
+        {
+          "rule": "ty_dyn"
+        },
+        {
+          "rule": "ty_fnptr"
+        },
+        {
+          "rule": "path"
+        }
+      ]
+    },
+    "ty_ref": {
+      "seq": [
+        {
+          "token": "AMP"
+        },
+        {
+          "opt": {
+            "token": "LIFETIME"
+          }
+        },
+        {
+          "opt": {
+            "token": "KW_MUT"
+          }
+        },
+        {
+          "rule": "ty"
+        }
+      ]
+    },
+    "ty_ptr": {
+      "seq": [
+        {
+          "token": "STAR"
+        },
+        {
+          "choice": [
+            {
+              "token": "KW_CONST"
+            },
+            {
+              "token": "KW_MUT"
+            }
+          ]
+        },
+        {
+          "rule": "ty"
+        }
+      ]
+    },
+    "ty_never": {
+      "token": "BANG"
+    },
+    "ty_array": {
+      "seq": [
+        {
+          "token": "LBRACKET"
+        },
+        {
+          "rule": "ty"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "SEMI"
+              },
+              {
+                "rule": "array_len"
+              }
+            ]
+          }
+        },
+        {
+          "token": "RBRACKET"
+        }
+      ]
+    },
+    "ty_paren": {
+      "seq": [
+        {
+          "token": "LPAREN"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "rule": "ty"
+              },
+              {
+                "repeat": {
+                  "min": 0,
+                  "max": null,
+                  "sub": {
+                    "seq": [
+                      {
+                        "token": "COMMA"
+                      },
+                      {
+                        "rule": "ty"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "opt": {
+                  "token": "COMMA"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "token": "RPAREN"
+        }
+      ]
+    },
+    "ty_impl": {
+      "seq": [
+        {
+          "token": "KW_IMPL"
+        },
+        {
+          "rule": "ty_bounds"
+        }
+      ]
+    },
+    "ty_dyn": {
+      "seq": [
+        {
+          "token": "KW_DYN"
+        },
+        {
+          "rule": "ty_bounds"
+        }
+      ]
+    },
+    "ty_fnptr": {
+      "seq": [
+        {
+          "opt": {
+            "token": "KW_UNSAFE"
+          }
+        },
+        {
+          "opt": {
+            "token": "KW_EXTERN"
+          }
+        },
+        {
+          "opt": {
+            "token": "STRING"
+          }
+        },
+        {
+          "token": "KW_FN"
+        },
+        {
+          "rule": "group_paren"
+        },
+        {
+          "opt": {
+            "rule": "fn_ret"
+          }
+        }
+      ]
+    },
+    "path": {
+      "seq": [
+        {
+          "opt": {
+            "token": "COLON2"
+          }
+        },
+        {
+          "rule": "path_seg"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "COLON2"
+                },
+                {
+                  "rule": "path_seg"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "path_seg": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "token": "IDENT"
+            },
+            {
+              "opt": {
+                "rule": "angle_args"
+              }
+            }
+          ]
+        },
+        {
+          "token": "KW_SELF"
+        },
+        {
+          "token": "KW_SUPER"
+        },
+        {
+          "token": "KW_CRATE"
+        }
+      ]
+    },
+    "angle_args": {
+      "seq": [
+        {
+          "opt": {
+            "token": "COLON2"
+          }
+        },
+        {
+          "token": "LT"
+        },
+        {
+          "opt": {
+            "rule": "gen_arg_list"
+          }
+        },
+        {
+          "token": "GT"
+        }
+      ]
+    },
+    "gen_arg_list": {
+      "repeat": {
+        "min": 0,
+        "max": null,
+        "sub": {
+          "seq": [
+            {
+              "rule": "gen_arg"
+            },
+            {
+              "opt": {
+                "token": "COMMA"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "gen_arg": {
+      "choice": [
+        {
+          "token": "LIFETIME"
+        },
+        {
+          "seq": [
+            {
+              "token": "IDENT"
+            },
+            {
+              "token": "EQ"
+            },
+            {
+              "rule": "ty"
+            }
+          ]
+        },
+        {
+          "token": "NUMBER"
+        },
+        {
+          "rule": "group"
+        },
+        {
+          "rule": "ty"
+        }
+      ]
+    },
+    "group": {
+      "choice": [
+        {
+          "rule": "group_paren"
+        },
+        {
+          "rule": "group_bracket"
+        },
+        {
+          "rule": "group_brace"
+        }
+      ]
+    },
+    "group_paren": {
+      "seq": [
+        {
+          "token": "LPAREN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "paren_el"
+            }
+          }
+        },
+        {
+          "token": "RPAREN"
+        }
+      ]
+    },
+    "paren_el": {
+      "choice": [
+        {
+          "rule": "group"
+        },
+        {
+          "seq": [
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "RPAREN"
+                }
+              }
+            },
+            {
+              "choice": [
+                {
+                  "token": "RAW_BYTE_STRING"
+                },
+                {
+                  "token": "RAW_STRING"
+                },
+                {
+                  "token": "BYTE_STRING"
+                },
+                {
+                  "token": "BYTE_CHAR"
+                },
+                {
+                  "token": "STRING"
+                },
+                {
+                  "token": "CHAR"
+                },
+                {
+                  "token": "LIFETIME"
+                },
+                {
+                  "token": "NUMBER"
+                },
+                {
+                  "token": "KW_AS"
+                },
+                {
+                  "token": "KW_ASYNC"
+                },
+                {
+                  "token": "KW_BREAK"
+                },
+                {
+                  "token": "KW_CONST"
+                },
+                {
+                  "token": "KW_CONTINUE"
+                },
+                {
+                  "token": "KW_CRATE"
+                },
+                {
+                  "token": "KW_DYN"
+                },
+                {
+                  "token": "KW_ELSE"
+                },
+                {
+                  "token": "KW_ENUM"
+                },
+                {
+                  "token": "KW_EXTERN"
+                },
+                {
+                  "token": "KW_FALSE"
+                },
+                {
+                  "token": "KW_FN"
+                },
+                {
+                  "token": "KW_FOR"
+                },
+                {
+                  "token": "KW_IF"
+                },
+                {
+                  "token": "KW_IMPL"
+                },
+                {
+                  "token": "KW_IN"
+                },
+                {
+                  "token": "KW_LET"
+                },
+                {
+                  "token": "KW_LOOP"
+                },
+                {
+                  "token": "KW_MATCH"
+                },
+                {
+                  "token": "KW_MOD"
+                },
+                {
+                  "token": "KW_MOVE"
+                },
+                {
+                  "token": "KW_MUT"
+                },
+                {
+                  "token": "KW_PUB"
+                },
+                {
+                  "token": "KW_REF"
+                },
+                {
+                  "token": "KW_RETURN"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_STATIC"
+                },
+                {
+                  "token": "KW_STRUCT"
+                },
+                {
+                  "token": "KW_SUPER"
+                },
+                {
+                  "token": "KW_TRAIT"
+                },
+                {
+                  "token": "KW_TRUE"
+                },
+                {
+                  "token": "KW_TYPE"
+                },
+                {
+                  "token": "KW_UNSAFE"
+                },
+                {
+                  "token": "KW_USE"
+                },
+                {
+                  "token": "KW_WHERE"
+                },
+                {
+                  "token": "KW_WHILE"
+                },
+                {
+                  "token": "MACRO_RULES"
+                },
+                {
+                  "token": "IDENT"
+                },
+                {
+                  "token": "COLON2"
+                },
+                {
+                  "token": "ARROW"
+                },
+                {
+                  "token": "FATARROW"
+                },
+                {
+                  "token": "DOT2EQ"
+                },
+                {
+                  "token": "DOT2"
+                },
+                {
+                  "token": "AND2"
+                },
+                {
+                  "token": "OR2"
+                },
+                {
+                  "token": "EQ2"
+                },
+                {
+                  "token": "NE"
+                },
+                {
+                  "token": "PLUSEQ"
+                },
+                {
+                  "token": "MINUSEQ"
+                },
+                {
+                  "token": "STAREQ"
+                },
+                {
+                  "token": "SLASHEQ"
+                },
+                {
+                  "token": "PERCENTEQ"
+                },
+                {
+                  "token": "ANDEQ"
+                },
+                {
+                  "token": "OREQ"
+                },
+                {
+                  "token": "CARETEQ"
+                },
+                {
+                  "token": "PLUS"
+                },
+                {
+                  "token": "MINUS"
+                },
+                {
+                  "token": "STAR"
+                },
+                {
+                  "token": "SLASH"
+                },
+                {
+                  "token": "PERCENT"
+                },
+                {
+                  "token": "CARET"
+                },
+                {
+                  "token": "AMP"
+                },
+                {
+                  "token": "PIPE"
+                },
+                {
+                  "token": "TILDE"
+                },
+                {
+                  "token": "BANG"
+                },
+                {
+                  "token": "EQ"
+                },
+                {
+                  "token": "LT"
+                },
+                {
+                  "token": "GT"
+                },
+                {
+                  "token": "DOT"
+                },
+                {
+                  "token": "COMMA"
+                },
+                {
+                  "token": "SEMI"
+                },
+                {
+                  "token": "COLON"
+                },
+                {
+                  "token": "LPAREN"
+                },
+                {
+                  "token": "RPAREN"
+                },
+                {
+                  "token": "LBRACKET"
+                },
+                {
+                  "token": "RBRACKET"
+                },
+                {
+                  "token": "LBRACE"
+                },
+                {
+                  "token": "RBRACE"
+                },
+                {
+                  "token": "HASH"
+                },
+                {
+                  "token": "QUESTION"
+                },
+                {
+                  "token": "AT"
+                },
+                {
+                  "token": "DOLLAR"
+                },
+                {
+                  "token": "error"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "group_bracket": {
+      "seq": [
+        {
+          "token": "LBRACKET"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "bracket_el"
+            }
+          }
+        },
+        {
+          "token": "RBRACKET"
+        }
+      ]
+    },
+    "bracket_el": {
+      "choice": [
+        {
+          "rule": "group"
+        },
+        {
+          "seq": [
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "RBRACKET"
+                }
+              }
+            },
+            {
+              "choice": [
+                {
+                  "token": "RAW_BYTE_STRING"
+                },
+                {
+                  "token": "RAW_STRING"
+                },
+                {
+                  "token": "BYTE_STRING"
+                },
+                {
+                  "token": "BYTE_CHAR"
+                },
+                {
+                  "token": "STRING"
+                },
+                {
+                  "token": "CHAR"
+                },
+                {
+                  "token": "LIFETIME"
+                },
+                {
+                  "token": "NUMBER"
+                },
+                {
+                  "token": "KW_AS"
+                },
+                {
+                  "token": "KW_ASYNC"
+                },
+                {
+                  "token": "KW_BREAK"
+                },
+                {
+                  "token": "KW_CONST"
+                },
+                {
+                  "token": "KW_CONTINUE"
+                },
+                {
+                  "token": "KW_CRATE"
+                },
+                {
+                  "token": "KW_DYN"
+                },
+                {
+                  "token": "KW_ELSE"
+                },
+                {
+                  "token": "KW_ENUM"
+                },
+                {
+                  "token": "KW_EXTERN"
+                },
+                {
+                  "token": "KW_FALSE"
+                },
+                {
+                  "token": "KW_FN"
+                },
+                {
+                  "token": "KW_FOR"
+                },
+                {
+                  "token": "KW_IF"
+                },
+                {
+                  "token": "KW_IMPL"
+                },
+                {
+                  "token": "KW_IN"
+                },
+                {
+                  "token": "KW_LET"
+                },
+                {
+                  "token": "KW_LOOP"
+                },
+                {
+                  "token": "KW_MATCH"
+                },
+                {
+                  "token": "KW_MOD"
+                },
+                {
+                  "token": "KW_MOVE"
+                },
+                {
+                  "token": "KW_MUT"
+                },
+                {
+                  "token": "KW_PUB"
+                },
+                {
+                  "token": "KW_REF"
+                },
+                {
+                  "token": "KW_RETURN"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_STATIC"
+                },
+                {
+                  "token": "KW_STRUCT"
+                },
+                {
+                  "token": "KW_SUPER"
+                },
+                {
+                  "token": "KW_TRAIT"
+                },
+                {
+                  "token": "KW_TRUE"
+                },
+                {
+                  "token": "KW_TYPE"
+                },
+                {
+                  "token": "KW_UNSAFE"
+                },
+                {
+                  "token": "KW_USE"
+                },
+                {
+                  "token": "KW_WHERE"
+                },
+                {
+                  "token": "KW_WHILE"
+                },
+                {
+                  "token": "MACRO_RULES"
+                },
+                {
+                  "token": "IDENT"
+                },
+                {
+                  "token": "COLON2"
+                },
+                {
+                  "token": "ARROW"
+                },
+                {
+                  "token": "FATARROW"
+                },
+                {
+                  "token": "DOT2EQ"
+                },
+                {
+                  "token": "DOT2"
+                },
+                {
+                  "token": "AND2"
+                },
+                {
+                  "token": "OR2"
+                },
+                {
+                  "token": "EQ2"
+                },
+                {
+                  "token": "NE"
+                },
+                {
+                  "token": "PLUSEQ"
+                },
+                {
+                  "token": "MINUSEQ"
+                },
+                {
+                  "token": "STAREQ"
+                },
+                {
+                  "token": "SLASHEQ"
+                },
+                {
+                  "token": "PERCENTEQ"
+                },
+                {
+                  "token": "ANDEQ"
+                },
+                {
+                  "token": "OREQ"
+                },
+                {
+                  "token": "CARETEQ"
+                },
+                {
+                  "token": "PLUS"
+                },
+                {
+                  "token": "MINUS"
+                },
+                {
+                  "token": "STAR"
+                },
+                {
+                  "token": "SLASH"
+                },
+                {
+                  "token": "PERCENT"
+                },
+                {
+                  "token": "CARET"
+                },
+                {
+                  "token": "AMP"
+                },
+                {
+                  "token": "PIPE"
+                },
+                {
+                  "token": "TILDE"
+                },
+                {
+                  "token": "BANG"
+                },
+                {
+                  "token": "EQ"
+                },
+                {
+                  "token": "LT"
+                },
+                {
+                  "token": "GT"
+                },
+                {
+                  "token": "DOT"
+                },
+                {
+                  "token": "COMMA"
+                },
+                {
+                  "token": "SEMI"
+                },
+                {
+                  "token": "COLON"
+                },
+                {
+                  "token": "LPAREN"
+                },
+                {
+                  "token": "RPAREN"
+                },
+                {
+                  "token": "LBRACKET"
+                },
+                {
+                  "token": "RBRACKET"
+                },
+                {
+                  "token": "LBRACE"
+                },
+                {
+                  "token": "RBRACE"
+                },
+                {
+                  "token": "HASH"
+                },
+                {
+                  "token": "QUESTION"
+                },
+                {
+                  "token": "AT"
+                },
+                {
+                  "token": "DOLLAR"
+                },
+                {
+                  "token": "error"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "group_brace": {
+      "seq": [
+        {
+          "token": "LBRACE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "brace_el"
+            }
+          }
+        },
+        {
+          "token": "RBRACE"
+        }
+      ]
+    },
+    "brace_el": {
+      "choice": [
+        {
+          "rule": "group"
+        },
+        {
+          "seq": [
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "RBRACE"
+                }
+              }
+            },
+            {
+              "choice": [
+                {
+                  "token": "RAW_BYTE_STRING"
+                },
+                {
+                  "token": "RAW_STRING"
+                },
+                {
+                  "token": "BYTE_STRING"
+                },
+                {
+                  "token": "BYTE_CHAR"
+                },
+                {
+                  "token": "STRING"
+                },
+                {
+                  "token": "CHAR"
+                },
+                {
+                  "token": "LIFETIME"
+                },
+                {
+                  "token": "NUMBER"
+                },
+                {
+                  "token": "KW_AS"
+                },
+                {
+                  "token": "KW_ASYNC"
+                },
+                {
+                  "token": "KW_BREAK"
+                },
+                {
+                  "token": "KW_CONST"
+                },
+                {
+                  "token": "KW_CONTINUE"
+                },
+                {
+                  "token": "KW_CRATE"
+                },
+                {
+                  "token": "KW_DYN"
+                },
+                {
+                  "token": "KW_ELSE"
+                },
+                {
+                  "token": "KW_ENUM"
+                },
+                {
+                  "token": "KW_EXTERN"
+                },
+                {
+                  "token": "KW_FALSE"
+                },
+                {
+                  "token": "KW_FN"
+                },
+                {
+                  "token": "KW_FOR"
+                },
+                {
+                  "token": "KW_IF"
+                },
+                {
+                  "token": "KW_IMPL"
+                },
+                {
+                  "token": "KW_IN"
+                },
+                {
+                  "token": "KW_LET"
+                },
+                {
+                  "token": "KW_LOOP"
+                },
+                {
+                  "token": "KW_MATCH"
+                },
+                {
+                  "token": "KW_MOD"
+                },
+                {
+                  "token": "KW_MOVE"
+                },
+                {
+                  "token": "KW_MUT"
+                },
+                {
+                  "token": "KW_PUB"
+                },
+                {
+                  "token": "KW_REF"
+                },
+                {
+                  "token": "KW_RETURN"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_STATIC"
+                },
+                {
+                  "token": "KW_STRUCT"
+                },
+                {
+                  "token": "KW_SUPER"
+                },
+                {
+                  "token": "KW_TRAIT"
+                },
+                {
+                  "token": "KW_TRUE"
+                },
+                {
+                  "token": "KW_TYPE"
+                },
+                {
+                  "token": "KW_UNSAFE"
+                },
+                {
+                  "token": "KW_USE"
+                },
+                {
+                  "token": "KW_WHERE"
+                },
+                {
+                  "token": "KW_WHILE"
+                },
+                {
+                  "token": "MACRO_RULES"
+                },
+                {
+                  "token": "IDENT"
+                },
+                {
+                  "token": "COLON2"
+                },
+                {
+                  "token": "ARROW"
+                },
+                {
+                  "token": "FATARROW"
+                },
+                {
+                  "token": "DOT2EQ"
+                },
+                {
+                  "token": "DOT2"
+                },
+                {
+                  "token": "AND2"
+                },
+                {
+                  "token": "OR2"
+                },
+                {
+                  "token": "EQ2"
+                },
+                {
+                  "token": "NE"
+                },
+                {
+                  "token": "PLUSEQ"
+                },
+                {
+                  "token": "MINUSEQ"
+                },
+                {
+                  "token": "STAREQ"
+                },
+                {
+                  "token": "SLASHEQ"
+                },
+                {
+                  "token": "PERCENTEQ"
+                },
+                {
+                  "token": "ANDEQ"
+                },
+                {
+                  "token": "OREQ"
+                },
+                {
+                  "token": "CARETEQ"
+                },
+                {
+                  "token": "PLUS"
+                },
+                {
+                  "token": "MINUS"
+                },
+                {
+                  "token": "STAR"
+                },
+                {
+                  "token": "SLASH"
+                },
+                {
+                  "token": "PERCENT"
+                },
+                {
+                  "token": "CARET"
+                },
+                {
+                  "token": "AMP"
+                },
+                {
+                  "token": "PIPE"
+                },
+                {
+                  "token": "TILDE"
+                },
+                {
+                  "token": "BANG"
+                },
+                {
+                  "token": "EQ"
+                },
+                {
+                  "token": "LT"
+                },
+                {
+                  "token": "GT"
+                },
+                {
+                  "token": "DOT"
+                },
+                {
+                  "token": "COMMA"
+                },
+                {
+                  "token": "SEMI"
+                },
+                {
+                  "token": "COLON"
+                },
+                {
+                  "token": "LPAREN"
+                },
+                {
+                  "token": "RPAREN"
+                },
+                {
+                  "token": "LBRACKET"
+                },
+                {
+                  "token": "RBRACKET"
+                },
+                {
+                  "token": "LBRACE"
+                },
+                {
+                  "token": "RBRACE"
+                },
+                {
+                  "token": "HASH"
+                },
+                {
+                  "token": "QUESTION"
+                },
+                {
+                  "token": "AT"
+                },
+                {
+                  "token": "DOLLAR"
+                },
+                {
+                  "token": "error"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "array_len": {
+      "repeat": {
+        "min": 0,
+        "max": null,
+        "sub": {
+          "rule": "bracket_el"
+        }
+      }
+    },
+    "block": {
+      "seq": [
+        {
+          "token": "LBRACE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "body_elem"
+            }
+          }
+        },
+        {
+          "token": "RBRACE"
+        }
+      ]
+    },
+    "body_elem": {
+      "choice": [
+        {
+          "rule": "body_item"
+        },
+        {
+          "rule": "stmt_chunk"
+        }
+      ]
+    },
+    "stmt_chunk": {
+      "seq": [
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "chunk_el"
+            }
+          }
+        },
+        {
+          "opt": {
+            "token": "SEMI"
+          }
+        }
+      ]
+    },
+    "chunk_el": {
+      "choice": [
+        {
+          "rule": "group"
+        },
+        {
+          "seq": [
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "RBRACE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "SEMI"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "HASH"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_PUB"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_USE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_MOD"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_FN"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_STRUCT"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_ENUM"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_TRAIT"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_IMPL"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_STATIC"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_TYPE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_EXTERN"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_CONST"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "MACRO_RULES"
+                }
+              }
+            },
+            {
+              "rule": "expr"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "RBRACE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "SEMI"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "HASH"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_PUB"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_USE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_MOD"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_FN"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_STRUCT"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_ENUM"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_TRAIT"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_IMPL"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_STATIC"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_TYPE"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_EXTERN"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "KW_CONST"
+                }
+              }
+            },
+            {
+              "ahead": {
+                "neg": true,
+                "sub": {
+                  "token": "MACRO_RULES"
+                }
+              }
+            },
+            {
+              "choice": [
+                {
+                  "token": "RAW_BYTE_STRING"
+                },
+                {
+                  "token": "RAW_STRING"
+                },
+                {
+                  "token": "BYTE_STRING"
+                },
+                {
+                  "token": "BYTE_CHAR"
+                },
+                {
+                  "token": "STRING"
+                },
+                {
+                  "token": "CHAR"
+                },
+                {
+                  "token": "LIFETIME"
+                },
+                {
+                  "token": "NUMBER"
+                },
+                {
+                  "token": "KW_AS"
+                },
+                {
+                  "token": "KW_ASYNC"
+                },
+                {
+                  "token": "KW_BREAK"
+                },
+                {
+                  "token": "KW_CONST"
+                },
+                {
+                  "token": "KW_CONTINUE"
+                },
+                {
+                  "token": "KW_CRATE"
+                },
+                {
+                  "token": "KW_DYN"
+                },
+                {
+                  "token": "KW_ELSE"
+                },
+                {
+                  "token": "KW_ENUM"
+                },
+                {
+                  "token": "KW_EXTERN"
+                },
+                {
+                  "token": "KW_FALSE"
+                },
+                {
+                  "token": "KW_FN"
+                },
+                {
+                  "token": "KW_FOR"
+                },
+                {
+                  "token": "KW_IF"
+                },
+                {
+                  "token": "KW_IMPL"
+                },
+                {
+                  "token": "KW_IN"
+                },
+                {
+                  "token": "KW_LET"
+                },
+                {
+                  "token": "KW_LOOP"
+                },
+                {
+                  "token": "KW_MATCH"
+                },
+                {
+                  "token": "KW_MOD"
+                },
+                {
+                  "token": "KW_MOVE"
+                },
+                {
+                  "token": "KW_MUT"
+                },
+                {
+                  "token": "KW_PUB"
+                },
+                {
+                  "token": "KW_REF"
+                },
+                {
+                  "token": "KW_RETURN"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_SELF"
+                },
+                {
+                  "token": "KW_STATIC"
+                },
+                {
+                  "token": "KW_STRUCT"
+                },
+                {
+                  "token": "KW_SUPER"
+                },
+                {
+                  "token": "KW_TRAIT"
+                },
+                {
+                  "token": "KW_TRUE"
+                },
+                {
+                  "token": "KW_TYPE"
+                },
+                {
+                  "token": "KW_UNSAFE"
+                },
+                {
+                  "token": "KW_USE"
+                },
+                {
+                  "token": "KW_WHERE"
+                },
+                {
+                  "token": "KW_WHILE"
+                },
+                {
+                  "token": "MACRO_RULES"
+                },
+                {
+                  "token": "IDENT"
+                },
+                {
+                  "token": "COLON2"
+                },
+                {
+                  "token": "ARROW"
+                },
+                {
+                  "token": "FATARROW"
+                },
+                {
+                  "token": "DOT2EQ"
+                },
+                {
+                  "token": "DOT2"
+                },
+                {
+                  "token": "AND2"
+                },
+                {
+                  "token": "OR2"
+                },
+                {
+                  "token": "EQ2"
+                },
+                {
+                  "token": "NE"
+                },
+                {
+                  "token": "PLUSEQ"
+                },
+                {
+                  "token": "MINUSEQ"
+                },
+                {
+                  "token": "STAREQ"
+                },
+                {
+                  "token": "SLASHEQ"
+                },
+                {
+                  "token": "PERCENTEQ"
+                },
+                {
+                  "token": "ANDEQ"
+                },
+                {
+                  "token": "OREQ"
+                },
+                {
+                  "token": "CARETEQ"
+                },
+                {
+                  "token": "PLUS"
+                },
+                {
+                  "token": "MINUS"
+                },
+                {
+                  "token": "STAR"
+                },
+                {
+                  "token": "SLASH"
+                },
+                {
+                  "token": "PERCENT"
+                },
+                {
+                  "token": "CARET"
+                },
+                {
+                  "token": "AMP"
+                },
+                {
+                  "token": "PIPE"
+                },
+                {
+                  "token": "TILDE"
+                },
+                {
+                  "token": "BANG"
+                },
+                {
+                  "token": "EQ"
+                },
+                {
+                  "token": "LT"
+                },
+                {
+                  "token": "GT"
+                },
+                {
+                  "token": "DOT"
+                },
+                {
+                  "token": "COMMA"
+                },
+                {
+                  "token": "SEMI"
+                },
+                {
+                  "token": "COLON"
+                },
+                {
+                  "token": "LPAREN"
+                },
+                {
+                  "token": "RPAREN"
+                },
+                {
+                  "token": "LBRACKET"
+                },
+                {
+                  "token": "RBRACKET"
+                },
+                {
+                  "token": "LBRACE"
+                },
+                {
+                  "token": "RBRACE"
+                },
+                {
+                  "token": "HASH"
+                },
+                {
+                  "token": "QUESTION"
+                },
+                {
+                  "token": "AT"
+                },
+                {
+                  "token": "DOLLAR"
+                },
+                {
+                  "token": "error"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "use_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_USE"
+        },
+        {
+          "rule": "use_tree"
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "use_tree": {
+      "seq": [
+        {
+          "opt": {
+            "token": "COLON2"
+          }
+        },
+        {
+          "rule": "use_base"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "COLON2"
+              },
+              {
+                "rule": "use_nested"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "KW_AS"
+              },
+              {
+                "token": "IDENT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "use_base": {
+      "choice": [
+        {
+          "token": "STAR"
+        },
+        {
+          "rule": "use_seg"
+        }
+      ]
+    },
+    "use_nested": {
+      "choice": [
+        {
+          "token": "STAR"
+        },
+        {
+          "rule": "use_group"
+        },
+        {
+          "rule": "use_tree"
+        }
+      ]
+    },
+    "use_group": {
+      "seq": [
+        {
+          "token": "LBRACE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "rule": "use_tree"
+                },
+                {
+                  "opt": {
+                    "token": "COMMA"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "token": "RBRACE"
+        }
+      ]
+    },
+    "use_seg": {
+      "choice": [
+        {
+          "token": "IDENT"
+        },
+        {
+          "token": "KW_SELF"
+        },
+        {
+          "token": "KW_SUPER"
+        },
+        {
+          "token": "KW_CRATE"
+        }
+      ]
+    },
+    "extern_crate_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_EXTERN"
+        },
+        {
+          "token": "KW_CRATE"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "KW_AS"
+              },
+              {
+                "token": "IDENT"
+              }
+            ]
+          }
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "foreign_mod_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_EXTERN"
+        },
+        {
+          "opt": {
+            "token": "STRING"
+          }
+        },
+        {
+          "rule": "block"
+        }
+      ]
+    },
+    "struct_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_STRUCT"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "choice": [
+            {
+              "rule": "struct_tuple"
+            },
+            {
+              "rule": "field_block"
+            },
+            {
+              "token": "SEMI"
+            }
+          ]
+        }
+      ]
+    },
+    "struct_tuple": {
+      "seq": [
+        {
+          "rule": "group_paren"
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "field_block": {
+      "seq": [
+        {
+          "token": "LBRACE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "field"
+            }
+          }
+        },
+        {
+          "token": "RBRACE"
+        }
+      ]
+    },
+    "field": {
+      "seq": [
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "attr"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "token": "COLON"
+        },
+        {
+          "rule": "ty"
+        },
+        {
+          "opt": {
+            "token": "COMMA"
+          }
+        }
+      ]
+    },
+    "enum_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_ENUM"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "rule": "enum_body"
+        }
+      ]
+    },
+    "enum_body": {
+      "seq": [
+        {
+          "token": "LBRACE"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "enum_variant"
+            }
+          }
+        },
+        {
+          "token": "RBRACE"
+        }
+      ]
+    },
+    "enum_variant": {
+      "seq": [
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "attr"
+            }
+          }
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "rule": "group_paren"
+              },
+              {
+                "rule": "field_block"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "rule": "discr_chunk"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "token": "COMMA"
+          }
+        }
+      ]
+    },
+    "discr_chunk": {
+      "repeat": {
+        "min": 0,
+        "max": null,
+        "sub": {
+          "choice": [
+            {
+              "rule": "group"
+            },
+            {
+              "seq": [
+                {
+                  "ahead": {
+                    "neg": true,
+                    "sub": {
+                      "token": "RBRACE"
+                    }
+                  }
+                },
+                {
+                  "ahead": {
+                    "neg": true,
+                    "sub": {
+                      "token": "SEMI"
+                    }
+                  }
+                },
+                {
+                  "ahead": {
+                    "neg": true,
+                    "sub": {
+                      "token": "COMMA"
+                    }
+                  }
+                },
+                {
+                  "choice": [
+                    {
+                      "token": "RAW_BYTE_STRING"
+                    },
+                    {
+                      "token": "RAW_STRING"
+                    },
+                    {
+                      "token": "BYTE_STRING"
+                    },
+                    {
+                      "token": "BYTE_CHAR"
+                    },
+                    {
+                      "token": "STRING"
+                    },
+                    {
+                      "token": "CHAR"
+                    },
+                    {
+                      "token": "LIFETIME"
+                    },
+                    {
+                      "token": "NUMBER"
+                    },
+                    {
+                      "token": "KW_AS"
+                    },
+                    {
+                      "token": "KW_ASYNC"
+                    },
+                    {
+                      "token": "KW_BREAK"
+                    },
+                    {
+                      "token": "KW_CONST"
+                    },
+                    {
+                      "token": "KW_CONTINUE"
+                    },
+                    {
+                      "token": "KW_CRATE"
+                    },
+                    {
+                      "token": "KW_DYN"
+                    },
+                    {
+                      "token": "KW_ELSE"
+                    },
+                    {
+                      "token": "KW_ENUM"
+                    },
+                    {
+                      "token": "KW_EXTERN"
+                    },
+                    {
+                      "token": "KW_FALSE"
+                    },
+                    {
+                      "token": "KW_FN"
+                    },
+                    {
+                      "token": "KW_FOR"
+                    },
+                    {
+                      "token": "KW_IF"
+                    },
+                    {
+                      "token": "KW_IMPL"
+                    },
+                    {
+                      "token": "KW_IN"
+                    },
+                    {
+                      "token": "KW_LET"
+                    },
+                    {
+                      "token": "KW_LOOP"
+                    },
+                    {
+                      "token": "KW_MATCH"
+                    },
+                    {
+                      "token": "KW_MOD"
+                    },
+                    {
+                      "token": "KW_MOVE"
+                    },
+                    {
+                      "token": "KW_MUT"
+                    },
+                    {
+                      "token": "KW_PUB"
+                    },
+                    {
+                      "token": "KW_REF"
+                    },
+                    {
+                      "token": "KW_RETURN"
+                    },
+                    {
+                      "token": "KW_SELF"
+                    },
+                    {
+                      "token": "KW_SELF"
+                    },
+                    {
+                      "token": "KW_STATIC"
+                    },
+                    {
+                      "token": "KW_STRUCT"
+                    },
+                    {
+                      "token": "KW_SUPER"
+                    },
+                    {
+                      "token": "KW_TRAIT"
+                    },
+                    {
+                      "token": "KW_TRUE"
+                    },
+                    {
+                      "token": "KW_TYPE"
+                    },
+                    {
+                      "token": "KW_UNSAFE"
+                    },
+                    {
+                      "token": "KW_USE"
+                    },
+                    {
+                      "token": "KW_WHERE"
+                    },
+                    {
+                      "token": "KW_WHILE"
+                    },
+                    {
+                      "token": "MACRO_RULES"
+                    },
+                    {
+                      "token": "IDENT"
+                    },
+                    {
+                      "token": "COLON2"
+                    },
+                    {
+                      "token": "ARROW"
+                    },
+                    {
+                      "token": "FATARROW"
+                    },
+                    {
+                      "token": "DOT2EQ"
+                    },
+                    {
+                      "token": "DOT2"
+                    },
+                    {
+                      "token": "AND2"
+                    },
+                    {
+                      "token": "OR2"
+                    },
+                    {
+                      "token": "EQ2"
+                    },
+                    {
+                      "token": "NE"
+                    },
+                    {
+                      "token": "PLUSEQ"
+                    },
+                    {
+                      "token": "MINUSEQ"
+                    },
+                    {
+                      "token": "STAREQ"
+                    },
+                    {
+                      "token": "SLASHEQ"
+                    },
+                    {
+                      "token": "PERCENTEQ"
+                    },
+                    {
+                      "token": "ANDEQ"
+                    },
+                    {
+                      "token": "OREQ"
+                    },
+                    {
+                      "token": "CARETEQ"
+                    },
+                    {
+                      "token": "PLUS"
+                    },
+                    {
+                      "token": "MINUS"
+                    },
+                    {
+                      "token": "STAR"
+                    },
+                    {
+                      "token": "SLASH"
+                    },
+                    {
+                      "token": "PERCENT"
+                    },
+                    {
+                      "token": "CARET"
+                    },
+                    {
+                      "token": "AMP"
+                    },
+                    {
+                      "token": "PIPE"
+                    },
+                    {
+                      "token": "TILDE"
+                    },
+                    {
+                      "token": "BANG"
+                    },
+                    {
+                      "token": "EQ"
+                    },
+                    {
+                      "token": "LT"
+                    },
+                    {
+                      "token": "GT"
+                    },
+                    {
+                      "token": "DOT"
+                    },
+                    {
+                      "token": "COMMA"
+                    },
+                    {
+                      "token": "SEMI"
+                    },
+                    {
+                      "token": "COLON"
+                    },
+                    {
+                      "token": "LPAREN"
+                    },
+                    {
+                      "token": "RPAREN"
+                    },
+                    {
+                      "token": "LBRACKET"
+                    },
+                    {
+                      "token": "RBRACKET"
+                    },
+                    {
+                      "token": "LBRACE"
+                    },
+                    {
+                      "token": "RBRACE"
+                    },
+                    {
+                      "token": "HASH"
+                    },
+                    {
+                      "token": "QUESTION"
+                    },
+                    {
+                      "token": "AT"
+                    },
+                    {
+                      "token": "DOLLAR"
+                    },
+                    {
+                      "token": "error"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "trait_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "opt": {
+            "token": "KW_UNSAFE"
+          }
+        },
+        {
+          "token": "KW_TRAIT"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "COLON"
+              },
+              {
+                "rule": "ty_bounds"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "choice": [
+            {
+              "rule": "block"
+            },
+            {
+              "token": "SEMI"
+            }
+          ]
+        }
+      ]
+    },
+    "impl_item": {
+      "seq": [
+        {
+          "opt": {
+            "token": "KW_UNSAFE"
+          }
+        },
+        {
+          "token": "KW_IMPL"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "choice": [
+            {
+              "seq": [
+                {
+                  "rule": "ty_bounds"
+                },
+                {
+                  "token": "KW_FOR"
+                },
+                {
+                  "rule": "ty"
+                }
+              ]
+            },
+            {
+              "rule": "ty"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "rule": "block"
+        }
+      ]
+    },
+    "static_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_STATIC"
+        },
+        {
+          "opt": {
+            "token": "KW_MUT"
+          }
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "token": "COLON"
+        },
+        {
+          "rule": "ty"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "rule": "expr_chunk"
+              }
+            ]
+          }
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "type_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_TYPE"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "opt": {
+            "rule": "generics"
+          }
+        },
+        {
+          "opt": {
+            "rule": "where_clause"
+          }
+        },
+        {
+          "token": "EQ"
+        },
+        {
+          "rule": "type_rhs"
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "type_rhs": {
+      "choice": [
+        {
+          "rule": "ty"
+        },
+        {
+          "rule": "expr_chunk"
+        }
+      ]
+    },
+    "mod_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_MOD"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "choice": [
+            {
+              "rule": "block"
+            },
+            {
+              "token": "SEMI"
+            }
+          ]
+        }
+      ]
+    },
+    "const_item": {
+      "seq": [
+        {
+          "opt": {
+            "rule": "vis"
+          }
+        },
+        {
+          "token": "KW_CONST"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "token": "COLON"
+        },
+        {
+          "rule": "ty"
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "token": "EQ"
+              },
+              {
+                "rule": "expr_chunk"
+              }
+            ]
+          }
+        },
+        {
+          "token": "SEMI"
+        }
+      ]
+    },
+    "expr_chunk": {
+      "repeat": {
+        "min": 0,
+        "max": null,
+        "sub": {
+          "choice": [
+            {
+              "rule": "group"
+            },
+            {
+              "rule": "e_stmt"
+            },
+            {
+              "seq": [
+                {
+                  "ahead": {
+                    "neg": true,
+                    "sub": {
+                      "token": "RBRACE"
+                    }
+                  }
+                },
+                {
+                  "ahead": {
+                    "neg": true,
+                    "sub": {
+                      "token": "SEMI"
+                    }
+                  }
+                },
+                {
+                  "choice": [
+                    {
+                      "token": "RAW_BYTE_STRING"
+                    },
+                    {
+                      "token": "RAW_STRING"
+                    },
+                    {
+                      "token": "BYTE_STRING"
+                    },
+                    {
+                      "token": "BYTE_CHAR"
+                    },
+                    {
+                      "token": "STRING"
+                    },
+                    {
+                      "token": "CHAR"
+                    },
+                    {
+                      "token": "LIFETIME"
+                    },
+                    {
+                      "token": "NUMBER"
+                    },
+                    {
+                      "token": "KW_AS"
+                    },
+                    {
+                      "token": "KW_ASYNC"
+                    },
+                    {
+                      "token": "KW_BREAK"
+                    },
+                    {
+                      "token": "KW_CONST"
+                    },
+                    {
+                      "token": "KW_CONTINUE"
+                    },
+                    {
+                      "token": "KW_CRATE"
+                    },
+                    {
+                      "token": "KW_DYN"
+                    },
+                    {
+                      "token": "KW_ELSE"
+                    },
+                    {
+                      "token": "KW_ENUM"
+                    },
+                    {
+                      "token": "KW_EXTERN"
+                    },
+                    {
+                      "token": "KW_FALSE"
+                    },
+                    {
+                      "token": "KW_FN"
+                    },
+                    {
+                      "token": "KW_FOR"
+                    },
+                    {
+                      "token": "KW_IF"
+                    },
+                    {
+                      "token": "KW_IMPL"
+                    },
+                    {
+                      "token": "KW_IN"
+                    },
+                    {
+                      "token": "KW_LET"
+                    },
+                    {
+                      "token": "KW_LOOP"
+                    },
+                    {
+                      "token": "KW_MATCH"
+                    },
+                    {
+                      "token": "KW_MOD"
+                    },
+                    {
+                      "token": "KW_MOVE"
+                    },
+                    {
+                      "token": "KW_MUT"
+                    },
+                    {
+                      "token": "KW_PUB"
+                    },
+                    {
+                      "token": "KW_REF"
+                    },
+                    {
+                      "token": "KW_RETURN"
+                    },
+                    {
+                      "token": "KW_SELF"
+                    },
+                    {
+                      "token": "KW_SELF"
+                    },
+                    {
+                      "token": "KW_STATIC"
+                    },
+                    {
+                      "token": "KW_STRUCT"
+                    },
+                    {
+                      "token": "KW_SUPER"
+                    },
+                    {
+                      "token": "KW_TRAIT"
+                    },
+                    {
+                      "token": "KW_TRUE"
+                    },
+                    {
+                      "token": "KW_TYPE"
+                    },
+                    {
+                      "token": "KW_UNSAFE"
+                    },
+                    {
+                      "token": "KW_USE"
+                    },
+                    {
+                      "token": "KW_WHERE"
+                    },
+                    {
+                      "token": "KW_WHILE"
+                    },
+                    {
+                      "token": "MACRO_RULES"
+                    },
+                    {
+                      "token": "IDENT"
+                    },
+                    {
+                      "token": "COLON2"
+                    },
+                    {
+                      "token": "ARROW"
+                    },
+                    {
+                      "token": "FATARROW"
+                    },
+                    {
+                      "token": "DOT2EQ"
+                    },
+                    {
+                      "token": "DOT2"
+                    },
+                    {
+                      "token": "AND2"
+                    },
+                    {
+                      "token": "OR2"
+                    },
+                    {
+                      "token": "EQ2"
+                    },
+                    {
+                      "token": "NE"
+                    },
+                    {
+                      "token": "PLUSEQ"
+                    },
+                    {
+                      "token": "MINUSEQ"
+                    },
+                    {
+                      "token": "STAREQ"
+                    },
+                    {
+                      "token": "SLASHEQ"
+                    },
+                    {
+                      "token": "PERCENTEQ"
+                    },
+                    {
+                      "token": "ANDEQ"
+                    },
+                    {
+                      "token": "OREQ"
+                    },
+                    {
+                      "token": "CARETEQ"
+                    },
+                    {
+                      "token": "PLUS"
+                    },
+                    {
+                      "token": "MINUS"
+                    },
+                    {
+                      "token": "STAR"
+                    },
+                    {
+                      "token": "SLASH"
+                    },
+                    {
+                      "token": "PERCENT"
+                    },
+                    {
+                      "token": "CARET"
+                    },
+                    {
+                      "token": "AMP"
+                    },
+                    {
+                      "token": "PIPE"
+                    },
+                    {
+                      "token": "TILDE"
+                    },
+                    {
+                      "token": "BANG"
+                    },
+                    {
+                      "token": "EQ"
+                    },
+                    {
+                      "token": "LT"
+                    },
+                    {
+                      "token": "GT"
+                    },
+                    {
+                      "token": "DOT"
+                    },
+                    {
+                      "token": "COMMA"
+                    },
+                    {
+                      "token": "SEMI"
+                    },
+                    {
+                      "token": "COLON"
+                    },
+                    {
+                      "token": "LPAREN"
+                    },
+                    {
+                      "token": "RPAREN"
+                    },
+                    {
+                      "token": "LBRACKET"
+                    },
+                    {
+                      "token": "RBRACKET"
+                    },
+                    {
+                      "token": "LBRACE"
+                    },
+                    {
+                      "token": "RBRACE"
+                    },
+                    {
+                      "token": "HASH"
+                    },
+                    {
+                      "token": "QUESTION"
+                    },
+                    {
+                      "token": "AT"
+                    },
+                    {
+                      "token": "DOLLAR"
+                    },
+                    {
+                      "token": "error"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "macro_rules_item": {
+      "seq": [
+        {
+          "token": "MACRO_RULES"
+        },
+        {
+          "token": "BANG"
+        },
+        {
+          "token": "IDENT"
+        },
+        {
+          "rule": "group_brace"
+        }
+      ]
+    },
+    "macro_item": {
+      "seq": [
+        {
+          "rule": "path"
+        },
+        {
+          "token": "BANG"
+        },
+        {
+          "choice": [
+            {
+              "rule": "group_paren"
+            },
+            {
+              "rule": "group_bracket"
+            },
+            {
+              "rule": "group_brace"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "token": "SEMI"
+          }
+        }
+      ]
+    },
+    "expr": {
+      "rule": "e_assign"
+    },
+    "e_assign": {
+      "seq": [
+        {
+          "rule": "e_or"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "EQ"
+              },
+              {
+                "token": "PLUSEQ"
+              },
+              {
+                "token": "MINUSEQ"
+              },
+              {
+                "token": "STAREQ"
+              },
+              {
+                "token": "SLASHEQ"
+              },
+              {
+                "token": "PERCENTEQ"
+              },
+              {
+                "token": "ANDEQ"
+              },
+              {
+                "token": "OREQ"
+              },
+              {
+                "token": "CARETEQ"
+              },
+              {
+                "token": "DOT2EQ"
+              },
+              {
+                "token": "EQ2"
+              }
+            ],
+            "then": {
+              "rule": "e_assign"
+            }
+          }
+        }
+      ]
+    },
+    "e_or": {
+      "seq": [
+        {
+          "rule": "e_and"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "OR2"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_and"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_and": {
+      "seq": [
+        {
+          "rule": "e_cmp"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "AND2"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_cmp"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_cmp": {
+      "seq": [
+        {
+          "rule": "e_bitor"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "EQ2"
+                    },
+                    {
+                      "token": "NE"
+                    },
+                    {
+                      "token": "LT"
+                    },
+                    {
+                      "token": "GT"
+                    },
+                    {
+                      "token": "LE"
+                    },
+                    {
+                      "token": "GE"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_bitor"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_bitor": {
+      "seq": [
+        {
+          "rule": "e_bitxor"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "PIPE"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_bitxor"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_bitxor": {
+      "seq": [
+        {
+          "rule": "e_bitand"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "CARET"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_bitand"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_bitand": {
+      "seq": [
+        {
+          "rule": "e_shift"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "AMP"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_shift"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_shift": {
+      "seq": [
+        {
+          "rule": "e_add"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "SHL"
+                    },
+                    {
+                      "seq": [
+                        {
+                          "token": "GT"
+                        },
+                        {
+                          "token": "GT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_add"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_add": {
+      "seq": [
+        {
+          "rule": "e_mul"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "PLUS"
+                    },
+                    {
+                      "token": "MINUS"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_mul"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_mul": {
+      "seq": [
+        {
+          "rule": "e_cast"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "STAR"
+                    },
+                    {
+                      "token": "SLASH"
+                    },
+                    {
+                      "token": "PERCENT"
+                    }
+                  ]
+                },
+                {
+                  "rule": "e_cast"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_cast": {
+      "seq": [
+        {
+          "rule": "e_unary"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "KW_AS"
+                },
+                {
+                  "rule": "ty"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_unary": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "choice": [
+                {
+                  "token": "BANG"
+                },
+                {
+                  "token": "MINUS"
+                },
+                {
+                  "token": "STAR"
+                },
+                {
+                  "token": "AMP"
+                },
+                {
+                  "token": "AND2"
+                }
+              ]
+            },
+            {
+              "rule": "e_unary"
+            }
+          ]
+        },
+        {
+          "rule": "e_postfix"
+        }
+      ]
+    },
+    "e_postfix": {
+      "seq": [
+        {
+          "rule": "e_primary"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "choice": [
+                {
+                  "seq": [
+                    {
+                      "token": "LPAREN"
+                    },
+                    {
+                      "rule": "call_args"
+                    },
+                    {
+                      "token": "RPAREN"
+                    }
+                  ]
+                },
+                {
+                  "seq": [
+                    {
+                      "token": "DOT"
+                    },
+                    {
+                      "choice": [
+                        {
+                          "token": "IDENT"
+                        },
+                        {
+                          "token": "RAW_IDENT"
+                        },
+                        {
+                          "token": "NUMBER"
+                        }
+                      ]
+                    },
+                    {
+                      "opt": {
+                        "seq": [
+                          {
+                            "token": "LPAREN"
+                          },
+                          {
+                            "rule": "call_args"
+                          },
+                          {
+                            "token": "RPAREN"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "seq": [
+                    {
+                      "token": "LBRACKET"
+                    },
+                    {
+                      "rule": "expr"
+                    },
+                    {
+                      "token": "RBRACKET"
+                    }
+                  ]
+                },
+                {
+                  "token": "QUESTION"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "e_primary": {
+      "choice": [
+        {
+          "token": "NUMBER"
+        },
+        {
+          "token": "STRING"
+        },
+        {
+          "token": "RAW_STRING"
+        },
+        {
+          "token": "BYTE_STRING"
+        },
+        {
+          "token": "RAW_BYTE_STRING"
+        },
+        {
+          "token": "CHAR"
+        },
+        {
+          "token": "BYTE_CHAR"
+        },
+        {
+          "token": "KW_TRUE"
+        },
+        {
+          "token": "KW_FALSE"
+        },
+        {
+          "seq": [
+            {
+              "token": "LPAREN"
+            },
+            {
+              "rule": "paren_el"
+            },
+            {
+              "token": "RPAREN"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "LBRACKET"
+            },
+            {
+              "opt": {
+                "rule": "expr"
+              }
+            },
+            {
+              "token": "RBRACKET"
+            }
+          ]
+        },
+        {
+          "rule": "path"
+        },
+        {
+          "rule": "block"
+        }
+      ]
+    },
+    "call_args": {
+      "opt": {
+        "seq": [
+          {
+            "rule": "expr"
+          },
+          {
+            "repeat": {
+              "min": 0,
+              "max": null,
+              "sub": {
+                "seq": [
+                  {
+                    "token": "COMMA"
+                  },
+                  {
+                    "rule": "expr"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "opt": {
+              "token": "COMMA"
+            }
+          }
+        ]
+      }
+    },
+    "e_stmt": {
+      "seq": [
+        {
+          "ahead": {
+            "neg": true,
+            "sub": {
+              "token": "RBRACE"
+            }
+          }
+        },
+        {
+          "rule": "expr"
+        },
+        {
+          "opt": {
+            "token": "SEMI"
+          }
+        }
+      ]
+    }
+  },
+  "revision": 3
+}
