@@ -96,20 +96,23 @@ fn t1_dualrun_all_abbreviations_golden() {
     }
 
     // 全缩写表逐条双跑：引擎位包 vs 围堰包，同参逐字节一致
-    let intents = pack["intents"].as_array().unwrap();
-    for intent in intents {
-        let id = intent["id"].as_str().unwrap();
-        let chain = &intent["chain"];
-        for abbr in intent["abbreviations"].as_array().unwrap() {
-            let abbr = abbr.as_str().unwrap();
-            let (code_a, out_a, _) = run(&["route", abbr, "--pack", engine.to_str().unwrap()]);
-            let (code_b, out_b, _) = run(&["route", abbr, "--pack", worktree.to_str().unwrap()]);
-            assert_eq!(code_a, code_b, "双跑退出码一致：{abbr}");
-            assert_eq!(out_a, out_b, "双跑报文逐字节一致：{abbr}");
-            let parsed: Value = serde_json::from_str(out_a.trim()).unwrap();
-            assert_eq!(parsed["matched"], true, "{abbr} 在册须命中");
-            assert_eq!(parsed["intent"], id, "双跑意图 id 对表：{abbr}");
-            assert_eq!(&parsed["chain"], chain, "双跑 chain 逐项对表：{abbr}");
+    //（围堰不在位的机器即纯引擎 CI，跳过跨对表，T0 同款守卫）
+    if worktree.exists() {
+        let intents = pack["intents"].as_array().unwrap();
+        for intent in intents {
+            let id = intent["id"].as_str().unwrap();
+            let chain = &intent["chain"];
+            for abbr in intent["abbreviations"].as_array().unwrap() {
+                let abbr = abbr.as_str().unwrap();
+                let (code_a, out_a, _) = run(&["route", abbr, "--pack", engine.to_str().unwrap()]);
+                let (code_b, out_b, _) = run(&["route", abbr, "--pack", worktree.to_str().unwrap()]);
+                assert_eq!(code_a, code_b, "双跑退出码一致：{abbr}");
+                assert_eq!(out_a, out_b, "双跑报文逐字节一致：{abbr}");
+                let parsed: Value = serde_json::from_str(out_a.trim()).unwrap();
+                assert_eq!(parsed["matched"], true, "{abbr} 在册须命中");
+                assert_eq!(parsed["intent"], id, "双跑意图 id 对表：{abbr}");
+                assert_eq!(&parsed["chain"], chain, "双跑 chain 逐项对表：{abbr}");
+            }
         }
     }
 }

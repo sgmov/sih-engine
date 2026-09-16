@@ -386,8 +386,9 @@ fn issue_if_needed(
 // ------------------------------------------------------------------- 段三
 
 /// 开域前置检查六项（init.py precheck 对等移植，序固定）。通过返回
-/// (域根归一形, 登记 active 行)。
-fn init_precheck(dom: &Path, central_root: &Path, registry: &Path) -> Result<(PathBuf, TokenRow), BootstrapError> {
+/// (域根归一形, 登记 active 行)。pub 放宽（adoptface 批 sih init 薄壳跨 bin
+/// 调用位，签名全 pub 类型零私有泄漏，零行为变更）。
+pub fn init_precheck(dom: &Path, central_root: &Path, registry: &Path) -> Result<(PathBuf, TokenRow), BootstrapError> {
     // 一：域根存在且为目录
     if !dom.exists() {
         return Err(rejection(
@@ -570,8 +571,10 @@ fn domain_readme_text(token_id: &str, domain_root: &Path, declaration: &Value) -
 }
 
 /// 落地五步加开域毕即验域（init.py open_domain 对等移植）。返回出参对象
-/// （成功形字段全集）。验红链留笔不删如实；全程零整文件重写台账。
-async fn open_domain(dom: &Path, row: &TokenRow, opened_by: &str, date: &str) -> Result<Value, BootstrapError> {
+/// （成功形字段全集）。验红链留笔不删如实；全程零整文件重写台账。pub 放宽
+/// （adoptface 批 sih init 薄壳跨 bin 调用位，签名全 pub 类型零私有泄漏，
+/// 零行为变更）。
+pub async fn open_domain(dom: &Path, row: &TokenRow, opened_by: &str, date: &str) -> Result<Value, BootstrapError> {
     let opened_at = tokens::now_stamp();
     // 步一：建目录四件
     for rel in ["sih/event/trail", "sih/ledger", "sih/state/plan", "sih/state/parking/materials"] {
