@@ -1,0 +1,28 @@
+[[predicates]]
+id = "R101"
+kind = "assertion_lists"
+route_on_fail = "siding"
+
+[[predicates]]
+id = "R102"
+kind = "anchor_density"
+density_threshold = 1.0
+resolve_root = "/Users/moc/workspaces/SiHankor/sih-engine"
+route_on_fail = "siding"
+
+[[predicates]]
+id = "R104"
+kind = "registry_conflict"
+
+[[predicates]]
+id = "R103"
+kind = "standing_constraints"
+required_receipts = ["nomenclator"]
+route_on_fail = "siding"
+
+[defaults]
+pass_route = "mainline"
+
+[alarms]
+siding_surplus_threshold = 5
+mainline_starvation_threshold = 0

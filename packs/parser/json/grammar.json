@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "start": "json",
+  "rules": {
+    "json": {
+      "choice": [
+        {"rule": "object"},
+        {"rule": "array"},
+        {"token": "STRING"},
+        {"token": "NUMBER"},
+        {"token": "TRUE"},
+        {"token": "FALSE"},
+        {"token": "NULL"}
+      ]
+    },
+    "object": {
+      "seq": [
+        {"token": "LBRACE"},
+        {
+          "opt": {
+            "seq": [
+              {"rule": "member"},
+              {
+                "repeat": {
+                  "min": 0,
+                  "max": null,
+                  "sub": {
+                    "seq": [
+                      {"token": "COMMA"},
+                      {"rule": "member"}
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {"opt": {"token": "COMMA"}},
+        {"token": "RBRACE"}
+      ]
+    },
+    "member": {
+      "seq": [
+        {"token": "KEY"},
+        {"token": "COLON"},
+        {
+          "choice": [
+            {"rule": "object"},
+            {"rule": "array"},
+            {"token": "STRING"},
+            {"token": "NUMBER"},
+            {"token": "TRUE"},
+            {"token": "FALSE"},
+            {"token": "NULL"}
+          ]
+        }
+      ]
+    },
+    "array": {
+      "seq": [
+        {"token": "LBRACKET"},
+        {
+          "opt": {
+            "seq": [
+              {"rule": "element"},
+              {
+                "repeat": {
+                  "min": 0,
+                  "max": null,
+                  "sub": {
+                    "seq": [
+                      {"token": "COMMA"},
+                      {"rule": "element"}
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {"opt": {"token": "COMMA"}},
+        {"token": "RBRACKET"}
+      ]
+    },
+    "element": {
+      "choice": [
+        {"rule": "object"},
+        {"rule": "array"},
+        {"token": "STRING"},
+        {"token": "NUMBER"},
+        {"token": "TRUE"},
+        {"token": "FALSE"},
+        {"token": "NULL"}
+      ]
+    }
+  }
+}

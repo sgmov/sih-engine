@@ -6,6 +6,7 @@
 //! 三个入口，按确定性程序规则运行。
 
 pub mod ask3repeater;
+pub mod askroute;
 pub mod attractor;
 pub mod event_stream;
 pub mod mcpserver;

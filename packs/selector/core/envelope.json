@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "core",
+  "family": "attractor",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "routes.toml"
+  ]
+}

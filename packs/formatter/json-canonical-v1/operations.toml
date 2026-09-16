@@ -1,0 +1,4 @@
+[[ops]]
+id = "J001"
+kind = "json_canonicalize"
+params = { sort_keys = true, indent = 2, ensure_ascii = false }

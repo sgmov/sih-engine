@@ -11,7 +11,11 @@
 //!    CLAUDE_PROJECT_DIR）次之，末位回退 cwd（围堰回退脚本上溯位）。
 //! 2. 新增 --root 与 --at 显式参（围堰无参形）：--root 供测试缝与显式覆盖；
 //!    --at 定链面日与覆盖窗（缺省仍取实日，读钟例外条款不变，critsweep --at 同先例）。
-//! 3. selector 路由子进程超时以 try_wait 轮询十秒实现，等价 subprocess timeout=10。
+//! 3. selector 路由子进程超时以 try_wait 轮询十秒实现，等价 subprocess timeout=10；
+//!    自 gap-parking-route-engine-selector 起泊界路由腿直调引擎 selector bin
+//!    （本 bin 同目录兄弟位 + 引擎仓 packs/selector/parking），消对围堰
+//!    uv run 的运行时依赖（iso-04 locks_read 直调先例同形）；materials 相对形
+//!    归一绝对后传参，语义同围堰 cwd 锚定形。
 //! 4. 账本与 trail 非 UTF-8 读失败：围堰个别裸崩位（except 只接 OSError），
 //!    移植一律降级行如实。
 //! 5. 出参 pretty 化（围堰 compact 单行）：JSON 语义等价，注入面解析不受影响。
@@ -220,22 +224,56 @@ fn run_with_timeout(mut cmd: Command, timeout: Duration) -> Result<ProcOut, Proc
     })
 }
 
+/// 引擎 selector 二进制位（gap-parking-route-engine-selector）：本 bin 同目录
+/// 兄弟位（cargo 同树 bins 同居 target/debug 或 target/release），缺位回落
+/// PATH 裸名，spawn 失败即降级如实（iso-04 locks_read 直调先例同形，
+/// mcpserver runtime lease_bin 兜底精神）。
+fn selector_bin() -> PathBuf {
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let sib = dir.join("selector");
+            if sib.is_file() {
+                return sib;
+            }
+        }
+    }
+    PathBuf::from("selector")
+}
+
+/// 泊界包位：exe 派生引擎仓根 packs/selector/parking（gap-packs-assets 落位，
+/// 与围堰 sih-tools/selector/packs/parking 内容同基），绝对形存在即用；
+/// 缺位回落相对形 "parking" 交 selector resolve_pack_input 引擎位候选序自解析，
+/// 全不中即 selector 既有 pack directory missing 路径如实报错（exit 2 降级可见）。
+fn parking_pack_arg() -> String {
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(root) = exe
+            .parent()
+            .and_then(|p| p.parent())
+            .and_then(|p| p.parent())
+        {
+            let p = root.join("packs").join("selector").join("parking");
+            if p.is_dir() {
+                return p.display().to_string();
+            }
+        }
+    }
+    "parking".to_string()
+}
+
 fn route_one(base: &Path, materials: &str, at: chrono::NaiveDate) -> Result<Value, ()> {
-    let cwd = base.join("sih-tools");
-    let mut cmd = Command::new("uv");
+    // 泛在与围堰同参：materials 相对形原以 <base>/sih-tools 为 cwd 基准，
+    // 归一绝对后传引擎 selector bin，子进程 cwd 不再锚定 sih-tools
+    //（对围堰 uv run 的最后运行时依赖随之消除）。
+    let mats = base.join("sih-tools").join(materials);
+    let mut cmd = Command::new(selector_bin());
     cmd.args([
-        "run",
-        "--project",
-        "./selector",
-        "selector",
         "route",
         "--pack",
-        "selector/packs/parking",
+        &parking_pack_arg(),
         "--reference-time",
         &at.to_string(),
-        materials,
-    ])
-    .current_dir(&cwd);
+    ]);
+    cmd.arg(&mats);
     let out = run_with_timeout(cmd, Duration::from_secs(ROUTE_TIMEOUT_S)).map_err(|_| ())?;
     let parsed: Value = serde_json::from_str(out.stdout.trim()).map_err(|_| ())?;
     match parsed.get("summary") {

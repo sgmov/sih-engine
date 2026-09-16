@@ -1,0 +1,1531 @@
+{
+  "dead": [
+    {
+      "cause": "无三路路由语义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "筛分"
+    },
+    {
+      "cause": "仓内活词碰撞即通道分流与三态分流所指不同",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "筛"
+    },
+    {
+      "cause": "仓内活词碰撞",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "分流器"
+    },
+    {
+      "cause": "器缀工业语域违美学判据",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "分拣器"
+    },
+    {
+      "cause": "物流语域加动词自撞",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "分拣"
+    },
+    {
+      "cause": "生僻字与古典语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "铨选"
+    },
+    {
+      "cause": "生僻字与古典语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "度支"
+    },
+    {
+      "cause": "生僻字与古典语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "拣放"
+    },
+    {
+      "cause": "医疗语域",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "分诊"
+    },
+    {
+      "cause": "书证弱",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "择路"
+    },
+    {
+      "cause": "人事语域裁量先验",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "选派"
+    },
+    {
+      "cause": "仓内活词实证自撞",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "放行"
+    },
+    {
+      "cause": "类型归位充分性在役占用",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "归位"
+    },
+    {
+      "cause": "桥接件落位在役占用",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "落位"
+    },
+    {
+      "cause": "facet 判据闸已占用加闭合暗示",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "闸"
+    },
+    {
+      "cause": "缺过且录撞书简",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "甄录"
+    },
+    {
+      "cause": "简撞书简且过为弱承诺",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "简择"
+    },
+    {
+      "cause": "无书证新建组合加口语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "通拣"
+    },
+    {
+      "cause": "禁字闭合暗示三路缺一类名物种侵占",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "门禁"
+    },
+    {
+      "cause": "未体现反洪流特质",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "准入"
+    },
+    {
+      "cause": "调节权错位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "平准"
+    },
+    {
+      "cause": "司字僭越",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "司门"
+    },
+    {
+      "cause": "名载体非动作",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "门籍"
+    },
+    {
+      "cause": "验字根与参验共享",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "勘验"
+    },
+    {
+      "cause": "核阅位",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "勘"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "勘对"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "勘览"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "勘阅"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "勘器"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "勘瞰"
+    },
+    {
+      "cause": "核阅位",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "审读"
+    },
+    {
+      "cause": "核阅位，通行技术词禁字级误分类经基线首跑修正为名位级",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "判读"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "剖检"
+    },
+    {
+      "cause": "与在役实名路择同根混称风险",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "路签"
+    },
+    {
+      "cause": "裸名读作趋向停止与活冻相反",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "向止"
+    },
+    {
+      "cause": "公路工程义与冻结方向反向",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "定线"
+    },
+    {
+      "cause": "立名活词占用兼三字违双字",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "立名笺"
+    },
+    {
+      "cause": "契根撞仓内契约专指",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "阶契"
+    },
+    {
+      "cause": "衡字僭越兼古典公文体",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "定衡"
+    },
+    {
+      "cause": "衡字僭越兼古典公文体",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "衡牒"
+    },
+    {
+      "cause": "佛家定慧术语强占",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "止观"
+    },
+    {
+      "cause": "庄子道枢环中在役",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "定枢"
+    },
+    {
+      "cause": "看板面板语义反转",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "阶板"
+    },
+    {
+      "cause": "视频帧快换节拍",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "段帧"
+    },
+    {
+      "cause": "词典义项皆挂航海电力标签",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "泊位"
+    },
+    {
+      "cause": "与后庭完全同音",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "候停"
+    },
+    {
+      "cause": "库存存放框架即名实三测错位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "停库"
+    },
+    {
+      "cause": "库存存放框架",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "寄库"
+    },
+    {
+      "cause": "库存存放框架",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "寄停"
+    },
+    {
+      "cause": "动词会议语域",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "缓议"
+    },
+    {
+      "cause": "海域加锚前科",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "锚地"
+    },
+    {
+      "cause": "抢答本簇悬裁",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "想法池"
+    },
+    {
+      "cause": "价值反演兼水利标签",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "分洪"
+    },
+    {
+      "cause": "词典查无此词违补记四",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "归槽"
+    },
+    {
+      "cause": "化学冶金标签实验室语域",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "析出"
+    },
+    {
+      "cause": "温室效应负面前例",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "温室"
+    },
+    {
+      "cause": "农艺域离防洪方向",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "苗床"
+    },
+    {
+      "cause": "指作业不指边界兼价值反演",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "蓄洪"
+    },
+    {
+      "cause": "法律语域指状态不指边界",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "监护"
+    },
+    {
+      "cause": "古典贬义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "卵翼"
+    },
+    {
+      "cause": "词典义项负面即银行清空与传送未达",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "落账"
+    },
+    {
+      "cause": "活义为组织负责人即官职僭越",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "书记"
+    },
+    {
+      "cause": "唯一在册义项为粤语入狱坐监",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "入册"
+    },
+    {
+      "cause": "屋内活词自撞即事件流留痕载体",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "留痕"
+    },
+    {
+      "cause": "会计泛词加 App 生态拥挤",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "记账"
+    },
+    {
+      "cause": "核销方向相反",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "销账"
+    },
+    {
+      "cause": "核对属复检职权",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "对账"
+    },
+    {
+      "cause": "结清越权",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "结账"
+    },
+    {
+      "cause": "流水账琐碎贬义",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "流水"
+    },
+    {
+      "cause": "秋后算总账俗语噪声",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "总账"
+    },
+    {
+      "cause": "泛词零指名性",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "登记"
+    },
+    {
+      "cause": "古典语域加誊抄义错向",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "誊录"
+    },
+    {
+      "cause": "古典语域加誊抄义错向",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "缮录"
+    },
+    {
+      "cause": "司法证据效力主张越权",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "存证"
+    },
+    {
+      "cause": "三字违双字兼义为学科非记录动作",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "水文"
+    },
+    {
+      "cause": "义为移动整理非记账",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "归档"
+    },
+    {
+      "cause": "花名册人名簿册主义项钉义补缺口禁手，用户裁定",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名册"
+    },
+    {
+      "cause": "人名目录框架连坐",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名录"
+    },
+    {
+      "cause": "人名清单框架连坐",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名单"
+    },
+    {
+      "cause": "用户通行度裁定即稽字日常语域少见",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "稽名"
+    },
+    {
+      "cause": "与记名完全同音兼生成漂移落核查盲区兼法度腿消退",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "纪名"
+    },
+    {
+      "cause": "房地产销售行业占用即判客报备义，用户行业实证捕获",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "查名"
+    },
+    {
+      "cause": "连词语义两腿皆空加同音记名全套加生僻加重",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "暨名"
+    },
+    {
+      "cause": "金榜题名自署义错向兼科举框架",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "题名"
+    },
+    {
+      "cause": "考核考试评定框架职权邻位违判在别处",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "考名"
+    },
+    {
+      "cause": "与查明同音兼巡察行政色彩",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "察名"
+    },
+    {
+      "cause": "验根与参验共享即勘验前案",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "验名"
+    },
+    {
+      "cause": "巡行非查验兼巡视行政色彩",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "巡名"
+    },
+    {
+      "cause": "双读兼监狱义",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "监名"
+    },
+    {
+      "cause": "督察行政色彩",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "督名"
+    },
+    {
+      "cause": "甄录根死档",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "甄名"
+    },
+    {
+      "cause": "辨根撞哲学仓应辨",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "辨名"
+    },
+    {
+      "cause": "析出根死档",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "析名"
+    },
+    {
+      "cause": "合符根前案兼浮名同音",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "符名"
+    },
+    {
+      "cause": "对账复检职权前案兼多义弱指名",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "对名"
+    },
+    {
+      "cause": "核根撞核阅",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "核名"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "阅名"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "审名"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "勘名"
+    },
+    {
+      "cause": "录撞书简功能前案",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "录名"
+    },
+    {
+      "cause": "鉴柱石僭越",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名鉴"
+    },
+    {
+      "cause": "鉴柱石僭越",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "词鉴"
+    },
+    {
+      "cause": "治司僭越",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "治词"
+    },
+    {
+      "cause": "治司僭越",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "司词"
+    },
+    {
+      "cause": "屋内名实复审在役",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名实"
+    },
+    {
+      "cause": "学校名称同形",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "校名"
+    },
+    {
+      "cause": "齐名同形",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "齐名"
+    },
+    {
+      "cause": "征集命名方向相反",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "征名"
+    },
+    {
+      "cause": "造词反讽即工具恰拒未裁铸词",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "铸名"
+    },
+    {
+      "cause": "和风语感",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名簿"
+    },
+    {
+      "cause": "库根存放遗忘框架",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名库"
+    },
+    {
+      "cause": "榜单排名义错向",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名榜"
+    },
+    {
+      "cause": "名目繁多贬义成语在役",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名目"
+    },
+    {
+      "cause": "江湖武侠语域",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名号"
+    },
+    {
+      "cause": "古典名分之辩强占",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名分"
+    },
+    {
+      "cause": "古典避讳义",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "名讳"
+    },
+    {
+      "cause": "数据库字段义",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名址"
+    },
+    {
+      "cause": "铭记义为心记非册载兼金石古典语域",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "铭名"
+    },
+    {
+      "cause": "谱根即谱系图谱在役同根邻义",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名谱"
+    },
+    {
+      "cause": "澄字双读摩擦",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "澄名"
+    },
+    {
+      "cause": "按册呼名查在场方向相反兼负色彩",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "点名"
+    },
+    {
+      "cause": "循名责实古典成语截取",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "循名"
+    },
+    {
+      "cause": "屋内英文正名强占兼儒家古典强占",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "正名"
+    },
+    {
+      "cause": "守名节义误读",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "守名"
+    },
+    {
+      "cause": "太守式官职形即司门先例",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名守"
+    },
+    {
+      "cause": "铁律在役同根邻义兼法律域",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名律"
+    },
+    {
+      "cause": "名案义为著名案件同形",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名案"
+    },
+    {
+      "cause": "纲须目配兼本草纲目专书强占",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "名纲"
+    },
+    {
+      "cause": "录简撞书简前案",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "简词"
+    },
+    {
+      "cause": "载体语义冒用操作位即 DEC-004 依据二兼文件惯例噪声",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Glossary"
+    },
+    {
+      "cause": "NLP 先验兼抽象书义",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Lexicon"
+    },
+    {
+      "cause": "仓内 survey 调研后缀与量地先验双撞",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Surveyor"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Examiner"
+    },
+    {
+      "cause": "核阅位兼 Intl.Collator 与 SQL 排序义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Collator"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Scrutinizer"
+    },
+    {
+      "cause": "核阅位",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Scrutiny"
+    },
+    {
+      "cause": "随筛死档与品类少数出局",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Sifter"
+    },
+    {
+      "cause": "随筛死档与品类少数出局，邮政分拣死根在案不翻",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Sorter"
+    },
+    {
+      "cause": "智能前缀谎报零 LLM 本质",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Splitter"
+    },
+    {
+      "cause": "弃置偏置",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Filter"
+    },
+    {
+      "cause": "安检语域",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Screener"
+    },
+    {
+      "cause": "权威联想",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Gatekeeper"
+    },
+    {
+      "cause": "馆藏封闭态",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Curator"
+    },
+    {
+      "cause": "猎杀联想",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Culler"
+    },
+    {
+      "cause": "书证不达线即拉丁极罕见英文无 OED 词条",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Optator"
+    },
+    {
+      "cause": "拣义不自背",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Dispatcher"
+    },
+    {
+      "cause": "拣义不自背",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Mapper"
+    },
+    {
+      "cause": "拣义不自背",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Diverter"
+    },
+    {
+      "cause": "拣义不自背",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Distributor"
+    },
+    {
+      "cause": "拣义不自背",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Gauger"
+    },
+    {
+      "cause": "核阅位",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Searcher"
+    },
+    {
+      "cause": "核阅位",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Vetter"
+    },
+    {
+      "cause": "现代义歪曲",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Garbler"
+    },
+    {
+      "cause": "现代义尝试者",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Trier"
+    },
+    {
+      "cause": "门闩闭合先验",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Bolter"
+    },
+    {
+      "cause": "保洁现代义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Janitor"
+    },
+    {
+      "cause": "序列化与执法双先验",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Marshal"
+    },
+    {
+      "cause": "电灯 JS 任天堂三重先验",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Switch"
+    },
+    {
+      "cause": "GitHub 强占",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Fork"
+    },
+    {
+      "cause": "分数积分先验",
+      "class": "strict",
+      "exempt": [
+        "Sur quelques points du calcul fonctionnel"
+      ],
+      "source": "PRO-007 死档登记",
+      "word": "Points"
+    },
+    {
+      "cause": "AI token 灾难撞",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Token"
+    },
+    {
+      "cause": "MVC 生态加调节权错位",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Controller"
+    },
+    {
+      "cause": "职业人名词",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Pointsman"
+    },
+    {
+      "cause": "职业人名词",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Yardmaster"
+    },
+    {
+      "cause": "按率非按件",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Metering"
+    },
+    {
+      "cause": "词原义为连接与分路名义背反",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Junction"
+    },
+    {
+      "cause": "主义项许可证执照宪章全偏核，用户词典核验捕获",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Charter"
+    },
+    {
+      "cause": "中心义项停留逗留离核",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Stay"
+    },
+    {
+      "cause": "换道自由先验兼子串高噪",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Lane"
+    },
+    {
+      "cause": "仓内 manifest 点 toml 强占",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Manifest"
+    },
+    {
+      "cause": "仓内工程基线五条实名域",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Baseline"
+    },
+    {
+      "cause": "机械轴承双义强势",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Bearing"
+    },
+    {
+      "cause": "仓内标题规则活词",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Heading"
+    },
+    {
+      "cause": "契约测试库外部占用",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Pact"
+    },
+    {
+      "cause": "敕令单向权威与破改须公议相逆",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Decree"
+    },
+    {
+      "cause": "敕令单向权威",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Edict"
+    },
+    {
+      "cause": "宗教重载",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Covenant"
+    },
+    {
+      "cause": "找方向的仪器会动",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Compass"
+    },
+    {
+      "cause": "授权发放义同 Charter",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Mandate"
+    },
+    {
+      "cause": "苍白形容义压倒界桩义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Pale"
+    },
+    {
+      "cause": "濒临义即坠落前夕",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Verge"
+    },
+    {
+      "cause": "计算平台义碾压政纲义",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Platform"
+    },
+    {
+      "cause": "AI 产品名强占",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Codex"
+    },
+    {
+      "cause": "无边界面兼 mission creep 反讽",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Mission"
+    },
+    {
+      "cause": "主义项仓库贮藏即存放框架",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Depot"
+    },
+    {
+      "cause": "中心义项卧铺离核",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Berth"
+    },
+    {
+      "cause": "宗教林波狱与林波舞双噪声",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Limbo"
+    },
+    {
+      "cause": "海域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Anchorage"
+    },
+    {
+      "cause": "预发布环境开发语域强占",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Staging"
+    },
+    {
+      "cause": "线程池开发泛化兼水池主义项",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Pool"
+    },
+    {
+      "cause": "围裙主义项",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Apron"
+    },
+    {
+      "cause": "泊界名位死于壁板主义项；禁字级误分类经路择契约核查修正，siding 为已签路择词条路径词即名位死而字符串在役",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Siding"
+    },
+    {
+      "cause": "荒野双义",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Moor"
+    },
+    {
+      "cause": "避风港庇护义",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Harbor"
+    },
+    {
+      "cause": "海湾主义项",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Bay"
+    },
+    {
+      "cause": "动词压倒加看台摊位散义",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Stand"
+    },
+    {
+      "cause": "英式地域标签加纺织义项",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Layby"
+    },
+    {
+      "cause": "待机先验即随时可用的反向承诺",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Standby"
+    },
+    {
+      "cause": "离题与漂移义项即防洪之病成了名义",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Excursion"
+    },
+    {
+      "cause": "军事语域出击攻击味",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Sortie"
+    },
+    {
+      "cause": "消遣中心义加 Diverter 族前科",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Diversion"
+    },
+    {
+      "cause": "外包开发文化贬义加供应商永久关系",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Outsourcing"
+    },
+    {
+      "cause": "git 合并在役强占",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Merge"
+    },
+    {
+      "cause": "载体语义冒用操作位，加密钱包先验",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Logbook"
+    },
+    {
+      "cause": "公证背书职权僭越",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Notary"
+    },
+    {
+      "cause": "日记杂志歧义加 journalctl 噪声",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Journal"
+    },
+    {
+      "cause": "音频设备先验加泛词",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Recorder"
+    },
+    {
+      "cause": "keeper 缀前案加会计人名加双 o 拼写",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Bookkeeper"
+    },
+    {
+      "cause": "古典语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Chronicler"
+    },
+    {
+      "cause": "古典语域",
+      "class": "strict",
+      "source": "PRO-007 死档登记",
+      "word": "Annalist"
+    },
+    {
+      "cause": "复验职权错位即本工具不复验",
+      "class": "name_only",
+      "source": "PRO-007 死档登记",
+      "word": "Auditor"
+    },
+    {
+      "cause": "现代审查义负面",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Censor"
+    },
+    {
+      "cause": "狱吏义兼以太坊协议先验",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Warden"
+    },
+    {
+      "cause": "keeper 缀 Gatekeeper 前案",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Terminologist"
+    },
+    {
+      "cause": "抽象系统名非执行位",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Nomenclature"
+    },
+    {
+      "cause": "提名致谢非正式语域与治理文书语域相逆",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Namecheck"
+    },
+    {
+      "cause": "改订义违只报不改",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Corrector"
+    },
+    {
+      "cause": "删改审查义违只报不改",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Redactor"
+    },
+    {
+      "cause": "修订义违只报不改",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Revisor"
+    },
+    {
+      "cause": "面包发酵设备行业占用",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Proofer"
+    },
+    {
+      "cause": "官职词",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Quaestor"
+    },
+    {
+      "cause": "宗教暗色",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Inquisitor"
+    },
+    {
+      "cause": "生僻书证弱",
+      "class": "strict",
+      "source": "PRO-007 术语功能轮",
+      "word": "Onomast"
+    },
+    {
+      "cause": "泛词零指名兼 validate 语素已被核阅占用",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Validator"
+    },
+    {
+      "cause": "doclint 血统档在册",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Linter"
+    },
+    {
+      "cause": "多义泛化零指名即 CPU 与 CSS 与收银机",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Register"
+    },
+    {
+      "cause": "多义与人员义",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Roll"
+    },
+    {
+      "cause": "人员名册与体育阵容域",
+      "class": "name_only",
+      "source": "PRO-007 术语功能轮",
+      "word": "Roster"
+    },
+    {
+      "cause": "用户 2026-08-25 裁定验收替验货即验收为任务包模板时代既有活词零新铸",
+      "class": "name_only",
+      "source": "sih-engine skills sihankor-intent-refine 修订二首铸即机械验货，2026-08-25 用户裁定弃用",
+      "word": "验货"
+    },
+    {
+      "cause": "硬套希腊教义违命名三原则且难作命令名",
+      "class": "strict",
+      "source": "DEC-017 死档登记",
+      "word": "anamnesis"
+    },
+    {
+      "cause": "名承诺保管即组件无存储违边界",
+      "class": "strict",
+      "source": "DEC-017 死档登记",
+      "word": "archivist"
+    },
+    {
+      "cause": "宿主名随DEC-017改retrievergate即旧名禁复用",
+      "class": "name_only",
+      "source": "DEC-017 死档登记",
+      "word": "memgate"
+    },
+    {
+      "cause": "名承诺产摘要越界即检索不产内容",
+      "class": "strict",
+      "source": "DEC-017 死档登记",
+      "word": "recap"
+    },
+    {
+      "cause": "复盘方向反即名承诺回顾评估",
+      "class": "strict",
+      "source": "DEC-017 死档登记",
+      "word": "retrospector"
+    },
+    {
+      "cause": "撞司衡字头与谐音失忆即方向反",
+      "class": "name_only",
+      "source": "DEC-017 死档登记",
+      "word": "司忆"
+    },
+    {
+      "cause": "宿主名随DEC-017改ask3repeatergate即家族公式统一,旧名禁复用",
+      "class": "name_only",
+      "source": "DEC-017 死档登记",
+      "word": "ask3gate"
+    },
+    {
+      "cause": "撤gate令即宿主名改裸英文对 retriever 旧名禁复用",
+      "class": "name_only",
+      "source": "DEC-017 修订一 死档登记",
+      "word": "retrievergate"
+    },
+    {
+      "cause": "撤gate令即宿主名改裸英文对 ask3repeater 旧名禁复用",
+      "class": "name_only",
+      "source": "DEC-017 修订一 死档登记",
+      "word": "ask3repeatergate"
+    },
+    {
+      "cause": "错名回滚为本名 scribe 即决策错误实例旧名禁复用",
+      "class": "name_only",
+      "source": "DEC-017 修订二 死档登记",
+      "word": "scribegate"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T5"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T6-A"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T6-B"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T6-C"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T6-D"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T7"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "T8-S"
+    },
+    {
+      "cause": "编号退场即代理编组立名批，历史行保留不得作新名",
+      "class": "name_only",
+      "source": "DEC-018 编号退场",
+      "word": "t6d"
+    },
+    {
+      "cause": "名实错位钉席位不钉动作即判官终审意象错安于不产方向的核对程序",
+      "class": "name_only",
+      "source": "tallyinit-solo 立名批",
+      "word": "定谳"
+    },
+    {
+      "cause": "名实错位钉席位不钉动作即判官终审意象错安于不产方向的核对程序",
+      "class": "name_only",
+      "source": "tallyinit-solo 立名批",
+      "word": "鉴裁"
+    },
+    {
+      "cause": "名实错位钉席位不钉动作即判官终审意象错安于不产方向的核对程序且为司衡鉴屋内子串阅读碰撞",
+      "class": "name_only",
+      "source": "tallyinit-solo 立名批",
+      "word": "衡鉴"
+    },
+    {
+      "cause": "验字根与参验共享承勘验先例",
+      "class": "name_only",
+      "source": "tallyinit-solo 立名批",
+      "word": "验算"
+    },
+    {
+      "cause": "工具已退役且代码全盘移除，2026-08-30 用户质询后补登记，幽灵服役期见根 AGENTS.md redteam 章",
+      "class": "strict",
+      "source": "ghostretire 死档登记",
+      "word": "redteam"
+    },
+    {
+      "cause": "词场淹没三十七文件加语义僭越即名承诺标准而芯只做匹配",
+      "class": "name_only",
+      "source": "modou-namefit-solo 立名推导反候选",
+      "word": "准绳"
+    },
+    {
+      "cause": "仓内占用四文件加语义僭越即名承诺标准而芯只做匹配",
+      "class": "name_only",
+      "source": "modou-namefit-solo 立名推导反候选",
+      "word": "绳墨"
+    }
+  ]
+}

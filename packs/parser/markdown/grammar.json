@@ -1,0 +1,1941 @@
+{
+  "version": 1,
+  "start": "doc",
+  "rules": {
+    "doc": {
+      "seq": [
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "choice": [
+                {
+                  "rule": "atx"
+                },
+                {
+                  "rule": "setext_h"
+                },
+                {
+                  "rule": "fence"
+                },
+                {
+                  "rule": "quote"
+                },
+                {
+                  "rule": "ul"
+                },
+                {
+                  "rule": "ol"
+                },
+                {
+                  "rule": "code"
+                },
+                {
+                  "rule": "hr"
+                },
+                {
+                  "token": "HTMLLINE"
+                },
+                {
+                  "rule": "para"
+                },
+                {
+                  "rule": "ln"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ln": {
+      "choice": [
+        {
+          "token": "FLINE"
+        },
+        {
+          "token": "NL"
+        }
+      ]
+    },
+    "contline": {
+      "choice": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "seq": [
+            {
+              "token": "OLIST"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "rule": "contline"
+            }
+          ]
+        }
+      ]
+    },
+    "para": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "para_body"
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        }
+      ]
+    },
+    "para_body": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "rule": "ln"
+                },
+                {
+                  "opt": {
+                    "choice": [
+                      {
+                        "token": "SP2"
+                      },
+                      {
+                        "token": "SP3"
+                      },
+                      {
+                        "token": "SP4"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "rule": "contline"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "para_q": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "qcont"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        }
+      ]
+    },
+    "qcont": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "BQ"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "rule": "contline"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  },
+                  {
+                    "token": "SP4"
+                  }
+                ]
+              }
+            },
+            {
+              "rule": "contline"
+            }
+          ]
+        }
+      ]
+    },
+    "setext_q": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "rule": "ln"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "token": "BQ"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "choice": [
+            {
+              "token": "EQ_UL"
+            },
+            {
+              "token": "DASH_UL"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        }
+      ]
+    },
+    "qblock": {
+      "choice": [
+        {
+          "rule": "quote"
+        },
+        {
+          "rule": "atx"
+        },
+        {
+          "rule": "setext_q"
+        },
+        {
+          "rule": "qfence"
+        },
+        {
+          "rule": "qlist"
+        },
+        {
+          "rule": "qolist"
+        },
+        {
+          "rule": "para_q"
+        }
+      ]
+    },
+    "qline": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "BQ"
+            },
+            {
+              "rule": "ln"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "BQ"
+            },
+            {
+              "rule": "qblock"
+            }
+          ]
+        }
+      ]
+    },
+    "quote": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "token": "BQ"
+        },
+        {
+          "choice": [
+            {
+              "rule": "qblock"
+            },
+            {
+              "rule": "ln"
+            }
+          ]
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "qline"
+            }
+          }
+        }
+      ]
+    },
+    "atx": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "token": "ATX"
+        },
+        {
+          "choice": [
+            {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                },
+                {
+                  "rule": "atx_num_body"
+                },
+                {
+                  "opt": {
+                    "token": "TRAILH"
+                  }
+                },
+                {
+                  "opt": {
+                    "rule": "ln"
+                  }
+                }
+              ]
+            },
+            {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                },
+                {
+                  "rule": "atx_body"
+                },
+                {
+                  "opt": {
+                    "token": "TRAILH"
+                  }
+                },
+                {
+                  "opt": {
+                    "rule": "ln"
+                  }
+                }
+              ]
+            },
+            {
+              "opt": {
+                "rule": "ln"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "atx_body": {
+      "seq": [
+        {
+          "opt": {
+            "token": "PJOIN"
+          }
+        }
+      ]
+    },
+    "atx_num_body": {
+      "seq": [
+        {
+          "token": "NPJOIN"
+        }
+      ]
+    },
+    "setext_h": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "rule": "sbody"
+        },
+        {
+          "rule": "ln"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "choice": [
+            {
+              "token": "EQ_UL"
+            },
+            {
+              "token": "DASH_UL"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        }
+      ]
+    },
+    "sbody": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "rule": "ln"
+                },
+                {
+                  "opt": {
+                    "choice": [
+                      {
+                        "token": "SP2"
+                      },
+                      {
+                        "token": "SP3"
+                      },
+                      {
+                        "token": "SP4"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "rule": "contline"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "fence": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "token": "FENCETICK4"
+            },
+            {
+              "repeat": {
+                "min": 0,
+                "max": null,
+                "sub": {
+                  "seq": [
+                    {
+                      "ahead": {
+                        "neg": true,
+                        "sub": {
+                          "token": "FENCETICK4"
+                        }
+                      }
+                    },
+                    {
+                      "rule": "fenceline"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "opt": {
+                "token": "FENCETICK4"
+              }
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "FENCETICK"
+            },
+            {
+              "repeat": {
+                "min": 0,
+                "max": null,
+                "sub": {
+                  "seq": [
+                    {
+                      "ahead": {
+                        "neg": true,
+                        "sub": {
+                          "choice": [
+                            {
+                              "token": "FENCETICK"
+                            },
+                            {
+                              "token": "FENCETICK4"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "rule": "fenceline"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "opt": {
+                "token": "FENCETICK"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "fenceline": {
+      "choice": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "token": "FLINE"
+        },
+        {
+          "token": "ATX"
+        },
+        {
+          "token": "NPJOIN"
+        },
+        {
+          "token": "BQ"
+        },
+        {
+          "token": "OLIST1"
+        },
+        {
+          "token": "OLIST"
+        },
+        {
+          "token": "HTMLLINE"
+        },
+        {
+          "token": "BULLET"
+        },
+        {
+          "token": "BULSTAR"
+        },
+        {
+          "token": "EQ_UL"
+        },
+        {
+          "token": "DASH_UL"
+        },
+        {
+          "token": "HR_DASH"
+        },
+        {
+          "token": "HR_STAR"
+        },
+        {
+          "token": "HR_US"
+        },
+        {
+          "token": "SP2"
+        },
+        {
+          "token": "SP3"
+        },
+        {
+          "token": "SP4"
+        },
+        {
+          "token": "TRAILH"
+        },
+        {
+          "token": "NL"
+        },
+        {
+          "token": "FENCETICK"
+        }
+      ]
+    },
+    "qfence": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "token": "FENCETICK4"
+            },
+            {
+              "repeat": {
+                "min": 0,
+                "max": null,
+                "sub": {
+                  "seq": [
+                    {
+                      "token": "BQ"
+                    },
+                    {
+                      "ahead": {
+                        "neg": true,
+                        "sub": {
+                          "token": "FENCETICK4"
+                        }
+                      }
+                    },
+                    {
+                      "repeat": {
+                        "min": 0,
+                        "max": null,
+                        "sub": {
+                          "rule": "qfct"
+                        }
+                      }
+                    },
+                    {
+                      "opt": {
+                        "rule": "ln"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "opt": {
+                "seq": [
+                  {
+                    "token": "BQ"
+                  },
+                  {
+                    "token": "FENCETICK4"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "FENCETICK"
+            },
+            {
+              "repeat": {
+                "min": 0,
+                "max": null,
+                "sub": {
+                  "seq": [
+                    {
+                      "token": "BQ"
+                    },
+                    {
+                      "ahead": {
+                        "neg": true,
+                        "sub": {
+                          "token": "FENCETICK"
+                        }
+                      }
+                    },
+                    {
+                      "repeat": {
+                        "min": 0,
+                        "max": null,
+                        "sub": {
+                          "rule": "qfct"
+                        }
+                      }
+                    },
+                    {
+                      "opt": {
+                        "rule": "ln"
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "opt": {
+                "seq": [
+                  {
+                    "token": "BQ"
+                  },
+                  {
+                    "token": "FENCETICK"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "qfct": {
+      "choice": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "token": "ATX"
+        },
+        {
+          "token": "NPJOIN"
+        },
+        {
+          "token": "BQ"
+        },
+        {
+          "token": "OLIST1"
+        },
+        {
+          "token": "OLIST"
+        },
+        {
+          "token": "BULLET"
+        },
+        {
+          "token": "BULSTAR"
+        },
+        {
+          "token": "EQ_UL"
+        },
+        {
+          "token": "DASH_UL"
+        },
+        {
+          "token": "HR_DASH"
+        },
+        {
+          "token": "HR_STAR"
+        },
+        {
+          "token": "HR_US"
+        },
+        {
+          "token": "SP2"
+        },
+        {
+          "token": "SP3"
+        },
+        {
+          "token": "SP4"
+        },
+        {
+          "token": "TRAILH"
+        }
+      ]
+    },
+    "qlist": {
+      "seq": [
+        {
+          "rule": "qitem"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "BQ"
+                },
+                {
+                  "rule": "qitem"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "qolist": {
+      "seq": [
+        {
+          "rule": "qoitem"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "BQ"
+                },
+                {
+                  "rule": "qoitem"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "qoitem": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "OLIST1"
+            },
+            {
+              "token": "OLIST"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para_qo"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "BQ"
+                },
+                {
+                  "rule": "ln"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "qitem": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "BULLET"
+            },
+            {
+              "token": "BULSTAR"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "choice": [
+                  {
+                    "token": "BPLUS"
+                  },
+                  {
+                    "token": "BULSTAR"
+                  }
+                ]
+              },
+              {
+                "opt": {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para_q"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "token": "BQ"
+                },
+                {
+                  "rule": "ln"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "li_para_q": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "licont_q"
+            }
+          }
+        }
+      ]
+    },
+    "licont_q": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "BQ"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "rule": "contline"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  },
+                  {
+                    "token": "SP4"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "PJOIN"
+            }
+          ]
+        }
+      ]
+    },
+    "ul": {
+      "seq": [
+        {
+          "rule": "li"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "li"
+            }
+          }
+        }
+      ]
+    },
+    "ol": {
+      "seq": [
+        {
+          "rule": "oli"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "oli"
+            }
+          }
+        }
+      ]
+    },
+    "li": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "choice": [
+            {
+              "token": "BULLET"
+            },
+            {
+              "token": "BULSTAR"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "choice": [
+                  {
+                    "token": "BPLUS"
+                  },
+                  {
+                    "token": "BULSTAR"
+                  }
+                ]
+              },
+              {
+                "opt": {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "li_more"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_tailblank"
+          }
+        }
+      ]
+    },
+    "oli": {
+      "seq": [
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "choice": [
+            {
+              "token": "OLIST1"
+            },
+            {
+              "token": "OLIST"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "choice": [
+                  {
+                    "token": "BPLUS"
+                  },
+                  {
+                    "token": "BULSTAR"
+                  }
+                ]
+              },
+              {
+                "opt": {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para_o"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "li_more"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_tailblank"
+          }
+        }
+      ]
+    },
+    "li_in": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "BULLET"
+            },
+            {
+              "token": "BULSTAR"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "choice": [
+                  {
+                    "token": "BPLUS"
+                  },
+                  {
+                    "token": "BULSTAR"
+                  }
+                ]
+              },
+              {
+                "opt": {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "li_more"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_tailblank"
+          }
+        }
+      ]
+    },
+    "oli_in": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "OLIST1"
+            },
+            {
+              "token": "OLIST"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "seq": [
+              {
+                "choice": [
+                  {
+                    "token": "BPLUS"
+                  },
+                  {
+                    "token": "BULSTAR"
+                  }
+                ]
+              },
+              {
+                "opt": {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_para_o"
+          }
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "li_more"
+            }
+          }
+        },
+        {
+          "opt": {
+            "rule": "li_tailblank"
+          }
+        }
+      ]
+    },
+    "ul_in": {
+      "seq": [
+        {
+          "rule": "li_in"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                },
+                {
+                  "rule": "li_in"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ol_in": {
+      "seq": [
+        {
+          "rule": "oli_in"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "seq": [
+                {
+                  "choice": [
+                    {
+                      "token": "SP2"
+                    },
+                    {
+                      "token": "SP3"
+                    }
+                  ]
+                },
+                {
+                  "rule": "oli_in"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "li_para": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "licont"
+            }
+          }
+        }
+      ]
+    },
+    "licont": {
+      "seq": [
+        {
+          "rule": "ln"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              },
+              {
+                "token": "SP4"
+              }
+            ]
+          }
+        },
+        {
+          "token": "PJOIN"
+        }
+      ]
+    },
+    "licont_strict": {
+      "seq": [
+        {
+          "rule": "ln"
+        },
+        {
+          "opt": {
+            "choice": [
+              {
+                "token": "SP2"
+              },
+              {
+                "token": "SP3"
+              },
+              {
+                "token": "SP4"
+              }
+            ]
+          }
+        },
+        {
+          "token": "PJOIN"
+        }
+      ]
+    },
+    "li_para_o": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "licont_strict"
+            }
+          }
+        }
+      ]
+    },
+    "li_para_qo": {
+      "seq": [
+        {
+          "token": "PJOIN"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "licont_qs"
+            }
+          }
+        }
+      ]
+    },
+    "licont_qs": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "BQ"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "PJOIN"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "opt": {
+                "choice": [
+                  {
+                    "token": "SP2"
+                  },
+                  {
+                    "token": "SP3"
+                  },
+                  {
+                    "token": "SP4"
+                  }
+                ]
+              }
+            },
+            {
+              "token": "PJOIN"
+            }
+          ]
+        }
+      ]
+    },
+    "li_more": {
+      "choice": [
+        {
+          "seq": [
+            {
+              "token": "SP2"
+            },
+            {
+              "rule": "ul_in"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "SP2"
+            },
+            {
+              "rule": "ol_in"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "SP4"
+            },
+            {
+              "rule": "li_para"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "token": "SP3"
+            },
+            {
+              "rule": "li_para"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "token": "SP2"
+            },
+            {
+              "rule": "li_para"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "token": "SP2"
+            },
+            {
+              "rule": "ul_in"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "token": "SP2"
+            },
+            {
+              "rule": "ol_in"
+            }
+          ]
+        },
+        {
+          "seq": [
+            {
+              "rule": "ln"
+            },
+            {
+              "token": "SP4"
+            },
+            {
+              "rule": "li_para"
+            }
+          ]
+        }
+      ]
+    },
+    "li_tailblank": {
+      "seq": [
+        {
+          "rule": "ln"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "rule": "ln"
+            }
+          }
+        }
+      ]
+    },
+    "code": {
+      "seq": [
+        {
+          "token": "SP4"
+        },
+        {
+          "rule": "li_para"
+        },
+        {
+          "repeat": {
+            "min": 0,
+            "max": null,
+            "sub": {
+              "choice": [
+                {
+                  "seq": [
+                    {
+                      "rule": "ln"
+                    },
+                    {
+                      "token": "SP4"
+                    },
+                    {
+                      "rule": "li_para"
+                    }
+                  ]
+                },
+                {
+                  "seq": [
+                    {
+                      "rule": "ln"
+                    },
+                    {
+                      "token": "FLINE"
+                    },
+                    {
+                      "token": "SP4"
+                    },
+                    {
+                      "rule": "li_para"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "hr": {
+      "seq": [
+        {
+          "choice": [
+            {
+              "token": "EQ_UL"
+            },
+            {
+              "token": "DASH_UL"
+            },
+            {
+              "token": "HR_DASH"
+            },
+            {
+              "token": "HR_STAR"
+            },
+            {
+              "token": "HR_US"
+            }
+          ]
+        },
+        {
+          "opt": {
+            "rule": "ln"
+          }
+        }
+      ]
+    }
+  }
+}

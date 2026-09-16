@@ -1,0 +1,14 @@
+{
+  "envelope_version": 1,
+  "id": "core",
+  "family": "nomenclator",
+  "body_type": "config",
+  "bodies": [
+    "manifest.json",
+    "terms.json",
+    "lazy.json",
+    "dead.json",
+    "candidates.json",
+    "anchors.json"
+  ]
+}

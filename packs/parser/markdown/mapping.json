@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "rule": "atx_body",
+      "kind": "heading",
+      "name_from": "PJOIN",
+      "text_form": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": ""
+        }
+      }
+    },
+    {
+      "rule": "atx_num_body",
+      "kind": "heading",
+      "name_from": "NPJOIN",
+      "text_form": {
+        "join_tokens": {
+          "name": "NPJOIN",
+          "sep": ""
+        }
+      }
+    },
+    {
+      "rule": "setext_h",
+      "kind": "heading",
+      "name_from": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": "\n"
+        }
+      },
+      "text_form": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": "\n"
+        }
+      }
+    },
+    {
+      "rule": "setext_q",
+      "kind": "heading",
+      "name_from": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": ""
+        }
+      },
+      "text_form": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": ""
+        }
+      }
+    },
+    {
+      "rule": "para_body",
+      "kind": "para",
+      "text_form": "raw"
+    },
+    {
+      "rule": "para_q",
+      "kind": "para",
+      "text_form": {
+        "join_tokens": {
+          "name": "PJOIN",
+          "sep": "\n"
+        }
+      }
+    },
+    {
+      "rule": "fence",
+      "kind": "fence",
+      "text_form": {
+        "raw_lines": {
+          "head": 1,
+          "tail": 1
+        }
+      }
+    },
+    {
+      "rule": "qfence",
+      "kind": "fence",
+      "text_form": {
+        "raw_lines": {
+          "head": 1,
+          "tail": 1,
+          "strip_prefix": [
+            "> ",
+            ">"
+          ]
+        }
+      }
+    },
+    {
+      "rule": "li",
+      "kind": "list_item",
+      "text_form": {
+        "join_rules": {
+          "rules": [
+            "li_para",
+            "li_para_o",
+            "li_para_q",
+            "li_para_qo",
+            "para_body"
+          ],
+          "sep": " ",
+          "line_strip_max": 3
+        }
+      }
+    },
+    {
+      "rule": "oli",
+      "kind": "list_item",
+      "text_form": {
+        "join_rules": {
+          "rules": [
+            "li_para",
+            "li_para_o",
+            "li_para_q",
+            "li_para_qo",
+            "para_body"
+          ],
+          "sep": " ",
+          "line_strip_max": 3
+        }
+      }
+    },
+    {
+      "rule": "qoitem",
+      "kind": "list_item",
+      "text_form": {
+        "join_rules": {
+          "rules": [
+            "li_para",
+            "li_para_o",
+            "li_para_q",
+            "li_para_qo",
+            "para_body"
+          ],
+          "sep": " ",
+          "strip_prefix": [
+            "> ",
+            ">"
+          ],
+          "line_strip_max": 3
+        }
+      }
+    },
+    {
+      "rule": "qitem",
+      "kind": "list_item",
+      "text_form": {
+        "join_rules": {
+          "rules": [
+            "li_para",
+            "li_para_o",
+            "li_para_q",
+            "li_para_qo",
+            "para_body"
+          ],
+          "sep": " ",
+          "strip_prefix": [
+            "> ",
+            ">"
+          ],
+          "line_strip_max": 3
+        }
+      }
+    }
+  ]
+}

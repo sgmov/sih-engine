@@ -1,0 +1,10 @@
+{
+  "envelope_version": 1,
+  "id": "json-canonical-v1",
+  "family": "formatter",
+  "body_type": "config",
+  "bodies": [
+    "manifest.toml",
+    "operations.toml"
+  ]
+}

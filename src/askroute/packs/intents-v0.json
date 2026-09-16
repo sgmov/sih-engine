@@ -1,0 +1,70 @@
+{
+  "pack": "intents",
+  "version": "v0",
+  "updated": "2026-09-11",
+  "canonical_pointers": [
+    "sih-tools/mcpline/AI-MANUAL.md",
+    "sih-engine/doc/decision/006-ask3-upgrade.md",
+    "sih-engine/doc/design/DES-013"
+  ],
+  "unknown_action": {
+    "id": "askroute-unknown",
+    "steps": [
+      "nomenclator_query <词>",
+      "retriever_recall word=<词>",
+      "ask_human：向用户复述候选语义求裁，禁即兴解释后执行"
+    ]
+  },
+  "intents": [
+    {
+      "id": "coldstart-check",
+      "abbreviations": ["体检", "冷启动"],
+      "chain": ["locks_read", "critsweep", "heartbeat", "chain_verify 今日"],
+      "manual": "AI-MANUAL §4 剧本 A"
+    },
+    {
+      "id": "naming",
+      "abbreviations": ["查册", "立名"],
+      "chain": ["naming_guide", "nomenclator_query <候选词>", "nomenclator map --concept <概念词>"],
+      "manual": "AI-MANUAL §4 剧本 B"
+    },
+    {
+      "id": "write-chain",
+      "abbreviations": ["开约", "立约", "开租约"],
+      "chain": ["lease_open", "lease_lock", "record_intent", "record_append", "lease_commit", "lease_unlock", "lease_close"],
+      "manual": "AI-MANUAL §4 剧本 C"
+    },
+    {
+      "id": "lock-wait",
+      "abbreviations": ["排队"],
+      "chain": ["lease_wait_turn"],
+      "manual": "AI-MANUAL §4 剧本 D"
+    },
+    {
+      "id": "park",
+      "abbreviations": ["泊一下", "入泊"],
+      "chain": ["record_park"],
+      "manual": "AI-MANUAL §4 剧本 E"
+    },
+    {
+      "id": "deyi-adjudicate",
+      "abbreviations": ["过得一裁", "得一裁", "过得一"],
+      "chain": [
+        "facet emit-contract --seat <框架:模型> --shots 9",
+        "同席回填 responses.jsonl（会话内单一模型逐发原文）",
+        "facet score --identity-report <正身件>",
+        "tally assemble --baseline <席位当日基线>",
+        "attractor check --material <裁决材料>",
+        "attractor verify --material <材料> --report <核对报告>",
+        "attractor sign --material <材料> --trail <引擎链>"
+      ],
+      "manual": "BATCH-FACE 五节（得一融回后）"
+    },
+    {
+      "id": "recall",
+      "abbreviations": ["温故"],
+      "chain": ["retriever_recall topic=<主题> 或 word=<词>"],
+      "manual": "AGENTS.md 温故检索"
+    }
+  ]
+}

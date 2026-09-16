@@ -1,0 +1,8 @@
+{
+  "state": "established",
+  "zh": "金向量",
+  "en": "Golden Vector",
+  "definition": "机制两场景的确定性机械重放，字节级冻结逐字节一致零漂移，M-4 模型可自证的金向量位",
+  "source": "ordwire-lease-solo 批登记",
+  "signed": "2026-09-03"
+}

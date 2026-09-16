@@ -1,0 +1,8 @@
+{
+  "state": "established",
+  "zh": "让路",
+  "en": "Yield",
+  "definition": "持锁会话放锁释放 released 落行让位等待方获放行，承接 ORD-020 等待终止性让步良基",
+  "source": "ordwire-lease-solo 批登记",
+  "signed": "2026-09-03"
+}

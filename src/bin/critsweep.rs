@@ -10,13 +10,20 @@
 //! 落差申报（对表围堰 sweep.py，零粉饰）：
 //! 1. registry 定位：围堰自脚本位取 registry.json；引擎 bin 无脚本位，解析序
 //!    --registry 显式参 > env CRITSWEEP_REGISTRY > cwd 上溯首个
-//!    sih-tools/critsweep/registry.json > root/sih-tools/critsweep/registry.json，
-//!    全缺即 criteria 空与降级如实。判据单源仍是围堰 registry.json 文件，零内嵌拷贝。
+//!    sih-engine/critsweep/registry.json（引擎位，gap-packs-assets 落位）>
+//!    cwd 上溯首个 sih-tools/critsweep/registry.json（围堰兼容候选）>
+//!    root/sih-engine/critsweep/registry.json > root/sih-tools/critsweep/registry.json，
+//!    全缺即 criteria 空与降级如实。判据单源是 registry.json 文件（引擎位与围堰位
+//!    同内容），零内嵌拷贝。
 //! 2. referee 台账定位：--referee-ledger 显式参 > env CRITSWEEP_REFEREE_LEDGER
 //!    > cwd 上溯 sih-tools/critsweep/ledger/referee.ndjson。
 //! 3. 根判别与中央码根：围堰自脚本位上溯，移植改自 cwd 上溯，语义同形
 //!    （首个含账本目录者／首个双仓标记者），--root 显式参优先。
-//! 4. selector 路由子进程超时以 try_wait 轮询十秒实现，等价 subprocess timeout=10。
+//! 4. selector 路由子进程超时以 try_wait 轮询十秒实现，等价 subprocess timeout=10；
+//!    自 gap-parking-route-engine-selector 起泊界路由腿直调引擎 selector bin
+//!    （本 bin 同目录兄弟位 + 引擎仓 packs/selector/parking），消对围堰
+//!    uv run 的运行时依赖（iso-04 locks_read 直调先例同形）；materials 相对形
+//!    归一绝对后传参，语义同围堰 cwd 锚定形。
 //! 5. 出参 pretty 化（围堰 indent=1 sort_keys）：JSON 语义等价。
 //! 6. 命名空间字段非字符串值的 str 化承 Python str() 形（Null→"None"、
 //!    Bool→"True"/"False"、数与容器 serde 形与 Python repr 有微差）；
@@ -282,11 +289,21 @@ fn registry_path(explicit: Option<&str>, root: &Path) -> PathBuf {
     let cwd = std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
     let mut cur = Some(cwd.as_path());
     while let Some(c) = cur {
+        // 引擎位默认候选首位（gap-packs-assets）：引擎树 registry 在前，
+        // 围堰位降为后续兼容候选，显式 --registry/--env 覆盖形不变。
+        let eng = c.join("sih-engine/critsweep/registry.json");
+        if eng.is_file() {
+            return eng;
+        }
         let cand = c.join("sih-tools/critsweep/registry.json");
         if cand.is_file() {
             return cand;
         }
         cur = c.parent();
+    }
+    let eng = root.join("sih-engine/critsweep/registry.json");
+    if eng.is_file() {
+        return eng;
     }
     root.join("sih-tools/critsweep/registry.json")
 }
@@ -734,24 +751,60 @@ fn run_with_timeout(mut cmd: Command, timeout: Duration) -> Result<ProcOut, Proc
     })
 }
 
+/// 引擎 selector 二进制位（gap-parking-route-engine-selector）：本 bin 同目录
+/// 兄弟位（cargo 同树 bins 同居 target/debug 或 target/release），缺位回落
+/// PATH 裸名，spawn 失败即降级如实（iso-04 locks_read 直调先例同形，
+/// mcpserver runtime lease_bin 兜底精神）。
+fn selector_bin() -> PathBuf {
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            let sib = dir.join("selector");
+            if sib.is_file() {
+                return sib;
+            }
+        }
+    }
+    PathBuf::from("selector")
+}
+
+/// 泊界包位：exe 派生引擎仓根 packs/selector/parking（gap-packs-assets 落位，
+/// 与围堰 sih-tools/selector/packs/parking 内容同基），绝对形存在即用；
+/// 缺位回落相对形 "parking" 交 selector resolve_pack_input 引擎位候选序自解析，
+/// 全不中即 selector 既有 pack directory missing 路径如实报错（exit 2 降级可见）。
+fn parking_pack_arg() -> String {
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(root) = exe
+            .parent()
+            .and_then(|p| p.parent())
+            .and_then(|p| p.parent())
+        {
+            let p = root.join("packs").join("selector").join("parking");
+            if p.is_dir() {
+                return p.display().to_string();
+            }
+        }
+    }
+    "parking".to_string()
+}
+
 fn parking_face(at: chrono::NaiveDate, faces: &Faces) -> (Value, Vec<String>) {
     let mut lines = Map::new();
     let mut degradations: Vec<String> = Vec::new();
+    let pack_arg = parking_pack_arg();
     for (name, materials) in &faces.parking_jobs {
-        let mut cmd = Command::new("uv");
+        // 泛在与围堰同参：materials 相对形原以 parking_cwd（<root>/sih-tools）为
+        // 基准，归一绝对后传引擎 selector bin，子进程 cwd 不再锚定 sih-tools
+        //（对围堰 uv run 的最后运行时依赖随之消除）。
+        let mats = faces.parking_cwd.join(materials);
+        let mut cmd = Command::new(selector_bin());
         cmd.args([
-            "run",
-            "--project",
-            "./selector",
-            "selector",
             "route",
             "--pack",
-            "selector/packs/parking",
+            &pack_arg,
             "--reference-time",
             &at.to_string(),
-            materials,
-        ])
-        .current_dir(&faces.parking_cwd);
+        ]);
+        cmd.arg(&mats);
         match run_with_timeout(cmd, Duration::from_secs(ROUTE_TIMEOUT_S)) {
             Err(ProcErr::Timeout) => {
                 lines.insert(

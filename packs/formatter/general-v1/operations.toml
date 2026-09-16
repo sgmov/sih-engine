@@ -1,0 +1,8 @@
+# ===== docmath-b3-solo 挂锚（2026-09-04，只加注记零判变） =====
+# [docmath-b3-solo 挂锚] L001 判定性 载体:ORD-023(mapping.md:209)（行级归一重写面即正则形唯一与重跑落零，carrwire-solo 源码接线第一消费位）
+#  推导档:sih-math/docs/docmath-carriers-derivation-2026-09-04.md（批二硬测试六性质第二消费位）
+#  测试件:sih-tools/formatter/tests/test_confluence_docmath.py
+[[ops]]
+id = "L001"
+kind = "line_ops"
+params = { trailing_whitespace = true, eol = "lf", final_newline = true }

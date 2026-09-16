@@ -1,0 +1,1855 @@
+{
+  "terms": [
+    {
+      "code": "scrutinator",
+      "definition": "受托持人批的规约包，对材料逐条核验阅览，产出结构化报告",
+      "en": "Scrutinator",
+      "signed": "2026-08-19",
+      "source": "PRO-007 已签项",
+      "zh": "核阅"
+    },
+    {
+      "code": null,
+      "definition": "受托持人批的谓词包，对到达材料逐件机械判定，择定主线、停放、丢弃三路之一",
+      "en": "Selector",
+      "signed": "2026-08-20",
+      "source": "PRO-007 已签项",
+      "zh": "路择"
+    },
+    {
+      "code": "formatter",
+      "definition": "化其格式，格式归一，笔在核前",
+      "en": "Formatter",
+      "signed": "2026-08-20",
+      "source": "PRO-007 簇五",
+      "zh": "化格"
+    },
+    {
+      "code": "scribe",
+      "definition": "如实书写组件，append-only 哈希链写入器，只记不判",
+      "en": "Scribe",
+      "signed": "2026-08-21",
+      "source": "PRO-007 书简外切裁定 承 DEC-004",
+      "zh": "书简"
+    },
+    {
+      "code": "nomenclator",
+      "definition": "受托持人批的术语包，对术语三态作机器可读登记，对治理文档作字符串级核查，对登记写入作前校验",
+      "en": "Nomenclator",
+      "signed": "2026-08-22",
+      "source": "PRO-007 簇六",
+      "zh": "检词"
+    },
+    {
+      "code": null,
+      "definition": "受托持人签的一页方向与边界声明",
+      "en": "Course",
+      "signed": "2026-08-21",
+      "source": "PRO-007 已签项",
+      "zh": "向界"
+    },
+    {
+      "code": "parking",
+      "definition": "未裁事项的有界停靠地，停了不忘",
+      "en": "Parking",
+      "signed": "2026-08-21",
+      "source": "PRO-007 已签项",
+      "zh": "泊界"
+    },
+    {
+      "code": null,
+      "definition": "能力切出围堰孵化，类微分之分",
+      "en": "Expedition",
+      "signed": "2026-08-21",
+      "source": "PRO-007 范式词汇组",
+      "zh": "外切"
+    },
+    {
+      "code": null,
+      "definition": "孵化期满回迁引擎，类积分之积",
+      "en": "Reintegration",
+      "signed": "2026-08-21",
+      "source": "PRO-007 范式词汇组",
+      "zh": "融回"
+    },
+    {
+      "code": null,
+      "definition": "外切后在 sih-tools 的孵化期环境",
+      "en": "Incubation",
+      "signed": "2026-08-21",
+      "source": "PRO-007 范式词汇组",
+      "zh": "孵化"
+    },
+    {
+      "code": null,
+      "definition": "水下施工临时挡水围护结构，竣工即拆",
+      "en": "Cofferdam",
+      "signed": "2026-08-21",
+      "source": "PRO-007 范式词汇组",
+      "zh": "围堰"
+    },
+    {
+      "code": "trail",
+      "definition": "事件流载体，append-only 单链",
+      "en": "trail",
+      "signed": "2026-08-21",
+      "source": "DEC-001",
+      "zh": null
+    },
+    {
+      "code": "sihankor",
+      "definition": "哲学身份，治理实体，承接哲学仓全部命题与铁律",
+      "en": "SiHankor",
+      "signed": "2026-08-19",
+      "source": "AGENTS 术语登记",
+      "zh": "司衡"
+    },
+    {
+      "code": null,
+      "definition": "工程产物，本轮基础设施",
+      "en": "sih-engine",
+      "signed": "2026-08-19",
+      "source": "AGENTS 术语登记",
+      "zh": "司衡引擎"
+    },
+    {
+      "code": null,
+      "definition": "唯一权威源，构成性约束 Agent 的生成与推理",
+      "en": "sih-philosophy",
+      "signed": "2026-08-19",
+      "source": "AGENTS 术语登记",
+      "zh": "哲学仓"
+    },
+    {
+      "code": null,
+      "definition": "已废弃沉默参考，失败设计不继承",
+      "en": null,
+      "signed": "2026-08-19",
+      "source": "AGENTS 术语登记",
+      "zh": "旧工程仓"
+    },
+    {
+      "code": null,
+      "definition": "原理层",
+      "en": "Tao",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "道"
+    },
+    {
+      "code": null,
+      "definition": "方法层，收敛五法",
+      "en": "Canon",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "法"
+    },
+    {
+      "code": null,
+      "definition": "认识层，检验道层主张的方法论",
+      "en": "Assay",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "鉴"
+    },
+    {
+      "code": null,
+      "definition": "应本体，居中不动以应万变",
+      "en": "Settle",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "应"
+    },
+    {
+      "code": null,
+      "definition": "应本体失态后的正反两相合称",
+      "en": "Unsettling",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "应变"
+    },
+    {
+      "code": null,
+      "definition": "应变之已形",
+      "en": "unsettle the present",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "应辨"
+    },
+    {
+      "code": null,
+      "definition": "应变之未形",
+      "en": "unsettle what's coming",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "应几"
+    },
+    {
+      "code": null,
+      "definition": "哲学的原型",
+      "en": "Arche",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "元"
+    },
+    {
+      "code": null,
+      "definition": "递归终止的本体论根据",
+      "en": "self-so",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "自然"
+    },
+    {
+      "code": null,
+      "definition": "元层三治总称",
+      "en": "Regimen",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "治"
+    },
+    {
+      "code": null,
+      "definition": "元层三治之一，资格控制",
+      "en": "Acknowledge",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "治病"
+    },
+    {
+      "code": null,
+      "definition": "元层三治之一，核心规约不可变动",
+      "en": "Infuse",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "治益"
+    },
+    {
+      "code": null,
+      "definition": "元层三治之一，禁止绕过鉴直接 Ratify",
+      "en": "Overcome",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "治强"
+    },
+    {
+      "code": null,
+      "definition": "链推导方法总称",
+      "en": "Emanation",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "流衍"
+    },
+    {
+      "code": null,
+      "definition": "自上而下推导段",
+      "en": "Proodos",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "流衍段"
+    },
+    {
+      "code": null,
+      "definition": "自下而上反推段",
+      "en": "Epistrophe",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "复归"
+    },
+    {
+      "code": null,
+      "definition": "Emanation 的属性名词",
+      "en": "Emanativity",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "流衍性"
+    },
+    {
+      "code": null,
+      "definition": "Epistrophe 的属性名词",
+      "en": "Reducibility",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "可归约性"
+    },
+    {
+      "code": null,
+      "definition": "Epistrophe 第四步属性名词",
+      "en": "Falsifiability",
+      "signed": null,
+      "source": "哲学仓 01 术语速查表",
+      "zh": "可证伪性"
+    },
+    {
+      "code": null,
+      "definition": "法的工程化展开",
+      "en": "Techne",
+      "signed": null,
+      "source": "哲学仓 01 英文对取名理据",
+      "zh": "术"
+    },
+    {
+      "code": null,
+      "definition": "微兆，应几之所察",
+      "en": "Incipient",
+      "signed": null,
+      "source": "哲学仓 01 英文对取名理据",
+      "zh": "几"
+    },
+    {
+      "code": null,
+      "definition": "约束，规约之约",
+      "en": "Brief",
+      "signed": null,
+      "source": "哲学仓 01 英文对取名理据",
+      "zh": "约"
+    },
+    {
+      "code": null,
+      "definition": "形之迹，可观测面",
+      "en": "Manifest",
+      "signed": null,
+      "source": "哲学仓 01 英文对取名理据",
+      "zh": "形迹"
+    },
+    {
+      "code": "ask3repeater",
+      "definition": "承接应几前向约束的治理动作组件，三层诘察即析显层掘隐含递归细化，向内诘察严禁外问，代码标识符小写 ask3repeater，内部代号 ASK3，展示名保留不用",
+      "en": "Ask3Repeater",
+      "signed": "2026-08-22",
+      "source": "DEC-006 承旧仓 DEC-035 名实复审",
+      "zh": "三问"
+    },
+    {
+      "code": "identity",
+      "definition": "验明调用方正身，即以子进程视角亲验出身，盐哈希身份串入册，自报对表三态，留痕不签",
+      "en": "identity",
+      "signed": "2026-08-25",
+      "source": "2026-08-25 立名会，sih-tools/identity 工具，推导史见 sih-engine PRO-007 簇八",
+      "zh": "正身"
+    },
+    {
+      "code": "cascade",
+      "definition": "级联检查，即引用即边建依赖表，路径即身份，上游洁净判定与孤儿侦查，链即账本",
+      "en": "cascade",
+      "signed": "2026-08-25",
+      "source": "2026-08-25 立名会，sih-tools/cascade 工具，推导史见 sih-engine PRO-007 簇八",
+      "zh": "级联"
+    },
+    {
+      "code": "session-credential",
+      "definition": "任务包批次的短期写入凭证，开工签发载范围与正身绑定，收工吊销，台账行为载体，承 DEC-011 留裁二即会话档为主环境变量为辅",
+      "en": "session credential",
+      "signed": "2026-08-26",
+      "source": "DEC-011 留裁二，2026-08-26 用户签署生效",
+      "zh": "会话档"
+    },
+    {
+      "code": "stable-subset",
+      "definition": "本地壳语境跨时可比的绑定组件集合即 hostname 加 user 加 boottime 三件，pid 与 ppid 与 ancestry 限同瞬对表，mac 不入，承 DEC-011 留裁一",
+      "en": "stable subset",
+      "signed": "2026-08-26",
+      "source": "DEC-011 留裁一，2026-08-26 用户签署生效",
+      "zh": "稳定子集"
+    },
+    {
+      "code": "lease",
+      "definition": "按任务包生命周期治理写入的租约工具，立约开工建副本签发会话档，租内双锁即悲观五验加乐观基线强制不得直改正本，期满审查归还归并拆本，回归义构成性于期满归还",
+      "en": "lease",
+      "signed": "2026-08-26",
+      "source": "2026-08-26 立名会即双工具并库为 sih-tools/lease，完美直译对两侧词典词，推导史见 sih-engine PRO-007 簇九",
+      "zh": "租约"
+    },
+    {
+      "signed": true,
+      "source": "DEC-012 裁决七即 git log 对台账对 trail 三方比对",
+      "zh": "对表"
+    },
+    {
+      "signed": true,
+      "source": "DEC-012 裁决七即绕行提交在对表中显现",
+      "zh": "露形"
+    },
+    {
+      "signed": true,
+      "source": "DEC-012 裁决一与四即 lease commit 唯一合法提交通道",
+      "zh": "正身路径"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "2026-08-25 用户匹配裁定即任务包请求写入段为会话范围第一源，lease 契约机器形态节承载",
+      "zh": "请求写入"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "用户 2026-08-27 封字令即存量裁定，audit-049 裁定补记节承载",
+      "zh": "封存"
+    },
+    {
+      "signed": true,
+      "source": "editmig-t6d 批 2026-08-27 用户批准即编辑位迁移，内容编辑与管线与段结算皆在副本、收约归并回主线",
+      "zh": "副本流"
+    },
+    {
+      "signed": true,
+      "source": "2026-08-27 用户批令即融回评估批逐件轮问体量与时间与贡献度",
+      "zh": "三问轮回"
+    },
+    {
+      "signed": true,
+      "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即被依赖的强制位实走计入贡献度",
+      "zh": "强制位"
+    },
+    {
+      "signed": true,
+      "source": "COURSE-v2 融回门判据 2026-08-22 用户裁定即空转调用量不计入贡献度",
+      "zh": "空转"
+    },
+    {
+      "signed": true,
+      "source": "孵化环第四步融回门三查即回迁债已评估",
+      "zh": "回迁债"
+    },
+    {
+      "signed": true,
+      "source": "audit-049 封字令 2026-08-27 即界线认定与增量零容忍",
+      "zh": "界线"
+    },
+    {
+      "signed": true,
+      "source": "AGENTS.md 泊界心跳 2026-08-25 接线裁定即对在泊材料跑 parking 谓词包",
+      "zh": "心跳"
+    },
+    {
+      "signed": true,
+      "source": "PARKING-v1 停泊记账即未决事项有界停靠",
+      "zh": "停泊"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "lease 契约修订二即任务包匹配裁定 2026-08-25，机器形态节承载",
+      "word": "绑定侧档",
+      "zh": "绑定侧档"
+    },
+    {
+      "signed": true,
+      "source": "2026-08-27 用户追认令即封字令修订一，audit-049 裁定修订节承载",
+      "zh": "追认"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "DEC-013 融回门机制名随物走节即家位承 DEC-001 映射不重建，2026-08-27 承用户批令",
+      "word": "名随物走",
+      "zh": "名随物走"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "sih-tools/scribe/CONTRACT.md 正文承载即双子代理并行形态，2026-08-27 切换批首次入检升格",
+      "word": "范式第二形态",
+      "zh": "范式第二形态"
+    },
+    {
+      "prior_state": "lazy",
+      "signed": true,
+      "source": "sih-tools/scribe/CONTRACT.md 正文承载即 facet 测量的执行入口指称，2026-08-27 切换批首次入检升格",
+      "word": "测量侧执行入口",
+      "zh": "测量侧执行入口"
+    },
+    {
+      "code": "locator",
+      "definition": "确定性寻址工具，对文档与配置与代码多载体结构化解析，为语义单元派生稳定标识，按标识与按词一次调用定位，索引是缓存源文件是权威源，只报不判",
+      "en": "locator",
+      "signed": true,
+      "source": "2026-08-27 立名会用户裁定寻址弃索引即反候选死因为泛名词噪声，sih-tools/locator 工具落 DEC-007 基础设施五索引槽位即槽位名与工具名两实体两名，推导史见 locator-t6d 任务包",
+      "word": "寻址",
+      "zh": "寻址"
+    },
+    {
+      "code": "retriever",
+      "definition": "五档已沉淀物的检索面激活组件，报出已沉淀供治理动作引用，只报不判，知新在消费侧",
+      "en": "Retriever",
+      "signed": "2026-08-28",
+      "source": "DEC-017 已签项",
+      "zh": "温故"
+    },
+    {
+      "code": "parser",
+      "definition": "空腹解析引擎加声明式语言包，把代码切分为语法树并投影为寻址条目，同输入恒同树，错误处包节点永远产树，只读不判",
+      "en": "Parser",
+      "signed": "2026-08-28",
+      "source": "句读立名批 已签项",
+      "zh": "句读"
+    },
+    {
+      "code": "marshalling",
+      "definition": "长程任务的执行队形谱系即主 agent 与子代理如何分工、产出如何进租约治理包络，族内五形单线单发反思并联串行，编号旧称全退场",
+      "en": "Marshalling",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "代理编组"
+    },
+    {
+      "code": "oneshot",
+      "definition": "单子代理单文件单次响应的队形，模板化独立任务，曾用名 T6-B",
+      "en": "Oneshot",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "单发"
+    },
+    {
+      "code": "parallel",
+      "definition": "多子代理并行各领独立簇主线收敛验收的队形，编排者是主线即此形，司衡协议编排者属借脑预留位，曾用名 T6-D",
+      "en": "Parallel",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "并联"
+    },
+    {
+      "code": "reflect",
+      "definition": "单子代理单文件多轮反思的队形，价值在抓结构性违规非润色，英文对带 Java 反射域距披露，曾用名 T6-C",
+      "en": "Reflection",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "反思"
+    },
+    {
+      "code": "serial",
+      "definition": "单子代理持全量上下文连续产强耦合多文件的队形，带工具级泛用轻占用披露，曾用名 T5",
+      "en": "Serial",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "串行"
+    },
+    {
+      "code": "solo",
+      "definition": "主线亲写零子代理的队形，需全局上下文与裁决连续性的治理批默认形，曾用名 T6-A",
+      "en": "Solo",
+      "signed": "2026-08-28",
+      "source": "代理编组立名批 已签项",
+      "zh": "单线"
+    },
+    {
+      "code": "tally",
+      "definition": "facet 裁决材料的确定性基线核对与终签壳，复算相符即合契结案落据，不契（不收敛）才归人，落据带全条件绑定即为条件改变时的重放锚；执契据以核结，非执行；契约源 DES-011，登记承 DEC-019",
+      "en": "Tally",
+      "signed": "2026-08-29",
+      "source": "tallyinit-solo 立名外切批 已签项",
+      "zh": "执契"
+    },
+    {
+      "code": "elicit",
+      "definition": "机械缺口信号驱动的人工介入升级位即未登记词与召回矛盾与裁定冲突三扳机、叩之小大应小大量级相称、无应答挂起不代答、契约逐信号消化过闸",
+      "en": "Elicit",
+      "signed": "2026-08-29",
+      "source": "PRO-007 已签项",
+      "zh": "叩问"
+    },
+    {
+      "code": "attractor",
+      "definition": "二层裁决结构组件（facet 上层采样观察加执契下层确定性核对终签），限定条件内收敛出唯一方向即机器落据为可重放裁决记录，不收敛归人诊断；得一承道德经三十九章文本根，attractor 承动力系统行业根；登记承 DEC-020",
+      "en": "Attractor",
+      "signed": "2026-08-30",
+      "source": "deyireg-solo 立名登记批 已签项",
+      "zh": "得一"
+    },
+    {
+      "definition": "尊重因果方向，介入点在前端",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 395 行 / 06-on-canon 18 行",
+      "zh": "顺因"
+    },
+    {
+      "definition": "收敛恰到好处",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 396 行 / 06-on-canon",
+      "zh": "有度"
+    },
+    {
+      "definition": "知道不做什么",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 397 行 / 06-on-canon",
+      "zh": "知止"
+    },
+    {
+      "definition": "损有余补不足",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 398 行 / 06-on-canon",
+      "zh": "损补"
+    },
+    {
+      "definition": "力度适配场景",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 399 行 / 06-on-canon",
+      "zh": "顺势"
+    },
+    {
+      "definition": "涤除尘垢，主动去除偏见",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 406 行 / 07-on-assay",
+      "zh": "去蔽"
+    },
+    {
+      "definition": "致虚守静，不预设立场",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 407 行 / 07-on-assay",
+      "zh": "客观"
+    },
+    {
+      "definition": "用心如镜，反映而不投射",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 408 行 / 07-on-assay",
+      "zh": "映照"
+    },
+    {
+      "definition": "术语与原义关系的三档——保留（义核未变，仅领域迁移）/ 延伸（义核保留，跨域展开）/ 限定（通则性原义收窄为具体应用）",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 emanation/proodos/01-ontology-of-names.md 558 至 559 行",
+      "zh": "血统档位"
+    },
+    {
+      "definition": "元层溢出话题的承接位机制",
+      "en": "",
+      "signed": "2026-08-30 用户批准术语束登记",
+      "source": "哲学仓 llm-friendly-build/entries/APP-01.md",
+      "zh": "承接槽"
+    },
+    {
+      "code": "gauge",
+      "definition": "治理态三维读数组件正式名：从链上治理事实读出量值的三维读数面即收敛度调用置信度融回度一具三表盘、只报不判、read 与 record 两操作、确定性投影；义核为杆秤刻度星点读星得量值兼承司衡之衡字",
+      "en": "gauge",
+      "signed": "2026-08-30",
+      "source": "SPEC-011 修订二即得一四通道机器终签 3d1ec172 至 923449fe 与用户 2026-08-30 同意令",
+      "zh": "秤星"
+    },
+    {
+      "code": "viewer",
+      "definition": "聚合输出组件，把仅可消费类事件与泊界心跳与结算计数聚合为人类介入接口的只读呈报面，人类只在视图告警时介入，零写零判，同参双跑逐字节一致，缺席字段如实标不虚构",
+      "en": "Viewer",
+      "signed": "2026-08-31",
+      "source": "视图立名批 已签项 承 DEC-007 名册即立名礼",
+      "zh": "视图"
+    },
+    {
+      "code": "adjudisp",
+      "definition": "治理裁决权的三态路由表，即哪些裁决必过得一、哪些留人节点、哪些由确定性程序代裁，灰区默认过得一从严；适用界从 adjudisp 批起算既往不回溯；只立路由不改 DEC-020 硬件钥匙签署模型",
+      "en": "AdjudicationRouting",
+      "signed": "2026-09-02",
+      "source": "adjudisp-solo 立名批 DEC-021 用户 2026-09-02 两步令",
+      "zh": "裁决分派"
+    },
+    {
+      "code": null,
+      "definition": "正身身份核六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token 的无盐确定性 SHA-256，core-v1 前缀管道键值串键序固定派生，缺席即空串，同席同日稳定可连认，供跨报告连认配对；对位 full 盐哈希一字不改续担逐报告防篡改与防重放，双层职能分离",
+      "en": "core_hash",
+      "signed": "2026-09-03",
+      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+      "zh": "核哈希"
+    },
+    {
+      "code": null,
+      "definition": "同一逻辑身份跨报告跨批次的机械等值认定，配对键只认确定性派生的核哈希即同输入同值；与逐报告取证哈希职能分离，旧材料任一缺席核哈希即回退原判定不追认",
+      "en": "cross-report recognition",
+      "signed": "2026-09-03",
+      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+      "zh": "连认"
+    },
+    {
+      "code": null,
+      "definition": "正身十二组件中慢变难冒充的稳定子集六件即 mac、hostname、user、boottime、sandbox_id、归一化血统 token，进核哈希作连认键；易变件与新鲜度件（pid、ppid、parent_start、net_time、timestamp）不进核，重启换 boottime 即换席位纪元",
+      "en": "identity core",
+      "signed": "2026-09-03",
+      "source": "idcore-solo 批 用户 2026-09-03 采纳裁即 inputlog 2026-09-03 seq 4 与决策材料 identity-drift-proposal §4 已采纳",
+      "zh": "身份核"
+    },
+    {
+      "code": null,
+      "definition": "数学管线载体覆盖审计的机器账本，逐机制与逐判定性常数标三态与载体锚点，脚本全量生成零人工填项",
+      "en": "Coverage Ledger",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a1-solo 批登记",
+      "zh": "覆盖账本"
+    },
+    {
+      "code": null,
+      "definition": "改动会改变治理判定即放行拦截配对裁决退出码的常数与判据属性，单点扰动判据",
+      "en": "Decision-bearing",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a1-solo 批登记",
+      "zh": "判定性"
+    },
+    {
+      "code": null,
+      "definition": "改动只改变性能与有界性不改变治理判定的参数属性，入环境参数登记面",
+      "en": "Resource-bearing",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a1-solo 批登记",
+      "zh": "资源性"
+    },
+    {
+      "code": null,
+      "definition": "资源性参数的单独登记册，变更走工程基线裁定不走载体推导",
+      "en": "Environment Parameter Registry",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a1-solo 批登记",
+      "zh": "环境参数登记面"
+    },
+    {
+      "code": null,
+      "definition": "语法启发式落入边界未静默归类的件，标待裁定态只呈报不代裁",
+      "en": "Pending-confirmation List",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a1-solo 批登记",
+      "zh": "待确认清单"
+    },
+    {
+      "code": null,
+      "definition": "ga-1 读数公式的校准观察期，满条件为结算日 2026-09-02 后累计七个含例行读数的席位日或用户令提前",
+      "en": "Calibration Window",
+      "signed": "2026-09-03",
+      "source": "pendsweep-solo 批登记",
+      "zh": "校准窗"
+    },
+    {
+      "code": null,
+      "definition": "校准启动的固定四步序列即窗满、解析校准尝试、解析不可行、pk-042 出泊复检走得一裁过即实验批",
+      "en": "Trigger Chain",
+      "signed": "2026-09-03",
+      "source": "pendsweep-solo 批登记",
+      "zh": "触发链"
+    },
+    {
+      "code": null,
+      "definition": "链上停泊事件的文档名册投影修正动作，投影与链不符时以链为准，修正只动投影不写链",
+      "en": "Projection Sync",
+      "signed": "2026-09-03",
+      "source": "pendsweep-solo 批登记",
+      "zh": "投影同步"
+    },
+    {
+      "code": null,
+      "definition": "以假设检验承载的判定判据：以观测计数相对零假设基线的显著偏离作机械判定，p 值与 α 确定性比较不投射结论",
+      "en": "Test Criterion",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a2-solo 批登记",
+      "zh": "检验判据"
+    },
+    {
+      "code": null,
+      "definition": "承接数学仓载体条目与映射表的推导文档，承载检验统计量与零假设与备择与 α 语义，落 sih-math/docs",
+      "en": "Derivation Doc",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a2-solo 批登记",
+      "zh": "推导档"
+    },
+    {
+      "code": null,
+      "definition": "判据切换导致既有裁决结果改变时的逐件申报清单，待人确认零静默改判，零判变如实记零",
+      "en": "Verdict Change List",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a2-solo 批登记",
+      "zh": "判变清单"
+    },
+    {
+      "code": null,
+      "definition": "批结算后遗留非阻塞性欠账的集中清偿批型，余债先登记后清偿零静默",
+      "en": "Debt Sweep",
+      "signed": "2026-09-03",
+      "source": "debtswp-solo 批登记",
+      "zh": "余债清理"
+    },
+    {
+      "code": null,
+      "definition": "同一前哈希出现两条各自 valid 的续链的链态异常，处置即主链为权威、分叉侧作废不归并、其独有事件按原件重挂",
+      "en": "Chain Fork",
+      "signed": "2026-09-03",
+      "source": "debtswp-solo 批登记",
+      "zh": "链分叉"
+    },
+    {
+      "code": null,
+      "definition": "治理批结算后遗留的未入版控余件经批按现状逐字节 identical 拷贝入工地图库提交，零改字的归档批型",
+      "en": "Batch Residual Archival",
+      "signed": "2026-09-03",
+      "source": "resarch-solo 批登记",
+      "zh": "批余件入库"
+    },
+    {
+      "code": null,
+      "definition": "盘面实态逐件映照登记面即账本与实态一致，入库按现状零改写，对表读数逐字节 identical 作为验收",
+      "en": "Ledger-Reality Alignment",
+      "signed": "2026-09-03",
+      "source": "resarch-solo 批登记",
+      "zh": "账实归一"
+    },
+    {
+      "code": null,
+      "definition": "pk-045 多 agent 冲突测试样本库要求各派外批结果档须载的章节，逐件记冲突点、机械响应、解决路径与重试计数",
+      "en": "Conflict Sample Section",
+      "signed": "2026-09-03",
+      "source": "resarch-solo 批登记",
+      "zh": "冲突样本节"
+    },
+    {
+      "definition": "对已持路径再守恒锁即他会在册持同 path 遇 locked_elsewhere 拒绝，冲突模式有限重试等待让位，承接 ORD-020 互斥语义",
+      "en": "Collision Lock",
+      "signed": "2026-09-03",
+      "source": "ordwire-lease-solo 批登记",
+      "zh": "撞锁"
+    },
+    {
+      "definition": "持锁会话放锁释放 released 落行让位等待方获放行，承接 ORD-020 等待终止性让步良基",
+      "en": "Yield",
+      "signed": "2026-09-03",
+      "source": "ordwire-lease-solo 批登记",
+      "zh": "让路"
+    },
+    {
+      "definition": "载体引用加推导档加代码接线加金向量四件套对接，M-1 判定性常数携带数学载体",
+      "en": "Carrier Wiring",
+      "signed": "2026-09-03",
+      "source": "ordwire-lease-solo 批登记",
+      "zh": "载体接线"
+    },
+    {
+      "definition": "机制两场景的确定性机械重放，字节级冻结逐字节一致零漂移，M-4 模型可自证的金向量位",
+      "en": "Golden Vector",
+      "signed": "2026-09-03",
+      "source": "ordwire-lease-solo 批登记",
+      "zh": "金向量"
+    },
+    {
+      "definition": "ORD-020 载体名称，资源集上取全序持有者按全序递增申请等待图无环死锁自由",
+      "en": "Total-Order Resource Allocation",
+      "signed": "2026-09-03",
+      "source": "ordwire-lease-solo 批登记",
+      "zh": "全序资源分配"
+    },
+    {
+      "definition": "把占比信念作为随机变量，以 Beta-Bernoulli 共轭先验把先验与观测证据合成后验的语义，承 PROB-005 Bayesian 更新",
+      "en": "Bayesian Semantics",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a3-solo 批登记",
+      "zh": "贝叶斯语义"
+    },
+    {
+      "definition": "Beta(α+k, β+n−k) 后验分布的均值 (α+k)/(α+β+n)，均匀先验下即拉普拉斯续则 (k+1)/(n+2)，承 PROB-005 共轭先验节",
+      "en": "Posterior Mean",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a3-solo 批登记",
+      "zh": "后验均值"
+    },
+    {
+      "definition": "样本比例 p̂ 依中心极限定理渐近正态的 95% 双侧区间 p̂ ± z_{0.975}√(p̂(1-p̂)/n)，收口到 [0,1] 界，承 PROB-003 中心极限定理",
+      "en": "Confidence Band",
+      "signed": "2026-09-03",
+      "source": "mathpipe-a3-solo 批登记",
+      "zh": "置信带"
+    },
+    {
+      "code": null,
+      "definition": "哲学原文的逐字节子串引文，落形原文「引文」见 文件 正本 L行号，以子串断言机械复验",
+      "en": "Verbatim Quote",
+      "signed": "2026-09-03",
+      "source": "mathquote2-solo 批登记",
+      "zh": "逐字引文"
+    },
+    {
+      "code": null,
+      "definition": "自死亡批工地逐字节导出的 git diff，地位为盘点源不是引用源，须经本批机械复验放行",
+      "en": "Salvage Diff",
+      "signed": "2026-09-03",
+      "source": "mathquote2-solo 批登记",
+      "zh": "抢救 diff"
+    },
+    {
+      "code": null,
+      "definition": "OpenTelemetry 可观测性框架全称，其 GenAI 语义约定为本批登记的视图组件契约参考面候选出处，入泊文件行文要求写全称零网络外链",
+      "en": "OpenTelemetry",
+      "signed": "2026-09-03",
+      "source": "facepark-solo 批登记",
+      "zh": null
+    },
+    {
+      "code": null,
+      "definition": "OpenTelemetry 的生成式 AI 遥测语义约定族名，视图组件契约参考面候选所借鉴的约定族（agent 与 MCP 遥测提案中）",
+      "en": "GenAI",
+      "signed": "2026-09-03",
+      "source": "facepark-solo 批登记",
+      "zh": null
+    },
+    {
+      "code": null,
+      "definition": "OpenTelemetry GenAI 语义约定的遥测属性命名空间前缀即 gen_ai.*，视图组件契约候选参考的属性族记法",
+      "en": "gen_ai",
+      "signed": "2026-09-03",
+      "source": "facepark-solo 批登记",
+      "zh": null
+    },
+    {
+      "code": null,
+      "definition": "链上停泊事件对应的泊界在泊材料即材料面投影文件，心跳按 parking 包逐件路由的对表单元",
+      "en": "Parking Material",
+      "signed": "2026-09-03",
+      "source": "facepark-solo 批登记",
+      "zh": "泊材料"
+    },
+    {
+      "definition": "ALG-002 载体名称，等价关系分板板内互通板间零串扰，canonical 代表即身份串等价类代表组件换序不变性同组件换序同串，承接 ALG-002 等价关系与商集隔离",
+      "en": "Quotient Isolation",
+      "signed": "2026-09-03",
+      "source": "idwire-solo 批登记",
+      "zh": "商集隔离"
+    },
+    {
+      "definition": "PROB-013 载体名称，时序分布随变点前后分布相异即未形之变的微兆检测，漂移比对即身份串跨时点组件哈希逐位对表的检测语义，承接 PROB-013 平稳性与变点检测",
+      "en": "Change Point Detection",
+      "signed": "2026-09-03",
+      "source": "idwire-solo 批登记",
+      "zh": "变点检测"
+    },
+    {
+      "definition": "级联判定语义的倒推终止载体即上游依赖倒推遍历的良基性，良基引用图（有限无环）担保逆引用倒推遍历必终止，承接 ORD-016 良基关系与倒推终止",
+      "en": "Well-founded Backtrack",
+      "signed": "2026-09-03",
+      "source": "caswire2-solo 批登记",
+      "zh": "良基倒推"
+    },
+    {
+      "definition": "幂集格上扩张单调幂等的算子与语言论后果算子 Cn，R1-R7 核对规则族的闭包语义载体：核对集对材料集每条核对是后果算子一步，幂等性担保重放同判",
+      "en": "Closure Operator",
+      "signed": "2026-09-04",
+      "source": "ORD-006 已签项 tallywire2-solo 批登记",
+      "zh": "闭包算子"
+    },
+    {
+      "definition": "无无穷降链的序结构给递归与归约的有限步终止担保，三态映射四值处置归约的良基终止载体：核对集有限即测度严格下降必到底",
+      "en": "Well-founded Termination",
+      "signed": "2026-09-04",
+      "source": "ORD-011 已签项 tallywire2-solo 批登记",
+      "zh": "良基终止"
+    },
+    {
+      "definition": "ALG-002 商集第二消费位，谓词族诱导等价关系同判定路即同类，主线停放丢弃三路即商集三分块完备且互斥，首败定路即类边界谓词定位，routed 条目即类规范形商映射像",
+      "en": "Predicate Partition",
+      "signed": "2026-09-04",
+      "source": "selwire-solo 批登记，承 ALG-002 等价关系与商集隔离",
+      "zh": "谓词划分"
+    },
+    {
+      "definition": "域内文档声明判定性常数（阈值、判据、裁决规则形）而声明行不携载体引用与推导档双指针即违规，des-001 包 C007 承载，闸门自维持的判定性常数不变量",
+      "en": "Naked Deterministic Constant",
+      "signed": "2026-09-04",
+      "source": "ORD-008 已签项 gatecap-solo 批登记",
+      "zh": "判定性常数裸奔"
+    },
+    {
+      "definition": "不变量由核阅闸门机械维持不靠惯例，mathpipe-full 程序收尾批即数学引用过闸机械强制的持久化，des-001 C007 与 C008 及 tally R8 三闸承载",
+      "en": "Gate Self-Maintenance",
+      "signed": "2026-09-04",
+      "source": "ORD-008 已签项 gatecap-solo 批登记",
+      "zh": "闸门自维持"
+    },
+    {
+      "definition": "任务包领取的声明位登记动作，lease claim 载包名与领取人与领取时刻与时效五字段入 claims 账本，同包未过期再领即拒 PackageAlreadyClaimed 载领取人与到期时刻，声明位拒绝非执法拒绝，硬执法归闸一同包唯一",
+      "en": "Claim Registration",
+      "signed": "2026-09-04",
+      "source": "claimgate-solo 批登记，承用户 2026-09-03「我在想是否任务包被领取也加个锁？」与主会判词领取登记为声明位非执法位",
+      "zh": "领取登记"
+    },
+    {
+      "definition": "sih-tools/lease/ledger/claims.ndjson append-only 领取登记台账，行五字段 package 与 claimant 与 claimed_at 与 ttl_minutes 与 status，追加即唯一写点零改写，实效状态三值 claimed 与 released 与 expired 读时派生过期自动标注僵尸领取不靠人清",
+      "en": "Claims Ledger",
+      "signed": "2026-09-04",
+      "source": "claimgate-solo 批登记，承任务包 claimgate-solo 关键设计一与三",
+      "zh": "领取账本"
+    },
+    {
+      "code": null,
+      "definition": "boundary 二项检验零假设的噪声翻桌率基线：H0 为 boundary 率不超过该基线，取值 0.004 承 Kimi 标定翻桌率，boundary 信号相对它的显著偏高才判 boundary",
+      "en": "Flip-rate Baseline",
+      "signed": "2026-09-04",
+      "source": "facetmath-solo 批登记",
+      "zh": "翻桌率基线"
+    },
+    {
+      "code": null,
+      "definition": "先行批已立函数与探针而生产路径未接线的批型：本批把判据切换落进生产判定路径完成收口，切换生效以得一裁三态为门",
+      "en": "Closeout Batch",
+      "signed": "2026-09-04",
+      "source": "facetmath-solo 批登记",
+      "zh": "收口批"
+    },
+    {
+      "code": null,
+      "definition": "判据切换的回退形：得一裁 boundary 时生产判据位经参数门控保持旧判据而切换件保留待役，缺省即旧判据生产行为逐字节不变",
+      "en": "Gated Rollback",
+      "signed": "2026-09-04",
+      "source": "facetmath-solo 批登记",
+      "zh": "门控关闭"
+    },
+    {
+      "code": null,
+      "definition": "链引用图可达判定：登记信号逐项被处置即逐节点有出边可达，elicit digest 消化闸逐信号处置标记核查承载，零信号直过即空图平凡可达，承接 ORD-008 引用图可达与孤悬判定",
+      "en": "Reference Graph Reachability",
+      "signed": "2026-09-04",
+      "source": "ORD-008 已签项 elicitwire-solo 批登记",
+      "zh": "引用图可达"
+    },
+    {
+      "code": null,
+      "definition": "非末端且出度为零节点的判定：未处置信号即孤悬即不得上链，elicit digest 缺处置标记拦截退出码一承载，承接 ORD-008 引用图可达与孤悬判定",
+      "en": "Orphan Determination",
+      "signed": "2026-09-04",
+      "source": "ORD-008 已签项 elicitwire-solo 批登记",
+      "zh": "孤悬判定"
+    },
+    {
+      "code": null,
+      "definition": "统计过程控制的时序视图件，基线期定控制限、监测点越限即告警，gauge gc-1 只读路径承载",
+      "en": "Control Chart",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承 PROB-013 与 PROB-010 载体",
+      "zh": "控制图"
+    },
+    {
+      "code": null,
+      "definition": "基线期均值加减 k 倍基线样本标准差的判定界线，k 显式给参承 PROB-010 公理一水平先验，双侧误报率 alpha=erfc(k/√2) 随行声明",
+      "en": "Control Limits",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承 PROB-010 载体",
+      "zh": "控制限"
+    },
+    {
+      "code": null,
+      "definition": "监测点出控制限的判定事实，告警逐笔载越限侧与限值与标准化偏离与统计依据行，承 PROB-010 公理二拒绝语义只断言稀有不断言因果",
+      "en": "Limit Crossing",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承 PROB-010 载体",
+      "zh": "越限"
+    },
+    {
+      "code": null,
+      "definition": "监察前确立的参照窗口，变点是相对基线的偏离，窗口长显式给参即基线稳与响应迟的显式对价，承 PROB-013 公理一与公理三",
+      "en": "Baseline Period",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承 PROB-013 载体",
+      "zh": "基线期"
+    },
+    {
+      "code": null,
+      "definition": "序列分布移位的信号位，CUSUM 统计量越阈 h 报信号位不报结论，误报率与检测延迟由 h 显式承担，承 PROB-013 定理一",
+      "en": "Change Point",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承 PROB-013 载体",
+      "zh": "变点"
+    },
+    {
+      "code": null,
+      "definition": "视图层异常信号输出，人只看视图告警不看原始日志，处置归人节点不自动触发治理动作，承工程基线第三条与 PROB-013 工程注意事项三",
+      "en": "Alarm",
+      "signed": "2026-09-04",
+      "source": "gchart-solo 批登记，承工程基线第三条",
+      "zh": "告警"
+    },
+    {
+      "code": null,
+      "definition": "队列中尚未完成离队的项目计数，WIP 读数即 Little 定律 L 的台账计数形态，gauge gq-1 只读路径承载三源：泊界在泊、批在途、会话持锁",
+      "en": "Work In Progress",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承 PROB-015 载体",
+      "zh": "在途数"
+    },
+    {
+      "code": null,
+      "definition": "单位时间进入队列的项目数时平均估计 λ̂，窗内 issued 计数÷窗口天数，窗口天数显式给参即模型参数承 PROB-015 工程注意事项三",
+      "en": "Arrival Rate",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承 PROB-015 载体",
+      "zh": "到达率"
+    },
+    {
+      "code": null,
+      "definition": "单位时间完成离队的项目数时平均估计 μ̂，窗内 revoked 计数÷窗口天数，与到达率同窗同单位",
+      "en": "Service Rate",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承 PROB-015 载体",
+      "zh": "服务率"
+    },
+    {
+      "code": null,
+      "definition": "到达率与服务率之比 ρ=λ/μ，PROB-015 定理二稳定性必要条件 ρ<1，ρ≥1 即稳态在途无界增长",
+      "en": "Utilization",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承 PROB-015 载体",
+      "zh": "利用率"
+    },
+    {
+      "code": null,
+      "definition": "后果显现前的先兆信号，洪流前兆即到达率超服务率的积压线性发散前兆，输出是视图告警处置归人节点不断言后果必至，承 convergence P3.1.3 预判性治理",
+      "en": "Precursor",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承 PROB-015 载体与工程基线第三条",
+      "zh": "前兆"
+    },
+    {
+      "code": null,
+      "definition": "治理管线占用量化为队列 WIP 读数的度量形，注意力预算排队化按队列在途数读数承载信息洪流前兆观测，工程基线第二三条度量面",
+      "en": "Queueing",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承工程基线第二条",
+      "zh": "排队化"
+    },
+    {
+      "code": null,
+      "definition": "信息洪流即 LLM 生成速度与人类审查注意力的结构性不对称失配，旧仓失败根因（工程基线第二条），本批以三 WIP 读数与 ρ 前兆判据承载其度量面",
+      "en": "Information Flood",
+      "signed": "2026-09-04",
+      "source": "queueing-solo 批登记，承工程基线第二条",
+      "zh": "洪流"
+    },
+    {
+      "code": null,
+      "definition": "mapping 表定位行与条目原文在工具契约文档中的引用登记节，逐载体标注概念 ID、mapping 行号、判定位与对挂语义，接线批四件套之一",
+      "en": "Carrier Reference",
+      "signed": "2026-09-04",
+      "source": "latexwire-solo 批词债，承 m3clear-solo 处置清单实例化候选行与 selwire/elicitwire 接线先例",
+      "zh": "载体引用"
+    },
+    {
+      "code": null,
+      "definition": "源码判定位处的注释标记，把载体条目语义对挂到既有判定行为，纯注释 AST 同形零行为变更",
+      "en": "Annotation Anchor",
+      "signed": "2026-09-04",
+      "source": "latexwire-solo 批词债，承 selwire 接线先例",
+      "zh": "注释锚点"
+    },
+    {
+      "code": null,
+      "definition": "工具源码中承载机械判定或运算的实际代码位，即判定谓词、运算路由与退出码枚举，对挂核验的落点",
+      "en": "Judgment Position",
+      "signed": "2026-09-04",
+      "source": "latexwire-solo 批词债，承 m3clear-solo 处置清单判据位用法",
+      "zh": "判定位"
+    },
+    {
+      "code": null,
+      "definition": "模块文档串中对支持运算族的枚举清单，与路由表实现面构成枚举与实现双层，双层差异须如实并记不硬挂",
+      "en": "Operation Enumeration",
+      "signed": "2026-09-04",
+      "source": "latexwire-solo 批词债，承 compute.py 实查",
+      "zh": "运算枚举"
+    },
+    {
+      "code": null,
+      "definition": "ORD-019 序结构，v ⪯ w 当且仅当 w 的内容由 v 的内容经一串被登记的变更导出，登记映射保序即 v ⪯ w 蕴含 ι(v) ≤ ι(w)，偏序三性承 ORD-001 反对称由登记唯一性保证",
+      "en": "Version Order",
+      "signed": "2026-09-04",
+      "source": "locatorwire-solo 批登记，承 ORD-019 版本偏序与外化状态存储",
+      "zh": "版本偏序"
+    },
+    {
+      "code": null,
+      "definition": "ORD-019 序结构承载，外化信息项全体构成偏序集登记账只增不减，持久性与版本化与可审计三性质，任一时刻快照可由登记账截段机械复现，工程实例即 locator 索引件源文件是权威源索引是缓存",
+      "en": "Externalized State Store",
+      "signed": "2026-09-04",
+      "source": "locatorwire-solo 批登记，承 ORD-019 版本偏序与外化状态存储",
+      "zh": "外化状态存储"
+    },
+    {
+      "code": null,
+      "definition": "locator 契约 DES-009 规则派生的确定性标识，路径加节点类型加节点序号加内容哈希入哈希派生，同输入同标识零时钟零随机，承 ORD-019 版本集每版本携带唯一登记号的一致命名位",
+      "en": "Stable Identifier",
+      "signed": "2026-09-04",
+      "source": "locatorwire-solo 批登记，承 ORD-019 版本偏序与外化状态存储",
+      "zh": "稳定标识"
+    },
+    {
+      "code": null,
+      "definition": "locator 三态判定，文件级内容哈希对表出 fresh 与 stale 与 missing 加头部包哈希与载体语法版本对表出全量重建标志，即 ORD-019 版本偏序上的可比判定，比较零改写索引件",
+      "en": "Staleness Verdict",
+      "signed": "2026-09-04",
+      "source": "locatorwire-solo 批登记，承 ORD-019 版本偏序与外化状态存储",
+      "zh": "陈旧判定"
+    },
+    {
+      "code": null,
+      "definition": "ORD-023 承载判定，一遍完整改写视作函数 R 则同一输入二遍格式化输出恒同即 R(R(a))=R(a) 重跑落零，合流加终止下唯一范式的幂等形态",
+      "en": "Rewrite Idempotence",
+      "signed": "2026-09-04",
+      "source": "carrwire-solo 批登记，承 ORD-023 抽象重写系统与确定性范式",
+      "zh": "改写幂等"
+    },
+    {
+      "code": null,
+      "definition": "PROB-016 划分求和定理，计数记录流逐条落册不重不漏当且仅当总计数等于分册计数之和，重复或漏记使恒等式成严格不等式被机械检出",
+      "en": "Reconciliation Identity",
+      "signed": "2026-09-04",
+      "source": "carrwire-solo 批登记，承 PROB-016 计数测度与可加性",
+      "zh": "对账恒等式"
+    },
+    {
+      "code": null,
+      "definition": "ORD-024 序结构，命中跨度即码点偏移上的半开区间，单词扫描步进产出两两互斥且升序的跨度族即区间序上的链",
+      "en": "Span Exclusivity",
+      "signed": "2026-09-04",
+      "source": "carrwire-solo 批登记，承 ORD-024 区间序与串跨度匹配",
+      "zh": "跨度互斥"
+    },
+    {
+      "code": null,
+      "definition": "ALG-012 解析确定性，choice 有序选择按声明序取首个成功候选式即优先全序消歧，每个可解析串至多一棵派生树双跑同树",
+      "en": "Derivation Uniqueness",
+      "signed": "2026-09-04",
+      "source": "carrwire-solo 批登记，承 ALG-012 形式文法与解析确定性",
+      "zh": "派生唯一"
+    },
+    {
+      "code": null,
+      "definition": "ORD-020 全序资源分配，持有者按同一全序递增申请即资源全序分配，租约与锁的多路径获取序是定理一的工程实例，逆序与冲突申请被确定性谓词拒绝",
+      "en": "Total-Order Acquisition",
+      "signed": "2026-09-04",
+      "source": "leasewire-solo 批登记，承 ORD-020 全序资源分配与死锁自由",
+      "zh": "全序获取序"
+    },
+    {
+      "code": null,
+      "definition": "ORD-020 定理一推论，凡按同一全序递增申请等待图无环，循环等待在全序获取下不可能，确定性拒绝使占持与等待不并存",
+      "en": "Deadlock Freedom",
+      "signed": "2026-09-04",
+      "source": "leasewire-solo 批登记，承 ORD-020 全序资源分配与死锁自由",
+      "zh": "死锁自由"
+    },
+    {
+      "code": null,
+      "definition": "ORD-020 互斥语义锁面形态，acquired 与 released 台账单遍事件序配对即持锁函数良定义，锁台账在锁映射与真实持位一致，配对残缺即锁面漂移被机械检出",
+      "en": "Lock-Face Consistency",
+      "signed": "2026-09-04",
+      "source": "leasewire-solo 批登记，承 ORD-020 全序资源分配与死锁自由",
+      "zh": "锁面一致性"
+    },
+    {
+      "code": null,
+      "definition": "ORD-020 互斥语义承载位，acquired 追加与 released 仅弹同号同路径的单遍配对，配对即锁面一致性的判定形，缺对或重对皆可机械检出",
+      "en": "Ledger Pairing",
+      "signed": "2026-09-04",
+      "source": "leasewire-solo 批登记，承 ORD-020 全序资源分配与死锁自由",
+      "zh": "台账配对"
+    },
+    {
+      "code": null,
+      "definition": "自下游出发逐层沿引用关系逆移到被引用上游的遍历，必终止当且仅当引用关系良基（ORD-016 定理一），级联上游依赖倒推检查即其工程实例",
+      "en": "Backward Traversal",
+      "signed": "2026-09-04",
+      "source": "ORD-016 已签项",
+      "zh": "倒推遍历"
+    },
+    {
+      "code": null,
+      "definition": "上游当前内容哈希等于链上最近认证哈希即洁净，三态 clean/dirty/unverified 逐上游判定，任一脏上游拒下游写入（ORD-016 落地判定哈希形态）",
+      "en": "Cleanliness Determination",
+      "signed": "2026-09-04",
+      "source": "ORD-016 已签项",
+      "zh": "洁净判定"
+    },
+    {
+      "code": null,
+      "definition": "上游路径缺席即边悬空，不改名即删除新建规则的机械兜底，悬空边入 orphan 态不拦承有度，侦查报告独立在册（ORD-016 死区定理哈希边形态）",
+      "en": "Orphan Edge",
+      "signed": "2026-09-04",
+      "source": "ORD-016 已签项",
+      "zh": "孤儿边"
+    },
+    {
+      "code": null,
+      "definition": "级联运行期四计数器即 consulted 与 upstream_changes 与 blocked 与 hits，本次检查的事实视图，零写即册与链零动",
+      "en": "Edge Ledger",
+      "signed": "2026-09-04",
+      "source": "cascade CONTRACT 修订五",
+      "zh": "边账"
+    },
+    {
+      "code": null,
+      "definition": "判定性常数合规承载语义：载体引用（概念 ID）与推导档指针同文档在场即合规，des-001 包 C009 邻近级地板承载，邻近的 v1 机械定义为同文档、节级邻近为已声明边界（SPEC-019）",
+      "en": "Nearby Presence",
+      "signed": "2026-09-04",
+      "source": "gatemath-solo 批登记，叩问消解随批入册",
+      "zh": "邻近在场"
+    },
+    {
+      "code": "sort-ledger",
+      "definition": "规则包规则逐件三态分拣的机械复算账本：数学可锚判定性携候选锚位、纯约定入环境参数登记面、待确认如实申报，零人工填项双跑逐字节一致",
+      "en": "Sorting Ledger",
+      "signed": "2026-09-04",
+      "source": "docmath-b1-solo 批登记",
+      "zh": "分拣账本"
+    },
+    {
+      "code": "pure-convention",
+      "definition": "判定性扰动缺席只改观感不改治理判定的规则态，入环境参数登记面诚实标注为约定，不做伪装数学",
+      "en": "Pure Convention",
+      "signed": "2026-09-04",
+      "source": "docmath-b1-solo 批登记",
+      "zh": "纯约定"
+    },
+    {
+      "code": "candidate-anchor",
+      "definition": "判定性规则待挂锚批的数学载体候选 ID 位，分拣账本产出、逐条挂锚批消费",
+      "en": "Candidate Anchor",
+      "signed": "2026-09-04",
+      "source": "docmath-b1-solo 批登记",
+      "zh": "候选锚位"
+    },
+    {
+      "code": "spec-sufficiency",
+      "definition": "指规格把实现压到唯一解的约束完备性判据，最小与极大不动点相等即够",
+      "en": "Spec Sufficiency",
+      "signed": "2026-09-04",
+      "source": "docmath-b2-solo 批登记",
+      "zh": "规格充分性"
+    },
+    {
+      "code": "falsification-coverage",
+      "definition": "指判据清单红证对有限突变面的覆盖计数，零信息判据如实暴露",
+      "en": "Falsification Coverage",
+      "signed": "2026-09-04",
+      "source": "docmath-b2-solo 批登记",
+      "zh": "证伪覆盖度"
+    },
+    {
+      "code": "confluence",
+      "definition": "指重写系统任意推导序同达唯一正则形的性质，化格硬测试承载",
+      "en": "Confluence",
+      "signed": "2026-09-04",
+      "source": "docmath-b2-solo 批登记",
+      "zh": "合流性"
+    },
+    {
+      "code": "red-proof",
+      "definition": "指能令验收判据失败的可构造输入，判据无红证即零信息如实暴露",
+      "en": "Red Proof",
+      "signed": "2026-09-04",
+      "source": "docmath-b2-solo 批登记",
+      "zh": "红证"
+    },
+    {
+      "code": "anchoring",
+      "definition": "指判定性规则在规则包本体落载体引用与推导档实指的动作，批三承载",
+      "en": "Anchoring",
+      "signed": "2026-09-04",
+      "source": "docmath-b3-solo 批登记",
+      "zh": "挂锚"
+    },
+    {
+      "code": "anchor-manifest",
+      "definition": "指规则包目录内纯数据锚位声明件，包装载器零消费仅供闸门与脚本对表",
+      "en": "Anchor Manifest",
+      "signed": "2026-09-04",
+      "source": "docmath-b3-solo 批登记",
+      "zh": "锚位件"
+    },
+    {
+      "code": "naked-count",
+      "definition": "指判定性规则无载体引用挂锚的计数，anchorcheck 脚本复算验收线为零",
+      "en": "Naked Count",
+      "signed": "2026-09-04",
+      "source": "docmath-b3-solo 批登记",
+      "zh": "裸奔数"
+    },
+    {
+      "code": "content-sufficiency",
+      "definition": "指判据红证对表加判定性常数挂锚加约束算子显式化三必填的规格充分性节",
+      "en": "Content Sufficiency",
+      "signed": "2026-09-04",
+      "source": "docmath-b4-solo 批登记",
+      "zh": "内容充分性"
+    },
+    {
+      "code": "backfill",
+      "definition": "指模板必填项按新旧都管裁定对存量文档的补节动作",
+      "en": "Backfill",
+      "signed": "2026-09-04",
+      "source": "docmath-b4-solo 批登记",
+      "zh": "存量补齐"
+    },
+    {
+      "code": "criterion-red-proof",
+      "definition": "指验收判据逐件携能令其失败的可构造输入的对表关系",
+      "en": "Criterion Red Proof",
+      "signed": "2026-09-04",
+      "source": "docmath-b4-solo 批登记",
+      "zh": "判据红证"
+    },
+    {
+      "code": "envelope",
+      "definition": "指 scribe 事件流写入时为每行事件信封锁定的生产者身份信息载体,承 idenlane-solo 批实装,字段面 session_id 与 identity_hash",
+      "en": "Envelope",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "信封"
+    },
+    {
+      "code": "chain-pen",
+      "definition": "指无租约轻量写入链笔形,承 idenlane-solo 批实装,agent 笔挂正身报告 human 笔挂 human seat 验真件,笔体载改动文件清单与事由,与租约笔在信封层同构",
+      "en": "Chain Pen",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "链笔"
+    },
+    {
+      "code": "direct-edit",
+      "definition": "指不通过租约通道的轻量直改写入笔形与守卫放行车道,承 idenlane-solo 批实装,链笔引用事件哈希前八位必对应当日 trail 真实在链",
+      "en": "Direct Edit",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "直改"
+    },
+    {
+      "code": "guard-direct-edit",
+      "definition": "指 commit-msg 守卫对直改车道提交放行的判定逻辑,承 idenlane-solo 批实装,形态即携带直改链笔引用前八位的主分支提交放行",
+      "en": "Guard Direct Edit",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "守卫直改"
+    },
+    {
+      "code": "human-seat",
+      "definition": "指司衡内人类生产者席位的正身形态,承 idenlane-solo 批实装,与三段式 agent 席位同面记账,字段面姓名加会话加时间戳加事由",
+      "en": "Human Seat",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "人席位"
+    },
+    {
+      "code": "pen-form",
+      "definition": "指 scribe 直改笔形与租约笔形的判别模式,承 idenlane-solo 批实装,合法链笔形覆盖租约笔与直改笔两类,信封层同构",
+      "en": "Pen Form",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "笔形"
+    },
+    {
+      "code": "judgment-semantics",
+      "definition": "指合法链笔形合法提交形 human seat 验真三类判定,承 idenlane-solo 批实装,任何变更过得一裁 facet 合同模式 near_threshold 呈用户",
+      "en": "Judgment Semantics",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "判定语义"
+    },
+    {
+      "code": "resident-on-chain",
+      "definition": "指信封锁定后 session_id 与 identity_hash 在链上常驻,承 idenlane-solo 批实装,操作来源可追溯的工程基线第四条的最后一环补位",
+      "en": "Resident On Chain",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "常驻"
+    },
+    {
+      "code": "externalization-residency",
+      "definition": "指身份从会话台账运行时内隐式状态外化为链上常驻显式记录的工程落点,承 idenlane-solo 批实装,接 P3.2.1 隐式记忆之困",
+      "en": "Externalization Residency",
+      "signed": "2026-09-05",
+      "source": "idenlane-solo 批登记",
+      "zh": "外化常驻"
+    },
+    {
+      "code": "tamper",
+      "definition": "指修改 envelope.session_id 或 envelope.identity_hash 须致 verify 断链,承 idenlane-envelope-solo 批 TDD 附加验收条",
+      "en": "Tamper",
+      "signed": "2026-09-05",
+      "source": "idenlane-envelope-solo 批登记",
+      "zh": "篡改"
+    },
+    {
+      "code": "zero-migration",
+      "definition": "指旧链行无新字段时 hash 重算逐字节一致,承 idenlane-envelope-solo 批 hash 选 1 精神零迁移",
+      "en": "Zero Migration",
+      "signed": "2026-09-05",
+      "source": "idenlane-envelope-solo 批登记",
+      "zh": "零迁移"
+    },
+    {
+      "code": "regula",
+      "definition": "docmath 程序正式名：文档判定性规则只能归因于可指认的数学载体、内容充分性三必填由分拣账本锚位注记与合并闸门机械维持的治理纪律；规取立规矩之器义兼数学法度义，Regula 拉丁义即治理规则文书",
+      "en": "Regula",
+      "signed": "2026-09-05",
+      "source": "docmath-namefit-solo 立名批登记（机器终签 m-wengui-fit-1）",
+      "zh": "文规"
+    },
+    {
+      "code": "namefit",
+      "definition": "名所承诺的内涵与被命名者实际运作一致，立名成败的判据本体，名实错位即立名失败形态",
+      "en": "Name-Reality Fit",
+      "signed": "2026-09-05",
+      "source": "docmath-namefit-solo 立名批登记",
+      "zh": "名实相副"
+    },
+    {
+      "code": "watchcheck",
+      "definition": "主树活写对表哨：确定性判定式脏文件集减租约锁面与直改链笔声明面与豁免面并集出无主清单，零 LLM 零网络零写面，只呈报不代裁，双跑逐字节一致；避撞引擎 attractor watch 子命令故立名稽",
+      "en": "Watchcheck",
+      "signed": "2026-09-05",
+      "source": "watchcheck-solo 批登记（对表哨首立，facet 一裁 round1 boundary 呈用户候裁中）",
+      "zh": "稽"
+    },
+    {
+      "code": "report",
+      "definition": "对表检出无主修改后的机械输出形：人话清单带路径加 mtime 加 git 态，零核验零调查轮次零处置建议，人节点二值裁决（PRO-07 鉴只列事实不列建议）",
+      "en": "Report",
+      "signed": "2026-09-05",
+      "source": "watchcheck-solo 批登记（对表哨首立，facet 一裁 round1 boundary 呈用户候裁中）",
+      "zh": "呈报"
+    },
+    {
+      "code": "declaration-face",
+      "definition": "对表判定的合法活写覆盖面：直改链笔 files 清单与租约锁面与豁免面三者并集；改了不记笔、记了笔没改由对表机械照出",
+      "en": "Declaration Face",
+      "signed": "2026-09-05",
+      "source": "watchcheck-solo 批登记（对表哨首立，facet 一裁 round1 boundary 呈用户候裁中）",
+      "zh": "声明面"
+    },
+    {
+      "code": "unowned-list",
+      "definition": "脏文件集减声明面并集的余集，即账实差值视图告警；逐件带路径与 mtime 与 git 态呈人节点二值裁决；无主为其限定语不单独立词",
+      "en": "Unowned List",
+      "signed": "2026-09-05",
+      "source": "watchcheck-solo 批登记（对表哨首立，facet 一裁 round1 boundary 呈用户候裁中）",
+      "zh": "无主清单"
+    },
+    {
+      "code": "exemption-face",
+      "definition": "合法活写面显式枚举冻结登记（trail 与 lease ledger 与 meter counts 与 scribe reports 四基础面加核实补全面共十六面逐面带出处），判定常数零裸奔，增缩走批与 CONTRACT 修订",
+      "en": "Exemption Face",
+      "signed": "2026-09-05",
+      "source": "watchcheck-solo 批登记（对表哨首立，facet 一裁 round1 boundary 呈用户候裁中）",
+      "zh": "豁免面"
+    },
+    {
+      "code": "self-clear",
+      "definition": "open 闸读侧判死 PID 残件后删残件并写 stale_cleared 事件留原文件快照随后正常续开的机械处置，判据归进程探针不归文件时间戳",
+      "en": "Self-clear",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（判定语义变更经得一裁 m-openhyg-selfclear-1 九发 stable_clear 执契终签 7018cade）",
+      "zh": "自清"
+    },
+    {
+      "code": "residue",
+      "definition": "open 签发失败后遗留的 session_id 为 null 的检验文件，未签发的机械证据，死 PID 判定后归自清处置",
+      "en": "Residue",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（docmath-namefit-solo 事故形态收编）",
+      "zh": "残件"
+    },
+    {
+      "code": "probe",
+      "definition": "检验文件窗口生死判定的进程实态判定：POSIX kill(pid,0) 探活加 ps 启动时刻对表，PermissionError 判活、启动时刻不符判跨启动复用即死、探针不可知保守判活防误删",
+      "en": "Probe",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（用户裁定活没活由进程说了算）",
+      "zh": "探针"
+    },
+    {
+      "code": "live-window",
+      "definition": "检验文件已落盘而会话未签发且落盘进程尚活的窗口，同正身误跑双开保护红证位与探针误删保护对象",
+      "en": "Live Window",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（活窗慢签发夹具证不误删）",
+      "zh": "活窗"
+    },
+    {
+      "code": "task-package-dirs",
+      "definition": "TASK_PACKAGE_DIRS 冻结架构常量三目录（引擎计划面、task-packages 遗留位、math 事件计划面），裸 stem 按表逐目录搜唯一命中即用、歧义列双径拒开不猜、零命中列全搜索面，扩面走 CONTRACT 修订",
+      "en": "Task Package Dirs",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（docmath-namefit-solo 解析面不对称事故修复）",
+      "zh": "任务包目录登记表"
+    },
+    {
+      "code": "born-complete",
+      "definition": "检验文件一次性落全形（package 与 opened_at 与 heartbeat_at 与 identity_core 与 pid 与 pid_started 与 session_id:null）无匿名窗，签发后唯一回填字段是 session_id",
+      "en": "Born Complete",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（用户裁定正身与时间戳出生即全）",
+      "zh": "出生即全"
+    },
+    {
+      "code": "bussing",
+      "definition": "检验文件落盘后签发成功前的失败路径退出前删自家检验文件，所有权核验 opened_at 与 pid 与己方一致才删，清理失败两错并报不掩原错",
+      "en": "Bussing",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记",
+      "zh": "自收桌"
+    },
+    {
+      "code": "takeover",
+      "definition": "lease takeover 人节点显式接管他人窗口，判据升级 PID 探针三态判即活窗拒清死窗机械清旧形回落心跳",
+      "en": "Takeover",
+      "signed": "2026-09-06",
+      "source": "openhyg-solo 批登记（leaseopt-lockqueue 立词，本批判据升级随批登记）",
+      "zh": "接管"
+    },
+    {
+      "code": "light-lane",
+      "definition": "直改车道中免全套租约仪式的文书类合法提交面，文件类以 DIRECT_LANE_FILE_WHITELIST 白名单承载",
+      "en": "Light Lane",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "轻车道"
+    },
+    {
+      "code": "whitelist",
+      "definition": "轻车道合法文件类冻结架构常量 DIRECT_LANE_FILE_WHITELIST，扩面走 CONTRACT 修订禁裸奔增删",
+      "en": "Whitelist",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "白名单"
+    },
+    {
+      "code": "recognize",
+      "definition": "reconcile 对 ok_direct 形提交归 routed_direct 类计入 routed 不再强制 bypass 例外登记",
+      "en": "Recognize",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "认账"
+    },
+    {
+      "code": "lock-gate",
+      "definition": "直改笔对他会话锁面的拒写或豁免判定语义，T-10 两案裁定对象零实装候裁",
+      "en": "Lock Gate",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "锁门"
+    },
+    {
+      "code": "append-surface",
+      "definition": "append 态锁可共存的治理共享追加面即 trail 与台账与 CALL-LOG 与 reports",
+      "en": "Append Surface",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "追加面"
+    },
+    {
+      "code": "exclusive",
+      "definition": "exclusive 态锁持有方式，与任何形态互斥即 T-10 乙案直改笔尊重对象",
+      "en": "Exclusive",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "独占"
+    },
+    {
+      "code": "queue-wait",
+      "definition": "撞在途锁时 wait-turn 排队或等收约让位的避让动作即 gateswitch 先例",
+      "en": "Queue-wait",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "候位"
+    },
+    {
+      "code": "file-class",
+      "definition": "轻车道白名单按文件类别枚举的条目形态即路径前缀与处置类两种",
+      "en": "File Class",
+      "signed": "2026-09-06",
+      "source": "idenlane-guard-solo 批登记（用户 2026-09-06 扩面令承载词）",
+      "zh": "文件类"
+    },
+    {
+      "code": "clobber-overwrite",
+      "definition": "收约归并用分支版整文件 checkout 覆盖主树活面的动作即病一本体，台账面冻结豁免根除对象（closefix-solo）",
+      "en": "Clobber-Overwrite",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "盖版"
+    },
+    {
+      "code": "union-append",
+      "definition": "台账追加面归并时活面保持原序原行、分支独有行按序补尾的超集落盘通道，替代整文件盖版（closefix-solo）",
+      "en": "Union-Append",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "并集追加"
+    },
+    {
+      "code": "three-point",
+      "definition": "归并面差集以 merge-base 为基准取 branch 侧改动的判定形态，主干侧前进零入面（closefix-solo）",
+      "en": "Three-Point",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "三点式"
+    },
+    {
+      "code": "frozen-exemption",
+      "definition": "台账追加面（LEASE_LEDGER_APPEND_FACES 冻结常量）永不整文件盖版只走并集追加的面级豁免语义（closefix-solo）",
+      "en": "Frozen-Exemption",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "冻结豁免"
+    },
+    {
+      "code": "reentrant",
+      "definition": "ledger_lock 同线程同路径重入不阻塞的锁属性即计数式持有，消除回补网自死锁（closefix-solo）",
+      "en": "Reentrant",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "可重入"
+    },
+    {
+      "code": "restore-net",
+      "definition": "checkout 让位后备份缺失行逐行回补的恢复网即 restore_missing 承载，pk057fix 立位 closefix 前移去重入（closefix-solo）",
+      "en": "Restore-Net",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "回补网"
+    },
+    {
+      "code": "file-swallowing",
+      "definition": "close 前置舞步 stash push -u 卷走未跟踪件且无 pop 通道致文件离盘的缺陷形态即病二本体，照单不清场根除（closefix-solo）",
+      "en": "File-Swallowing",
+      "signed": "2026-09-06",
+      "source": "closefix-solo 批登记",
+      "zh": "吞件"
+    },
+    {
+      "code": "snapline",
+      "definition": "引擎共享谓词求值基座：纯求值原语（glob 与 fnmatch），零治理语义，无包消费（非空腹机器是无胃之芯），无命令面无退出码契约，同参同出确定性；消费方核阅与得一路由在役、文规检查器规划中。用名纪律两条：重放句只写经消费方金向量间接证或单测直证，禁写独立命令重放；中文对不进文件名与代码标识符，一律走代号 snapline。家位 src/snapline 顶层注册为引擎共享模块首件（pk-062 全局家位另裁）",
+      "en": "snapline",
+      "signed": "2026-09-06",
+      "source": "modou-namefit-solo 批立名即登记，用户 2026-09-06 批准，终签 m-modou-fit-1 stable_clear fd2210e7",
+      "zh": "墨斗"
+    },
+    {
+      "code": "receipt",
+      "definition": "书简落笔法定凭据：scribe 写位成功即返回 event_hash，真退出码零加回执在手即写入成立；grep 降级为审计手段不再逐笔必做，疑惑先 confirm 查询，全文 verify 归批收约与审计且一律主树二进制",
+      "en": "Receipt",
+      "signed": "2026-09-07",
+      "source": "chainstamp-solo 批已签项 承写即回执纪律",
+      "zh": "回执"
+    },
+    {
+      "code": "chain-minted-timestamp",
+      "definition": "链铸时戳：排序时戳由 append 写位 flock 临界区内机械自铸 final_ts=max(调用方提示,链尾时戳+1ms)，单调性由构造保证，调用方自带时戳降级 details.declared_ts 元数据留档；旧链行零迁移哈希公式零动",
+      "en": "Chain-Minted Timestamp",
+      "signed": "2026-09-07",
+      "source": "chainstamp-solo 批已签项 承并行上链铸值单调由构造保证",
+      "zh": "链铸时戳"
+    },
+    {
+      "code": "sweep",
+      "definition": "租约扫残留子命令：五类协调态残留全机械普查即幻影活跃会话与僵尸锁与停滞检验文件与散位收据与无主工地，三态输出即自清件与候裁件与净，--fix 自清件径走既有通道清除留痕候裁件只列清单升视图，判据复用既有判定函数零 LLM",
+      "en": "Sweep",
+      "signed": "2026-09-07",
+      "source": "sweepimpl-solo 批已签项 承用户残留直清令五类三态设计",
+      "zh": "扫残留"
+    },
+    {
+      "code": "namespace-face",
+      "definition": "命名空间面：要出生新文件的目录面（起步三面即 sih-tools/proposition/DES 与 sih-tools/facet/contracts 与 sih-engine/sih/event/plan），声明落此面时锁 <目录>/<批名>/ 子路径保留位不锁父目录，各批子目录互不冲突即并行；显式形 open --namespace <完整子路径> 兜底实际子目名录与派生位不符形（如 DES 的 m-gid 名）",
+      "en": "Namespace Face",
+      "signed": "2026-09-07",
+      "source": "facefit-solo 批已签项 承用户 2026-09-06 锁文件夹问答裁定",
+      "zh": "命名空间面"
+    },
+    {
+      "code": "subpath-reservation",
+      "definition": "子路径保留：命名空间面的锁粒度——锁 <目录>/<批名>/ 保留位即宣告该命名空间的批属子路径，两会话不同子路径零交即并行双绿，同子路径撞即拒；预检与提交守卫按子路径粒度对表，父目录不作越界判据",
+      "en": "Subpath Reservation",
+      "signed": "2026-09-07",
+      "source": "facefit-solo 批已签项 承改啥锁啥裁定",
+      "zh": "子路径保留"
+    },
+    {
+      "code": "basemgr",
+      "definition": "基线向量与规约向量双种共享家位工具：freeze 冻结 replay 重放 refreeze 重冻三操作，答没变与答对两物分立，重放只读零写入，冻结与重冻落笔仅限显式指名向量件；SPEC-021 金向量双方法论的载体，实装位 sih-tools/basemgr",
+      "en": "basemgr",
+      "prior_state": "lazy",
+      "signed": "2026-09-09",
+      "source": "2026-09-09 lazyclear-solo 批升格立名：名随实达即 basemgr 工具 basemgrimpl-solo 批 2026-09-07 已实装（sih-tools/basemgr）；正典在用即 SPEC-021 一词两物节在用词先于 2026-09-06 懒波登记且持续；人节点 2026-09-09 裁二明授升格立名（specfix-solo 停批候裁选项二先清债后复链）；工作名来历承 toolincub-solo 批孵化登记件 sih-tools/incubation/regula-line-tools-2026-09-06.md",
+      "zh": "基线管"
+    },
+    {
+      "code": "bootstrap",
+      "definition": "新城引入 MCP 开域全链一令：前置检查、标识牌签发、正典树开域、验域收口、令牌双落位、客户端注册旗标选入，五段编排；开域单步窄口为 init",
+      "en": "bootstrap",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 立名会用户裁决（双名并行），典承 DES-015 域自举程序形判词，sih-tools/mcpline 工具 mcpboot-solo 批",
+      "zh": "域自举"
+    },
+    {
+      "code": "domaware",
+      "definition": "治理工具对所处域的布局判别与路径解析与域界停止：first_domain 双仓形或 canonical 新城 sih/ 形各认各的台账与泊界与 trail，城内裸调不越界读他域；critsweep rootanchor gauge 三工具判定同构",
+      "en": "DomainAwareness",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 用户令「同意M2实装」承 mcpauth-solo 既裁每项目一域，典承 DES-015 域布局两形判词，sih-tools 三工具 domaware-solo 批",
+      "zh": "域感知"
+    },
+    {
+      "code": "wengumcp",
+      "definition": "温故 retriever 投影 MCP 只读面加新城域自身档案索引之机制与批名：retriever_recall 工具两面透传只报不判，--root 数据根显式加 canonical 布局判别加 locator 码根祖先回溯加内嵌记忆包，城内代理一调即检本域沉淀",
+      "en": "WenguMcp",
+      "signed": "2026-09-11",
+      "source": "2026-09-11 用户令「同意。开始M5的修复，你拉子代理」承司梦侧 M5 发现，典承 SPEC-007 接口签名 v1.3 与 SPEC-023 修订二，wengumcp-parallel 批",
+      "zh": "温故投影"
+    },
+    {
+      "code": "retriever_recall",
+      "definition": "温故的 MCP 只读工具名：stdio 与 HTTP 两面同名投影，入参 topic 与 word 与 event 与 since 与 until 与 archive 与 at，承接 CLI 全参透传含 --root 域根，NDJSON 与退出码三值透传，只报不判",
+      "en": "RetrieverRecall",
+      "signed": "2026-09-11",
+      "source": "2026-09-11 wengumcp-parallel 批立名，典承 SPEC-023 修订二 alpha 相八读数面，宿主命令 retriever recall 子命令镜像",
+      "zh": "温故检索具"
+    },
+    {
+      "code": "simuseor",
+      "definition": "司梦项目族正典英文名（SiMuseor）；审美工作台工程落地域为仓 sim-aesthetic-workbench；简写 sim- 前缀为域级专用（产品、仓、治理域 sim-aesthetic-workbench）；域内构件、目录、批名一律不复用 sim- 前缀（2026-09-11 用户裁定）（如 sim-aesthetic-workbench、sim-siinfer-migration），禁用源工作区名（siinfer 等）作前缀",
+      "en": "Simuseor",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 用户立名裁定（司梦英文正名与 sim- 前缀纪律）；2026-09-11 用户裁定精化作用域",
+      "zh": "司梦"
+    },
+    {
+      "code": "sim-siinfer-migration",
+      "definition": "司梦美学工作台内容自 SiInfer 工作区整体迁入 sim-aesthetic-workbench 新仓之批（2026-09-10，收编提交 9070e49，租约会话 0d8b3186f2ca9ec4）；原 siinfer-migration 形经用户立名裁定改 sim- 前缀正典形",
+      "en": "Sim-SiInfer Migration",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 用户立名裁定（sim- 前缀纪律）",
+      "zh": "司梦 SiInfer 迁移批"
+    },
+    {
+      "code": "sim-revive-guard",
+      "definition": "司梦美学工作台复活守护批（2026-09-10 圆桌 P0 裁决）：8191 工作台与六循环 12:47–13:18 静默死亡后的拉活与常驻监护，含独立心跳/越限/告警面（术语承 gchart 六件先例）、重拟合欠账清偿、captioner 超限大图解卡（PIL 炸弹检查一行修复）",
+      "en": "Sim-Revive-Guard",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 用户圆桌裁决（P0 复活+守护），命名承 sim- 前缀纪律（simuseor 立名裁定）",
+      "zh": "司梦复活守护批"
+    },
+    {
+      "code": "sim-webdesk",
+      "definition": "已裁废（2026-09-11 用户令）：webdesk 造词不当，且 sim- 前缀属域级专用、域内不得复用；标识让位 web/（前端）与 api/（后端），历史单号与链笔留档不改",
+      "en": "Sim-Webdesk",
+      "signed": "2026-09-10",
+      "source": "2026-09-10 用户令骨架为第一优先；批名单号形式承 sim- 前缀纪律与批1先例",
+      "state": "retired",
+      "zh": "司梦网页工作台"
+    },
+    {
+      "code": "mcpmanual",
+      "definition": "司衡 MCP 调用 AI 使用说明书（mcpmanual-solo 批正典件）：零上下文外部冷代理经 MCP 连接司衡的单册上手位，承载工具目录与生命周期剧本与错误理由码表与边界申报；正典件 AI-MANUAL.md，HTTP 面 /manual 路由与双实例 instructions 指针，漂移守卫测试钉工具名与理由码三类硬事实",
+      "en": "AI usage manual",
+      "signed": "2026-09-11",
+      "source": "2026-09-10 用户令「司梦彩排阶段，对于司衡mcp的使用没有概念，我们缺失了一份针对mcp调用的ai使用说明书。」，mcpmanual-solo 批立",
+      "zh": "AI 使用说明书"
+    }
+  ]
+}
