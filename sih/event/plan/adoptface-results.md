@@ -19,9 +19,9 @@
 - 任务包与批材料落主树未跟踪位：sih/state/plan/adoptface.md 与 sih/event/plan/adoptface-materials/（intent 与 identity 与 settlement）按惯例位落主树不入 commit，候批归并统一登记在档。
 - 核阅域判实读：doc 三件（026 决策档与 guide 两件）核阅 exit-0 过；README.md 与 results.md 域外 exit-2（判词「目标不在任何已加载规则包声明的治理域内」，DES-001 域即 sih-engine/doc/**/*.md，两件本不在 doc 域）如实记档不属违规，规则域对 worktree 路径的显式扩面候批另裁。
 - 版本钉死：Cargo.toml version = "0.9.0" 零动（SPEC-026 测试基线读数即按 0.9.0 取得，候 1.0.0 晋升批另裁）。
-- 工地夹带件其一保留：tests/mergeall_t6_askroute.rs 增围堰不在位跳过守卫（本批施工时段 02:43 写入，服务 af-05 裸环境验收，主树同文件干净无分叉）。
+- 工地夹带件其一保留：tests/mergeall_t6_askroute.rs 增围堰不在位跳过守卫（SPEC-025 引擎位融回线配套测试的裸环境适配，本批施工时段 02:43 写入，服务 af-05 裸环境验收，主树同文件干净无分叉）。
 - 工地夹带件其二让位退出：src/bin/parser.rs 的 resolve_pack_arg（SPEC-025 融回缺口 gap-packs-assets 承载，DES-019 引擎位包根候选序之工地保守序变体，02:48 写入）曾随 settle 219e2ce 入分支并使施工态全绿 478/0/6；收约预检撞真分叉闸（主树同文件为并发批 lease-cutover-parallel 在途 M 态且内容不同源，closegate.rs 分叉闸无绕行旗标，BATCH-FACE §10 真分叉形整批拒），按让位归并程序以 wip 笔退归并面，实现件在 219e2ce 考古位可达，候 lease-cutover-parallel 批归并统一裁决。
-- 让位后分支 tip 测试实态如实申报：gap_parser_pack_assets 段 t1 与 t2 红（main 基点 494a351 固有红——配套测试在基点在库而其实现为并发批在途 M 态，本批 restore 后复跑实测 318 过 2 败即此二件，非本批引入退化）；其余段全绿。t1/t2 回绿路径即并发批实现归并。
+- 让位后分支 tip 测试实态如实申报：gap_parser_pack_assets 段 t1 与 t2 红（SPEC-025 gap-packs-assets 配套测试在 main 基点 494a351 在库而其实现为并发批在途 M 态，故基点固有红——本批 restore 后复跑实测 318 过 2 败即此二件，非本批引入退化）；其余段全绿。t1/t2 回绿路径即并发批实现归并。
 - 收约绕行事由：无主闸按逐件归属申报显式绕行（主树六 bin M 态属并发批 lease-cutover-parallel、sih/event 与 sih/state 旧档 M 态属各原批，本批零触碰），落 bypass 台账留痕（DEC-024 显式绕行通道）。
 
 ## 三、可证伪条件核对（falsifiable）
