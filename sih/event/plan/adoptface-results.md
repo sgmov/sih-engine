@@ -23,6 +23,7 @@
 - 工地夹带件其二让位退出：src/bin/parser.rs 的 resolve_pack_arg（SPEC-025 融回缺口 gap-packs-assets 承载，DES-019 引擎位包根候选序之工地保守序变体，02:48 写入）曾随 settle 219e2ce 入分支并使施工态全绿 478/0/6；收约预检撞真分叉闸（主树同文件为并发批 lease-cutover-parallel 在途 M 态且内容不同源，closegate.rs 分叉闸无绕行旗标，BATCH-FACE §10 真分叉形整批拒），按让位归并程序以 wip 笔退归并面，实现件在 219e2ce 考古位可达，候 lease-cutover-parallel 批归并统一裁决。
 - 让位后分支 tip 测试实态如实申报：gap_parser_pack_assets 段 t1 与 t2 红（SPEC-025 gap-packs-assets 配套测试在 main 基点 494a351 在库而其实现为并发批在途 M 态，故基点固有红——本批 restore 后复跑实测 318 过 2 败即此二件，非本批引入退化）；其余段全绿。t1/t2 回绿路径即并发批实现归并。
 - 收约绕行事由：无主闸按逐件归属申报显式绕行（主树六 bin M 态属并发批 lease-cutover-parallel、sih/event 与 sih/state 旧档 M 态属各原批，本批零触碰），落 bypass 台账留痕（DEC-024 显式绕行通道）。
+- 任务包请求写入节与交付实名差集四件认领：doc/guide/adopt-v1.md 交付实名 adoption-guide-v1.md、doc/guide/AGENTS-template.md 交付实名 agents-template-v1.md（均 v1 后缀形对齐仓内正典命名惯例），doc/decision/026-mcp-default-stdio-v1.md 交付实名 026-adoption-default-stdio-v1.md（DEC-026 成文实名，采纳面缺省 stdio 语义不变），sih/event/plan/adoptface-materials/ 按惯例落主树未跟踪位不入 commit；四件以差集闸认领形逐路径带事由放行，候批修订任务包 §九对表。
 
 ## 三、可证伪条件核对（falsifiable）
 
