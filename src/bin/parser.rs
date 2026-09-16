@@ -2302,32 +2302,6 @@ struct LangPack {
     mapping: Value,
 }
 
-/// --pack 相对形包名补解析（SPEC-025 融回缺口 gap-packs-assets，DES-019：
-/// 引擎位候选序消对围堰的运行时依赖）。候选序落地方案：现存路径形
-/// （绝对形与现存相对形）原样直通居首——temp 自建包显式路径既有链同形
-/// 零扰动，较 DES-019「exe 派生首位」字面取保守序，差异在此申报；裸包名
-/// 沿 exe 祖先链逐级找 <root>/packs/parser/<pack>（target/debug 与
-/// target/debug/deps 两种 exe 落位同覆），cwd 无关；全不中原样返回，交
-/// load_pack 既有「语言包目录不存在或不可读」报错路径（退出码一），
-/// 不静默不降级。
-fn resolve_pack_arg(pack: &str) -> String {
-    let direct = Path::new(pack);
-    if direct.is_absolute() || direct.exists() {
-        return pack.to_string();
-    }
-    if let Ok(exe) = std::env::current_exe() {
-        if let Some(bin_dir) = exe.parent() {
-            for anc in bin_dir.ancestors() {
-                let cand = anc.join("packs").join("parser").join(pack);
-                if cand.is_dir() {
-                    return cand.display().to_string();
-                }
-            }
-        }
-    }
-    pack.to_string()
-}
-
 fn load_pack(pack_dir: &str) -> R<LangPack> {
     let pack_path = Path::new(pack_dir);
     if !pack_path.is_dir() {
@@ -2874,7 +2848,7 @@ fn cmd_parse(args: &[String]) -> R<()> {
         Some(v) => v,
         None => usage_fail("parse 缺 --in（必填）"),
     };
-    let pack = load_pack(&resolve_pack_arg(pack_dir))?;
+    let pack = load_pack(pack_dir)?;
     let src = read_input_chars(infile)?;
     let (_, tree) = parse_text(&src, &pack.tokens, &pack.grammar)?;
     println!("{}", serde_json::to_string_pretty(&tree.to_value()).unwrap());
@@ -2895,7 +2869,6 @@ fn cmd_entries(args: &[String]) -> R<()> {
         Some(v) => v,
         None => usage_fail("entries 缺 --out（必填）"),
     };
-    let pack_dir = &resolve_pack_arg(pack_dir);
     let pack = load_pack(pack_dir)?;
     let src = read_input_chars(infile)?;
     let (_, tree) = parse_text(&src, &pack.tokens, &pack.grammar)?;
@@ -2929,7 +2902,7 @@ fn cmd_lint(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("lint 缺 --pack（必填）"),
     };
-    match lint_pack(&resolve_pack_arg(pack_dir)) {
+    match lint_pack(pack_dir) {
         Ok(findings) => {
             for finding in &findings {
                 eprintln!("lint: {finding}");
@@ -2955,7 +2928,7 @@ fn cmd_vectors(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("vectors 缺 --pack（必填）"),
     };
-    let report = run_vectors(&resolve_pack_arg(pack_dir), f.freeze)?;
+    let report = run_vectors(pack_dir, f.freeze)?;
     if let Some(fails) = report.get("fail").and_then(|v| v.as_array()) {
         for fail in fails {
             eprintln!(
