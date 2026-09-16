@@ -19,7 +19,7 @@
 - 他批在途件不入本批 commit：并发批 lease-cutover-parallel 六 bin 改件与 sih/event、sih/state 旧档一律留原批（SPEC-025 候批；候对应批结算统一裁决）。
 - SDDG-2 单件残留：packs/parser/rust/vectors/in/sample.rs 为解析器矢量夹具，头注加注即改解析输入、破与围堰 pack 的逐字节对表（vectors 必红），按 DEC-024 显式绕行通道收约，绕行事由落 bypass 台账（对照 DEC-023 已裁载体豁免先例）。
 - worktree 仓设 core.quotepath false：直提守卫对 git 非 ASCII 路径的 C-Style 引号形未去引即判（守卫缺陷，pk-100 工地盲区同类），候修上报；本批以显示层配置修正输入。
-- 版本钉死：Cargo.toml version = "0.9.0" 零动（用户令：本批不升 1.0）。
+- 版本钉死：Cargo.toml version = "0.9.0" 零动（用户令：本批不升 1.0；SPEC-026 测试基线读数即按 0.9.0 取得，候 1.0.0 晋升批另裁）。
 
 ## 三、可证伪条件核对 {#falsifiable}
 
