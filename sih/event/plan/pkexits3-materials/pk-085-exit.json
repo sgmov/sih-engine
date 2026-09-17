@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-085",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "裁定开工 DES-017 即候裁处置范式编排设计档，档位配置面 3/6/9/关默认 3 加 boundary 人重写处置位加执行位加泊位通道，范式有人工活证即 mcpdual-parallel 第九节。 承用户 2026-09-17 令「裁，多子代理并行」按普查推荐裁定执行。",
+ "context": "2026-09-17 泊界全量普查第二波即裁定落账批，E 类推荐裁定全部采纳，工作包多子代理并行候结算。",
+ "parking": {
+  "entered_at": "见入泊笔"
+ }
+}

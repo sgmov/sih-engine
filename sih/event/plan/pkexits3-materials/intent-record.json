@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-pkexits3",
+  "raw_input": "用户 2026-09-17 令「裁，多子代理并行」即普查推荐裁定全部采纳，十一件出泊两件续泊，工作包多子代理并行分投。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pkexits3 批：裁定落账第二波十一件出泊即立项开工令形九件加作废一件加并一退役一件，续泊两件即 pk-026 候价格与 pk-078 随线裁定语载链，泊界清至两件，工作包八包多子代理并行即 snapabsorb 加 openface 加 cascadeclose 加 leasebook 加 des017 加 spec023matches 加 retrieverline 加 faceprecise，出泊笔与认证笔在链，settle 加 close 加推双远端。",
+    "exclusions": [
+      "续泊两件零出泊事件即 pk-026 与 pk-078",
+      "工作包子代理只产内容与测试零治理动作即不碰 lease 与 scribe 与台账",
+      "PARKING-v1.md 名册投影归后继索引同步批"
+    ],
+    "output_format": "十一件出泊事件在链加裁定表存批材料，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：出泊以链上事件为证",
+      "出泊唯人节点：用户裁定令原文「裁，多子代理并行」为总裁定",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine 批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
