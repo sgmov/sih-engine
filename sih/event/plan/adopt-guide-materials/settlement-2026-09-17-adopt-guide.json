@@ -1,0 +1,13 @@
+{
+  "batch": "adopt-guide",
+  "date": "2026-09-17",
+  "deliverables": {
+    "faq": "端口问、令牌问、init 语义问重写、exclude 三入口同语义、SIH_ROOT 两用位，五问同步",
+    "guide": "doc/guide/adoption-guide-v1.md 162 行：缺省路径改首连自动开域（四件自动动作与判定边界与子进程根解析），sih init 四态兜底矩阵（用户 2026-09-17 裁定留任复查与兜底位），手动两形备选，--complete 缺位标注",
+    "parking": "pk-106 出泊 promoted（两半俱齐）；pk-107 入泊（complete 补全形 Rust 缺位，半态恢复无路，修法照 Python 分支移植）",
+    "pipeline": "化格 0 加核阅违例 0 加检词违例 0，三步全零"
+  },
+  "kind": "settlement",
+  "session_id": "49738f3ad3080028",
+  "what": "接入指南实态重写批结算：第二节步序重排（MCP 注册第二步、首连自动开域第三步、手动备选与 sih init 兜底矩阵），FAQ 五问同步，--complete 缺位如实标注；pk-106 出泊 pk-107 入泊"
+}

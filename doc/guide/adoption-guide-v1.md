@@ -22,7 +22,7 @@
 
 接入后的三方角色：LLM 只生成符号材料；确定性程序执法，即租约闸与哈希链与判据扫；你作为人节点只做四类事，即下令、裁决、看回显、异常介入。
 
-缺省形态一句话：单项目即单域，单域即一块 stdio 客户端配置，无后台服务、无端口、无令牌。HTTP 多域与管理台是显式选用的进阶档，见第三节。缺省面裁定见 DEC-026。
+缺省形态一句话：单项目即单域，单域即一块 stdio 客户端配置，首连自动开域，无后台服务、无端口、无令牌。HTTP 多域与管理台是显式选用的进阶档，见第三节。缺省面裁定见 DEC-026。
 
 占位符约定，全文两形。`{{ENGINE_WORKSPACE}}` 即引擎工作区根，其下应有 sih-engine 仓；`{{PROJECT_ROOT}}` 即被治理项目根，域自举后成为域根。
 
@@ -41,33 +41,7 @@
 
 产物在 target/debug 下。常用五件即 scribe 书简、critsweep 判据扫、sihmcp MCP 服务器、lease 租约、retriever 温故。生产调用面唯一形态即引擎 bin 位。
 
-### 第二步 sih init 域自举 {#default-init}
-
-域自举把 {{PROJECT_ROOT}} 落成正典形域。sih init 是域自举单步窄口，零签发零镜像零客户端注册，签发与镜像与客户端注册归 sihmcp bootstrap 全链，各守各位。窄口两动作：
-
-其一，一次性签发本域标识牌。中央登记册本域根尚无 active 行时直接 init 即拒，拒语会指引到签发位。签发走管理台两步确认：按第三节起服，浏览器开 /tokens 签发表单，填标识词形与本域根与档位 domain_write，确认落笔即停服。标识牌是明文短标识防呆锚点非安全凭据，一次性动作，签完即回缺省档。
-
-其二，跑窄口：`cd {{ENGINE_WORKSPACE}}/sih-engine && target/debug/sih init --root {{PROJECT_ROOT}}`
-
-域根缺省取当前目录，可用 --root 显式传。前置检查六项自动逐项判词，任何一项不过即拒并给处置语，全链零写入可修复重跑：一 域根存在且为目录。二 域根下 .git 在位。三 中央登记册本域 active 标识牌行在档且同路。四 域根不等于中央根，司衡工作区自身是第一域映射形，不走本步。五 sih/domain.json 缺席，域已在册即拒，幂等守卫明确拒非静默，无 reinit 旗标。六 半态拒，sih 目录存在且非空但声明文件缺席时位人节点处置。
-
-出参严格 JSON 单对象，precheck 六项逐项 pass 或 fail 或 unverified，domain 字段含域名与域自举时与首笔哈希与链验判词。落地五步即建目录四件、写域声明文件、落模板三件、写域自述、域登记首笔落链，落毕自动验域，scribe verify 判词 valid 才算成。
-
-落地后 {{PROJECT_ROOT}} 下新增 sih 树：
-
-- sih/domain.json 域声明文件七字段
-- sih/README.md 域自述卡
-- sih/event/trail/ 哈希链，域登记首笔已落
-- sih/ledger/ 域内登记册与锁册
-- sih/state/plan/ 与 sih/state/parking/materials/ 任务包与停泊，含三份模板
-
-隔离一句：init 成功时自动把 `sih/` 一行幂等写入域根 `.git/info/exclude` 并以 `git check-ignore` 机械验证，治理飞轮不进你的 git，项目可随意公开。
-
-两形提示。运行 init 时不要把 SIH_ROOT 环境变量指到 {{PROJECT_ROOT}}，中央登记册落中央根，指错会落进项目内，详见问答第六问。
-
-版本提示。sih init 是本批新增薄壳位，usage 即 sih init [--root <域根>]，--help 出用法。若你构建出的 bin 集尚无 sih，说明引擎版本早于本批，先升版本，或走第三节管理台两步域自举全链。
-
-### 第三步 MCP 注册 {#default-mcp}
+### 第二步 MCP 注册 {#default-mcp}
 
 在你客户端的 MCP 配置里加一块，下形为通用形，路径换成你机器上的绝对路径，可复制单行形：
 
@@ -82,6 +56,27 @@
 - 本地单人可信档可在 env 加 SIH_MCPLINE_AGENT_CLASS 值 local，写面全集十二具在役；缺省 external 分级在役十具，record_direct 与 lease_unclaim 两具不透传
 
 在役工具面：读面九具，即 chain_query、chain_verify、critsweep、heartbeat、locks_read、retriever_recall、naming_guide、nomenclator_query、nomenclator_check；写面缺省十具，即 lease_open、record_intent、record_append、record_park、lease_lock、lease_unlock、lease_wait_turn、lease_claim、lease_commit、lease_close。
+
+### 第三步 首连自动开域 {#default-auto}
+
+域自举的缺省形态是零动作：客户端配置加好后连接一次，其余交给引擎。首连时引擎发现 SIH_ROOT 指向未开域的 git 域根，自动完成四件：一 自动签发本域标识牌，词形自域根确定性派生即 stdio 前缀短串，中央登记册已有本域 active 行时复用旧牌；二 建 sih 治理树，即域声明与模板与域自述；三 开域首笔落链并自动验域；四 把 sih/ 一行幂等写入域根 .git/info/exclude 并以 git check-ignore 机械验证，治理飞轮不进你的 git。全程动作在 stderr 如实告知，不静默。标识牌是明文短标识防呆锚点非安全凭据，本义是选定治理空间。
+
+自动开域的判定边界：SIH_ROOT 指向目录的 .git 在位且 sih/domain.json 缺席才触发；已开域域根幂等跳过，非 git 目录零触碰。自动链以子进程承载并显式解析中央根，中央登记册恒落引擎工作区，不落项目内。
+
+落地后 {{PROJECT_ROOT}} 下新增 sih 树：sih/domain.json 域声明七字段、sih/README.md 域自述卡、sih/event/trail/ 哈希链含域登记首笔、sih/ledger/ 域内登记册与锁册、sih/state/plan/ 与 sih/state/parking/materials/ 任务包与停泊含三份模板。
+
+### 手动备选与兜底 {#default-manual}
+
+想先看清会发生什么再开域的人用两形手动位。其一 CLI 全链：`cd {{ENGINE_WORKSPACE}}/sih-engine && target/debug/sihmcp bootstrap {{PROJECT_ROOT}} --by <事由> --token-id <短串>`，与自动链同一核心，签发加开域加镜像一次完成。其二 管理台两步确认：按第三节起服，浏览器开 /tokens 域自举表单，确认落笔即停服。
+
+sih init 是复查与兜底位（用户 2026-09-17 裁定，留着做复查用），四种域态各有判词：
+
+- 全新域无牌：预检拒并教学指引到签发位，此态的入口是首连自动链或手动两形
+- 有牌无树即自动链死在签发之后：init 完整恢复，预检六项过，树与链与 exclude 全落
+- 半态即域声明在而链缺：init 判已开域，深查以 scribe verify 定位缺件；补全形 --complete 在 Rust 载体尚未承载，候批补位，现以人工处置
+- 已开域健康域：幂等守卫明确拒非静默，判词即复查回答
+
+调用形 `target/debug/sih init --root {{PROJECT_ROOT}}`。运行 init 等中央侧工具时 SIH_ROOT 保持指中央根，指错会把中央登记册落进项目内，详见问答。bin 集尚无 sih 即引擎版本早于其引入批，先升版本。
 
 ### 第四步 AGENTS.md 约束落位 {#default-agents}
 
@@ -102,7 +97,7 @@ MCP 面走查，新会话按序调三具即冷启动体检，locks_read 与 crit
 ### 第六步 验证清单 {#default-checklist}
 
 - cargo build 零错，target/debug 下 scribe 与 critsweep 与 sihmcp 在位
-- sih init 退出码零，出参 precheck 六项 pass，sih/domain.json 与 sih/README.md 与四目录在位
+- 首连 stderr 载自动开域完成判语，sih/domain.json 与 sih/README.md 与四目录在位，.git/info/exclude 含 sih/ 行
 - scribe verify 判词 valid
 - critsweep 出严格 JSON 单对象，降级注记如实
 - 新会话 tools 列表见 sih 工具面，locks_read 可调
@@ -111,7 +106,7 @@ MCP 面走查，新会话按序调三具即冷启动体检，locks_read 与 crit
 
 ## 进阶：HTTP 多域与管理台 {#http}
 
-何时才需要：一个引擎实例集中服务多个项目域；客户端走 HTTP 而非 stdio，比如其他语言或远机形态；需要令牌生命周期管理台。单项目缺省档日常用不到本节，唯一交叉点即第二节的一次性签发。
+何时才需要：一个引擎实例集中服务多个项目域；客户端走 HTTP 而非 stdio，比如其他语言或远机形态；需要令牌生命周期管理台。单项目缺省档日常用不到本节，唯一交叉点即第二节手动备选的开域表单。
 
 起服与面览。SIH_TRANSPORT 置 http 起服，缺省绑 127.0.0.1:8765，SIH_HTTP_BIND 与 SIH_HTTP_ENDPOINT 可覆写：`cd {{ENGINE_WORKSPACE}}/sih-engine && SIH_TRANSPORT=http target/debug/sihmcp`
 
@@ -129,19 +124,19 @@ HTTP 客户端形。域自举全链 --client-config 给参时写的是 HTTP 形 
 
 问：要联网吗。答：不要，构建之外全程本地。
 
-问：要开端口吗。答：缺省档日常零端口零后台服务，stdio 是客户端拉起的子进程；仅域自举前的一次性签发会短暂起一次管理台，回环即停。进阶档绑 127.0.0.1:8765 回环，可用 SIH_HTTP_BIND 换址。
+问：要开端口吗。答：缺省档日常零端口零后台服务，stdio 是客户端拉起的子进程，首连自动开域零管理台；手动备选开域才短暂起一次管理台，回环即停。进阶档绑 127.0.0.1:8765 回环，可用 SIH_HTTP_BIND 换址。
 
-问：单项目要令牌吗。答：stdio 日常零 Bearer 令牌。域自举前需一次性签发域标识牌，那是明文短标识防呆锚点，不是安全凭据，签发走管理台两步确认，签完即回缺省档。
+问：单项目要令牌吗。答：stdio 日常零 Bearer 令牌。域标识牌在首连自动开域时自动签发，那是明文短标识防呆锚点，不是安全凭据，本义是选定治理空间；手动形态亦可 CLI 或管理台签。
 
-问：为什么 init 前要先签发。答：sih init 是域自举单步窄口，零签发零镜像零客户端注册，它从中央登记册取本域 active 标识牌行落域；签发位与镜像位与客户端注册位归域自举全链，各守各位。
+问：什么时候用 sih init。答：它是复查与兜底位。域已在册时幂等拒判词即复查回答；自动开域死在签发后即有牌无树态，init 完整恢复；无牌新域的教学拒指引到自动链或手动位。矩阵见第二节手动备选与兜底。
 
 问：项目还不是 git 仓。答：先 git init 加 git config user.name 与 user.email，前置检查第二项的拒教文案同此指路。
 
-问：sih 树会进我的 git 提交吗。答：不会，init 成功时自动把 sih/ 一行写入域根 .git/info/exclude 并机械验证，治理飞轮不进你的 git，项目可随意公开。
+问：sih 树会进我的 git 提交吗。答：不会，开域链成功时自动把 sih/ 一行写入域根 .git/info/exclude 并机械验证，自动链与 CLI 与管理台三入口同语义，治理飞轮不进你的 git，项目可随意公开。
 
 问：重复跑 init 会怎样。答：幂等守卫明确拒非静默，sih/domain.json 在位即域已在册，无 reinit 旗标。重开候人节点先处置既有域状态。
 
-问：引擎装项目里还是项目外。答：两形都可。项目外分置时用 SIH_MCPLINE_CODE_ROOT 指引擎工作区；引擎在治理根内的同源形可省此键，缺省与数据根同源。运行 init 与起服时 SIH_ROOT 保持指中央根，指错会把中央登记册落进项目内。
+问：引擎装项目里还是项目外。答：两形都可。项目外分置时用 SIH_MCPLINE_CODE_ROOT 指引擎工作区；引擎在治理根内的同源形可省此键，缺省与数据根同源。SIH_ROOT 是两用位：客户端配置里它指域根，运行 init 等中央侧工具时它指中央根，指错会把中央登记册落进项目内。
 
 问：为什么写面要装 uv 与 sih-tools。答：写面正身签发经 identity 件采集，现役承载即 uv run 加 sih-tools/identity；域自举任务包模板源也在 sih-tools。未装时读面全功能，写面 lease_open 会在正身签发位拒。两件依赖融回引擎后此答会收窄，以仓内现行文档为准。
 

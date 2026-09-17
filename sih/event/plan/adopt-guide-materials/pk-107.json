@@ -1,0 +1,16 @@
+{
+ "action": "enter",
+ "created_at": "2026-09-17",
+ "entry_id": "pk-107",
+ "id": "pk-107",
+ "ttl_days": 30,
+ "context": "adopt-guide 批兜底矩阵实证时发现：sihmcp bootstrap --complete 补全形在 Rust 载体未实现，报错教学语仍指向已冻结退役的 Python 载体（mcpline），半态恢复（域声明在而链缺）实际无路可走。指南已如实标注候批补位。修法即照 bootstrap.py 的 complete 分支移植：面卡核对加镜像核对加教学补全，零域状态写零 reinit。",
+ "exit_condition": "Rust 载体 complete 分支实装加测试绿，或人节点裁定半态恢复另通道承载",
+ "parking": {
+  "entered_at": "2026-09-17",
+  "ttl_days": 30
+ },
+ "source": "adopt-guide 批兜底矩阵实证（会话 49738f3ad3080028）",
+ "state": "parked",
+ "title": "bootstrap --complete 补全形 Rust 载体缺位：半态恢复无路"
+}

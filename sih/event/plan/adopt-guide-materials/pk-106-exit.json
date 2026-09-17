@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-106",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "adopt-guide 批 2026-09-17 收口：接入指南第二节按实态重写即 MCP 注册第二步加首连自动开域第三步加手动备选与 sih init 兜底矩阵子节，FAQ 五问同步；sih init 语义经用户 2026-09-17 裁定留任复查与兜底位（原话「留着做复查用，如果自动化被阻断或者失败了呢」），四态矩阵实测在案",
+ "context": "出泊条件两半俱齐：指南第二节重写落盘（化格核阅检词三步全零）且 init 语义人节点已裁",
+ "parking": {
+  "entered_at": "2026-09-17"
+ }
+}

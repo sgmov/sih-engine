@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-adopt-guide",
+  "raw_input": "用户 2026-09-17 令「开工」，承同日 sih init 留任复查与兜底位裁定与四态矩阵实证，重写接入指南第二节至实态并收口 pk-106、入泊 pk-107。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "adopt-guide 批：doc/guide/adoption-guide-v1.md 第二节步序重排（MCP 注册第二步、首连自动开域第三步、手动备选与 sih init 兜底矩阵子节），FAQ 五问同步，--complete 缺位如实标注；化格核阅检词三步全零；pk-106 出泊 pk-107 入泊；settle 推双远端。",
+    "exclusions": [
+      "只动 adoption-guide-v1.md 与批件",
+      "README 与源码零触碰（stdio-auto 批已同步）",
+      "--complete 补全形本批不实现——pk-107 候批",
+      "agents-template 与 user-guide 不动"
+    ],
+    "output_format": "指南重写件 + 批材料 + 意图认证笔加 pk-106 出泊笔加 pk-107 入泊笔 + settle commit + close + 双远端",
+    "injected_constraints": [
+      "T6 管线序固定：化格落笔在核前、核阅复验、检词核查",
+      "工程基线第四条：指南句句与实态对得上，矩阵以实测判词为锚",
+      "GOV-004：治理域历史不可改",
+      "红证：--complete 缺位如实写进指南不掩饰"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/doc/guide/adoption-guide-v1.md + 任务包 + 批材料 + 当日 trail",
+      "max_depth": 1
+    }
+  }
+}
