@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-055",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "裁定形态即 close 前重建挂收约流程，承 pk-052 择案先例，引擎侧实装批候开即收约凭据落链前机械重建 CASCADE.json 投影。 承用户 2026-09-17 令「裁，多子代理并行」按普查推荐裁定执行。",
+ "context": "2026-09-17 泊界全量普查第二波即裁定落账批，E 类推荐裁定全部采纳，工作包多子代理并行候结算。",
+ "parking": {
+  "entered_at": "见入泊笔"
+ }
+}

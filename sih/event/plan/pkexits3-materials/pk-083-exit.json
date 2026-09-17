@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-083",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "裁定开工 spec023-matches-solo 即 SPEC-023 修订一行注明 matches 字段两面语义即 MCP 面全日笔数与 CLI 面过滤命中数，双面注明形零破面，统一字段形不采。 承用户 2026-09-17 令「裁，多子代理并行」按普查推荐裁定执行。",
+ "context": "2026-09-17 泊界全量普查第二波即裁定落账批，E 类推荐裁定全部采纳，工作包多子代理并行候结算。",
+ "parking": {
+  "entered_at": "见入泊笔"
+ }
+}
