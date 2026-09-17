@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-pk016exit",
+  "raw_input": "用户 2026-09-17 令「pk-016 出泊，不进向界，进入远期（你还记得远期备忘录吗）」，远期备忘录档经检索不存在即随令新立，pk-016 为首件迁入。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pk016exit 批：pk-016 硬件锚定出泊 promoted 转远期备忘录，不进向界即 GOV-003 零触碰，远期备忘录随令立档为域外草稿形即工作区根零号位零认证，原触发条件不灭即硬件加强版立项时取件裁，出泊笔与认证笔在链，settle 加 close 加推双远端。",
+    "exclusions": [
+      "GOV-003 向界零触碰——用户明令不进向界",
+      "其余二十三件在泊件零触碰——另有四路子代理普查出泊方案候裁后另批处置",
+      "PARKING-v1.md 名册投影不随本批改——欠账补记归后继索引同步批"
+    ],
+    "output_format": "远期备忘录.md 域外档加 pk-016 出泊事件与认证笔在链加批材料，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：出泊以链上事件为证",
+      "域外草稿纪律：不占号位零认证绑定",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "远期备忘录.md 工作区根域外件加 sih-engine 批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
