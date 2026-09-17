@@ -8,6 +8,7 @@
 pub mod ask3repeater;
 pub mod askroute;
 pub mod attractor;
+pub mod cascade_registry;
 pub mod event_stream;
 pub mod mcpserver;
 pub mod retriever;

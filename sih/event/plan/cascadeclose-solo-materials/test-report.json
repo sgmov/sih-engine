@@ -1,0 +1,1 @@
+{"batch": "cascadeclose-solo", "date": "2026-09-17", "new_suite": "tests/lease_cascadeclose_projection 6 passed 0 failed", "regression": {"t4_cascade_golden": "3 passed 逐字节", "t2_close_golden": "4 passed 跳过形不增键", "t6_close_gates": "5 passed", "gap_suites": "5 passed", "lib": "241 passed", "t3_t5_t7_pathfix": "全过"}, "projection": "edges 73 至 99，orphans 零", "exit_code": 0}

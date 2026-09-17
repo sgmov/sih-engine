@@ -1,6 +1,7 @@
 //! 收约执法闸序（SPEC-024 腿二，lease-commitlaw-parallel 批）：锁清零、工地卫生、
 //! 冲突三态、预收提交、链证守门、SDDG 四判据、CALL-LOG 跑步机与随批检查、无主闸、
-//! 声明差集闸、归并删支拆本、账单与收约凭据。融回基准权威 sih-tools/lease/src/lease/
+//! 声明差集闸、级联投影 close 前重建（pk-055）、归并删支拆本、账单与收约凭据。
+//! 融回基准权威 sih-tools/lease/src/lease/
 //! core.py close_session 与 watchcheck/core.py 无主谓词，闸序承 closegate-solo T-2 终签。
 
 use crate::commitlaw::{default_trails, fail, git, ledger_surface, py_compact, py_pretty, py_resolve};
@@ -9,6 +10,7 @@ use crate::{append_row, emit, now_utc, one, read_jsonl, tool};
 use chrono::DateTime;
 use regex::Regex;
 use serde_json::{json, Map, Value};
+use sih_engine::cascade_registry::{build_registry_recorded, dump_canonical};
 use std::process::Command;
 use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
@@ -352,6 +354,113 @@ fn collect_gates_skipped(
         "calllog_bypass": bypass_calllog.map(|s| json!(s)).unwrap_or(Value::Null),
         "count": count,
         "orphan_bypass": bypass_orphan.map(|s| json!(s)).unwrap_or(Value::Null),
+    })
+}
+
+/// 级联边册投影 close 前重建（pk-055 cascadeclose-solo 批，2026-09-17 用户裁定
+/// 形态：close 前重建挂收约流程，承 pk-052 择案先例）。sih-engine/doc/CASCADE.json
+/// 是级联边册投影，认证后不随动（消费位 locksview check 缺省读它作乐观锁基线），
+/// 故挂收约闸序重建。分流与处置：
+/// - 仅中央工作区形生效：root 下 sih-tools/lease/ledger 在位（承 ledger_surface
+///   分流先例），新城域形跳过注记 reason=domain_form。
+/// - 级联基建在位（主树语料根与投影件俱在）才重建，缺席跳过注记
+///   reason=no_cascade_infrastructure（跳过不炸）。
+/// - 载体即会话 sih-engine 工地（语料取工地 doc，归并后态近似；册记 root 锚主树
+///   语料位防工地路径进册致伪 diff）；无载体跳过注记 reason=no_worktree_carrier
+///   （主树零直写，投影只经工地归并路径回主树）。
+/// - 产物与工地在盘投影逐字节比：in_sync 零动作；diff 即落工地并自成一笔提交
+///   （归并带回主树）。重建异常不静默（含语料扫描 panic 形 catch_unwind 收口），
+///   fail-visible 拒收约退出码一，会话保持活跃零归并。
+fn cascade_projection_rebuild(root: &Path, repos: &[Value], stem: &str) -> Value {
+    if !root.join("sih-tools/lease/ledger").is_dir() {
+        return json!({"checked": false, "reason": "domain_form"});
+    }
+    let main_doc = root.join("sih-engine/doc");
+    if !main_doc.is_dir() || !main_doc.join("CASCADE.json").is_file() {
+        return json!({"checked": false, "reason": "no_cascade_infrastructure"});
+    }
+    let carrier = repos.iter().find_map(|e| {
+        let repo = PathBuf::from(e.get("repo").and_then(|v| v.as_str()).unwrap_or(""));
+        let worktree = PathBuf::from(e.get("worktree").and_then(|v| v.as_str()).unwrap_or(""));
+        if repo.file_name().and_then(|n| n.to_str()) == Some("sih-engine")
+            && worktree.is_dir()
+            && worktree.join("doc").is_dir()
+            && worktree.join("doc/CASCADE.json").is_file()
+        {
+            Some(worktree)
+        } else {
+            None
+        }
+    });
+    let Some(worktree) = carrier else {
+        return json!({"checked": false, "reason": "no_worktree_carrier"});
+    };
+    let corpus = worktree.join("doc");
+    let rebuilt = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
+        build_registry_recorded(&corpus, &main_doc)
+    }));
+    let registry = match rebuilt {
+        Ok(Ok(v)) => v,
+        Ok(Err(e)) => fail(
+            1,
+            json!({
+                "error": format!(
+                    "级联投影重建失败：close 前重建不静默，整批拒零动作（会话保持活跃，修复语料后重收）。{e}"
+                ),
+                "reason": "cascade_rebuild_failed",
+            }),
+        ),
+        Err(_) => fail(
+            1,
+            json!({
+                "error": "级联投影重建失败：语料扫描中断（panic 形，如非 UTF-8 语料件），close 前重建不静默，整批拒零动作（会话保持活跃，修复语料后重收）",
+                "reason": "cascade_rebuild_failed",
+            }),
+        ),
+    };
+    let text = dump_canonical(&registry);
+    let projection = corpus.join("CASCADE.json");
+    let ondisk = std::fs::read_to_string(&projection).unwrap_or_default();
+    if ondisk == text {
+        return json!({"checked": true, "diff": false, "result": "in_sync"});
+    }
+    if let Err(e) = std::fs::write(&projection, &text) {
+        fail(
+            1,
+            json!({
+                "error": format!("级联投影落盘失败：{}: {e}", projection.display()),
+                "reason": "cascade_rebuild_failed",
+            }),
+        );
+    }
+    git(&worktree, &["add", "--", "doc/CASCADE.json"]);
+    let (rc_c, _, err_c) = git(
+        &worktree,
+        &[
+            "-c",
+            "core.hooksPath=/dev/null",
+            "commit",
+            "-m",
+            &format!("cascadeclose-solo: pre-close cascade projection rebuild ({})", stem),
+        ],
+    );
+    if rc_c != 0 {
+        let detail: String = err_c.trim().chars().take(200).collect();
+        fail(
+            1,
+            json!({
+                "error": format!("级联投影工地提交失败：{}", detail),
+                "reason": "cascade_rebuild_failed",
+            }),
+        );
+    }
+    let (rc_s, sha, _) = git(&worktree, &["rev-parse", "--short", "HEAD"]);
+    json!({
+        "checked": true,
+        "commit": if rc_s == 0 { sha.trim().to_string() } else { String::new() },
+        "diff": true,
+        "projection": "sih-engine/doc/CASCADE.json",
+        "result": "updated",
     })
 }
 
@@ -852,6 +961,14 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         );
     }
 
+    // 级联边册投影 close 前重建（pk-055）：接线位在声明差集闸后、归并删支拆本前
+    // 即收约凭据落链前——全部准入闸（卫生/冲突/链证/SDDG/无主/CALL-LOG/差集）先
+    // 按批自身材料判毕，投影重建作为末位预归并动作不扰动闸判定（机械派生件不
+    // 走 SDDG 材料面）；diff 落工地自成一笔提交由归并带回主树；重建失败
+    // fail-visible 拒收约零归并会话保持活跃；跳过形注记入吊销行（回执面承 T2
+    // 金向量对表冻结，engage 形才上回执键）。
+    let cascade_gate = cascade_projection_rebuild(&root, &repos, &stem);
+
     // 归并删支拆本
     let mut removed: Vec<Value> = Vec::new();
     let mut failed: Vec<Value> = Vec::new();
@@ -958,6 +1075,7 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
             "detail": {
                 "calllog_gate": calllog_gate,
                 "calllog_treadmill": calllog_treadmill,
+                "cascade_gate": cascade_gate,
                 "declaration_gate": declaration_gate,
                 "gates_skipped": gates_skipped,
                 "sddgate_gate": sddgate_gate,
@@ -1025,7 +1143,8 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         );
     }
 
-    // 收约凭据
+    // 收约凭据（cascade_gate 承 T2 金向量对表冻结：engage 形才上回执，跳过形
+    // 注记只在吊销行 detail）
     let mut report = json!({
         "calllog_gate": calllog_gate,
         "calllog_treadmill": calllog_treadmill,
@@ -1038,6 +1157,9 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         "sddgate_gate": sddgate_gate,
         "session_id": sid,
     });
+    if cascade_gate.get("checked").and_then(|v| v.as_bool()) == Some(true) {
+        report["cascade_gate"] = cascade_gate.clone();
+    }
     let surface = ledger_surface(&root);
     let checks_file = surface.join("checks").join(format!("{}.json", stem));
     if checks_file.exists() {

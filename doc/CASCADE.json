@@ -1,6 +1,26 @@
 {
   "code": {},
   "edges": {
+    "AGENTS-RETIRED-2026-09.md": [
+      "decision/000-document-format.md",
+      "decision/001-repository-structure.md",
+      "decision/004-component-naming-shujian.md",
+      "decision/006-ask3-formalization.md",
+      "decision/010-zero-trust-identity.md",
+      "decision/012-git-commit-takeover.md",
+      "decision/013-mergeback-gate.md",
+      "decision/016-parser-initiation.md",
+      "decision/017-wengu-naming.md",
+      "decision/019-tally-naming.md",
+      "decision/020-deyi-component-naming.md",
+      "decision/DEC-007-engineering-layer-ontology.md",
+      "design/DES-009-crosscheck-semantic-layer.md",
+      "governance/GOV-004-commit-takeover-v1.md",
+      "proposal/PRO-005-engineering-layer-ontology.md",
+      "spec/SPEC-004-event-stream.md",
+      "spec/SPEC-007-project-memory-component.md",
+      "spec/SPEC-009-parser-implementation-gap.md"
+    ],
     "decision/000-document-format.md": [
       "proposal/PRO-006-actor-ontology.md"
     ],
@@ -38,7 +58,6 @@
       "decision/017-wengu-naming.md",
       "decision/DEC-007-engineering-layer-ontology.md",
       "design/DES-013-ask3-component-design.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-003-ask3-component-redesign.md",
       "proposal/PRO-005-engineering-layer-ontology.md",
       "proposal/PRO-008-project-memory-component-derivation.md",
@@ -52,34 +71,36 @@
     "decision/010-zero-trust-identity.md": [
       "decision/009-git-governance-boundary.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "governance/GOV-003-fullstate-course-v1.md"
+      "spec/SPEC-017-contribution-measure.md"
     ],
     "decision/011-locks-and-package-binding.md": [
       "decision/009-git-governance-boundary.md",
       "decision/010-zero-trust-identity.md",
       "decision/012-git-commit-takeover.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "governance/GOV-003-fullstate-course-v1.md",
       "proposal/PRO-007-naming-clearance-draft.md",
       "proposal/PRO-008-project-memory-component-derivation.md"
     ],
     "decision/012-git-commit-takeover.md": [
       "decision/009-git-governance-boundary.md",
       "decision/011-locks-and-package-binding.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "governance/GOV-004-commit-takeover-v1.md"
     ],
     "decision/013-mergeback-gate.md": [
       "decision/001-repository-structure.md",
-      "governance/GOV-002-mainline-lock-v1.md"
+      "decision/016-parser-initiation.md",
+      "decision/020-deyi-component-naming.md",
+      "proposal/PRO-005-engineering-layer-ontology.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md",
+      "spec/SPEC-017-contribution-measure.md"
     ],
     "decision/014-project-memory-initiation.md": [
       "decision/006-ask3-formalization.md",
       "decision/013-mergeback-gate.md",
       "decision/017-wengu-naming.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "governance/GOV-002-mainline-lock-v1.md",
-      "governance/GOV-003-fullstate-course-v1.md",
       "proposal/PRO-008-project-memory-component-derivation.md",
       "spec/SPEC-007-project-memory-component.md"
     ],
@@ -93,8 +114,7 @@
     "decision/016-parser-initiation.md": [
       "decision/013-mergeback-gate.md",
       "decision/015-quality-baseline.md",
-      "decision/017-wengu-naming.md",
-      "governance/GOV-002-mainline-lock-v1.md"
+      "decision/017-wengu-naming.md"
     ],
     "decision/017-wengu-naming.md": [
       "decision/004-component-naming-shujian.md",
@@ -102,7 +122,9 @@
       "decision/014-project-memory-initiation.md",
       "decision/015-quality-baseline.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "spec/SPEC-006-scribe-mergeback-gap.md"
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md",
+      "spec/SPEC-006-scribe-mergeback-gap.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
     ],
     "decision/018-marshalling-naming.md": [
       "decision/017-wengu-naming.md"
@@ -110,11 +132,35 @@
     "decision/020-deyi-component-naming.md": [
       "decision/017-wengu-naming.md"
     ],
+    "decision/021-adjudication-dispatch.md": [
+      "decision/013-mergeback-gate.md",
+      "decision/020-deyi-component-naming.md"
+    ],
+    "decision/022-semver-release-v1.md": [
+      "decision/024-sdd-completeness-gates.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
+    ],
+    "decision/023-mcp-rust-carrier.md": [
+      "decision/001-repository-structure.md",
+      "decision/017-wengu-naming.md",
+      "decision/022-semver-release-v1.md",
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
+    ],
+    "decision/024-sdd-completeness-gates.md": [
+      "decision/022-semver-release-v1.md",
+      "decision/023-mcp-rust-carrier.md"
+    ],
+    "decision/026-adoption-default-stdio-v1.md": [
+      "decision/001-repository-structure.md",
+      "decision/023-mcp-rust-carrier.md",
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "design/DES-015-mcp-http-multitenant-auth-v1.md"
+    ],
     "decision/DEC-007-engineering-layer-ontology.md": [
       "decision/002-component-naming-crosscheck.md",
       "decision/004-component-naming-shujian.md",
       "decision/006-ask3-formalization.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-004-crosscheck-semantic-layer.md",
       "proposal/PRO-005-engineering-layer-ontology.md"
     ],
@@ -161,8 +207,6 @@
     "design/DES-001-document-format/governance-spec.md": [
       "decision/001-repository-structure.md",
       "governance/GOV-001-failure-derived-prohibitions.md",
-      "governance/GOV-002-mainline-lock-v1.md",
-      "governance/GOV-003-fullstate-course-v1.md",
       "governance/GOV-004-commit-takeover-v1.md",
       "proposal/PRO-006-actor-ontology.md"
     ],
@@ -216,6 +260,7 @@
     ],
     "design/DES-005-semantic-verification-calculus.md": [
       "design/DES-009-crosscheck-semantic-layer.md",
+      "design/DES-018-derived-snapshot-design-v1.md",
       "proposal/PRO-004-crosscheck-semantic-layer.md",
       "proposal/PRO-008-project-memory-component-derivation.md",
       "spec/SPEC-003-crosscheck.md"
@@ -248,6 +293,7 @@
       "design/DES-005-semantic-verification-calculus.md",
       "design/DES-008-violation-to-trail.md",
       "design/DES-009-crosscheck-semantic-layer.md",
+      "design/DES-018-derived-snapshot-design-v1.md",
       "proposal/PRO-004-crosscheck-semantic-layer.md"
     ],
     "design/DES-011-adjudication-baseline-check.md": [
@@ -265,7 +311,6 @@
       "spec/SPEC-004-event-stream.md"
     ],
     "design/DES-012-scrutinator-predicate-engine.md": [
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-005-engineering-layer-ontology.md",
       "proposal/PRO-007-naming-clearance-draft.md"
     ],
@@ -273,29 +318,70 @@
       "decision/006-ask3-formalization.md",
       "spec/SPEC-005-ask3-interface.md"
     ],
+    "design/DES-014-mcp-beta-security-model-v1.md": [
+      "design/DES-013-ask3-component-design.md",
+      "design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md"
+    ],
+    "design/DES-015-mcp-http-multitenant-auth-v1.md": [
+      "decision/010-zero-trust-identity.md",
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md"
+    ],
+    "design/DES-016-mcp-pure-tool-intent-form-v1.md": [
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
+    ],
+    "design/DES-018-derived-snapshot-design-v1.md": [
+      "decision/025-project-memory-snapshot-initiation-v1.md"
+    ],
+    "design/DES-019-mergeback-toolface-design-v1.md": [
+      "decision/013-mergeback-gate.md",
+      "decision/017-wengu-naming.md",
+      "decision/023-mcp-rust-carrier.md",
+      "decision/024-sdd-completeness-gates.md",
+      "decision/DEC-007-engineering-layer-ontology.md",
+      "design/DES-018-derived-snapshot-design-v1.md",
+      "spec/SPEC-005-ask3-interface.md",
+      "spec/SPEC-006-scribe-mergeback-gap.md",
+      "spec/SPEC-007-project-memory-component.md",
+      "spec/SPEC-008-project-memory-implementation-gap.md",
+      "spec/SPEC-011-governance-state-reading.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-024-lease-mergeback-gap-v1.md",
+      "spec/SPEC-025-toolful-mergeback-v1.md"
+    ],
     "governance/GOV-001-failure-derived-prohibitions.md": [
       "decision/001-repository-structure.md",
       "decision/008-node-tree-clearance.md",
       "decision/009-git-governance-boundary.md",
-      "decision/016-parser-initiation.md"
+      "decision/016-parser-initiation.md",
+      "design/DES-018-derived-snapshot-design-v1.md"
+    ],
+    "governance/GOV-002-history-v1.md": [
+      "decision/017-wengu-naming.md"
     ],
     "governance/GOV-002-mainline-lock-v1.md": [
-      "decision/017-wengu-naming.md",
-      "governance/GOV-003-fullstate-course-v1.md",
+      "decision/024-sdd-completeness-gates.md",
       "proposal/PRO-005-engineering-layer-ontology.md",
       "proposal/PRO-006-actor-ontology.md"
     ],
     "governance/GOV-003-fullstate-course-v1.md": [
-      "decision/006-ask3-formalization.md",
-      "decision/009-git-governance-boundary.md",
       "decision/014-project-memory-initiation.md",
       "decision/017-wengu-naming.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "design/DES-013-ask3-component-design.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-005-engineering-layer-ontology.md",
+      "proposal/PRO-008-project-memory-component-derivation.md"
+    ],
+    "governance/GOV-003-history-v1.md": [
+      "decision/014-project-memory-initiation.md",
+      "decision/DEC-007-engineering-layer-ontology.md",
       "proposal/PRO-008-project-memory-component-derivation.md",
-      "spec/SPEC-005-ask3-interface.md"
+      "spec/SPEC-004-event-stream.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md"
     ],
     "governance/GOV-004-commit-takeover-v1.md": [
       "decision/009-git-governance-boundary.md",
@@ -305,12 +391,28 @@
     "governance/PARKING-v1.md": [
       "decision/010-zero-trust-identity.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-007-naming-clearance-draft.md",
-      "proposal/PRO-008-project-memory-component-derivation.md"
+      "proposal/PRO-008-project-memory-component-derivation.md",
+      "spec/SPEC-017-contribution-measure.md"
+    ],
+    "governance/SETTLEMENT-V1-2026-09-02.md": [
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md"
+    ],
+    "guide/adoption-guide-v1.md": [
+      "decision/023-mcp-rust-carrier.md",
+      "decision/026-adoption-default-stdio-v1.md",
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
     ],
     "knowledge/KNOW-001-convergence-retrieval-map.md": [
       "decision/001-repository-structure.md"
+    ],
+    "plan/release-0.9.0-v1.md": [
+      "decision/022-semver-release-v1.md",
+      "governance/GOV-004-commit-takeover-v1.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
     ],
     "proposal/PRO-001-unified-crosscheck-for-code-and-doc.md": [
       "decision/002-component-naming-crosscheck.md",
@@ -344,7 +446,6 @@
       "decision/003-component-function-boundary.md",
       "decision/004-component-naming-shujian.md",
       "design/DES-007-engine-foundation.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "proposal/PRO-003-ask3-component-redesign.md",
       "proposal/PRO-004-crosscheck-semantic-layer.md"
     ],
@@ -357,30 +458,26 @@
       "decision/010-zero-trust-identity.md",
       "decision/011-locks-and-package-binding.md",
       "design/DES-003-phase-one-components.md",
-      "governance/GOV-002-mainline-lock-v1.md",
-      "governance/GOV-003-fullstate-course-v1.md",
       "proposal/PRO-001-unified-crosscheck-for-code-and-doc.md",
       "proposal/PRO-006-actor-ontology.md",
       "spec/SPEC-004-event-stream.md"
     ],
     "proposal/PRO-008-project-memory-component-derivation.md": [
-      "decision/DEC-007-engineering-layer-ontology.md",
-      "governance/GOV-002-mainline-lock-v1.md",
-      "governance/GOV-003-fullstate-course-v1.md"
+      "decision/DEC-007-engineering-layer-ontology.md"
     ],
     "research/mergeback-evaluation-2026-08-27.md": [
       "decision/000-document-format.md",
       "decision/001-repository-structure.md",
       "decision/010-zero-trust-identity.md",
       "decision/012-git-commit-takeover.md",
-      "governance/GOV-002-mainline-lock-v1.md",
       "governance/GOV-004-commit-takeover-v1.md",
       "proposal/PRO-007-naming-clearance-draft.md"
     ],
     "research/old-repo-failure-analysis.md": [
       "decision/008-node-tree-clearance.md",
       "decision/009-git-governance-boundary.md",
-      "decision/016-parser-initiation.md"
+      "decision/016-parser-initiation.md",
+      "design/DES-018-derived-snapshot-design-v1.md"
     ],
     "spec/SPEC-001-divergence-experiment.md": [
       "decision/005-phase-0-data-and-intent.md",
@@ -430,7 +527,8 @@
       "decision/014-project-memory-initiation.md",
       "decision/017-wengu-naming.md",
       "decision/DEC-007-engineering-layer-ontology.md",
-      "proposal/PRO-008-project-memory-component-derivation.md"
+      "proposal/PRO-008-project-memory-component-derivation.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md"
     ],
     "spec/SPEC-008-project-memory-implementation-gap.md": [
       "decision/013-mergeback-gate.md",
@@ -454,12 +552,79 @@
     "spec/SPEC-012-elicit-contract.md": [
       "decision/013-mergeback-gate.md"
     ],
-    "guide/user-guide-v1.md": [
-      "governance/GOV-002-mainline-lock-v1.md",
-      "governance/PARKING-v1.md"
+    "spec/SPEC-013-scrutiny-mergeback-gap.md": [
+      "decision/001-repository-structure.md",
+      "decision/006-ask3-formalization.md",
+      "decision/013-mergeback-gate.md",
+      "decision/020-deyi-component-naming.md",
+      "decision/DEC-007-engineering-layer-ontology.md",
+      "proposal/PRO-007-naming-clearance-draft.md",
+      "spec/SPEC-006-scribe-mergeback-gap.md"
     ],
-    "guide/contributor-guide-v1.md": [
-      "governance/GOV-002-mainline-lock-v1.md"
+    "spec/SPEC-014-attractor-mergeback-gap.md": [
+      "decision/001-repository-structure.md",
+      "decision/013-mergeback-gate.md",
+      "decision/020-deyi-component-naming.md",
+      "decision/DEC-007-engineering-layer-ontology.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md"
+    ],
+    "spec/SPEC-015-predicate-mergeback-gap.md": [
+      "decision/001-repository-structure.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md"
+    ],
+    "spec/SPEC-016-attractor-proposition-drafting.md": [
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md"
+    ],
+    "spec/SPEC-017-contribution-measure.md": [
+      "decision/013-mergeback-gate.md",
+      "spec/SPEC-011-governance-state-reading.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md",
+      "spec/SPEC-016-attractor-proposition-drafting.md"
+    ],
+    "spec/SPEC-018-basefix-concurrency-invariants.md": [
+      "decision/013-mergeback-gate.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md",
+      "spec/SPEC-016-attractor-proposition-drafting.md",
+      "spec/SPEC-017-contribution-measure.md"
+    ],
+    "spec/SPEC-020-close-merge-harden-v1.md": [
+      "proposal/PRO-007-naming-clearance-draft.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md",
+      "spec/SPEC-018-basefix-concurrency-invariants.md"
+    ],
+    "spec/SPEC-021-golden-vector-dual-method.md": [
+      "spec/SPEC-015-predicate-mergeback-gap.md"
+    ],
+    "spec/SPEC-023-mcpline-alpha-readonly-v1.md": [
+      "decision/001-repository-structure.md",
+      "decision/017-wengu-naming.md",
+      "decision/023-mcp-rust-carrier.md"
+    ],
+    "spec/SPEC-024-lease-mergeback-gap-v1.md": [
+      "decision/001-repository-structure.md",
+      "decision/011-locks-and-package-binding.md",
+      "decision/013-mergeback-gate.md",
+      "design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "spec/SPEC-013-scrutiny-mergeback-gap.md",
+      "spec/SPEC-014-attractor-mergeback-gap.md",
+      "spec/SPEC-015-predicate-mergeback-gap.md"
+    ],
+    "spec/SPEC-025-toolful-mergeback-v1.md": [
+      "design/DES-014-mcp-beta-security-model-v1.md",
+      "design/DES-015-mcp-http-multitenant-auth-v1.md",
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+      "spec/SPEC-024-lease-mergeback-gap-v1.md"
+    ],
+    "spec/SPEC-026-engine-test-design-v1.md": [
+      "decision/023-mcp-rust-carrier.md",
+      "spec/SPEC-021-golden-vector-dual-method.md",
+      "spec/SPEC-024-lease-mergeback-gap-v1.md",
+      "spec/SPEC-025-toolful-mergeback-v1.md"
     ]
   },
   "header": {
@@ -470,6 +635,116 @@
     }
   },
   "ledger": {
+    "AGENTS-RETIRED-2026-09.md": {
+      "decision/000-document-format.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/004-component-naming-shujian.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/006-ask3-formalization.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/010-zero-trust-identity.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/012-git-commit-takeover.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/016-parser-initiation.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/017-wengu-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/019-tally-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/020-deyi-component-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/DEC-007-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-009-crosscheck-semantic-layer.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "governance/GOV-004-commit-takeover-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "proposal/PRO-005-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-004-event-stream.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-007-project-memory-component.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-009-parser-implementation-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
     "decision/000-document-format.md": {
       "proposal/PRO-006-actor-ontology.md": {
         "blocked": 0,
@@ -627,12 +902,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-003-ask3-component-redesign.md": {
         "blocked": 0,
         "consulted": 0,
@@ -691,7 +960,7 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-003-fullstate-course-v1.md": {
+      "spec/SPEC-017-contribution-measure.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -723,12 +992,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-003-fullstate-course-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-007-naming-clearance-draft.md": {
         "blocked": 0,
         "consulted": 0,
@@ -755,12 +1018,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "governance/GOV-004-commit-takeover-v1.md": {
         "blocked": 0,
         "consulted": 0,
@@ -775,7 +1032,43 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
+      "decision/016-parser-initiation.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/020-deyi-component-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "proposal/PRO-005-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-017-contribution-measure.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -802,18 +1095,6 @@
         "upstream_changes": 0
       },
       "decision/DEC-007-engineering-layer-ontology.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-003-fullstate-course-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -882,12 +1163,6 @@
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
       }
     },
     "decision/017-wengu-naming.md": {
@@ -921,7 +1196,19 @@
         "hits": 0,
         "upstream_changes": 0
       },
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
       "spec/SPEC-006-scribe-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -944,6 +1231,106 @@
         "upstream_changes": 0
       }
     },
+    "decision/021-adjudication-dispatch.md": {
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/020-deyi-component-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "decision/022-semver-release-v1.md": {
+      "decision/024-sdd-completeness-gates.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "decision/023-mcp-rust-carrier.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/017-wengu-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/022-semver-release-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "decision/024-sdd-completeness-gates.md": {
+      "decision/022-semver-release-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "decision/026-adoption-default-stdio-v1.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
     "decision/DEC-007-engineering-layer-ontology.md": {
       "decision/002-component-naming-crosscheck.md": {
         "blocked": 0,
@@ -958,12 +1345,6 @@
         "upstream_changes": 0
       },
       "decision/006-ask3-formalization.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -1180,18 +1561,6 @@
         "upstream_changes": 0
       },
       "governance/GOV-001-failure-derived-prohibitions.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-003-fullstate-course-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -1435,6 +1804,12 @@
         "hits": 0,
         "upstream_changes": 0
       },
+      "design/DES-018-derived-snapshot-design-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
       "proposal/PRO-004-crosscheck-semantic-layer.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1577,6 +1952,12 @@
         "hits": 0,
         "upstream_changes": 0
       },
+      "design/DES-018-derived-snapshot-design-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
       "proposal/PRO-004-crosscheck-semantic-layer.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1649,12 +2030,6 @@
       }
     },
     "design/DES-012-scrutinator-predicate-engine.md": {
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-005-engineering-layer-ontology.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1676,6 +2051,160 @@
         "upstream_changes": 0
       },
       "spec/SPEC-005-ask3-interface.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "design/DES-014-mcp-beta-security-model-v1.md": {
+      "design/DES-013-ask3-component-design.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+      "decision/010-zero-trust-identity.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-016-mcp-pure-tool-intent-form-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "design/DES-016-mcp-pure-tool-intent-form-v1.md": {
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "design/DES-018-derived-snapshot-design-v1.md": {
+      "decision/025-project-memory-snapshot-initiation-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "design/DES-019-mergeback-toolface-design-v1.md": {
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/017-wengu-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/024-sdd-completeness-gates.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/DEC-007-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-018-derived-snapshot-design-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-005-ask3-interface.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-006-scribe-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-007-project-memory-component.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-008-project-memory-implementation-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-011-governance-state-reading.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-024-lease-mergeback-gap-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-025-toolful-mergeback-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -1706,16 +2235,24 @@
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
+      },
+      "design/DES-018-derived-snapshot-design-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
       }
     },
-    "governance/GOV-002-mainline-lock-v1.md": {
+    "governance/GOV-002-history-v1.md": {
       "decision/017-wengu-naming.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
-      },
-      "governance/GOV-003-fullstate-course-v1.md": {
+      }
+    },
+    "governance/GOV-002-mainline-lock-v1.md": {
+      "decision/024-sdd-completeness-gates.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -1735,18 +2272,6 @@
       }
     },
     "governance/GOV-003-fullstate-course-v1.md": {
-      "decision/006-ask3-formalization.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "decision/009-git-governance-boundary.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "decision/014-project-memory-initiation.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1765,18 +2290,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "design/DES-013-ask3-component-design.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-005-engineering-layer-ontology.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1788,8 +2301,46 @@
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
+      }
+    },
+    "governance/GOV-003-history-v1.md": {
+      "decision/014-project-memory-initiation.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
       },
-      "spec/SPEC-005-ask3-interface.md": {
+      "decision/DEC-007-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "proposal/PRO-008-project-memory-component-derivation.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-004-event-stream.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -1829,12 +2380,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-007-naming-clearance-draft.md": {
         "blocked": 0,
         "consulted": 0,
@@ -1846,10 +2391,82 @@
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
+      },
+      "spec/SPEC-017-contribution-measure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "governance/SETTLEMENT-V1-2026-09-02.md": {
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "guide/adoption-guide-v1.md": {
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/026-adoption-default-stdio-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
       }
     },
     "knowledge/KNOW-001-convergence-retrieval-map.md": {
       "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "plan/release-0.9.0-v1.md": {
+      "decision/022-semver-release-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "governance/GOV-004-commit-takeover-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -2003,12 +2620,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-003-ask3-component-redesign.md": {
         "blocked": 0,
         "consulted": 0,
@@ -2061,18 +2672,6 @@
         "hits": 0,
         "upstream_changes": 0
       },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-003-fullstate-course-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
       "proposal/PRO-001-unified-crosscheck-for-code-and-doc.md": {
         "blocked": 0,
         "consulted": 0,
@@ -2094,18 +2693,6 @@
     },
     "proposal/PRO-008-project-memory-component-derivation.md": {
       "decision/DEC-007-engineering-layer-ontology.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-003-fullstate-course-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -2132,12 +2719,6 @@
         "upstream_changes": 0
       },
       "decision/012-git-commit-takeover.md": {
-        "blocked": 0,
-        "consulted": 0,
-        "hits": 0,
-        "upstream_changes": 0
-      },
-      "governance/GOV-002-mainline-lock-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -2170,6 +2751,12 @@
         "upstream_changes": 0
       },
       "decision/016-parser-initiation.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-018-derived-snapshot-design-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
@@ -2394,6 +2981,12 @@
         "consulted": 0,
         "hits": 0,
         "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
       }
     },
     "spec/SPEC-008-project-memory-implementation-gap.md": {
@@ -2477,17 +3070,342 @@
         "hits": 0,
         "upstream_changes": 0
       }
+    },
+    "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/006-ask3-formalization.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/020-deyi-component-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/DEC-007-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "proposal/PRO-007-naming-clearance-draft.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-006-scribe-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-014-attractor-mergeback-gap.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/020-deyi-component-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/DEC-007-engineering-layer-ontology.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-015-predicate-mergeback-gap.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-016-attractor-proposition-drafting.md": {
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-017-contribution-measure.md": {
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-011-governance-state-reading.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-016-attractor-proposition-drafting.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-018-basefix-concurrency-invariants.md": {
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-016-attractor-proposition-drafting.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-017-contribution-measure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-020-close-merge-harden-v1.md": {
+      "proposal/PRO-007-naming-clearance-draft.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-018-basefix-concurrency-invariants.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-021-golden-vector-dual-method.md": {
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/017-wengu-naming.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-024-lease-mergeback-gap-v1.md": {
+      "decision/001-repository-structure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/011-locks-and-package-binding.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "decision/013-mergeback-gate.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-013-scrutiny-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-014-attractor-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-015-predicate-mergeback-gap.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-025-toolful-mergeback-v1.md": {
+      "design/DES-014-mcp-beta-security-model-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "design/DES-015-mcp-http-multitenant-auth-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-023-mcpline-alpha-readonly-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-024-lease-mergeback-gap-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
+    },
+    "spec/SPEC-026-engine-test-design-v1.md": {
+      "decision/023-mcp-rust-carrier.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-021-golden-vector-dual-method.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-024-lease-mergeback-gap-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-025-toolful-mergeback-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      }
     }
   },
   "notes": {
     "ambiguous": [
       "DES-011",
+      "GOV-002",
+      "GOV-003",
       "SPEC-001"
     ],
     "unmapped": [
       "DEC-035",
       "DES-001",
-      "DES-018",
       "DES-020",
       "DES-039",
       "DES-041",
@@ -2495,7 +3413,6 @@
       "GOV-005",
       "PRO-010",
       "PRO-036",
-      "SPEC-017",
       "SPEC-036"
     ],
     "use_ambiguous": [],
