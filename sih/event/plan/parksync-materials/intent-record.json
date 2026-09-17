@@ -1,0 +1,24 @@
+{
+  "session_id": "sess-zcode-260918-parksync",
+  "raw_input": "候令簿第五件推进 parksync 批即泊界名册投影对链同步，承 orphansweep 披露投影欠账与 2026-09-17 两波出泊二十三笔未投影，子代理对链轧差施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "parksync 批：全量重放泊事件轧差推真态，PARKING-v1.md 在泊行改写与名册补记节逐件列事件 id 与 disposition 与承载，历史散文照录不动，T6 三步全零，工具线 PARKING-v1.md 补记随 sih-tools 侧提交，settle 加 close 加推双远端。",
+    "exclusions": [
+      "trail 与 ledger 只读零写入",
+      "历史散文快照照录纪律不动"
+    ],
+    "output_format": "doc/governance/PARKING-v1.md 外科改加批材料与任务包，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "泊界纪律：出泊唯人节点，投影以链为准",
+      "acceptclose 先例：逐笔对链",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine doc/governance/PARKING-v1.md 加 sih-tools PARKING-v1.md 补记加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

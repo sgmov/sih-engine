@@ -1,0 +1,15 @@
+{
+  "batch": "parksync",
+  "date": "2026-09-18",
+  "new_suite": "链面轧差与 T6 三步：全量重放 26 日档 3018 笔唯一事件，入泊 109 减出泊 107 即在泊 2 件 pk-026 与 pk-078；化格 0、核阅 0（工地路径域缺口按 corpus 匹配路径等价形复跑 content_hash 372c8ca0 对表确证真审）、检词 0",
+  "regression": {
+    "投影对齐": "在泊行改写与补记节 +3/-1 行外科手术，历史散文快照照录未动",
+    "补记覆盖": "2026-09-17 二十三笔出泊逐件列事件 id 与 disposition 与承载（pathfix 一笔加 pk-016 一笔加 pkexits2 十笔加 pkexits3 十一笔），orphansweep 披露欠账十一件核销",
+    "工具线": "PARKING-v1.md 补记随本批 sih-tools 工地提交，fmt 0 与 nom 0"
+  },
+  "changed": [
+    "doc/governance/PARKING-v1.md（+3/-1）",
+    "sih-tools/PARKING-v1.md（补记节）"
+  ],
+  "exit_code": 0
+}
