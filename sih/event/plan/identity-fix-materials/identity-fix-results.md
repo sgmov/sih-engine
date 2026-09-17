@@ -20,8 +20,9 @@
 
 ## 四、偏差申报 {#deviations}
 
-- 正身报告由围堰 identity 只读产出替位（引擎位修前挂死不可自证），mergeall-closeout 先例；本批修复后引擎位自证恢复。
+- 正身报告由围堰 identity 只读产出替位（引擎位修前挂死不可自证），mergeall-closeout 先例；本缺陷本体即 SPEC-025 移植件（lease-mergeleg23-parallel 簇E）引入的移植缺欠，已列候修项随本批清偿，修复后引擎位自证恢复。
 - 任务包 idf-03 的 SDD 完备度门：单点机械缺陷修复批无独立 DES，close 时若 SDD 门拦按 DEC-024 bypass 留痕申报，TDD 门以新回归测试承载。
+- SDDG 首拦补录（如实留痕不抹）：SDDG-3 判偏差条目零承载词形、SDDG-4 判差分缺 tests 面文件，两判均属实——补 tests/identity_salt.rs 端到端回归（15 秒超时闸，旧病回流即红不挂套件）并修订本节承载词形后复约，未动 bypass 通道。
 
 ## 五、改动文件 {#changed}
 
