@@ -84,7 +84,11 @@ fn pack_path(root: &Path) -> PathBuf {
 }
 
 fn index_path() -> PathBuf {
-    std::env::temp_dir().join(format!("retriever-index-{}.ndjson", std::process::id()))
+    std::env::temp_dir().join(format!(
+        "retriever-index-{}-{:?}.ndjson",
+        std::process::id(),
+        std::thread::current().id()
+    ))
 }
 
 /// 建索引于系统临时目录不落工作区，缺席或失败映射 MissingBase 即报缺席件名 locator。
@@ -92,8 +96,9 @@ fn index_path() -> PathBuf {
 pub fn build_index(root: &Path) -> Result<PathBuf, RecallError> {
     let pack: PathBuf = if layout_form(root) == Some(Layout::Canonical) {
         let p = std::env::temp_dir().join(format!(
-            "retriever-canonical-pack-{}.json",
-            std::process::id()
+            "retriever-canonical-pack-{}-{:?}.json",
+            std::process::id(),
+            std::thread::current().id()
         ));
         std::fs::write(&p, CANONICAL_MEMORY_PACK)
             .map_err(|_| RecallError::MissingBase("locator".to_string()))?;
@@ -200,4 +205,27 @@ pub fn query_by_id(
         ],
     )?;
     Ok(entries_of(report).into_iter().next())
+}
+
+#[cfg(test)]
+mod tests {
+    use std::collections::HashSet;
+
+    use super::index_path;
+
+    /// 并行抖动最小复现：测试框架同进程多线程跑测，进程 id 相同；
+    /// 临时索引文件名若只掺进程 id，8 线程全撞同名互踩。修复前此测必红
+    /// （8 路径全同），掺线程 id 后必绿（ThreadId 进程内唯一）。
+    #[test]
+    fn index_path_distinct_across_threads() {
+        let handles: Vec<_> = (0..8)
+            .map(|_| std::thread::spawn(index_path))
+            .collect();
+        let paths: Vec<_> = handles
+            .into_iter()
+            .map(|h| h.join().expect("测试线程正常退出"))
+            .collect();
+        let unique: HashSet<_> = paths.iter().collect();
+        assert_eq!(unique.len(), 8, "并行线程临时索引路径互踩: {paths:?}");
+    }
 }
