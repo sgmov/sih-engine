@@ -391,9 +391,11 @@
     "governance/PARKING-v1.md": [
       "decision/010-zero-trust-identity.md",
       "decision/DEC-007-engineering-layer-ontology.md",
+      "design/DES-017-pending-adjudication-orchestration-v1.md",
       "proposal/PRO-007-naming-clearance-draft.md",
       "proposal/PRO-008-project-memory-component-derivation.md",
-      "spec/SPEC-017-contribution-measure.md"
+      "spec/SPEC-017-contribution-measure.md",
+      "spec/SPEC-025-toolful-mergeback-v1.md"
     ],
     "governance/SETTLEMENT-V1-2026-09-02.md": [
       "spec/SPEC-014-attractor-mergeback-gap.md",
@@ -2389,6 +2391,12 @@
         "hits": 0,
         "upstream_changes": 0
       },
+      "design/DES-017-pending-adjudication-orchestration-v1.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
       "proposal/PRO-007-naming-clearance-draft.md": {
         "blocked": 0,
         "consulted": 0,
@@ -2402,6 +2410,12 @@
         "upstream_changes": 0
       },
       "spec/SPEC-017-contribution-measure.md": {
+        "blocked": 0,
+        "consulted": 0,
+        "hits": 0,
+        "upstream_changes": 0
+      },
+      "spec/SPEC-025-toolful-mergeback-v1.md": {
         "blocked": 0,
         "consulted": 0,
         "hits": 0,
