@@ -94,6 +94,7 @@ mod tests {
             excerpt: String::new(),
             matched: String::new(),
             at: "t".into(),
+            source_domain: None,
         };
         let mut rows = vec![
             mk(Archive::Conclusion, "md", "sih-engine/sih/event/plan/b-results.md@9-9", Axis::Topic),

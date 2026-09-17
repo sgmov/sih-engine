@@ -34,6 +34,28 @@ pub fn classify_path(rel: &str) -> Option<Archive> {
         }
         return None;
     }
+    // retrieverline 批（rl-02）档案面扩容两域：检索可见面非引用权威面，SETSP 名录与
+    // 旧仓 doc 只作盘点源不作引用源（工程基线与资产回锚登记先例），来源域标注
+    // 经 source_domain_of 随件出行零伪装正典；档属归经验档承 ai-ex 外部经验先例。
+    if rel.starts_with("sihankor/doc/") && rel.ends_with(".md") {
+        return Some(Archive::Experience);
+    }
+    if rel.starts_with(".tmp/SihEngineeringTechnologySelectionPrecedent/") && rel.ends_with(".md")
+    {
+        return Some(Archive::Experience);
+    }
+    None
+}
+
+/// retrieverline 批（rl-02）：扩容两域来源域标注，未入两域返回 None（既有域条目
+/// 零标注，输出行零新键）。检索可见面非引用权威面：标注是出处显形，非正典地位授予。
+pub fn source_domain_of(rel: &str) -> Option<&'static str> {
+    if rel.starts_with("sihankor/doc/") {
+        return Some("legacy-sihankor");
+    }
+    if rel.starts_with(".tmp/SihEngineeringTechnologySelectionPrecedent/") {
+        return Some("setsp");
+    }
     None
 }
 
@@ -110,6 +132,38 @@ mod tests {
         assert_eq!(classify_path("sih-engine/doc/spec/SPEC-007-project-memory-component.md"), None);
         assert_eq!(classify_path("sih-engine/sih/event/plan/mem-init-t6d.md"), None);
         assert_eq!(classify_path("sih-tools/scribe/reports/2026-08-27-memimpl-identity.json"), None);
+    }
+
+    /// retrieverline rl-02：扩容两域归经验档且来源域标注随件；既有域零标注零串线。
+    #[test]
+    fn retrline_extension_domains_classify_and_annotate() {
+        assert_eq!(
+            classify_path("sihankor/doc/decision/DEC-019-trust-decay.md"),
+            Some(Archive::Experience)
+        );
+        assert_eq!(
+            classify_path(
+                ".tmp/SihEngineeringTechnologySelectionPrecedent/engineering-bridge/meta/05-meta-defenses.md"
+            ),
+            Some(Archive::Experience)
+        );
+        assert_eq!(
+            source_domain_of("sihankor/doc/design/DES-016-trust-scoring-implementation.md"),
+            Some("legacy-sihankor")
+        );
+        assert_eq!(
+            source_domain_of(".tmp/SihEngineeringTechnologySelectionPrecedent/README.md"),
+            Some("setsp")
+        );
+        // 两域非 md 载体不入档案面（yaml 关系边集在册未入索引），标注判定与载体验独立。
+        assert_eq!(classify_path("sihankor/doc/other.txt"), None);
+        assert_eq!(
+            classify_path(".tmp/SihEngineeringTechnologySelectionPrecedent/decisions/rust.yaml"),
+            None
+        );
+        // 既有域零标注：ai-ex 属本域经验档不落 legacy 标注。
+        assert_eq!(source_domain_of("ai-ex/INDEX.md"), None);
+        assert_eq!(source_domain_of("sih-engine/doc/governance/PARKING-v1.md"), None);
     }
 
     #[test]

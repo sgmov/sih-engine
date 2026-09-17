@@ -17,10 +17,10 @@ pk-039 面：retriever 档案面扩容到资产层即 SETSP 名录与旧仓 doc 
 
 ## 三、工作清单 {#work}
 
-- [ ] rl-01：资产面盘点即 SETSP 名录与旧仓 sihankor/doc 目录逐件清点建册
-- [ ] rl-02：档案面扩容即盘点面入 retriever 检索索引（archives 面），来源域标注随件
-- [ ] rl-03：引擎温故语义通道实装对齐 wikirecall 语义算法（确定性统计向量，缺省 K=3，词面留显式回退位）
-- [ ] rl-04：同参双跑对表即引擎件与工具壳判词一致加测试族
+- [x] rl-01：资产面盘点即 SETSP 名录与旧仓 sihankor/doc 目录逐件清点建册（册在 sih/event/plan/retrline-materials/rl01-inventory.md，2026-09-18）
+- [x] rl-02：档案面扩容即盘点面入 retriever 检索索引（archives 面），来源域标注随件（两域 include 出 files=462 entries=39281 parse_errors=0，source_domain 随行，2026-09-18）
+- [x] rl-03：引擎温故语义通道实装对齐 wikirecall 语义算法（确定性统计向量，缺省 K=3，词面留显式回退位）（src/retriever/semantic.rs 与 CLI --lexical/--semantic K，2026-09-18）
+- [x] rl-04：同参双跑对表即引擎件与工具壳判词一致加测试族（dualrun 八查询判词一致 verdict=consistent，材料在 sih/event/plan/retrline-materials/dualrun/，2026-09-18）
 - [ ] rl-05：settle 加 close 加结果档
 
 ## 四、验收 {#acceptance}

@@ -1,0 +1,125 @@
+{
+  "agreed": 8,
+  "corpus": "sih/event/plan/retrline-materials/dualrun/corpus (十二件)",
+  "criterion": "top-k 集合全等且逐位得分差 <= 1e-9",
+  "date": "2026-09-18",
+  "disagreement_count": 0,
+  "disagreements": [],
+  "engine_side": "sih-engine src/retriever/semantic.rs semantic_channel",
+  "k": 3,
+  "per_query": [
+    {
+      "engine_ids": [
+        "doc-01-lease-lifecycle"
+      ],
+      "hit_type": "lexical-hit",
+      "ids_equal": true,
+      "query": "租约 生命周期",
+      "score_max_delta_this_query": 2.220446049250313e-16,
+      "tool_ids": [
+        "doc-01-lease-lifecycle"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [
+        "doc-02-parse-judou"
+      ],
+      "hit_type": "lexical-hit",
+      "ids_equal": true,
+      "query": "句读 解析",
+      "score_max_delta_this_query": 1.1102230246251565e-16,
+      "tool_ids": [
+        "doc-02-parse-judou"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [
+        "doc-04-hash-chain",
+        "doc-01-lease-lifecycle",
+        "doc-10-formatter"
+      ],
+      "hit_type": "lexical-hit",
+      "ids_equal": true,
+      "query": "哈希 链 认证",
+      "score_max_delta_this_query": 1.1102230246251565e-16,
+      "tool_ids": [
+        "doc-04-hash-chain",
+        "doc-01-lease-lifecycle",
+        "doc-10-formatter"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [
+        "doc-12-lock"
+      ],
+      "hit_type": "semantic-near",
+      "ids_equal": true,
+      "query": "并发 控制 死锁",
+      "score_max_delta_this_query": 1.6653345369377348e-16,
+      "tool_ids": [
+        "doc-12-lock"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [
+        "doc-04-hash-chain",
+        "doc-10-formatter",
+        "doc-01-lease-lifecycle"
+      ],
+      "hit_type": "semantic-near",
+      "ids_equal": true,
+      "query": "留痕 追溯 不可改",
+      "score_max_delta_this_query": 2.7755575615628914e-17,
+      "tool_ids": [
+        "doc-04-hash-chain",
+        "doc-10-formatter",
+        "doc-01-lease-lifecycle"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [
+        "doc-11-selector",
+        "doc-06-parking",
+        "doc-03-cascade-clean"
+      ],
+      "hit_type": "semantic-near",
+      "ids_equal": true,
+      "query": "三路 路由 判定",
+      "score_max_delta_this_query": 1.6653345369377348e-16,
+      "tool_ids": [
+        "doc-11-selector",
+        "doc-06-parking",
+        "doc-03-cascade-clean"
+      ],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [],
+      "hit_type": "zero-hit",
+      "ids_equal": true,
+      "query": "量子 色动力学 夸克",
+      "score_max_delta_this_query": 0.0,
+      "tool_ids": [],
+      "verdict": "agree"
+    },
+    {
+      "engine_ids": [],
+      "hit_type": "zero-hit",
+      "ids_equal": true,
+      "query": "巧克力 火锅 配方",
+      "score_max_delta_this_query": 0.0,
+      "tool_ids": [],
+      "verdict": "agree"
+    }
+  ],
+  "schema": "retrline-dualrun/1",
+  "score_max_delta": 2.220446049250313e-16,
+  "tool_side": "sih-tools/wikirecall semantic.semantic_channel (冻结只读 import)",
+  "total_queries": 8,
+  "verdict": "consistent"
+}

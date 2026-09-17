@@ -1,0 +1,103 @@
+{
+  "schema": "retrline-dualrun-engine/1",
+  "date": "2026-09-18",
+  "engine_side": "sih-engine src/retriever/semantic.rs semantic_channel",
+  "corpus": "sih/event/plan/retrline-materials/dualrun/corpus",
+  "k": 3,
+  "queries": [
+    {
+      "query": "租约 生命周期",
+      "hit_type": "lexical-hit",
+      "hits": [
+        {
+          "id": "doc-01-lease-lifecycle",
+          "score": 0.5499382803749593
+        }
+      ]
+    },
+    {
+      "query": "句读 解析",
+      "hit_type": "lexical-hit",
+      "hits": [
+        {
+          "id": "doc-02-parse-judou",
+          "score": 0.5366810487028635
+        }
+      ]
+    },
+    {
+      "query": "哈希 链 认证",
+      "hit_type": "lexical-hit",
+      "hits": [
+        {
+          "id": "doc-04-hash-chain",
+          "score": 0.2767042874355408
+        },
+        {
+          "id": "doc-01-lease-lifecycle",
+          "score": 0.06553997264657101
+        },
+        {
+          "id": "doc-10-formatter",
+          "score": 0.060297251096046195
+        }
+      ]
+    },
+    {
+      "query": "并发 控制 死锁",
+      "hit_type": "semantic-near",
+      "hits": [
+        {
+          "id": "doc-12-lock",
+          "score": 0.30494993943550214
+        }
+      ]
+    },
+    {
+      "query": "留痕 追溯 不可改",
+      "hit_type": "semantic-near",
+      "hits": [
+        {
+          "id": "doc-04-hash-chain",
+          "score": 0.1529497186412414
+        },
+        {
+          "id": "doc-10-formatter",
+          "score": 0.07092905143745909
+        },
+        {
+          "id": "doc-01-lease-lifecycle",
+          "score": 0.03001983508231054
+        }
+      ]
+    },
+    {
+      "query": "三路 路由 判定",
+      "hit_type": "semantic-near",
+      "hits": [
+        {
+          "id": "doc-11-selector",
+          "score": 0.4553776404661723
+        },
+        {
+          "id": "doc-06-parking",
+          "score": 0.14785827107590688
+        },
+        {
+          "id": "doc-03-cascade-clean",
+          "score": 0.01979924068397271
+        }
+      ]
+    },
+    {
+      "query": "量子 色动力学 夸克",
+      "hit_type": "zero-hit",
+      "hits": []
+    },
+    {
+      "query": "巧克力 火锅 配方",
+      "hit_type": "zero-hit",
+      "hits": []
+    }
+  ]
+}
