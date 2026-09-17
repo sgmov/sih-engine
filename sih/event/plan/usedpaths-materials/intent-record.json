@@ -1,0 +1,24 @@
+{
+  "session_id": "sess-zcode-260918-usedpaths",
+  "raw_input": "候令簿第二件推进 usedpaths 批即收约未用锁罚口径精确化，承 pk-074 faceprecise 实证，子代理工地施工归报，主会治理结算。前会话 b2a65416071e1f06 系空正身缺陷签发即开即废，本会话为真承载。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "usedpaths 批：closegate 罚金块 used_paths 改源收约时 worktree git diff 实改集，前缀覆盖比对与尾斜杠归一，git 不可用回退 allow 近似并 detail.used_source 如实标注，事件 schema 八字段零删零改义，测试六件，lease 系既有套件零新红，settle 加 close 加推双远端。",
+    "exclusions": [
+      "围堰 sih-tools/lease 冻结零改动，其 path_count 计费去重留解冻批",
+      "测试例文案与正典相悖处从 faceprecise-analysis §2.5 即罚 = 锁面且未被实改集覆盖"
+    ],
+    "output_format": "src/bin/lease/closegate.rs 改加 tests/lease_usedpaths_penalty.rs 新立即批材料，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以红转绿与全量回归为证据",
+      "SPEC-027：事件 schema 兼容",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/bin/lease/closegate.rs 加 tests/lease_usedpaths_penalty.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
