@@ -1,0 +1,5 @@
+{
+  "validator": "lease-structural",
+  "note": "作废会话补链笔，plain 意图形 DES-016 豁免",
+  "validated_at": "2026-09-18"
+}

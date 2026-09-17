@@ -1,0 +1,23 @@
+{
+  "session_id": "sess-zcode-260918-usedpaths-void",
+  "raw_input": "坏会话作废笔：open 时正身与意图件路径已被误先拆的工地连带删除，引擎 open 对缺席件零校验即空哈希签发，本会话即开即废重开。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "作废会话 b2a65416071e1f06：空正身空意图缺陷签发，补链两笔后收约拆会，零锁零提交零施工。",
+    "exclusions": [
+      "引擎 open 对 identity 与 intent 缺席零校验即空哈希签发一节记缺陷披露候另批",
+      "本会话不承载 usedpaths 实批任何工作"
+    ],
+    "output_format": "作废链两笔加收约撤销行，重开新会话承载实批",
+    "injected_constraints": [
+      "如实申报纪律",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "作废链笔与收约行",
+      "max_depth": 1
+    }
+  }
+}
