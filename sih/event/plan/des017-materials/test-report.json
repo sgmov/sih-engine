@@ -1,0 +1,13 @@
+{
+  "batch": "des017",
+  "date": "2026-09-18",
+  "new_suite": "T6 三步全零：化格 formatter --pack packs/formatter/general-v1 退出码 0 零改动；核阅 scrutinator --pack des-001 首跑退出码 2 系工地路径域匹配缺口按等价路径形复跑 content_hash aa1ed5d1 对表确证真审后 0 零 findings；检词 nomenclator check --pack packs/nomenclator/core 退出码 0 零违例",
+  "regression": {
+    "文档差分": "git diff 仅修订记录追加一行（1 file changed, 1 insertion），零语义改写",
+    "子代理汇报": "des017 子代理三步时间线与违例清单在档，T6 全零交付线达成"
+  },
+  "changed": [
+    "doc/design/DES-017-pending-adjudication-orchestration-v1.md（修订记录 +1 行）"
+  ],
+  "exit_code": 0
+}
