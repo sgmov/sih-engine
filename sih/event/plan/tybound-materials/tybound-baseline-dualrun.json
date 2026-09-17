@@ -1,0 +1,13 @@
+{
+ "batch": "tybound",
+ "phase": "baseline-refresh-dualrun",
+ "exit_code": 0,
+ "readings": {
+  "run1": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/tybound-materials/rust-stream-baseline-run1.ndjson",
+  "run2": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/tybound-materials/rust-stream-baseline-run2.ndjson",
+  "cmp": "byte-identical exit 0",
+  "sha256": "62d83aeba02411b6f49da0ad55502745efa484bceae64228ab1af1f93dc8dffb",
+  "lines": 329,
+  "quirk": "条目 id 哈希料取 --in 参数原文，回落件 sample.rs 基线生成须与测试同款相对路径解析形"
+ }
+}

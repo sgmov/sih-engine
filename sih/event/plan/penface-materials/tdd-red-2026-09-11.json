@@ -1,0 +1,21 @@
+{
+  "what": "penface 批 TDD 先红红证（gatefix-parallel 簇M）",
+  "batch": "penface",
+  "session_id": "b8aa24a253bb7fd4",
+  "evidence_log": "sih-engine/sih/event/plan/penface-materials/tdd-red-2026-09-11.log",
+  "suite": "tests/test_penface_fixes.py",
+  "verdict": "red",
+  "counts": {"failed": 8, "passed": 1},
+  "red_items": [
+    "test_commit_trail_root_passthrough_to_argv (F1)",
+    "test_open_cli_failure_teaches_intent_file_path (F2a)",
+    "test_append_cli_failure_teaches_report_json_path (F2b)",
+    "test_trail_path_layout_forms (F3)",
+    "test_scribe_bin_profile_agnostic (F3)",
+    "test_implicit_placeholder_close_collects (F4)",
+    "test_binding_teachings_cross_reference_implicit (F4)",
+    "test_repo_outside_domain_teaches_dot_and_absolute (F5)"
+  ],
+  "green_guard": "test_commit_argv_default_semantics_unchanged（缺省发现语义零变回归卫，应绿）",
+  "note": "红证先红留痕纪律：重跑不覆盖首跑记录，本 JSON 为链上认证承载件，原文 log 同目录在档"
+}

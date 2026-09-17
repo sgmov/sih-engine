@@ -1,0 +1,37 @@
+{
+  "batch": "mergeall-closeout",
+  "kind": "settlement",
+  "session_id": "bf9422294f9ca2a2",
+  "date": "2026-09-16",
+  "what": "sih-tools→sih-engine 融回补缺六腿（前批 ZCode 动态工作流 dwfrun-be5d655b 工程成果）的批结算：批 commit + 认证上链 + SDDG 收约",
+  "deliverables": {
+    "staged_files": 71,
+    "insertions": 23332,
+    "deletions": 69,
+    "legs": [
+      "gap-parking-route-engine-selector：critsweep/attnanchor 泊界路由腿直调引擎 selector bin，消最后围堰运行时依赖（无 uv 双跑判词一致 VERDICT-IDENTICAL）",
+      "gap-locksview-cascade-engine-bin：locksview 级联检查直调引擎 cascade bin（CASCADE_BIN_OVERRIDE 测试缝，沙箱双跑逐字节 IDENTICAL）",
+      "gap-parser-pack-assets：parser json/markdown 数据包落位引擎 packs/（diff -r 逐字节一致，双跑出参一致）",
+      "gap-identity-verify-137：采集子进程 2 秒超时闸收口（同参双跑五用例逐字节 IDENTICAL）",
+      "gap-mergeback-uncommitted-landing：融回候批 55 件编暂存（lease 偏差清偿、金向量修复、askroute 全套、lib.rs 承重行、packs 45 件、critsweep registry）",
+      "gap-ask3repeater-fixture-race：validate 夹具并行竞态修复（tag+pid 唯一路径，三轮全绿）"
+    ],
+    "docs": [
+      "doc/design/DES-019-mergeback-toolface-design-v1.md（SDD）",
+      "doc/spec/SPEC-026-engine-test-design-v1.md（TDD）"
+    ]
+  },
+  "verification": {
+    "cargo_test": "裸默认工具链 cargo test --workspace 退出码 0：473 passed / 0 failed / 6 ignored / 87 段（2026-09-16 本会话实跑复现）",
+    "doc_audits": "DES-019 与 SPEC-026 三审（化格 formatter 0 / 核阅 scrutinator 0 / 检词 nomenclator 0）六命令复跑全 0",
+    "book_guard": "两文档零数学载体 ID 引用（grep 实测 0），checkcite 必跑步前置不成立，如实记档",
+    "xcode_license": "用户已接受 Xcode 许可；强制重编+真链接裸环境验证通过，许可墙遗留销账"
+  },
+  "deviations": [
+    "前批施工主树直写非工地位（工作流工程面所限），本批以工地复制+让位归并对表法补偿（BATCH-FACE §10）",
+    "结算批跳过 ask3 双门与叩问（零新生成，plain 意图形）",
+    "正身以围堰 identity 只读运行替位：引擎 bin 裸环境 identity verify 狂转 114 秒（96 秒系统态）后 SIGKILL 137 复发，二进制新于修复源码仍现，缺陷随批登记候修",
+    "他批在途件（formatter/locator/nomenclator/parser/selector/tally 六 bin、sih/event 与 sih/state 旧档、并发批 lease-cutover-parallel 面）一律不入本批 commit"
+  ],
+  "version": "0.9.0-pinned"
+}

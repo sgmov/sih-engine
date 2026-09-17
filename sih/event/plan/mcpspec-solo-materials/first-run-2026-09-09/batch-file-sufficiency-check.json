@@ -1,0 +1,7 @@
+{
+ "file": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/mcpspec-solo/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+ "check": "docmath gate 查二同款逐件复核（批内工地形）",
+ "violations": [],
+ "notes": [],
+ "verdict": "green"
+}

@@ -1,0 +1,25 @@
+{
+ "date": "2026-09-17",
+ "engine": {
+  "untracked_committed": 107,
+  "scope": "sih/ 树全量批材料与 results 档与任务包与泊材料",
+  "deleted": [
+   "sih/event/trail/.ndjson（estcarr 认证笔重复写入，同 report_hash 正笔在 2026-09-13 正链，全零孤链删无损）"
+  ],
+  "doc_edits": [
+   "doc/governance/PARKING-v1.md 名册补记七件加存量违例三处机械修"
+  ]
+ },
+ "tools": {
+  "untracked_committed": 1233,
+  "modified_committed": 6,
+  "scope": "台账五件现态加 AI-MANUAL 语义修正加 scribe/reports 九百件加 lease 回执加 proposition 双目录加 parking 加 facet 契约加 work 加 scribe/trail",
+  "deleted": [
+   "lease/ledger/{bypass,lockface-bills,locks,sessions}.ndjson.lock 四枚零字节锁件",
+   "lease/ledger/lock.db 零字节",
+   "lease/ledger/locks.ndjson.bak-mathclose-181734 陈旧备份"
+  ]
+ },
+ "ruling": "用户 2026-09-17 简式缺省处置规：以后没有批的文件自动跟批跑，如果无用直接删除",
+ "watchcheck_disposition": "候令项一随本批消解：sih-tools 侧四件与主树旧未跟踪 results 档俱按简式规收编入版控，不再候二值裁"
+}

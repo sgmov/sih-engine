@@ -1,0 +1,11 @@
+{
+  "batch": "gitexclude",
+  "kind": "settlement-wip",
+  "session": "129b20a249e74549",
+  "what": "gitexclude wip：src/bin/parser.rs 让位退出本批归并面（收约无绕行预检撞真分叉闸整批拒，diverged_files 即 src/bin/parser.rs，主树同文件为并发批 lease-cutover-parallel 在途 M 态且实现不同源，分叉闸无绕行旗标，按 adoptface 批让位归并程序处置），实现保考古位 4c54724 可达，SPEC-025 gap-packs-assets 承载件统一裁决候 lease-cutover-parallel 批归并；结果档补收约让位实录与链证行（des-016 plain 意图与 DEC-026 与 SPEC-025 承载词在档）",
+  "readings": {
+    "restore_source": "git checkout 67131b1 -- src/bin/parser.rs（基点版退归并面，工作树与索引同形）",
+    "t6_results_rerun": "化格 exit 0；核阅域外 exit-2 记档；检词 0 findings 0（packs/nomenclator/core）",
+    "chain_base": "2026-09-17 当日链本笔 append 前 5 行（settle 认证笔 c201b9f0 与意图笔 34c5199b 与 gauge 三维快照在链）"
+  }
+}

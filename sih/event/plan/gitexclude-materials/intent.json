@@ -1,0 +1,36 @@
+{
+  "session_id": "sess-zcode-260917-gitexclude",
+  "raw_input": "为飞轮隔离批（gitexclude）立约开工地。原则（用户原话意）：司衡引擎结构不动，sih init 落下的治理数据飞轮（sih 树）不得进入用户项目的 git。本批一件主交付：sih init 落域后自动把 sih/ 写入项目 .git/info/exclude 并以 git check-ignore 机械验证，飞轮与用户项目 VCS 解耦，引擎结构零改动。硬性纪律七条：sih-tools/ 冻结围堰只读（identity verify 只读运行唯一例外，PYTHONDONTWRITEBYTECODE=1）；全部施工写入工地副本主树零直写（任务包与批材料落主树 sih/{state,event}/plan/ 未跟踪位）；Cargo.toml 版本保持 0.9.0 依赖零增删；src/mcpserver/ 零改动（本批只动 sih 薄壳与文档与测试）；不碰他批在途件（主树六 bin M 态、sih/event 与 sih/state 旧档）；禁 git commit/push 直呼（commit 由 lease commit 落笔）；回报用中文。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "gitexclude 飞轮隔离批：sih init 落域自动把 sih/ 写入项目 .git/info/exclude 并以 git check-ignore 机械验证，飞轮与用户项目 VCS 解耦。1) src/bin/sih.rs 薄壳扩展——open_domain 成功后幂等写域根 .git/info/exclude 司衡标记段（已有标记段不重复写），git check-ignore 判 sih/ 被忽略，结果入结构化出参；2) tests/sih_init.rs 黑箱扩展——临时 git 仓活体 init 后 exclude 段在位、check-ignore 判负即验红、重跑幂等零重复段；3) README.md 与 doc/guide/adopt-v1.md 涉 init 段补飞轮隔离行为（写 info/exclude 不写 .gitignore 的选型理由）；4) 验收——cargo test 全绿、Cargo.toml 0.9.0 与依赖清单零变动、src/mcpserver/ diff 零、活体 git status --porcelain 零 sih/ 未跟踪项、T6 三步审计（化格、核阅、检词）过。",
+    "exclusions": [
+      "不动引擎结构——src/mcpserver/ 零改动，bootstrap 内核与 MCP bootstrap 工具位零触碰，施工面限 src/bin/sih.rs 与 tests/ 与文档",
+      "不升版本号——Cargo.toml 0.9.0 钉死，依赖清单零增删",
+      "不碰他批在途件——主树 src/bin/{formatter,locator,nomenclator,parser,selector,tally}.rs 的 M 态与 sih/event 与 sih/state 旧档零触碰",
+      "围堰零写入——sih-tools/ 冻结只读，identity verify 只读运行（PYTHONDONTWRITEBYTECODE=1）唯一例外",
+      "主树零直写——全部施工写入工地副本路径，任务包与批材料按惯例落主树 sih/{state,event}/plan/ 未跟踪位",
+      "不直呼 git commit/push——commit 一律由 lease commit 机械落笔",
+      "不写用户仓可见文件——排除位选 .git/info/exclude 而非 .gitignore，.gitignore 零触碰",
+      "生成批但 ask3 双门以 plain 意图替位，候补申报——本件即 plain 形零哲学引文，候人节点裁"
+    ],
+    "output_format": "sih-engine/src/bin/sih.rs（薄壳扩展，exclude 步幂等写与 check-ignore 验证与出参 exclude 段）+ sih-engine/tests/sih_init.rs（黑箱扩展）+ sih-engine/README.md 与 sih-engine/doc/guide/adopt-v1.md（文档对表）+ cargo test 全绿 + T6 三步审计（化格、核阅、检词）+ 结果档 sih-engine/sih/event/plan/gitexclude-results.md + materials/（intent、identity）",
+    "injected_constraints": [
+      "工程基线第一条确定性程序是治理操作唯一执行者——commit 由 lease commit 机械落笔，闸拒即停",
+      "工程基线第四条可验证性约束——F-1 至 F-5 跑前立文（任务包 gitexclude.md 第四节），check-ignore 与幂等以活体命令证",
+      "DEC-017 修订六甲表形——lease open --new-stem 带甲表三件（概念锚 zh=飞轮隔离 与 无承、派生申报 gitexclude:new），stem 闸机械核对派生对表",
+      "围堰冻结令（2026-09-14）——sih-tools/ 生产调用面切引擎 bin 位，围堰源码零改动",
+      "GOV-004 接管五钉位——治理域历史不可改，只追加；引擎仓自身 sih 树跟踪态零回溯"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/bin/sih.rs + sih-engine/tests/sih_init.rs + sih-engine/README.md + sih-engine/doc/guide/adopt-v1.md + sih-engine/sih/event/plan/gitexclude-{results.md, materials/}",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-engine/src/mcpserver/bootstrap.rs（init_precheck 六项与 open_domain 落地五步，只读基准零改动）+ sih-engine/sih/state/plan/adoptface.md（薄壳批前位）+ sih-engine/doc/governance/GOV-004-commit-takeover-v1.md",
+      "max_depth": 1
+    }
+  }
+}

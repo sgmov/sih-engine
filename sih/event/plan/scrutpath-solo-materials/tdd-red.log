@@ -1,0 +1,66 @@
+   Compiling sih-engine v0.1.0 (/Users/moc/workspaces/SiHankor/worktrees/sih-engine/scrutpath-solo)
+error[E0425]: cannot find function `domain_match_rooted` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:432:35
+    |
+432 |         crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
+    |                                   ^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `domain_match_rooted` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:444:35
+    |
+444 |         crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
+    |                                   ^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `domain_match_rooted` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:455:36
+    |
+455 |         !crate::scrutinator::rule::domain_match_rooted(&dom, root, "/fake/ws-root/other/doc/x.md"),
+    |                                    ^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `domain_match_rooted` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:459:36
+    |
+459 |         !crate::scrutinator::rule::domain_match_rooted(
+    |                                    ^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `normalize_worktree_rel` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:472:35
+    |
+472 |         crate::scrutinator::rule::normalize_worktree_rel(
+    |                                   ^^^^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `normalize_worktree_rel` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:478:42
+    |
+478 |     assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("sih-engine/doc/x.md"), None);
+    |                                          ^^^^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `normalize_worktree_rel` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:479:42
+    |
+479 |     assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("worktrees/sih-engine"), None);
+    |                                          ^^^^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `discover_workspace_root` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:491:42
+    |
+491 |     let root = crate::scrutinator::rule::discover_workspace_root(target.to_str().unwrap())
+    |                                          ^^^^^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+error[E0425]: cannot find function `discover_workspace_root` in module `crate::scrutinator::rule`
+   --> src/scrutinator/tests.rs:499:39
+    |
+499 |     assert!(crate::scrutinator::rule::discover_workspace_root("/tmp").is_none());
+    |                                       ^^^^^^^^^^^^^^^^^^^^^^^ not found in `crate::scrutinator::rule`
+
+warning: duplicated attribute
+   --> src/event_stream/append.rs:370:5
+    |
+370 |     #[test]
+    |     ^^^^^^^
+    |
+    = note: `#[warn(duplicate_macro_attributes)]` on by default
+
+For more information about this error, try `rustc --explain E0425`.
+warning: `sih-engine` (lib test) generated 1 warning
+error: could not compile `sih-engine` (lib test) due to 9 previous errors; 1 warning emitted

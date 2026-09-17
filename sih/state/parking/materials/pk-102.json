@@ -1,0 +1,22 @@
+{
+ "action": "enter",
+ "context": "令源：用户 2026-09-12 令「都要测，测试数据可以留痕，并且通过人节点签署回撤。」sihmcp 载体换防验收的全量实测批 gauge-probe 与 gauge-probe-2（双会话）留下测试痕：链笔（trail 2026-09-12 两探针会话各笔）与台账行（sessions 加 locks 加 claims 加 mcpline tokens 登记册探针令牌行）与 sih-engine 主树归并件（gauge-probe 会话结果档与测试件）与 /tmp 测试域根（台面开域视图实测工件）。测试数据经用户明示准予留痕，回撤通道候人节点签署后执行。",
+ "created_at": "2026-09-12",
+ "entry_id": "pk-102",
+ "exit_condition": "人节点签署回撤令后按清单一笔一笔回撤（git revert 归并件与台账行停行注记与链面补偿笔），或人节点裁测试痕转正归档",
+ "id": "pk-102",
+ "parking": {
+  "entered_at": "2026-09-12",
+  "ttl_days": 14
+ },
+ "path": "doc/governance/PARKING-v1.md",
+ "related": [
+  "gauge-probe",
+  "gauge-probe-2",
+  "pk-101"
+ ],
+ "source": "主会 2026-09-12 用户令（都要测加留痕加人节点签署回撤）",
+ "state": "parked",
+ "title": "gauge-probe 双会话测试痕回撤候签：链笔与台账行与归并件与测试域根清单",
+ "ttl_days": 14
+}

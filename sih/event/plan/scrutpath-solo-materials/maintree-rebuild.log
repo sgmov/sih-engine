@@ -1,0 +1,11 @@
+   Compiling sih-engine v0.1.0 (/Users/moc/workspaces/SiHankor/sih-engine)
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:356:4
+    |
+356 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.06s

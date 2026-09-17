@@ -1,0 +1,30 @@
+{
+  "session_id": "sess-zcode-260916-mergeall-closeout",
+  "raw_input": "用户令「1、2开工」：mergeall-closeout 批结算。前批（ZCode 动态工作流 dwfrun-be5d655b，2026-09-15/16）以工程面完成 sih-tools→sih-engine 融回补缺六项（parking 路由引擎位、locksview 级联直调、parser packs 落位、identity 137 超时闸、融回候批件暂存 55、ask3repeater 夹具竞态）与 SDD（DES-019）/TDD（SPEC-026）成文三审与全量测试 473 过 0 败。本批只做结算收口：批 commit + 认证上链 + SDDG 收约，零新生成。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "mergeall-closeout 批结算：1) git 对账分类（本批六腿件与文档入库，他批在途件一律不动）；2) 书简认证笔绑定批报告哈希落 2026-09-16 当日链；3) lease commit settle 形落笔（session+cert 挂接行过直提守卫）；4) lease close 过 SDDG 两道门（DEC-024）；5) reconcile 与链 verify 收尾对账。已核实读数：裸默认工具链 cargo test --workspace 退出码 0、473 过 0 败 6 忽略、87 测试段；DES-019 与 SPEC-026 三审六命令复跑全 0。",
+    "exclusions": [
+      "不推送远端——推送候选用户单独令",
+      "不动他批在途件——sih/event 与 sih/state 旧档、并发批 M 件（formatter/locator/nomenclator/parser/selector/tally 六 bin 与 sih/event 改档）一律零触碰",
+      "不升版本号——Cargo.toml 0.9.0 钉死，依赖清单不动",
+      "不改 src/mcpserver/——生产切位归快照切换批另令",
+      "围堰零写入——只读运行 identity verify 出正身报告替位（引擎 bin 裸环境 137 复发，缺陷随批登记）",
+      "跳过 ask3 双门与叩问——结算批零新生成，plain 意图形，偏离如实申报于此"
+    ],
+    "output_format": "sih-engine/sih/event/plan/mergeall-closeout-materials/（intent + identity + settlement 报告）+ 当日链认证笔 + sih-engine 批 commit（settle 形报文）+ lease settle 与 close 台账行 + 完工报告（工作区根）",
+    "injected_constraints": [
+      "工程基线第一条：确定性程序执法——commit 报文由 lease commit 机械落笔，认证由 scribe 机械上链",
+      "GOV-004 接管五钉位：治理域历史不可改，只追加",
+      "DEC-024：lease close 受 SDDG 两道门，不绕行",
+      "围堰冻结令（2026-09-14）：sih-tools 只读",
+      "结算追加制：账本与链只追加零改写"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine（源码六腿件与测试与 packs 与两文档的批 commit）+ sih-engine/sih/event/trail/2026-09-16.ndjson（认证笔）+ sih-engine/sih/event/plan/mergeall-closeout-materials/",
+      "max_depth": 1
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "allow": [
+    "sih-tools/mcpline/src/mcpline",
+    "sih-tools/mcpline/tests",
+    "sih-tools/mcpline/README.md",
+    "sih-tools/mcpline/AI-MANUAL.md",
+    "sih-tools/mcpline/pyproject.toml",
+    "sih-tools/mcpline/CALL-LOG.md",
+    "sih-engine/doc/design/DES-014-mcp-beta-security-model-v1.md",
+    "sih-engine/sih/state/plan/penface.md",
+    "sih-engine/sih/event/plan/penface-results.md",
+    "sih-engine/sih/event/plan/penface-materials"
+  ],
+  "event": "issued",
+  "gauge": {
+    "at": "2026-09-10",
+    "formula_version": "ga-2",
+    "values": {
+      "adoption": {
+        "sequence": "ok",
+        "value": 0.939173
+      },
+      "convergence": {
+        "sequence": "ok",
+        "value": 1.0
+      },
+      "mergeback": {
+        "sequence": "ok",
+        "value": 0.028571
+      }
+    },
+    "window_days": 30
+  },
+  "identity": {
+    "core_hash": null,
+    "file_sha256": "d6be46adfc1e7efabe9cf21cf822b80ea127a471e03adc4b900aff8f913395bb",
+    "identity_hash": null
+  },
+  "intent": {
+    "anchor_count": 0,
+    "record_sha256": "dff4c8d778745048f8d8828c17ee79a34cf885c6499c66bbf32ba141b55ddbb8",
+    "validated_by": "lease-structural"
+  },
+  "issued_at": "2026-09-10T20:55:55+00:00",
+  "package": "penface",
+  "package_path": "/Users/moc/workspaces/SiHankor/sih-engine/sih/state/plan/penface.md",
+  "repos": [
+    {
+      "base_branch": "integral-stage-build",
+      "branch": "msh/penface",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-tools",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/penface"
+    },
+    {
+      "base_branch": "main",
+      "branch": "msh/penface",
+      "repo": "/Users/moc/workspaces/SiHankor/sih-engine",
+      "worktree": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/penface"
+    }
+  ],
+  "scope_source": "package",
+  "session_id": "b8aa24a253bb7fd4",
+  "stem_check": {
+    "checked": true,
+    "disposition": "new_coinage_acknowledged",
+    "domain_scope": "first",
+    "new_coinage_claim": {
+      "code": "无承",
+      "code_verdict": "declared_none",
+      "derivation": [
+        {
+          "kind": "new",
+          "segment": "penface",
+          "verified_state": "unknown"
+        }
+      ],
+      "zh": "写面修"
+    },
+    "segments": [
+      {
+        "segment": "penface",
+        "state": "unknown",
+        "verdict": "new_coinage"
+      }
+    ],
+    "teaching": "新词认领在案：penface"
+  },
+  "tool": {
+    "name": "lease",
+    "version": "1.44.0"
+  }
+}

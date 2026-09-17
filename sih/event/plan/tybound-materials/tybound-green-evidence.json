@@ -1,0 +1,10 @@
+{
+ "batch": "tybound",
+ "phase": "tdd-green-full-suite",
+ "exit_code": 0,
+ "readings": {
+  "log": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/tybound-materials/tdd-green-full-suite.log",
+  "suite": "94 passed, 12 subtests passed",
+  "note": "工地全套绿：批前 82 绿 2 存量红，本批 +10 测并根因处置两存量红"
+ }
+}

@@ -1,0 +1,207 @@
+F.FFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+__________________ test_commit_trail_root_passthrough_to_argv __________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-1/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a59dba0>
+
+    def test_commit_trail_root_passthrough_to_argv(fx_root, monkeypatch):
+        """F1：MCP lease_commit 带 trail 与 root 透传到 CLI argv（pk-091 其三）。"""
+        from mcpline.writeface import tools as wf
+    
+        conn = make_conn(fx_root, monkeypatch)
+        conn.bind("f" * 16, "mcpbeta-fixture")
+        captured = {}
+    
+        def fake_run_cli(argv, timeout):
+            captured["argv"] = argv
+            return 0, '{"ok": true}', ""
+    
+        monkeypatch.setattr(wf, "run_cli", fake_run_cli)
+        trail_rel = "sih-engine/sih/event/trail/2026-09-11.ndjson"
+>       out = wf.tool_lease_commit(
+            conn, "sih-engine", "settle", "事述", seq=1, cert="deadbeef",
+            trail=[trail_rel], root="sih-engine",
+        )
+E       TypeError: tool_lease_commit() got an unexpected keyword argument 'trail'
+
+tests/test_penface_fixes.py:29: TypeError
+________________ test_open_cli_failure_teaches_intent_file_path ________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-3/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a532c30>
+
+    def test_open_cli_failure_teaches_intent_file_path(fx_root, monkeypatch):
+        """F2a：lease_open CLI 失败路径载荷四字段喂满，教学钉 intent 实为意图件路径。"""
+        conn = make_conn(fx_root, monkeypatch)
+        fp = fixture_paths(fx_root)
+>       out = wf.tool_lease_open(
+              ^^
+            conn, fp["package"], str(fx_root / "work" / "no-such-intent.json"),
+            repo=["sih-engine"],
+        )
+E       NameError: name 'wf' is not defined
+
+tests/test_penface_fixes.py:66: NameError
+_______________ test_append_cli_failure_teaches_report_json_path _______________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-4/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a629f20>
+
+    def test_append_cli_failure_teaches_report_json_path(fx_root, monkeypatch):
+        """F2b：record_append CLI 失败路径载荷四字段喂满，教学钉 report 实为 JSON 报告文件路径。"""
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_penface_fixes.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-4/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a629f20>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...OG', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_________________________ test_trail_path_layout_forms _________________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_trail_path_layout_forms0')
+
+    def test_trail_path_layout_forms(tmp_path):
+        """F3：trail_path 按 layout_form 解析（critsweep detect_layout 先例同构）。
+    
+        canonical 域根（sih/ledger 标记）命中域内 sih/event/trail；first_domain 形
+        与未知形回落第一域历史形（缺省发现语义零变）。
+        """
+        from mcpline.runtime import trail_path
+    
+        d = "2026-09-11"
+        canon = tmp_path / "canon"
+        (canon / "sih" / "ledger").mkdir(parents=True)
+>       assert trail_path(canon, d) == canon / "sih" / "event" / "trail" / f"{d}.ndjson"
+E       AssertionError: assert PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_trail_path_layout_forms0/canon/sih-engine/sih/event/trail/2026-09-11.ndjson') == ((((PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_trail_path_layout_forms0/canon') / 'sih') / 'event') / 'trail') / '2026-09-11.ndjson')
+E        +  where PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_trail_path_layout_forms0/canon/sih-engine/sih/event/trail/2026-09-11.ndjson') = <function trail_path at 0x10a57e1f0>(PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_trail_path_layout_forms0/canon'), '2026-09-11')
+
+tests/test_penface_fixes.py:101: AssertionError
+_______________________ test_scribe_bin_profile_agnostic _______________________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_scribe_bin_profile_agnost0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a62a250>
+
+    def test_scribe_bin_profile_agnostic(tmp_path, monkeypatch):
+        """F3：scribe_bin 解析 profile 无关——debug 与 release 兜底序，俱缺回落 debug。"""
+        from mcpline import runtime
+    
+        code = tmp_path / "code"
+        target = code / "sih-engine" / "target"
+        (target / "release").mkdir(parents=True)
+        (target / "release" / "scribe").write_text("", encoding="utf-8")
+        monkeypatch.setenv("SIH_MCPLINE_CODE_ROOT", str(code))
+>       assert runtime.scribe_bin(tmp_path) == target / "release" / "scribe"
+E       AssertionError: assert PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_scribe_bin_profile_agnost0/code/sih-engine/target/debug/scribe') == ((PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_scribe_bin_profile_agnost0/code/sih-engine/target') / 'release') / 'scribe')
+E        +  where PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_scribe_bin_profile_agnost0/code/sih-engine/target/debug/scribe') = <function scribe_bin at 0x10a57e350>(PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_scribe_bin_profile_agnost0'))
+E        +    where <function scribe_bin at 0x10a57e350> = <module 'mcpline.runtime' from '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/penface/mcpline/src/mcpline/runtime.py'>.scribe_bin
+
+tests/test_penface_fixes.py:128: AssertionError
+___________________ test_implicit_placeholder_close_collects ___________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-5/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a6e8250>
+
+    def test_implicit_placeholder_close_collects(fx_root, monkeypatch):
+        """F4：close 与 open 同一绑定查找位，close 能收隐式会话（pk-093 其一）。
+    
+        隐式占位态连接（server 重启形：连接级自动立会话未成留既成事实，进程内零
+        绑定）此前 close 即 session_not_bound 拒——隐式会话成收不回的孤儿；归一后
+        close 径透传既有 CLI 执法（链闸与 closeguard 原位），收得。
+        """
+>       conn = open_session(fx_root, monkeypatch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_penface_fixes.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-5/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a6e8250>
+cls = 'external', second_package = False
+
+    def open_session(fx_root, monkeypatch, cls=AGENT_CLASS_EXTERNAL,
+                     second_package: bool = False) -> ConnectionSession:
+        conn = make_conn(fx_root, monkeypatch, cls)
+        if second_package:
+            conn._pkg2 = True
+        fp = fixture_paths(fx_root)
+        pkg = FIXTURE_PACKAGE_2 if getattr(conn, "_pkg2", False) else fp["package"]
+        out = wf.tool_lease_open(
+            conn, pkg, fp["intent"],
+            repo=["sih-engine"], allow=["sih-engine/sih/event/trail/", "sih-engine/doc/"],
+        )
+>       assert out["exit_code"] == 0, out
+E       AssertionError: {'error': 'lease open 退出码 1: {
+E           "detail": {
+E             "conflicts": [
+E               {
+E                 "held_path": "sih-engine/doc/desig...OG', 'reason_code': None, 'gate': None, 'what_this_tool_does': 'lease open：立约开工立连接会话（一连接恰好一会话），以 server 进程正身件签发。', ...}
+E       assert 1 == 0
+
+tests/test_write_gates.py:38: AssertionError
+_______________ test_binding_teachings_cross_reference_implicit ________________
+
+fx_root = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/mcpline-beta-fixture0/case-6/SiHankor-fixture')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10a6e8850>
+
+    def test_binding_teachings_cross_reference_implicit(fx_root, monkeypatch):
+        """F4：两处错误载荷教学互指隐式占位事实（74 行与 89 行同源绑定查找位）。"""
+        conn = make_conn(fx_root, monkeypatch)
+        fp = fixture_paths(fx_root)
+>       out = wf.tool_record_intent(conn, fp["intent"], fp["validation"])
+              ^^
+E       NameError: name 'wf' is not defined
+
+tests/test_penface_fixes.py:162: NameError
+______________ test_repo_outside_domain_teaches_dot_and_absolute _______________
+
+tmp_path = PosixPath('/private/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/pytest-of-moc/pytest-1108/test_repo_outside_domain_teach0')
+
+    def test_repo_outside_domain_teaches_dot_and_absolute(tmp_path):
+        """F5：path_outside_domain 误教改正——repo 合法形教点号列表与域内绝对路径。"""
+        from mcpline import httpface
+        from mcpline.writeface.domains import layout_for
+    
+        dom = tmp_path / "dom"
+        dom.mkdir()
+        layout = layout_for(dom, tmp_path / "central")
+        _, err = httpface._resolve_repos(layout, "lease_open", ["sih-engine"])
+        assert err is not None and err["reason_code"] == "path_outside_domain"
+>       assert "点号" in err["error"], err["error"]
+E       AssertionError: repo 越界所绑域根（绑定验：操作目标路径前缀须属所绑域根；路径传域根相对形或域内绝对形）
+E       assert '点号' in 'repo 越界所绑域根（绑定验：操作目标路径前缀须属所绑域根；路径传域根相对形或域内绝对形）'
+
+tests/test_penface_fixes.py:184: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_penface_fixes.py::test_commit_trail_root_passthrough_to_argv
+FAILED tests/test_penface_fixes.py::test_open_cli_failure_teaches_intent_file_path
+FAILED tests/test_penface_fixes.py::test_append_cli_failure_teaches_report_json_path
+FAILED tests/test_penface_fixes.py::test_trail_path_layout_forms - AssertionE...
+FAILED tests/test_penface_fixes.py::test_scribe_bin_profile_agnostic - Assert...
+FAILED tests/test_penface_fixes.py::test_implicit_placeholder_close_collects
+FAILED tests/test_penface_fixes.py::test_binding_teachings_cross_reference_implicit
+FAILED tests/test_penface_fixes.py::test_repo_outside_domain_teaches_dot_and_absolute
+8 failed, 1 passed in 5.70s

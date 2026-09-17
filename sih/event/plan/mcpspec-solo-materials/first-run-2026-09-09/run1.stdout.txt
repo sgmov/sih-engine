@@ -1,0 +1,3 @@
+红: sih-engine/doc/spec/SPEC-021-golden-vector-dual-method.md: 缺内容充分性节（补『## 内容充分性 {#sufficiency}』节：判据红证对表、判定性常数挂锚对表、约束算子对表三行逐行如实填写，模板见 doc/spec/SPEC-TEMPLATE-sufficiency-v1.md）
+红: sih-engine/doc/spec/SPEC-022-envelope-v1.md: 缺内容充分性节（补『## 内容充分性 {#sufficiency}』节：判据红证对表、判定性常数挂锚对表、约束算子对表三行逐行如实填写，模板见 doc/spec/SPEC-TEMPLATE-sufficiency-v1.md）
+{"verdict": "red", "violations": 2}
