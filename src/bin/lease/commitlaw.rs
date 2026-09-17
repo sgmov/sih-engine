@@ -593,11 +593,50 @@ pub(crate) fn cmd_commit(m: &BTreeMap<String, Vec<String>>) {
     print!("{}", emit(&receipt));
 }
 
+/// 工作区根上溯发现（pathfix 批）：自起点向上找 sih-engine 与 sih-tools 双目录在位者。
+/// 无果即 None，调用位 fail-closed 拒绝，不落 cwd 缺省。
+pub(crate) fn discover_workspace_root(start: &Path) -> Option<PathBuf> {
+    let mut cur = py_resolve(start);
+    loop {
+        if cur.join("sih-engine").is_dir() && cur.join("sih-tools").is_dir() {
+            return Some(cur);
+        }
+        if !cur.pop() {
+            return None;
+        }
+    }
+}
+
+/// 台账面基座（pathfix 批承 pk-089）：root 下 sih-tools/lease/ledger 在位即中央工作区形，
+/// 否则即新城域正典形 sih/ledger。禁止以 root 直拼第一域常量致域树沉积假骨架。
+pub(crate) fn ledger_surface(root: &Path) -> PathBuf {
+    if root.join("sih-tools/lease/ledger").is_dir() {
+        root.join("sih-tools/lease/ledger")
+    } else {
+        root.join("sih/ledger")
+    }
+}
+
 pub(crate) fn cmd_bypass(m: &BTreeMap<String, Vec<String>>) {
-    let root = py_resolve(Path::new(one(m, "root").unwrap_or(".")));
     let repo_arg = one(m, "repo").unwrap_or("").to_string();
     let sha = one(m, "sha").unwrap_or("").to_string();
     let reason = one(m, "reason").unwrap_or("").to_string();
+    if repo_arg.is_empty() || sha.is_empty() || reason.is_empty() {
+        fail(
+            2,
+            json!({"error": "bypass 缺参即拒：--repo 与 --sha 与 --reason 俱必填，防空行污染台账"}),
+        );
+    }
+    let root = match one(m, "root") {
+        Some(r) => py_resolve(Path::new(r)),
+        None => match discover_workspace_root(Path::new(".")) {
+            Some(r) => r,
+            None => fail(
+                2,
+                json!({"error": "bypass 工作区根发现失败：未传 --root 且自 cwd 上溯无 sih-engine 与 sih-tools 双目录在位者，fail-closed 拒落 cwd 缺省"}),
+            ),
+        },
+    };
     let session = one(m, "session").map(|s| s.to_string());
     let at = one(m, "at").map(|s| s.to_string()).unwrap_or_else(now_utc);
     let ledger = match one(m, "bypass-ledger") {
@@ -1003,5 +1042,63 @@ pub(crate) fn py_pretty(v: &Value, level: usize, width: usize) -> String {
             format!("[\n{}\n{}]", items.join(",\n"), pad)
         }
         other => serde_json::to_string(other).unwrap(),
+    }
+}
+
+#[cfg(test)]
+mod pathfix_tests {
+    // pathfix 批（pk-089 承接）：台账基座双分支与工作区根上溯发现单测。
+    use super::{discover_workspace_root, ledger_surface};
+    use std::path::PathBuf;
+
+    fn tmp_ws(tag: &str) -> PathBuf {
+        let root = std::env::temp_dir().join(format!("pathfix-unit-{}-{}", tag, std::process::id()));
+        let _ = std::fs::remove_dir_all(&root);
+        root
+    }
+
+    #[test]
+    fn ledger_surface_central_form() {
+        let ws = tmp_ws("central");
+        std::fs::create_dir_all(ws.join("sih-tools/lease/ledger")).unwrap();
+        assert_eq!(
+            ledger_surface(&ws),
+            ws.join("sih-tools/lease/ledger"),
+            "中央形零改即既有路径逐字节不变"
+        );
+        let _ = std::fs::remove_dir_all(&ws);
+    }
+
+    #[test]
+    fn ledger_surface_domain_form() {
+        let dom = tmp_ws("domain");
+        std::fs::create_dir_all(dom.join("sih/ledger")).unwrap();
+        assert_eq!(
+            ledger_surface(&dom),
+            dom.join("sih/ledger"),
+            "新城域形落域内正典位，不沉积 sih-tools 假骨架"
+        );
+        assert!(!dom.join("sih-tools").exists());
+        let _ = std::fs::remove_dir_all(&dom);
+    }
+
+    #[test]
+    fn discover_root_found_and_not_found() {
+        let ws = tmp_ws("discover");
+        std::fs::create_dir_all(ws.join("sih-engine")).unwrap();
+        std::fs::create_dir_all(ws.join("sih-tools")).unwrap();
+        let deep = ws.join("sih-engine/src/bin/lease");
+        std::fs::create_dir_all(&deep).unwrap();
+        let ws_canon = std::fs::canonicalize(&ws).unwrap_or_else(|_| ws.clone());
+        assert_eq!(discover_workspace_root(&deep).as_deref(), Some(ws_canon.as_path()));
+        let bare = tmp_ws("bare");
+        std::fs::create_dir_all(&bare).unwrap();
+        assert_eq!(
+            discover_workspace_root(&bare).as_deref(),
+            None,
+            "无双目录标记即 None，调用位 fail-closed"
+        );
+        let _ = std::fs::remove_dir_all(&ws);
+        let _ = std::fs::remove_dir_all(&bare);
     }
 }

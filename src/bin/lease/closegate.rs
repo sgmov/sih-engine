@@ -3,7 +3,7 @@
 //! 声明差集闸、归并删支拆本、账单与收约凭据。融回基准权威 sih-tools/lease/src/lease/
 //! core.py close_session 与 watchcheck/core.py 无主谓词，闸序承 closegate-solo T-2 终签。
 
-use crate::commitlaw::{default_trails, fail, git, py_compact, py_pretty, py_resolve};
+use crate::commitlaw::{default_trails, fail, git, ledger_surface, py_compact, py_pretty, py_resolve};
 use crate::sddgate;
 use crate::{append_row, emit, now_utc, one, read_jsonl, tool};
 use chrono::DateTime;
@@ -1038,15 +1038,14 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         "sddgate_gate": sddgate_gate,
         "session_id": sid,
     });
-    let checks_file = root
-        .join("sih-tools/lease/ledger/checks")
-        .join(format!("{}.json", stem));
+    let surface = ledger_surface(&root);
+    let checks_file = surface.join("checks").join(format!("{}.json", stem));
     if checks_file.exists() {
         let mut data: Value = serde_json::from_str(&std::fs::read_to_string(&checks_file).unwrap_or_default())
             .unwrap_or(json!({}));
         data["closed_at"] = json!(at.unwrap_or_else(now_utc));
         data["close_session"] = json!(report.get("session_id").cloned().unwrap_or(Value::Null));
-        let receipts_dir = root.join("sih-tools/lease/ledger/receipts");
+        let receipts_dir = surface.join("receipts");
         std::fs::create_dir_all(&receipts_dir).ok();
         let receipt_path = receipts_dir.join(format!("{}.json", stem));
         std::fs::write(&receipt_path, py_pretty(&data, 0, 1) + "\n").ok();

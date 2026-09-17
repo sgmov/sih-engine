@@ -15,7 +15,7 @@ use std::path::{Path, PathBuf};
 use serde_json::{json, Map, Value};
 
 use crate::attachments::detect_domain_context;
-use crate::commitlaw::{git, py_resolve};
+use crate::commitlaw::{git, ledger_surface, py_resolve};
 use crate::{die, emit, now_utc, one};
 
 const SWEEP_REPAIR_MARK: &str = "sweep:phantom-session";
@@ -308,7 +308,7 @@ pub(crate) fn scan(root: &Path, session_ledger: &Path, locks_ledger: &Path, at: 
     }
 
     // 类三：停滞检验文件（pid 探针四态；会话活跃或持锁即候裁防搁浅）。
-    let checks = root.join("sih-tools/lease/ledger/checks");
+    let checks = ledger_surface(&root).join("checks");
     if checks.is_dir() {
         let mut entries: Vec<PathBuf> = std::fs::read_dir(&checks)
             .into_iter()

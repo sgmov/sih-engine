@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-089",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "pathfix 批 2026-09-17 收口：receipts_dir 域感知即新立 ledger_surface 基座分流，root 下 sih-tools/lease/ledger 在位走中央形零改，否则走新城正典形 sih/ledger，closegate 两处加 sweepcore 一处俱改走基座，对新城域 root 不再沉积假 sih-tools 骨架。存量五回执迁移与假骨架清理两小件实查事实性免除即 2026-09-17 撤牌核验时 sim-aesthetic-workbench 域内 sih-tools 与 sih 树俱无踪，无物可迁无物可清。",
+ "context": "出泊条件达成：M2 域感知批即本批承载 receipts_dir 改新城正典形；单测双分支即中央形路径逐字节不变与域形落 sih/ledger，集成三件即 bypass 缺参拒与根发现落正册与 fail-closed。裁定源即用户 2026-09-17 令「1要修」加 pk-089 问询，同日撤 sim-aesthetic-workbench 牌两步确认停行在册。",
+ "parking": {
+  "entered_at": "2026-09-10"
+ }
+}

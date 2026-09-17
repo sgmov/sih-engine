@@ -1,0 +1,16 @@
+{
+  "batch": "pathfix",
+  "date": "2026-09-17",
+  "worktree": "worktrees/sih-engine/pathfix",
+  "suites": [
+    {"name": "tests/pathfix.rs", "result": "3 passed 0 failed", "cases": ["t1 缺参拒退出码二零落笔", "t2 根发现落中央正册无迷路树", "t3 非工作区 fail-closed"]},
+    {"name": "bin lease 内 pathfix_tests", "result": "3 passed 0 failed", "cases": ["ledger_surface 中央形零改", "ledger_surface 域形落 sih/ledger", "discover 双目录标记 found 与 None"]},
+    {"name": "lease_mergeback t2/t5/t6 回归", "result": "14 passed 0 failed"},
+    {"name": "全量 cargo test", "result": "exit 0 零 FAILED，长跑套件 9 passed 含 bscomplete，零新红"}
+  ],
+  "fixes": [
+    {"file": "src/bin/lease/commitlaw.rs", "change": "cmd_bypass 缺参即拒加工作区根上溯发现 fail-closed，新立 discover_workspace_root 与 ledger_surface"},
+    {"file": "src/bin/lease/closegate.rs", "change": "checks 与 receipts 两处改走 ledger_surface 基座"},
+    {"file": "src/bin/lease/sweepcore.rs", "change": "停滞检验文件扫描改走 ledger_surface 基座"}
+  ]
+}
