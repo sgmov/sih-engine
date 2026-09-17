@@ -1,0 +1,143 @@
+{
+ "batch": "pk-074 faceprecise-solo",
+ "generated_at": "2026-09-17",
+ "data_sources": {
+  "lockface_bills": "sih-tools/lease/ledger/lockface-bills.ndjson (1699 lines)",
+  "locks": "sih-tools/lease/ledger/locks.ndjson (9295 lines)",
+  "sessions": "sih-tools/lease/ledger/sessions.ndjson (1114 lines)"
+ },
+ "task1_threshold": {
+  "current": 20,
+  "recommended": 25,
+  "alternative_conservative": 30,
+  "basis": "sentinel-semantics per-session peak held-lock width: p95=22 over 401 sessions; 25 clears the 21-24 routine band (elbow 28->24)",
+  "open_face_bill_width": {
+   "n": 152,
+   "p50": 11,
+   "p90": 20.9,
+   "p95": 22.45,
+   "p99": 33.84,
+   "max": 42,
+   "buckets": {
+    "1-5": 16,
+    "6-10": 53,
+    "11-15": 33,
+    "16-20": 34,
+    "21-30": 14,
+    "41+": 2
+   }
+  },
+  "session_width": {
+   "n": 401,
+   "p50": 10,
+   "p90": 18,
+   "p95": 22,
+   "p99": 39,
+   "max": 71,
+   "buckets": {
+    "1-5": 78,
+    "6-10": 150,
+    "11-15": 103,
+    "16-20": 44,
+    "21-30": 19,
+    "31-40": 3,
+    "41+": 4
+   }
+  },
+  "hits_by_threshold": {
+   "15": 70,
+   "18": 37,
+   "20": 26,
+   "22": 17,
+   "25": 10,
+   "30": 7,
+   "35": 5,
+   "40": 4,
+   "43": 3
+  },
+  "open_face_over20_count": 16,
+  "session_over20_count": 26,
+  "session_over20_packages": [
+   "autoflow2-solo",
+   "cmdface-solo",
+   "constclear2c-solo",
+   "deyimerge-switch-solo",
+   "dose01-solo",
+   "facepark-solo",
+   "fusadopt-solo",
+   "guardhook-solo",
+   "leaseup-solo",
+   "listzero-solo",
+   "mathclose-solo",
+   "mcpnomgate-solo",
+   "outslim-solo",
+   "packenv-solo",
+   "pendsweep-solo",
+   "pk035impl-solo",
+   "sweepclea6-solo",
+   "tokencap-solo",
+   "wengumcp-parallel",
+   "wengunaming-t6d"
+  ],
+  "expected_hit_change": "26/401 (6.5%) -> 10/401 (2.5%), -61.5%",
+  "anomaly_note": "idwire-solo session 28d326f924916cd0: 123 acquired / 11 distinct paths (duplicate-acquire artifact); sentinel dict semantics collapse it, naive replay overreads 112"
+ },
+ "task2_penalty": {
+  "events": 31,
+  "points": 124,
+  "formula_recheck_matches": 31,
+  "write_evidenced_paths": 65,
+  "write_evidenced_pct": 52.4,
+  "evidence_breakdown": {
+   "mtime_in_window": 23,
+   "dir_children_in_window": 42,
+   "no_evidence": 57,
+   "worktree_unverifiable": 2
+  },
+  "no_evidence_breakdown": {
+   "pre_existing_untouched": 10,
+   "missing_never_created": 4,
+   "dir_touched_later_clean": 39,
+   "file_touched_later": 4
+  },
+  "events_with_write_evidence": 21,
+  "events_without_any_write_evidence": 10,
+  "paid_expansion_paths": 99,
+  "under_penalized_locked_allow_no_evidence": 6,
+  "projected_points_under_precise_scope_max": 59,
+  "over_penalty_pct_min": 52.4
+ },
+ "declared_not_locked": {
+  "billed_era_allow_entries": 1907,
+  "billed_era_never_locked": 435,
+  "billed_era_pct": 22.8,
+  "billed_era_sessions_affected": 92,
+  "billed_era_sessions_total": 152,
+  "whole_ledger_never_locked": 2114,
+  "whole_ledger_allow_entries": 6427
+ },
+ "open_face_duplicate_billing": {
+  "bills_with_dupes": 9,
+  "duplicate_entries_billed": 23
+ },
+ "constant_locations": [
+  {
+   "path": "sih-engine/src/bin/watchcheck.rs",
+   "line": 41,
+   "code": "const LOCKFACE_WIDE_THRESHOLD: usize = 20;",
+   "note": "uses at :290/:293/:330; bin at sih-engine/target/debug/watchcheck"
+  },
+  {
+   "path": "sih-tools/watchcheck/src/watchcheck/constants.py",
+   "line": 21,
+   "code": "LOCKFACE_WIDE_THRESHOLD = 20",
+   "note": "registry line :20; test floor >=10 at tests/test_leaseup_watch.py:25"
+  }
+ ],
+ "precision_recommendation": {
+  "used_paths_source": "actual changed files: git diff --name-only <base>..<branch> at close (preferred) or trail direct_edit_completed.details.files union (zero-git alternative, same source as watchcheck pen_face)",
+  "match_shape": "prefix-coverage match per watchcheck covered() (path or ancestor-dir hit counts as used)",
+  "normalization": "rstrip('/') before set ops in both open_face path_count and unused set-difference",
+  "projected_penalty": "124 -> <=59 points"
+ }
+}
