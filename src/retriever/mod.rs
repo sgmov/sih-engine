@@ -4,9 +4,11 @@
 //! 只报不判即无评分无建议字段，确定性即同参同语料双跑逐字节一致，零 LLM。
 
 pub mod archives;
+pub mod archives_ext;
 pub mod axes;
 pub mod facet;
 pub mod locator_bridge;
+pub mod semantic;
 
 pub use archives::Layout;
 
@@ -49,6 +51,8 @@ impl Archive {
 }
 
 /// 四轴枚举，排序即 topic 加 word 加 event 加 time 末位决胜。
+/// retrline 批（rl-03）增 Semantic 变体居末：排序键值续接既有四轴零扰动，
+/// 语义通道行轴名 semantic（pk-050 缺省切换形，词面回退位见 RecallArgs.semantic）。
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord, Serialize)]
 #[serde(rename_all = "lowercase")]
 pub enum Axis {
@@ -56,6 +60,7 @@ pub enum Axis {
     Word,
     Event,
     Time,
+    Semantic,
 }
 
 impl Axis {
@@ -65,11 +70,14 @@ impl Axis {
             Axis::Word => "word",
             Axis::Event => "event",
             Axis::Time => "time",
+            Axis::Semantic => "semantic",
         }
     }
 }
 
 /// recall 参数组：原七件承 SPEC-007 冻结加 word 文轴词列与 miss_log 可选参承 SPEC-008 修订六。
+/// retrieverline 批（rl-03）增 semantic：None 即词面回退位（四轴切前行为），Some(k) 即
+/// 语义通道前 k 正分命中（CLI 缺省 k=3 承 pk-050 切换形，词面两轴降显式回退位）。
 #[derive(Clone, Debug)]
 pub struct RecallArgs {
     pub root: PathBuf,
@@ -83,9 +91,13 @@ pub struct RecallArgs {
     pub words: Vec<String>,
     /// 零命中账可选参：带参时对每个产零行的查询词追加一行 ndjson 四字段 at/axis/word/rows=0。
     pub miss_log: Option<PathBuf>,
+    /// 语义通道：None 即词面回退位，Some(k) 即缺省语义路径前 k 正分命中（0 视同零出）。
+    pub semantic: Option<usize>,
 }
 
 /// 切面记录七字段，键序固定即 archive 加 carrier 加 ref 加 axis 加 excerpt 加 matched 加 at。
+/// retrieverline 批（rl-02）增 source_domain 可选尾注：扩容两域（SETSP 与旧仓 doc）行带
+/// 来源域标注，既有域条目 None 序列化零出（键集与键序对既有行逐字节零变）。
 #[derive(Clone, Debug, PartialEq, Eq, Serialize)]
 pub struct FacetRow {
     pub archive: Archive,
@@ -96,6 +108,9 @@ pub struct FacetRow {
     pub excerpt: String,
     pub matched: String,
     pub at: String,
+    /// 来源域标注：检索可见面非引用权威面，扩容域行带 legacy-sihankor / setsp。
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub source_domain: Option<&'static str>,
 }
 
 /// recall 错误面，Blocked 拦即退出码一，余四类异常即退出码二。
@@ -133,10 +148,51 @@ fn md_raw_window(
     Some(lines[ls - 1..le].join("\n"))
 }
 
+/// 条目行构造即 md 行区间原始窗口与 json 标识两路，窗口不可开档或行区间越界即
+/// None 不录活引用（原 recall 内联两段同构抽件，retrieverline 批承载，行为逐字节承袭）。
+fn entry_facet_row(
+    root: &Path,
+    md_windows: &mut std::collections::HashMap<String, Option<Vec<String>>>,
+    entry: &locator_bridge::LocatorEntry,
+    archive: Archive,
+    axis: Axis,
+    matched: String,
+    at: &str,
+) -> Option<FacetRow> {
+    let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
+    let (reference, excerpt) = match (carrier, entry.line_start, entry.line_end) {
+        ("json", _, _) => (
+            format!("{}@{}", entry.path, entry.id),
+            facet::excerpt_of_text(&entry.text),
+        ),
+        ("md", Some(ls), Some(le)) => {
+            let window = md_raw_window(root, md_windows, &entry.path, ls, le)?;
+            (
+                format!("{}@{ls}-{le}", entry.path),
+                facet::excerpt_of_text(&window),
+            )
+        }
+        _ => return None,
+    };
+    Some(FacetRow {
+        archive,
+        carrier,
+        reference,
+        axis,
+        excerpt,
+        matched,
+        at: at.to_string(),
+        source_domain: archives::source_domain_of(&entry.path),
+    })
+}
+
 /// 单操作 recall 即四轴编排取切面行序列，排序机械承 SPEC-008 确定性与排序节。
 ///
 /// md 活引用抽取规则即出处可机械回验由构造保证：md 行摘录取原始行区间窗口词面
 /// （逐字含行首标记），窗口不可开档或行区间越界即不录活引用。
+/// retrieverline 批（rl-02/rl-03）：档案面扩容两域经平行索引合并入词面与主题两轴
+/// （来源域标注随件）；semantic 缺省路径即词面两轴降位、查询词经确定性统计向量
+/// 语义通道出前 K 正分行（pk-050 切换形，miss_log 只记账词轴实跑面零假账）。
 pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     let mut keep: Vec<Archive> = Vec::new();
     for name in &args.archives {
@@ -184,129 +240,162 @@ pub fn recall(args: &RecallArgs) -> Result<Vec<FacetRow>, RecallError> {
     if !args.topics.is_empty() || !args.words.is_empty() {
         let index = locator_bridge::build_index(&args.root)?;
         let entries = locator_bridge::load_entries(&index)?;
+        // 扩容面平行索引（retrieverline rl-02）：first_domain 形承载两域，canonical
+        // 城形无旧仓与 SETSP 域即零扩容；主索引缺席报文先出（F-8 退化序承袭）。
+        let ext_index = if layout == Layout::FirstDomain {
+            Some(archives_ext::build_ext_index(&args.root)?)
+        } else {
+            None
+        };
+        let ext_entries = match &ext_index {
+            Some(path) => locator_bridge::load_entries(path)?,
+            None => Vec::new(),
+        };
         let mut md_windows: std::collections::HashMap<String, Option<Vec<String>>> =
             std::collections::HashMap::new();
-        if !args.topics.is_empty() {
-            for topic in &args.topics {
-                for entry in locator_bridge::query_word_entries(&args.root, &index, topic)? {
-                    let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
-                        continue;
-                    };
-                    if !in_keep(archive) {
-                        continue;
-                    }
-                    let carrier: &'static str = if entry.carrier == "json" { "json" } else { "md" };
-                    let (reference, excerpt) = match (carrier, entry.line_start, entry.line_end) {
-                        ("json", _, _) => (
-                            format!("{}@{}", entry.path, entry.id),
-                            facet::excerpt_of_text(&entry.text),
-                        ),
-                        ("md", Some(ls), Some(le)) => {
-                            let Some(window) =
-                                md_raw_window(&args.root, &mut md_windows, &entry.path, ls, le)
-                            else {
-                                continue;
-                            };
-                            (
-                                format!("{}@{ls}-{le}", entry.path),
-                                facet::excerpt_of_text(&window),
-                            )
-                        }
-                        _ => continue,
-                    };
-                    rows.push(FacetRow {
-                        archive,
-                        carrier,
-                        reference,
-                        axis: Axis::Topic,
-                        excerpt,
-                        matched: topic.clone(),
-                        at: args.at.clone(),
-                    });
+        if args.semantic.is_some() {
+            // 语义通道缺省路径（rl-03）：词面两轴降位不跑；miss_log 不记（词轴未跑
+            // 零假账）；查询词并集去重排序承 wikirecall expand_terms sorted(set) 形。
+            let mut terms = args.words.clone();
+            terms.extend(args.topics.iter().cloned());
+            terms.sort();
+            terms.dedup();
+            // 语料面：两索引条目归档可判且过档滤者，键即 locator 稳定标识，遍历排序。
+            let mut corpus: std::collections::BTreeMap<
+                String,
+                (Archive, &locator_bridge::LocatorEntry),
+            > = std::collections::BTreeMap::new();
+            for entry in entries.iter().chain(ext_entries.iter()) {
+                let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
+                    continue;
+                };
+                if !in_keep(archive) {
+                    continue;
+                }
+                corpus.insert(entry.id.clone(), (archive, entry));
+            }
+            let hays: std::collections::BTreeMap<String, String> = corpus
+                .iter()
+                .map(|(key, (_archive, entry))| (key.clone(), entry.text.clone()))
+                .collect();
+            let qtext = terms.join("\n");
+            for (id, _score) in
+                semantic::semantic_channel(&hays, &terms, args.semantic.unwrap_or(0))
+            {
+                let Some((archive, entry)) = corpus.get(&id) else {
+                    continue;
+                };
+                if let Some(row) = entry_facet_row(
+                    &args.root,
+                    &mut md_windows,
+                    entry,
+                    *archive,
+                    Axis::Semantic,
+                    qtext.clone(),
+                    &args.at,
+                ) {
+                    rows.push(row);
                 }
             }
-        }
-        if !args.words.is_empty() {
-            // miss_log 账：带参且产零行即每词一行，缺参零写。
-            let mut per_word_rows: Vec<(String, usize)> = Vec::new();
-            for word in &args.words {
-                let mut count = 0usize;
-                for entry in &entries {
-                    let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
-                        continue;
-                    };
-                    if !in_keep(archive) {
-                        continue;
+        } else {
+            if !args.topics.is_empty() {
+                for topic in &args.topics {
+                    let mut queried =
+                        locator_bridge::query_word_entries(&args.root, &index, topic)?;
+                    if let Some(path) = &ext_index {
+                        queried.extend(locator_bridge::query_word_entries(
+                            &args.root, path, topic,
+                        )?);
                     }
-                    let carrier: &'static str =
-                        if entry.carrier == "json" { "json" } else { "md" };
-                    if !entry.text.contains(word.as_str()) {
-                        continue;
-                    }
-                    let (reference, excerpt) = match (carrier, entry.line_start, entry.line_end) {
-                        ("json", _, _) => (
-                            format!("{}@{}", entry.path, entry.id),
-                            facet::excerpt_of_text(&entry.text),
-                        ),
-                        ("md", Some(ls), Some(le)) => {
-                            let Some(window) =
-                                md_raw_window(&args.root, &mut md_windows, &entry.path, ls, le)
-                            else {
-                                continue;
-                            };
-                            (
-                                format!("{}@{ls}-{le}", entry.path),
-                                facet::excerpt_of_text(&window),
-                            )
+                    for entry in &queried {
+                        let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
+                            continue;
+                        };
+                        if !in_keep(archive) {
+                            continue;
                         }
-                        _ => continue,
-                    };
-                    count += 1;
-                    rows.push(FacetRow {
-                        archive,
-                        carrier,
-                        reference,
-                        axis: Axis::Word,
-                        excerpt,
-                        matched: word.clone(),
-                        at: args.at.clone(),
-                    });
+                        if let Some(row) = entry_facet_row(
+                            &args.root,
+                            &mut md_windows,
+                            entry,
+                            archive,
+                            Axis::Topic,
+                            topic.clone(),
+                            &args.at,
+                        ) {
+                            rows.push(row);
+                        }
+                    }
                 }
-                per_word_rows.push((word.clone(), count));
             }
-            if let Some(log_path) = &args.miss_log {
-                if let Some(parent) = log_path.parent() {
-                    if !parent.as_os_str().is_empty() {
-                        std::fs::create_dir_all(parent).map_err(|_| {
+            if !args.words.is_empty() {
+                // miss_log 账：带参且产零行即每词一行，缺参零写。
+                let mut per_word_rows: Vec<(String, usize)> = Vec::new();
+                for word in &args.words {
+                    let mut count = 0usize;
+                    for entry in entries.iter().chain(ext_entries.iter()) {
+                        let Some(archive) = archives::classify_path_in(layout, &entry.path) else {
+                            continue;
+                        };
+                        if !in_keep(archive) {
+                            continue;
+                        }
+                        if !entry.text.contains(word.as_str()) {
+                            continue;
+                        }
+                        if let Some(row) = entry_facet_row(
+                            &args.root,
+                            &mut md_windows,
+                            entry,
+                            archive,
+                            Axis::Word,
+                            word.clone(),
+                            &args.at,
+                        ) {
+                            count += 1;
+                            rows.push(row);
+                        }
+                    }
+                    per_word_rows.push((word.clone(), count));
+                }
+                if let Some(log_path) = &args.miss_log {
+                    if let Some(parent) = log_path.parent() {
+                        if !parent.as_os_str().is_empty() {
+                            std::fs::create_dir_all(parent).map_err(|_| {
+                                RecallError::OutUnwritable(
+                                    log_path.to_string_lossy().into_owned(),
+                                )
+                            })?;
+                        }
+                    }
+                    let mut buf = String::new();
+                    for (word, count) in &per_word_rows {
+                        if *count == 0 {
+                            let row = serde_json::json!({
+                                "at": args.at,
+                                "axis": Axis::Word.as_str(),
+                                "word": word,
+                                "rows": 0u32,
+                            });
+                            buf.push_str(&serde_json::to_string(&row).unwrap_or_default());
+                            buf.push('\n');
+                        }
+                    }
+                    if !buf.is_empty() {
+                        use std::io::Write;
+                        let mut f = std::fs::OpenOptions::new()
+                            .create(true)
+                            .append(true)
+                            .open(log_path)
+                            .map_err(|_| {
+                                RecallError::OutUnwritable(
+                                    log_path.to_string_lossy().into_owned(),
+                                )
+                            })?;
+                        f.write_all(buf.as_bytes()).map_err(|_| {
                             RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
                         })?;
                     }
-                }
-                let mut buf = String::new();
-                for (word, count) in &per_word_rows {
-                    if *count == 0 {
-                        let row = serde_json::json!({
-                            "at": args.at,
-                            "axis": Axis::Word.as_str(),
-                            "word": word,
-                            "rows": 0u32,
-                        });
-                        buf.push_str(&serde_json::to_string(&row).unwrap_or_default());
-                        buf.push('\n');
-                    }
-                }
-                if !buf.is_empty() {
-                    use std::io::Write;
-                    let mut f = std::fs::OpenOptions::new()
-                        .create(true)
-                        .append(true)
-                        .open(log_path)
-                        .map_err(|_| {
-                            RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
-                        })?;
-                    f.write_all(buf.as_bytes()).map_err(|_| {
-                        RecallError::OutUnwritable(log_path.to_string_lossy().into_owned())
-                    })?;
                 }
             }
         }
@@ -368,7 +457,11 @@ mod envelope_tests {
 
     #[test]
     fn zero_hit_writes_envelope_not_empty_file() {
-        let dir = std::env::temp_dir().join(format!("retr-env-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!(
+            "retr-env-{}-{:?}",
+            std::process::id(),
+            std::thread::current().id()
+        ));
         std::fs::create_dir_all(&dir).unwrap();
         let p = dir.join("out.ndjson");
         write_output_envelope(&p, &[], &["注意力 预算".to_string()]).unwrap();
@@ -378,6 +471,131 @@ mod envelope_tests {
         assert_eq!(v["count"], 0);
         assert_eq!(v["envelope"], "recall");
         std::fs::remove_dir_all(&dir).ok();
+    }
+}
+
+#[cfg(test)]
+mod retrline_tests {
+    use super::*;
+
+    /// rl-03：语义轴名 serialization 为 semantic，排序居末续接既有四轴序零扰动。
+    #[test]
+    fn semantic_axis_name_and_sort_order() {
+        assert_eq!(Axis::Semantic.as_str(), "semantic");
+        let mk = |axis: Axis, r: &str| FacetRow {
+            archive: Archive::Fact,
+            carrier: "md",
+            reference: r.to_string(),
+            axis,
+            excerpt: String::new(),
+            matched: String::new(),
+            at: "t".into(),
+            source_domain: None,
+        };
+        let mut rows = vec![
+            mk(Axis::Time, "e2/aaaaaaaa"),
+            mk(Axis::Semantic, "z.md@1-1"),
+            mk(Axis::Event, "e1/bbbbbbbb"),
+        ];
+        facet::sort_rows(&mut rows);
+        assert_eq!(rows[0].axis, Axis::Event);
+        assert_eq!(rows[1].axis, Axis::Time);
+        assert_eq!(rows[2].axis, Axis::Semantic, "语义轴居末承既有档序零扰动");
+    }
+
+    /// rl-02：来源域标注序列化形——扩容域行带 source_domain 键；既有域行零新键
+    /// 七字段键序逐字节承袭。
+    #[test]
+    fn source_domain_serialization_shape() {
+        let legacy = FacetRow {
+            archive: Archive::Experience,
+            carrier: "md",
+            reference: "sihankor/doc/decision/DEC-019-trust-decay.md@1-2".to_string(),
+            axis: Axis::Word,
+            excerpt: "x".into(),
+            matched: "信任".into(),
+            at: "2026-09-18".into(),
+            source_domain: Some("legacy-sihankor"),
+        };
+        let line = serde_json::to_string(&legacy).unwrap();
+        assert!(line.contains(r#""source_domain":"legacy-sihankor""#), "{line}");
+        let plain = FacetRow { source_domain: None, ..legacy };
+        let line = serde_json::to_string(&plain).unwrap();
+        assert!(!line.contains("source_domain"), "{line}");
+        let v: serde_json::Value = serde_json::from_str(&line).unwrap();
+        let keys: Vec<String> = v.as_object().unwrap().keys().cloned().collect();
+        assert_eq!(
+            keys,
+            vec!["archive", "carrier", "ref", "axis", "excerpt", "matched", "at"],
+            "既有行键集键序零变"
+        );
+    }
+
+    /// rl-02 验收（真工作区跑慢故 ignore）：扩容两域经词面轴命中且来源域标注在行。
+    /// 实跑：cargo test --lib retriever -- --ignored
+    #[test]
+    #[ignore]
+    fn extension_domains_hit_with_source_domain() {
+        let root = integration_root();
+        let mk = |words: Vec<String>| RecallArgs {
+            root: root.clone(),
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-09-18".to_string(),
+            words,
+            miss_log: None,
+            semantic: None,
+        };
+        let rows = recall(&mk(vec!["信任衰减".to_string()])).expect("recall 失败");
+        assert!(
+            rows.iter().any(|r| r.source_domain == Some("legacy-sihankor")),
+            "旧仓 doc 域未命中，rows={}",
+            rows_to_ndjson(&rows)
+        );
+        let rows = recall(&mk(vec!["信任评分".to_string()])).expect("recall 失败");
+        assert!(
+            rows.iter().any(|r| r.source_domain == Some("setsp")),
+            "SETSP 名录域未命中，rows={}",
+            rows_to_ndjson(&rows)
+        );
+    }
+
+    /// rl-03 验收（真工作区跑慢故 ignore）：缺省语义路径只出语义轴行；词面回退位
+    /// （semantic=None）词轴在役行为切前。
+    #[test]
+    #[ignore]
+    fn semantic_default_and_lexical_fallback() {
+        let root = integration_root();
+        let mut args = RecallArgs {
+            root,
+            topics: vec![],
+            events: vec![],
+            since: None,
+            until: None,
+            archives: vec![],
+            at: "2026-09-18".to_string(),
+            words: vec!["租约".to_string()],
+            miss_log: None,
+            semantic: Some(semantic::DEFAULT_SEMANTIC_K),
+        };
+        let rows = recall(&args).expect("语义路径 recall 失败");
+        assert!(!rows.is_empty(), "语义路径零命中");
+        assert!(
+            rows.iter().all(|r| r.axis == Axis::Semantic),
+            "语义路径须只出语义轴行：{}",
+            rows_to_ndjson(&rows)
+        );
+        args.semantic = None;
+        let rows = recall(&args).expect("回退位 recall 失败");
+        assert!(!rows.is_empty(), "回退位词轴零命中");
+        assert!(
+            rows.iter().all(|r| r.axis == Axis::Word),
+            "回退位须只出词轴行：{}",
+            rows_to_ndjson(&rows)
+        );
     }
 }
 
@@ -507,6 +725,7 @@ mod wenguobs_tests {
                 "级联".to_string(),
             ],
             miss_log: None,
+            semantic: None,
         };
         let rows = recall(&args).expect("recall 失败");
         let six: Vec<&str> = vec!["令牌", "use 边", "边账", "期票", "句读", "级联"];
@@ -539,6 +758,7 @@ mod wenguobs_tests {
             at: "2026-08-31".to_string(),
             words: vec![],
             miss_log: None,
+            semantic: None,
         };
         let baseline_rows = recall(&baseline).expect("baseline 失败");
         let baseline_count = baseline_rows
@@ -578,6 +798,7 @@ mod wenguobs_tests {
             at: "2026-08-31".to_string(),
             words: vec!["期票".to_string()],
             miss_log: None,
+            semantic: None,
         };
         let rows = recall(&args).expect("recall 失败");
         let has_topic = rows.iter().any(|r| r.axis == Axis::Topic && r.matched == "期票");
@@ -602,15 +823,16 @@ mod wenguobs_tests {
             at: "2026-08-31".to_string(),
             words: vec!["wenguobsnonexistent".to_string()],
             miss_log: None,
+            semantic: None,
         };
         let _ = recall(&args).expect("recall 失败");
         assert!(!target.exists(), "缺参形态不应写 miss_log");
     }
 
     /// F-2.2 miss_log 带参对零命中词追加 ndjson 一行四字段。
-    /// 选词用 `zzz_wenguobs_unique_20260831_xyz`——本批"wenguobsnonexistent" 已被
-    /// wenguobs-solo-results.md 第 78/79/81/89 行实测收录，逐字子串包含即命中即非零，
-    /// 选此词真零命中且工作区无碰撞。
+    /// 选词 `zz-fresh-word-0918q7-untold`（retrieverline 批 2026-09-18 换词）：
+    /// 前两任选词 wenguobsnonexistent 与 zzz_wenguobs_unique_20260831_xyz 已被后续批
+    /// 结果档引录进语料，逐字子串包含即命中即假零命中失效；本词全语料 grep 零在册。
     #[test]
     #[ignore]
     fn f2_miss_log_records_zero_hit_axis_word() {
@@ -625,8 +847,9 @@ mod wenguobs_tests {
             until: None,
             archives: vec![],
             at: "2026-08-31".to_string(),
-            words: vec!["zzz_wenguobs_unique_20260831_xyz".to_string()],
+            words: vec!["zz-fresh-word-0918q7-untold".to_string()],
             miss_log: Some(target.clone()),
+            semantic: None,
         };
         let _ = recall(&args).expect("recall 失败");
         assert!(target.exists(), "带参形态应写 miss_log");
@@ -636,12 +859,12 @@ mod wenguobs_tests {
         let row: serde_json::Value = serde_json::from_str(lines[0]).expect("行非 json");
         assert_eq!(row["at"], "2026-08-31");
         assert_eq!(row["axis"], "word");
-        assert_eq!(row["word"], "zzz_wenguobs_unique_20260831_xyz");
+        assert_eq!(row["word"], "zz-fresh-word-0918q7-untold");
         assert_eq!(row["rows"], 0);
     }
 
     /// F-2.3 miss_log 重复查询词重复记行即 append-only 不去重。
-    /// 选词同 F-2.2，理由同上。
+    /// 选词同 F-2.2（retrieverline 批 2026-09-18 换词，理由同上）。
     #[test]
     #[ignore]
     fn f2_miss_log_repeats_each_call() {
@@ -656,8 +879,9 @@ mod wenguobs_tests {
             until: None,
             archives: vec![],
             at: "2026-08-31".to_string(),
-            words: vec!["zzz_wenguobs_unique_20260831_xyz".to_string()],
+            words: vec!["zz-fresh-word-0918q7-untold".to_string()],
             miss_log: Some(target.clone()),
+            semantic: None,
         };
         let _ = recall(&mk()).expect("first 失败");
         let _ = recall(&mk()).expect("second 失败");
@@ -719,6 +943,7 @@ pub fn event_axis_rows(
                     excerpt: facet::excerpt_of_event(event),
                     matched: token.clone(),
                     at: at.to_string(),
+                    source_domain: None,
                 });
             }
         }
@@ -752,6 +977,7 @@ pub fn time_axis_rows(
             excerpt: facet::excerpt_of_event(event),
             matched: event.timestamp.to_rfc3339(),
             at: at.to_string(),
+            source_domain: None,
         });
     }
     Ok(rows)

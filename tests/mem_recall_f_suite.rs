@@ -26,6 +26,7 @@ fn args_real(topics: &[&str], events: &[&str], since: Option<&str>, until: Optio
         until: until.map(|s| s.to_string()),
         words: Vec::new(),
         miss_log: None,
+        semantic: None,
         archives: Vec::new(),
         at: "2026-08-27T19:30:00+08:00".to_string(),
     }
@@ -211,6 +212,7 @@ fn f8_degradation_names_missing_base() {
         until: None,
         words: Vec::new(),
         miss_log: None,
+        semantic: None,
         archives: vec![],
         at: "t".to_string(),
     })
@@ -228,6 +230,7 @@ fn f8_degradation_names_missing_base() {
         until: None,
         words: Vec::new(),
         miss_log: None,
+        semantic: None,
         archives: vec![],
         at: "t".to_string(),
     })

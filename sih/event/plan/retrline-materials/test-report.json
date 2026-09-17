@@ -1,0 +1,22 @@
+{
+  "batch": "retrline",
+  "date": "2026-09-18",
+  "new_suite": "lib retriever 25 passed 0 failed（含 Python 实测金值五组与标注序列化钉）加 tests/retrline_dualrun.rs 1 passed",
+  "regression": {
+    "ignored_real_workspace": "8 passed（--ignored 真工作区：扩容两域命中带标注、语义缺省回退两形、wenguobs F 系）",
+    "mem_recall_f_suite": "9 passed",
+    "retriever_canonical_suite": "4 passed",
+    "dualrun": "8 查询判词 8/8 一致，score_max_delta=2.22e-16，dualrun-summary.json 在档"
+  },
+  "changed": [
+    "src/retriever/semantic.rs（新立）",
+    "src/retriever/archives_ext.rs（新立）",
+    "src/retriever/mod.rs（接线与 retr-env 测试掺名修复）",
+    "src/retriever/archives.rs（两域分类与来源域标注）",
+    "src/retriever/facet.rs（+1 行测试配 field）",
+    "src/bin/retriever.rs（--lexical 与 --semantic K 旗标）",
+    "tests/retrline_dualrun.rs（新立）",
+    "tests/mem_recall_f_suite.rs 与 tests/retriever_canonical_suite.rs（各 +3 行配 field）"
+  ],
+  "exit_code": 0
+}

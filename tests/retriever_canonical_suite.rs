@@ -71,6 +71,7 @@ fn t2_city_archives_indexed_and_classified() {
         until: None,
         words: vec!["wengucity".to_string()],
         miss_log: None,
+        semantic: None,
         archives: Vec::new(),
         at: "2026-09-11".to_string(),
     };
@@ -103,6 +104,7 @@ fn t3_city_chain_event_axis() {
         until: None,
         words: Vec::new(),
         miss_log: None,
+        semantic: None,
         archives: Vec::new(),
         at: "2026-09-11".to_string(),
     };
@@ -128,6 +130,7 @@ fn t4_non_layout_root_legacy_degradation() {
         until: None,
         words: Vec::new(),
         miss_log: None,
+        semantic: None,
         archives: Vec::new(),
         at: "2026-09-11".to_string(),
     };

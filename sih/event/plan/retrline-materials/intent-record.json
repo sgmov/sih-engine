@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-retrline",
+  "raw_input": "候令簿第三件推进 retrieverline 批即检索线双面收口，承 pk-039 与 pk-056 出泊开工令形，立项包 retrieverline.md 承载，子代理施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "retrieverline 批 rl-01 至 rl-04：SETSP 名录与旧仓 doc 索引入引擎温故 archives 面带来源域标注，确定性统计向量语义通道引擎化缺省 K=3 词面降显式回退，同参双跑判词一致在档，CLI 与 MCP 参数形零破坏，settle 加 close 加推双远端。",
+    "exclusions": [
+      "locator_bridge.rs 零触碰（memfix 批域）",
+      "MCP 面零改码",
+      "wikirecall 与旧仓与 sih-math 只读"
+    ],
+    "output_format": "src/retriever 扩容加 semantic.rs 新立加测试与对表材料与任务包勾选，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "检索可见面非引用权威面，来源域标注随件",
+      "pk-037 既裁：确定性统计向量不做向量库",
+      "SPEC-023：MCP retriever_recall 四轴语义零变更"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/retriever 加 CLI 入口加新测试文件加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
