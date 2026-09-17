@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-pathfix",
+  "raw_input": "用户 2026-09-17 令「1要修」（bypass 台账误位）并问 pk-089 现状，实查 receipts_dir 写死在引擎件仍活即 closegate.rs 1049 行，两缺陷同族路径病并入一批修。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pathfix 批：lease 路径缺陷双修即 bypass 缺参拒加工作区根上溯发现，与台账基座 ledger_surface 分流即中央形零改加新城域形落 sih/ledger，三改文件加新测试套件四件，pk-089 出泊 promoted 承代码病修复即存量迁移与假骨架清理实查无踪事实性免除，worktree 全量回归零新红，settle 加 close 加推双远端。",
+    "exclusions": [
+      "root 解析全局重构不做——只修 bypass 写位，其余 root 缺省位如实申报候另批",
+      "工作台域零触碰——牌已停行，存量假骨架实查无踪无物可迁",
+      "tokens 台账与锁册会话册即活账本面——本批只读不写其结构"
+    ],
+    "output_format": "三源码文件改加 tests/pathfix.rs 新立加 pk-089 出泊件与批材料，认证笔与出泊笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以测试为证据即 pathfix 四件绿加 mergeback 零回归",
+      "SDDG：任务包先行即本件先于施工，测试随批",
+      "GOV-004：append-only 台账只增行不改行"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/bin/lease 三文件加 tests/pathfix.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
