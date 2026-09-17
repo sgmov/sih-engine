@@ -23,7 +23,7 @@
 ### chain_query {#chain-query}
 
 - 入参：date 即 YYYY-MM-DD 缺省实日；event_type 可选过滤
-- 出参：当日链事件清单即哈希、事件型、主体字段
+- 出参：当日链事件清单即哈希、事件型、主体字段；matches=全日笔数、returned=过滤命中数即 MCP 面，承接 CLI 面 scribe query 同名字段 matches=过滤命中数，同名字段两面语义显式申报见修订五
 - 承接 CLI 只读：`sih-engine/target/debug/scribe query --trail sih-engine/sih/event/trail/<date>.ndjson`
 
 ### chain_verify {#chain-verify}
@@ -125,3 +125,4 @@
 2026-09-11 修订三：随 nomsupply 批增立名指引具即 naming_guide，令源 pk-090 出泊即用户 2026-09-11 令「拉起子代理逐项清账，可以并行」承清账并联批 debtclear-parallel 簇A；alpha 相读数面八具扩九具，内容五段静态教学即立名五步形与 DEC-017 修订指针与检词六态语义与 stem 闸拒教认领三语义与死档禁条，只读零裁决零 LLM 零写入，语义忠实终裁归立名程序人节点；stdio 外部面 18 具升 19 具、HTTP 面 18 具升 19 具同步在 mcpline 0.10.0 实装；同批件三检词包按域解析修订 nomenclator_query 与 nomenclator_check 两具即 canonical 域优先域内词典包回退中央包，件二 unknown 与错误载荷附立名程序摘要，DEC-017 修订六同批在册。
 
 2026-09-11 修订四：随 sihmcp-solo 批载体形变更，令源用户 2026-09-11 令「rmcp在sihankor旧仓开发的时候就是定下技术栈选型，直接替换。」承 DEC-023 载体决策；MCP 线载体由 Python FastMCP 实装 sih-tools/mcpline 换 Rust rmcp 原生承载，引擎 bin sihmcp 加 lib 模块 src/mcpserver 承 DEC-001 源码位；本契九具工具契约与红线与验收程序零变化，行为对等由双载体对表电池判词承 mcpdual-parallel 先例形，材料 sih-engine/sih/event/plan/sihmcp-solo/materials/ 在档，alpha 九用例与 beta 生命周期八步与错误路径五步俱判词一致；chain_query 与 chain_verify 两具承接形由 scribe 子进程改引擎进程内库调 event_stream 即消子进程缺陷族，承接 CLI 指针保留作正典读形；载体名 serverInfo sihmcp 承 DEC-023 甲表认领候立名程序人节点终裁。
+2026-09-17 修订五：随 spec023-matches-solo 批注明 matches 字段两面语义，令源 pk-083 出泊裁定承用户 2026-09-17 令「裁，多子代理并行」，双面注明形零破面，统一字段形不采：MCP 面 chain_query 出参 matches=全日笔数加 returned=过滤命中数，CLI 面 scribe query --trail 出参 matches=过滤命中数即零命中形 matches=0 退出码一。同名字段两面语义自此显式申报，两面事件集三路一致零语义损，mcpdual-parallel 批对表在档即发现一，字段语义差异为两面接口事实申报非缺陷；工具契约节 chain_query 条目出参行同批补注，两面代码零改动。
