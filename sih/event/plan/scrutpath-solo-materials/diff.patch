@@ -1,0 +1,259 @@
+diff --git a/src/bin/scrutinator.rs b/src/bin/scrutinator.rs
+index a0edcd0..5314006 100644
+--- a/src/bin/scrutinator.rs
++++ b/src/bin/scrutinator.rs
+@@ -31,6 +31,26 @@ fn read_text(path: &str) -> Option<String> {
+     std::fs::read_to_string(path).ok()
+ }
+ 
++/// 域判定（scrutpath-solo 批增根锚定）：原路径形与 canonicalize 绝对形先判
++/// （主树形短路，输出零漂移）；未命中则上溯判根（anchor.py 同款标记件）后
++/// 以根相对形与 worktree 归一化形再判——工地内的 sih-engine/doc/... 即域内。
++/// 无根面返回 false（域外纵深守卫，/tmp 域外场景退出码 2 语义零变）。
++fn target_in_domain(dom: &sih_engine::scrutinator::rule::DomainSpec, path: &str) -> bool {
++    let abs = std::fs::canonicalize(path)
++        .ok()
++        .and_then(|p| p.to_str().map(String::from))
++        .unwrap_or_else(|| path.to_string());
++    if sih_engine::scrutinator::rule::domain_match(dom, &abs)
++        || sih_engine::scrutinator::rule::domain_match(dom, path)
++    {
++        return true;
++    }
++    match sih_engine::scrutinator::rule::discover_workspace_root(&abs) {
++        Some(root) => sih_engine::scrutinator::rule::domain_match_rooted(dom, &root, &abs),
++        None => false,
++    }
++}
++
+ /// CLI 解析结果。
+ /// opts: 旗标位（不含 --pack 后立即的位置参数）
+ /// positional_targets: 位置参数按出现顺序收集的目标
+@@ -142,14 +162,9 @@ fn main() {
+     let mut all_in_domain = true;
+     let mut domain_mismatches: Vec<String> = Vec::new();
+     for path in &target_paths {
+-        let in_any = packs_data.iter().any(|(_, dom, _)| {
+-            let abs = std::fs::canonicalize(path)
+-                .ok()
+-                .and_then(|p| p.to_str().map(String::from))
+-                .unwrap_or_else(|| path.clone());
+-            sih_engine::scrutinator::rule::domain_match(dom, &abs)
+-                || sih_engine::scrutinator::rule::domain_match(dom, path)
+-        });
++        let in_any = packs_data
++            .iter()
++            .any(|(_, dom, _)| target_in_domain(dom, path));
+         if !in_any {
+             all_in_domain = false;
+             domain_mismatches.push(path.clone());
+@@ -188,18 +203,14 @@ fn main() {
+     for (pack_name, dom, rules) in &packs_data {
+         for (path, text_opt) in &targets {
+             if let Some(text) = text_opt {
+-                // 域内判定：target 在 pack 域内才跑
+-                let abs = std::fs::canonicalize(path)
+-                    .ok()
+-                    .and_then(|p| p.to_str().map(String::from))
+-                    .unwrap_or_else(|| path.clone());
+-                let in_domain = sih_engine::scrutinator::rule::domain_match(dom, &abs)
+-                    || sih_engine::scrutinator::rule::domain_match(dom, path);
++                // 域内判定：target 在 pack 域内才跑（scrutpath-solo 起含根锚定工地形）
++                let in_domain = target_in_domain(dom, path);
+                 if !in_domain {
+                     continue;
+                 }
+                 // finding 的 path 字段填绝对路径，与工具件 Python `str(path)` 行为对表
+-                let finding_path = abs.clone();
++                // （targets 已按 canonicalize 绝对化，此处即 targets 的 path 本形）
++                let finding_path = path.clone();
+                 // 判断材料轴：manifest 标 json 走 json 规则，否则 text
+                 let manifest = sih_engine::scrutinator::asset::manifest(pack_name);
+                 let is_json_pack = manifest.contains("material = \"json\"")
+diff --git a/src/scrutinator/rule.rs b/src/scrutinator/rule.rs
+index 8b726eb..659227e 100644
+--- a/src/scrutinator/rule.rs
++++ b/src/scrutinator/rule.rs
+@@ -210,6 +210,66 @@ pub fn domain_match(spec: &DomainSpec, path: &str) -> bool {
+     spec.include.iter().any(|p| match_path_glob(p, path))
+ }
+ 
++/// 工作区根标记件（scrutpath-solo 批增，anchor.py 同款上溯判根先例：
++/// sih-tools/attnanchor/anchor.py root() 即按此标记件逐级上溯）
++pub const WORKSPACE_ROOT_MARKER: &str = "sih-tools/lease/ledger/sessions.ndjson";
++
++/// 上溯判根：从目标路径逐级上溯找工作区根标记件，命中即返回根目录。
++/// 目标文件或中间目录不存在也可判（按路径串词法上溯，各祖先逐一实查标记件），
++/// 无标记件面返回 None（域外纵深守卫，退出码三值语义零变承此）。
++pub fn discover_workspace_root(path: &str) -> Option<String> {
++    let p = std::path::Path::new(path);
++    let mut cur: std::path::PathBuf = if p.is_dir() {
++        p.to_path_buf()
++    } else {
++        p.parent()?.to_path_buf()
++    };
++    loop {
++        if cur.join(WORKSPACE_ROOT_MARKER).is_file() {
++            return cur.to_str().map(String::from);
++        }
++        if !cur.pop() || cur.as_os_str().is_empty() {
++            return None;
++        }
++    }
++}
++
++/// worktree 路径归一化：根相对形若为 worktrees/<仓>/<批>/... 即剥前三段，
++/// 前置仓段回仓相对形（工地内容是仓的完整检出）：
++/// worktrees/sih-engine/<批>/doc/x.md → sih-engine/doc/x.md。
++/// 段数不足四或首段非 worktrees 返回 None。
++pub fn normalize_worktree_rel(rel: &str) -> Option<String> {
++    let comps: Vec<&str> = rel.split('/').collect();
++    if comps.len() < 4 || comps[0] != "worktrees" {
++        return None;
++    }
++    Some(format!("{}/{}", comps[1], comps[3..].join("/")))
++}
++
++/// 根锚定域判定（显式根参形，纯函数可测）：
++/// 原路径串命中即短路；否则取根相对形与 worktree 归一化形再判，
++/// 任一命中即域内。exclude 逐候选生效，域清单语义零变。
++pub fn domain_match_rooted(spec: &DomainSpec, root: &str, path: &str) -> bool {
++    if domain_match(spec, path) {
++        return true;
++    }
++    let root_trimmed = root.trim_end_matches('/');
++    let rel = match path.strip_prefix(root_trimmed) {
++        Some(r) => r.trim_start_matches('/'),
++        None => return false,
++    };
++    if rel.is_empty() {
++        return false;
++    }
++    if domain_match(spec, rel) {
++        return true;
++    }
++    match normalize_worktree_rel(rel) {
++        Some(norm) => domain_match(spec, &norm),
++        None => false,
++    }
++}
++
+ /// 规则对单条文本检查，返回 findings
+ pub fn check_text(rule: &RuleEntry, text: &str) -> Vec<TextFinding> {
+     let mut out = Vec::new();
+diff --git a/src/scrutinator/tests.rs b/src/scrutinator/tests.rs
+index a32d083..9a191dd 100644
+--- a/src/scrutinator/tests.rs
++++ b/src/scrutinator/tests.rs
+@@ -405,3 +405,111 @@ fn c9_bridge_chars_fire() {
+     assert_eq!(c9_lines(&rule, text), vec![3, 4, 5]);
+ }
+ 
++// ============================================================================
++// scrutpath-solo 批增：域判定路径基根锚定（工地路径域外误判修复）
++//
++// 病灶：des-001 include 按根相对 glob（sih-engine/doc/**），引擎件按
++// canonicalize 绝对路径匹配，工地路径形 worktrees/<仓>/<批>/doc/... 不命中
++// 即域外 exit 2（acceptclose 与 constclear2c 与 adjudicate2 三窗申报同款，
++// 本批修复前红证 materials/prefix-red-worktree-exit2.json 在档）。
++// 修法：anchor.py 同款上溯判根（标记件 sih-tools/lease/ledger/sessions.ndjson）
++// 加 worktree 路径归一化（剥 worktrees/<仓>/<批> 前缀回仓相对形）。
++// 红线：域清单零扩面（des-001 仍只盖 sih-engine/doc）、退出码三值语义零变。
++// ============================================================================
++
++fn des001_spec() -> crate::scrutinator::rule::DomainSpec {
++    let (dom, _) = crate::scrutinator::rule::load_pack("des-001").expect("des-001 包应可加载");
++    dom
++}
++
++#[test]
++fn scrutpath_rooted_worktree_doc_in_domain() {
++    // 工地路径形经根锚定归一后应判域内（修复前 false 即三窗申报病灶）
++    let dom = des001_spec();
++    let root = "/fake/ws-root";
++    let path = "/fake/ws-root/worktrees/sih-engine/scrutpath-solo/doc/GOV-900.md";
++    assert!(
++        crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
++        "工地 doc 路径形经根锚定归一后应判域内"
++    );
++}
++
++#[test]
++fn scrutpath_rooted_maintree_rel_zero_regression() {
++    // 主树根相对形既有判定零回归
++    let dom = des001_spec();
++    let root = "/fake/ws-root";
++    let path = "/fake/ws-root/sih-engine/doc/GOV-900.md";
++    assert!(
++        crate::scrutinator::rule::domain_match_rooted(&dom, root, path),
++        "主树根相对 doc 形应域内"
++    );
++}
++
++#[test]
++fn scrutpath_rooted_out_of_domain_unchanged() {
++    // 域清单零扩面与 exclude 语义零变：域外路径不得因根锚定入域，skills 排除仍生效
++    let dom = des001_spec();
++    let root = "/fake/ws-root";
++    assert!(
++        !crate::scrutinator::rule::domain_match_rooted(&dom, root, "/fake/ws-root/other/doc/x.md"),
++        "域外路径不得因根锚定扩面入域"
++    );
++    assert!(
++        !crate::scrutinator::rule::domain_match_rooted(
++            &dom,
++            root,
++            "/fake/ws-root/worktrees/sih-engine/b/doc/skills/x.md"
++        ),
++        "exclude 语义零变：worktree 形下 skills 排除仍生效"
++    );
++}
++
++#[test]
++fn scrutpath_normalize_worktree_rel() {
++    // 归一化单元：剥 worktrees/<仓>/<批> 前缀回仓相对形；非 worktree 形返回 None
++    assert_eq!(
++        crate::scrutinator::rule::normalize_worktree_rel(
++            "worktrees/sih-engine/scrutpath-solo/doc/x.md"
++        )
++        .as_deref(),
++        Some("sih-engine/doc/x.md")
++    );
++    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("sih-engine/doc/x.md"), None);
++    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("worktrees/sih-engine"), None);
++}
++
++#[test]
++fn scrutpath_discover_workspace_root_finds_marker() {
++    // 上溯判根（anchor.py 同款标记件）：从目标路径逐级上溯找 sih-tools/lease/ledger/sessions.ndjson
++    let ws = tempfile::tempdir().expect("tempdir");
++    let marker = ws.path().join("sih-tools/lease/ledger/sessions.ndjson");
++    std::fs::create_dir_all(marker.parent().unwrap()).expect("marker 目录创建");
++    std::fs::write(&marker, "").expect("marker 写");
++    let target = ws.path().join("worktrees/sih-engine/b/doc/x.md");
++    std::fs::create_dir_all(target.parent().unwrap()).expect("target 目录创建");
++    let root = crate::scrutinator::rule::discover_workspace_root(target.to_str().unwrap())
++        .expect("应发现工作区根");
++    assert_eq!(std::path::Path::new(&root), ws.path(), "判根应落在标记件所在目录");
++}
++
++#[test]
++fn scrutpath_discover_workspace_root_none_without_marker() {
++    // 无标记件面（域外纵深守卫）：/tmp 上溯无根应返回 None，退出码三值语义零变承此
++    assert!(crate::scrutinator::rule::discover_workspace_root("/tmp").is_none());
++}
++
++#[test]
++fn scrutpath_worktree_path_form_exit_zero() {
++    // CLI 级（假工作区全链）：工地 doc 路径应判域内（修复前 exit 2 即三窗申报形）
++    let ws = tempfile::tempdir().expect("tempdir");
++    let marker = ws.path().join("sih-tools/lease/ledger/sessions.ndjson");
++    std::fs::create_dir_all(marker.parent().unwrap()).expect("marker 目录创建");
++    std::fs::write(&marker, "").expect("marker 写");
++    let doc = ws.path().join("worktrees/sih-engine/scrutpath-solo/doc/SCRUTPATH-TEST.md");
++    std::fs::create_dir_all(doc.parent().unwrap()).expect("doc 目录创建");
++    std::fs::write(&doc, "# 测试标题\n\n零违规正文。\n").expect("doc 写");
++    let (code, _stdout) = run_flag(&["des-001"], &[doc.to_str().unwrap()]);
++    assert_eq!(code, 0, "工地 doc 路径形应判域内退出 0（域外即三窗病灶形），实际 {}", code);
++}
++

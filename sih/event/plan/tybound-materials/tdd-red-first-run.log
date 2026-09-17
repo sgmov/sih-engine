@@ -1,0 +1,49 @@
+FF......F.                                                               [100%]
+=================================== FAILURES ===================================
+___________ NegativeBoundFullForm.test_negative_bound_impl_full_form ___________
+
+self = <test_tybound_deep.NegativeBoundFullForm testMethod=test_negative_bound_impl_full_form>
+
+    def test_negative_bound_impl_full_form(self):
+        source = "impl !Send for Foo {\n    fn x(&self) -> u8 { 0 }\n}\n"
+        rows = entries_for(RUST_PACK, source)
+        impls = [r for r in rows if r["kind"] == "impl"]
+>       self.assertEqual(len(impls), 1, [r["name"] for r in rows])
+E       AssertionError: 0 != 1 : ['x']
+
+tests/test_tybound_deep.py:63: AssertionError
+________ NegativeBoundFullForm.test_negative_bound_in_where_keeps_name _________
+
+self = <test_tybound_deep.NegativeBoundFullForm testMethod=test_negative_bound_in_where_keeps_name>
+
+    def test_negative_bound_in_where_keeps_name(self):
+        source = "impl<T> Trait for Foo<T> where T: !Send {\n}\n"
+        rows = entries_for(RUST_PACK, source)
+        impls = [r for r in rows if r["kind"] == "impl"]
+>       self.assertEqual(len(impls), 1)
+E       AssertionError: 0 != 1
+
+tests/test_tybound_deep.py:71: AssertionError
+________________ MarkdownStarBullet.test_star_bullet_list_items ________________
+
+self = <test_tybound_deep.MarkdownStarBullet testMethod=test_star_bullet_list_items>
+
+    def test_star_bullet_list_items(self):
+        rows = entries_for(MD_PACK, "* Alpha line\n\n* Beta line\n")
+        kinds = [r["kind"] for r in rows]
+>       self.assertEqual(kinds, ["list_item", "list_item"], rows)
+E       AssertionError: Lists differ: ['para', 'para'] != ['list_item', 'list_item']
+E       
+E       First differing element 0:
+E       'para'
+E       'list_item'
+E       
+E       - ['para', 'para']
+E       + ['list_item', 'list_item'] : [{'id': '84095ff2a23d0a07d8e1c7e2120c7561fa1fe60155894d60644518dca670de90', 'path': '/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/tmpbg_io86l/sample.rs', 'carrier': 'markdown', 'kind': 'para', 'name': None, 'seq': 1, 'line_start': 1, 'line_end': 1, 'content_hash': '71961caee2856afa78cb2d56c35b0e109300073511ce19ee5823addbff39e688', 'text': 'Alpha line'}, {'id': '794598868f3d9f279556ed10cd6bca520a13af31d3ed570f0c6a90f4fcbe6169', 'path': '/var/folders/xp/z0252_qj1bj3fsb9prgqfc4w0000gn/T/tmpbg_io86l/sample.rs', 'carrier': 'markdown', 'kind': 'para', 'name': None, 'seq': 2, 'line_start': 3, 'line_end': 3, 'content_hash': '0f7051cc91ecf6d26171216afc9881b084b218390df06735fc132ea459a1875f', 'text': 'Beta line'}]
+
+tests/test_tybound_deep.py:118: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_tybound_deep.py::NegativeBoundFullForm::test_negative_bound_impl_full_form
+FAILED tests/test_tybound_deep.py::NegativeBoundFullForm::test_negative_bound_in_where_keeps_name
+FAILED tests/test_tybound_deep.py::MarkdownStarBullet::test_star_bullet_list_items
+3 failed, 7 passed in 0.71s

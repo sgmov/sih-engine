@@ -1,0 +1,29 @@
+{
+ "batch": "tybound",
+ "phase": "settle-r2",
+ "exit_code": 0,
+ "readings": {
+  "session": "e3b8e8db5a830d7c",
+  "prior_session": "9d24fc5bc19dea64（allow 形勘误空会话让位，bypass-orphan 四件批前在盘无主件留痕在案）",
+  "worktree": "worktrees/sih-tools/tybound",
+  "changed": [
+   "parser/packs/rust/grammar.json",
+   "parser/packs/markdown/grammar.json",
+   "parser/packs/markdown/tokens.json",
+   "parser/tests/test_tybound_deep.py",
+   "parser/tests/test_tokencap.py",
+   "parser/tests/fixtures/rust-stream-baseline-2026-09-11.ndjson"
+  ],
+  "content_identity": "改件自备份逐字节复归，复验全套 94 passed 12 subtests",
+  "f1": "negative bound full form red-then-green",
+  "f2": "old single form pins green",
+  "f3": "full suite green, two legacy reds root-caused and cleared",
+  "intent_r2": "b92a648e",
+  "prior_certs": [
+   "24eb8c12",
+   "1b93d470",
+   "aa359eae",
+   "bf483820"
+  ]
+ }
+}

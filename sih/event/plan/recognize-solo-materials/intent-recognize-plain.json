@@ -1,0 +1,33 @@
+{
+  "session_id": "sess-zcode-260914-recognize",
+  "raw_input": "开：recognize-solo 读面连接识别域隔离批（实验侧越权读汇报核实后开批；含引擎租约甲表对表修复）",
+  "round": 1,
+  "intent_contract": {
+    "goal": "HTTP alpha 读面按连接绑域投影；绑未域自举根硬拒教学禁回退中央；降级三形（缺头/停行/未登记）回受控教学面并兑现 identity_notice；控制台签发加域自举闸；locks_read HTTP 面退出码 127 修复；AI-MANUAL 第 2 节与第 8.4 节语义对表；引擎租约甲表派生对表非对称判定对齐围堰",
+    "exclusions": [
+      "P2 读面访问审计候另裁不入本批",
+      "stdio 面行为零变化",
+      "写面闸语义零回退",
+      "引擎租约甲表修复仅限 attachments.rs 派生对表判定位，不动围堰"
+    ],
+    "output_format": "mcpserver 代码与 Rust 回归 + AI-MANUAL 修订 + 结果档 + HTTP 活体四用例验收 + scribe 认证 + lease 收约",
+    "injected_constraints": [
+      "工程基线第一条：确定性程序执行，LLM 产出仅符号材料",
+      "工程基线第四条：操作来源可追溯、结果可机械校验、历史不可篡改",
+      "T6 管线序固定：化格、核阅、检词、认证"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/mcpserver + sih-tools/mcpline/AI-MANUAL.md",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "lease + scribe + formatter + scrutinator + nomenclator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [],
+  "calls_in": 0,
+  "calls_out": 0
+}

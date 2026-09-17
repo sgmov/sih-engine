@@ -1,0 +1,17 @@
+{
+ "occasion": "scrutpath-solo 收约补笔检词首跑红",
+ "exit_code": 1,
+ "findings": [
+  {
+   "rule": "dead_ban",
+   "class": "strict",
+   "severity": "high",
+   "word": "落账",
+   "cause": "词典义项负面即银行清空与传送未达",
+   "source": "PRO-007 死档登记",
+   "line": 31,
+   "excerpt": " 14 件全清单,calllog 旗未单落账(calllog 闸 checked true unreleased 0,被"
+  }
+ ],
+ "disposition": "词面改「未单独成笔」后复检 exit 0,先红留痕不清洗(先红留痕纪律,gvecmath 用户令同源)"
+}

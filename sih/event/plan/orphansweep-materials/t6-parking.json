@@ -1,0 +1,16 @@
+{
+  "target": "doc/governance/PARKING-v1.md",
+  "date": "2026-09-17",
+  "pipeline": [
+    {"step": "formatter", "pack": "packs/formatter/general-v1", "exit_code": 0},
+    {"step": "scrutinator", "pack": "des-001", "exit_code": 0, "findings": 0},
+    {"step": "nomenclator", "pack": "packs/nomenclator/core", "exit_code": 0, "findings": 0}
+  ],
+  "preexisting_fixes": [
+    {"line": 27, "violation": "C001 加 C002 破折号", "fix": "SiInfer 彩排泊置——改全角冒号，parksi-solo 段存量违例机械修复零语义改动"},
+    {"line": 27, "violation": "C002 U+03B2 希腊字母 beta", "fix": "beta 实装改 ASCII 形 beta，同段存量违例机械修复零语义改动"},
+    {"line": 37, "violation": "dead_ban 落账", "fix": "本批新增句裁定落账批改裁定承载批，死档词出清"},
+    {"line": 37, "violation": "lazy_in_doc 开域", "fix": "本批新增句开域全链改域自举全链，避懒波词"}
+  ],
+  "content_change": "名册补记一段：pk-102 至 pk-108 七件对链同步加投影欠账十一件与多记一件核算照录"
+}

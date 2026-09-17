@@ -1,0 +1,12 @@
+{
+  "action": "exit",
+  "entry_id": "pk-102",
+  "title": "gauge-probe 双会话测试痕回撤候签出泊",
+  "context": "回撤令签署后执行：sih-engine 回撤提交 b4f0fee（lease bypass 留痕）加直改链笔 565a779c 补偿申报加工地分支与测试域根与未跟踪件清偿加令牌台账六行停行注记既在",
+  "ruling": "用户 2026-09-12 签署「签署，立即执行」",
+  "state": "exited",
+  "ttl_days": 14,
+  "exit_condition": "已达成（人节点签署回撤令并执行毕）",
+  "created_at": "2026-09-12",
+  "disposition": "promoted"
+}

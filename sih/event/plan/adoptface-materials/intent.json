@@ -1,0 +1,36 @@
+{
+  "session_id": "sess-zcode-260917-adoptface",
+  "raw_input": "为采纳面批（adoptface）完成立约开工地。本批四件：README 重写、接入指南+AGENTS 模版、sih init 薄壳、DEC-026 缺省 stdio 决策。硬性纪律八条：sih-tools/ 冻结围堰只读（identity verify 只读运行唯一例外）；全部施工写入工地副本路径主树零直写；Cargo.toml 0.9.0 钉死依赖零增删；src/mcpserver/ 仅允许 sih init 薄壳最小 pub 可见性放宽零行为变更；不碰他批在途件；新增 .rs 头注前二十行含正典指针词形（SDDG-2）；禁 git commit/push 直呼；回报用中文。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "adoptface 采纳面批：引擎仓对外采纳动线四件齐备。1) sih-engine/README.md 重写——动线以现役调用形为唯一源（引擎 bin 位生产调用面与 sihmcp stdio/HTTP 双面，DEC-023），五分钟跑起来段逐条活体可跑；2) 接入指南与 AGENTS 模版落 doc/guide/——域自举到会话启动五件到租约首件的单页动线，AGENTS 模版最小可配形；3) sih init 命令行薄壳 src/bin/sih.rs 直调 src/mcpserver/bootstrap.rs 域自举内核，src/mcpserver/ 仅最小 pub 可见性放宽零行为变更逐条申报；4) DEC-026 缺省 stdio 决策成文 doc/decision/026-mcp-default-stdio-v1.md，HTTP 面转显式选用位，只裁缺省面不裁通道存废。",
+    "exclusions": [
+      "不升版本号——Cargo.toml 0.9.0 钉死，依赖清单零增删",
+      "不改 mcpserver 行为——src/mcpserver/ 仅允许为薄壳做最小 pub 可见性放宽，零行为变更，逐条申报",
+      "不碰他批在途件——主树 src/bin/{formatter,locator,nomenclator,parser,selector,tally}.rs 的 M 态与 sih/event 与 sih/state 旧档零触碰",
+      "围堰零写入——sih-tools/ 冻结只读，identity verify 只读运行（PYTHONDONTWRITEBYTECODE=1）唯一例外",
+      "主树零直写——全部施工写入工地副本路径，任务包与批材料按惯例落主树 sih/{state,event}/plan/ 未跟踪位",
+      "不直呼 git commit/push——commit 一律由 lease commit 机械落笔",
+      "生成批但 ask3 双门以 plain 意图替位，候补申报——本件即 plain 形零哲学引文，候人节点裁"
+    ],
+    "output_format": "sih-engine/README.md（重写）+ sih-engine/doc/guide/adopt-v1.md 与 sih-engine/doc/guide/AGENTS-template.md + sih-engine/src/bin/sih.rs（薄壳，头注前二十行含正典指针词形）+ src/mcpserver/ 最小 pub 放宽 + sih-engine/doc/decision/026-mcp-default-stdio-v1.md + cargo test 全绿 + T6 三步审计（化格、核阅、检词）+ 结果档 sih-engine/sih/event/plan/adoptface-results.md + materials/（intent、identity）",
+    "injected_constraints": [
+      "工程基线第一条确定性程序是治理操作唯一执行者——commit 由 lease commit 机械落笔，闸拒即停",
+      "工程基线第四条可验证性约束——F-1 至 F-5 跑前立文，README 命令逐条活体可跑，mcpserver 零行为变更以 cargo test 全绿证",
+      "SDDG-2 机械门——新增 .rs 头注前二十行必须含正典指针词形（SPEC 或 DES 或 DEC 至少一处）",
+      "DEC-017 修订六甲表形——lease open --new-stem 带甲表三件，stem 闸机械核对派生对表",
+      "围堰冻结令（2026-09-14）——sih-tools/ 生产调用面切引擎 bin 位，围堰源码零改动",
+      "GOV-004 接管五钉位——治理域历史不可改，只追加"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md + sih-engine/doc/guide/{adopt-v1.md, AGENTS-template.md} + sih-engine/src/bin/sih.rs + sih-engine/src/mcpserver/（仅 pub 放宽）+ sih-engine/doc/decision/026-mcp-default-stdio-v1.md + sih-engine/sih/event/plan/adoptface-{results.md, materials/}",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "sih-engine/src/mcpserver/bootstrap.rs（域自举内核常量面）+ sih-engine/doc/decision/023-mcp-rust-carrier.md 与 025-project-memory-snapshot-initiation-v1.md + sih-engine/doc/decision/000 文档格式正典 + sih-engine/AGENTS.md（模版底本）",
+      "max_depth": 1
+    }
+  }
+}

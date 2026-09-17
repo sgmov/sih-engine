@@ -1,0 +1,52 @@
+warning: duplicated attribute
+   --> src/event_stream/append.rs:370:5
+    |
+370 |     #[test]
+    |     ^^^^^^^
+    |
+    = note: `#[warn(duplicate_macro_attributes)]` on by default
+
+warning: `sih-engine` (lib test) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s
+     Running unittests src/lib.rs (target/debug/deps/sih_engine-6d7aa693b004146e)
+
+running 36 tests
+test scrutinator::tests::c9_parse_accepts_doc_constant_gate ... ok
+test scrutinator::tests::c9_missing_carrier_only_fires ... ok
+test scrutinator::tests::c9_inline_code_declaration_stripped ... ok
+test scrutinator::tests::c9_missing_derivation_only_fires ... ok
+test scrutinator::tests::c9_compliant_nearby_presence_zero ... ok
+test scrutinator::tests::c9_naked_document_fires_per_declaration_line ... ok
+test scrutinator::tests::c9_bridge_chars_fire ... ok
+test scrutinator::tests::c9_fence_declaration_exempt_and_pointer_in_fence_counts ... ok
+test scrutinator::tests::c9_extended_trigger_words_only_with_digit_adjacency ... ok
+test scrutinator::tests::exit_missing_pack_two ... ok
+test scrutinator::tests::exit_empty_load_zero ... ok
+test scrutinator::tests::golden_ask3_scrutmerge_sdd ... ok
+test scrutinator::tests::golden_ask3_viewrider ... ok
+test scrutinator::tests::exit_out_of_domain_two ... ok
+test scrutinator::tests::exit_single_violation_one ... ok
+test scrutinator::tests::exit_compliant_zero ... ok
+test scrutinator::tests::golden_des001_dec020 ... ok
+test scrutinator::tests::golden_des001_goldfix_002_header ... ok
+test scrutinator::tests::cli_positional_form_matches_golden ... ok
+test scrutinator::tests::golden_des001_goldfix_001_multiflag ... ok
+test scrutinator::tests::scrutpath_discover_workspace_root_finds_marker ... ok
+test scrutinator::tests::scrutpath_discover_workspace_root_none_without_marker ... ok
+test scrutinator::tests::golden_des001_goldfix_003_fence ... ok
+test scrutinator::tests::golden_des001_gov003 ... ok
+test scrutinator::tests::scrutpath_normalize_worktree_rel ... ok
+test scrutinator::tests::golden_des001_goldfix_005_skip ... ok
+test scrutinator::tests::golden_des001mathe_lim001 ... ok
+test scrutinator::tests::golden_des001_goldfix_004_nav ... ok
+test scrutinator::tests::scrutpath_rooted_maintree_rel_zero_regression ... ok
+test scrutinator::tests::cli_positional_and_flag_forms_byte_identical ... ok
+test scrutinator::tests::golden_des001_gov002 ... ok
+test scrutinator::tests::scrutpath_rooted_worktree_doc_in_domain ... ok
+test scrutinator::tests::scrutpath_rooted_out_of_domain_unchanged ... ok
+test scrutinator::tests::golden_des001mathe_mul001 ... ok
+test scrutinator::tests::multipack_attribution_pack_names ... ok
+test scrutinator::tests::scrutpath_worktree_path_form_exit_zero ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 155 filtered out; finished in 0.65s
+

@@ -1,0 +1,40 @@
+{
+  "session_id": "sess-zcode-260914-recognize-r2",
+  "raw_input": "开：recognize-solo 读面连接识别域隔离批 r2（前会话零写入轻收约，allow 面改裸路径重开）",
+  "round": 2,
+  "spec_refs": [
+    "sih-engine/doc/design/DES-014-mcp-beta-security-model-v1.md",
+    "sih-engine/doc/design/DES-015-mcp-http-multitenant-auth-v1.md",
+    "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+    "sih-engine/doc/decision/017-wengu-naming.md"
+  ],
+  "intent_contract": {
+    "goal": "HTTP alpha 读面按连接绑域投影；绑未域自举根硬拒教学禁回退中央；降级三形（缺头/停行/未登记）回受控教学面并兑现 identity_notice；控制台签发加域自举闸；locks_read HTTP 面退出码 127 修复；AI-MANUAL 第 2 节与第 8.4 节语义对表；引擎租约甲表派生对表非对称判定对齐围堰",
+    "exclusions": [
+      "P2 读面访问审计候另裁不入本批",
+      "stdio 面行为零变化",
+      "写面闸语义零回退",
+      "引擎租约甲表修复仅限 attachments.rs 派生对表判定位，不动围堰"
+    ],
+    "output_format": "mcpserver 代码与 Rust 回归 + AI-MANUAL 修订 + 结果档 + HTTP 活体四用例验收 + scribe 认证 + lease 收约",
+    "injected_constraints": [
+      "工程基线第一条：确定性程序执行，LLM 产出仅符号材料",
+      "工程基线第四条：操作来源可追溯、结果可机械校验、历史不可篡改",
+      "T6 管线序固定：化格、核阅、检词、认证",
+      "消费面与正典：DES-014 写面安全模型、DES-015 多租户识别、SPEC-023 alpha 读面契约、DEC-017 立名纪律"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/mcpserver + sih-engine/src/bin/lease/attachments.rs + sih-tools/mcpline/AI-MANUAL.md",
+      "max_depth": 1
+    },
+    "support_domain": {
+      "scope": "lease + scribe + formatter + scrutinator + nomenclator",
+      "max_depth": 0
+    }
+  },
+  "anchors": [],
+  "calls_in": 0,
+  "calls_out": 0
+}

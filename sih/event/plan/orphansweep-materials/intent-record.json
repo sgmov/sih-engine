@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-orphansweep",
+  "raw_input": "用户 2026-09-17 令「pk-108 的两个决策是什么？以后没有批的文件自动跟批跑，如果无用直接删除。」，裁定落账加双仓孤儿全量收编。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "orphansweep 批：pk-108 出泊 promoted 承用户简式缺省处置规（无批文件自动跟批跑，无用直接删，取代原两钉），双仓孤儿全量收编（引擎一百零六件加工具仓记录件与账本现态）加三类无用件删除加 PARKING-v1.md 名册补记七件对链，settle 后双仓 status 转净，推双远端。",
+    "exclusions": [
+      "sih-philosophy 与 sih-math 与 sih-visual 零触碰——非本批对象",
+      "工具仓冻结语义不变——收编只入版本控不改源码，生产调用面仍在引擎 bin 位",
+      "watchcheck 主树旧 results 档候裁项随本批收编消解——收编即处置，不再候二值裁"
+    ],
+    "output_format": "双仓 settle commit + pk-108 出泊事件与认证笔在链 + 名册补记与 T6 报告随批 + close 与 reconcile 零新增",
+    "injected_constraints": [
+      "工程基线第四条：收编以 git status 转净与链验 valid 为证据",
+      "GOV-004：append-only，账本只增不改",
+      "红线：删件仅限三类已验无用件，迷路 .ndjson 删前已验同 report_hash 正笔在正链"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine sih 树未跟踪全量加 doc/governance/PARKING-v1.md 加 sih-tools 台账与记录件目录加批材料与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+ "batch": "mcpspec-solo",
+ "kind": "projection",
+ "date": "2026-09-09",
+ "session": {
+  "zcode": "sess-zcode-260909-mcpspec",
+  "lease": "bd45929ddeb6ff5e"
+ },
+ "mission": "mcpline alpha 相只读面契约正典 SPEC-023 定稿与批机械链收约",
+ "line": "mcpline",
+ "spec": "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+ "tools": [
+  "chain_query",
+  "chain_verify",
+  "critsweep",
+  "heartbeat",
+  "locks_read"
+ ],
+ "allow": [
+  "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+  "sih-engine/sih/state/plan/mcpspec-solo.md",
+  "sih-engine/sih/state/plan/mcpspec-solo-prompt.md",
+  "sih-engine/sih/event/plan/mcpspec-solo-results.md",
+  "sih-engine/sih/event/plan/mcpspec-solo-materials",
+  "sih-engine/sih/event/trail/2026-09-09.ndjson",
+  "sih-tools/scribe/reports",
+  "sih-tools/identity/reports",
+  "sih-tools/proposition/DES/m-mcpspec-1"
+ ],
+ "chain": {
+  "intent_event_id": "c4b26009-d595-41af-a233-95ea9ec65fd6",
+  "intent_event_hash": "04d1201c01a3c3c3e46ae18d05744a0b8154b8e3ebcca675e9380c5d40e7a7e1"
+ },
+ "readings": {
+  "identity_hash_prefix": "33e3b83b",
+  "ask3_sha256": "64fb08055c102df1fcb8e6226198fb3dc6c64a088dc74cd01dbb7e6aab4a76a3",
+  "gate_note": "docmath 闸门主树存量红两笔 SPEC-021 与 SPEC-022 候人节点裁补齐批；批内 SPEC-023 查二同款复核 green"
+ }
+}

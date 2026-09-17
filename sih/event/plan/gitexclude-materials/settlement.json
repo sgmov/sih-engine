@@ -1,0 +1,22 @@
+{
+  "batch": "gitexclude",
+  "kind": "settlement",
+  "session": "129b20a249e74549",
+  "what": "gitexclude 结算：sih init 飞轮隔离（.git/info/exclude 自动排除加 check-ignore 验证），工地 worktrees/sih-engine/gitexclude 分支 msh/gitexclude，lease commit settle 机械落笔",
+  "deliverables": [
+    "src/bin/sih.rs（薄壳扩展：open_domain 成功路径尾随 flywheel_git_exclude——域根 .git/info/exclude 幂等追加 sih/ 行加 git check-ignore 机械验证，出参 flywheel_git_exclude 段，隔离失败不回滚 warning 显形）",
+    "tests/sih_init.rs（黑箱扩展：沙箱域根改真 git 仓，成功形五断言：method 形加 verified 真值加零 warning 加 exclude 含 sih/ 行加 check-ignore 退出码零）",
+    "README.md（三步接入段补隔离保证一句）",
+    "doc/guide/adoption-guide-v1.md（隔离一句加问答新增一问）",
+    "doc/decision/026-adoption-default-stdio-v1.md（DEC-026 v2 修订记录：飞轮与用户项目 VCS 解耦保证）",
+    "src/bin/parser.rs（工地保守序 resolve_pack_arg，SPEC-025 gap-packs-assets 承载，非任务包清单件随工地在途一并结算，主树同名为并发批 lease-cutover-parallel 在途 M 态且实现不同源，偏差节申报）",
+    "sih/event/plan/gitexclude-results.md（结果档，偏差申报与 F 核对表承载件）"
+  ],
+  "readings": {
+    "cargo_test": "退出码 0，478 过 0 败 6 忽略 89 段（与 adoptface 基线同数，本批零新段，扩展断言并入既有 sih_init 段五用例全过）",
+    "live_probe": "活体 A 新临时真 git 仓 init 退出码 0、verified 真值零 warning、exclude 恰一行 sih/、check-ignore 退出码 0、git status --porcelain 零行；活体 B 预置 sih/ 行形（幂等去重分支）init 后仍恰一份且用户既有排除行零扰动、check-ignore 退出码 0",
+    "t6": "化格四件全 0 无需改（packs/formatter/general-v1）；核阅 doc 两件 exit-0、README 与 results 档域外 exit-2 记档（DES-001 域即 sih-engine/doc/**/*.md，不属违规）；检词四件 0 findings 0（packs/nomenclator/core）",
+    "hard_discipline": "src/mcpserver/ git diff 零行；Cargo.toml 与 Cargo.lock git diff 零行（version 0.9.0 钉死与依赖零增删）；主树他批在途件（六 bin M 态加三个旧 results 档 M 态加 09-11 trail M 态）零触碰实核；围堰 sih-tools/ 零源码写入（identity 复用批材料只读件）",
+    "chain_base": "2026-09-17 当日链 append 前 0 行（链文件缺席，本结算认证笔为首笔）"
+  }
+}

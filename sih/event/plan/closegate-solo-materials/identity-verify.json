@@ -1,0 +1,47 @@
+{
+  "anomalies": [],
+  "claims": {},
+  "header": {
+    "mode": "attest",
+    "net_probe": "external",
+    "tool": {
+      "name": "identity",
+      "version": "0.5.0"
+    }
+  },
+  "identity": {
+    "core_components": {
+      "boottime": "1787917459",
+      "hostname": "MiniServer",
+      "lineage": "minimax-code>login>ghostty",
+      "mac": "1cf64c65312e",
+      "sandbox_id": "",
+      "user": "moc"
+    },
+    "core_hash": "9550cba28a5599bbf6b7f393a97b864e560dd74b42023e86b99e65a56b8a6aae",
+    "hash": "d0cd0c9ce6febcf70d5d54d2ed1e174f1b2ca61b52e6c346109adee01e91a6c2",
+    "salt": "d92659cf9c6fa576becfdb054293dcd413324e427b7e2fd36e202993c7ad54b4",
+    "string": "v3|pid=48917|ppid=48774|hostname=MiniServer|mac=1cf64c65312e|user=moc|sandbox_id=|session_id=|boottime=1787917459|parent_start=2026-09-07T04:03:09+00:00|ancestry=python3>bash>minimax-code>zsh>login>ghostty>launchd|net_time=1788753795|timestamp=2026-09-07T04:03:14+00:00"
+  },
+  "observed": {
+    "ancestry": "python3>bash>minimax-code>zsh>login>ghostty>launchd",
+    "boottime": "1787917459",
+    "hostname": "MiniServer",
+    "mac": "1cf64c65312e",
+    "net_time": "1788753795",
+    "parent_start": "2026-09-07T04:03:09+00:00",
+    "pid": "48917",
+    "ppid": "48774",
+    "sandbox_id": "",
+    "session_id": "",
+    "timestamp": "2026-09-07T04:03:14+00:00",
+    "user": "moc"
+  },
+  "summary": {
+    "anomalies": 0,
+    "claimed": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "verdict": "attest"
+  }
+}

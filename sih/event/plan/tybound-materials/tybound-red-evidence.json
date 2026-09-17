@@ -1,0 +1,15 @@
+{
+ "batch": "tybound",
+ "phase": "tdd-red-first-run",
+ "exit_code": 1,
+ "readings": {
+  "log": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/plan/tybound-materials/tdd-red-first-run.log",
+  "failed": [
+   "NegativeBoundFullForm::test_negative_bound_impl_full_form",
+   "NegativeBoundFullForm::test_negative_bound_in_where_keeps_name",
+   "MarkdownStarBullet::test_star_bullet_list_items"
+  ],
+  "passed": 7,
+  "note": "先红留痕：负 bound 全形两红与 md 圆点一红；钉面七绿先行为设计内"
+ }
+}

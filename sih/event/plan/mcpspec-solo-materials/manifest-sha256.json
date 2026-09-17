@@ -1,0 +1,66 @@
+{
+ "batch": "mcpspec-solo",
+ "kind": "content-manifest",
+ "entries": [
+  {
+   "path": "sih-engine/doc/spec/SPEC-023-mcpline-alpha-readonly-v1.md",
+   "sha256": "db4ca56f7f00498f28cea32dfceda1af9c7de058fde32fac09d7999d51bc71fa"
+  },
+  {
+   "path": "sih-engine/sih/state/plan/mcpspec-solo.md",
+   "sha256": "b2373a9ce36e48a6bee873de37411a5e229c45a8752cdffe5b4eede620bf079a"
+  },
+  {
+   "path": "sih-engine/sih/state/plan/mcpspec-solo-prompt.md",
+   "sha256": "c4cd18616a3e3faa657a533038f018f96729f1579f35c0a78716561e8664b30b"
+  },
+  {
+   "path": "sih-engine/sih/event/plan/mcpspec-solo-results.md",
+   "sha256": "a530bd1addf8865c0299676f4dab2f93da43ea44cd21659cbe7e854cb8a7765e"
+  },
+  {
+   "path": "sih-engine/sih/event/plan/mcpspec-solo-materials/mcpspec-solo.json",
+   "sha256": "43fd9fc704dbbd8f505ef1ca1685be740cc759f2a1303d4e5ee007c67a3a4ecd"
+  },
+  {
+   "path": "sih-engine/sih/event/plan/mcpspec-solo-materials/first-run-2026-09-09/batch-file-sufficiency-check.json",
+   "sha256": "2c26b404f8ad12e4beb59e24b39283d1b8b9c1560538e19b30998689020d9534"
+  },
+  {
+   "path": "sih-engine/sih/event/plan/mcpspec-solo-materials/first-run-2026-09-09/run1/docmath_gate.json",
+   "sha256": "e21daec6014e38b321c3a8e02634f884883404f8cca2346a0a8e3dace9722f64"
+  },
+  {
+   "path": "sih-tools/scribe/reports/make_ask3_mcpspec-solo.py",
+   "sha256": "7e692575319edc4b83d7d39e97570fcf400883283381602ad9b9743ae12ec498"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-ask3-mcpspec-solo-record.json",
+   "sha256": "64fb08055c102df1fcb8e6226198fb3dc6c64a088dc74cd01dbb7e6aab4a76a3"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-ask3-mcpspec-solo-validation.json",
+   "sha256": "7faf64a2d11600907b155100a44ab8e1cc5bd10f2aef96b4f25049ed6b1ffc6b"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-mcpspec-solo-elicit-signals.ndjson",
+   "sha256": "bc6ffcad2cdc55ff2b7c289ad0593b01c0f70118a93d3d032f3c34892a81a35f"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-mcpspec-solo-pipeline-report.json",
+   "sha256": "be59d943a43742827b4f5e54273b18935e455d89b790fbd0b1d38759564d0fba"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-mcpspec-solo-checkcite.json",
+   "sha256": "90e34585a058733a605b64b1f2b2e2f8a6ed846719e480745368375a61f564a0"
+  },
+  {
+   "path": "sih-tools/scribe/reports/2026-09-09-mcpspec-solo-checkcite-firstrun-selfname-red.json",
+   "sha256": "d92539991b4cd9b132fce9acc120e8750dacf6cf2c631bc4eaea6ece309866c2"
+  },
+  {
+   "path": "sih-tools/identity/reports/2026-09-09-mcpspec-solo-identity.json",
+   "sha256": "bb9ed97d0edd4c100b0cfb152cfd6189357fbb1db66d79547deddd285a6e5baa"
+  }
+ ]
+}

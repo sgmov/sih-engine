@@ -1,0 +1,174 @@
+Using CPython 3.14.6
+Creating virtual environment at: .venv
+   Building basemgr @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr
+      Built basemgr @ file:///Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr
+Installed 6 packages in 31ms
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+____________________________ test_replay_zero_drift ____________________________
+
+    def test_replay_zero_drift():
+        r = run_cli("replay", "--vector", str(VEC / "self" / "cli-help.json"),
+                    "--command", "python3", "-x", "--root", str(ROOT))
+        # 占位防误用：本测试由迁移与自托管向量生成后激活（向量缺席即红）
+>       assert (VEC / "self" / "cli-help.json").exists(), "自托管向量缺席"
+E       AssertionError: 自托管向量缺席
+E       assert False
+E        +  where False = exists()
+E        +    where exists = ((PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors') / 'self') / 'cli-help.json').exists
+
+tests/test_engine.py:35: AssertionError
+_________________________ test_fingerprint_gate_exit2 __________________________
+
+    def test_fingerprint_gate_exit2():
+        vec = VEC / "self" / "cli-help.json"
+>       assert vec.exists(), "自托管向量缺席"
+E       AssertionError: 自托管向量缺席
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/self/cli-help.json').exists
+
+tests/test_engine.py:44: AssertionError
+_____________________ test_refreeze_baseline_impact_paths ______________________
+
+    def test_refreeze_baseline_impact_paths():
+>       v = json.loads((VEC / "checker-golden" / "expected-scenarios.json").read_text(encoding="utf-8"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+_______________________ test_refreeze_spec_requires_red ________________________
+
+    def test_refreeze_spec_requires_red():
+        r = run_cli("refreeze", "--vector", str(VEC / "checker-golden" / "expected-scenarios.json"),
+                    "--command", "cat", str(VEC / "checker-golden" / "expected-scenarios.bin"),
+                    "--red-evidence", "/nonexistent-red.txt", "--root", str(ROOT))
+        # 规约种先红前置：红证缺席即 refuse exit 1
+>       v = json.loads((VEC / "checker-golden" / "expected-scenarios.json").read_text(encoding="utf-8"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+_______________________ test_six_objects_change_refuses ________________________
+
+    def test_six_objects_change_refuses():
+>       v = json.loads((VEC / "checker-golden" / "expected-scenarios.json").read_text(encoding="utf-8"))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/checker-golden/expected-scenarios.json'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+_________________________ test_double_run_determinism __________________________
+
+    def test_double_run_determinism():
+        vec = VEC / "self" / "cli-help.json"
+>       cmd = json.loads(vec.read_text(encoding="utf-8"))["quadruple"]["input_desc"].split("|")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_engine.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/self/cli-help.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/Users/moc/workspaces/SiHankor/worktrees/sih-tools/basemgrimpl-solo/basemgr/vectors/self/cli-help.json'
+
+/Users/moc/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/pathlib/__init__.py:771: FileNotFoundError
+______________________________ test_empty_stomach ______________________________
+
+    def test_empty_stomach():
+        """空腹证明：引擎 src 零项目特异字面零命令字面零规则编号字面。"""
+>       forbidden = re.compile(
+                    ^^
+            r"\bchecker\b|\bacceptor\b|\bcargo\b|\bpytest\b|\buv\b"
+            r"|sdd-v1|golden|frozen|validate\.py|project_report"
+            r"|\b(?:CP|SD|SL|TD|TL|TC|BC)-\d{3}",
+        )
+E       NameError: name 're' is not defined. Did you forget to import 're'?
+
+tests/test_engine.py:96: NameError
+=========================== short test summary info ============================
+FAILED tests/test_engine.py::test_replay_zero_drift - AssertionError: 自托管...
+FAILED tests/test_engine.py::test_fingerprint_gate_exit2 - AssertionError: 自...
+FAILED tests/test_engine.py::test_refreeze_baseline_impact_paths - FileNotFou...
+FAILED tests/test_engine.py::test_refreeze_spec_requires_red - FileNotFoundEr...
+FAILED tests/test_engine.py::test_six_objects_change_refuses - FileNotFoundEr...
+FAILED tests/test_engine.py::test_double_run_determinism - FileNotFoundError:...
+FAILED tests/test_engine.py::test_empty_stomach - NameError: name 're' is not...
+7 failed in 0.16s
