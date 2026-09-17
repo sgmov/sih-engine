@@ -13,7 +13,7 @@
 - 机械读数（本结算批复跑，施工态原样）：`cargo test --workspace` 退出码 0，478 过 0 败 6 忽略 89 段（与 adoptface 基线同数，本批零新段，扩展断言并入既有 sih_init 段五用例全过）；活体补验两形——活体 A 临时真 git 仓跑 sih init 退出码 0、出参 verified 真值零 warning、exclude 恰一行 `sih/`、check-ignore 退出码 0、`git status --porcelain` 零行（sih/ 整树对用户 git 隐形）；活体 B 预置 `sih/` 行形（幂等去重分支）init 后该行仍恰一份且用户既有排除行零扰动、check-ignore 退出码 0。
 - T6 三步审计（本结算批复跑，序固定化格、核阅、检词先于认证）：化格三件交付（README 与 026 决策档与接入指南）全 0 无需改（packs/formatter/general-v1）；核阅 doc 两件 exit-0、README 与本结果档域外 exit-2 记档（判词「目标不在任何已加载规则包声明的治理域内」，DES-001 域即 sih-engine/doc/**/*.md，两件本不在 doc 域，不属违规）；检词四件 0 findings 0（packs/nomenclator/core）。
 - 硬纪律对表：src/mcpserver/ `git diff` 零行、Cargo.toml 与 Cargo.lock `git diff` 零行（版本 0.9.0 钉死与依赖清单零增删实读，Cargo.toml:3）；主树他批在途件（src/bin 六 bin M 态、sih/event 三个旧 results 档 M 态、sih/event/trail/2026-09-11.ndjson M 态）零触碰实核（主树 `git status --porcelain` 实读与本批写入面零交集）；围堰 sih-tools/ 零源码写入（identity 复用批材料只读件）。
-- 链证：settle 认证笔与意图笔经 scribe append 落 2026-09-17 当日链（seq 与 event_hash 见 lease commit 台账与结算回报），gauge 三维快照随后落链（ga-2）。
+- 链证：settle 认证笔 c201b9f0（seq 1，commit 4c54724 三检查全过，base main@67131b1）；意图笔 34c5199b（plain 形，DES-016）；gauge 三维快照落当日链（convergence 0.181818 与 adoption 1.0 与 mergeback 0.025641，ga-2，事件哈希 b47e760e 与 b03b0180 与 1a4bcb11）；让位 wip 认证笔见当日链 2026-09-17.ndjson 与结算回报。
 
 ## 二、偏差申报（deviation，逐行承载词形）
 
@@ -25,6 +25,7 @@
 - 工地夹带件申报：src/bin/parser.rs 的 resolve_pack_arg 保守序变体（SPEC-025 融回缺口 gap-packs-assets 承载，DES-019「exe 派生首位」之保守序差异在码注申报，src/bin/parser.rs:2305-2330）非任务包 §九清单件，随本工地在途一并结算；主树同名为并发批 lease-cutover-parallel 在途 M 态且实现不同源（engine_pack_roots exe 派生首位形），让位归并处置与收约判词实录见偏差节末行与当日链台账，统一裁决候 lease-cutover-parallel 批。
 - 决策修订随批落笔认领：DEC-026 v2 修订段落（doc/decision/026-adoption-default-stdio-v1.md:82）非任务包 §九清单件，承载词即 DEC-026 自身且为判负行为改写项的正典位，候批修订任务包对表。
 - 核阅域判如实记档：README.md 与本结果档在 des-001 规则域（sih-engine/doc/**/*.md）域外，核阅判词以实跑退出码为准如实记档，不属违规，规则域对 worktree 路径的显式扩面候批另裁。
+- 收约让位实录：收约无绕行预检撞真分叉闸（判词「存在真分叉冲突（非纯追加形），整批拒零动作」，diverged_files 即 src/bin/parser.rs，分叉闸无绕行旗标），按让位归并程序以 wip 笔将 src/bin/parser.rs 退本批归并面（主树同文件为并发批 lease-cutover-parallel 在途 M 态且实现不同源），本变体实现保考古位 4c54724 可达，SPEC-025 gap-packs-assets 承载件统一裁决候 lease-cutover-parallel 批归并；让位后本批归并面与任务包 §九请求写入节全对齐。
 
 ## 三、可证伪条件核对（falsifiable）
 
