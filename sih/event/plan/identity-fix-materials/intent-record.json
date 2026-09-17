@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-identity-fix",
+  "raw_input": "用户 2026-09-17 问「identity的bug修复了吗」，承同日根因定位（new_salt 的 fs::read(\"/dev/urandom\") 无限流读入致 137）视为修复令。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "identity-fix 批：修复引擎 bin identity 无盐裸跑挂死，new_salt 改定长读，回归测试四件，整合验收五连秒回，settle 收约。",
+    "exclusions": [
+      "只动 src/bin/identity.rs",
+      "围堰零写入",
+      "不推送远端",
+      "readme-plain 批在途件零触碰",
+      "plain 意图形跳过 ask3 双门如实申报"
+    ],
+    "output_format": "src/bin/identity.rs 修复与测试 + 批材料 + 认证笔 + settle commit + close 台账行",
+    "injected_constraints": [
+      "工程基线第四条可验证性",
+      "identity_string 与哈希合成位零改动",
+      "SDDG 收约如实过门或 bypass 留痕"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/bin/identity.rs + 任务包 + 批材料",
+      "max_depth": 1
+    }
+  }
+}
