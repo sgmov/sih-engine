@@ -3,6 +3,8 @@
 //! 金向量逐字节对等（归一 session_id 与域根两域）。chained workspace 门族归腿一后继批。
 //! 腿二收约执法面（lease-commitlaw-parallel 批）：commit 与 bypass 与 reconcile 三子命令
 //! 与 SDDG 四判据门与直提守卫纯函数，子模块 lease/{commitlaw,sddgate,guardlaw}.rs。
+//! open repos 面单一源化（openface-solo 批）：repos 推导自任务包声明面仓前缀
+//!（closegate repo_entries 前缀解析形），--repo 旗标保留为显式扩写位并集。
 
 #[path = "lease/closegate.rs"]
 mod closegate;
@@ -153,6 +155,43 @@ fn compose_allow(requested: &[String], explicit: &[String]) -> Vec<String> {
         }
     }
     allow
+}
+
+/// 域内已知仓名面（pk-104 openface-solo）：open 推导位的仓前缀集合，
+/// closegate 声明差集闸 repo_entries 的仓名来源在会话 repos，open 时
+/// 会话未立故以已知仓面锚定。
+const KNOWN_REPOS: [&str; 2] = ["sih-engine", "sih-tools"];
+
+/// 声明面仓前缀推导（pk-104 openface-solo）：复用 closegate.rs 声明差集闸
+/// repo_entries 前缀解析形（token.starts_with("<repo>/")）——声明路径以
+/// sih-engine/ 开头即挂引擎仓、sih-tools/ 开头即挂工具仓，域外件
+/// （AGENTS.md 与 远期备忘录.md 形）不推导仓；推导面空（声明全无仓前缀）
+/// 回落缺省 sih-engine（腿一金向量兼容形）。
+fn derive_repo_names(declared: &[String]) -> Vec<String> {
+    let mut repos: Vec<String> = KNOWN_REPOS
+        .iter()
+        .filter(|r| {
+            let prefix = format!("{}/", r);
+            declared.iter().any(|p| p.starts_with(&prefix))
+        })
+        .map(|r| r.to_string())
+        .collect();
+    if repos.is_empty() {
+        repos.push("sih-engine".into());
+    }
+    repos
+}
+
+/// repos 组合形（pk-104 openface-solo，组合序对表 compose_allow）：推导面
+/// 原序保留，--repo 显式旗标不在面者按传入序并入（显式扩写位并集，面不重账）。
+fn compose_repo_names(derived: &[String], explicit: &[String]) -> Vec<String> {
+    let mut names = derived.to_vec();
+    for r in explicit {
+        if !names.contains(r) {
+            names.push(r.clone());
+        }
+    }
+    names
 }
 
 fn parse_requested_writes(text: &str) -> Vec<String> {
@@ -306,10 +345,10 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
         json!({"missing": [], "reason": "ok", "skipped": false})
     };
 
-    let repo_names: Vec<String> = m
-        .get("repo")
-        .cloned()
-        .unwrap_or_else(|| vec!["sih-engine".into()]);
+    // repos 面单一源化（pk-104 openface-solo）：推导自任务包声明面仓前缀，
+    // --repo 旗标保留为显式扩写位与推导面并集。
+    let explicit_repos: Vec<String> = m.get("repo").cloned().unwrap_or_default();
+    let repo_names = compose_repo_names(&derive_repo_names(&requested), &explicit_repos);
     let mut repos = Vec::new();
     for rn in &repo_names {
         let repo_dir = commitlaw::py_resolve(&root.join(rn));

@@ -1,0 +1,1 @@
+{"batch": "openface-solo", "date": "2026-09-17", "new_suite": "tests/openface.rs 4 passed 0 failed（红转绿即实现前 1过3败）", "regression": {"bin_lease": "24 passed", "mergeback_t2_golden": "4 passed 金向量逐字节不破", "mergeback_t3_t4_t5_t6_t7": "20 passed", "allow_parse": "2 passed", "pathfix": "3 passed"}, "changed": ["src/bin/lease.rs（+43/-4）", "tests/openface.rs（新立）"], "exit_code": 0}
