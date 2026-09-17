@@ -173,6 +173,111 @@ fn merge_face(repo: &Path, base: &str, branch: &str) -> Vec<String> {
         .collect()
 }
 
+/// pk-074 承 faceprecise-analysis.md §2.5 其三：声明面条目归一——先 rstrip('/')
+/// 再按归一形去重（同路径带/不带尾斜杠不重账），任一带尾斜杠变体即记目录性。
+/// 键 = 归一路径，值 = 目录性（尾斜杠在案）。
+fn face_entry_map<I: IntoIterator<Item = String>>(raws: I) -> BTreeMap<String, bool> {
+    let mut m: BTreeMap<String, bool> = BTreeMap::new();
+    for raw in raws {
+        let is_dir = raw.ends_with('/');
+        let norm = raw.trim_end_matches('/').to_string();
+        if norm.is_empty() {
+            continue;
+        }
+        m.entry(norm).and_modify(|d| *d |= is_dir).or_insert(is_dir);
+    }
+    m
+}
+
+/// pk-074 承 faceprecise-analysis.md §2.5 其二：比对形改前缀覆盖匹配，即
+/// watchcheck covered() 同形——路径精确命中，或目录条目为祖先目录命中即算用
+/// （弃字符串全等）。used 面文件与目录混载两向俱判：锁面目条目为目录而 used
+/// 件在其下（工地 diff 件为文件形），或 used 条目为目录（allow 回退面）而
+/// 锁面件在其下。
+fn entry_covered(norm: &str, is_dir: bool, used: &BTreeMap<String, bool>) -> bool {
+    used.iter().any(|(u, u_is_dir)| {
+        u == norm
+            || (*u_is_dir && norm.starts_with(&format!("{}/", u)))
+            || (is_dir && !*u_is_dir && u.starts_with(&format!("{}/", norm)))
+    })
+}
+
+/// pk-074 承 faceprecise-analysis.md §2.5 其一：used 集改源实际改动文件集。
+/// 收约取样在归并删支拆本前执行（分支与工地在席）：会话工地跑
+/// `git diff --name-only <base>..<branch>`；base 取会话记录开工基
+/// base_branch，缺席时以主仓当前 HEAD 与分支的 merge-base 兜底（于主仓执行：
+/// worktree HEAD 即分支自身，merge-base 须以主仓 HEAD 为第二参）。diff 出路
+/// 为仓相对形，按仓名前缀化为台账同域（工作区相对）路径。任一仓 git 取数
+/// 失败（非 git 工地等）即整体回退旧 allow 近似口径：返回空集并标
+/// allow_fallback，罚单 detail 如实标注不静默。
+fn collect_used_paths(repos: &[Value]) -> (BTreeMap<String, bool>, &'static str) {
+    let fallback = (BTreeMap::new(), "allow_fallback");
+    if repos.is_empty() {
+        return fallback;
+    }
+    let mut used: BTreeMap<String, bool> = BTreeMap::new();
+    for entry in repos {
+        let repo = PathBuf::from(entry.get("repo").and_then(|v| v.as_str()).unwrap_or(""));
+        let worktree = PathBuf::from(entry.get("worktree").and_then(|v| v.as_str()).unwrap_or(""));
+        let base = entry
+            .get("base_branch")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .trim()
+            .to_string();
+        let branch = entry
+            .get("branch")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .trim()
+            .to_string();
+        if branch.is_empty() || base == branch {
+            // 无分支面或分支即基线：零改动面贡献，不算取数失败
+            continue;
+        }
+        let base_ref = if !base.is_empty() {
+            base.clone()
+        } else {
+            let (rc_h, out_h, _) = git(&repo, &["rev-parse", "HEAD"]);
+            if rc_h != 0 {
+                return fallback;
+            }
+            let head = out_h.trim().to_string();
+            let (rc_m, out_m, _) = git(&repo, &["merge-base", &branch, &head]);
+            if rc_m != 0 {
+                return fallback;
+            }
+            out_m.trim().to_string()
+        };
+        // 工地在位即在工地跑（收约机械本就随工地归并），缺席落主仓（refs 同源）
+        let dir = if worktree.is_dir() { worktree } else { repo.clone() };
+        let (rc, out, _) = git(
+            &dir,
+            &["diff", "--name-only", &format!("{}..{}", base_ref, branch)],
+        );
+        if rc != 0 {
+            return fallback;
+        }
+        let repo_name = repo
+            .file_name()
+            .map(|n| n.to_string_lossy().to_string())
+            .unwrap_or_default();
+        for line in out.lines() {
+            let l = line.trim();
+            if l.is_empty() {
+                continue;
+            }
+            let ws = if repo_name.is_empty() {
+                l.to_string()
+            } else {
+                format!("{}/{}", repo_name, l)
+            };
+            used.insert(ws, false);
+        }
+    }
+    (used, "worktree_diff")
+}
+
 fn unowned_list(root: &Path, trail: &Path, locks_path: &Path) -> Vec<Value> {
     // 脏文件集：双仓 git status --porcelain -uall -z --no-renames，根相对路径排序
     let mut dirty: Vec<(String, String)> = Vec::new();
@@ -553,6 +658,10 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         .and_then(|v| v.as_array())
         .cloned()
         .unwrap_or_default();
+
+    // pk-074：used 集（实际改动文件集）取样须在归并删支拆本前（分支与工地
+    // 在席），罚金记账位于吊销行后使用本取样结果。
+    let (used_map, used_source) = collect_used_paths(&repos);
 
     // 锁清零
     let held = lock_face_paths(&locks_ledger);
@@ -1090,19 +1199,26 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         }),
     );
 
-    // 账单：未用锁罚（SQL 投影腿不随迁，ndjson 正典唯一写点）
-    let mut locked_paths: BTreeSet<String> = BTreeSet::new();
+    // 账单：未用锁罚（SQL 投影腿不随迁，ndjson 正典唯一写点）。
+    // pk-074 承 faceprecise-analysis.md §2.5：used_paths 弃 allow 全集近似
+    // （旧口径对 52.4% 实写路径过罚），改源会话工地实际改动文件集（归并前
+    // 取样见 collect_used_paths）；比对形改前缀覆盖（watchcheck covered 同形）；
+    // 集合运算先 rstrip('/') 归一。git 取数失败整体回退 allow 近似口径，
+    // 罚单 detail 以 used_source=allow_fallback 如实标注。事件既有字段不删
+    // 不改义，used_source 为新增字段。
+    let mut locked_raws: Vec<String> = Vec::new();
     for row in read_jsonl(&locks_ledger) {
         if row.get("event").and_then(|v| v.as_str()) == Some("acquired")
             && row.get("session_id").and_then(|v| v.as_str()) == Some(sid.as_str())
         {
             if let Some(p) = row.get("path").and_then(|v| v.as_str()) {
                 if !p.is_empty() {
-                    locked_paths.insert(p.to_string());
+                    locked_raws.push(p.to_string());
                 }
             }
         }
     }
+    let locked_map = face_entry_map(locked_raws);
     let allow: Vec<String> = session
         .get("allow")
         .and_then(|v| v.as_array())
@@ -1112,12 +1228,19 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
                 .collect()
         })
         .unwrap_or_default();
-    let unused: Vec<String> = locked_paths
+    let used_effective = if used_source == "worktree_diff" {
+        used_map
+    } else {
+        // 回退旧近似口径：used := allow 全集（§2.1 现口径），比对形仍前缀覆盖
+        face_entry_map(allow)
+    };
+    let unused: Vec<String> = locked_map
         .iter()
-        .filter(|p| !allow.contains(p))
-        .cloned()
+        .filter(|(norm, is_dir)| !entry_covered(norm, **is_dir, &used_effective))
+        .map(|(norm, _)| norm.clone())
         .collect();
     if !unused.is_empty() {
+        let unused_count = unused.len();
         let identity_hash = session
             .pointer("/identity/identity_hash")
             .and_then(|v| v.as_str())
@@ -1130,15 +1253,15 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
         append_row(
             &bills,
             &json!({
-                "bill_points": unused.len() as i64 * UNUSED_LOCK_MULTIPLIER,
-                "detail": {"unused_paths": unused},
+                "bill_points": unused_count as i64 * UNUSED_LOCK_MULTIPLIER,
+                "detail": {"unused_paths": unused, "used_source": used_source},
                 "event_type": "unused_lock_penalty",
                 "identity_hash": identity_hash,
                 "locks_ndjson": locks_ledger.display().to_string(),
                 "package": stem,
                 "session_id": sid,
                 "ts": revoked_at,
-                "unused_count": unused.len(),
+                "unused_count": unused_count,
             }),
         );
     }

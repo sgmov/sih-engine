@@ -1,0 +1,17 @@
+{
+  "batch": "usedpaths",
+  "date": "2026-09-18",
+  "new_suite": "tests/lease_usedpaths_penalty.rs 6 passed 0 failed（主会移植后工地复跑同绿）",
+  "regression": {
+    "bin_lease": "24 passed（子代理实录）",
+    "lease_mergeback_t2_golden": "4 passed 回执金向量逐字节不破",
+    "lease_mergeback_t3_t7": "全绿",
+    "openface": "绿",
+    "allow_parse": "绿"
+  },
+  "changed": [
+    "src/bin/lease/closegate.rs（+132/-9）",
+    "tests/lease_usedpaths_penalty.rs（新立）"
+  ],
+  "exit_code": 0
+}
