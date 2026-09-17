@@ -46,7 +46,7 @@ target/debug/critsweep --at $(date +%F) --root ..
 动线正典三件：
 
 - 接入指南：`doc/guide/adoption-guide-v1.md`，域自举、客户端配置、会话启动五件、租约治理首件的单页走读
-- AGENTS 模版：`doc/guide/AGENTS-template.md`，最小可配形，照裁即用
+- AGENTS 模版：`doc/guide/agents-template-v1.md`，最小可配形，照裁即用
 - 决策档：`doc/decision/026-adoption-default-stdio-v1.md`，缺省面裁 stdio，HTTP 面转显式选用（只裁缺省面，不裁通道存废）
 
 ## MCP 接入：sihmcp
