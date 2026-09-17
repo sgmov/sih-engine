@@ -24,7 +24,7 @@ impl Fixture {
         std::fs::create_dir_all(ws.join("sih-tools/lease")).unwrap();
         std::fs::create_dir_all(ws.join("sih-tools/mcpline/ledger")).unwrap();
         std::fs::create_dir_all(ws.join("sih-engine/target/debug")).unwrap();
-        let mut wsroot = std::env::current_dir().unwrap().join("../../..").canonicalize().unwrap();
+        let mut wsroot = std::env::current_dir().unwrap();
         while !wsroot.join("sih-tools/lease/TASK-PACKAGE-TEMPLATE.md").is_file() {
             if !wsroot.pop() {
                 panic!("工作区根未寻得：{}", wsroot.display());
