@@ -1,0 +1,16 @@
+{
+ "action": "enter",
+ "created_at": "2026-09-17",
+ "entry_id": "pk-106",
+ "id": "pk-106",
+ "context": "adoption-guide-v1.md 第二节缺省路径写「先 /tokens 签发表单签发、再跑 sih init 窄口」，但 2026-09-14 sim-dev 病灶收口后签发闸严拒牌先于域，该序列不可能走通；现行活路径是 /tokens/open 开域全链（README 已按实态改写并标注）。另 sih init 窄口因此双向不可达，其存留语义候裁（issue 闸开首牌特例或窄口改义或退役）。",
+ "exit_condition": "指南第二节按现行闸重写（doc/ 域须走化格核阅检词三步）且 sih init 语义人节点裁",
+ "parking": {
+  "entered_at": "2026-09-17",
+  "ttl_days": 30
+ },
+ "source": "readme-adopt 批走查（会话 a6469f70e3364d51）",
+ "state": "parked",
+ "title": "接入指南旧序列被签发闸锁死与 sih init 窄口语义候裁",
+ "ttl_days": 30
+}

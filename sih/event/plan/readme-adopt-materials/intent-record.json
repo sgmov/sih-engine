@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-readme-adopt",
+  "raw_input": "用户 2026-09-17 令「立即做一下」即 README 发布前接入走查，实测暴露接入节四处与实态不符，立批修正。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "readme-adopt 批：README 接入节改两段形（管理台开域一次加日常 stdio）、MCP 块补 SIH_MCPLINE_CODE_ROOT、指南旧序列如实标注、exclude 手动补行说明；两缺陷停泊笔上链；settle 收约归并推双远端。",
+    "exclusions": [
+      "只动 README 与批件",
+      "引擎源码零触碰（exclude 缺陷候修批另立）",
+      "adoption-guide 不改（doc/ 域三步管线候裁）"
+    ],
+    "output_format": "README 修订 + 批材料 + 意图停泊认证笔 + settle commit + close + 双远端",
+    "injected_constraints": [
+      "工程基线第四条：断言以走查实测为锚",
+      "泊界账本走书简 trail 停泊事件",
+      "PARKING-v1.md 索引同步候后续批如实申报"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md + 任务包 + 批材料 + 当日 trail",
+      "max_depth": 1
+    }
+  }
+}

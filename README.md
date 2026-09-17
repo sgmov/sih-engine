@@ -60,13 +60,22 @@ cargo build
 
 ## 接入你自己的项目
 
-司衡治理你的研发流程，不接管你的代码。
+司衡治理你的研发流程，不接管你的代码。接入分两段：开域一次（要走本地管理台），之后日常全在 stdio。
 
-1. **初始化**：`sih init` 在项目根生成 sih 治理树。它会自动写入 `.git/info/exclude`，不进你的 git，项目照常公开。
-2. **注册客户端**：在你的 MCP 客户端配置里加一块 stdio 配置，见下节。
-3. **启动会话**：按 doc/guide/agents-template-v1.md 的模板裁剪会话启动项。
+**第一段：开域（一次性，约两分钟）**
 
-全程无后台服务、无监听端口、无访问令牌。单页走读见 doc/guide/adoption-guide-v1.md。
+1. 起本地管理台：`cd <引擎工作区>/sih-engine && SIH_TRANSPORT=http target/debug/sihmcp`，浏览器打开 http://127.0.0.1:8765/tokens
+2. 「开域」表单填三样：项目根的绝对路径、标识词形（你自定的短词，是登记册里的防呆锚点，不是密码）、档位选 domain_write；两步确认
+3. 全链自动落地：标识登记、sih 治理树（含任务包与停泊模板）、开域首笔上链并自验，完事停服即可
+
+两个注意：其一，开域要从引擎工作区目录起跑，登记册按工作区解析，从项目目录跑会落错位；其二，当前版本开域链不自动把 `sih/` 排除出你的 git（已知缺陷候修），开域后手动在 `.git/info/exclude` 加一行 `sih/`，治理数据就不进你的仓库历史。
+
+**第二段：日常接入（stdio，此后无后台）**
+
+1. **注册客户端**：MCP 配置里加一块 stdio 配置，见下节
+2. **启动会话**：按 doc/guide/agents-template-v1.md 的模板裁剪会话启动项
+
+日常运行无后台服务、无监听端口。单页走读见 doc/guide/adoption-guide-v1.md（注意其第二节「先签发后 init」的旧序列已被现行签发闸锁死，以本页流程为准，指南修订候裁）。
 
 ## MCP 接入
 
@@ -80,7 +89,8 @@ cargo build
         "type": "stdio",
         "command": "<引擎仓绝对路径>/target/debug/sihmcp",
         "env": {
-          "SIH_ROOT": "<你要治理的项目根>"
+          "SIH_ROOT": "<你要治理的项目根>",
+          "SIH_MCPLINE_CODE_ROOT": "<引擎工作区根>"
         },
         "enabled": true,
         "timeoutMs": 60000
@@ -91,6 +101,7 @@ cargo build
 ```
 
 - SIH_ROOT 显式指项目根最稳；不写就从当前目录向上找标记
+- SIH_MCPLINE_CODE_ROOT 指引擎工作区，写面的书简与租约二进制从这里解析；引擎与治理根同源布局时可省
 - 多个项目就是多块配置，一客一域
 - 注意：`bootstrap --client-config` 自动生成的是 HTTP 形配置，走 8765 端口；用 stdio 就照上面手写，两种形态不可混用
 

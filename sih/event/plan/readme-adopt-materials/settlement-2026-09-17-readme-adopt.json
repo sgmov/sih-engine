@@ -1,0 +1,13 @@
+{
+  "batch": "readme-adopt",
+  "date": "2026-09-17",
+  "deliverables": {
+    "concurrent": "与 rant-doc 批撞锁 README.md，轮询 11 次约 3.5 分钟后依序取得（租约排队语义正确执法）；另发现引擎位 lease 无 wait-turn 子命令（围堰有），融回缺口记 pk 系外候报",
+    "defects_parked": "pk-105 开域链缺 exclude 写入（引擎位候修）；pk-106 指南旧序列锁死与 sih init 语义候裁（文档位候裁）；PARKING-v1.md 索引同步候后续批（doc/ 域三步管线）",
+    "readme_fix": "接入节两段形重写（含工作区位坑与手动 exclude 补行）、MCP env 补 SIH_MCPLINE_CODE_ROOT 加释义、指南旧序列失效标注",
+    "walkthrough": "/tmp/sih-adopt-test 域全链实测：sih init 预检拒（牌先于域）→ /tokens/open 两步确认全链落位（树、登记册、首笔链验 valid）→ stdio 19 具投影 chain_verify valid → exclude 未写实测 ?? sih/"
+  },
+  "kind": "settlement",
+  "session_id": "a6469f70e3364d51",
+  "what": "README 接入节实测修订批结算：两段形接入（管理台开域一次加日常 stdio）加 MCP 块补 SIH_MCPLINE_CODE_ROOT 加指南旧序列标注，两缺陷入泊（pk-105 pk-106），双远端推送"
+}

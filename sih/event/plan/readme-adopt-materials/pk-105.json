@@ -1,0 +1,16 @@
+{
+ "action": "enter",
+ "created_at": "2026-09-17",
+ "entry_id": "pk-105",
+ "id": "pk-105",
+ "context": "readme-adopt 批走查实测：/tokens/open 开域全链落地 sih 树与登记册与首笔链，但不写 .git/info/exclude（实测 /tmp/sih-adopt-test 域 git status 出现 ?? sih/）。exclude 写入位即 sih init 窄口的 flywheel_git_exclude（src/bin/sih.rs），而窄口在新域双向不可达（预检要 active 牌行，签发闸 2026-09-14 起拒牌先于域），隔离保证在现行唯一活路径上不可达。README 已按实态改写为手动补行说明。",
+ "exit_condition": "bootstrap 开域链复用 flywheel_git_exclude 同一函数（或等价机械验证 git check-ignore），得一裁过出修批",
+ "parking": {
+  "entered_at": "2026-09-17",
+  "ttl_days": 30
+ },
+ "source": "readme-adopt 批走查（会话 a6469f70e3364d51）",
+ "state": "parked",
+ "title": "开域全链缺 exclude 写入：sih 树污染用户 git",
+ "ttl_days": 30
+}

@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-readme-adopt",
+  "raw_input": "用户 2026-09-17 令「立即做一下」即 README 发布前接入走查。走查实测（/tmp/sih-adopt-test 域 adopt-test-01，全链落位链验 valid，stdio 19 具投影 chain_verify valid）暴露 README 接入节四处与实态不符，立 readme-adopt 批修正并登记两缺陷入泊。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "readme-adopt 批：README 接入节改两段形（管理台开域一次加日常 stdio）、MCP 块补 SIH_MCPLINE_CODE_ROOT、如实标注指南旧序列失效、exclude 手动补行说明；两缺陷停泊笔上链；settle 收约归并推双远端。",
+    "exclusions": [
+      "只动 README.md 与批件",
+      "引擎源码零触碰（exclude 缺陷属 bootstrap core，候修批另立）",
+      "adoption-guide-v1.md 不改（其修订属 doc/ 域三步管线，候裁）",
+      "不推哲学数学仓"
+    ],
+    "output_format": "README.md 修订 + 批材料 + 意图笔与认证笔与停泊笔两件 + settle commit + close 台账行 + 双远端推送",
+    "injected_constraints": [
+      "工程基线第四条：README 断言以走查实测判词为锚",
+      "泊界账本走书简 trail 停泊事件",
+      "红证：走查发现与修复同批留痕不清洗",
+      "PARKING-v1.md 索引同步候后续批如实申报"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md + 任务包 + 批材料 + 当日 trail",
+      "max_depth": 1
+    }
+  }
+}
