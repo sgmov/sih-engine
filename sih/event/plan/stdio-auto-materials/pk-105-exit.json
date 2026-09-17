@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-105",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "stdio-auto 批 2026-09-17 收口：bootstrap.rs open_domain 步六补 flywheel_exclude 幂等写入加 git check-ignore 机械验证，三入口（stdio 自动加 CLI bootstrap 加控制台 open）经正典核心全覆盖，与 sih.rs 窄口同语义零二账",
+ "context": "出泊条件达成：tests/stdio_auto_bootstrap.rs t1 幂等单测加 t2 CLI 集成 exclude 断言绿；t3 stdio 首连自动开域端到端绿（登记册落工作区不落项目的根解析回归钉在案）",
+ "parking": {
+  "entered_at": "2026-09-17"
+ }
+}

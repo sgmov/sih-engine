@@ -1,0 +1,14 @@
+{
+  "batch": "stdio-auto",
+  "date": "2026-09-17",
+  "deliverables": {
+    "engine": "src/bin/sihmcp.rs：argv bootstrap 分发（此前文档有二进制无接线的缺口一并收口）加 stdio_auto_domain 判定加 stdio_auto_bootstrap 子进程（env 卸 SIH_ROOT 加 cwd 取 code_root 防登记册落项目）加 stdio_token_id 确定性派生；src/mcpserver/bootstrap.rs：flywheel_exclude 幂等写入加验证出参，bootstrap_domain 出参透传",
+    "env_red": "gap_parser_pack_assets 两败系会话前旧伤（identity-fix 批已申报主树同参对照同败在案），非本批码坏",
+    "parking": "pk-105 出泊 promoted；pk-106 半收口（指南重写与 sih init 退役裁定仍候 doc/ 域批）",
+    "readme": "接入节改一步接入口径：stdio 首连自动开域，管理台与 CLI 为手动备选；检词零违例零 emoji 零营销词",
+    "tests": "tests/stdio_auto_bootstrap.rs 四件全绿：t1 exclude 幂等、t2 CLI 集成（域树加 exclude 加登记册一行加出参判词）、t3 stdio 首连自动开域端到端（登记册不落项目内回归钉）、t3b 二连幂等零重开"
+  },
+  "kind": "settlement",
+  "session_id": "c56e83a01055af4b",
+  "what": "stdio 自动签发开域批结算：用户裁定令牌本义即域绑定锚点，stdio 首连自动走 bootstrap 正典全链（子进程隔离根解析），open_domain 补 exclude 写入收口 pk-105，bootstrap CLI argv 接线，测试四件先红后绿"
+}

@@ -716,6 +716,12 @@ pub async fn open_domain(dom: &Path, row: &TokenRow, opened_by: &str, date: &str
     .map(|p| json!(p))
     .chain(std::iter::once(json!(format!("sih/event/trail/{date}.ndjson"))))
     .collect();
+    // 步六：飞轮隔离步（pk-105 收口，stdio-auto 批）：幂等把 sih/ 写入域根
+    // .git/info/exclude 并以 git check-ignore 机械验证。与 sih.rs 窄口
+    // flywheel_git_exclude 同语义零二账；三入口（stdio 自动、CLI bootstrap、
+    // 控制台 open）经 open_domain 全覆盖。非致命：失败降级为 warning 出参，
+    // 域数据已落盘不回滚。
+    let flywheel_git_exclude = flywheel_exclude(dom);
     Ok(json!({
         "ok": true,
         "domain_id": row.token_id,
@@ -724,8 +730,61 @@ pub async fn open_domain(dom: &Path, row: &TokenRow, opened_by: &str, date: &str
         "files": files,
         "open_pen_hash": pen_hash,
         "chain_verify": "valid",
+        "flywheel_git_exclude": flywheel_git_exclude,
         "next": "读面经标识牌绑定本域可用：MCP 连接头携 Authorization: Bearer <标识牌> 读本域",
     }))
+}
+
+/// 飞轮隔离步：幂等写 `sih/` 一行进域根 .git/info/exclude，git check-ignore
+/// 机械验证。写失败或验证不过降级 warning 不拒开域（域数据已落盘不回滚），
+/// 出参形对齐 sih.rs 窄口（method 加 verified 加可选 warning）。
+pub fn flywheel_exclude(dom: &Path) -> Value {
+    const LINE: &str = "sih/";
+    let exclude = dom.join(".git/info/exclude");
+    let write_result = (|| -> Result<(), String> {
+        if let Some(parent) = exclude.parent() {
+            std::fs::create_dir_all(parent).map_err(|e| format!("info/ 目录创建拒：{e}"))?;
+        }
+        let cur = if exclude.is_file() {
+            std::fs::read_to_string(&exclude).map_err(|e| format!("exclude 不可读：{e}"))?
+        } else {
+            String::new()
+        };
+        if cur.lines().any(|l| l.trim_end() == LINE) {
+            return Ok(()); // 已有该行，幂等跳过
+        }
+        let mut next = cur;
+        if !next.is_empty() && !next.ends_with('\n') {
+            next.push('\n');
+        }
+        next.push_str(LINE);
+        next.push('\n');
+        std::fs::write(&exclude, next).map_err(|e| format!("exclude 写入拒：{e}"))
+    })();
+    if let Err(msg) = write_result {
+        return json!({"method": ".git/info/exclude", "verified": false, "warning": msg});
+    }
+    match std::process::Command::new("git")
+        .arg("-C")
+        .arg(dom)
+        .args(["check-ignore", "-q", LINE])
+        .status()
+    {
+        Ok(st) if st.code() == Some(0) => json!({"method": ".git/info/exclude", "verified": true}),
+        Ok(st) => json!({
+            "method": ".git/info/exclude",
+            "verified": false,
+            "warning": format!(
+                "git check-ignore 退出码 {:?}，sih/ 未确认被忽略（域数据已落盘不回滚）",
+                st.code()
+            ),
+        }),
+        Err(e) => json!({
+            "method": ".git/info/exclude",
+            "verified": false,
+            "warning": format!("git spawn 拒：{e}（域数据已落盘不回滚）"),
+        }),
+    }
 }
 
 // ------------------------------------------------------------------- 段四
@@ -955,6 +1014,7 @@ pub async fn bootstrap_domain(
     // 出参承开域链（全链恒含：本载体无补全分流，开域恒跑）。
     result["files"] = opened_r["files"].clone();
     result["open_pen_hash"] = opened_r["open_pen_hash"].clone();
+    result["flywheel_git_exclude"] = opened_r["flywheel_git_exclude"].clone();
     Ok(result)
 }
 

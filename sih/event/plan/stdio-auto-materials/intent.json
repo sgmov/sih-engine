@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-stdio-auto",
+  "raw_input": "用户 2026-09-17 裁定「stdio应该是自动签发令牌，令牌最重要的目的是选定治理空间」，承 readme-adopt 走查证据与 pk-105/pk-106 泊件，立批实现 stdio 自动签发开域并收口 exclude 缺陷。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "stdio-auto 批：stdio 首连未开域 SIH_ROOT 自动走 bootstrap 全链（子进程隔离根解析），open_domain 补 exclude 幂等写入（pk-105 收口，三入口全覆盖），测试三族先红后绿，README 接入口径同步，pk-105 出泊，settle 收约推双远端。",
+    "exclusions": [
+      "签发闸牌先于域语义零改动——HTTP 面仍正典",
+      "sih init 窄口零触碰——退役裁定候另批（pk-106 半收口）",
+      "adoption-guide 重写不动——doc/ 域三步管线候后续批",
+      "不推哲学数学仓"
+    ],
+    "output_format": "src/mcpserver/bootstrap.rs 加 src/bin/sihmcp.rs 加测试 + README 接入节 + 批材料 + 意图认证出泊笔 + settle commit + close + 双远端",
+    "injected_constraints": [
+      "工程基线第一条：治理写入走确定性程序——自动开域调既有 bootstrap 正典核心零二次实现",
+      "DEC-026：缺省面 stdio 轻接入，本批即其补全",
+      "SDDG：任务包先行（本件），测试即完备度载体",
+      "红证：子进程失败如实 stderr 不静默，未开域形态继续"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/mcpserver/bootstrap.rs 加 sih-engine/src/bin/sihmcp.rs 加 sih-engine/tests/ 加 sih-engine/README.md 加任务包与批材料与当日 trail",
+      "max_depth": 2
+    }
+  }
+}
