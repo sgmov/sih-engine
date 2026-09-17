@@ -1,0 +1,233 @@
+diff --git a/src/bin/attnanchor.rs b/src/bin/attnanchor.rs
+index 9772e3a..6217e8e 100644
+--- a/src/bin/attnanchor.rs
++++ b/src/bin/attnanchor.rs
+@@ -23,6 +23,7 @@
+ // 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
+ 
+ use serde_json::{json, Map, Value};
++use sih_engine::exitenvelope::emit;
+ use std::io::Read;
+ use std::path::{Path, PathBuf};
+ use std::process::{Command, Stdio};
+@@ -34,27 +35,6 @@ const DISCIPLINE: &str =
+ const COVERAGE_WINDOW_DAYS: i64 = 7;
+ const ROUTE_TIMEOUT_S: u64 = 10;
+ 
+-fn sort_json(v: &Value) -> Value {
+-    match v {
+-        Value::Object(m) => {
+-            let bt: std::collections::BTreeMap<&String, &Value> = m.iter().collect();
+-            Value::Object(
+-                bt.into_iter()
+-                    .map(|(k, val)| (k.clone(), sort_json(val)))
+-                    .collect(),
+-            )
+-        }
+-        Value::Array(a) => Value::Array(a.iter().map(sort_json).collect()),
+-        other => other.clone(),
+-    }
+-}
+-
+-fn emit(v: &Value) -> String {
+-    let mut s = serde_json::to_string_pretty(&sort_json(v)).unwrap();
+-    s.push('\n');
+-    s
+-}
+-
+ fn today() -> chrono::NaiveDate {
+     chrono::Local::now().date_naive()
+ }
+diff --git a/src/bin/calllogtool.rs b/src/bin/calllogtool.rs
+index a011275..6343437 100644
+--- a/src/bin/calllogtool.rs
++++ b/src/bin/calllogtool.rs
+@@ -364,8 +364,7 @@ fn usage_fail(msg: &str) -> ! {
+ 
+ /// 围堰未捕获 ValueError 路径近似（见头注落差三）：stderr 单行、退出 1。
+ fn die_value_error(msg: &str) -> ! {
+-    eprintln!("ValueError: {msg}");
+-    exit(1);
++    sih_engine::exitenvelope::die_plain(1, &format!("ValueError: {msg}"))
+ }
+ 
+ fn main() {
+diff --git a/src/bin/critsweep.rs b/src/bin/critsweep.rs
+index 217ad47..904e27a 100644
+--- a/src/bin/critsweep.rs
++++ b/src/bin/critsweep.rs
+@@ -34,6 +34,7 @@
+ //! 2 用法错（未知旗标、缺值、非整数值）。
+ 
+ use serde_json::{json, Map, Value};
++use sih_engine::exitenvelope::{die, emit};
+ use std::collections::{BTreeMap, BTreeSet};
+ use std::io::Write;
+ use std::io::Read;
+@@ -47,37 +48,6 @@ const NAMESPACE_FIELDS: [&str; 3] = ["record_path", "report_path", "package"];
+ const WINDOW_DAYS: i64 = 10;
+ const ROUTE_TIMEOUT_S: u64 = 10;
+ 
+-fn sort_json(v: &Value) -> Value {
+-    match v {
+-        Value::Object(m) => {
+-            let bt: BTreeMap<&String, &Value> = m.iter().collect();
+-            Value::Object(
+-                bt.into_iter()
+-                    .map(|(k, val)| (k.clone(), sort_json(val)))
+-                    .collect(),
+-            )
+-        }
+-        Value::Array(a) => Value::Array(a.iter().map(sort_json).collect()),
+-        other => other.clone(),
+-    }
+-}
+-
+-fn emit(v: &Value) -> String {
+-    let mut s = serde_json::to_string_pretty(&sort_json(v)).unwrap();
+-    s.push('\n');
+-    s
+-}
+-
+-fn die(rc: i32, err: &str, detail: Value) -> ! {
+-    let mut m = Map::new();
+-    m.insert("error".into(), json!(err));
+-    if !detail.is_null() {
+-        m.insert("detail".into(), detail);
+-    }
+-    eprintln!("{}", emit(&Value::Object(m)));
+-    std::process::exit(rc);
+-}
+-
+ fn today() -> chrono::NaiveDate {
+     chrono::Local::now().date_naive()
+ }
+diff --git a/src/bin/gauge.rs b/src/bin/gauge.rs
+index 0dd0372..8e67f07 100644
+--- a/src/bin/gauge.rs
++++ b/src/bin/gauge.rs
+@@ -27,6 +27,7 @@
+ 
+ use serde_json::{json, Map, Value};
+ use sha2::{Digest, Sha256};
++use sih_engine::exitenvelope::{die, emit};
+ use std::collections::{BTreeMap, BTreeSet};
+ use std::path::{Path, PathBuf};
+ use std::process::Command;
+@@ -41,37 +42,6 @@ const READ_DIMENSIONS: [&str; 3] = ["convergence", "adoption", "mergeback"];
+ const READ_FALLBACK_PIECES: [&str; 3] = ["sessions_ledger", "src_root", "tools_root"];
+ const FALLBACK_PIECES: [&str; 4] = ["sessions_ledger", "src_root", "tools_root", "scribe"];
+ 
+-fn sort_json(v: &Value) -> Value {
+-    match v {
+-        Value::Object(m) => {
+-            let bt: BTreeMap<&String, &Value> = m.iter().collect();
+-            Value::Object(
+-                bt.into_iter()
+-                    .map(|(k, val)| (k.clone(), sort_json(val)))
+-                    .collect(),
+-            )
+-        }
+-        Value::Array(a) => Value::Array(a.iter().map(sort_json).collect()),
+-        other => other.clone(),
+-    }
+-}
+-
+-fn emit(v: &Value) -> String {
+-    let mut s = serde_json::to_string_pretty(&sort_json(v)).unwrap();
+-    s.push('\n');
+-    s
+-}
+-
+-fn die(rc: i32, err: &str, detail: Value) -> ! {
+-    let mut m = Map::new();
+-    m.insert("error".into(), json!(err));
+-    if !detail.is_null() {
+-        m.insert("detail".into(), detail);
+-    }
+-    eprintln!("{}", emit(&Value::Object(m)));
+-    std::process::exit(rc);
+-}
+-
+ fn sha256_hex(bytes: &[u8]) -> String {
+     let mut h = Sha256::new();
+     h.update(bytes);
+diff --git a/src/bin/lease.rs b/src/bin/lease.rs
+index 0730db1..f9df1a5 100644
+--- a/src/bin/lease.rs
++++ b/src/bin/lease.rs
+@@ -20,8 +20,9 @@ mod calllogface;
+ mod sweepcore;
+ 
+ use chrono::Utc;
+-use serde_json::{json, Map, Value};
++use serde_json::{json, Value};
+ use sha2::{Digest, Sha256};
++use sih_engine::exitenvelope::{die, emit, sort_json};
+ use std::collections::BTreeMap;
+ use std::io::Write;
+ use std::path::{Path, PathBuf};
+@@ -36,37 +37,6 @@ const FACES: [&str; 4] = [
+     "sih/state/plan",
+ ];
+ 
+-fn die(rc: i32, err: &str, detail: Value) -> ! {
+-    let mut m = Map::new();
+-    m.insert("error".into(), json!(err));
+-    if !detail.is_null() {
+-        m.insert("detail".into(), detail);
+-    }
+-    eprintln!("{}", emit(&Value::Object(m)));
+-    std::process::exit(rc);
+-}
+-
+-fn sort_json(v: &Value) -> Value {
+-    match v {
+-        Value::Object(m) => {
+-            let bt: BTreeMap<&String, &Value> = m.iter().collect();
+-            Value::Object(
+-                bt.into_iter()
+-                    .map(|(k, val)| (k.clone(), sort_json(val)))
+-                    .collect(),
+-            )
+-        }
+-        Value::Array(a) => Value::Array(a.iter().map(sort_json).collect()),
+-        other => other.clone(),
+-    }
+-}
+-
+-fn emit(v: &Value) -> String {
+-    let mut s = serde_json::to_string_pretty(&sort_json(v)).unwrap();
+-    s.push('\n');
+-    s
+-}
+-
+ fn sha256_hex(bytes: &[u8]) -> String {
+     let mut h = Sha256::new();
+     h.update(bytes);
+diff --git a/src/bin/meter.rs b/src/bin/meter.rs
+index 45f882c..8d16578 100644
+--- a/src/bin/meter.rs
++++ b/src/bin/meter.rs
+@@ -243,8 +243,7 @@ fn usage_fail(msg: &str) -> ! {
+ 
+ /// 围堰未捕获异常路径的近似承载（落差三）：stderr 单行、退出 1。
+ fn die_uncaught(kind: &str, msg: &str) -> ! {
+-    eprintln!("meter: {kind}: {msg}");
+-    exit(1);
++    sih_engine::exitenvelope::die_plain(1, &format!("meter: {kind}: {msg}"))
+ }
+ 
+ // ---------- 计数册 ----------
+diff --git a/src/lib.rs b/src/lib.rs
+index 0a16fec..567e63f 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -9,6 +9,7 @@ pub mod ask3repeater;
+ pub mod askroute;
+ pub mod attractor;
+ pub mod event_stream;
++pub mod exitenvelope;
+ pub mod mcpserver;
+ pub mod retriever;
+ pub mod snapline;
