@@ -1,0 +1,12 @@
+{
+  "session_id": "sess-zcode-260917-openface",
+  "raw_input": "pk-104 出泊裁定开工 openface-solo 即 lease open 的 repos 从任务包声明面推导，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "openface-solo 批：cmd_open 的 repos 推导自任务包声明面仓前缀即新增 derive_repo_names 加 compose_repo_names 两纯函数，repo 旗标降为显式扩写位即并集去重，推导面空回落缺省保金向量兼容，tests/openface.rs 四件红转绿，全量回归零新红，settle 加 close 加推双远端。",
+    "exclusions": ["allow 面零改动即已单一源在役", "closegate 与其他子命令零触碰", "PARKING 索引投影归后继同步批"],
+    "output_format": "src/bin/lease.rs 改加 tests/openface.rs 新立加批材料，认证笔在链，双远端快进",
+    "injected_constraints": ["工程基线第四条：修以红转绿与全量回归为证据", "SDDG：任务包先行测试随批", "GOV-004：append-only"]
+  },
+  "domain_contract": {"target_domain": {"scope": "sih-engine src/bin/lease.rs 加 tests/openface.rs 加批材料与任务包与当日 trail", "max_depth": 1}}
+}
