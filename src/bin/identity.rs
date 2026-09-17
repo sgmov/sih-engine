@@ -159,12 +159,19 @@ fn validate_salt(salt_hex: &str) -> Result<String, String> {
     Ok(lowered)
 }
 
+/// 有界取盐：从随机流读定长 SALT_BYTES 字节即返，对表围堰 os.urandom(32)。
+/// 读入位必须定长：/dev/urandom 是无限设备流，读到 EOF 的读法（fs::read）
+/// 会无限吞内存直至被杀（137 即此病，evidence-137.md 在批材料）。
+fn salt_from_reader<R: Read>(mut r: R) -> Option<String> {
+    let mut buf = [0u8; SALT_BYTES];
+    r.read_exact(&mut buf).ok()?;
+    Some(hex::encode(&buf))
+}
+
 fn new_salt() -> String {
-    if let Ok(bytes) = fs::read("/dev/urandom") {
-        // 只取前 32 字节；/dev/urandom 是无限流，read 返回请求量。
-        let take: Vec<u8> = bytes.into_iter().take(SALT_BYTES).collect();
-        if take.len() == SALT_BYTES {
-            return hex::encode(&take);
+    if let Ok(f) = fs::File::open("/dev/urandom") {
+        if let Some(salt) = salt_from_reader(f) {
+            return salt;
         }
     }
     // 兜底：双 v4 UUID 合成 32 字节（落地机器 /dev/urandom 恒可用，此径不达）。
@@ -915,4 +922,41 @@ fn main() {
         );
     }
     exit(exit_code);
+}
+
+#[cfg(test)]
+mod salt_tests {
+    use super::*;
+
+    /// 回归钉（identity-fix 批）：无限流源必须定长返回。
+    /// 修前实现在此挂死（fs::read 对无限源读到 EOF 永不返），
+    /// repeat 源使旧病在测试里必现且有限时暴露。
+    #[test]
+    fn salt_from_endless_stream_returns_bounded() {
+        let endless = std::io::repeat(0xAB);
+        let salt = salt_from_reader(endless).expect("salt from endless stream");
+        assert_eq!(salt.len(), SALT_HEX_LEN);
+        assert!(salt.chars().all(|c| c.is_ascii_hexdigit()));
+    }
+
+    /// 短源（不足 32 字节即 EOF）返 None，落兜底径的前提成立。
+    #[test]
+    fn salt_from_short_stream_is_none() {
+        let short: &[u8] = &[0x01, 0x02, 0x03];
+        assert!(salt_from_reader(short).is_none());
+    }
+
+    /// 连续两跑盐不同（围堰 F6 生产盐随机对表）。
+    #[test]
+    fn consecutive_new_salt_differs() {
+        assert_ne!(new_salt(), new_salt());
+    }
+
+    /// 盐格式钉：64 hex。
+    #[test]
+    fn new_salt_is_64_hex() {
+        let salt = new_salt();
+        assert_eq!(salt.len(), SALT_HEX_LEN);
+        assert!(salt.chars().all(|c| c.is_ascii_hexdigit()));
+    }
 }

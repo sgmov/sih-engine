@@ -1,0 +1,14 @@
+{
+  "batch": "identity-fix",
+  "date": "2026-09-17",
+  "deliverables": {
+    "env_red": "gap_parser_pack_assets 主树修前同参同败（1过2败），非本批码坏，parser 资产解析候修",
+    "fix": "src/bin/identity.rs new_salt 改 File::open+read_exact 定长 32 字节（新抽 salt_from_reader），镜像围堰 os.urandom(32)，兜底与身份串与哈希合成位零改动",
+    "integration": "修复后 verify --no-net 五连跑 rc=0 全秒回（0.19-0.78s），盐哈希逐次异、核哈希稳",
+    "report_md": "identity-fix-results.md",
+    "tests": "salt_tests 四件全绿（无限源定长回归钉/短源 None/盐随机/64hex），cargo test --bin identity 0.00s"
+  },
+  "kind": "settlement",
+  "session_id": "98f1a21883ddf142",
+  "what": "引擎 bin identity 无盐裸跑挂死（137）修复批结算：new_salt 定长读修复 + 回归测试四件 + 认证上链 + settle commit + SDDG 收约"
+}

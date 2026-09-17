@@ -1,0 +1,28 @@
+{
+  "session_id": "sess-zcode-260917-identity-fix",
+  "raw_input": "用户 2026-09-17 问「identity的bug修复了吗」——承本会话同日根因定位（new_salt 的 fs::read(\"/dev/urandom\") 无限流读入）与 ps 曲线加 sample 栈证据，视为修复令，立 identity-fix 批。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "identity-fix 批：修复引擎 bin identity 无盐裸跑挂死（137）。1) new_salt 改 File::open 加 read_exact 定长读 32 字节，镜像围堰 os.urandom(32) 语义；2) 抽 salt_from_reader 可测位加无限源回归测试；3) cargo test --bin identity 绿加整合验收（无盐 verify 秒回 rc=0 五连跑盐各异）；4) settle commit 与 close 与归并与 reconcile。",
+    "exclusions": [
+      "只动 src/bin/identity.rs——其余源码与 doc/ 零触碰；mcpserver 与 calllog 已 grep 确认无同型弹点不扩面",
+      "围堰 sih-tools 零写入——identity 对表基准只读",
+      "不推送远端——候用户单独令",
+      "readme-plain 批在途件零触碰——两会话各自独立",
+      "跳过 ask3 双门与叩问——机械缺陷修复零语义裁量，plain 意图形，偏离如实申报于此"
+    ],
+    "output_format": "sih-engine/src/bin/identity.rs（修复与测试）+ sih-engine/sih/state/plan/identity-fix.md（任务包）+ sih-engine/sih/event/plan/identity-fix-materials/（意图件与正身报告与 evidence-137.md 与结果档）+ 当日链认证笔 + settle commit + close 台账行 + 完工报告",
+    "injected_constraints": [
+      "工程基线第四条：可验证性——修复以测试与整合命令输出为证据链，散文断言不作为完成依据",
+      "identity_string 与哈希合成位零改动——只修盐源采集，围堰对表语义不变形",
+      "SDDG（DEC-024）：close 过 TDD 门（新回归测试即完备度载体）；SDD 门若拦按单件修复批如实申报候裁",
+      "红证文化：修前红态用已测证据不重放烧机，evidence-137.md 在批材料"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/bin/identity.rs（唯一施工面）+ sih-engine/sih/state/plan/identity-fix.md（任务包）+ sih-engine/sih/event/plan/identity-fix-materials/（批材料）",
+      "max_depth": 1
+    }
+  }
+}
