@@ -1,0 +1,11 @@
+{
+ "action": "exit",
+ "entry_id": "pk-107",
+ "disposition": "promoted",
+ "state": "exited",
+ "ruling": "bscomplete 批 2026-09-17 收口：bootstrap_domain 增补全链即已开域加 --complete 走验域形加镜像核对加面卡重写零域状态写，三新函数逐行对表围堰 complete 分支（DES-015 修订五），run_cli 旗标贯通替换旧拒学桩，指南两处口径同步（化格核阅检词三步全零）",
+ "context": "出泊条件达成：tests/bscomplete.rs 四件绿即健康域 in_place 零域状态写、缺镜像 appended 恒等、域链缺席退出码二如实拒零静默造链、未开域旗标无害走全链；stdio_auto 套件四件零回归",
+ "parking": {
+  "entered_at": "2026-09-17"
+ }
+}

@@ -797,6 +797,97 @@ fn write_mirror_row(dom: &Path, row: &TokenRow) -> Result<PathBuf, BootstrapErro
     Ok(mirror)
 }
 
+// ------------------------------------------------- 补全链三分支（bscomplete 批）
+
+/// 补全链域声明卡读数位（只读，对表围堰 _load_declaration）：不可读或非合法
+/// JSON 或顶层非对象即工具异常。
+fn load_declaration(dom: &Path) -> Result<Value, BootstrapError> {
+    let decl_path = dom.join(DOMAIN_DECLARATION_RELPATH);
+    let text = std::fs::read_to_string(&decl_path)
+        .map_err(|e| tool_error(format!("域声明卡不可读或非合法 JSON：{}（{e}）", decl_path.display())))?;
+    let v: Value = serde_json::from_str(&text)
+        .map_err(|e| tool_error(format!("域声明卡不可读或非合法 JSON：{}（{e}）", decl_path.display())))?;
+    if !v.is_object() {
+        return Err(tool_error(format!("域声明卡顶层非对象形：{}", decl_path.display())));
+    }
+    Ok(v)
+}
+
+/// 补全链验域位（读形零写，对表围堰 verify_domain_chain）：域链最新一日
+/// scribe verify 判词 valid 即过；域链缺席即工具异常；验红即拒，链留笔不删。
+async fn verify_domain_chain(dom: &Path) -> Result<String, BootstrapError> {
+    let trail_dir = dom.join("sih/event/trail");
+    let mut trails: Vec<PathBuf> = match std::fs::read_dir(&trail_dir) {
+        Ok(rd) => rd
+            .filter_map(|e| e.ok().map(|e| e.path()))
+            .filter(|p| p.extension().map(|x| x == "ndjson").unwrap_or(false))
+            .collect(),
+        Err(_) => Vec::new(),
+    };
+    trails.sort();
+    let trail = match trails.last() {
+        Some(t) => t.clone(),
+        None => {
+            return Err(tool_error(format!(
+                "域链缺席（sih/event/trail 无 ndjson）：{}",
+                dom.display()
+            )))
+        }
+    };
+    let scribe = scribe_bin();
+    if !scribe.is_file() {
+        return Err(tool_error(format!("scribe 主树二进制缺席：{}", scribe.display())));
+    }
+    let argv = vec![
+        scribe.display().to_string(),
+        "verify".to_string(),
+        "--trail".to_string(),
+        trail.display().to_string(),
+    ];
+    let out = run_scribe(&argv).await;
+    let verdict = serde_json::from_str::<Value>(&out.stdout)
+        .ok()
+        .and_then(|v| v.get("status").and_then(|s| s.as_str()).map(str::to_string));
+    if out.rc != 0 || verdict.as_deref() != Some("valid") {
+        return Err(rejection(
+            format!(
+                "补全验红：scribe verify 退出码 {} 判词 {}",
+                out.rc,
+                verdict.unwrap_or_else(|| "不可解析".to_string())
+            ),
+            format!("链文件留笔不删：{}；人节点对表后重跑 scribe verify --trail <链文件> 复核", trail.display()),
+        ));
+    }
+    Ok("valid".to_string())
+}
+
+/// 补全链镜像核对位（对表围堰 reconcile_mirror_row）：中央 active 行与域镜像
+/// 末行恒等对表，末行恒等即 in_place 零写；缺席或漂移即 append_row 补写中央
+/// active 行恒等行（appended），append-only 零整文件重写。
+fn reconcile_mirror_row(dom: &Path, row: &TokenRow) -> Result<(PathBuf, &'static str), BootstrapError> {
+    let mirror = mirror_tokens_path(dom);
+    let mut last: Option<Value> = None;
+    if mirror.is_file() {
+        let text = std::fs::read_to_string(&mirror)
+            .map_err(|e| tool_error(format!("域镜像登记册不可读：{}（{e}）", mirror.display())))?;
+        let lines: Vec<&str> = text.lines().filter(|l| !l.trim().is_empty()).collect();
+        if let Some(last_line) = lines.last() {
+            let v: Value = serde_json::from_str(last_line).map_err(|e| {
+                tool_error(format!("域镜像登记册末行行形损坏：{}（{e}）", mirror.display()))
+            })?;
+            last = Some(v);
+        }
+    }
+    let row_value = serde_json::to_value(row)
+        .map_err(|e| tool_error(format!("中央行序列化拒：{e}")))?;
+    if last.as_ref() == Some(&row_value) {
+        return Ok((mirror, "in_place"));
+    }
+    tokens::append_row(&mirror, row)
+        .map_err(|e| tool_error(format!("镜像行补写拒：{e}")))?;
+    Ok((mirror, "appended"))
+}
+
 // ------------------------------------------------------------------- 段五
 
 /// 客户端注册固定 payload（.zcode/config.json 的 mcp.servers.sih 值形）。
@@ -948,6 +1039,7 @@ pub async fn bootstrap_domain(
     by: &str,
     date: Option<&str>,
     client_config: Option<&std::path::Path>,
+    complete: bool,
 ) -> Result<Value, BootstrapError> {
     let date = date.map(str::to_string).unwrap_or_else(today_str);
     if !valid_date(&date) {
@@ -959,7 +1051,7 @@ pub async fn bootstrap_domain(
     // 段一：前置检查（域根面检先于签发；已开域分流；客户端配置件形先验随行
     // ——畸形件在签发与开域前即拒，全链零写入可修复重跑）
     let opened = precheck_bootstrap_face(&dom, &central_root)?;
-    if opened {
+    if opened && !complete {
         return Err(rejection(
             format!(
                 "域已开域（sih/domain.json 在位）：{}",
@@ -969,12 +1061,54 @@ pub async fn bootstrap_domain(
         ));
     }
     let (client_obj, client_note) = load_client_config(client_config)?;
-    // 段二：签发位（缺牌即签，有牌复用）
+    // 段二：签发位（缺牌即签，有牌复用——补全链照旧复用 active 行）
     let scope = scope.unwrap_or(DEFAULT_SCOPE);
-    // row（签发行）在开域位由 init_precheck 复读的 row2 承接（init 同形），
-    // 本载体无补全分流故 row 本身不再直读，出参经 issued 承载。
-    let (_row, issued) = issue_if_needed(&registry, &dom, token_id, scope, by)?;
+    let (row, issued) = issue_if_needed(&registry, &dom, token_id, scope, by)?;
+    // 补全链分流（DES-015 修订五，pk-107 承载）：已开域加 complete 即验域形
+    // 加镜像核对加面卡重写，零域状态写零 reinit；未开域给旗标无害走正常全链。
+    // 出参形对表围堰：补全链不含 files 与 open_pen_hash 与 flywheel_git_exclude。
+    if opened {
+        let declaration = load_declaration(&dom)?;
+        let chain_verify = verify_domain_chain(&dom).await?;
+        let (mirror, mirror_action) = reconcile_mirror_row(&dom, &row)?;
+        let readme_path = dom.join(DOMAIN_README_RELPATH);
+        std::fs::write(
+            &readme_path,
+            domain_readme_text(&row.token_id, &dom, &declaration),
+        )
+        .map_err(|e| tool_error(format!("域自述重写拒 {}：{e}", readme_path.display())))?;
+        let mut result = json!({
+            "ok": true,
+            "domain_id": declaration.get("domain_id").cloned().unwrap_or_else(|| json!(row.token_id)),
+            "domain_root": dom.display().to_string(),
+            "opened_at": declaration.get("opened_at").cloned().unwrap_or_else(|| json!("")),
+            "issued": issued,
+            "chain_verify": chain_verify,
+            "mirror_row_path": mirror.display().to_string(),
+            "mirror_action": mirror_action,
+            "readme_path": readme_path.display().to_string(),
+            "client_config": json!({"written": false, "path": null, "note": client_note}),
+            "next": NEXT_TEACHING,
+        });
+        // 段五：客户端注册位（旗标选入，缺省零触碰 .zcode）加写后复核位
+        if let Some(obj) = client_obj {
+            let cfg_path = expand_home(client_config.expect("client_obj 在位即路径在位"));
+            let written = write_client_config(&cfg_path, &row.token_id, obj, client_note)?;
+            let note = teaching_note(
+                written["note"].as_str().unwrap_or(client_note),
+                written["path"].as_str().unwrap_or_default(),
+            );
+            result["client_config"] = json!({
+                "written": true,
+                "path": written["path"],
+                "note": note,
+            });
+            verify_client_config(&cfg_path, &row.token_id)?;
+        }
+        return Ok(result);
+    }
     // 段三：开域位（init 既有形零重实现；precheck 六项在签发后复跑全过）
+    // row（签发行）在开域位由 init_precheck 复读的 row2 承接（init 同形）。
     let (dom2, row2) = init_precheck(&dom, &central_root, &registry)?;
     let opened_r = open_domain(&dom2, &row2, by, &date).await?;
     // 段四：镜像位（验域 valid 后恒等落域内登记册）
@@ -1032,6 +1166,7 @@ pub async fn run_cli(args: &[String]) -> anyhow::Result<i32> {
     let mut scope: Option<String> = None;
     let mut date: Option<String> = None;
     let mut client_config: Option<String> = None;
+    let mut complete = false;;
     let mut it = args.iter();
     while let Some(arg) = it.next() {
         match arg.as_str() {
@@ -1073,8 +1208,7 @@ pub async fn run_cli(args: &[String]) -> anyhow::Result<i32> {
             },
             // 补全旗标显式拒（如实教学，零静默吞旗标）。
             "--complete" => {
-                eprintln!("--complete 补全形候后继批承载：Rust 载体本批零补全链，已开域补全请走 Python 载体 mcpline.bootstrap --complete");
-                return Ok(2);
+                complete = true;
             }
             other => {
                 if domain_root.is_none() {
@@ -1097,6 +1231,7 @@ pub async fn run_cli(args: &[String]) -> anyhow::Result<i32> {
         by.as_deref().unwrap_or(DEFAULT_OPENED_BY),
         date.as_deref(),
         client_config.as_deref().map(Path::new),
+        complete,
     )
     .await
     {
@@ -1290,6 +1425,7 @@ async fn confirm_open_action(Form(form): Form<HashMap<String, String>>) -> Respo
         &by_owned,
         None,
         None,
+        false,
     )
     .await;
     let result = match result {
@@ -1400,7 +1536,7 @@ mod tests {
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
-        let result = bootstrap_domain(&dom, Some("dom-a"), None, "test-window", Some("2026-09-11"), None)
+        let result = bootstrap_domain(&dom, Some("dom-a"), None, "test-window", Some("2026-09-11"), None, false)
             .await
             .expect("全链应绿");
         // 出参键全集（files 与 open_pen_hash 承开域链）。
@@ -1437,7 +1573,7 @@ mod tests {
         assert_eq!(m.scope, "domain_write");
         assert_eq!(m.status, "active");
         // 幂等守卫：已开域重跑即拒（零 reinit）。
-        let err = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None)
+        let err = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None, false)
             .await
             .unwrap_err();
         assert_eq!(err.exit_code, 1);
@@ -1455,7 +1591,7 @@ mod tests {
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
-        let result = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None)
+        let result = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None, false)
             .await
             .expect("复用现牌全链应绿");
         assert_eq!(result["issued"]["done"], json!(false));
@@ -1479,7 +1615,7 @@ mod tests {
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
-        let err = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None)
+        let err = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None, false)
             .await
             .unwrap_err();
         assert_eq!(err.exit_code, 1);
@@ -1513,6 +1649,7 @@ mod tests {
             "test-window",
             Some("2026-09-11"),
             Some(&cfg),
+            false,
         )
         .await
         .expect("全链应绿");
@@ -1544,7 +1681,7 @@ mod tests {
     #[tokio::test]
     async fn date_invalid_is_tool_error() {
         // 词形违例在段一之前即拒（exit 2 工具异常形，零触碰任何面）。
-        let err = bootstrap_domain(Path::new("/tmp/sihmcp-boot-absent"), None, None, "t", Some("2026-9-1"), None)
+        let err = bootstrap_domain(Path::new("/tmp/sihmcp-boot-absent"), None, None, "t", Some("2026-9-1"), None, false)
             .await
             .unwrap_err();
         assert_eq!(err.exit_code, 2);

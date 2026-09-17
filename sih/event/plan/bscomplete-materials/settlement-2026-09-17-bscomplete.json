@@ -1,0 +1,14 @@
+{
+  "batch": "bscomplete",
+  "date": "2026-09-17",
+  "deliverables": {
+    "engine": "bootstrap.rs：bootstrap_domain 增 complete 参与补全链分流，三新函数 load_declaration 加 verify_domain_chain 加 reconcile_mirror_row，run_cli 拒学桩换真承载",
+    "guide": "手动备选 CLI 行与兜底矩阵半态行两处 --complete 口径同步，化格 0 加核阅违例 0 加检词违例 0",
+    "parking": "pk-107 出泊 promoted",
+    "rulings": "用户 2026-09-17 同日两裁随批登记：launchd 常驻 8765 面不算产品部署形态系本机开发调试便利文档不提；六 bin 在途件经 git log -S 验证不存在于任何提交任何分支即回滚即丢，处置候收编批另令",
+    "tests": "tests/bscomplete.rs 四件全绿；stdio_auto 套件四件零回归；全量套件见结果档补记"
+  },
+  "kind": "settlement",
+  "session_id": "c246e26c3ded0608",
+  "what": "开域补全链 Rust 承载批结算：--complete 语义逐行对表围堰（验域形加镜像核对加面卡重写零域状态写），测试四件绿，指南两处口径同步，pk-107 出泊"
+}

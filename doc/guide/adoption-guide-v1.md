@@ -67,13 +67,13 @@
 
 ### 手动备选与兜底 {#default-manual}
 
-想先看清会发生什么再开域的人用两形手动位。其一 CLI 全链：`cd {{ENGINE_WORKSPACE}}/sih-engine && target/debug/sihmcp bootstrap {{PROJECT_ROOT}} --by <事由> --token-id <短串>`，与自动链同一核心，签发加开域加镜像一次完成。其二 管理台两步确认：按第三节起服，浏览器开 /tokens 域自举表单，确认落笔即停服。
+想先看清会发生什么再开域的人用两形手动位。其一 CLI 全链：`cd {{ENGINE_WORKSPACE}}/sih-engine && target/debug/sihmcp bootstrap {{PROJECT_ROOT}} --by <事由> --token-id <短串>`，与自动链同一核心，签发加开域加镜像一次完成；已开域的补全给 --complete 旗标，验域加镜像核对加面卡重写，零域状态写零 reinit。其二 管理台两步确认：按第三节起服，浏览器开 /tokens 域自举表单，确认落笔即停服。
 
 sih init 是复查与兜底位（用户 2026-09-17 裁定，留着做复查用），四种域态各有判词：
 
 - 全新域无牌：预检拒并教学指引到签发位，此态的入口是首连自动链或手动两形
 - 有牌无树即自动链死在签发之后：init 完整恢复，预检六项过，树与链与 exclude 全落
-- 半态即域声明在而链缺：init 判已开域，深查以 scribe verify 定位缺件；补全形 --complete 在 Rust 载体尚未承载，候批补位，现以人工处置
+- 半态即域声明在而链缺：init 判已开域，深查以 scribe verify 定位缺件；补全形 `sihmcp bootstrap {{PROJECT_ROOT}} --by <事由> --complete` 已承载，即验域加镜像核对加面卡重写零域状态写；域链缺席或验红如实拒，链留笔不删候人节点处置
 - 已开域健康域：幂等守卫明确拒非静默，判词即复查回答
 
 调用形 `target/debug/sih init --root {{PROJECT_ROOT}}`。运行 init 等中央侧工具时 SIH_ROOT 保持指中央根，指错会把中央登记册落进项目内，详见问答。bin 集尚无 sih 即引擎版本早于其引入批，先升版本。

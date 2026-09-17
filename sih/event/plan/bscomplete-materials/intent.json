@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-bscomplete",
+  "raw_input": "用户 2026-09-17 令「107出泊修复」，实现开域补全链 --complete 的 Rust 承载，语义逐行对表围堰 bootstrap.py complete 分支；兼承同日裁定即 launchd 常驻面不算产品形态与六 bin 在途件回滚不安全判定候收编。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "bscomplete 批：bootstrap_domain 增补全链（验域形加镜像核对加面卡重写零域状态写），run_cli 贯通旗标，测试四件，指南两处口径同步，pk-107 出泊，settle 推双远端。",
+    "exclusions": [
+      "围堰 Python 源码零改动——只读对表",
+      "签发闸与幂等守卫语义零改动",
+      "六 bin 在途件零触碰——收编候另令",
+      "launchd 文档零写——裁定为不算产品形态即无需记载"
+    ],
+    "output_format": "bootstrap.rs 与测试与指南 + 批材料 + 意图认证出泊笔 + settle commit + close + 双远端",
+    "injected_constraints": [
+      "工程基线第一条：补全链只调既有正典件即 scribe verify 与 tokens append_row，零二次实现",
+      "DES-015 修订五：补全链语义正典即围堰 complete 分支",
+      "SDDG：任务包先行，测试即完备度载体",
+      "红证：域链缺席与验红如实拒，链留笔不删"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/mcpserver/bootstrap.rs 加 sih-engine/tests/bscomplete.rs 加 sih-engine/doc/guide/adoption-guide-v1.md 加任务包与批材料与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
