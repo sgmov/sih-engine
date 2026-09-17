@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260917-pkexits2",
+  "raw_input": "用户 2026-09-17 令「其它的所有 pk 使用子代理全部查一遍，需要全部出泊，给出出泊的方案」，四路子代理普查俱归，本批落第一波十件即 A 五 promoted 加 B 两 discarded 加 C 三转远期。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pkexits2 批：泊位普查第一波十件出泊即 pk-058 加 pk-090 加 pk-094 加 pk-098 加 pk-103 俱 promoted 承后续批已解决实证，pk-064 加 pk-065 discarded 承前提消解，pk-069 加 pk-079 加 pk-081 promoted 转远期备忘录，普查四路报告存批材料，出泊笔与认证笔在链，settle 加 close 加推双远端。",
+    "exclusions": [
+      "D 类三件 pk-062 与 pk-083 与 pk-104 候小批另开，本批零触碰",
+      "E 类十件候用户逐件裁，本批零触碰",
+      "PARKING-v1.md 名册投影不随本批改，欠账与本次增量俱归后继索引同步批"
+    ],
+    "output_format": "十件出泊事件在链加普查报告四件存档加远期备忘录三件迁入，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：出泊以链上事件与普查证据指针为证",
+      "出泊唯人节点：用户全部出泊令为总裁定本批为机械执行",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "远期备忘录.md 域外件加 sih-engine 批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
