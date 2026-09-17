@@ -1,0 +1,1 @@
+{"batch": "faceprecise-solo", "date": "2026-09-17", "change": "src/bin/watchcheck.rs LOCKFACE_WIDE_THRESHOLD 20 改 25", "tests": "workcheck 相关套件与全量 cargo test 退出码零零失败（工地 w/faceprecise 全量 exit 0）", "evidence": {"p95": 22, "hit_sessions_before": 26, "hit_after_estimate": 10, "mispenalty": "65/124 即 52.4%", "open_face_wide": "16 笔>20"}, "exit_code": 0}

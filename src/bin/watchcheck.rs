@@ -38,7 +38,7 @@ const JUDGMENT_FORMULA: &str = "脏文件集 −（租约锁面 ∪ 直改链笔
 const EXIT_CLEAN: i32 = 0;
 const EXIT_UNOWNED: i32 = 1;
 const EXIT_TOOL_ERROR: i32 = 2;
-const LOCKFACE_WIDE_THRESHOLD: usize = 20;
+const LOCKFACE_WIDE_THRESHOLD: usize = 25;
 /// 豁免面冻结登记（constants.py EXEMPTION_FACES 逐字对表，16 面）。
 const EXEMPTION_FACES: [&str; 16] = [
     "sih-engine/sih/event/trail/",
