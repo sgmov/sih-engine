@@ -1,0 +1,27 @@
+{
+  "session_id": "sess-zcode-260917-rant-doc",
+  "raw_input": "用户 2026-09-17 令「结合 ai-ex 的各种沉淀，痛点拆解，重新写一份类似用户对话的文档，作为 Readme 的补充。行文风格需要轻快，像是开发日常吐槽需要参考小红书那种爆款文案的写法」。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "rant-doc 批：写 RANTS.md（仓根，README 补充读物），帖子体吐槽文。1) 素材取 ai-ex 沉淀库六真实案例（意图错位、假扫描声明、最小改动偏差、看见没读到、子代理旧地图、存在不等于可用）与六废仓大结局；2) 每案例后接司衡解法短评，口径与 README 组件表逐条一致；3) 小红书爆款形（钩子、短句、emoji、互动引导、话题标签）；4) README 文档与贡献节补链接一行；5) 用户过目后 settle 收约推送。",
+    "exclusions": [
+      "不入 doc/ 目录——小红书风格与治理域文档规范冲突，落仓根 des-001 域外，不进 T6 管线",
+      "ai-ex 档零写入——只读取引用，ai-ex 本身不入 git 不改动",
+      "案例零虚构——六案例逐一锚原档，日期原话数字不改",
+      "不推送远端——settle 后候用户令或随批令"
+    ],
+    "output_format": "sih-engine/RANTS.md（新件）+ sih-engine/README.md（补一行链接）+ 任务包 + 批材料 + settle commit + close 台账行",
+    "injected_constraints": [
+      "汇报大白话纪律的逆向适用：本文档的目标风格就是大白话本身，克制术语到零",
+      "司衡解法口径与 README（readme-plain 批产物）组件表零矛盾，不发明机制",
+      "置顶含丑话（手续成本、适用域指回 README），诚实口径与门面一致",
+      "正身报告用修复后的引擎位自证（identity-fix 批产物首次实战自证）"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/RANTS.md（新件）+ sih-engine/README.md（一行）+ sih-engine/sih/state/plan/rant-doc.md（任务包）+ sih-engine/sih/event/plan/rant-doc-materials/（批材料）",
+      "max_depth": 1
+    }
+  }
+}

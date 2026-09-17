@@ -1,0 +1,12 @@
+{
+  "batch": "rant-doc",
+  "date": "2026-09-17",
+  "deliverables": {
+    "fact_anchors": "六案例锚 ai-ex 六原档，翻车七锚 BACKGROUND-TASK-DISCIPLINE（1515 分钟实跑），翻车八锚 MODEL-DIFFERENCE-LESSONS（14/235，公开版隐厂商名），彩蛋锚 identity-fix 批实录（含 SDDG 两拦补测试）",
+    "rantdoc": "RANTS.md 176 行帖子体：楼主开帖、编号翻车各配司衡解法短评（与 README 组件表逐条对齐）、大结局、彩蛋（自家翻车被自家流程抓包）、置顶含丑话与互动引导与话题标签",
+    "readme_link": "README.md 文档与贡献节补一行（轻松版先看这个解闷）"
+  },
+  "kind": "settlement",
+  "session_id": "bbaef13eb91f0a2f",
+  "what": "RANTS.md 门面吐槽文批结算：八翻车（意图错位、假扫描、最小改动、看见没读到、旧地图、存在不等于可用、25 小时全盘遍历、换模型 14 对 235）加六废仓大结局加 identity 137 彩蛋，用户两轮过目令收工放锁"
+}

@@ -152,6 +152,7 @@ cargo build
 
 ## 文档与贡献
 
+- 轻松版（先看这个解闷）：RANTS.md，AI 结对编程翻车实录，真实案例吐槽体
 - 使用者入门：doc/guide/user-guide-v1.md
 - 贡献者指南：doc/guide/contributor-guide-v1.md，含五仓地图与提交变更全流程
 - 设计哲学：sih-philosophy 仓；数学形式化：sih-math 仓

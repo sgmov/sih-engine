@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-zcode-260917-rant-doc",
+  "raw_input": "用户 2026-09-17 令「结合 ai-ex 的各种沉淀、痛点拆解，写一份类似用户对话的 README 补充文档，轻快、开发日常吐槽、参考小红书爆款文案写法」→ 初稿六案例 → 用户问「还有其它可以补充的吗」→ 补翻车七（25 小时全盘遍历）翻车八（换模型 14 对 235）与彩蛋（identity 137 自家翻车被自家流程抓包）→ 用户令「可以，收工，其它 agent 等着你放锁」。",
+  "round": 2,
+  "intent_contract": {
+    "goal": "rant-doc 批：RANTS.md 落仓根（八翻车加大结局加彩蛋加置顶的帖子体吐槽文，案例全部锚 ai-ex 原档与本会话实录）+ README 补一行链接，settle 收约放锁推送。",
+    "exclusions": [
+      "不入 doc/ 域",
+      "ai-ex 零写入",
+      "案例零虚构",
+      "公开版隐厂商名只留数字"
+    ],
+    "output_format": "RANTS.md + README.md 一行 + 批材料 + 意图笔认证笔 + settle commit + close 台账行 + 双远端",
+    "injected_constraints": [
+      "解法口径与 README 组件表零矛盾",
+      "置顶含丑话指回 README 适用域",
+      "正身报告用修复后引擎位自证（本批已践）"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/RANTS.md + sih-engine/README.md（一行）+ 任务包 + 批材料",
+      "max_depth": 1
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "validator": "lease-structural",
+  "note": "plain 意图形 DES-016 validation 豁免，结构校验由 lease open 闸三承载通过",
+  "validated_at": "2026-09-17"
+}
