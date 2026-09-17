@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-zcode-260917-readme-plain",
+  "raw_input": "用户 2026-09-17 令「司衡引擎的README，社区的朋友都在说 AI 味特别重，如何优化润色美化」→ 诊断三病灶 → 外部 agent 建议版评审（骨架取、新指纹与两处事实漂移弃）→ 用户裁「由司衡执笔、从人类用 AI 编程的痛点入手、六大组件大白话」→ 四稿迭代三轮外人席位验收（AI 味从特别重降至 3/10，行级批评逐条修）→ 用户过目令「没问题，合并后推送」。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "readme-plain 批：README 门面文去 AI 味重写为痛点驱动结构（七痛对六组件加租约），事实还原（真五条基线自 BASELINE-v1.md、DEC-023 表述改仓内决策档、决策编号撤文末），新增丑话段（强制力边界）、适用域节、术语速查表；外人席位验收通过后 settle 收约归并推送。",
+    "exclusions": [
+      "只动 README.md 与批件",
+      "doc/ 域与源码零触碰",
+      "不重写指南文档——只门面"
+    ],
+    "output_format": "README.md 重写稿 + 批材料 + 意图笔与认证笔 + settle commit + close 台账行 + 双远端推送",
+    "injected_constraints": [
+      "工程基线第四条：README 事实断言与正典对得上",
+      "汇报大白话纪律：术语首现配人话",
+      "DEC-017 修订六：stem 认领 readme-plain 甲表三件，语义终裁归人节点（用户已过目）",
+      "人审门：settle 前用户过目已过"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md + 任务包 + 批材料",
+      "max_depth": 1
+    }
+  }
+}
