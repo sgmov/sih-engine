@@ -61,6 +61,8 @@
 - sih/ledger/ 域内登记册与锁册
 - sih/state/plan/ 与 sih/state/parking/materials/ 任务包与停泊，含三份模板
 
+隔离一句：init 成功时自动把 `sih/` 一行幂等写入域根 `.git/info/exclude` 并以 `git check-ignore` 机械验证，治理飞轮不进你的 git，项目可随意公开。
+
 两形提示。运行 init 时不要把 SIH_ROOT 环境变量指到 {{PROJECT_ROOT}}，中央登记册落中央根，指错会落进项目内，详见问答第六问。
 
 版本提示。sih init 是本批新增薄壳位，usage 即 sih init [--root <域根>]，--help 出用法。若你构建出的 bin 集尚无 sih，说明引擎版本早于本批，先升版本，或走第三节管理台两步域自举全链。
@@ -134,6 +136,8 @@ HTTP 客户端形。域自举全链 --client-config 给参时写的是 HTTP 形 
 问：为什么 init 前要先签发。答：sih init 是域自举单步窄口，零签发零镜像零客户端注册，它从中央登记册取本域 active 标识牌行落域；签发位与镜像位与客户端注册位归域自举全链，各守各位。
 
 问：项目还不是 git 仓。答：先 git init 加 git config user.name 与 user.email，前置检查第二项的拒教文案同此指路。
+
+问：sih 树会进我的 git 提交吗。答：不会，init 成功时自动把 sih/ 一行写入域根 .git/info/exclude 并机械验证，治理飞轮不进你的 git，项目可随意公开。
 
 问：重复跑 init 会怎样。答：幂等守卫明确拒非静默，sih/domain.json 在位即域已在册，无 reinit 旗标。重开候人节点先处置既有域状态。
 

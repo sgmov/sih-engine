@@ -8,6 +8,8 @@
 //! 断言 sih 树生成与重复运行幂等守卫（明确拒非静默）与逐项判词整形。
 //! 伪 scribe 只承 open_domain 两步出参形（append 出 event_hash 落链一行、
 //! verify 出 valid 判词），零真链校验。unix 专属（脚本执行位）。
+//! gitexclude 批追加：沙箱域根为真 git 仓，成功形断言飞轮隔离步（
+//! .git/info/exclude 幂等含 sih/ 行加 git check-ignore 退出码零）。
 #![cfg(unix)]
 
 use std::fs;
@@ -55,7 +57,15 @@ fn sandbox() -> Sandbox {
     fs::create_dir_all(central.join("sih-tools/lease")).unwrap();
     fs::create_dir_all(central.join("sih-tools/mcpline/ledger")).unwrap();
     fs::create_dir_all(central.join("sih-engine/target/debug")).unwrap();
-    fs::create_dir_all(dom.join(".git")).unwrap();
+    fs::create_dir_all(&dom).unwrap();
+    // 域根为真 git 仓（gitexclude 批：飞轮隔离步 git check-ignore 机械验证
+    // 要求真仓形，空 .git 目录非合法仓会退出码 128）
+    let st = Command::new("git")
+        .current_dir(&dom)
+        .args(["init", "-q"])
+        .status()
+        .expect("沙箱域根 git init spawn 拒");
+    assert!(st.success(), "沙箱域根 git init 失败");
     // 中央任务包模板源（open_domain 步三字节复制源，在位即可）
     fs::write(
         central.join("sih-tools/lease/TASK-PACKAGE-TEMPLATE.md"),
@@ -185,6 +195,35 @@ fn init_ok_creates_canonical_sih_tree() {
     assert_eq!(decl["domain_id"], json!(TOKEN_ID));
     assert_eq!(decl["layout_form"], json!("canonical"));
     assert_eq!(decl["opened_by"], json!("main-window-bootstrap"));
+    // 飞轮隔离步（gitexclude 批）：出参 verified 真值加零 warning 加
+    // exclude 幂等含 sih/ 行加 git check-ignore 机械验证退出码零
+    assert_eq!(
+        v["flywheel_git_exclude"]["method"],
+        json!(".git/info/exclude"),
+        "隔离步出参 method 形破坏：{stdout}"
+    );
+    assert_eq!(
+        v["flywheel_git_exclude"]["verified"],
+        json!(true),
+        "隔离步未验证：{stdout}"
+    );
+    assert!(
+        v.get("warning").is_none(),
+        "成功形不带 warning：{}",
+        v.get("warning").map(|w| w.to_string()).unwrap_or_default()
+    );
+    let exclude_text = fs::read_to_string(domc.join(".git/info/exclude"))
+        .expect("域根 .git/info/exclude 缺席");
+    assert!(
+        exclude_text.lines().any(|l| l.trim_end() == "sih/"),
+        "exclude 缺 sih/ 行：{exclude_text}"
+    );
+    let ci = Command::new("git")
+        .current_dir(&domc)
+        .args(["check-ignore", "-q", "sih/"])
+        .status()
+        .expect("git check-ignore spawn 拒");
+    assert_eq!(ci.code(), Some(0), "sih/ 未被用户 git 忽略");
 }
 
 #[test]

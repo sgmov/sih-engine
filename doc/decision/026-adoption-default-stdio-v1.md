@@ -79,6 +79,8 @@ v1 即 2026-09-17 承用户缺省采纳路径裁定成立，随 adoptface 工地
 
 2026-09-17 v1 随 adoptface 工地批起草，令源即用户 2026-09-17 缺省采纳路径裁定。编号防撞声明：本档与旧校准语料件名 decision__DEC-026-code-anchor-scan，见主树 sih/state/calibration/manifest.json:51231 起 phase1-round1 审计清单语料，非 doc/decision/ 决策正典，与本档无血统关联。
 
+2026-09-17 v2 飞轮与用户项目 VCS 解耦保证，形为 .git/info/exclude、结构零改动：sih init 成功路径幂等追加 sih/ 行至域根 .git/info/exclude 并以 git check-ignore 机械验证，治理飞轮不进用户 git，用户项目可随意公开；隔离失败不回滚 init，warning 字段如实显形。承载词 DEC-026 自身，随 gitexclude 工地批落笔。
+
 ## 关联 {#relation}
 
 载体位序上游 DEC-023 承 Rust 双面载体与段3 HTTP 面与管理台；进阶档能力正典承 DES-014 与 DES-015；依据面承 BASELINE-v1 工程基线第二三条；源码位承 DEC-001；实施面 sih init 薄壳随批另钉，实施批独立开立。
