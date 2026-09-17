@@ -1,0 +1,29 @@
+{
+  "session_id": "sess-zcode-260917-readme-plain",
+  "raw_input": "用户 2026-09-17 令「司衡引擎的README，社区的朋友都在说 AI 味特别重，如何优化润色美化」→ 两轮方案讨论（诊断三病灶即即字名词堆叠、术语裸奔、内引泄出；评审外部 agent 建议版即骨架可取但新指纹与两处事实漂移）→ 用户令「同意」按合流方案出一版完整稿走租约批落 README。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "readme-plain 批：重写 sih-engine/README.md 去除 AI 味。1) 取外部建议版骨架（编号步骤、动词加粗、完整句）；2) 套去 AI 规则（删 emoji、营销强调词、口号收尾、三连形容词）；3) 事实还原（真五条工程基线逐条取自 BASELINE-v1.md，DEC-023 表述改仓内决策档，决策编号撤到文末档案节）；4) 新增术语速查表与适用域边界节；5) 用户过目后 settle commit 与收约。",
+    "exclusions": [
+      "不动 README 以外任何文件——doc/ 域零触碰，工具与源码零改动",
+      "不推送远端——推送候选候用户单独令",
+      "不把 README 纳入 des-001 强制管线——域只盖 doc/，自然标点保留，检词核查只作纪律自检",
+      "引擎位 identity 缺陷本批不修——new_salt 的 fs::read(\"/dev/urandom\") 无限读入根因已定位，修复归候修批，本批围堰 identity 只读出报告替位（mergeall 先例）",
+      "跳过 ask3 双门与叩问——纯文风重写零机制变更，plain 意图形，偏离如实申报于此"
+    ],
+    "output_format": "sih-engine/README.md（重写稿）+ sih-engine/sih/state/plan/readme-plain.md（任务包）+ sih-engine/sih/event/plan/readme-plain-materials/（本意图件与正身报告）+ 检词核查读数登记 + 用户过目后 settle commit 与 lease close 台账行 + 完工报告",
+    "injected_constraints": [
+      "工程基线第四条：写入可追溯可机械校验——README 事实断言须与正典对得上，五条基线逐条取自 BASELINE-v1.md",
+      "汇报大白话纪律（2026-08-25 用户裁定入列）：术语首现配人话，文末术语速查表",
+      "GOV-004 接管五钉位：治理域历史不可改，本批不触碰历史档",
+      "settle 前用户过目——本批含显式人审门，agent 不代签",
+      "DEC-017 修订六：stem 认领走甲表三件，认领即声明入回执可追，语义忠实终裁归人节点"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md（唯一施工面）+ sih-engine/sih/state/plan/readme-plain.md（任务包）+ sih-engine/sih/event/plan/readme-plain-materials/（批材料）",
+      "max_depth": 1
+    }
+  }
+}
