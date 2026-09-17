@@ -4,6 +4,8 @@
 //! 行为面移植自围堰 sih-tools/cascade 0.4.0（src/cascade/：cli.py、core.py），
 //! 只读对表移植，围堰源码零改动。路径即 id 不改名即删除新建，引用即边，
 //! 上游洁净不变式即当前内容哈希等于链上最近认证哈希，只读不写判在别处。
+//! 建册核心五件已提取库侧 sih_engine::cascade_registry（pk-055
+//! cascadeclose-solo 批，lease close 前投影重建复用），本 bin 行为面零改动。
 //!
 //! CLI 三子命令，退出码三值：
 //!   build   --root <语料根> [--out <册文件>]   0 建册毕 / 2 工具异常
@@ -31,16 +33,16 @@
 
 use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::BTreeMap;
 use std::fs;
 use std::path::Path;
 use std::process::exit;
 
-/// 围堰版本锚：sih-tools/cascade/src/cascade/__init__.py __version__。
-const ENGINE_VERSION: &str = "0.4.0";
-
-/// 引用词形：DEC/GOV/PRO/DES/SPEC 前缀族加三位数字（core.py TOKEN_RE 逐字对表）。
-const TOKEN_RE: &str = r"\b(?:DEC|GOV|PRO|DES|SPEC)-\d{3}\b";
+// 建册核心库件承接（pk-055 cascadeclose-solo 批）：本 bin 建册路径五件
+// （版本锚、路径解析、键序归一、建册、正典序列化）原位提取至库侧
+// sih_engine::cascade_registry，lease close 前投影重建复用同件，零 shell out；
+// 本侧行为面零改动（函数体逐字节承提取前原文）。
+use sih_engine::cascade_registry::{build_registry, dump_canonical, resolve_abs, sort_value, ENGINE_VERSION};
 
 fn sha256_hex(bytes: &[u8]) -> String {
     let mut h = Sha256::new();
@@ -51,39 +53,6 @@ fn sha256_hex(bytes: &[u8]) -> String {
 fn file_hash(path: &Path) -> Result<String, String> {
     let bytes = fs::read(path).map_err(|e| format!("file hash failed: {}: {e}", path.display()))?;
     Ok(sha256_hex(&bytes))
-}
-
-/// Python path.resolve() 非严格形：canonicalize 优先，失败退绝对化拼接。
-fn resolve_abs(p: &Path) -> String {
-    if let Ok(c) = fs::canonicalize(p) {
-        return c.to_string_lossy().into_owned();
-    }
-    if p.is_absolute() {
-        p.to_string_lossy().into_owned()
-    } else {
-        std::env::current_dir()
-            .unwrap_or_default()
-            .join(p)
-            .to_string_lossy()
-            .into_owned()
-    }
-}
-
-/// 对象键递归排序（json.dumps sort_keys=True 语义）。
-fn sort_value(v: Value) -> Value {
-    match v {
-        Value::Object(m) => {
-            let mut kvs: Vec<(String, Value)> = m.into_iter().collect();
-            kvs.sort_by(|a, b| a.0.cmp(&b.0));
-            let mut out = Map::new();
-            for (k, val) in kvs {
-                out.insert(k, sort_value(val));
-            }
-            Value::Object(out)
-        }
-        Value::Array(a) => Value::Array(a.into_iter().map(sort_value).collect()),
-        other => other,
-    }
 }
 
 fn emit_error(msg: &str) -> ! {
@@ -103,167 +72,6 @@ fn usage_fail(msg: &str) -> ! {
          \x20     cascade orphans --registry <册> --root <语料根>"
     );
     exit(2);
-}
-
-// ---------- 语料扫描（core.py scan_corpus 对表） ----------
-
-fn scan_corpus(root: &Path) -> Result<BTreeMap<String, String>, String> {
-    if !root.is_dir() {
-        return Err(format!("corpus root missing: {}", root.display()));
-    }
-    let mut docs = BTreeMap::new();
-    fn walk(dir: &Path, root: &Path, docs: &mut BTreeMap<String, String>) {
-        let Ok(entries) = fs::read_dir(dir) else {
-            return;
-        };
-        for entry in entries.flatten() {
-            let path = entry.path();
-            if path.is_dir() {
-                walk(&path, root, docs);
-            } else if path.extension().and_then(|e| e.to_str()) == Some("md") {
-                let Ok(rel) = path.strip_prefix(root) else {
-                    continue;
-                };
-                let rel_posix = rel
-                    .components()
-                    .map(|c| c.as_os_str().to_string_lossy().into_owned())
-                    .collect::<Vec<_>>()
-                    .join("/");
-                match fs::read(&path).map_err(|e| e.to_string()).and_then(|b| {
-                    String::from_utf8(b).map_err(|e| e.to_string())
-                }) {
-                    Ok(text) => {
-                        docs.insert(rel_posix, text);
-                    }
-                    Err(e) => {
-                        // 围堰 UnicodeDecodeError 崩溃形不对齐（落差五）。
-                        panic!("corpus file unreadable: {}: {e}", path.display())
-                    }
-                }
-            }
-        }
-    }
-    walk(root, root, &mut docs);
-    Ok(docs)
-}
-
-// ---------- 引用词映射（core.py map_tokens 对表） ----------
-
-/// 引用词到路径的映射：前缀族优先精确匹配，多义入注记，无主入注记。
-fn map_tokens(
-    docs: &BTreeMap<String, String>,
-) -> (BTreeMap<String, String>, Vec<String>, Vec<String>) {
-    let re = regex::Regex::new(TOKEN_RE).unwrap();
-    let mut by_name: BTreeMap<String, String> = BTreeMap::new();
-    for rel in docs.keys() {
-        let name = match rel.rsplit('/').next() {
-            Some(n) => n.to_string(),
-            None => continue,
-        };
-        by_name.entry(name).or_insert_with(|| rel.clone());
-    }
-    let mut tokens: BTreeSet<String> = BTreeSet::new();
-    for text in docs.values() {
-        for m in re.find_iter(text) {
-            tokens.insert(m.as_str().to_string());
-        }
-    }
-    let mut mapping = BTreeMap::new();
-    let mut ambiguous = Vec::new();
-    let mut unmapped = Vec::new();
-    for token in &tokens {
-        let Some((family, number)) = token.split_once('-') else {
-            continue;
-        };
-        let prefix_dash = format!("{family}-{number}-");
-        let prefix_dot = format!("{family}-{number}.");
-        let mut candidates: Vec<&String> = by_name
-            .iter()
-            .filter(|(name, _)| name.starts_with(&prefix_dash) || name.starts_with(&prefix_dot))
-            .map(|(_, rel)| rel)
-            .collect();
-        candidates.sort();
-        let bare_prefix = format!("{number}-");
-        let mut bare: Vec<&String> = if family == "DEC" {
-            by_name
-                .iter()
-                .filter(|(name, _)| name.starts_with(&bare_prefix))
-                .map(|(_, rel)| rel)
-                .collect()
-        } else {
-            vec![]
-        };
-        bare.sort();
-        if candidates.len() == 1 {
-            mapping.insert(token.clone(), candidates[0].clone());
-        } else if !candidates.is_empty() {
-            ambiguous.push(token.clone());
-        } else if !bare.is_empty() && bare.len() == 1 && family == "DEC" {
-            mapping.insert(token.clone(), bare[0].clone());
-        } else {
-            unmapped.push(token.clone());
-        }
-    }
-    (mapping, ambiguous, unmapped)
-}
-
-// ---------- 引用即边（core.py build_edges 对表，d ≻ u 上游集） ----------
-
-fn build_edges(docs: &BTreeMap<String, String>, mapping: &BTreeMap<String, String>) -> BTreeMap<String, Vec<String>> {
-    let re = regex::Regex::new(TOKEN_RE).unwrap();
-    let mut edges: BTreeMap<String, BTreeSet<String>> = BTreeMap::new();
-    for (rel, text) in docs {
-        let mut upstreams: BTreeSet<String> = BTreeSet::new();
-        for m in re.find_iter(text) {
-            if let Some(target) = mapping.get(m.as_str()) {
-                if target != rel {
-                    upstreams.insert(target.clone());
-                }
-            }
-        }
-        if !upstreams.is_empty() {
-            edges.insert(rel.clone(), upstreams);
-        }
-    }
-    edges
-        .into_iter()
-        .map(|(k, v)| (k, v.into_iter().collect()))
-        .collect()
-}
-
-// ---------- 建册（core.py build_registry 对表，落差一二：code 节恒空） ----------
-
-fn build_registry(root: &Path) -> Result<Value, String> {
-    let docs = scan_corpus(root)?;
-    let (mapping, ambiguous, unmapped) = map_tokens(&docs);
-    let edges = build_edges(&docs, &mapping);
-    let mut ledger = Map::new();
-    for (rel, ups) in &edges {
-        let mut entry = Map::new();
-        for up in ups {
-            entry.insert(
-                up.clone(),
-                json!({"upstream_changes": 0, "consulted": 0, "blocked": 0, "hits": 0}),
-            );
-        }
-        ledger.insert(rel.clone(), Value::Object(entry));
-    }
-    Ok(json!({
-        "edges": edges,
-        "header": {
-            "root": resolve_abs(root),
-            "tool": {"name": "cascade", "version": ENGINE_VERSION},
-        },
-        "ledger": Value::Object(ledger),
-        "code": {},
-        "notes": {
-            "ambiguous": ambiguous,
-            "unmapped": unmapped,
-            "use_ambiguous": [],
-            "use_unmapped": [],
-            "use_wildcard": [],
-        },
-    }))
 }
 
 // ---------- 读册（core.py load_registry 对表） ----------
@@ -476,9 +284,7 @@ fn main() {
                 Err(e) => emit_error(&e),
             };
             if let Some(out) = &opt_out {
-                let mut text =
-                    serde_json::to_string_pretty(&sort_value(registry.clone())).unwrap();
-                text.push('\n');
+                let text = dump_canonical(&registry);
                 if let Err(e) = fs::write(out, text) {
                     emit_error(&format!("registry write failed: {out}: {e}"));
                 }
