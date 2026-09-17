@@ -1,13 +1,17 @@
 //! sih 命令薄壳：`sih init` 开域单步窄口（adoptface 批）。
 //!
 //! 职能窄口：调 mcpserver::bootstrap 的 init_precheck（六项预检，逐项判词）
-//! 加 open_domain（落地五步加开域毕验域），stdout 出结构化 JSON 单对象；
+//! 加 open_domain（落地五步加开域毕验域），成功路径尾随飞轮隔离步（域根
+//! .git/info/exclude 幂等追加 sih/ 行加 git check-ignore 机械验证；隔离失败
+//! 不回滚 init，warning 字段如实显形），stdout 出结构化 JSON 单对象；
 //! 域根缺省取 cwd，--root 可传。零签发零镜像零客户端注册——全链五段位归
 //! sihmcp bootstrap（bootstrap_domain 单一 canonical 路径），本壳零重实现。
 //!
 //! 正典指针：SPEC-025（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md，
 //! 引擎 bin 位融回线）；DEC-023（sih-engine/doc/decision/023-mcp-rust-carrier.md，
-//! MCP 线 Rust 载体定约）；SPEC-026（sih-engine/doc/spec/
+//! MCP 线 Rust 载体定约）；DEC-026（sih-engine/doc/decision/
+//! 026-adoption-default-stdio-v1.md 修订记录，飞轮与用户项目 VCS 解耦保证）；
+//! SPEC-026（sih-engine/doc/spec/
 //! SPEC-026-engine-test-design-v1.md，配套 tests/sih_init.rs 黑箱测试）；
 //! 行为对等基准 sih-tools/mcpline/src/mcpline/init.py（开域单步窄口正典）；
 //! 承载模块自带正典 DES-015 与 DES-014 与 SPEC-023（bootstrap.rs
@@ -56,9 +60,9 @@ fn main() {
     std::process::exit(code);
 }
 
-/// 薄壳主体：argv 解析 → init_precheck 逐项判词 → open_domain → 结构化出参。
-/// 退出码即 BootstrapError.exit_code（1 前置拒或验红、2 工具自身异常），
-/// 用法错 2（usage 出 stderr）。
+/// 薄壳主体：argv 解析 → init_precheck 逐项判词 → open_domain → 飞轮隔离步
+/// → 结构化出参。退出码即 BootstrapError.exit_code（1 前置拒或验红、2 工具
+/// 自身异常），用法错 2（usage 出 stderr）。
 async fn run(args: Vec<String>) -> i32 {
     let mut it = args.iter();
     match it.next().map(String::as_str) {
@@ -105,7 +109,8 @@ async fn run(args: Vec<String>) -> i32 {
     match init_precheck(&dom, &central_root, &registry) {
         Ok((dom2, row)) => match open_domain(&dom2, &row, DEFAULT_OPENED_BY, &date).await {
             Ok(opened) => {
-                emit(&json!({
+                let (verified, warning) = flywheel_git_exclude(&dom2);
+                let mut out = json!({
                     "ok": true,
                     "command": COMMAND,
                     "central_root": central_root.display().to_string(),
@@ -118,7 +123,13 @@ async fn run(args: Vec<String>) -> i32 {
                         "items": items_pass(),
                     },
                     "domain": opened,
-                }));
+                });
+                out["flywheel_git_exclude"] =
+                    json!({"method": ".git/info/exclude", "verified": verified});
+                if let Some(w) = warning {
+                    out["warning"] = json!(w);
+                }
+                emit(&out);
                 0
             }
             Err(e) => {
@@ -141,6 +152,64 @@ async fn run(args: Vec<String>) -> i32 {
             emit(&out);
             e.exit_code
         }
+    }
+}
+
+/// 飞轮隔离步（DEC-026 修订位：飞轮与用户项目 VCS 解耦保证）：域根
+/// .git/info/exclude 幂等追加一行 "sih/"（info/ 目录缺席则创建；文件已有该行
+/// 则幂等跳过），随后 git -C <域根> check-ignore -q sih/ 机械验证（退出码 0
+/// 即 sih/ 已被用户 git 忽略）。返回 (verified, warning)：verified 即验证过；
+/// 追加或验证任何一步失败不回滚 init（数据已落盘，失败回滚更糟），失败详情
+/// 经 warning 如实显形，零静默零假判。
+fn flywheel_git_exclude(dom: &std::path::Path) -> (bool, Option<String>) {
+    const LINE: &str = "sih/";
+    let exclude = dom.join(".git/info/exclude");
+    if let Err(msg) = (|| -> Result<(), String> {
+        if let Some(parent) = exclude.parent() {
+            std::fs::create_dir_all(parent).map_err(|e| format!("info/ 目录创建拒：{e}"))?;
+        }
+        let cur = if exclude.is_file() {
+            std::fs::read_to_string(&exclude).map_err(|e| format!("exclude 不可读：{e}"))?
+        } else {
+            String::new()
+        };
+        if cur.lines().any(|l| l.trim_end() == LINE) {
+            return Ok(()); // 已有该行，幂等跳过
+        }
+        let mut next = cur;
+        if !next.is_empty() && !next.ends_with('\n') {
+            next.push('\n');
+        }
+        next.push_str(LINE);
+        next.push('\n');
+        std::fs::write(&exclude, next).map_err(|e| format!("exclude 写入拒：{e}"))?;
+        Ok(())
+    })() {
+        return (
+            false,
+            Some(format!("飞轮隔离步未完成（init 数据已落盘不回滚）：{msg}")),
+        );
+    }
+    match std::process::Command::new("git")
+        .arg("-C")
+        .arg(dom)
+        .args(["check-ignore", "-q", LINE])
+        .status()
+    {
+        Ok(st) if st.code() == Some(0) => (true, None),
+        Ok(st) => (
+            false,
+            Some(format!(
+                "飞轮隔离步验证未过（init 数据已落盘不回滚）：git check-ignore 退出码 {:?}，sih/ 未确认被忽略",
+                st.code()
+            )),
+        ),
+        Err(e) => (
+            false,
+            Some(format!(
+                "飞轮隔离步验证未跑（init 数据已落盘不回滚）：git spawn 拒：{e}"
+            )),
+        ),
     }
 }
 

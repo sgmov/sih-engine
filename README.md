@@ -41,6 +41,8 @@ target/debug/critsweep --at $(date +%F) --root ..
 2. 三步接入：`sih init` 落 sih 树 → 客户端注册一行 stdio 配置 → 会话启动五件照模版裁剪，全程无后台服务、无端口、无令牌
 3. 缺省 stdio 单域一块配置（DEC-026 裁定）；HTTP 多域与管理台是显式选用的进阶档
 
+隔离保证：sih 树自动写入 `.git/info/exclude`，治理飞轮不进你的 git，项目可随意公开。
+
 动线正典三件：
 
 - 接入指南：`doc/guide/adoption-guide-v1.md`，域自举、客户端配置、会话启动五件、租约治理首件的单页走读
