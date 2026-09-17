@@ -39,7 +39,11 @@
 
 ## 六、结算
 
-（认证与 settle 与主树复跑读数批尾回填）
+管线与测试认证 ad8e91b8；双仓 settle seq1 tools 65f8875b 与 engine f6f3845，seq2 engine e408e90（terms 备份件）；收约 revoked 双仓归并；reconcile 双零（tools unrouted 0 cert_missing 0，engine 同）；链 verify valid。收约自身由收约前主树码执行故回执 gates_skipped 缺席属自举限界（mcpnomgate 同款），链面证明承本批 test_close_receipt_carries_gates_skipped 与后继批收约实跑。
+
+主树真跑：critsweep 23 passed 实扫 root_form=first_domain 零降级 v1.1.0；gauge 48 passed 3 skipped；nomenclator 30 passed；lease 正典 uv 形 339 passed 1 failed——失败件 test_path_inclusion_conflict 即环境红：他会话 28d1c5c35a945234（mcpmanual-solo 批）现持 sih-engine/doc 锁面，无 --locks 形预检读中央册真撞（前置提交 65f8875b~1 隔离复跑 passed 在案，env-red-path-inclusion.log 在 materials）；非回归，他会话收约后自愈。sweepjson 金向量刷新（tool/version 1.42.0 升 1.43.0 单字段正当漂移在档）。
+
+收约后补笔两笔：terms.json 并集回补并行窗四词（直改笔 d9ea85d1，写时序先于他会话 16:21:22Z 取锁，超集验真 237 词包载入零损）与本结算节回填（直改笔第二笔）。
 
 ## 七、M5 与工作台边界（用户令在档）
 

@@ -10,10 +10,15 @@
 //! 退出码三值：0 = 全过或一致；1 = 失败或不一致；2 = 用法或环境错误。
 //!
 //! 落差申报（相对围堰）：
-//! 1. assemble 确定性装配子命令未移植（命题区 glob 择件发现面属边缘命令），调用即
-//!    stderr 报未移植、退出码 2。
-//! 2. Python json 规范形（fingerprint 与 canonical）的浮点最短表示边缘形未对齐
-//!    （serde_json 最短浮点 vs Python repr）；字符串/整数/布尔/嵌套结构逐字节对齐。
+//! 1. [已清偿 gap-tally-parity] assemble 确定性装配已移植：glob 择件（responses 哈希
+//!    对表、按 (n_shots, responses_sha256) 择最大、平局取先现）、合同 topic 哈希发现
+//!    （cell topic.md 先行、topics-dir 逐个 glob *.md，围堰 glob 顺序未定处按全径
+//!    字典序，sha 命中至多一件时同判）、正身 core_hash 透传、基线与日期透传；
+//!    argparse 的无歧义前缀缩写形未移植（全名形为准）。
+//! 2. [已清偿 gap-tally-parity] Python json 规范形（fingerprint 与 canonical）的浮点
+//!    最短表示已对齐 CPython repr 排版：decpt ≤ -4 或 > 16 走科学计数、指数带符号
+//!    且至少两位（1e+16 / 1e-05）、整值浮点带 .0、负零保留符号；NaN/Infinity 的
+//!    json 文本形 serde 解析面不认，不在对表范围。
 //! 3. 异常报文内文不对齐（FileNotFoundError/JSONDecodeError 的 Python 内文形以近似
 //!    形出），异常类名与退出码对齐。
 //! 4. watch 异常视图 error 字段类名以近似 Python 名出（KeyError/ValueError/
@@ -95,7 +100,13 @@ fn py_scalar(v: &Value) -> String {
     match v {
         Value::Null => "null".to_string(),
         Value::Bool(b) => if *b { "true" } else { "false" }.to_string(),
-        Value::Number(n) => n.to_string(),
+        Value::Number(n) => {
+            if n.is_f64() {
+                py_float_repr(n.as_f64().unwrap_or(0.0))
+            } else {
+                n.to_string()
+            }
+        }
         Value::String(s) => py_escape(s),
         _ => String::new(),
     }
@@ -214,6 +225,109 @@ fn py_display(v: &Value) -> String {
         Value::String(s) => s.clone(),
         other => py_line(other, true),
     }
+}
+
+// ---------- Python 浮点 repr 与 pathlib 展示形（gap-tally-parity 清偿，见头注落差一、二） ----------
+
+/// Python repr(float)（json.dumps 浮点规范形）：最短往返数字串按 CPython repr 排版——
+/// decpt ≤ -4 或 > 16 走科学计数、指数带符号且至少两位（1e+16 / 1e-05）、整值浮点带 .0。
+fn py_float_repr(x: f64) -> String {
+    if x.is_nan() {
+        return "NaN".to_string();
+    }
+    if x.is_infinite() {
+        return if x > 0.0 { "Infinity" } else { "-Infinity" }.to_string();
+    }
+    let neg = x.is_sign_negative();
+    // Rust {:e} 即最短往返 d[.ddd]e±exp 形，取其数字与十进指数
+    let s = format!("{:e}", x.abs());
+    let (mant, exp_s) = s.split_once('e').expect("LowerExp 形必带 e");
+    let exp: i32 = exp_s.parse().expect("十进指数");
+    let digits: String = mant.chars().filter(|c| *c != '.').collect();
+    let decpt = exp + 1; // 值 = 0.digits × 10^decpt
+    let ndigits = digits.len();
+    let mut out = String::new();
+    if neg {
+        out.push('-');
+    }
+    if decpt <= -4 || decpt > 16 {
+        out.push_str(&digits[..1]);
+        if ndigits > 1 {
+            out.push('.');
+            out.push_str(&digits[1..]);
+        }
+        let e = decpt - 1;
+        if e < 0 {
+            out.push_str(&format!("e-{:02}", -e));
+        } else {
+            out.push_str(&format!("e+{:02}", e));
+        }
+    } else if decpt <= 0 {
+        out.push_str("0.");
+        for _ in 0..-decpt {
+            out.push('0');
+        }
+        out.push_str(&digits);
+    } else if decpt as usize >= ndigits {
+        out.push_str(&digits);
+        for _ in 0..(decpt as usize - ndigits) {
+            out.push('0');
+        }
+        out.push_str(".0");
+    } else {
+        out.push_str(&digits[..decpt as usize]);
+        out.push('.');
+        out.push_str(&digits[decpt as usize..]);
+    }
+    out
+}
+
+/// pathlib PurePath 解析形：（是否绝对、组件列）。空组件与点组件剥除，`..` 保留。
+fn py_norm(p: &str) -> (bool, Vec<&str>) {
+    let abs = p.starts_with('/');
+    let comps: Vec<&str> = p
+        .split('/')
+        .filter(|c| !c.is_empty() && *c != ".")
+        .collect();
+    (abs, comps)
+}
+
+fn py_render(abs: bool, comps: &[&str]) -> String {
+    let mut s = comps.join("/");
+    if abs {
+        s.insert(0, '/');
+    }
+    if s.is_empty() {
+        s.push('.');
+    }
+    s
+}
+
+/// pathlib str() 形（Path("") 归 "."）。
+fn py_path_str(p: &str) -> String {
+    let (abs, comps) = py_norm(p);
+    py_render(abs, &comps)
+}
+
+/// pathlib parent 语义（Path("a").parent == "."，Path("/").parent == "/"）。
+fn py_parent_str(p: &str) -> String {
+    let (abs, comps) = py_norm(p);
+    if comps.is_empty() {
+        return if abs { "/".to_string() } else { ".".to_string() };
+    }
+    py_render(abs, &comps[..comps.len() - 1])
+}
+
+/// pathlib join 后的 str() 形（rel 绝对即取 rel 本身）。
+fn py_join_str(base: &str, rel: &str) -> String {
+    if rel.starts_with('/') {
+        return py_path_str(rel);
+    }
+    let (abs, base_comps) = py_norm(base);
+    let (_, rel_comps) = py_norm(rel);
+    let mut comps = base_comps;
+    comps.extend(rel_comps);
+    py_render(abs, &comps)
 }
 
 // ---------- 基础工具 ----------
@@ -704,6 +818,246 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
     Ok(Value::Object(rep))
 }
 
+// ---------- assemble：确定性装配（gap-tally-parity 移植，围堰 assemble_material） ----------
+
+/// 围堰 _resolve：缺席/空值原样回（None/空串），绝对保持，相对按仓库根拼；
+/// 非字符串真值围堰走 Path(v) 崩溃，此处近似串化（病态输入，见头注落差）。
+fn py_resolve(repo_root: &str, v: Option<&Value>) -> Option<String> {
+    match v {
+        None | Some(Value::Null) => None,
+        Some(Value::String(s)) => {
+            if s.is_empty() {
+                Some(String::new())
+            } else {
+                Some(py_join_str(repo_root, s))
+            }
+        }
+        Some(other) => Some(py_display(other)),
+    }
+}
+
+/// 计分材料的 responses 哈希对表（围堰 _load_sc 的 _m 位）：响应文件在场且
+/// responses_sha256 与当前文件哈希一致才可择。
+fn score_matches_responses(repo_root: &str, sc: &Value) -> Result<bool, ToolFailure> {
+    let rp = match py_resolve(repo_root, sc.get("responses_path")) {
+        Some(s) if !s.is_empty() => s,
+        _ => return Ok(false),
+    };
+    if !Path::new(&rp).is_file() {
+        return Ok(false);
+    }
+    let want = sc.get("responses_sha256").and_then(|v| v.as_str());
+    let got = sha256_file(Path::new(&rp))?;
+    Ok(want == Some(got.as_str()))
+}
+
+fn assemble_material(
+    gid: &str,
+    des_root: &str,
+    topics_dirs: &[String],
+    baseline: Option<&str>,
+    date: Option<&str>,
+    out_path: &str,
+    identity_report: Option<&str>,
+) -> Result<Value, ToolFailure> {
+    let repo_root = py_parent_str(&py_parent_str(des_root));
+    let cell_str = py_join_str(des_root, gid);
+    if !Path::new(&cell_str).is_dir() {
+        return Err(ToolFailure::value(format!("命题区目录不存在：{cell_str}")));
+    }
+    // glob *-score-material.json（隐藏件排除，全径字典序）
+    let mut scores: Vec<String> = vec![];
+    let rd = fs::read_dir(Path::new(&cell_str)).map_err(|_| ToolFailure::not_found(&cell_str))?;
+    for ent in rd.flatten() {
+        let name = ent.file_name().to_string_lossy().into_owned();
+        if !name.starts_with('.') && name.ends_with("-score-material.json") {
+            scores.push(py_join_str(&cell_str, &name));
+        }
+    }
+    scores.sort();
+    if scores.is_empty() {
+        return Err(ToolFailure::value(format!(
+            "无计分材料：{cell_str}/*-score-material.json"
+        )));
+    }
+    let mut matched: Vec<Value> = vec![];
+    for sp in &scores {
+        let sc = parse_json(&read_text(Path::new(sp))?)?;
+        if !sc.is_object() {
+            return Err(ToolFailure::value(format!("计分材料非对象：{sp}")));
+        }
+        if score_matches_responses(&repo_root, &sc)? {
+            matched.push(sc);
+        }
+    }
+    if matched.is_empty() {
+        return Err(ToolFailure::value(
+            "无计分材料与当前响应文件哈希一致（响应已变而未重计分？）".to_string(),
+        ));
+    }
+    // max by (n_shots, responses_sha256)：严格大于才替换即平局取先现（Python max 语义）
+    let n_shots_key = |sc: &Value| -> f64 {
+        match sc.get("n_shots") {
+            Some(Value::Number(n)) => n.as_f64().unwrap_or(0.0),
+            _ => 0.0,
+        }
+    };
+    let sha_key = |sc: &Value| -> String {
+        sc.get("responses_sha256")
+            .and_then(|v| v.as_str())
+            .unwrap_or("")
+            .to_string()
+    };
+    let mut best_idx = 0usize;
+    for i in 1..matched.len() {
+        let best = (n_shots_key(&matched[best_idx]), sha_key(&matched[best_idx]));
+        let cand = (n_shots_key(&matched[i]), sha_key(&matched[i]));
+        if cand > best {
+            best_idx = i;
+        }
+    }
+    let score = matched[best_idx].clone();
+    let responses_resolved = py_resolve(&repo_root, score.get("responses_path"));
+    let trail_resolved = py_resolve(&repo_root, score.get("trail_path"));
+    let contract_resolved = py_resolve(&repo_root, score.get("contract_path"));
+    // Python：Path(score["contract_path"])，键缺席即 KeyError('contract_path')
+    let contract_str = match &contract_resolved {
+        Some(s) if !s.is_empty() => s.clone(),
+        Some(_) => ".".to_string(), // Python Path("") == PosixPath(".")
+        None => return Err(ToolFailure::key("contract_path")),
+    };
+    let contract = parse_json(&read_text(Path::new(&contract_str))?)?;
+    let topic_sha = contract
+        .get("proposition")
+        .and_then(|p| p.as_object())
+        .and_then(|o| o.get("topic_sha256"))
+        .and_then(|v| v.as_str())
+        .unwrap_or("")
+        .to_string();
+    // trail：resolved 真值即用，否则 cell 内默认名
+    let trail_str = match &trail_resolved {
+        Some(s) if !s.is_empty() => s.clone(),
+        _ => py_join_str(&cell_str, "flywheel-trail.jsonl"),
+    };
+    // topic 发现：cell topic.md 先行，topics_dirs 逐个 glob *.md；围堰 glob 顺序未定，
+    // 此处按全径字典序（sha 命中至多一件时同判），命中即取
+    let mut cands: Vec<String> = vec![py_join_str(&cell_str, "topic.md")];
+    for td in topics_dirs {
+        let dir_str = py_path_str(td);
+        let mut hits: Vec<String> = vec![];
+        if let Ok(rd) = fs::read_dir(Path::new(&dir_str)) {
+            for ent in rd.flatten() {
+                let name = ent.file_name().to_string_lossy().into_owned();
+                if !name.starts_with('.') && name.ends_with(".md") {
+                    hits.push(py_join_str(&dir_str, &name));
+                }
+            }
+        }
+        hits.sort();
+        cands.extend(hits);
+    }
+    let mut topic_path: Option<String> = None;
+    for cand in &cands {
+        let p = Path::new(cand);
+        if p.is_file() && sha256_file(p)? == topic_sha {
+            topic_path = Some(cand.clone());
+            break;
+        }
+    }
+    let topic_path = match topic_path {
+        Some(t) => t,
+        None => {
+            let head: String = topic_sha.chars().take(12).collect();
+            return Err(ToolFailure::value(format!(
+                "topic 按哈希无匹配：{head}（topics_dirs 覆盖不足）"
+            )));
+        }
+    };
+    let (dc_list, _runs) = load_dc_list(Path::new(&trail_str))?;
+    let mut material = Map::new();
+    material.insert("kind".into(), json!("tally-check-input"));
+    material.insert("gid".into(), json!(gid));
+    material.insert("topic_path".into(), json!(topic_path));
+    material.insert("topic_sha256".into(), json!(topic_sha));
+    material.insert("trail_path".into(), json!(trail_str));
+    material.insert("dc_fingerprint".into(), json!(fingerprint(&dc_list)));
+    material.insert(
+        "gate_verdict".into(),
+        score.get("gate_verdict").cloned().unwrap_or(Value::Null),
+    );
+    material.insert("criteria_version".into(), json!(CRITERIA_VERSION));
+    material.insert("contract_path".into(), json!(contract_str));
+    material.insert(
+        "contract_sha256".into(),
+        score.get("contract_sha256").cloned().unwrap_or(Value::Null),
+    );
+    material.insert(
+        "responses_path".into(),
+        responses_resolved.map(Value::String).unwrap_or(Value::Null),
+    );
+    material.insert(
+        "responses_sha256".into(),
+        score.get("responses_sha256").cloned().unwrap_or(Value::Null),
+    );
+    material.insert(
+        "n_shots".into(),
+        score.get("n_shots").cloned().unwrap_or(Value::Null),
+    );
+    material.insert(
+        "voids".into(),
+        match score.get("voids") {
+            Some(v) => v.clone(), // 键在即原样（含 null），缺席才缺省空数组（围堰 get(v, []) 语义）
+            None => json!([]),
+        },
+    );
+    material.insert("rules_version".into(), json!("des-011-r1"));
+    if py_truthy(score.get("identity_hash")) {
+        material.insert(
+            "identity_hash".into(),
+            score.get("identity_hash").cloned().unwrap_or(Value::Null),
+        );
+    }
+    // 正身透传承 pendsweep-solo：读 identity.core_hash 载入材料，缺席空缺不判败
+    if let Some(irp) = identity_report {
+        let irp_str = py_path_str(irp);
+        let p = Path::new(&irp_str);
+        if !p.is_file() {
+            return Err(ToolFailure::value(format!("identity 报告不存在：{irp_str}")));
+        }
+        let report = parse_json(&read_text(p)?)?;
+        let core = report
+            .get("identity")
+            .filter(|v| py_truthy(Some(v)))
+            .and_then(|v| v.as_object())
+            .and_then(|o| o.get("core_hash"))
+            .cloned();
+        if let Some(core) = core {
+            if py_truthy(Some(&core)) {
+                material.insert("core_hash".into(), core);
+            }
+        }
+    }
+    if let Some(bp) = baseline {
+        material.insert("seat_baseline_path".into(), json!(py_path_str(bp)));
+    }
+    if let Some(d) = date {
+        material.insert("date".into(), json!(d));
+    }
+    // 落盘：json.dumps(material, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
+    let out_str = py_path_str(out_path);
+    let op = Path::new(&out_str);
+    if let Some(parent) = op.parent() {
+        let ps = parent.to_string_lossy();
+        if !ps.is_empty() {
+            fs::create_dir_all(parent)
+                .map_err(|e| ToolFailure { kind: "OSError", msg: e.to_string() })?;
+        }
+    }
+    fs::write(op, format!("{}\n", py_canonical(&Value::Object(material.clone()))))
+        .map_err(|e| ToolFailure { kind: "OSError", msg: e.to_string() })?;
+    Ok(Value::Object(material))
+}
+
 // ---------- verify / watch / sign ----------
 
 fn verify_material(material_path: &str, report_path: &str) -> Result<i32, ToolFailure> {
@@ -901,9 +1255,73 @@ fn dispatch(cmd: &str, rest: &[String]) -> Result<i32, ToolFailure> {
             verify_material(f["--material"].as_str(), f["--report"].as_str())
         }
         "assemble" => {
-            // 落差申报一：确定性装配未移植。
-            eprintln!("tally assemble: 未移植（落差申报：确定性装配属边缘命令未随本件移植，见 bin 头注）");
-            exit(2);
+            // argparse 形：--gid/--des-root/--out 必带，--topics-dir 可重复累积，
+            // --baseline/--identity-report/--date 空串同缺席（围堰 if 值语义）
+            let mut flags: HashMap<String, String> = HashMap::new();
+            let mut topics: Vec<String> = vec![];
+            let mut i = 0usize;
+            while i < rest.len() {
+                let a = &rest[i];
+                let (name, inline) = match a.split_once('=') {
+                    Some((n, v)) if n.starts_with("--") => (n.to_string(), Some(v.to_string())),
+                    _ => (a.clone(), None),
+                };
+                if !name.starts_with("--") {
+                    usage_fail(&format!("意外位置参数: {a}"));
+                }
+                let val = match inline {
+                    Some(v) => v,
+                    None => {
+                        i += 1;
+                        if i >= rest.len() {
+                            usage_fail(&format!("{name} 缺值"));
+                        }
+                        rest[i].clone()
+                    }
+                };
+                match name.as_str() {
+                    "--topics-dir" => topics.push(val),
+                    "--gid" | "--des-root" | "--baseline" | "--identity-report" | "--date"
+                    | "--out" => {
+                        flags.insert(name, val);
+                    }
+                    other => usage_fail(&format!("未知旗标: {other}")),
+                }
+                i += 1;
+            }
+            for req in ["--gid", "--des-root", "--out"] {
+                if !flags.contains_key(req) {
+                    usage_fail(&format!("缺 {req}"));
+                }
+            }
+            let baseline = flags.get("--baseline").filter(|s| !s.is_empty()).cloned();
+            let date = flags.get("--date").filter(|s| !s.is_empty()).cloned();
+            let identity = flags
+                .get("--identity-report")
+                .filter(|s| !s.is_empty())
+                .cloned();
+            let material = assemble_material(
+                flags["--gid"].as_str(),
+                flags["--des-root"].as_str(),
+                &topics,
+                baseline.as_deref(),
+                date.as_deref(),
+                flags["--out"].as_str(),
+                identity.as_deref(),
+            )?;
+            println!(
+                "{}",
+                py_line(
+                    &json!({
+                        "assembled": py_path_str(flags["--out"].as_str()),
+                        "gid": material["gid"],
+                        "gate_verdict": material["gate_verdict"],
+                        "n_shots": material["n_shots"],
+                    }),
+                    true
+                )
+            );
+            Ok(0)
         }
         "watch" => {
             let f = parse_flags(&rest, &["--reports"], &["--reports"]);

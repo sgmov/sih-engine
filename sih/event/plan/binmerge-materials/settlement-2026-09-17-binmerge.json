@@ -1,0 +1,14 @@
+{
+  "batch": "binmerge",
+  "date": "2026-09-17",
+  "deliverables": {
+    "forensics": "leak-forensics.md：漏因三层即误分类（并发批 M 不存在，账册复核在案）、排除性分类无登记面、bypass 事由模板复读",
+    "incorporated": "src/bin 六件（tally 确定性装配移植加浮点排版对齐约 434 行、五 bin 引擎位默认包根解析）加 sih/event/plan 三 results 档批尾回填；内容按 dwfrun 最终版原样收编零改动",
+    "out_of_scope": "sih-tools 侧四件零触碰（冻结只读独立仓另裁）：AI-MANUAL 改动、tokens 登记册（活性账本逐笔增长属设计内）、m-retireform 三件",
+    "parking": "pk-108 入泊：排除性分类无登记面候闸面改造（bypass-orphan 事由须附处置指针加孤儿件带龄升级）",
+    "tests": "worktree cargo test --workspace：30 套件全绿零失败，gap_parser_pack_assets 含在内即六件入位后既有环境红自愈（主树归并后复跑确认为验收尾件）"
+  },
+  "kind": "settlement",
+  "session_id": "9a8f1fbc72624ed6",
+  "what": "六 bin 腿件收编批结算：dwfrun 最终版九件入库（六 bin 约 678 行加三 results 批尾回填），worktree 全量测试 30 套件全绿含 gap_parser 旧伤自愈，pk-108 过程缺口入泊，漏因三层查证随批档"
+}

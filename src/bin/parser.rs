@@ -8,6 +8,8 @@
 //! CLI：`parser parse --pack <语言包目录> --in <输入>`、
 //! `parser entries --pack <语言包目录> --in <输入> --out <输出>`、
 //! `parser lint --pack <语言包目录>`、`parser vectors --pack <语言包目录> [--freeze]`。
+//! --pack 解析：原样路径（绝对或 cwd 相对已存在）优先即显式覆盖；相对形原样
+//! 不存在时按引擎位默认包根候选序补解析（首位 exe 派生引擎仓根，gap-packs-assets）。
 //! 退出码三值：0 = 产树或抽取或校验过、1 = 包校验违例或输入不可读、2 = 工具异常。
 //!
 //! 落差申报（相对围堰，零粉饰）：
@@ -36,7 +38,7 @@ use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::fs;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 /// 围堰版本锚：sih-tools/parser/src/parser/__init__.py __version__。
 const VERSION: &str = "0.1.0";
@@ -2811,6 +2813,50 @@ fn read_input_chars(infile: &str) -> R<Vec<char>> {
     Ok(String::from_utf8_lossy(&raw).chars().collect())
 }
 
+// ============ 引擎位默认包根（SPEC-025 融回缺口 gap-packs-assets） ============
+
+const PACK_TOOL: &str = "parser";
+
+/// 显式 --pack 值解析：原样（绝对或 cwd 相对已存在）即用，兼容既有调用形；
+/// 相对形原样不存在时按引擎位候选序补解析（首位即引擎位，零 sih-tools/ 依赖）；
+/// 全不中则原样返回，交由既有"语言包目录不存在"路径如实报错。
+fn resolve_pack_input(raw: &str) -> PathBuf {
+    let as_given = PathBuf::from(raw);
+    if as_given.is_absolute() || as_given.is_dir() {
+        return as_given;
+    }
+    for root in engine_pack_roots() {
+        let cand = root.join(raw);
+        if cand.is_dir() {
+            return cand;
+        }
+    }
+    as_given
+}
+
+/// 引擎位默认包根候选序：exe 派生（引擎仓根/packs/<tool>）在前，
+/// 其后 cwd 自身逐级上溯两形（<祖>/packs/<tool> 与 <祖>/sih-engine/packs/<tool>）。
+fn engine_pack_roots() -> Vec<PathBuf> {
+    let mut out: Vec<PathBuf> = Vec::new();
+    if let Some(root) = std::env::current_exe().ok().and_then(|e| {
+        e.parent()
+            .and_then(|p| p.parent())
+            .and_then(|p| p.parent())
+            .map(|p| p.to_path_buf())
+    }) {
+        out.push(root.join("packs").join(PACK_TOOL));
+    }
+    if let Ok(cwd) = std::env::current_dir() {
+        let mut cur = Some(cwd.as_path());
+        while let Some(c) = cur {
+            out.push(c.join("packs").join(PACK_TOOL));
+            out.push(c.join("sih-engine").join("packs").join(PACK_TOOL));
+            cur = c.parent();
+        }
+    }
+    out
+}
+
 fn run() -> i32 {
     let args: Vec<String> = std::env::args().skip(1).collect();
     if args.is_empty() {
@@ -2844,6 +2890,8 @@ fn cmd_parse(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("parse 缺 --pack（必填）"),
     };
+    let pack_dir_buf = resolve_pack_input(pack_dir);
+    let pack_dir: &str = pack_dir_buf.to_str().unwrap_or(pack_dir);
     let infile = match &f.infile {
         Some(v) => v,
         None => usage_fail("parse 缺 --in（必填）"),
@@ -2861,6 +2909,8 @@ fn cmd_entries(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("entries 缺 --pack（必填）"),
     };
+    let pack_dir_buf = resolve_pack_input(pack_dir);
+    let pack_dir: &str = pack_dir_buf.to_str().unwrap_or(pack_dir);
     let infile = match &f.infile {
         Some(v) => v,
         None => usage_fail("entries 缺 --in（必填）"),
@@ -2902,6 +2952,8 @@ fn cmd_lint(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("lint 缺 --pack（必填）"),
     };
+    let pack_dir_buf = resolve_pack_input(pack_dir);
+    let pack_dir: &str = pack_dir_buf.to_str().unwrap_or(pack_dir);
     match lint_pack(pack_dir) {
         Ok(findings) => {
             for finding in &findings {
@@ -2928,6 +2980,8 @@ fn cmd_vectors(args: &[String]) -> R<()> {
         Some(p) => p,
         None => usage_fail("vectors 缺 --pack（必填）"),
     };
+    let pack_dir_buf = resolve_pack_input(pack_dir);
+    let pack_dir: &str = pack_dir_buf.to_str().unwrap_or(pack_dir);
     let report = run_vectors(pack_dir, f.freeze)?;
     if let Some(fails) = report.get("fail").and_then(|v| v.as_array()) {
         for fail in fails {

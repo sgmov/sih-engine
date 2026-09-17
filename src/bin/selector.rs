@@ -5,6 +5,8 @@
 //! predicates.py、route.py），只读对表移植，围堰源码零改动。
 //!
 //! CLI：`selector route --pack <谓词包目录> [--reference-time <ISO日期>] [MATERIAL...]`
+//! --pack 解析：原样路径（绝对或 cwd 相对已存在）优先即显式覆盖；相对形原样
+//! 不存在时按引擎位默认包根候选序补解析（首位 exe 派生引擎仓根，gap-packs-assets）。
 //! 退出码三值：0 = 路由毕无告警、1 = 路由毕有告警、2 = 输入非法。
 //! 核心行为链：pack（envelope.json + manifest.toml + routes.toml）驱动谓词按声明
 //! 序逐件机械求值，首败定路（route_on_fail）全过走 pass_route；轮记录携带 round
@@ -956,6 +958,50 @@ fn read_material(path: &Path) -> Result<Value, String> {
     Ok(v)
 }
 
+// ============ 引擎位默认包根（SPEC-025 融回缺口 gap-packs-assets） ============
+
+const PACK_TOOL: &str = "selector";
+
+/// 显式 --pack 值解析：原样（绝对或 cwd 相对已存在）即用，兼容既有调用形；
+/// 相对形原样不存在时按引擎位候选序补解析（首位即引擎位，零 sih-tools/ 依赖）；
+/// 全不中则原样返回，交由既有"pack directory missing"路径如实报错。
+fn resolve_pack_input(raw: &str) -> PathBuf {
+    let as_given = PathBuf::from(raw);
+    if as_given.is_absolute() || as_given.is_dir() {
+        return as_given;
+    }
+    for root in engine_pack_roots() {
+        let cand = root.join(raw);
+        if cand.is_dir() {
+            return cand;
+        }
+    }
+    as_given
+}
+
+/// 引擎位默认包根候选序：exe 派生（引擎仓根/packs/<tool>）在前，
+/// 其后 cwd 自身逐级上溯两形（<祖>/packs/<tool> 与 <祖>/sih-engine/packs/<tool>）。
+fn engine_pack_roots() -> Vec<PathBuf> {
+    let mut out: Vec<PathBuf> = Vec::new();
+    if let Some(root) = std::env::current_exe().ok().and_then(|e| {
+        e.parent()
+            .and_then(|p| p.parent())
+            .and_then(|p| p.parent())
+            .map(|p| p.to_path_buf())
+    }) {
+        out.push(root.join("packs").join(PACK_TOOL));
+    }
+    if let Ok(cwd) = std::env::current_dir() {
+        let mut cur = Some(cwd.as_path());
+        while let Some(c) = cur {
+            out.push(c.join("packs").join(PACK_TOOL));
+            out.push(c.join("sih-engine").join("packs").join(PACK_TOOL));
+            cur = c.parent();
+        }
+    }
+    out
+}
+
 fn main() {
     let args: Vec<String> = std::env::args().skip(1).collect();
     if args.is_empty() {
@@ -997,7 +1043,8 @@ fn main() {
         usage_fail("缺 --pack（必填）");
     };
 
-    let pack = match load_pack(Path::new(&pack_dir)) {
+    let pack_input = resolve_pack_input(&pack_dir);
+    let pack = match load_pack(&pack_input) {
         Ok(p) => p,
         Err(e) => emit_error(&format!("pack invalid: {e}")),
     };

@@ -33,4 +33,6 @@
 
 ## 五、结算
 
-（认证与 settle 与主树复跑读数批尾回填）
+管线与簇验收认证 b522a9ad；双仓 settle seq1 tools 62522df5 与 engine bc583c0，seq2 engine d14db68（terms 备份件）；收约 revoked 双仓归并；reconcile 双零（双仓 unrouted 0 cert_missing 0）；当日链 verify valid；terms.json 主树回补直改笔 f3ef256d（并行窗四词超集验真 239 词包载入零损）。
+
+主树真跑：cargo build 重编后新二进制烟测绿（域感知词即 canonical 检索命中 domaware-solo 结果档）；retriever_canonical_suite 4 passed 与 mem_recall_f_suite 9 passed 主树双绿；mcpline 全测 112 passed 加 15 failed——十五红俱环境干扰非回归：十四件 write_gate 撞他会话 mcpmanual-solo 再开后现持 sih-engine/doc/design 锁面、一件 heartbeat 属例行读数日态，与簇 A 的 HEAD 基线对照证同形（clusterA-env-control.log），README 既载绿读数以放锁窗复跑为准；本批自产 test_wengu_tools 十测与全部面计数投影断言主树绿。
