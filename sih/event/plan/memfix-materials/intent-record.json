@@ -1,0 +1,24 @@
+{
+  "session_id": "sess-zcode-260918-memfix",
+  "raw_input": "候令簿第一件推进 memfix 批即 locator_bridge 临时件掺名并行抖动修复，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "memfix 批：index_path 与 canonical pack 临时件名在 pid 后追加线程 id 消并行互踩，单元测试 index_path_distinct_across_threads 先红后绿，mem_recall 系套件零回归，settle 加 close 加推双远端。",
+    "exclusions": [
+      "src/retriever/mod.rs:371 retr-env 掺名位不在本批由 retrline 批域内顺带处置",
+      "函数签名与语义零变"
+    ],
+    "output_format": "src/retriever/locator_bridge.rs 单文件改动加批材料，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以红转绿与全量回归为证据",
+      "先红留痕纪律：修复前红证归档",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/retriever/locator_bridge.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

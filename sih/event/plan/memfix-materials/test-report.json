@@ -1,0 +1,14 @@
+{
+  "batch": "memfix",
+  "date": "2026-09-18",
+  "new_suite": "retriever::locator_bridge::tests::index_path_distinct_across_threads 1 passed（红转绿：实现前 8 线程全同路径即 1 败红证在案）",
+  "regression": {
+    "lib_retriever": "14 passed 0 failed 6 ignored（ignored 系既有 wenguobs）",
+    "mem_recall_f_suite": "9 passed 0 failed",
+    "主会工地复跑": "index_path_distinct 1 passed"
+  },
+  "changed": [
+    "src/retriever/locator_bridge.rs（+31/-3，两处掺名位）"
+  ],
+  "exit_code": 0
+}
