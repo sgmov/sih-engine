@@ -1,0 +1,16 @@
+{
+ "action": "enter",
+ "created_at": "2026-09-17",
+ "entry_id": "pk-108",
+ "id": "pk-108",
+ "ttl_days": 30,
+ "context": "binmerge 批漏因查证：结算纪律允许排除性分类（零触碰留原批）但无登记面，被排除件不留泊位不留待办不留账行即成无主孤儿；六 bin 悬置一点五日、孤儿闸逐批点名而不收敛、bypass 事由模板复读虚构并发批即此缺口实证（leak-forensics.md 在批材料）。",
+ "exit_condition": "闸面改造裁定并实装：bypass-orphan 事由须附处置指针（泊位或待办）无指针即拒；孤儿件带龄告警即同文件连续两批被点名升级呈报人节点",
+ "parking": {
+  "entered_at": "2026-09-17",
+  "ttl_days": 30
+ },
+ "source": "binmerge 批漏因查证（会话 9a8f1fbc72624ed6）",
+ "state": "parked",
+ "title": "排除性分类无登记面：被排除件成无主孤儿且告警不收敛"
+}

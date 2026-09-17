@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-zcode-260917-binmerge",
+  "raw_input": "用户 2026-09-17 令「补收编。另外查一下为啥会漏」，收编 dwfrun 六 bin 腿件与三 results 回填共九件，漏因三层查证随批档。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "binmerge 批：九件在途改收编入库（六 bin 腿件加三 results 批尾回填），worktree 全量测试零新回归，pk-108 过程缺口入泊（排除性分类无登记面），settle 归并后主树九件转净，推双远端。",
+    "exclusions": [
+      "sih-tools 侧四件零触碰——冻结只读独立仓另裁",
+      "六 bin 内容零改动——按 dwfrun 最终版原样收编，缺陷随批如实申报候修",
+      "gap_parser 两件既有红不在本批治——收编后仍红则如实呈报"
+    ],
+    "output_format": "九件收编 commit + 批材料含 leak-forensics.md + 意图认证入泊笔 + settle + close + 双远端",
+    "injected_constraints": [
+      "工程基线第四条：收编以全量测试对照基线为证据",
+      "红证：gap_parser 若仍红如实申报不清洗",
+      "SDDG：任务包先行",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/src/bin 六件加 sih-engine/sih/event/plan 三 results 档加任务包与批材料与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

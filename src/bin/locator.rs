@@ -26,9 +26,11 @@
 //!    标量按 Display 字符串出（tomllib 为 datetime 对象、Python json.dumps 即抛、
 //!    围堰该文件记入 parse_errors）。
 //! 5. 代码载体语言包定位改环境变量 PARSER_PACKS_ROOT（指语言包父目录）加相对
-//!    候选探测（packs/rust、sih-tools/parser/packs/rust 等），非 Python 包元数据
-//!    定位；未探得即该文件记入 parse_errors 不致命。语言包装载跳过 schema 全查
-//!    （parser bin 为全查位），缺件或 JSON 不合即按文件记 parse_errors。
+//!    候选探测（首位 exe 派生引擎仓根 packs/parser/rust 与 cwd 相对引擎位，
+//!    gap-packs-assets；围堰位 packs/rust、sih-tools/parser/packs/rust 等降为
+//!    后续兼容候选），非 Python 包元数据定位；未探得即该文件记入 parse_errors
+//!    不致命。语言包装载跳过 schema 全查（parser bin 为全查位），缺件或 JSON
+//!    不合即按文件记 parse_errors。
 //! 6. carriers 元数据串为本引擎自述（md-lite、serde_json、serde_yaml、toml、
 //!    judou 紧凑副本），非围堰的 markdown-it-py 与 PyYAML 版本串；围堰 Python 版
 //!    所建索引与本引擎互查 stale 即报 grammar 全量重建，同引擎自洽双跑一致。
@@ -1707,15 +1709,26 @@ fn resolve_rust_pack() -> Option<PathBuf> {
                     return Some(p);
                 }
             }
-            for cand in [
-                "packs/rust",
-                "sih-tools/parser/packs/rust",
-                "../sih-tools/parser/packs/rust",
-                "../../sih-tools/parser/packs/rust",
-            ] {
-                let p = PathBuf::from(cand);
-                if p.join("mapping.json").is_file() && p.join("tokens.json").is_file() {
-                    return Some(p);
+            // 引擎位默认候选首位（gap-packs-assets）：exe 派生引擎仓根与 cwd
+            // 相对引擎位在前；围堰位降为后续兼容候选，行为对表不受影响。
+            let mut cands: Vec<PathBuf> = Vec::new();
+            if let Some(engine_root) = std::env::current_exe().ok().and_then(|e| {
+                e.parent()
+                    .and_then(|p| p.parent())
+                    .and_then(|p| p.parent())
+                    .map(|p| p.to_path_buf())
+            }) {
+                cands.push(engine_root.join("packs/parser/rust"));
+            }
+            cands.push(PathBuf::from("packs/parser/rust"));
+            cands.push(PathBuf::from("sih-engine/packs/parser/rust"));
+            cands.push(PathBuf::from("packs/rust"));
+            cands.push(PathBuf::from("sih-tools/parser/packs/rust"));
+            cands.push(PathBuf::from("../sih-tools/parser/packs/rust"));
+            cands.push(PathBuf::from("../../sih-tools/parser/packs/rust"));
+            for cand in &cands {
+                if cand.join("mapping.json").is_file() && cand.join("tokens.json").is_file() {
+                    return Some(cand.clone());
                 }
             }
             None

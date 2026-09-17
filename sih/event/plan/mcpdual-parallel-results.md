@@ -49,7 +49,7 @@
 | F4 | 401 教学载荷；降只读；有牌域内读 | 过（发现四残项候裁不拦本判据：401 与域绑定与 CLI 交叉一致俱实证） |
 | F5 | 闸拒退出码与载荷合正典形 | 部分过（G1 与 stdio 补针合正典；G2 即发现三红证） |
 | F6 | 探针期零写入 | 部分过（G2 两行冗余即违约面本身，红证留痕如实申报；其余探针零写入，InferServer 域只读零触碰，登记册与会话册零新行） |
-| F7 | settle 归并 close，reconcile 零新增，链 verify valid | 收约时回填 |
+| F7 | settle 归并 close，reconcile 零新增，链 verify valid | 过（engine settle 22670d7 与 closeguard 546f2fd 与归并 4ee07b4，tools 零改动免 settle；reconcile 双仓 unrouted 与 cert_missing 双零，unbypassed 92 与 129 为既有存量类如实转述非本批新增；当日链 verify valid 10 笔尾哈希 3de607cb 即本批认证笔；收约后锁面会话双清零净态） |
 
 ## 六、队形验证
 
@@ -60,3 +60,20 @@
 - 簇档：materials/cluster-local-a/（summary 与 r1 至 r7 与 g1 与 g2 全件）与 materials/cluster-http-b/（summary 与 21 件原始响应与 99-commands.txt）与 materials/cluster-stdio-main/summary.json
 - 温故检索：materials/recall-topic-mcpline.md（61 行先例，零命中项无）
 - 红证：locks.ndjson 8174 与 8175 两行（不清洗，候裁后处置）；甲簇 g2.txt 全出参
+
+## 八、结算读数（收约补笔回填）
+
+- 双仓 settle：engine 工地提交 22670d7（段1 settle，cert 3de607cb），closeguard 预收 546f2fd，归并 4ee07b4；tools 工地零改动（零工具改动批）免 settle 如实申报。
+- 收约：close 三闸全过（calllog_gate unreleased 0、chain_gate checked trails 20、declaration_gate clean），双仓 worktree 拆除与分支删除，收据在 sih-tools/lease/ledger/receipts/mcpdual-parallel.json。
+- 对账：reconcile engine 与 tools 退出码一，成因即 unbypassed 既有存量类（92 与 129），本批两判据 unrouted 与 cert_missing 俱零新增。
+- 链面：2026-09-10 链 verify valid 10 笔，first b6c7e1c7 尾 3de607cb（本批认证笔）。
+- 红证处置候裁：locks.ndjson 8174 与 8175 两行冗余 acquired 留痕在册（发现三），本批不清洗。
+- 补笔后管线复跑见直改链笔申报。
+
+## 九、候裁处置后记（2026-09-10 用户令「待裁过得一，裁一过一执行一，未过入泊」）
+
+- HTTP 写能力确认（用户指位隔壁域）：InferServer 域内落盘证据坐实——会话 d04e81e7e4c265dd 全生命周期（2026-09-09T23:20 issued 至 2026-09-10T00:06 revoked），域链 2026-09-10 四笔（意图一加认证三）与 2026-09-09 一笔俱 verify valid，包材料五件在 sih/state/plan/；HTTP 面携 siinfer 活跃牌读回今日域链逐笔同哈希且零 identity_notice。判词：识别写面写路径与域锚定实证成立，第一域不再另添探针笔。
+- 过一执行一：发现二之 AGENTS.md MCP 节陈旧已修（实况改写含三正典指针与一致性判词指针）；发现五之 .zcode/config.json 旧 sihankor 条目（http://localhost:9741，enabled=false）已清除，mcp.servers 现役仅 sih。
+- 未过入泊：发现一与发现三与发现四并 heartbeat 描述命令形漂移入泊 pk-083（sih-tools/parking/materials/pk-083.json，停泊事件 1093cbe7，ttl 30 天，名录行在 sih-tools/PARKING-v1.md），出泊条件即用户裁修复形态。
+- 缺口消项：第一域活跃标识牌按需经管理台（:8765/tokens）人节点自签即开，HTTP 写确认已由第二域承载，不再候裁。
+- 本节与 pk-083 件与泊界名录行走直改链笔声明（no-session 主会处置位）。
