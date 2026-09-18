@@ -210,7 +210,7 @@ fn entry_covered(norm: &str, is_dir: bool, used: &BTreeMap<String, bool>) -> boo
 /// 为仓相对形，按仓名前缀化为台账同域（工作区相对）路径。任一仓 git 取数
 /// 失败（非 git 工地等）即整体回退旧 allow 近似口径：返回空集并标
 /// allow_fallback，罚单 detail 如实标注不静默。
-fn collect_used_paths(repos: &[Value]) -> (BTreeMap<String, bool>, &'static str) {
+pub(crate) fn collect_used_paths(repos: &[Value]) -> (BTreeMap<String, bool>, &'static str) {
     let fallback = (BTreeMap::new(), "allow_fallback");
     if repos.is_empty() {
         return fallback;
@@ -276,6 +276,67 @@ fn collect_used_paths(repos: &[Value]) -> (BTreeMap<String, bool>, &'static str)
         }
     }
     (used, "worktree_diff")
+}
+
+/// defectwave 批缺陷二：settle 时取样缓存承载面（申报出处
+/// sih/event/plan/usedpaths-materials/usedpaths-results.md 偏差申报节）。
+/// merge-then-close 形下 close 时取样读已归并空差分必假罚，取样点前移到
+/// `lease commit --stage settle` 成功后（彼时分支未归并 diff 为真），取样
+/// 结果落缓存件 `<locks 台账同目录>/usedpaths/<session_id>.json`；close 罚金
+/// 块优先读缓存，缓存缺席回落现行 close 时取样形（兼容存量会话，含不走过
+/// settle 的既有 harness）。取样纯函数 collect_used_paths 两边复用零复制。
+pub(crate) fn usedpaths_cache_path(locks_ledger: &Path, sid: &str) -> Option<PathBuf> {
+    locks_ledger
+        .parent()
+        .map(|p| p.join("usedpaths").join(format!("{}.json", sid)))
+}
+
+/// settle 成功位写缓存（best-effort：写失败回落 close 时取样形不阻断提交）。
+pub(crate) fn write_usedpaths_cache(
+    locks_ledger: &Path,
+    sid: &str,
+    used: &BTreeMap<String, bool>,
+    used_source: &str,
+) {
+    let Some(path) = usedpaths_cache_path(locks_ledger, sid) else {
+        return;
+    };
+    if let Some(dir) = path.parent() {
+        std::fs::create_dir_all(dir).ok();
+    }
+    let payload = json!({
+        "sampled_at": now_utc(),
+        "session_id": sid,
+        "used_paths": used.keys().cloned().collect::<Vec<String>>(),
+        "used_source": used_source,
+    });
+    if let Ok(text) = serde_json::to_string_pretty(&payload) {
+        std::fs::write(&path, text + "\n").ok();
+    }
+}
+
+/// close 罚金块读缓存：返回 (used 集, used_source, sampled_at)；缓存缺席或
+/// 不可解析即 None（回落 close 时取样形）。used_paths 集合存储形为字符串
+/// 数组（collect_used_paths 只产文件面条目，is_dir 恒 false）。
+pub(crate) fn read_usedpaths_cache(
+    locks_ledger: &Path,
+    sid: &str,
+) -> Option<(BTreeMap<String, bool>, String, String)> {
+    let path = usedpaths_cache_path(locks_ledger, sid)?;
+    let text = std::fs::read_to_string(path).ok()?;
+    let v: Value = serde_json::from_str(&text).ok()?;
+    let source = v.get("used_source").and_then(|x| x.as_str())?.to_string();
+    let sampled_at = v
+        .get("sampled_at")
+        .and_then(|x| x.as_str())
+        .unwrap_or("")
+        .to_string();
+    let mut used = BTreeMap::new();
+    for entry in v.get("used_paths").and_then(|x| x.as_array())? {
+        let s = entry.as_str()?;
+        used.insert(s.to_string(), false);
+    }
+    Some((used, source, sampled_at))
 }
 
 fn unowned_list(root: &Path, trail: &Path, locks_path: &Path) -> Vec<Value> {
@@ -1218,6 +1279,16 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
             }
         }
     }
+    // defectwave 批缺陷二：罚金取样优先读 settle 缓存（彼时分支未归并 diff
+    // 为真，merge-then-close 形不再假罚）；缓存缺席回落现行 close 时取样形
+    //（上 :664 附近取样在归并删支拆本前，兼容存量会话）。used_source 语义
+    // 零变（仍承载 worktree_diff/allow_fallback 原值），取样窗口出处经罚单
+    // detail.sampled_at 显形（仅罚单存在且缓存命中时在案，回执 schema 雷新键）。
+    let (used_effective_map, used_effective_source, cache_sampled_at) =
+        match read_usedpaths_cache(&locks_ledger, &sid) {
+            Some((m, s, at)) => (m, s, Some(at)),
+            None => (used_map, used_source.to_string(), None),
+        };
     let locked_map = face_entry_map(locked_raws);
     let allow: Vec<String> = session
         .get("allow")
@@ -1228,8 +1299,8 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
                 .collect()
         })
         .unwrap_or_default();
-    let used_effective = if used_source == "worktree_diff" {
-        used_map
+    let used_effective = if used_effective_source == "worktree_diff" {
+        used_effective_map
     } else {
         // 回退旧近似口径：used := allow 全集（§2.1 现口径），比对形仍前缀覆盖
         face_entry_map(allow)
@@ -1250,11 +1321,17 @@ pub(crate) fn cmd_close(m: &BTreeMap<String, Vec<String>>) {
             .parent()
             .map(|p| p.join("lockface-bills.ndjson"))
             .unwrap_or_else(|| PathBuf::from("lockface-bills.ndjson"));
+        let mut penalty_detail = json!({"unused_paths": unused, "used_source": used_effective_source});
+        if let Some(sa) = &cache_sampled_at {
+            // defectwave 缺陷二：取样窗口出处只入罚单 detail（罚单存在时），
+            // 回执 schema 零新增顶层键（T2 金向量逐字节不破）。
+            penalty_detail["sampled_at"] = json!(sa);
+        }
         append_row(
             &bills,
             &json!({
                 "bill_points": unused_count as i64 * UNUSED_LOCK_MULTIPLIER,
-                "detail": {"unused_paths": unused, "used_source": used_source},
+                "detail": penalty_detail,
                 "event_type": "unused_lock_penalty",
                 "identity_hash": identity_hash,
                 "locks_ndjson": locks_ledger.display().to_string(),

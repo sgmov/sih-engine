@@ -574,6 +574,23 @@ pub(crate) fn cmd_commit(m: &BTreeMap<String, Vec<String>>) {
         Err(e) => fail(1, json!({"error": format!("git commit failed: {}", e)})),
     }
     let (rc3, sha_out, _) = git(&repo_path, &["rev-parse", "--short", "HEAD"]);
+    // defectwave 批缺陷二（申报出处 sih/event/plan/usedpaths-materials/
+    // usedpaths-results.md 偏差申报节）：settle 提交成功即 used 路径取样点
+    //（彼时分支未归并 diff 为真），取样结果落缓存件 usedpaths/<session_id>.json
+    //（locks 台账同目录）；close 罚金块优先读缓存，缺席回落 close 时取样形。
+    // 取样纯函数复用 closegate::collect_used_paths 零复制；best-effort 写不
+    // 阻断提交（写失败回落旧形）。locks 路径缺省对表 cmd_close 缺省拼形。
+    if stage == "settle" {
+        let locks_ledger = match one(m, "locks") {
+            Some(l) if !l.is_empty() => PathBuf::from(l),
+            _ => ledger
+                .parent()
+                .map(|p| p.join("locks.ndjson"))
+                .unwrap_or_else(|| root.join("sih-tools/lease/ledger/locks.ndjson")),
+        };
+        let (used, used_source) = crate::closegate::collect_used_paths(&repos);
+        crate::closegate::write_usedpaths_cache(&locks_ledger, &sid, &used, used_source);
+    }
     let mut checks = vec![json!("session_active"), json!("staged_in_scope")];
     if stage == "settle" {
         checks.push(json!("cert_on_chain"));

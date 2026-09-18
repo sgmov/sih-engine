@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-defectwave",
+  "raw_input": "五缺陷并一修复批：四件系同日五批结算披露缺陷加密五件越限侦察读数，用户令「同意，我希望你作为主编排，拉起子代理顺序完成一 二 三」第二件承载，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "defectwave 批五件：open 输入闸零残留、罚金取样前移 settle 写缓存 close 优先、scrutinator w 形归一、cascadeclose 测试真可达 skip 形、attnanchor 域覆盖 last-row-wins；各先红后绿，全量回归零新红，真台账撤牌域告警灭，settle 加 close 以本批新二进制 dogfood，settle 加 close 加推双远端。",
+    "exclusions": [
+      "event_stream 系环境假红不修（任务书预告）",
+      "已入账假罚 9 点无冲销通道不回冲候令",
+      "三既有件判定语义零触碰"
+    ],
+    "output_format": "五生产码文件改加三新测试文件与既有测试适配加批材料，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以红转绿与全量回归为证据",
+      "先红留痕纪律：各件红证归档",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/bin/lease 与 src/scrutinator 与 src/bin/attnanchor 与 tests/ 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

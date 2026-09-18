@@ -247,6 +247,24 @@ fn t7_hooks_install_uninstall_roundtrip() {
 }
 
 // --------------------------------------------- F4 stem 闸全查与回归
+/// defectwave 批缺陷一闸适配夹具：open 正身与意图件校验前置后，stem 闸教学
+/// 验证须以合规两件入参抵达 stem 段（/nonexistent 松形不再可达 stem 闸）。
+fn write_open_input_fixtures(root: &Path) {
+    std::fs::write(
+        root.join("identity.json"),
+        json!({
+            "anomalies": [],
+            "identity": {
+                "core_hash": "t7fixturecorehash",
+                "identity_hash": "t7fixtureidentityhash",
+            },
+        })
+        .to_string(),
+    )
+    .unwrap();
+    std::fs::write(root.join("intent.json"), json!({"anchors": []}).to_string()).unwrap();
+}
+
 #[test]
 fn t7_stem_gate_full_query_rejects_unknown() {
     // fixture 域预置最小真词典包（envelope 加六 body，词表空）：spawn uv
@@ -276,6 +294,7 @@ fn t7_stem_gate_full_query_rejects_unknown() {
         "# uncoined-word-xyz\n\n## 请求写入 {#requested-writes}\n\n- sih-engine/src/x.rs\n",
     )
     .unwrap();
+    write_open_input_fixtures(&d.root);
 
     let (rc, _out, err) = run_lease(&lease_args(&[
         "open",
@@ -284,9 +303,9 @@ fn t7_stem_gate_full_query_rejects_unknown() {
         "--root",
         d.root.to_str().unwrap(),
         "--identity",
-        "/nonexistent/identity.json",
+        d.root.join("identity.json").to_str().unwrap(),
         "--intent",
-        "/nonexistent/intent.json",
+        d.root.join("intent.json").to_str().unwrap(),
         "--ledger",
         d.ledger.to_str().unwrap(),
         "--locks",
@@ -308,6 +327,7 @@ fn t7_stem_gate_pack_absent_skip_regression() {
     let d = make_sweep_domain("stemskip");
     // first 判定在引擎 stem_check_full 用目录级（sih-engine 与 sih-tools 目录
     // 在即真）。
+    write_open_input_fixtures(&d.root);
     let (_rc, out, err) = run_lease(&lease_args(&[
         "open",
         "--package",
@@ -315,9 +335,9 @@ fn t7_stem_gate_pack_absent_skip_regression() {
         "--root",
         d.root.to_str().unwrap(),
         "--identity",
-        "/nonexistent/identity.json",
+        d.root.join("identity.json").to_str().unwrap(),
         "--intent",
-        "/nonexistent/intent.json",
+        d.root.join("intent.json").to_str().unwrap(),
         "--ledger",
         d.ledger.to_str().unwrap(),
         "--locks",

@@ -316,27 +316,35 @@ fn parking_line(base: &Path, at: chrono::NaiveDate) -> String {
     run().unwrap_or_else(|_| "[泊界] 路由不可用（降级）".to_string())
 }
 
+/// 域覆盖面（defectwave 批缺陷五改 last-row-wins，申报出处：2026-09-18 侦察批
+/// 会话档案 sih-engine 侧候令簿——sim-aesthetic-workbench 撤牌笔后旧逐行扫形
+/// 仍收域根，撤牌域每次提交日误报「越限告警查无此人」）。按域取末行 status
+///（domain_root 即覆盖单元，同域多令牌时文件序末行为准），仅最终态 active 的
+/// 域入覆盖面；单行域与探测域行（/private/tmp 探针）行为不变；stopped→active
+/// 反转域仍覆盖。输出按域根排序（确定性面）。
 fn registry_domains(base: &Path) -> Vec<String> {
-    let mut domains: Vec<String> = Vec::new();
     let text = match std::fs::read_to_string(base.join("sih-tools/mcpline/ledger/tokens.ndjson")) {
         Ok(t) => t,
-        Err(_) => return domains,
+        Err(_) => return Vec::new(),
     };
+    let mut last_status: std::collections::BTreeMap<String, String> = Default::default();
     for line in text.lines() {
         let e: Value = match serde_json::from_str(line) {
             Ok(v) => v,
             Err(_) => continue,
         };
-        if e.get("status").and_then(|v| v.as_str()) != Some("active") {
-            continue;
-        }
+        let status = e.get("status").and_then(|v| v.as_str()).unwrap_or("");
         if let Some(d) = e.get("domain_root").and_then(|v| v.as_str()) {
-            if !d.is_empty() && !domains.iter().any(|x| x == d) {
-                domains.push(d.to_string());
+            if !d.is_empty() {
+                last_status.insert(d.to_string(), status.to_string());
             }
         }
     }
-    domains
+    last_status
+        .into_iter()
+        .filter(|(_, s)| s == "active")
+        .map(|(d, _)| d)
+        .collect()
 }
 
 fn commit_days(domain: &str) -> std::collections::BTreeMap<String, u64> {
