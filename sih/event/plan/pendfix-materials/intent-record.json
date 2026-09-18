@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-pendfix",
+  "raw_input": "用户令「修复」即 pendline dispatch 提示词 basis 枚举声明缺陷，pendlive 首活披露件，小批直修主会亲写。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pendfix 批：SYSTEM_PROMPT 补四键 schema 与 basis_regulation 枚举声明承评分器 declared_basis_enum 解析形，单元测试评分器同语义红转绿，活体回路验收即修复后 dispatch 产合同过 python 枚举解析与 fixture 评分，settle 加 close 加推双远端。",
+    "exclusions": [
+      "司梦域裁定即暂时忽略不纳入治理，记锚不入本包域",
+      "route 与 backfill 与 collect 三腿零触碰",
+      "评分器侧零改动即缺口在 dispatch 提示词单点"
+    ],
+    "output_format": "src/pendline/dispatch.rs 单文件改即提示词与单元测试，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以红转绿与活体回路为证",
+      "先红留痕纪律",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/pendline/dispatch.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
