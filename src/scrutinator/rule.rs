@@ -234,16 +234,28 @@ pub fn discover_workspace_root(path: &str) -> Option<String> {
     }
 }
 
-/// worktree 路径归一化：根相对形若为 worktrees/<仓>/<批>/... 即剥前三段，
-/// 前置仓段回仓相对形（工地内容是仓的完整检出）：
-/// worktrees/sih-engine/<批>/doc/x.md → sih-engine/doc/x.md。
-/// 段数不足四或首段非 worktrees 返回 None。
+/// worktree 路径归一化：根相对形补两布局（defectwave 批缺陷三，申报出处
+/// des017-results.md 与 parksync-results.md 偏差申报节）：
+/// - worktrees/<仓>/<批>/... 即剥前三段，前置仓段回仓相对形（工地内容是仓
+///   的完整检出）：worktrees/sih-engine/<批>/doc/x.md → sih-engine/doc/x.md。
+/// - w/<名>/... 即剥 w/ 前缀剥至引擎仓名（w/ 形今为引擎工地惯例，工地即
+///   sih-engine 仓完整检出）：w/<名>/doc/x.md → sih-engine/doc/x.md。
+/// 其余形（段数不足、首段非 worktrees/w、主树相对形）返回 None。
 pub fn normalize_worktree_rel(rel: &str) -> Option<String> {
     let comps: Vec<&str> = rel.split('/').collect();
-    if comps.len() < 4 || comps[0] != "worktrees" {
-        return None;
+    if comps[0] == "worktrees" {
+        if comps.len() < 4 {
+            return None;
+        }
+        return Some(format!("{}/{}", comps[1], comps[3..].join("/")));
     }
-    Some(format!("{}/{}", comps[1], comps[3..].join("/")))
+    if comps[0] == "w" {
+        if comps.len() < 3 {
+            return None;
+        }
+        return Some(format!("sih-engine/{}", comps[2..].join("/")));
+    }
+    None
 }
 
 /// 根锚定域判定（显式根参形，纯函数可测）：

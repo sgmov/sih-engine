@@ -513,3 +513,73 @@ fn scrutpath_worktree_path_form_exit_zero() {
     assert_eq!(code, 0, "工地 doc 路径形应判域内退出 0（域外即三窗病灶形），实际 {}", code);
 }
 
+
+// ============================================================================
+// defectwave 批缺陷三：工地路径域匹配缺口（w/ 工地布局）。
+// 病灶申报出处：sih/event/plan/des017-materials/des017-results.md 与
+// sih/event/plan/parksync-materials/parksync-results.md 偏差申报节
+//（2026-09-18 des017 与 parksync 两文档批核阅首跑 exit-2，工地路径未归一，
+// 分别以带域边界等价路径形与 corpus 匹配路径副本两法绕行确证真审）。
+// 修法：normalize_worktree_rel 既有 worktrees/<仓>/<批>/ 剥前缀回 <仓>/ 形
+// 之外补 w/<名>/ 剥前缀回 sih-engine/（w/ 形今为引擎工地惯例，工地即引擎仓
+// 完整检出）。域清单零扩面，exclude 语义零变。
+// ============================================================================
+
+#[test]
+fn defectwave_w_form_worktree_doc_in_domain() {
+    // w/ 工地 doc 形经根锚定归一后应判域内（修复前 false 即 exit-2 病灶）
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    assert!(
+        crate::scrutinator::rule::domain_match_rooted(
+            &dom,
+            root,
+            "/fake/ws-root/w/defectwave/doc/design/t.md"
+        ),
+        "w/ 工地 doc 形应判域内（不再 exit-2）"
+    );
+}
+
+#[test]
+fn defectwave_worktrees_form_regression_pin() {
+    // 既有归一形回归钉：worktrees/<仓>/<批>/ 剥前缀回 <仓>/ 行为零变
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    assert!(
+        crate::scrutinator::rule::domain_match_rooted(
+            &dom,
+            root,
+            "/fake/ws-root/worktrees/sih-engine/x/doc/design/t.md"
+        ),
+        "worktrees 工地 doc 形域内（既有归一形回归钉）"
+    );
+    assert_eq!(
+        crate::scrutinator::rule::normalize_worktree_rel("worktrees/sih-engine/x/doc/design/t.md")
+            .as_deref(),
+        Some("sih-engine/doc/design/t.md")
+    );
+}
+
+#[test]
+fn defectwave_w_form_normalization_exclude_and_guard_pins() {
+    // 归一单元：w/<名>/rest 剥前缀回 sih-engine/rest
+    assert_eq!(
+        crate::scrutinator::rule::normalize_worktree_rel("w/defectwave/doc/design/t.md").as_deref(),
+        Some("sih-engine/doc/design/t.md")
+    );
+    // 段数不足不误判；主树相对形与既有 None 面零回归
+    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("w/x"), None);
+    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("w"), None);
+    assert_eq!(crate::scrutinator::rule::normalize_worktree_rel("sih-engine/doc/x.md"), None);
+    // 域清单零扩面与 exclude 语义零变：w/ 形下 skills 排除仍生效，非 doc 面不入域
+    let dom = des001_spec();
+    let root = "/fake/ws-root";
+    assert!(
+        !crate::scrutinator::rule::domain_match_rooted(&dom, root, "/fake/ws-root/w/x/doc/skills/x.md"),
+        "w/ 形下 skills 排除仍生效"
+    );
+    assert!(
+        !crate::scrutinator::rule::domain_match_rooted(&dom, root, "/fake/ws-root/w/x/src/lib.rs"),
+        "w/ 形非 doc 面不入域（域清单零扩面）"
+    );
+}

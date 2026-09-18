@@ -266,6 +266,62 @@ fn stem_check(
     )
 }
 
+/// open 正身与意图件闸（defectwave 批缺陷一，申报出处
+/// sih/event/plan/usedpaths-materials/usedpaths-results.md 偏差申报节：件路径
+/// 已删后 open 仍空哈希签发）。一切副作用（目录骨架、worktree add、台账写、
+/// 账单）之前只读校验：存在、非空、JSON 可解析、identity 件含非空
+/// identity_hash（同义键 /identity/identity_hash 与 /identity/hash 对齐既有
+/// 取哈希面）；任一不满足即 die(2, 清晰报文) 零残留。承 openhyg 闸序纪律
+///（前五位只读化在前副作用在后）。
+fn validate_open_inputs(identity_path: &Path, intent_path: &Path) {
+    let id_bytes = std::fs::read(identity_path).unwrap_or_default();
+    if id_bytes.is_empty() {
+        die(
+            2,
+            "open 正身件缺席或空件，拒签发零残留（defectwave 缺陷一闸）",
+            json!({"identity": identity_path.display().to_string()}),
+        );
+    }
+    let id_json: Value = match serde_json::from_slice(&id_bytes) {
+        Ok(v) => v,
+        Err(e) => die(
+            2,
+            "open 正身件非合法 JSON，拒签发零残留（defectwave 缺陷一闸）",
+            json!({"identity": identity_path.display().to_string(), "err": e.to_string()}),
+        ),
+    };
+    let identity_hash = id_json
+        .pointer("/identity/identity_hash")
+        .or_else(|| id_json.pointer("/identity/hash"))
+        .and_then(|v| v.as_str())
+        .unwrap_or("");
+    if identity_hash.is_empty() {
+        die(
+            2,
+            "open 正身件缺非空 identity_hash，拒签发零残留（defectwave 缺陷一闸）",
+            json!({
+                "identity": identity_path.display().to_string(),
+                "keys_tried": ["/identity/identity_hash", "/identity/hash"],
+            }),
+        );
+    }
+    let intent_bytes = std::fs::read(intent_path).unwrap_or_default();
+    if intent_bytes.is_empty() {
+        die(
+            2,
+            "open 意图件缺席或空件，拒签发零残留（defectwave 缺陷一闸）",
+            json!({"intent": intent_path.display().to_string()}),
+        );
+    }
+    if let Err(e) = serde_json::from_slice::<Value>(&intent_bytes) {
+        die(
+            2,
+            "open 意图件非合法 JSON，拒签发零残留（defectwave 缺陷一闸）",
+            json!({"intent": intent_path.display().to_string(), "err": e.to_string()}),
+        );
+    }
+}
+
 fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
     // pk-103 收口：root 缺省自 cwd 上溯（canonical 先检域界即停再双仓标记），
     // 词典包路径随 root 锚定与 cwd 无关。
@@ -287,6 +343,8 @@ fn cmd_open(m: &BTreeMap<String, Vec<String>>) {
     if ledger.as_os_str().is_empty() || locks.as_os_str().is_empty() || bills.as_os_str().is_empty() {
         die(2, "open 须三台账显式全传（fixture scope）", json!(null));
     }
+    // defectwave 缺陷一闸：正身与意图件校验在前，一切副作用在后（零残留面）。
+    validate_open_inputs(&identity_path, &intent_path);
     // 目录骨架先行：域内 sih-tools/lease/ledger 面（与围堰行为对表）
     for d in [
         ledger.parent().unwrap_or(Path::new("/")),

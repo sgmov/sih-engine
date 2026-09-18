@@ -385,3 +385,87 @@ fn nongit_repo_falls_back_to_allow_approximation() {
         "回退近似口径：allow 内 B 豁免，未声明未写 A 入罚"
     );
 }
+
+/// defectwave 批缺陷二（红转绿主证，申报出处
+/// sih/event/plan/usedpaths-materials/usedpaths-results.md 偏差申报节）：
+/// merge-then-close 形假罚修复——settle 取样缓存形。settle 成功时（分支未
+/// 归并 diff 为真）取样落缓存件 usedpaths/<session_id>.json（locks 台账同
+/// 目录），close 罚金块优先读缓存；settle 后测试仓内手工归并再 close，实写
+/// 路径须零罚单（修复前 close 时取样读已归并空差分 used_source=worktree_diff
+/// 必假罚）。既有六件不走过 lease commit settle（harness 直 git 提交），缓存
+/// 缺席回落现行 close 时取样形，行为零变。
+#[test]
+fn settle_cache_survives_manual_merge_before_close() {
+    let d = make_domain("settlecache");
+    let sid = open_session(
+        &d,
+        "settlecache",
+        &["sih-engine/src/a.rs", "sih-engine/src/b.rs"],
+    );
+    // 工地实写两件但只 add 不自提交：staged 面留给 settle 提交（settle 要求非空 staged）。
+    let wt = d
+        .root
+        .join(format!("worktrees/sih-engine/{}", STEM));
+    for (p, text) in [("src/a.rs", "// fixture a\n"), ("src/b.rs", "// fixture b\n")] {
+        let full = wt.join(p);
+        std::fs::create_dir_all(full.parent().unwrap()).unwrap();
+        std::fs::write(full, text).unwrap();
+    }
+    let (ok, _, err) = git(&wt, &["add", "-A"]);
+    assert!(ok, "worktree add: {}", err);
+    // settle 链证：--cert 须在链（trail 载 certification_completed 事件）。
+    let trail = d.root.join("settle-trail.ndjson");
+    let cert_event = json!({
+        "event_hash": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+        "event_type": "certification_completed",
+    });
+    std::fs::write(&trail, serde_json::to_string(&cert_event).unwrap() + "\n").unwrap();
+    // 会话 worktree 面是 py_resolve 规范形（macOS /var→/private/var），canonical 对表。
+    let wt_canon = std::fs::canonicalize(&wt).unwrap();
+    let (code, out, err) = run_lease(
+        &d,
+        &[
+            "commit".into(),
+            "--stage".into(),
+            "settle".into(),
+            "--repo".into(),
+            wt_canon.display().to_string(),
+            "--seq".into(),
+            "1".into(),
+            "--subject".into(),
+            "fixture settle".into(),
+            "--cert".into(),
+            "fedcba9".into(),
+            "--trail".into(),
+            trail.display().to_string(),
+        ],
+    );
+    assert_eq!(code, 0, "settle 提交须过：{} {}", out, err);
+    // 测试仓内手工归并（merge-then-close 形）：master 吞并分支，close 时
+    // base..branch 差分必空——这正是病灶取样窗口。
+    let engine = d.root.join("sih-engine");
+    let (ok, _, merr) = git(&engine, &["merge", "--no-ff", "-m", "manual merge", "msh/usedpaths"]);
+    assert!(ok, "手工归并: {}", merr);
+    let (ok, diff_out, _) = git(&engine, &["diff", "--name-only", "master..msh/usedpaths"]);
+    assert!(ok && diff_out.trim().is_empty(), "归并后差分必空（病灶前提）: {}", diff_out);
+    lock_path(&d, &sid, "sih-engine/src/a.rs");
+    lock_path(&d, &sid, "sih-engine/src/b.rs");
+    unlock_path(&d, &sid, "sih-engine/src/a.rs");
+    unlock_path(&d, &sid, "sih-engine/src/b.rs");
+    let (code, out, err) = close(&d);
+    assert_eq!(code, 0, "收约须过：{} {}", out, err);
+    let penalties = penalty_events(&d);
+    assert!(
+        penalties.is_empty(),
+        "实写路径经 settle 缓存取样不得假罚（红态此处两笔假罚）：{:?}",
+        penalties
+    );
+    // settle 取样缓存承载面在案（修复形；红态缺席即回落假罚形）。
+    let cache = d
+        .locks
+        .parent()
+        .unwrap()
+        .join("usedpaths")
+        .join(format!("{}.json", sid));
+    assert!(cache.is_file(), "settle 取样缓存须落盘：{}", cache.display());
+}

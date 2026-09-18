@@ -444,6 +444,21 @@ fn cascadeclose_domain_form_skip_noted_and_projection_untouched() {
 fn cascadeclose_no_worktree_carrier_skip_and_no_main_write() {
     let d = make_domain("nocarrier", Corpus::StaleProjection, LedgerForm::Central);
     let _sid = open_with_chain(&d, "nocarrier", &["sih-tools"]);
+    // defectwave 批缺陷四：pk-104 openface 推导形后 open 声明 ["sih-tools"]
+    // 仍得引擎仓（声明面全无仓前缀回落缺省 sih-engine 与旗标面并集），
+    // skip 前提不可达即恒红。载体判定（closegate cascade_projection_rebuild）：
+    // 会话 sih-engine 工地在席且其 doc/CASCADE.json 在案即载体。故 open 后、
+    // close 前移走引擎工地目录模拟载体灭失（工程真实形：载体中途灭失），
+    // close 应报 cascade_gate reason no_worktree_carrier 且主树投影零直写。
+    let engine_worktree = d.root.join(format!("worktrees/sih-engine/{}", STEM));
+    assert!(engine_worktree.is_dir(), "引擎工地在席前提：{}", engine_worktree.display());
+    // git worktree remove 正形拆除（清主仓 worktree 元数据；裸 rm 会让
+    // branch -d 因「used by worktree」拒删）。拆后载体灭失。
+    let (ok, _, werr) = git(
+        &d.engine,
+        &["worktree", "remove", engine_worktree.to_str().unwrap()],
+    );
+    assert!(ok, "引擎工地拆除: {}", werr);
     let main_projection = d.engine.join("doc/CASCADE.json");
     let stale_bytes = std::fs::read_to_string(&main_projection).unwrap();
 

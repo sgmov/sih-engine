@@ -1,0 +1,22 @@
+{
+  "batch": "defectwave",
+  "date": "2026-09-18",
+  "new_suite": "defectwave_open_input_gate 5 passed（红转绿四件加对照组）加 lease_usedpaths_penalty 7 passed（新增 settle_cache_survives_manual_merge_before_close 红转绿）加 defectwave_scrutpath_wform 3 passed 加 scrutinator lib 新三件加 cascadeclose 6 passed（测试改形后）加 defectwave_attnanchor_coverage 3 passed（红转绿两件加双向钉）",
+  "regression": {
+    "lease_系": "t2_golden 4 与 t3 2 与 t4 1 与 t5 5 与 t6 5 与 t7 7 与 open_allow_parse 2 与 openface 4 与 gap_locksview 2 全绿",
+    "lib_全量": "257 passed 1 failed 8 ignored（唯一红系 event_stream 工地环境假红族任务书预告未触碰）",
+    "集成全量": "mergeall 全系与 attractor 系与 gap 系约 50 套全绿",
+    "真台账验证": "修复后 binary 对真工作区读数越限告警零条即撤牌域告警灭",
+    "主会抽测复跑": "open_input_gate 5 与 usedpaths 7 与 attnanchor_coverage 3 俱绿"
+  },
+  "changed": [
+    "src/bin/lease.rs（validate_open_inputs）",
+    "src/bin/lease/closegate.rs（缓存三助手与罚金块缓存优先）",
+    "src/bin/lease/commitlaw.rs（settle 后取样写缓存）",
+    "src/scrutinator/rule.rs（w/ 形归一）",
+    "src/scrutinator/tests.rs（+3）",
+    "src/bin/attnanchor.rs（registry_domains last-row-wins）",
+    "tests/ 五文件改加三文件新立"
+  ],
+  "exit_code": 0
+}

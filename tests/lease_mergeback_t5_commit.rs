@@ -62,6 +62,21 @@ fn make_domain(tag: &str) -> Domain {
     std::fs::write(root.join("sih/ledger/sessions.ndjson"), "").unwrap();
     std::fs::write(root.join("sih/ledger/locks.ndjson"), "").unwrap();
     std::fs::write(root.join("sih/ledger/bills.ndjson"), "").unwrap();
+    // defectwave 批缺陷一闸适配：open 正身与意图件校验前置后，harness 不得再
+    // 依赖缺席零校验松形，夹具补合规两件（本件验证对象是 commit 面非 open 闸）。
+    std::fs::write(
+        root.join("identity.json"),
+        json!({
+            "anomalies": [],
+            "identity": {
+                "core_hash": "t5fixturecorehash",
+                "identity_hash": "t5fixtureidentityhash",
+            },
+        })
+        .to_string(),
+    )
+    .unwrap();
+    std::fs::write(root.join("intent.json"), json!({"anchors": []}).to_string()).unwrap();
     Domain {
         trail: root.join("sih/event/trail"),
         ledger: root.join("sih/ledger/sessions.ndjson"),
@@ -95,7 +110,20 @@ fn run_lease(domain: &Domain, args: &[&str]) -> (i32, String, String) {
 }
 
 fn open_session(domain: &Domain) -> (String, PathBuf) {
-    let (code, out, err) = run_lease(domain, &["open", "--package", "goldc", "--at", "2026-09-13"]);
+    let (code, out, err) = run_lease(
+        domain,
+        &[
+            "open",
+            "--package",
+            "goldc",
+            "--at",
+            "2026-09-13",
+            "--identity",
+            domain.root.join("identity.json").to_str().unwrap(),
+            "--intent",
+            domain.root.join("intent.json").to_str().unwrap(),
+        ],
+    );
     assert_eq!(code, 0, "open failed: {} {}", out, err);
     let receipt: Value = serde_json::from_str(&out).unwrap();
     let sid = receipt["session_id"].as_str().unwrap().to_string();
