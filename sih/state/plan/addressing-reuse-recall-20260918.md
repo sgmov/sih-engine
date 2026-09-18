@@ -1,0 +1,3 @@
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/draft/setsp-reuse-decision-2026-07-22.md@121-122","axis":"semantic","excerpt":"复用状态\n: 直接复用","matched":"复用\n寻址","at":"2026-09-18","source_domain":"legacy-sihankor"}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/draft/setsp-reuse-decision-2026-07-22.md@196-197","axis":"semantic","excerpt":"复用状态\n: 直接复用","matched":"复用\n寻址","at":"2026-09-18","source_domain":"legacy-sihankor"}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/draft/setsp-reuse-decision-2026-07-22.md@243-244","axis":"semantic","excerpt":"复用状态\n: 直接复用","matched":"复用\n寻址","at":"2026-09-18","source_domain":"legacy-sihankor"}
