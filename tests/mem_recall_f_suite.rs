@@ -1,6 +1,10 @@
 //! 项目记忆实装批 F 锚定集成测试，承接 SPEC-007 验收判据与 SPEC-008 测试计划。
 //!
 //! 真实工作区材料跑 F-1 至 F-8 与 F-10，红态即桩入口 todo 宏，绿态即实装完成。
+//!
+//! testhard 批（2026-09-18）：F-7 双跑输入快照冻结加固（件一），病灶申报出处
+//! defectwave 波后全量回归记录——全量跑窗口内当日链被并发会话合法追加，
+//! 活 trail 背靠背双跑假红；详见 f7 测试体注记。
 
 use std::collections::BTreeSet;
 use std::path::{Path, PathBuf};
@@ -186,11 +190,125 @@ fn f6_no_judgment_fields() {
 }
 
 /// F-7 确定性即同参双跑逐字节一致。
+///
+/// testhard 批件一加固。病灶申报出处：defectwave 波后全量回归记录（2026-09-18）
+/// ——全量跑 349 秒窗口内当日链被并发会话合法追加，旧形活 trail 背靠背双跑
+/// 之间链面变行即假红（单跑必绿，2026-09-18 实证 301.95 秒绿）。修法把双跑
+/// 输入冻结：trail（事件轴竞态面）与 canonical 内嵌记忆包 include 语料面
+///（主题轴输入）快照拷贝进临时 canonical 城形根，两跑同指快照断言逐字节
+/// 一致；recall 真代码路径零冻结（locator 子进程、链加载、排序、序列化全实
+/// 跑）。真 trail 冒烟形弃留申报：排序行集等断言在跑间追加场景仍假红（追加即增行、
+/// 集合必变），冻结形是唯一对竞态干净的双跑形。红证机制复现：活链双跑跑间
+/// 追一行即逐字节断言红、同场景快照形绿（testhard 批 scratch 实测留汇报）。
 #[test]
 fn f7_double_run_identical() {
-    let a = rows_to_ndjson(&recall(&args_real(&["pk-024", "recall"], &["certification_completed"], None, None)).expect("首跑"));
-    let b = rows_to_ndjson(&recall(&args_real(&["pk-024", "recall"], &["certification_completed"], None, None)).expect("再跑"));
-    assert_eq!(a, b, "同参双跑须逐字节一致");
+    let snap = f7_snapshot_root().expect("快照根构建");
+    let args_at_snap = || RecallArgs {
+        root: snap.path().to_path_buf(),
+        topics: vec!["pk-024".to_string(), "recall".to_string()],
+        events: vec!["certification_completed".to_string()],
+        since: None,
+        until: None,
+        words: Vec::new(),
+        miss_log: None,
+        semantic: None,
+        archives: Vec::new(),
+        at: "2026-08-27T19:30:00+08:00".to_string(),
+    };
+    let a = rows_to_ndjson(&recall(&args_at_snap()).expect("首跑"));
+    let b = rows_to_ndjson(&recall(&args_at_snap()).expect("再跑"));
+    assert!(!a.is_empty(), "快照双跑输出非空");
+    assert_eq!(a, b, "同参双跑（冻结输入）须逐字节一致");
+    // 双轴皆在面：事件轴证 trail 快照承载真链材料，主题轴证语料快照在位。
+    let axes: BTreeSet<String> = a
+        .lines()
+        .filter_map(|l| {
+            serde_json::from_str::<Value>(l)
+                .ok()
+                .and_then(|v| v["axis"].as_str().map(|s| s.to_string()))
+        })
+        .collect();
+    assert!(
+        axes.contains("event") && axes.contains("topic"),
+        "事件轴与主题轴双在面，实见 {axes:?}"
+    );
+}
+
+/// F-7 快照根：canonical 城形临时根，收容 recall 全部只读输入。
+///
+/// 形制择定申报：快照根取 canonical 城形（sih/ledger 标记），非 first_domain
+/// 镜像——first_domain 形的 locator 码根=root/sih-tools/locator 须整仓拷贝
+/// 或 symlink，而 locator pyproject 带 "../parser" 相对路径依赖，symlink 形
+/// uv 解析必败（status=2 实证）；canonical 形 locator 码根经祖先上溯定位真
+/// sih-tools/locator（零 symlink 零拷贝，uv 子进程照实跑）。落位居
+/// CARGO_MANIFEST_DIR/target/ 下（祖先链含 sih-tools，构建产物位零工作区
+/// 污染），TempDir 随测自清。
+///
+/// 快照面＝canonical 内嵌记忆包 include 全域（locator_bridge::
+/// CANONICAL_MEMORY_PACK）：trail 全量 ndjson（事件轴竞态病灶面）加
+/// sih/event/plan/*-results.md 加 sih/state/plan/*.md 加
+/// sih/state/parking/materials/*.json 加 sih/state/parking/PARKING-v1.md，
+/// 源自 real_root 引擎仓 sih 树。源缺席域静默跳过（快照面可裁，双跑一致性
+/// 不受缺席影响）。
+fn f7_snapshot_root() -> std::io::Result<tempfile::TempDir> {
+    let ws = real_root();
+    let base = Path::new(env!("CARGO_MANIFEST_DIR")).join("target/f7-snap");
+    std::fs::create_dir_all(&base)?;
+    let snap = tempfile::Builder::new().prefix("run-").tempdir_in(&base)?;
+
+    // canonical 城形标记与 sih 树骨架（layout_form 判据 root/sih/ledger）。
+    std::fs::create_dir_all(snap.path().join("sih/ledger"))?;
+
+    // trail：事件轴输入，竞态病灶面，全量 ndjson 冻结。
+    f7_copy_flat(
+        &ws.join("sih-engine/sih/event/trail"),
+        &snap.path().join("sih/event/trail"),
+        &|_| true,
+    )?;
+    // canonical 内嵌记忆包 include 面：主题轴语料。
+    f7_copy_flat(
+        &ws.join("sih-engine/sih/event/plan"),
+        &snap.path().join("sih/event/plan"),
+        &|name| name.ends_with("-results.md"),
+    )?;
+    f7_copy_flat(
+        &ws.join("sih-engine/sih/state/plan"),
+        &snap.path().join("sih/state/plan"),
+        &|name| name.ends_with(".md"),
+    )?;
+    f7_copy_flat(
+        &ws.join("sih-engine/sih/state/parking/materials"),
+        &snap.path().join("sih/state/parking/materials"),
+        &|name| name.ends_with(".json"),
+    )?;
+    let parking_doc = ws.join("sih-engine/doc/governance/PARKING-v1.md");
+    if parking_doc.is_file() {
+        std::fs::copy(
+            &parking_doc,
+            snap.path().join("sih/state/parking/PARKING-v1.md"),
+        )?;
+    }
+    Ok(snap)
+}
+
+/// 单层按名滤拷贝（pack include 单层 glob 形），源缺席静默跳过。
+fn f7_copy_flat(src: &Path, dst: &Path, keep: &dyn Fn(&str) -> bool) -> std::io::Result<()> {
+    if !src.is_dir() {
+        return Ok(());
+    }
+    std::fs::create_dir_all(dst)?;
+    for entry in std::fs::read_dir(src)? {
+        let entry = entry?;
+        if !entry.file_type()?.is_file() {
+            continue;
+        }
+        let name = entry.file_name();
+        let Some(name) = name.to_str() else { continue };
+        if keep(name) {
+            std::fs::copy(entry.path(), dst.join(&name))?;
+        }
+    }
+    Ok(())
 }
 
 /// F-8 退化不崩即底座件缺席报缺席件名退出码二，五档载体原样无损。

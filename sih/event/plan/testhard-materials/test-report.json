@@ -1,0 +1,19 @@
+{
+  "batch": "testhard",
+  "date": "2026-09-18",
+  "new_suite": "scope_tests 10/10 含新三件（红转绿钉加 splinter 白名单钉加非日期 trail 声明面钉）；F 套件 9/9 含快照形 f7",
+  "regression": {
+    "假红族清零": "30 红留档，修后三形（worktree 共享 target 加主树裸跑加自有 target）--lib 262/0 与 258/0 与 262/0 俱绿",
+    "全量": "lease 系与 pendline 15/0 与 cascadeclose 6/0 与 attractor 系俱绿",
+    "主会抽测": "non_chain_ndjson 1 passed 与 lib --lib spot 绿"
+  },
+  "changed": [
+    "tests/mem_recall_f_suite.rs（f7 快照形）",
+    "src/testbin.rs（新立两级解析）",
+    "src/lib.rs（cfg(test) 挂载）",
+    "src/scrutinator/tests.rs（bin() 助手）",
+    "src/event_stream/tdd_tests.rs 与 chainstamp_tests.rs（寻址点切换）",
+    "src/event_stream/park.rs（load_parking_scope 收窄）"
+  ],
+  "exit_code": 0
+}

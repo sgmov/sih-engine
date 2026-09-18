@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-testhard",
+  "raw_input": "双波第一波 testhard 批：f7 活工作区竞态加固加假红族 CARGO_BIN_EXE 化扫净加 scribe park 重放面收窄，用户令「那你调2个子代理，把2波都做了」承载，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "testhard 批三件：f7 冻结输入双跑根除活链竞态假红；三十件假红族两级解析扫净主树与工地双形皆绿；park 重放收窄规范链文件面 splinter 白名单保留；各先红后绿全量回归零新红，settle 加 close 加推双远端。",
+    "exclusions": [
+      "lease 面测试旧寻址残留候后续批（禁改条款）",
+      "真 trail 冒烟形弃留申报",
+      "retriever 与 lease 语义与 attractor 与 pendline 零触碰"
+    ],
+    "output_format": "六文件改加 testbin.rs 新立即批材料，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "工程基线第四条：修以红转绿与全量回归为证据",
+      "先红留痕纪律：三十件红名单在案",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine tests/mem_recall_f_suite.rs 加 src/scrutinator 加 src/event_stream 加 src/testbin.rs 加 src/lib.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

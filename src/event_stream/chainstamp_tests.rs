@@ -1,5 +1,9 @@
 //! chainstamp-solo 四族测试：链铸时戳、旧行零动、confirm 三态、单调拒收不可达。
 //! 先红后绿——红相即旧码对迟到 hint 抛 TimestampNotMonotonic 且 confirm 命令缺席。
+//!
+//! testhard 批件二（2026-09-18）：scribe 二进制寻址统一切 crate::testbin 两级
+//! 解析——旧形 `CARGO_MANIFEST_DIR/target/debug/scribe` 在 worktree 工地形
+//! （共享 CARGO_TARGET_DIR）必红，修前红证 confirm_three_states 留档。
 
 #[cfg(test)]
 mod chainstamp {
@@ -42,12 +46,7 @@ mod chainstamp {
     }
 
     fn scribe_bin() -> PathBuf {
-        let manifest = env!("CARGO_MANIFEST_DIR");
-        let bin = PathBuf::from(manifest).join("target/debug/scribe");
-        if !bin.exists() {
-            panic!("scribe 未构建");
-        }
-        bin
+        crate::testbin::bin("scribe")
     }
 
     // ── 族一：链铸时戳——迟到 hint 铸值抬升、未来 hint 原样直通、链序严格单调 ──

@@ -1,4 +1,9 @@
 //! TDD 六组测试承 SPEC-006 测试计划，先红后绿。
+//!
+//! testhard 批件二（2026-09-18）：二进制寻址点统一切 crate::testbin 两级解析
+//!（CARGO_BIN_EXE 运行期在位优先，lib 测试面回落 current_exe 同胞定位）——
+//! 旧形 `CARGO_MANIFEST_DIR/target/debug/scribe` 在 worktree 工地形（共享
+//! CARGO_TARGET_DIR）必红，修前红名单 t2/t6/t7/t11/ga1/ga2/ga3/ga4 八件留档。
 
 #[cfg(test)]
 mod tdd {
@@ -8,8 +13,13 @@ mod tdd {
         append, certification_event, compute_event_hash, intent_event, load_events, park_event,
         verify, Actor, ActorType, Event, EventInput, VerifyRange,
     };
-    use std::path::PathBuf;
+    use std::path::{Path, PathBuf};
     use std::process::Command;
+
+    /// scribe 引擎件二进制位（testhard 批件二，寻址机制见文件头注）。
+    fn scribe_bin() -> PathBuf {
+        crate::testbin::bin("scribe")
+    }
 
 
 
@@ -53,14 +63,22 @@ mod tdd {
     // T2 生产复验：在场文件全量 valid 且目录非空。
     // 恰数断言已除即工具书简退役后日文件数随退役批迁移浮动，死数与本意无关，
     // 存量红定性见 lockguard-solo 结果档即主线未改源同红。
+    // testhard 批件二：目录定位改 CARGO_MANIFEST_DIR 祖先链上溯寻
+    // sih-tools/scribe/trail——旧形两条 manifest 相对径在 worktree 工地形
+    // （manifest 下无 ../sih-tools）必红，修前红证 t2 留档。
     #[test]
     fn t2_production_trails_verify() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let dir = ["../sih-tools/scribe/trail", "../../../sih-tools/scribe/trail"]
-            .iter()
-            .map(|c| manifest.join(c))
-            .find(|d| d.exists())
-            .expect("生产 trail 目录存在");
+        let mut cur: &Path = Path::new(env!("CARGO_MANIFEST_DIR"));
+        let dir = loop {
+            let Some(parent) = cur.parent() else {
+                panic!("生产 trail 目录存在：自 {} 祖先链上溯无 sih-tools/scribe/trail", env!("CARGO_MANIFEST_DIR"));
+            };
+            let cand = parent.join("sih-tools/scribe/trail");
+            if cand.is_dir() {
+                break cand;
+            }
+            cur = parent;
+        };
         let mut files: Vec<PathBuf> = std::fs::read_dir(&dir)
             .expect("生产 trail 目录存在")
             .filter_map(|e| e.ok())
@@ -179,11 +197,7 @@ mod tdd {
     // T6 scribe 退出码三值即本名回滚后。
     #[test]
     fn t6_scribe_exit_codes() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
-        if !bin.exists() {
-            panic!("scribe 未构建");
-        }
+        let bin = scribe_bin();
         let trail = temp_trail("cli");
         let _ = std::fs::remove_file(&trail);
         let ok = Command::new(&bin).args(["verify", "--trail", "/nonexistent.ndjson"]).output().unwrap();
@@ -260,8 +274,7 @@ mod tdd {
     // G-A1 append 工地链副本拒退出码二载错文。
     #[test]
     fn ga1_append_worktree_trail_rejected() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
+        let bin = scribe_bin();
         let wt = worktree_trail();
         let out = Command::new(&bin)
             .args(["append", "--report", cert_report().to_str().unwrap(), "--exit-code", "0", "--trail", wt.to_str().unwrap()])
@@ -275,8 +288,7 @@ mod tdd {
     // G-A2 record 工地链副本拒退出码二。
     #[test]
     fn ga2_record_worktree_trail_rejected() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
+        let bin = scribe_bin();
         let wt = worktree_trail();
         let reading = std::env::temp_dir().join(format!("guard-reading-{}.json", std::process::id()));
         let rd = r#"{"dimension":"convergence","subject":"sih-engine","value":0.5,"window":"2026-08-01/2026-08-30","formula_version":"ga-1","computed_at":"2026-08-30","inputs_digest":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}"#;
@@ -301,8 +313,7 @@ mod tdd {
     // G-A3 intent 工地链副本拒退出码二。
     #[test]
     fn ga3_intent_worktree_trail_rejected() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
+        let bin = scribe_bin();
         let wt = worktree_trail();
         let out = Command::new(&bin)
             .args(["intent", "--record", intent_record().to_str().unwrap(), "--validation", valid_rec().to_str().unwrap(), "--trail", wt.to_str().unwrap()])
@@ -316,8 +327,7 @@ mod tdd {
     // G-A4 park 工地链副本拒退出码二。
     #[test]
     fn ga4_park_worktree_trail_rejected() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
+        let bin = scribe_bin();
         let wt = worktree_trail();
         let rec = std::env::temp_dir().join(format!("guard-park-{}.json", std::process::id()));
         let rp = json!({"action": "enter", "entry_id": "g-test", "title": "t", "exit_condition": "c", "ttl_days": 3});
@@ -338,11 +348,7 @@ mod tdd {
     // 修复前读算追加无锁窗口：两进程同尾算 prev_hash 双写即链分叉 verify 破。
     #[test]
     fn t7_concurrent_append_race_two_processes() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
-        if !bin.exists() {
-            panic!("scribe 未构建");
-        }
+        let bin = scribe_bin();
         let trail = temp_trail("race2");
         let _ = std::fs::remove_file(&trail);
         let sessions = temp_trail("race-sess");
@@ -532,11 +538,7 @@ mod tdd {
     // 形放行。
     #[test]
     fn t11_direct_agent_requires_identity_report() {
-        let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        let bin = manifest.join("target/debug/scribe");
-        if !bin.exists() {
-            panic!("scribe 未构建");
-        }
+        let bin = scribe_bin();
         let trail = temp_trail("direct");
         let _ = std::fs::remove_file(&trail);
         let sessions = temp_trail("direct-sess");
