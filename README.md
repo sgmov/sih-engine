@@ -191,9 +191,9 @@ critsweep 的 --root 指工作区根；只克隆了单仓的话，在飞面降�
 | 位置 | 干什么 |
 |---|---|
 | src/ | 引擎库：正文所述各机制加 MCP 服务端 |
-| src/bin/ | 命令行工具：lease、scribe、critsweep、identity 等 |
+| src/bin/ | 命令行工具：lease、scribe、critsweep、pendline（候裁处置编排）、identity 等 |
 | sih/event/trail/ | 治理账本（哈希链），一天一文件，只经 scribe 写入 |
-| sih/state/parking/ | 未决事项的停靠区 |
+| sih/state/parking/ | 未决事项的停靠区；historic/ 存已办结归档 |
 | packs/ | 规则、格式、路由的纯数据包 |
 | doc/ | 治理文档；doc/guide/ 入门，doc/decision/ 决策档案 |
 
