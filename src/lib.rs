@@ -18,6 +18,10 @@ pub mod scrutinator;
 pub mod tools_registry;
 pub mod view;
 
+/// 测试专用二进制定位助手（testhard 批件二），只入测试编译面。
+#[cfg(test)]
+pub(crate) mod testbin;
+
 // Re-export the public API
 pub use ask3repeater::{
     intent_event_input, validate, Anchor, Ask3Error, Domain, DomainContract, DomainTag,

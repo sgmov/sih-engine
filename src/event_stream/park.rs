@@ -163,11 +163,18 @@ pub fn park_event(
     }
 }
 
-/// 泊界账本重放面即链目录全量，承 parkreplay-solo 修订一。
+/// 泊界账本重放面收窄即规范链文件面（testhard 批件三）。
 ///
-/// park 配对门的重放面从 --trail 单链文件扩为同目录全部 ndjson 按名序，
-/// 跨天出泊即泊入在先日链的出泊机械可达。追加面仍由调用方以 --trail
-/// 单文件承载即当日链自身链序，本函数只读不写。
+/// park 配对门的重放面从 --trail 单链文件扩为同目录规范链文件集按名序
+/// （parkreplay-solo 修订一原形），本批收窄其成员判：日期形
+/// `<YYYY-MM-DD>.ndjson` 链文件，加日期前缀 splinter 分叉保全件形
+/// `<YYYY-MM-DD>-*-splinter.ndjson`（如 2026-08-28-pk023spec-pre-replay-
+/// splinter.ndjson，重复入泊笔去重语义由名序后真链覆盖承载，零破坏），加
+/// --trail 显式指定文件本身（链文件身份由调用方声明承载，测试形
+/// trail.ndjson 兼容）。其余 ndjson（随手笔记等非链件）一律忽略——病灶
+/// 申报出处：sih/event/plan/pendline-materials/pendline-results.md 测试发现
+/// 处置节（scribe park 泊界重放面解析同目录全部 ndjson）。跨天出泊可达性
+/// 零回退（日期形全在面）；文件名序加载零变。
 ///
 /// 载体引用（承接 ORD-019 版本偏序与外化状态存储）：重放面遍历是版本偏序
 /// 持久性语义的机械实例，按既有事件链序重放判定在泊状态。推导见
@@ -181,14 +188,48 @@ pub fn load_parking_scope(trail: &Path) -> Result<Vec<Event>, AppendError> {
     let mut files: Vec<std::path::PathBuf> = std::fs::read_dir(&dir)
         .map_err(|e| AppendError::Internal(format!("read dir failed: {e}")))?
         .filter_map(|entry| entry.ok().map(|entry| entry.path()))
-        .filter(|p| p.extension().map(|ext| ext == "ndjson").unwrap_or(false))
+        .filter(|p| is_canonical_chain_name(p))
         .collect();
+    // --trail 显式指定文件即链文件（非日期形兼容）；首次落笔前文件可尚未
+    // 在盘（旧形 read_dir 亦不见），缺席不推入。同名判同件（候选同出一目录）。
+    if target.is_file() && !files.iter().any(|f| f.file_name() == target.file_name()) {
+        files.push(target);
+    }
     files.sort();
     let mut scope = Vec::new();
-    for f in files {
-        scope.extend(load_events(&f)?);
+    for f in &files {
+        scope.extend(load_events(f)?);
     }
     Ok(scope)
+}
+
+/// 规范链文件名判：日期形 `<YYYY-MM-DD>.ndjson` 与日期前缀 splinter 保全件形
+/// `<YYYY-MM-DD>-*-splinter.ndjson`（testhard 批件三）。
+fn is_canonical_chain_name(p: &Path) -> bool {
+    let Some(name) = p.file_name().and_then(|n| n.to_str()) else {
+        return false;
+    };
+    let Some(stem) = name.strip_suffix(".ndjson") else {
+        return false;
+    };
+    if is_date_form(stem) {
+        return true;
+    }
+    stem.len() > 11
+        && stem.as_bytes()[10] == b'-'
+        && stem.ends_with("-splinter")
+        && is_date_form(&stem[..10])
+}
+
+/// `YYYY-MM-DD` 十位日期形判。
+fn is_date_form(s: &str) -> bool {
+    let b = s.as_bytes();
+    b.len() == 10
+        && b[4] == b'-'
+        && b[7] == b'-'
+        && b.iter().enumerate().all(|(i, c)| {
+            i == 4 || i == 7 || c.is_ascii_digit()
+        })
 }
 
 #[cfg(test)]
@@ -327,6 +368,73 @@ mod scope_tests {
         assert!(matches!(
             park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(20)),
             Err(ParkError::EntryIdUsedRejected(_))
+        ));
+    }
+
+    /// testhard 批件三红转绿钉：泊界重放面只认规范链文件，同目录非日期形
+    /// ndjson（随手笔记）忽略，规范链行数零变且号源判定零污染。
+    /// 病灶申报出处：sih/event/plan/pendline-materials/pendline-results.md
+    /// 测试发现处置节（scribe park 泊界重放面解析同目录全部 ndjson）。
+    /// 红相即旧码 read_dir 全量 ndjson 面把垃圾件 parking_entered 假行吃进
+    /// 泊界账：scope 多一行且同号新入泊被 EntryIdUsed 误拒。
+    #[test]
+    fn non_chain_ndjson_ignored_in_parking_scope() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-th-3","title":"规范链入泊","exit_condition":"测试即弃","ttl_days":7}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "2026-09-18.ndjson", enter, t1);
+        // 垃圾笔记件：非日期形 ndjson，内含 parking_entered 假行（合法事件形）。
+        let notes = r#"{"action":"enter","entry_id":"pk-th-garbage","title":"随手笔记假行","exit_condition":"c","ttl_days":3}"#;
+        park_to(dir.path(), "notes.ndjson", notes, t1);
+        let today = dir.path().join("2026-09-18.ndjson");
+        let scope = load_parking_scope(&today).unwrap();
+        assert_eq!(scope.len(), 1, "重放面只认规范链，垃圾 ndjson 假行忽略");
+        assert_eq!(scope[0].details.as_ref().unwrap()["entry_id"], "pk-th-3");
+        // 号源判定零污染：与假行同 entry_id 的新入泊应放行。
+        let again = r#"{"action":"enter","entry_id":"pk-th-garbage","title":"假号真用","exit_condition":"c","ttl_days":3}"#;
+        let verdict = park_event(again, &scope, actor(), t1 + chrono::Duration::seconds(10));
+        assert!(
+            verdict.is_ok(),
+            "垃圾 ndjson 假行不得污染号源判定：{:?}",
+            verdict.err()
+        );
+    }
+
+    /// testhard 批件三白名单钉：日期前缀 splinter 分叉保全件形仍在重放面
+    ///（2026-08-28-pk023spec-pre-replay-splinter.ndjson 先例），重复入泊笔
+    /// 去重语义零破坏；垃圾件同场仍忽略。
+    #[test]
+    fn splinter_form_stays_in_scope() {
+        let dir = tempfile::tempdir().unwrap();
+        let t1 = chrono::Utc::now();
+        let enter_a = r#"{"action":"enter","entry_id":"pk-th-sa","title":"真链入泊","exit_condition":"c","ttl_days":7}"#;
+        let enter_b = r#"{"action":"enter","entry_id":"pk-th-sb","title":"保全件入泊","exit_condition":"c","ttl_days":7}"#;
+        park_to(dir.path(), "2026-08-28.ndjson", enter_a, t1);
+        park_to(dir.path(), "2026-08-28-pk023spec-pre-replay-splinter.ndjson", enter_b, t1);
+        let notes = r#"{"action":"enter","entry_id":"pk-th-garbage","title":"随手笔记假行","exit_condition":"c","ttl_days":3}"#;
+        park_to(dir.path(), "notes.ndjson", notes, t1);
+        let scope = load_parking_scope(&dir.path().join("2026-08-28.ndjson")).unwrap();
+        let ids: Vec<&str> = scope
+            .iter()
+            .filter_map(|e| e.details.as_ref())
+            .filter_map(|d| d.get("entry_id").and_then(|v| v.as_str()))
+            .collect();
+        assert_eq!(ids, vec!["pk-th-sb", "pk-th-sa"], "splinter 保全件在面且名序居真链前，垃圾件忽略");
+    }
+
+    /// testhard 批件三声明面钉：--trail 显式指定文件即链文件（非日期形
+    /// 兼容），自含停泊笔在其重放面内，在泊重入拒零回退。
+    #[test]
+    fn non_date_trail_self_in_scope() {
+        let dir = tempfile::tempdir().unwrap();
+        let enter = r#"{"action":"enter","entry_id":"pk-th-nd","title":"非日期链自含","exit_condition":"c","ttl_days":7}"#;
+        let t1 = chrono::Utc::now();
+        park_to(dir.path(), "trail.ndjson", enter, t1);
+        let scope = load_parking_scope(&dir.path().join("trail.ndjson")).unwrap();
+        assert_eq!(scope.len(), 1, "--trail 显式指定文件在其重放面内");
+        assert!(matches!(
+            park_event(enter, &scope, actor(), t1 + chrono::Duration::seconds(10)),
+            Err(ParkError::ReEnterRejected(_))
         ));
     }
 }

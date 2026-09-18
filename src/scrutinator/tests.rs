@@ -12,23 +12,17 @@
 use std::path::Path;
 use std::process::Command;
 
-/// 引擎件 binary 路径。
+/// 引擎件 binary 路径（testhard 批件二）。
 ///
-/// 优先用 cargo 集成测试的 CARGO_BIN_EXE_scrutinator；lib test 时 fallback 到
-/// `target/debug/scrutinator` 绝对路径（前提：cargo build --bins 已 build）。
+/// 旧形 `CARGO_MANIFEST_DIR/target/debug/scrutinator` 回退在 worktree 工地形
+/// （共享 CARGO_TARGET_DIR）必红——修前红名单 21 件（2026-09-18 基点 522321a
+/// 实测），现统一走 crate::testbin 两级解析（CARGO_BIN_EXE 运行期在位优先，
+/// lib 测试面回落 current_exe 同胞定位）。
 fn bin() -> String {
-    if let Ok(p) = std::env::var("CARGO_BIN_EXE_scrutinator") {
-        return p;
-    }
-    let manifest = std::env::var("CARGO_MANIFEST_DIR").expect("CARGO_MANIFEST_DIR 未设置");
-    let p = std::path::Path::new(&manifest).join("target/debug/scrutinator");
-    if p.exists() {
-        return p.to_str().unwrap().to_string();
-    }
-    panic!(
-        "scrutinator binary 未找到：CARGO_BIN_EXE_scrutinator 未设且 {} 不存在。请先 cargo build --bins 再 cargo test --lib",
-        p.display()
-    );
+    crate::testbin::bin("scrutinator")
+        .to_str()
+        .expect("二进制路径 UTF-8 可表")
+        .to_string()
 }
 
 /// 跑引擎件 CLI，传 --pack + --target（旗标形），返回 (exit_code, stdout_string)
