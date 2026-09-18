@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-pendline",
+  "raw_input": "三件顺序推进第三件 pendline 批：DES-017 候裁处置范式编排件实装，设计正典已入典，用户令「同意，我希望你作为主编排，拉起子代理顺序完成一 二 三」，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pendline 批：独立引擎件 collect 加 dispatch 加 route 三段编排，档位 3/6/9 可关缺省 3 配置件持存，回填腿插拔零模型，三态路由过者执行位标记未过者 scribe park boundary 者人重写标记，全落链经 scribe 子进程，critsweep 与 attractor 与 lease 零触碰，测试十五件全绿，settle 加 close 加推双远端。",
+    "exclusions": [
+      "collect 不内调 critsweep 进程只吃文件",
+      "回填腿不调模型活模型回填不进本批",
+      "挂点不接会话启动例程候另批"
+    ],
+    "output_format": "src/bin/pendline.rs 加 src/pendline/ 加 tests/pendline.rs 新立即批材料与任务包勾选，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "DES-017 正典：编排层零新判定语义三件零触碰",
+      "档位值域与缺省值冻结承设计档",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/bin/pendline.rs 加 src/pendline/ 加 tests/pendline.rs 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}
