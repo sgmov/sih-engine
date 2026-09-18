@@ -1,0 +1,13 @@
+{
+  "batch": "pendfix",
+  "date": "2026-09-18",
+  "new_suite": "dispatch.rs 内嵌 pendfix_tests 两件绿即 system_prompt_declares_basis_enum_scorer_form（评分器同语义正则提取断言枚举集恰三值）与 system_prompt_declares_four_judgment_keys（四键 schema 全声明钉）；红证即 pendlive 批活体 ValueError shot r1 与残次合同俱在 pendlive-materials 在档承先红留痕",
+  "regression": {
+    "pendline_集成": "15 passed 0 failed 零回归",
+    "活体回路": "修复后 dispatch 产合同经 python declared_basis_enum 解析得 baseline_1 与 baseline_4 与 baseline_5；夹具 gid m-pendfix-rt-1 三发评分零拒即 stable_clear voids 0（/tmp 一次性夹具即零仓内写，identity 以零哈希夹具形）"
+  },
+  "changed": [
+    "src/pendline/dispatch.rs（SYSTEM_PROMPT 补四键 schema 与枚举声明加内嵌测试模块）"
+  ],
+  "exit_code": 0
+}

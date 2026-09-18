@@ -28,9 +28,10 @@ pub const BACKFILL_VERSION: i64 = 1;
 /// 由调用方以 --seat 覆写为真实框架:模型）。
 pub const DEFAULT_SEAT: &str = "pendline:unbound";
 
-/// v1 合同固定最小系统框架文本（合同数据非提示词活动，零模型调用）。
-const SYSTEM_PROMPT: &str =
-    "pendline 候裁处置测量合同：对下列候裁项依既立命题独立判定，输出 JSON 判定四键。";
+/// v1 合同固定系统框架文本（合同数据非提示词活动，零模型调用）。
+/// 输出格式行须字面携带 basis_regulation 枚举声明（值段以「 或 」分隔），
+/// 评分器 declared_basis_enum 按此提取合法枚举集零回落（pendfix 批）。
+const SYSTEM_PROMPT: &str = "pendline 候裁处置测量合同：对下列候裁项依既立命题独立判定，输出 JSON 判定四键，不要输出 JSON 以外的文本。输出格式：{\"decision\": \"comply 或 violate\", \"basis_regulation\": \"baseline_1 或 baseline_4 或 baseline_5\", \"reason\": \"一句话理由\", \"boundary_flag\": true 或 false}。字段说明：decision 即命题符合规约与否；basis_regulation 即判定依据哪条基线即 baseline_1 确定性执行者与 baseline_4 可验证性与 baseline_5 减少 LLM 参与；reason 即一句话理由指明依据哪条规约的哪条要求；boundary_flag 即命题是否落在规范边界须推理适用。";
 
 /// dispatch 子命令入口。
 pub fn run(args: &Args) -> Result<i32, PendError> {
@@ -254,5 +255,40 @@ fn py_err(e: sih_engine::attractor::jsonc::PyError) -> PendError {
         PendError::usage(e.msg)
     } else {
         PendError::violate(e.msg)
+    }
+}
+
+#[cfg(test)]
+mod pendfix_tests {
+    use super::SYSTEM_PROMPT;
+
+    /// 评分器 declared_basis_enum 同语义提取：值段按「 或 」分割。
+    /// 病灶即旧提示词无此声明行，评分器 ValueError shot r1（pendlive 批活体
+    /// 红证与残次合同在 pendlive-materials 在档），本钉防复发。
+    #[test]
+    fn system_prompt_declares_basis_enum_scorer_form() {
+        let re = regex::Regex::new(r#""basis_regulation"\s*:\s*"([^"]*)""#).unwrap();
+        let m = re
+            .captures(SYSTEM_PROMPT)
+            .expect("system_prompt 须含字面 basis_regulation 声明行");
+        let tokens: Vec<&str> = m.get(1).unwrap().as_str().split(" 或 ").collect();
+        let mut set: Vec<&str> = tokens.into_iter().map(|t| t.trim()).filter(|t| !t.is_empty()).collect();
+        set.sort_unstable();
+        assert_eq!(
+            set,
+            vec!["baseline_1", "baseline_4", "baseline_5"],
+            "枚举集须恰三值即评分器合法域"
+        );
+    }
+
+    /// 四键 schema 全声明钉：decision 与 basis_regulation 与 reason 与 boundary_flag。
+    #[test]
+    fn system_prompt_declares_four_judgment_keys() {
+        for key in ["\"decision\"", "\"basis_regulation\"", "\"reason\"", "\"boundary_flag\""] {
+            assert!(
+                SYSTEM_PROMPT.contains(key),
+                "system_prompt 缺四键 schema 声明：{key}"
+            );
+        }
     }
 }
