@@ -1,0 +1,25 @@
+{
+  "kind": "pendline-route-report",
+  "version": 1,
+  "trail": "/Users/moc/workspaces/SiHankor/sih-engine/sih/event/trail/2026-09-18.ndjson",
+  "dry_run": false,
+  "routed": 1,
+  "failures": 0,
+  "results": [
+    {
+      "gid": "m-parkdisp2-a1",
+      "disposition": "passed",
+      "action": "execution_marked",
+      "channel": "batch",
+      "dry_run": false,
+      "scribe_subcommand": "direct",
+      "scribe_exit": 0,
+      "chain_event_type": "direct_edit_completed",
+      "chain_subject": "execution_marked",
+      "event_id": "45536a31-4075-4093-ab40-a2b16bf7c309",
+      "event_hash": "f352ff7dabe45266b9a051ce4ec64182aebd3bedfb4858a921b87b4e9a95b364",
+      "ok": true,
+      "verdict": "stable_clear"
+    }
+  ]
+}

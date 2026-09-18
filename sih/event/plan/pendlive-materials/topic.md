@@ -1,0 +1,35 @@
+---
+title: 泊界出泊材料处置形复审丙形追认：已出泊材料移 historic 归档甲案计数语义废止
+authored: pendlive 批起草，AI 起草（ZCode/GLM-5.3），2026-09-18，谱系披露见文内；改写链第 0 次
+ng: medium
+n: 9
+gid: m-parkdisp2-a1
+---
+
+# 待裁命题
+
+泊界出泊材料处置形复审裁定丙形追认：两线已出泊泊件材料（引擎 98 件与工具 29 件，2026-09-18 hygwave 批执行）自 materials 目录移 parking/historic 归档承载；09-08 m-adjudicate2-a1 甲案（出泊件留册计入 mainline 计数）前提已变即裁时出泊件量少且 TTL 多未到期，其后 09-17 集中出泊 23 笔叠加 TTL 到期致 127 件陈料滞留计数面、心跳侧线冗余告警两线常报即 surplus 12 与 4 阈 2，甲案计数语义同步废止；乙案谓词分轨仍不采。言说域限出泊材料处置形与心跳计数语义，不涉名册投影维护与在泊件语义。
+
+命题负载的规约面：historic 归档随 git 版控即出泊件审计可追溯性不损承基线四可验证性（挪位件零删除零改名，129 行逐件清单在档，任意时点可程序复核）；处置形由确定性程序承载即 selector 路由读数与 git 挪位零 LLM 执笔承基线一确定性执行者（hygwave 批全程机械执行，主会仅治理结算）。
+
+锚定事实面：hygwave 批处置前后两线 selector route 读数对照（告警双清零）与判据扫两线 exit 0 与 PARKING-v1.md 名册在泊两件零触碰，俱为在档可机械核验记载，归确定性核对通道不入采样。
+
+# 谱系披露与对己不利声明
+
+起草与采样作答席位同一（ZCode:GLM-5.3:self-reported），本席位是命题文本起草者。对己不利声明：判 comply 即命题落据执行，本席位承担名册语义注改写与管线维护成本；判 violate 即命题返工呈人，本席位承担材料回迁与返工成本，两向均有负担，如实披露。判定流按合同与响应哈希复算，本席位无法挑选作答。
+
+# 前置分道披露
+
+事实面即文中所引 hygwave 批读数与清单与名册零触碰俱为在档可机械核验记载，归确定性核对通道不入采样；本采样只裁命题的规约相容性与条款完整性两面。
+
+## anchors
+
+- path: sih-engine/doc/governance/PARKING-v1.md
+  range: 21
+  note: 甲案落注三选项甲乙丙原文与 m-adjudicate2-a1 终签 crosscheck 链笔 e6ab6bd7 在档
+- path: sih-engine/sih/event/plan/hygwave-materials/disposition-table.md
+  range: 全表
+  note: 129 行逐件处置清单零删除零改名零元数据改
+- path: sih-engine/sih/event/plan/hygwave-materials/hygwave-materials-hygiene-2026-09-18.md
+  range: 全文
+  note: 处置前后两线 selector route 读数对照即告警双清零

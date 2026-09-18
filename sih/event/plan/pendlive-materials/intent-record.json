@@ -1,0 +1,25 @@
+{
+  "session_id": "sess-zcode-260918-pendlive",
+  "raw_input": "用户裁 b 即甲案复审走 pendline 第一次真活：命题 m-parkdisp2-a1 九发采样机械评分复审出泊材料处置形丙形追认，stable_clear 即名册语义注，主会编排结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "pendlive 批：pendline 四子命令首活全链，复审 09-08 m-adjudicate2-a1 甲案前提变更，gate_verdict 机械出零人工断言，route 三态落链，执行腿与判词一致，settle 加 close 加推双远端。",
+    "exclusions": [
+      "判词不由人断言不由模型直书，唯一上游 facet score v3 闸",
+      "boundary 即停呈人不硬凑重采",
+      "名册除语义注一行外零触碰"
+    ],
+    "output_format": "命题与候裁单与合同与回填与评分材料与路由报告俱入批材料，飞轮 trail 落工地，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "DES-017：编排层零新判定语义",
+      "先例 adjudicate2-solo：九发采样与谱系披露形",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine 批材料与 PARKING 语义注与 sih-tools 工地 proposition/DES 与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

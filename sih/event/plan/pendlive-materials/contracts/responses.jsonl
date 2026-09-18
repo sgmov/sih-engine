@@ -1,0 +1,9 @@
+{"key": "m-parkdisp2-a1#r1", "shot": 1, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"出泊件移 historic 后 git 版控与 129 行逐件清单俱在档，出泊件审计可追溯性不损，基线四可验证性成立\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r2", "shot": 2, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"挪位全程由 selector 路由读数与 git 操作机械承载零 LLM 执笔，处置过程任意时点可程序复核承可验证性\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r3", "shot": 3, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"甲案裁时前提量少 TTL 未到期，今 127 件滞留致两线告警常报有读数在案，复审废止旧计数语义有据非裸断言\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r4", "shot": 4, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"零删除零改名零元数据改动，git 认 rename 100%，误判时回迁通道完整，可逆性支撑基线四\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r5", "shot": 5, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"命题言说域限材料处置形与心跳计数语义，锚定事实归确定性核对通道，条款边界清无越域承诺\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r6", "shot": 6, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"名册与 trail 与在泊件零触碰，波及面收窄为两目录材料，影响域可逐件核对\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r7", "shot": 7, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"historic 归档随仓版控，处置前后态可经 git diff 复原，审计可见性等价于在册形\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r8", "shot": 8, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"判据扫两线 exit 0 与告警双清零读数在档，命题效果面可机械复核非自述成立\", \"boundary_flag\": false}"}
+{"key": "m-parkdisp2-a1#r9", "shot": 9, "raw": "{\"decision\": \"comply\", \"basis_regulation\": \"baseline_4\", \"reason\": \"谱系披露与对己不利声明入命题文，起草作答同席两向负担如实，测量诚实性可查\", \"boundary_flag\": false}"}
