@@ -7,8 +7,14 @@
 //! acquired/released 配对、当日 trail 直改链笔声明面、豁免面冻结登记，判定式
 //! 脏文件集 −（租约锁面 ∪ 链笔声明面 ∪ 豁免面）= 无主清单，只呈报不代裁。
 //!
-//! CLI：`watchcheck check --at <YYYY-MM-DD> --root <工作区根> [--locks <路径>] [--trail <路径>]...`
+//! CLI：`watchcheck check --at <YYYY-MM-DD> --root <工作区根> [--locks <路径>] [--trail <路径>]... [--json]`
 //! 退出码三值：0 = 净态；1 = 有无主修改（呈报位）；2 = 工具自身异常（fail-closed）。
+//!
+//! hygwave 批增量（引擎侧扩展，围堰对表面零改动）：冗余重复 acquire 台账卫生
+//! 读数——同 (路径, 会话) 冗余重复 acquired 超阈 REDUNDANT_ACQUIRE_THRESHOLD
+//! 即呈报（只报不裁，形承 LOCKFACE_WIDE_THRESHOLD 先例），文本面追加呈报节，
+//! `--json` 机读面挂可选键 redundant_acquires（零冗余时不出键，向后兼容）。
+//! 正典指针：hygwave 批令；faceprecise-solo-materials/faceprecise-analysis.md §1.4。
 //!
 //! 落差申报（相对围堰）：
 //! 1. 围堰 _lockface_wide_alarms 内含多处 pass 体死分支，本件按其有效行为移植：
@@ -24,7 +30,7 @@
 //! 6. stderr 报文与呈报文本形逐字对齐；异常内文形近似（见落差三、四）。
 
 use serde_json::{json, Map, Value};
-use std::collections::BTreeSet;
+use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{exit, Command};
@@ -39,6 +45,12 @@ const EXIT_CLEAN: i32 = 0;
 const EXIT_UNOWNED: i32 = 1;
 const EXIT_TOOL_ERROR: i32 = 2;
 const LOCKFACE_WIDE_THRESHOLD: usize = 25;
+/// 冗余重复加锁阈值（hygwave 批）：同 (路径, 会话) 冗余重复 acquired 合计
+/// （redundant_total = Σ(单路径笔数 − 1)）超此阈值即台账卫生呈报项。
+/// 形承 LOCKFACE_WIDE_THRESHOLD 先例：只报不裁，呈报不代裁。
+/// 正典指针：hygwave 批令；faceprecise-solo-materials/faceprecise-analysis.md §1.4
+/// （idwire-solo 会话 28d326f924916cd0 实证：123 笔 acquired 仅 11 路径）。
+const REDUNDANT_ACQUIRE_THRESHOLD: usize = 3;
 /// 豁免面冻结登记（constants.py EXEMPTION_FACES 逐字对表，16 面）。
 const EXEMPTION_FACES: [&str; 16] = [
     "sih-engine/sih/event/trail/",
@@ -297,19 +309,135 @@ fn lockface_wide_alarms(locks: &Map<String, Value>) -> Vec<(String, String)> {
     alarms
 }
 
-/// 对表判定：返回 (退出码, 呈报文本)。只呈报不代裁。
-fn judge(root: &Path, at: &str, trail_paths: &[String], locks_path: &Path) -> Result<(i32, String), ToolError> {
+/// sessions 台账 issued 事件反查：会话号 → 批名 package（hygwave 批）。
+fn session_packages(sessions_path: &Path) -> BTreeMap<String, String> {
+    let mut out = BTreeMap::new();
+    let Ok(text) = fs::read_to_string(sessions_path) else {
+        return out;
+    };
+    for line in text.lines() {
+        let line = line.trim();
+        if line.is_empty() {
+            continue;
+        }
+        let Ok(ev) = serde_json::from_str::<Value>(line) else {
+            continue;
+        };
+        if ev.get("event").and_then(|v| v.as_str()) != Some("issued") {
+            continue;
+        }
+        if let (Some(sid), Some(pkg)) = (
+            ev.get("session_id").and_then(|v| v.as_str()),
+            ev.get("package").and_then(|v| v.as_str()),
+        ) {
+            out.insert(sid.to_string(), pkg.to_string());
+        }
+    }
+    out
+}
+
+/// 冗余重复加锁台账卫生读数（hygwave 批）。按 (路径, 会话) 键回放原始流
+/// acquired 笔数（哨兵字典塌缩前的台账事实）：max_repeat_acquires 即单路径
+/// 最多 acquired 笔数，redundant_total 即 Σ(单路径笔数 − 1)；合计超
+/// REDUNDANT_ACQUIRE_THRESHOLD 才呈报。批名 package 自同目录 sessions.ndjson
+/// issued 事件反查，缺席记「未知」。只报不裁，判定语义不在此位。
+fn redundant_acquire_alarms(locks_path: &Path) -> Vec<(String, String, usize, usize)> {
+    let text = match fs::read_to_string(locks_path) {
+        Ok(t) => t,
+        Err(_) => return vec![],
+    };
+    let mut counts: BTreeMap<String, BTreeMap<String, usize>> = BTreeMap::new();
+    for line in text.lines() {
+        let line = line.trim();
+        if line.is_empty() {
+            continue;
+        }
+        let ev: Value = match serde_json::from_str(line) {
+            Ok(v) => v,
+            Err(_) => continue,
+        };
+        if ev.get("event").and_then(|v| v.as_str()) != Some("acquired") {
+            continue;
+        }
+        let path = py_display_key(ev.get("path").unwrap_or(&Value::Null));
+        let sid = py_display_key(ev.get("session_id").unwrap_or(&Value::Null));
+        *counts.entry(sid).or_default().entry(path).or_insert(0) += 1;
+    }
+    let packages = session_packages(&locks_path.with_file_name("sessions.ndjson"));
+    let mut out: Vec<(String, String, usize, usize)> = vec![];
+    for (sid, paths) in counts {
+        let mut redundant_total = 0usize;
+        let mut max_repeat_acquires = 0usize;
+        for n in paths.values() {
+            redundant_total += n.saturating_sub(1);
+            max_repeat_acquires = max_repeat_acquires.max(*n);
+        }
+        if redundant_total > REDUNDANT_ACQUIRE_THRESHOLD {
+            let pkg = packages.get(&sid).cloned().unwrap_or_else(|| "未知".to_string());
+            out.push((sid, pkg, max_repeat_acquires, redundant_total));
+        }
+    }
+    out.sort();
+    out
+}
+
+/// 对表判定读数（文本与 JSON 两面共用的计算核，hygwave 批重构）。
+/// unowned 条目：全工作区相对路径、XY 码、mtime ISO 串（文本面用）。
+struct Reading {
+    dirty: Vec<(String, String)>,
+    locks: Map<String, Value>,
+    declared_len: usize,
+    unowned: Vec<(String, String, String)>,
+    wide_alarms: Vec<(String, String)>,
+    redundant: Vec<(String, String, usize, usize)>,
+}
+
+fn compute_reading(
+    root: &Path,
+    trail_paths: &[String],
+    locks_path: &Path,
+) -> Result<Reading, ToolError> {
     let dirty = dirty_set(root)?;
     let locks = lock_face(locks_path);
     let declared = pen_face(trail_paths)?;
-    let mut unowned: Vec<(String, String)> = vec![];
+    let declared_len = declared.len();
+    let mut unowned: Vec<(String, String, String)> = vec![];
     for (ws_path, xy) in &dirty {
         if covered(ws_path, &locks, &declared).is_none() {
-            unowned.push((ws_path.clone(), xy.clone()));
+            let mt = mtime_iso(&root.join(ws_path));
+            unowned.push((ws_path.clone(), xy.clone(), mt));
         }
     }
     let wide_alarms = lockface_wide_alarms(&locks);
-    let trails_joined = trail_paths.join(" 与 ");
+    let redundant = redundant_acquire_alarms(locks_path);
+    Ok(Reading {
+        dirty,
+        locks,
+        declared_len,
+        unowned,
+        wide_alarms,
+        redundant,
+    })
+}
+
+fn reading_exit_code(r: &Reading) -> i32 {
+    if r.unowned.is_empty() {
+        EXIT_CLEAN
+    } else {
+        EXIT_UNOWNED
+    }
+}
+
+/// 文本面渲染：逐行形与改造前逐字对齐（mergeall_t4_watchcheck 金向量为证）。
+fn render_text(r: &Reading, at: &str, trails_joined: &str, locks_path: &Path) -> String {
+    let Reading {
+        dirty,
+        locks,
+        declared_len,
+        unowned,
+        wide_alarms,
+        redundant,
+    } = r;
     let mut lines = vec![
         format!("稽 watchcheck 对表读数 {at}（v{VERSION}）"),
         format!("判定式：{JUDGMENT_FORMULA}"),
@@ -318,7 +446,7 @@ fn judge(root: &Path, at: &str, trail_paths: &[String], locks_path: &Path) -> Re
             locks_path.to_string_lossy(),
             locks.len(),
             trails_joined,
-            declared.len(),
+            declared_len,
             EXEMPTION_FACES.len(),
         ),
         format!("扫描：脏文件 {} 件", dirty.len()),
@@ -330,19 +458,29 @@ fn judge(root: &Path, at: &str, trail_paths: &[String], locks_path: &Path) -> Re
                 "锁面超宽面哨兵呈报（leaseup-solo T-4）：{} 项，只报不拦——超阈值 LOCKFACE_WIDE_THRESHOLD={LOCKFACE_WIDE_THRESHOLD}：",
                 wide_alarms.len()
             ));
-            for (kind, payload) in &wide_alarms {
+            for (kind, payload) in wide_alarms {
                 lines.push(format!("  - {kind}: {payload}"));
             }
         }
-        return Ok((EXIT_CLEAN, lines.join("\n") + "\n"));
+        if !redundant.is_empty() {
+            lines.push(format!(
+                "冗余重复加锁台账卫生读数（hygwave）：{} 会话，只报不裁——同 (路径,会话) 冗余重复 acquired 超阈 REDUNDANT_ACQUIRE_THRESHOLD={REDUNDANT_ACQUIRE_THRESHOLD}：",
+                redundant.len()
+            ));
+            for (sid, pkg, mx, total) in redundant {
+                lines.push(format!(
+                    "  - session={sid} package={pkg} max_repeat_acquires={mx} redundant_total={total}"
+                ));
+            }
+        }
+        return lines.join("\n") + "\n";
     }
     lines.push(format!(
         "结论：无主修改 {} 件，呈人节点二值裁决——「我的」：走司衡治理通道（域内管线三步加直改链笔）；「不是我的」：机械回滚（git restore 或对未跟踪件删除，操作见 BATCH-FACE 处置协议节；本工具零代行）。",
         unowned.len()
     ));
     lines.push("无主清单：".to_string());
-    for (ws_path, xy) in &unowned {
-        let mt = mtime_iso(&root.join(ws_path));
+    for (ws_path, xy, mt) in unowned {
         lines.push(format!("- {ws_path} | mtime {mt} | {}", status_label(xy)));
     }
     if !wide_alarms.is_empty() {
@@ -350,11 +488,82 @@ fn judge(root: &Path, at: &str, trail_paths: &[String], locks_path: &Path) -> Re
             "\n锁面超宽面哨兵呈报（leaseup-solo T-4）：{} 项，只报不拦：",
             wide_alarms.len()
         ));
-        for (kind, payload) in &wide_alarms {
+        for (kind, payload) in wide_alarms {
             lines.push(format!("  - {kind}: {payload}"));
         }
     }
-    Ok((EXIT_UNOWNED, lines.join("\n") + "\n"))
+    if !redundant.is_empty() {
+        lines.push(format!(
+            "\n冗余重复加锁台账卫生读数（hygwave）：{} 会话，只报不裁——同 (路径,会话) 冗余重复 acquired 超阈 REDUNDANT_ACQUIRE_THRESHOLD={REDUNDANT_ACQUIRE_THRESHOLD}：",
+            redundant.len()
+        ));
+        for (sid, pkg, mx, total) in redundant {
+            lines.push(format!(
+                "  - session={sid} package={pkg} max_repeat_acquires={mx} redundant_total={total}"
+            ));
+        }
+    }
+    lines.join("\n") + "\n"
+}
+
+/// JSON 机读面渲染（hygwave 批）：redundant_acquires 为可选键，零冗余不出键。
+fn render_json(r: &Reading, at: &str, locks_path: &Path) -> Value {
+    let mut obj = json!({
+        "tool": {"name": "watchcheck", "version": VERSION},
+        "at": at,
+        "locks": locks_path.to_string_lossy(),
+        "judgment_formula": JUDGMENT_FORMULA,
+        "counts": {
+            "dirty": r.dirty.len(),
+            "declared": r.declared_len,
+            "locks_held": r.locks.len(),
+            "unowned": r.unowned.len(),
+            "exemption_faces": EXEMPTION_FACES.len(),
+        },
+        "unowned": r
+            .unowned
+            .iter()
+            .map(|(p, xy, mt)| json!({"path": p, "git_status": xy, "mtime": mt}))
+            .collect::<Vec<_>>(),
+        "wide_alarms": r
+            .wide_alarms
+            .iter()
+            .map(|(k, p)| json!({"kind": k, "payload": p}))
+            .collect::<Vec<_>>(),
+    });
+    if !r.redundant.is_empty() {
+        obj["redundant_acquires"] = json!(r
+            .redundant
+            .iter()
+            .map(|(sid, pkg, mx, total)| json!({
+                "session": sid,
+                "package": pkg,
+                "max_repeat_acquires": mx,
+                "redundant_total": total,
+            }))
+            .collect::<Vec<_>>());
+    }
+    obj
+}
+
+/// 对表判定：返回 (退出码, 呈报文本)。只呈报不代裁。
+fn judge(root: &Path, at: &str, trail_paths: &[String], locks_path: &Path) -> Result<(i32, String), ToolError> {
+    let reading = compute_reading(root, trail_paths, locks_path)?;
+    let code = reading_exit_code(&reading);
+    let trails_joined = trail_paths.join(" 与 ");
+    Ok((code, render_text(&reading, at, &trails_joined, locks_path)))
+}
+
+/// 对表判定 JSON 面（hygwave 批）：返回 (退出码, 读数对象)。退出码语义同文本面。
+fn judge_json(
+    root: &Path,
+    at: &str,
+    trail_paths: &[String],
+    locks_path: &Path,
+) -> Result<(i32, Value), ToolError> {
+    let reading = compute_reading(root, trail_paths, locks_path)?;
+    let code = reading_exit_code(&reading);
+    Ok((code, render_json(&reading, at, locks_path)))
 }
 
 // ---------- CLI ----------
@@ -383,6 +592,7 @@ fn main() {
     let mut at: Option<String> = None;
     let mut root: Option<String> = None;
     let mut locks: Option<String> = None;
+    let mut json_face = false;
     let mut trails: Vec<String> = vec![];
     let mut j = 0usize;
     while j < rest.len() {
@@ -415,6 +625,7 @@ fn main() {
                 }
                 trails.push(rest[j].clone());
             }
+            "--json" => json_face = true,
             a if a.starts_with("--") => usage_fail(&format!("未知旗标: {a}")),
             a => usage_fail(&format!("意外位置参数: {a}")),
         }
@@ -440,7 +651,13 @@ fn main() {
     } else {
         trails
     };
-    match judge(&root, &at, &trail_paths, &locks_path) {
+    let outcome = if json_face {
+        judge_json(&root, &at, &trail_paths, &locks_path)
+            .map(|(code, v)| (code, format!("{}\n", serde_json::to_string_pretty(&v).unwrap())))
+    } else {
+        judge(&root, &at, &trail_paths, &locks_path)
+    };
+    match outcome {
         Ok((code, report)) => {
             print!("{report}");
             exit(code);
