@@ -1,0 +1,31 @@
+{
+  "kind": "pendline-backfill",
+  "backfill_version": 1,
+  "gid": "m-parkdisp2-a1",
+  "title": "泊界出泊材料处置形复审丙形追认：已出泊材料移 historic 归档甲案计数语义废止",
+  "summary": "",
+  "gear": null,
+  "n_shots": 9,
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pendlive/sih/event/plan/pendlive-materials/contracts/facet-m-parkdisp2-a1.json",
+  "contract_sha256": "0ed033508996edcf8a1bce2a58637d47ed0fc42ebbac3f8403a20bcb81f04f4c",
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pendlive/sih/event/plan/pendlive-materials/contracts/facet-responses.jsonl",
+  "responses_sha256": "64b01d06413eec3d9a01aaa66a78974e72bc42c0db15678eddb751461abbacea",
+  "voids": [],
+  "n_voids": 0,
+  "decisions": [
+    "comply",
+    "comply",
+    "comply",
+    "comply",
+    "comply",
+    "comply",
+    "comply",
+    "comply",
+    "comply"
+  ],
+  "verdict": "stable_clear",
+  "gate_verdict": "stable_clear",
+  "runs_written": 0,
+  "backfilled_at": "2026-09-18T05:20:48.586128+00:00",
+  "note": "v1 夹具回填：零模型零飞轮写，verdict 系上游直读零判定（DES-017 回填腿插拔）"
+}

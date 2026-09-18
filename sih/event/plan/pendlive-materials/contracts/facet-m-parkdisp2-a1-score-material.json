@@ -1,0 +1,16 @@
+{
+  "contract_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pendlive/sih/event/plan/pendlive-materials/contracts/facet-m-parkdisp2-a1.json",
+  "contract_sha256": "0ed033508996edcf8a1bce2a58637d47ed0fc42ebbac3f8403a20bcb81f04f4c",
+  "gate_verdict": "stable_clear",
+  "gid": "m-parkdisp2-a1",
+  "identity_hash": "e37b39bf821e323e7ced939d6bb446918d07c2a64d11a3af1870291fb4afb9b1",
+  "kind": "facet-contract-score",
+  "n_shots": 9,
+  "responses_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/pendlive/sih/event/plan/pendlive-materials/contracts/facet-responses.jsonl",
+  "responses_sha256": "64b01d06413eec3d9a01aaa66a78974e72bc42c0db15678eddb751461abbacea",
+  "runs_written": 0,
+  "score_version": 2,
+  "seat_string": "ZCode:GLM-5.3:self-reported",
+  "trail_path": "/Users/moc/workspaces/SiHankor/worktrees/sih-tools/pendlive/proposition/DES/m-parkdisp2-a1/flywheel-trail.jsonl",
+  "voids": []
+}
