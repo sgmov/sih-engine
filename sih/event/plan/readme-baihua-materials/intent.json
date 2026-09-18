@@ -1,0 +1,29 @@
+{
+  "session_id": "sess-zcode-260917-readme-baihua",
+  "raw_input": "用户 2026-09-17 两轮演进：润色版（现稿说法修正）与重写版（时间线骨架）相继呈示 → 用户令「结合司衡哲学和数学仓，结合ai-ex文件夹的沉淀内容，还有sihankor旧仓，你重新写一个，小白能看懂的版本。我感觉你写的还是偏向极客版本的」→ 小白版草稿呈示 → 用户令「这个版本可以用」。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "readme-baihua 批：README 门面小白白话版重写，全文替换 sih-engine/README.md。1) 正文零术语，账本、工单、体检、翻档、多个独立评审五比喻承接全部机制；2) 叙事骨架即速度差与缝、盯紧点为什么不行（ai-ex 三案例加旧仓六版本废弃加 12 天僵尸进程）、两路思想（道一、道二、道四、鉴、注意力稀缺）、一件活五步、问五遍不是玄学（数学仓四条推导）、丑话、适用域、你要做的三件事；3) 硬技术件全收附录 A 至 G（安装验证、接入、工具清单、仓内地图、司衡词人话版、五条基线、再往下读）；4) 用户已过目下可用令，settle commit 与 lease close 后推双远端。",
+    "exclusions": [
+      "不动 README 以外任何施工面文件——doc/ 域零触碰，工具与源码零改动",
+      "检词开域懒波二例系旧版继承（旧版三例在案），批内不改词，立名候另裁，处置记结果档",
+      "根 README 在 des-001 域外，核阅 exit-2 如实记档，不强行入域",
+      "跳过 ask3 双门与叩问——纯文档重写零机制变更，plain 意图形，偏离如实申报于此",
+      "sih-philosophy、sih-math、ai-ex、sihankor 只读取材零写入"
+    ],
+    "output_format": "sih-engine/README.md（小白版全文）加 sih-engine/sih/state/plan/readme-baihua.md（任务包）加 sih-engine/sih/event/plan/readme-baihua-materials/intent.json（本意图件）加 sih-engine/sih/event/plan/readme-baihua-results.md（结果档）加三步读数加 settle commit 与 lease close 台账行加完工报告",
+    "injected_constraints": [
+      "工程基线第四条：写入可追溯可机械校验——README 事实断言（73 次 0 执行、十版全推翻、几十轮人审、12 天端口、六版本废弃、默认五遍）逐条与 ai-ex 与旧仓审计链对表",
+      "汇报大白话纪律（2026-08-25 用户裁定入列）：正文零术语，术语首现配人话，附录 E 司衡词人话版",
+      "DEC-017 修订六：stem 认领走甲表三件（readme:new 加 baihua:new），认领即声明入回执可追，语义忠实终裁归人节点",
+      "SDDG-1：任务包即规格物在 settle 差分首件，免绕行",
+      "用户过目令即验收门——本批含显式人审门，agent 不代签"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine/README.md（唯一施工面）加 sih-engine/sih/state/plan/readme-baihua.md（任务包）加 sih-engine/sih/event/plan/readme-baihua-materials/（批材料）加 sih-engine/sih/event/plan/readme-baihua-results.md（结果档）",
+      "max_depth": 1
+    }
+  }
+}

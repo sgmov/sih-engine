@@ -1,0 +1,13 @@
+{
+  "batch": "readme-baihua",
+  "date": "2026-09-17",
+  "deliverables": {
+    "acceptance": "用户 2026-09-17「这个版本可以用」令（润色版与重写版两稿演进在会话在案）；小白版四源取材即哲学仓四道与鉴、数学仓判定推导、ai-ex 三失效案例、旧仓验尸细节；正文事实断言逐条对表来源见结果档第一节",
+    "fact_anchors": "73 次 0 执行连借口都是假的 ← ai-ex MANUAL-STAGE-GOVERNANCE-LESSONS 教训七；十版全推翻答案早写在册 ← ai-ex CROSS-DOMAIN-RETRIEVAL-METHODOLOGY 案例一；几十轮人审报废重来加 12 天端口 ← 旧仓 audit-039；六版本废弃每次从工具开始 ← ai-ex SIX-ABANDONED-REPOS-LESSONS 第二节；数学节四条 ← sih-math PROB-001 与 PROB-019 与 APP-009 与 ORD-020；道一道二道四与鉴 ← sih-philosophy PRO-02-first-tao-as-chain 与 PRO-03 与 PRO-05-fourth-tao-main 与 PRO-07",
+    "mechanical": "化格 general-v1 exit-0 零改动（草稿内容哈希 d6f5def6d26f84f283c2eb1786740bbea8cefa86a674b45bbca2990ab7661d9c 对表呈示稿）；核阅 des-001 exit-2 域外如实记档（包域只盖 sih-engine/doc/**，承域外先例不属违规）；检词 core 0.13.0 开出域 lazy medium 二例（附录 B 171 与 176 行），旧版三例在案系继承非新引入，立名候另裁批内不改词",
+    "rewrite": "README.md 232 行：正文零术语（账本工单体检翻档多个独立评审五比喻承接机制），叙事即速度差与缝、盯紧点为什么不行、两路思想、一件活五步、问五遍不是玄学、丑话、适用域、你要做的三件事；硬技术件全收附录 A 至 G"
+  },
+  "kind": "settlement",
+  "session_id": "64553a5f9dff0e18",
+  "what": "README 门面小白白话版重写批结算：过目稿全文替换加三步如实记档加 stem 甲表认领在案加推双远端"
+}
