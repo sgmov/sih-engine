@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-zcode-260918-hygwave",
+  "raw_input": "双波第二波 hygwave 批：泊界材料面卫生清侧线冗余告警加 watchcheck 冗余 acquire 台账卫生读数，用户令「那你调2个子代理，把2波都做了」承载，子代理工地施工归报，主会治理结算。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "hygwave 批两件：两线泊界已出泊材料 127 件挪位新建 parking/historic 零删除零改名零元数据改使心跳告警双清零；watchcheck 引擎位加冗余 acquire 卫生读数阈值三呈报不代裁向后兼容；各先红后绿或处置前后读数为证，settle 加 close 加推双远端。",
+    "exclusions": [
+      "PARKING-v1.md 名册零触碰",
+      "trail 与租约台账零触碰",
+      "材料元数据补齐候有令再议",
+      "挪位形与 09-08 甲案张力候人节点追认"
+    ],
+    "output_format": "watchcheck.rs 改加新测试与两线材料挪位加卫生报告与逐件清单，认证笔在链，双远端快进",
+    "injected_constraints": [
+      "selector 包语义为正典只报不裁",
+      "围堰 sih-tools 代码零改动只动 parking 材料",
+      "GOV-004：append-only"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/bin/watchcheck.rs 加 tests/watchcheck_redundant_acquire.rs 加两线 parking 材料挪位加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

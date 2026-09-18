@@ -1,0 +1,18 @@
+{
+  "batch": "hygwave",
+  "date": "2026-09-18",
+  "new_suite": "tests/watchcheck_redundant_acquire.rs 4 passed 0 failed（红转绿：改造前 4/4 红含 --json 未知旗标退 2 与文本面无卫生节；绿证清单正确加零冗余键不出加阈值边界 3 不报 4 报加 package 反查未知兜底）",
+  "regression": {
+    "金向量": "mergeall_t4_watchcheck 3/3 绿文本面逐字零回归",
+    "真台账": "locks.ndjson exit 0，23 会话超阈呈报，idwire-solo 28d326f924916cd0 在列 max_repeat_acquires=17 redundant_total=112 与 faceprecise §1.4 逐字吻合",
+    "材料路由": "两线 selector route 处置后 exit 0 零告警，mainline 恰两真在泊件",
+    "lib_30_败": "全在 testhard 批域且系本工地基点在 testhard 归并前的环境败，主树基点绿，与本批零关联"
+  },
+  "changed": [
+    "src/bin/watchcheck.rs（卫生读数与 --json 面）",
+    "tests/watchcheck_redundant_acquire.rs（新立）",
+    "两线 parking 材料挪位（engine 98 件加 tools 29 件至 parking/historic）",
+    "sih/event/plan/hygwave-materials/（卫生报告加逐件清单）"
+  ],
+  "exit_code": 0
+}

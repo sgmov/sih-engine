@@ -1,0 +1,47 @@
+{
+  "anomalies": [],
+  "claims": {},
+  "header": {
+    "mode": "attest",
+    "net_probe": "external",
+    "tool": {
+      "name": "identity",
+      "version": "0.5.0"
+    }
+  },
+  "identity": {
+    "core_components": {
+      "boottime": "1789358041",
+      "hostname": "MiniServer",
+      "lineage": "python>zcode-cli>zcode-host-local>ZCode",
+      "mac": "",
+      "sandbox_id": "",
+      "user": "moc"
+    },
+    "core_hash": "faaffeb2b4fa7b80b00d3c672dbd4d2dffb8a9aca4ebcad8001ddf588a1c4507",
+    "hash": "515cea3e788a8d893de5c9d1d01104e003466bda18ac0d35525490199ed026c8",
+    "salt": "0510ade85185f2bd6b6c4ab30e12326dbdc3c32175899b199b7b5b8296be541b",
+    "string": "v3|pid=97254|ppid=97253|hostname=MiniServer|mac=|user=moc|sandbox_id=|session_id=|boottime=1789358041|parent_start=2026-09-18T05:03:15+00:00|ancestry=python>uv>zsh>zcode-cli>zcode-host-local-1>ZCode>launchd|net_time=1789707796|timestamp=2026-09-18T05:03:15+00:00"
+  },
+  "observed": {
+    "ancestry": "python>uv>zsh>zcode-cli>zcode-host-local-1>ZCode>launchd",
+    "boottime": "1789358041",
+    "hostname": "MiniServer",
+    "mac": "",
+    "net_time": "1789707796",
+    "parent_start": "2026-09-18T05:03:15+00:00",
+    "pid": "97254",
+    "ppid": "97253",
+    "sandbox_id": "",
+    "session_id": "",
+    "timestamp": "2026-09-18T05:03:15+00:00",
+    "user": "moc"
+  },
+  "summary": {
+    "anomalies": 0,
+    "claimed": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "verdict": "attest"
+  }
+}
