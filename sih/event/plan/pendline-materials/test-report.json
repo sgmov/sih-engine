@@ -1,0 +1,17 @@
+{
+  "batch": "pendline",
+  "date": "2026-09-18",
+  "new_suite": "tests/pendline.rs 15 passed 0 failed（三态全链各一件加混批加档位面加配置件两面加 collect 三源加 backfill 缺发拒收加会话席前置校验加 dry-run 加零触碰断言；全链测试断言链上事件类型与字段并 scribe verify valid）",
+  "regression": {
+    "零触碰": "critsweep 与 attractor 与 lease 与 retriever 与 mcpserver git 零 diff，测试内断言绿",
+    "cargo_build": "退出码 0，pendline 自有文件零警告",
+    "主会复跑": "工地复跑 15 passed"
+  },
+  "changed": [
+    "src/bin/pendline.rs（新立）",
+    "src/pendline/（新立五模块）",
+    "tests/pendline.rs（新立）",
+    "sih/state/plan/pendline.md（勾选 pl-01..05）"
+  ],
+  "exit_code": 0
+}
