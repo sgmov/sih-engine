@@ -1,0 +1,3 @@
+{"archive":"experience","carrier":"md","ref":"ai-ex/deepseek-harness-research/INDEX.md@91-92","axis":"semantic","excerpt":"- Misconfiguration fails loud\n","matched":"fail-loud","at":"2026-09-20"}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/spec/SPEC-002-verify-decision-spec.md@97-97","axis":"semantic","excerpt":"### Fail 路径 {#test-fail}","matched":"fail-loud","at":"2026-09-20","source_domain":"legacy-sihankor"}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/spec/SPEC-017-identity-triple-verify-spec.md@39-39","axis":"semantic","excerpt":"- `pass_or_fail`","matched":"fail-loud","at":"2026-09-20","source_domain":"legacy-sihankor"}

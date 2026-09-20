@@ -1,0 +1,3 @@
+{"archive":"experience","carrier":"md","ref":"ai-ex/hermes-research/A-official-docs.md@971-971","axis":"semantic","excerpt":"- MCP Elicitation：服务器可请求用户结构化输入","matched":"结构化输出 schema 校验 提取","at":""}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/decision/DEC-026-code-anchor-scan.md@82-82","axis":"semantic","excerpt":"canon detect 输出结构化","matched":"结构化输出 schema 校验 提取","at":"","source_domain":"legacy-sihankor"}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/proposal/014-mcp-api-contract.md@11-12","axis":"semantic","excerpt":"4. MCP 2025-11-25 下的能力声明、结构化输出、错误分层与兼容基线\n不覆盖：","matched":"结构化输出 schema 校验 提取","at":"","source_domain":"legacy-sihankor"}
