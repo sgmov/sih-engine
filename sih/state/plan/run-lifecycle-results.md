@@ -34,3 +34,11 @@
 ## 检索申报
 
 3 命中（T6 范式谱系、legacy 归档档、归档零损先例意图档），无冲突约束，存档 recall/run-lifecycle-recall-20260921.md。
+
+## 追加：canvas-fullscreen（PR #60，用户需求驱动）
+
+- 分支 community/canvas-fullscreen（基 55b8f48），commit b0b8849。
+- 结构拓扑区前加全屏钮：Fullscreen API 优先、拒绝/受限落 CSS 覆盖层；进出双沿 zoom 自适应重算；数据刷交互态保（全屏态跨轮询/切 run 保持，空态释放）；Esc 对话框优先路由；i18n 双语。
+- 状态机提纯 fullscreen-model.mjs + checks/canvas-fullscreen.check.mjs 6 例。
+- egolite 交互实测：按钮位、进全屏（覆盖层 1426×751）、6 秒轮询保持、按钮翻转为退出、Esc 回内联（1128×327），全过。
+- 闸门：npm test 148/148 亲跑；siinfer 绿（b0b88490）；fork 预览 35667369312 windows+codeql 双绿；PR https://github.com/MiniMax-AI/MiniMax-Code-Plugins/pull/60。
