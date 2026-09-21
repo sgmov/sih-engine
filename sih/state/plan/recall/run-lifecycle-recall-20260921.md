@@ -1,0 +1,3 @@
+{"archive":"experience","carrier":"md","ref":"ai-ex/T6-AUDIT-TASK-PACKAGE-PARADIGM.md@291-291","axis":"semantic","excerpt":"### 范式谱系定位","matched":"删除 恢复 归档 复跑 谱系","at":""}
+{"archive":"experience","carrier":"md","ref":"sihankor/doc/draft/T5-CROSS-MODEL-EXPERIMENT-2026-07-21.md@197-197","axis":"semantic","excerpt":"## 八、文件归档","matched":"删除 恢复 归档 复跑 谱系","at":"","source_domain":"legacy-sihankor"}
+{"archive":"intent","carrier":"json","ref":"sih-tools/scribe/reports/2026-09-01-ask3-agentslim-solo-record.json@60dfd1e90ae9a61861bad3b99cc6a27264d2ba5d6cf797b4aa3308104f43e391","axis":"semantic","excerpt":"移出内容全量归档，不删除历史（归档零损）","matched":"删除 恢复 归档 复跑 谱系","at":""}
