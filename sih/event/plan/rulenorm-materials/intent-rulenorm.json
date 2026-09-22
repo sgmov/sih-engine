@@ -1,0 +1,28 @@
+{
+  "session_id": "sess-zcode-260922-rulenorm",
+  "raw_input": "用户选定 auditfix 遗留清单并令「得一裁，继续推进」。askroute 判定包命中 deyi-adjudicate 链后按 facet-measure skill 修订三修订四前置分道改道：三项悬置裁决皆处置裁断形不送采样，.json 域界走 scrutinizer 域外实证（exit 2 在档），三项裁断以用户本令为令源落 DEC，人保留一票绝对反对权（修订八）。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "rulenorm 批五件：rn-01 三 DEC 落据（DEC-027 exitenvelope A 轨择定候融回线收口、DEC-036 双 SPDX MIT OR Apache-2.0 首发前可逆、DEC-035 retired 目录与 CASCADE 归 knowledge 与 DES-001 域界条款）；rn-02 双 assessment 报告核阅归一 exit 0 数据零失真；rn-03 append.rs 重复 #[test] 去重；rn-04 AGENTS-RETIRED 迁 doc/retired 与 CASCADE 迁 doc/knowledge 加引擎侧引用更新加 LICENSE-MIT 与 LICENSE-APACHE 加 Cargo license 字段；rn-05 编排位核验证证收约；rn-06 工作区根 AGENTS.md 指针直改链笔。",
+    "exclusions": [
+      "exitenvelope A 轨执行批次候融回线收口本批零实装",
+      "发布三步候主窗终验本批零触碰",
+      "CONTRIBUTING 与 CHANGELOG 候后批",
+      "facet 采样零调用（前置分道改道在案）"
+    ],
+    "output_format": "三新 DEC 加双报告改加移动两件加新目录两处加 LICENSE 两件加批材料，认证笔在链",
+    "injected_constraints": [
+      "工程基线第五条：减少 LLM 参与，归一以确定性程序读数为验收",
+      "规格消费面申报：本批消费 DEC-024 两道门、DES-001 规则包（含其域声明 **/*.md 实证）、DEC-017 命名与甲表、task package rulenorm.md 规格节、auditfix 勘误后报告 REC-012/017/018、BASELINE-v1（SDDG-1 补申报位）",
+      "facet-measure skill 修订四：改道须披露依据，用户可当场否决",
+      "GOV-004：append-only",
+      "数据保真：双报告归一后全部数值与 REC 编号与结论零失真"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine doc/decision 三新件与 doc/assessment 双报告与 doc 根级两件迁移与 doc/retired 与 doc/knowledge 与 src/event_stream/append.rs 与 Cargo.toml 与 LICENSE 两件与 AGENTS.md 与 PARKING-v1 与 decision/001 加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

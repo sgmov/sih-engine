@@ -1,0 +1,6 @@
+== scrutiny x5 (main rerun) ==
+doc/decision/027-exitenvelope-merging-status.md scrutiny=0
+doc/decision/035-doc-retired-directory-policy.md scrutiny=0
+doc/decision/036-license-selection.md scrutiny=0
+doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md scrutiny=0
+doc/assessment/2026-09-22-sih-engine-evaluation-report.md scrutiny=0

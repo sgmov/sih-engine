@@ -2,6 +2,7 @@
 name = "sih-engine"
 version = "0.9.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
