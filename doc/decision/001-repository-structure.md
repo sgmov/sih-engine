@@ -360,3 +360,5 @@ sih/event/audit
 2026-08-26 修订四：两态归属全量判定承用户裁定。一即消费完成度判据入文，签与结算人节点过即消费完成归事件层，未过即退役待审归状态层。二即 task-packages 两段两态，活跃与待签批归 sih/state/plan 即 README 与 TEMPLATE 随行，签毕批归 sih/event/plan，名随源不加内容改名即不立 task-package-archive 名。三即 skills 归 sih/state/skills 承过渡期治理手工状态裁定。四即 open-questions 归 sih/state 工作记忆。五即 static 之 audit 判事件层归档即 sih/event/audit。修订三所列 sih 根下独立节点行由此全部细化归层，映射表十件。
 
 2026-08-26 修订五：用户签署生效即修订二三四转裁定，结构收编与两态归位定案。
+
+2026-09-22 修订六：随 DEC-035 归桶，本文所引 doc/AGENTS-RETIRED-2026-09.md 更新为 doc/retired/AGENTS-RETIRED-2026-09.md，doc/CASCADE.json 更新为 doc/knowledge/CASCADE-decidable-cascade-v1.json；正文历史形不改。

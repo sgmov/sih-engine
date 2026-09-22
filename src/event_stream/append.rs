@@ -363,7 +363,6 @@ mod tests {
         assert!(matches!(err, AppendError::DuplicateEventId(id) if id == "evt-dup"));
     }
 
-    #[test]
     // chainstamp-solo 适配（如实记）：旧断言为迟到时戳抛 TimestampNotMonotonic，
     // 链铸时戳语义下迟到 hint 铸值抬升不再拒收，单调拒收对任何 hint 不可达；
     // TimestampNotMonotonic 变体保留仅为 API 兼容，常规路径不可达。
