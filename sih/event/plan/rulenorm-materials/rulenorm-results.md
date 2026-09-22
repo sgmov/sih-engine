@@ -16,9 +16,9 @@
 - rn-move 初版按编排位过宽指令改写 22 件历史批档案路径，编排位裁返工全回退，历史形保全零残留；根因即指令未圈定活文档与档案边界，对表 GOV-004 与 DEC-035 域界条款。
 - decision/001 修订以既有修订一至五顺延落修订六一行，正文历史形不改，对表 DEC-035 与 GOV-004。
 - event_stream 测试 grep 口径自 102 减 1 即 101，系去除重复属性计数的虚增位，真实测试函数数不变；对表 SPEC-024 与 auditfix 批 102 口径注记，候批将 §5.1 口径改为函数数或恢复一测候裁。
-- 评估报告原件备份于本 materials（eval-report-original-backup.md，sha256 前 8 位 aba9074f），主树未跟踪原件于收约前让位由归并接管，同 auditfix 批 report-original-backup 先例。
-- rn-code-fix 首跑红 8 件系工地缺 scribe 二进制环境件，cargo build --bins 后全绿，非断言红，按先红留痕注记于此。
-- 检词一笔既有懒波词「开域」于评估报告改写为既立词组自动新域自举，未生造新词。
+- 评估报告原件备份于本 materials（eval-report-original-backup.md，sha256 前 8 位 aba9074f），主树未跟踪原件于收约前让位由归并接管，承载对表 auditfix 批 report-original-backup 先例与 DEC-024 SDDG-3 承载形。
+- rn-code-fix 首跑红 8 件系工地缺 scribe 二进制环境件，cargo build --bins 后全绿，非断言红，按先红留痕纪律与 DEC-024 环境红注记承载于此。
+- 检词一笔既有懒波词「开域」于评估报告改写为既立词组自动新域自举，未生造新词，承载 DEC-017 立名纪律候批零。
 
 ## 尾读数 {#tail}
 
