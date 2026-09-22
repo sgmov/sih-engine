@@ -15,11 +15,12 @@
 ## 偏差 {#deviation}
 
 - 核阅 des-001 于勘误后报告实测 536 处违例，七类（C001 破折号 46、C002 强调 70、C006 表格 182、S004 39、F003 176、F005 22、S005 1）全系初版既有行文风格项，勘误未新增违例类别；报告属 assessment 类非 PRO/DES/GOV 类 T6 产出，全量风格归一候批（专项化格批），本批不做半改半留。证据：materials/tests/scrutiny-des001-report.json。
-- REC-006 三测落地名与原档建议名不同，且 teaching embed 经子代理核实为 run_gate 拒收输出载荷非输入，三测按直调投影语义落地（拒收载荷在位、申报缺席 fail-closed、形坏 fail-closed），REC-006 验收判据（grep ≥9 与 cargo test --bin lease 全绿）满足。
-- REC-016 应编排位修订重写为不变式正测形：三处 expect 为不可达构造性不变式，should_panic 撤除，正测三条钉住；与报告 REC-016 修订节一致。
+- REC-006 三测落地名与原档建议名不同，且 teaching embed 经子代理核实为 run_gate 拒收输出载荷非输入，三测按直调投影语义落地（拒收载荷在位、申报缺席 fail-closed、形坏 fail-closed），对表 SPEC-024 验收判据 A2；REC-006 验收判据（grep ≥9 与 cargo test --bin lease 全绿）满足。
+- REC-016 应编排位修订重写为不变式正测形：三处 expect 为不可达构造性不变式，should_panic 撤除，正测三条钉住；对表 DEC-024 SDDG-3 判据，与报告 REC-016 修订节一致。
 - append.rs 既有测试 test_mint_non_monotonic_hint_instead_of_reject 带重复 #[test] 属性两枚（主仓同位亦然，可编译），系既有面，本批未清候批。
 - 主树未跟踪件收约让位：迭代建议报告原件备份于本 materials（report-original-backup.md），主树原件于 close 前让位由工地版归并接管；姊妹篇评估报告仍无主未跟踪于主树 doc/assessment/，候批直改链笔申报或入册。
-- README.md 与本报告批内管线面：README 在 des-001 域外（域外 exit-2 不属违规，未跑化格）；报告核阅读数见偏差第一条。
+- README.md 与本报告批内管线面：README 在 DES-001 域外（域界承载件 DES-001，域外 exit-2 不属违规，未跑化格）；报告核阅读数见偏差第一条。
+- SDDG-1 意图申报材料修复：原意图笔 record_path 指主树件，收约让位暂离致通道三读空；补追加意图笔重指工地同文重申报（承载：DEC-024 SDDG-1 通道三；书简闸二按异 record 路径放行，非同路径重 intent）。
 - 编号水位申报（供后继批对表）：经本批勘误，报告拟号占用 DEC-027 至 DEC-039 与 DES-020 至 DES-022；现存目录编号 DEC 至 026、DES 至 019，占号无冲突。
 
 ## 尾读数 {#tail}
