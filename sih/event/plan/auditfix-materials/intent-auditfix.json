@@ -1,0 +1,28 @@
+{
+  "session_id": "sess-zcode-260922-auditfix",
+  "raw_input": "迭代建议报告出入全量修复批：用户令「按照你的规划，你拉起多子代理进行全量修复。你作为主编排，不写代码，只负责分配子代理任务。所有的子代理报告必须自己核查才可相信。直至所有的问题都修复完成。所有的内容必须遵循司衡的纪律和要求」。主会编排零亲写，五子代理工地施工归报，主会逐批独立核验后认证上链收约。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "auditfix 批五件：af-01 报告勘误（十七组出入就地修正，REC-015 重写为收尾批，REC-016 重写为不变式正测形，编号勘误 DEC-009 改 DEC-039 与 DES-024/025/026 改 020/021/022，bin 计数 36）；af-02 README 工具清单与 list_tools 21 具对表；af-03 sddgate.rs 补 SDDG-1 内单测三条；af-04 event_stream 三处构造性不变式改正测三条（99 加 3 即 102）；af-05 Cargo.toml 显式 [[example]] 三段加 registrydemo 与 tools_registry 旧申报注对表收尾；编排位核验每子批后才采信，认证笔在链，settle 加 close 过 SDDG 四判据。",
+    "exclusions": [
+      "波二及以后批次不属本批（exitenvelope 归并候融回线收口、发布三步候主窗终验、license 与 CASCADE 归属候用户三裁）",
+      "哲学仓与数学仓内容零触碰",
+      "三既有判定语义零触碰（sddgate 与 closegate 与 commitlaw 执法语义不改只补测）",
+      "评估报告姊妹篇零改动"
+    ],
+    "output_format": "四生产码文件改加两文档改加批材料（results.md 加 tests 证据子目录加管线报告），认证笔在链",
+    "injected_constraints": [
+      "工程基线第四条：修以测试红转绿与全量回归为证据",
+      "先红留痕纪律：子代理首跑红证归档不清洗",
+      "规格消费面申报：本批消费 DEC-024 两道门判据语义、SPEC-025 腿四接线现状、BASELINE-v1 五基线、任务包 auditfix.md 规格节、评估与迭代两报告出入清单（SDDG-1 补申报位）",
+      "GOV-004：治理域历史 append-only，零 git 直提交",
+      "BATCH-FACE 工地铁律：一切待提交件先复制进工地从工地施工改，主树零直写"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine doc/assessment 迭代建议报告与 README.md 与 Cargo.toml 与 src/bin/registrydemo.rs 与 src/tools_registry.rs 与 src/bin/lease/sddgate.rs 与 src/event_stream/hash.rs 与 src/event_stream/append.rs 加 sih/event/plan/auditfix-materials/ 加任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

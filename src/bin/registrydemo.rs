@@ -6,6 +6,7 @@
 //! heartbeat 只读投影直委托，同参同出参）加 mock echo 加 mock fail 加
 //! manifest 扫描读数。MCP 面接线改造（defs 加 dispatch 改走 registry）候
 //! 腿五收口批。
+//! 2026-09-14 腿四接线批已落地：分派面走 registry（server.rs list_tools/call_tool A3），本申报了结（auditfix 批 2026-09-22 对表注记）。
 //!
 //! 零 LLM 零网络（SPEC-025 A9 承袭）：全调用为本地投影或纯 mock。
 

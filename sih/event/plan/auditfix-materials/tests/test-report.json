@@ -1,0 +1,8 @@
+{
+ "doc": "auditfix test evidence",
+ "generated_by": "chief orchestrator rerun",
+ "exit_code": 0,
+ "lease": "test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s",
+ "event_stream": "test result: ok. 102 passed; 0 failed; 0 ignored; 0 measured; 171 filtered out; finished in 0.14s",
+ "examples_check": "Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.04s"
+}

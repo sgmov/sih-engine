@@ -230,4 +230,83 @@ mod tests {
         assert_eq!(last, "");
         assert!(err.is_none());
     }
+
+    #[test]
+    fn test_full_field_event_hashable() {
+        // REC-016：全字段事件可哈希——每个字段位与 Option 位全填满，
+        // 走 compute_event_hash 一次成功出非空摘要，钉「actor serializable」
+        // 构造性不变式（String 与单位枚举的 serde 序列化实际不可失败）。
+        let event = Event {
+            event_id: "00000000-0000-0000-0000-00000000000f".into(),
+            event_type: "task_completion".into(),
+            timestamp: chrono::DateTime::parse_from_rfc3339("2026-09-22T00:00:00.000000+00:00")
+                .unwrap()
+                .with_timezone(&Utc),
+            actor: Actor {
+                actor_id: "full-field-agent".into(),
+                actor_type: ActorType::Agent,
+                invoked_via: "deterministic-cli".into(),
+            },
+            details: Some(serde_json::json!({
+                "change_summary": "full field",
+                "nested": {"k": [1, 2, 3]}
+            })),
+            doc_id: "FULL-FIELD-DOC".into(),
+            prev_hash: GENESIS_PREV_HASH.into(),
+            event_hash: String::new(), // event_hash 不参与哈希，占位
+            event_class: Some("record_only".into()),
+            verification_result: Some(serde_json::json!({"passed": true})),
+            session_id: Some("sess-full-field".into()),
+            identity_hash: Some("ff".repeat(32)),
+        };
+        let hash = compute_event_hash(&event);
+        assert_eq!(hash.len(), 64, "SHA-256 十六进制摘要须 64 字符即非空");
+        assert_eq!(
+            hash,
+            compute_event_hash(&event),
+            "全字段输入同样须满足哈希确定性"
+        );
+    }
+
+    #[test]
+    fn test_btreemap_payload_serialization_deterministic() {
+        // REC-016：载荷序列化确定性——同一 BTreeMap 载荷两次 serde_json 序列化
+        // 逐字节一致且非空，钉「BTreeMap serializable」构造性不变式
+        //（&str 键加 Value 值的映射序列化实际不可失败）。
+        use std::collections::BTreeMap;
+        let build_payload = || {
+            let mut map: BTreeMap<&str, serde_json::Value> = BTreeMap::new();
+            map.insert(
+                "actor",
+                serde_json::json!({
+                    "actor_id": "payload-agent",
+                    "actor_type": "agent",
+                    "invoked_via": "deterministic-cli"
+                }),
+            );
+            map.insert("details", serde_json::json!({"change_summary": "payload"}));
+            map.insert("doc_id", serde_json::json!("PAYLOAD-DOC"));
+            map.insert("event_class", serde_json::Value::Null);
+            map.insert(
+                "event_id",
+                serde_json::json!("00000000-0000-0000-0000-00000000000e"),
+            );
+            map.insert("event_type", serde_json::json!("task_completion"));
+            map.insert("prev_hash", serde_json::json!(GENESIS_PREV_HASH));
+            map.insert("timestamp", serde_json::json!("2026-09-22T00:00:00+00:00"));
+            map.insert("verification_result", serde_json::Value::Null);
+            map
+        };
+        let payload1 = serde_json::to_string(&build_payload()).expect("BTreeMap 载荷可序列化");
+        let payload2 = serde_json::to_string(&build_payload()).expect("BTreeMap 载荷可序列化");
+        assert!(!payload1.is_empty(), "序列化载荷须非空");
+        assert_eq!(
+            payload1, payload2,
+            "同一载荷两次序列化须逐字节一致"
+        );
+        assert!(
+            payload1.starts_with("{\"actor\""),
+            "BTreeMap 有序性下载荷键序须为字段名字典序，首键 actor"
+        );
+    }
 }

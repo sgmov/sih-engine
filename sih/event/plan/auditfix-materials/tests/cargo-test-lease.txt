@@ -1,0 +1,106 @@
+warning: unused import: `Path`
+ --> src/mcpserver/alpha.rs:8:17
+  |
+8 | use std::path::{Path, PathBuf};
+  |                 ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `rmcp::ErrorData as McpError`
+  --> src/mcpserver/providers.rs:15:5
+   |
+15 | use rmcp::ErrorData as McpError;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `super::alpha`
+  --> src/mcpserver/server.rs:20:5
+   |
+20 | use super::alpha;
+   |     ^^^^^^^^^^^^
+
+warning: unused import: `super::tools`
+  --> src/mcpserver/server.rs:24:5
+   |
+24 | use super::tools;
+   |     ^^^^^^^^^^^^
+
+warning: unnecessary trailing semicolon
+    --> src/mcpserver/bootstrap.rs:1169:30
+     |
+1169 |     let mut complete = false;;
+     |                              ^ help: remove this semicolon
+     |
+     = note: `#[warn(redundant_semicolons)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `integration_root` is never used
+   --> src/retriever/mod.rs:689:4
+    |
+689 | fn integration_root() -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib) generated 6 warnings (run `cargo fix --lib -p sih-engine` to apply 4 suggestions)
+warning: unused variable: `slot`
+  --> src/bin/lease/closegate.rs:95:29
+   |
+95 |                 if let Some(slot) = held.iter_mut().find(|(hp, hs)| *hp == p && *hs == sid) {
+   |                             ^^^^ help: if this is intentional, prefix it with an underscore: `_slot`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused variable: `rc_t`
+   --> src/bin/lease/sddgate.rs:198:10
+    |
+198 |     let (rc_t, out_t, _) = git(repo, &["show", "-s", "--format=%cI", sha]);
+    |          ^^^^ help: if this is intentional, prefix it with an underscore: `_rc_t`
+
+warning: unused variable: `rc_f`
+   --> src/bin/lease/sddgate.rs:200:10
+    |
+200 |     let (rc_f, out_f, _) = git(
+    |          ^^^^ help: if this is intentional, prefix it with an underscore: `_rc_f`
+
+warning: constant `GUARD_VERSION` is never used
+  --> src/bin/lease/guardlaw.rs:10:18
+   |
+10 | pub(crate) const GUARD_VERSION: &str = "1.17.0";
+   |                  ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (bin "lease" test) generated 4 warnings (run `cargo fix --bin "lease" -p sih-engine --tests` to apply 3 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/bin/lease.rs (target/debug/deps/lease-c4bbcf835a6ed591)
+
+running 27 tests
+test allow_parse_tests::empty_extraction_dropped ... ok
+test allow_parse_tests::dash_truncation_and_star_marker ... ok
+test allow_parse_tests::backticked_path_with_prose_reason_extracts_path ... ok
+test allow_parse_tests::explicit_allow_extracted_and_deduped_against_requested ... ok
+test attachments::tests::established_segment_claimed_new_rejects ... ok
+test allow_parse_tests::placeholder_and_bare_word_kept_for_weizhan_parity ... ok
+test allow_parse_tests::section_scoping_excludes_other_sections ... ok
+test attachments::tests::established_segment_claim_established_passes ... ok
+test attachments::tests::new_segment_claimed_established_rejects ... ok
+test attachments::tests::new_stem_claim_new_segment_passes ... ok
+test guardlaw::tests::t7_batch_prefix_edges ... ok
+test guardlaw::tests::t7_staged_enforce_three_faces ... ok
+test sddgate::tests::t6_applicability_and_chainless ... ok
+test guardlaw::tests::t7_direct_pen_first ... ok
+test sddgate::tests::sddg1_missing_teaching_embed_fails_closed ... ok
+test commitlaw::pathfix_tests::ledger_surface_domain_form ... ok
+test guardlaw::tests::t7_active_locks_pairing ... ok
+test commitlaw::pathfix_tests::ledger_surface_central_form ... ok
+test sddgate::tests::sddg1_malformed_teaching_embed_fails_closed ... ok
+test commitlaw::pathfix_tests::discover_root_found_and_not_found ... ok
+test guardlaw::tests::t7_message_forms ... ok
+test sddgate::tests::sddg1_teaching_embed_present_rejects ... ok
+test sddgate::tests::t6_sddg3_deviation_carriers ... ok
+test sddgate::tests::t6_sddg4_test_and_acceptance ... ok
+test sddgate::tests::t6_sddg2_skips_tests_and_docs ... ok
+test sddgate::tests::t6_run_gate_reject_teaching_shape ... ok
+test sddgate::tests::t6_sddg2_pointer_scan ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+

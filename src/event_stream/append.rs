@@ -425,4 +425,25 @@ mod tests {
             AppendError::MissingRequiredDetails(t) if t == "task_completion"
         ));
     }
+
+    #[test]
+    fn test_append_in_memory_tail_present_after_success() {
+        // REC-016：成功追加后链尾必在——对空链 append_in_memory 后 last() 须为
+        // Some 且链尾哈希与该事件哈希一致，钉「成功追加后链尾必在」构造性
+        // 不变式（append 原子化路径写出行前的 last().expect 位）。
+        let mut store: Vec<Event> = Vec::new();
+        let input = make_input("evt-tail", "2026-07-27T13:00:00.000000+00:00");
+        let succ = append_in_memory(input, &mut store).expect("空链首事件追加须成功");
+        let tail = store.last().expect("成功追加后链尾必在");
+        assert_eq!(tail.event_id, "evt-tail");
+        assert_eq!(
+            tail.event_hash, succ.event_hash,
+            "链尾哈希须与追加返回的该事件哈希一致"
+        );
+        assert!(!tail.event_hash.is_empty());
+        assert_eq!(
+            tail.prev_hash, GENESIS_PREV_HASH,
+            "空链首事件 prev_hash 须为 genesis"
+        );
+    }
 }

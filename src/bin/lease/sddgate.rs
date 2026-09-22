@@ -820,4 +820,140 @@ mod tests {
         assert!(teaching["criteria_commands"]["SDDG-2"].is_string());
         assert!(teaching["counterexamples"]["SDDG-2"].is_string());
     }
+
+    // REC-006（auditfix 批）：SDDG-1 内单测补强。外测 tests/lease_mergeback_t6_close_gates.rs
+    // t6_sddg1_reject_teaching_embed 走二进制子进程对 close 报文，此处直调闸函数对表同一
+    // 拒收形：teaching 内嵌载荷（reason_code/gate/criteria_commands/counterexamples）与
+    // 申报通道 fail-closed 双向。夹具落 std::env::temp_dir() 唯一子目录，测毕清理。
+
+    #[test]
+    fn sddg1_teaching_embed_present_rejects() {
+        // 构造对齐外测 open_with_chain(declare_spec=false)：意图记录可解析但零申报词形，
+        // 链面有意图标 t0、无实装 t1，三通道俱空即闸面拒且 teaching 内嵌载荷在位
+        let dir = std::env::temp_dir().join(format!(
+            "leg2-sdd-sddg1-present-{}",
+            std::process::id()
+        ));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let record = dir.join("record.json");
+        std::fs::write(
+            &record,
+            json!({
+                "session_id": "sess-sddg1",
+                "round": 1,
+                "raw_input": "普通任务描述文本",
+                "intent_contract": {"goal": "普通任务描述文本"},
+                "domain_contract": {"repos": ["sih-engine"], "writes": []}
+            })
+            .to_string(),
+        )
+        .unwrap();
+        let trail = dir.join("trail.ndjson");
+        std::fs::write(
+            &trail,
+            format!(
+                "{}\n",
+                json!({
+                    "event_type": "intent_refined",
+                    "session_id": "sess-sddg1",
+                    "timestamp": "2026-09-13T01:00:00+00:00",
+                    "details": {"record_path": record.display().to_string()}
+                })
+            ),
+        )
+        .unwrap();
+        let session = json!({"issued_at": "2026-09-13T00:00:00+00:00", "session_id": "sess-sddg1"});
+        let out = run_gate(&session, &[trail.clone()], &[]);
+        assert_eq!(out["checked"], json!(true));
+        assert_eq!(out["verdict"], json!("reject"));
+        let gate1 = &out["gates"]["SDDG-1"];
+        assert_eq!(gate1["verdict"], json!("reject"));
+        assert_eq!(gate1["intent_spec_declared"], json!(false));
+        assert_eq!(gate1["t0_intent"], json!("2026-09-13T01:00:00+00:00"));
+        assert_eq!(gate1["t1_first_impl"], json!(null));
+        let teaching = &out["teaching"];
+        assert_eq!(teaching["reason_code"], json!("sddgate_rejected"));
+        assert_eq!(teaching["gate"], json!(["SDDG-1"]));
+        assert!(teaching["criteria_commands"]["SDDG-1"].is_string());
+        assert!(teaching["counterexamples"]["SDDG-1"].is_string());
+        assert_eq!(out["gate_since"], json!(GATE_SINCE));
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn sddg1_missing_teaching_embed_fails_closed() {
+        // 申报材料缺席（record_path 指向不存在的文件）：读档失败不豁免不放行，
+        // 按 fail-closed 返 reject，零 panic
+        let dir = std::env::temp_dir().join(format!(
+            "leg2-sdd-sddg1-missing-{}",
+            std::process::id()
+        ));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        let absent = dir.join("absent-record.json");
+        let events = vec![json!({
+            "event_type": "intent_refined",
+            "session_id": "sess-miss",
+            "timestamp": "2026-09-13T01:00:00+00:00",
+            "details": {"record_path": absent.display().to_string()}
+        })];
+        let v = check_sddg1(&events, &[]);
+        assert_eq!(v["verdict"], json!("reject"));
+        assert_eq!(v["intent_spec_declared"], json!(false));
+        assert_eq!(v["first_impl_spec_hits"].as_array().unwrap().len(), 0);
+        assert_eq!(v["window_spec_hits"].as_array().unwrap().len(), 0);
+        assert_eq!(v["t0_intent"], json!("2026-09-13T01:00:00+00:00"));
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn sddg1_malformed_teaching_embed_fails_closed() {
+        // 申报形可解析但语义不合两形：记录可读而正文零申报词形（对齐外测
+        // declare_spec=false 构造）、事件 JSON 可解析而 record_path 型坏非字符串，
+        // 俱按 fail-closed 返 reject
+        let dir = std::env::temp_dir().join(format!(
+            "leg2-sdd-sddg1-malformed-{}",
+            std::process::id()
+        ));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+
+        // 形一：记录文件可读（JSON 可解析）但语义零申报词形
+        let record = dir.join("plain-record.json");
+        std::fs::write(
+            &record,
+            json!({
+                "session_id": "sess-bad",
+                "raw_input": "普通任务描述文本",
+                "intent_contract": {"goal": "普通任务描述文本"}
+            })
+            .to_string(),
+        )
+        .unwrap();
+        let events = vec![json!({
+            "event_type": "intent_refined",
+            "session_id": "sess-bad",
+            "timestamp": "2026-09-13T01:00:00+00:00",
+            "details": {"record_path": record.display().to_string()}
+        })];
+        let v = check_sddg1(&events, &[]);
+        assert_eq!(v["verdict"], json!("reject"));
+        assert_eq!(v["intent_spec_declared"], json!(false));
+        assert_eq!(v["window_spec_hits"].as_array().unwrap().len(), 0);
+
+        // 形二：事件可解析但 record_path 型坏（非字符串），申报通道跳过不放行
+        let events_bad = vec![json!({
+            "event_type": "intent_refined",
+            "session_id": "sess-bad",
+            "timestamp": "2026-09-13T01:00:00+00:00",
+            "details": {"record_path": 123}
+        })];
+        let v2 = check_sddg1(&events_bad, &[]);
+        assert_eq!(v2["verdict"], json!("reject"));
+        assert_eq!(v2["intent_spec_declared"], json!(false));
+        assert_eq!(v2["t0_intent"], json!("2026-09-13T01:00:00+00:00"));
+
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 }

@@ -1,0 +1,4872 @@
+{
+  "engine": {
+    "name": "scrutinator",
+    "version": "0.1.0"
+  },
+  "packs": [
+    {
+      "name": "des-001",
+      "version": "0.3.0",
+      "domain": {
+        "include": [
+          "sih-engine/doc/**/*.md",
+          "**/scrutinator/fixtures/corpus/**/*.md",
+          "**/formatter/fixtures/**/*.md"
+        ],
+        "exclude": [
+          "**/skills/**",
+          "**/.agents/**",
+          "**/skill_like.md"
+        ]
+      }
+    }
+  ],
+  "targets": [
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md"
+  ],
+  "content_hashes": {
+    "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md": "2ace0926c3fedeb78bd06f78a9422d1d073d54334b5f645951e69dce6932a2bb"
+  },
+  "findings": [
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 40
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 41
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 42
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 112
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 113
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 180
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 183
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 184
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 185
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 199
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 219
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 239
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 243
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 264
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 297
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 320
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 323
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 324
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 325
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 341
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 344
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 380
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 401
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 419
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 422
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 423
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 424
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 438
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 459
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 483
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 490
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 504
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 507
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 508
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 509
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 510
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 524
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 527
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 528
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 529
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 624
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 625
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 626
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C001",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 646
+      },
+      "message": "禁止破折号「——」,中文连接请使用全角冒号「:」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 1
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 40
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 41
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 42
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 86
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 112
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 113
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 119
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 144
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 180
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 183
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 184
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 185
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 189
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 199
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 219
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 229
+      },
+      "message": "字符 U+2264 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 237
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 239
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 243
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 264
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 268
+      },
+      "message": "字符 U+2264 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 297
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 320
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 323
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 324
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 325
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 341
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 344
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 380
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 401
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 419
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 422
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 423
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 424
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 438
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 449
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 459
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 483
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 486
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 487
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 488
+      },
+      "message": "字符 U+2192 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 490
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 494
+      },
+      "message": "字符 U+2264 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 504
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 507
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 508
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 509
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 510
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 524
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 527
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 528
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 529
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 565
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 566
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 567
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 568
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 569
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 570
+      },
+      "message": "字符 U+2500 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 608
+      },
+      "message": "字符 U+2264 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 610
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 612
+      },
+      "message": "字符 U+2264 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 614
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 616
+      },
+      "message": "字符 U+2265 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 624
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 625
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 626
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C002",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 646
+      },
+      "message": "字符 U+2014 超出允许的 ASCII+CJK 字符集,疑似 Emoji 或装饰符号"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 1
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 5
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 6
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 10
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 14
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 22
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 26
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 40
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 68
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 73
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 77
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 78
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 79
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 80
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 84
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 90
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 92
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 99
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 101
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 107
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 109
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 113
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 115
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 119
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 121
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 133
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 144
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 146
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 152
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 163
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 163
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 163
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 178
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 180
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 189
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 197
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 202
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 203
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 207
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 222
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 223
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 225
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 229
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 233
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 237
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 239
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 241
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 242
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 243
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 248
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 260
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 261
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 262
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 264
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 264
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 268
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 272
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 280
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 282
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 283
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 295
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 305
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 314
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 320
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 322
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 323
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 323
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 324
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 325
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 327
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 335
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 335
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 341
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 341
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 344
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 344
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 345
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 345
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 346
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 347
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 359
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 361
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 361
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 361
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 361
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 364
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 365
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 366
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 370
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 372
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 378
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 380
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 383
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 384
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 385
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 399
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 401
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 401
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 405
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 419
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 422
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 423
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 424
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 424
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 432
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 457
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 459
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 483
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 498
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 502
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 507
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 509
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 510
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 516
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 522
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 524
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 527
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 528
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 529
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 537
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 543
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 545
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 549
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 549
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 551
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 553
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 553
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 553
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 553
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 554
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 554
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 554
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 555
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 555
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 557
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 559
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 559
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 560
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 560
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 562
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 567
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 582
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 585
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 586
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 598
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 608
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 608
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 610
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 612
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 612
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 616
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 618
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 624
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 625
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 626
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 626
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 634
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 636
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 644
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 644
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 646
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "C006",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 646
+      },
+      "message": "全角括号内容非法:仅允许英文 slug、缩写引入或单一治理编号。论证/举例/补充应改为独立句或顿号串"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 10
+      },
+      "message": "第 2 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 12
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 28
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 38
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 48
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 65
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 75
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 90
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 107
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 127
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 144
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 160
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 178
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 197
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 217
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 237
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 256
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 276
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 295
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 318
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 339
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 359
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 378
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 399
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 417
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 436
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 457
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 481
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 502
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 522
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 543
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 551
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 557
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 562
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 577
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 588
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 604
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 620
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S004",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 630
+      },
+      "message": "第 3 级标题必须显式声明 {#锚点}"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "S005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 10
+      },
+      "message": "全文第一个二级标题必须为「概览」(现为「0 摘要（执行总结）」)"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 26
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 40
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 41
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 42
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 52
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 56
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 60
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 92
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 94
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 99
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 101
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 103
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 109
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 111
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 112
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 113
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 117
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 119
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 121
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 123
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 129
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 131
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 136
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 138
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 140
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 146
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 148
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 150
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 152
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 154
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 156
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 162
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 166
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 170
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 172
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 174
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 180
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 182
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 187
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 189
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 191
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 193
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 199
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 201
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 207
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 209
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 211
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 213
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 219
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 221
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 227
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 229
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 231
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 233
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 239
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 241
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 246
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 248
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 250
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 252
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 258
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 260
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 266
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 268
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 270
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 272
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 278
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 280
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 285
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 287
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 289
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 291
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 297
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 299
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 308
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 310
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 312
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 314
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 320
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 322
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 323
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 324
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 325
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 329
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 331
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 333
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 335
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 341
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 343
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 344
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 345
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 346
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 347
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 349
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 351
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 353
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 355
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 361
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 363
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 368
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 370
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 372
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 374
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 380
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 382
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 389
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 391
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 393
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 395
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 401
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 403
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 407
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 409
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 411
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 413
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 419
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 421
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 426
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 428
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 430
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 432
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 438
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 440
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 447
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 449
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 451
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 453
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 459
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 461
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 471
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 473
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 475
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 477
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 483
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 485
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 492
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 494
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 496
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 498
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 504
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 506
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 512
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 514
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 516
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 518
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 524
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 526
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 527
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 528
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 529
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 531
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 533
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 535
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 537
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 547
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 548
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 549
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 553
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 554
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 555
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 559
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 560
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 590
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 592
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 594
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 596
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 598
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 608
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 610
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 612
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 614
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 616
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 618
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 624
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 625
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F003",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 626
+      },
+      "message": "禁止粗体「**」"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 16
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 17
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 18
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 19
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 20
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 21
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 22
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 23
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 24
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 32
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 33
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 34
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 35
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 36
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 579
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 580
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 581
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 582
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 583
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 584
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 585
+      },
+      "message": "禁止表格"
+    },
+    {
+      "pack": "des-001",
+      "rule_id": "F005",
+      "path": "/Users/moc/workspaces/SiHankor/worktrees/sih-engine/auditfix/doc/assessment/2026-09-22-sih-engine-iteration-recommendations.md",
+      "location": {
+        "line": 586
+      },
+      "message": "禁止表格"
+    }
+  ],
+  "domain_mismatches": [],
+  "summary": {
+    "total": 536,
+    "by_rule": {
+      "C001": 46,
+      "C002": 70,
+      "C006": 182,
+      "S004": 39,
+      "S005": 1,
+      "F003": 176,
+      "F005": 22
+    },
+    "by_pack": {
+      "des-001": 536
+    }
+  }
+}

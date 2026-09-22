@@ -18,6 +18,7 @@
 //! mcpserver::alpha::heartbeat，元数据与 MCP 面 defs 冻结同形，call 零变换
 //! 直委托，同参同出参），运行演示 bin 即 src/bin/registrydemo.rs；MCP 面
 //! 接线改造（defs 加 dispatch 改走 registry）候腿五收口批。
+//! 2026-09-14 腿四接线批已落地：分派面走 registry（server.rs list_tools/call_tool A3），本申报了结（auditfix 批 2026-09-22 对表注记）。
 //!
 //! A4 申报缺席形：ExternalPluginBridge 四面（spawn 加 send_request 加 recv
 //! 加 shutdown）只立签名，缺省体全部返回 BridgeUnsupported，进程外桥实装
