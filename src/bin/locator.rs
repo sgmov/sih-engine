@@ -40,7 +40,7 @@
 //!    decode replace 粒度随 from_utf8_lossy。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -59,12 +59,6 @@ type R<T> = Result<T, ToolErr>;
 
 fn tool_err<T>(msg: impl Into<String>) -> R<T> {
     Err(ToolErr::Tool(msg.into()))
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 fn content_hash(text: Option<&str>) -> String {

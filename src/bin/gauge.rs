@@ -26,7 +26,7 @@
 // 正典指针：SPEC-025 全量工具融回与插件槽位规格（sih-engine/doc/spec/SPEC-025-toolful-mergeback-v1.md）。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -70,12 +70,6 @@ fn die(rc: i32, err: &str, detail: Value) -> ! {
     }
     eprintln!("{}", emit(&Value::Object(m)));
     std::process::exit(rc);
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 /// Python round(x, 6) 等价：十进制六位舍入

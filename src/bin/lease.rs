@@ -23,7 +23,7 @@ mod sweepcore;
 
 use chrono::Utc;
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::BTreeMap;
 use std::io::Write;
 use std::path::{Path, PathBuf};
@@ -67,12 +67,6 @@ fn emit(v: &Value) -> String {
     let mut s = serde_json::to_string_pretty(&sort_json(v)).unwrap();
     s.push('\n');
     s
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 fn now_utc() -> String {

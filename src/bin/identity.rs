@@ -32,7 +32,7 @@
 
 use chrono::{DateTime, Local, NaiveDateTime, SecondsFormat, TimeZone, Utc};
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::HashSet;
 use std::fs;
 use std::io::Read;
@@ -99,12 +99,6 @@ const NET_TIME_URL: &str = "https://www.cloudflare.com/cdn-cgi/trace";
 const HUMAN_SEAT: &str = "human";
 const HUMAN_SEAT_REQUIRED: [&str; 3] = ["seat", "name", "attest_at"];
 const FINGERPRINT_FORMS: [&str; 3] = ["keyboard_layout", "boottime", "link_code"];
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
-}
 
 /// 对象键递归排序（json.dumps sort_keys=True 语义）。
 fn sort_value(v: Value) -> Value {

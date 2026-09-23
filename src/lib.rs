@@ -11,6 +11,7 @@ pub mod attractor;
 pub mod cascade_registry;
 pub mod event_stream;
 pub mod exitenvelope;
+pub mod hashutil;
 pub mod mcpserver;
 pub mod retriever;
 pub mod snapline;

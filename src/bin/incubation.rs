@@ -29,7 +29,7 @@
 
 use regex::Regex;
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::fs;
 use std::path::Path;
@@ -51,12 +51,6 @@ fn usage_fail(msg: &str) -> ! {
 fn fail2(payload: Value) -> ! {
     println!("{}", serde_json::to_string_pretty(&payload).unwrap());
     exit(2);
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 fn heading_re() -> &'static Regex {

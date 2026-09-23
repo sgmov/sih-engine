@@ -1,0 +1,143 @@
+warning: unused import: `Path`
+ --> src/mcpserver/alpha.rs:8:17
+  |
+8 | use std::path::{Path, PathBuf};
+  |                 ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `rmcp::ErrorData as McpError`
+  --> src/mcpserver/providers.rs:15:5
+   |
+15 | use rmcp::ErrorData as McpError;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `super::alpha`
+  --> src/mcpserver/server.rs:20:5
+   |
+20 | use super::alpha;
+   |     ^^^^^^^^^^^^
+
+warning: unused import: `super::tools`
+  --> src/mcpserver/server.rs:24:5
+   |
+24 | use super::tools;
+   |     ^^^^^^^^^^^^
+
+warning: unnecessary trailing semicolon
+    --> src/mcpserver/bootstrap.rs:1169:30
+     |
+1169 |     let mut complete = false;;
+     |                              ^ help: remove this semicolon
+     |
+     = note: `#[warn(redundant_semicolons)]` (part of `#[warn(unused)]`) on by default
+
+warning: `sih-engine` (lib test) generated 5 warnings (run `cargo fix --lib -p sih-engine --tests` to apply 4 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running unittests src/lib.rs (target/debug/deps/sih_engine-a549a1b1054ef702)
+
+running 101 tests
+test event_stream::append::tests::test_reject_missing_details_for_task_completion ... ok
+test event_stream::append::tests::test_reject_illegal_actor_llm_invoked_via ... ok
+test event_stream::append::tests::test_append_first_event_success ... ok
+test event_stream::append::tests::test_append_in_memory_tail_present_after_success ... ok
+test event_stream::append::tests::test_reject_prev_hash_mismatch ... ok
+test event_stream::append::tests::test_append_second_event_success ... ok
+test event_stream::append::tests::test_reject_duplicate_event_id ... ok
+test event_stream::append::tests::test_mint_non_monotonic_hint_instead_of_reject ... ok
+test event_stream::crosscheck::tests::c3_material_absent_rejected ... ok
+test event_stream::crosscheck::tests::c1_guard_accepts_well_formed ... ok
+test event_stream::crosscheck::tests::c2_missing_and_extra_rejected ... ok
+test event_stream::event::tests::test_actor_type_case_insensitive ... ok
+test event_stream::crosscheck::tests::c5_event_class_by_disposition ... ok
+test event_stream::crosscheck::tests::c6_append_and_verify_roundtrip ... ok
+test event_stream::event::tests::test_event_roundtrip ... ok
+test event_stream::hash::tests::test_btreemap_payload_serialization_deterministic ... ok
+test event_stream::hash::tests::test_empty_chain ... ok
+test event_stream::hash::tests::test_compute_hash_deterministic ... ok
+test event_stream::intent::intent_status_tests::ask3_form_without_validation_refused ... ok
+test event_stream::intent::intent_status_tests::plain_form_without_validation_passes ... ok
+test event_stream::hash::tests::test_tamper_detection ... ok
+test event_stream::intent::intent_status_tests::ok_status_passes_gate ... ok
+test event_stream::chainstamp_tests::chainstamp::mint_raises_late_hint_future_hint_passes_through ... ok
+test event_stream::hash::tests::test_verify_chain_success ... ok
+test event_stream::intent::intent_status_tests::reintent_empty_scope_allows ... ok
+test event_stream::intent::intent_status_tests::reintent_allow_reintent_allows ... ok
+test event_stream::crosscheck::tests::c4_shape_violations_rejected ... ok
+test event_stream::hash::tests::test_full_field_event_hashable ... ok
+test event_stream::intent::intent_status_tests::reintent_repeated_record_rejected ... ok
+test event_stream::intent::intent_status_tests::reintent_fresh_record_allows ... ok
+test event_stream::intent::intent_status_tests::rejected_status_refused ... ok
+test event_stream::intent::intent_status_tests::session_mismatch_refused ... ok
+test event_stream::lockgate::lockgate_tests::g1_missing_ledger_allows ... ok
+test event_stream::chainstamp_tests::chainstamp::old_rows_byte_identical_and_hash_stable ... ok
+test event_stream::chainstamp_tests::chainstamp::monotonic_rejection_unreachable_for_any_hint ... ok
+test event_stream::lockgate::lockgate_tests::g5_malformed_is_unreadable ... ok
+test event_stream::lockgate::lockgate_tests::g7_non_transition_rows_skipped ... ok
+test event_stream::lockgate::lockgate_tests::g4_released_allows ... ok
+test event_stream::lockgate::lockgate_tests::g2_other_session_held ... ok
+test event_stream::lockgate::lockgate_tests::g6_unrelated_path_allows ... ok
+test event_stream::lockgate::lockgate_tests::g3_self_session_allows ... ok
+test event_stream::lockgate::lockgate_tests::g10_append_plus_exclusive_blocks ... ok
+test event_stream::lockgate::lockgate_tests::g9_exclusive_holder_blocks ... ok
+test event_stream::lockgate::lockgate_tests::g8_append_holder_allows ... ok
+test event_stream::park::scope_tests::append_face_stays_single_chain ... ok
+test event_stream::park::scope_tests::new_entry_passes ... ok
+test event_stream::park::scope_tests::cross_day_exit_reaches_over_full_scope ... ok
+test event_stream::query::tests::test_aggregate_by_actor ... ok
+test event_stream::query::tests::test_aggregate_by_hour ... ok
+test event_stream::query::tests::test_aggregate_by_type ... ok
+test event_stream::park::scope_tests::cross_day_used_number_rejected ... ok
+test event_stream::query::tests::test_filter_by_actor_id ... ok
+test event_stream::query::tests::test_filter_by_event_type ... ok
+test event_stream::query::tests::test_combined_filter_and_aggregate ... ok
+test event_stream::query::tests::test_filter_by_time_range ... ok
+test event_stream::query::tests::test_query_all ... ok
+test event_stream::reading::tests::r1_guard_accepts_well_formed ... ok
+test event_stream::park::scope_tests::in_parking_reenter_rejected_regression ... ok
+test event_stream::park::scope_tests::cross_file_reenter_rejected_over_full_scope ... ok
+test event_stream::reading::tests::r2_guard_rejects_missing_and_extra ... ok
+test event_stream::reading::tests::r4_insufficient_marker_and_bounds_ok ... ok
+test event_stream::reading::tests::r3_guard_rejects_enum_value_digest_shapes ... ok
+test event_stream::reading::tests::r6_guard_accepts_ga2_ext_fields ... ok
+test event_stream::reading::tests::r8_ga1_reading_still_accepted ... ok
+test event_stream::park::scope_tests::non_date_trail_self_in_scope ... ok
+test event_stream::reading::tests::r7_guard_rejects_malformed_ga2_ext ... ok
+test event_stream::sessiongate::sessiongate_tests::s1_no_session_rejected ... ok
+test event_stream::sessiongate::sessiongate_tests::s5_missing_ledger_rejects ... ok
+test event_stream::park::scope_tests::non_chain_ndjson_ignored_in_parking_scope ... ok
+test event_stream::sessiongate::sessiongate_tests::s7_no_session_reason_allows ... ok
+test event_stream::reading::tests::r5_reading_event_appends_and_chain_verifies ... ok
+test event_stream::sessiongate::sessiongate_tests::s3_revoked_rejected ... ok
+test event_stream::sessiongate::sessiongate_tests::s6_malformed_unreadable ... ok
+test event_stream::sessiongate::sessiongate_tests::s8_reissue_not_clobbered ... ok
+test event_stream::sessiongate::sessiongate_tests::s2_active_session_allows ... ok
+test event_stream::sessiongate::sessiongate_tests::s4_never_issued_rejected ... ok
+test event_stream::park::scope_tests::exited_number_reuse_rejected ... ok
+test event_stream::tdd_tests::tdd::t10_zero_migration_old_row_byte_identical ... ok
+test event_stream::tdd_tests::tdd::t3_intent_findings_rejected ... ok
+test event_stream::tdd_tests::tdd::t2_production_trails_verify ... ok
+test event_stream::tdd_tests::tdd::t3_intent_zero_findings_passes ... ok
+test event_stream::park::scope_tests::splinter_form_stays_in_scope ... ok
+test event_stream::tdd_tests::tdd::t1_golden_vectors_recompute ... ok
+test event_stream::tdd_tests::tdd::t4_park_invariants ... ok
+test event_stream::tdd_tests::tdd::t8_tamper_session_id_breaks_verify ... ok
+test event_stream::tdd_tests::tdd::t9_tamper_identity_hash_breaks_verify ... ok
+test event_stream::verify::tests::test_empty_stream_error ... ok
+test event_stream::verify::tests::test_event_id_not_found ... ok
+test event_stream::verify::tests::test_full_verify_success ... ok
+test event_stream::verify::tests::test_hash_chain_broken ... ok
+test event_stream::verify::tests::test_invalid_range ... ok
+test event_stream::verify::tests::test_range_verify_success ... ok
+test event_stream::tdd_tests::tdd::t5_certify_payload_and_duplicate ... ok
+test event_stream::tdd_tests::tdd::ga3_intent_worktree_trail_rejected ... ok
+test event_stream::tdd_tests::tdd::ga1_append_worktree_trail_rejected ... ok
+test event_stream::tdd_tests::tdd::ga4_park_worktree_trail_rejected ... ok
+test event_stream::tdd_tests::tdd::ga2_record_worktree_trail_rejected ... ok
+test event_stream::tdd_tests::tdd::t11_direct_agent_requires_identity_report ... ok
+test event_stream::tdd_tests::tdd::t6_scribe_exit_codes ... ok
+test event_stream::chainstamp_tests::chainstamp::confirm_three_states ... ok
+test event_stream::tdd_tests::tdd::t7_concurrent_append_race_two_processes ... ok
+
+test result: ok. 101 passed; 0 failed; 0 ignored; 0 measured; 173 filtered out; finished in 0.14s
+

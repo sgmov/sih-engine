@@ -1,0 +1,1 @@
+formatter dual-run: engine exit 0 / tool exit 0 / cmp IDENTICAL

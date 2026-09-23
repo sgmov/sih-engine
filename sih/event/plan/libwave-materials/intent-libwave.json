@@ -1,0 +1,26 @@
+{
+  "session_id": "sess-zcode-260923-libwave",
+  "raw_input": "用户令「继续」，承接完工报告所列当下无阻塞三件：哈希归并（REC-008 hashutil 半）、AGENTS.md 索引补全（REC-010）、CONTRIBUTING 加 CHANGELOG（REC-018 余项），随批登记 DEC-031 与 DEC-033 与 DES-020。",
+  "round": 1,
+  "intent_contract": {
+    "goal": "libwave 批五件：lw-01 三文档落据；lw-02 src/hashutil.rs 新件归并 13 bin 的 sha256_hex（逐字等价前提，异文即停）；lw-03 引擎 AGENTS.md 两段索引（36 bin 加 12 mod，不超 200 行）；lw-04 CONTRIBUTING 加 CHANGELOG 候发布节加 RANTS frontmatter 豁免；lw-05 主会亲验含 gauge 与 formatter 双跑对表抽检，认证收约。",
+    "exclusions": [
+      "cliargs 归并候后批（DEC-031 分批条款）",
+      "parse_args 七处本批零触碰",
+      "发布三步与 exitenvelope 与融回线照旧候闸"
+    ],
+    "output_format": "一新 rs 件加 13 bin 调用位改加 AGENTS.md 索引段加根级三件加三文档，认证笔在链",
+    "injected_constraints": [
+      "行为保真：sha256_hex 语义逐字等价方可替换，双跑对表抽检为证",
+      "规格消费面申报：本批消费 DEC-031 草案条款、DES-020 草案、DES-001 域界（DEC-033）、task package libwave.md 规格节、BASELINE-v1、auditfix 勘误后报告 REC-008/010/012/018（SDDG-1 补申报位）",
+      "新源文件头注载正典指针（DEC-031）",
+      "工程基线五条与先红留痕纪律"
+    ]
+  },
+  "domain_contract": {
+    "target_domain": {
+      "scope": "sih-engine src/hashutil.rs 与 src/lib.rs 与 13 bin 调用位与 AGENTS.md 与根级 CONTRIBUTING CHANGELOG RANTS 与 doc/decision 两新件与 doc/design 一新件加批材料与任务包与当日 trail",
+      "max_depth": 1
+    }
+  }
+}

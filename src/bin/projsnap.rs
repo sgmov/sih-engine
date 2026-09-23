@@ -22,6 +22,7 @@
 
 use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -31,12 +32,6 @@ use std::process::exit;
 const VERSION: &str = "0.1.0";
 /// 派生节全集与顺序（SECTIONS 插入序，sources_hash 拼接序）。
 const SECTIONS: [&str; 3] = ["file-index", "tool-versions", "parked-count"];
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
-}
 
 fn begin_mark(name: &str) -> String {
     format!("<!-- projsnap:begin {name} -->")
