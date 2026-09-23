@@ -27,7 +27,7 @@
 //!    TypeError traceback 退出码 1）。
 
 use serde_json::{json, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::HashMap;
 use std::fs;
 use std::io::Read;
@@ -151,12 +151,6 @@ fn py_str(v: &Value) -> String {
         Value::String(s) => s.clone(),
         other => other.to_string(),
     }
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 fn expand_token(t: &str, root: &str, pack_dir: &str) -> String {

@@ -28,7 +28,7 @@
 //! 8. verify 的未配对支付 findings 遍历按 ref 首现序（与围堰 dict 插入序同形）。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{BTreeMap, HashMap};
 use std::fs::{self, OpenOptions};
 use std::io::Write;
@@ -156,12 +156,6 @@ fn py_rec(
         Value::Bool(b) => out.push_str(if *b { "true" } else { "false" }),
         Value::Null => out.push_str("null"),
     }
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 fn ts_now() -> String {

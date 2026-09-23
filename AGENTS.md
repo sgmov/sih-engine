@@ -81,6 +81,64 @@
 过程性产出
 : T-001 启动任务包、old-repo-failure-analysis 旧仓失败复盘。定位 tmp/，不进治理链条。
 
+## 内部工具 bin 索引 {#bin-index}
+
+src/bin/ 下 36 个 bin 逐件登记，三列即 bin 名、行数、职能，职能取各文件头注 //! 首行语义压缩。lease 含 src/bin/lease/ 七子模块。
+
+- acceptor：596 行，引擎侧空腹判定包执行机命令行面，lease-mergeleg6-parallel 簇J 移植件
+- ask3repeater：81 行，三问确定性外壳的校验腿，承接 SPEC-005#deterministic-shell
+- askroute：147 行，判定路由命令行面，gap-askroute-port 引擎位移植件
+- attnanchor：483 行，回锚引擎件，五行锚读数组装器，注入式回锚 v1 的引擎 bin 形
+- attractor：337 行，得一机械核对腿的六子命令入口
+- basemgr：820 行，引擎侧基线向量管理工具命令行面，lease-mergeleg6-parallel 簇I 移植件
+- calllogtool：500 行，引擎侧行式账本命令行面，lease-mergeleg23-parallel 簇F 移植件
+- cascade：377 行，引擎侧级联命令行面，lease-mergeleg23-parallel 簇E 移植件
+- checker：831 行，引擎侧检查器命令行面，lease-mergeleg6-parallel 簇I 移植件
+- confledger：796 行，引擎侧冲突账本命令行面，lease-mergeleg6-parallel 簇I 移植件
+- critsweep：1102 行，判据扫引擎件，对话框内治理态回算器，v1.2.0 的引擎 bin 形
+- elicit：578 行，引擎侧叩问命令行面，lease-mergeleg6-parallel 簇J 移植件
+- formatter：627 行，引擎侧化格命令行面，lease-mergeall-parallel 簇B 移植件
+- gauge：839 行，秤星引擎件，治理态读数计算核，ga-2 的引擎 bin 形
+- identity：962 行，引擎侧正身命令行面，lease-mergeleg23-parallel 簇E 移植件
+- incubation：1186 行，孵化回路契约校验器引擎 bin，lease-mergeleg6-parallel 簇H 移植件
+- latextool：1495 行，引擎侧 LaTeX 书写辅助命令行面，lease-mergeleg6-parallel 簇G 移植件
+- lease：729 行，租约引擎件，锁核腿 fixture 对等实装，SPEC-024 腿一；含 src/bin/lease/ 七子模块：attachments、calllogface、closegate、commitlaw、guardlaw、sddgate、sweepcore
+- locator：2872 行，引擎侧寻址命令行面，lease-mergeleg23-parallel 簇D 移植件
+- locksview：746 行，引擎侧锁视图工具命令行面，lease-mergeleg6-parallel 簇I 移植件
+- meter：696 行，引擎侧计量命令行面，lease-mergeleg23-parallel 簇F 移植件
+- nomenclator：930 行，引擎侧检词命令行面，lease-mergeall-parallel 簇B 移植件
+- parser：3012 行，引擎侧句读命令行面，lease-mergeleg23-parallel 簇D 移植件
+- pendline：74 行，候裁处置范式编排件的五子命令入口，pl-04
+- projsnap：786 行，引擎侧派生快照投影器命令行面，lease-mergeleg6-parallel 簇J 移植件
+- registrydemo：125 行，腿五插件槽位演示 bin，SPEC-025 插件槽位协议，lease-mergeall-parallel 簇C
+- retriever：168 行，温故宿主命令面，承接 SPEC-007#interface-signature 与 SPEC-008#boundary 与修订六
+- scribe：750 行，书简融回命令行面，本名回滚承 DEC-017 修订二，承接 SPEC-006#boundary 与 T6
+- scrutinator：232 行，引擎侧核阅组件命令行面，承接 DEC-007#decision-component 与 SPEC-013
+- selector：1097 行，引擎侧路择命令行面，lease-mergeleg23-parallel 簇E 移植件
+- sih：288 行，sih 命令薄壳，sih init 开域单步窄口，adoptface 批
+- sihmcp：151 行，sihmcp 二进制入口，MCP 线 Rust 载体，sihmcp-solo 批
+- tally：1366 行，引擎侧执契命令行面，lease-mergeleg23-parallel 簇F 移植件
+- viewer：221 行，视图组件命令行面，承接 DEC-007#decision-component 聚合输出组件
+- watchcheck：670 行，引擎侧稽命令行面，lease-mergeleg23-parallel 簇F 移植件
+- wikirecall：703 行，三通道确定性召回引擎 bin，lease-mergeleg6-parallel 簇H 移植件
+
+## lib 模块清单 {#lib-modules}
+
+src/lib.rs 现役 12 个 pub mod 逐件登记。
+
+- ask3repeater：三问组件本体，承接 DEC-006 七项决策、DES-013 组件设计、SPEC-005 接口规格
+- askroute：判定路由组件库，gap-askroute-port 引擎位移植件；此前未列入，O2 收口
+- attractor：得一，判定器席实例的机械核对腿，融回自 sih-tools facet 与 tally
+- cascade_registry：级联建册核心库件，pk-055 cascadeclose-solo 批自 src/bin/cascade.rs 原位提取；此前未列入，O2 收口
+- event_stream：事件流模块入口，承接 DES-007#module-organization 与 SPEC-004#interface-signature
+- exitenvelope：引擎共享退出封套基座，CLI bin 侧错误报文发射与终退出的唯一实现位；此前未列入，O2 收口
+- mcpserver：MCP 线 Rust 载体，rmcp SDK，sihmcp-solo 批
+- retriever：项目记忆组件库面，承接 SPEC-007 冻结契约与 SPEC-008 落差规格
+- snapline：墨斗，引擎共享谓词求值基座，纯求值原语零治理语义；此前未列入，O2 收口
+- scrutinator：引擎侧核阅组件库，承接 SPEC-013
+- tools_registry：腿五插件槽位架构骨架，SPEC-025 插件槽位协议；此前未列入，O2 收口
+- view：视图组件纯函数簇，承接 DEC-007#decision-component 聚合输出组件边界
+
 ## 关联 {#relation}
 
 - 根 AGENTS.md：工作区整体入口，承载项目身份、哲学仓地位、工程基线与禁止条款
@@ -98,6 +156,7 @@
 - 首个二级标题命名为概览
 - 无破折号、无装饰符号、无 Unicode Emoji
 - 全角括号仅用于单一治理编号
+- RANTS.md 风格豁免（DEC-033）
 
 ### 内容自检 {#content-self-check}
 

@@ -35,7 +35,7 @@
 //!    与 Python 逐错替换在畸形序列处 U+FFFD 个数可差。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -59,12 +59,6 @@ fn pack_err<T>(msg: impl Into<String>) -> R<T> {
 
 fn tool_err<T>(msg: impl Into<String>) -> R<T> {
     Err(ToolErr::Tool(msg.into()))
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 /// Python repr(str) 近似：默认单引号，含单引号且无双引号时用双引号。

@@ -27,7 +27,7 @@
 //!    紧凑 JSON 形），字符串与 None 对齐。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::{BTreeSet, HashMap};
 use std::fs;
 use std::path::Path;
@@ -331,12 +331,6 @@ fn py_join_str(base: &str, rel: &str) -> String {
 }
 
 // ---------- 基础工具 ----------
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
-}
 
 fn sha256_file(path: &Path) -> Result<String, ToolFailure> {
     let bytes = fs::read(path).map_err(|_| ToolFailure::not_found(&path.to_string_lossy()))?;

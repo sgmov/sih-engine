@@ -31,7 +31,7 @@
 //!    （自足序列化器逐字节对齐）；stderr 错误为插入序单行形。
 
 use serde_json::{json, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{Command, exit};
@@ -123,12 +123,6 @@ fn py_rec(v: &Value, indent: Option<usize>, sort: bool, depth: usize, out: &mut 
         Value::Bool(b) => out.push_str(if *b { "true" } else { "false" }),
         Value::Null => out.push_str("null"),
     }
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 /// Python Path.resolve() 非严格形：canonicalize 优先，失败退绝对化拼接。

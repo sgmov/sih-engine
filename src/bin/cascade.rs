@@ -32,7 +32,7 @@
 //!    与围堰 argparse 对齐，报文形不对齐。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::collections::BTreeMap;
 use std::fs;
 use std::path::Path;
@@ -43,12 +43,6 @@ use std::process::exit;
 // sih_engine::cascade_registry，lease close 前投影重建复用同件，零 shell out；
 // 本侧行为面零改动（函数体逐字节承提取前原文）。
 use sih_engine::cascade_registry::{build_registry, dump_canonical, resolve_abs, sort_value, ENGINE_VERSION};
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
-}
 
 fn file_hash(path: &Path) -> Result<String, String> {
     let bytes = fs::read(path).map_err(|e| format!("file hash failed: {}: {e}", path.display()))?;

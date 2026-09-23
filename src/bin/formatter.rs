@@ -24,7 +24,7 @@
 //! 6. envelope_version 判等按 JSON 整数 1 严格判（Python 1.0 == 1 宽判未对齐）。
 
 use serde_json::{json, Map, Value};
-use sha2::{Digest, Sha256};
+use sih_engine::hashutil::sha256_hex;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::exit;
@@ -56,12 +56,6 @@ fn usage_fail(msg: &str) -> ! {
     eprintln!("用法错: {msg}");
     eprintln!("用法: formatter --pack <格式包目录> [--pack <格式包目录>...] [--write] [--quiet] <目标>...");
     exit(2);
-}
-
-fn sha256_hex(bytes: &[u8]) -> String {
-    let mut h = Sha256::new();
-    h.update(bytes);
-    hex::encode(h.finalize())
 }
 
 /// 域 glob 编译（scrutinator/domain.py `_compile` 逐字对表）：
