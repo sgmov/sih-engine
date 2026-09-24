@@ -1,10 +1,12 @@
 {
   "contract_path": "sih/state/plan/m-gatesplit-1-contract.json",
   "contract_sha256": "040ba1adb4fa57f70ba033bc43d96238fa138d335034b5805ad3119718505177",
+  "core_hash": "65101ccae8d56918c6c2910e217ce46306df81ae24d2f3c63e88a69cd59c0af6",
   "coverage_flags": 0,
   "coverage_rate": 0.0,
   "coverage_reasons": [],
   "criteria_version": "v4",
+  "date": "2026-09-24",
   "dc_fingerprint": "fe672623b2450ac4",
   "gate_verdict": "stable_clear",
   "gid": "m-gatesplit-1",

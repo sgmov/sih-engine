@@ -43,5 +43,5 @@ gid `m-gatesplit-1`：判据 v3 之 boundary_flag 单旗语义应修订为 v4 �
 - [x] 测试：单测覆盖（信心旗触发 boundary、超纲旗不触发、旧响应兼容、缺键 false）；既有测试与夹具回归
 - [x] 自裁命题 m-gatesplit-1 走新判据采样九发 stable_clear
 - [x] R5 读档注入形修复：bin 与 attractor 双面配对降信号、assemble 正身透传、R5 五件新测试（核等值快径不动、核不一致放行加告警、基线漂移仍挂起、身份哈希不一致放行加告警、旧报告无核回退）
-- [ ] 重装配（带正身报告）→ check 裁决通过 → verify identical → sign 落链
+- [x] 重装配（带正身报告）→ check 裁决通过 → verify identical → sign 落链（b4c6bf4c）
 - [ ] 后继：m-siacarr 批按新判据重送（另批不承诺本批内）

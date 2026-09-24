@@ -54,4 +54,36 @@
 
 ## 五、范畴排除声明
 
-本批不动：围堰 sih-tools/（冻结）、金向量 fixtures/golden/、pendline/lease/critsweep 行为面、闸三态词表与 DES-011 四值处置逻辑、cell 四分格收敛逻辑（compiler 既有 0.5/0.5 阈值面）。工作清单第四件（自裁命题 m-gatesplit-1 走新判据采样九发 stable_clear）与第五件（m-siacarr 重送）不在本委外件范围（另批）。bin/tally.rs 缺省代际保持 v3 的不对称属对表忠实决策，已在文件头注与本文档申报。
+本批不动：围堰 sih-tools/（冻结）、金向量 fixtures/golden/、pendline/lease/critsweep 行为面、闸三态词表与 DES-011 四值处置逻辑、cell 四分格收敛逻辑（compiler 既有 0.5/0.5 阈值面）。bin/tally.rs 缺省代际保持 v3 的不对称属对表忠实决策，已在文件头注与本文档申报。
+
+## 六、段2：自裁终签与 R5 读档注入形修复（2026-09-24 主会执行）
+
+### 6.1 自裁命题 m-gatesplit-1 全链落据
+
+- 九发采样经引擎 emit-contract（v4 五键模板）出题、QNAIGC:z-ai/glm-5.1 座席作答，score v4 自判闸 **stable_clear**（boundary 率 0、coverage_flags 0，计分材料 proposition/DES/m-gatesplit-1/m-gatesplit-1-score-material.json）
+- tally 链：assemble（正身透传 core_hash 65101cca）→ check **pass 裁决通过**（R5 passed 行「基线判定可用；身份核哈希与冻结基线不一致，环境漂移信号留档」＋告警在档）→ verify **identical** → sign **落链**（event_hash b4c6bf4c，doc crosscheck-m-gatesplit-1）
+- 首跑红证保留（先红留痕纪律）：段1 sign 拒于 R5 之拒签记录即本节 6.2 的修复输入，判词「席位身份哈希与基线不一致（处置走优先级映射）」在 beb2b81 提交信息留档，未清洗
+
+### 6.2 R5 读档注入形修复（任务包 §2.5 范围扩展腿）
+
+根因链：pk-035（08-30）身份哈希配对 → idcore-solo（09-02）核哈希优先 → pk-044（09-07）温度退役零新鲜采样。三裁合成后基线永久冻结于 2026-09-11 账本尾行（core e1c9a7fa），机器约 09-19 重启（boottime 1787917458→1789823102，mac 由缺席变在场，血统链 python>→identity>）后核哈希必然漂移，此后每批得一裁 sign 必挂起。09-13 后链上再无 crosscheck_completed 为证。gauge-probe-3（09-12）预申报此双缺陷候批，末次成功签靠 py 侧同日核侥幸配对，重启后该绕行亦死。
+
+修法（承用户责任转移裁定）：R5 阻断语义收缩为基线在场与判定三态（可用放行、漂移告警仍挂起）；核哈希与身份哈希配对降为在档信号（一致记 passed、不一致记 passed 加告警留链不拦判定）。改动：src/bin/tally.rs 两 mismatch 分支、src/attractor/tally.rs R5 重排为核配对优先三层（同时对齐 bin 面即消 gauge-probe-3 登记的双实现分歧）、assemble_material 增 identity_report 参数（读 identity.core_hash 入材料，对齐 pendsweep-solo 形）。新增测试五件（tests/attractor_gate_v4.rs R5 组）：核等值快径不动、核不一致放行加告警、基线漂移仍挂起、身份哈希不一致放行加告警、旧报告无核回退。
+
+### 6.3 会话状态异常与 bypass 处置（如实申报）
+
+- 提交 beb2b81（段1）与 a3d6e76（段2）均经 --no-verify：会话 0ecd6de3 绑定侧档（worktrees/.bindings/0ecd6de3*.json）缺席致 lease lock 报 binding_absent，锁面经文档路径不可取；同时 src/bin 与 proposition 实写面未入开约 allow（申报缺口）。a3d6e76 已登记 lease bypass（台账在册）；beb2b81 的 bypass 补登记随收约（段1 提交时守卫拒件信息在案）。
+- 伴生异常如实记录候另批：两会话（0ecd6de3、d9ffa03e）检验文件俱为空形 {}（出生即空，违 openhyg「出生即全形」约）、绑定侧档俱缺、会话台账俱无 closed/revoked 笔而锁面视图报活跃会话零。疑 MCP 连接生命周期自动开约/收约路径（session.rs 连接建立自动 open、断开自动 close）与文档路径状态件写作不一致所致，未定位根因，入泊候裁。
+- 操作事故申报：段2 首次提交误以 cwd=sih-tools/lease 落 sih-tools 仓（卷入台账追加件），即发现即软回退撤 commit，两仓状态各归其位后重落引擎工作树正确提交 a3d6e76；sih-tools 仓零提交零改动（账面脏位系当日真实 lease 事件，非本批写入面）。
+
+### 6.4 段2 测试与链结果
+
+- cargo test 全量：96 套件 ok（gate_v4 增至 11/11）；pendline 零触碰守卫于 a3d6e76 提交后复跑 **ok**（阻塞项一解除）
+- 链 verify：2026-09-24 trail **valid**（last_hash b4c6bf4c）
+- 本会话链笔：intent_refined e1401dfc（session 0ecd6de3）＋ crosscheck_completed b4c6bf4c ＋ certification_completed（收约认证笔，见 6.5）
+
+### 6.5 收约面
+
+- 结果档即本文件；任务包 sih/state/plan/m-gatesplit.md 工作清单前六件俱勾
+- 终件提交：signcheck/check-report/tally-input/impl/任务包入版控（bypass 登记随批）
+- 后继另批：m-siacarr 四候选命题按 v4 判据重送（材料封存于 worktrees/sih-math/m-siacarr 分支 msh/m-siacarr，提交 f667c20/f7e2a27）；绑定侧档与检验文件异常根因批；beb2b81 bypass 补登记
