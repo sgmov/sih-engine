@@ -1,0 +1,1 @@
+{"decision": "comply", "basis_regulation": "baseline_4", "reason": "命题与意图精炼规约逐项吻合（双旗分立、超纲记账不拦判定、阈值三态不变、旧 trail 零改写），并依 baseline_4 可验证性之产出须可机械校验要求以五 F 双态可证伪验收锚定，故 comply。", "boundary_flag": false, "coverage_flag": false}

@@ -588,7 +588,8 @@ pub fn compute_metrics(records: &[Value], topic_path: &Path, project_root: &Path
     })
 }
 
-/// 从 integrator output 解析 decision JSON 字段。
+/// 从 integrator output 解析 decision JSON 字段（v4 五键：coverage_flag 缺席
+/// 即 false 向后兼容，其余四键仍为 required 面）。
 pub fn extract_decision_fields(output: &str) -> Option<Value> {
     let parsed = parse_payload(output)?;
     if parsed.get("decision").is_none() {
@@ -603,6 +604,7 @@ pub fn extract_decision_fields(output: &str) -> Option<Value> {
         "basis_regulation": parsed["basis_regulation"],
         "reason": parsed.get("reason").cloned().unwrap_or(Value::String(String::new())),
         "boundary_flag": parsed.get("boundary_flag").and_then(|v| v.as_bool()).unwrap_or(false),
+        "coverage_flag": parsed.get("coverage_flag").and_then(|v| v.as_bool()).unwrap_or(false),
     }))
 }
 
@@ -646,6 +648,7 @@ pub fn compute_decision_convergence(records: &[Value]) -> Value {
     let mut order: Vec<String> = Vec::new();
     let mut counts: HashMap<String, i64> = HashMap::new();
     let mut boundary_count = 0i64;
+    let mut coverage_count = 0i64;
     for d in &decisions {
         let dec = d["decision"].as_str().unwrap_or_default().to_string();
         if !order.contains(&dec) {
@@ -654,6 +657,9 @@ pub fn compute_decision_convergence(records: &[Value]) -> Value {
         *counts.entry(dec).or_insert(0) += 1;
         if d["boundary_flag"].as_bool().unwrap_or(false) {
             boundary_count += 1;
+        }
+        if d["coverage_flag"].as_bool().unwrap_or(false) {
+            coverage_count += 1;
         }
     }
     let mut modal_decision = order[0].clone();
@@ -667,6 +673,8 @@ pub fn compute_decision_convergence(records: &[Value]) -> Value {
     }
     let agreement_rate = modal_count as f64 / n as f64;
     let declared_boundary_rate = boundary_count as f64 / n as f64;
+    // v4 单列报告项：超纲旗计数与率（描述信号，不入 cell 四分格判定）
+    let coverage_rate = coverage_count as f64 / n as f64;
     let is_boundary = declared_boundary_rate >= 0.5;
     let is_converged = agreement_rate >= 0.5;
     let cell = if is_boundary {
@@ -688,6 +696,7 @@ pub fn compute_decision_convergence(records: &[Value]) -> Value {
                 "basis_regulation": d["basis_regulation"],
                 "reason": d["reason"],
                 "boundary_flag": d["boundary_flag"],
+                "coverage_flag": d["coverage_flag"],
             })
         })
         .collect();
@@ -711,6 +720,7 @@ pub fn compute_decision_convergence(records: &[Value]) -> Value {
         "n_integrators": n as i64,
         "agreement_rate": py_round(agreement_rate, 4),
         "declared_boundary_rate": py_round(declared_boundary_rate, 4),
+        "declared_coverage_rate": py_round(coverage_rate, 4),
         "cell": cell,
         "modal_decision": modal_decision,
         "per_actor": per_actor,

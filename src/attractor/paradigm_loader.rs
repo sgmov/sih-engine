@@ -4,6 +4,10 @@
 //! yaml 装载以 serde_yaml 承载（引擎侧按需引依赖，Cargo.toml 随批声明）；
 //! atom 与 chain yaml 路径由调用方显式给位（围堰缺省路径语义不迁，双模
 //! 并存期围堰原位有效）。
+//!
+//! 判据 v4（m-gatesplit）：合同模式模板以引擎自有资产落位
+//! （templates/atom.yaml，编译期内嵌），emit-contract 模板查找序改为引擎
+//! 资产优先（新缺省）、--atoms 显式给位时外部件回退兼容。
 
 use std::collections::BTreeMap;
 use std::path::Path;
@@ -12,17 +16,30 @@ use serde_json::Value;
 
 use super::jsonc::{io_to_py, PyError};
 
+/// 引擎自有合同模式模板资产（判据 v4 五键形，m-gatesplit 批）。
+/// 编译期内嵌：零文件系统依赖，缺席不可能。
+pub const TEMPLATE_ATOM_YAML: &str = include_str!("templates/atom.yaml");
+
 fn load_yaml(path: &Path) -> Result<Value, PyError> {
     let text = std::fs::read_to_string(path).map_err(|e| io_to_py(&e))?;
-    let v: Value = serde_yaml::from_str(&text)
+    parse_atoms_yaml(&text)
+}
+
+/// yaml 文本 → atom 映射（文件与内嵌资产共用装载面）。
+fn parse_atoms_yaml(text: &str) -> Result<Value, PyError> {
+    let v: Value = serde_yaml::from_str(text)
         .map_err(|e| super::jsonc::jsonerr(format!("{}", e)))?;
-    Ok(v)
+    Ok(v.get("atoms").cloned().unwrap_or(Value::Null))
 }
 
 /// 加载 atom.yaml，返回 atom_name -> atom 配置映射。
 pub fn load_atoms(yaml_path: &Path) -> Result<Value, PyError> {
-    let raw = load_yaml(yaml_path)?;
-    Ok(raw.get("atoms").cloned().unwrap_or(Value::Null))
+    load_yaml(yaml_path)
+}
+
+/// 加载引擎自有模板资产（判据 v4 五键形），返回 atom_name -> atom 映射。
+pub fn load_engine_template_atoms() -> Result<Value, PyError> {
+    parse_atoms_yaml(TEMPLATE_ATOM_YAML)
 }
 
 /// 加载 atom-chain.yaml，返回 paradigm_id -> 范式配置映射。

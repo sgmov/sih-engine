@@ -1,0 +1,1 @@
+{"decision": "comply", "basis_regulation": "baseline_4", "reason": "命题四要素即双旗分立、超纲记账不拦判定、阈值三态不变、旧 trail 零改写与意图精炼规约逐项吻合，且五 F 验收、金向量逐字节对表与双态可证伪满足 baseline_4 可验证性的机械可证要求", "boundary_flag": false, "coverage_flag": false}

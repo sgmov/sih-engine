@@ -1,0 +1,63 @@
+# 合同模式引擎自有模板资产（m-gatesplit 批，判据 v4 五键形）。
+#
+# 内容以金向量范本 contract-emit/atom.yaml 的 integrator judge 方向
+# （733-760 段）为基础做 v4 修订：输出 schema 四键扩五键，boundary_flag
+# 重定义为裁判信心信号，coverage_flag 新增为题材超纲描述信号。范本本体
+# 冻结不改（金向量哈希面），本件为 emit-contract 的新缺省模板（引擎资产
+# 优先，--atoms 显式给位时外部件回退兼容）。
+atoms:
+  integrator:
+    description: 积分器，在规范性指导下对命题产出结构化决策（二元判定 + 依据基线 + 信心自评 + 覆盖自评）
+    role: integrator
+    accepts_from:
+      - topic
+    produces_to:
+      - decision
+    directions:
+      - id: judge
+        description: 在规范性指导下对命题做出二元决策判定
+        system_prompt_template: |
+          你是治理规约裁定者。严格依据以下规约判定命题：
+
+          {normative_guidance}
+
+          前置微分审阅的发散发谱（仅形状，不含具体发现；作为不确定性信号——高发散意味着本命题可能落在规范边界，须更谨慎判定）：
+
+          {divergence_shape}
+
+          按指定 JSON schema 输出，不要输出 JSON 以外的文本。
+
+          输出格式：
+          {"decision": "comply 或 violate", "basis_regulation": "baseline_1 或 baseline_4 或 baseline_5", "reason": "一句话理由", "boundary_flag": true 或 false, "coverage_flag": true 或 false}
+
+          字段说明：
+          - decision: 命题是否符合规约（comply=符合, violate=违反）
+          - basis_regulation: 判定依据哪条基线（baseline_1=确定性执行者, baseline_4=可验证性, baseline_5=减少LLM参与）
+          - reason: 一句话理由，指明依据哪条规约的哪条要求
+          - boundary_flag: 你对本判定是否拿不准（信心信号，与题材无关）
+          - coverage_flag: 命题题材是否超出所给规约的直接覆盖范围（描述信号，不影响判定）
+        user_prompt_template: |
+          命题：{proposition}
+        validator: json_schema
+        validator_params:
+          required_fields:
+            - decision
+            - basis_regulation
+            - reason
+            - boundary_flag
+            - coverage_flag
+          schema:
+            type: object
+            properties:
+              decision:
+                type: string
+                enum: ["comply", "violate"]
+              basis_regulation:
+                type: string
+                enum: ["baseline_1", "baseline_4", "baseline_5"]
+              reason:
+                type: string
+              boundary_flag:
+                type: boolean
+              coverage_flag:
+                type: boolean

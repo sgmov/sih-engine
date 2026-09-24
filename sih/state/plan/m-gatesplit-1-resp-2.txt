@@ -1,0 +1,1 @@
+{"decision": "comply", "basis_regulation": "baseline_4", "reason": "命题四要素即双旗分立、超纲记账不拦判定、阈值三态不变、旧 trail 零改写，与规约 record 所载意图精炼逐项一致，且五 F 全过即达成、任一不过即整批退回的双态可证伪设计满足 baseline_4 可验证性要求", "boundary_flag": false, "coverage_flag": false}

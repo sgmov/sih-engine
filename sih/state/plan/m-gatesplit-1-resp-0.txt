@@ -1,0 +1,1 @@
+{"decision": "comply", "basis_regulation": "baseline_4", "reason": "命题与意图精炼规约逐项吻合（boundary_flag 重定义为信心信号、coverage_flag 单列记账不参与三态、阈值三态不变、旧 trail 零改写），且五 F 验收面（单测与集成绿、金向量对表、围堰零写入、九发 stable_clear、allow 清单写入、任一不过整批退回）满足基线四可验证性要求，判定可机械复算。", "boundary_flag": false, "coverage_flag": false}

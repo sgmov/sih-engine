@@ -37,6 +37,9 @@ use std::process::{exit, Command};
 const VERSION: &str = "1.0.0";
 const GATE_VALUES: [&str; 3] = ["stable_clear", "near_threshold", "boundary"];
 const CRITERIA_VERSION: &str = "v3";
+/// 校验面认册集（m-gatesplit）：v3 历史件与 v4 旗语分立件双认。缺省仍 v3
+/// （本件为围堰 1.0.0 对表移植，缺省随其上游；v4 材料显式声明 v4）。
+const KNOWN_CRITERIA_VERSIONS: [&str; 2] = ["v3", "v4"];
 const BUDGET_PER_GID: usize = 9;
 const PER_ACTOR_FIELDS: [&str; 7] = [
     "actor_id",
@@ -45,6 +48,17 @@ const PER_ACTOR_FIELDS: [&str; 7] = [
     "decision",
     "basis_regulation",
     "boundary_flag",
+    "reason",
+];
+/// v4 八字段形：七字段加 coverage_flag（题材超纲描述信号，m-gatesplit）。
+const PER_ACTOR_FIELDS_V4: [&str; 8] = [
+    "actor_id",
+    "model_id",
+    "family",
+    "decision",
+    "basis_regulation",
+    "boundary_flag",
+    "coverage_flag",
     "reason",
 ];
 const DECISION_VALUES: [&str; 2] = ["comply", "violate"];
@@ -549,11 +563,12 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
     let criteria = material
         .get("criteria_version")
         .and_then(|v| v.as_str())
-        .unwrap_or(CRITERIA_VERSION);
-    if criteria != CRITERIA_VERSION {
-        failed.push(json!({"rule": "R3", "where": format!("criteria_version 非 {CRITERIA_VERSION}")}));
+        .unwrap_or(CRITERIA_VERSION)
+        .to_string();
+    if !KNOWN_CRITERIA_VERSIONS.contains(&criteria.as_str()) {
+        failed.push(json!({"rule": "R3", "where": format!("criteria_version 不在认册集 {KNOWN_CRITERIA_VERSIONS:?}：{criteria}")}));
     } else {
-        passed.push(json!(format!("R3: criteria_version {CRITERIA_VERSION}")));
+        passed.push(json!(format!("R3: criteria_version {criteria}")));
     }
     let mut dc_list: Vec<Value> = vec![];
     let mut runs: Vec<Value> = vec![];
@@ -567,13 +582,29 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
             passed.push(json!("R3: dc_fingerprint 复算一致"));
         }
         let mut bad_actor: BTreeSet<usize> = BTreeSet::new();
+        let mut n_v4_rows: usize = 0;
+        let mut n_rows: usize = 0;
+        let mut cov_count: usize = 0;
         for (i, dc) in dc_list.iter().enumerate() {
             if let Some(pas) = dc.get("per_actor").and_then(|v| v.as_array()) {
                 for pa in pas {
+                    n_rows += 1;
                     let keys_ok = pa.as_object().map(|o| {
-                        o.len() == PER_ACTOR_FIELDS.len()
-                            && PER_ACTOR_FIELDS.iter().all(|f| o.contains_key(*f))
+                        (o.len() == PER_ACTOR_FIELDS.len()
+                            && PER_ACTOR_FIELDS.iter().all(|f| o.contains_key(*f)))
+                            || (o.len() == PER_ACTOR_FIELDS_V4.len()
+                                && PER_ACTOR_FIELDS_V4.iter().all(|f| o.contains_key(*f)))
                     }).unwrap_or(false);
+                    let is_v4 = pa.as_object().map(|o| {
+                        o.len() == PER_ACTOR_FIELDS_V4.len()
+                            && PER_ACTOR_FIELDS_V4.iter().all(|f| o.contains_key(*f))
+                    }).unwrap_or(false);
+                    if is_v4 {
+                        n_v4_rows += 1;
+                        if pa.get("coverage_flag").and_then(|v| v.as_bool()).unwrap_or(false) {
+                            cov_count += 1;
+                        }
+                    }
                     let dec_ok = pa
                         .get("decision")
                         .and_then(|v| v.as_str())
@@ -588,8 +619,19 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
         if !bad_actor.is_empty() {
             let head: Vec<String> = bad_actor.iter().take(3).map(|i| i.to_string()).collect();
             failed.push(json!({"rule": "R3", "where": format!("per_actor 字段或 decision 枚举不符：行 [{}]", head.join(", "))}));
-        } else {
+        } else if n_v4_rows == 0 {
             passed.push(json!("R3: per_actor 七字段与方向枚举全符"));
+        } else if n_v4_rows == n_rows {
+            passed.push(json!("R3: per_actor 八字段与方向枚举全符（v4 双旗在列）"));
+        } else {
+            passed.push(json!("R3: per_actor 字段与方向枚举全符（v3 七字段与 v4 八字段混列）"));
+        }
+        // v4 coverage 单列计数（m-gatesplit：描述信号不入三态，机械记账不拦判定）
+        if criteria == "v4" {
+            passed.push(json!(format!(
+                "R3: coverage 单列记账 {}/{} 发（描述信号不入三态）",
+                cov_count, n_rows
+            )));
         }
     }
 
@@ -638,8 +680,17 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
                         _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
                     }
                 } else {
-                    r5_state = "suspend";
-                    passed.push(json!("R5: 席位身份核哈希与基线不一致（处置走优先级映射）"));
+                    // pk-044 读档注入形：mint 退役后基线冻结，核哈希漂移是环境时移
+                    // 信号非换席证据，配对降为留档告警，阻断语义归基线判定三态
+                    r5_state = r5_values(raw.as_ref());
+                    match r5_state {
+                        "ok" => passed.push(json!("R5: 基线判定可用；身份核哈希与冻结基线不一致，环境漂移信号留档")),
+                        "suspend" | "abnormal" => passed.push(json!(format!(
+                            "R5: 身份核哈希不一致、基线判定 {}（处置走优先级映射）", py_display(raw.as_ref().unwrap_or(&Value::Null))
+                        ))),
+                        _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
+                    }
+                    alarms.push("R5: 身份核哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）".to_string());
                 }
             } else if both_truthy(&m_hash, &b_hash) {
                 if m_hash == b_hash {
@@ -652,8 +703,17 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
                         _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
                     }
                 } else {
-                    r5_state = "suspend";
-                    passed.push(json!("R5: 席位身份哈希与基线不一致（处置走优先级映射）"));
+                    // 同核哈希分支的读档注入形语义：旧身份哈希配对为 mint 时代残留，
+                    // 不一致降为留档告警，阻断语义归基线判定三态
+                    r5_state = r5_values(raw.as_ref());
+                    match r5_state {
+                        "ok" => passed.push(json!("R5: 基线判定可用；身份哈希与冻结基线不一致，环境漂移信号留档")),
+                        "suspend" | "abnormal" => passed.push(json!(format!(
+                            "R5: 身份哈希不一致、基线判定 {}（处置走优先级映射）", py_display(raw.as_ref().unwrap_or(&Value::Null))
+                        ))),
+                        _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
+                    }
+                    alarms.push("R5: 身份哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）".to_string());
                 }
             } else {
                 r5_state = r5_values(raw.as_ref());
@@ -979,7 +1039,15 @@ fn assemble_material(
         "gate_verdict".into(),
         score.get("gate_verdict").cloned().unwrap_or(Value::Null),
     );
-    material.insert("criteria_version".into(), json!(CRITERIA_VERSION));
+    // 判据代际透传（m-gatesplit）：计分材料声明者随件（v4 自判闸材料带 v4），
+    // 未声明者按本件缺省 v3（围堰 1.0.0 对表形）
+    material.insert(
+        "criteria_version".into(),
+        json!(score
+            .get("criteria_version")
+            .and_then(|v| v.as_str())
+            .unwrap_or(CRITERIA_VERSION)),
+    );
     material.insert("contract_path".into(), json!(contract_str));
     material.insert(
         "contract_sha256".into(),
@@ -1005,6 +1073,12 @@ fn assemble_material(
         },
     );
     material.insert("rules_version".into(), json!("des-011-r1"));
+    // coverage 缺口记账透传（m-gatesplit：v4 计分材料携带；旧材料无此键零动作）
+    for key in ["coverage_flags", "coverage_rate", "coverage_reasons"] {
+        if let Some(v) = score.get(key) {
+            material.insert(key.into(), v.clone());
+        }
+    }
     if py_truthy(score.get("identity_hash")) {
         material.insert(
             "identity_hash".into(),

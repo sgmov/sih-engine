@@ -79,7 +79,7 @@ fn t4_assemble_field_compat_then_check_passes() {
     let out = ws.dir.join("assembled.json");
     let material = tally::assemble_material(
         "adisp-guard-1", &ws.dir.join("cell"), &[], Some(&baseline_path),
-        Some("2026-09-02"), &out).unwrap();
+        Some("2026-09-02"), &out, None).unwrap();
     // 跨腿契约字段逐字段对表
     for field in ["kind", "gid", "topic_path", "topic_sha256", "trail_path", "dc_fingerprint",
                   "gate_verdict", "criteria_version", "contract_path", "contract_sha256",
@@ -87,7 +87,9 @@ fn t4_assemble_field_compat_then_check_passes() {
         assert!(material.get(field).is_some(), "assemble 缺跨腿字段 {field}");
     }
     assert_eq!(material["kind"], "tally-check-input");
-    assert_eq!(material["criteria_version"], "v3");
+    // m-gatesplit：assemble 缺省判据代际随当代 v4（计分材料未声明者），
+    // v3 历史件由 check 面认册集向后兼容
+    assert_eq!(material["criteria_version"], "v4");
     assert_eq!(material["rules_version"], "des-011-r1");
     assert_eq!(material["topic_sha256"], Value::String(topic_hash));
     assert_eq!(material["identity_hash"], baseline["identity_hash"]);

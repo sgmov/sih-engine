@@ -9,6 +9,11 @@
 //! 哈希绑定链（工程基线四）：合同哈希绑定响应原文哈希绑定裁决材料，verify
 //! 全量重算。解析失败的响应不静默丢：落 no_answer + boundary_flag=true 空转
 //! 标记（复现即作废语义），逐发计入裁决材料。
+//!
+//! 判据 v4（m-gatesplit 旗语分立）：boundary_flag 重定义为裁判信心信号，
+//! coverage_flag 新增为题材超纲描述信号（缺席即 false 向后兼容）；闸由
+//! maturation::assess_maturation_v4 引擎内聚计算，score 无外部判词时
+//! 自动判闸并在计分材料携带 coverage 缺口记账。
 
 use std::path::Path;
 
@@ -248,8 +253,11 @@ pub fn load_responses(path: &Path, contract: &Value) -> Result<Vec<Value>, PyErr
     Ok(out)
 }
 
-/// 模型原文 → 判定四键（围堰双解析同语义合成：先围栏剥离再花括号切片）。
-/// 解析失败不静默：no_answer + boundary_flag=true + void 标记。
+/// 模型原文 → 判定五键（围堰双解析同语义合成：先围栏剥离再花括号切片）。
+/// v4 旗语分立（m-gatesplit）：boundary_flag＝信心信号，coverage_flag＝题材
+/// 超纲描述信号，coverage_flag 键缺席即 false（旧四键响应向后兼容）。
+/// 解析失败不静默：no_answer + boundary_flag=true + void 标记（coverage_flag
+/// 落 false：解析失败不是超纲陈述，缺省语义）。
 pub fn parse_raw_answer(raw: &str) -> Value {
     let mut text = raw.trim().to_string();
     if text.starts_with("```") {
@@ -269,10 +277,12 @@ pub fn parse_raw_answer(raw: &str) -> Value {
                 let basis = o.get("basis_regulation").cloned().unwrap_or(Value::String(String::new()));
                 let boundary = o.get("boundary_flag").cloned().unwrap_or(Value::Bool(false));
                 let reason = o.get("reason").cloned().unwrap_or(Value::String(String::new()));
+                let coverage = o.get("coverage_flag").cloned().unwrap_or(Value::Bool(false));
                 return json!({
                     "decision": decision,
                     "basis_regulation": basis,
                     "boundary_flag": boundary.as_bool().unwrap_or(false),
+                    "coverage_flag": coverage.as_bool().unwrap_or(false),
                     "reason": reason,
                     "void": false,
                 });
@@ -284,12 +294,15 @@ pub fn parse_raw_answer(raw: &str) -> Value {
         "decision": "no_answer",
         "basis_regulation": "",
         "boundary_flag": true,
+        "coverage_flag": false,
         "reason": format!("non-JSON output: {}", head),
         "void": true,
     })
 }
 
 /// 响应列表 → per_actor 列表与空转发明细。actor_id 形如 `<framework>+<model>`。
+/// v4：per_actor 八字段（七字段加 coverage_flag），与 per_actor 序同responses
+/// 序一一对应（缺口记账按位对齐取 key）。
 pub fn dc_from_responses(responses: &[Value], seat: &Value) -> Result<(Vec<Value>, Vec<Value>), PyError> {
     let framework = seat["framework"].as_str().unwrap_or_default();
     let model_id = seat["model_id"].as_str().unwrap_or_default();
@@ -305,6 +318,7 @@ pub fn dc_from_responses(responses: &[Value], seat: &Value) -> Result<(Vec<Value
             "decision": d["decision"],
             "basis_regulation": d["basis_regulation"],
             "boundary_flag": d["boundary_flag"],
+            "coverage_flag": d["coverage_flag"],
             "reason": d["reason"],
         }));
         if d["void"].as_bool().unwrap_or(false) {
@@ -315,6 +329,22 @@ pub fn dc_from_responses(responses: &[Value], seat: &Value) -> Result<(Vec<Value
         }
     }
     Ok((per_actor, voids))
+}
+
+/// 规则缺口记账（v4 单列报告项）：举旗 reason 摘引列表。per_actor 与
+/// responses 按位对齐，coverage_flag 为真者摘其 key 与 reason。
+fn coverage_reasons(responses: &[Value], per_actor: &[Value]) -> Vec<Value> {
+    responses
+        .iter()
+        .zip(per_actor.iter())
+        .filter(|(_, pa)| pa["coverage_flag"].as_bool().unwrap_or(false))
+        .map(|(r, pa)| {
+            json!({
+                "key": r["key"],
+                "reason": pa["reason"],
+            })
+        })
+        .collect()
 }
 
 /// 逐发 flywheel_run 记录追加（与围堰判定流同构），存量感知：run_id 已在
@@ -452,15 +482,21 @@ pub fn write_score_material(
 }
 
 /// 计分管线：合同装载 → 响应严格对表 → dc 装配 → 飞轮追加（幂等）→
-/// 计分材料落盘。gate_verdict 为闸上游产出（判据 v3 闸留围堰，机械腿只装配
-/// 不判闸），identity_hash 强制携带承 pk-035。
+/// 计分材料落盘。identity_hash 强制携带承 pk-035。
+///
+/// gate_verdict 两形（m-gatesplit 判据 v4，向前生效）：
+/// - `None`：引擎 v4 判闸（maturation::assess_maturation_v4 对本合同 run 的
+///   per_actor 计算），计分材料携带判据明细与 coverage 缺口记账（计数、率、
+///   举旗 reason 摘引）与 criteria_version v4；
+/// - `Some(verdict)`：外部判词直装配（围堰兼容形），计分材料保持既有四键面
+///   逐字节不变（金向量对表线），不携带 v4 扩展字段。
 pub fn score_pipeline(
     contract_path: &Path,
     responses_path: &Path,
     trail_path: &Path,
     out_path: &Path,
     identity_hash: &str,
-    gate_verdict: &str,
+    gate_verdict: Option<&str>,
 ) -> Result<Value, PyError> {
     let contract = load_contract(contract_path)?;
     let gid = contract["proposition"]["gid"].as_str().unwrap_or_default().to_string();
@@ -468,6 +504,35 @@ pub fn score_pipeline(
     let (per_actor, voids) = dc_from_responses(&responses, &contract["seat"])?;
     let ng_label = contract["pack"]["ng_label"].as_str().unwrap_or_default();
     let written = append_contract_runs(trail_path, &gid, &responses, &per_actor, &contract["seat"], ng_label)?;
+    let mut extra = json!({
+        "trail_path": trail_path.to_string_lossy(),
+        "runs_written": written.len() as i64,
+    });
+    match gate_verdict {
+        Some(v) => {
+            if let Some(o) = extra.as_object_mut() {
+                o.insert("gate_verdict".into(), json!(v));
+            }
+        }
+        None => {
+            // 引擎 v4 判闸：对本合同 run 的 per_actor 计算（不含历史行，历史
+            // trail 不重算不改写）
+            let gate = super::maturation::assess_maturation_v4(&[json!({ "per_actor": per_actor })]);
+            let cov_reasons = coverage_reasons(&responses, &per_actor);
+            let verdict = gate["verdict"].clone();
+            let cov_flags = gate["metrics"]["coverage_flags"].clone();
+            let cov_rate = gate["metrics"]["coverage_rate"].clone();
+            if let Some(o) = extra.as_object_mut() {
+                o.insert("gate_verdict".into(), verdict);
+                o.insert("gate_source".into(), json!("engine-maturation-v4"));
+                o.insert("criteria_version".into(), json!(super::maturation::CRITERIA_VERSION));
+                o.insert("gate".into(), gate);
+                o.insert("coverage_flags".into(), cov_flags);
+                o.insert("coverage_rate".into(), cov_rate);
+                o.insert("coverage_reasons".into(), json!(cov_reasons));
+            }
+        }
+    }
     write_score_material(
         out_path,
         contract_path,
@@ -476,10 +541,6 @@ pub fn score_pipeline(
         responses.len() as i64,
         &voids,
         identity_hash,
-        &json!({
-            "trail_path": trail_path.to_string_lossy(),
-            "runs_written": written.len() as i64,
-            "gate_verdict": gate_verdict,
-        }),
+        &extra,
     )
 }

@@ -1,0 +1,17 @@
+{
+  "batch": "m-gatesplit",
+  "content_hashes": {
+    "commits": [
+      "beb2b81730daea83e824a86429ab959e76654b67",
+      "a3d6e76e1a473ede864b0d6ceac0fa78299134b5",
+      "53311d1267d8d725ef6f00c6faee98b30e6a7d29"
+    ],
+    "intent_event": "e1401dfc49421bcfc71412c2196b0b4c15752f21c3c3b0a92abb9aa467704d24",
+    "results_doc": "sih/state/plan/m-gatesplit-impl.md",
+    "signcheck_event": "b4c6bf4c33ee0b991f0884009431e3eb573ec5619d923765bcc6488650241196"
+  },
+  "date": "2026-09-24",
+  "exit_code": 0,
+  "report": "m-gatesplit 批认证：判据 v4 旗语分立（信心旗判定用超纲旗记账用）加 R5 读档注入形修复（配对降留档信号），自裁命题 m-gatesplit-1 九发 stable_clear 经 tally 全链终签 b4c6bf4c；全量 96 套件绿加链 valid",
+  "session_id": "0ecd6de39168ac9c"
+}

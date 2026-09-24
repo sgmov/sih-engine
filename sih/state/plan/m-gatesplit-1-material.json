@@ -1,0 +1,64 @@
+{
+  "contract_path": "sih/state/plan/m-gatesplit-1-contract.json",
+  "contract_sha256": "040ba1adb4fa57f70ba033bc43d96238fa138d335034b5805ad3119718505177",
+  "coverage_flags": 0,
+  "coverage_rate": 0.0,
+  "coverage_reasons": [],
+  "criteria_version": "v4",
+  "gate": {
+    "coverage_note": "coverage_flag 为题材超纲描述信号：单列记账不入三态（规则缺口台账机械承载）",
+    "criteria": {
+      "basis_consensus": true,
+      "boundary_low": true,
+      "decision_stable": true
+    },
+    "criteria_version": "v4",
+    "metrics": {
+      "boundary_rate": 0.0,
+      "coverage_flags": 0,
+      "coverage_rate": 0.0,
+      "distinct_basis": [
+        "baseline_4"
+      ],
+      "n_runs": 1,
+      "n_shots": 9,
+      "noise_models": [],
+      "per_model": {
+        "z-ai/glm-5.1": {
+          "decision_flip_rate": 0.0,
+          "modal_decision": "comply",
+          "n_shots": 9,
+          "stable": true
+        }
+      },
+      "stable_modal_decisions": [
+        "comply"
+      ]
+    },
+    "near_flags": {
+      "basis_near": false,
+      "boundary_near": false,
+      "decision_near": false
+    },
+    "note": "v4 全过且无贴近 → 送终签核对腿",
+    "thresholds": {
+      "boundary_rate": 0.34,
+      "decision_flip": 0.2,
+      "near_margin": 0.1
+    },
+    "verdict": "stable_clear"
+  },
+  "gate_source": "engine-maturation-v4",
+  "gate_verdict": "stable_clear",
+  "gid": "m-gatesplit-1",
+  "identity_hash": "5a470797fba84a6d24b53c4ade1df955ebad5a863eb2aabde02e76abe74e40b7",
+  "kind": "facet-contract-score",
+  "n_shots": 9,
+  "responses_path": "sih/state/plan/m-gatesplit-1-responses.jsonl",
+  "responses_sha256": "48bbc513ca3edbf070ec0644573c9d984ba3adf5b514fb19fcf8309b5364faa1",
+  "runs_written": 0,
+  "score_version": 2,
+  "seat_string": "QNAIGC:z-ai/glm-5.1:self-reported",
+  "trail_path": "sih/state/plan/m-gatesplit-1-trail.jsonl",
+  "voids": []
+}
