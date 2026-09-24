@@ -1,5 +1,10 @@
 //! maturation——判据 v4 三态计算（m-gatesplit 批，闸自围堰融回引擎）。
 //!
+//! 正典指针：三态映射与四值处置承 DES-011（tally 输出契约 R1 至 R7）；判据
+//! v4 修订承任务包 sih/state/plan/m-gatesplit.md §2.2 与终签件 proposition/
+//! DES/m-gatesplit-1（gid m-gatesplit-1，crosscheck b4c6bf4c）；跨腿字段对表
+//! 承 SPEC-014；温度与基线读档注入背景承 pk-044 裁定。
+//!
 //! 语义移植自围堰 assess_maturation 基座（sih-tools/facet/probes/
 //! maturation_gate.py，冻结只读只作定位引用）：三子判据合取裁决三态
 //! stable_clear / near_threshold / boundary，任一明确挂 → boundary；全过
