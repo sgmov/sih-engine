@@ -15,7 +15,8 @@
 //! - [`validators`]：PRO-001 内置检验器函数库
 //! - [`anchors`]：锚定三步验证
 //! - [`model_utils`]：模型家族与认知框架提取
-//! - [`paradigm_loader`]：范式 yaml 装载与编排校验
+//! - [`paradigm_loader`]：范式 yaml 装载与编排校验（含引擎自有 v4 模板资产）
+//! - [`maturation`]：判据 v4 三态计算（信心旗判定用、超纲旗记账用）
 //! - [`tally`]：执契机械核对五子命令逻辑（check/verify/assemble/watch/sign）
 //!
 //! 判定规约形态（des-011 随迁）：R1 至 R7 规则与三态映射为代码承载的核对
@@ -27,6 +28,7 @@ pub mod anchors;
 pub mod compiler;
 pub mod contract_mode;
 pub mod jsonc;
+pub mod maturation;
 pub mod model_utils;
 pub mod paradigm_loader;
 pub mod route;

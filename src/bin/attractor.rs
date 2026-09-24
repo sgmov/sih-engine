@@ -22,11 +22,15 @@ use sih_engine::attractor::tally;
 
 const USAGE: &str = "用法 attractor <emit-contract|score|check|verify|sign|watch|route> <子命令参数>\n\
 emit-contract: --topic <topic.md> --ng-file <ng文本> --seat <框架:模型> --gid <gid> --title <题名> \\\n\
-               --shots <n> --atoms <atom.yaml> --ng-label <档> --out <合同.json> \\\n\
-               [--paradigm-id normative_convergence] [--atom integrator] [--direction judge] \\\n\
+               --shots <n> --ng-label <档> --out <合同.json> \\\n\
+               [--atoms <atom.yaml>] [--paradigm-id normative_convergence] [--atom integrator] [--direction judge] \\\n\
                [--n-declared <n>] [--version-label <版本自报>]\n\
+               （模板查找序：缺省用引擎自有资产 templates/atom.yaml（判据 v4 五键形，m-gatesplit）；\n\
+                --atoms 显式给位时外部件回退兼容（围堰 v3 形仍在位有效））\n\
 score: --contract <合同.json> --responses <响应.jsonl> --trail <飞轮链.jsonl> \\\n\
-       --identity-hash <hex64> --gate-verdict <闸三态> --out <计分材料.json>\n\
+       --identity-hash <hex64> [--gate-verdict <闸三态>] --out <计分材料.json>\n\
+       （--gate-verdict 缺省即引擎判据 v4 自判闸并携带 coverage 缺口记账（m-gatesplit 向前生效）；\n\
+        显式给位为外部判词直装配兼容形（材料面保持旧四键形逐字节不变））\n\
 check: --material <裁决材料.json>\n\
 verify: --material <裁决材料.json> --report <核对报告.json>\n\
 sign: --material <裁决材料.json> --out <落盘目录> --trail <引擎链> \\\n\
@@ -68,7 +72,6 @@ impl Args {
 fn emit_args(args: &Args) -> Result<(), PyError> {
     let topic_path = PathBuf::from(args.get("topic").map_err(eusage)?);
     let out_path = PathBuf::from(args.get("out").map_err(eusage)?);
-    let atoms_path = PathBuf::from(args.get("atoms").map_err(eusage)?);
     let seat_raw = args.get("seat").map_err(eusage)?;
     let gid = args.get("gid").map_err(eusage)?;
     let title = args.get("title").map_err(eusage)?;
@@ -98,7 +101,12 @@ fn emit_args(args: &Args) -> Result<(), PyError> {
         )));
     }
 
-    let atoms = paradigm_loader::load_atoms(&atoms_path)?;
+    // 模板查找序（m-gatesplit）：引擎资产优先（新缺省，判据 v4 五键形），
+    // --atoms 显式给位时外部件回退兼容（围堰 v3 形有效）
+    let atoms = match args.opt("atoms") {
+        Some(p) => paradigm_loader::load_atoms(&PathBuf::from(p))?,
+        None => paradigm_loader::load_engine_template_atoms()?,
+    };
     let ng_seen = contract_mode::scheme_clipped_ng(&ng_text_raw);
     let topic_md_text = std::fs::read_to_string(&topic_path).map_err(|e| super_eio(&e))?;
     let (system_prompt, user_prompt) =
@@ -147,14 +155,16 @@ fn score_args(args: &Args) -> Result<(), PyError> {
     let trail_path = PathBuf::from(args.get("trail").map_err(eusage)?);
     let out_path = PathBuf::from(args.get("out").map_err(eusage)?);
     let identity_hash = args.get("identity-hash").map_err(eusage)?;
-    let gate_verdict = args.get("gate-verdict").map_err(eusage)?;
+    // --gate-verdict 缺省即引擎判据 v4 自判闸（m-gatesplit 向前生效）；
+    // 显式给位为外部判词直装配兼容形
+    let gate_verdict = args.opt("gate-verdict");
     let material = contract_mode::score_pipeline(
         &contract_path,
         &responses_path,
         &trail_path,
         &out_path,
         &identity_hash,
-        &gate_verdict,
+        gate_verdict.as_deref(),
     )?;
     println!(
         "{}",
@@ -165,6 +175,7 @@ fn score_args(args: &Args) -> Result<(), PyError> {
             "voids": material["voids"].as_array().map(|a| a.len()).unwrap_or(0),
             "runs_written": material["runs_written"],
             "gate_verdict": material["gate_verdict"],
+            "coverage_flags": material.get("coverage_flags").cloned().unwrap_or(Value::Null),
         }))
         .unwrap_or_default()
     );

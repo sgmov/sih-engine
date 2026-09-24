@@ -87,7 +87,9 @@ fn t4_assemble_field_compat_then_check_passes() {
         assert!(material.get(field).is_some(), "assemble 缺跨腿字段 {field}");
     }
     assert_eq!(material["kind"], "tally-check-input");
-    assert_eq!(material["criteria_version"], "v3");
+    // m-gatesplit：assemble 缺省判据代际随当代 v4（计分材料未声明者），
+    // v3 历史件由 check 面认册集向后兼容
+    assert_eq!(material["criteria_version"], "v4");
     assert_eq!(material["rules_version"], "des-011-r1");
     assert_eq!(material["topic_sha256"], Value::String(topic_hash));
     assert_eq!(material["identity_hash"], baseline["identity_hash"]);

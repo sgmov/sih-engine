@@ -178,7 +178,7 @@ fn t2_score_material_byte_identical() {
             &ws.dir.join("flywheel-trail.jsonl"),
             &out_path,
             &ih,
-            &gate,
+            Some(gate.as_str()),
         )
         .unwrap();
         let got = fs::read_to_string(&out_path).unwrap();

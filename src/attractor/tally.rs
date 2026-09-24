@@ -30,7 +30,11 @@ use super::jsonc::{
 };
 
 pub const VERSION: &str = "1.0.0";
-pub const CRITERIA_VERSION: &str = "v3";
+/// 判据代际（m-gatesplit 起 v4：信心旗判定用、超纲旗记账用）。校验面
+/// 向后认 v3 历史件（历史 trail 与旧计分材料不重算不改写，向前生效）。
+pub const CRITERIA_VERSION: &str = super::maturation::CRITERIA_VERSION;
+/// 校验面认册集：v3（历史件）与 v4（旗语分立后新件）。
+pub const KNOWN_CRITERIA_VERSIONS: [&str; 2] = ["v3", "v4"];
 // [constclear2c] 登记行 f1 态工程实践三件套｜账面 sih-math/docs/constclear2-routing-2026-09-08.md
 pub const BUDGET_PER_GID: i64 = 9;
 pub const RULES_VERSION: &str = "des-011-r1";
@@ -42,6 +46,17 @@ const PER_ACTOR_FIELDS: [&str; 7] = [
     "decision",
     "basis_regulation",
     "boundary_flag",
+    "reason",
+];
+/// v4 八字段形：七字段加 coverage_flag（题材超纲描述信号）。
+const PER_ACTOR_FIELDS_V4: [&str; 8] = [
+    "actor_id",
+    "model_id",
+    "family",
+    "decision",
+    "basis_regulation",
+    "boundary_flag",
+    "coverage_flag",
     "reason",
 ];
 
@@ -212,20 +227,22 @@ pub fn check_material(material_path: &Path) -> Result<Value, PyError> {
         }
     }
 
-    // R3 结果可机械校验：三值、版本、指纹重算、per_actor 七字段与方向枚举
+    // R3 结果可机械校验：三值、版本（v3 历史件与 v4 新件双认）、指纹重算、
+    // per_actor 七/八字段与方向枚举、v4 coverage 单列计数
     if !["stable_clear", "near_threshold", "boundary"].contains(&verdict_str.as_str()) {
         fail(&mut failed, "R3", format!("闸裁决不在三值集合：{}", verdict_str));
     } else {
         passed.push(json!(format!("R3: 闸裁决 {} 在三值集合", verdict_str)));
     }
-    let criteria = material
-        .get("criteria_version")
-        .cloned()
-        .unwrap_or(Value::String(CRITERIA_VERSION.into()));
-    if criteria != Value::String(CRITERIA_VERSION.into()) {
-        fail(&mut failed, "R3", format!("criteria_version 非 {}", CRITERIA_VERSION));
+    let criteria = match material.get("criteria_version") {
+        None => CRITERIA_VERSION.to_string(),
+        Some(Value::String(s)) => s.clone(),
+        Some(other) => other.to_string(),
+    };
+    if !KNOWN_CRITERIA_VERSIONS.contains(&criteria.as_str()) {
+        fail(&mut failed, "R3", format!("criteria_version 不在认册集 {:?}：{}", KNOWN_CRITERIA_VERSIONS, criteria));
     } else {
-        passed.push(json!(format!("R3: criteria_version {}", CRITERIA_VERSION)));
+        passed.push(json!(format!("R3: criteria_version {}", criteria)));
     }
     let mut dc_list: Vec<Value> = Vec::new();
     let mut runs: Vec<Value> = Vec::new();
@@ -240,14 +257,28 @@ pub fn check_material(material_path: &Path) -> Result<Value, PyError> {
                 passed.push(json!("R3: dc_fingerprint 复算一致"));
             }
             let mut bad_actor: BTreeSet<usize> = BTreeSet::new();
+            let mut n_v4_rows: usize = 0;
+            let mut n_rows: usize = 0;
+            let mut cov_count: usize = 0;
+            let v3_set: BTreeSet<String> = PER_ACTOR_FIELDS.iter().map(|s| s.to_string()).collect();
+            let v4_set: BTreeSet<String> = PER_ACTOR_FIELDS_V4.iter().map(|s| s.to_string()).collect();
             for (i, dc) in dc_list.iter().enumerate() {
                 if let Some(pas) = dc.get("per_actor").and_then(|v| v.as_array()) {
                     for pa in pas {
-                        let fields_ok = pa
+                        n_rows += 1;
+                        let keys: Option<BTreeSet<String>> = pa
                             .as_object()
-                            .map(|o| o.keys().cloned().collect::<BTreeSet<_>>()
-                                == PER_ACTOR_FIELDS.iter().map(|s| s.to_string()).collect())
+                            .map(|o| o.keys().cloned().collect());
+                        let fields_ok = keys
+                            .as_ref()
+                            .map(|k| k == &v3_set || k == &v4_set)
                             .unwrap_or(false);
+                        if keys.as_ref().map(|k| k == &v4_set).unwrap_or(false) {
+                            n_v4_rows += 1;
+                            if pa.get("coverage_flag").and_then(|v| v.as_bool()).unwrap_or(false) {
+                                cov_count += 1;
+                            }
+                        }
                         let dec_ok = pa.get("decision").and_then(|v| v.as_str())
                             .map(|d| d == "comply" || d == "violate")
                             .unwrap_or(false);
@@ -261,8 +292,19 @@ pub fn check_material(material_path: &Path) -> Result<Value, PyError> {
                 let v: Vec<usize> = bad_actor.iter().copied().collect();
                 let shown: Vec<usize> = v.iter().take(3).copied().collect();
                 fail(&mut failed, "R3", format!("per_actor 字段或 decision 枚举不符：行 {}", py_int_list_repr(&shown)));
-            } else {
+            } else if n_v4_rows == 0 {
                 passed.push(json!("R3: per_actor 七字段与方向枚举全符"));
+            } else if n_v4_rows == n_rows {
+                passed.push(json!("R3: per_actor 八字段与方向枚举全符（v4 双旗在列）"));
+            } else {
+                passed.push(json!("R3: per_actor 字段与方向枚举全符（v3 七字段与 v4 八字段混列）"));
+            }
+            // v4 coverage 单列计数（描述信号不入三态，机械记账不拦判定）
+            if criteria == super::maturation::CRITERIA_VERSION {
+                passed.push(json!(format!(
+                    "R3: coverage 单列记账 {}/{} 发（描述信号不入三态）",
+                    cov_count, n_rows
+                )));
             }
         }
     }
@@ -535,6 +577,13 @@ pub fn assemble_material(
         }
     };
     let (dc_list, _runs) = load_dc_list(&trail_path)?;
+    // 判据代际透传：计分材料声明者随件（v4 自判闸材料带 v4），未声明者按
+    // 当代缺省 v4 落（向前生效；历史 v3 计分材料若声明 v3 则如实随件）
+    let criteria_declared = score
+        .get("criteria_version")
+        .and_then(|v| v.as_str())
+        .unwrap_or(CRITERIA_VERSION)
+        .to_string();
     let mut material = json!({
         "kind": "tally-check-input",
         "gid": gid,
@@ -543,7 +592,7 @@ pub fn assemble_material(
         "trail_path": trail_path_str,
         "dc_fingerprint": fingerprint(&dc_list),
         "gate_verdict": score.get("gate_verdict").cloned().unwrap_or(Value::Null),
-        "criteria_version": CRITERIA_VERSION,
+        "criteria_version": criteria_declared,
         "contract_path": score.get("contract_path").cloned().unwrap_or(Value::Null),
         "contract_sha256": score.get("contract_sha256").cloned().unwrap_or(Value::Null),
         "responses_path": score.get("responses_path").cloned().unwrap_or(Value::Null),
@@ -552,6 +601,14 @@ pub fn assemble_material(
         "voids": score.get("voids").cloned().unwrap_or(Value::Array(vec![])),
         "rules_version": RULES_VERSION,
     });
+    // coverage 缺口记账透传（v4 计分材料携带；旧材料无此键零动作）
+    if let Some(o) = material.as_object_mut() {
+        for key in ["coverage_flags", "coverage_rate", "coverage_reasons"] {
+            if let Some(v) = score.get(key) {
+                o.insert(key.into(), v.clone());
+            }
+        }
+    }
     if let (Some(o), Some(ih)) = (material.as_object_mut(), score.get("identity_hash").filter(|v| !v.is_null())) {
         o.insert("identity_hash".into(), ih.clone());
     }

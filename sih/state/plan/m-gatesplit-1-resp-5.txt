@@ -1,0 +1,1 @@
+{"decision": "comply", "basis_regulation": "baseline_4", "reason": "命题与意图记录的 boundary_flag 信心语义与 coverage_flag 超纲语义分立、超纲记账不拦判定、阈值三态不变、旧 trail 零改写四项要求逐点一致，且五 F 验收面（单测与金向量对表与围堰零写入与 stable_clear 与 allow 清单）双态可证伪，满足可验证性基线的机械可核要求。", "boundary_flag": false, "coverage_flag": false}
