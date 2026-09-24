@@ -680,8 +680,17 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
                         _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
                     }
                 } else {
-                    r5_state = "suspend";
-                    passed.push(json!("R5: 席位身份核哈希与基线不一致（处置走优先级映射）"));
+                    // pk-044 读档注入形：mint 退役后基线冻结，核哈希漂移是环境时移
+                    // 信号非换席证据，配对降为留档告警，阻断语义归基线判定三态
+                    r5_state = r5_values(raw.as_ref());
+                    match r5_state {
+                        "ok" => passed.push(json!("R5: 基线判定可用；身份核哈希与冻结基线不一致，环境漂移信号留档")),
+                        "suspend" | "abnormal" => passed.push(json!(format!(
+                            "R5: 身份核哈希不一致、基线判定 {}（处置走优先级映射）", py_display(raw.as_ref().unwrap_or(&Value::Null))
+                        ))),
+                        _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
+                    }
+                    alarms.push("R5: 身份核哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）".to_string());
                 }
             } else if both_truthy(&m_hash, &b_hash) {
                 if m_hash == b_hash {
@@ -694,8 +703,17 @@ fn check_material(material_path: &str) -> Result<Value, ToolFailure> {
                         _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
                     }
                 } else {
-                    r5_state = "suspend";
-                    passed.push(json!("R5: 席位身份哈希与基线不一致（处置走优先级映射）"));
+                    // 同核哈希分支的读档注入形语义：旧身份哈希配对为 mint 时代残留，
+                    // 不一致降为留档告警，阻断语义归基线判定三态
+                    r5_state = r5_values(raw.as_ref());
+                    match r5_state {
+                        "ok" => passed.push(json!("R5: 基线判定可用；身份哈希与冻结基线不一致，环境漂移信号留档")),
+                        "suspend" | "abnormal" => passed.push(json!(format!(
+                            "R5: 身份哈希不一致、基线判定 {}（处置走优先级映射）", py_display(raw.as_ref().unwrap_or(&Value::Null))
+                        ))),
+                        _ => failed.push(json!({"rule": "R5", "where": format!("基线判定值不可读：{}", py_display(raw.as_ref().unwrap_or(&Value::Null)))})),
+                    }
+                    alarms.push("R5: 身份哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）".to_string());
                 }
             } else {
                 r5_state = r5_values(raw.as_ref());

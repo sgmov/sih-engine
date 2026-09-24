@@ -195,7 +195,7 @@ fn check_of(w: &Ws, score: &Value) -> Value {
     let out = w.dir.join("assembled.json");
     let assembled = tally::assemble_material(
         "m-gatesplit-t", &w.dir.join("cell"), &[], Some(&baseline),
-        Some("2026-09-24"), &out,
+        Some("2026-09-24"), &out, None,
     ).unwrap();
     assert_eq!(assembled["criteria_version"], "v4", "v4 计分材料装配须随件 v4");
     assert_eq!(assembled["coverage_flags"], score["coverage_flags"], "coverage 记账须透传装配面");
@@ -253,4 +253,100 @@ fn integration_emit_contract_engine_template_default() {
     assert!(sys.contains("coverage_flag"), "缺省模板须为 v4 五键形");
     assert!(sys.contains("描述信号，不影响判定"));
     assert_eq!(contract["shots"].as_array().unwrap().len(), 3);
+}
+
+// ---------- R5 读档注入形：mint 退役后配对降为留档信号（m-gatesplit 范围扩展腿） ----------
+
+/// R5 专用装配：复用 build_score 的 stable_clear 计分材料，指定基线件与正身
+/// 报告内容做装配后全量核对。返回 check 报告。
+fn r5_check(baseline: &Value, identity_core: Option<&str>) -> Value {
+    let (w, score) = build_score(&[false; 3], &[false; 3]);
+    let cell = w.dir.join("cell/m-gatesplit-t");
+    fs::create_dir_all(&cell).unwrap();
+    fs::copy(w.dir.join("contract.json"), cell.join("contract.json")).unwrap();
+    fs::copy(w.dir.join("responses.jsonl"), cell.join("responses.jsonl")).unwrap();
+    fs::copy(w.dir.join("topic.md"), cell.join("topic.md")).unwrap();
+    fs::copy(w.dir.join("trail.jsonl"), cell.join("flywheel-trail.jsonl")).unwrap();
+    fs::write(cell.join("contract-n3-score-material.json"),
+              serde_json::to_string(&score).unwrap()).unwrap();
+    let baseline_path = w.dir.join("r5-baseline.json");
+    fs::write(&baseline_path, serde_json::to_string(baseline).unwrap()).unwrap();
+    let report_path = w.dir.join("r5-identity.json");
+    let identity = match identity_core {
+        Some(c) => json!({"identity": {"core_hash": c}}),
+        None => json!({"identity": {}}),
+    };
+    fs::write(&report_path, identity.to_string()).unwrap();
+    let out = w.dir.join("r5-assembled.json");
+    tally::assemble_material(
+        "m-gatesplit-t", &w.dir.join("cell"), &[], Some(&baseline_path),
+        Some("2026-09-24"), &out, Some(&report_path),
+    ).unwrap();
+    tally::check_material(&out).unwrap()
+}
+
+#[test]
+fn r5_core_equal_pairs_and_passes() {
+    // 核等值快径不动：核哈希一致且判定可用 → 裁决通过、无核漂移告警
+    let report = r5_check(
+        &json!({"verdict": "可用", "identity_hash": "bbbb", "core_hash": "CCC"}),
+        Some("CCC"),
+    );
+    assert_eq!(report["disposition"], "裁决通过");
+    assert!(report["passed"].as_array().unwrap().iter()
+        .any(|p| p.as_str().unwrap().contains("身份核哈希一致")));
+    assert!(!report["alarms"].as_array().unwrap().iter()
+        .any(|a| a.as_str().unwrap().contains("核哈希与冻结基线不一致")),
+        "核等值不得出漂移告警：{}", report["alarms"]);
+}
+
+#[test]
+fn r5_core_mismatch_postmint_signal_not_blocker() {
+    // 读档注入形核心：核不一致 + 判定可用 → 裁决通过 + 漂移信号留档告警
+    let report = r5_check(
+        &json!({"verdict": "可用", "identity_hash": "bbbb", "core_hash": "DDD"}),
+        Some("CCC"),
+    );
+    assert_eq!(report["disposition"], "裁决通过",
+        "pk-044 读档注入形下核漂移不得拦判定：{}", report["disposition"]);
+    assert!(report["passed"].as_array().unwrap().iter()
+        .any(|p| p.as_str().unwrap().contains("环境漂移信号留档")));
+    assert!(report["alarms"].as_array().unwrap().iter()
+        .any(|a| a.as_str().unwrap().contains("核哈希与冻结基线不一致")),
+        "核漂移告警须在档：{}", report["alarms"]);
+}
+
+#[test]
+fn r5_core_mismatch_with_drift_verdict_still_suspends() {
+    // 基线判定漂移告警仍是阻断位：核配对结果不豁免基线异常三态
+    let report = r5_check(
+        &json!({"verdict": "漂移告警", "identity_hash": "bbbb", "core_hash": "CCC"}),
+        Some("CCC"),
+    );
+    assert_eq!(report["disposition"], "挂起");
+}
+
+#[test]
+fn r5_identity_mismatch_postmint_signal_not_blocker() {
+    // 旧身份哈希路径同读档注入形：双带不一致 + 判定可用 → 裁决通过 + 告警留档
+    let report = r5_check(
+        &json!({"verdict": "可用", "identity_hash": "bbbb"}),
+        None,
+    );
+    assert_eq!(report["disposition"], "裁决通过");
+    assert!(report["alarms"].as_array().unwrap().iter()
+        .any(|a| a.as_str().unwrap().contains("身份哈希与冻结基线不一致")),
+        "身份哈希漂移告警须在档：{}", report["alarms"]);
+}
+
+#[test]
+fn r5_identity_report_without_core_falls_back() {
+    // 旧正身报告无 core_hash：材料空缺不判败，回退现行为（判定三态直判）
+    let report = r5_check(
+        &json!({"verdict": "可用"}),
+        None,
+    );
+    assert_eq!(report["disposition"], "裁决通过");
+    assert!(report["passed"].as_array().unwrap().iter()
+        .any(|p| p.as_str().unwrap().contains("席位当日基线判定可用")));
 }

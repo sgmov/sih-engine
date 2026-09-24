@@ -79,7 +79,7 @@ fn t4_assemble_field_compat_then_check_passes() {
     let out = ws.dir.join("assembled.json");
     let material = tally::assemble_material(
         "adisp-guard-1", &ws.dir.join("cell"), &[], Some(&baseline_path),
-        Some("2026-09-02"), &out).unwrap();
+        Some("2026-09-02"), &out, None).unwrap();
     // 跨腿契约字段逐字段对表
     for field in ["kind", "gid", "topic_path", "topic_sha256", "trail_path", "dc_fingerprint",
                   "gate_verdict", "criteria_version", "contract_path", "contract_sha256",

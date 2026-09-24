@@ -331,36 +331,73 @@ pub fn check_material(material_path: &Path) -> Result<Value, PyError> {
                 Some(Value::Null) | None => String::new(),
                 Some(other) => other.to_string(),
             };
+            let m_core = material.get("core_hash").and_then(|v| v.as_str());
+            let b_core = base.get("core_hash").and_then(|v| v.as_str());
             let m_hash = material.get("identity_hash").and_then(|v| v.as_str());
             let b_hash = base.get("identity_hash").and_then(|v| v.as_str());
-            match (m_hash.filter(|s| !s.is_empty()), b_hash.filter(|s| !s.is_empty())) {
-                (Some(mh), Some(bh)) => {
-                    if mh == bh {
-                        // 哈希优先配对承 pk-035：双带即比对，异即不同环境按漂移挂起
+            let non_empty = |s: &&str| !s.is_empty();
+            match (m_core.filter(non_empty), b_core.filter(non_empty)) {
+                (Some(_), Some(_)) => {
+                    // 核哈希优先配对承 idcore-solo（双带即核比对，对齐 bin 面）；
+                    // pk-044 读档注入形：mint 退役后基线冻结，核漂移是环境时移信号
+                    // 非换席证据，不一致降为留档告警，阻断语义归基线判定三态
+                    if m_core == b_core {
                         r5_state = r5_state_of(&raw);
                         match r5_state {
-                            "ok" => passed.push(json!("R5: 席位当日基线判定可用且身份哈希一致")),
+                            "ok" => passed.push(json!("R5: 席位当日基线判定可用且身份核哈希一致")),
                             "suspend" | "abnormal" => {
-                                passed.push(json!(format!("R5: 身份哈希一致、基线判定 {}（处置走优先级映射）", raw)))
+                                passed.push(json!(format!("R5: 身份核哈希一致、基线判定 {}（处置走优先级映射）", raw)))
                             }
                             _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
                         }
                     } else {
-                        r5_state = "suspend";
-                        passed.push(json!("R5: 席位身份哈希与基线不一致（处置走优先级映射）"));
-                    }
-                }
-                _ => {
-                    // 任一缺席回退现行为：旧材料旧基线重放逐字节同判
-                    r5_state = r5_state_of(&raw);
-                    match r5_state {
-                        "ok" => passed.push(json!("R5: 席位当日基线判定可用")),
-                        "suspend" | "abnormal" => {
-                            passed.push(json!(format!("R5: 席位当日基线判定 {}（处置走优先级映射）", raw)))
+                        r5_state = r5_state_of(&raw);
+                        match r5_state {
+                            "ok" => passed.push(json!("R5: 基线判定可用；身份核哈希与冻结基线不一致，环境漂移信号留档")),
+                            "suspend" | "abnormal" => {
+                                passed.push(json!(format!("R5: 身份核哈希不一致、基线判定 {}（处置走优先级映射）", raw)))
+                            }
+                            _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
                         }
-                        _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
+                        alarms.push(json!("R5: 身份核哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）"));
                     }
                 }
+                _ => match (m_hash.filter(non_empty), b_hash.filter(non_empty)) {
+                    (Some(_), Some(_)) => {
+                        // 旧身份哈希配对承 pk-035；不一致同读档注入形降为留档告警
+                        if m_hash == b_hash {
+                            r5_state = r5_state_of(&raw);
+                            match r5_state {
+                                "ok" => passed.push(json!("R5: 席位当日基线判定可用且身份哈希一致")),
+                                "suspend" | "abnormal" => {
+                                    passed.push(json!(format!("R5: 身份哈希一致、基线判定 {}（处置走优先级映射）", raw)))
+                                }
+                                _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
+                            }
+                        } else {
+                            r5_state = r5_state_of(&raw);
+                            match r5_state {
+                                "ok" => passed.push(json!("R5: 基线判定可用；身份哈希与冻结基线不一致，环境漂移信号留档")),
+                                "suspend" | "abnormal" => {
+                                    passed.push(json!(format!("R5: 身份哈希不一致、基线判定 {}（处置走优先级映射）", raw)))
+                                }
+                                _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
+                            }
+                            alarms.push(json!("R5: 身份哈希与冻结基线不一致（pk-044 读档注入形，mint 退役后无当日配对，配对降为留档信号不拦判定）"));
+                        }
+                    }
+                    _ => {
+                        // 任一缺席回退现行为：旧材料旧基线重放逐字节同判
+                        r5_state = r5_state_of(&raw);
+                        match r5_state {
+                            "ok" => passed.push(json!("R5: 席位当日基线判定可用")),
+                            "suspend" | "abnormal" => {
+                                passed.push(json!(format!("R5: 席位当日基线判定 {}（处置走优先级映射）", raw)))
+                            }
+                            _ => fail(&mut failed, "R5", format!("基线判定值不可读：{}", raw)),
+                        }
+                    }
+                },
             }
         }
     }
@@ -456,6 +493,7 @@ pub fn assemble_material(
     baseline_path: Option<&Path>,
     date: Option<&str>,
     out_path: &Path,
+    identity_report: Option<&Path>,
 ) -> Result<Value, PyError> {
     let repo_root = des_root
         .parent()
@@ -611,6 +649,20 @@ pub fn assemble_material(
     }
     if let (Some(o), Some(ih)) = (material.as_object_mut(), score.get("identity_hash").filter(|v| !v.is_null())) {
         o.insert("identity_hash".into(), ih.clone());
+    }
+    // 正身透传承 pendsweep-solo（对齐 bin 面）：读 identity.core_hash 载入材料，
+    // R5 判定面走核配对；旧报告缺席 core_hash 即空缺不判败
+    if let Some(irp) = identity_report {
+        let text = std::fs::read_to_string(irp).map_err(|e| io_to_py(&e))?;
+        let report = parse_json(&text)?;
+        let core = report
+            .get("identity")
+            .and_then(|i| i.get("core_hash"))
+            .and_then(|v| v.as_str())
+            .filter(|s| !s.is_empty());
+        if let (Some(o), Some(c)) = (material.as_object_mut(), core) {
+            o.insert("core_hash".into(), json!(c));
+        }
     }
     if let Some(b) = baseline_path {
         if let Some(o) = material.as_object_mut() {
