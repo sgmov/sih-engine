@@ -1,0 +1,47 @@
+{
+  "anomalies": [],
+  "claims": {},
+  "header": {
+    "mode": "attest",
+    "net_probe": "external",
+    "tool": {
+      "name": "identity",
+      "version": "0.5.0"
+    }
+  },
+  "identity": {
+    "core_components": {
+      "boottime": "1789823101",
+      "hostname": "MiniServer",
+      "lineage": "python>MiniMax Inside Code Helper>MiniMax Inside Code",
+      "mac": "",
+      "sandbox_id": "",
+      "user": "moc"
+    },
+    "core_hash": "a2f3ee0f35c28e1cb7e632d1be8858c92fa70292b0e703d3feb07340a87d4c58",
+    "hash": "064a004dd8e4df8977a9943ba385620493baaf288bfe2e0ef2e0443f9f356975",
+    "salt": "86f0d89001337546d41b3b1f9a861dad1019bd8a0b50a50ff078e49885e159af",
+    "string": "v3|pid=13108|ppid=13107|hostname=MiniServer|mac=|user=moc|sandbox_id=|session_id=|boottime=1789823101|parent_start=2026-09-29T11:41:04+00:00|ancestry=python>uv>bash>MiniMax Inside Code Helper>MiniMax Inside Code>launchd|net_time=1790682065|timestamp=2026-09-29T11:41:04+00:00"
+  },
+  "observed": {
+    "ancestry": "python>uv>bash>MiniMax Inside Code Helper>MiniMax Inside Code>launchd",
+    "boottime": "1789823101",
+    "hostname": "MiniServer",
+    "mac": "",
+    "net_time": "1790682065",
+    "parent_start": "2026-09-29T11:41:04+00:00",
+    "pid": "13108",
+    "ppid": "13107",
+    "sandbox_id": "",
+    "session_id": "",
+    "timestamp": "2026-09-29T11:41:04+00:00",
+    "user": "moc"
+  },
+  "summary": {
+    "anomalies": 0,
+    "claimed": 0,
+    "matched": 0,
+    "mismatched": 0,
+    "verdict": "attest"
+  }
+}
