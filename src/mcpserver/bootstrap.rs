@@ -1486,9 +1486,22 @@ async fn confirm_open_action(Form(form): Form<HashMap<String, String>>) -> Respo
 mod tests {
     use super::*;
 
-    /// 测试基準位：中央 scribe 真二进制与模板源走真工作区根（code root），
+    /// 測試基準位：中央 scribe 真二进制与模板源走真工作区根（code root），
     /// SIH_ROOT 指临时根（数据根）——runtime 两根分离；链追加只落临时根。
-    const REAL_WS_ROOT: &str = "/Users/moc/workspaces/SiHankor";
+    /// 自仓根向上寻址（sih-engine/Cargo.toml 特征件），免机器绝对路径绑定。
+    fn real_ws_root() -> String {
+        let mut root = std::env::current_dir().unwrap();
+        loop {
+            if root.join("sih-engine/Cargo.toml").is_file()
+                && root.join("sih-tools/lease").is_dir()
+            {
+                return root.to_string_lossy().to_string();
+            }
+            if !root.pop() {
+                panic!("工作区根未寻得：sih-engine/Cargo.toml 且 sih-tools/lease");
+            }
+        }
+    }
 
     /// 环境变量是进程全局量：本模块涉 env 测试互斥串行，退出即还原。
     static ENV_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
@@ -1561,7 +1574,7 @@ mod tests {
     fn env_pair(central: &Path, base: &Path) -> Vec<(&'static str, String)> {
         vec![
             ("SIH_ROOT", central.to_string_lossy().to_string()),
-            ("SIH_MCPLINE_CODE_ROOT", REAL_WS_ROOT.to_string()),
+            ("SIH_MCPLINE_CODE_ROOT", real_ws_root()),
             (
                 "SIH_TOKENS_REGISTRY_PATH",
                 central.join("test-tools/mcpline/ledger/tokens.ndjson")

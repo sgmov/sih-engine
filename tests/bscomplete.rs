@@ -45,12 +45,30 @@ impl Fixture {
         Self { ws, dom }
     }
 
+    /// 命令基座：数据根清环境避免继承宿主 SIH_ROOT，登记册位与任务包模板
+    /// 经 env 显式配置（bootstrap 运行时零硬编码围堰路径，见
+    /// SIH_TOKENS_REGISTRY_PATH / SIH_TASK_PACKAGE_TEMPLATE_PATH 契约），
+    /// cwd 落沙箱工作区根。
+    fn cmd(&self) -> Command {
+        let mut c = Command::new(env!("CARGO_BIN_EXE_sihmcp"));
+        c.env_remove("SIH_ROOT")
+            .env(
+                "SIH_TOKENS_REGISTRY_PATH",
+                self.ws.join("sih-tools/mcpline/ledger/tokens.ndjson"),
+            )
+            .env(
+                "SIH_TASK_PACKAGE_TEMPLATE_PATH",
+                self.ws.join("sih-tools/lease/TASK-PACKAGE-TEMPLATE.md"),
+            )
+            .current_dir(&self.ws);
+        c
+    }
+
     /// 先开域（正常全链），返回 stdout 判词。
     fn open(&self, token: &str) -> String {
-        let out = Command::new(env!("CARGO_BIN_EXE_sihmcp"))
+        let out = self
+            .cmd()
             .args(["bootstrap", self.dom.to_string_lossy().as_ref(), "--by", "pre", "--token-id", token])
-            .env_remove("SIH_ROOT")
-            .current_dir(&self.ws)
             .output()
             .expect("spawn bootstrap");
         assert!(out.status.success(), "预开域失败：{}", String::from_utf8_lossy(&out.stdout));
@@ -58,10 +76,8 @@ impl Fixture {
     }
 
     fn complete(&self) -> std::process::Output {
-        Command::new(env!("CARGO_BIN_EXE_sihmcp"))
+        self.cmd()
             .args(["bootstrap", self.dom.to_string_lossy().as_ref(), "--by", "complete-run", "--complete"])
-            .env_remove("SIH_ROOT")
-            .current_dir(&self.ws)
             .output()
             .expect("spawn bootstrap --complete")
     }
@@ -127,10 +143,9 @@ fn t3_complete_penless_half_state_rejected() {
 #[test]
 fn t4_complete_on_unopened_is_harmless_full_chain() {
     let f = Fixture::new("t4");
-    let out = Command::new(env!("CARGO_BIN_EXE_sihmcp"))
+    let out = f
+        .cmd()
         .args(["bootstrap", f.dom.to_string_lossy().as_ref(), "--by", "t4", "--token-id", "bc-t4-01", "--complete"])
-        .env_remove("SIH_ROOT")
-        .current_dir(&f.ws)
         .output()
         .expect("spawn");
     let stdout = String::from_utf8_lossy(&out.stdout).to_string();

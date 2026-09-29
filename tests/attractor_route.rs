@@ -30,9 +30,19 @@ fn bin_attractor() -> &'static str {
 }
 
 fn pack_worktree() -> PathBuf {
-    // 围堰原包绝对路径：仅用于跨对表（同参形条款的包路径差异是调用形差异，
-    // 包数据逐字节随迁由 T0 承载）
-    PathBuf::from("/Users/moc/workspaces/SiHankor/sih-tools/selector/packs")
+    // 围堰原包目录：仅用于跨对表（同参形条款的包路径差异是调用形差异，
+    // 包数据逐字节随迁由 T0 承载）。自工作区根向上寻址，免机器绝对路径
+    // 绑定（换机或换根即失效的硬编码不进仓）。
+    let mut root = std::env::current_dir().unwrap();
+    loop {
+        let candidate = root.join("sih-tools/selector/packs");
+        if candidate.is_dir() {
+            return candidate;
+        }
+        if !root.pop() {
+            panic!("工作区根未寻得：sih-tools/selector/packs");
+        }
+    }
 }
 
 fn run_bin(args: &[&str]) -> (i32, Vec<u8>, Vec<u8>) {
