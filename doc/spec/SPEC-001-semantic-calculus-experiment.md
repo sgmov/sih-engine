@@ -177,6 +177,7 @@ sih/state/calibration/ 是 DEC-001 状态层的子节点。calibration 承载标
 - 方法学：DES-005 语义验证微积分实验方法学
 - 通用规范：DES-001 文档格式设计
 - 失败复盘：sih-engine/tmp/old-repo-failure-analysis.md
+- 平行编号说明：本文件编号 SPEC-001，与 doc/spec/SPEC-028-divergence-threshold-experiment.md 历史上曾共用 SPEC-001 编号，前者 v1 实验执行规格，后者 v2 偏离率阈值实验。2026-09-29 文档收口批为消除编号撞车把 divergence 重命名为 SPEC-028。两件为方法学同源不同阶段的协议，spec/spec 下共存。
 
 ## 认识论立场 {#epistemic-stance}
 

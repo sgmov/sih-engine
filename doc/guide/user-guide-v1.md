@@ -71,11 +71,11 @@
 
 其二判据现态，achieved 即达成、in_flight 即在飞、sunk 即沉底需关注：
 
-`python3 ../sih-tools/critsweep/sweep.py --at $(date +%F) --root ..`
+`cd sih-engine && target/debug/critsweep --at $(date +%F) --root ..`
 
 其在飞与持锁，当前有多少会话与锁在册：
 
-`cd ../sih-tools/lease && uv run --project . lease status`
+`cd sih-engine && target/debug/lease status`
 
 判据扫的沉底项是给你看的异常信号：某条主线目标超过三天没有任何程序活动痕迹即沉底，这是唯一需要你主动过问的常态告警。
 

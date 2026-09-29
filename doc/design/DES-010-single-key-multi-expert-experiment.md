@@ -123,7 +123,7 @@ Jaccard 高意味专家间一致,Jaccard 低意味专家间分歧大。
 - 上游:convergence 层 P3.1 退化机制
 - 平行:DES-009 参验语义层完整设计
 - 平行:DES-008 违规进 trail
-- 下游:SPEC-001 偏离率阈值实验
+- 下游:SPEC-028 偏离率阈值实验
 - 下游:Rust 工具链实现 v1 路线图
 
 ## 认识论立场 {#epistemic-stance}

@@ -1,12 +1,12 @@
 # DES-020 AGENTS.md 内部工具索引设计
 
-本设计补齐 AGENTS.md 对工程实体的索引覆盖。背景即评估报告文档维度 W4 与观察 O2：W4 即 AGENTS.md 覆盖偏薄，组件索引仅列 4 个第一阶段组件加 2 个第二阶段预登记件，src/bin 实况 36 个内部工具 bin 与 lib 面模块均未索引，新贡献者只读 AGENTS.md 会误判仓体只有 4 个组件；O2 即 src/lib.rs 实测 12 个 pub mod，其中 cascade_registry 与 exitenvelope 与 tools_registry 与 snapline 与 askroute 五件未在 AGENTS.md 出现。判词：AGENTS.md 是仓的门面索引，索引缺件即门面失真；索引以机械对表为纪律，不靠记忆维护。
+本设计补齐 AGENTS.md 对工程实体的索引覆盖。背景即评估报告文档维度 W4 与观察 O2：W4 即 AGENTS.md 覆盖偏薄，组件索引仅列 4 个第一阶段组件加 2 个第二阶段预登记件，src/bin 实况 36 个内部工具 bin 与 lib 面模块均未索引，新贡献者只读 AGENTS.md 会误判仓体只有 4 个组件；O2 即 src/lib.rs 实测 13 个 pub mod，其中 cascade_registry 与 exitenvelope 与 tools_registry 与 snapline 与 askroute 与 hashutil 六件未在 AGENTS.md 出现。判词：AGENTS.md 是仓的门面索引，索引缺件即门面失真；索引以机械对表为纪律，不靠记忆维护。
 
 ## 概览 {#overview}
 
 - 两段结构即阶段组件段保留 4 加 2 不动加新增内部工具 bin 索引段::[两段结构](#structure)
 - 索引条目载三信息即 bin 名加行数加职能一句话，在 AGENTS.md 内一行一件::[索引条目形](#entry-form)
-- 初始索引快照 36 件与 lib 模块清单 12 件在案，含观察 O2 五件收口::[初始索引快照](#snapshot)
+- 初始索引快照 36 件与 lib 模块清单 13 件在案，含观察 O2 六件收口::[初始索引快照](#snapshot)
 - AGENTS.md 全文总行数不超 200::[行数约束](#line-budget)
 - 新 bin 入场须同步索引行，漂移由评审对表::[更新纪律](#update-discipline)
 
@@ -139,10 +139,10 @@ wikirecall
 ## lib 模块清单 {#lib-modules}
 
 清单
-: src/lib.rs pub mod 实况 12 件即 ask3repeater 与 askroute 与 attractor 与 cascade_registry 与 event_stream 与 exitenvelope 与 mcpserver 与 retriever 与 snapline 与 scrutinator 与 tools_registry 与 view。
+: src/lib.rs pub mod 实况 13 件即 ask3repeater 与 askroute 与 attractor 与 cascade_registry 与 event_stream 与 exitenvelope 与 hashutil 与 mcpserver 与 retriever 与 snapline 与 scrutinator 与 tools_registry 与 view。hashutil 是 DEC-031 哈希归库宿件，44 行货夹，详见 doc/decision/031-hashutil-cliargs-merge.md。
 
 O2 收口
-: 其中 cascade_registry 与 exitenvelope 与 tools_registry 与 snapline 与 askroute 五件为此前未在 AGENTS.md 出现的模块，随第二段入索引即评估观察 O2 收口。lib 模块清单与 bin 索引同节承载，同适用更新纪律。
+: 其中 cascade_registry 与 exitenvelope 与 tools_registry 与 snapline 与 askroute 与 hashutil 六件为此前未在 AGENTS.md 出现的模块，随第二段入索引即评估观察 O2 收口。lib 模块清单与 bin 索引同节承载，同适用更新纪律。
 
 ## 行数约束 {#line-budget}
 

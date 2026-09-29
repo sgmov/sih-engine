@@ -20,6 +20,9 @@
 验收判据
 : 判定命令一：grep fn sha256_hex src/bin 零命中。判定命令二：fn sha256_hex 在 lib 面恰一处。判定命令三：cargo build 全量绿。三判据同时成立即验收过，缺一即不收。
 
+当前状态判词
+: 文档收口批核日 2026-09-29。判定命令一实测命中零，bin 面 13 份手抄副本已全数归库，达标。判定命令二实测不达标：lib 面 fn sha256_hex 现两处。一处即 src/hashutil.rs:17 收归宿，签名 pub fn sha256_hex, 入参 bytes: &[u8], 返回 String。另一处即 src/event_stream/certify.rs:19 同算法镜像，签名 pub(crate) fn sha256_hex, 入参 text: &str, 返回 String。两份实现逐字节等价，同为 SHA-256 加 hex::encode 小写输出，certify 版多一步 text.as_bytes() 调用。判别为重复代码债非行为分叉，certify.rs 一份实装待后续批收归，本决策档验收令按两处镜像形态记入并存期判词。判定命令三实测绿。验收判词暂以「达标加一枚像镜像未收归」形态记录，全收归批候人节点立项排期。
+
 ## 后批界 {#deferral}
 
 cliargs 归库

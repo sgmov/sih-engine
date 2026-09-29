@@ -115,6 +115,10 @@ sih-engine 侧即 baseline_checker，消费流程：
 - 平行：T6D-02 fix-failures-t6d 任务包 A5、flywheel_trail.py 的 record_program_signoff A5 schema
 - 下游：baseline_checker 代码实现 SPEC、SPEC-004 扩展、facet supersession 路径
 
+## 编号说明 {#numbering-note}
+
+本文件编号 DES-011，是桥接件立名与 cross-link 协议的决策档，与 doc/design/DES-011-adjudication-baseline-check.md 同用 DES-011 编号。两件为演化关系非独立设计，正本承担核对规则集与闸三态映射，本档承担立名 baseline_checker 与 cross-link 协议。文件路径稳定保留以承 doc/knowledge/CASCADE-decidable-cascade-v1.json 等知识基的索引。引用本决策时若指向桥接件立名与 cross-link 协议请走本档；若指向核对规则集与闸三态映射请走正本。
+
 ## 八、自检 {#self-check}
 
 ### 形式合规 {#formal}

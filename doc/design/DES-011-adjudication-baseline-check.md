@@ -47,7 +47,7 @@ facet 闸三态与温度探针判定到裁决处置的映射。处置枚举四�
 
 第四优先级，stable_clear。核对规则 R1 至 R7 全过，处置为裁决通过，裁决方向沿用席位众数方向，写 crosscheck_completed 事件，负载通过记录含闸裁决、方向、v3_rule、规则版本、材料指纹。任一规则失败，处置为材料退回，裁决不通过，写 crosscheck_completed 事件，负载偏差记录含失败规则标识与失败位置。
 
-处置为退回、挂起、打回的 crosscheck_completed 与 inconsistency 事件，event_class 取可消费进告警视图。处置为裁决通过的事件，event_class 取仅记录进知晓视图——人类知晓、零动作要求、无需复签（2026-08-30 用户裁定签署节点三条款，原「不进人类视图」旧文废止留痕）；人类保留一票绝对反对权，否决经 inconsistency 翻案事件覆盖被签效力；级联边界条件变更经复算浮出即签署点异常视图，人介入重命题或令 agent 重跑。
+处置为退回、挂起、打回的 crosscheck_completed 与 inconsistency 事件，event_class 取可消费进告警视图。处置为裁决通过的事件，event_class 取仅记录进知晓视图即人类知晓、零动作要求、无需复签，承 2026-08-30 用户裁定签署节点三条款，原「不进人类视图」旧文废止留痕；人类保留一票绝对反对权，否决经 inconsistency 翻案事件覆盖被签效力；级联边界条件变更经复算浮出即签署点异常视图，人介入重命题或令 agent 重跑。
 
 ## 输出契约 {#output-contract}
 
@@ -83,6 +83,10 @@ facet 闸三态与温度探针判定到裁决处置的映射。处置枚举四�
 可证伪条件二：若出现核对规则无法覆盖的越权形态，例如新 LLM 通道绕过执行者归属校验，则规则集版本升级完成前裁决通道整体降级为挂起，本设计暂停执行。
 
 可证伪条件三：若挂起队列在无池化裁决的情况下持续累积超过消化能力，即 OQ-21 待定二长期悬置，则本设计的挂起处置退化为遗忘清单，与旧仓 OPEN-QUESTIONS 失败模式同构，须视为设计失败。
+
+## 编号说明 {#numbering-note}
+
+本文件编号 DES-011，是桥接件设计正本。doc/design/DES-011-baseline-checker-DEC.md 同用 DES-011 编号，是承载立名 baseline_checker 与 cross-link 协议的决策档，属演化关系非独立设计。两件文件路径稳定保留以承 doc/knowledge/CASCADE-decidable-cascade-v1.json 等知识基的索引。引用本设计时若指向桥接件立名与 cross-link 协议请走 DEC 档；若指向核对规则集与闸三态映射请走本档。
 
 ## 自检 {#self-check}
 
