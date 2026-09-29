@@ -247,14 +247,27 @@ pub async fn tool_lease_open(
             Some("候 server 重签正身件后重试"),
         );
     }
-    let argv = lease_open_argv(
+    let argv = match lease_open_argv(
         &conn.root,
         &report.unwrap(),
         &package,
         &intent,
         &repo.unwrap_or_default(),
         &allow.unwrap_or_default(),
-    );
+    ) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_open",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     let out = run_cli(&argv, LEASE_BIN_TIMEOUT).await;
     if out.rc != 0 {
         return tool_error(
@@ -508,7 +521,20 @@ pub async fn tool_lease_lock(
         }
     };
     let session_id = conn.session_id.clone().unwrap_or_default();
-    let argv = lease_lock_argv(&conn.root, &report, &session_id, &path, mode_s.as_deref(), wait.unwrap_or(false));
+    let argv = match lease_lock_argv(&conn.root, &report, &session_id, &path, mode_s.as_deref(), wait.unwrap_or(false)) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_lock",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_lock", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -532,7 +558,20 @@ pub async fn tool_lease_unlock(conn: &mut ConnectionSession, path: Option<String
         }
     };
     let session_id = conn.session_id.clone().unwrap_or_default();
-    let argv = lease_unlock_argv(&conn.root, &report, &session_id, &path);
+    let argv = match lease_unlock_argv(&conn.root, &report, &session_id, &path) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_unlock",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_unlock", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -567,8 +606,21 @@ pub async fn tool_lease_wait_turn(
         }
     };
     let session_id = conn.session_id.clone().unwrap_or_default();
-    let argv = lease_wait_turn_argv(&conn.root, &report, &session_id, &path,
-        mode.as_deref(), timeout_seconds, interval_seconds);
+    let argv = match lease_wait_turn_argv(&conn.root, &report, &session_id, &path,
+        mode.as_deref(), timeout_seconds, interval_seconds) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_wait_turn",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_wait_turn", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -592,7 +644,20 @@ pub async fn tool_lease_claim(
         return tool_error(conn, "lease_claim", what, &params, "缺必填参数：package 与 ttl", 2,
             Some("invalid_param"), Some("参数校验（调用形教学位）"), Some("补 package 与 ttl（分钟数正整数）"));
     }
-    let argv = lease_claim_argv(&conn.root, &package, ttl.unwrap(), claimant.as_deref());
+    let argv = match lease_claim_argv(&conn.root, &package, ttl.unwrap(), claimant.as_deref()) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_claim",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_claim", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -614,7 +679,20 @@ pub async fn tool_lease_unclaim(
         return tool_error(conn, "lease_unclaim", what, &params, "缺必填参数：package", 2,
             Some("invalid_param"), Some("参数校验（调用形教学位）"), Some("补任务包 stem 或路径"));
     }
-    let argv = lease_unclaim_argv(&conn.root, &package, claimant.as_deref());
+    let argv = match lease_unclaim_argv(&conn.root, &package, claimant.as_deref()) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_unclaim",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_unclaim", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -668,8 +746,21 @@ pub async fn tool_lease_commit(
             Some("invalid_param"), Some("参数校验（调用形教学位）"), Some("改 stage 为 wip 或 settle"));
     }
     let session_id = conn.session_id.clone().unwrap_or_default();
-    let argv = lease_commit_argv(&conn.root, &session_id, &repos[0], &stage, &subject,
-        seq, cert.as_deref(), note.as_deref(), &trail.unwrap_or_default(), root.as_deref());
+    let argv = match lease_commit_argv(&conn.root, &session_id, &repos[0], &stage, &subject,
+        seq, cert.as_deref(), note.as_deref(), &trail.unwrap_or_default(), root.as_deref()) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_commit",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(conn, "lease_commit", &argv, LEASE_BIN_TIMEOUT, what, &params, true, None).await
 }
 
@@ -691,7 +782,20 @@ pub async fn tool_lease_close(
         return tool_error(conn, "lease_close", what, &params, "缺必填参数：package", 2,
             Some("invalid_param"), Some("参数校验（调用形教学位）"), Some("补任务包 stem 或路径"));
     }
-    let argv = lease_close_argv(&conn.root, &package, reason.as_deref().filter(|s| !s.is_empty()), None);
+    let argv = match lease_close_argv(&conn.root, &package, reason.as_deref().filter(|s| !s.is_empty()), None) {
+        Ok(v) => v,
+        Err(e) => return tool_error(
+            conn,
+            "lease_close",
+            what,
+            &params,
+            &format!("engine binary 解析拒（lease bin）：{e}"),
+            2,
+            Some("engine_bin_missing"),
+            Some("mcp 进程侧"),
+            Some("cargo build 后重试；零静默回落掩盖无 bin spawn 127 病灶"),
+        ),
+    };
     finish(
         conn,
         "lease_close",

@@ -206,16 +206,16 @@ pub(crate) fn alpha_defs() -> Vec<Tool> {
     let desc_sweep = format!(
         "判据扫：GOV-002 五判据三态、泊界两线路由、两账本在飞，严格 JSON 单对象。Criterion sweep: \
          five GOV-002 criteria tri-state, parking routing, two in-flight ledgers. \
-         承接 CLI：python3 sih-tools/critsweep/sweep.py --at <date> --root <root>。正典：{canon}"
+         承接 CLI：sih-engine/target/debug/critsweep --at <date> --root <root>。正典：{canon}"
     );
     let desc_heart = format!(
         "心跳：秤星三维最新读数与距上快照间隔日（只读不落链）。Heartbeat: latest gauge tri-dimension \
          readings and days since last snapshot (read-only). 承接 CLI：\
-         cd sih-tools/gauge 且 PYTHONPATH=src python3 -m gauge.cli read。正典：{canon}"
+         sih-engine/target/debug/gauge read --dimension <dim> --at <date> --trail <trail>。正典：{canon}"
     );
     let desc_locks = format!(
         "锁面读数：未释放锁成对核算与活跃会话数。Locks reading: unreleased lock accounting and \
-         active session count. 承接 CLI：uv run --project sih-tools/lease lease status（查册）。正典：{canon}"
+         active session count. 承接 CLI：sih-engine/target/debug/lease status --ledger <l> --locks <k>（查册）。正典：{canon}"
     );
     let desc_recall = format!(
         "温故检索：治理档案四轴检索（topic 主题轴、word 文轴、event 事件轴、time 时间轴），\
@@ -346,7 +346,7 @@ impl ServerHandler for SihMcpServer {
                  lease_open 加 lease_lock 加 lease_commit 加 lease_unlock 加 lease_close，\
                  意图笔与认证笔先于收约；被拒是教学：读错误载荷 reason_code 与 suggested_action \
                  改做法，勿原样重试。AI 使用说明书：HTTP 面 http://127.0.0.1:8765/manual，\
-                 仓内 sih-tools/mcpline/AI-MANUAL.md。正典指针："
+                 中央登记册位（迁移后由 SIH_FIRST_DOMAIN_MANUAL_RELATIVE 强制配置）。正典指针："
                     .to_owned()
                     + CANON_DES_014
                     + " 与 "

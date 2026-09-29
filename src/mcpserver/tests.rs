@@ -17,13 +17,13 @@ fn valid_date_shape() {
 
 #[test]
 fn layout_forms() {
-    // 布局判别是纯逻辑：临时目录造标记验形（first_domain 双仓标记俱在；
-    // canonical 域内 sih/ledger 面在场）
+    use super::runtime::test_helpers::EnvGuard;
+    // 布局判别是纯逻辑：env var 短路第一域（fixture 零依赖旧仓 marker 文件
+    // 检测），canonical 域内 sih/ledger 面在场。
+    let _env = EnvGuard::set(&[("SIH_LEGACY_FIRST_DOMAIN", "1")]);
     let base = std::env::temp_dir().join(format!("sihmcp-layout-{}", std::process::id()));
     std::fs::create_dir_all(base.join("sih-engine")).unwrap();
-    std::fs::create_dir_all(base.join("sih-tools")).unwrap();
     std::fs::write(base.join("sih-engine/Cargo.toml"), "[package]").unwrap();
-    std::fs::write(base.join("sih-tools/pyproject.toml"), "").unwrap();
     assert_eq!(detect_layout_form(&base), Some("first_domain"));
     assert_eq!(
         trail_path(&base, "2026-09-11"),

@@ -23,7 +23,7 @@ use std::time::Duration;
 use serde_json::{json, Map, Value};
 use sha2::{Digest, Sha256};
 
-use super::runtime::{code_root, resolve_root, run_readonly, scribe_bin, today_str, valid_date};
+use super::runtime::{resolve_root, run_readonly, scribe_bin, today_str, valid_date};
 use super::tokens::{self, TokenRow};
 
 // ------------------------------------------------------------------ 常量定形
@@ -177,10 +177,18 @@ fn expand_home(p: &Path) -> PathBuf {
     p.to_path_buf()
 }
 
-/// 中央登记册位：第一域布局投影（对等 layout_for(central, central).tokens_path()
-/// 即 sih-tools/mcpline/ledger/tokens.ndjson；域根恒非中央根，第一域形单点）。
-pub fn central_registry_path(central_root: &Path) -> PathBuf {
-    central_root.join("sih-tools/mcpline/ledger/tokens.ndjson")
+/// 中央登记册位：env var SIH_TOKENS_REGISTRY_PATH 强制配置，缺位显式拒。
+/// 围堰第一域历史位「中央根下 sihtools/mcpline/ledger/tokens.ndjson」由部署
+/// 方在 env 中自指（生产部署方须显式配 SIH_TOKENS_REGISTRY_PATH）。绝拒位
+/// 哨返回——任何后续 IO 会以 ENOENT 显形，绝不静默降级。
+pub fn central_registry_path(_central_root: &Path) -> PathBuf {
+    match std::env::var("SIH_TOKENS_REGISTRY_PATH") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path(
+            "SIH_TOKENS_REGISTRY_PATH",
+            "sihtools-围堰冻结-中央标识登记册位",
+        ),
+    }
 }
 
 /// 新城镜像登记册位：DES-015 登记册形判词「新城正典位 <域根>/sih/ledger/
@@ -599,7 +607,16 @@ pub async fn open_domain(dom: &Path, row: &TokenRow, opened_by: &str, date: &str
     std::fs::write(&decl_path, &decl_bytes)
         .map_err(|e| tool_error(format!("域声明卡落地拒 {}：{e}", decl_path.display())))?;
     // 步三：落模板两件（任务包模板字节复制中央单一源；停泊骨架模块内置）
-    let template_src = code_root().join("sih-tools/lease/TASK-PACKAGE-TEMPLATE.md");
+    // 中央任务包模板源：env var SIH_TASK_PACKAGE_TEMPLATE_PATH 强制配置，缺位
+    // 显式拒。围堰历史位「双仓内 sihtools/lease/TASK-PACKAGE-TEMPLATE.md」由
+    // 部署方在 env 中自指（绝拒位哨返回——任何后续 IO 会以 ENOENT 显形）。
+    let template_src = match std::env::var("SIH_TASK_PACKAGE_TEMPLATE_PATH") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path(
+            "SIH_TASK_PACKAGE_TEMPLATE_PATH",
+            "sihtools-围堰冻结-任务包模板源位",
+        ),
+    };
     if !template_src.is_file() {
         return Err(tool_error(format!("中央任务包模板源缺席：{}", template_src.display())));
     }
@@ -1505,6 +1522,9 @@ mod tests {
     }
 
     /// 临时新城根：中央根带中央登记册目录，域根带 .git（前置检查即过）。
+    /// 模板源：运行时按 env var 强制配置，本测试 fixture 复制真围堰模板到位
+    /// （按迁移后字节对等载荷，不写源文件）。模板源位置由 SIH_TEST_TEMPLATE_
+    /// SOURCE env 指定（测试 CI 注入），未指定即用 fixture 自包含空模板。
     fn make_roots(tag: &str) -> (PathBuf, PathBuf) {
         let nanos = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
@@ -1513,8 +1533,20 @@ mod tests {
         let base = std::env::temp_dir().join(format!("sihmcp-boot-{tag}-{}-{nanos}", std::process::id()));
         let central = base.join("central");
         let dom = base.join("dom");
-        std::fs::create_dir_all(central.join("sih-tools/mcpline/ledger")).unwrap();
+        std::fs::create_dir_all(central.join("test-tools/mcpline/ledger")).unwrap();
         std::fs::create_dir_all(dom.join(".git")).unwrap();
+        // 模板 fixture：源位置由 env 显式注入（CI 配置），未注入即空模板
+        // （fixture 自包含；本测试批不依赖具体模板内容字节）。
+        let fixture_template = base.join("task-package-template-fixture.md");
+        if let Ok(src) = std::env::var("SIH_TEST_TEMPLATE_SOURCE") {
+            if !src.trim().is_empty() && Path::new(&src).is_file() {
+                let _ = std::fs::copy(&src, &fixture_template);
+            } else {
+                std::fs::write(&fixture_template, b"# fixture template placeholder\n").unwrap();
+            }
+        } else {
+            std::fs::write(&fixture_template, b"# fixture template placeholder\n").unwrap();
+        }
         (central, dom)
     }
 
@@ -1522,17 +1554,34 @@ mod tests {
         let _ = std::fs::remove_dir_all(base);
     }
 
-    fn env_pair(central: &Path) -> Vec<(&'static str, String)> {
+    /// 测试 env 组：SIH_ROOT 指数据根（fixture 临时中央），SIH_MCPLINE_CODE_ROOT
+    /// 指真实工作区根（scribe 走真二进制），SIH_TOKENS_REGISTRY_PATH 指临时
+    /// 中央登记册位（与 make_roots fixture 路径对齐），模板源指 fixture 本副
+    /// 本（运行时按 env 强制配置，测试侧零硬编码围堰路径）。
+    fn env_pair(central: &Path, base: &Path) -> Vec<(&'static str, String)> {
         vec![
             ("SIH_ROOT", central.to_string_lossy().to_string()),
             ("SIH_MCPLINE_CODE_ROOT", REAL_WS_ROOT.to_string()),
+            (
+                "SIH_TOKENS_REGISTRY_PATH",
+                central.join("test-tools/mcpline/ledger/tokens.ndjson")
+                    .to_string_lossy()
+                    .to_string(),
+            ),
+            (
+                "SIH_TASK_PACKAGE_TEMPLATE_PATH",
+                base.join("task-package-template-fixture.md")
+                    .to_string_lossy()
+                    .to_string(),
+            ),
         ]
     }
 
     #[tokio::test]
     async fn happy_path_five_segments() {
         let (central, dom) = make_roots("happy");
-        let vars = env_pair(&central);
+        let base = central.parent().unwrap().to_path_buf();
+        let vars = env_pair(&central, &base);
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
@@ -1584,13 +1633,16 @@ mod tests {
     #[tokio::test]
     async fn active_row_reused_no_reissue() {
         let (central, dom) = make_roots("reuse");
+        let base = central.parent().unwrap().to_path_buf();
         // 预置中央 active 行（seed-a 绑本域根）：全链应复用不重签。
-        let seed = tokens::issue_row("seed-a", &dom.to_string_lossy(), "readonly", "seed");
-        tokens::append_row(&central_registry_path(&central), &seed).unwrap();
-        let vars = env_pair(&central);
+        // env 须先设：central_registry_path 现按 SIH_TOKENS_REGISTRY_PATH 强
+        // 制配置，缺位即显式拒位哨——预置须在 env 设置之后。
+        let vars = env_pair(&central, &base);
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
+        let seed = tokens::issue_row("seed-a", &dom.to_string_lossy(), "readonly", "seed");
+        tokens::append_row(&central_registry_path(&central), &seed).unwrap();
         let result = bootstrap_domain(&dom, None, None, "test-window", Some("2026-09-11"), None, false)
             .await
             .expect("复用现牌全链应绿");
@@ -1611,7 +1663,8 @@ mod tests {
     #[tokio::test]
     async fn missing_token_id_rejects_zero_write() {
         let (central, dom) = make_roots("notoken");
-        let vars = env_pair(&central);
+        let base = central.parent().unwrap().to_path_buf();
+        let vars = env_pair(&central, &base);
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );
@@ -1632,13 +1685,14 @@ mod tests {
     #[tokio::test]
     async fn client_config_merge_preserves_and_idempotent() {
         let (central, dom) = make_roots("clientcfg");
-        let cfg = central.parent().unwrap().join("zcode-config.json");
+        let base = central.parent().unwrap().to_path_buf();
+        let cfg = base.join("zcode-config.json");
         std::fs::write(
             &cfg,
             r#"{"other":{"keep":true},"mcp":{"servers":{"other-srv":{"type":"http","url":"http://example"}}}}"#,
         )
         .unwrap();
-        let vars = env_pair(&central);
+        let vars = env_pair(&central, &base);
         let _env = EnvGuard::set(
             &vars.iter().map(|(k, v)| (*k, v.as_str())).collect::<Vec<_>>(),
         );

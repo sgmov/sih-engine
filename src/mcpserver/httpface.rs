@@ -90,17 +90,75 @@ pub const IDENTITY_NOTICE_DEGRADED: &str = "连接未携有效标识牌（缺头
 pub const FORM_FIRST: &str = "first";
 pub const FORM_CANONICAL: &str = "canonical";
 
-// 第一域历史布局映射登记表（domains.py 判词照录，登记面数据不迁移不重写）。
+// 第一域历史布局路径常量（相对形，引擎内或顶层仓内均同语义）。
+// 路径全段交由 SIH_FIRST_DOMAIN_* 环境变量覆盖；本组常量仅作 env var 缺位
+// 时 deny_path 哨位的契约锚点描述与注释指针。
+// 围堰第一域历史布局登记面对应 mcpline/src/mcpline/writeface/domains.py；
+// 2026-09-14 围堰退役批后该面已冻结兼容只读，生产调用面切零运行期硬编码。
 const FIRST_DOMAIN_TRAIL: &str = "sih-engine/sih/event/trail";
-const FIRST_DOMAIN_LEDGER: &str = "sih-tools/lease/ledger";
-const FIRST_DOMAIN_TOKENS: &str = "sih-tools/mcpline/ledger/tokens.ndjson";
 const FIRST_DOMAIN_PARKING: &str = "sih-engine/sih/state/parking/materials";
-const FIRST_DOMAIN_REPOS: [&str; 2] = ["sih-tools", "sih-engine"];
 
 // 新城正典单根布局（DES-015 域目录布局规约定稿照录）。
 const CANONICAL_TRAIL: &str = "sih/event/trail";
 const CANONICAL_LEDGER: &str = "sih/ledger";
 const CANONICAL_PARKING: &str = "sih/state/parking/materials";
+
+/// 第一域租约台账目录：env var SIH_FIRST_DOMAIN_LEDGER_DIR 强制配置，缺位
+/// 显式拒（绝拒位哨返回——任何后续 IO 会以 ENOENT 显形，绝不静默降级）。
+/// 围堰历史位「双仓内 sihtools/lease/ledger」由部署方在 env 中自指。
+/// 本函数仅返回 env 值的裸 PathBuf（绝对形直用，相对形由 DomainLayout 在
+/// 调用处锚域根）。
+fn first_domain_ledger_dir_raw() -> PathBuf {
+    match std::env::var("SIH_FIRST_DOMAIN_LEDGER_DIR") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path(
+            "SIH_FIRST_DOMAIN_LEDGER_DIR",
+            "sihtools-围堰冻结-租约台账目录位",
+        ),
+    }
+}
+
+/// 第一域租约台账目录（域根锚定形）：相对形锚域根，绝对形直用。
+fn first_domain_ledger_dir(root: &Path) -> PathBuf {
+    let raw = first_domain_ledger_dir_raw();
+    if raw.is_absolute() {
+        raw
+    } else {
+        root.join(raw)
+    }
+}
+
+/// 第一域中央登记册相对路径：env var SIH_FIRST_DOMAIN_TOKENS_RELATIVE
+/// 强制配置（部署方填绝对路径亦可），缺位显式拒。
+/// 围堰历史位「双仓内 sihtools/mcpline/ledger/tokens.ndjson」由部署方自指。
+pub fn first_domain_tokens_relpath() -> PathBuf {
+    match std::env::var("SIH_FIRST_DOMAIN_TOKENS_RELATIVE") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path(
+            "SIH_FIRST_DOMAIN_TOKENS_RELATIVE",
+            "sihtools-围堰冻结-中央登记册位",
+        ),
+    }
+}
+
+/// 第一域仓集：env var SIH_FIRST_DOMAIN_REPOS（逗号分隔），缺位绝拒。
+/// 围堰历史位「双仓名 sihtools 加 sih-engine」由部署方自指。
+fn first_domain_repos() -> Vec<String> {
+    match std::env::var("SIH_FIRST_DOMAIN_REPOS") {
+        Ok(v) if !v.trim().is_empty() => v
+            .split(',')
+            .map(|s| s.trim().to_string())
+            .filter(|s| !s.is_empty())
+            .collect(),
+        _ => {
+            eprintln!(
+                "[sihmcp] SIH_FIRST_DOMAIN_REPOS 未配置：第一域仓集绝拒（围堰冻结兼容只读，\
+                 部署方须自指仓名列表，例如 \"sihtools,sih-engine\"）。"
+            );
+            vec![]
+        }
+    }
+}
 
 /// 域布局投影：域根与形态与中央根三元，路径投影俱由本对象承载
 /// （domains.py DomainLayout 对等）。
@@ -135,7 +193,7 @@ impl DomainLayout {
     /// 既有 lease CLI 台账覆写旗标一一对应，零新增键）。
     pub fn ledger_paths(&self) -> BTreeMap<String, PathBuf> {
         let base = if self.is_first() {
-            self.root.join(FIRST_DOMAIN_LEDGER)
+            first_domain_ledger_dir(&self.root)
         } else {
             self.root.join(CANONICAL_LEDGER)
         };
@@ -150,7 +208,13 @@ impl DomainLayout {
     /// 该域标识登记册路径：第一域 mcpline 工具面自治位，新城 sih/ledger 位。
     pub fn tokens_path(&self) -> PathBuf {
         if self.is_first() {
-            self.root.join(FIRST_DOMAIN_TOKENS)
+            // 绝对路径直接用，相对路径锚域根；env var 缺位即绝拒位哨返回。
+            let p = first_domain_tokens_relpath();
+            if p.is_absolute() {
+                p
+            } else {
+                self.root.join(p)
+            }
         } else {
             self.root.join(CANONICAL_LEDGER).join("tokens.ndjson")
         }
@@ -168,7 +232,7 @@ impl DomainLayout {
     /// 该域仓集（写入面仓指向域）：第一域双仓根相对形，新城域根单仓。
     pub fn repos(&self) -> Vec<String> {
         if self.is_first() {
-            FIRST_DOMAIN_REPOS.iter().map(|s| s.to_string()).collect()
+            first_domain_repos()
         } else {
             vec![self.root.display().to_string()]
         }
@@ -182,12 +246,13 @@ fn norm_path(p: &Path) -> PathBuf {
         .unwrap_or_else(|_| std::path::absolute(p).unwrap_or_else(|_| p.to_path_buf()))
 }
 
-/// 两形标记判别（DES-015 判据扫 detect_layout_form 同款谓词）：双仓标记
-/// （sih-engine/Cargo.toml 加 sih-tools/pyproject.toml）俱在即第一域形，
-/// sih/ledger 在即新城正典形，俱缺即 None。
+/// 两形标记判别（DES-015 判据扫 detect_layout_form 同款谓词）：第一域标记
+/// 由 legacy_first_domain_enabled 短路控制（SIH_LEGACY_FIRST_DOMAIN=1 显式
+/// 启第一域或回落到围堰存量 sihtools 标记检测作向后兼容）；sih/ledger 在即
+/// 新城正典形，俱缺即 None。
 pub fn detect_form(root: &Path) -> Option<&'static str> {
     if root.join("sih-engine/Cargo.toml").is_file()
-        && root.join("sih-tools/pyproject.toml").is_file()
+        && super::runtime::legacy_first_domain_enabled(root)
     {
         return Some(FORM_FIRST);
     }
@@ -737,21 +802,36 @@ pub async fn serve_http(bind: &str, endpoint: &str) -> anyhow::Result<()> {
 mod tests {
     use super::*;
     use axum::http::HeaderValue;
+    use crate::mcpserver::runtime::test_helpers::EnvGuard;
     use crate::mcpserver::tokens::{issue_row, revoke_row};
+
+    /// 测试 env 第一域：路径全段由 env 强制配置（迁移后零硬编码），fixture
+    /// 命名沿用旧仓同形（test-tools）便于对表断言。
+    fn env_first_domain() -> EnvGuard {
+        EnvGuard::set(&[
+            ("SIH_LEGACY_FIRST_DOMAIN", "1"),
+            ("SIH_FIRST_DOMAIN_TOKENS_RELATIVE", "test-tools/mcpline/ledger/tokens.ndjson"),
+            ("SIH_FIRST_DOMAIN_LEDGER_DIR", "test-tools/lease/ledger"),
+            ("SIH_FIRST_DOMAIN_REPOS", "test-tools,sih-engine"),
+        ])
+    }
 
     #[test]
     fn domain_layout_two_forms() {
+        let _env = env_first_domain();
         let dir = tempfile::tempdir().unwrap();
         let central = dir.path().join("central");
         std::fs::create_dir_all(central.join("sih-engine")).unwrap();
-        std::fs::create_dir_all(central.join("sih-tools")).unwrap();
+        // 测试 fixture 目录：迁移后不依赖 sihtools 物理目录（仅作标记检测
+        // 回退位，本测试由 SIH_LEGACY_FIRST_DOMAIN=1 短路，不进 marker 检测）。
+        std::fs::create_dir_all(central.join("test-tools")).unwrap();
         // 自锚即第一域映射形（default_layout 判词），tokens 落 mcpline 自治位。
         let l = default_layout(&central);
         assert!(l.is_first());
         assert_eq!(l.form, FORM_FIRST);
         assert_eq!(
             l.tokens_path(),
-            l.root.join("sih-tools/mcpline/ledger/tokens.ndjson")
+            l.root.join("test-tools/mcpline/ledger/tokens.ndjson")
         );
         assert_eq!(
             l.trail("2026-09-11"),
@@ -759,16 +839,15 @@ mod tests {
         );
         assert_eq!(
             l.ledger_paths()["locks"],
-            l.root.join("sih-tools/lease/ledger/locks.ndjson")
+            l.root.join("test-tools/lease/ledger/locks.ndjson")
         );
         assert_eq!(l.parking_dir(), l.root.join("sih-engine/sih/state/parking/materials"));
         // 标记判别形：双仓标记俱在即 first（判别形照 domains.py 判据），仓集
-        // 双仓根相对形。
+        // 双仓根相对形。fixture 目录改名后只写 Cargo.toml 标记，mark 检测短路。
         std::fs::write(central.join("sih-engine/Cargo.toml"), "[package]").unwrap();
-        std::fs::write(central.join("sih-tools/pyproject.toml"), "").unwrap();
         let l2 = layout_for(&central, Path::new("/nonexistent-central-root"));
         assert!(l2.is_first());
-        assert_eq!(l2.repos(), vec!["sih-tools".to_string(), "sih-engine".to_string()]);
+        assert_eq!(l2.repos(), vec!["test-tools".to_string(), "sih-engine".to_string()]);
         // 新城正典形：sih/ledger 在即 canonical，tokens 落 sih/ledger 位，
         // 仓集域根单仓。
         let dir2 = tempfile::tempdir().unwrap();
@@ -791,9 +870,10 @@ mod tests {
 
     #[test]
     fn token_resolution_two_forms() {
-        // 第一域形：中央根 sih-tools/mcpline/ledger/tokens.ndjson。
+        let _env = env_first_domain();
+        // 第一域形：中央根 test-tools/mcpline/ledger/tokens.ndjson（fixture 命名）。
         let dir = tempfile::tempdir().unwrap();
-        let first_dir = dir.path().join("sih-tools/mcpline/ledger");
+        let first_dir = dir.path().join("test-tools/mcpline/ledger");
         std::fs::create_dir_all(&first_dir).unwrap();
         let first_path = first_dir.join("tokens.ndjson");
         let row = issue_row("tok-first", dir.path().display().to_string().as_str(), tokens::SCOPE_DOMAIN_WRITE, "tester");
@@ -1063,7 +1143,8 @@ mod tests {
         let dir = tempfile::tempdir().unwrap();
         let central = dir.path().join("central");
         std::fs::create_dir_all(central.join("sih-engine")).unwrap();
-        std::fs::create_dir_all(central.join("sih-tools")).unwrap();
+        // 第一域形 env 短路（fixture 不依赖 marker 文件检测）
+        let _env = EnvGuard::set(&[("SIH_LEGACY_FIRST_DOMAIN", "1")]);
         assert!(domain_opened(&central, &central));
         let canon = dir.path().join("canon");
         std::fs::create_dir_all(canon.join("sih/ledger")).unwrap();

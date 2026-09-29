@@ -10,18 +10,24 @@ use std::path::{Path, PathBuf};
 use serde_json::{json, Map, Value};
 
 use super::runtime::{
-    code_root, error_payload, lease_bin, retriever_bin, resolve_root, run_readonly, today_str,
-    trail_path, valid_date, RunOutcome, CANON_LINE_PKG, CANON_SPEC_023,
+    critsweep_bin, error_payload, gauge_bin, lease_bin, nomenclator_bin,
+    retriever_bin, resolve_root, run_readonly, today_str, trail_path, valid_date, RunOutcome,
+    CANON_LINE_PKG, CANON_SPEC_023,
 };
 
 const NAMING_TEACHING: &str = "立名程序摘要（序承先乙后名再甲）：一、乙前注入——立名动作前先拉 nomenclator map --concept 语义映射报告入上下文（概念锚查词典六态与既裁 code 形与近邻词，只报不判），防想错了；二、查册对表——命名动作查册对象是概念本尊非只造出的词形，nomenclator_query 查概念词与候选词形并查命名集与检词（DEC-017 修订四常设纪律）；三、看真材料取名后填甲表三件——概念锚 zh、既裁 code 形或显式申报无承、语素派生；四、甲机械兜底——lease open --new-stem 带甲表，stem 闸机械核对指称完整与派生对表，填不圆即拒（零 LLM 判词位），防真的想错了；五、立名程序终裁登记——语义忠实终裁归立名程序人节点，收敛后 nomenclator register 在册。正典：sih-engine/doc/decision/017-wengu-naming.md；.agents/skills/sihankor-naming/SKILL.md";
 
-fn nom_project_dir() -> PathBuf {
-    code_root().join("sih-tools").join("nomenclator")
-}
-
-fn nom_pack() -> PathBuf {
-    code_root().join("sih-tools").join("nomenclator").join("packs").join("core")
+/// 检词核心术语包位：env var SIH_NOMENCLATOR_PACK_DIR 强制配置，缺位显式拒。
+/// 围堰历史位「双仓内 sihtools/nomenclator/packs/core」由部署方在 env 中自指
+/// （绝拒位哨返回——任何后续 spawn 会以 ENOENT 显形，绝不静默降级）。
+fn nom_pack_dir() -> PathBuf {
+    match std::env::var("SIH_NOMENCLATOR_PACK_DIR") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path(
+            "SIH_NOMENCLATOR_PACK_DIR",
+            "sihtools-围堰冻结-检词核心包位",
+        ),
+    }
 }
 
 fn argv_of(parts: &[&str]) -> Vec<String> {
@@ -163,9 +169,14 @@ pub async fn critsweep(root: PathBuf, date: Option<String>) -> Value {
             &format!("date 非法: '{date}'，须 YYYY-MM-DD"),
         );
     }
+    let bin = match critsweep_bin() {
+        Ok(p) => p,
+        Err(e) => {
+            return error_payload("critsweep", what, &params, &e.to_string());
+        }
+    };
     let argv = argv_of(&[
-        "python3",
-        &code_root().join("sih-tools/critsweep/sweep.py").display().to_string(),
+        &bin.display().to_string(),
         "--at",
         &date,
         "--root",
@@ -177,17 +188,17 @@ pub async fn critsweep(root: PathBuf, date: Option<String>) -> Value {
             "critsweep",
             what,
             &params,
-            &format!("sweep.py 退出码 {}: {}", out.rc, truncate(&out.stderr, 400)),
+            &format!("critsweep 退出码 {}: {}", out.rc, truncate(&out.stderr, 400)),
         );
     }
     match serde_json::from_str::<Value>(&out.stdout) {
         Ok(v) if v.is_object() => v,
-        Ok(_) => error_payload("critsweep", what, &params, "sweep.py 出参非单对象"),
+        Ok(_) => error_payload("critsweep", what, &params, "critsweep 出参非单对象"),
         Err(e) => error_payload(
             "critsweep",
             what,
             &params,
-            &format!("sweep.py 出参非 JSON: {e}"),
+            &format!("critsweep 出参非 JSON: {e}"),
         ),
     }
 }
@@ -216,10 +227,18 @@ pub async fn heartbeat(root: PathBuf) -> Value {
             &format!("当日链文件缺席: {}（心跳读数以当日链为准）", trail.display()),
         );
     }
-    let gauge_dir = root.join("sih-tools/gauge");
-    let sessions_ledger = root.join("sih-tools/lease/ledger/sessions.ndjson");
+    let sessions_ledger = super::httpface::layout_for(&root, &root)
+        .ledger_paths()
+        .remove("ledger")
+        .unwrap_or_else(|| super::runtime::deny_path("ledger_domain_layout", "心跳 sessions ledger"));
     let src_root = root.join("sih-engine");
-    let tools_root = root.join("sih-tools");
+    // tools_root：env var SIH_TOOLS_ROOT 强制配置，缺位绝拒位哨。围堰历史位
+    // 「双仓内 sihtools」由部署方在 env 中自指。cwd 锚解（围堰需 gauge_dir 作
+    // PYTHONPATH=src 之 cwd；引擎 bin 自含 PYTHONPATH 故 None）。
+    let tools_root = match std::env::var("SIH_TOOLS_ROOT") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => super::runtime::deny_path("SIH_TOOLS_ROOT", "sihtools-围堰冻结-秤星工具根"),
+    };
     // 域链全日展开：trail 目录全日 sorted glob（pk-090 件六根因修复形）
     let mut trails: Vec<PathBuf> = match std::fs::read_dir(trail.parent().unwrap()) {
         Ok(rd) => rd
@@ -230,14 +249,25 @@ pub async fn heartbeat(root: PathBuf) -> Value {
     };
     trails.sort();
     let trail_strs: Vec<String> = trails.iter().map(|p| p.display().to_string()).collect();
-    let env_extra = [("PYTHONPATH", "src")];
     let mut readings = Map::new();
     let mut snapshot_dates: Vec<String> = vec![];
     for dim in GAUGE_DIMS {
+        // 围堰 PYTHONPATH=src python3 -m gauge.cli 已冻结兼容只读（2026-09-14
+        // 围堰退役批），生产调用面切引擎 bin gauge（簇A 融回件，read 子命令
+        // 与原 CLI 形对齐，cwd 锚解）。
+        let bin = match gauge_bin() {
+            Ok(p) => p,
+            Err(e) => {
+                return error_payload(
+                    "heartbeat",
+                    what,
+                    &params,
+                    &format!("gauge bin 解析失败 ({dim}): {e}"),
+                );
+            }
+        };
         let mut argv = vec![
-            "python3".to_string(),
-            "-m".to_string(),
-            "gauge.cli".to_string(),
+            bin.display().to_string(),
             "read".to_string(),
             "--dimension".to_string(),
             dim.to_string(),
@@ -254,7 +284,7 @@ pub async fn heartbeat(root: PathBuf) -> Value {
         argv.push(src_root.display().to_string());
         argv.push("--tools-root".to_string());
         argv.push(tools_root.display().to_string());
-        let out = run_readonly(&argv, Some(&gauge_dir), Some(&env_extra), std::time::Duration::from_secs(120)).await;
+        let out = run_readonly(&argv, None, None, std::time::Duration::from_secs(120)).await;
         if out.rc != 0 {
             return error_payload(
                 "heartbeat",
@@ -317,8 +347,12 @@ pub async fn locks_read(root: PathBuf) -> Value {
     let argv = {
         let central = resolve_root();
         let lp = super::httpface::layout_for(&root, &central).ledger_paths();
+        let bin = match lease_bin() {
+            Ok(p) => p,
+            Err(e) => return error_payload("locks_read", what, &params, &e.to_string()),
+        };
         argv_of(&[
-            &lease_bin().display().to_string(),
+            &bin.display().to_string(),
             "status",
             "--ledger",
             &lp["ledger"].display().to_string(),
@@ -369,20 +403,26 @@ pub async fn nomenclator_query(word: Option<String>) -> Value {
         out["naming_teaching"] = json!(NAMING_TEACHING);
         return out;
     }
-    let nom_dir = nom_project_dir();
+    // 围堰 uv run --project sihtools/nomenclator 已冻结兼容只读（2026-09-14
+    // 围堰退役批），生产调用面切引擎 bin nomenclator（簇A 融回件，query 子
+    // 命令与原 CLI 形对齐；核心包位由 SIH_NOMENCLATOR_PACK_DIR 强制配置）。
+    let bin = match nomenclator_bin() {
+        Ok(p) => p,
+        Err(e) => {
+            let mut o = error_payload("nomenclator_query", what, &params, &e.to_string());
+            o["naming_teaching"] = json!(NAMING_TEACHING);
+            return o;
+        }
+    };
     let argv = argv_of(&[
-        "uv",
-        "run",
-        "--project",
-        &nom_dir.display().to_string(),
-        "nomenclator",
+        &bin.display().to_string(),
         "query",
         "--pack",
-        &nom_pack().display().to_string(),
+        &nom_pack_dir().display().to_string(),
         "--word",
         &w,
     ]);
-    let out = run_readonly(&argv, Some(&nom_dir), None, std::time::Duration::from_secs(60)).await;
+    let out = run_readonly(&argv, None, None, std::time::Duration::from_secs(60)).await;
     if out.rc != 0 {
         let mut o = error_payload(
             "nomenclator_query",
@@ -444,19 +484,25 @@ pub async fn nomenclator_check(root: PathBuf, target: Option<String>) -> Value {
         out["naming_teaching"] = json!(NAMING_TEACHING);
         return out;
     }
-    let nom_dir = nom_project_dir();
+    // 围堰 uv run --project sihtools/nomenclator 已冻结兼容只读（2026-09-14
+    // 围堰退役批），生产调用面切引擎 bin nomenclator（簇A 融回件，check 子
+    // 命令与原 CLI 形对齐；核心包位由 SIH_NOMENCLATOR_PACK_DIR 强制配置）。
+    let bin = match nomenclator_bin() {
+        Ok(p) => p,
+        Err(e) => {
+            let mut o = error_payload("nomenclator_check", what, &params, &e.to_string());
+            o["naming_teaching"] = json!(NAMING_TEACHING);
+            return o;
+        }
+    };
     let argv = argv_of(&[
-        "uv",
-        "run",
-        "--project",
-        &nom_dir.display().to_string(),
-        "nomenclator",
+        &bin.display().to_string(),
         "check",
         "--pack",
-        &nom_pack().display().to_string(),
+        &nom_pack_dir().display().to_string(),
         &tp.display().to_string(),
     ]);
-    let out = run_readonly(&argv, Some(&nom_dir), None, std::time::Duration::from_secs(60)).await;
+    let out = run_readonly(&argv, None, None, std::time::Duration::from_secs(60)).await;
     if out.rc != 0 && out.rc != 1 {
         let mut o = error_payload(
             "nomenclator_check",
@@ -536,7 +582,7 @@ pub async fn naming_guide() -> Value {
             "sih-engine/doc/decision/017-wengu-naming.md",
             ".agents/skills/sihankor-naming/SKILL.md",
             "sih-engine/sih/state/parking/materials/pk-090.json",
-            "sih-tools/lease/CONTRACT.md（stem 查册闸修订）",
+            "DEC-017 修订四与五（stem 查册闸与甲表认领）",
         ],
         "disclaimer": "本具只读教学零裁决零 LLM：语义忠实终裁归立名程序人节点（pk-090 甲乙结合定案）",
     })

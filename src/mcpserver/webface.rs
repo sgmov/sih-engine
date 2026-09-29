@@ -41,13 +41,26 @@ pub const VISUAL_SUBPATH: &str = "sih-visual/assets/viewer-dashboard-2026-09-06"
 /// 根路径入口页文件名（web.py DEFAULT_ENTRY 照录）。
 pub const DEFAULT_ENTRY: &str = "dashboard-v3-flow-console.html";
 
-/// AI 使用说明书相对位（web.py manual_file 即包仓根 AI-MANUAL.md，对等工作
-/// 区形 <root>/sih-tools/mcpline/AI-MANUAL.md）。
-pub const MANUAL_REL: &str = "sih-tools/mcpline/AI-MANUAL.md";
+/// AI 使用说明书相对位（围堰 manual_file 即包仓根 AI-MANUAL.md；env var
+/// SIH_FIRST_DOMAIN_MANUAL_RELATIVE 强制配置，缺位显式拒；围堰历史位由部署
+/// 方在 env 中自指）。
+fn manual_relpath() -> PathBuf {
+    match std::env::var("SIH_FIRST_DOMAIN_MANUAL_RELATIVE") {
+        Ok(v) if !v.trim().is_empty() => PathBuf::from(v),
+        _ => crate::mcpserver::runtime::deny_path(
+            "SIH_FIRST_DOMAIN_MANUAL_RELATIVE",
+            "sihtools-围堰冻结-AI 使用说明书位",
+        ),
+    }
+}
 pub const MANUAL_FILENAME: &str = "AI-MANUAL.md";
 
-/// 中央标识登记册相对位（第一域 mcpline 工具面自治位，路径形固定）。
-pub const LEDGER_REL: &str = "sih-tools/mcpline/ledger/tokens.ndjson";
+/// 中央标识登记册相对位（围堰第一域 mcpline 工具面自治位；env var
+/// SIH_FIRST_DOMAIN_TOKENS_RELATIVE 强制配置，缺位显式拒——本模块 webface
+/// 与 httpface 中央登记册路径共享同一 env 配置，避免双源歧义）。
+fn ledger_relpath() -> PathBuf {
+    crate::mcpserver::httpface::first_domain_tokens_relpath()
+}
 
 /// 开域缺省档位与缺省事由（bootstrap 常量照录，确认页文案对等用）。
 pub const DEFAULT_SCOPE: &str = "domain_write";
@@ -74,14 +87,15 @@ pub struct WebState {
 
 // ------------------------------------------------------------------ 路径解析
 
-/// 中央标识登记册路径（第一域形固定，解析单点）。
+/// 中央标识登记册路径（第一域形固定，解析单点；env var 强制配置，缺位绝拒位
+/// 哨返回，触 IO 错误显形）。
 pub fn registry_path(root: &Path) -> PathBuf {
-    root.join(LEDGER_REL)
+    root.join(ledger_relpath())
 }
 
-/// AI 使用说明书路径。
+/// AI 使用说明书路径（env var 强制配置，缺位绝拒位哨返回）。
 pub fn manual_path(root: &Path) -> PathBuf {
-    root.join(MANUAL_REL)
+    root.join(manual_relpath())
 }
 
 /// 根路径入口页路径（面板静态目录 + 入口文件名）。
@@ -392,9 +406,10 @@ async fn manual_page(State(state): State<WebState>) -> Response {
             "说明书缺席",
             &format!(
                 "<p>AI 使用说明书文件缺席（预期位 <code>{fname}</code>，\
-仓内位 <code>sih-tools/mcpline/{fname}</code>)。\
+仓内位 <code>{rel}</code>）。\
 候部署面补件后重试，勿手工另立副本。</p>",
                 fname = MANUAL_FILENAME,
+                rel = manual_relpath().display(),
             ),
         ),
     }
@@ -647,13 +662,24 @@ pub fn router(state: WebState) -> axum::Router {
 mod tests {
     use super::*;
     use axum::response::Response;
+    use crate::mcpserver::runtime::test_helpers::EnvGuard;
 
     /// 临时台面根：唯一目录 + 台账父目录在位（append_row 目录须在位形）。
     fn temp_root(tag: &str) -> PathBuf {
         let d = std::env::temp_dir().join(format!("sihmcp-webface-{}-{}", tag, std::process::id()));
         let _ = std::fs::remove_dir_all(&d);
-        std::fs::create_dir_all(d.join("sih-tools/mcpline/ledger")).unwrap();
+        std::fs::create_dir_all(d.join("test-tools/mcpline/ledger")).unwrap();
         d
+    }
+
+    /// 临时 env 自指：本批迁移后第一域 tokens 与 manual 路径走 env var 强制
+    /// 配置。测试侧把 env 指到 fixture 相对路径下（与第一域历史形同形），脱
+    /// 离运行时 sihtools 真实目录的硬依赖。
+    fn env_first_domain() -> EnvGuard {
+        EnvGuard::set(&[
+            ("SIH_FIRST_DOMAIN_TOKENS_RELATIVE", "test-tools/mcpline/ledger/tokens.ndjson"),
+            ("SIH_FIRST_DOMAIN_MANUAL_RELATIVE", "test-tools/mcpline/AI-MANUAL.md"),
+        ])
     }
 
     async fn body_text(resp: Response) -> String {
@@ -797,8 +823,8 @@ mod tests {
     #[test]
     fn console_body_contains_registry_and_three_forms() {
         let rows: BTreeMap<String, TokenRow> = BTreeMap::new();
-        let html = console_body("sih-tools/mcpline/ledger/tokens.ndjson", &rows);
-        assert!(html.contains("<code>sih-tools/mcpline/ledger/tokens.ndjson</code>"));
+        let html = console_body("test-tools/mcpline/ledger/tokens.ndjson", &rows);
+        assert!(html.contains("<code>test-tools/mcpline/ledger/tokens.ndjson</code>"));
         assert!(html.contains("登记册空册"));
         // 三表单动作路由与字段名逐一在档
         assert!(html.contains("action=\"/tokens/issue\""));
@@ -813,9 +839,10 @@ mod tests {
 
     #[test]
     fn paths_are_first_domain_form() {
+        let _env = env_first_domain();
         let root = PathBuf::from("/tmp/sih");
-        assert_eq!(registry_path(&root), root.join("sih-tools/mcpline/ledger/tokens.ndjson"));
-        assert_eq!(manual_path(&root), root.join("sih-tools/mcpline/AI-MANUAL.md"));
+        assert_eq!(registry_path(&root), root.join("test-tools/mcpline/ledger/tokens.ndjson"));
+        assert_eq!(manual_path(&root), root.join("test-tools/mcpline/AI-MANUAL.md"));
         assert_eq!(
             entry_page_path(&root),
             root.join("sih-visual/assets/viewer-dashboard-2026-09-06/dashboard-v3-flow-console.html")
@@ -824,6 +851,7 @@ mod tests {
 
     #[tokio::test]
     async fn issue_then_duplicate_then_revoke_roundtrip() {
+        let _env = env_first_domain();
         let root = temp_root("roundtrip");
         let state = WebState { root: root.clone() };
         // 目标域先域自举（recognize-solo 签发闸：未域自举根拒签，sim-dev 病灶收口）。
@@ -896,15 +924,16 @@ mod tests {
 
     #[tokio::test]
     async fn manual_page_serves_markdown_or_teaches_absence() {
+        let _env = env_first_domain();
         let root = temp_root("manual");
         let state = WebState { root: root.clone() };
 
-        // 缺席：404 教学语指仓内位
+        // 缺席：404 教学语指仓内位（迁移后仓内位由 env var 强制配置）
         let resp = manual_page(State(state.clone())).await;
         assert_eq!(resp.status(), StatusCode::NOT_FOUND);
         let text = body_text(resp).await;
         assert!(text.contains("说明书缺席"));
-        assert!(text.contains("sih-tools/mcpline/AI-MANUAL.md"));
+        assert!(text.contains("test-tools/mcpline/AI-MANUAL.md"));
 
         // 在位：原文 text/markdown 直出
         let mf = manual_path(&root);

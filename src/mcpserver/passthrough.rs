@@ -12,7 +12,8 @@ use std::path::{Path, PathBuf};
 
 use serde_json::{json, Map, Value};
 
-use super::runtime::{code_root, run_readonly, scribe_bin, today_str, RunOutcome};
+use super::httpface::layout_for;
+use super::runtime::{lease_bin, resolve_root, run_readonly, scribe_bin, today_str, RunOutcome};
 
 pub const LEASE_BIN_TIMEOUT: f64 = 600.0;
 pub const SCRIBE_TIMEOUT: f64 = 120.0;
@@ -21,15 +22,16 @@ fn secs(t: f64) -> std::time::Duration {
     std::time::Duration::from_secs_f64(t)
 }
 
-/// 第一域正典台账位（缺省分支形）。
+/// 域台账位（域布局投影双形俱承载：第一域由 SIH_FIRST_DOMAIN_LEDGER_DIR
+/// 覆盖，新城正典由域内 sih/ledger 承载）。围堰双仓内 sihtools/lease/ledger
+/// 已冻结兼容只读，本函数零硬编码，运行期路径全段由域布局投影承载。
 pub fn ledger_paths(root: &Path) -> Map<String, Value> {
-    let base = root.join("sih-tools/lease/ledger");
-    Map::from_iter([
-        ("ledger".to_string(), json!(base.join("sessions.ndjson").display().to_string())),
-        ("locks".to_string(), json!(base.join("locks.ndjson").display().to_string())),
-        ("claims".to_string(), json!(base.join("claims.ndjson").display().to_string())),
-        ("bills".to_string(), json!(base.join("lockface-bills.ndjson").display().to_string())),
-    ])
+    let central = resolve_root();
+    let paths = layout_for(root, &central).ledger_paths();
+    paths
+        .into_iter()
+        .map(|(k, p)| (k, json!(p.display().to_string())))
+        .collect()
 }
 
 /// 段2 缺省布局：数据根自锚即第一域映射形；trail 即引擎域链路径。
@@ -54,17 +56,17 @@ pub async fn run_cli(argv: &[String], timeout: f64) -> RunOutcome {
     run_readonly(argv, Some(Path::new("/")), None, secs(timeout)).await
 }
 
-fn lease_base(root: &Path, sub: &str) -> Vec<String> {
-    vec![
-        "uv".to_string(),
-        "run".to_string(),
-        "--project".to_string(),
-        code_root().join("sih-tools/lease").display().to_string(),
-        "lease".to_string(),
+fn lease_base(root: &Path, sub: &str) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    // 围堰 uv run --project sihtools/lease 已冻结兼容只读（2026-09-14 围堰退役
+    // 批），生产调用面切引擎 bin lease（lockface 簇A 融回件，与原 CLI 同参
+    // 覆盖 open/lock/unlock/close/status/commit/bypass/reconcile/sweep 等）。
+    let bin = lease_bin()?;
+    Ok(vec![
+        bin.display().to_string(),
         sub.to_string(),
         "--root".to_string(),
         root.display().to_string(),
-    ]
+    ])
 }
 
 fn led_str(root: &Path, key: &str) -> String {
@@ -140,8 +142,8 @@ pub fn scribe_direct_argv(root: &Path, session_id: &str, identity_report: &Path,
 // ------------------------------------------------------------------- lease 面
 
 pub fn lease_open_argv(root: &Path, identity_report: &Path, package: &str,
-                       intent: &str, repos: &[String], allow: &[String]) -> Vec<String> {
-    let mut argv = lease_base(root, "open");
+                       intent: &str, repos: &[String], allow: &[String]) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "open")?;
     argv.extend([
         "--package".to_string(), package.to_string(),
         "--identity".to_string(), identity_report.display().to_string(),
@@ -156,12 +158,12 @@ pub fn lease_open_argv(root: &Path, identity_report: &Path, package: &str,
     for a in allow {
         argv.extend(["--allow".to_string(), a.clone()]);
     }
-    argv
+    Ok(argv)
 }
 
 pub fn lease_lock_argv(root: &Path, identity_report: &Path, session_id: &str,
-                       path: &str, mode: Option<&str>, wait: bool) -> Vec<String> {
-    let mut argv = lease_base(root, "lock");
+                       path: &str, mode: Option<&str>, wait: bool) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "lock")?;
     argv.extend([
         "--path".to_string(), path.to_string(),
         "--identity".to_string(), identity_report.display().to_string(),
@@ -175,12 +177,12 @@ pub fn lease_lock_argv(root: &Path, identity_report: &Path, session_id: &str,
     if wait {
         argv.push("--wait".to_string());
     }
-    argv
+    Ok(argv)
 }
 
 pub fn lease_unlock_argv(root: &Path, identity_report: &Path, session_id: &str,
-                         path: &str) -> Vec<String> {
-    let mut argv = lease_base(root, "unlock");
+                         path: &str) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "unlock")?;
     argv.extend([
         "--path".to_string(), path.to_string(),
         "--identity".to_string(), identity_report.display().to_string(),
@@ -188,13 +190,13 @@ pub fn lease_unlock_argv(root: &Path, identity_report: &Path, session_id: &str,
         "--ledger".to_string(), led_str(root, "ledger"),
         "--locks".to_string(), led_str(root, "locks"),
     ]);
-    argv
+    Ok(argv)
 }
 
 pub fn lease_wait_turn_argv(root: &Path, identity_report: &Path, session_id: &str,
                             path: &str, mode: Option<&str>, timeout_seconds: Option<f64>,
-                            interval_seconds: Option<f64>) -> Vec<String> {
-    let mut argv = lease_base(root, "wait-turn");
+                            interval_seconds: Option<f64>) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "wait-turn")?;
     argv.extend([
         "--path".to_string(), path.to_string(),
         "--identity".to_string(), identity_report.display().to_string(),
@@ -211,12 +213,12 @@ pub fn lease_wait_turn_argv(root: &Path, identity_report: &Path, session_id: &st
     if let Some(i) = interval_seconds {
         argv.extend(["--interval".to_string(), format!("{i}")]);
     }
-    argv
+    Ok(argv)
 }
 
 pub fn lease_claim_argv(root: &Path, package: &str, ttl: i64,
-                        claimant: Option<&str>) -> Vec<String> {
-    let mut argv = lease_base(root, "claim");
+                        claimant: Option<&str>) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "claim")?;
     argv.extend([
         "--package".to_string(), package.to_string(),
         "--ttl".to_string(), ttl.to_string(),
@@ -225,11 +227,11 @@ pub fn lease_claim_argv(root: &Path, package: &str, ttl: i64,
     if let Some(c) = claimant {
         argv.extend(["--claimant".to_string(), c.to_string()]);
     }
-    argv
+    Ok(argv)
 }
 
-pub fn lease_unclaim_argv(root: &Path, package: &str, claimant: Option<&str>) -> Vec<String> {
-    let mut argv = lease_base(root, "unclaim");
+pub fn lease_unclaim_argv(root: &Path, package: &str, claimant: Option<&str>) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "unclaim")?;
     argv.extend([
         "--package".to_string(), package.to_string(),
         "--claims".to_string(), led_str(root, "claims"),
@@ -237,7 +239,7 @@ pub fn lease_unclaim_argv(root: &Path, package: &str, claimant: Option<&str>) ->
     if let Some(c) = claimant {
         argv.extend(["--claimant".to_string(), c.to_string()]);
     }
-    argv
+    Ok(argv)
 }
 
 /// 提交 argv：trail 逐条 --trail 透传（相对形按域根锚定归一），root 覆写透传
@@ -245,8 +247,8 @@ pub fn lease_unclaim_argv(root: &Path, package: &str, claimant: Option<&str>) ->
 #[allow(clippy::too_many_arguments)]
 pub fn lease_commit_argv(root: &Path, session_id: &str, repo: &str, stage: &str,
                          subject: &str, seq: Option<i64>, cert: Option<&str>,
-                         note: Option<&str>, trail: &[String], root_param: Option<&str>) -> Vec<String> {
-    let mut argv = lease_base(root, "commit");
+                         note: Option<&str>, trail: &[String], root_param: Option<&str>) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "commit")?;
     argv.extend([
         "--repo".to_string(), anchored(root, repo),
         "--session".to_string(), session_id.to_string(),
@@ -270,14 +272,14 @@ pub fn lease_commit_argv(root: &Path, session_id: &str, repo: &str, stage: &str,
     if let Some(n) = note {
         argv.extend(["--note".to_string(), n.to_string()]);
     }
-    argv
+    Ok(argv)
 }
 
 /// 收约 argv：light_trail 非 None 即零写连接轻收约形；--force 与 bypass 与
 /// ack 旗标永不透传（server 不强拆，人节点裁决位不代行）。
 pub fn lease_close_argv(root: &Path, package: &str, reason: Option<&str>,
-                        light_trail: Option<&Path>) -> Vec<String> {
-    let mut argv = lease_base(root, "close");
+                        light_trail: Option<&Path>) -> Result<Vec<String>, super::runtime::EngineBinError> {
+    let mut argv = lease_base(root, "close")?;
     argv.extend([
         "--package".to_string(), package.to_string(),
         "--ledger".to_string(), led_str(root, "ledger"),
@@ -289,7 +291,7 @@ pub fn lease_close_argv(root: &Path, package: &str, reason: Option<&str>,
     if let Some(t) = light_trail {
         argv.extend(["--trail".to_string(), t.display().to_string()]);
     }
-    argv
+    Ok(argv)
 }
 
 /// 结果透传载荷：退出码与出参原样载出，出参可解析 JSON 时并载解析形。

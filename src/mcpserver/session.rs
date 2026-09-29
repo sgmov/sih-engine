@@ -13,7 +13,7 @@ use serde_json::{json, Value};
 use super::passthrough::{
     lease_close_argv, lease_open_argv, parse_session_id, run_cli, LEASE_BIN_TIMEOUT,
 };
-use super::runtime::{code_root, resolve_root, run_readonly};
+use super::runtime::{identity_bin, resolve_root, run_readonly};
 use super::runtime::RunOutcome;
 
 const IDENTITY_TIMEOUT: f64 = 120.0;
@@ -74,14 +74,17 @@ impl ConnectionSession {
         if self.identity_report.is_some() || self.identity_error.is_some() {
             return self.identity_report.clone();
         }
-        let argv = vec![
-            "uv".to_string(),
-            "run".to_string(),
-            "--project".to_string(),
-            code_root().join("sih-tools/identity").display().to_string(),
-            "identity".to_string(),
-            "verify".to_string(),
-        ];
+        // 围堰 uv run --project sihtools/identity 已冻结兼容只读（2026-09-14
+        // 围堰退役批），生产调用面切引擎 bin identity（簇E 融回件，verify 退出
+        // 码与报告语义同源）。SIH_SESSION_ID 与 SIH_SANDBOX_ID 由 env_extra 透传。
+        let bin = match identity_bin() {
+            Ok(p) => p,
+            Err(e) => {
+                self.identity_error = Some(format!("identity bin 解析拒: {e}"));
+                return None;
+            }
+        };
+        let argv = vec![bin.display().to_string(), "verify".to_string()];
         let mut env_extra: Vec<(&str, &str)> = vec![("SIH_SESSION_ID", self.id_component.as_str())];
         let sandbox = std::env::var("SIH_SANDBOX_ID").unwrap_or_default();
         if !sandbox.is_empty() {
@@ -159,7 +162,14 @@ impl ConnectionSession {
             return Some(err);
         }
         let report = report.unwrap();
-        let argv = lease_open_argv(&self.root, &report, &package, &intent, &repos, &allow);
+        let argv = match lease_open_argv(&self.root, &report, &package, &intent, &repos, &allow) {
+            Ok(v) => v,
+            Err(e) => {
+                let msg = format!("连接级 lease open argv 构造拒：{e}");
+                self.auto_open_error = Some(msg.clone());
+                return Some(msg);
+            }
+        };
         let out = run_cli(&argv, LEASE_BIN_TIMEOUT).await;
         let sid = if out.rc == 0 { parse_session_id(&out.stdout) } else { None };
         match sid {
@@ -195,7 +205,22 @@ impl ConnectionSession {
         } else {
             (None, "full")
         };
-        let argv = lease_close_argv(&self.root, &package, None, light_trail.as_deref());
+        let argv = match lease_close_argv(&self.root, &package, None, light_trail.as_deref()) {
+            Ok(v) => v,
+            Err(e) => {
+                // 引擎二进制缺席即收约位不可用：显形上呈不静默弃置，会话转
+                // 挂起候人节点裁决（同收约失败处置形，server 不强拆）。
+                let msg = format!("收约 argv 构造拒（引擎二进制缺席）：{e}");
+                eprintln!("[sihmcp] {msg}");
+                self.auto_open_error = Some(msg.clone());
+                return Some(json!({
+                    "ok": false,
+                    "stage": "disconnect_close",
+                    "reason": "engine_bin_missing",
+                    "message": msg,
+                }));
+            }
+        };
         let out = run_cli(&argv, LEASE_BIN_TIMEOUT).await;
         if out.rc != 0 {
             eprintln!(
