@@ -1,6 +1,6 @@
 //! scribe 即书简融回命令行面即本名回滚承 DEC-017 修订二，承接 SPEC-006#boundary 与 T6。
 //!
-//! 子命令六件即 append、verify、query、intent、park、record，另携 vectors 冻结向量集。
+//! 子命令七件即 append、verify、query、intent、park、pen、record，另携 vectors 冻结向量集。
 //! record 即秤星读数落链入口，七字段守卫承 SPEC-011，只校形不判值。
 //! 退出码三值即零成功、一校验或检索异常、二工具自身异常。
 
@@ -11,7 +11,7 @@ use sih_engine::event_stream::park::load_parking_scope;
 use sih_engine::event_stream::{
     append, certification_event, check_intent_reused, check_locks, check_session,
     compute_event_hash, intent_event, load_events, AppendError,
-    crosscheck_event, lockgate::LockGateError, park_event, query,
+    crosscheck_event, lockgate::LockGateError, park_event, pen_event, query,
     reading_event, sessiongate::SessionGateError, verify, Event, EventFilter, EventInput, VerifyRange,
     GENESIS_PREV_HASH,
 };
@@ -218,6 +218,14 @@ const USAGE: &str = r#"scribe 书简：引擎事件链写入与校验命令行
   park      追加停泊事件（写）
     必填：--record <停泊记录 JSON> --trail <链文件>
     可选：--locks <锁册路径> --session <会话号> --allow-worktree-trail <1|true>
+
+  pen       追加直改链笔事件（写）
+    必填：--record <直改申报 JSON> --trail <链文件>
+    JSON 必填字段：path（被改路径）、subject（事由）、actor_id（申报人）；缺即拒不入流
+    事件类型：direct_edit_completed，事件分类 record_only，doc_id 由 path 末段派生
+    可选：--locks <锁册路径> --session <会话号> --sessions <会话台账路径> --allow-worktree-trail <1|true> --no-session-reason <事由>
+    示例：scribe pen --record pen.json --trail trail.ndjson
+    语义：未持租约锁面但发生受治理改档时的显式申报通道，留 direct_edit_completed 凭据供守卫按路径核验
 
   verify    校验链完整性（读）
     必填：--trail <链文件>
@@ -471,6 +479,42 @@ fn main() {
                 Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
             }
         }
+        "pen" => {
+            // 直改链笔形（pen-solo 批）：未持租约锁面但发生受治理改档时的
+            // 显式申报通道。闸序 lockgate → worktree → session → 守卫 →
+            // load_store → append，事件类型 direct_edit_completed 与
+            // 既有 direct 子命令共用事件类型但 details 形态不同（pen 走
+            // 单路径 + subject + actor_id 简化形，direct 走 agent/human
+            // 双笔形分类路径），详见 pen_event 守卫契约。
+            let (Some(record), Some(trail)) = (opt("record"), opt("trail")) else {
+                emit(json!({"error": "pen 缺少必填参数，需 --record <直改申报 JSON> --trail <链文件>"}), 2)
+            };
+            lockgate_guard(&opts, &trail);
+            worktree_trail_guard(&opts, &trail);
+            session_guard(&opts);
+            let Some(text) = read_text(&record) else {
+                emit(json!({"error": format!("记录不存在：应为直改申报 JSON 文件路径（绝对或相对），收到 {}（{}）", record, missing_file_reason(&record))}), 2)
+            };
+            let mut input = match pen_event(&text, gate_actor(), Utc::now()) {
+                Ok(i) => i,
+                Err(e) => emit(json!({"error": format!("直改笔拒 {e}")}), 1),
+            };
+            bind_envelope(&opts, &mut input);
+            let doc_id = input.doc_id.clone();
+            let mut store = load_store(&trail);
+            match append(input, &mut store, Some(&PathBuf::from(&trail))) {
+                Ok(ok) => emit(
+                    json!({
+                        "status": "appended",
+                        "event_id": ok.event_id,
+                        "event_hash": ok.event_hash,
+                        "doc_id": doc_id,
+                    }),
+                    0,
+                ),
+                Err(e) => emit(json!({"error": format!("写入拒 {e:?}")}), 1),
+            }
+        }
         "record" => {
             let (Some(reading), Some(trail)) = (opt("reading"), opt("trail")) else {
                 emit(json!({"error": "record 缺少必填参数，需 --reading <读数件> --trail <链文件>"}), 2)
@@ -688,7 +732,7 @@ fn main() {
             }
         }
         _ => emit(
-            json!({"error": "用法 scribe <append|verify|query|intent|park|record|crosscheck|direct|vectors> --trail <路径>"}),
+            json!({"error": "用法 scribe <append|verify|query|intent|park|pen|record|crosscheck|direct|vectors> --trail <路径>"}),
             2,
         ),
     }
